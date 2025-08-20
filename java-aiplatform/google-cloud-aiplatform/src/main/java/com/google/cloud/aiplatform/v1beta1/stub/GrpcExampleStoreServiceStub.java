@@ -83,6 +83,7 @@ public class GrpcExampleStoreServiceStub extends ExampleStoreServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateExampleStoreRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetExampleStoreRequest, ExampleStore>
@@ -94,6 +95,7 @@ public class GrpcExampleStoreServiceStub extends ExampleStoreServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetExampleStoreRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ExampleStore.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateExampleStoreRequest, Operation>
@@ -105,6 +107,7 @@ public class GrpcExampleStoreServiceStub extends ExampleStoreServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateExampleStoreRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteExampleStoreRequest, Operation>
@@ -116,6 +119,7 @@ public class GrpcExampleStoreServiceStub extends ExampleStoreServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteExampleStoreRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListExampleStoresRequest, ListExampleStoresResponse>
@@ -128,6 +132,7 @@ public class GrpcExampleStoreServiceStub extends ExampleStoreServiceStub {
                   ProtoUtils.marshaller(ListExampleStoresRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListExampleStoresResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpsertExamplesRequest, UpsertExamplesResponse>
@@ -140,6 +145,7 @@ public class GrpcExampleStoreServiceStub extends ExampleStoreServiceStub {
                   ProtoUtils.marshaller(UpsertExamplesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(UpsertExamplesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RemoveExamplesRequest, RemoveExamplesResponse>
@@ -152,6 +158,7 @@ public class GrpcExampleStoreServiceStub extends ExampleStoreServiceStub {
                   ProtoUtils.marshaller(RemoveExamplesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RemoveExamplesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SearchExamplesRequest, SearchExamplesResponse>
@@ -164,6 +171,7 @@ public class GrpcExampleStoreServiceStub extends ExampleStoreServiceStub {
                   ProtoUtils.marshaller(SearchExamplesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchExamplesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<FetchExamplesRequest, FetchExamplesResponse>
@@ -176,6 +184,7 @@ public class GrpcExampleStoreServiceStub extends ExampleStoreServiceStub {
                   ProtoUtils.marshaller(FetchExamplesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FetchExamplesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -187,6 +196,7 @@ public class GrpcExampleStoreServiceStub extends ExampleStoreServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -195,6 +205,7 @@ public class GrpcExampleStoreServiceStub extends ExampleStoreServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -203,6 +214,7 @@ public class GrpcExampleStoreServiceStub extends ExampleStoreServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -211,6 +223,7 @@ public class GrpcExampleStoreServiceStub extends ExampleStoreServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -222,6 +235,7 @@ public class GrpcExampleStoreServiceStub extends ExampleStoreServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateExampleStoreRequest, Operation> createExampleStoreCallable;

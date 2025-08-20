@@ -73,6 +73,7 @@ public class GrpcFunctionServiceStub extends FunctionServiceStub {
           .setFullMethodName("google.cloud.functions.v2alpha.FunctionService/GetFunction")
           .setRequestMarshaller(ProtoUtils.marshaller(GetFunctionRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Function.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListFunctionsRequest, ListFunctionsResponse>
@@ -84,6 +85,7 @@ public class GrpcFunctionServiceStub extends FunctionServiceStub {
                   ProtoUtils.marshaller(ListFunctionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListFunctionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateFunctionRequest, Operation>
@@ -94,6 +96,7 @@ public class GrpcFunctionServiceStub extends FunctionServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateFunctionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateFunctionRequest, Operation>
@@ -104,6 +107,7 @@ public class GrpcFunctionServiceStub extends FunctionServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateFunctionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteFunctionRequest, Operation>
@@ -114,6 +118,7 @@ public class GrpcFunctionServiceStub extends FunctionServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteFunctionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GenerateUploadUrlRequest, GenerateUploadUrlResponse>
@@ -125,6 +130,7 @@ public class GrpcFunctionServiceStub extends FunctionServiceStub {
                   ProtoUtils.marshaller(GenerateUploadUrlRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GenerateUploadUrlResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GenerateDownloadUrlRequest, GenerateDownloadUrlResponse>
@@ -137,6 +143,7 @@ public class GrpcFunctionServiceStub extends FunctionServiceStub {
                   ProtoUtils.marshaller(GenerateDownloadUrlRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GenerateDownloadUrlResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListRuntimesRequest, ListRuntimesResponse>
@@ -147,6 +154,7 @@ public class GrpcFunctionServiceStub extends FunctionServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListRuntimesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListRuntimesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -158,6 +166,7 @@ public class GrpcFunctionServiceStub extends FunctionServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -166,6 +175,7 @@ public class GrpcFunctionServiceStub extends FunctionServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -174,6 +184,7 @@ public class GrpcFunctionServiceStub extends FunctionServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -185,6 +196,7 @@ public class GrpcFunctionServiceStub extends FunctionServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetFunctionRequest, Function> getFunctionCallable;

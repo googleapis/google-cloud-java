@@ -52,6 +52,7 @@ public class GrpcDeveloperRegistrationServiceStub extends DeveloperRegistrationS
               .setRequestMarshaller(ProtoUtils.marshaller(RegisterGcpRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(DeveloperRegistration.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDeveloperRegistrationRequest, DeveloperRegistration>
@@ -64,6 +65,7 @@ public class GrpcDeveloperRegistrationServiceStub extends DeveloperRegistrationS
                   ProtoUtils.marshaller(GetDeveloperRegistrationRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(DeveloperRegistration.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UnregisterGcpRequest, Empty> unregisterGcpMethodDescriptor =
@@ -73,6 +75,7 @@ public class GrpcDeveloperRegistrationServiceStub extends DeveloperRegistrationS
               "google.shopping.merchant.accounts.v1.DeveloperRegistrationService/UnregisterGcp")
           .setRequestMarshaller(ProtoUtils.marshaller(UnregisterGcpRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<RegisterGcpRequest, DeveloperRegistration> registerGcpCallable;

@@ -28,7 +28,7 @@ public interface ListSubpropertySyncConfigsResponseOrBuilder
    *
    *
    * <pre>
-   * List of Subproperty Sync Configs.
+   * List of `SubpropertySyncConfig` resources.
    * </pre>
    *
    * <code>
@@ -42,7 +42,7 @@ public interface ListSubpropertySyncConfigsResponseOrBuilder
    *
    *
    * <pre>
-   * List of Subproperty Sync Configs.
+   * List of `SubpropertySyncConfig` resources.
    * </pre>
    *
    * <code>
@@ -55,7 +55,7 @@ public interface ListSubpropertySyncConfigsResponseOrBuilder
    *
    *
    * <pre>
-   * List of Subproperty Sync Configs.
+   * List of `SubpropertySyncConfig` resources.
    * </pre>
    *
    * <code>
@@ -68,7 +68,7 @@ public interface ListSubpropertySyncConfigsResponseOrBuilder
    *
    *
    * <pre>
-   * List of Subproperty Sync Configs.
+   * List of `SubpropertySyncConfig` resources.
    * </pre>
    *
    * <code>
@@ -82,7 +82,7 @@ public interface ListSubpropertySyncConfigsResponseOrBuilder
    *
    *
    * <pre>
-   * List of Subproperty Sync Configs.
+   * List of `SubpropertySyncConfig` resources.
    * </pre>
    *
    * <code>

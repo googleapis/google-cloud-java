@@ -63,6 +63,7 @@ public class GrpcCompletionServiceStub extends CompletionServiceStub {
                   ProtoUtils.marshaller(CompleteQueryRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(CompleteQueryResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportSuggestionDenyListEntriesRequest, Operation>
@@ -75,6 +76,7 @@ public class GrpcCompletionServiceStub extends CompletionServiceStub {
                   ProtoUtils.marshaller(
                       ImportSuggestionDenyListEntriesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<PurgeSuggestionDenyListEntriesRequest, Operation>
@@ -86,6 +88,7 @@ public class GrpcCompletionServiceStub extends CompletionServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(PurgeSuggestionDenyListEntriesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportCompletionSuggestionsRequest, Operation>
@@ -97,6 +100,7 @@ public class GrpcCompletionServiceStub extends CompletionServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ImportCompletionSuggestionsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<PurgeCompletionSuggestionsRequest, Operation>
@@ -108,6 +112,7 @@ public class GrpcCompletionServiceStub extends CompletionServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(PurgeCompletionSuggestionsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CompleteQueryRequest, CompleteQueryResponse> completeQueryCallable;

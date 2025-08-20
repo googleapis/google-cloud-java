@@ -62,6 +62,7 @@ public class GrpcAutoscalingPolicyServiceStub extends AutoscalingPolicyServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateAutoscalingPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AutoscalingPolicy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateAutoscalingPolicyRequest, AutoscalingPolicy>
@@ -73,6 +74,7 @@ public class GrpcAutoscalingPolicyServiceStub extends AutoscalingPolicyServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateAutoscalingPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AutoscalingPolicy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAutoscalingPolicyRequest, AutoscalingPolicy>
@@ -84,6 +86,7 @@ public class GrpcAutoscalingPolicyServiceStub extends AutoscalingPolicyServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAutoscalingPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AutoscalingPolicy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -98,6 +101,7 @@ public class GrpcAutoscalingPolicyServiceStub extends AutoscalingPolicyServiceSt
                   ProtoUtils.marshaller(ListAutoscalingPoliciesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAutoscalingPoliciesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteAutoscalingPolicyRequest, Empty>
@@ -109,6 +113,7 @@ public class GrpcAutoscalingPolicyServiceStub extends AutoscalingPolicyServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteAutoscalingPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -117,6 +122,7 @@ public class GrpcAutoscalingPolicyServiceStub extends AutoscalingPolicyServiceSt
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -125,6 +131,7 @@ public class GrpcAutoscalingPolicyServiceStub extends AutoscalingPolicyServiceSt
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -136,6 +143,7 @@ public class GrpcAutoscalingPolicyServiceStub extends AutoscalingPolicyServiceSt
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateAutoscalingPolicyRequest, AutoscalingPolicy>

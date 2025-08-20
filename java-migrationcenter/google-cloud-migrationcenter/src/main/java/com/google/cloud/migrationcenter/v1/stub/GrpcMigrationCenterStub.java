@@ -134,6 +134,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
               .setFullMethodName("google.cloud.migrationcenter.v1.MigrationCenter/ListAssets")
               .setRequestMarshaller(ProtoUtils.marshaller(ListAssetsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListAssetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAssetRequest, Asset> getAssetMethodDescriptor =
@@ -142,6 +143,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
           .setFullMethodName("google.cloud.migrationcenter.v1.MigrationCenter/GetAsset")
           .setRequestMarshaller(ProtoUtils.marshaller(GetAssetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Asset.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateAssetRequest, Asset> updateAssetMethodDescriptor =
@@ -150,6 +152,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
           .setFullMethodName("google.cloud.migrationcenter.v1.MigrationCenter/UpdateAsset")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateAssetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Asset.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<BatchUpdateAssetsRequest, BatchUpdateAssetsResponse>
@@ -162,6 +165,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
                   ProtoUtils.marshaller(BatchUpdateAssetsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(BatchUpdateAssetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteAssetRequest, Empty> deleteAssetMethodDescriptor =
@@ -170,6 +174,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
           .setFullMethodName("google.cloud.migrationcenter.v1.MigrationCenter/DeleteAsset")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteAssetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<BatchDeleteAssetsRequest, Empty>
@@ -181,6 +186,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchDeleteAssetsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ReportAssetFramesRequest, ReportAssetFramesResponse>
@@ -193,6 +199,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
                   ProtoUtils.marshaller(ReportAssetFramesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ReportAssetFramesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AggregateAssetsValuesRequest, AggregateAssetsValuesResponse>
@@ -205,6 +212,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
                   ProtoUtils.marshaller(AggregateAssetsValuesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AggregateAssetsValuesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateImportJobRequest, Operation>
@@ -215,6 +223,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateImportJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListImportJobsRequest, ListImportJobsResponse>
@@ -226,6 +235,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
                   ProtoUtils.marshaller(ListImportJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListImportJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetImportJobRequest, ImportJob>
@@ -235,6 +245,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
               .setFullMethodName("google.cloud.migrationcenter.v1.MigrationCenter/GetImportJob")
               .setRequestMarshaller(ProtoUtils.marshaller(GetImportJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ImportJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteImportJobRequest, Operation>
@@ -245,6 +256,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteImportJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateImportJobRequest, Operation>
@@ -255,6 +267,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateImportJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ValidateImportJobRequest, Operation>
@@ -266,6 +279,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ValidateImportJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RunImportJobRequest, Operation>
@@ -275,6 +289,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
               .setFullMethodName("google.cloud.migrationcenter.v1.MigrationCenter/RunImportJob")
               .setRequestMarshaller(ProtoUtils.marshaller(RunImportJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetImportDataFileRequest, ImportDataFile>
@@ -286,6 +301,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetImportDataFileRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ImportDataFile.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListImportDataFilesRequest, ListImportDataFilesResponse>
@@ -298,6 +314,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
                   ProtoUtils.marshaller(ListImportDataFilesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListImportDataFilesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateImportDataFileRequest, Operation>
@@ -309,6 +326,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateImportDataFileRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteImportDataFileRequest, Operation>
@@ -320,6 +338,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteImportDataFileRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListGroupsRequest, ListGroupsResponse>
@@ -329,6 +348,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
               .setFullMethodName("google.cloud.migrationcenter.v1.MigrationCenter/ListGroups")
               .setRequestMarshaller(ProtoUtils.marshaller(ListGroupsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListGroupsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetGroupRequest, Group> getGroupMethodDescriptor =
@@ -337,6 +357,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
           .setFullMethodName("google.cloud.migrationcenter.v1.MigrationCenter/GetGroup")
           .setRequestMarshaller(ProtoUtils.marshaller(GetGroupRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Group.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateGroupRequest, Operation> createGroupMethodDescriptor =
@@ -345,6 +366,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
           .setFullMethodName("google.cloud.migrationcenter.v1.MigrationCenter/CreateGroup")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateGroupRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateGroupRequest, Operation> updateGroupMethodDescriptor =
@@ -353,6 +375,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
           .setFullMethodName("google.cloud.migrationcenter.v1.MigrationCenter/UpdateGroup")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateGroupRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteGroupRequest, Operation> deleteGroupMethodDescriptor =
@@ -361,6 +384,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
           .setFullMethodName("google.cloud.migrationcenter.v1.MigrationCenter/DeleteGroup")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteGroupRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<AddAssetsToGroupRequest, Operation>
@@ -371,6 +395,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(AddAssetsToGroupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RemoveAssetsFromGroupRequest, Operation>
@@ -382,6 +407,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RemoveAssetsFromGroupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListErrorFramesRequest, ListErrorFramesResponse>
@@ -393,6 +419,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
                   ProtoUtils.marshaller(ListErrorFramesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListErrorFramesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetErrorFrameRequest, ErrorFrame>
@@ -403,6 +430,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetErrorFrameRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ErrorFrame.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListSourcesRequest, ListSourcesResponse>
@@ -413,6 +441,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListSourcesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSourcesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSourceRequest, Source> getSourceMethodDescriptor =
@@ -421,6 +450,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
           .setFullMethodName("google.cloud.migrationcenter.v1.MigrationCenter/GetSource")
           .setRequestMarshaller(ProtoUtils.marshaller(GetSourceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Source.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateSourceRequest, Operation>
@@ -430,6 +460,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
               .setFullMethodName("google.cloud.migrationcenter.v1.MigrationCenter/CreateSource")
               .setRequestMarshaller(ProtoUtils.marshaller(CreateSourceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateSourceRequest, Operation>
@@ -439,6 +470,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
               .setFullMethodName("google.cloud.migrationcenter.v1.MigrationCenter/UpdateSource")
               .setRequestMarshaller(ProtoUtils.marshaller(UpdateSourceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteSourceRequest, Operation>
@@ -448,6 +480,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
               .setFullMethodName("google.cloud.migrationcenter.v1.MigrationCenter/DeleteSource")
               .setRequestMarshaller(ProtoUtils.marshaller(DeleteSourceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListPreferenceSetsRequest, ListPreferenceSetsResponse>
@@ -460,6 +493,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
                   ProtoUtils.marshaller(ListPreferenceSetsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListPreferenceSetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetPreferenceSetRequest, PreferenceSet>
@@ -470,6 +504,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetPreferenceSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PreferenceSet.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreatePreferenceSetRequest, Operation>
@@ -481,6 +516,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreatePreferenceSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdatePreferenceSetRequest, Operation>
@@ -492,6 +528,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdatePreferenceSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeletePreferenceSetRequest, Operation>
@@ -503,6 +540,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeletePreferenceSetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSettingsRequest, Settings> getSettingsMethodDescriptor =
@@ -511,6 +549,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
           .setFullMethodName("google.cloud.migrationcenter.v1.MigrationCenter/GetSettings")
           .setRequestMarshaller(ProtoUtils.marshaller(GetSettingsRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Settings.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateSettingsRequest, Operation>
@@ -521,6 +560,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateReportConfigRequest, Operation>
@@ -532,6 +572,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateReportConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetReportConfigRequest, ReportConfig>
@@ -542,6 +583,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetReportConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ReportConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListReportConfigsRequest, ListReportConfigsResponse>
@@ -554,6 +596,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
                   ProtoUtils.marshaller(ListReportConfigsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListReportConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteReportConfigRequest, Operation>
@@ -565,6 +608,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteReportConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateReportRequest, Operation>
@@ -574,6 +618,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
               .setFullMethodName("google.cloud.migrationcenter.v1.MigrationCenter/CreateReport")
               .setRequestMarshaller(ProtoUtils.marshaller(CreateReportRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetReportRequest, Report> getReportMethodDescriptor =
@@ -582,6 +627,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
           .setFullMethodName("google.cloud.migrationcenter.v1.MigrationCenter/GetReport")
           .setRequestMarshaller(ProtoUtils.marshaller(GetReportRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Report.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListReportsRequest, ListReportsResponse>
@@ -592,6 +638,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListReportsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListReportsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteReportRequest, Operation>
@@ -601,6 +648,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
               .setFullMethodName("google.cloud.migrationcenter.v1.MigrationCenter/DeleteReport")
               .setRequestMarshaller(ProtoUtils.marshaller(DeleteReportRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -612,6 +660,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -620,6 +669,7 @@ public class GrpcMigrationCenterStub extends MigrationCenterStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListAssetsRequest, ListAssetsResponse> listAssetsCallable;

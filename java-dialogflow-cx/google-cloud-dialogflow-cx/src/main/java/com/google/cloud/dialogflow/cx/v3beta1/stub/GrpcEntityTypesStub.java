@@ -71,6 +71,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetEntityTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(EntityType.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateEntityTypeRequest, EntityType>
@@ -81,6 +82,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateEntityTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(EntityType.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateEntityTypeRequest, EntityType>
@@ -91,6 +93,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateEntityTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(EntityType.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteEntityTypeRequest, Empty>
@@ -101,6 +104,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteEntityTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListEntityTypesRequest, ListEntityTypesResponse>
@@ -112,6 +116,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
                   ProtoUtils.marshaller(ListEntityTypesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEntityTypesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ExportEntityTypesRequest, Operation>
@@ -122,6 +127,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ExportEntityTypesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportEntityTypesRequest, Operation>
@@ -132,6 +138,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ImportEntityTypesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -143,6 +150,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -151,6 +159,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<GetEntityTypeRequest, EntityType> getEntityTypeCallable;

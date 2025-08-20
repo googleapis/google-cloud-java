@@ -54,6 +54,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
           .setFullMethodName("google.cloud.asset.v1p2beta1.AssetService/CreateFeed")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateFeedRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Feed.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetFeedRequest, Feed> getFeedMethodDescriptor =
@@ -62,6 +63,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
           .setFullMethodName("google.cloud.asset.v1p2beta1.AssetService/GetFeed")
           .setRequestMarshaller(ProtoUtils.marshaller(GetFeedRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Feed.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListFeedsRequest, ListFeedsResponse>
@@ -71,6 +73,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
               .setFullMethodName("google.cloud.asset.v1p2beta1.AssetService/ListFeeds")
               .setRequestMarshaller(ProtoUtils.marshaller(ListFeedsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListFeedsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateFeedRequest, Feed> updateFeedMethodDescriptor =
@@ -79,6 +82,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
           .setFullMethodName("google.cloud.asset.v1p2beta1.AssetService/UpdateFeed")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateFeedRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Feed.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteFeedRequest, Empty> deleteFeedMethodDescriptor =
@@ -87,6 +91,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
           .setFullMethodName("google.cloud.asset.v1p2beta1.AssetService/DeleteFeed")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteFeedRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CreateFeedRequest, Feed> createFeedCallable;

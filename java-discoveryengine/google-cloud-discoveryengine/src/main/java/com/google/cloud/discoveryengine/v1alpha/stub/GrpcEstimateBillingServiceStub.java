@@ -54,6 +54,7 @@ public class GrpcEstimateBillingServiceStub extends EstimateBillingServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(EstimateDataSizeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<EstimateDataSizeRequest, Operation> estimateDataSizeCallable;

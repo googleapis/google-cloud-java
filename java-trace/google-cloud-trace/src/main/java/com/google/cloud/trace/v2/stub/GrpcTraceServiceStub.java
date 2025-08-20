@@ -49,6 +49,7 @@ public class GrpcTraceServiceStub extends TraceServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchWriteSpansRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<Span, Span> createSpanMethodDescriptor =
@@ -57,6 +58,7 @@ public class GrpcTraceServiceStub extends TraceServiceStub {
           .setFullMethodName("google.devtools.cloudtrace.v2.TraceService/CreateSpan")
           .setRequestMarshaller(ProtoUtils.marshaller(Span.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Span.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<BatchWriteSpansRequest, Empty> batchWriteSpansCallable;

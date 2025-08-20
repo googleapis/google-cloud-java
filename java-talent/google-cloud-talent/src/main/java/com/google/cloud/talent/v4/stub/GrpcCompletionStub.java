@@ -49,6 +49,7 @@ public class GrpcCompletionStub extends CompletionStub {
                   ProtoUtils.marshaller(CompleteQueryRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(CompleteQueryResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CompleteQueryRequest, CompleteQueryResponse> completeQueryCallable;

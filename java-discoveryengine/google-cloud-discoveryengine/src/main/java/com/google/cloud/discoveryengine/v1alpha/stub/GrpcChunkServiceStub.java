@@ -52,6 +52,7 @@ public class GrpcChunkServiceStub extends ChunkServiceStub {
           .setFullMethodName("google.cloud.discoveryengine.v1alpha.ChunkService/GetChunk")
           .setRequestMarshaller(ProtoUtils.marshaller(GetChunkRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Chunk.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListChunksRequest, ListChunksResponse>
@@ -61,6 +62,7 @@ public class GrpcChunkServiceStub extends ChunkServiceStub {
               .setFullMethodName("google.cloud.discoveryengine.v1alpha.ChunkService/ListChunks")
               .setRequestMarshaller(ProtoUtils.marshaller(ListChunksRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListChunksResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetChunkRequest, Chunk> getChunkCallable;

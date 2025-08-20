@@ -71,6 +71,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
                   ProtoUtils.marshaller(ListEntityTypesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEntityTypesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetEntityTypeRequest, EntityType>
@@ -81,6 +82,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetEntityTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(EntityType.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateEntityTypeRequest, EntityType>
@@ -91,6 +93,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateEntityTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(EntityType.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateEntityTypeRequest, EntityType>
@@ -101,6 +104,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateEntityTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(EntityType.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteEntityTypeRequest, Empty>
@@ -111,6 +115,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteEntityTypeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchUpdateEntityTypesRequest, Operation>
@@ -121,6 +126,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchUpdateEntityTypesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchDeleteEntityTypesRequest, Operation>
@@ -131,6 +137,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchDeleteEntityTypesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchCreateEntitiesRequest, Operation>
@@ -141,6 +148,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchCreateEntitiesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchUpdateEntitiesRequest, Operation>
@@ -151,6 +159,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchUpdateEntitiesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchDeleteEntitiesRequest, Operation>
@@ -161,6 +170,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchDeleteEntitiesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -172,6 +182,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -180,6 +191,7 @@ public class GrpcEntityTypesStub extends EntityTypesStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListEntityTypesRequest, ListEntityTypesResponse>

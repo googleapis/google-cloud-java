@@ -77,6 +77,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   ProtoUtils.marshaller(TranslateTextRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TranslateTextResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DetectLanguageRequest, DetectLanguageResponse>
@@ -89,6 +90,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   ProtoUtils.marshaller(DetectLanguageRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(DetectLanguageResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSupportedLanguagesRequest, SupportedLanguages>
@@ -100,6 +102,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetSupportedLanguagesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SupportedLanguages.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<TranslateDocumentRequest, TranslateDocumentResponse>
@@ -112,6 +115,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   ProtoUtils.marshaller(TranslateDocumentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TranslateDocumentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchTranslateTextRequest, Operation>
@@ -123,6 +127,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchTranslateTextRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchTranslateDocumentRequest, Operation>
@@ -134,6 +139,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchTranslateDocumentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateGlossaryRequest, Operation>
@@ -145,6 +151,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateGlossaryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListGlossariesRequest, ListGlossariesResponse>
@@ -157,6 +164,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
                   ProtoUtils.marshaller(ListGlossariesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListGlossariesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetGlossaryRequest, Glossary> getGlossaryMethodDescriptor =
@@ -165,6 +173,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
           .setFullMethodName("google.cloud.translation.v3beta1.TranslationService/GetGlossary")
           .setRequestMarshaller(ProtoUtils.marshaller(GetGlossaryRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Glossary.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteGlossaryRequest, Operation>
@@ -176,6 +185,7 @@ public class GrpcTranslationServiceStub extends TranslationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteGlossaryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<TranslateTextRequest, TranslateTextResponse> translateTextCallable;

@@ -52,6 +52,7 @@ public class GrpcReportErrorsServiceStub extends ReportErrorsServiceStub {
                   ProtoUtils.marshaller(ReportErrorEventRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ReportErrorEventResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ReportErrorEventRequest, ReportErrorEventResponse>

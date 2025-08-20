@@ -51,6 +51,7 @@ public class GrpcVideoIntelligenceServiceStub extends VideoIntelligenceServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(AnnotateVideoRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<AnnotateVideoRequest, Operation> annotateVideoCallable;

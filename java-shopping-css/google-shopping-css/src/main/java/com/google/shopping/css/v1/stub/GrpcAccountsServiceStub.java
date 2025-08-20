@@ -54,6 +54,7 @@ public class GrpcAccountsServiceStub extends AccountsServiceStub {
                   ProtoUtils.marshaller(ListChildAccountsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListChildAccountsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAccountRequest, Account> getAccountMethodDescriptor =
@@ -62,6 +63,7 @@ public class GrpcAccountsServiceStub extends AccountsServiceStub {
           .setFullMethodName("google.shopping.css.v1.AccountsService/GetAccount")
           .setRequestMarshaller(ProtoUtils.marshaller(GetAccountRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Account.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateAccountLabelsRequest, Account>
@@ -72,6 +74,7 @@ public class GrpcAccountsServiceStub extends AccountsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateAccountLabelsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Account.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListChildAccountsRequest, ListChildAccountsResponse>

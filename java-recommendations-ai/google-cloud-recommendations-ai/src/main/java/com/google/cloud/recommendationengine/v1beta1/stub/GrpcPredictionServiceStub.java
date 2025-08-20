@@ -50,6 +50,7 @@ public class GrpcPredictionServiceStub extends PredictionServiceStub {
           .setFullMethodName("google.cloud.recommendationengine.v1beta1.PredictionService/Predict")
           .setRequestMarshaller(ProtoUtils.marshaller(PredictRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(PredictResponse.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<PredictRequest, PredictResponse> predictCallable;

@@ -50,6 +50,7 @@ public class GrpcExportServiceStub extends ExportServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListProfilesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListProfilesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListProfilesRequest, ListProfilesResponse> listProfilesCallable;

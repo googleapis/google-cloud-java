@@ -49,6 +49,7 @@ public class GrpcLfpInventoryServiceStub extends LfpInventoryServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(InsertLfpInventoryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(LfpInventory.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<InsertLfpInventoryRequest, LfpInventory> insertLfpInventoryCallable;

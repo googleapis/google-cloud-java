@@ -54,6 +54,7 @@ public class GrpcTemplatesServiceStub extends TemplatesServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateJobFromTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<LaunchTemplateRequest, LaunchTemplateResponse>
@@ -65,6 +66,7 @@ public class GrpcTemplatesServiceStub extends TemplatesServiceStub {
                   ProtoUtils.marshaller(LaunchTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(LaunchTemplateResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTemplateRequest, GetTemplateResponse>
@@ -75,6 +77,7 @@ public class GrpcTemplatesServiceStub extends TemplatesServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(GetTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GetTemplateResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateJobFromTemplateRequest, Job> createJobFromTemplateCallable;

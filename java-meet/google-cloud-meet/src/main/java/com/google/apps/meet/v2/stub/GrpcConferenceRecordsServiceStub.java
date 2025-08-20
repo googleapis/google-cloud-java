@@ -77,6 +77,7 @@ public class GrpcConferenceRecordsServiceStub extends ConferenceRecordsServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetConferenceRecordRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ConferenceRecord.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListConferenceRecordsRequest, ListConferenceRecordsResponse>
@@ -89,6 +90,7 @@ public class GrpcConferenceRecordsServiceStub extends ConferenceRecordsServiceSt
                   ProtoUtils.marshaller(ListConferenceRecordsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListConferenceRecordsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetParticipantRequest, Participant>
@@ -99,6 +101,7 @@ public class GrpcConferenceRecordsServiceStub extends ConferenceRecordsServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetParticipantRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Participant.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListParticipantsRequest, ListParticipantsResponse>
@@ -110,6 +113,7 @@ public class GrpcConferenceRecordsServiceStub extends ConferenceRecordsServiceSt
                   ProtoUtils.marshaller(ListParticipantsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListParticipantsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetParticipantSessionRequest, ParticipantSession>
@@ -121,6 +125,7 @@ public class GrpcConferenceRecordsServiceStub extends ConferenceRecordsServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetParticipantSessionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ParticipantSession.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -135,6 +140,7 @@ public class GrpcConferenceRecordsServiceStub extends ConferenceRecordsServiceSt
                   ProtoUtils.marshaller(ListParticipantSessionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListParticipantSessionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetRecordingRequest, Recording>
@@ -144,6 +150,7 @@ public class GrpcConferenceRecordsServiceStub extends ConferenceRecordsServiceSt
               .setFullMethodName("google.apps.meet.v2.ConferenceRecordsService/GetRecording")
               .setRequestMarshaller(ProtoUtils.marshaller(GetRecordingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Recording.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListRecordingsRequest, ListRecordingsResponse>
@@ -155,6 +162,7 @@ public class GrpcConferenceRecordsServiceStub extends ConferenceRecordsServiceSt
                   ProtoUtils.marshaller(ListRecordingsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListRecordingsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTranscriptRequest, Transcript>
@@ -165,6 +173,7 @@ public class GrpcConferenceRecordsServiceStub extends ConferenceRecordsServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetTranscriptRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Transcript.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListTranscriptsRequest, ListTranscriptsResponse>
@@ -176,6 +185,7 @@ public class GrpcConferenceRecordsServiceStub extends ConferenceRecordsServiceSt
                   ProtoUtils.marshaller(ListTranscriptsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTranscriptsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTranscriptEntryRequest, TranscriptEntry>
@@ -186,6 +196,7 @@ public class GrpcConferenceRecordsServiceStub extends ConferenceRecordsServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetTranscriptEntryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TranscriptEntry.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListTranscriptEntriesRequest, ListTranscriptEntriesResponse>
@@ -198,6 +209,7 @@ public class GrpcConferenceRecordsServiceStub extends ConferenceRecordsServiceSt
                   ProtoUtils.marshaller(ListTranscriptEntriesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTranscriptEntriesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetConferenceRecordRequest, ConferenceRecord>

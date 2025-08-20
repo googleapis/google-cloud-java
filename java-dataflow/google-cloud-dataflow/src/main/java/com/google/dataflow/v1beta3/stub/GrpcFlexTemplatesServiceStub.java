@@ -51,6 +51,7 @@ public class GrpcFlexTemplatesServiceStub extends FlexTemplatesServiceStub {
                   ProtoUtils.marshaller(LaunchFlexTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(LaunchFlexTemplateResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<LaunchFlexTemplateRequest, LaunchFlexTemplateResponse>

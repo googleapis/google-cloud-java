@@ -2331,52 +2331,6 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
   }
 
   @Override
-  public void setAutomatedGa4ConfigurationOptOut(
-      SetAutomatedGa4ConfigurationOptOutRequest request,
-      StreamObserver<SetAutomatedGa4ConfigurationOptOutResponse> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof SetAutomatedGa4ConfigurationOptOutResponse) {
-      requests.add(request);
-      responseObserver.onNext(((SetAutomatedGa4ConfigurationOptOutResponse) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method SetAutomatedGa4ConfigurationOptOut,"
-                      + " expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  SetAutomatedGa4ConfigurationOptOutResponse.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
-  public void fetchAutomatedGa4ConfigurationOptOut(
-      FetchAutomatedGa4ConfigurationOptOutRequest request,
-      StreamObserver<FetchAutomatedGa4ConfigurationOptOutResponse> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof FetchAutomatedGa4ConfigurationOptOutResponse) {
-      requests.add(request);
-      responseObserver.onNext(((FetchAutomatedGa4ConfigurationOptOutResponse) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method FetchAutomatedGa4ConfigurationOptOut,"
-                      + " expected %s or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  FetchAutomatedGa4ConfigurationOptOutResponse.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
   public void createBigQueryLink(
       CreateBigQueryLinkRequest request, StreamObserver<BigQueryLink> responseObserver) {
     Object response = responses.poll();
@@ -2524,97 +2478,6 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
                       + " expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   EnhancedMeasurementSettings.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
-  public void createConnectedSiteTag(
-      CreateConnectedSiteTagRequest request,
-      StreamObserver<CreateConnectedSiteTagResponse> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof CreateConnectedSiteTagResponse) {
-      requests.add(request);
-      responseObserver.onNext(((CreateConnectedSiteTagResponse) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method CreateConnectedSiteTag, expected %s or"
-                      + " %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  CreateConnectedSiteTagResponse.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
-  public void deleteConnectedSiteTag(
-      DeleteConnectedSiteTagRequest request, StreamObserver<Empty> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof Empty) {
-      requests.add(request);
-      responseObserver.onNext(((Empty) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method DeleteConnectedSiteTag, expected %s or"
-                      + " %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  Empty.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
-  public void listConnectedSiteTags(
-      ListConnectedSiteTagsRequest request,
-      StreamObserver<ListConnectedSiteTagsResponse> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof ListConnectedSiteTagsResponse) {
-      requests.add(request);
-      responseObserver.onNext(((ListConnectedSiteTagsResponse) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method ListConnectedSiteTags, expected %s or"
-                      + " %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  ListConnectedSiteTagsResponse.class.getName(),
-                  Exception.class.getName())));
-    }
-  }
-
-  @Override
-  public void fetchConnectedGa4Property(
-      FetchConnectedGa4PropertyRequest request,
-      StreamObserver<FetchConnectedGa4PropertyResponse> responseObserver) {
-    Object response = responses.poll();
-    if (response instanceof FetchConnectedGa4PropertyResponse) {
-      requests.add(request);
-      responseObserver.onNext(((FetchConnectedGa4PropertyResponse) response));
-      responseObserver.onCompleted();
-    } else if (response instanceof Exception) {
-      responseObserver.onError(((Exception) response));
-    } else {
-      responseObserver.onError(
-          new IllegalArgumentException(
-              String.format(
-                  "Unrecognized response type %s for method FetchConnectedGa4Property, expected %s"
-                      + " or %s",
-                  response == null ? "null" : response.getClass().getName(),
-                  FetchConnectedGa4PropertyResponse.class.getName(),
                   Exception.class.getName())));
     }
   }
@@ -3549,6 +3412,29 @@ public class MockAnalyticsAdminServiceImpl extends AnalyticsAdminServiceImplBase
                       + " or %s",
                   response == null ? "null" : response.getClass().getName(),
                   SubpropertySyncConfig.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getReportingIdentitySettings(
+      GetReportingIdentitySettingsRequest request,
+      StreamObserver<ReportingIdentitySettings> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ReportingIdentitySettings) {
+      requests.add(request);
+      responseObserver.onNext(((ReportingIdentitySettings) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetReportingIdentitySettings, expected"
+                      + " %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ReportingIdentitySettings.class.getName(),
                   Exception.class.getName())));
     }
   }

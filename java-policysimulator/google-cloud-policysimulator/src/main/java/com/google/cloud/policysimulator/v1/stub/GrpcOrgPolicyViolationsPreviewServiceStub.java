@@ -67,6 +67,7 @@ public class GrpcOrgPolicyViolationsPreviewServiceStub
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       ListOrgPolicyViolationsPreviewsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -81,6 +82,7 @@ public class GrpcOrgPolicyViolationsPreviewServiceStub
                   ProtoUtils.marshaller(GetOrgPolicyViolationsPreviewRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(OrgPolicyViolationsPreview.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateOrgPolicyViolationsPreviewRequest, Operation>
@@ -93,6 +95,7 @@ public class GrpcOrgPolicyViolationsPreviewServiceStub
                   ProtoUtils.marshaller(
                       CreateOrgPolicyViolationsPreviewRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -107,6 +110,7 @@ public class GrpcOrgPolicyViolationsPreviewServiceStub
                   ProtoUtils.marshaller(ListOrgPolicyViolationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListOrgPolicyViolationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<

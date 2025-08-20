@@ -76,7 +76,7 @@ public final class ListSubpropertySyncConfigsResponse extends com.google.protobu
    *
    *
    * <pre>
-   * List of Subproperty Sync Configs.
+   * List of `SubpropertySyncConfig` resources.
    * </pre>
    *
    * <code>
@@ -93,7 +93,7 @@ public final class ListSubpropertySyncConfigsResponse extends com.google.protobu
    *
    *
    * <pre>
-   * List of Subproperty Sync Configs.
+   * List of `SubpropertySyncConfig` resources.
    * </pre>
    *
    * <code>
@@ -110,7 +110,7 @@ public final class ListSubpropertySyncConfigsResponse extends com.google.protobu
    *
    *
    * <pre>
-   * List of Subproperty Sync Configs.
+   * List of `SubpropertySyncConfig` resources.
    * </pre>
    *
    * <code>
@@ -126,7 +126,7 @@ public final class ListSubpropertySyncConfigsResponse extends com.google.protobu
    *
    *
    * <pre>
-   * List of Subproperty Sync Configs.
+   * List of `SubpropertySyncConfig` resources.
    * </pre>
    *
    * <code>
@@ -143,7 +143,7 @@ public final class ListSubpropertySyncConfigsResponse extends com.google.protobu
    *
    *
    * <pre>
-   * List of Subproperty Sync Configs.
+   * List of `SubpropertySyncConfig` resources.
    * </pre>
    *
    * <code>
@@ -661,7 +661,7 @@ public final class ListSubpropertySyncConfigsResponse extends com.google.protobu
      *
      *
      * <pre>
-     * List of Subproperty Sync Configs.
+     * List of `SubpropertySyncConfig` resources.
      * </pre>
      *
      * <code>
@@ -681,7 +681,7 @@ public final class ListSubpropertySyncConfigsResponse extends com.google.protobu
      *
      *
      * <pre>
-     * List of Subproperty Sync Configs.
+     * List of `SubpropertySyncConfig` resources.
      * </pre>
      *
      * <code>
@@ -700,7 +700,7 @@ public final class ListSubpropertySyncConfigsResponse extends com.google.protobu
      *
      *
      * <pre>
-     * List of Subproperty Sync Configs.
+     * List of `SubpropertySyncConfig` resources.
      * </pre>
      *
      * <code>
@@ -720,7 +720,7 @@ public final class ListSubpropertySyncConfigsResponse extends com.google.protobu
      *
      *
      * <pre>
-     * List of Subproperty Sync Configs.
+     * List of `SubpropertySyncConfig` resources.
      * </pre>
      *
      * <code>
@@ -746,7 +746,7 @@ public final class ListSubpropertySyncConfigsResponse extends com.google.protobu
      *
      *
      * <pre>
-     * List of Subproperty Sync Configs.
+     * List of `SubpropertySyncConfig` resources.
      * </pre>
      *
      * <code>
@@ -770,7 +770,7 @@ public final class ListSubpropertySyncConfigsResponse extends com.google.protobu
      *
      *
      * <pre>
-     * List of Subproperty Sync Configs.
+     * List of `SubpropertySyncConfig` resources.
      * </pre>
      *
      * <code>
@@ -796,7 +796,7 @@ public final class ListSubpropertySyncConfigsResponse extends com.google.protobu
      *
      *
      * <pre>
-     * List of Subproperty Sync Configs.
+     * List of `SubpropertySyncConfig` resources.
      * </pre>
      *
      * <code>
@@ -822,7 +822,7 @@ public final class ListSubpropertySyncConfigsResponse extends com.google.protobu
      *
      *
      * <pre>
-     * List of Subproperty Sync Configs.
+     * List of `SubpropertySyncConfig` resources.
      * </pre>
      *
      * <code>
@@ -845,7 +845,7 @@ public final class ListSubpropertySyncConfigsResponse extends com.google.protobu
      *
      *
      * <pre>
-     * List of Subproperty Sync Configs.
+     * List of `SubpropertySyncConfig` resources.
      * </pre>
      *
      * <code>
@@ -869,7 +869,7 @@ public final class ListSubpropertySyncConfigsResponse extends com.google.protobu
      *
      *
      * <pre>
-     * List of Subproperty Sync Configs.
+     * List of `SubpropertySyncConfig` resources.
      * </pre>
      *
      * <code>
@@ -893,7 +893,7 @@ public final class ListSubpropertySyncConfigsResponse extends com.google.protobu
      *
      *
      * <pre>
-     * List of Subproperty Sync Configs.
+     * List of `SubpropertySyncConfig` resources.
      * </pre>
      *
      * <code>
@@ -915,7 +915,7 @@ public final class ListSubpropertySyncConfigsResponse extends com.google.protobu
      *
      *
      * <pre>
-     * List of Subproperty Sync Configs.
+     * List of `SubpropertySyncConfig` resources.
      * </pre>
      *
      * <code>
@@ -937,7 +937,7 @@ public final class ListSubpropertySyncConfigsResponse extends com.google.protobu
      *
      *
      * <pre>
-     * List of Subproperty Sync Configs.
+     * List of `SubpropertySyncConfig` resources.
      * </pre>
      *
      * <code>
@@ -953,7 +953,7 @@ public final class ListSubpropertySyncConfigsResponse extends com.google.protobu
      *
      *
      * <pre>
-     * List of Subproperty Sync Configs.
+     * List of `SubpropertySyncConfig` resources.
      * </pre>
      *
      * <code>
@@ -973,7 +973,7 @@ public final class ListSubpropertySyncConfigsResponse extends com.google.protobu
      *
      *
      * <pre>
-     * List of Subproperty Sync Configs.
+     * List of `SubpropertySyncConfig` resources.
      * </pre>
      *
      * <code>
@@ -994,7 +994,7 @@ public final class ListSubpropertySyncConfigsResponse extends com.google.protobu
      *
      *
      * <pre>
-     * List of Subproperty Sync Configs.
+     * List of `SubpropertySyncConfig` resources.
      * </pre>
      *
      * <code>
@@ -1012,7 +1012,7 @@ public final class ListSubpropertySyncConfigsResponse extends com.google.protobu
      *
      *
      * <pre>
-     * List of Subproperty Sync Configs.
+     * List of `SubpropertySyncConfig` resources.
      * </pre>
      *
      * <code>
@@ -1030,7 +1030,7 @@ public final class ListSubpropertySyncConfigsResponse extends com.google.protobu
      *
      *
      * <pre>
-     * List of Subproperty Sync Configs.
+     * List of `SubpropertySyncConfig` resources.
      * </pre>
      *
      * <code>

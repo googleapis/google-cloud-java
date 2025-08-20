@@ -54,6 +54,7 @@ public class GrpcRevisionsStub extends RevisionsStub {
           .setFullMethodName("google.cloud.run.v2.Revisions/GetRevision")
           .setRequestMarshaller(ProtoUtils.marshaller(GetRevisionRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Revision.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListRevisionsRequest, ListRevisionsResponse>
@@ -65,6 +66,7 @@ public class GrpcRevisionsStub extends RevisionsStub {
                   ProtoUtils.marshaller(ListRevisionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListRevisionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteRevisionRequest, Operation>
@@ -75,6 +77,7 @@ public class GrpcRevisionsStub extends RevisionsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteRevisionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetRevisionRequest, Revision> getRevisionCallable;

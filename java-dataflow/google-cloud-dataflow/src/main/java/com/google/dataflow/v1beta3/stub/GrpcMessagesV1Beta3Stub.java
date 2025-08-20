@@ -53,6 +53,7 @@ public class GrpcMessagesV1Beta3Stub extends MessagesV1Beta3Stub {
                   ProtoUtils.marshaller(ListJobMessagesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListJobMessagesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListJobMessagesRequest, ListJobMessagesResponse>

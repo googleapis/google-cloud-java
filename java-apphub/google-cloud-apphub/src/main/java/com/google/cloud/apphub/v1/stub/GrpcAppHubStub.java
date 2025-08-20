@@ -115,6 +115,7 @@ public class GrpcAppHubStub extends AppHubStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       LookupServiceProjectAttachmentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -129,6 +130,7 @@ public class GrpcAppHubStub extends AppHubStub {
                   ProtoUtils.marshaller(ListServiceProjectAttachmentsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListServiceProjectAttachmentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateServiceProjectAttachmentRequest, Operation>
@@ -139,6 +141,7 @@ public class GrpcAppHubStub extends AppHubStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateServiceProjectAttachmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -152,6 +155,7 @@ public class GrpcAppHubStub extends AppHubStub {
                   ProtoUtils.marshaller(GetServiceProjectAttachmentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ServiceProjectAttachment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteServiceProjectAttachmentRequest, Operation>
@@ -162,6 +166,7 @@ public class GrpcAppHubStub extends AppHubStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteServiceProjectAttachmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -177,6 +182,7 @@ public class GrpcAppHubStub extends AppHubStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       DetachServiceProjectAttachmentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -190,6 +196,7 @@ public class GrpcAppHubStub extends AppHubStub {
                   ProtoUtils.marshaller(ListDiscoveredServicesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDiscoveredServicesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDiscoveredServiceRequest, DiscoveredService>
@@ -200,6 +207,7 @@ public class GrpcAppHubStub extends AppHubStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetDiscoveredServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DiscoveredService.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -213,6 +221,7 @@ public class GrpcAppHubStub extends AppHubStub {
                   ProtoUtils.marshaller(LookupDiscoveredServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(LookupDiscoveredServiceResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListServicesRequest, ListServicesResponse>
@@ -223,6 +232,7 @@ public class GrpcAppHubStub extends AppHubStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListServicesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListServicesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateServiceRequest, Operation>
@@ -233,6 +243,7 @@ public class GrpcAppHubStub extends AppHubStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetServiceRequest, Service> getServiceMethodDescriptor =
@@ -241,6 +252,7 @@ public class GrpcAppHubStub extends AppHubStub {
           .setFullMethodName("google.cloud.apphub.v1.AppHub/GetService")
           .setRequestMarshaller(ProtoUtils.marshaller(GetServiceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Service.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateServiceRequest, Operation>
@@ -251,6 +263,7 @@ public class GrpcAppHubStub extends AppHubStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteServiceRequest, Operation>
@@ -261,6 +274,7 @@ public class GrpcAppHubStub extends AppHubStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -274,6 +288,7 @@ public class GrpcAppHubStub extends AppHubStub {
                   ProtoUtils.marshaller(ListDiscoveredWorkloadsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDiscoveredWorkloadsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDiscoveredWorkloadRequest, DiscoveredWorkload>
@@ -284,6 +299,7 @@ public class GrpcAppHubStub extends AppHubStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetDiscoveredWorkloadRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DiscoveredWorkload.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -297,6 +313,7 @@ public class GrpcAppHubStub extends AppHubStub {
                   ProtoUtils.marshaller(LookupDiscoveredWorkloadRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(LookupDiscoveredWorkloadResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListWorkloadsRequest, ListWorkloadsResponse>
@@ -308,6 +325,7 @@ public class GrpcAppHubStub extends AppHubStub {
                   ProtoUtils.marshaller(ListWorkloadsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListWorkloadsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateWorkloadRequest, Operation>
@@ -318,6 +336,7 @@ public class GrpcAppHubStub extends AppHubStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateWorkloadRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetWorkloadRequest, Workload> getWorkloadMethodDescriptor =
@@ -326,6 +345,7 @@ public class GrpcAppHubStub extends AppHubStub {
           .setFullMethodName("google.cloud.apphub.v1.AppHub/GetWorkload")
           .setRequestMarshaller(ProtoUtils.marshaller(GetWorkloadRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Workload.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateWorkloadRequest, Operation>
@@ -336,6 +356,7 @@ public class GrpcAppHubStub extends AppHubStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateWorkloadRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteWorkloadRequest, Operation>
@@ -346,6 +367,7 @@ public class GrpcAppHubStub extends AppHubStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteWorkloadRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListApplicationsRequest, ListApplicationsResponse>
@@ -357,6 +379,7 @@ public class GrpcAppHubStub extends AppHubStub {
                   ProtoUtils.marshaller(ListApplicationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListApplicationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateApplicationRequest, Operation>
@@ -367,6 +390,7 @@ public class GrpcAppHubStub extends AppHubStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateApplicationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetApplicationRequest, Application>
@@ -377,6 +401,7 @@ public class GrpcAppHubStub extends AppHubStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetApplicationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Application.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateApplicationRequest, Operation>
@@ -387,6 +412,7 @@ public class GrpcAppHubStub extends AppHubStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateApplicationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteApplicationRequest, Operation>
@@ -397,6 +423,7 @@ public class GrpcAppHubStub extends AppHubStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteApplicationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -408,6 +435,7 @@ public class GrpcAppHubStub extends AppHubStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -416,6 +444,7 @@ public class GrpcAppHubStub extends AppHubStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -424,6 +453,7 @@ public class GrpcAppHubStub extends AppHubStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -432,6 +462,7 @@ public class GrpcAppHubStub extends AppHubStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -443,6 +474,7 @@ public class GrpcAppHubStub extends AppHubStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<

@@ -48,6 +48,7 @@ public class GrpcHealthCheckServiceStub extends HealthCheckServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(HealthCheckRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(HealthCheckResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<HealthCheckRequest, HealthCheckResponse> healthCheckCallable;

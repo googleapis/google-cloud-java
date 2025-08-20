@@ -55,6 +55,7 @@ public class GrpcCommentServiceStub extends CommentServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListCommentsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCommentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateCommentRequest, Comment>
@@ -65,6 +66,7 @@ public class GrpcCommentServiceStub extends CommentServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateCommentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Comment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetCommentRequest, Comment> getCommentMethodDescriptor =
@@ -73,6 +75,7 @@ public class GrpcCommentServiceStub extends CommentServiceStub {
           .setFullMethodName("google.cloud.support.v2beta.CommentService/GetComment")
           .setRequestMarshaller(ProtoUtils.marshaller(GetCommentRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Comment.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListCommentsRequest, ListCommentsResponse> listCommentsCallable;

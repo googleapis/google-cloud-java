@@ -66,6 +66,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.MetadataService/CreateEntity")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateEntityRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Entity.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateEntityRequest, Entity> updateEntityMethodDescriptor =
@@ -74,6 +75,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.MetadataService/UpdateEntity")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateEntityRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Entity.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteEntityRequest, Empty> deleteEntityMethodDescriptor =
@@ -82,6 +84,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.MetadataService/DeleteEntity")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteEntityRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetEntityRequest, Entity> getEntityMethodDescriptor =
@@ -90,6 +93,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
           .setFullMethodName("google.cloud.dataplex.v1.MetadataService/GetEntity")
           .setRequestMarshaller(ProtoUtils.marshaller(GetEntityRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Entity.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListEntitiesRequest, ListEntitiesResponse>
@@ -100,6 +104,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListEntitiesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEntitiesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreatePartitionRequest, Partition>
@@ -110,6 +115,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreatePartitionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Partition.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeletePartitionRequest, Empty>
@@ -120,6 +126,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeletePartitionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetPartitionRequest, Partition>
@@ -129,6 +136,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
               .setFullMethodName("google.cloud.dataplex.v1.MetadataService/GetPartition")
               .setRequestMarshaller(ProtoUtils.marshaller(GetPartitionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Partition.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListPartitionsRequest, ListPartitionsResponse>
@@ -140,6 +148,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   ProtoUtils.marshaller(ListPartitionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListPartitionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -151,6 +160,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -159,6 +169,7 @@ public class GrpcMetadataServiceStub extends MetadataServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CreateEntityRequest, Entity> createEntityCallable;

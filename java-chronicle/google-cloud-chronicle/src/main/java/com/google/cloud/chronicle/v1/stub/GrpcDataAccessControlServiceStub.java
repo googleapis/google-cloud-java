@@ -65,6 +65,7 @@ public class GrpcDataAccessControlServiceStub extends DataAccessControlServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDataAccessLabelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DataAccessLabel.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDataAccessLabelRequest, DataAccessLabel>
@@ -76,6 +77,7 @@ public class GrpcDataAccessControlServiceStub extends DataAccessControlServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetDataAccessLabelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DataAccessLabel.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListDataAccessLabelsRequest, ListDataAccessLabelsResponse>
@@ -88,6 +90,7 @@ public class GrpcDataAccessControlServiceStub extends DataAccessControlServiceSt
                   ProtoUtils.marshaller(ListDataAccessLabelsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDataAccessLabelsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDataAccessLabelRequest, DataAccessLabel>
@@ -99,6 +102,7 @@ public class GrpcDataAccessControlServiceStub extends DataAccessControlServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDataAccessLabelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DataAccessLabel.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDataAccessLabelRequest, Empty>
@@ -110,6 +114,7 @@ public class GrpcDataAccessControlServiceStub extends DataAccessControlServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDataAccessLabelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateDataAccessScopeRequest, DataAccessScope>
@@ -121,6 +126,7 @@ public class GrpcDataAccessControlServiceStub extends DataAccessControlServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDataAccessScopeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DataAccessScope.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDataAccessScopeRequest, DataAccessScope>
@@ -132,6 +138,7 @@ public class GrpcDataAccessControlServiceStub extends DataAccessControlServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetDataAccessScopeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DataAccessScope.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListDataAccessScopesRequest, ListDataAccessScopesResponse>
@@ -144,6 +151,7 @@ public class GrpcDataAccessControlServiceStub extends DataAccessControlServiceSt
                   ProtoUtils.marshaller(ListDataAccessScopesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDataAccessScopesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDataAccessScopeRequest, DataAccessScope>
@@ -155,6 +163,7 @@ public class GrpcDataAccessControlServiceStub extends DataAccessControlServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDataAccessScopeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DataAccessScope.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDataAccessScopeRequest, Empty>
@@ -166,6 +175,7 @@ public class GrpcDataAccessControlServiceStub extends DataAccessControlServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDataAccessScopeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateDataAccessLabelRequest, DataAccessLabel>

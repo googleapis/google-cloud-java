@@ -56,6 +56,7 @@ public class GrpcSpeechStub extends SpeechStub {
               .setFullMethodName("google.cloud.speech.v1p1beta1.Speech/Recognize")
               .setRequestMarshaller(ProtoUtils.marshaller(RecognizeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(RecognizeResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<LongRunningRecognizeRequest, Operation>
@@ -66,6 +67,7 @@ public class GrpcSpeechStub extends SpeechStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(LongRunningRecognizeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StreamingRecognizeRequest, StreamingRecognizeResponse>
@@ -77,6 +79,7 @@ public class GrpcSpeechStub extends SpeechStub {
                   ProtoUtils.marshaller(StreamingRecognizeRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(StreamingRecognizeResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<RecognizeRequest, RecognizeResponse> recognizeCallable;

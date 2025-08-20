@@ -50,6 +50,7 @@ public class GrpcErrorGroupServiceStub extends ErrorGroupServiceStub {
               "google.devtools.clouderrorreporting.v1beta1.ErrorGroupService/GetGroup")
           .setRequestMarshaller(ProtoUtils.marshaller(GetGroupRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(ErrorGroup.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateGroupRequest, ErrorGroup>
@@ -60,6 +61,7 @@ public class GrpcErrorGroupServiceStub extends ErrorGroupServiceStub {
                   "google.devtools.clouderrorreporting.v1beta1.ErrorGroupService/UpdateGroup")
               .setRequestMarshaller(ProtoUtils.marshaller(UpdateGroupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ErrorGroup.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetGroupRequest, ErrorGroup> getGroupCallable;

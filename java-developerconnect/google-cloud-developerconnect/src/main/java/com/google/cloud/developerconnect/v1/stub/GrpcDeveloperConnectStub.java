@@ -102,6 +102,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
                   ProtoUtils.marshaller(ListConnectionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListConnectionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetConnectionRequest, Connection>
@@ -112,6 +113,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Connection.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateConnectionRequest, Operation>
@@ -123,6 +125,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateConnectionRequest, Operation>
@@ -134,6 +137,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteConnectionRequest, Operation>
@@ -145,6 +149,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateGitRepositoryLinkRequest, Operation>
@@ -156,6 +161,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateGitRepositoryLinkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteGitRepositoryLinkRequest, Operation>
@@ -167,6 +173,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteGitRepositoryLinkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -181,6 +188,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
                   ProtoUtils.marshaller(ListGitRepositoryLinksRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListGitRepositoryLinksResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetGitRepositoryLinkRequest, GitRepositoryLink>
@@ -192,6 +200,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetGitRepositoryLinkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(GitRepositoryLink.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<FetchReadWriteTokenRequest, FetchReadWriteTokenResponse>
@@ -204,6 +213,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
                   ProtoUtils.marshaller(FetchReadWriteTokenRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FetchReadWriteTokenResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<FetchReadTokenRequest, FetchReadTokenResponse>
@@ -215,6 +225,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
                   ProtoUtils.marshaller(FetchReadTokenRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FetchReadTokenResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -230,6 +241,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
                   ProtoUtils.marshaller(FetchLinkableGitRepositoriesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FetchLinkableGitRepositoriesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -244,6 +256,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
                   ProtoUtils.marshaller(FetchGitHubInstallationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FetchGitHubInstallationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<FetchGitRefsRequest, FetchGitRefsResponse>
@@ -254,6 +267,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
               .setRequestMarshaller(ProtoUtils.marshaller(FetchGitRefsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FetchGitRefsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListAccountConnectorsRequest, ListAccountConnectorsResponse>
@@ -266,6 +280,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
                   ProtoUtils.marshaller(ListAccountConnectorsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAccountConnectorsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAccountConnectorRequest, AccountConnector>
@@ -277,6 +292,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAccountConnectorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AccountConnector.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateAccountConnectorRequest, Operation>
@@ -288,6 +304,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateAccountConnectorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateAccountConnectorRequest, Operation>
@@ -299,6 +316,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateAccountConnectorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteAccountConnectorRequest, Operation>
@@ -310,6 +328,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteAccountConnectorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<FetchAccessTokenRequest, FetchAccessTokenResponse>
@@ -322,6 +341,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
                   ProtoUtils.marshaller(FetchAccessTokenRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FetchAccessTokenResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListUsersRequest, ListUsersResponse>
@@ -331,6 +351,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
               .setFullMethodName("google.cloud.developerconnect.v1.DeveloperConnect/ListUsers")
               .setRequestMarshaller(ProtoUtils.marshaller(ListUsersRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListUsersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteUserRequest, Operation> deleteUserMethodDescriptor =
@@ -339,6 +360,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
           .setFullMethodName("google.cloud.developerconnect.v1.DeveloperConnect/DeleteUser")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteUserRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<FetchSelfRequest, User> fetchSelfMethodDescriptor =
@@ -347,6 +369,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
           .setFullMethodName("google.cloud.developerconnect.v1.DeveloperConnect/FetchSelf")
           .setRequestMarshaller(ProtoUtils.marshaller(FetchSelfRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(User.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteSelfRequest, Operation> deleteSelfMethodDescriptor =
@@ -355,6 +378,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
           .setFullMethodName("google.cloud.developerconnect.v1.DeveloperConnect/DeleteSelf")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteSelfRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -366,6 +390,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -374,6 +399,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListConnectionsRequest, ListConnectionsResponse>

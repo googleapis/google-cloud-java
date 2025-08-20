@@ -98,6 +98,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
                   ProtoUtils.marshaller(ListResourceBundlesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListResourceBundlesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetResourceBundleRequest, ResourceBundle>
@@ -108,6 +109,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetResourceBundleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ResourceBundle.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateResourceBundleRequest, Operation>
@@ -119,6 +121,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateResourceBundleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateResourceBundleRequest, Operation>
@@ -130,6 +133,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateResourceBundleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteResourceBundleRequest, Operation>
@@ -141,6 +145,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteResourceBundleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListFleetPackagesRequest, ListFleetPackagesResponse>
@@ -152,6 +157,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
                   ProtoUtils.marshaller(ListFleetPackagesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListFleetPackagesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetFleetPackageRequest, FleetPackage>
@@ -162,6 +168,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetFleetPackageRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(FleetPackage.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateFleetPackageRequest, Operation>
@@ -172,6 +179,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateFleetPackageRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateFleetPackageRequest, Operation>
@@ -182,6 +190,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateFleetPackageRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteFleetPackageRequest, Operation>
@@ -192,6 +201,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteFleetPackageRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListReleasesRequest, ListReleasesResponse>
@@ -202,6 +212,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListReleasesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListReleasesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetReleaseRequest, Release> getReleaseMethodDescriptor =
@@ -210,6 +221,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
           .setFullMethodName("google.cloud.configdelivery.v1.ConfigDelivery/GetRelease")
           .setRequestMarshaller(ProtoUtils.marshaller(GetReleaseRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Release.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateReleaseRequest, Operation>
@@ -220,6 +232,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateReleaseRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateReleaseRequest, Operation>
@@ -230,6 +243,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateReleaseRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteReleaseRequest, Operation>
@@ -240,6 +254,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteReleaseRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListVariantsRequest, ListVariantsResponse>
@@ -250,6 +265,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListVariantsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListVariantsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetVariantRequest, Variant> getVariantMethodDescriptor =
@@ -258,6 +274,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
           .setFullMethodName("google.cloud.configdelivery.v1.ConfigDelivery/GetVariant")
           .setRequestMarshaller(ProtoUtils.marshaller(GetVariantRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Variant.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateVariantRequest, Operation>
@@ -268,6 +285,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateVariantRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateVariantRequest, Operation>
@@ -278,6 +296,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateVariantRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteVariantRequest, Operation>
@@ -288,6 +307,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteVariantRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListRolloutsRequest, ListRolloutsResponse>
@@ -298,6 +318,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListRolloutsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListRolloutsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetRolloutRequest, Rollout> getRolloutMethodDescriptor =
@@ -306,6 +327,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
           .setFullMethodName("google.cloud.configdelivery.v1.ConfigDelivery/GetRollout")
           .setRequestMarshaller(ProtoUtils.marshaller(GetRolloutRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Rollout.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SuspendRolloutRequest, Operation>
@@ -316,6 +338,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(SuspendRolloutRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ResumeRolloutRequest, Operation>
@@ -326,6 +349,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ResumeRolloutRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AbortRolloutRequest, Operation>
@@ -335,6 +359,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
               .setFullMethodName("google.cloud.configdelivery.v1.ConfigDelivery/AbortRollout")
               .setRequestMarshaller(ProtoUtils.marshaller(AbortRolloutRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -346,6 +371,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -354,6 +380,7 @@ public class GrpcConfigDeliveryStub extends ConfigDeliveryStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListResourceBundlesRequest, ListResourceBundlesResponse>

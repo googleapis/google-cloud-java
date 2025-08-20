@@ -78,6 +78,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateAwsClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateAwsClusterRequest, Operation>
@@ -88,6 +89,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateAwsClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAwsClusterRequest, AwsCluster>
@@ -98,6 +100,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAwsClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AwsCluster.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListAwsClustersRequest, ListAwsClustersResponse>
@@ -109,6 +112,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
                   ProtoUtils.marshaller(ListAwsClustersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAwsClustersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteAwsClusterRequest, Operation>
@@ -119,6 +123,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteAwsClusterRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -134,6 +139,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
                   ProtoUtils.marshaller(GenerateAwsClusterAgentTokenRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GenerateAwsClusterAgentTokenResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -147,6 +153,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
                   ProtoUtils.marshaller(GenerateAwsAccessTokenRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GenerateAwsAccessTokenResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateAwsNodePoolRequest, Operation>
@@ -157,6 +164,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateAwsNodePoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateAwsNodePoolRequest, Operation>
@@ -167,6 +175,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateAwsNodePoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RollbackAwsNodePoolUpdateRequest, Operation>
@@ -178,6 +187,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RollbackAwsNodePoolUpdateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAwsNodePoolRequest, AwsNodePool>
@@ -188,6 +198,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAwsNodePoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AwsNodePool.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListAwsNodePoolsRequest, ListAwsNodePoolsResponse>
@@ -199,6 +210,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
                   ProtoUtils.marshaller(ListAwsNodePoolsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAwsNodePoolsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteAwsNodePoolRequest, Operation>
@@ -209,6 +221,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteAwsNodePoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAwsOpenIdConfigRequest, AwsOpenIdConfig>
@@ -219,6 +232,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAwsOpenIdConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AwsOpenIdConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAwsJsonWebKeysRequest, AwsJsonWebKeys>
@@ -229,6 +243,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAwsJsonWebKeysRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AwsJsonWebKeys.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAwsServerConfigRequest, AwsServerConfig>
@@ -239,6 +254,7 @@ public class GrpcAwsClustersStub extends AwsClustersStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAwsServerConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AwsServerConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateAwsClusterRequest, Operation> createAwsClusterCallable;

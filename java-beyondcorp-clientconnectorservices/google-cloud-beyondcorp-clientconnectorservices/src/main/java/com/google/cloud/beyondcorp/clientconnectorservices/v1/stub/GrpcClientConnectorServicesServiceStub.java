@@ -73,6 +73,7 @@ public class GrpcClientConnectorServicesServiceStub extends ClientConnectorServi
                   ProtoUtils.marshaller(ListClientConnectorServicesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListClientConnectorServicesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetClientConnectorServiceRequest, ClientConnectorService>
@@ -85,6 +86,7 @@ public class GrpcClientConnectorServicesServiceStub extends ClientConnectorServi
                   ProtoUtils.marshaller(GetClientConnectorServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ClientConnectorService.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateClientConnectorServiceRequest, Operation>
@@ -96,6 +98,7 @@ public class GrpcClientConnectorServicesServiceStub extends ClientConnectorServi
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateClientConnectorServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateClientConnectorServiceRequest, Operation>
@@ -107,6 +110,7 @@ public class GrpcClientConnectorServicesServiceStub extends ClientConnectorServi
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateClientConnectorServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteClientConnectorServiceRequest, Operation>
@@ -118,6 +122,7 @@ public class GrpcClientConnectorServicesServiceStub extends ClientConnectorServi
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteClientConnectorServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -129,6 +134,7 @@ public class GrpcClientConnectorServicesServiceStub extends ClientConnectorServi
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -137,6 +143,7 @@ public class GrpcClientConnectorServicesServiceStub extends ClientConnectorServi
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -145,6 +152,7 @@ public class GrpcClientConnectorServicesServiceStub extends ClientConnectorServi
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -153,6 +161,7 @@ public class GrpcClientConnectorServicesServiceStub extends ClientConnectorServi
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -164,6 +173,7 @@ public class GrpcClientConnectorServicesServiceStub extends ClientConnectorServi
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<

@@ -72,6 +72,7 @@ public class GrpcSaasRolloutsStub extends SaasRolloutsStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListRolloutsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListRolloutsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetRolloutRequest, Rollout> getRolloutMethodDescriptor =
@@ -81,6 +82,7 @@ public class GrpcSaasRolloutsStub extends SaasRolloutsStub {
               "google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasRollouts/GetRollout")
           .setRequestMarshaller(ProtoUtils.marshaller(GetRolloutRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Rollout.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateRolloutRequest, Rollout>
@@ -92,6 +94,7 @@ public class GrpcSaasRolloutsStub extends SaasRolloutsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateRolloutRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Rollout.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateRolloutRequest, Rollout>
@@ -103,6 +106,7 @@ public class GrpcSaasRolloutsStub extends SaasRolloutsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateRolloutRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Rollout.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteRolloutRequest, Empty> deleteRolloutMethodDescriptor =
@@ -112,6 +116,7 @@ public class GrpcSaasRolloutsStub extends SaasRolloutsStub {
               "google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasRollouts/DeleteRollout")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteRolloutRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListRolloutKindsRequest, ListRolloutKindsResponse>
@@ -124,6 +129,7 @@ public class GrpcSaasRolloutsStub extends SaasRolloutsStub {
                   ProtoUtils.marshaller(ListRolloutKindsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListRolloutKindsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetRolloutKindRequest, RolloutKind>
@@ -135,6 +141,7 @@ public class GrpcSaasRolloutsStub extends SaasRolloutsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetRolloutKindRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(RolloutKind.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateRolloutKindRequest, RolloutKind>
@@ -146,6 +153,7 @@ public class GrpcSaasRolloutsStub extends SaasRolloutsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateRolloutKindRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(RolloutKind.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateRolloutKindRequest, RolloutKind>
@@ -157,6 +165,7 @@ public class GrpcSaasRolloutsStub extends SaasRolloutsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateRolloutKindRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(RolloutKind.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteRolloutKindRequest, Empty>
@@ -168,6 +177,7 @@ public class GrpcSaasRolloutsStub extends SaasRolloutsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteRolloutKindRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -179,6 +189,7 @@ public class GrpcSaasRolloutsStub extends SaasRolloutsStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -187,6 +198,7 @@ public class GrpcSaasRolloutsStub extends SaasRolloutsStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListRolloutsRequest, ListRolloutsResponse> listRolloutsCallable;

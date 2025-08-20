@@ -56,6 +56,7 @@ public class GrpcTripServiceStub extends TripServiceStub {
           .setFullMethodName("maps.fleetengine.v1.TripService/CreateTrip")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateTripRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Trip.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetTripRequest, Trip> getTripMethodDescriptor =
@@ -64,6 +65,7 @@ public class GrpcTripServiceStub extends TripServiceStub {
           .setFullMethodName("maps.fleetengine.v1.TripService/GetTrip")
           .setRequestMarshaller(ProtoUtils.marshaller(GetTripRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Trip.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteTripRequest, Empty> deleteTripMethodDescriptor =
@@ -72,6 +74,7 @@ public class GrpcTripServiceStub extends TripServiceStub {
           .setFullMethodName("maps.fleetengine.v1.TripService/DeleteTrip")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteTripRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ReportBillableTripRequest, Empty>
@@ -82,6 +85,7 @@ public class GrpcTripServiceStub extends TripServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ReportBillableTripRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SearchTripsRequest, SearchTripsResponse>
@@ -92,6 +96,7 @@ public class GrpcTripServiceStub extends TripServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(SearchTripsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchTripsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateTripRequest, Trip> updateTripMethodDescriptor =
@@ -100,6 +105,7 @@ public class GrpcTripServiceStub extends TripServiceStub {
           .setFullMethodName("maps.fleetengine.v1.TripService/UpdateTrip")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateTripRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Trip.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CreateTripRequest, Trip> createTripCallable;

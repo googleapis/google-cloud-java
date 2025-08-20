@@ -92,6 +92,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateAssessmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Assessment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AnnotateAssessmentRequest, AnnotateAssessmentResponse>
@@ -104,6 +105,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
                   ProtoUtils.marshaller(AnnotateAssessmentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AnnotateAssessmentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateKeyRequest, Key> createKeyMethodDescriptor =
@@ -113,6 +115,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
               "google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService/CreateKey")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateKeyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Key.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListKeysRequest, ListKeysResponse>
@@ -123,6 +126,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
                   "google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService/ListKeys")
               .setRequestMarshaller(ProtoUtils.marshaller(ListKeysRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListKeysResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -137,6 +141,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
                   ProtoUtils.marshaller(RetrieveLegacySecretKeyRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RetrieveLegacySecretKeyResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetKeyRequest, Key> getKeyMethodDescriptor =
@@ -146,6 +151,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
               "google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService/GetKey")
           .setRequestMarshaller(ProtoUtils.marshaller(GetKeyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Key.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateKeyRequest, Key> updateKeyMethodDescriptor =
@@ -155,6 +161,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
               "google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService/UpdateKey")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateKeyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Key.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteKeyRequest, Empty> deleteKeyMethodDescriptor =
@@ -164,6 +171,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
               "google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService/DeleteKey")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteKeyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<MigrateKeyRequest, Key> migrateKeyMethodDescriptor =
@@ -173,6 +181,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
               "google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService/MigrateKey")
           .setRequestMarshaller(ProtoUtils.marshaller(MigrateKeyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Key.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<AddIpOverrideRequest, AddIpOverrideResponse>
@@ -185,6 +194,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
                   ProtoUtils.marshaller(AddIpOverrideRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AddIpOverrideResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RemoveIpOverrideRequest, RemoveIpOverrideResponse>
@@ -197,6 +207,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
                   ProtoUtils.marshaller(RemoveIpOverrideRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RemoveIpOverrideResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListIpOverridesRequest, ListIpOverridesResponse>
@@ -209,6 +220,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
                   ProtoUtils.marshaller(ListIpOverridesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListIpOverridesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetMetricsRequest, Metrics> getMetricsMethodDescriptor =
@@ -218,6 +230,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
               "google.cloud.recaptchaenterprise.v1.RecaptchaEnterpriseService/GetMetrics")
           .setRequestMarshaller(ProtoUtils.marshaller(GetMetricsRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Metrics.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateFirewallPolicyRequest, FirewallPolicy>
@@ -229,6 +242,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateFirewallPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(FirewallPolicy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListFirewallPoliciesRequest, ListFirewallPoliciesResponse>
@@ -241,6 +255,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
                   ProtoUtils.marshaller(ListFirewallPoliciesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListFirewallPoliciesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetFirewallPolicyRequest, FirewallPolicy>
@@ -252,6 +267,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetFirewallPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(FirewallPolicy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateFirewallPolicyRequest, FirewallPolicy>
@@ -263,6 +279,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateFirewallPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(FirewallPolicy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteFirewallPolicyRequest, Empty>
@@ -274,6 +291,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteFirewallPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -288,6 +306,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
                   ProtoUtils.marshaller(ReorderFirewallPoliciesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ReorderFirewallPoliciesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -302,6 +321,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
                   ProtoUtils.marshaller(ListRelatedAccountGroupsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListRelatedAccountGroupsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -320,6 +340,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       ListRelatedAccountGroupMembershipsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -338,6 +359,7 @@ public class GrpcRecaptchaEnterpriseServiceStub extends RecaptchaEnterpriseServi
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       SearchRelatedAccountGroupMembershipsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateAssessmentRequest, Assessment> createAssessmentCallable;

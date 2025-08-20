@@ -62,6 +62,7 @@ public class GrpcProjectServiceStub extends ProjectServiceStub {
           .setFullMethodName("google.cloud.retail.v2alpha.ProjectService/GetProject")
           .setRequestMarshaller(ProtoUtils.marshaller(GetProjectRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Project.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<AcceptTermsRequest, Project> acceptTermsMethodDescriptor =
@@ -70,6 +71,7 @@ public class GrpcProjectServiceStub extends ProjectServiceStub {
           .setFullMethodName("google.cloud.retail.v2alpha.ProjectService/AcceptTerms")
           .setRequestMarshaller(ProtoUtils.marshaller(AcceptTermsRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Project.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<EnrollSolutionRequest, Operation>
@@ -80,6 +82,7 @@ public class GrpcProjectServiceStub extends ProjectServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(EnrollSolutionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListEnrolledSolutionsRequest, ListEnrolledSolutionsResponse>
@@ -91,6 +94,7 @@ public class GrpcProjectServiceStub extends ProjectServiceStub {
                   ProtoUtils.marshaller(ListEnrolledSolutionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEnrolledSolutionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLoggingConfigRequest, LoggingConfig>
@@ -101,6 +105,7 @@ public class GrpcProjectServiceStub extends ProjectServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetLoggingConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(LoggingConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateLoggingConfigRequest, LoggingConfig>
@@ -111,6 +116,7 @@ public class GrpcProjectServiceStub extends ProjectServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateLoggingConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(LoggingConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAlertConfigRequest, AlertConfig>
@@ -121,6 +127,7 @@ public class GrpcProjectServiceStub extends ProjectServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAlertConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AlertConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateAlertConfigRequest, AlertConfig>
@@ -131,6 +138,7 @@ public class GrpcProjectServiceStub extends ProjectServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateAlertConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AlertConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetProjectRequest, Project> getProjectCallable;

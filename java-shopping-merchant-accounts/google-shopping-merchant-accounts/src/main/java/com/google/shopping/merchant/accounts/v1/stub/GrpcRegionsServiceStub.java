@@ -54,6 +54,7 @@ public class GrpcRegionsServiceStub extends RegionsServiceStub {
           .setFullMethodName("google.shopping.merchant.accounts.v1.RegionsService/GetRegion")
           .setRequestMarshaller(ProtoUtils.marshaller(GetRegionRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Region.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateRegionRequest, Region> createRegionMethodDescriptor =
@@ -62,6 +63,7 @@ public class GrpcRegionsServiceStub extends RegionsServiceStub {
           .setFullMethodName("google.shopping.merchant.accounts.v1.RegionsService/CreateRegion")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateRegionRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Region.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateRegionRequest, Region> updateRegionMethodDescriptor =
@@ -70,6 +72,7 @@ public class GrpcRegionsServiceStub extends RegionsServiceStub {
           .setFullMethodName("google.shopping.merchant.accounts.v1.RegionsService/UpdateRegion")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateRegionRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Region.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteRegionRequest, Empty> deleteRegionMethodDescriptor =
@@ -78,6 +81,7 @@ public class GrpcRegionsServiceStub extends RegionsServiceStub {
           .setFullMethodName("google.shopping.merchant.accounts.v1.RegionsService/DeleteRegion")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteRegionRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListRegionsRequest, ListRegionsResponse>
@@ -88,6 +92,7 @@ public class GrpcRegionsServiceStub extends RegionsServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListRegionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListRegionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetRegionRequest, Region> getRegionCallable;

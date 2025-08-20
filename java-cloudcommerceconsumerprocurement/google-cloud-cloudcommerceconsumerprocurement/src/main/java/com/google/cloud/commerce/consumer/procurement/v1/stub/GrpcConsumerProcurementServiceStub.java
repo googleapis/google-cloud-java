@@ -59,6 +59,7 @@ public class GrpcConsumerProcurementServiceStub extends ConsumerProcurementServi
               "google.cloud.commerce.consumer.procurement.v1.ConsumerProcurementService/PlaceOrder")
           .setRequestMarshaller(ProtoUtils.marshaller(PlaceOrderRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetOrderRequest, Order> getOrderMethodDescriptor =
@@ -68,6 +69,7 @@ public class GrpcConsumerProcurementServiceStub extends ConsumerProcurementServi
               "google.cloud.commerce.consumer.procurement.v1.ConsumerProcurementService/GetOrder")
           .setRequestMarshaller(ProtoUtils.marshaller(GetOrderRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Order.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListOrdersRequest, ListOrdersResponse>
@@ -78,6 +80,7 @@ public class GrpcConsumerProcurementServiceStub extends ConsumerProcurementServi
                   "google.cloud.commerce.consumer.procurement.v1.ConsumerProcurementService/ListOrders")
               .setRequestMarshaller(ProtoUtils.marshaller(ListOrdersRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListOrdersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ModifyOrderRequest, Operation> modifyOrderMethodDescriptor =
@@ -87,6 +90,7 @@ public class GrpcConsumerProcurementServiceStub extends ConsumerProcurementServi
               "google.cloud.commerce.consumer.procurement.v1.ConsumerProcurementService/ModifyOrder")
           .setRequestMarshaller(ProtoUtils.marshaller(ModifyOrderRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CancelOrderRequest, Operation> cancelOrderMethodDescriptor =
@@ -96,6 +100,7 @@ public class GrpcConsumerProcurementServiceStub extends ConsumerProcurementServi
               "google.cloud.commerce.consumer.procurement.v1.ConsumerProcurementService/CancelOrder")
           .setRequestMarshaller(ProtoUtils.marshaller(CancelOrderRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<PlaceOrderRequest, Operation> placeOrderCallable;

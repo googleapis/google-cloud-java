@@ -60,6 +60,7 @@ public class GrpcMapsPlatformDatasetsStub extends MapsPlatformDatasetsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDatasetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Dataset.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDatasetMetadataRequest, Dataset>
@@ -71,6 +72,7 @@ public class GrpcMapsPlatformDatasetsStub extends MapsPlatformDatasetsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDatasetMetadataRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Dataset.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDatasetRequest, Dataset> getDatasetMethodDescriptor =
@@ -79,6 +81,7 @@ public class GrpcMapsPlatformDatasetsStub extends MapsPlatformDatasetsStub {
           .setFullMethodName("google.maps.mapsplatformdatasets.v1.MapsPlatformDatasets/GetDataset")
           .setRequestMarshaller(ProtoUtils.marshaller(GetDatasetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Dataset.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<FetchDatasetErrorsRequest, FetchDatasetErrorsResponse>
@@ -91,6 +94,7 @@ public class GrpcMapsPlatformDatasetsStub extends MapsPlatformDatasetsStub {
                   ProtoUtils.marshaller(FetchDatasetErrorsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FetchDatasetErrorsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListDatasetsRequest, ListDatasetsResponse>
@@ -102,6 +106,7 @@ public class GrpcMapsPlatformDatasetsStub extends MapsPlatformDatasetsStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListDatasetsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDatasetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDatasetRequest, Empty> deleteDatasetMethodDescriptor =
@@ -111,6 +116,7 @@ public class GrpcMapsPlatformDatasetsStub extends MapsPlatformDatasetsStub {
               "google.maps.mapsplatformdatasets.v1.MapsPlatformDatasets/DeleteDataset")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteDatasetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CreateDatasetRequest, Dataset> createDatasetCallable;

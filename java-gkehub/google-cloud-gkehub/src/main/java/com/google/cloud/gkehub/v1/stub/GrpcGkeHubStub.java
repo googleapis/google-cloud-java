@@ -70,6 +70,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
                   ProtoUtils.marshaller(ListMembershipsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListMembershipsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListFeaturesRequest, ListFeaturesResponse>
@@ -80,6 +81,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListFeaturesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListFeaturesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetMembershipRequest, Membership>
@@ -90,6 +92,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetMembershipRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Membership.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetFeatureRequest, Feature> getFeatureMethodDescriptor =
@@ -98,6 +101,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
           .setFullMethodName("google.cloud.gkehub.v1.GkeHub/GetFeature")
           .setRequestMarshaller(ProtoUtils.marshaller(GetFeatureRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Feature.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateMembershipRequest, Operation>
@@ -108,6 +112,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateMembershipRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateFeatureRequest, Operation>
@@ -118,6 +123,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateFeatureRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteMembershipRequest, Operation>
@@ -128,6 +134,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteMembershipRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteFeatureRequest, Operation>
@@ -138,6 +145,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteFeatureRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateMembershipRequest, Operation>
@@ -148,6 +156,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateMembershipRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateFeatureRequest, Operation>
@@ -158,6 +167,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateFeatureRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -171,6 +181,7 @@ public class GrpcGkeHubStub extends GkeHubStub {
                   ProtoUtils.marshaller(GenerateConnectManifestRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GenerateConnectManifestResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListMembershipsRequest, ListMembershipsResponse>

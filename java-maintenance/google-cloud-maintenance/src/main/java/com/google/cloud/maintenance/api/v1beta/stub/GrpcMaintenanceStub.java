@@ -64,6 +64,7 @@ public class GrpcMaintenanceStub extends MaintenanceStub {
                   ProtoUtils.marshaller(SummarizeMaintenancesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SummarizeMaintenancesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -78,6 +79,7 @@ public class GrpcMaintenanceStub extends MaintenanceStub {
                   ProtoUtils.marshaller(ListResourceMaintenancesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListResourceMaintenancesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetResourceMaintenanceRequest, ResourceMaintenance>
@@ -90,6 +92,7 @@ public class GrpcMaintenanceStub extends MaintenanceStub {
                   ProtoUtils.marshaller(GetResourceMaintenanceRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ResourceMaintenance.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -101,6 +104,7 @@ public class GrpcMaintenanceStub extends MaintenanceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -109,6 +113,7 @@ public class GrpcMaintenanceStub extends MaintenanceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<SummarizeMaintenancesRequest, SummarizeMaintenancesResponse>

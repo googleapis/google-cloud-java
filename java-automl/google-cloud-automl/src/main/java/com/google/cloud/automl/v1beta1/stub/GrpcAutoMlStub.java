@@ -93,6 +93,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDatasetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Dataset.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDatasetRequest, Dataset> getDatasetMethodDescriptor =
@@ -101,6 +102,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
           .setFullMethodName("google.cloud.automl.v1beta1.AutoMl/GetDataset")
           .setRequestMarshaller(ProtoUtils.marshaller(GetDatasetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Dataset.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListDatasetsRequest, ListDatasetsResponse>
@@ -111,6 +113,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListDatasetsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDatasetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDatasetRequest, Dataset>
@@ -121,6 +124,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDatasetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Dataset.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDatasetRequest, Operation>
@@ -131,6 +135,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDatasetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportDataRequest, Operation> importDataMethodDescriptor =
@@ -139,6 +144,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
           .setFullMethodName("google.cloud.automl.v1beta1.AutoMl/ImportData")
           .setRequestMarshaller(ProtoUtils.marshaller(ImportDataRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ExportDataRequest, Operation> exportDataMethodDescriptor =
@@ -147,6 +153,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
           .setFullMethodName("google.cloud.automl.v1beta1.AutoMl/ExportData")
           .setRequestMarshaller(ProtoUtils.marshaller(ExportDataRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetAnnotationSpecRequest, AnnotationSpec>
@@ -157,6 +164,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAnnotationSpecRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AnnotationSpec.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTableSpecRequest, TableSpec>
@@ -166,6 +174,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
               .setFullMethodName("google.cloud.automl.v1beta1.AutoMl/GetTableSpec")
               .setRequestMarshaller(ProtoUtils.marshaller(GetTableSpecRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TableSpec.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListTableSpecsRequest, ListTableSpecsResponse>
@@ -177,6 +186,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
                   ProtoUtils.marshaller(ListTableSpecsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTableSpecsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateTableSpecRequest, TableSpec>
@@ -187,6 +197,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateTableSpecRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TableSpec.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetColumnSpecRequest, ColumnSpec>
@@ -197,6 +208,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetColumnSpecRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ColumnSpec.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListColumnSpecsRequest, ListColumnSpecsResponse>
@@ -208,6 +220,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
                   ProtoUtils.marshaller(ListColumnSpecsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListColumnSpecsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateColumnSpecRequest, ColumnSpec>
@@ -218,6 +231,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateColumnSpecRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ColumnSpec.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateModelRequest, Operation> createModelMethodDescriptor =
@@ -226,6 +240,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
           .setFullMethodName("google.cloud.automl.v1beta1.AutoMl/CreateModel")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetModelRequest, Model> getModelMethodDescriptor =
@@ -234,6 +249,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
           .setFullMethodName("google.cloud.automl.v1beta1.AutoMl/GetModel")
           .setRequestMarshaller(ProtoUtils.marshaller(GetModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Model.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListModelsRequest, ListModelsResponse>
@@ -243,6 +259,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
               .setFullMethodName("google.cloud.automl.v1beta1.AutoMl/ListModels")
               .setRequestMarshaller(ProtoUtils.marshaller(ListModelsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListModelsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteModelRequest, Operation> deleteModelMethodDescriptor =
@@ -251,6 +268,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
           .setFullMethodName("google.cloud.automl.v1beta1.AutoMl/DeleteModel")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeployModelRequest, Operation> deployModelMethodDescriptor =
@@ -259,6 +277,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
           .setFullMethodName("google.cloud.automl.v1beta1.AutoMl/DeployModel")
           .setRequestMarshaller(ProtoUtils.marshaller(DeployModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UndeployModelRequest, Operation>
@@ -269,6 +288,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UndeployModelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ExportModelRequest, Operation> exportModelMethodDescriptor =
@@ -277,6 +297,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
           .setFullMethodName("google.cloud.automl.v1beta1.AutoMl/ExportModel")
           .setRequestMarshaller(ProtoUtils.marshaller(ExportModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ExportEvaluatedExamplesRequest, Operation>
@@ -287,6 +308,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ExportEvaluatedExamplesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetModelEvaluationRequest, ModelEvaluation>
@@ -297,6 +319,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetModelEvaluationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ModelEvaluation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListModelEvaluationsRequest, ListModelEvaluationsResponse>
@@ -308,6 +331,7 @@ public class GrpcAutoMlStub extends AutoMlStub {
                   ProtoUtils.marshaller(ListModelEvaluationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListModelEvaluationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateDatasetRequest, Dataset> createDatasetCallable;

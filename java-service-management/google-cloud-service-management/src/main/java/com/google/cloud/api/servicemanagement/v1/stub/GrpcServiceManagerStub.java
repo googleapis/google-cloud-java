@@ -81,6 +81,7 @@ public class GrpcServiceManagerStub extends ServiceManagerStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListServicesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListServicesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetServiceRequest, ManagedService>
@@ -90,6 +91,7 @@ public class GrpcServiceManagerStub extends ServiceManagerStub {
               .setFullMethodName("google.api.servicemanagement.v1.ServiceManager/GetService")
               .setRequestMarshaller(ProtoUtils.marshaller(GetServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ManagedService.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateServiceRequest, Operation>
@@ -100,6 +102,7 @@ public class GrpcServiceManagerStub extends ServiceManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteServiceRequest, Operation>
@@ -110,6 +113,7 @@ public class GrpcServiceManagerStub extends ServiceManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UndeleteServiceRequest, Operation>
@@ -120,6 +124,7 @@ public class GrpcServiceManagerStub extends ServiceManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UndeleteServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListServiceConfigsRequest, ListServiceConfigsResponse>
@@ -132,6 +137,7 @@ public class GrpcServiceManagerStub extends ServiceManagerStub {
                   ProtoUtils.marshaller(ListServiceConfigsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListServiceConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetServiceConfigRequest, Service>
@@ -142,6 +148,7 @@ public class GrpcServiceManagerStub extends ServiceManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetServiceConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Service.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateServiceConfigRequest, Service>
@@ -153,6 +160,7 @@ public class GrpcServiceManagerStub extends ServiceManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateServiceConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Service.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SubmitConfigSourceRequest, Operation>
@@ -164,6 +172,7 @@ public class GrpcServiceManagerStub extends ServiceManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(SubmitConfigSourceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListServiceRolloutsRequest, ListServiceRolloutsResponse>
@@ -176,6 +185,7 @@ public class GrpcServiceManagerStub extends ServiceManagerStub {
                   ProtoUtils.marshaller(ListServiceRolloutsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListServiceRolloutsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetServiceRolloutRequest, Rollout>
@@ -186,6 +196,7 @@ public class GrpcServiceManagerStub extends ServiceManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetServiceRolloutRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Rollout.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateServiceRolloutRequest, Operation>
@@ -197,6 +208,7 @@ public class GrpcServiceManagerStub extends ServiceManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateServiceRolloutRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GenerateConfigReportRequest, GenerateConfigReportResponse>
@@ -209,6 +221,7 @@ public class GrpcServiceManagerStub extends ServiceManagerStub {
                   ProtoUtils.marshaller(GenerateConfigReportRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GenerateConfigReportResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -217,6 +230,7 @@ public class GrpcServiceManagerStub extends ServiceManagerStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -225,6 +239,7 @@ public class GrpcServiceManagerStub extends ServiceManagerStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -236,6 +251,7 @@ public class GrpcServiceManagerStub extends ServiceManagerStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListServicesRequest, ListServicesResponse> listServicesCallable;

@@ -52,6 +52,7 @@ public class GrpcSqlTranslationServiceStub extends SqlTranslationServiceStub {
                   ProtoUtils.marshaller(TranslateQueryRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TranslateQueryResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<TranslateQueryRequest, TranslateQueryResponse> translateQueryCallable;

@@ -78,6 +78,7 @@ public class GrpcVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
                   ProtoUtils.marshaller(ListVpcFlowLogsConfigsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListVpcFlowLogsConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetVpcFlowLogsConfigRequest, VpcFlowLogsConfig>
@@ -89,6 +90,7 @@ public class GrpcVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetVpcFlowLogsConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(VpcFlowLogsConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateVpcFlowLogsConfigRequest, Operation>
@@ -100,6 +102,7 @@ public class GrpcVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateVpcFlowLogsConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateVpcFlowLogsConfigRequest, Operation>
@@ -111,6 +114,7 @@ public class GrpcVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateVpcFlowLogsConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteVpcFlowLogsConfigRequest, Operation>
@@ -122,6 +126,7 @@ public class GrpcVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteVpcFlowLogsConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -136,6 +141,7 @@ public class GrpcVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
                   ProtoUtils.marshaller(QueryOrgVpcFlowLogsConfigsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(QueryOrgVpcFlowLogsConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -147,6 +153,7 @@ public class GrpcVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -155,6 +162,7 @@ public class GrpcVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -163,6 +171,7 @@ public class GrpcVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -171,6 +180,7 @@ public class GrpcVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -182,6 +192,7 @@ public class GrpcVpcFlowLogsServiceStub extends VpcFlowLogsServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListVpcFlowLogsConfigsRequest, ListVpcFlowLogsConfigsResponse>

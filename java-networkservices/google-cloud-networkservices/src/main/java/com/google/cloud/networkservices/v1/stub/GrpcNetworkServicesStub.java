@@ -160,6 +160,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   ProtoUtils.marshaller(ListEndpointPoliciesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEndpointPoliciesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetEndpointPolicyRequest, EndpointPolicy>
@@ -171,6 +172,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetEndpointPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(EndpointPolicy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateEndpointPolicyRequest, Operation>
@@ -182,6 +184,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateEndpointPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateEndpointPolicyRequest, Operation>
@@ -193,6 +196,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateEndpointPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteEndpointPolicyRequest, Operation>
@@ -204,6 +208,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteEndpointPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -218,6 +223,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   ProtoUtils.marshaller(ListWasmPluginVersionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListWasmPluginVersionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetWasmPluginVersionRequest, WasmPluginVersion>
@@ -229,6 +235,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetWasmPluginVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(WasmPluginVersion.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateWasmPluginVersionRequest, Operation>
@@ -240,6 +247,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateWasmPluginVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteWasmPluginVersionRequest, Operation>
@@ -251,6 +259,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteWasmPluginVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListWasmPluginsRequest, ListWasmPluginsResponse>
@@ -262,6 +271,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   ProtoUtils.marshaller(ListWasmPluginsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListWasmPluginsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetWasmPluginRequest, WasmPlugin>
@@ -272,6 +282,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetWasmPluginRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(WasmPlugin.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateWasmPluginRequest, Operation>
@@ -282,6 +293,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateWasmPluginRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateWasmPluginRequest, Operation>
@@ -292,6 +304,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateWasmPluginRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteWasmPluginRequest, Operation>
@@ -302,6 +315,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteWasmPluginRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListGatewaysRequest, ListGatewaysResponse>
@@ -312,6 +326,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListGatewaysRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListGatewaysResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetGatewayRequest, Gateway> getGatewayMethodDescriptor =
@@ -320,6 +335,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
           .setFullMethodName("google.cloud.networkservices.v1.NetworkServices/GetGateway")
           .setRequestMarshaller(ProtoUtils.marshaller(GetGatewayRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Gateway.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateGatewayRequest, Operation>
@@ -330,6 +346,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateGatewayRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateGatewayRequest, Operation>
@@ -340,6 +357,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateGatewayRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteGatewayRequest, Operation>
@@ -350,6 +368,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteGatewayRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListGrpcRoutesRequest, ListGrpcRoutesResponse>
@@ -361,6 +380,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   ProtoUtils.marshaller(ListGrpcRoutesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListGrpcRoutesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetGrpcRouteRequest, GrpcRoute>
@@ -370,6 +390,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setFullMethodName("google.cloud.networkservices.v1.NetworkServices/GetGrpcRoute")
               .setRequestMarshaller(ProtoUtils.marshaller(GetGrpcRouteRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(GrpcRoute.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateGrpcRouteRequest, Operation>
@@ -380,6 +401,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateGrpcRouteRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateGrpcRouteRequest, Operation>
@@ -390,6 +412,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateGrpcRouteRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteGrpcRouteRequest, Operation>
@@ -400,6 +423,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteGrpcRouteRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListHttpRoutesRequest, ListHttpRoutesResponse>
@@ -411,6 +435,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   ProtoUtils.marshaller(ListHttpRoutesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListHttpRoutesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetHttpRouteRequest, HttpRoute>
@@ -420,6 +445,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setFullMethodName("google.cloud.networkservices.v1.NetworkServices/GetHttpRoute")
               .setRequestMarshaller(ProtoUtils.marshaller(GetHttpRouteRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(HttpRoute.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateHttpRouteRequest, Operation>
@@ -430,6 +456,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateHttpRouteRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateHttpRouteRequest, Operation>
@@ -440,6 +467,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateHttpRouteRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteHttpRouteRequest, Operation>
@@ -450,6 +478,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteHttpRouteRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListTcpRoutesRequest, ListTcpRoutesResponse>
@@ -461,6 +490,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   ProtoUtils.marshaller(ListTcpRoutesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTcpRoutesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTcpRouteRequest, TcpRoute> getTcpRouteMethodDescriptor =
@@ -469,6 +499,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
           .setFullMethodName("google.cloud.networkservices.v1.NetworkServices/GetTcpRoute")
           .setRequestMarshaller(ProtoUtils.marshaller(GetTcpRouteRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(TcpRoute.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateTcpRouteRequest, Operation>
@@ -479,6 +510,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateTcpRouteRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateTcpRouteRequest, Operation>
@@ -489,6 +521,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateTcpRouteRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteTcpRouteRequest, Operation>
@@ -499,6 +532,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteTcpRouteRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListTlsRoutesRequest, ListTlsRoutesResponse>
@@ -510,6 +544,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   ProtoUtils.marshaller(ListTlsRoutesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTlsRoutesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTlsRouteRequest, TlsRoute> getTlsRouteMethodDescriptor =
@@ -518,6 +553,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
           .setFullMethodName("google.cloud.networkservices.v1.NetworkServices/GetTlsRoute")
           .setRequestMarshaller(ProtoUtils.marshaller(GetTlsRouteRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(TlsRoute.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateTlsRouteRequest, Operation>
@@ -528,6 +564,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateTlsRouteRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateTlsRouteRequest, Operation>
@@ -538,6 +575,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateTlsRouteRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteTlsRouteRequest, Operation>
@@ -548,6 +586,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteTlsRouteRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListServiceBindingsRequest, ListServiceBindingsResponse>
@@ -560,6 +599,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   ProtoUtils.marshaller(ListServiceBindingsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListServiceBindingsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetServiceBindingRequest, ServiceBinding>
@@ -571,6 +611,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetServiceBindingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ServiceBinding.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateServiceBindingRequest, Operation>
@@ -582,6 +623,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateServiceBindingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateServiceBindingRequest, Operation>
@@ -593,6 +635,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateServiceBindingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteServiceBindingRequest, Operation>
@@ -604,6 +647,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteServiceBindingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListMeshesRequest, ListMeshesResponse>
@@ -613,6 +657,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setFullMethodName("google.cloud.networkservices.v1.NetworkServices/ListMeshes")
               .setRequestMarshaller(ProtoUtils.marshaller(ListMeshesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListMeshesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetMeshRequest, Mesh> getMeshMethodDescriptor =
@@ -621,6 +666,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
           .setFullMethodName("google.cloud.networkservices.v1.NetworkServices/GetMesh")
           .setRequestMarshaller(ProtoUtils.marshaller(GetMeshRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Mesh.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateMeshRequest, Operation> createMeshMethodDescriptor =
@@ -629,6 +675,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
           .setFullMethodName("google.cloud.networkservices.v1.NetworkServices/CreateMesh")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateMeshRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateMeshRequest, Operation> updateMeshMethodDescriptor =
@@ -637,6 +684,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
           .setFullMethodName("google.cloud.networkservices.v1.NetworkServices/UpdateMesh")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateMeshRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteMeshRequest, Operation> deleteMeshMethodDescriptor =
@@ -645,6 +693,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
           .setFullMethodName("google.cloud.networkservices.v1.NetworkServices/DeleteMesh")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteMeshRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListServiceLbPoliciesRequest, ListServiceLbPoliciesResponse>
@@ -657,6 +706,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   ProtoUtils.marshaller(ListServiceLbPoliciesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListServiceLbPoliciesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetServiceLbPolicyRequest, ServiceLbPolicy>
@@ -668,6 +718,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetServiceLbPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ServiceLbPolicy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateServiceLbPolicyRequest, Operation>
@@ -679,6 +730,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateServiceLbPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateServiceLbPolicyRequest, Operation>
@@ -690,6 +742,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateServiceLbPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteServiceLbPolicyRequest, Operation>
@@ -701,6 +754,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteServiceLbPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetGatewayRouteViewRequest, GatewayRouteView>
@@ -712,6 +766,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetGatewayRouteViewRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(GatewayRouteView.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetMeshRouteViewRequest, MeshRouteView>
@@ -722,6 +777,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetMeshRouteViewRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(MeshRouteView.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListGatewayRouteViewsRequest, ListGatewayRouteViewsResponse>
@@ -734,6 +790,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   ProtoUtils.marshaller(ListGatewayRouteViewsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListGatewayRouteViewsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListMeshRouteViewsRequest, ListMeshRouteViewsResponse>
@@ -746,6 +803,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   ProtoUtils.marshaller(ListMeshRouteViewsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListMeshRouteViewsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -757,6 +815,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -765,6 +824,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -773,6 +833,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -781,6 +842,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -792,6 +854,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListEndpointPoliciesRequest, ListEndpointPoliciesResponse>

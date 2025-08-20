@@ -97,6 +97,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
               .setFullMethodName("google.cloud.asset.v1.AssetService/ExportAssets")
               .setRequestMarshaller(ProtoUtils.marshaller(ExportAssetsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListAssetsRequest, ListAssetsResponse>
@@ -106,6 +107,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
               .setFullMethodName("google.cloud.asset.v1.AssetService/ListAssets")
               .setRequestMarshaller(ProtoUtils.marshaller(ListAssetsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListAssetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchGetAssetsHistoryRequest, BatchGetAssetsHistoryResponse>
@@ -117,6 +119,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
                   ProtoUtils.marshaller(BatchGetAssetsHistoryRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(BatchGetAssetsHistoryResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateFeedRequest, Feed> createFeedMethodDescriptor =
@@ -125,6 +128,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
           .setFullMethodName("google.cloud.asset.v1.AssetService/CreateFeed")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateFeedRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Feed.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetFeedRequest, Feed> getFeedMethodDescriptor =
@@ -133,6 +137,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
           .setFullMethodName("google.cloud.asset.v1.AssetService/GetFeed")
           .setRequestMarshaller(ProtoUtils.marshaller(GetFeedRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Feed.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListFeedsRequest, ListFeedsResponse>
@@ -142,6 +147,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
               .setFullMethodName("google.cloud.asset.v1.AssetService/ListFeeds")
               .setRequestMarshaller(ProtoUtils.marshaller(ListFeedsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListFeedsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateFeedRequest, Feed> updateFeedMethodDescriptor =
@@ -150,6 +156,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
           .setFullMethodName("google.cloud.asset.v1.AssetService/UpdateFeed")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateFeedRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Feed.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteFeedRequest, Empty> deleteFeedMethodDescriptor =
@@ -158,6 +165,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
           .setFullMethodName("google.cloud.asset.v1.AssetService/DeleteFeed")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteFeedRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SearchAllResourcesRequest, SearchAllResourcesResponse>
@@ -169,6 +177,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
                   ProtoUtils.marshaller(SearchAllResourcesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchAllResourcesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SearchAllIamPoliciesRequest, SearchAllIamPoliciesResponse>
@@ -180,6 +189,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
                   ProtoUtils.marshaller(SearchAllIamPoliciesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchAllIamPoliciesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AnalyzeIamPolicyRequest, AnalyzeIamPolicyResponse>
@@ -191,6 +201,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
                   ProtoUtils.marshaller(AnalyzeIamPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AnalyzeIamPolicyResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AnalyzeIamPolicyLongrunningRequest, Operation>
@@ -201,6 +212,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(AnalyzeIamPolicyLongrunningRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AnalyzeMoveRequest, AnalyzeMoveResponse>
@@ -211,6 +223,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(AnalyzeMoveRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AnalyzeMoveResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<QueryAssetsRequest, QueryAssetsResponse>
@@ -221,6 +234,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(QueryAssetsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(QueryAssetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateSavedQueryRequest, SavedQuery>
@@ -231,6 +245,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateSavedQueryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SavedQuery.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSavedQueryRequest, SavedQuery>
@@ -241,6 +256,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetSavedQueryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SavedQuery.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListSavedQueriesRequest, ListSavedQueriesResponse>
@@ -252,6 +268,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
                   ProtoUtils.marshaller(ListSavedQueriesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSavedQueriesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateSavedQueryRequest, SavedQuery>
@@ -262,6 +279,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateSavedQueryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SavedQuery.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteSavedQueryRequest, Empty>
@@ -272,6 +290,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteSavedQueryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -286,6 +305,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
                   ProtoUtils.marshaller(BatchGetEffectiveIamPoliciesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(BatchGetEffectiveIamPoliciesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AnalyzeOrgPoliciesRequest, AnalyzeOrgPoliciesResponse>
@@ -297,6 +317,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
                   ProtoUtils.marshaller(AnalyzeOrgPoliciesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AnalyzeOrgPoliciesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -315,6 +336,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       AnalyzeOrgPolicyGovernedContainersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -331,6 +353,7 @@ public class GrpcAssetServiceStub extends AssetServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       AnalyzeOrgPolicyGovernedAssetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ExportAssetsRequest, Operation> exportAssetsCallable;

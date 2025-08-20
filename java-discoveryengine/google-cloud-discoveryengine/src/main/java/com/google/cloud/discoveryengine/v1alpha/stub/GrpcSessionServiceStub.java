@@ -62,6 +62,7 @@ public class GrpcSessionServiceStub extends SessionServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateSessionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Session.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteSessionRequest, Empty> deleteSessionMethodDescriptor =
@@ -70,6 +71,7 @@ public class GrpcSessionServiceStub extends SessionServiceStub {
           .setFullMethodName("google.cloud.discoveryengine.v1alpha.SessionService/DeleteSession")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteSessionRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateSessionRequest, Session>
@@ -81,6 +83,7 @@ public class GrpcSessionServiceStub extends SessionServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateSessionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Session.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSessionRequest, Session> getSessionMethodDescriptor =
@@ -89,6 +92,7 @@ public class GrpcSessionServiceStub extends SessionServiceStub {
           .setFullMethodName("google.cloud.discoveryengine.v1alpha.SessionService/GetSession")
           .setRequestMarshaller(ProtoUtils.marshaller(GetSessionRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Session.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListSessionsRequest, ListSessionsResponse>
@@ -99,6 +103,7 @@ public class GrpcSessionServiceStub extends SessionServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListSessionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSessionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListFilesRequest, ListFilesResponse>
@@ -108,6 +113,7 @@ public class GrpcSessionServiceStub extends SessionServiceStub {
               .setFullMethodName("google.cloud.discoveryengine.v1alpha.SessionService/ListFiles")
               .setRequestMarshaller(ProtoUtils.marshaller(ListFilesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListFilesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateSessionRequest, Session> createSessionCallable;

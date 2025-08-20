@@ -54,6 +54,7 @@ public class GrpcSimulatorStub extends SimulatorStub {
           .setFullMethodName("google.cloud.policysimulator.v1.Simulator/GetReplay")
           .setRequestMarshaller(ProtoUtils.marshaller(GetReplayRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Replay.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateReplayRequest, Operation>
@@ -63,6 +64,7 @@ public class GrpcSimulatorStub extends SimulatorStub {
               .setFullMethodName("google.cloud.policysimulator.v1.Simulator/CreateReplay")
               .setRequestMarshaller(ProtoUtils.marshaller(CreateReplayRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListReplayResultsRequest, ListReplayResultsResponse>
@@ -74,6 +76,7 @@ public class GrpcSimulatorStub extends SimulatorStub {
                   ProtoUtils.marshaller(ListReplayResultsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListReplayResultsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetReplayRequest, Replay> getReplayCallable;

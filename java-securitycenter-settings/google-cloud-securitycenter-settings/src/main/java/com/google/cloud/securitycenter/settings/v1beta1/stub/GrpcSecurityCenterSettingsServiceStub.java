@@ -73,6 +73,7 @@ public class GrpcSecurityCenterSettingsServiceStub extends SecurityCenterSetting
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetServiceAccountRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ServiceAccount.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSettingsRequest, Settings> getSettingsMethodDescriptor =
@@ -82,6 +83,7 @@ public class GrpcSecurityCenterSettingsServiceStub extends SecurityCenterSetting
               "google.cloud.securitycenter.settings.v1beta1.SecurityCenterSettingsService/GetSettings")
           .setRequestMarshaller(ProtoUtils.marshaller(GetSettingsRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Settings.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateSettingsRequest, Settings>
@@ -93,6 +95,7 @@ public class GrpcSecurityCenterSettingsServiceStub extends SecurityCenterSetting
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Settings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ResetSettingsRequest, Empty> resetSettingsMethodDescriptor =
@@ -102,6 +105,7 @@ public class GrpcSecurityCenterSettingsServiceStub extends SecurityCenterSetting
               "google.cloud.securitycenter.settings.v1beta1.SecurityCenterSettingsService/ResetSettings")
           .setRequestMarshaller(ProtoUtils.marshaller(ResetSettingsRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<BatchGetSettingsRequest, BatchGetSettingsResponse>
@@ -114,6 +118,7 @@ public class GrpcSecurityCenterSettingsServiceStub extends SecurityCenterSetting
                   ProtoUtils.marshaller(BatchGetSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(BatchGetSettingsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CalculateEffectiveSettingsRequest, Settings>
@@ -125,6 +130,7 @@ public class GrpcSecurityCenterSettingsServiceStub extends SecurityCenterSetting
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CalculateEffectiveSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Settings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -142,6 +148,7 @@ public class GrpcSecurityCenterSettingsServiceStub extends SecurityCenterSetting
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       BatchCalculateEffectiveSettingsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetComponentSettingsRequest, ComponentSettings>
@@ -153,6 +160,7 @@ public class GrpcSecurityCenterSettingsServiceStub extends SecurityCenterSetting
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetComponentSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ComponentSettings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateComponentSettingsRequest, ComponentSettings>
@@ -164,6 +172,7 @@ public class GrpcSecurityCenterSettingsServiceStub extends SecurityCenterSetting
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateComponentSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ComponentSettings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ResetComponentSettingsRequest, Empty>
@@ -175,6 +184,7 @@ public class GrpcSecurityCenterSettingsServiceStub extends SecurityCenterSetting
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ResetComponentSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -189,6 +199,7 @@ public class GrpcSecurityCenterSettingsServiceStub extends SecurityCenterSetting
                   ProtoUtils.marshaller(
                       CalculateEffectiveComponentSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ComponentSettings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListDetectorsRequest, ListDetectorsResponse>
@@ -201,6 +212,7 @@ public class GrpcSecurityCenterSettingsServiceStub extends SecurityCenterSetting
                   ProtoUtils.marshaller(ListDetectorsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDetectorsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListComponentsRequest, ListComponentsResponse>
@@ -213,6 +225,7 @@ public class GrpcSecurityCenterSettingsServiceStub extends SecurityCenterSetting
                   ProtoUtils.marshaller(ListComponentsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListComponentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetServiceAccountRequest, ServiceAccount> getServiceAccountCallable;

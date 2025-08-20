@@ -63,6 +63,7 @@ public class GrpcGenerativeQuestionServiceStub extends GenerativeQuestionService
                       UpdateGenerativeQuestionsFeatureConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GenerativeQuestionsFeatureConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -79,6 +80,7 @@ public class GrpcGenerativeQuestionServiceStub extends GenerativeQuestionService
                       GetGenerativeQuestionsFeatureConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GenerativeQuestionsFeatureConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -94,6 +96,7 @@ public class GrpcGenerativeQuestionServiceStub extends GenerativeQuestionService
                   ProtoUtils.marshaller(ListGenerativeQuestionConfigsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListGenerativeQuestionConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -108,6 +111,7 @@ public class GrpcGenerativeQuestionServiceStub extends GenerativeQuestionService
                   ProtoUtils.marshaller(UpdateGenerativeQuestionConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GenerativeQuestionConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -126,6 +130,7 @@ public class GrpcGenerativeQuestionServiceStub extends GenerativeQuestionService
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       BatchUpdateGenerativeQuestionConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<

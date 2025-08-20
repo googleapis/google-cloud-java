@@ -50,6 +50,7 @@ public class GrpcProductsServiceStub extends ProductsServiceStub {
           .setFullMethodName("google.shopping.merchant.products.v1.ProductsService/GetProduct")
           .setRequestMarshaller(ProtoUtils.marshaller(GetProductRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Product.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListProductsRequest, ListProductsResponse>
@@ -61,6 +62,7 @@ public class GrpcProductsServiceStub extends ProductsServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListProductsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListProductsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetProductRequest, Product> getProductCallable;

@@ -107,6 +107,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateChannelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListChannelsRequest, ListChannelsResponse>
@@ -117,6 +118,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListChannelsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListChannelsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetChannelRequest, Channel> getChannelMethodDescriptor =
@@ -125,6 +127,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
           .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/GetChannel")
           .setRequestMarshaller(ProtoUtils.marshaller(GetChannelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Channel.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteChannelRequest, Operation>
@@ -135,6 +138,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteChannelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateChannelRequest, Operation>
@@ -145,6 +149,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateChannelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StartChannelRequest, Operation>
@@ -154,6 +159,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
               .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/StartChannel")
               .setRequestMarshaller(ProtoUtils.marshaller(StartChannelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StopChannelRequest, Operation> stopChannelMethodDescriptor =
@@ -162,6 +168,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
           .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/StopChannel")
           .setRequestMarshaller(ProtoUtils.marshaller(StopChannelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateInputRequest, Operation> createInputMethodDescriptor =
@@ -170,6 +177,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
           .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/CreateInput")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateInputRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListInputsRequest, ListInputsResponse>
@@ -179,6 +187,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
               .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/ListInputs")
               .setRequestMarshaller(ProtoUtils.marshaller(ListInputsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListInputsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetInputRequest, Input> getInputMethodDescriptor =
@@ -187,6 +196,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
           .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/GetInput")
           .setRequestMarshaller(ProtoUtils.marshaller(GetInputRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Input.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteInputRequest, Operation> deleteInputMethodDescriptor =
@@ -195,6 +205,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
           .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/DeleteInput")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteInputRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateInputRequest, Operation> updateInputMethodDescriptor =
@@ -203,6 +214,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
           .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/UpdateInput")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateInputRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateEventRequest, Event> createEventMethodDescriptor =
@@ -211,6 +223,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
           .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/CreateEvent")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateEventRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Event.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListEventsRequest, ListEventsResponse>
@@ -220,6 +233,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
               .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/ListEvents")
               .setRequestMarshaller(ProtoUtils.marshaller(ListEventsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListEventsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetEventRequest, Event> getEventMethodDescriptor =
@@ -228,6 +242,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
           .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/GetEvent")
           .setRequestMarshaller(ProtoUtils.marshaller(GetEventRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Event.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteEventRequest, Empty> deleteEventMethodDescriptor =
@@ -236,6 +251,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
           .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/DeleteEvent")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteEventRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListClipsRequest, ListClipsResponse>
@@ -245,6 +261,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
               .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/ListClips")
               .setRequestMarshaller(ProtoUtils.marshaller(ListClipsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListClipsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetClipRequest, Clip> getClipMethodDescriptor =
@@ -253,6 +270,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
           .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/GetClip")
           .setRequestMarshaller(ProtoUtils.marshaller(GetClipRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Clip.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateClipRequest, Operation> createClipMethodDescriptor =
@@ -261,6 +279,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
           .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/CreateClip")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateClipRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteClipRequest, Operation> deleteClipMethodDescriptor =
@@ -269,6 +288,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
           .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/DeleteClip")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteClipRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateDvrSessionRequest, Operation>
@@ -280,6 +300,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDvrSessionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListDvrSessionsRequest, ListDvrSessionsResponse>
@@ -292,6 +313,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   ProtoUtils.marshaller(ListDvrSessionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDvrSessionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDvrSessionRequest, DvrSession>
@@ -302,6 +324,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetDvrSessionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DvrSession.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDvrSessionRequest, Operation>
@@ -313,6 +336,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDvrSessionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDvrSessionRequest, Operation>
@@ -324,6 +348,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDvrSessionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateAssetRequest, Operation> createAssetMethodDescriptor =
@@ -332,6 +357,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
           .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/CreateAsset")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateAssetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteAssetRequest, Operation> deleteAssetMethodDescriptor =
@@ -340,6 +366,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
           .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/DeleteAsset")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteAssetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetAssetRequest, Asset> getAssetMethodDescriptor =
@@ -348,6 +375,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
           .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/GetAsset")
           .setRequestMarshaller(ProtoUtils.marshaller(GetAssetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Asset.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListAssetsRequest, ListAssetsResponse>
@@ -357,6 +385,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
               .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/ListAssets")
               .setRequestMarshaller(ProtoUtils.marshaller(ListAssetsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListAssetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetPoolRequest, Pool> getPoolMethodDescriptor =
@@ -365,6 +394,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
           .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/GetPool")
           .setRequestMarshaller(ProtoUtils.marshaller(GetPoolRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Pool.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdatePoolRequest, Operation> updatePoolMethodDescriptor =
@@ -373,6 +403,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
           .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/UpdatePool")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdatePoolRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -384,6 +415,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -392,6 +424,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CreateChannelRequest, Operation> createChannelCallable;

@@ -57,6 +57,7 @@ public class GrpcAggregateProductStatusesServiceStub extends AggregateProductSta
                   ProtoUtils.marshaller(ListAggregateProductStatusesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAggregateProductStatusesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<

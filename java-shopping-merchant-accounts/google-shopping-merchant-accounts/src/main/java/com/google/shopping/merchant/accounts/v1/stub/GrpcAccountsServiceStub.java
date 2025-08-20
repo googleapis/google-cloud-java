@@ -57,6 +57,7 @@ public class GrpcAccountsServiceStub extends AccountsServiceStub {
           .setFullMethodName("google.shopping.merchant.accounts.v1.AccountsService/GetAccount")
           .setRequestMarshaller(ProtoUtils.marshaller(GetAccountRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Account.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateAndConfigureAccountRequest, Account>
@@ -68,6 +69,7 @@ public class GrpcAccountsServiceStub extends AccountsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateAndConfigureAccountRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Account.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteAccountRequest, Empty> deleteAccountMethodDescriptor =
@@ -76,6 +78,7 @@ public class GrpcAccountsServiceStub extends AccountsServiceStub {
           .setFullMethodName("google.shopping.merchant.accounts.v1.AccountsService/DeleteAccount")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteAccountRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateAccountRequest, Account>
@@ -87,6 +90,7 @@ public class GrpcAccountsServiceStub extends AccountsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateAccountRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Account.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListAccountsRequest, ListAccountsResponse>
@@ -98,6 +102,7 @@ public class GrpcAccountsServiceStub extends AccountsServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListAccountsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAccountsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListSubAccountsRequest, ListSubAccountsResponse>
@@ -110,6 +115,7 @@ public class GrpcAccountsServiceStub extends AccountsServiceStub {
                   ProtoUtils.marshaller(ListSubAccountsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSubAccountsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetAccountRequest, Account> getAccountCallable;

@@ -50,6 +50,7 @@ public class GrpcProfilerServiceStub extends ProfilerServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateProfileRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Profile.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateOfflineProfileRequest, Profile>
@@ -61,6 +62,7 @@ public class GrpcProfilerServiceStub extends ProfilerServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateOfflineProfileRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Profile.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateProfileRequest, Profile>
@@ -71,6 +73,7 @@ public class GrpcProfilerServiceStub extends ProfilerServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateProfileRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Profile.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateProfileRequest, Profile> createProfileCallable;

@@ -66,6 +66,7 @@ public class GrpcPrincipalAccessBoundaryPoliciesStub extends PrincipalAccessBoun
                   ProtoUtils.marshaller(
                       CreatePrincipalAccessBoundaryPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -81,6 +82,7 @@ public class GrpcPrincipalAccessBoundaryPoliciesStub extends PrincipalAccessBoun
                       GetPrincipalAccessBoundaryPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(PrincipalAccessBoundaryPolicy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdatePrincipalAccessBoundaryPolicyRequest, Operation>
@@ -93,6 +95,7 @@ public class GrpcPrincipalAccessBoundaryPoliciesStub extends PrincipalAccessBoun
                   ProtoUtils.marshaller(
                       UpdatePrincipalAccessBoundaryPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeletePrincipalAccessBoundaryPolicyRequest, Operation>
@@ -105,6 +108,7 @@ public class GrpcPrincipalAccessBoundaryPoliciesStub extends PrincipalAccessBoun
                   ProtoUtils.marshaller(
                       DeletePrincipalAccessBoundaryPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -123,6 +127,7 @@ public class GrpcPrincipalAccessBoundaryPoliciesStub extends PrincipalAccessBoun
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       ListPrincipalAccessBoundaryPoliciesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -142,6 +147,7 @@ public class GrpcPrincipalAccessBoundaryPoliciesStub extends PrincipalAccessBoun
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       SearchPrincipalAccessBoundaryPolicyBindingsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreatePrincipalAccessBoundaryPolicyRequest, Operation>

@@ -51,6 +51,7 @@ public class GrpcProjectServiceStub extends ProjectServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAlertConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AlertConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateAlertConfigRequest, AlertConfig>
@@ -61,6 +62,7 @@ public class GrpcProjectServiceStub extends ProjectServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateAlertConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AlertConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetAlertConfigRequest, AlertConfig> getAlertConfigCallable;

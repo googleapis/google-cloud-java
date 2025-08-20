@@ -57,6 +57,7 @@ public class GrpcAlertPolicyServiceStub extends AlertPolicyServiceStub {
                   ProtoUtils.marshaller(ListAlertPoliciesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAlertPoliciesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAlertPolicyRequest, AlertPolicy>
@@ -67,6 +68,7 @@ public class GrpcAlertPolicyServiceStub extends AlertPolicyServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAlertPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AlertPolicy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateAlertPolicyRequest, AlertPolicy>
@@ -77,6 +79,7 @@ public class GrpcAlertPolicyServiceStub extends AlertPolicyServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateAlertPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AlertPolicy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteAlertPolicyRequest, Empty>
@@ -87,6 +90,7 @@ public class GrpcAlertPolicyServiceStub extends AlertPolicyServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteAlertPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateAlertPolicyRequest, AlertPolicy>
@@ -97,6 +101,7 @@ public class GrpcAlertPolicyServiceStub extends AlertPolicyServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateAlertPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AlertPolicy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListAlertPoliciesRequest, ListAlertPoliciesResponse>

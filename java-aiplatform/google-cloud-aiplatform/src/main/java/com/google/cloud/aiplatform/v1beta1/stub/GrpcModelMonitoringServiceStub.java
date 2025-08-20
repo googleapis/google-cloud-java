@@ -87,6 +87,7 @@ public class GrpcModelMonitoringServiceStub extends ModelMonitoringServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateModelMonitorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateModelMonitorRequest, Operation>
@@ -98,6 +99,7 @@ public class GrpcModelMonitoringServiceStub extends ModelMonitoringServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateModelMonitorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetModelMonitorRequest, ModelMonitor>
@@ -109,6 +111,7 @@ public class GrpcModelMonitoringServiceStub extends ModelMonitoringServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetModelMonitorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ModelMonitor.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListModelMonitorsRequest, ListModelMonitorsResponse>
@@ -121,6 +124,7 @@ public class GrpcModelMonitoringServiceStub extends ModelMonitoringServiceStub {
                   ProtoUtils.marshaller(ListModelMonitorsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListModelMonitorsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteModelMonitorRequest, Operation>
@@ -132,6 +136,7 @@ public class GrpcModelMonitoringServiceStub extends ModelMonitoringServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteModelMonitorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateModelMonitoringJobRequest, ModelMonitoringJob>
@@ -143,6 +148,7 @@ public class GrpcModelMonitoringServiceStub extends ModelMonitoringServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateModelMonitoringJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ModelMonitoringJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetModelMonitoringJobRequest, ModelMonitoringJob>
@@ -154,6 +160,7 @@ public class GrpcModelMonitoringServiceStub extends ModelMonitoringServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetModelMonitoringJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ModelMonitoringJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -168,6 +175,7 @@ public class GrpcModelMonitoringServiceStub extends ModelMonitoringServiceStub {
                   ProtoUtils.marshaller(ListModelMonitoringJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListModelMonitoringJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteModelMonitoringJobRequest, Operation>
@@ -179,6 +187,7 @@ public class GrpcModelMonitoringServiceStub extends ModelMonitoringServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteModelMonitoringJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -193,6 +202,7 @@ public class GrpcModelMonitoringServiceStub extends ModelMonitoringServiceStub {
                   ProtoUtils.marshaller(SearchModelMonitoringStatsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchModelMonitoringStatsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -207,6 +217,7 @@ public class GrpcModelMonitoringServiceStub extends ModelMonitoringServiceStub {
                   ProtoUtils.marshaller(SearchModelMonitoringAlertsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchModelMonitoringAlertsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -218,6 +229,7 @@ public class GrpcModelMonitoringServiceStub extends ModelMonitoringServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -226,6 +238,7 @@ public class GrpcModelMonitoringServiceStub extends ModelMonitoringServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -234,6 +247,7 @@ public class GrpcModelMonitoringServiceStub extends ModelMonitoringServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -242,6 +256,7 @@ public class GrpcModelMonitoringServiceStub extends ModelMonitoringServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -253,6 +268,7 @@ public class GrpcModelMonitoringServiceStub extends ModelMonitoringServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateModelMonitorRequest, Operation> createModelMonitorCallable;

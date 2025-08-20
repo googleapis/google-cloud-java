@@ -94,6 +94,7 @@ public class GrpcDatastreamStub extends DatastreamStub {
                   ProtoUtils.marshaller(ListConnectionProfilesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListConnectionProfilesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetConnectionProfileRequest, ConnectionProfile>
@@ -104,6 +105,7 @@ public class GrpcDatastreamStub extends DatastreamStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetConnectionProfileRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ConnectionProfile.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateConnectionProfileRequest, Operation>
@@ -115,6 +117,7 @@ public class GrpcDatastreamStub extends DatastreamStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateConnectionProfileRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateConnectionProfileRequest, Operation>
@@ -126,6 +129,7 @@ public class GrpcDatastreamStub extends DatastreamStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateConnectionProfileRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteConnectionProfileRequest, Operation>
@@ -137,6 +141,7 @@ public class GrpcDatastreamStub extends DatastreamStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteConnectionProfileRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -151,6 +156,7 @@ public class GrpcDatastreamStub extends DatastreamStub {
                   ProtoUtils.marshaller(DiscoverConnectionProfileRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(DiscoverConnectionProfileResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListStreamsRequest, ListStreamsResponse>
@@ -161,6 +167,7 @@ public class GrpcDatastreamStub extends DatastreamStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListStreamsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListStreamsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetStreamRequest, Stream> getStreamMethodDescriptor =
@@ -169,6 +176,7 @@ public class GrpcDatastreamStub extends DatastreamStub {
           .setFullMethodName("google.cloud.datastream.v1alpha1.Datastream/GetStream")
           .setRequestMarshaller(ProtoUtils.marshaller(GetStreamRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Stream.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateStreamRequest, Operation>
@@ -178,6 +186,7 @@ public class GrpcDatastreamStub extends DatastreamStub {
               .setFullMethodName("google.cloud.datastream.v1alpha1.Datastream/CreateStream")
               .setRequestMarshaller(ProtoUtils.marshaller(CreateStreamRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateStreamRequest, Operation>
@@ -187,6 +196,7 @@ public class GrpcDatastreamStub extends DatastreamStub {
               .setFullMethodName("google.cloud.datastream.v1alpha1.Datastream/UpdateStream")
               .setRequestMarshaller(ProtoUtils.marshaller(UpdateStreamRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteStreamRequest, Operation>
@@ -196,6 +206,7 @@ public class GrpcDatastreamStub extends DatastreamStub {
               .setFullMethodName("google.cloud.datastream.v1alpha1.Datastream/DeleteStream")
               .setRequestMarshaller(ProtoUtils.marshaller(DeleteStreamRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<FetchErrorsRequest, Operation> fetchErrorsMethodDescriptor =
@@ -204,6 +215,7 @@ public class GrpcDatastreamStub extends DatastreamStub {
           .setFullMethodName("google.cloud.datastream.v1alpha1.Datastream/FetchErrors")
           .setRequestMarshaller(ProtoUtils.marshaller(FetchErrorsRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<FetchStaticIpsRequest, FetchStaticIpsResponse>
@@ -215,6 +227,7 @@ public class GrpcDatastreamStub extends DatastreamStub {
                   ProtoUtils.marshaller(FetchStaticIpsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FetchStaticIpsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreatePrivateConnectionRequest, Operation>
@@ -226,6 +239,7 @@ public class GrpcDatastreamStub extends DatastreamStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreatePrivateConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetPrivateConnectionRequest, PrivateConnection>
@@ -236,6 +250,7 @@ public class GrpcDatastreamStub extends DatastreamStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetPrivateConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PrivateConnection.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -250,6 +265,7 @@ public class GrpcDatastreamStub extends DatastreamStub {
                   ProtoUtils.marshaller(ListPrivateConnectionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListPrivateConnectionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeletePrivateConnectionRequest, Operation>
@@ -261,6 +277,7 @@ public class GrpcDatastreamStub extends DatastreamStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeletePrivateConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateRouteRequest, Operation> createRouteMethodDescriptor =
@@ -269,6 +286,7 @@ public class GrpcDatastreamStub extends DatastreamStub {
           .setFullMethodName("google.cloud.datastream.v1alpha1.Datastream/CreateRoute")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateRouteRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetRouteRequest, Route> getRouteMethodDescriptor =
@@ -277,6 +295,7 @@ public class GrpcDatastreamStub extends DatastreamStub {
           .setFullMethodName("google.cloud.datastream.v1alpha1.Datastream/GetRoute")
           .setRequestMarshaller(ProtoUtils.marshaller(GetRouteRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Route.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListRoutesRequest, ListRoutesResponse>
@@ -286,6 +305,7 @@ public class GrpcDatastreamStub extends DatastreamStub {
               .setFullMethodName("google.cloud.datastream.v1alpha1.Datastream/ListRoutes")
               .setRequestMarshaller(ProtoUtils.marshaller(ListRoutesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListRoutesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteRouteRequest, Operation> deleteRouteMethodDescriptor =
@@ -294,6 +314,7 @@ public class GrpcDatastreamStub extends DatastreamStub {
           .setFullMethodName("google.cloud.datastream.v1alpha1.Datastream/DeleteRoute")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteRouteRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListConnectionProfilesRequest, ListConnectionProfilesResponse>

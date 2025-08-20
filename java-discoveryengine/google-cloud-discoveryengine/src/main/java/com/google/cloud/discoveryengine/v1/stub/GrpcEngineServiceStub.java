@@ -59,6 +59,7 @@ public class GrpcEngineServiceStub extends EngineServiceStub {
               .setFullMethodName("google.cloud.discoveryengine.v1.EngineService/CreateEngine")
               .setRequestMarshaller(ProtoUtils.marshaller(CreateEngineRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteEngineRequest, Operation>
@@ -68,6 +69,7 @@ public class GrpcEngineServiceStub extends EngineServiceStub {
               .setFullMethodName("google.cloud.discoveryengine.v1.EngineService/DeleteEngine")
               .setRequestMarshaller(ProtoUtils.marshaller(DeleteEngineRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateEngineRequest, Engine> updateEngineMethodDescriptor =
@@ -76,6 +78,7 @@ public class GrpcEngineServiceStub extends EngineServiceStub {
           .setFullMethodName("google.cloud.discoveryengine.v1.EngineService/UpdateEngine")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateEngineRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Engine.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetEngineRequest, Engine> getEngineMethodDescriptor =
@@ -84,6 +87,7 @@ public class GrpcEngineServiceStub extends EngineServiceStub {
           .setFullMethodName("google.cloud.discoveryengine.v1.EngineService/GetEngine")
           .setRequestMarshaller(ProtoUtils.marshaller(GetEngineRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Engine.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListEnginesRequest, ListEnginesResponse>
@@ -94,6 +98,7 @@ public class GrpcEngineServiceStub extends EngineServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListEnginesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEnginesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateEngineRequest, Operation> createEngineCallable;

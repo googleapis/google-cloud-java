@@ -86,6 +86,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateReservationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Reservation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListReservationsRequest, ListReservationsResponse>
@@ -98,6 +99,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                   ProtoUtils.marshaller(ListReservationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListReservationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetReservationRequest, Reservation>
@@ -109,6 +111,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetReservationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Reservation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteReservationRequest, Empty>
@@ -120,6 +123,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteReservationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateReservationRequest, Reservation>
@@ -131,6 +135,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateReservationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Reservation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<FailoverReservationRequest, Reservation>
@@ -142,6 +147,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(FailoverReservationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Reservation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateCapacityCommitmentRequest, CapacityCommitment>
@@ -153,6 +159,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateCapacityCommitmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CapacityCommitment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -167,6 +174,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                   ProtoUtils.marshaller(ListCapacityCommitmentsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCapacityCommitmentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetCapacityCommitmentRequest, CapacityCommitment>
@@ -178,6 +186,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetCapacityCommitmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CapacityCommitment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteCapacityCommitmentRequest, Empty>
@@ -189,6 +198,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteCapacityCommitmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateCapacityCommitmentRequest, CapacityCommitment>
@@ -200,6 +210,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateCapacityCommitmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CapacityCommitment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -214,6 +225,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                   ProtoUtils.marshaller(SplitCapacityCommitmentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SplitCapacityCommitmentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<MergeCapacityCommitmentsRequest, CapacityCommitment>
@@ -225,6 +237,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(MergeCapacityCommitmentsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CapacityCommitment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateAssignmentRequest, Assignment>
@@ -236,6 +249,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateAssignmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Assignment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListAssignmentsRequest, ListAssignmentsResponse>
@@ -248,6 +262,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                   ProtoUtils.marshaller(ListAssignmentsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAssignmentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteAssignmentRequest, Empty>
@@ -259,6 +274,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteAssignmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SearchAssignmentsRequest, SearchAssignmentsResponse>
@@ -271,6 +287,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                   ProtoUtils.marshaller(SearchAssignmentsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchAssignmentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SearchAllAssignmentsRequest, SearchAllAssignmentsResponse>
@@ -283,6 +300,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
                   ProtoUtils.marshaller(SearchAllAssignmentsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchAllAssignmentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<MoveAssignmentRequest, Assignment>
@@ -294,6 +312,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(MoveAssignmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Assignment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateAssignmentRequest, Assignment>
@@ -305,6 +324,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateAssignmentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Assignment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetBiReservationRequest, BiReservation>
@@ -316,6 +336,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetBiReservationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BiReservation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateBiReservationRequest, BiReservation>
@@ -327,6 +348,7 @@ public class GrpcReservationServiceStub extends ReservationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateBiReservationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BiReservation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateReservationRequest, Reservation> createReservationCallable;

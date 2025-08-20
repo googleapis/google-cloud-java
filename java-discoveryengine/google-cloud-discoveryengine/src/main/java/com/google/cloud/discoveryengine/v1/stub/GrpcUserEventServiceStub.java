@@ -58,6 +58,7 @@ public class GrpcUserEventServiceStub extends UserEventServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(WriteUserEventRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(UserEvent.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CollectUserEventRequest, HttpBody>
@@ -69,6 +70,7 @@ public class GrpcUserEventServiceStub extends UserEventServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CollectUserEventRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(HttpBody.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<PurgeUserEventsRequest, Operation>
@@ -79,6 +81,7 @@ public class GrpcUserEventServiceStub extends UserEventServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(PurgeUserEventsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportUserEventsRequest, Operation>
@@ -90,6 +93,7 @@ public class GrpcUserEventServiceStub extends UserEventServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ImportUserEventsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<WriteUserEventRequest, UserEvent> writeUserEventCallable;

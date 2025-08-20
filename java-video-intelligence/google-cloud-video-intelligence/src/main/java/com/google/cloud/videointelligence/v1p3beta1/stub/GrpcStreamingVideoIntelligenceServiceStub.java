@@ -54,6 +54,7 @@ public class GrpcStreamingVideoIntelligenceServiceStub
                   ProtoUtils.marshaller(StreamingAnnotateVideoRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(StreamingAnnotateVideoResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final BidiStreamingCallable<StreamingAnnotateVideoRequest, StreamingAnnotateVideoResponse>

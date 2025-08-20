@@ -66,6 +66,7 @@ public class GrpcSubscriptionsServiceStub extends SubscriptionsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateSubscriptionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteSubscriptionRequest, Operation>
@@ -77,6 +78,7 @@ public class GrpcSubscriptionsServiceStub extends SubscriptionsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteSubscriptionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSubscriptionRequest, Subscription>
@@ -88,6 +90,7 @@ public class GrpcSubscriptionsServiceStub extends SubscriptionsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetSubscriptionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Subscription.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListSubscriptionsRequest, ListSubscriptionsResponse>
@@ -100,6 +103,7 @@ public class GrpcSubscriptionsServiceStub extends SubscriptionsServiceStub {
                   ProtoUtils.marshaller(ListSubscriptionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSubscriptionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateSubscriptionRequest, Operation>
@@ -111,6 +115,7 @@ public class GrpcSubscriptionsServiceStub extends SubscriptionsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateSubscriptionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ReactivateSubscriptionRequest, Operation>
@@ -122,6 +127,7 @@ public class GrpcSubscriptionsServiceStub extends SubscriptionsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ReactivateSubscriptionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateSubscriptionRequest, Operation> createSubscriptionCallable;

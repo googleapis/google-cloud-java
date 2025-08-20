@@ -54,6 +54,7 @@ public class GrpcAccountIssueServiceStub extends AccountIssueServiceStub {
                   ProtoUtils.marshaller(ListAccountIssuesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAccountIssuesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListAccountIssuesRequest, ListAccountIssuesResponse>

@@ -82,6 +82,7 @@ public class GrpcLicenseManagerStub extends LicenseManagerStub {
                   ProtoUtils.marshaller(ListConfigurationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListConfigurationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetConfigurationRequest, Configuration>
@@ -92,6 +93,7 @@ public class GrpcLicenseManagerStub extends LicenseManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetConfigurationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Configuration.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateConfigurationRequest, Operation>
@@ -103,6 +105,7 @@ public class GrpcLicenseManagerStub extends LicenseManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateConfigurationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateConfigurationRequest, Operation>
@@ -114,6 +117,7 @@ public class GrpcLicenseManagerStub extends LicenseManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateConfigurationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteConfigurationRequest, Operation>
@@ -125,6 +129,7 @@ public class GrpcLicenseManagerStub extends LicenseManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteConfigurationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListInstancesRequest, ListInstancesResponse>
@@ -136,6 +141,7 @@ public class GrpcLicenseManagerStub extends LicenseManagerStub {
                   ProtoUtils.marshaller(ListInstancesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListInstancesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetInstanceRequest, Instance> getInstanceMethodDescriptor =
@@ -144,6 +150,7 @@ public class GrpcLicenseManagerStub extends LicenseManagerStub {
           .setFullMethodName("google.cloud.licensemanager.v1.LicenseManager/GetInstance")
           .setRequestMarshaller(ProtoUtils.marshaller(GetInstanceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Instance.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeactivateConfigurationRequest, Operation>
@@ -155,6 +162,7 @@ public class GrpcLicenseManagerStub extends LicenseManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeactivateConfigurationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ReactivateConfigurationRequest, Operation>
@@ -166,6 +174,7 @@ public class GrpcLicenseManagerStub extends LicenseManagerStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ReactivateConfigurationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -182,6 +191,7 @@ public class GrpcLicenseManagerStub extends LicenseManagerStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       QueryConfigurationLicenseUsageResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AggregateUsageRequest, AggregateUsageResponse>
@@ -193,6 +203,7 @@ public class GrpcLicenseManagerStub extends LicenseManagerStub {
                   ProtoUtils.marshaller(AggregateUsageRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AggregateUsageResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListProductsRequest, ListProductsResponse>
@@ -203,6 +214,7 @@ public class GrpcLicenseManagerStub extends LicenseManagerStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListProductsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListProductsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetProductRequest, Product> getProductMethodDescriptor =
@@ -211,6 +223,7 @@ public class GrpcLicenseManagerStub extends LicenseManagerStub {
           .setFullMethodName("google.cloud.licensemanager.v1.LicenseManager/GetProduct")
           .setRequestMarshaller(ProtoUtils.marshaller(GetProductRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Product.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -222,6 +235,7 @@ public class GrpcLicenseManagerStub extends LicenseManagerStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -230,6 +244,7 @@ public class GrpcLicenseManagerStub extends LicenseManagerStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListConfigurationsRequest, ListConfigurationsResponse>

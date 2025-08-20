@@ -63,6 +63,7 @@ public class GrpcWebhooksStub extends WebhooksStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListWebhooksRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListWebhooksResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetWebhookRequest, Webhook> getWebhookMethodDescriptor =
@@ -71,6 +72,7 @@ public class GrpcWebhooksStub extends WebhooksStub {
           .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Webhooks/GetWebhook")
           .setRequestMarshaller(ProtoUtils.marshaller(GetWebhookRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Webhook.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateWebhookRequest, Webhook>
@@ -81,6 +83,7 @@ public class GrpcWebhooksStub extends WebhooksStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateWebhookRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Webhook.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateWebhookRequest, Webhook>
@@ -91,6 +94,7 @@ public class GrpcWebhooksStub extends WebhooksStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateWebhookRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Webhook.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteWebhookRequest, Empty> deleteWebhookMethodDescriptor =
@@ -99,6 +103,7 @@ public class GrpcWebhooksStub extends WebhooksStub {
           .setFullMethodName("google.cloud.dialogflow.cx.v3beta1.Webhooks/DeleteWebhook")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteWebhookRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -110,6 +115,7 @@ public class GrpcWebhooksStub extends WebhooksStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -118,6 +124,7 @@ public class GrpcWebhooksStub extends WebhooksStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListWebhooksRequest, ListWebhooksResponse> listWebhooksCallable;

@@ -120,6 +120,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateCustomJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CustomJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetCustomJobRequest, CustomJob>
@@ -129,6 +130,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setFullMethodName("google.cloud.aiplatform.v1.JobService/GetCustomJob")
               .setRequestMarshaller(ProtoUtils.marshaller(GetCustomJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CustomJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListCustomJobsRequest, ListCustomJobsResponse>
@@ -140,6 +142,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   ProtoUtils.marshaller(ListCustomJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCustomJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteCustomJobRequest, Operation>
@@ -150,6 +153,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteCustomJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CancelCustomJobRequest, Empty>
@@ -160,6 +164,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CancelCustomJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateDataLabelingJobRequest, DataLabelingJob>
@@ -170,6 +175,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDataLabelingJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DataLabelingJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDataLabelingJobRequest, DataLabelingJob>
@@ -180,6 +186,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetDataLabelingJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DataLabelingJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListDataLabelingJobsRequest, ListDataLabelingJobsResponse>
@@ -191,6 +198,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   ProtoUtils.marshaller(ListDataLabelingJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDataLabelingJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDataLabelingJobRequest, Operation>
@@ -201,6 +209,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDataLabelingJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CancelDataLabelingJobRequest, Empty>
@@ -211,6 +220,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CancelDataLabelingJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -225,6 +235,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   ProtoUtils.marshaller(CreateHyperparameterTuningJobRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(HyperparameterTuningJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetHyperparameterTuningJobRequest, HyperparameterTuningJob>
@@ -236,6 +247,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   ProtoUtils.marshaller(GetHyperparameterTuningJobRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(HyperparameterTuningJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -251,6 +263,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   ProtoUtils.marshaller(ListHyperparameterTuningJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListHyperparameterTuningJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteHyperparameterTuningJobRequest, Operation>
@@ -262,6 +275,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteHyperparameterTuningJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CancelHyperparameterTuningJobRequest, Empty>
@@ -273,6 +287,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CancelHyperparameterTuningJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateNasJobRequest, NasJob> createNasJobMethodDescriptor =
@@ -281,6 +296,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1.JobService/CreateNasJob")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateNasJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(NasJob.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetNasJobRequest, NasJob> getNasJobMethodDescriptor =
@@ -289,6 +305,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1.JobService/GetNasJob")
           .setRequestMarshaller(ProtoUtils.marshaller(GetNasJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(NasJob.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListNasJobsRequest, ListNasJobsResponse>
@@ -299,6 +316,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListNasJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListNasJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteNasJobRequest, Operation>
@@ -308,6 +326,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setFullMethodName("google.cloud.aiplatform.v1.JobService/DeleteNasJob")
               .setRequestMarshaller(ProtoUtils.marshaller(DeleteNasJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CancelNasJobRequest, Empty> cancelNasJobMethodDescriptor =
@@ -316,6 +335,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1.JobService/CancelNasJob")
           .setRequestMarshaller(ProtoUtils.marshaller(CancelNasJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetNasTrialDetailRequest, NasTrialDetail>
@@ -326,6 +346,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetNasTrialDetailRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(NasTrialDetail.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListNasTrialDetailsRequest, ListNasTrialDetailsResponse>
@@ -337,6 +358,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   ProtoUtils.marshaller(ListNasTrialDetailsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListNasTrialDetailsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateBatchPredictionJobRequest, BatchPredictionJob>
@@ -347,6 +369,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateBatchPredictionJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BatchPredictionJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetBatchPredictionJobRequest, BatchPredictionJob>
@@ -357,6 +380,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetBatchPredictionJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BatchPredictionJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -370,6 +394,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   ProtoUtils.marshaller(ListBatchPredictionJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBatchPredictionJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteBatchPredictionJobRequest, Operation>
@@ -380,6 +405,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteBatchPredictionJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CancelBatchPredictionJobRequest, Empty>
@@ -390,6 +416,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CancelBatchPredictionJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -405,6 +432,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                       CreateModelDeploymentMonitoringJobRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ModelDeploymentMonitoringJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -424,6 +452,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       SearchModelDeploymentMonitoringStatsAnomaliesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -439,6 +468,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                       GetModelDeploymentMonitoringJobRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ModelDeploymentMonitoringJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -456,6 +486,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       ListModelDeploymentMonitoringJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateModelDeploymentMonitoringJobRequest, Operation>
@@ -468,6 +499,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   ProtoUtils.marshaller(
                       UpdateModelDeploymentMonitoringJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteModelDeploymentMonitoringJobRequest, Operation>
@@ -480,6 +512,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   ProtoUtils.marshaller(
                       DeleteModelDeploymentMonitoringJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<PauseModelDeploymentMonitoringJobRequest, Empty>
@@ -492,6 +525,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   ProtoUtils.marshaller(
                       PauseModelDeploymentMonitoringJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ResumeModelDeploymentMonitoringJobRequest, Empty>
@@ -504,6 +538,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   ProtoUtils.marshaller(
                       ResumeModelDeploymentMonitoringJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -515,6 +550,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -523,6 +559,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -531,6 +568,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -539,6 +577,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -550,6 +589,7 @@ public class GrpcJobServiceStub extends JobServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateCustomJobRequest, CustomJob> createCustomJobCallable;

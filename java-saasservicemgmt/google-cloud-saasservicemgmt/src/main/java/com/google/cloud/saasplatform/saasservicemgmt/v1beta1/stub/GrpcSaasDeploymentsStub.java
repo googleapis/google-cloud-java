@@ -103,6 +103,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
                   "google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasDeployments/ListSaas")
               .setRequestMarshaller(ProtoUtils.marshaller(ListSaasRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListSaasResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSaasRequest, Saas> getSaasMethodDescriptor =
@@ -112,6 +113,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
               "google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasDeployments/GetSaas")
           .setRequestMarshaller(ProtoUtils.marshaller(GetSaasRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Saas.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateSaasRequest, Saas> createSaasMethodDescriptor =
@@ -121,6 +123,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
               "google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasDeployments/CreateSaas")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateSaasRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Saas.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateSaasRequest, Saas> updateSaasMethodDescriptor =
@@ -130,6 +133,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
               "google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasDeployments/UpdateSaas")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateSaasRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Saas.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteSaasRequest, Empty> deleteSaasMethodDescriptor =
@@ -139,6 +143,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
               "google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasDeployments/DeleteSaas")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteSaasRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListTenantsRequest, ListTenantsResponse>
@@ -150,6 +155,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListTenantsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTenantsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTenantRequest, Tenant> getTenantMethodDescriptor =
@@ -159,6 +165,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
               "google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasDeployments/GetTenant")
           .setRequestMarshaller(ProtoUtils.marshaller(GetTenantRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Tenant.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateTenantRequest, Tenant> createTenantMethodDescriptor =
@@ -168,6 +175,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
               "google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasDeployments/CreateTenant")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateTenantRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Tenant.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateTenantRequest, Tenant> updateTenantMethodDescriptor =
@@ -177,6 +185,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
               "google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasDeployments/UpdateTenant")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateTenantRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Tenant.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteTenantRequest, Empty> deleteTenantMethodDescriptor =
@@ -186,6 +195,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
               "google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasDeployments/DeleteTenant")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteTenantRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListUnitKindsRequest, ListUnitKindsResponse>
@@ -198,6 +208,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
                   ProtoUtils.marshaller(ListUnitKindsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListUnitKindsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetUnitKindRequest, UnitKind> getUnitKindMethodDescriptor =
@@ -207,6 +218,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
               "google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasDeployments/GetUnitKind")
           .setRequestMarshaller(ProtoUtils.marshaller(GetUnitKindRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(UnitKind.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateUnitKindRequest, UnitKind>
@@ -218,6 +230,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateUnitKindRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(UnitKind.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateUnitKindRequest, UnitKind>
@@ -229,6 +242,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateUnitKindRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(UnitKind.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteUnitKindRequest, Empty>
@@ -240,6 +254,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteUnitKindRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListUnitsRequest, ListUnitsResponse>
@@ -250,6 +265,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
                   "google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasDeployments/ListUnits")
               .setRequestMarshaller(ProtoUtils.marshaller(ListUnitsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListUnitsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetUnitRequest, Unit> getUnitMethodDescriptor =
@@ -259,6 +275,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
               "google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasDeployments/GetUnit")
           .setRequestMarshaller(ProtoUtils.marshaller(GetUnitRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Unit.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateUnitRequest, Unit> createUnitMethodDescriptor =
@@ -268,6 +285,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
               "google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasDeployments/CreateUnit")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateUnitRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Unit.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateUnitRequest, Unit> updateUnitMethodDescriptor =
@@ -277,6 +295,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
               "google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasDeployments/UpdateUnit")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateUnitRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Unit.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteUnitRequest, Empty> deleteUnitMethodDescriptor =
@@ -286,6 +305,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
               "google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasDeployments/DeleteUnit")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteUnitRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListUnitOperationsRequest, ListUnitOperationsResponse>
@@ -298,6 +318,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
                   ProtoUtils.marshaller(ListUnitOperationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListUnitOperationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetUnitOperationRequest, UnitOperation>
@@ -309,6 +330,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetUnitOperationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(UnitOperation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateUnitOperationRequest, UnitOperation>
@@ -320,6 +342,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateUnitOperationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(UnitOperation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateUnitOperationRequest, UnitOperation>
@@ -331,6 +354,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateUnitOperationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(UnitOperation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteUnitOperationRequest, Empty>
@@ -342,6 +366,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteUnitOperationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListReleasesRequest, ListReleasesResponse>
@@ -353,6 +378,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListReleasesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListReleasesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetReleaseRequest, Release> getReleaseMethodDescriptor =
@@ -362,6 +388,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
               "google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasDeployments/GetRelease")
           .setRequestMarshaller(ProtoUtils.marshaller(GetReleaseRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Release.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateReleaseRequest, Release>
@@ -373,6 +400,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateReleaseRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Release.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateReleaseRequest, Release>
@@ -384,6 +412,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateReleaseRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Release.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteReleaseRequest, Empty> deleteReleaseMethodDescriptor =
@@ -393,6 +422,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
               "google.cloud.saasplatform.saasservicemgmt.v1beta1.SaasDeployments/DeleteRelease")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteReleaseRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -404,6 +434,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -412,6 +443,7 @@ public class GrpcSaasDeploymentsStub extends SaasDeploymentsStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListSaasRequest, ListSaasResponse> listSaasCallable;

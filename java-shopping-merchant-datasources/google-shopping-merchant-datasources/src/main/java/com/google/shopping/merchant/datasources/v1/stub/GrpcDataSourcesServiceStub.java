@@ -58,6 +58,7 @@ public class GrpcDataSourcesServiceStub extends DataSourcesServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetDataSourceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DataSource.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListDataSourcesRequest, ListDataSourcesResponse>
@@ -70,6 +71,7 @@ public class GrpcDataSourcesServiceStub extends DataSourcesServiceStub {
                   ProtoUtils.marshaller(ListDataSourcesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDataSourcesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateDataSourceRequest, DataSource>
@@ -81,6 +83,7 @@ public class GrpcDataSourcesServiceStub extends DataSourcesServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDataSourceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DataSource.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDataSourceRequest, DataSource>
@@ -92,6 +95,7 @@ public class GrpcDataSourcesServiceStub extends DataSourcesServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDataSourceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DataSource.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDataSourceRequest, Empty>
@@ -103,6 +107,7 @@ public class GrpcDataSourcesServiceStub extends DataSourcesServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDataSourceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<FetchDataSourceRequest, Empty>
@@ -114,6 +119,7 @@ public class GrpcDataSourcesServiceStub extends DataSourcesServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(FetchDataSourceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetDataSourceRequest, DataSource> getDataSourceCallable;

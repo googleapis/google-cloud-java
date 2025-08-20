@@ -64,6 +64,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
           .setFullMethodName("google.cloud.discoveryengine.v1.DocumentService/GetDocument")
           .setRequestMarshaller(ProtoUtils.marshaller(GetDocumentRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Document.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListDocumentsRequest, ListDocumentsResponse>
@@ -75,6 +76,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
                   ProtoUtils.marshaller(ListDocumentsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDocumentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateDocumentRequest, Document>
@@ -85,6 +87,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDocumentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Document.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDocumentRequest, Document>
@@ -95,6 +98,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDocumentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Document.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDocumentRequest, Empty>
@@ -105,6 +109,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDocumentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportDocumentsRequest, Operation>
@@ -115,6 +120,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ImportDocumentsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<PurgeDocumentsRequest, Operation>
@@ -125,6 +131,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(PurgeDocumentsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -139,6 +146,7 @@ public class GrpcDocumentServiceStub extends DocumentServiceStub {
                   ProtoUtils.marshaller(BatchGetDocumentsMetadataRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(BatchGetDocumentsMetadataResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetDocumentRequest, Document> getDocumentCallable;

@@ -105,6 +105,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.ModelService/UploadModel")
           .setRequestMarshaller(ProtoUtils.marshaller(UploadModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetModelRequest, Model> getModelMethodDescriptor =
@@ -113,6 +114,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.ModelService/GetModel")
           .setRequestMarshaller(ProtoUtils.marshaller(GetModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Model.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListModelsRequest, ListModelsResponse>
@@ -122,6 +124,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
               .setFullMethodName("google.cloud.aiplatform.v1beta1.ModelService/ListModels")
               .setRequestMarshaller(ProtoUtils.marshaller(ListModelsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListModelsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListModelVersionsRequest, ListModelVersionsResponse>
@@ -133,6 +136,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                   ProtoUtils.marshaller(ListModelVersionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListModelVersionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -147,6 +151,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                   ProtoUtils.marshaller(ListModelVersionCheckpointsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListModelVersionCheckpointsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateModelRequest, Model> updateModelMethodDescriptor =
@@ -155,6 +160,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.ModelService/UpdateModel")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Model.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateExplanationDatasetRequest, Operation>
@@ -166,6 +172,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateExplanationDatasetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteModelRequest, Operation> deleteModelMethodDescriptor =
@@ -174,6 +181,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.ModelService/DeleteModel")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteModelVersionRequest, Operation>
@@ -184,6 +192,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteModelVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<MergeVersionAliasesRequest, Model>
@@ -194,6 +203,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(MergeVersionAliasesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Model.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ExportModelRequest, Operation> exportModelMethodDescriptor =
@@ -202,6 +212,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.ModelService/ExportModel")
           .setRequestMarshaller(ProtoUtils.marshaller(ExportModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CopyModelRequest, Operation> copyModelMethodDescriptor =
@@ -210,6 +221,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.ModelService/CopyModel")
           .setRequestMarshaller(ProtoUtils.marshaller(CopyModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ImportModelEvaluationRequest, ModelEvaluation>
@@ -221,6 +233,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ImportModelEvaluationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ModelEvaluation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -238,6 +251,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       BatchImportModelEvaluationSlicesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -255,6 +269,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       BatchImportEvaluatedAnnotationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetModelEvaluationRequest, ModelEvaluation>
@@ -265,6 +280,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetModelEvaluationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ModelEvaluation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListModelEvaluationsRequest, ListModelEvaluationsResponse>
@@ -277,6 +293,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                   ProtoUtils.marshaller(ListModelEvaluationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListModelEvaluationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetModelEvaluationSliceRequest, ModelEvaluationSlice>
@@ -289,6 +306,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                   ProtoUtils.marshaller(GetModelEvaluationSliceRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ModelEvaluationSlice.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -303,6 +321,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                   ProtoUtils.marshaller(ListModelEvaluationSlicesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListModelEvaluationSlicesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RecommendSpecRequest, RecommendSpecResponse>
@@ -314,6 +333,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                   ProtoUtils.marshaller(RecommendSpecRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RecommendSpecResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -325,6 +345,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -333,6 +354,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -341,6 +363,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -349,6 +372,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -360,6 +384,7 @@ public class GrpcModelServiceStub extends ModelServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<UploadModelRequest, Operation> uploadModelCallable;

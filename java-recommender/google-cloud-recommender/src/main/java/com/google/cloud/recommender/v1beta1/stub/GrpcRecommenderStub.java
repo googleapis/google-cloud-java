@@ -75,6 +75,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListInsightsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListInsightsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetInsightRequest, Insight> getInsightMethodDescriptor =
@@ -83,6 +84,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
           .setFullMethodName("google.cloud.recommender.v1beta1.Recommender/GetInsight")
           .setRequestMarshaller(ProtoUtils.marshaller(GetInsightRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Insight.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<MarkInsightAcceptedRequest, Insight>
@@ -93,6 +95,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(MarkInsightAcceptedRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Insight.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListRecommendationsRequest, ListRecommendationsResponse>
@@ -104,6 +107,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
                   ProtoUtils.marshaller(ListRecommendationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListRecommendationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetRecommendationRequest, Recommendation>
@@ -114,6 +118,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetRecommendationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Recommendation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<MarkRecommendationClaimedRequest, Recommendation>
@@ -125,6 +130,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(MarkRecommendationClaimedRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Recommendation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<MarkRecommendationSucceededRequest, Recommendation>
@@ -136,6 +142,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(MarkRecommendationSucceededRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Recommendation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<MarkRecommendationFailedRequest, Recommendation>
@@ -147,6 +154,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(MarkRecommendationFailedRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Recommendation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetRecommenderConfigRequest, RecommenderConfig>
@@ -158,6 +166,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetRecommenderConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(RecommenderConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateRecommenderConfigRequest, RecommenderConfig>
@@ -169,6 +178,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateRecommenderConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(RecommenderConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetInsightTypeConfigRequest, InsightTypeConfig>
@@ -180,6 +190,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetInsightTypeConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(InsightTypeConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateInsightTypeConfigRequest, InsightTypeConfig>
@@ -191,6 +202,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateInsightTypeConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(InsightTypeConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListRecommendersRequest, ListRecommendersResponse>
@@ -202,6 +214,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
                   ProtoUtils.marshaller(ListRecommendersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListRecommendersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListInsightTypesRequest, ListInsightTypesResponse>
@@ -213,6 +226,7 @@ public class GrpcRecommenderStub extends RecommenderStub {
                   ProtoUtils.marshaller(ListInsightTypesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListInsightTypesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListInsightsRequest, ListInsightsResponse> listInsightsCallable;

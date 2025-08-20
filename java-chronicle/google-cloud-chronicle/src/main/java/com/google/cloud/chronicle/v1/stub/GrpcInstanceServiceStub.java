@@ -46,6 +46,7 @@ public class GrpcInstanceServiceStub extends InstanceServiceStub {
           .setFullMethodName("google.cloud.chronicle.v1.InstanceService/GetInstance")
           .setRequestMarshaller(ProtoUtils.marshaller(GetInstanceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Instance.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<GetInstanceRequest, Instance> getInstanceCallable;

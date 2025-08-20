@@ -59,6 +59,7 @@ public class GrpcWebRiskServiceStub extends WebRiskServiceStub {
                   ProtoUtils.marshaller(ComputeThreatListDiffRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ComputeThreatListDiffResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SearchUrisRequest, SearchUrisResponse>
@@ -68,6 +69,7 @@ public class GrpcWebRiskServiceStub extends WebRiskServiceStub {
               .setFullMethodName("google.cloud.webrisk.v1.WebRiskService/SearchUris")
               .setRequestMarshaller(ProtoUtils.marshaller(SearchUrisRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SearchUrisResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SearchHashesRequest, SearchHashesResponse>
@@ -78,6 +80,7 @@ public class GrpcWebRiskServiceStub extends WebRiskServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(SearchHashesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchHashesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateSubmissionRequest, Submission>
@@ -88,6 +91,7 @@ public class GrpcWebRiskServiceStub extends WebRiskServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateSubmissionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Submission.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SubmitUriRequest, Operation> submitUriMethodDescriptor =
@@ -96,6 +100,7 @@ public class GrpcWebRiskServiceStub extends WebRiskServiceStub {
           .setFullMethodName("google.cloud.webrisk.v1.WebRiskService/SubmitUri")
           .setRequestMarshaller(ProtoUtils.marshaller(SubmitUriRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ComputeThreatListDiffRequest, ComputeThreatListDiffResponse>

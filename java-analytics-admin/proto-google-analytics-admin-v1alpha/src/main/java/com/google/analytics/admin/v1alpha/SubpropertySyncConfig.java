@@ -72,7 +72,7 @@ public final class SubpropertySyncConfig extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Synchronization modes for a Subproperty
+   * Synchronization modes for a subproperty
    * </pre>
    *
    * Protobuf enum {@code google.analytics.admin.v1alpha.SubpropertySyncConfig.SynchronizationMode}
@@ -93,7 +93,7 @@ public final class SubpropertySyncConfig extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Entities are not synchronized.
-     * Local edits are allowed on the Subproperty.
+     * Local edits are allowed on the subproperty.
      * </pre>
      *
      * <code>NONE = 1;</code>
@@ -103,8 +103,8 @@ public final class SubpropertySyncConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Entities are synchronized from Parent Property.
-     * Local mutations are not allowed on the Subproperty (Create / Update /
+     * Entities are synchronized from parent property.
+     * Local mutations are not allowed on the subproperty (Create / Update /
      * Delete)
      * </pre>
      *
@@ -130,7 +130,7 @@ public final class SubpropertySyncConfig extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Entities are not synchronized.
-     * Local edits are allowed on the Subproperty.
+     * Local edits are allowed on the subproperty.
      * </pre>
      *
      * <code>NONE = 1;</code>
@@ -141,8 +141,8 @@ public final class SubpropertySyncConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Entities are synchronized from Parent Property.
-     * Local mutations are not allowed on the Subproperty (Create / Update /
+     * Entities are synchronized from parent property.
+     * Local mutations are not allowed on the subproperty (Create / Update /
      * Delete)
      * </pre>
      *
@@ -308,7 +308,7 @@ public final class SubpropertySyncConfig extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Output only. Immutable. Resource name of the Subproperty that these
+   * Output only. Immutable. Resource name of the subproperty that these
    * settings apply to.
    * </pre>
    *
@@ -335,7 +335,7 @@ public final class SubpropertySyncConfig extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Output only. Immutable. Resource name of the Subproperty that these
+   * Output only. Immutable. Resource name of the subproperty that these
    * settings apply to.
    * </pre>
    *
@@ -366,11 +366,11 @@ public final class SubpropertySyncConfig extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. Specifies the Custom Dimension / Metric synchronization mode for
-   * the Subproperty.
+   * the subproperty.
    *
    * If set to ALL, Custom Dimension / Metric synchronization will be
    * immediately enabled.  Local configuration of Custom Dimensions / Metrics
-   * will not be allowed on the Subproperty so long as the synchronization mode
+   * will not be allowed on the subproperty so long as the synchronization mode
    * is set to ALL.
    *
    * If set to NONE, Custom Dimensions / Metric synchronization is disabled.
@@ -394,11 +394,11 @@ public final class SubpropertySyncConfig extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. Specifies the Custom Dimension / Metric synchronization mode for
-   * the Subproperty.
+   * the subproperty.
    *
    * If set to ALL, Custom Dimension / Metric synchronization will be
    * immediately enabled.  Local configuration of Custom Dimensions / Metrics
-   * will not be allowed on the Subproperty so long as the synchronization mode
+   * will not be allowed on the subproperty so long as the synchronization mode
    * is set to ALL.
    *
    * If set to NONE, Custom Dimensions / Metric synchronization is disabled.
@@ -960,7 +960,7 @@ public final class SubpropertySyncConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Output only. Immutable. Resource name of the Subproperty that these
+     * Output only. Immutable. Resource name of the subproperty that these
      * settings apply to.
      * </pre>
      *
@@ -986,7 +986,7 @@ public final class SubpropertySyncConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Output only. Immutable. Resource name of the Subproperty that these
+     * Output only. Immutable. Resource name of the subproperty that these
      * settings apply to.
      * </pre>
      *
@@ -1012,7 +1012,7 @@ public final class SubpropertySyncConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Output only. Immutable. Resource name of the Subproperty that these
+     * Output only. Immutable. Resource name of the subproperty that these
      * settings apply to.
      * </pre>
      *
@@ -1037,7 +1037,7 @@ public final class SubpropertySyncConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Output only. Immutable. Resource name of the Subproperty that these
+     * Output only. Immutable. Resource name of the subproperty that these
      * settings apply to.
      * </pre>
      *
@@ -1058,7 +1058,7 @@ public final class SubpropertySyncConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Output only. Immutable. Resource name of the Subproperty that these
+     * Output only. Immutable. Resource name of the subproperty that these
      * settings apply to.
      * </pre>
      *
@@ -1087,11 +1087,11 @@ public final class SubpropertySyncConfig extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. Specifies the Custom Dimension / Metric synchronization mode for
-     * the Subproperty.
+     * the subproperty.
      *
      * If set to ALL, Custom Dimension / Metric synchronization will be
      * immediately enabled.  Local configuration of Custom Dimensions / Metrics
-     * will not be allowed on the Subproperty so long as the synchronization mode
+     * will not be allowed on the subproperty so long as the synchronization mode
      * is set to ALL.
      *
      * If set to NONE, Custom Dimensions / Metric synchronization is disabled.
@@ -1115,11 +1115,11 @@ public final class SubpropertySyncConfig extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. Specifies the Custom Dimension / Metric synchronization mode for
-     * the Subproperty.
+     * the subproperty.
      *
      * If set to ALL, Custom Dimension / Metric synchronization will be
      * immediately enabled.  Local configuration of Custom Dimensions / Metrics
-     * will not be allowed on the Subproperty so long as the synchronization mode
+     * will not be allowed on the subproperty so long as the synchronization mode
      * is set to ALL.
      *
      * If set to NONE, Custom Dimensions / Metric synchronization is disabled.
@@ -1146,11 +1146,11 @@ public final class SubpropertySyncConfig extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. Specifies the Custom Dimension / Metric synchronization mode for
-     * the Subproperty.
+     * the subproperty.
      *
      * If set to ALL, Custom Dimension / Metric synchronization will be
      * immediately enabled.  Local configuration of Custom Dimensions / Metrics
-     * will not be allowed on the Subproperty so long as the synchronization mode
+     * will not be allowed on the subproperty so long as the synchronization mode
      * is set to ALL.
      *
      * If set to NONE, Custom Dimensions / Metric synchronization is disabled.
@@ -1181,11 +1181,11 @@ public final class SubpropertySyncConfig extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. Specifies the Custom Dimension / Metric synchronization mode for
-     * the Subproperty.
+     * the subproperty.
      *
      * If set to ALL, Custom Dimension / Metric synchronization will be
      * immediately enabled.  Local configuration of Custom Dimensions / Metrics
-     * will not be allowed on the Subproperty so long as the synchronization mode
+     * will not be allowed on the subproperty so long as the synchronization mode
      * is set to ALL.
      *
      * If set to NONE, Custom Dimensions / Metric synchronization is disabled.
@@ -1216,11 +1216,11 @@ public final class SubpropertySyncConfig extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. Specifies the Custom Dimension / Metric synchronization mode for
-     * the Subproperty.
+     * the subproperty.
      *
      * If set to ALL, Custom Dimension / Metric synchronization will be
      * immediately enabled.  Local configuration of Custom Dimensions / Metrics
-     * will not be allowed on the Subproperty so long as the synchronization mode
+     * will not be allowed on the subproperty so long as the synchronization mode
      * is set to ALL.
      *
      * If set to NONE, Custom Dimensions / Metric synchronization is disabled.

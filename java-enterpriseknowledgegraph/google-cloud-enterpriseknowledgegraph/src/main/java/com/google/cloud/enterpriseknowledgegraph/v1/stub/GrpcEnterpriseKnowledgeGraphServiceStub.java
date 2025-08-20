@@ -68,6 +68,7 @@ public class GrpcEnterpriseKnowledgeGraphServiceStub extends EnterpriseKnowledge
                   ProtoUtils.marshaller(CreateEntityReconciliationJobRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(EntityReconciliationJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetEntityReconciliationJobRequest, EntityReconciliationJob>
@@ -80,6 +81,7 @@ public class GrpcEnterpriseKnowledgeGraphServiceStub extends EnterpriseKnowledge
                   ProtoUtils.marshaller(GetEntityReconciliationJobRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(EntityReconciliationJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -95,6 +97,7 @@ public class GrpcEnterpriseKnowledgeGraphServiceStub extends EnterpriseKnowledge
                   ProtoUtils.marshaller(ListEntityReconciliationJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEntityReconciliationJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CancelEntityReconciliationJobRequest, Empty>
@@ -106,6 +109,7 @@ public class GrpcEnterpriseKnowledgeGraphServiceStub extends EnterpriseKnowledge
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CancelEntityReconciliationJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteEntityReconciliationJobRequest, Empty>
@@ -117,6 +121,7 @@ public class GrpcEnterpriseKnowledgeGraphServiceStub extends EnterpriseKnowledge
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteEntityReconciliationJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<LookupRequest, LookupResponse> lookupMethodDescriptor =
@@ -126,6 +131,7 @@ public class GrpcEnterpriseKnowledgeGraphServiceStub extends EnterpriseKnowledge
               "google.cloud.enterpriseknowledgegraph.v1.EnterpriseKnowledgeGraphService/Lookup")
           .setRequestMarshaller(ProtoUtils.marshaller(LookupRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(LookupResponse.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SearchRequest, SearchResponse> searchMethodDescriptor =
@@ -135,6 +141,7 @@ public class GrpcEnterpriseKnowledgeGraphServiceStub extends EnterpriseKnowledge
               "google.cloud.enterpriseknowledgegraph.v1.EnterpriseKnowledgeGraphService/Search")
           .setRequestMarshaller(ProtoUtils.marshaller(SearchRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(SearchResponse.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<LookupPublicKgRequest, LookupPublicKgResponse>
@@ -147,6 +154,7 @@ public class GrpcEnterpriseKnowledgeGraphServiceStub extends EnterpriseKnowledge
                   ProtoUtils.marshaller(LookupPublicKgRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(LookupPublicKgResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SearchPublicKgRequest, SearchPublicKgResponse>
@@ -159,6 +167,7 @@ public class GrpcEnterpriseKnowledgeGraphServiceStub extends EnterpriseKnowledge
                   ProtoUtils.marshaller(SearchPublicKgRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchPublicKgResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateEntityReconciliationJobRequest, EntityReconciliationJob>

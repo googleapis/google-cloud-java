@@ -61,6 +61,7 @@ public class GrpcEssentialContactsServiceStub extends EssentialContactsServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateContactRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Contact.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateContactRequest, Contact>
@@ -72,6 +73,7 @@ public class GrpcEssentialContactsServiceStub extends EssentialContactsServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateContactRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Contact.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListContactsRequest, ListContactsResponse>
@@ -83,6 +85,7 @@ public class GrpcEssentialContactsServiceStub extends EssentialContactsServiceSt
               .setRequestMarshaller(ProtoUtils.marshaller(ListContactsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListContactsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetContactRequest, Contact> getContactMethodDescriptor =
@@ -92,6 +95,7 @@ public class GrpcEssentialContactsServiceStub extends EssentialContactsServiceSt
               "google.cloud.essentialcontacts.v1.EssentialContactsService/GetContact")
           .setRequestMarshaller(ProtoUtils.marshaller(GetContactRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Contact.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteContactRequest, Empty> deleteContactMethodDescriptor =
@@ -101,6 +105,7 @@ public class GrpcEssentialContactsServiceStub extends EssentialContactsServiceSt
               "google.cloud.essentialcontacts.v1.EssentialContactsService/DeleteContact")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteContactRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ComputeContactsRequest, ComputeContactsResponse>
@@ -113,6 +118,7 @@ public class GrpcEssentialContactsServiceStub extends EssentialContactsServiceSt
                   ProtoUtils.marshaller(ComputeContactsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ComputeContactsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SendTestMessageRequest, Empty>
@@ -124,6 +130,7 @@ public class GrpcEssentialContactsServiceStub extends EssentialContactsServiceSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(SendTestMessageRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateContactRequest, Contact> createContactCallable;
