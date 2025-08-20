@@ -103,6 +103,7 @@
     <module>java-financialservices</module>
     <module>java-functions</module>
     <module>java-gdchardwaremanagement</module>
+    <module>java-geminidataanalytics</module>
     <module>java-gke-backup</module>
     <module>java-gke-connect-gateway</module>
     <module>java-gke-multi-cloud</module>
