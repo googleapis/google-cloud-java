@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.141.3](https://github.com/googleapis/java-pubsub/compare/v1.141.2...v1.141.3) (2025-08-19)
+
+
+### Bug Fixes
+
+* Use the system executor instead of a separate thread pool for EOD ack/modack callbacks ([#2526](https://github.com/googleapis/java-pubsub/issues/2526)) ([ffeb017](https://github.com/googleapis/java-pubsub/commit/ffeb017a58ca486688105738f180d70df33a74de))
+
+
+### Dependencies
+
+* Update actions/checkout action to v5 ([#2520](https://github.com/googleapis/java-pubsub/issues/2520)) ([409398a](https://github.com/googleapis/java-pubsub/commit/409398a40f71866d5a84b4542d582777ee240a08))
+* Update dependency com.google.cloud:google-cloud-bigquery to v2.54.1 ([#2523](https://github.com/googleapis/java-pubsub/issues/2523)) ([0678a74](https://github.com/googleapis/java-pubsub/commit/0678a74dc22f73cd8ec8c4893c1a8dd60449b128))
+* Update dependency com.google.cloud:google-cloud-core to v2.60.0 ([#2527](https://github.com/googleapis/java-pubsub/issues/2527)) ([0166e21](https://github.com/googleapis/java-pubsub/commit/0166e21012f0bc2ccb2e832d6f27e60ad3382456))
+* Update dependency com.google.cloud:google-cloud-storage to v2.55.0 ([#2517](https://github.com/googleapis/java-pubsub/issues/2517)) ([b67acf1](https://github.com/googleapis/java-pubsub/commit/b67acf1294249be308568f49f287897ae55ced08))
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.52.0 ([#2528](https://github.com/googleapis/java-pubsub/issues/2528)) ([e424d11](https://github.com/googleapis/java-pubsub/commit/e424d11ffe0fbe242c59dec44ac1af2f9bd80173))
+* Update dependency com.google.protobuf:protobuf-java-util to v4.32.0 ([#2524](https://github.com/googleapis/java-pubsub/issues/2524)) ([44ff087](https://github.com/googleapis/java-pubsub/commit/44ff0873171f8fe2e7cd79b4550f8ec94ea2c99a))
+* Update dependency org.assertj:assertj-core to v3.27.4 ([#2518](https://github.com/googleapis/java-pubsub/issues/2518)) ([67695bc](https://github.com/googleapis/java-pubsub/commit/67695bc50eafc475866eb6c300b3359083ecfe00))
+
 ## [1.141.2](https://github.com/googleapis/java-pubsub/compare/v1.141.1...v1.141.2) (2025-08-05)
 
 
