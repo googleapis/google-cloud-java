@@ -158,7 +158,7 @@ public class BulkWriterTest {
 
     bulkWriter =
         firestoreMock.bulkWriter(BulkWriterOptions.builder().setExecutor(timeoutExecutor).build());
-    bulkWriter.autoShutdownBulkWriterExecutor = true;
+
     doc1 = firestoreMock.document("coll/doc1");
     doc2 = firestoreMock.document("coll/doc2");
   }
@@ -1400,5 +1400,31 @@ public class BulkWriterTest {
         firestoreMock.bulkWriter(BulkWriterOptions.builder().setThrottlingEnabled(false).build());
     assertEquals(bulkWriter.getRateLimiter().getInitialCapacity(), Integer.MAX_VALUE);
     assertEquals(bulkWriter.getRateLimiter().getMaximumRate(), Integer.MAX_VALUE);
+  }
+
+  @Test
+  public void closeHandlesLargeNumberOfBufferedOps() throws Exception {
+    final int numOps = 100;
+
+    bulkWriter.setMaxPendingOpCount(5);
+    bulkWriter.setMaxBatchSize(1);
+    bulkWriter.autoShutdownBulkWriterExecutor = true;
+
+    ResponseStubber responseStubber = new ResponseStubber();
+
+    for (int i = 0; i < numOps; i += 1) {
+      responseStubber.put(
+          batchWrite(set(LocalFirestoreHelper.SINGLE_FIELD_PROTO, "coll/doc" + i)),
+          successResponse(1));
+    }
+
+    responseStubber.initializeStub(batchWriteCapture, firestoreMock);
+
+    for (int i = 0; i < numOps; ++i) {
+      bulkWriter.set(firestoreMock.document("coll/doc" + i), LocalFirestoreHelper.SINGLE_FIELD_MAP);
+    }
+    bulkWriter.close();
+    responseStubber.verifyAllRequestsSent();
+    assertEquals(numOps, responseStubber.actualRequestList.size());
   }
 }

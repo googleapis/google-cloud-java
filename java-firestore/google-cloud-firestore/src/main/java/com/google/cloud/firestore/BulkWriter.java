@@ -661,8 +661,10 @@ public final class BulkWriter implements AutoCloseable {
         ApiFutures.transformAsync(
             operation.getFuture(),
             result -> {
-              pendingOpsCount--;
-              processBufferedOperations();
+              synchronized (lock) {
+                pendingOpsCount--;
+                processBufferedOperations();
+              }
               return ApiFutures.immediateFuture(result);
             },
             MoreExecutors.directExecutor());
@@ -671,8 +673,10 @@ public final class BulkWriter implements AutoCloseable {
         processedOperationFuture,
         ApiException.class,
         e -> {
-          pendingOpsCount--;
-          processBufferedOperations();
+          synchronized (lock) {
+            pendingOpsCount--;
+            processBufferedOperations();
+          }
           throw e;
         },
         MoreExecutors.directExecutor());
@@ -951,7 +955,7 @@ public final class BulkWriter implements AutoCloseable {
                   }
                 }
               },
-              bulkWriterExecutor);
+              MoreExecutors.directExecutor());
         }
         span.endAtFuture(result);
         metricsContext.recordLatencyAtFuture(MetricType.END_TO_END_LATENCY, result);
