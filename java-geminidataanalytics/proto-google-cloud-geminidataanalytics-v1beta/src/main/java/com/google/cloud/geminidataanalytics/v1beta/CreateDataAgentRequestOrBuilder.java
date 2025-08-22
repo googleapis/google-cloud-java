@@ -58,9 +58,9 @@ public interface CreateDataAgentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Id of the requesting object.
-   * Must be unique within the parent.
+   * Optional. Id of the requesting object. Must be unique within the parent.
    * The allowed format is: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
+   * If not provided, the server will auto-generate a value for the id.
    * </pre>
    *
    * <code>string data_agent_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -73,9 +73,9 @@ public interface CreateDataAgentRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. Id of the requesting object.
-   * Must be unique within the parent.
+   * Optional. Id of the requesting object. Must be unique within the parent.
    * The allowed format is: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
+   * If not provided, the server will auto-generate a value for the id.
    * </pre>
    *
    * <code>string data_agent_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

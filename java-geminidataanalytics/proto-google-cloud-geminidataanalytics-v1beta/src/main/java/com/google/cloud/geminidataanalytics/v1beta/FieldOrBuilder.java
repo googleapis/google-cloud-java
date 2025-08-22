@@ -132,6 +132,122 @@ public interface FieldOrBuilder
    *
    *
    * <pre>
+   * Optional. A list of alternative names or synonyms that can be used to refer
+   * to this field. For example: ["id", "customerid", "cust_id"]
+   * </pre>
+   *
+   * <code>repeated string synonyms = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the synonyms.
+   */
+  java.util.List<java.lang.String> getSynonymsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of alternative names or synonyms that can be used to refer
+   * to this field. For example: ["id", "customerid", "cust_id"]
+   * </pre>
+   *
+   * <code>repeated string synonyms = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of synonyms.
+   */
+  int getSynonymsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of alternative names or synonyms that can be used to refer
+   * to this field. For example: ["id", "customerid", "cust_id"]
+   * </pre>
+   *
+   * <code>repeated string synonyms = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The synonyms at the given index.
+   */
+  java.lang.String getSynonyms(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of alternative names or synonyms that can be used to refer
+   * to this field. For example: ["id", "customerid", "cust_id"]
+   * </pre>
+   *
+   * <code>repeated string synonyms = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the synonyms at the given index.
+   */
+  com.google.protobuf.ByteString getSynonymsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of tags or keywords associated with the field, used for
+   * categorization. For example: ["identifier", "customer", "pii"]
+   * </pre>
+   *
+   * <code>repeated string tags = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the tags.
+   */
+  java.util.List<java.lang.String> getTagsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of tags or keywords associated with the field, used for
+   * categorization. For example: ["identifier", "customer", "pii"]
+   * </pre>
+   *
+   * <code>repeated string tags = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of tags.
+   */
+  int getTagsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of tags or keywords associated with the field, used for
+   * categorization. For example: ["identifier", "customer", "pii"]
+   * </pre>
+   *
+   * <code>repeated string tags = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The tags at the given index.
+   */
+  java.lang.String getTags(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of tags or keywords associated with the field, used for
+   * categorization. For example: ["identifier", "customer", "pii"]
+   * </pre>
+   *
+   * <code>repeated string tags = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the tags at the given index.
+   */
+  com.google.protobuf.ByteString getTagsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Field display_name (same as label in
    * </pre>
    *
@@ -249,4 +365,34 @@ public interface FieldOrBuilder
    * @return The bytes for category.
    */
   com.google.protobuf.ByteString getCategoryBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Looker only. Value format of the field.
+   * Ref:
+   * https://cloud.google.com/looker/docs/reference/param-field-value-format
+   * </pre>
+   *
+   * <code>string value_format = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The valueFormat.
+   */
+  java.lang.String getValueFormat();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Looker only. Value format of the field.
+   * Ref:
+   * https://cloud.google.com/looker/docs/reference/param-field-value-format
+   * </pre>
+   *
+   * <code>string value_format = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for valueFormat.
+   */
+  com.google.protobuf.ByteString getValueFormatBytes();
 }

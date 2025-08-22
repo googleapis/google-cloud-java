@@ -193,7 +193,7 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Identifier. The unique resource name of a Agent.
+   * Optional. Identifier. The unique resource name of a DataAgent.
    * Format:
    * `projects/{project}/locations/{location}/dataAgents/{data_agent_id}`
    * `{data_agent}` is the resource id and should be 63 characters or less and
@@ -201,6 +201,10 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessageV3
    * https://google.aip.dev/122#resource-id-segments
    *
    * Example: `projects/1234567890/locations/us-central1/dataAgents/my-agent`.
+   *
+   * It is recommended to skip setting this field during agent creation as it
+   * will be inferred automatically and overwritten with the
+   * {parent}/dataAgents/{data_agent_id}.
    * </pre>
    *
    * <code>
@@ -226,7 +230,7 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Identifier. The unique resource name of a Agent.
+   * Optional. Identifier. The unique resource name of a DataAgent.
    * Format:
    * `projects/{project}/locations/{location}/dataAgents/{data_agent_id}`
    * `{data_agent}` is the resource id and should be 63 characters or less and
@@ -234,6 +238,10 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessageV3
    * https://google.aip.dev/122#resource-id-segments
    *
    * Example: `projects/1234567890/locations/us-central1/dataAgents/my-agent`.
+   *
+   * It is recommended to skip setting this field during agent creation as it
+   * will be inferred automatically and overwritten with the
+   * {parent}/dataAgents/{data_agent_id}.
    * </pre>
    *
    * <code>
@@ -401,10 +409,11 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Labels to help users filter related agents.
-   * E.g. "sales", "business", "etl", etc.
-   * Note labels are only used for filtering and not for policies.
-   * See https://cloud.google.com/resource-manager/docs/labels-overview for more
-   * details on label usage.
+   * For example, "sales", "business", "etl", and so on.
+   * Note labels are used only for filtering and not for policies.
+   * See the [labels
+   * documentation](https://cloud.google.com/resource-manager/docs/labels-overview)
+   * for more details on label usage.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -429,10 +438,11 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Labels to help users filter related agents.
-   * E.g. "sales", "business", "etl", etc.
-   * Note labels are only used for filtering and not for policies.
-   * See https://cloud.google.com/resource-manager/docs/labels-overview for more
-   * details on label usage.
+   * For example, "sales", "business", "etl", and so on.
+   * Note labels are used only for filtering and not for policies.
+   * See the [labels
+   * documentation](https://cloud.google.com/resource-manager/docs/labels-overview)
+   * for more details on label usage.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -447,10 +457,11 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Labels to help users filter related agents.
-   * E.g. "sales", "business", "etl", etc.
-   * Note labels are only used for filtering and not for policies.
-   * See https://cloud.google.com/resource-manager/docs/labels-overview for more
-   * details on label usage.
+   * For example, "sales", "business", "etl", and so on.
+   * Note labels are used only for filtering and not for policies.
+   * See the [labels
+   * documentation](https://cloud.google.com/resource-manager/docs/labels-overview)
+   * for more details on label usage.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -472,10 +483,11 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. Labels to help users filter related agents.
-   * E.g. "sales", "business", "etl", etc.
-   * Note labels are only used for filtering and not for policies.
-   * See https://cloud.google.com/resource-manager/docs/labels-overview for more
-   * details on label usage.
+   * For example, "sales", "business", "etl", and so on.
+   * Note labels are used only for filtering and not for policies.
+   * See the [labels
+   * documentation](https://cloud.google.com/resource-manager/docs/labels-overview)
+   * for more details on label usage.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1609,7 +1621,7 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Identifier. The unique resource name of a Agent.
+     * Optional. Identifier. The unique resource name of a DataAgent.
      * Format:
      * `projects/{project}/locations/{location}/dataAgents/{data_agent_id}`
      * `{data_agent}` is the resource id and should be 63 characters or less and
@@ -1617,6 +1629,10 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessageV3
      * https://google.aip.dev/122#resource-id-segments
      *
      * Example: `projects/1234567890/locations/us-central1/dataAgents/my-agent`.
+     *
+     * It is recommended to skip setting this field during agent creation as it
+     * will be inferred automatically and overwritten with the
+     * {parent}/dataAgents/{data_agent_id}.
      * </pre>
      *
      * <code>
@@ -1641,7 +1657,7 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Identifier. The unique resource name of a Agent.
+     * Optional. Identifier. The unique resource name of a DataAgent.
      * Format:
      * `projects/{project}/locations/{location}/dataAgents/{data_agent_id}`
      * `{data_agent}` is the resource id and should be 63 characters or less and
@@ -1649,6 +1665,10 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessageV3
      * https://google.aip.dev/122#resource-id-segments
      *
      * Example: `projects/1234567890/locations/us-central1/dataAgents/my-agent`.
+     *
+     * It is recommended to skip setting this field during agent creation as it
+     * will be inferred automatically and overwritten with the
+     * {parent}/dataAgents/{data_agent_id}.
      * </pre>
      *
      * <code>
@@ -1673,7 +1693,7 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Identifier. The unique resource name of a Agent.
+     * Optional. Identifier. The unique resource name of a DataAgent.
      * Format:
      * `projects/{project}/locations/{location}/dataAgents/{data_agent_id}`
      * `{data_agent}` is the resource id and should be 63 characters or less and
@@ -1681,6 +1701,10 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessageV3
      * https://google.aip.dev/122#resource-id-segments
      *
      * Example: `projects/1234567890/locations/us-central1/dataAgents/my-agent`.
+     *
+     * It is recommended to skip setting this field during agent creation as it
+     * will be inferred automatically and overwritten with the
+     * {parent}/dataAgents/{data_agent_id}.
      * </pre>
      *
      * <code>
@@ -1704,7 +1728,7 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Identifier. The unique resource name of a Agent.
+     * Optional. Identifier. The unique resource name of a DataAgent.
      * Format:
      * `projects/{project}/locations/{location}/dataAgents/{data_agent_id}`
      * `{data_agent}` is the resource id and should be 63 characters or less and
@@ -1712,6 +1736,10 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessageV3
      * https://google.aip.dev/122#resource-id-segments
      *
      * Example: `projects/1234567890/locations/us-central1/dataAgents/my-agent`.
+     *
+     * It is recommended to skip setting this field during agent creation as it
+     * will be inferred automatically and overwritten with the
+     * {parent}/dataAgents/{data_agent_id}.
      * </pre>
      *
      * <code>
@@ -1731,7 +1759,7 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Identifier. The unique resource name of a Agent.
+     * Optional. Identifier. The unique resource name of a DataAgent.
      * Format:
      * `projects/{project}/locations/{location}/dataAgents/{data_agent_id}`
      * `{data_agent}` is the resource id and should be 63 characters or less and
@@ -1739,6 +1767,10 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessageV3
      * https://google.aip.dev/122#resource-id-segments
      *
      * Example: `projects/1234567890/locations/us-central1/dataAgents/my-agent`.
+     *
+     * It is recommended to skip setting this field during agent creation as it
+     * will be inferred automatically and overwritten with the
+     * {parent}/dataAgents/{data_agent_id}.
      * </pre>
      *
      * <code>
@@ -2032,10 +2064,11 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Labels to help users filter related agents.
-     * E.g. "sales", "business", "etl", etc.
-     * Note labels are only used for filtering and not for policies.
-     * See https://cloud.google.com/resource-manager/docs/labels-overview for more
-     * details on label usage.
+     * For example, "sales", "business", "etl", and so on.
+     * Note labels are used only for filtering and not for policies.
+     * See the [labels
+     * documentation](https://cloud.google.com/resource-manager/docs/labels-overview)
+     * for more details on label usage.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2060,10 +2093,11 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Labels to help users filter related agents.
-     * E.g. "sales", "business", "etl", etc.
-     * Note labels are only used for filtering and not for policies.
-     * See https://cloud.google.com/resource-manager/docs/labels-overview for more
-     * details on label usage.
+     * For example, "sales", "business", "etl", and so on.
+     * Note labels are used only for filtering and not for policies.
+     * See the [labels
+     * documentation](https://cloud.google.com/resource-manager/docs/labels-overview)
+     * for more details on label usage.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2078,10 +2112,11 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Labels to help users filter related agents.
-     * E.g. "sales", "business", "etl", etc.
-     * Note labels are only used for filtering and not for policies.
-     * See https://cloud.google.com/resource-manager/docs/labels-overview for more
-     * details on label usage.
+     * For example, "sales", "business", "etl", and so on.
+     * Note labels are used only for filtering and not for policies.
+     * See the [labels
+     * documentation](https://cloud.google.com/resource-manager/docs/labels-overview)
+     * for more details on label usage.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2103,10 +2138,11 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Labels to help users filter related agents.
-     * E.g. "sales", "business", "etl", etc.
-     * Note labels are only used for filtering and not for policies.
-     * See https://cloud.google.com/resource-manager/docs/labels-overview for more
-     * details on label usage.
+     * For example, "sales", "business", "etl", and so on.
+     * Note labels are used only for filtering and not for policies.
+     * See the [labels
+     * documentation](https://cloud.google.com/resource-manager/docs/labels-overview)
+     * for more details on label usage.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2134,10 +2170,11 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Labels to help users filter related agents.
-     * E.g. "sales", "business", "etl", etc.
-     * Note labels are only used for filtering and not for policies.
-     * See https://cloud.google.com/resource-manager/docs/labels-overview for more
-     * details on label usage.
+     * For example, "sales", "business", "etl", and so on.
+     * Note labels are used only for filtering and not for policies.
+     * See the [labels
+     * documentation](https://cloud.google.com/resource-manager/docs/labels-overview)
+     * for more details on label usage.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2162,10 +2199,11 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Labels to help users filter related agents.
-     * E.g. "sales", "business", "etl", etc.
-     * Note labels are only used for filtering and not for policies.
-     * See https://cloud.google.com/resource-manager/docs/labels-overview for more
-     * details on label usage.
+     * For example, "sales", "business", "etl", and so on.
+     * Note labels are used only for filtering and not for policies.
+     * See the [labels
+     * documentation](https://cloud.google.com/resource-manager/docs/labels-overview)
+     * for more details on label usage.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2187,10 +2225,11 @@ public final class DataAgent extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. Labels to help users filter related agents.
-     * E.g. "sales", "business", "etl", etc.
-     * Note labels are only used for filtering and not for policies.
-     * See https://cloud.google.com/resource-manager/docs/labels-overview for more
-     * details on label usage.
+     * For example, "sales", "business", "etl", and so on.
+     * Note labels are used only for filtering and not for policies.
+     * See the [labels
+     * documentation](https://cloud.google.com/resource-manager/docs/labels-overview)
+     * for more details on label usage.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

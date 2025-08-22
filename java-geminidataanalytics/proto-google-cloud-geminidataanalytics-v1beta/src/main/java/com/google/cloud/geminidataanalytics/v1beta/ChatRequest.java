@@ -323,7 +323,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The GCP project to be used for quota and billing.
+   * Optional. The Google Cloud project to be used for quota and billing.
    * </pre>
    *
    * <code>
@@ -331,7 +331,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-   *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=163
+   *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=164
    * @return The project.
    */
   @java.lang.Override
@@ -352,7 +352,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The GCP project to be used for quota and billing.
+   * Optional. The Google Cloud project to be used for quota and billing.
    * </pre>
    *
    * <code>
@@ -360,7 +360,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-   *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=163
+   *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=164
    * @return The bytes for project.
    */
   @java.lang.Override
@@ -1878,7 +1878,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The GCP project to be used for quota and billing.
+     * Optional. The Google Cloud project to be used for quota and billing.
      * </pre>
      *
      * <code>
@@ -1886,7 +1886,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=163
+     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=164
      * @return The project.
      */
     @java.lang.Deprecated
@@ -1906,7 +1906,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The GCP project to be used for quota and billing.
+     * Optional. The Google Cloud project to be used for quota and billing.
      * </pre>
      *
      * <code>
@@ -1914,7 +1914,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=163
+     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=164
      * @return The bytes for project.
      */
     @java.lang.Deprecated
@@ -1934,7 +1934,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The GCP project to be used for quota and billing.
+     * Optional. The Google Cloud project to be used for quota and billing.
      * </pre>
      *
      * <code>
@@ -1942,7 +1942,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=163
+     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=164
      * @param value The project to set.
      * @return This builder for chaining.
      */
@@ -1961,7 +1961,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The GCP project to be used for quota and billing.
+     * Optional. The Google Cloud project to be used for quota and billing.
      * </pre>
      *
      * <code>
@@ -1969,7 +1969,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=163
+     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=164
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -1984,7 +1984,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The GCP project to be used for quota and billing.
+     * Optional. The Google Cloud project to be used for quota and billing.
      * </pre>
      *
      * <code>
@@ -1992,7 +1992,7 @@ public final class ChatRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=163
+     *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=164
      * @param value The bytes for project to set.
      * @return This builder for chaining.
      */

@@ -297,11 +297,12 @@ public final class DataAgentContext extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The credentials to use when calling the looker datasource
+   * Optional. The credentials to use when calling the Looker data source.
    *
-   * Currently supports both oauth token and api keys based credentials, as
+   * Currently supports both OAuth token and API key-based credentials, as
    * described in
-   * https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk
+   * [Authentication with an
+   * SDK](https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk).
    * </pre>
    *
    * <code>
@@ -319,11 +320,12 @@ public final class DataAgentContext extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The credentials to use when calling the looker datasource
+   * Optional. The credentials to use when calling the Looker data source.
    *
-   * Currently supports both oauth token and api keys based credentials, as
+   * Currently supports both OAuth token and API key-based credentials, as
    * described in
-   * https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk
+   * [Authentication with an
+   * SDK](https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk).
    * </pre>
    *
    * <code>
@@ -343,11 +345,12 @@ public final class DataAgentContext extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Optional. The credentials to use when calling the looker datasource
+   * Optional. The credentials to use when calling the Looker data source.
    *
-   * Currently supports both oauth token and api keys based credentials, as
+   * Currently supports both OAuth token and API key-based credentials, as
    * described in
-   * https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk
+   * [Authentication with an
+   * SDK](https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk).
    * </pre>
    *
    * <code>
@@ -958,11 +961,12 @@ public final class DataAgentContext extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The credentials to use when calling the looker datasource
+     * Optional. The credentials to use when calling the Looker data source.
      *
-     * Currently supports both oauth token and api keys based credentials, as
+     * Currently supports both OAuth token and API key-based credentials, as
      * described in
-     * https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk
+     * [Authentication with an
+     * SDK](https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk).
      * </pre>
      *
      * <code>
@@ -979,11 +983,12 @@ public final class DataAgentContext extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The credentials to use when calling the looker datasource
+     * Optional. The credentials to use when calling the Looker data source.
      *
-     * Currently supports both oauth token and api keys based credentials, as
+     * Currently supports both OAuth token and API key-based credentials, as
      * described in
-     * https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk
+     * [Authentication with an
+     * SDK](https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk).
      * </pre>
      *
      * <code>
@@ -1006,11 +1011,12 @@ public final class DataAgentContext extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The credentials to use when calling the looker datasource
+     * Optional. The credentials to use when calling the Looker data source.
      *
-     * Currently supports both oauth token and api keys based credentials, as
+     * Currently supports both OAuth token and API key-based credentials, as
      * described in
-     * https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk
+     * [Authentication with an
+     * SDK](https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk).
      * </pre>
      *
      * <code>
@@ -1035,11 +1041,12 @@ public final class DataAgentContext extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The credentials to use when calling the looker datasource
+     * Optional. The credentials to use when calling the Looker data source.
      *
-     * Currently supports both oauth token and api keys based credentials, as
+     * Currently supports both OAuth token and API key-based credentials, as
      * described in
-     * https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk
+     * [Authentication with an
+     * SDK](https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk).
      * </pre>
      *
      * <code>
@@ -1062,11 +1069,12 @@ public final class DataAgentContext extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The credentials to use when calling the looker datasource
+     * Optional. The credentials to use when calling the Looker data source.
      *
-     * Currently supports both oauth token and api keys based credentials, as
+     * Currently supports both OAuth token and API key-based credentials, as
      * described in
-     * https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk
+     * [Authentication with an
+     * SDK](https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk).
      * </pre>
      *
      * <code>
@@ -1097,11 +1105,12 @@ public final class DataAgentContext extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The credentials to use when calling the looker datasource
+     * Optional. The credentials to use when calling the Looker data source.
      *
-     * Currently supports both oauth token and api keys based credentials, as
+     * Currently supports both OAuth token and API key-based credentials, as
      * described in
-     * https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk
+     * [Authentication with an
+     * SDK](https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk).
      * </pre>
      *
      * <code>
@@ -1123,11 +1132,12 @@ public final class DataAgentContext extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The credentials to use when calling the looker datasource
+     * Optional. The credentials to use when calling the Looker data source.
      *
-     * Currently supports both oauth token and api keys based credentials, as
+     * Currently supports both OAuth token and API key-based credentials, as
      * described in
-     * https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk
+     * [Authentication with an
+     * SDK](https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk).
      * </pre>
      *
      * <code>
@@ -1144,11 +1154,12 @@ public final class DataAgentContext extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The credentials to use when calling the looker datasource
+     * Optional. The credentials to use when calling the Looker data source.
      *
-     * Currently supports both oauth token and api keys based credentials, as
+     * Currently supports both OAuth token and API key-based credentials, as
      * described in
-     * https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk
+     * [Authentication with an
+     * SDK](https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk).
      * </pre>
      *
      * <code>
@@ -1170,11 +1181,12 @@ public final class DataAgentContext extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Optional. The credentials to use when calling the looker datasource
+     * Optional. The credentials to use when calling the Looker data source.
      *
-     * Currently supports both oauth token and api keys based credentials, as
+     * Currently supports both OAuth token and API key-based credentials, as
      * described in
-     * https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk
+     * [Authentication with an
+     * SDK](https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk).
      * </pre>
      *
      * <code>

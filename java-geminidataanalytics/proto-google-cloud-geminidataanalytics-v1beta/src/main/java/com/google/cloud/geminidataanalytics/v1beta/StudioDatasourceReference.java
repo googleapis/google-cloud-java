@@ -23,7 +23,7 @@ package com.google.cloud.geminidataanalytics.v1beta;
  *
  *
  * <pre>
- * Message representing a reference to a single LookerStudio datasource.
+ * Message representing a reference to a single Looker Studio datasource.
  * </pre>
  *
  * Protobuf type {@code google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference}
@@ -283,7 +283,7 @@ public final class StudioDatasourceReference extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Message representing a reference to a single LookerStudio datasource.
+   * Message representing a reference to a single Looker Studio datasource.
    * </pre>
    *
    * Protobuf type {@code google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference}

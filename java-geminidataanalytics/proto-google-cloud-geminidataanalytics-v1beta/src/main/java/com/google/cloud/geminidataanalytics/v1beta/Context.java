@@ -41,6 +41,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
 
   private Context() {
     systemInstruction_ = "";
+    exampleQueries_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -135,7 +136,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Datasources available for answering the question.
+   * Required. Data sources that are available for answering the question.
    * </pre>
    *
    * <code>
@@ -153,7 +154,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Datasources available for answering the question.
+   * Required. Data sources that are available for answering the question.
    * </pre>
    *
    * <code>
@@ -174,7 +175,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Datasources available for answering the question.
+   * Required. Data sources that are available for answering the question.
    * </pre>
    *
    * <code>
@@ -249,6 +250,104 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
         : options_;
   }
 
+  public static final int EXAMPLE_QUERIES_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.geminidataanalytics.v1beta.ExampleQuery> exampleQueries_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of example queries, providing examples of relevant and
+   * commonly used SQL queries and their corresponding natural language queries
+   * optionally present.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.ExampleQuery example_queries = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.geminidataanalytics.v1beta.ExampleQuery>
+      getExampleQueriesList() {
+    return exampleQueries_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of example queries, providing examples of relevant and
+   * commonly used SQL queries and their corresponding natural language queries
+   * optionally present.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.ExampleQuery example_queries = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.geminidataanalytics.v1beta.ExampleQueryOrBuilder>
+      getExampleQueriesOrBuilderList() {
+    return exampleQueries_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of example queries, providing examples of relevant and
+   * commonly used SQL queries and their corresponding natural language queries
+   * optionally present.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.ExampleQuery example_queries = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getExampleQueriesCount() {
+    return exampleQueries_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of example queries, providing examples of relevant and
+   * commonly used SQL queries and their corresponding natural language queries
+   * optionally present.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.ExampleQuery example_queries = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.ExampleQuery getExampleQueries(int index) {
+    return exampleQueries_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of example queries, providing examples of relevant and
+   * commonly used SQL queries and their corresponding natural language queries
+   * optionally present.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.ExampleQuery example_queries = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.ExampleQueryOrBuilder
+      getExampleQueriesOrBuilder(int index) {
+    return exampleQueries_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -269,6 +368,9 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(3, getOptions());
     }
+    for (int i = 0; i < exampleQueries_.size(); i++) {
+      output.writeMessage(5, exampleQueries_.get(i));
+    }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(7, getDatasourceReferences());
     }
@@ -286,6 +388,9 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getOptions());
+    }
+    for (int i = 0; i < exampleQueries_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, exampleQueries_.get(i));
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size +=
@@ -316,6 +421,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
     if (hasOptions()) {
       if (!getOptions().equals(other.getOptions())) return false;
     }
+    if (!getExampleQueriesList().equals(other.getExampleQueriesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -336,6 +442,10 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
     if (hasOptions()) {
       hash = (37 * hash) + OPTIONS_FIELD_NUMBER;
       hash = (53 * hash) + getOptions().hashCode();
+    }
+    if (getExampleQueriesCount() > 0) {
+      hash = (37 * hash) + EXAMPLE_QUERIES_FIELD_NUMBER;
+      hash = (53 * hash) + getExampleQueriesList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -480,6 +590,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getDatasourceReferencesFieldBuilder();
         getOptionsFieldBuilder();
+        getExampleQueriesFieldBuilder();
       }
     }
 
@@ -498,6 +609,13 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
         optionsBuilder_.dispose();
         optionsBuilder_ = null;
       }
+      if (exampleQueriesBuilder_ == null) {
+        exampleQueries_ = java.util.Collections.emptyList();
+      } else {
+        exampleQueries_ = null;
+        exampleQueriesBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -525,11 +643,25 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.geminidataanalytics.v1beta.Context buildPartial() {
       com.google.cloud.geminidataanalytics.v1beta.Context result =
           new com.google.cloud.geminidataanalytics.v1beta.Context(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.geminidataanalytics.v1beta.Context result) {
+      if (exampleQueriesBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)) {
+          exampleQueries_ = java.util.Collections.unmodifiableList(exampleQueries_);
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.exampleQueries_ = exampleQueries_;
+      } else {
+        result.exampleQueries_ = exampleQueriesBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.geminidataanalytics.v1beta.Context result) {
@@ -609,6 +741,33 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
       if (other.hasOptions()) {
         mergeOptions(other.getOptions());
       }
+      if (exampleQueriesBuilder_ == null) {
+        if (!other.exampleQueries_.isEmpty()) {
+          if (exampleQueries_.isEmpty()) {
+            exampleQueries_ = other.exampleQueries_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureExampleQueriesIsMutable();
+            exampleQueries_.addAll(other.exampleQueries_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.exampleQueries_.isEmpty()) {
+          if (exampleQueriesBuilder_.isEmpty()) {
+            exampleQueriesBuilder_.dispose();
+            exampleQueriesBuilder_ = null;
+            exampleQueries_ = other.exampleQueries_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+            exampleQueriesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getExampleQueriesFieldBuilder()
+                    : null;
+          } else {
+            exampleQueriesBuilder_.addAllMessages(other.exampleQueries_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -647,6 +806,20 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 42:
+              {
+                com.google.cloud.geminidataanalytics.v1beta.ExampleQuery m =
+                    input.readMessage(
+                        com.google.cloud.geminidataanalytics.v1beta.ExampleQuery.parser(),
+                        extensionRegistry);
+                if (exampleQueriesBuilder_ == null) {
+                  ensureExampleQueriesIsMutable();
+                  exampleQueries_.add(m);
+                } else {
+                  exampleQueriesBuilder_.addMessage(m);
+                }
+                break;
+              } // case 42
             case 58:
               {
                 input.readMessage(
@@ -820,7 +993,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Datasources available for answering the question.
+     * Required. Data sources that are available for answering the question.
      * </pre>
      *
      * <code>
@@ -837,7 +1010,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Datasources available for answering the question.
+     * Required. Data sources that are available for answering the question.
      * </pre>
      *
      * <code>
@@ -861,7 +1034,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Datasources available for answering the question.
+     * Required. Data sources that are available for answering the question.
      * </pre>
      *
      * <code>
@@ -887,7 +1060,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Datasources available for answering the question.
+     * Required. Data sources that are available for answering the question.
      * </pre>
      *
      * <code>
@@ -910,7 +1083,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Datasources available for answering the question.
+     * Required. Data sources that are available for answering the question.
      * </pre>
      *
      * <code>
@@ -943,7 +1116,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Datasources available for answering the question.
+     * Required. Data sources that are available for answering the question.
      * </pre>
      *
      * <code>
@@ -965,7 +1138,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Datasources available for answering the question.
+     * Required. Data sources that are available for answering the question.
      * </pre>
      *
      * <code>
@@ -983,7 +1156,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Datasources available for answering the question.
+     * Required. Data sources that are available for answering the question.
      * </pre>
      *
      * <code>
@@ -1005,7 +1178,7 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Datasources available for answering the question.
+     * Required. Data sources that are available for answering the question.
      * </pre>
      *
      * <code>
@@ -1246,6 +1419,464 @@ public final class Context extends com.google.protobuf.GeneratedMessageV3
         options_ = null;
       }
       return optionsBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.geminidataanalytics.v1beta.ExampleQuery>
+        exampleQueries_ = java.util.Collections.emptyList();
+
+    private void ensureExampleQueriesIsMutable() {
+      if (!((bitField0_ & 0x00000008) != 0)) {
+        exampleQueries_ =
+            new java.util.ArrayList<com.google.cloud.geminidataanalytics.v1beta.ExampleQuery>(
+                exampleQueries_);
+        bitField0_ |= 0x00000008;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.geminidataanalytics.v1beta.ExampleQuery,
+            com.google.cloud.geminidataanalytics.v1beta.ExampleQuery.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.ExampleQueryOrBuilder>
+        exampleQueriesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of example queries, providing examples of relevant and
+     * commonly used SQL queries and their corresponding natural language queries
+     * optionally present.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.ExampleQuery example_queries = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.geminidataanalytics.v1beta.ExampleQuery>
+        getExampleQueriesList() {
+      if (exampleQueriesBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(exampleQueries_);
+      } else {
+        return exampleQueriesBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of example queries, providing examples of relevant and
+     * commonly used SQL queries and their corresponding natural language queries
+     * optionally present.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.ExampleQuery example_queries = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getExampleQueriesCount() {
+      if (exampleQueriesBuilder_ == null) {
+        return exampleQueries_.size();
+      } else {
+        return exampleQueriesBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of example queries, providing examples of relevant and
+     * commonly used SQL queries and their corresponding natural language queries
+     * optionally present.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.ExampleQuery example_queries = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.ExampleQuery getExampleQueries(int index) {
+      if (exampleQueriesBuilder_ == null) {
+        return exampleQueries_.get(index);
+      } else {
+        return exampleQueriesBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of example queries, providing examples of relevant and
+     * commonly used SQL queries and their corresponding natural language queries
+     * optionally present.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.ExampleQuery example_queries = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setExampleQueries(
+        int index, com.google.cloud.geminidataanalytics.v1beta.ExampleQuery value) {
+      if (exampleQueriesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExampleQueriesIsMutable();
+        exampleQueries_.set(index, value);
+        onChanged();
+      } else {
+        exampleQueriesBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of example queries, providing examples of relevant and
+     * commonly used SQL queries and their corresponding natural language queries
+     * optionally present.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.ExampleQuery example_queries = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setExampleQueries(
+        int index,
+        com.google.cloud.geminidataanalytics.v1beta.ExampleQuery.Builder builderForValue) {
+      if (exampleQueriesBuilder_ == null) {
+        ensureExampleQueriesIsMutable();
+        exampleQueries_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        exampleQueriesBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of example queries, providing examples of relevant and
+     * commonly used SQL queries and their corresponding natural language queries
+     * optionally present.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.ExampleQuery example_queries = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addExampleQueries(
+        com.google.cloud.geminidataanalytics.v1beta.ExampleQuery value) {
+      if (exampleQueriesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExampleQueriesIsMutable();
+        exampleQueries_.add(value);
+        onChanged();
+      } else {
+        exampleQueriesBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of example queries, providing examples of relevant and
+     * commonly used SQL queries and their corresponding natural language queries
+     * optionally present.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.ExampleQuery example_queries = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addExampleQueries(
+        int index, com.google.cloud.geminidataanalytics.v1beta.ExampleQuery value) {
+      if (exampleQueriesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExampleQueriesIsMutable();
+        exampleQueries_.add(index, value);
+        onChanged();
+      } else {
+        exampleQueriesBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of example queries, providing examples of relevant and
+     * commonly used SQL queries and their corresponding natural language queries
+     * optionally present.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.ExampleQuery example_queries = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addExampleQueries(
+        com.google.cloud.geminidataanalytics.v1beta.ExampleQuery.Builder builderForValue) {
+      if (exampleQueriesBuilder_ == null) {
+        ensureExampleQueriesIsMutable();
+        exampleQueries_.add(builderForValue.build());
+        onChanged();
+      } else {
+        exampleQueriesBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of example queries, providing examples of relevant and
+     * commonly used SQL queries and their corresponding natural language queries
+     * optionally present.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.ExampleQuery example_queries = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addExampleQueries(
+        int index,
+        com.google.cloud.geminidataanalytics.v1beta.ExampleQuery.Builder builderForValue) {
+      if (exampleQueriesBuilder_ == null) {
+        ensureExampleQueriesIsMutable();
+        exampleQueries_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        exampleQueriesBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of example queries, providing examples of relevant and
+     * commonly used SQL queries and their corresponding natural language queries
+     * optionally present.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.ExampleQuery example_queries = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllExampleQueries(
+        java.lang.Iterable<? extends com.google.cloud.geminidataanalytics.v1beta.ExampleQuery>
+            values) {
+      if (exampleQueriesBuilder_ == null) {
+        ensureExampleQueriesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, exampleQueries_);
+        onChanged();
+      } else {
+        exampleQueriesBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of example queries, providing examples of relevant and
+     * commonly used SQL queries and their corresponding natural language queries
+     * optionally present.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.ExampleQuery example_queries = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearExampleQueries() {
+      if (exampleQueriesBuilder_ == null) {
+        exampleQueries_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+      } else {
+        exampleQueriesBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of example queries, providing examples of relevant and
+     * commonly used SQL queries and their corresponding natural language queries
+     * optionally present.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.ExampleQuery example_queries = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeExampleQueries(int index) {
+      if (exampleQueriesBuilder_ == null) {
+        ensureExampleQueriesIsMutable();
+        exampleQueries_.remove(index);
+        onChanged();
+      } else {
+        exampleQueriesBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of example queries, providing examples of relevant and
+     * commonly used SQL queries and their corresponding natural language queries
+     * optionally present.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.ExampleQuery example_queries = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.ExampleQuery.Builder
+        getExampleQueriesBuilder(int index) {
+      return getExampleQueriesFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of example queries, providing examples of relevant and
+     * commonly used SQL queries and their corresponding natural language queries
+     * optionally present.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.ExampleQuery example_queries = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.ExampleQueryOrBuilder
+        getExampleQueriesOrBuilder(int index) {
+      if (exampleQueriesBuilder_ == null) {
+        return exampleQueries_.get(index);
+      } else {
+        return exampleQueriesBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of example queries, providing examples of relevant and
+     * commonly used SQL queries and their corresponding natural language queries
+     * optionally present.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.ExampleQuery example_queries = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.geminidataanalytics.v1beta.ExampleQueryOrBuilder>
+        getExampleQueriesOrBuilderList() {
+      if (exampleQueriesBuilder_ != null) {
+        return exampleQueriesBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(exampleQueries_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of example queries, providing examples of relevant and
+     * commonly used SQL queries and their corresponding natural language queries
+     * optionally present.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.ExampleQuery example_queries = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.ExampleQuery.Builder
+        addExampleQueriesBuilder() {
+      return getExampleQueriesFieldBuilder()
+          .addBuilder(
+              com.google.cloud.geminidataanalytics.v1beta.ExampleQuery.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of example queries, providing examples of relevant and
+     * commonly used SQL queries and their corresponding natural language queries
+     * optionally present.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.ExampleQuery example_queries = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.ExampleQuery.Builder
+        addExampleQueriesBuilder(int index) {
+      return getExampleQueriesFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.geminidataanalytics.v1beta.ExampleQuery.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of example queries, providing examples of relevant and
+     * commonly used SQL queries and their corresponding natural language queries
+     * optionally present.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.ExampleQuery example_queries = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.geminidataanalytics.v1beta.ExampleQuery.Builder>
+        getExampleQueriesBuilderList() {
+      return getExampleQueriesFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.geminidataanalytics.v1beta.ExampleQuery,
+            com.google.cloud.geminidataanalytics.v1beta.ExampleQuery.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.ExampleQueryOrBuilder>
+        getExampleQueriesFieldBuilder() {
+      if (exampleQueriesBuilder_ == null) {
+        exampleQueriesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.geminidataanalytics.v1beta.ExampleQuery,
+                com.google.cloud.geminidataanalytics.v1beta.ExampleQuery.Builder,
+                com.google.cloud.geminidataanalytics.v1beta.ExampleQueryOrBuilder>(
+                exampleQueries_,
+                ((bitField0_ & 0x00000008) != 0),
+                getParentForChildren(),
+                isClean());
+        exampleQueries_ = null;
+      }
+      return exampleQueriesBuilder_;
     }
 
     @java.lang.Override

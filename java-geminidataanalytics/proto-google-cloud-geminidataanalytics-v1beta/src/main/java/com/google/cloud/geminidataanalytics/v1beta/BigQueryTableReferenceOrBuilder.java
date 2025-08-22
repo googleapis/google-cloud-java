@@ -28,7 +28,7 @@ public interface BigQueryTableReferenceOrBuilder
    *
    *
    * <pre>
-   * Required. The project the table belongs to.
+   * Required. The project that the table belongs to.
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -41,7 +41,7 @@ public interface BigQueryTableReferenceOrBuilder
    *
    *
    * <pre>
-   * Required. The project the table belongs to.
+   * Required. The project that the table belongs to.
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -54,7 +54,7 @@ public interface BigQueryTableReferenceOrBuilder
    *
    *
    * <pre>
-   * Required. The dataset the table belongs to.
+   * Required. The dataset that the table belongs to.
    * </pre>
    *
    * <code>string dataset_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -67,7 +67,7 @@ public interface BigQueryTableReferenceOrBuilder
    *
    *
    * <pre>
-   * Required. The dataset the table belongs to.
+   * Required. The dataset that the table belongs to.
    * </pre>
    *
    * <code>string dataset_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -101,4 +101,47 @@ public interface BigQueryTableReferenceOrBuilder
    * @return The bytes for tableId.
    */
   com.google.protobuf.ByteString getTableIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The schema of the datasource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.Schema schema = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the schema field is set.
+   */
+  boolean hasSchema();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The schema of the datasource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.Schema schema = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The schema.
+   */
+  com.google.cloud.geminidataanalytics.v1beta.Schema getSchema();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The schema of the datasource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.Schema schema = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.geminidataanalytics.v1beta.SchemaOrBuilder getSchemaOrBuilder();
 }
