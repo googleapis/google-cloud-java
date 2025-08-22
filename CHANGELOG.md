@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.31.4](https://github.com/googleapis/java-datastore/compare/v2.31.3...v2.31.4) (2025-08-22)
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.62.0 ([90f5526](https://github.com/googleapis/java-datastore/commit/90f552624627b3ca6fde4b4241b66893019174dd))
+
 ## [2.31.3](https://github.com/googleapis/java-datastore/compare/v2.31.2...v2.31.3) (2025-08-20)
 
 
