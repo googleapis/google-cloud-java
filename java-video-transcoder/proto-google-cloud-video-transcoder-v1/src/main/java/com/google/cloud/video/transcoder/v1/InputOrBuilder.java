@@ -125,4 +125,47 @@ public interface InputOrBuilder
    */
   com.google.cloud.video.transcoder.v1.PreprocessingConfigOrBuilder
       getPreprocessingConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input Attributes.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.transcoder.v1.InputAttributes attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the attributes field is set.
+   */
+  boolean hasAttributes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input Attributes.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.transcoder.v1.InputAttributes attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The attributes.
+   */
+  com.google.cloud.video.transcoder.v1.InputAttributes getAttributes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input Attributes.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.transcoder.v1.InputAttributes attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.video.transcoder.v1.InputAttributesOrBuilder getAttributesOrBuilder();
 }
