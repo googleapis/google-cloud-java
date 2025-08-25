@@ -1,5 +1,16 @@
 # Changelog
 
+## 2.74.0 (2025-08-25)
+
+### Features
+
+* Add Reservation.max_slots field to Reservation proto, indicating the total max number of slots this reservation can use up to ([0193b28](https://github.com/googleapis/google-cloud-java/commit/0193b28c0639ee80ddb0bcf51f6b1c18d67b7494))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.52.0 ([#11727](https://github.com/googleapis/google-cloud-java/issues/11727)) ([31d8698](https://github.com/googleapis/google-cloud-java/commit/31d86980d0e27e0a948727d778cf46fbcf227239))
+
+
 ## 2.73.0 (2025-08-13)
 
 * No change
