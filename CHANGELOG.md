@@ -1,5 +1,51 @@
 # Changelog
 
+## [1.67.0](https://github.com/googleapis/google-cloud-java/compare/v1.66.0...v1.67.0) (2025-08-25)
+
+
+### ⚠ BREAKING CHANGES
+
+* [geminidataanalytics] An existing service `ContextRetrievalService` is removed
+* [analytics-admin] remove the `SetAutomatedGa4ConfigurationOptOut` method
+* [aiplatform] fields are not part of `oneof`
+
+### Features
+
+* [aiplatform] add `disable_container_logging` in v1beta1 api ([b53e708](https://github.com/googleapis/google-cloud-java/commit/b53e70867b39fc16a3e381950c23ef39ec66be0c))
+* [aiplatform] add `gpu_partition_size` to `MachineSpec` ([0193b28](https://github.com/googleapis/google-cloud-java/commit/0193b28c0639ee80ddb0bcf51f6b1c18d67b7494))
+* [aiplatform] Add API for Gen AI Evaluation in Tuning ([0193b28](https://github.com/googleapis/google-cloud-java/commit/0193b28c0639ee80ddb0bcf51f6b1c18d67b7494))
+* [aiplatform] add data foundry service synthetic data generation API for v1 ([3e90a3e](https://github.com/googleapis/google-cloud-java/commit/3e90a3e5c16da80c46e3b2b397d0b30376d1c89c))
+* [aiplatform] add option EndpointUserId and ModelUserId fields ([0193b28](https://github.com/googleapis/google-cloud-java/commit/0193b28c0639ee80ddb0bcf51f6b1c18d67b7494))
+* [aiplatform] add option EndpointUserId and ModelUserId fields ([0193b28](https://github.com/googleapis/google-cloud-java/commit/0193b28c0639ee80ddb0bcf51f6b1c18d67b7494))
+* [aiplatform] Add support for CMEK, runtime controls, and PSC-I to Reasoning Engine protos ([0193b28](https://github.com/googleapis/google-cloud-java/commit/0193b28c0639ee80ddb0bcf51f6b1c18d67b7494))
+* [aiplatform] Added document_name for vertex ai search as part of retrieved context from grounding chunk ([0193b28](https://github.com/googleapis/google-cloud-java/commit/0193b28c0639ee80ddb0bcf51f6b1c18d67b7494))
+* [aiplatform] expose RecommendSpecs api to vertex python SDK for Custom Weights Model deployment ([0193b28](https://github.com/googleapis/google-cloud-java/commit/0193b28c0639ee80ddb0bcf51f6b1c18d67b7494))
+* [bigqueryreservation] Add Reservation.max_slots field to Reservation proto, indicating the total max number of slots this reservation can use up to ([0193b28](https://github.com/googleapis/google-cloud-java/commit/0193b28c0639ee80ddb0bcf51f6b1c18d67b7494))
+* [cloudbuild] Add option to enable nested virtualization if available ([0193b28](https://github.com/googleapis/google-cloud-java/commit/0193b28c0639ee80ddb0bcf51f6b1c18d67b7494))
+* [cloudsupport] A new message `GetAttachmentRequest` and `GetComment` is added ([0193b28](https://github.com/googleapis/google-cloud-java/commit/0193b28c0639ee80ddb0bcf51f6b1c18d67b7494))
+* [compute] Update Compute Engine v1 API to revision 20250807 ([b53e708](https://github.com/googleapis/google-cloud-java/commit/b53e70867b39fc16a3e381950c23ef39ec66be0c))
+* [document-ai] Added config options for derived fields and signature detection. Some annotation changes changes to mark fields explicitly output only (no changes in semantics just readability) ([0193b28](https://github.com/googleapis/google-cloud-java/commit/0193b28c0639ee80ddb0bcf51f6b1c18d67b7494))
+* [geminidataanalytics] new module for geminidataanalytics ([#11731](https://github.com/googleapis/google-cloud-java/issues/11731)) ([9396cfb](https://github.com/googleapis/google-cloud-java/commit/9396cfb50fdd22e7f19901773c8af206306cbfb3))
+* [maps-solar] Add `experiments` param to endpoints for access to pre-GA features ([0193b28](https://github.com/googleapis/google-cloud-java/commit/0193b28c0639ee80ddb0bcf51f6b1c18d67b7494))
+* [network-management] add `service_uri` field to CloudRunRevisionEndpoint ([0193b28](https://github.com/googleapis/google-cloud-java/commit/0193b28c0639ee80ddb0bcf51f6b1c18d67b7494))
+* [os-config] Add highest_upgradable_cve_severity field to Vulnerability report ([0193b28](https://github.com/googleapis/google-cloud-java/commit/0193b28c0639ee80ddb0bcf51f6b1c18d67b7494))
+* [video-transcoder] add support for automatically generating subtitle for input videos ([b53e708](https://github.com/googleapis/google-cloud-java/commit/b53e70867b39fc16a3e381950c23ef39ec66be0c))
+
+
+### Bug Fixes
+
+* [aiplatform] fields are not part of `oneof` ([0193b28](https://github.com/googleapis/google-cloud-java/commit/0193b28c0639ee80ddb0bcf51f6b1c18d67b7494))
+* [analytics-admin] remove the `SetAutomatedGa4ConfigurationOptOut` method ([3e90a3e](https://github.com/googleapis/google-cloud-java/commit/3e90a3e5c16da80c46e3b2b397d0b30376d1c89c))
+* [geminidataanalytics] An existing service `ContextRetrievalService` is removed ([b53e708](https://github.com/googleapis/google-cloud-java/commit/b53e70867b39fc16a3e381950c23ef39ec66be0c))
+* **deps:** update the Java code generator (gapic-generator-java) to 2.62.0 ([3e90a3e](https://github.com/googleapis/google-cloud-java/commit/3e90a3e5c16da80c46e3b2b397d0b30376d1c89c))
+* update dependency com.google.cloud:sdk-platform-java-config to v3.52.0 ([#11727](https://github.com/googleapis/google-cloud-java/issues/11727)) ([31d8698](https://github.com/googleapis/google-cloud-java/commit/31d86980d0e27e0a948727d778cf46fbcf227239))
+
+
+### Documentation
+
+* [java-shopping-merchant-issue-resolution] update docs for issue resolution ([0193b28](https://github.com/googleapis/google-cloud-java/commit/0193b28c0639ee80ddb0bcf51f6b1c18d67b7494))
+* [shopping-merchant-accounts] fix comment for online return policy ([0193b28](https://github.com/googleapis/google-cloud-java/commit/0193b28c0639ee80ddb0bcf51f6b1c18d67b7494))
+
 ## [1.66.0](https://github.com/googleapis/google-cloud-java/compare/v1.65.0...v1.66.0) (2025-08-13)
 
 
