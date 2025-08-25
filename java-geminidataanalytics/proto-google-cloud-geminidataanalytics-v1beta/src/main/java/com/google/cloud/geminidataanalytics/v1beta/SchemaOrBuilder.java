@@ -94,6 +94,152 @@ public interface SchemaOrBuilder
    *
    *
    * <pre>
+   * Optional. A textual description of the table's content and purpose.
+   * For example: "Contains information about customer orders in our e-commerce
+   * store."
+   * </pre>
+   *
+   * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The description.
+   */
+  java.lang.String getDescription();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A textual description of the table's content and purpose.
+   * For example: "Contains information about customer orders in our e-commerce
+   * store."
+   * </pre>
+   *
+   * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for description.
+   */
+  com.google.protobuf.ByteString getDescriptionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of alternative names or synonyms that can be used to refer
+   * to the table. For example: ["sales", "orders", "purchases"]
+   * </pre>
+   *
+   * <code>repeated string synonyms = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the synonyms.
+   */
+  java.util.List<java.lang.String> getSynonymsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of alternative names or synonyms that can be used to refer
+   * to the table. For example: ["sales", "orders", "purchases"]
+   * </pre>
+   *
+   * <code>repeated string synonyms = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of synonyms.
+   */
+  int getSynonymsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of alternative names or synonyms that can be used to refer
+   * to the table. For example: ["sales", "orders", "purchases"]
+   * </pre>
+   *
+   * <code>repeated string synonyms = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The synonyms at the given index.
+   */
+  java.lang.String getSynonyms(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of alternative names or synonyms that can be used to refer
+   * to the table. For example: ["sales", "orders", "purchases"]
+   * </pre>
+   *
+   * <code>repeated string synonyms = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the synonyms at the given index.
+   */
+  com.google.protobuf.ByteString getSynonymsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of tags or keywords associated with the table, used for
+   * categorization. For example: ["transaction", "revenue", "customer_data"]
+   * </pre>
+   *
+   * <code>repeated string tags = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the tags.
+   */
+  java.util.List<java.lang.String> getTagsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of tags or keywords associated with the table, used for
+   * categorization. For example: ["transaction", "revenue", "customer_data"]
+   * </pre>
+   *
+   * <code>repeated string tags = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of tags.
+   */
+  int getTagsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of tags or keywords associated with the table, used for
+   * categorization. For example: ["transaction", "revenue", "customer_data"]
+   * </pre>
+   *
+   * <code>repeated string tags = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The tags at the given index.
+   */
+  java.lang.String getTags(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of tags or keywords associated with the table, used for
+   * categorization. For example: ["transaction", "revenue", "customer_data"]
+   * </pre>
+   *
+   * <code>repeated string tags = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the tags at the given index.
+   */
+  com.google.protobuf.ByteString getTagsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. Table display_name (same as label in
    * cloud/data_analytics/anarres/data/looker/proto/model_explore.proto), not
    * required, currently only Looker has this field.
@@ -119,4 +265,75 @@ public interface SchemaOrBuilder
    * @return The bytes for displayName.
    */
   com.google.protobuf.ByteString getDisplayNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The filters on the datasource's underlying data. Currently only
+   * used for Looker data sources.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.DataFilter filters = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.geminidataanalytics.v1beta.DataFilter> getFiltersList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The filters on the datasource's underlying data. Currently only
+   * used for Looker data sources.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.DataFilter filters = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.geminidataanalytics.v1beta.DataFilter getFilters(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The filters on the datasource's underlying data. Currently only
+   * used for Looker data sources.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.DataFilter filters = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getFiltersCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The filters on the datasource's underlying data. Currently only
+   * used for Looker data sources.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.DataFilter filters = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.geminidataanalytics.v1beta.DataFilterOrBuilder>
+      getFiltersOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The filters on the datasource's underlying data. Currently only
+   * used for Looker data sources.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.DataFilter filters = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.geminidataanalytics.v1beta.DataFilterOrBuilder getFiltersOrBuilder(int index);
 }

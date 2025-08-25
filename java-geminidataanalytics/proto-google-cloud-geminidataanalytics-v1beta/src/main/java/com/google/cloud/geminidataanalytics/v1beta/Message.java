@@ -23,7 +23,7 @@ package com.google.cloud.geminidataanalytics.v1beta;
  *
  *
  * <pre>
- * A message from an internaction between the user and the system.
+ * A message from an interaction between the user and the system.
  * </pre>
  *
  * Protobuf type {@code google.cloud.geminidataanalytics.v1beta.Message}
@@ -553,7 +553,7 @@ public final class Message extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A message from an internaction between the user and the system.
+   * A message from an interaction between the user and the system.
    * </pre>
    *
    * Protobuf type {@code google.cloud.geminidataanalytics.v1beta.Message}

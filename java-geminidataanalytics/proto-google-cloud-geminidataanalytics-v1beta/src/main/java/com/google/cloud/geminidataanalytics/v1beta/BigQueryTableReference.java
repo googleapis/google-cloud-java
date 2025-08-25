@@ -66,6 +66,7 @@ public final class BigQueryTableReference extends com.google.protobuf.GeneratedM
             com.google.cloud.geminidataanalytics.v1beta.BigQueryTableReference.Builder.class);
   }
 
+  private int bitField0_;
   public static final int PROJECT_ID_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -75,7 +76,7 @@ public final class BigQueryTableReference extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The project the table belongs to.
+   * Required. The project that the table belongs to.
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -99,7 +100,7 @@ public final class BigQueryTableReference extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The project the table belongs to.
+   * Required. The project that the table belongs to.
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -128,7 +129,7 @@ public final class BigQueryTableReference extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The dataset the table belongs to.
+   * Required. The dataset that the table belongs to.
    * </pre>
    *
    * <code>string dataset_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -152,7 +153,7 @@ public final class BigQueryTableReference extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Required. The dataset the table belongs to.
+   * Required. The dataset that the table belongs to.
    * </pre>
    *
    * <code>string dataset_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -225,6 +226,65 @@ public final class BigQueryTableReference extends com.google.protobuf.GeneratedM
     }
   }
 
+  public static final int SCHEMA_FIELD_NUMBER = 6;
+  private com.google.cloud.geminidataanalytics.v1beta.Schema schema_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The schema of the datasource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.Schema schema = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the schema field is set.
+   */
+  @java.lang.Override
+  public boolean hasSchema() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The schema of the datasource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.Schema schema = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The schema.
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.Schema getSchema() {
+    return schema_ == null
+        ? com.google.cloud.geminidataanalytics.v1beta.Schema.getDefaultInstance()
+        : schema_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The schema of the datasource.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.geminidataanalytics.v1beta.Schema schema = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.SchemaOrBuilder getSchemaOrBuilder() {
+    return schema_ == null
+        ? com.google.cloud.geminidataanalytics.v1beta.Schema.getDefaultInstance()
+        : schema_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -248,6 +308,9 @@ public final class BigQueryTableReference extends com.google.protobuf.GeneratedM
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableId_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, tableId_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(6, getSchema());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -265,6 +328,9 @@ public final class BigQueryTableReference extends com.google.protobuf.GeneratedM
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(tableId_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, tableId_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getSchema());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -285,6 +351,10 @@ public final class BigQueryTableReference extends com.google.protobuf.GeneratedM
     if (!getProjectId().equals(other.getProjectId())) return false;
     if (!getDatasetId().equals(other.getDatasetId())) return false;
     if (!getTableId().equals(other.getTableId())) return false;
+    if (hasSchema() != other.hasSchema()) return false;
+    if (hasSchema()) {
+      if (!getSchema().equals(other.getSchema())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -302,6 +372,10 @@ public final class BigQueryTableReference extends com.google.protobuf.GeneratedM
     hash = (53 * hash) + getDatasetId().hashCode();
     hash = (37 * hash) + TABLE_ID_FIELD_NUMBER;
     hash = (53 * hash) + getTableId().hashCode();
+    if (hasSchema()) {
+      hash = (37 * hash) + SCHEMA_FIELD_NUMBER;
+      hash = (53 * hash) + getSchema().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -435,10 +509,19 @@ public final class BigQueryTableReference extends com.google.protobuf.GeneratedM
 
     // Construct using
     // com.google.cloud.geminidataanalytics.v1beta.BigQueryTableReference.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getSchemaFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -448,6 +531,11 @@ public final class BigQueryTableReference extends com.google.protobuf.GeneratedM
       projectId_ = "";
       datasetId_ = "";
       tableId_ = "";
+      schema_ = null;
+      if (schemaBuilder_ != null) {
+        schemaBuilder_.dispose();
+        schemaBuilder_ = null;
+      }
       return this;
     }
 
@@ -496,6 +584,12 @@ public final class BigQueryTableReference extends com.google.protobuf.GeneratedM
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.tableId_ = tableId_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.schema_ = schemaBuilder_ == null ? schema_ : schemaBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -562,6 +656,9 @@ public final class BigQueryTableReference extends com.google.protobuf.GeneratedM
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (other.hasSchema()) {
+        mergeSchema(other.getSchema());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -606,6 +703,12 @@ public final class BigQueryTableReference extends com.google.protobuf.GeneratedM
                 bitField0_ |= 0x00000004;
                 break;
               } // case 34
+            case 50:
+              {
+                input.readMessage(getSchemaFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -631,7 +734,7 @@ public final class BigQueryTableReference extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The project the table belongs to.
+     * Required. The project that the table belongs to.
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -654,7 +757,7 @@ public final class BigQueryTableReference extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The project the table belongs to.
+     * Required. The project that the table belongs to.
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -677,7 +780,7 @@ public final class BigQueryTableReference extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The project the table belongs to.
+     * Required. The project that the table belongs to.
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -699,7 +802,7 @@ public final class BigQueryTableReference extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The project the table belongs to.
+     * Required. The project that the table belongs to.
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -717,7 +820,7 @@ public final class BigQueryTableReference extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The project the table belongs to.
+     * Required. The project that the table belongs to.
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -742,7 +845,7 @@ public final class BigQueryTableReference extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The dataset the table belongs to.
+     * Required. The dataset that the table belongs to.
      * </pre>
      *
      * <code>string dataset_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -765,7 +868,7 @@ public final class BigQueryTableReference extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The dataset the table belongs to.
+     * Required. The dataset that the table belongs to.
      * </pre>
      *
      * <code>string dataset_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -788,7 +891,7 @@ public final class BigQueryTableReference extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The dataset the table belongs to.
+     * Required. The dataset that the table belongs to.
      * </pre>
      *
      * <code>string dataset_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -810,7 +913,7 @@ public final class BigQueryTableReference extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The dataset the table belongs to.
+     * Required. The dataset that the table belongs to.
      * </pre>
      *
      * <code>string dataset_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -828,7 +931,7 @@ public final class BigQueryTableReference extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Required. The dataset the table belongs to.
+     * Required. The dataset that the table belongs to.
      * </pre>
      *
      * <code>string dataset_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -956,6 +1059,219 @@ public final class BigQueryTableReference extends com.google.protobuf.GeneratedM
       bitField0_ |= 0x00000004;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.geminidataanalytics.v1beta.Schema schema_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.geminidataanalytics.v1beta.Schema,
+            com.google.cloud.geminidataanalytics.v1beta.Schema.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.SchemaOrBuilder>
+        schemaBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The schema of the datasource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.Schema schema = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the schema field is set.
+     */
+    public boolean hasSchema() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The schema of the datasource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.Schema schema = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The schema.
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.Schema getSchema() {
+      if (schemaBuilder_ == null) {
+        return schema_ == null
+            ? com.google.cloud.geminidataanalytics.v1beta.Schema.getDefaultInstance()
+            : schema_;
+      } else {
+        return schemaBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The schema of the datasource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.Schema schema = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSchema(com.google.cloud.geminidataanalytics.v1beta.Schema value) {
+      if (schemaBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        schema_ = value;
+      } else {
+        schemaBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The schema of the datasource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.Schema schema = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSchema(
+        com.google.cloud.geminidataanalytics.v1beta.Schema.Builder builderForValue) {
+      if (schemaBuilder_ == null) {
+        schema_ = builderForValue.build();
+      } else {
+        schemaBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The schema of the datasource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.Schema schema = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSchema(com.google.cloud.geminidataanalytics.v1beta.Schema value) {
+      if (schemaBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && schema_ != null
+            && schema_ != com.google.cloud.geminidataanalytics.v1beta.Schema.getDefaultInstance()) {
+          getSchemaBuilder().mergeFrom(value);
+        } else {
+          schema_ = value;
+        }
+      } else {
+        schemaBuilder_.mergeFrom(value);
+      }
+      if (schema_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The schema of the datasource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.Schema schema = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSchema() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      schema_ = null;
+      if (schemaBuilder_ != null) {
+        schemaBuilder_.dispose();
+        schemaBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The schema of the datasource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.Schema schema = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.Schema.Builder getSchemaBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getSchemaFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The schema of the datasource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.Schema schema = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.SchemaOrBuilder getSchemaOrBuilder() {
+      if (schemaBuilder_ != null) {
+        return schemaBuilder_.getMessageOrBuilder();
+      } else {
+        return schema_ == null
+            ? com.google.cloud.geminidataanalytics.v1beta.Schema.getDefaultInstance()
+            : schema_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The schema of the datasource.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.geminidataanalytics.v1beta.Schema schema = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.geminidataanalytics.v1beta.Schema,
+            com.google.cloud.geminidataanalytics.v1beta.Schema.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.SchemaOrBuilder>
+        getSchemaFieldBuilder() {
+      if (schemaBuilder_ == null) {
+        schemaBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.geminidataanalytics.v1beta.Schema,
+                com.google.cloud.geminidataanalytics.v1beta.Schema.Builder,
+                com.google.cloud.geminidataanalytics.v1beta.SchemaOrBuilder>(
+                getSchema(), getParentForChildren(), isClean());
+        schema_ = null;
+      }
+      return schemaBuilder_;
     }
 
     @java.lang.Override

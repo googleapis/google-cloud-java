@@ -28,8 +28,18 @@ public interface ConversationOrBuilder
    *
    *
    * <pre>
-   * Optional. Identifier. The unique resource name of a conversation.
-   * It's not expected to be set when creating a conversation.
+   * Optional. Identifier. The unique resource name of a conversation. Format:
+   * `projects/{project}/locations/{location}/conversations/{conversation_id}`
+   * `{conversation_id}` is the resource id and should be 63 characters or less
+   * and must match the format described in
+   * https://google.aip.dev/122#resource-id-segments
+   *
+   * Example:
+   * `projects/1234567890/locations/us-central1/conversations/my-conversation`.
+   *
+   * It is recommended to skip setting this field during conversation creation
+   * as it will be inferred automatically and overwritten with the
+   * {parent}/conversations/{conversation_id}.
    * </pre>
    *
    * <code>
@@ -44,8 +54,18 @@ public interface ConversationOrBuilder
    *
    *
    * <pre>
-   * Optional. Identifier. The unique resource name of a conversation.
-   * It's not expected to be set when creating a conversation.
+   * Optional. Identifier. The unique resource name of a conversation. Format:
+   * `projects/{project}/locations/{location}/conversations/{conversation_id}`
+   * `{conversation_id}` is the resource id and should be 63 characters or less
+   * and must match the format described in
+   * https://google.aip.dev/122#resource-id-segments
+   *
+   * Example:
+   * `projects/1234567890/locations/us-central1/conversations/my-conversation`.
+   *
+   * It is recommended to skip setting this field during conversation creation
+   * as it will be inferred automatically and overwritten with the
+   * {parent}/conversations/{conversation_id}.
    * </pre>
    *
    * <code>

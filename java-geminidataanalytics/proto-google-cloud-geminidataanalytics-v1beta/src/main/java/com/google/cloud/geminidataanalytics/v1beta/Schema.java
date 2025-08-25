@@ -41,7 +41,11 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
 
   private Schema() {
     fields_ = java.util.Collections.emptyList();
+    description_ = "";
+    synonyms_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
     displayName_ = "";
+    filters_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -151,6 +155,207 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     return fields_.get(index);
   }
 
+  public static final int DESCRIPTION_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object description_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A textual description of the table's content and purpose.
+   * For example: "Contains information about customer orders in our e-commerce
+   * store."
+   * </pre>
+   *
+   * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The description.
+   */
+  @java.lang.Override
+  public java.lang.String getDescription() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      description_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A textual description of the table's content and purpose.
+   * For example: "Contains information about customer orders in our e-commerce
+   * store."
+   * </pre>
+   *
+   * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for description.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDescriptionBytes() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      description_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SYNONYMS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList synonyms_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of alternative names or synonyms that can be used to refer
+   * to the table. For example: ["sales", "orders", "purchases"]
+   * </pre>
+   *
+   * <code>repeated string synonyms = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the synonyms.
+   */
+  public com.google.protobuf.ProtocolStringList getSynonymsList() {
+    return synonyms_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of alternative names or synonyms that can be used to refer
+   * to the table. For example: ["sales", "orders", "purchases"]
+   * </pre>
+   *
+   * <code>repeated string synonyms = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of synonyms.
+   */
+  public int getSynonymsCount() {
+    return synonyms_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of alternative names or synonyms that can be used to refer
+   * to the table. For example: ["sales", "orders", "purchases"]
+   * </pre>
+   *
+   * <code>repeated string synonyms = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The synonyms at the given index.
+   */
+  public java.lang.String getSynonyms(int index) {
+    return synonyms_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of alternative names or synonyms that can be used to refer
+   * to the table. For example: ["sales", "orders", "purchases"]
+   * </pre>
+   *
+   * <code>repeated string synonyms = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the synonyms at the given index.
+   */
+  public com.google.protobuf.ByteString getSynonymsBytes(int index) {
+    return synonyms_.getByteString(index);
+  }
+
+  public static final int TAGS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList tags_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of tags or keywords associated with the table, used for
+   * categorization. For example: ["transaction", "revenue", "customer_data"]
+   * </pre>
+   *
+   * <code>repeated string tags = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the tags.
+   */
+  public com.google.protobuf.ProtocolStringList getTagsList() {
+    return tags_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of tags or keywords associated with the table, used for
+   * categorization. For example: ["transaction", "revenue", "customer_data"]
+   * </pre>
+   *
+   * <code>repeated string tags = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of tags.
+   */
+  public int getTagsCount() {
+    return tags_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of tags or keywords associated with the table, used for
+   * categorization. For example: ["transaction", "revenue", "customer_data"]
+   * </pre>
+   *
+   * <code>repeated string tags = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The tags at the given index.
+   */
+  public java.lang.String getTags(int index) {
+    return tags_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of tags or keywords associated with the table, used for
+   * categorization. For example: ["transaction", "revenue", "customer_data"]
+   * </pre>
+   *
+   * <code>repeated string tags = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the tags at the given index.
+   */
+  public com.google.protobuf.ByteString getTagsBytes(int index) {
+    return tags_.getByteString(index);
+  }
+
   public static final int DISPLAY_NAME_FIELD_NUMBER = 5;
 
   @SuppressWarnings("serial")
@@ -208,6 +413,98 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int FILTERS_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.geminidataanalytics.v1beta.DataFilter> filters_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The filters on the datasource's underlying data. Currently only
+   * used for Looker data sources.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.DataFilter filters = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.geminidataanalytics.v1beta.DataFilter> getFiltersList() {
+    return filters_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The filters on the datasource's underlying data. Currently only
+   * used for Looker data sources.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.DataFilter filters = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.geminidataanalytics.v1beta.DataFilterOrBuilder>
+      getFiltersOrBuilderList() {
+    return filters_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The filters on the datasource's underlying data. Currently only
+   * used for Looker data sources.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.DataFilter filters = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getFiltersCount() {
+    return filters_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The filters on the datasource's underlying data. Currently only
+   * used for Looker data sources.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.DataFilter filters = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.DataFilter getFilters(int index) {
+    return filters_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The filters on the datasource's underlying data. Currently only
+   * used for Looker data sources.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.DataFilter filters = 6 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.geminidataanalytics.v1beta.DataFilterOrBuilder getFiltersOrBuilder(
+      int index) {
+    return filters_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -225,8 +522,20 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < fields_.size(); i++) {
       output.writeMessage(1, fields_.get(i));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, description_);
+    }
+    for (int i = 0; i < synonyms_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3, synonyms_.getRaw(i));
+    }
+    for (int i = 0; i < tags_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, tags_.getRaw(i));
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, displayName_);
+    }
+    for (int i = 0; i < filters_.size(); i++) {
+      output.writeMessage(6, filters_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -240,8 +549,30 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < fields_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, fields_.get(i));
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, description_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < synonyms_.size(); i++) {
+        dataSize += computeStringSizeNoTag(synonyms_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getSynonymsList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < tags_.size(); i++) {
+        dataSize += computeStringSizeNoTag(tags_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getTagsList().size();
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, displayName_);
+    }
+    for (int i = 0; i < filters_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, filters_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -260,7 +591,11 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         (com.google.cloud.geminidataanalytics.v1beta.Schema) obj;
 
     if (!getFieldsList().equals(other.getFieldsList())) return false;
+    if (!getDescription().equals(other.getDescription())) return false;
+    if (!getSynonymsList().equals(other.getSynonymsList())) return false;
+    if (!getTagsList().equals(other.getTagsList())) return false;
     if (!getDisplayName().equals(other.getDisplayName())) return false;
+    if (!getFiltersList().equals(other.getFiltersList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -276,8 +611,22 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + FIELDS_FIELD_NUMBER;
       hash = (53 * hash) + getFieldsList().hashCode();
     }
+    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+    hash = (53 * hash) + getDescription().hashCode();
+    if (getSynonymsCount() > 0) {
+      hash = (37 * hash) + SYNONYMS_FIELD_NUMBER;
+      hash = (53 * hash) + getSynonymsList().hashCode();
+    }
+    if (getTagsCount() > 0) {
+      hash = (37 * hash) + TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + getTagsList().hashCode();
+    }
     hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getDisplayName().hashCode();
+    if (getFiltersCount() > 0) {
+      hash = (37 * hash) + FILTERS_FIELD_NUMBER;
+      hash = (53 * hash) + getFiltersList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -425,7 +774,17 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         fieldsBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x00000001);
+      description_ = "";
+      synonyms_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       displayName_ = "";
+      if (filtersBuilder_ == null) {
+        filters_ = java.util.Collections.emptyList();
+      } else {
+        filters_ = null;
+        filtersBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000020);
       return this;
     }
 
@@ -472,11 +831,31 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       } else {
         result.fields_ = fieldsBuilder_.build();
       }
+      if (filtersBuilder_ == null) {
+        if (((bitField0_ & 0x00000020) != 0)) {
+          filters_ = java.util.Collections.unmodifiableList(filters_);
+          bitField0_ = (bitField0_ & ~0x00000020);
+        }
+        result.filters_ = filters_;
+      } else {
+        result.filters_ = filtersBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.geminidataanalytics.v1beta.Schema result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.description_ = description_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        synonyms_.makeImmutable();
+        result.synonyms_ = synonyms_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        tags_.makeImmutable();
+        result.tags_ = tags_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.displayName_ = displayName_;
       }
     }
@@ -554,10 +933,62 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
-      if (!other.getDisplayName().isEmpty()) {
-        displayName_ = other.displayName_;
+      if (!other.getDescription().isEmpty()) {
+        description_ = other.description_;
         bitField0_ |= 0x00000002;
         onChanged();
+      }
+      if (!other.synonyms_.isEmpty()) {
+        if (synonyms_.isEmpty()) {
+          synonyms_ = other.synonyms_;
+          bitField0_ |= 0x00000004;
+        } else {
+          ensureSynonymsIsMutable();
+          synonyms_.addAll(other.synonyms_);
+        }
+        onChanged();
+      }
+      if (!other.tags_.isEmpty()) {
+        if (tags_.isEmpty()) {
+          tags_ = other.tags_;
+          bitField0_ |= 0x00000008;
+        } else {
+          ensureTagsIsMutable();
+          tags_.addAll(other.tags_);
+        }
+        onChanged();
+      }
+      if (!other.getDisplayName().isEmpty()) {
+        displayName_ = other.displayName_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      if (filtersBuilder_ == null) {
+        if (!other.filters_.isEmpty()) {
+          if (filters_.isEmpty()) {
+            filters_ = other.filters_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+          } else {
+            ensureFiltersIsMutable();
+            filters_.addAll(other.filters_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.filters_.isEmpty()) {
+          if (filtersBuilder_.isEmpty()) {
+            filtersBuilder_.dispose();
+            filtersBuilder_ = null;
+            filters_ = other.filters_;
+            bitField0_ = (bitField0_ & ~0x00000020);
+            filtersBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getFiltersFieldBuilder()
+                    : null;
+          } else {
+            filtersBuilder_.addAllMessages(other.filters_);
+          }
+        }
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -599,12 +1030,46 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
                 }
                 break;
               } // case 10
+            case 18:
+              {
+                description_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+            case 26:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureSynonymsIsMutable();
+                synonyms_.add(s);
+                break;
+              } // case 26
+            case 34:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureTagsIsMutable();
+                tags_.add(s);
+                break;
+              } // case 34
             case 42:
               {
                 displayName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
+            case 50:
+              {
+                com.google.cloud.geminidataanalytics.v1beta.DataFilter m =
+                    input.readMessage(
+                        com.google.cloud.geminidataanalytics.v1beta.DataFilter.parser(),
+                        extensionRegistry);
+                if (filtersBuilder_ == null) {
+                  ensureFiltersIsMutable();
+                  filters_.add(m);
+                } else {
+                  filtersBuilder_.addMessage(m);
+                }
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1030,6 +1495,511 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       return fieldsBuilder_;
     }
 
+    private java.lang.Object description_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A textual description of the table's content and purpose.
+     * For example: "Contains information about customer orders in our e-commerce
+     * store."
+     * </pre>
+     *
+     * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The description.
+     */
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A textual description of the table's content and purpose.
+     * For example: "Contains information about customer orders in our e-commerce
+     * store."
+     * </pre>
+     *
+     * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for description.
+     */
+    public com.google.protobuf.ByteString getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A textual description of the table's content and purpose.
+     * For example: "Contains information about customer orders in our e-commerce
+     * store."
+     * </pre>
+     *
+     * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescription(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      description_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A textual description of the table's content and purpose.
+     * For example: "Contains information about customer orders in our e-commerce
+     * store."
+     * </pre>
+     *
+     * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDescription() {
+      description_ = getDefaultInstance().getDescription();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A textual description of the table's content and purpose.
+     * For example: "Contains information about customer orders in our e-commerce
+     * store."
+     * </pre>
+     *
+     * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for description to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      description_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList synonyms_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureSynonymsIsMutable() {
+      if (!synonyms_.isModifiable()) {
+        synonyms_ = new com.google.protobuf.LazyStringArrayList(synonyms_);
+      }
+      bitField0_ |= 0x00000004;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of alternative names or synonyms that can be used to refer
+     * to the table. For example: ["sales", "orders", "purchases"]
+     * </pre>
+     *
+     * <code>repeated string synonyms = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the synonyms.
+     */
+    public com.google.protobuf.ProtocolStringList getSynonymsList() {
+      synonyms_.makeImmutable();
+      return synonyms_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of alternative names or synonyms that can be used to refer
+     * to the table. For example: ["sales", "orders", "purchases"]
+     * </pre>
+     *
+     * <code>repeated string synonyms = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of synonyms.
+     */
+    public int getSynonymsCount() {
+      return synonyms_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of alternative names or synonyms that can be used to refer
+     * to the table. For example: ["sales", "orders", "purchases"]
+     * </pre>
+     *
+     * <code>repeated string synonyms = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The synonyms at the given index.
+     */
+    public java.lang.String getSynonyms(int index) {
+      return synonyms_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of alternative names or synonyms that can be used to refer
+     * to the table. For example: ["sales", "orders", "purchases"]
+     * </pre>
+     *
+     * <code>repeated string synonyms = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the synonyms at the given index.
+     */
+    public com.google.protobuf.ByteString getSynonymsBytes(int index) {
+      return synonyms_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of alternative names or synonyms that can be used to refer
+     * to the table. For example: ["sales", "orders", "purchases"]
+     * </pre>
+     *
+     * <code>repeated string synonyms = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The synonyms to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSynonyms(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSynonymsIsMutable();
+      synonyms_.set(index, value);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of alternative names or synonyms that can be used to refer
+     * to the table. For example: ["sales", "orders", "purchases"]
+     * </pre>
+     *
+     * <code>repeated string synonyms = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The synonyms to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSynonyms(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSynonymsIsMutable();
+      synonyms_.add(value);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of alternative names or synonyms that can be used to refer
+     * to the table. For example: ["sales", "orders", "purchases"]
+     * </pre>
+     *
+     * <code>repeated string synonyms = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param values The synonyms to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllSynonyms(java.lang.Iterable<java.lang.String> values) {
+      ensureSynonymsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, synonyms_);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of alternative names or synonyms that can be used to refer
+     * to the table. For example: ["sales", "orders", "purchases"]
+     * </pre>
+     *
+     * <code>repeated string synonyms = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSynonyms() {
+      synonyms_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of alternative names or synonyms that can be used to refer
+     * to the table. For example: ["sales", "orders", "purchases"]
+     * </pre>
+     *
+     * <code>repeated string synonyms = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes of the synonyms to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSynonymsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureSynonymsIsMutable();
+      synonyms_.add(value);
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList tags_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureTagsIsMutable() {
+      if (!tags_.isModifiable()) {
+        tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
+      }
+      bitField0_ |= 0x00000008;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of tags or keywords associated with the table, used for
+     * categorization. For example: ["transaction", "revenue", "customer_data"]
+     * </pre>
+     *
+     * <code>repeated string tags = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the tags.
+     */
+    public com.google.protobuf.ProtocolStringList getTagsList() {
+      tags_.makeImmutable();
+      return tags_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of tags or keywords associated with the table, used for
+     * categorization. For example: ["transaction", "revenue", "customer_data"]
+     * </pre>
+     *
+     * <code>repeated string tags = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of tags.
+     */
+    public int getTagsCount() {
+      return tags_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of tags or keywords associated with the table, used for
+     * categorization. For example: ["transaction", "revenue", "customer_data"]
+     * </pre>
+     *
+     * <code>repeated string tags = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
+     */
+    public java.lang.String getTags(int index) {
+      return tags_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of tags or keywords associated with the table, used for
+     * categorization. For example: ["transaction", "revenue", "customer_data"]
+     * </pre>
+     *
+     * <code>repeated string tags = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
+     */
+    public com.google.protobuf.ByteString getTagsBytes(int index) {
+      return tags_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of tags or keywords associated with the table, used for
+     * categorization. For example: ["transaction", "revenue", "customer_data"]
+     * </pre>
+     *
+     * <code>repeated string tags = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The tags to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTags(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureTagsIsMutable();
+      tags_.set(index, value);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of tags or keywords associated with the table, used for
+     * categorization. For example: ["transaction", "revenue", "customer_data"]
+     * </pre>
+     *
+     * <code>repeated string tags = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The tags to add.
+     * @return This builder for chaining.
+     */
+    public Builder addTags(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureTagsIsMutable();
+      tags_.add(value);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of tags or keywords associated with the table, used for
+     * categorization. For example: ["transaction", "revenue", "customer_data"]
+     * </pre>
+     *
+     * <code>repeated string tags = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param values The tags to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllTags(java.lang.Iterable<java.lang.String> values) {
+      ensureTagsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tags_);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of tags or keywords associated with the table, used for
+     * categorization. For example: ["transaction", "revenue", "customer_data"]
+     * </pre>
+     *
+     * <code>repeated string tags = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTags() {
+      tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of tags or keywords associated with the table, used for
+     * categorization. For example: ["transaction", "revenue", "customer_data"]
+     * </pre>
+     *
+     * <code>repeated string tags = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes of the tags to add.
+     * @return This builder for chaining.
+     */
+    public Builder addTagsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureTagsIsMutable();
+      tags_.add(value);
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object displayName_ = "";
 
     /**
@@ -1101,7 +2071,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       displayName_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1121,7 +2091,7 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDisplayName() {
       displayName_ = getDefaultInstance().getDisplayName();
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1146,9 +2116,439 @@ public final class Schema extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       displayName_ = value;
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.cloud.geminidataanalytics.v1beta.DataFilter> filters_ =
+        java.util.Collections.emptyList();
+
+    private void ensureFiltersIsMutable() {
+      if (!((bitField0_ & 0x00000020) != 0)) {
+        filters_ =
+            new java.util.ArrayList<com.google.cloud.geminidataanalytics.v1beta.DataFilter>(
+                filters_);
+        bitField0_ |= 0x00000020;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.geminidataanalytics.v1beta.DataFilter,
+            com.google.cloud.geminidataanalytics.v1beta.DataFilter.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.DataFilterOrBuilder>
+        filtersBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The filters on the datasource's underlying data. Currently only
+     * used for Looker data sources.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DataFilter filters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.geminidataanalytics.v1beta.DataFilter> getFiltersList() {
+      if (filtersBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(filters_);
+      } else {
+        return filtersBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The filters on the datasource's underlying data. Currently only
+     * used for Looker data sources.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DataFilter filters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getFiltersCount() {
+      if (filtersBuilder_ == null) {
+        return filters_.size();
+      } else {
+        return filtersBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The filters on the datasource's underlying data. Currently only
+     * used for Looker data sources.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DataFilter filters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.DataFilter getFilters(int index) {
+      if (filtersBuilder_ == null) {
+        return filters_.get(index);
+      } else {
+        return filtersBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The filters on the datasource's underlying data. Currently only
+     * used for Looker data sources.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DataFilter filters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setFilters(
+        int index, com.google.cloud.geminidataanalytics.v1beta.DataFilter value) {
+      if (filtersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFiltersIsMutable();
+        filters_.set(index, value);
+        onChanged();
+      } else {
+        filtersBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The filters on the datasource's underlying data. Currently only
+     * used for Looker data sources.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DataFilter filters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setFilters(
+        int index, com.google.cloud.geminidataanalytics.v1beta.DataFilter.Builder builderForValue) {
+      if (filtersBuilder_ == null) {
+        ensureFiltersIsMutable();
+        filters_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        filtersBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The filters on the datasource's underlying data. Currently only
+     * used for Looker data sources.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DataFilter filters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addFilters(com.google.cloud.geminidataanalytics.v1beta.DataFilter value) {
+      if (filtersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFiltersIsMutable();
+        filters_.add(value);
+        onChanged();
+      } else {
+        filtersBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The filters on the datasource's underlying data. Currently only
+     * used for Looker data sources.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DataFilter filters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addFilters(
+        int index, com.google.cloud.geminidataanalytics.v1beta.DataFilter value) {
+      if (filtersBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureFiltersIsMutable();
+        filters_.add(index, value);
+        onChanged();
+      } else {
+        filtersBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The filters on the datasource's underlying data. Currently only
+     * used for Looker data sources.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DataFilter filters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addFilters(
+        com.google.cloud.geminidataanalytics.v1beta.DataFilter.Builder builderForValue) {
+      if (filtersBuilder_ == null) {
+        ensureFiltersIsMutable();
+        filters_.add(builderForValue.build());
+        onChanged();
+      } else {
+        filtersBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The filters on the datasource's underlying data. Currently only
+     * used for Looker data sources.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DataFilter filters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addFilters(
+        int index, com.google.cloud.geminidataanalytics.v1beta.DataFilter.Builder builderForValue) {
+      if (filtersBuilder_ == null) {
+        ensureFiltersIsMutable();
+        filters_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        filtersBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The filters on the datasource's underlying data. Currently only
+     * used for Looker data sources.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DataFilter filters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllFilters(
+        java.lang.Iterable<? extends com.google.cloud.geminidataanalytics.v1beta.DataFilter>
+            values) {
+      if (filtersBuilder_ == null) {
+        ensureFiltersIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, filters_);
+        onChanged();
+      } else {
+        filtersBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The filters on the datasource's underlying data. Currently only
+     * used for Looker data sources.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DataFilter filters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearFilters() {
+      if (filtersBuilder_ == null) {
+        filters_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+      } else {
+        filtersBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The filters on the datasource's underlying data. Currently only
+     * used for Looker data sources.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DataFilter filters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeFilters(int index) {
+      if (filtersBuilder_ == null) {
+        ensureFiltersIsMutable();
+        filters_.remove(index);
+        onChanged();
+      } else {
+        filtersBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The filters on the datasource's underlying data. Currently only
+     * used for Looker data sources.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DataFilter filters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.DataFilter.Builder getFiltersBuilder(
+        int index) {
+      return getFiltersFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The filters on the datasource's underlying data. Currently only
+     * used for Looker data sources.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DataFilter filters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.DataFilterOrBuilder getFiltersOrBuilder(
+        int index) {
+      if (filtersBuilder_ == null) {
+        return filters_.get(index);
+      } else {
+        return filtersBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The filters on the datasource's underlying data. Currently only
+     * used for Looker data sources.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DataFilter filters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.geminidataanalytics.v1beta.DataFilterOrBuilder>
+        getFiltersOrBuilderList() {
+      if (filtersBuilder_ != null) {
+        return filtersBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(filters_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The filters on the datasource's underlying data. Currently only
+     * used for Looker data sources.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DataFilter filters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.DataFilter.Builder addFiltersBuilder() {
+      return getFiltersFieldBuilder()
+          .addBuilder(com.google.cloud.geminidataanalytics.v1beta.DataFilter.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The filters on the datasource's underlying data. Currently only
+     * used for Looker data sources.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DataFilter filters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.geminidataanalytics.v1beta.DataFilter.Builder addFiltersBuilder(
+        int index) {
+      return getFiltersFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.geminidataanalytics.v1beta.DataFilter.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The filters on the datasource's underlying data. Currently only
+     * used for Looker data sources.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.geminidataanalytics.v1beta.DataFilter filters = 6 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.geminidataanalytics.v1beta.DataFilter.Builder>
+        getFiltersBuilderList() {
+      return getFiltersFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.geminidataanalytics.v1beta.DataFilter,
+            com.google.cloud.geminidataanalytics.v1beta.DataFilter.Builder,
+            com.google.cloud.geminidataanalytics.v1beta.DataFilterOrBuilder>
+        getFiltersFieldBuilder() {
+      if (filtersBuilder_ == null) {
+        filtersBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.geminidataanalytics.v1beta.DataFilter,
+                com.google.cloud.geminidataanalytics.v1beta.DataFilter.Builder,
+                com.google.cloud.geminidataanalytics.v1beta.DataFilterOrBuilder>(
+                filters_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
+        filters_ = null;
+      }
+      return filtersBuilder_;
     }
 
     @java.lang.Override

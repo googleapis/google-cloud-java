@@ -176,7 +176,7 @@ public final class DatasourceReferences extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * References to LookerStudio datasources.
+   * References to Looker Studio datasources.
    * </pre>
    *
    * <code>.google.cloud.geminidataanalytics.v1beta.StudioDatasourceReferences studio = 2;</code>
@@ -192,7 +192,7 @@ public final class DatasourceReferences extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * References to LookerStudio datasources.
+   * References to Looker Studio datasources.
    * </pre>
    *
    * <code>.google.cloud.geminidataanalytics.v1beta.StudioDatasourceReferences studio = 2;</code>
@@ -212,7 +212,7 @@ public final class DatasourceReferences extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * References to LookerStudio datasources.
+   * References to Looker Studio datasources.
    * </pre>
    *
    * <code>.google.cloud.geminidataanalytics.v1beta.StudioDatasourceReferences studio = 2;</code>
@@ -233,7 +233,7 @@ public final class DatasourceReferences extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * References to Looker explores.
+   * References to Looker Explores.
    * </pre>
    *
    * <code>.google.cloud.geminidataanalytics.v1beta.LookerExploreReferences looker = 3;</code>
@@ -249,7 +249,7 @@ public final class DatasourceReferences extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * References to Looker explores.
+   * References to Looker Explores.
    * </pre>
    *
    * <code>.google.cloud.geminidataanalytics.v1beta.LookerExploreReferences looker = 3;</code>
@@ -268,7 +268,7 @@ public final class DatasourceReferences extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * References to Looker explores.
+   * References to Looker Explores.
    * </pre>
    *
    * <code>.google.cloud.geminidataanalytics.v1beta.LookerExploreReferences looker = 3;</code>
@@ -985,7 +985,7 @@ public final class DatasourceReferences extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * References to LookerStudio datasources.
+     * References to Looker Studio datasources.
      * </pre>
      *
      * <code>.google.cloud.geminidataanalytics.v1beta.StudioDatasourceReferences studio = 2;</code>
@@ -1001,7 +1001,7 @@ public final class DatasourceReferences extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * References to LookerStudio datasources.
+     * References to Looker Studio datasources.
      * </pre>
      *
      * <code>.google.cloud.geminidataanalytics.v1beta.StudioDatasourceReferences studio = 2;</code>
@@ -1030,7 +1030,7 @@ public final class DatasourceReferences extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * References to LookerStudio datasources.
+     * References to Looker Studio datasources.
      * </pre>
      *
      * <code>.google.cloud.geminidataanalytics.v1beta.StudioDatasourceReferences studio = 2;</code>
@@ -1054,7 +1054,7 @@ public final class DatasourceReferences extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * References to LookerStudio datasources.
+     * References to Looker Studio datasources.
      * </pre>
      *
      * <code>.google.cloud.geminidataanalytics.v1beta.StudioDatasourceReferences studio = 2;</code>
@@ -1076,7 +1076,7 @@ public final class DatasourceReferences extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * References to LookerStudio datasources.
+     * References to Looker Studio datasources.
      * </pre>
      *
      * <code>.google.cloud.geminidataanalytics.v1beta.StudioDatasourceReferences studio = 2;</code>
@@ -1113,7 +1113,7 @@ public final class DatasourceReferences extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * References to LookerStudio datasources.
+     * References to Looker Studio datasources.
      * </pre>
      *
      * <code>.google.cloud.geminidataanalytics.v1beta.StudioDatasourceReferences studio = 2;</code>
@@ -1139,7 +1139,7 @@ public final class DatasourceReferences extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * References to LookerStudio datasources.
+     * References to Looker Studio datasources.
      * </pre>
      *
      * <code>.google.cloud.geminidataanalytics.v1beta.StudioDatasourceReferences studio = 2;</code>
@@ -1153,7 +1153,7 @@ public final class DatasourceReferences extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * References to LookerStudio datasources.
+     * References to Looker Studio datasources.
      * </pre>
      *
      * <code>.google.cloud.geminidataanalytics.v1beta.StudioDatasourceReferences studio = 2;</code>
@@ -1177,7 +1177,7 @@ public final class DatasourceReferences extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * References to LookerStudio datasources.
+     * References to Looker Studio datasources.
      * </pre>
      *
      * <code>.google.cloud.geminidataanalytics.v1beta.StudioDatasourceReferences studio = 2;</code>
@@ -1219,7 +1219,7 @@ public final class DatasourceReferences extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * References to Looker explores.
+     * References to Looker Explores.
      * </pre>
      *
      * <code>.google.cloud.geminidataanalytics.v1beta.LookerExploreReferences looker = 3;</code>
@@ -1235,7 +1235,7 @@ public final class DatasourceReferences extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * References to Looker explores.
+     * References to Looker Explores.
      * </pre>
      *
      * <code>.google.cloud.geminidataanalytics.v1beta.LookerExploreReferences looker = 3;</code>
@@ -1263,7 +1263,7 @@ public final class DatasourceReferences extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * References to Looker explores.
+     * References to Looker Explores.
      * </pre>
      *
      * <code>.google.cloud.geminidataanalytics.v1beta.LookerExploreReferences looker = 3;</code>
@@ -1287,7 +1287,7 @@ public final class DatasourceReferences extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * References to Looker explores.
+     * References to Looker Explores.
      * </pre>
      *
      * <code>.google.cloud.geminidataanalytics.v1beta.LookerExploreReferences looker = 3;</code>
@@ -1309,7 +1309,7 @@ public final class DatasourceReferences extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * References to Looker explores.
+     * References to Looker Explores.
      * </pre>
      *
      * <code>.google.cloud.geminidataanalytics.v1beta.LookerExploreReferences looker = 3;</code>
@@ -1346,7 +1346,7 @@ public final class DatasourceReferences extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * References to Looker explores.
+     * References to Looker Explores.
      * </pre>
      *
      * <code>.google.cloud.geminidataanalytics.v1beta.LookerExploreReferences looker = 3;</code>
@@ -1372,7 +1372,7 @@ public final class DatasourceReferences extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * References to Looker explores.
+     * References to Looker Explores.
      * </pre>
      *
      * <code>.google.cloud.geminidataanalytics.v1beta.LookerExploreReferences looker = 3;</code>
@@ -1386,7 +1386,7 @@ public final class DatasourceReferences extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * References to Looker explores.
+     * References to Looker Explores.
      * </pre>
      *
      * <code>.google.cloud.geminidataanalytics.v1beta.LookerExploreReferences looker = 3;</code>
@@ -1409,7 +1409,7 @@ public final class DatasourceReferences extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * References to Looker explores.
+     * References to Looker Explores.
      * </pre>
      *
      * <code>.google.cloud.geminidataanalytics.v1beta.LookerExploreReferences looker = 3;</code>

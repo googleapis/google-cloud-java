@@ -5,39 +5,6 @@
   "protoPackage": "google.cloud.geminidataanalytics.v1beta",
   "libraryPackage": "com.google.cloud.geminidataanalytics.v1beta",
   "services": {
-    "ContextRetrievalService": {
-      "clients": {
-        "grpc": {
-          "libraryClient": "ContextRetrievalServiceClient",
-          "rpcs": {
-            "GetLocation": {
-              "methods": ["getLocation", "getLocationCallable"]
-            },
-            "ListLocations": {
-              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
-            },
-            "RetrieveBigQueryRecentRelevantTables": {
-              "methods": ["retrieveBigQueryRecentRelevantTables", "retrieveBigQueryRecentRelevantTablesCallable"]
-            },
-            "RetrieveBigQueryTableContext": {
-              "methods": ["retrieveBigQueryTableContext", "retrieveBigQueryTableContextCallable"]
-            },
-            "RetrieveBigQueryTableContexts": {
-              "methods": ["retrieveBigQueryTableContexts", "retrieveBigQueryTableContextsCallable"]
-            },
-            "RetrieveBigQueryTableContextsFromRecentTables": {
-              "methods": ["retrieveBigQueryTableContextsFromRecentTables", "retrieveBigQueryTableContextsFromRecentTablesCallable"]
-            },
-            "RetrieveBigQueryTableSuggestedDescriptions": {
-              "methods": ["retrieveBigQueryTableSuggestedDescriptions", "retrieveBigQueryTableSuggestedDescriptionsCallable"]
-            },
-            "RetrieveBigQueryTableSuggestedExamples": {
-              "methods": ["retrieveBigQueryTableSuggestedExamples", "retrieveBigQueryTableSuggestedExamplesCallable"]
-            }
-          }
-        }
-      }
-    },
     "DataAgentService": {
       "clients": {
         "grpc": {

@@ -44,9 +44,12 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
     type_ = "";
     description_ = "";
     mode_ = "";
+    synonyms_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
     displayName_ = "";
     subfields_ = java.util.Collections.emptyList();
     category_ = "";
+    valueFormat_ = "";
   }
 
   @java.lang.Override
@@ -282,6 +285,150 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int SYNONYMS_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList synonyms_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of alternative names or synonyms that can be used to refer
+   * to this field. For example: ["id", "customerid", "cust_id"]
+   * </pre>
+   *
+   * <code>repeated string synonyms = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the synonyms.
+   */
+  public com.google.protobuf.ProtocolStringList getSynonymsList() {
+    return synonyms_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of alternative names or synonyms that can be used to refer
+   * to this field. For example: ["id", "customerid", "cust_id"]
+   * </pre>
+   *
+   * <code>repeated string synonyms = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of synonyms.
+   */
+  public int getSynonymsCount() {
+    return synonyms_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of alternative names or synonyms that can be used to refer
+   * to this field. For example: ["id", "customerid", "cust_id"]
+   * </pre>
+   *
+   * <code>repeated string synonyms = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The synonyms at the given index.
+   */
+  public java.lang.String getSynonyms(int index) {
+    return synonyms_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of alternative names or synonyms that can be used to refer
+   * to this field. For example: ["id", "customerid", "cust_id"]
+   * </pre>
+   *
+   * <code>repeated string synonyms = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the synonyms at the given index.
+   */
+  public com.google.protobuf.ByteString getSynonymsBytes(int index) {
+    return synonyms_.getByteString(index);
+  }
+
+  public static final int TAGS_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList tags_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of tags or keywords associated with the field, used for
+   * categorization. For example: ["identifier", "customer", "pii"]
+   * </pre>
+   *
+   * <code>repeated string tags = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the tags.
+   */
+  public com.google.protobuf.ProtocolStringList getTagsList() {
+    return tags_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of tags or keywords associated with the field, used for
+   * categorization. For example: ["identifier", "customer", "pii"]
+   * </pre>
+   *
+   * <code>repeated string tags = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of tags.
+   */
+  public int getTagsCount() {
+    return tags_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of tags or keywords associated with the field, used for
+   * categorization. For example: ["identifier", "customer", "pii"]
+   * </pre>
+   *
+   * <code>repeated string tags = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The tags at the given index.
+   */
+  public java.lang.String getTags(int index) {
+    return tags_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of tags or keywords associated with the field, used for
+   * categorization. For example: ["identifier", "customer", "pii"]
+   * </pre>
+   *
+   * <code>repeated string tags = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the tags at the given index.
+   */
+  public com.google.protobuf.ByteString getTagsBytes(int index) {
+    return tags_.getByteString(index);
+  }
+
   public static final int DISPLAY_NAME_FIELD_NUMBER = 8;
 
   @SuppressWarnings("serial")
@@ -479,6 +626,63 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int VALUE_FORMAT_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object valueFormat_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Looker only. Value format of the field.
+   * Ref:
+   * https://cloud.google.com/looker/docs/reference/param-field-value-format
+   * </pre>
+   *
+   * <code>string value_format = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The valueFormat.
+   */
+  @java.lang.Override
+  public java.lang.String getValueFormat() {
+    java.lang.Object ref = valueFormat_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      valueFormat_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Looker only. Value format of the field.
+   * Ref:
+   * https://cloud.google.com/looker/docs/reference/param-field-value-format
+   * </pre>
+   *
+   * <code>string value_format = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for valueFormat.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getValueFormatBytes() {
+    java.lang.Object ref = valueFormat_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      valueFormat_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -505,6 +709,12 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mode_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, mode_);
     }
+    for (int i = 0; i < synonyms_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, synonyms_.getRaw(i));
+    }
+    for (int i = 0; i < tags_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 7, tags_.getRaw(i));
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, displayName_);
     }
@@ -513,6 +723,9 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(category_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, category_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(valueFormat_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, valueFormat_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -535,6 +748,22 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(mode_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, mode_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < synonyms_.size(); i++) {
+        dataSize += computeStringSizeNoTag(synonyms_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getSynonymsList().size();
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < tags_.size(); i++) {
+        dataSize += computeStringSizeNoTag(tags_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getTagsList().size();
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, displayName_);
     }
@@ -543,6 +772,9 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(category_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, category_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(valueFormat_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, valueFormat_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -564,9 +796,12 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
     if (!getType().equals(other.getType())) return false;
     if (!getDescription().equals(other.getDescription())) return false;
     if (!getMode().equals(other.getMode())) return false;
+    if (!getSynonymsList().equals(other.getSynonymsList())) return false;
+    if (!getTagsList().equals(other.getTagsList())) return false;
     if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (!getSubfieldsList().equals(other.getSubfieldsList())) return false;
     if (!getCategory().equals(other.getCategory())) return false;
+    if (!getValueFormat().equals(other.getValueFormat())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -586,6 +821,14 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getDescription().hashCode();
     hash = (37 * hash) + MODE_FIELD_NUMBER;
     hash = (53 * hash) + getMode().hashCode();
+    if (getSynonymsCount() > 0) {
+      hash = (37 * hash) + SYNONYMS_FIELD_NUMBER;
+      hash = (53 * hash) + getSynonymsList().hashCode();
+    }
+    if (getTagsCount() > 0) {
+      hash = (37 * hash) + TAGS_FIELD_NUMBER;
+      hash = (53 * hash) + getTagsList().hashCode();
+    }
     hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getDisplayName().hashCode();
     if (getSubfieldsCount() > 0) {
@@ -594,6 +837,8 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + CATEGORY_FIELD_NUMBER;
     hash = (53 * hash) + getCategory().hashCode();
+    hash = (37 * hash) + VALUE_FORMAT_FIELD_NUMBER;
+    hash = (53 * hash) + getValueFormat().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -738,6 +983,8 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
       type_ = "";
       description_ = "";
       mode_ = "";
+      synonyms_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
       displayName_ = "";
       if (subfieldsBuilder_ == null) {
         subfields_ = java.util.Collections.emptyList();
@@ -745,8 +992,9 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
         subfields_ = null;
         subfieldsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000080);
       category_ = "";
+      valueFormat_ = "";
       return this;
     }
 
@@ -785,9 +1033,9 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
     private void buildPartialRepeatedFields(
         com.google.cloud.geminidataanalytics.v1beta.Field result) {
       if (subfieldsBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           subfields_ = java.util.Collections.unmodifiableList(subfields_);
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.subfields_ = subfields_;
       } else {
@@ -810,10 +1058,21 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
         result.mode_ = mode_;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.displayName_ = displayName_;
+        synonyms_.makeImmutable();
+        result.synonyms_ = synonyms_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        tags_.makeImmutable();
+        result.tags_ = tags_;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.category_ = category_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.valueFormat_ = valueFormat_;
       }
     }
 
@@ -883,16 +1142,36 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000008;
         onChanged();
       }
+      if (!other.synonyms_.isEmpty()) {
+        if (synonyms_.isEmpty()) {
+          synonyms_ = other.synonyms_;
+          bitField0_ |= 0x00000010;
+        } else {
+          ensureSynonymsIsMutable();
+          synonyms_.addAll(other.synonyms_);
+        }
+        onChanged();
+      }
+      if (!other.tags_.isEmpty()) {
+        if (tags_.isEmpty()) {
+          tags_ = other.tags_;
+          bitField0_ |= 0x00000020;
+        } else {
+          ensureTagsIsMutable();
+          tags_.addAll(other.tags_);
+        }
+        onChanged();
+      }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (subfieldsBuilder_ == null) {
         if (!other.subfields_.isEmpty()) {
           if (subfields_.isEmpty()) {
             subfields_ = other.subfields_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureSubfieldsIsMutable();
             subfields_.addAll(other.subfields_);
@@ -905,7 +1184,7 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
             subfieldsBuilder_.dispose();
             subfieldsBuilder_ = null;
             subfields_ = other.subfields_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000080);
             subfieldsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getSubfieldsFieldBuilder()
@@ -917,7 +1196,12 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
       }
       if (!other.getCategory().isEmpty()) {
         category_ = other.category_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      if (!other.getValueFormat().isEmpty()) {
+        valueFormat_ = other.valueFormat_;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -970,10 +1254,24 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 50:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureSynonymsIsMutable();
+                synonyms_.add(s);
+                break;
+              } // case 50
+            case 58:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureTagsIsMutable();
+                tags_.add(s);
+                break;
+              } // case 58
             case 66:
               {
                 displayName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 66
             case 74:
@@ -993,9 +1291,15 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
             case 82:
               {
                 category_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 82
+            case 90:
+              {
+                valueFormat_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1459,6 +1763,390 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.protobuf.LazyStringArrayList synonyms_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureSynonymsIsMutable() {
+      if (!synonyms_.isModifiable()) {
+        synonyms_ = new com.google.protobuf.LazyStringArrayList(synonyms_);
+      }
+      bitField0_ |= 0x00000010;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of alternative names or synonyms that can be used to refer
+     * to this field. For example: ["id", "customerid", "cust_id"]
+     * </pre>
+     *
+     * <code>repeated string synonyms = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the synonyms.
+     */
+    public com.google.protobuf.ProtocolStringList getSynonymsList() {
+      synonyms_.makeImmutable();
+      return synonyms_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of alternative names or synonyms that can be used to refer
+     * to this field. For example: ["id", "customerid", "cust_id"]
+     * </pre>
+     *
+     * <code>repeated string synonyms = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of synonyms.
+     */
+    public int getSynonymsCount() {
+      return synonyms_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of alternative names or synonyms that can be used to refer
+     * to this field. For example: ["id", "customerid", "cust_id"]
+     * </pre>
+     *
+     * <code>repeated string synonyms = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The synonyms at the given index.
+     */
+    public java.lang.String getSynonyms(int index) {
+      return synonyms_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of alternative names or synonyms that can be used to refer
+     * to this field. For example: ["id", "customerid", "cust_id"]
+     * </pre>
+     *
+     * <code>repeated string synonyms = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the synonyms at the given index.
+     */
+    public com.google.protobuf.ByteString getSynonymsBytes(int index) {
+      return synonyms_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of alternative names or synonyms that can be used to refer
+     * to this field. For example: ["id", "customerid", "cust_id"]
+     * </pre>
+     *
+     * <code>repeated string synonyms = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The synonyms to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSynonyms(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSynonymsIsMutable();
+      synonyms_.set(index, value);
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of alternative names or synonyms that can be used to refer
+     * to this field. For example: ["id", "customerid", "cust_id"]
+     * </pre>
+     *
+     * <code>repeated string synonyms = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The synonyms to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSynonyms(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSynonymsIsMutable();
+      synonyms_.add(value);
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of alternative names or synonyms that can be used to refer
+     * to this field. For example: ["id", "customerid", "cust_id"]
+     * </pre>
+     *
+     * <code>repeated string synonyms = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param values The synonyms to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllSynonyms(java.lang.Iterable<java.lang.String> values) {
+      ensureSynonymsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, synonyms_);
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of alternative names or synonyms that can be used to refer
+     * to this field. For example: ["id", "customerid", "cust_id"]
+     * </pre>
+     *
+     * <code>repeated string synonyms = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSynonyms() {
+      synonyms_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of alternative names or synonyms that can be used to refer
+     * to this field. For example: ["id", "customerid", "cust_id"]
+     * </pre>
+     *
+     * <code>repeated string synonyms = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes of the synonyms to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSynonymsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureSynonymsIsMutable();
+      synonyms_.add(value);
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList tags_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureTagsIsMutable() {
+      if (!tags_.isModifiable()) {
+        tags_ = new com.google.protobuf.LazyStringArrayList(tags_);
+      }
+      bitField0_ |= 0x00000020;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of tags or keywords associated with the field, used for
+     * categorization. For example: ["identifier", "customer", "pii"]
+     * </pre>
+     *
+     * <code>repeated string tags = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the tags.
+     */
+    public com.google.protobuf.ProtocolStringList getTagsList() {
+      tags_.makeImmutable();
+      return tags_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of tags or keywords associated with the field, used for
+     * categorization. For example: ["identifier", "customer", "pii"]
+     * </pre>
+     *
+     * <code>repeated string tags = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of tags.
+     */
+    public int getTagsCount() {
+      return tags_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of tags or keywords associated with the field, used for
+     * categorization. For example: ["identifier", "customer", "pii"]
+     * </pre>
+     *
+     * <code>repeated string tags = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The tags at the given index.
+     */
+    public java.lang.String getTags(int index) {
+      return tags_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of tags or keywords associated with the field, used for
+     * categorization. For example: ["identifier", "customer", "pii"]
+     * </pre>
+     *
+     * <code>repeated string tags = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the tags at the given index.
+     */
+    public com.google.protobuf.ByteString getTagsBytes(int index) {
+      return tags_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of tags or keywords associated with the field, used for
+     * categorization. For example: ["identifier", "customer", "pii"]
+     * </pre>
+     *
+     * <code>repeated string tags = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The tags to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTags(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureTagsIsMutable();
+      tags_.set(index, value);
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of tags or keywords associated with the field, used for
+     * categorization. For example: ["identifier", "customer", "pii"]
+     * </pre>
+     *
+     * <code>repeated string tags = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The tags to add.
+     * @return This builder for chaining.
+     */
+    public Builder addTags(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureTagsIsMutable();
+      tags_.add(value);
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of tags or keywords associated with the field, used for
+     * categorization. For example: ["identifier", "customer", "pii"]
+     * </pre>
+     *
+     * <code>repeated string tags = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param values The tags to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllTags(java.lang.Iterable<java.lang.String> values) {
+      ensureTagsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tags_);
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of tags or keywords associated with the field, used for
+     * categorization. For example: ["identifier", "customer", "pii"]
+     * </pre>
+     *
+     * <code>repeated string tags = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTags() {
+      tags_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of tags or keywords associated with the field, used for
+     * categorization. For example: ["identifier", "customer", "pii"]
+     * </pre>
+     *
+     * <code>repeated string tags = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes of the tags to add.
+     * @return This builder for chaining.
+     */
+    public Builder addTagsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureTagsIsMutable();
+      tags_.add(value);
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object displayName_ = "";
 
     /**
@@ -1524,7 +2212,7 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       displayName_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1542,7 +2230,7 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDisplayName() {
       displayName_ = getDefaultInstance().getDisplayName();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -1565,7 +2253,7 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       displayName_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -1574,10 +2262,10 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureSubfieldsIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         subfields_ =
             new java.util.ArrayList<com.google.cloud.geminidataanalytics.v1beta.Field>(subfields_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000080;
       }
     }
 
@@ -1827,7 +2515,7 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
     public Builder clearSubfields() {
       if (subfieldsBuilder_ == null) {
         subfields_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
       } else {
         subfieldsBuilder_.clear();
@@ -1974,7 +2662,7 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.geminidataanalytics.v1beta.Field,
                 com.google.cloud.geminidataanalytics.v1beta.Field.Builder,
                 com.google.cloud.geminidataanalytics.v1beta.FieldOrBuilder>(
-                subfields_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
+                subfields_, ((bitField0_ & 0x00000080) != 0), getParentForChildren(), isClean());
         subfields_ = null;
       }
       return subfieldsBuilder_;
@@ -2051,7 +2739,7 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       category_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2071,7 +2759,7 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearCategory() {
       category_ = getDefaultInstance().getCategory();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -2096,7 +2784,128 @@ public final class Field extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       category_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object valueFormat_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Looker only. Value format of the field.
+     * Ref:
+     * https://cloud.google.com/looker/docs/reference/param-field-value-format
+     * </pre>
+     *
+     * <code>string value_format = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The valueFormat.
+     */
+    public java.lang.String getValueFormat() {
+      java.lang.Object ref = valueFormat_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        valueFormat_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Looker only. Value format of the field.
+     * Ref:
+     * https://cloud.google.com/looker/docs/reference/param-field-value-format
+     * </pre>
+     *
+     * <code>string value_format = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for valueFormat.
+     */
+    public com.google.protobuf.ByteString getValueFormatBytes() {
+      java.lang.Object ref = valueFormat_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        valueFormat_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Looker only. Value format of the field.
+     * Ref:
+     * https://cloud.google.com/looker/docs/reference/param-field-value-format
+     * </pre>
+     *
+     * <code>string value_format = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The valueFormat to set.
+     * @return This builder for chaining.
+     */
+    public Builder setValueFormat(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      valueFormat_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Looker only. Value format of the field.
+     * Ref:
+     * https://cloud.google.com/looker/docs/reference/param-field-value-format
+     * </pre>
+     *
+     * <code>string value_format = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearValueFormat() {
+      valueFormat_ = getDefaultInstance().getValueFormat();
+      bitField0_ = (bitField0_ & ~0x00000200);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Looker only. Value format of the field.
+     * Ref:
+     * https://cloud.google.com/looker/docs/reference/param-field-value-format
+     * </pre>
+     *
+     * <code>string value_format = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for valueFormat to set.
+     * @return This builder for chaining.
+     */
+    public Builder setValueFormatBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      valueFormat_ = value;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }

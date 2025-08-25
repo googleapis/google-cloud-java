@@ -880,7 +880,8 @@ public class DataAgentServiceClient implements BackgroundResource {
    * @param parent Required. Value for parent.
    * @param dataAgent Required. The resource being created.
    * @param dataAgentId Optional. Id of the requesting object. Must be unique within the parent. The
-   *     allowed format is: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
+   *     allowed format is: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`. If not provided, the server will
+   *     auto-generate a value for the id.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<DataAgent, OperationMetadata> createDataAgentAsync(
@@ -918,7 +919,8 @@ public class DataAgentServiceClient implements BackgroundResource {
    * @param parent Required. Value for parent.
    * @param dataAgent Required. The resource being created.
    * @param dataAgentId Optional. Id of the requesting object. Must be unique within the parent. The
-   *     allowed format is: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
+   *     allowed format is: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`. If not provided, the server will
+   *     auto-generate a value for the id.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<DataAgent, OperationMetadata> createDataAgentAsync(

@@ -54,7 +54,7 @@ public interface LookerQueryOrBuilder
    *
    *
    * <pre>
-   * Required. The LookML explore used to generate the query.
+   * Required. The LookML Explore used to generate the query.
    * </pre>
    *
    * <code>string explore = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -67,7 +67,7 @@ public interface LookerQueryOrBuilder
    *
    *
    * <pre>
-   * Required. The LookML explore used to generate the query.
+   * Required. The LookML Explore used to generate the query.
    * </pre>
    *
    * <code>string explore = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -80,7 +80,7 @@ public interface LookerQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. The fields to retrieve from the explore.
+   * Optional. The fields to retrieve from the Explore.
    * </pre>
    *
    * <code>repeated string fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -93,7 +93,7 @@ public interface LookerQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. The fields to retrieve from the explore.
+   * Optional. The fields to retrieve from the Explore.
    * </pre>
    *
    * <code>repeated string fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -106,7 +106,7 @@ public interface LookerQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. The fields to retrieve from the explore.
+   * Optional. The fields to retrieve from the Explore.
    * </pre>
    *
    * <code>repeated string fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -120,7 +120,7 @@ public interface LookerQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. The fields to retrieve from the explore.
+   * Optional. The fields to retrieve from the Explore.
    * </pre>
    *
    * <code>repeated string fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -134,7 +134,7 @@ public interface LookerQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. The filters to apply to the explore.
+   * Optional. The filters to apply to the Explore.
    * </pre>
    *
    * <code>
@@ -147,7 +147,7 @@ public interface LookerQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. The filters to apply to the explore.
+   * Optional. The filters to apply to the Explore.
    * </pre>
    *
    * <code>
@@ -160,7 +160,7 @@ public interface LookerQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. The filters to apply to the explore.
+   * Optional. The filters to apply to the Explore.
    * </pre>
    *
    * <code>
@@ -173,7 +173,7 @@ public interface LookerQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. The filters to apply to the explore.
+   * Optional. The filters to apply to the Explore.
    * </pre>
    *
    * <code>
@@ -187,7 +187,7 @@ public interface LookerQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. The filters to apply to the explore.
+   * Optional. The filters to apply to the Explore.
    * </pre>
    *
    * <code>
@@ -201,7 +201,7 @@ public interface LookerQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. The sorts to apply to the explore.
+   * Optional. The sorts to apply to the Explore.
    * </pre>
    *
    * <code>repeated string sorts = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -214,7 +214,7 @@ public interface LookerQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. The sorts to apply to the explore.
+   * Optional. The sorts to apply to the Explore.
    * </pre>
    *
    * <code>repeated string sorts = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -227,7 +227,7 @@ public interface LookerQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. The sorts to apply to the explore.
+   * Optional. The sorts to apply to the Explore.
    * </pre>
    *
    * <code>repeated string sorts = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -241,7 +241,7 @@ public interface LookerQueryOrBuilder
    *
    *
    * <pre>
-   * Optional. The sorts to apply to the explore.
+   * Optional. The sorts to apply to the Explore.
    * </pre>
    *
    * <code>repeated string sorts = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
