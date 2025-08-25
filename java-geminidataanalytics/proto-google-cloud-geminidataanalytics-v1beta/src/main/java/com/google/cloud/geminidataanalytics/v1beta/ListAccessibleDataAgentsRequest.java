@@ -111,6 +111,16 @@ public final class ListAccessibleDataAgentsRequest extends com.google.protobuf.G
      * <code>CREATOR_ONLY = 2;</code>
      */
     CREATOR_ONLY(2),
+    /**
+     *
+     *
+     * <pre>
+     * Only agents not created by the user calling the API will be returned.
+     * </pre>
+     *
+     * <code>NOT_CREATOR_ONLY = 3;</code>
+     */
+    NOT_CREATOR_ONLY(3),
     UNRECOGNIZED(-1),
     ;
 
@@ -147,6 +157,17 @@ public final class ListAccessibleDataAgentsRequest extends com.google.protobuf.G
      */
     public static final int CREATOR_ONLY_VALUE = 2;
 
+    /**
+     *
+     *
+     * <pre>
+     * Only agents not created by the user calling the API will be returned.
+     * </pre>
+     *
+     * <code>NOT_CREATOR_ONLY = 3;</code>
+     */
+    public static final int NOT_CREATOR_ONLY_VALUE = 3;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -177,6 +198,8 @@ public final class ListAccessibleDataAgentsRequest extends com.google.protobuf.G
           return NONE;
         case 2:
           return CREATOR_ONLY;
+        case 3:
+          return NOT_CREATOR_ONLY;
         default:
           return null;
       }

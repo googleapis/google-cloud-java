@@ -165,9 +165,10 @@ public final class LookerExploreReferences extends com.google.protobuf.Generated
    * <pre>
    * Optional. The credentials to use when calling the Looker API.
    *
-   * Currently supports both oauth token and api keys based credentials, as
+   * Currently supports both OAuth token and API key-based credentials, as
    * described in
-   * https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk
+   * [Authentication with an
+   * SDK](https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk).
    * </pre>
    *
    * <code>
@@ -187,9 +188,10 @@ public final class LookerExploreReferences extends com.google.protobuf.Generated
    * <pre>
    * Optional. The credentials to use when calling the Looker API.
    *
-   * Currently supports both oauth token and api keys based credentials, as
+   * Currently supports both OAuth token and API key-based credentials, as
    * described in
-   * https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk
+   * [Authentication with an
+   * SDK](https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk).
    * </pre>
    *
    * <code>
@@ -211,9 +213,10 @@ public final class LookerExploreReferences extends com.google.protobuf.Generated
    * <pre>
    * Optional. The credentials to use when calling the Looker API.
    *
-   * Currently supports both oauth token and api keys based credentials, as
+   * Currently supports both OAuth token and API key-based credentials, as
    * described in
-   * https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk
+   * [Authentication with an
+   * SDK](https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk).
    * </pre>
    *
    * <code>
@@ -1120,9 +1123,10 @@ public final class LookerExploreReferences extends com.google.protobuf.Generated
      * <pre>
      * Optional. The credentials to use when calling the Looker API.
      *
-     * Currently supports both oauth token and api keys based credentials, as
+     * Currently supports both OAuth token and API key-based credentials, as
      * described in
-     * https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk
+     * [Authentication with an
+     * SDK](https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk).
      * </pre>
      *
      * <code>
@@ -1141,9 +1145,10 @@ public final class LookerExploreReferences extends com.google.protobuf.Generated
      * <pre>
      * Optional. The credentials to use when calling the Looker API.
      *
-     * Currently supports both oauth token and api keys based credentials, as
+     * Currently supports both OAuth token and API key-based credentials, as
      * described in
-     * https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk
+     * [Authentication with an
+     * SDK](https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk).
      * </pre>
      *
      * <code>
@@ -1168,9 +1173,10 @@ public final class LookerExploreReferences extends com.google.protobuf.Generated
      * <pre>
      * Optional. The credentials to use when calling the Looker API.
      *
-     * Currently supports both oauth token and api keys based credentials, as
+     * Currently supports both OAuth token and API key-based credentials, as
      * described in
-     * https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk
+     * [Authentication with an
+     * SDK](https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk).
      * </pre>
      *
      * <code>
@@ -1197,9 +1203,10 @@ public final class LookerExploreReferences extends com.google.protobuf.Generated
      * <pre>
      * Optional. The credentials to use when calling the Looker API.
      *
-     * Currently supports both oauth token and api keys based credentials, as
+     * Currently supports both OAuth token and API key-based credentials, as
      * described in
-     * https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk
+     * [Authentication with an
+     * SDK](https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk).
      * </pre>
      *
      * <code>
@@ -1224,9 +1231,10 @@ public final class LookerExploreReferences extends com.google.protobuf.Generated
      * <pre>
      * Optional. The credentials to use when calling the Looker API.
      *
-     * Currently supports both oauth token and api keys based credentials, as
+     * Currently supports both OAuth token and API key-based credentials, as
      * described in
-     * https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk
+     * [Authentication with an
+     * SDK](https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk).
      * </pre>
      *
      * <code>
@@ -1259,9 +1267,10 @@ public final class LookerExploreReferences extends com.google.protobuf.Generated
      * <pre>
      * Optional. The credentials to use when calling the Looker API.
      *
-     * Currently supports both oauth token and api keys based credentials, as
+     * Currently supports both OAuth token and API key-based credentials, as
      * described in
-     * https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk
+     * [Authentication with an
+     * SDK](https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk).
      * </pre>
      *
      * <code>
@@ -1285,9 +1294,10 @@ public final class LookerExploreReferences extends com.google.protobuf.Generated
      * <pre>
      * Optional. The credentials to use when calling the Looker API.
      *
-     * Currently supports both oauth token and api keys based credentials, as
+     * Currently supports both OAuth token and API key-based credentials, as
      * described in
-     * https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk
+     * [Authentication with an
+     * SDK](https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk).
      * </pre>
      *
      * <code>
@@ -1306,9 +1316,10 @@ public final class LookerExploreReferences extends com.google.protobuf.Generated
      * <pre>
      * Optional. The credentials to use when calling the Looker API.
      *
-     * Currently supports both oauth token and api keys based credentials, as
+     * Currently supports both OAuth token and API key-based credentials, as
      * described in
-     * https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk
+     * [Authentication with an
+     * SDK](https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk).
      * </pre>
      *
      * <code>
@@ -1332,9 +1343,10 @@ public final class LookerExploreReferences extends com.google.protobuf.Generated
      * <pre>
      * Optional. The credentials to use when calling the Looker API.
      *
-     * Currently supports both oauth token and api keys based credentials, as
+     * Currently supports both OAuth token and API key-based credentials, as
      * described in
-     * https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk
+     * [Authentication with an
+     * SDK](https://cloud.google.com/looker/docs/api-auth#authentication_with_an_sdk).
      * </pre>
      *
      * <code>

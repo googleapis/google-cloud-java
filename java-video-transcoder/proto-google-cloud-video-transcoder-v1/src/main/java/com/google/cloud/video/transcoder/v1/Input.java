@@ -238,6 +238,65 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
         : preprocessingConfig_;
   }
 
+  public static final int ATTRIBUTES_FIELD_NUMBER = 4;
+  private com.google.cloud.video.transcoder.v1.InputAttributes attributes_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input Attributes.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.transcoder.v1.InputAttributes attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the attributes field is set.
+   */
+  @java.lang.Override
+  public boolean hasAttributes() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input Attributes.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.transcoder.v1.InputAttributes attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The attributes.
+   */
+  @java.lang.Override
+  public com.google.cloud.video.transcoder.v1.InputAttributes getAttributes() {
+    return attributes_ == null
+        ? com.google.cloud.video.transcoder.v1.InputAttributes.getDefaultInstance()
+        : attributes_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input Attributes.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.video.transcoder.v1.InputAttributes attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.video.transcoder.v1.InputAttributesOrBuilder getAttributesOrBuilder() {
+    return attributes_ == null
+        ? com.google.cloud.video.transcoder.v1.InputAttributes.getDefaultInstance()
+        : attributes_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -261,6 +320,9 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(3, getPreprocessingConfig());
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(4, getAttributes());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -278,6 +340,9 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getPreprocessingConfig());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getAttributes());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -301,6 +366,10 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
     if (hasPreprocessingConfig()) {
       if (!getPreprocessingConfig().equals(other.getPreprocessingConfig())) return false;
     }
+    if (hasAttributes() != other.hasAttributes()) return false;
+    if (hasAttributes()) {
+      if (!getAttributes().equals(other.getAttributes())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -319,6 +388,10 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
     if (hasPreprocessingConfig()) {
       hash = (37 * hash) + PREPROCESSING_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getPreprocessingConfig().hashCode();
+    }
+    if (hasAttributes()) {
+      hash = (37 * hash) + ATTRIBUTES_FIELD_NUMBER;
+      hash = (53 * hash) + getAttributes().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -462,6 +535,7 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getPreprocessingConfigFieldBuilder();
+        getAttributesFieldBuilder();
       }
     }
 
@@ -475,6 +549,11 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
       if (preprocessingConfigBuilder_ != null) {
         preprocessingConfigBuilder_.dispose();
         preprocessingConfigBuilder_ = null;
+      }
+      attributes_ = null;
+      if (attributesBuilder_ != null) {
+        attributesBuilder_.dispose();
+        attributesBuilder_ = null;
       }
       return this;
     }
@@ -525,6 +604,10 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
                 ? preprocessingConfig_
                 : preprocessingConfigBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.attributes_ = attributesBuilder_ == null ? attributes_ : attributesBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -587,6 +670,9 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
       if (other.hasPreprocessingConfig()) {
         mergePreprocessingConfig(other.getPreprocessingConfig());
       }
+      if (other.hasAttributes()) {
+        mergeAttributes(other.getAttributes());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -632,6 +718,12 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 34:
+              {
+                input.readMessage(getAttributesFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1101,6 +1193,220 @@ public final class Input extends com.google.protobuf.GeneratedMessageV3
         preprocessingConfig_ = null;
       }
       return preprocessingConfigBuilder_;
+    }
+
+    private com.google.cloud.video.transcoder.v1.InputAttributes attributes_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.video.transcoder.v1.InputAttributes,
+            com.google.cloud.video.transcoder.v1.InputAttributes.Builder,
+            com.google.cloud.video.transcoder.v1.InputAttributesOrBuilder>
+        attributesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input Attributes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.InputAttributes attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the attributes field is set.
+     */
+    public boolean hasAttributes() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input Attributes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.InputAttributes attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The attributes.
+     */
+    public com.google.cloud.video.transcoder.v1.InputAttributes getAttributes() {
+      if (attributesBuilder_ == null) {
+        return attributes_ == null
+            ? com.google.cloud.video.transcoder.v1.InputAttributes.getDefaultInstance()
+            : attributes_;
+      } else {
+        return attributesBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input Attributes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.InputAttributes attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAttributes(com.google.cloud.video.transcoder.v1.InputAttributes value) {
+      if (attributesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        attributes_ = value;
+      } else {
+        attributesBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input Attributes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.InputAttributes attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAttributes(
+        com.google.cloud.video.transcoder.v1.InputAttributes.Builder builderForValue) {
+      if (attributesBuilder_ == null) {
+        attributes_ = builderForValue.build();
+      } else {
+        attributesBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input Attributes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.InputAttributes attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeAttributes(com.google.cloud.video.transcoder.v1.InputAttributes value) {
+      if (attributesBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && attributes_ != null
+            && attributes_
+                != com.google.cloud.video.transcoder.v1.InputAttributes.getDefaultInstance()) {
+          getAttributesBuilder().mergeFrom(value);
+        } else {
+          attributes_ = value;
+        }
+      } else {
+        attributesBuilder_.mergeFrom(value);
+      }
+      if (attributes_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input Attributes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.InputAttributes attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAttributes() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      attributes_ = null;
+      if (attributesBuilder_ != null) {
+        attributesBuilder_.dispose();
+        attributesBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input Attributes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.InputAttributes attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.video.transcoder.v1.InputAttributes.Builder getAttributesBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getAttributesFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input Attributes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.InputAttributes attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.video.transcoder.v1.InputAttributesOrBuilder getAttributesOrBuilder() {
+      if (attributesBuilder_ != null) {
+        return attributesBuilder_.getMessageOrBuilder();
+      } else {
+        return attributes_ == null
+            ? com.google.cloud.video.transcoder.v1.InputAttributes.getDefaultInstance()
+            : attributes_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Input Attributes.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.video.transcoder.v1.InputAttributes attributes = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.video.transcoder.v1.InputAttributes,
+            com.google.cloud.video.transcoder.v1.InputAttributes.Builder,
+            com.google.cloud.video.transcoder.v1.InputAttributesOrBuilder>
+        getAttributesFieldBuilder() {
+      if (attributesBuilder_ == null) {
+        attributesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.video.transcoder.v1.InputAttributes,
+                com.google.cloud.video.transcoder.v1.InputAttributes.Builder,
+                com.google.cloud.video.transcoder.v1.InputAttributesOrBuilder>(
+                getAttributes(), getParentForChildren(), isClean());
+        attributes_ = null;
+      }
+      return attributesBuilder_;
     }
 
     @java.lang.Override

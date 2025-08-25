@@ -76,9 +76,10 @@ public final class BigQueryJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The project the job belongs to.
+   * Required. The project that the job belongs to.
    *
-   * See https://cloud.google.com/bigquery/docs/reference/rest/v2/JobReference
+   * See
+   * [JobReference](https://cloud.google.com/bigquery/docs/reference/rest/v2/JobReference).
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -102,9 +103,10 @@ public final class BigQueryJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The project the job belongs to.
+   * Required. The project that the job belongs to.
    *
-   * See https://cloud.google.com/bigquery/docs/reference/rest/v2/JobReference
+   * See
+   * [JobReference](https://cloud.google.com/bigquery/docs/reference/rest/v2/JobReference).
    * </pre>
    *
    * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -135,7 +137,8 @@ public final class BigQueryJob extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The ID of the job.
    *
-   * See https://cloud.google.com/bigquery/docs/reference/rest/v2/JobReference
+   * See
+   * [JobReference](https://cloud.google.com/bigquery/docs/reference/rest/v2/JobReference).
    * </pre>
    *
    * <code>string job_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -161,7 +164,8 @@ public final class BigQueryJob extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Required. The ID of the job.
    *
-   * See https://cloud.google.com/bigquery/docs/reference/rest/v2/JobReference
+   * See
+   * [JobReference](https://cloud.google.com/bigquery/docs/reference/rest/v2/JobReference).
    * </pre>
    *
    * <code>string job_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -192,7 +196,8 @@ public final class BigQueryJob extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. The location of the job.
    *
-   * See https://cloud.google.com/bigquery/docs/reference/rest/v2/JobReference
+   * See
+   * [JobReference](https://cloud.google.com/bigquery/docs/reference/rest/v2/JobReference).
    * </pre>
    *
    * <code>string location = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -218,7 +223,8 @@ public final class BigQueryJob extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * Optional. The location of the job.
    *
-   * See https://cloud.google.com/bigquery/docs/reference/rest/v2/JobReference
+   * See
+   * [JobReference](https://cloud.google.com/bigquery/docs/reference/rest/v2/JobReference).
    * </pre>
    *
    * <code>string location = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -248,7 +254,7 @@ public final class BigQueryJob extends com.google.protobuf.GeneratedMessageV3
    * Optional. A reference to the destination table of the job's query results.
    *
    * See
-   * https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobconfigurationquery
+   * [JobConfigurationQuery](https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobconfigurationquery).
    * </pre>
    *
    * <code>
@@ -269,7 +275,7 @@ public final class BigQueryJob extends com.google.protobuf.GeneratedMessageV3
    * Optional. A reference to the destination table of the job's query results.
    *
    * See
-   * https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobconfigurationquery
+   * [JobConfigurationQuery](https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobconfigurationquery).
    * </pre>
    *
    * <code>
@@ -292,7 +298,7 @@ public final class BigQueryJob extends com.google.protobuf.GeneratedMessageV3
    * Optional. A reference to the destination table of the job's query results.
    *
    * See
-   * https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobconfigurationquery
+   * [JobConfigurationQuery](https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobconfigurationquery).
    * </pre>
    *
    * <code>
@@ -317,7 +323,7 @@ public final class BigQueryJob extends com.google.protobuf.GeneratedMessageV3
    * Optional. The schema of the job's query results.
    *
    * See
-   * https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobstatistics2
+   * [JobStatistics2](https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobstatistics2).
    * </pre>
    *
    * <code>
@@ -338,7 +344,7 @@ public final class BigQueryJob extends com.google.protobuf.GeneratedMessageV3
    * Optional. The schema of the job's query results.
    *
    * See
-   * https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobstatistics2
+   * [JobStatistics2](https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobstatistics2).
    * </pre>
    *
    * <code>
@@ -361,7 +367,7 @@ public final class BigQueryJob extends com.google.protobuf.GeneratedMessageV3
    * Optional. The schema of the job's query results.
    *
    * See
-   * https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobstatistics2
+   * [JobStatistics2](https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobstatistics2).
    * </pre>
    *
    * <code>
@@ -851,9 +857,10 @@ public final class BigQueryJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The project the job belongs to.
+     * Required. The project that the job belongs to.
      *
-     * See https://cloud.google.com/bigquery/docs/reference/rest/v2/JobReference
+     * See
+     * [JobReference](https://cloud.google.com/bigquery/docs/reference/rest/v2/JobReference).
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -876,9 +883,10 @@ public final class BigQueryJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The project the job belongs to.
+     * Required. The project that the job belongs to.
      *
-     * See https://cloud.google.com/bigquery/docs/reference/rest/v2/JobReference
+     * See
+     * [JobReference](https://cloud.google.com/bigquery/docs/reference/rest/v2/JobReference).
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -901,9 +909,10 @@ public final class BigQueryJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The project the job belongs to.
+     * Required. The project that the job belongs to.
      *
-     * See https://cloud.google.com/bigquery/docs/reference/rest/v2/JobReference
+     * See
+     * [JobReference](https://cloud.google.com/bigquery/docs/reference/rest/v2/JobReference).
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -925,9 +934,10 @@ public final class BigQueryJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The project the job belongs to.
+     * Required. The project that the job belongs to.
      *
-     * See https://cloud.google.com/bigquery/docs/reference/rest/v2/JobReference
+     * See
+     * [JobReference](https://cloud.google.com/bigquery/docs/reference/rest/v2/JobReference).
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -945,9 +955,10 @@ public final class BigQueryJob extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The project the job belongs to.
+     * Required. The project that the job belongs to.
      *
-     * See https://cloud.google.com/bigquery/docs/reference/rest/v2/JobReference
+     * See
+     * [JobReference](https://cloud.google.com/bigquery/docs/reference/rest/v2/JobReference).
      * </pre>
      *
      * <code>string project_id = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -974,7 +985,8 @@ public final class BigQueryJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The ID of the job.
      *
-     * See https://cloud.google.com/bigquery/docs/reference/rest/v2/JobReference
+     * See
+     * [JobReference](https://cloud.google.com/bigquery/docs/reference/rest/v2/JobReference).
      * </pre>
      *
      * <code>string job_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -999,7 +1011,8 @@ public final class BigQueryJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The ID of the job.
      *
-     * See https://cloud.google.com/bigquery/docs/reference/rest/v2/JobReference
+     * See
+     * [JobReference](https://cloud.google.com/bigquery/docs/reference/rest/v2/JobReference).
      * </pre>
      *
      * <code>string job_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1024,7 +1037,8 @@ public final class BigQueryJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The ID of the job.
      *
-     * See https://cloud.google.com/bigquery/docs/reference/rest/v2/JobReference
+     * See
+     * [JobReference](https://cloud.google.com/bigquery/docs/reference/rest/v2/JobReference).
      * </pre>
      *
      * <code>string job_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1048,7 +1062,8 @@ public final class BigQueryJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The ID of the job.
      *
-     * See https://cloud.google.com/bigquery/docs/reference/rest/v2/JobReference
+     * See
+     * [JobReference](https://cloud.google.com/bigquery/docs/reference/rest/v2/JobReference).
      * </pre>
      *
      * <code>string job_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1068,7 +1083,8 @@ public final class BigQueryJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Required. The ID of the job.
      *
-     * See https://cloud.google.com/bigquery/docs/reference/rest/v2/JobReference
+     * See
+     * [JobReference](https://cloud.google.com/bigquery/docs/reference/rest/v2/JobReference).
      * </pre>
      *
      * <code>string job_id = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1095,7 +1111,8 @@ public final class BigQueryJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The location of the job.
      *
-     * See https://cloud.google.com/bigquery/docs/reference/rest/v2/JobReference
+     * See
+     * [JobReference](https://cloud.google.com/bigquery/docs/reference/rest/v2/JobReference).
      * </pre>
      *
      * <code>string location = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1120,7 +1137,8 @@ public final class BigQueryJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The location of the job.
      *
-     * See https://cloud.google.com/bigquery/docs/reference/rest/v2/JobReference
+     * See
+     * [JobReference](https://cloud.google.com/bigquery/docs/reference/rest/v2/JobReference).
      * </pre>
      *
      * <code>string location = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1145,7 +1163,8 @@ public final class BigQueryJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The location of the job.
      *
-     * See https://cloud.google.com/bigquery/docs/reference/rest/v2/JobReference
+     * See
+     * [JobReference](https://cloud.google.com/bigquery/docs/reference/rest/v2/JobReference).
      * </pre>
      *
      * <code>string location = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1169,7 +1188,8 @@ public final class BigQueryJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The location of the job.
      *
-     * See https://cloud.google.com/bigquery/docs/reference/rest/v2/JobReference
+     * See
+     * [JobReference](https://cloud.google.com/bigquery/docs/reference/rest/v2/JobReference).
      * </pre>
      *
      * <code>string location = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1189,7 +1209,8 @@ public final class BigQueryJob extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Optional. The location of the job.
      *
-     * See https://cloud.google.com/bigquery/docs/reference/rest/v2/JobReference
+     * See
+     * [JobReference](https://cloud.google.com/bigquery/docs/reference/rest/v2/JobReference).
      * </pre>
      *
      * <code>string location = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1222,7 +1243,7 @@ public final class BigQueryJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. A reference to the destination table of the job's query results.
      *
      * See
-     * https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobconfigurationquery
+     * [JobConfigurationQuery](https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobconfigurationquery).
      * </pre>
      *
      * <code>
@@ -1242,7 +1263,7 @@ public final class BigQueryJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. A reference to the destination table of the job's query results.
      *
      * See
-     * https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobconfigurationquery
+     * [JobConfigurationQuery](https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobconfigurationquery).
      * </pre>
      *
      * <code>
@@ -1270,7 +1291,7 @@ public final class BigQueryJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. A reference to the destination table of the job's query results.
      *
      * See
-     * https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobconfigurationquery
+     * [JobConfigurationQuery](https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobconfigurationquery).
      * </pre>
      *
      * <code>
@@ -1299,7 +1320,7 @@ public final class BigQueryJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. A reference to the destination table of the job's query results.
      *
      * See
-     * https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobconfigurationquery
+     * [JobConfigurationQuery](https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobconfigurationquery).
      * </pre>
      *
      * <code>
@@ -1326,7 +1347,7 @@ public final class BigQueryJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. A reference to the destination table of the job's query results.
      *
      * See
-     * https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobconfigurationquery
+     * [JobConfigurationQuery](https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobconfigurationquery).
      * </pre>
      *
      * <code>
@@ -1362,7 +1383,7 @@ public final class BigQueryJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. A reference to the destination table of the job's query results.
      *
      * See
-     * https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobconfigurationquery
+     * [JobConfigurationQuery](https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobconfigurationquery).
      * </pre>
      *
      * <code>
@@ -1387,7 +1408,7 @@ public final class BigQueryJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. A reference to the destination table of the job's query results.
      *
      * See
-     * https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobconfigurationquery
+     * [JobConfigurationQuery](https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobconfigurationquery).
      * </pre>
      *
      * <code>
@@ -1408,7 +1429,7 @@ public final class BigQueryJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. A reference to the destination table of the job's query results.
      *
      * See
-     * https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobconfigurationquery
+     * [JobConfigurationQuery](https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobconfigurationquery).
      * </pre>
      *
      * <code>
@@ -1434,7 +1455,7 @@ public final class BigQueryJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. A reference to the destination table of the job's query results.
      *
      * See
-     * https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobconfigurationquery
+     * [JobConfigurationQuery](https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobconfigurationquery).
      * </pre>
      *
      * <code>
@@ -1472,7 +1493,7 @@ public final class BigQueryJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. The schema of the job's query results.
      *
      * See
-     * https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobstatistics2
+     * [JobStatistics2](https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobstatistics2).
      * </pre>
      *
      * <code>
@@ -1492,7 +1513,7 @@ public final class BigQueryJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. The schema of the job's query results.
      *
      * See
-     * https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobstatistics2
+     * [JobStatistics2](https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobstatistics2).
      * </pre>
      *
      * <code>
@@ -1518,7 +1539,7 @@ public final class BigQueryJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. The schema of the job's query results.
      *
      * See
-     * https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobstatistics2
+     * [JobStatistics2](https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobstatistics2).
      * </pre>
      *
      * <code>
@@ -1546,7 +1567,7 @@ public final class BigQueryJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. The schema of the job's query results.
      *
      * See
-     * https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobstatistics2
+     * [JobStatistics2](https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobstatistics2).
      * </pre>
      *
      * <code>
@@ -1572,7 +1593,7 @@ public final class BigQueryJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. The schema of the job's query results.
      *
      * See
-     * https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobstatistics2
+     * [JobStatistics2](https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobstatistics2).
      * </pre>
      *
      * <code>
@@ -1605,7 +1626,7 @@ public final class BigQueryJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. The schema of the job's query results.
      *
      * See
-     * https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobstatistics2
+     * [JobStatistics2](https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobstatistics2).
      * </pre>
      *
      * <code>
@@ -1630,7 +1651,7 @@ public final class BigQueryJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. The schema of the job's query results.
      *
      * See
-     * https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobstatistics2
+     * [JobStatistics2](https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobstatistics2).
      * </pre>
      *
      * <code>
@@ -1650,7 +1671,7 @@ public final class BigQueryJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. The schema of the job's query results.
      *
      * See
-     * https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobstatistics2
+     * [JobStatistics2](https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobstatistics2).
      * </pre>
      *
      * <code>
@@ -1674,7 +1695,7 @@ public final class BigQueryJob extends com.google.protobuf.GeneratedMessageV3
      * Optional. The schema of the job's query results.
      *
      * See
-     * https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobstatistics2
+     * [JobStatistics2](https://cloud.google.com/bigquery/docs/reference/rest/v2/Job#jobstatistics2).
      * </pre>
      *
      * <code>

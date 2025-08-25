@@ -64,7 +64,7 @@ public interface ContextOrBuilder
    *
    *
    * <pre>
-   * Required. Datasources available for answering the question.
+   * Required. Data sources that are available for answering the question.
    * </pre>
    *
    * <code>
@@ -79,7 +79,7 @@ public interface ContextOrBuilder
    *
    *
    * <pre>
-   * Required. Datasources available for answering the question.
+   * Required. Data sources that are available for answering the question.
    * </pre>
    *
    * <code>
@@ -94,7 +94,7 @@ public interface ContextOrBuilder
    *
    *
    * <pre>
-   * Required. Datasources available for answering the question.
+   * Required. Data sources that are available for answering the question.
    * </pre>
    *
    * <code>
@@ -146,4 +146,81 @@ public interface ContextOrBuilder
    * </code>
    */
   com.google.cloud.geminidataanalytics.v1beta.ConversationOptionsOrBuilder getOptionsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of example queries, providing examples of relevant and
+   * commonly used SQL queries and their corresponding natural language queries
+   * optionally present.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.ExampleQuery example_queries = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.geminidataanalytics.v1beta.ExampleQuery> getExampleQueriesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of example queries, providing examples of relevant and
+   * commonly used SQL queries and their corresponding natural language queries
+   * optionally present.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.ExampleQuery example_queries = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.geminidataanalytics.v1beta.ExampleQuery getExampleQueries(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of example queries, providing examples of relevant and
+   * commonly used SQL queries and their corresponding natural language queries
+   * optionally present.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.ExampleQuery example_queries = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getExampleQueriesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of example queries, providing examples of relevant and
+   * commonly used SQL queries and their corresponding natural language queries
+   * optionally present.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.ExampleQuery example_queries = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.geminidataanalytics.v1beta.ExampleQueryOrBuilder>
+      getExampleQueriesOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A list of example queries, providing examples of relevant and
+   * commonly used SQL queries and their corresponding natural language queries
+   * optionally present.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.geminidataanalytics.v1beta.ExampleQuery example_queries = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.geminidataanalytics.v1beta.ExampleQueryOrBuilder getExampleQueriesOrBuilder(
+      int index);
 }

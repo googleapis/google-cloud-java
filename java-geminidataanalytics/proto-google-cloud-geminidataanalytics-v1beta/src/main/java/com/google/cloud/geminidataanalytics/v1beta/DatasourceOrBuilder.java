@@ -72,7 +72,7 @@ public interface DatasourceOrBuilder
    *
    *
    * <pre>
-   * A reference to a LookerStudio datasource.
+   * A reference to a Looker Studio datasource.
    * </pre>
    *
    * <code>string studio_datasource_id = 2;</code>
@@ -85,7 +85,7 @@ public interface DatasourceOrBuilder
    *
    *
    * <pre>
-   * A reference to a LookerStudio datasource.
+   * A reference to a Looker Studio datasource.
    * </pre>
    *
    * <code>string studio_datasource_id = 2;</code>
@@ -98,7 +98,7 @@ public interface DatasourceOrBuilder
    *
    *
    * <pre>
-   * A reference to a LookerStudio datasource.
+   * A reference to a Looker Studio datasource.
    * </pre>
    *
    * <code>string studio_datasource_id = 2;</code>

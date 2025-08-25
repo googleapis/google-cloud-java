@@ -40,8 +40,8 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: Service to ask a natural language question on top of BigQuery and
- * LookerStudio datasources to get back streamed responses of various kinds to help provide a rich
+ * Service Description: Service to ask a natural language question on top of BigQuery and Looker
+ * Studio datasources to get back streamed responses of various kinds to help provide a rich
  * conversational answer.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
@@ -75,7 +75,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> Chat</td>
- *      <td><p> Answers a data question by generating a stream of [Message]s.</td>
+ *      <td><p> Answers a data question by generating a stream of [Message][google.cloud.geminidataanalytics.v1alpha.Message] objects.</td>
  *      <td>
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
@@ -104,7 +104,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetConversation</td>
- *      <td><p> Gets details of a single conversation using conversation id and parent.</td>
+ *      <td><p> Gets details of a single conversation by using conversation id and parent.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -301,7 +301,8 @@ public class DataChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Answers a data question by generating a stream of [Message]s.
+   * Answers a data question by generating a stream of
+   * [Message][google.cloud.geminidataanalytics.v1alpha.Message] objects.
    *
    * <p>Sample code:
    *
@@ -354,7 +355,9 @@ public class DataChatServiceClient implements BackgroundResource {
    * @param parent Required. Parent value for CreateConversationRequest. Format:
    *     `projects/{project}/locations/{location}`
    * @param conversation Required. The conversation to create.
-   * @param conversationId Optional. The conversation id of the conversation to create.
+   * @param conversationId Optional. The conversation id of the conversation to create. Must be
+   *     unique within the parent. The allowed format is: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`. If
+   *     not provided, the server will auto-generate a value for the id.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Conversation createConversation(
@@ -393,7 +396,9 @@ public class DataChatServiceClient implements BackgroundResource {
    * @param parent Required. Parent value for CreateConversationRequest. Format:
    *     `projects/{project}/locations/{location}`
    * @param conversation Required. The conversation to create.
-   * @param conversationId Optional. The conversation id of the conversation to create.
+   * @param conversationId Optional. The conversation id of the conversation to create. Must be
+   *     unique within the parent. The allowed format is: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`. If
+   *     not provided, the server will auto-generate a value for the id.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Conversation createConversation(
@@ -473,7 +478,7 @@ public class DataChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single conversation using conversation id and parent.
+   * Gets details of a single conversation by using conversation id and parent.
    *
    * <p>Sample code:
    *
@@ -501,7 +506,7 @@ public class DataChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single conversation using conversation id and parent.
+   * Gets details of a single conversation by using conversation id and parent.
    *
    * <p>Sample code:
    *
@@ -528,7 +533,7 @@ public class DataChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single conversation using conversation id and parent.
+   * Gets details of a single conversation by using conversation id and parent.
    *
    * <p>Sample code:
    *
@@ -556,7 +561,7 @@ public class DataChatServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single conversation using conversation id and parent.
+   * Gets details of a single conversation by using conversation id and parent.
    *
    * <p>Sample code:
    *

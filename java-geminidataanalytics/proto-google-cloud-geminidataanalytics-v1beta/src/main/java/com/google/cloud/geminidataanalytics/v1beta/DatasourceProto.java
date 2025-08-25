@@ -72,6 +72,10 @@ public final class DatasourceProto {
       internal_static_google_cloud_geminidataanalytics_v1beta_Field_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_geminidataanalytics_v1beta_Field_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_geminidataanalytics_v1beta_DataFilter_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_geminidataanalytics_v1beta_DataFilter_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -95,62 +99,81 @@ public final class DatasourceProto {
           + "references\"y\n"
           + "\027BigQueryTableReferences\022^\n"
           + "\020table_references\030\001 \003(\0132?.google.cloud.geminidata"
-          + "analytics.v1beta.BigQueryTableReferenceB\003\340A\002\"a\n"
+          + "analytics.v1beta.BigQueryTableReferenceB\003\340A\002\"\247\001\n"
           + "\026BigQueryTableReference\022\027\n\n"
           + "project_id\030\001 \001(\tB\003\340A\002\022\027\n\n"
           + "dataset_id\030\003 \001(\tB\003\340A\002\022\025\n"
-          + "\010table_id\030\004 \001(\tB\003\340A\002\"{\n"
+          + "\010table_id\030\004 \001(\tB\003\340A\002\022D\n"
+          + "\006schema\030\006 \001(\013"
+          + "2/.google.cloud.geminidataanalytics.v1beta.SchemaB\003\340A\001\"{\n"
           + "\032StudioDatasourceReferences\022]\n"
-          + "\021studio_references\030\002 \003(\013"
-          + "2B.google.cloud.geminidataanalytics.v1beta.StudioDatasourceReference\"7\n"
+          + "\021studio_references\030\002 \003(\0132B.google"
+          + ".cloud.geminidataanalytics.v1beta.StudioDatasourceReference\"7\n"
           + "\031StudioDatasourceReference\022\032\n\r"
           + "datasource_id\030\001 \001(\tB\003\340A\002\"\313\001\n"
           + "\027LookerExploreReferences\022`\n"
-          + "\022explore_references\030\001 \003(\0132?.google.cloud.gem"
-          + "inidataanalytics.v1beta.LookerExploreReferenceB\003\340A\002\022N\n"
-          + "\013credentials\030\002 \001(\01324.googl"
-          + "e.cloud.geminidataanalytics.v1beta.CredentialsB\003\340A\001\"\253\002\n"
-          + "\026LookerExploreReference\022\"\n"
-          + "\023looker_instance_uri\030\t \001(\tB\003\340A\002H\000\022j\n"
+          + "\022explore_references\030\001 \003(\0132?.google.cloud.geminidataan"
+          + "alytics.v1beta.LookerExploreReferenceB\003\340A\002\022N\n"
+          + "\013credentials\030\002 \001(\01324.google.cloud.g"
+          + "eminidataanalytics.v1beta.CredentialsB\003\340A\001\"\246\002\n"
+          + "\026LookerExploreReference\022\035\n"
+          + "\023looker_instance_uri\030\t \001(\tH\000\022j\n"
           + "\034private_looker_instance_info\030\n"
-          + " \001(\0132B.googl"
-          + "e.cloud.geminidataanalytics.v1beta.PrivateLookerInstanceInfoH\000\022\031\n"
+          + " \001(\0132B.google.cloud.gemini"
+          + "dataanalytics.v1beta.PrivateLookerInstanceInfoH\000\022\031\n"
           + "\014lookml_model\030\004 \001(\tB\003\340A\002\022\024\n"
           + "\007explore\030\005 \001(\tB\003\340A\002\022D\n"
-          + "\006schema\030\010"
-          + " \001(\0132/.google.cloud.geminidataanalytics.v1beta.SchemaB\003\340A\001B\n\n"
+          + "\006schema\030\010 \001(\0132/.goog"
+          + "le.cloud.geminidataanalytics.v1beta.SchemaB\003\340A\001B\n\n"
           + "\010instance\"W\n"
           + "\031PrivateLookerInstanceInfo\022\032\n"
           + "\022looker_instance_id\030\001 \001(\t\022\036\n"
           + "\026service_directory_name\030\002 \001(\t\"\311\002\n\n"
           + "Datasource\022c\n"
-          + "\030bigquery_table_reference\030\001 \001(\0132?.google.cloud.geminidataana"
-          + "lytics.v1beta.BigQueryTableReferenceH\000\022\036\n"
+          + "\030bigquery_table_reference\030\001 \001(\0132?."
+          + "google.cloud.geminidataanalytics.v1beta.BigQueryTableReferenceH\000\022\036\n"
           + "\024studio_datasource_id\030\002 \001(\tH\000\022c\n"
-          + "\030looker_explore_reference\030\004 \001(\0132?.google.cloud."
-          + "geminidataanalytics.v1beta.LookerExploreReferenceH\000\022D\n"
-          + "\006schema\030\007 \001(\0132/.google.clo"
-          + "ud.geminidataanalytics.v1beta.SchemaB\003\340A\001B\013\n"
-          + "\treference\"h\n"
+          + "\030looker_explore_reference\030\004"
+          + " \001(\0132?.google.cloud.geminidataanalytics.v1beta.LookerExploreReferenceH\000\022D\n"
+          + "\006schema\030\007"
+          + " \001(\0132/.google.cloud.geminidataanalytics.v1beta.SchemaB\003\340A\001B\013\n"
+          + "\treference\"\367\001\n"
           + "\006Schema\022C\n"
-          + "\006fields\030\001 \003(\013"
-          + "2..google.cloud.geminidataanalytics.v1beta.FieldB\003\340A\001\022\031\n"
-          + "\014display_name\030\005 \001(\tB\003\340A\001\"\324\001\n"
+          + "\006fields\030\001 \003(\0132..google.clo"
+          + "ud.geminidataanalytics.v1beta.FieldB\003\340A\001\022\030\n"
+          + "\013description\030\002 \001(\tB\003\340A\001\022\025\n"
+          + "\010synonyms\030\003 \003(\tB\003\340A\001\022\021\n"
+          + "\004tags\030\004 \003(\tB\003\340A\001\022\031\n"
+          + "\014display_name\030\005 \001(\tB\003\340A\001\022I\n"
+          + "\007filters\030\006 \003(\01323.googl"
+          + "e.cloud.geminidataanalytics.v1beta.DataFilterB\003\340A\001\"\231\002\n"
           + "\005Field\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\001\022\021\n"
           + "\004type\030\002 \001(\tB\003\340A\001\022\030\n"
           + "\013description\030\003 \001(\tB\003\340A\001\022\021\n"
-          + "\004mode\030\004 \001(\tB\003\340A\001\022\031\n"
+          + "\004mode\030\004 \001(\tB\003\340A\001\022\025\n"
+          + "\010synonyms\030\006 \003(\tB\003\340A\001\022\021\n"
+          + "\004tags\030\007 \003(\tB\003\340A\001\022\031\n"
           + "\014display_name\030\010 \001(\tB\003\340A\001\022F\n"
-          + "\tsubfields\030\t"
-          + " \003(\0132..google.cloud.geminidataanalytics.v1beta.FieldB\003\340A\001\022\025\n"
+          + "\tsubfields\030\t \003(\0132..google"
+          + ".cloud.geminidataanalytics.v1beta.FieldB\003\340A\001\022\025\n"
           + "\010category\030\n"
-          + " \001(\tB\003\340A\001B\240\002\n"
-          + "+com.google.cloud.geminidataanalytics.v1betaB\017DatasourceProto"
-          + "P\001Z]cloud.google.com/go/geminidataanalytics/apiv1beta/geminidataanalyticspb;gemi"
-          + "nidataanalyticspb\252\002\'Google.Cloud.GeminiD"
-          + "ataAnalytics.V1Beta\312\002\'Google\\Cloud\\Gemin"
-          + "iDataAnalytics\\V1beta\352\002*Google::Cloud::GeminiDataAnalytics::V1betab\006proto3"
+          + " \001(\tB\003\340A\001\022\031\n"
+          + "\014value_format\030\013 \001(\tB\003\340A\001\"\200\001\n\n"
+          + "DataFilter\022\022\n"
+          + "\005field\030\001 \001(\tB\003\340A\001\022\022\n"
+          + "\005value\030\002 \001(\tB\003\340A\001\022J\n"
+          + "\004type\030\003 "
+          + "\001(\01627.google.cloud.geminidataanalytics.v1beta.DataFilterTypeB\003\340A\001*E\n"
+          + "\016DataFilterType\022 \n"
+          + "\034DATA_FILTER_TYPE_UNSPECIFIED\020\000\022\021\n"
+          + "\r"
+          + "ALWAYS_FILTER\020\001B\240\002\n"
+          + "+com.google.cloud.geminidataanalytics.v1betaB\017DatasourceProt"
+          + "oP\001Z]cloud.google.com/go/geminidataanalytics/apiv1beta/geminidataanalyticspb;gem"
+          + "inidataanalyticspb\252\002\'Google.Cloud.Gemini"
+          + "DataAnalytics.V1Beta\312\002\'Google\\Cloud\\Gemi"
+          + "niDataAnalytics\\V1beta\352\002*Google::Cloud::GeminiDataAnalytics::V1betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -181,7 +204,7 @@ public final class DatasourceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_geminidataanalytics_v1beta_BigQueryTableReference_descriptor,
             new java.lang.String[] {
-              "ProjectId", "DatasetId", "TableId",
+              "ProjectId", "DatasetId", "TableId", "Schema",
             });
     internal_static_google_cloud_geminidataanalytics_v1beta_StudioDatasourceReferences_descriptor =
         getDescriptor().getMessageTypes().get(3);
@@ -246,7 +269,7 @@ public final class DatasourceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_geminidataanalytics_v1beta_Schema_descriptor,
             new java.lang.String[] {
-              "Fields", "DisplayName",
+              "Fields", "Description", "Synonyms", "Tags", "DisplayName", "Filters",
             });
     internal_static_google_cloud_geminidataanalytics_v1beta_Field_descriptor =
         getDescriptor().getMessageTypes().get(10);
@@ -254,7 +277,24 @@ public final class DatasourceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_geminidataanalytics_v1beta_Field_descriptor,
             new java.lang.String[] {
-              "Name", "Type", "Description", "Mode", "DisplayName", "Subfields", "Category",
+              "Name",
+              "Type",
+              "Description",
+              "Mode",
+              "Synonyms",
+              "Tags",
+              "DisplayName",
+              "Subfields",
+              "Category",
+              "ValueFormat",
+            });
+    internal_static_google_cloud_geminidataanalytics_v1beta_DataFilter_descriptor =
+        getDescriptor().getMessageTypes().get(11);
+    internal_static_google_cloud_geminidataanalytics_v1beta_DataFilter_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_geminidataanalytics_v1beta_DataFilter_descriptor,
+            new java.lang.String[] {
+              "Field", "Value", "Type",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

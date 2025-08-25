@@ -31,7 +31,7 @@ public interface LookerExploreReferenceOrBuilder
    * Required. The base url of the Looker instance.
    * </pre>
    *
-   * <code>string looker_instance_uri = 9 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string looker_instance_uri = 9;</code>
    *
    * @return Whether the lookerInstanceUri field is set.
    */
@@ -44,7 +44,7 @@ public interface LookerExploreReferenceOrBuilder
    * Required. The base url of the Looker instance.
    * </pre>
    *
-   * <code>string looker_instance_uri = 9 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string looker_instance_uri = 9;</code>
    *
    * @return The lookerInstanceUri.
    */
@@ -57,7 +57,7 @@ public interface LookerExploreReferenceOrBuilder
    * Required. The base url of the Looker instance.
    * </pre>
    *
-   * <code>string looker_instance_uri = 9 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string looker_instance_uri = 9;</code>
    *
    * @return The bytes for lookerInstanceUri.
    */
@@ -112,9 +112,10 @@ public interface LookerExploreReferenceOrBuilder
    *
    *
    * <pre>
-   * Required. Looker Model as outlined in
-   * https://cloud.google.com/looker/docs/lookml-terms-and-concepts#major_lookml_structures
-   * Name of LookML model.
+   * Required. Looker model, as outlined in
+   * [Major LookML
+   * structures](https://cloud.google.com/looker/docs/lookml-terms-and-concepts#major_lookml_structures).
+   * Name of the LookML model.
    * </pre>
    *
    * <code>string lookml_model = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -127,9 +128,10 @@ public interface LookerExploreReferenceOrBuilder
    *
    *
    * <pre>
-   * Required. Looker Model as outlined in
-   * https://cloud.google.com/looker/docs/lookml-terms-and-concepts#major_lookml_structures
-   * Name of LookML model.
+   * Required. Looker model, as outlined in
+   * [Major LookML
+   * structures](https://cloud.google.com/looker/docs/lookml-terms-and-concepts#major_lookml_structures).
+   * Name of the LookML model.
    * </pre>
    *
    * <code>string lookml_model = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -142,9 +144,10 @@ public interface LookerExploreReferenceOrBuilder
    *
    *
    * <pre>
-   * Required. Looker Explore as outlined in
-   * https://cloud.google.com/looker/docs/lookml-terms-and-concepts#major_lookml_structures
-   * Name of LookML explore.
+   * Required. Looker Explore, as outlined in
+   * [Major LookML
+   * structures](https://cloud.google.com/looker/docs/lookml-terms-and-concepts#major_lookml_structures).
+   * Name of the LookML Explore.
    * </pre>
    *
    * <code>string explore = 5 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -157,9 +160,10 @@ public interface LookerExploreReferenceOrBuilder
    *
    *
    * <pre>
-   * Required. Looker Explore as outlined in
-   * https://cloud.google.com/looker/docs/lookml-terms-and-concepts#major_lookml_structures
-   * Name of LookML explore.
+   * Required. Looker Explore, as outlined in
+   * [Major LookML
+   * structures](https://cloud.google.com/looker/docs/lookml-terms-and-concepts#major_lookml_structures).
+   * Name of the LookML Explore.
    * </pre>
    *
    * <code>string explore = 5 [(.google.api.field_behavior) = REQUIRED];</code>

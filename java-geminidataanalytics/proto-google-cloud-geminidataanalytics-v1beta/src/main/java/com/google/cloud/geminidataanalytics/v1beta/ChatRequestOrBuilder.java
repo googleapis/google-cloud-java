@@ -171,7 +171,7 @@ public interface ChatRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The GCP project to be used for quota and billing.
+   * Optional. The Google Cloud project to be used for quota and billing.
    * </pre>
    *
    * <code>
@@ -179,7 +179,7 @@ public interface ChatRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-   *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=163
+   *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=164
    * @return The project.
    */
   @java.lang.Deprecated
@@ -189,7 +189,7 @@ public interface ChatRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The GCP project to be used for quota and billing.
+   * Optional. The Google Cloud project to be used for quota and billing.
    * </pre>
    *
    * <code>
@@ -197,7 +197,7 @@ public interface ChatRequestOrBuilder
    * </code>
    *
    * @deprecated google.cloud.geminidataanalytics.v1beta.ChatRequest.project is deprecated. See
-   *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=163
+   *     google/cloud/geminidataanalytics/v1beta/data_chat_service.proto;l=164
    * @return The bytes for project.
    */
   @java.lang.Deprecated

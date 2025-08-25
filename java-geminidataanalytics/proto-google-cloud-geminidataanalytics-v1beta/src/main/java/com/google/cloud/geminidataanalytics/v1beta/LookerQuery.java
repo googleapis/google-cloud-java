@@ -23,8 +23,9 @@ package com.google.cloud.geminidataanalytics.v1beta;
  *
  *
  * <pre>
- * A query for retrieving data from a Looker explore. See
- * https://cloud.google.com/looker/docs/reference/looker-api/latest/methods/Query/run_inline_query
+ * A query for retrieving data from a Looker Explore. See
+ * [Run Inline
+ * Query](https://cloud.google.com/looker/docs/reference/looker-api/latest/methods/Query/run_inline_query).
  * </pre>
  *
  * Protobuf type {@code google.cloud.geminidataanalytics.v1beta.LookerQuery}
@@ -1008,7 +1009,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The LookML explore used to generate the query.
+   * Required. The LookML Explore used to generate the query.
    * </pre>
    *
    * <code>string explore = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1032,7 +1033,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. The LookML explore used to generate the query.
+   * Required. The LookML Explore used to generate the query.
    * </pre>
    *
    * <code>string explore = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1062,7 +1063,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The fields to retrieve from the explore.
+   * Optional. The fields to retrieve from the Explore.
    * </pre>
    *
    * <code>repeated string fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1077,7 +1078,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The fields to retrieve from the explore.
+   * Optional. The fields to retrieve from the Explore.
    * </pre>
    *
    * <code>repeated string fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1092,7 +1093,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The fields to retrieve from the explore.
+   * Optional. The fields to retrieve from the Explore.
    * </pre>
    *
    * <code>repeated string fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1108,7 +1109,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The fields to retrieve from the explore.
+   * Optional. The fields to retrieve from the Explore.
    * </pre>
    *
    * <code>repeated string fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1129,7 +1130,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The filters to apply to the explore.
+   * Optional. The filters to apply to the Explore.
    * </pre>
    *
    * <code>
@@ -1146,7 +1147,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The filters to apply to the explore.
+   * Optional. The filters to apply to the Explore.
    * </pre>
    *
    * <code>
@@ -1164,7 +1165,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The filters to apply to the explore.
+   * Optional. The filters to apply to the Explore.
    * </pre>
    *
    * <code>
@@ -1180,7 +1181,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The filters to apply to the explore.
+   * Optional. The filters to apply to the Explore.
    * </pre>
    *
    * <code>
@@ -1196,7 +1197,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The filters to apply to the explore.
+   * Optional. The filters to apply to the Explore.
    * </pre>
    *
    * <code>
@@ -1219,7 +1220,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The sorts to apply to the explore.
+   * Optional. The sorts to apply to the Explore.
    * </pre>
    *
    * <code>repeated string sorts = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1234,7 +1235,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The sorts to apply to the explore.
+   * Optional. The sorts to apply to the Explore.
    * </pre>
    *
    * <code>repeated string sorts = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1249,7 +1250,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The sorts to apply to the explore.
+   * Optional. The sorts to apply to the Explore.
    * </pre>
    *
    * <code>repeated string sorts = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1265,7 +1266,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. The sorts to apply to the explore.
+   * Optional. The sorts to apply to the Explore.
    * </pre>
    *
    * <code>repeated string sorts = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1577,8 +1578,9 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A query for retrieving data from a Looker explore. See
-   * https://cloud.google.com/looker/docs/reference/looker-api/latest/methods/Query/run_inline_query
+   * A query for retrieving data from a Looker Explore. See
+   * [Run Inline
+   * Query](https://cloud.google.com/looker/docs/reference/looker-api/latest/methods/Query/run_inline_query).
    * </pre>
    *
    * Protobuf type {@code google.cloud.geminidataanalytics.v1beta.LookerQuery}
@@ -2013,7 +2015,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The LookML explore used to generate the query.
+     * Required. The LookML Explore used to generate the query.
      * </pre>
      *
      * <code>string explore = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2036,7 +2038,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The LookML explore used to generate the query.
+     * Required. The LookML Explore used to generate the query.
      * </pre>
      *
      * <code>string explore = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2059,7 +2061,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The LookML explore used to generate the query.
+     * Required. The LookML Explore used to generate the query.
      * </pre>
      *
      * <code>string explore = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2081,7 +2083,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The LookML explore used to generate the query.
+     * Required. The LookML Explore used to generate the query.
      * </pre>
      *
      * <code>string explore = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2099,7 +2101,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The LookML explore used to generate the query.
+     * Required. The LookML Explore used to generate the query.
      * </pre>
      *
      * <code>string explore = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2132,7 +2134,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The fields to retrieve from the explore.
+     * Optional. The fields to retrieve from the Explore.
      * </pre>
      *
      * <code>repeated string fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2148,7 +2150,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The fields to retrieve from the explore.
+     * Optional. The fields to retrieve from the Explore.
      * </pre>
      *
      * <code>repeated string fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2163,7 +2165,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The fields to retrieve from the explore.
+     * Optional. The fields to retrieve from the Explore.
      * </pre>
      *
      * <code>repeated string fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2179,7 +2181,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The fields to retrieve from the explore.
+     * Optional. The fields to retrieve from the Explore.
      * </pre>
      *
      * <code>repeated string fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2195,7 +2197,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The fields to retrieve from the explore.
+     * Optional. The fields to retrieve from the Explore.
      * </pre>
      *
      * <code>repeated string fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2219,7 +2221,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The fields to retrieve from the explore.
+     * Optional. The fields to retrieve from the Explore.
      * </pre>
      *
      * <code>repeated string fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2242,7 +2244,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The fields to retrieve from the explore.
+     * Optional. The fields to retrieve from the Explore.
      * </pre>
      *
      * <code>repeated string fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2262,7 +2264,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The fields to retrieve from the explore.
+     * Optional. The fields to retrieve from the Explore.
      * </pre>
      *
      * <code>repeated string fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2281,7 +2283,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The fields to retrieve from the explore.
+     * Optional. The fields to retrieve from the Explore.
      * </pre>
      *
      * <code>repeated string fields = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2323,7 +2325,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The filters to apply to the explore.
+     * Optional. The filters to apply to the Explore.
      * </pre>
      *
      * <code>
@@ -2343,7 +2345,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The filters to apply to the explore.
+     * Optional. The filters to apply to the Explore.
      * </pre>
      *
      * <code>
@@ -2362,7 +2364,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The filters to apply to the explore.
+     * Optional. The filters to apply to the Explore.
      * </pre>
      *
      * <code>
@@ -2381,7 +2383,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The filters to apply to the explore.
+     * Optional. The filters to apply to the Explore.
      * </pre>
      *
      * <code>
@@ -2407,7 +2409,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The filters to apply to the explore.
+     * Optional. The filters to apply to the Explore.
      * </pre>
      *
      * <code>
@@ -2431,7 +2433,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The filters to apply to the explore.
+     * Optional. The filters to apply to the Explore.
      * </pre>
      *
      * <code>
@@ -2457,7 +2459,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The filters to apply to the explore.
+     * Optional. The filters to apply to the Explore.
      * </pre>
      *
      * <code>
@@ -2483,7 +2485,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The filters to apply to the explore.
+     * Optional. The filters to apply to the Explore.
      * </pre>
      *
      * <code>
@@ -2506,7 +2508,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The filters to apply to the explore.
+     * Optional. The filters to apply to the Explore.
      * </pre>
      *
      * <code>
@@ -2530,7 +2532,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The filters to apply to the explore.
+     * Optional. The filters to apply to the Explore.
      * </pre>
      *
      * <code>
@@ -2554,7 +2556,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The filters to apply to the explore.
+     * Optional. The filters to apply to the Explore.
      * </pre>
      *
      * <code>
@@ -2576,7 +2578,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The filters to apply to the explore.
+     * Optional. The filters to apply to the Explore.
      * </pre>
      *
      * <code>
@@ -2598,7 +2600,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The filters to apply to the explore.
+     * Optional. The filters to apply to the Explore.
      * </pre>
      *
      * <code>
@@ -2614,7 +2616,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The filters to apply to the explore.
+     * Optional. The filters to apply to the Explore.
      * </pre>
      *
      * <code>
@@ -2634,7 +2636,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The filters to apply to the explore.
+     * Optional. The filters to apply to the Explore.
      * </pre>
      *
      * <code>
@@ -2655,7 +2657,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The filters to apply to the explore.
+     * Optional. The filters to apply to the Explore.
      * </pre>
      *
      * <code>
@@ -2673,7 +2675,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The filters to apply to the explore.
+     * Optional. The filters to apply to the Explore.
      * </pre>
      *
      * <code>
@@ -2692,7 +2694,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The filters to apply to the explore.
+     * Optional. The filters to apply to the Explore.
      * </pre>
      *
      * <code>
@@ -2735,7 +2737,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The sorts to apply to the explore.
+     * Optional. The sorts to apply to the Explore.
      * </pre>
      *
      * <code>repeated string sorts = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2751,7 +2753,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The sorts to apply to the explore.
+     * Optional. The sorts to apply to the Explore.
      * </pre>
      *
      * <code>repeated string sorts = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2766,7 +2768,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The sorts to apply to the explore.
+     * Optional. The sorts to apply to the Explore.
      * </pre>
      *
      * <code>repeated string sorts = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2782,7 +2784,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The sorts to apply to the explore.
+     * Optional. The sorts to apply to the Explore.
      * </pre>
      *
      * <code>repeated string sorts = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2798,7 +2800,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The sorts to apply to the explore.
+     * Optional. The sorts to apply to the Explore.
      * </pre>
      *
      * <code>repeated string sorts = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2822,7 +2824,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The sorts to apply to the explore.
+     * Optional. The sorts to apply to the Explore.
      * </pre>
      *
      * <code>repeated string sorts = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2845,7 +2847,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The sorts to apply to the explore.
+     * Optional. The sorts to apply to the Explore.
      * </pre>
      *
      * <code>repeated string sorts = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2865,7 +2867,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The sorts to apply to the explore.
+     * Optional. The sorts to apply to the Explore.
      * </pre>
      *
      * <code>repeated string sorts = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2884,7 +2886,7 @@ public final class LookerQuery extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. The sorts to apply to the explore.
+     * Optional. The sorts to apply to the Explore.
      * </pre>
      *
      * <code>repeated string sorts = 5 [(.google.api.field_behavior) = OPTIONAL];</code>

@@ -22,7 +22,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  * <pre>
  * Service to ask a natural language question on top of BigQuery
- * and LookerStudio datasources to get back streamed responses of various kinds
+ * and Looker Studio datasources to get back streamed responses of various kinds
  * to help provide a rich conversational answer.
  * </pre>
  */
@@ -332,7 +332,7 @@ public final class DataChatServiceGrpc {
    *
    * <pre>
    * Service to ask a natural language question on top of BigQuery
-   * and LookerStudio datasources to get back streamed responses of various kinds
+   * and Looker Studio datasources to get back streamed responses of various kinds
    * to help provide a rich conversational answer.
    * </pre>
    */
@@ -342,7 +342,8 @@ public final class DataChatServiceGrpc {
      *
      *
      * <pre>
-     * Answers a data question by generating a stream of [Message]s.
+     * Answers a data question by generating a stream of
+     * [Message][google.cloud.geminidataanalytics.v1alpha.Message] objects.
      * </pre>
      */
     default void chat(
@@ -372,7 +373,7 @@ public final class DataChatServiceGrpc {
      *
      *
      * <pre>
-     * Gets details of a single conversation using conversation id and parent.
+     * Gets details of a single conversation by using conversation id and parent.
      * </pre>
      */
     default void getConversation(
@@ -421,7 +422,7 @@ public final class DataChatServiceGrpc {
    *
    * <pre>
    * Service to ask a natural language question on top of BigQuery
-   * and LookerStudio datasources to get back streamed responses of various kinds
+   * and Looker Studio datasources to get back streamed responses of various kinds
    * to help provide a rich conversational answer.
    * </pre>
    */
@@ -439,7 +440,7 @@ public final class DataChatServiceGrpc {
    *
    * <pre>
    * Service to ask a natural language question on top of BigQuery
-   * and LookerStudio datasources to get back streamed responses of various kinds
+   * and Looker Studio datasources to get back streamed responses of various kinds
    * to help provide a rich conversational answer.
    * </pre>
    */
@@ -458,7 +459,8 @@ public final class DataChatServiceGrpc {
      *
      *
      * <pre>
-     * Answers a data question by generating a stream of [Message]s.
+     * Answers a data question by generating a stream of
+     * [Message][google.cloud.geminidataanalytics.v1alpha.Message] objects.
      * </pre>
      */
     public void chat(
@@ -491,7 +493,7 @@ public final class DataChatServiceGrpc {
      *
      *
      * <pre>
-     * Gets details of a single conversation using conversation id and parent.
+     * Gets details of a single conversation by using conversation id and parent.
      * </pre>
      */
     public void getConversation(
@@ -546,7 +548,7 @@ public final class DataChatServiceGrpc {
    *
    * <pre>
    * Service to ask a natural language question on top of BigQuery
-   * and LookerStudio datasources to get back streamed responses of various kinds
+   * and Looker Studio datasources to get back streamed responses of various kinds
    * to help provide a rich conversational answer.
    * </pre>
    */
@@ -567,7 +569,8 @@ public final class DataChatServiceGrpc {
      *
      *
      * <pre>
-     * Answers a data question by generating a stream of [Message]s.
+     * Answers a data question by generating a stream of
+     * [Message][google.cloud.geminidataanalytics.v1alpha.Message] objects.
      * </pre>
      */
     @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/10918")
@@ -595,7 +598,7 @@ public final class DataChatServiceGrpc {
      *
      *
      * <pre>
-     * Gets details of a single conversation using conversation id and parent.
+     * Gets details of a single conversation by using conversation id and parent.
      * </pre>
      */
     public com.google.cloud.geminidataanalytics.v1beta.Conversation getConversation(
@@ -636,7 +639,7 @@ public final class DataChatServiceGrpc {
    *
    * <pre>
    * Service to ask a natural language question on top of BigQuery
-   * and LookerStudio datasources to get back streamed responses of various kinds
+   * and Looker Studio datasources to get back streamed responses of various kinds
    * to help provide a rich conversational answer.
    * </pre>
    */
@@ -656,7 +659,8 @@ public final class DataChatServiceGrpc {
      *
      *
      * <pre>
-     * Answers a data question by generating a stream of [Message]s.
+     * Answers a data question by generating a stream of
+     * [Message][google.cloud.geminidataanalytics.v1alpha.Message] objects.
      * </pre>
      */
     public java.util.Iterator<com.google.cloud.geminidataanalytics.v1beta.Message> chat(
@@ -683,7 +687,7 @@ public final class DataChatServiceGrpc {
      *
      *
      * <pre>
-     * Gets details of a single conversation using conversation id and parent.
+     * Gets details of a single conversation by using conversation id and parent.
      * </pre>
      */
     public com.google.cloud.geminidataanalytics.v1beta.Conversation getConversation(
@@ -724,7 +728,7 @@ public final class DataChatServiceGrpc {
    *
    * <pre>
    * Service to ask a natural language question on top of BigQuery
-   * and LookerStudio datasources to get back streamed responses of various kinds
+   * and Looker Studio datasources to get back streamed responses of various kinds
    * to help provide a rich conversational answer.
    * </pre>
    */
@@ -760,7 +764,7 @@ public final class DataChatServiceGrpc {
      *
      *
      * <pre>
-     * Gets details of a single conversation using conversation id and parent.
+     * Gets details of a single conversation by using conversation id and parent.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

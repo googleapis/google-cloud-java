@@ -182,6 +182,16 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
+     * Maintenance due to redundant hardware fault.
+     * </pre>
+     *
+     * <code>FAILURE_REDUNDANT_HARDWARE_FAULT = 31000530;</code>
+     */
+    FAILURE_REDUNDANT_HARDWARE_FAULT(31000530),
+    /**
+     *
+     *
+     * <pre>
      * Maintenance due to infrastructure relocation.
      * </pre>
      *
@@ -335,6 +345,17 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
+     * Maintenance due to redundant hardware fault.
+     * </pre>
+     *
+     * <code>FAILURE_REDUNDANT_HARDWARE_FAULT = 31000530;</code>
+     */
+    public static final int FAILURE_REDUNDANT_HARDWARE_FAULT_VALUE = 31000530;
+
+    /**
+     *
+     *
+     * <pre>
      * Maintenance due to infrastructure relocation.
      * </pre>
      *
@@ -419,6 +440,8 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
           return FAILURE_NETWORK;
         case 484426295:
           return FAILURE_NVLINK;
+        case 31000530:
+          return FAILURE_REDUNDANT_HARDWARE_FAULT;
         case 359845636:
           return INFRASTRUCTURE_RELOCATION;
         case 50570235:

@@ -19,35 +19,6 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
- * <p>======================= ContextRetrievalServiceClient =======================
- *
- * <p>Service Description: Service to ask a natural language question with a provided project,
- * returns BigQuery tables that are relevant to the question within the project scope that is
- * accessible to the user, along with contextual data including table schema information as well as
- * sample values.
- *
- * <p>Sample for ContextRetrievalServiceClient:
- *
- * <pre>{@code
- * // This snippet has been automatically generated and should be regarded as a code template only.
- * // It will require modifications to work:
- * // - It may require correct/in-range values for request initialization.
- * // - It may require specifying regional endpoints when creating the service client as shown in
- * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
- * try (ContextRetrievalServiceClient contextRetrievalServiceClient =
- *     ContextRetrievalServiceClient.create()) {
- *   RetrieveBigQueryTableContextRequest request =
- *       RetrieveBigQueryTableContextRequest.newBuilder()
- *           .setProject("project-309310695")
- *           .setParent("parent-995424086")
- *           .setQuery("query107944136")
- *           .addAllDirectLookup(new ArrayList<DirectLookup>())
- *           .build();
- *   RetrieveBigQueryTableContextResponse response =
- *       contextRetrievalServiceClient.retrieveBigQueryTableContext(request);
- * }
- * }</pre>
- *
  * <p>======================= DataAgentServiceClient =======================
  *
  * <p>Service Description: Service describing handlers for resources.
@@ -68,8 +39,8 @@
  *
  * <p>======================= DataChatServiceClient =======================
  *
- * <p>Service Description: Service to ask a natural language question on top of BigQuery and
- * LookerStudio datasources to get back streamed responses of various kinds to help provide a rich
+ * <p>Service Description: Service to ask a natural language question on top of BigQuery and Looker
+ * Studio datasources to get back streamed responses of various kinds to help provide a rich
  * conversational answer.
  *
  * <p>Sample for DataChatServiceClient:
