@@ -29,7 +29,7 @@ echo ${JOB_TYPE}
 
 # attempt to install 3 times with exponential backoff (starting with 10 seconds)
 retry_with_backoff 3 10 \
-  mvn install -B -V -U \
+  mvn install -B -V -ntp \
     -DskipTests=true \
     -Dclirr.skip=true \
     -Denforcer.skip=true \
@@ -74,12 +74,7 @@ integration)
     ;;
 graalvm)
     # Run Unit and Integration Tests with Native Image
-    mvn -B ${INTEGRATION_TEST_ARGS} -ntp -PcustomNative -Penable-integration-tests  test
-    RETURN_CODE=$?
-    ;;
-graalvm17)
-    # Run Unit and Integration Tests with Native Image
-    mvn -B ${INTEGRATION_TEST_ARGS} -ntp -PcustomNative -Penable-integration-tests test
+    mvn -B ${INTEGRATION_TEST_ARGS} -ntp -PcustomNative test
     RETURN_CODE=$?
     ;;
 samples)

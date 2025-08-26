@@ -44,15 +44,6 @@
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>flatten-maven-plugin</artifactId>
       </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-dependency-plugin</artifactId>
-        <configuration>
-          <usedDependencies>
-            <dependency>com.google.auto.value:auto-value</dependency>
-          </usedDependencies>
-        </configuration>
-      </plugin>
     </plugins>
   </build>
   <dependencies>
@@ -79,11 +70,6 @@
     <dependency>
       <groupId>com.google.api</groupId>
       <artifactId>api-common</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>com.google.auto.value</groupId>
-      <artifactId>auto-value</artifactId>
-      <version>${auto-value.version}</version>
     </dependency>
     <dependency>
       <groupId>com.google.auto.value</groupId>
@@ -285,7 +271,7 @@
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-cloud-bigquerystorage-v1</artifactId>
     </dependency>
-    
+
     <!-- Need testing utility classes for generated gRPC clients tests -->
     <dependency>
       <groupId>com.google.api</groupId>
@@ -294,4 +280,118 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+
+  <profiles>
+    <profile>
+      <id>arrow-config</id>
+      <activation>
+        <jdk>[9,)</jdk>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+              <encoding>UTF-8</encoding>
+              <fork>true</fork>
+              <compilerArgs>
+                <arg>-J--add-opens=java.base/java.nio=org.apache.arrow.memory.core,ALL-UNNAMED</arg>
+                <arg>-J--add-opens=java.base/java.nio=java-base,ALL-UNNAMED</arg>
+              </compilerArgs>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <!-- This profile is used to enable GraalVM native image testing in BQ storage-->
+      <id>customNative</id>
+      <dependencies>
+        <!-- Add this dependency to resolve class org.opentest4j.TestAbortedException -->
+        <dependency>
+          <groupId>org.opentest4j</groupId>
+          <artifactId>opentest4j</artifactId>
+          <version>${opentest4j.version}</version>
+        </dependency>
+        <dependency>
+          <groupId>org.junit.vintage</groupId>
+          <artifactId>junit-vintage-engine</artifactId>
+          <version>${junit-vintage-engine.version}</version>
+        </dependency>
+      </dependencies>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>${surefire.version}</version>
+            <dependencies>
+              <dependency>
+                <groupId>org.junit.vintage</groupId>
+                <artifactId>junit-vintage-engine</artifactId>
+                <version>${junit-vintage-engine.version}</version>
+              </dependency>
+            </dependencies>
+            <configuration>
+              <!-- Include all tests during native image testing. -->
+              <excludes combine.self="override">
+                <exclude>**/ITBigQueryWrite*RetryTest.java</exclude>
+              </excludes>
+              <includes>
+                <include>**/IT*.java</include>
+                <!-- Enable unit tests in generated libraries for native image testing. -->
+                <include>**/*ClientTest.java</include>
+              </includes>
+            </configuration>
+          </plugin>
+          <plugin>
+            <groupId>org.graalvm.buildtools</groupId>
+            <artifactId>native-maven-plugin</artifactId>
+            <version>${native-maven-plugin.version}</version>
+            <extensions>true</extensions>
+            <executions>
+              <execution>
+                <id>test-native</id>
+                <goals>
+                  <goal>test</goal>
+                </goals>
+                <phase>test</phase>
+              </execution>
+            </executions>
+            <configuration>
+              <buildArgs>
+                <buildArg>--no-fallback</buildArg>
+                <buildArg>--no-server</buildArg>
+              </buildArgs>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>java17</id>
+      <activation>
+        <jdk>[17,)</jdk>
+        <property>
+          <!--
+          In Java 8 unit tests where we run tests in Java 8 after building
+          bytecode on Java 17, we don't want to add the argLine
+          -->
+          <name>!jvm</name>
+        </property>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <configuration>
+              <argLine>--add-opens=java.base/java.nio=ALL-UNNAMED</argLine>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 </project>
