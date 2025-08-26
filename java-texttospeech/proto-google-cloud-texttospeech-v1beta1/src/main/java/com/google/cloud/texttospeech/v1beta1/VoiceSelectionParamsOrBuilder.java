@@ -182,8 +182,8 @@ public interface VoiceSelectionParamsOrBuilder
    *
    * <pre>
    * Optional. The configuration for a voice clone. If
-   * [VoiceCloneParams.voice_clone_key] is set, the service will choose the
-   * voice clone matching the specified configuration.
+   * [VoiceCloneParams.voice_clone_key] is set, the service chooses the voice
+   * clone matching the specified configuration.
    * </pre>
    *
    * <code>
@@ -199,8 +199,8 @@ public interface VoiceSelectionParamsOrBuilder
    *
    * <pre>
    * Optional. The configuration for a voice clone. If
-   * [VoiceCloneParams.voice_clone_key] is set, the service will choose the
-   * voice clone matching the specified configuration.
+   * [VoiceCloneParams.voice_clone_key] is set, the service chooses the voice
+   * clone matching the specified configuration.
    * </pre>
    *
    * <code>
@@ -216,8 +216,8 @@ public interface VoiceSelectionParamsOrBuilder
    *
    * <pre>
    * Optional. The configuration for a voice clone. If
-   * [VoiceCloneParams.voice_clone_key] is set, the service will choose the
-   * voice clone matching the specified configuration.
+   * [VoiceCloneParams.voice_clone_key] is set, the service chooses the voice
+   * clone matching the specified configuration.
    * </pre>
    *
    * <code>
@@ -225,4 +225,32 @@ public interface VoiceSelectionParamsOrBuilder
    * </code>
    */
   com.google.cloud.texttospeech.v1beta1.VoiceCloneParamsOrBuilder getVoiceCloneOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the model. If set, the service will choose the model
+   * matching the specified configuration.
+   * </pre>
+   *
+   * <code>string model_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The modelName.
+   */
+  java.lang.String getModelName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the model. If set, the service will choose the model
+   * matching the specified configuration.
+   * </pre>
+   *
+   * <code>string model_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for modelName.
+   */
+  com.google.protobuf.ByteString getModelNameBytes();
 }
