@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.32.2](https://github.com/googleapis/java-firestore/compare/v3.32.1...v3.32.2) (2025-08-26)
+
+
+### Bug Fixes
+
+* Resolve RejectedExecutionException that occurred on BulkWriter close or executor shutdown ([#2223](https://github.com/googleapis/java-firestore/issues/2223)) ([e919ebb](https://github.com/googleapis/java-firestore/commit/e919ebbef229558098535ba6456b29ed22fa1533))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.52.0 ([#2222](https://github.com/googleapis/java-firestore/issues/2222)) ([cb90035](https://github.com/googleapis/java-firestore/commit/cb90035e8fa60c162c74b009053506d8f417b3a1))
+
 ## [3.32.1](https://github.com/googleapis/java-firestore/compare/v3.32.0...v3.32.1) (2025-08-13)
 
 
