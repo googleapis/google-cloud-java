@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.65.1](https://github.com/googleapis/java-bigtable/compare/v2.65.0...v2.65.1) (2025-08-27)
+
+
+### Dependencies
+
+* Update shared dependencies ([#2664](https://github.com/googleapis/java-bigtable/issues/2664)) ([841318b](https://github.com/googleapis/java-bigtable/commit/841318b2248dcda89d8482bc2e84c838bd8be8d0))
+
 ## [2.65.0](https://github.com/googleapis/java-bigtable/compare/v2.64.0...v2.65.0) (2025-08-12)
 
 
