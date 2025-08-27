@@ -39,7 +39,9 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
     super(builder);
   }
 
-  private StreamingSynthesisInput() {}
+  private StreamingSynthesisInput() {
+    prompt_ = "";
+  }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
@@ -62,6 +64,7 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
             com.google.cloud.texttospeech.v1.StreamingSynthesisInput.Builder.class);
   }
 
+  private int bitField0_;
   private int inputSourceCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -267,6 +270,75 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
     }
   }
 
+  public static final int PROMPT_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object prompt_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * This is system instruction supported only for controllable voice models.
+   * </pre>
+   *
+   * <code>optional string prompt = 6;</code>
+   *
+   * @return Whether the prompt field is set.
+   */
+  @java.lang.Override
+  public boolean hasPrompt() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * This is system instruction supported only for controllable voice models.
+   * </pre>
+   *
+   * <code>optional string prompt = 6;</code>
+   *
+   * @return The prompt.
+   */
+  @java.lang.Override
+  public java.lang.String getPrompt() {
+    java.lang.Object ref = prompt_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      prompt_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * This is system instruction supported only for controllable voice models.
+   * </pre>
+   *
+   * <code>optional string prompt = 6;</code>
+   *
+   * @return The bytes for prompt.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getPromptBytes() {
+    java.lang.Object ref = prompt_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      prompt_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -287,6 +359,9 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
     if (inputSourceCase_ == 5) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, inputSource_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, prompt_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -301,6 +376,9 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
     }
     if (inputSourceCase_ == 5) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, inputSource_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, prompt_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -318,6 +396,10 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
     com.google.cloud.texttospeech.v1.StreamingSynthesisInput other =
         (com.google.cloud.texttospeech.v1.StreamingSynthesisInput) obj;
 
+    if (hasPrompt() != other.hasPrompt()) return false;
+    if (hasPrompt()) {
+      if (!getPrompt().equals(other.getPrompt())) return false;
+    }
     if (!getInputSourceCase().equals(other.getInputSourceCase())) return false;
     switch (inputSourceCase_) {
       case 1:
@@ -340,6 +422,10 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasPrompt()) {
+      hash = (37 * hash) + PROMPT_FIELD_NUMBER;
+      hash = (53 * hash) + getPrompt().hashCode();
+    }
     switch (inputSourceCase_) {
       case 1:
         hash = (37 * hash) + TEXT_FIELD_NUMBER;
@@ -493,6 +579,7 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      prompt_ = "";
       inputSourceCase_ = 0;
       inputSource_ = null;
       return this;
@@ -532,6 +619,12 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
 
     private void buildPartial0(com.google.cloud.texttospeech.v1.StreamingSynthesisInput result) {
       int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.prompt_ = prompt_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     private void buildPartialOneofs(
@@ -586,6 +679,11 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
     public Builder mergeFrom(com.google.cloud.texttospeech.v1.StreamingSynthesisInput other) {
       if (other == com.google.cloud.texttospeech.v1.StreamingSynthesisInput.getDefaultInstance())
         return this;
+      if (other.hasPrompt()) {
+        prompt_ = other.prompt_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
       switch (other.getInputSourceCase()) {
         case TEXT:
           {
@@ -646,6 +744,12 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
                 inputSource_ = s;
                 break;
               } // case 42
+            case 50:
+              {
+                prompt_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -971,6 +1075,132 @@ public final class StreamingSynthesisInput extends com.google.protobuf.Generated
       checkByteStringIsUtf8(value);
       inputSourceCase_ = 5;
       inputSource_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object prompt_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * This is system instruction supported only for controllable voice models.
+     * </pre>
+     *
+     * <code>optional string prompt = 6;</code>
+     *
+     * @return Whether the prompt field is set.
+     */
+    public boolean hasPrompt() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This is system instruction supported only for controllable voice models.
+     * </pre>
+     *
+     * <code>optional string prompt = 6;</code>
+     *
+     * @return The prompt.
+     */
+    public java.lang.String getPrompt() {
+      java.lang.Object ref = prompt_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        prompt_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This is system instruction supported only for controllable voice models.
+     * </pre>
+     *
+     * <code>optional string prompt = 6;</code>
+     *
+     * @return The bytes for prompt.
+     */
+    public com.google.protobuf.ByteString getPromptBytes() {
+      java.lang.Object ref = prompt_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        prompt_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This is system instruction supported only for controllable voice models.
+     * </pre>
+     *
+     * <code>optional string prompt = 6;</code>
+     *
+     * @param value The prompt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPrompt(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      prompt_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This is system instruction supported only for controllable voice models.
+     * </pre>
+     *
+     * <code>optional string prompt = 6;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPrompt() {
+      prompt_ = getDefaultInstance().getPrompt();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * This is system instruction supported only for controllable voice models.
+     * </pre>
+     *
+     * <code>optional string prompt = 6;</code>
+     *
+     * @param value The bytes for prompt to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPromptBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      prompt_ = value;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }

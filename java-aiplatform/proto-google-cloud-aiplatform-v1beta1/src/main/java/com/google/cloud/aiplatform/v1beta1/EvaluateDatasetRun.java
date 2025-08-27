@@ -176,6 +176,66 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
     }
   }
 
+  public static final int EVALUATE_DATASET_RESPONSE_FIELD_NUMBER = 3;
+  private com.google.cloud.aiplatform.v1beta1.EvaluateDatasetResponse evaluateDatasetResponse_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Results for EvaluationService.EvaluateDataset.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.EvaluateDatasetResponse evaluate_dataset_response = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the evaluateDatasetResponse field is set.
+   */
+  @java.lang.Override
+  public boolean hasEvaluateDatasetResponse() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Results for EvaluationService.EvaluateDataset.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.EvaluateDatasetResponse evaluate_dataset_response = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The evaluateDatasetResponse.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.EvaluateDatasetResponse getEvaluateDatasetResponse() {
+    return evaluateDatasetResponse_ == null
+        ? com.google.cloud.aiplatform.v1beta1.EvaluateDatasetResponse.getDefaultInstance()
+        : evaluateDatasetResponse_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Results for EvaluationService.EvaluateDataset.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.EvaluateDatasetResponse evaluate_dataset_response = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.EvaluateDatasetResponseOrBuilder
+      getEvaluateDatasetResponseOrBuilder() {
+    return evaluateDatasetResponse_ == null
+        ? com.google.cloud.aiplatform.v1beta1.EvaluateDatasetResponse.getDefaultInstance()
+        : evaluateDatasetResponse_;
+  }
+
   public static final int ERROR_FIELD_NUMBER = 4;
   private com.google.rpc.Status error_;
 
@@ -192,7 +252,7 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
    */
   @java.lang.Override
   public boolean hasError() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
 
   /**
@@ -246,6 +306,9 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, checkpointId_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(3, getEvaluateDatasetResponse());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(4, getError());
     }
     getUnknownFields().writeTo(output);
@@ -264,6 +327,10 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, checkpointId_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(3, getEvaluateDatasetResponse());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getError());
     }
     size += getUnknownFields().getSerializedSize();
@@ -284,6 +351,10 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
 
     if (!getOperationName().equals(other.getOperationName())) return false;
     if (!getCheckpointId().equals(other.getCheckpointId())) return false;
+    if (hasEvaluateDatasetResponse() != other.hasEvaluateDatasetResponse()) return false;
+    if (hasEvaluateDatasetResponse()) {
+      if (!getEvaluateDatasetResponse().equals(other.getEvaluateDatasetResponse())) return false;
+    }
     if (hasError() != other.hasError()) return false;
     if (hasError()) {
       if (!getError().equals(other.getError())) return false;
@@ -303,6 +374,10 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
     hash = (53 * hash) + getOperationName().hashCode();
     hash = (37 * hash) + CHECKPOINT_ID_FIELD_NUMBER;
     hash = (53 * hash) + getCheckpointId().hashCode();
+    if (hasEvaluateDatasetResponse()) {
+      hash = (37 * hash) + EVALUATE_DATASET_RESPONSE_FIELD_NUMBER;
+      hash = (53 * hash) + getEvaluateDatasetResponse().hashCode();
+    }
     if (hasError()) {
       hash = (37 * hash) + ERROR_FIELD_NUMBER;
       hash = (53 * hash) + getError().hashCode();
@@ -449,6 +524,7 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getEvaluateDatasetResponseFieldBuilder();
         getErrorFieldBuilder();
       }
     }
@@ -459,6 +535,11 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
       bitField0_ = 0;
       operationName_ = "";
       checkpointId_ = "";
+      evaluateDatasetResponse_ = null;
+      if (evaluateDatasetResponseBuilder_ != null) {
+        evaluateDatasetResponseBuilder_.dispose();
+        evaluateDatasetResponseBuilder_ = null;
+      }
       error_ = null;
       if (errorBuilder_ != null) {
         errorBuilder_.dispose();
@@ -508,8 +589,15 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
       }
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.error_ = errorBuilder_ == null ? error_ : errorBuilder_.build();
+        result.evaluateDatasetResponse_ =
+            evaluateDatasetResponseBuilder_ == null
+                ? evaluateDatasetResponse_
+                : evaluateDatasetResponseBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.error_ = errorBuilder_ == null ? error_ : errorBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -570,6 +658,9 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
         bitField0_ |= 0x00000002;
         onChanged();
       }
+      if (other.hasEvaluateDatasetResponse()) {
+        mergeEvaluateDatasetResponse(other.getEvaluateDatasetResponse());
+      }
       if (other.hasError()) {
         mergeError(other.getError());
       }
@@ -611,10 +702,17 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000002;
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(
+                    getEvaluateDatasetResponseFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 26
             case 34:
               {
                 input.readMessage(getErrorFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             default:
@@ -868,6 +966,226 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    private com.google.cloud.aiplatform.v1beta1.EvaluateDatasetResponse evaluateDatasetResponse_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.EvaluateDatasetResponse,
+            com.google.cloud.aiplatform.v1beta1.EvaluateDatasetResponse.Builder,
+            com.google.cloud.aiplatform.v1beta1.EvaluateDatasetResponseOrBuilder>
+        evaluateDatasetResponseBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Results for EvaluationService.EvaluateDataset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EvaluateDatasetResponse evaluate_dataset_response = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the evaluateDatasetResponse field is set.
+     */
+    public boolean hasEvaluateDatasetResponse() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Results for EvaluationService.EvaluateDataset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EvaluateDatasetResponse evaluate_dataset_response = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The evaluateDatasetResponse.
+     */
+    public com.google.cloud.aiplatform.v1beta1.EvaluateDatasetResponse
+        getEvaluateDatasetResponse() {
+      if (evaluateDatasetResponseBuilder_ == null) {
+        return evaluateDatasetResponse_ == null
+            ? com.google.cloud.aiplatform.v1beta1.EvaluateDatasetResponse.getDefaultInstance()
+            : evaluateDatasetResponse_;
+      } else {
+        return evaluateDatasetResponseBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Results for EvaluationService.EvaluateDataset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EvaluateDatasetResponse evaluate_dataset_response = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setEvaluateDatasetResponse(
+        com.google.cloud.aiplatform.v1beta1.EvaluateDatasetResponse value) {
+      if (evaluateDatasetResponseBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        evaluateDatasetResponse_ = value;
+      } else {
+        evaluateDatasetResponseBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Results for EvaluationService.EvaluateDataset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EvaluateDatasetResponse evaluate_dataset_response = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setEvaluateDatasetResponse(
+        com.google.cloud.aiplatform.v1beta1.EvaluateDatasetResponse.Builder builderForValue) {
+      if (evaluateDatasetResponseBuilder_ == null) {
+        evaluateDatasetResponse_ = builderForValue.build();
+      } else {
+        evaluateDatasetResponseBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Results for EvaluationService.EvaluateDataset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EvaluateDatasetResponse evaluate_dataset_response = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeEvaluateDatasetResponse(
+        com.google.cloud.aiplatform.v1beta1.EvaluateDatasetResponse value) {
+      if (evaluateDatasetResponseBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)
+            && evaluateDatasetResponse_ != null
+            && evaluateDatasetResponse_
+                != com.google.cloud.aiplatform.v1beta1.EvaluateDatasetResponse
+                    .getDefaultInstance()) {
+          getEvaluateDatasetResponseBuilder().mergeFrom(value);
+        } else {
+          evaluateDatasetResponse_ = value;
+        }
+      } else {
+        evaluateDatasetResponseBuilder_.mergeFrom(value);
+      }
+      if (evaluateDatasetResponse_ != null) {
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Results for EvaluationService.EvaluateDataset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EvaluateDatasetResponse evaluate_dataset_response = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearEvaluateDatasetResponse() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      evaluateDatasetResponse_ = null;
+      if (evaluateDatasetResponseBuilder_ != null) {
+        evaluateDatasetResponseBuilder_.dispose();
+        evaluateDatasetResponseBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Results for EvaluationService.EvaluateDataset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EvaluateDatasetResponse evaluate_dataset_response = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.EvaluateDatasetResponse.Builder
+        getEvaluateDatasetResponseBuilder() {
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return getEvaluateDatasetResponseFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Results for EvaluationService.EvaluateDataset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EvaluateDatasetResponse evaluate_dataset_response = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.EvaluateDatasetResponseOrBuilder
+        getEvaluateDatasetResponseOrBuilder() {
+      if (evaluateDatasetResponseBuilder_ != null) {
+        return evaluateDatasetResponseBuilder_.getMessageOrBuilder();
+      } else {
+        return evaluateDatasetResponse_ == null
+            ? com.google.cloud.aiplatform.v1beta1.EvaluateDatasetResponse.getDefaultInstance()
+            : evaluateDatasetResponse_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Results for EvaluationService.EvaluateDataset.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.EvaluateDatasetResponse evaluate_dataset_response = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.EvaluateDatasetResponse,
+            com.google.cloud.aiplatform.v1beta1.EvaluateDatasetResponse.Builder,
+            com.google.cloud.aiplatform.v1beta1.EvaluateDatasetResponseOrBuilder>
+        getEvaluateDatasetResponseFieldBuilder() {
+      if (evaluateDatasetResponseBuilder_ == null) {
+        evaluateDatasetResponseBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.EvaluateDatasetResponse,
+                com.google.cloud.aiplatform.v1beta1.EvaluateDatasetResponse.Builder,
+                com.google.cloud.aiplatform.v1beta1.EvaluateDatasetResponseOrBuilder>(
+                getEvaluateDatasetResponse(), getParentForChildren(), isClean());
+        evaluateDatasetResponse_ = null;
+      }
+      return evaluateDatasetResponseBuilder_;
+    }
+
     private com.google.rpc.Status error_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
@@ -885,7 +1203,7 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
      * @return Whether the error field is set.
      */
     public boolean hasError() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -925,7 +1243,7 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
       } else {
         errorBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -945,7 +1263,7 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
       } else {
         errorBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -961,7 +1279,7 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeError(com.google.rpc.Status value) {
       if (errorBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && error_ != null
             && error_ != com.google.rpc.Status.getDefaultInstance()) {
           getErrorBuilder().mergeFrom(value);
@@ -972,7 +1290,7 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
         errorBuilder_.mergeFrom(value);
       }
       if (error_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -988,7 +1306,7 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
      * <code>.google.rpc.Status error = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearError() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       error_ = null;
       if (errorBuilder_ != null) {
         errorBuilder_.dispose();
@@ -1008,7 +1326,7 @@ public final class EvaluateDatasetRun extends com.google.protobuf.GeneratedMessa
      * <code>.google.rpc.Status error = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.rpc.Status.Builder getErrorBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }

@@ -111,5 +111,44 @@ public interface StreamingSynthesisInputOrBuilder
    */
   com.google.protobuf.ByteString getMarkupBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * This is system instruction supported only for controllable voice models.
+   * </pre>
+   *
+   * <code>optional string prompt = 6;</code>
+   *
+   * @return Whether the prompt field is set.
+   */
+  boolean hasPrompt();
+
+  /**
+   *
+   *
+   * <pre>
+   * This is system instruction supported only for controllable voice models.
+   * </pre>
+   *
+   * <code>optional string prompt = 6;</code>
+   *
+   * @return The prompt.
+   */
+  java.lang.String getPrompt();
+
+  /**
+   *
+   *
+   * <pre>
+   * This is system instruction supported only for controllable voice models.
+   * </pre>
+   *
+   * <code>optional string prompt = 6;</code>
+   *
+   * @return The bytes for prompt.
+   */
+  com.google.protobuf.ByteString getPromptBytes();
+
   com.google.cloud.texttospeech.v1.StreamingSynthesisInput.InputSourceCase getInputSourceCase();
 }

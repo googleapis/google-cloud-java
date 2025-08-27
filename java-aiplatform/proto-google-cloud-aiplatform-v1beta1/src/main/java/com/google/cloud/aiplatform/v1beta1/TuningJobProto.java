@@ -347,21 +347,23 @@ public final class TuningJobProto {
           + "output_config\030\002"
           + " \001(\0132-.google.cloud.aiplatform.v1beta1.OutputConfigB\003\340A\002\022O\n"
           + "\020autorater_config\030\003"
-          + " \001(\01320.google.cloud.aiplatform.v1beta1.AutoraterConfigB\003\340A\001\"u\n"
+          + " \001(\01320.google.cloud.aiplatform.v1beta1.AutoraterConfigB\003\340A\001\"\327\001\n"
           + "\022EvaluateDatasetRun\022\033\n"
           + "\016operation_name\030\001 \001(\tB\003\340A\003\022\032\n\r"
-          + "checkpoint_id\030\002 \001(\tB\003\340A\003\022&\n"
+          + "checkpoint_id\030\002 \001(\tB\003\340A\003\022`\n"
+          + "\031evaluate_dataset_response\030\003 \001(\01328.google.cloud.aipla"
+          + "tform.v1beta1.EvaluateDatasetResponseB\003\340A\003\022&\n"
           + "\005error\030\004 \001(\0132\022.google.rpc.StatusB\003\340A\003\"\\\n"
           + "\024TunedModelCheckpoint\022\025\n\r"
           + "checkpoint_id\030\001 \001(\t\022\r\n"
           + "\005epoch\030\002 \001(\003\022\014\n"
           + "\004step\030\003 \001(\003\022\020\n"
           + "\010endpoint\030\004 \001(\tB\345\001\n"
-          + "#com.google.cloud.aiplatform.v1beta1B\016TuningJobProtoP\001ZCcloud.google.com/go/aip"
-          + "latform/apiv1beta1/aiplatformpb;aiplatfo"
-          + "rmpb\252\002\037Google.Cloud.AIPlatform.V1Beta1\312\002"
-          + "\037Google\\Cloud\\AIPlatform\\V1beta1\352\002\"Googl"
-          + "e::Cloud::AIPlatform::V1beta1b\006proto3"
+          + "#com.google.cloud.aiplatform.v1beta1B\016TuningJobProtoP\001ZCclou"
+          + "d.google.com/go/aiplatform/apiv1beta1/ai"
+          + "platformpb;aiplatformpb\252\002\037Google.Cloud.A"
+          + "IPlatform.V1Beta1\312\002\037Google\\Cloud\\AIPlatf"
+          + "orm\\V1beta1\352\002\"Google::Cloud::AIPlatform::V1beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -614,7 +616,7 @@ public final class TuningJobProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_EvaluateDatasetRun_descriptor,
             new java.lang.String[] {
-              "OperationName", "CheckpointId", "Error",
+              "OperationName", "CheckpointId", "EvaluateDatasetResponse", "Error",
             });
     internal_static_google_cloud_aiplatform_v1beta1_TunedModelCheckpoint_descriptor =
         getDescriptor().getMessageTypes().get(18);
