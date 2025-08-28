@@ -363,45 +363,54 @@ public interface HardwareGroupOrBuilder
    *
    *
    * <pre>
-   * Optional. Requested installation date for the hardware in this
-   * HardwareGroup. Filled in by the customer.
+   * Deprecated: This value is not used. Use the requested_installation_date
+   * field in the Order resource instead.
    * </pre>
    *
    * <code>
-   * .google.type.Date requested_installation_date = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.type.Date requested_installation_date = 10 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated
+   *     google.cloud.gdchardwaremanagement.v1alpha.HardwareGroup.requested_installation_date is
+   *     deprecated. See google/cloud/gdchardwaremanagement/v1alpha/resources.proto;l=408
    * @return Whether the requestedInstallationDate field is set.
    */
+  @java.lang.Deprecated
   boolean hasRequestedInstallationDate();
 
   /**
    *
    *
    * <pre>
-   * Optional. Requested installation date for the hardware in this
-   * HardwareGroup. Filled in by the customer.
+   * Deprecated: This value is not used. Use the requested_installation_date
+   * field in the Order resource instead.
    * </pre>
    *
    * <code>
-   * .google.type.Date requested_installation_date = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.type.Date requested_installation_date = 10 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated
+   *     google.cloud.gdchardwaremanagement.v1alpha.HardwareGroup.requested_installation_date is
+   *     deprecated. See google/cloud/gdchardwaremanagement/v1alpha/resources.proto;l=408
    * @return The requestedInstallationDate.
    */
+  @java.lang.Deprecated
   com.google.type.Date getRequestedInstallationDate();
 
   /**
    *
    *
    * <pre>
-   * Optional. Requested installation date for the hardware in this
-   * HardwareGroup. Filled in by the customer.
+   * Deprecated: This value is not used. Use the requested_installation_date
+   * field in the Order resource instead.
    * </pre>
    *
    * <code>
-   * .google.type.Date requested_installation_date = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.type.Date requested_installation_date = 10 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Deprecated
   com.google.type.DateOrBuilder getRequestedInstallationDateOrBuilder();
 }
