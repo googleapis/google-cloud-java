@@ -37,13 +37,33 @@ public final class RegionsProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_shopping_merchant_accounts_v1_CreateRegionRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_shopping_merchant_accounts_v1_BatchCreateRegionsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_shopping_merchant_accounts_v1_BatchCreateRegionsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_shopping_merchant_accounts_v1_BatchCreateRegionsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_shopping_merchant_accounts_v1_BatchCreateRegionsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_shopping_merchant_accounts_v1_UpdateRegionRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_shopping_merchant_accounts_v1_UpdateRegionRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_shopping_merchant_accounts_v1_BatchUpdateRegionsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_shopping_merchant_accounts_v1_BatchUpdateRegionsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_shopping_merchant_accounts_v1_BatchUpdateRegionsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_shopping_merchant_accounts_v1_BatchUpdateRegionsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_shopping_merchant_accounts_v1_DeleteRegionRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_shopping_merchant_accounts_v1_DeleteRegionRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_shopping_merchant_accounts_v1_BatchDeleteRegionsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_shopping_merchant_accounts_v1_BatchDeleteRegionsRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_shopping_merchant_accounts_v1_ListRegionsRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -91,14 +111,35 @@ public final class RegionsProto {
           + "\"merchantapi.googleapis.com/Account\022\026\n"
           + "\tregion_id\030\002 \001(\tB\003\340A\002\022A\n"
           + "\006region\030\003"
-          + " \001(\0132,.google.shopping.merchant.accounts.v1.RegionB\003\340A\002\"\216\001\n"
+          + " \001(\0132,.google.shopping.merchant.accounts.v1.RegionB\003\340A\002\"\251\001\n"
+          + "\031BatchCreateRegionsRequest\022:\n"
+          + "\006parent\030\001 \001(\tB*\340A\002\372A$\n"
+          + "\"merchantapi.googleapis.com/Account\022P\n"
+          + "\010requests\030\002 \003(\01329.google.shopping.m"
+          + "erchant.accounts.v1.CreateRegionRequestB\003\340A\002\"[\n"
+          + "\032BatchCreateRegionsResponse\022=\n"
+          + "\007regions\030\001"
+          + " \003(\0132,.google.shopping.merchant.accounts.v1.Region\"\216\001\n"
           + "\023UpdateRegionRequest\022A\n"
-          + "\006region\030\001 \001(\0132,.googl"
-          + "e.shopping.merchant.accounts.v1.RegionB\003\340A\002\0224\n"
-          + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\"N\n"
+          + "\006region\030\001"
+          + " \001(\0132,.google.shopping.merchant.accounts.v1.RegionB\003\340A\002\0224\n"
+          + "\013update_mask\030\002"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\"\251\001\n"
+          + "\031BatchUpdateRegionsRequest\022:\n"
+          + "\006parent\030\001 \001(\tB*\340A\002\372A$\n"
+          + "\"merchantapi.googleapis.com/Account\022P\n"
+          + "\010requests\030\002 \003(\01329.google."
+          + "shopping.merchant.accounts.v1.UpdateRegionRequestB\003\340A\002\"[\n"
+          + "\032BatchUpdateRegionsResponse\022=\n"
+          + "\007regions\030\001 \003(\0132,.google.shopping.merchant.accounts.v1.Region\"N\n"
           + "\023DeleteRegionRequest\0227\n"
           + "\004name\030\001 \001(\tB)\340A\002\372A#\n"
-          + "!merchantapi.googleapis.com/Region\"\201\001\n"
+          + "!merchantapi.googleapis.com/Region\"\251\001\n"
+          + "\031BatchDeleteRegionsRequest\022:\n"
+          + "\006parent\030\001 \001(\tB*\340A\002\372A$\n"
+          + "\"merchantapi.googleapis.com/Account\022P\n"
+          + "\010requests\030\002 \003(\01329.google.shopping.mercha"
+          + "nt.accounts.v1.DeleteRegionRequestB\003\340A\002\"\201\001\n"
           + "\022ListRegionsRequest\022:\n"
           + "\006parent\030\001 \001(\tB*\340A\002\372A$\n"
           + "\"merchantapi.googleapis.com/Account\022\026\n"
@@ -110,51 +151,62 @@ public final class RegionsProto {
           + "\006Region\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022\036\n"
           + "\014display_name\030\002 \001(\tB\003\340A\001H\000\210\001\001\022Z\n"
-          + "\020postal_code_area\030\003 \001(\0132;.google.sh"
-          + "opping.merchant.accounts.v1.Region.PostalCodeAreaB\003\340A\001\022W\n"
-          + "\016geotarget_area\030\004 \001(\0132:"
-          + ".google.shopping.merchant.accounts.v1.Region.GeoTargetAreaB\003\340A\001\022D\n"
+          + "\020postal_code_area\030\003"
+          + " \001(\0132;.google.shopping.merchant.accounts.v1.Region.PostalCodeAreaB\003\340A\001\022W\n"
+          + "\016geotarget_area\030\004 \001(\0132:.google.shopping.m"
+          + "erchant.accounts.v1.Region.GeoTargetAreaB\003\340A\001\022D\n"
           + "\033regional_inventory_eligible\030\005"
           + " \001(\0132\032.google.protobuf.BoolValueB\003\340A\003\022:\n"
           + "\021shipping_eligible\030\006"
           + " \001(\0132\032.google.protobuf.BoolValueB\003\340A\003\032\313\001\n"
           + "\016PostalCodeArea\022\030\n"
           + "\013region_code\030\001 \001(\tB\003\340A\002\022f\n"
-          + "\014postal_codes\030\002 \003(\0132K.google.shopping.m"
-          + "erchant.accounts.v1.Region.PostalCodeArea.PostalCodeRangeB\003\340A\002\0327\n"
+          + "\014postal_codes\030\002 \003(\0132K.google.shopping.merchant.accounts.v"
+          + "1.Region.PostalCodeArea.PostalCodeRangeB\003\340A\002\0327\n"
           + "\017PostalCodeRange\022\022\n"
           + "\005begin\030\001 \001(\tB\003\340A\002\022\020\n"
           + "\003end\030\002 \001(\tB\003\340A\001\0324\n\r"
           + "GeoTargetArea\022#\n"
           + "\026geotarget_criteria_ids\030\001 \003(\003B\003\340A\002:\\\352AY\n"
-          + "!merchantapi.googleap"
-          + "is.com/Region\022#accounts/{account}/regions/{region}*\007regions2\006regionB\017\n\r"
-          + "_display_name2\201\010\n"
+          + "!merchantapi.googleapis.com/Region\022#acc"
+          + "ounts/{account}/regions/{region}*\007regions2\006regionB\017\n\r"
+          + "_display_name2\350\014\n"
           + "\016RegionsService\022\252\001\n"
-          + "\tGetRegion\0226.google.shopping.merchant.accounts.v1.Get"
-          + "RegionRequest\032,.google.shopping.merchant"
-          + ".accounts.v1.Region\"7\332A\004name\202\323\344\223\002*\022(/accounts/v1/{name=accounts/*/regions/*}\022\313\001\n"
-          + "\014CreateRegion\0229.google.shopping.merchant"
-          + ".accounts.v1.CreateRegionRequest\032,.google.shopping.merchant.accounts.v1.Region\"R"
-          + "\332A\027parent,region,region_id\202\323\344\223\0022\"(/accou"
-          + "nts/v1/{parent=accounts/*}/regions:\006region\022\315\001\n"
-          + "\014UpdateRegion\0229.google.shopping.merchant.accounts.v1.UpdateRegionRequest\032,"
-          + ".google.shopping.merchant.accounts.v1.Re"
-          + "gion\"T\332A\022region,update_mask\202\323\344\223\00292//acco"
-          + "unts/v1/{region.name=accounts/*/regions/*}:\006region\022\232\001\n"
-          + "\014DeleteRegion\0229.google.shopping.merchant.accounts.v1.DeleteRegionR"
-          + "equest\032\026.google.protobuf.Empty\"7\332A\004name\202"
-          + "\323\344\223\002**(/accounts/v1/{name=accounts/*/regions/*}\022\275\001\n"
-          + "\013ListRegions\0228.google.shopping.merchant.accounts.v1.ListRegionsReques"
-          + "t\0329.google.shopping.merchant.accounts.v1"
-          + ".ListRegionsResponse\"9\332A\006parent\202\323\344\223\002*\022(/"
-          + "accounts/v1/{parent=accounts/*}/regions\032"
-          + "G\312A\032merchantapi.googleapis.com\322A\'https://www.googleapis.com/auth/contentB\377\001\n"
-          + "(com.google.shopping.merchant.accounts.v1B\014R"
-          + "egionsProtoP\001ZJcloud.google.com/go/shopping/merchant/accounts/apiv1/accountspb;a"
-          + "ccountspb\252\002$Google.Shopping.Merchant.Acc"
-          + "ounts.V1\312\002$Google\\Shopping\\Merchant\\Acco"
-          + "unts\\V1\352\002(Google::Shopping::Merchant::Accounts::V1b\006proto3"
+          + "\tGetRegion\0226.google.shopping.merchant.accounts.v1.GetRegionRequest\032,.go"
+          + "ogle.shopping.merchant.accounts.v1.Regio"
+          + "n\"7\332A\004name\202\323\344\223\002*\022(/accounts/v1/{name=accounts/*/regions/*}\022\313\001\n"
+          + "\014CreateRegion\0229.google.shopping.merchant.accounts.v1.Creat"
+          + "eRegionRequest\032,.google.shopping.merchan"
+          + "t.accounts.v1.Region\"R\332A\027parent,region,r"
+          + "egion_id\202\323\344\223\0022\"(/accounts/v1/{parent=accounts/*}/regions:\006region\022\330\001\n"
+          + "\022BatchCreateRegions\022?.google.shopping.merchant.accou"
+          + "nts.v1.BatchCreateRegionsRequest\032@.google.shopping.merchant.accounts.v1.BatchCre"
+          + "ateRegionsResponse\"?\202\323\344\223\0029\"4/accounts/v1"
+          + "/{parent=accounts/*}/regions:batchCreate:\001*\022\315\001\n"
+          + "\014UpdateRegion\0229.google.shopping.merchant.accounts.v1.UpdateRegionRequest\032"
+          + ",.google.shopping.merchant.accounts.v1.R"
+          + "egion\"T\332A\022region,update_mask\202\323\344\223\00292//acc"
+          + "ounts/v1/{region.name=accounts/*/regions/*}:\006region\022\330\001\n"
+          + "\022BatchUpdateRegions\022?.google.shopping.merchant.accounts.v1.BatchU"
+          + "pdateRegionsRequest\032@.google.shopping.merchant.accounts.v1.BatchUpdateRegionsRes"
+          + "ponse\"?\202\323\344\223\0029\"4/accounts/v1/{parent=accounts/*}/regions:batchUpdate:\001*\022\232\001\n"
+          + "\014DeleteRegion\0229.google.shopping.merchant.accou"
+          + "nts.v1.DeleteRegionRequest\032\026.google.prot"
+          + "obuf.Empty\"7\332A\004name\202\323\344\223\002**(/accounts/v1/{name=accounts/*/regions/*}\022\256\001\n"
+          + "\022BatchDeleteRegions\022?.google.shopping.merchant.ac"
+          + "counts.v1.BatchDeleteRegionsRequest\032\026.go"
+          + "ogle.protobuf.Empty\"?\202\323\344\223\0029\"4/accounts/v"
+          + "1/{parent=accounts/*}/regions:batchDelete:\001*\022\275\001\n"
+          + "\013ListRegions\0228.google.shopping.merchant.accounts.v1.ListRegionsRequest\0329"
+          + ".google.shopping.merchant.accounts.v1.Li"
+          + "stRegionsResponse\"9\332A\006parent\202\323\344\223\002*\022(/acc"
+          + "ounts/v1/{parent=accounts/*}/regions\032G\312A"
+          + "\032merchantapi.googleapis.com\322A\'https://www.googleapis.com/auth/contentB\377\001\n"
+          + "(com.google.shopping.merchant.accounts.v1B\014Regi"
+          + "onsProtoP\001ZJcloud.google.com/go/shopping/merchant/accounts/apiv1/accountspb;acco"
+          + "untspb\252\002$Google.Shopping.Merchant.Accoun"
+          + "ts.V1\312\002$Google\\Shopping\\Merchant\\Account"
+          + "s\\V1\352\002(Google::Shopping::Merchant::Accounts::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -184,24 +236,64 @@ public final class RegionsProto {
             new java.lang.String[] {
               "Parent", "RegionId", "Region",
             });
-    internal_static_google_shopping_merchant_accounts_v1_UpdateRegionRequest_descriptor =
+    internal_static_google_shopping_merchant_accounts_v1_BatchCreateRegionsRequest_descriptor =
         getDescriptor().getMessageTypes().get(2);
+    internal_static_google_shopping_merchant_accounts_v1_BatchCreateRegionsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_shopping_merchant_accounts_v1_BatchCreateRegionsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Requests",
+            });
+    internal_static_google_shopping_merchant_accounts_v1_BatchCreateRegionsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(3);
+    internal_static_google_shopping_merchant_accounts_v1_BatchCreateRegionsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_shopping_merchant_accounts_v1_BatchCreateRegionsResponse_descriptor,
+            new java.lang.String[] {
+              "Regions",
+            });
+    internal_static_google_shopping_merchant_accounts_v1_UpdateRegionRequest_descriptor =
+        getDescriptor().getMessageTypes().get(4);
     internal_static_google_shopping_merchant_accounts_v1_UpdateRegionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_shopping_merchant_accounts_v1_UpdateRegionRequest_descriptor,
             new java.lang.String[] {
               "Region", "UpdateMask",
             });
+    internal_static_google_shopping_merchant_accounts_v1_BatchUpdateRegionsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(5);
+    internal_static_google_shopping_merchant_accounts_v1_BatchUpdateRegionsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_shopping_merchant_accounts_v1_BatchUpdateRegionsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Requests",
+            });
+    internal_static_google_shopping_merchant_accounts_v1_BatchUpdateRegionsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(6);
+    internal_static_google_shopping_merchant_accounts_v1_BatchUpdateRegionsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_shopping_merchant_accounts_v1_BatchUpdateRegionsResponse_descriptor,
+            new java.lang.String[] {
+              "Regions",
+            });
     internal_static_google_shopping_merchant_accounts_v1_DeleteRegionRequest_descriptor =
-        getDescriptor().getMessageTypes().get(3);
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_shopping_merchant_accounts_v1_DeleteRegionRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_shopping_merchant_accounts_v1_DeleteRegionRequest_descriptor,
             new java.lang.String[] {
               "Name",
             });
+    internal_static_google_shopping_merchant_accounts_v1_BatchDeleteRegionsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(8);
+    internal_static_google_shopping_merchant_accounts_v1_BatchDeleteRegionsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_shopping_merchant_accounts_v1_BatchDeleteRegionsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Requests",
+            });
     internal_static_google_shopping_merchant_accounts_v1_ListRegionsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(4);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_shopping_merchant_accounts_v1_ListRegionsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_shopping_merchant_accounts_v1_ListRegionsRequest_descriptor,
@@ -209,7 +301,7 @@ public final class RegionsProto {
               "Parent", "PageSize", "PageToken",
             });
     internal_static_google_shopping_merchant_accounts_v1_ListRegionsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_shopping_merchant_accounts_v1_ListRegionsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_shopping_merchant_accounts_v1_ListRegionsResponse_descriptor,
@@ -217,7 +309,7 @@ public final class RegionsProto {
               "Regions", "NextPageToken",
             });
     internal_static_google_shopping_merchant_accounts_v1_Region_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_shopping_merchant_accounts_v1_Region_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_shopping_merchant_accounts_v1_Region_descriptor,

@@ -32,6 +32,7 @@ import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
 import io.grpc.StatusRuntimeException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
@@ -266,6 +267,51 @@ public class RegionsServiceClientTest {
   }
 
   @Test
+  public void batchCreateRegionsTest() throws Exception {
+    BatchCreateRegionsResponse expectedResponse =
+        BatchCreateRegionsResponse.newBuilder().addAllRegions(new ArrayList<Region>()).build();
+    mockRegionsService.addResponse(expectedResponse);
+
+    BatchCreateRegionsRequest request =
+        BatchCreateRegionsRequest.newBuilder()
+            .setParent(AccountName.of("[ACCOUNT]").toString())
+            .addAllRequests(new ArrayList<CreateRegionRequest>())
+            .build();
+
+    BatchCreateRegionsResponse actualResponse = client.batchCreateRegions(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockRegionsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchCreateRegionsRequest actualRequest = ((BatchCreateRegionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getRequestsList(), actualRequest.getRequestsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchCreateRegionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRegionsService.addException(exception);
+
+    try {
+      BatchCreateRegionsRequest request =
+          BatchCreateRegionsRequest.newBuilder()
+              .setParent(AccountName.of("[ACCOUNT]").toString())
+              .addAllRequests(new ArrayList<CreateRegionRequest>())
+              .build();
+      client.batchCreateRegions(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void updateRegionTest() throws Exception {
     Region expectedResponse =
         Region.newBuilder()
@@ -305,6 +351,51 @@ public class RegionsServiceClientTest {
       Region region = Region.newBuilder().build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateRegion(region, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchUpdateRegionsTest() throws Exception {
+    BatchUpdateRegionsResponse expectedResponse =
+        BatchUpdateRegionsResponse.newBuilder().addAllRegions(new ArrayList<Region>()).build();
+    mockRegionsService.addResponse(expectedResponse);
+
+    BatchUpdateRegionsRequest request =
+        BatchUpdateRegionsRequest.newBuilder()
+            .setParent(AccountName.of("[ACCOUNT]").toString())
+            .addAllRequests(new ArrayList<UpdateRegionRequest>())
+            .build();
+
+    BatchUpdateRegionsResponse actualResponse = client.batchUpdateRegions(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockRegionsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchUpdateRegionsRequest actualRequest = ((BatchUpdateRegionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getRequestsList(), actualRequest.getRequestsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchUpdateRegionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRegionsService.addException(exception);
+
+    try {
+      BatchUpdateRegionsRequest request =
+          BatchUpdateRegionsRequest.newBuilder()
+              .setParent(AccountName.of("[ACCOUNT]").toString())
+              .addAllRequests(new ArrayList<UpdateRegionRequest>())
+              .build();
+      client.batchUpdateRegions(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -373,6 +464,49 @@ public class RegionsServiceClientTest {
     try {
       String name = "name3373707";
       client.deleteRegion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void batchDeleteRegionsTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockRegionsService.addResponse(expectedResponse);
+
+    BatchDeleteRegionsRequest request =
+        BatchDeleteRegionsRequest.newBuilder()
+            .setParent(AccountName.of("[ACCOUNT]").toString())
+            .addAllRequests(new ArrayList<DeleteRegionRequest>())
+            .build();
+
+    client.batchDeleteRegions(request);
+
+    List<AbstractMessage> actualRequests = mockRegionsService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    BatchDeleteRegionsRequest actualRequest = ((BatchDeleteRegionsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getRequestsList(), actualRequest.getRequestsList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void batchDeleteRegionsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockRegionsService.addException(exception);
+
+    try {
+      BatchDeleteRegionsRequest request =
+          BatchDeleteRegionsRequest.newBuilder()
+              .setParent(AccountName.of("[ACCOUNT]").toString())
+              .addAllRequests(new ArrayList<DeleteRegionRequest>())
+              .build();
+      client.batchDeleteRegions(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

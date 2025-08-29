@@ -130,6 +130,54 @@ public final class RegionsServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.shopping.merchant.accounts.v1.BatchCreateRegionsRequest,
+          com.google.shopping.merchant.accounts.v1.BatchCreateRegionsResponse>
+      getBatchCreateRegionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchCreateRegions",
+      requestType = com.google.shopping.merchant.accounts.v1.BatchCreateRegionsRequest.class,
+      responseType = com.google.shopping.merchant.accounts.v1.BatchCreateRegionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.shopping.merchant.accounts.v1.BatchCreateRegionsRequest,
+          com.google.shopping.merchant.accounts.v1.BatchCreateRegionsResponse>
+      getBatchCreateRegionsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.shopping.merchant.accounts.v1.BatchCreateRegionsRequest,
+            com.google.shopping.merchant.accounts.v1.BatchCreateRegionsResponse>
+        getBatchCreateRegionsMethod;
+    if ((getBatchCreateRegionsMethod = RegionsServiceGrpc.getBatchCreateRegionsMethod) == null) {
+      synchronized (RegionsServiceGrpc.class) {
+        if ((getBatchCreateRegionsMethod = RegionsServiceGrpc.getBatchCreateRegionsMethod)
+            == null) {
+          RegionsServiceGrpc.getBatchCreateRegionsMethod =
+              getBatchCreateRegionsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.shopping.merchant.accounts.v1.BatchCreateRegionsRequest,
+                          com.google.shopping.merchant.accounts.v1.BatchCreateRegionsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "BatchCreateRegions"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.shopping.merchant.accounts.v1.BatchCreateRegionsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.shopping.merchant.accounts.v1.BatchCreateRegionsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new RegionsServiceMethodDescriptorSupplier("BatchCreateRegions"))
+                      .build();
+        }
+      }
+    }
+    return getBatchCreateRegionsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.shopping.merchant.accounts.v1.UpdateRegionRequest,
           com.google.shopping.merchant.accounts.v1.Region>
       getUpdateRegionMethod;
@@ -176,6 +224,54 @@ public final class RegionsServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.shopping.merchant.accounts.v1.BatchUpdateRegionsRequest,
+          com.google.shopping.merchant.accounts.v1.BatchUpdateRegionsResponse>
+      getBatchUpdateRegionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchUpdateRegions",
+      requestType = com.google.shopping.merchant.accounts.v1.BatchUpdateRegionsRequest.class,
+      responseType = com.google.shopping.merchant.accounts.v1.BatchUpdateRegionsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.shopping.merchant.accounts.v1.BatchUpdateRegionsRequest,
+          com.google.shopping.merchant.accounts.v1.BatchUpdateRegionsResponse>
+      getBatchUpdateRegionsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.shopping.merchant.accounts.v1.BatchUpdateRegionsRequest,
+            com.google.shopping.merchant.accounts.v1.BatchUpdateRegionsResponse>
+        getBatchUpdateRegionsMethod;
+    if ((getBatchUpdateRegionsMethod = RegionsServiceGrpc.getBatchUpdateRegionsMethod) == null) {
+      synchronized (RegionsServiceGrpc.class) {
+        if ((getBatchUpdateRegionsMethod = RegionsServiceGrpc.getBatchUpdateRegionsMethod)
+            == null) {
+          RegionsServiceGrpc.getBatchUpdateRegionsMethod =
+              getBatchUpdateRegionsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.shopping.merchant.accounts.v1.BatchUpdateRegionsRequest,
+                          com.google.shopping.merchant.accounts.v1.BatchUpdateRegionsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "BatchUpdateRegions"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.shopping.merchant.accounts.v1.BatchUpdateRegionsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.shopping.merchant.accounts.v1.BatchUpdateRegionsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new RegionsServiceMethodDescriptorSupplier("BatchUpdateRegions"))
+                      .build();
+        }
+      }
+    }
+    return getBatchUpdateRegionsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.shopping.merchant.accounts.v1.DeleteRegionRequest, com.google.protobuf.Empty>
       getDeleteRegionMethod;
 
@@ -216,6 +312,53 @@ public final class RegionsServiceGrpc {
       }
     }
     return getDeleteRegionMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.shopping.merchant.accounts.v1.BatchDeleteRegionsRequest,
+          com.google.protobuf.Empty>
+      getBatchDeleteRegionsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "BatchDeleteRegions",
+      requestType = com.google.shopping.merchant.accounts.v1.BatchDeleteRegionsRequest.class,
+      responseType = com.google.protobuf.Empty.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.shopping.merchant.accounts.v1.BatchDeleteRegionsRequest,
+          com.google.protobuf.Empty>
+      getBatchDeleteRegionsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.shopping.merchant.accounts.v1.BatchDeleteRegionsRequest,
+            com.google.protobuf.Empty>
+        getBatchDeleteRegionsMethod;
+    if ((getBatchDeleteRegionsMethod = RegionsServiceGrpc.getBatchDeleteRegionsMethod) == null) {
+      synchronized (RegionsServiceGrpc.class) {
+        if ((getBatchDeleteRegionsMethod = RegionsServiceGrpc.getBatchDeleteRegionsMethod)
+            == null) {
+          RegionsServiceGrpc.getBatchDeleteRegionsMethod =
+              getBatchDeleteRegionsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.shopping.merchant.accounts.v1.BatchDeleteRegionsRequest,
+                          com.google.protobuf.Empty>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "BatchDeleteRegions"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.shopping.merchant.accounts.v1.BatchDeleteRegionsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.protobuf.Empty.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new RegionsServiceMethodDescriptorSupplier("BatchDeleteRegions"))
+                      .build();
+        }
+      }
+    }
+    return getBatchDeleteRegionsMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -364,6 +507,23 @@ public final class RegionsServiceGrpc {
      *
      *
      * <pre>
+     * Creates one or more regions in your Merchant Center account.
+     * Executing this method requires admin access.
+     * </pre>
+     */
+    default void batchCreateRegions(
+        com.google.shopping.merchant.accounts.v1.BatchCreateRegionsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.shopping.merchant.accounts.v1.BatchCreateRegionsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getBatchCreateRegionsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates a region definition in your Merchant Center account.
      * Executing this method requires admin access.
      * </pre>
@@ -380,6 +540,23 @@ public final class RegionsServiceGrpc {
      *
      *
      * <pre>
+     * Updates one or more regions in your Merchant Center account.
+     * Executing this method requires admin access.
+     * </pre>
+     */
+    default void batchUpdateRegions(
+        com.google.shopping.merchant.accounts.v1.BatchUpdateRegionsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.shopping.merchant.accounts.v1.BatchUpdateRegionsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getBatchUpdateRegionsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a region definition from your Merchant Center account. Executing
      * this method requires admin access.
      * </pre>
@@ -389,6 +566,21 @@ public final class RegionsServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteRegionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes multiple regions by name from your Merchant Center account.
+     * Executing this method requires admin access.
+     * </pre>
+     */
+    default void batchDeleteRegions(
+        com.google.shopping.merchant.accounts.v1.BatchDeleteRegionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getBatchDeleteRegionsMethod(), responseObserver);
     }
 
     /**
@@ -482,6 +674,25 @@ public final class RegionsServiceGrpc {
      *
      *
      * <pre>
+     * Creates one or more regions in your Merchant Center account.
+     * Executing this method requires admin access.
+     * </pre>
+     */
+    public void batchCreateRegions(
+        com.google.shopping.merchant.accounts.v1.BatchCreateRegionsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.shopping.merchant.accounts.v1.BatchCreateRegionsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getBatchCreateRegionsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates a region definition in your Merchant Center account.
      * Executing this method requires admin access.
      * </pre>
@@ -500,6 +711,25 @@ public final class RegionsServiceGrpc {
      *
      *
      * <pre>
+     * Updates one or more regions in your Merchant Center account.
+     * Executing this method requires admin access.
+     * </pre>
+     */
+    public void batchUpdateRegions(
+        com.google.shopping.merchant.accounts.v1.BatchUpdateRegionsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.shopping.merchant.accounts.v1.BatchUpdateRegionsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getBatchUpdateRegionsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a region definition from your Merchant Center account. Executing
      * this method requires admin access.
      * </pre>
@@ -509,6 +739,23 @@ public final class RegionsServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getDeleteRegionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes multiple regions by name from your Merchant Center account.
+     * Executing this method requires admin access.
+     * </pre>
+     */
+    public void batchDeleteRegions(
+        com.google.shopping.merchant.accounts.v1.BatchDeleteRegionsRequest request,
+        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getBatchDeleteRegionsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -583,6 +830,20 @@ public final class RegionsServiceGrpc {
      *
      *
      * <pre>
+     * Creates one or more regions in your Merchant Center account.
+     * Executing this method requires admin access.
+     * </pre>
+     */
+    public com.google.shopping.merchant.accounts.v1.BatchCreateRegionsResponse batchCreateRegions(
+        com.google.shopping.merchant.accounts.v1.BatchCreateRegionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchCreateRegionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates a region definition in your Merchant Center account.
      * Executing this method requires admin access.
      * </pre>
@@ -597,6 +858,20 @@ public final class RegionsServiceGrpc {
      *
      *
      * <pre>
+     * Updates one or more regions in your Merchant Center account.
+     * Executing this method requires admin access.
+     * </pre>
+     */
+    public com.google.shopping.merchant.accounts.v1.BatchUpdateRegionsResponse batchUpdateRegions(
+        com.google.shopping.merchant.accounts.v1.BatchUpdateRegionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchUpdateRegionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a region definition from your Merchant Center account. Executing
      * this method requires admin access.
      * </pre>
@@ -605,6 +880,20 @@ public final class RegionsServiceGrpc {
         com.google.shopping.merchant.accounts.v1.DeleteRegionRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteRegionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes multiple regions by name from your Merchant Center account.
+     * Executing this method requires admin access.
+     * </pre>
+     */
+    public com.google.protobuf.Empty batchDeleteRegions(
+        com.google.shopping.merchant.accounts.v1.BatchDeleteRegionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchDeleteRegionsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -673,6 +962,20 @@ public final class RegionsServiceGrpc {
      *
      *
      * <pre>
+     * Creates one or more regions in your Merchant Center account.
+     * Executing this method requires admin access.
+     * </pre>
+     */
+    public com.google.shopping.merchant.accounts.v1.BatchCreateRegionsResponse batchCreateRegions(
+        com.google.shopping.merchant.accounts.v1.BatchCreateRegionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchCreateRegionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates a region definition in your Merchant Center account.
      * Executing this method requires admin access.
      * </pre>
@@ -687,6 +990,20 @@ public final class RegionsServiceGrpc {
      *
      *
      * <pre>
+     * Updates one or more regions in your Merchant Center account.
+     * Executing this method requires admin access.
+     * </pre>
+     */
+    public com.google.shopping.merchant.accounts.v1.BatchUpdateRegionsResponse batchUpdateRegions(
+        com.google.shopping.merchant.accounts.v1.BatchUpdateRegionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchUpdateRegionsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Deletes a region definition from your Merchant Center account. Executing
      * this method requires admin access.
      * </pre>
@@ -695,6 +1012,20 @@ public final class RegionsServiceGrpc {
         com.google.shopping.merchant.accounts.v1.DeleteRegionRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteRegionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Deletes multiple regions by name from your Merchant Center account.
+     * Executing this method requires admin access.
+     * </pre>
+     */
+    public com.google.protobuf.Empty batchDeleteRegions(
+        com.google.shopping.merchant.accounts.v1.BatchDeleteRegionsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getBatchDeleteRegionsMethod(), getCallOptions(), request);
     }
 
     /**
@@ -765,6 +1096,22 @@ public final class RegionsServiceGrpc {
      *
      *
      * <pre>
+     * Creates one or more regions in your Merchant Center account.
+     * Executing this method requires admin access.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.shopping.merchant.accounts.v1.BatchCreateRegionsResponse>
+        batchCreateRegions(
+            com.google.shopping.merchant.accounts.v1.BatchCreateRegionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getBatchCreateRegionsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Updates a region definition in your Merchant Center account.
      * Executing this method requires admin access.
      * </pre>
@@ -774,6 +1121,22 @@ public final class RegionsServiceGrpc {
         updateRegion(com.google.shopping.merchant.accounts.v1.UpdateRegionRequest request) {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateRegionMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates one or more regions in your Merchant Center account.
+     * Executing this method requires admin access.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.shopping.merchant.accounts.v1.BatchUpdateRegionsResponse>
+        batchUpdateRegions(
+            com.google.shopping.merchant.accounts.v1.BatchUpdateRegionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getBatchUpdateRegionsMethod(), getCallOptions()), request);
     }
 
     /**
@@ -794,6 +1157,21 @@ public final class RegionsServiceGrpc {
      *
      *
      * <pre>
+     * Deletes multiple regions by name from your Merchant Center account.
+     * Executing this method requires admin access.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
+        batchDeleteRegions(
+            com.google.shopping.merchant.accounts.v1.BatchDeleteRegionsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getBatchDeleteRegionsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Lists the regions in your Merchant Center account.
      * </pre>
      */
@@ -807,9 +1185,12 @@ public final class RegionsServiceGrpc {
 
   private static final int METHODID_GET_REGION = 0;
   private static final int METHODID_CREATE_REGION = 1;
-  private static final int METHODID_UPDATE_REGION = 2;
-  private static final int METHODID_DELETE_REGION = 3;
-  private static final int METHODID_LIST_REGIONS = 4;
+  private static final int METHODID_BATCH_CREATE_REGIONS = 2;
+  private static final int METHODID_UPDATE_REGION = 3;
+  private static final int METHODID_BATCH_UPDATE_REGIONS = 4;
+  private static final int METHODID_DELETE_REGION = 5;
+  private static final int METHODID_BATCH_DELETE_REGIONS = 6;
+  private static final int METHODID_LIST_REGIONS = 7;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -840,15 +1221,34 @@ public final class RegionsServiceGrpc {
               (io.grpc.stub.StreamObserver<com.google.shopping.merchant.accounts.v1.Region>)
                   responseObserver);
           break;
+        case METHODID_BATCH_CREATE_REGIONS:
+          serviceImpl.batchCreateRegions(
+              (com.google.shopping.merchant.accounts.v1.BatchCreateRegionsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.shopping.merchant.accounts.v1.BatchCreateRegionsResponse>)
+                  responseObserver);
+          break;
         case METHODID_UPDATE_REGION:
           serviceImpl.updateRegion(
               (com.google.shopping.merchant.accounts.v1.UpdateRegionRequest) request,
               (io.grpc.stub.StreamObserver<com.google.shopping.merchant.accounts.v1.Region>)
                   responseObserver);
           break;
+        case METHODID_BATCH_UPDATE_REGIONS:
+          serviceImpl.batchUpdateRegions(
+              (com.google.shopping.merchant.accounts.v1.BatchUpdateRegionsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.shopping.merchant.accounts.v1.BatchUpdateRegionsResponse>)
+                  responseObserver);
+          break;
         case METHODID_DELETE_REGION:
           serviceImpl.deleteRegion(
               (com.google.shopping.merchant.accounts.v1.DeleteRegionRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_BATCH_DELETE_REGIONS:
+          serviceImpl.batchDeleteRegions(
+              (com.google.shopping.merchant.accounts.v1.BatchDeleteRegionsRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
         case METHODID_LIST_REGIONS:
@@ -890,6 +1290,13 @@ public final class RegionsServiceGrpc {
                     com.google.shopping.merchant.accounts.v1.Region>(
                     service, METHODID_CREATE_REGION)))
         .addMethod(
+            getBatchCreateRegionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.shopping.merchant.accounts.v1.BatchCreateRegionsRequest,
+                    com.google.shopping.merchant.accounts.v1.BatchCreateRegionsResponse>(
+                    service, METHODID_BATCH_CREATE_REGIONS)))
+        .addMethod(
             getUpdateRegionMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -897,11 +1304,24 @@ public final class RegionsServiceGrpc {
                     com.google.shopping.merchant.accounts.v1.Region>(
                     service, METHODID_UPDATE_REGION)))
         .addMethod(
+            getBatchUpdateRegionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.shopping.merchant.accounts.v1.BatchUpdateRegionsRequest,
+                    com.google.shopping.merchant.accounts.v1.BatchUpdateRegionsResponse>(
+                    service, METHODID_BATCH_UPDATE_REGIONS)))
+        .addMethod(
             getDeleteRegionMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
                     com.google.shopping.merchant.accounts.v1.DeleteRegionRequest,
                     com.google.protobuf.Empty>(service, METHODID_DELETE_REGION)))
+        .addMethod(
+            getBatchDeleteRegionsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.shopping.merchant.accounts.v1.BatchDeleteRegionsRequest,
+                    com.google.protobuf.Empty>(service, METHODID_BATCH_DELETE_REGIONS)))
         .addMethod(
             getListRegionsMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -962,8 +1382,11 @@ public final class RegionsServiceGrpc {
                       .setSchemaDescriptor(new RegionsServiceFileDescriptorSupplier())
                       .addMethod(getGetRegionMethod())
                       .addMethod(getCreateRegionMethod())
+                      .addMethod(getBatchCreateRegionsMethod())
                       .addMethod(getUpdateRegionMethod())
+                      .addMethod(getBatchUpdateRegionsMethod())
                       .addMethod(getDeleteRegionMethod())
+                      .addMethod(getBatchDeleteRegionsMethod())
                       .addMethod(getListRegionsMethod())
                       .build();
         }
