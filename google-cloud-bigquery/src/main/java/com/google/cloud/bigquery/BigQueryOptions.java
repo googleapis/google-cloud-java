@@ -17,6 +17,7 @@
 package com.google.cloud.bigquery;
 
 import com.google.api.core.BetaApi;
+import com.google.api.gax.retrying.ResultRetryAlgorithm;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.ServiceRpc;
@@ -43,6 +44,7 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
   private JobCreationMode defaultJobCreationMode = JobCreationMode.JOB_CREATION_MODE_UNSPECIFIED;
   private boolean enableOpenTelemetryTracing;
   private Tracer openTelemetryTracer;
+  private ResultRetryAlgorithm<?> resultRetryAlgorithm;
 
   public static class DefaultBigQueryFactory implements BigQueryFactory {
 
@@ -70,6 +72,7 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
     private boolean useInt64Timestamps;
     private boolean enableOpenTelemetryTracing;
     private Tracer openTelemetryTracer;
+    private ResultRetryAlgorithm<?> resultRetryAlgorithm;
 
     private Builder() {}
 
@@ -118,6 +121,11 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
       return this;
     }
 
+    public Builder setResultRetryAlgorithm(ResultRetryAlgorithm<?> resultRetryAlgorithm) {
+      this.resultRetryAlgorithm = resultRetryAlgorithm;
+      return this;
+    }
+
     @Override
     public BigQueryOptions build() {
       return new BigQueryOptions(this);
@@ -130,6 +138,11 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
     this.useInt64Timestamps = builder.useInt64Timestamps;
     this.enableOpenTelemetryTracing = builder.enableOpenTelemetryTracing;
     this.openTelemetryTracer = builder.openTelemetryTracer;
+    if (builder.resultRetryAlgorithm != null) {
+      this.resultRetryAlgorithm = builder.resultRetryAlgorithm;
+    } else {
+      this.resultRetryAlgorithm = BigQueryBaseService.DEFAULT_BIGQUERY_EXCEPTION_HANDLER;
+    }
   }
 
   private static class BigQueryDefaults implements ServiceDefaults<BigQuery, BigQueryOptions> {
@@ -219,6 +232,10 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
   @BetaApi("Span names and attributes are subject to change without notice")
   public Tracer getOpenTelemetryTracer() {
     return openTelemetryTracer;
+  }
+
+  public ResultRetryAlgorithm<?> getResultRetryAlgorithm() {
+    return resultRetryAlgorithm;
   }
 
   @SuppressWarnings("unchecked")

@@ -21,7 +21,10 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
+import static org.mockito.Mockito.doReturn;
+import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
@@ -29,9 +32,14 @@ import static org.mockito.Mockito.when;
 import com.google.api.client.http.HttpHeaders;
 import com.google.api.client.http.HttpResponseException;
 import com.google.cloud.BaseServiceException;
+import com.google.cloud.ExceptionHandler;
 import com.google.cloud.RetryHelper.RetryHelperException;
+import com.google.cloud.bigquery.spi.v2.BigQueryRpc;
+import com.google.cloud.bigquery.spi.v2.HttpBigQueryRpc;
 import java.io.IOException;
 import java.net.SocketTimeoutException;
+import java.util.HashMap;
+import java.util.Map;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.junit.MockitoJUnitRunner;
@@ -156,6 +164,89 @@ public class BigQueryExceptionTest {
     } finally {
       verify(exceptionMock).getMessage();
       verify(exceptionMock, times(2)).getCause();
+    }
+  }
+
+  @Test
+  public void testDefaultExceptionHandler() throws java.io.IOException {
+    BigQueryOptions defaultOptions =
+        BigQueryOptions.newBuilder().setProjectId("project-id").build();
+    DatasetInfo info = DatasetInfo.newBuilder("dataset").build();
+    Dataset dataset = null;
+
+    final com.google.api.services.bigquery.model.Dataset datasetPb =
+        info.setProjectId(defaultOptions.getProjectId()).toPb();
+    final Map<BigQueryRpc.Option, ?> optionsMap = new HashMap<>();
+
+    BigQueryOptions mockOptions = spy(defaultOptions);
+    HttpBigQueryRpc bigQueryRpcMock = mock(HttpBigQueryRpc.class);
+    doReturn(bigQueryRpcMock).when(mockOptions).getBigQueryRpcV2();
+    // java.net.SocketException is retry-able in the default exception handler.
+    doThrow(java.net.SocketException.class)
+        .when(bigQueryRpcMock)
+        .createSkipExceptionTranslation(datasetPb, optionsMap);
+
+    BigQuery bigquery = mockOptions.getService();
+    try {
+      dataset = bigquery.create(info);
+    } catch (BigQueryException e) {
+      assertEquals(e.getCause().getClass(), java.net.SocketException.class);
+      assertNull(dataset);
+    } finally {
+      verify(bigQueryRpcMock, times(6)).createSkipExceptionTranslation(datasetPb, optionsMap);
+    }
+  }
+
+  @Test
+  public void testCustomExceptionHandler() throws java.io.IOException {
+    BigQueryOptions defaultOptions =
+        BigQueryOptions.newBuilder()
+            .setProjectId("project-id")
+            .setResultRetryAlgorithm(
+                ExceptionHandler.newBuilder()
+                    .abortOn(RuntimeException.class)
+                    .retryOn(java.util.EmptyStackException.class)
+                    .addInterceptors(BigQueryBaseService.EXCEPTION_HANDLER_INTERCEPTOR)
+                    .build())
+            .build();
+    DatasetInfo info = DatasetInfo.newBuilder("dataset").build();
+    Dataset dataset = null;
+
+    final com.google.api.services.bigquery.model.Dataset datasetPb =
+        info.setProjectId(defaultOptions.getProjectId()).toPb();
+    final Map<BigQueryRpc.Option, ?> optionsMap = new HashMap<>();
+
+    BigQueryOptions mockOptions = spy(defaultOptions);
+    HttpBigQueryRpc bigQueryRpcRetryMock = mock(HttpBigQueryRpc.class);
+    doReturn(bigQueryRpcRetryMock).when(mockOptions).getBigQueryRpcV2();
+    doThrow(java.util.EmptyStackException.class)
+        .when(bigQueryRpcRetryMock)
+        .createSkipExceptionTranslation(datasetPb, optionsMap);
+
+    BigQuery bigquery = mockOptions.getService();
+    try {
+      dataset = bigquery.create(info);
+    } catch (BigQueryException e) {
+      assertEquals(e.getCause().getClass(), java.util.EmptyStackException.class);
+      assertNull(dataset);
+    } finally {
+      verify(bigQueryRpcRetryMock, times(6)).createSkipExceptionTranslation(datasetPb, optionsMap);
+    }
+
+    BigQueryOptions mockOptionsAbort = spy(defaultOptions);
+    HttpBigQueryRpc bigQueryRpcAbortMock = mock(HttpBigQueryRpc.class);
+    doReturn(bigQueryRpcAbortMock).when(mockOptionsAbort).getBigQueryRpcV2();
+    doThrow(RuntimeException.class)
+        .when(bigQueryRpcAbortMock)
+        .createSkipExceptionTranslation(datasetPb, optionsMap);
+    bigquery = mockOptionsAbort.getService();
+    try {
+      dataset = bigquery.create(info);
+    } catch (BigQueryException e) {
+      assertEquals(e.getCause().getClass(), RuntimeException.class);
+      assertNull(dataset);
+    } finally {
+      verify(bigQueryRpcAbortMock, times(1)).createSkipExceptionTranslation(datasetPb, optionsMap);
     }
   }
 }

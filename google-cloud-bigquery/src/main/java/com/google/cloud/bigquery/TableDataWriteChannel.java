@@ -77,7 +77,7 @@ public class TableDataWriteChannel
                 }
               },
               getOptions().getRetrySettings(),
-              BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
+              getOptions().getResultRetryAlgorithm(),
               getOptions().getClock(),
               EMPTY_RETRY_CONFIG,
               getOptions().isOpenTelemetryTracingEnabled(),
@@ -126,7 +126,7 @@ public class TableDataWriteChannel
             }
           },
           options.getRetrySettings(),
-          BigQueryBaseService.BIGQUERY_EXCEPTION_HANDLER,
+          options.getResultRetryAlgorithm(),
           options.getClock(),
           EMPTY_RETRY_CONFIG,
           options.isOpenTelemetryTracingEnabled(),

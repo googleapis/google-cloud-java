@@ -26,7 +26,7 @@ abstract class BigQueryBaseService<OptionsT extends ServiceOptions<?, OptionsT>>
     super(options);
   }
 
-  public static final ExceptionHandler BIGQUERY_EXCEPTION_HANDLER =
+  public static final ExceptionHandler DEFAULT_BIGQUERY_EXCEPTION_HANDLER =
       ExceptionHandler.newBuilder()
           .abortOn(RuntimeException.class)
           .retryOn(java.net.ConnectException.class) // retry on Connection Exception
