@@ -23,74 +23,77 @@ package com.google.cloud.confidentialcomputing.v1;
  *
  *
  * <pre>
- * A response once an attestation has been successfully verified, containing a
- * signed attestation token.
+ * VerifyConfidentialSpaceResponse is returned once a Confidential Space
+ * attestation has been successfully verified, containing a signed token.
  * </pre>
  *
- * Protobuf type {@code google.cloud.confidentialcomputing.v1.VerifyAttestationResponse}
+ * Protobuf type {@code google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse}
  */
-public final class VerifyAttestationResponse extends com.google.protobuf.GeneratedMessageV3
+public final class VerifyConfidentialSpaceResponse extends com.google.protobuf.GeneratedMessageV3
     implements
-    // @@protoc_insertion_point(message_implements:google.cloud.confidentialcomputing.v1.VerifyAttestationResponse)
-    VerifyAttestationResponseOrBuilder {
+    // @@protoc_insertion_point(message_implements:google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse)
+    VerifyConfidentialSpaceResponseOrBuilder {
   private static final long serialVersionUID = 0L;
 
-  // Use VerifyAttestationResponse.newBuilder() to construct.
-  private VerifyAttestationResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  // Use VerifyConfidentialSpaceResponse.newBuilder() to construct.
+  private VerifyConfidentialSpaceResponse(
+      com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
 
-  private VerifyAttestationResponse() {
-    oidcClaimsToken_ = "";
+  private VerifyConfidentialSpaceResponse() {
+    attestationToken_ = "";
     partialErrors_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
   @SuppressWarnings({"unused"})
   protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-    return new VerifyAttestationResponse();
+    return new VerifyConfidentialSpaceResponse();
   }
 
   public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.cloud.confidentialcomputing.v1.ServiceProto
-        .internal_static_google_cloud_confidentialcomputing_v1_VerifyAttestationResponse_descriptor;
+        .internal_static_google_cloud_confidentialcomputing_v1_VerifyConfidentialSpaceResponse_descriptor;
   }
 
   @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.cloud.confidentialcomputing.v1.ServiceProto
-        .internal_static_google_cloud_confidentialcomputing_v1_VerifyAttestationResponse_fieldAccessorTable
+        .internal_static_google_cloud_confidentialcomputing_v1_VerifyConfidentialSpaceResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse.class,
-            com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse.Builder.class);
+            com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse.class,
+            com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse.Builder
+                .class);
   }
 
-  public static final int OIDC_CLAIMS_TOKEN_FIELD_NUMBER = 2;
+  public static final int ATTESTATION_TOKEN_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
-  private volatile java.lang.Object oidcClaimsToken_ = "";
+  private volatile java.lang.Object attestationToken_ = "";
 
   /**
    *
    *
    * <pre>
-   * Output only. Same as claims_token, but as a string.
+   * Output only. The attestation token issued by this service. It contains
+   * specific platform claims based on the contents of the provided attestation.
    * </pre>
    *
-   * <code>string oidc_claims_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string attestation_token = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
-   * @return The oidcClaimsToken.
+   * @return The attestationToken.
    */
   @java.lang.Override
-  public java.lang.String getOidcClaimsToken() {
-    java.lang.Object ref = oidcClaimsToken_;
+  public java.lang.String getAttestationToken() {
+    java.lang.Object ref = attestationToken_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
       com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
-      oidcClaimsToken_ = s;
+      attestationToken_ = s;
       return s;
     }
   }
@@ -99,27 +102,28 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Output only. Same as claims_token, but as a string.
+   * Output only. The attestation token issued by this service. It contains
+   * specific platform claims based on the contents of the provided attestation.
    * </pre>
    *
-   * <code>string oidc_claims_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string attestation_token = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
-   * @return The bytes for oidcClaimsToken.
+   * @return The bytes for attestationToken.
    */
   @java.lang.Override
-  public com.google.protobuf.ByteString getOidcClaimsTokenBytes() {
-    java.lang.Object ref = oidcClaimsToken_;
+  public com.google.protobuf.ByteString getAttestationTokenBytes() {
+    java.lang.Object ref = attestationToken_;
     if (ref instanceof java.lang.String) {
       com.google.protobuf.ByteString b =
           com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      oidcClaimsToken_ = b;
+      attestationToken_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
   }
 
-  public static final int PARTIAL_ERRORS_FIELD_NUMBER = 3;
+  public static final int PARTIAL_ERRORS_FIELD_NUMBER = 2;
 
   @SuppressWarnings("serial")
   private java.util.List<com.google.rpc.Status> partialErrors_;
@@ -129,11 +133,15 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
    *
    * <pre>
    * Output only. A list of messages that carry the partial error details
-   * related to VerifyAttestation.
+   * related to VerifyConfidentialSpace. This field is populated by errors
+   * during container image signature verification, which may reflect problems
+   * in the provided image signatures. This does not block the issuing of an
+   * attestation token, but the token will not contain claims for the failed
+   * image signatures.
    * </pre>
    *
    * <code>
-   * repeated .google.rpc.Status partial_errors = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * repeated .google.rpc.Status partial_errors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   @java.lang.Override
@@ -146,11 +154,15 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
    *
    * <pre>
    * Output only. A list of messages that carry the partial error details
-   * related to VerifyAttestation.
+   * related to VerifyConfidentialSpace. This field is populated by errors
+   * during container image signature verification, which may reflect problems
+   * in the provided image signatures. This does not block the issuing of an
+   * attestation token, but the token will not contain claims for the failed
+   * image signatures.
    * </pre>
    *
    * <code>
-   * repeated .google.rpc.Status partial_errors = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * repeated .google.rpc.Status partial_errors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   @java.lang.Override
@@ -163,11 +175,15 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
    *
    * <pre>
    * Output only. A list of messages that carry the partial error details
-   * related to VerifyAttestation.
+   * related to VerifyConfidentialSpace. This field is populated by errors
+   * during container image signature verification, which may reflect problems
+   * in the provided image signatures. This does not block the issuing of an
+   * attestation token, but the token will not contain claims for the failed
+   * image signatures.
    * </pre>
    *
    * <code>
-   * repeated .google.rpc.Status partial_errors = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * repeated .google.rpc.Status partial_errors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   @java.lang.Override
@@ -180,11 +196,15 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
    *
    * <pre>
    * Output only. A list of messages that carry the partial error details
-   * related to VerifyAttestation.
+   * related to VerifyConfidentialSpace. This field is populated by errors
+   * during container image signature verification, which may reflect problems
+   * in the provided image signatures. This does not block the issuing of an
+   * attestation token, but the token will not contain claims for the failed
+   * image signatures.
    * </pre>
    *
    * <code>
-   * repeated .google.rpc.Status partial_errors = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * repeated .google.rpc.Status partial_errors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   @java.lang.Override
@@ -197,11 +217,15 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
    *
    * <pre>
    * Output only. A list of messages that carry the partial error details
-   * related to VerifyAttestation.
+   * related to VerifyConfidentialSpace. This field is populated by errors
+   * during container image signature verification, which may reflect problems
+   * in the provided image signatures. This does not block the issuing of an
+   * attestation token, but the token will not contain claims for the failed
+   * image signatures.
    * </pre>
    *
    * <code>
-   * repeated .google.rpc.Status partial_errors = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * repeated .google.rpc.Status partial_errors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   @java.lang.Override
@@ -223,11 +247,11 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(oidcClaimsToken_)) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, oidcClaimsToken_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(attestationToken_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, attestationToken_);
     }
     for (int i = 0; i < partialErrors_.size(); i++) {
-      output.writeMessage(3, partialErrors_.get(i));
+      output.writeMessage(2, partialErrors_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -238,11 +262,11 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
     if (size != -1) return size;
 
     size = 0;
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(oidcClaimsToken_)) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, oidcClaimsToken_);
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(attestationToken_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, attestationToken_);
     }
     for (int i = 0; i < partialErrors_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, partialErrors_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, partialErrors_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -254,13 +278,14 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
     if (obj == this) {
       return true;
     }
-    if (!(obj instanceof com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse)) {
+    if (!(obj
+        instanceof com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse)) {
       return super.equals(obj);
     }
-    com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse other =
-        (com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse) obj;
+    com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse other =
+        (com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse) obj;
 
-    if (!getOidcClaimsToken().equals(other.getOidcClaimsToken())) return false;
+    if (!getAttestationToken().equals(other.getAttestationToken())) return false;
     if (!getPartialErrorsList().equals(other.getPartialErrorsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -273,8 +298,8 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
-    hash = (37 * hash) + OIDC_CLAIMS_TOKEN_FIELD_NUMBER;
-    hash = (53 * hash) + getOidcClaimsToken().hashCode();
+    hash = (37 * hash) + ATTESTATION_TOKEN_FIELD_NUMBER;
+    hash = (53 * hash) + getAttestationToken().hashCode();
     if (getPartialErrorsCount() > 0) {
       hash = (37 * hash) + PARTIAL_ERRORS_FIELD_NUMBER;
       hash = (53 * hash) + getPartialErrorsList().hashCode();
@@ -284,59 +309,59 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
     return hash;
   }
 
-  public static com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse parseFrom(
+  public static com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse parseFrom(
       java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse parseFrom(
+  public static com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse parseFrom(
       java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse parseFrom(
+  public static com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse parseFrom(
+  public static com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse parseFrom(
+  public static com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse parseFrom(
       byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
 
-  public static com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse parseFrom(
+  public static com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse parseFrom(
       byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
 
-  public static com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse parseFrom(
+  public static com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse parseFrom(
       java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse parseFrom(
+  public static com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse parseFrom(
       java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse
+  public static com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse
       parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse
+  public static com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse
       parseDelimitedFrom(
           java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
@@ -344,12 +369,12 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
         PARSER, input, extensionRegistry);
   }
 
-  public static com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse parseFrom(
+  public static com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse parseFrom(
       com.google.protobuf.CodedInputStream input) throws java.io.IOException {
     return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
 
-  public static com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse parseFrom(
+  public static com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
@@ -367,7 +392,7 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
   }
 
   public static Builder newBuilder(
-      com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse prototype) {
+      com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
 
@@ -386,33 +411,34 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * A response once an attestation has been successfully verified, containing a
-   * signed attestation token.
+   * VerifyConfidentialSpaceResponse is returned once a Confidential Space
+   * attestation has been successfully verified, containing a signed token.
    * </pre>
    *
-   * Protobuf type {@code google.cloud.confidentialcomputing.v1.VerifyAttestationResponse}
+   * Protobuf type {@code google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse}
    */
   public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
       implements
-      // @@protoc_insertion_point(builder_implements:google.cloud.confidentialcomputing.v1.VerifyAttestationResponse)
-      com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponseOrBuilder {
+      // @@protoc_insertion_point(builder_implements:google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse)
+      com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponseOrBuilder {
     public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.cloud.confidentialcomputing.v1.ServiceProto
-          .internal_static_google_cloud_confidentialcomputing_v1_VerifyAttestationResponse_descriptor;
+          .internal_static_google_cloud_confidentialcomputing_v1_VerifyConfidentialSpaceResponse_descriptor;
     }
 
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return com.google.cloud.confidentialcomputing.v1.ServiceProto
-          .internal_static_google_cloud_confidentialcomputing_v1_VerifyAttestationResponse_fieldAccessorTable
+          .internal_static_google_cloud_confidentialcomputing_v1_VerifyConfidentialSpaceResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse.class,
-              com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse.Builder.class);
+              com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse.class,
+              com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse.Builder
+                  .class);
     }
 
     // Construct using
-    // com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse.newBuilder()
+    // com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse.newBuilder()
     private Builder() {}
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
@@ -423,7 +449,7 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
-      oidcClaimsToken_ = "";
+      attestationToken_ = "";
       if (partialErrorsBuilder_ == null) {
         partialErrors_ = java.util.Collections.emptyList();
       } else {
@@ -437,19 +463,20 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
     @java.lang.Override
     public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.cloud.confidentialcomputing.v1.ServiceProto
-          .internal_static_google_cloud_confidentialcomputing_v1_VerifyAttestationResponse_descriptor;
+          .internal_static_google_cloud_confidentialcomputing_v1_VerifyConfidentialSpaceResponse_descriptor;
     }
 
     @java.lang.Override
-    public com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse
+    public com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse
         getDefaultInstanceForType() {
-      return com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse
+      return com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse
           .getDefaultInstance();
     }
 
     @java.lang.Override
-    public com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse build() {
-      com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse result = buildPartial();
+    public com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse build() {
+      com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse result =
+          buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
@@ -457,9 +484,10 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
     }
 
     @java.lang.Override
-    public com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse buildPartial() {
-      com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse result =
-          new com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse(this);
+    public com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse
+        buildPartial() {
+      com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse result =
+          new com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse(this);
       buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
@@ -469,7 +497,7 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
     }
 
     private void buildPartialRepeatedFields(
-        com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse result) {
+        com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse result) {
       if (partialErrorsBuilder_ == null) {
         if (((bitField0_ & 0x00000002) != 0)) {
           partialErrors_ = java.util.Collections.unmodifiableList(partialErrors_);
@@ -482,10 +510,10 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
     }
 
     private void buildPartial0(
-        com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse result) {
+        com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.oidcClaimsToken_ = oidcClaimsToken_;
+        result.attestationToken_ = attestationToken_;
       }
     }
 
@@ -524,9 +552,10 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
 
     @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse) {
+      if (other
+          instanceof com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse) {
         return mergeFrom(
-            (com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse) other);
+            (com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -534,12 +563,12 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
     }
 
     public Builder mergeFrom(
-        com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse other) {
+        com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse other) {
       if (other
-          == com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse
+          == com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse
               .getDefaultInstance()) return this;
-      if (!other.getOidcClaimsToken().isEmpty()) {
-        oidcClaimsToken_ = other.oidcClaimsToken_;
+      if (!other.getAttestationToken().isEmpty()) {
+        attestationToken_ = other.attestationToken_;
         bitField0_ |= 0x00000001;
         onChanged();
       }
@@ -596,13 +625,13 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
             case 0:
               done = true;
               break;
-            case 18:
+            case 10:
               {
-                oidcClaimsToken_ = input.readStringRequireUtf8();
+                attestationToken_ = input.readStringRequireUtf8();
                 bitField0_ |= 0x00000001;
                 break;
-              } // case 18
-            case 26:
+              } // case 10
+            case 18:
               {
                 com.google.rpc.Status m =
                     input.readMessage(com.google.rpc.Status.parser(), extensionRegistry);
@@ -613,7 +642,7 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
                   partialErrorsBuilder_.addMessage(m);
                 }
                 break;
-              } // case 26
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -633,25 +662,26 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
 
     private int bitField0_;
 
-    private java.lang.Object oidcClaimsToken_ = "";
+    private java.lang.Object attestationToken_ = "";
 
     /**
      *
      *
      * <pre>
-     * Output only. Same as claims_token, but as a string.
+     * Output only. The attestation token issued by this service. It contains
+     * specific platform claims based on the contents of the provided attestation.
      * </pre>
      *
-     * <code>string oidc_claims_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string attestation_token = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
-     * @return The oidcClaimsToken.
+     * @return The attestationToken.
      */
-    public java.lang.String getOidcClaimsToken() {
-      java.lang.Object ref = oidcClaimsToken_;
+    public java.lang.String getAttestationToken() {
+      java.lang.Object ref = attestationToken_;
       if (!(ref instanceof java.lang.String)) {
         com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
-        oidcClaimsToken_ = s;
+        attestationToken_ = s;
         return s;
       } else {
         return (java.lang.String) ref;
@@ -662,19 +692,20 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. Same as claims_token, but as a string.
+     * Output only. The attestation token issued by this service. It contains
+     * specific platform claims based on the contents of the provided attestation.
      * </pre>
      *
-     * <code>string oidc_claims_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string attestation_token = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
-     * @return The bytes for oidcClaimsToken.
+     * @return The bytes for attestationToken.
      */
-    public com.google.protobuf.ByteString getOidcClaimsTokenBytes() {
-      java.lang.Object ref = oidcClaimsToken_;
+    public com.google.protobuf.ByteString getAttestationTokenBytes() {
+      java.lang.Object ref = attestationToken_;
       if (ref instanceof String) {
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        oidcClaimsToken_ = b;
+        attestationToken_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -685,19 +716,20 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. Same as claims_token, but as a string.
+     * Output only. The attestation token issued by this service. It contains
+     * specific platform claims based on the contents of the provided attestation.
      * </pre>
      *
-     * <code>string oidc_claims_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string attestation_token = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
-     * @param value The oidcClaimsToken to set.
+     * @param value The attestationToken to set.
      * @return This builder for chaining.
      */
-    public Builder setOidcClaimsToken(java.lang.String value) {
+    public Builder setAttestationToken(java.lang.String value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      oidcClaimsToken_ = value;
+      attestationToken_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
@@ -707,15 +739,16 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. Same as claims_token, but as a string.
+     * Output only. The attestation token issued by this service. It contains
+     * specific platform claims based on the contents of the provided attestation.
      * </pre>
      *
-     * <code>string oidc_claims_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string attestation_token = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
-    public Builder clearOidcClaimsToken() {
-      oidcClaimsToken_ = getDefaultInstance().getOidcClaimsToken();
+    public Builder clearAttestationToken() {
+      attestationToken_ = getDefaultInstance().getAttestationToken();
       bitField0_ = (bitField0_ & ~0x00000001);
       onChanged();
       return this;
@@ -725,20 +758,21 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. Same as claims_token, but as a string.
+     * Output only. The attestation token issued by this service. It contains
+     * specific platform claims based on the contents of the provided attestation.
      * </pre>
      *
-     * <code>string oidc_claims_token = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string attestation_token = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
-     * @param value The bytes for oidcClaimsToken to set.
+     * @param value The bytes for attestationToken to set.
      * @return This builder for chaining.
      */
-    public Builder setOidcClaimsTokenBytes(com.google.protobuf.ByteString value) {
+    public Builder setAttestationTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
         throw new NullPointerException();
       }
       checkByteStringIsUtf8(value);
-      oidcClaimsToken_ = value;
+      attestationToken_ = value;
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
@@ -763,11 +797,15 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * Output only. A list of messages that carry the partial error details
-     * related to VerifyAttestation.
+     * related to VerifyConfidentialSpace. This field is populated by errors
+     * during container image signature verification, which may reflect problems
+     * in the provided image signatures. This does not block the issuing of an
+     * attestation token, but the token will not contain claims for the failed
+     * image signatures.
      * </pre>
      *
      * <code>
-     * repeated .google.rpc.Status partial_errors = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.rpc.Status partial_errors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public java.util.List<com.google.rpc.Status> getPartialErrorsList() {
@@ -783,11 +821,15 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * Output only. A list of messages that carry the partial error details
-     * related to VerifyAttestation.
+     * related to VerifyConfidentialSpace. This field is populated by errors
+     * during container image signature verification, which may reflect problems
+     * in the provided image signatures. This does not block the issuing of an
+     * attestation token, but the token will not contain claims for the failed
+     * image signatures.
      * </pre>
      *
      * <code>
-     * repeated .google.rpc.Status partial_errors = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.rpc.Status partial_errors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public int getPartialErrorsCount() {
@@ -803,11 +845,15 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * Output only. A list of messages that carry the partial error details
-     * related to VerifyAttestation.
+     * related to VerifyConfidentialSpace. This field is populated by errors
+     * during container image signature verification, which may reflect problems
+     * in the provided image signatures. This does not block the issuing of an
+     * attestation token, but the token will not contain claims for the failed
+     * image signatures.
      * </pre>
      *
      * <code>
-     * repeated .google.rpc.Status partial_errors = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.rpc.Status partial_errors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.rpc.Status getPartialErrors(int index) {
@@ -823,11 +869,15 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * Output only. A list of messages that carry the partial error details
-     * related to VerifyAttestation.
+     * related to VerifyConfidentialSpace. This field is populated by errors
+     * during container image signature verification, which may reflect problems
+     * in the provided image signatures. This does not block the issuing of an
+     * attestation token, but the token will not contain claims for the failed
+     * image signatures.
      * </pre>
      *
      * <code>
-     * repeated .google.rpc.Status partial_errors = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.rpc.Status partial_errors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setPartialErrors(int index, com.google.rpc.Status value) {
@@ -849,11 +899,15 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * Output only. A list of messages that carry the partial error details
-     * related to VerifyAttestation.
+     * related to VerifyConfidentialSpace. This field is populated by errors
+     * during container image signature verification, which may reflect problems
+     * in the provided image signatures. This does not block the issuing of an
+     * attestation token, but the token will not contain claims for the failed
+     * image signatures.
      * </pre>
      *
      * <code>
-     * repeated .google.rpc.Status partial_errors = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.rpc.Status partial_errors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setPartialErrors(int index, com.google.rpc.Status.Builder builderForValue) {
@@ -872,11 +926,15 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * Output only. A list of messages that carry the partial error details
-     * related to VerifyAttestation.
+     * related to VerifyConfidentialSpace. This field is populated by errors
+     * during container image signature verification, which may reflect problems
+     * in the provided image signatures. This does not block the issuing of an
+     * attestation token, but the token will not contain claims for the failed
+     * image signatures.
      * </pre>
      *
      * <code>
-     * repeated .google.rpc.Status partial_errors = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.rpc.Status partial_errors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder addPartialErrors(com.google.rpc.Status value) {
@@ -898,11 +956,15 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * Output only. A list of messages that carry the partial error details
-     * related to VerifyAttestation.
+     * related to VerifyConfidentialSpace. This field is populated by errors
+     * during container image signature verification, which may reflect problems
+     * in the provided image signatures. This does not block the issuing of an
+     * attestation token, but the token will not contain claims for the failed
+     * image signatures.
      * </pre>
      *
      * <code>
-     * repeated .google.rpc.Status partial_errors = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.rpc.Status partial_errors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder addPartialErrors(int index, com.google.rpc.Status value) {
@@ -924,11 +986,15 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * Output only. A list of messages that carry the partial error details
-     * related to VerifyAttestation.
+     * related to VerifyConfidentialSpace. This field is populated by errors
+     * during container image signature verification, which may reflect problems
+     * in the provided image signatures. This does not block the issuing of an
+     * attestation token, but the token will not contain claims for the failed
+     * image signatures.
      * </pre>
      *
      * <code>
-     * repeated .google.rpc.Status partial_errors = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.rpc.Status partial_errors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder addPartialErrors(com.google.rpc.Status.Builder builderForValue) {
@@ -947,11 +1013,15 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * Output only. A list of messages that carry the partial error details
-     * related to VerifyAttestation.
+     * related to VerifyConfidentialSpace. This field is populated by errors
+     * during container image signature verification, which may reflect problems
+     * in the provided image signatures. This does not block the issuing of an
+     * attestation token, but the token will not contain claims for the failed
+     * image signatures.
      * </pre>
      *
      * <code>
-     * repeated .google.rpc.Status partial_errors = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.rpc.Status partial_errors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder addPartialErrors(int index, com.google.rpc.Status.Builder builderForValue) {
@@ -970,11 +1040,15 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * Output only. A list of messages that carry the partial error details
-     * related to VerifyAttestation.
+     * related to VerifyConfidentialSpace. This field is populated by errors
+     * during container image signature verification, which may reflect problems
+     * in the provided image signatures. This does not block the issuing of an
+     * attestation token, but the token will not contain claims for the failed
+     * image signatures.
      * </pre>
      *
      * <code>
-     * repeated .google.rpc.Status partial_errors = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.rpc.Status partial_errors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder addAllPartialErrors(java.lang.Iterable<? extends com.google.rpc.Status> values) {
@@ -993,11 +1067,15 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * Output only. A list of messages that carry the partial error details
-     * related to VerifyAttestation.
+     * related to VerifyConfidentialSpace. This field is populated by errors
+     * during container image signature verification, which may reflect problems
+     * in the provided image signatures. This does not block the issuing of an
+     * attestation token, but the token will not contain claims for the failed
+     * image signatures.
      * </pre>
      *
      * <code>
-     * repeated .google.rpc.Status partial_errors = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.rpc.Status partial_errors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder clearPartialErrors() {
@@ -1016,11 +1094,15 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * Output only. A list of messages that carry the partial error details
-     * related to VerifyAttestation.
+     * related to VerifyConfidentialSpace. This field is populated by errors
+     * during container image signature verification, which may reflect problems
+     * in the provided image signatures. This does not block the issuing of an
+     * attestation token, but the token will not contain claims for the failed
+     * image signatures.
      * </pre>
      *
      * <code>
-     * repeated .google.rpc.Status partial_errors = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.rpc.Status partial_errors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder removePartialErrors(int index) {
@@ -1039,11 +1121,15 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * Output only. A list of messages that carry the partial error details
-     * related to VerifyAttestation.
+     * related to VerifyConfidentialSpace. This field is populated by errors
+     * during container image signature verification, which may reflect problems
+     * in the provided image signatures. This does not block the issuing of an
+     * attestation token, but the token will not contain claims for the failed
+     * image signatures.
      * </pre>
      *
      * <code>
-     * repeated .google.rpc.Status partial_errors = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.rpc.Status partial_errors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.rpc.Status.Builder getPartialErrorsBuilder(int index) {
@@ -1055,11 +1141,15 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * Output only. A list of messages that carry the partial error details
-     * related to VerifyAttestation.
+     * related to VerifyConfidentialSpace. This field is populated by errors
+     * during container image signature verification, which may reflect problems
+     * in the provided image signatures. This does not block the issuing of an
+     * attestation token, but the token will not contain claims for the failed
+     * image signatures.
      * </pre>
      *
      * <code>
-     * repeated .google.rpc.Status partial_errors = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.rpc.Status partial_errors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.rpc.StatusOrBuilder getPartialErrorsOrBuilder(int index) {
@@ -1075,11 +1165,15 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * Output only. A list of messages that carry the partial error details
-     * related to VerifyAttestation.
+     * related to VerifyConfidentialSpace. This field is populated by errors
+     * during container image signature verification, which may reflect problems
+     * in the provided image signatures. This does not block the issuing of an
+     * attestation token, but the token will not contain claims for the failed
+     * image signatures.
      * </pre>
      *
      * <code>
-     * repeated .google.rpc.Status partial_errors = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.rpc.Status partial_errors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public java.util.List<? extends com.google.rpc.StatusOrBuilder>
@@ -1096,11 +1190,15 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * Output only. A list of messages that carry the partial error details
-     * related to VerifyAttestation.
+     * related to VerifyConfidentialSpace. This field is populated by errors
+     * during container image signature verification, which may reflect problems
+     * in the provided image signatures. This does not block the issuing of an
+     * attestation token, but the token will not contain claims for the failed
+     * image signatures.
      * </pre>
      *
      * <code>
-     * repeated .google.rpc.Status partial_errors = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.rpc.Status partial_errors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.rpc.Status.Builder addPartialErrorsBuilder() {
@@ -1112,11 +1210,15 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * Output only. A list of messages that carry the partial error details
-     * related to VerifyAttestation.
+     * related to VerifyConfidentialSpace. This field is populated by errors
+     * during container image signature verification, which may reflect problems
+     * in the provided image signatures. This does not block the issuing of an
+     * attestation token, but the token will not contain claims for the failed
+     * image signatures.
      * </pre>
      *
      * <code>
-     * repeated .google.rpc.Status partial_errors = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.rpc.Status partial_errors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.rpc.Status.Builder addPartialErrorsBuilder(int index) {
@@ -1129,11 +1231,15 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
      *
      * <pre>
      * Output only. A list of messages that carry the partial error details
-     * related to VerifyAttestation.
+     * related to VerifyConfidentialSpace. This field is populated by errors
+     * during container image signature verification, which may reflect problems
+     * in the provided image signatures. This does not block the issuing of an
+     * attestation token, but the token will not contain claims for the failed
+     * image signatures.
      * </pre>
      *
      * <code>
-     * repeated .google.rpc.Status partial_errors = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated .google.rpc.Status partial_errors = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public java.util.List<com.google.rpc.Status.Builder> getPartialErrorsBuilderList() {
@@ -1169,26 +1275,27 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
       return super.mergeUnknownFields(unknownFields);
     }
 
-    // @@protoc_insertion_point(builder_scope:google.cloud.confidentialcomputing.v1.VerifyAttestationResponse)
+    // @@protoc_insertion_point(builder_scope:google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse)
   }
 
-  // @@protoc_insertion_point(class_scope:google.cloud.confidentialcomputing.v1.VerifyAttestationResponse)
-  private static final com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse
+  // @@protoc_insertion_point(class_scope:google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse)
+  private static final com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse
       DEFAULT_INSTANCE;
 
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse();
+    DEFAULT_INSTANCE =
+        new com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse();
   }
 
-  public static com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse
+  public static com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse
       getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<VerifyAttestationResponse> PARSER =
-      new com.google.protobuf.AbstractParser<VerifyAttestationResponse>() {
+  private static final com.google.protobuf.Parser<VerifyConfidentialSpaceResponse> PARSER =
+      new com.google.protobuf.AbstractParser<VerifyConfidentialSpaceResponse>() {
         @java.lang.Override
-        public VerifyAttestationResponse parsePartialFrom(
+        public VerifyConfidentialSpaceResponse parsePartialFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1207,17 +1314,17 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
         }
       };
 
-  public static com.google.protobuf.Parser<VerifyAttestationResponse> parser() {
+  public static com.google.protobuf.Parser<VerifyConfidentialSpaceResponse> parser() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.protobuf.Parser<VerifyAttestationResponse> getParserForType() {
+  public com.google.protobuf.Parser<VerifyConfidentialSpaceResponse> getParserForType() {
     return PARSER;
   }
 
   @java.lang.Override
-  public com.google.cloud.confidentialcomputing.v1.VerifyAttestationResponse
+  public com.google.cloud.confidentialcomputing.v1.VerifyConfidentialSpaceResponse
       getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }

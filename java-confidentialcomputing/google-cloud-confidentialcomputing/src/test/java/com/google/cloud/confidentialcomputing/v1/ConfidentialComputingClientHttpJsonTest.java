@@ -246,6 +246,117 @@ public class ConfidentialComputingClientHttpJsonTest {
   }
 
   @Test
+  public void verifyConfidentialSpaceTest() throws Exception {
+    VerifyConfidentialSpaceResponse expectedResponse =
+        VerifyConfidentialSpaceResponse.newBuilder()
+            .setAttestationToken("attestationToken-1730245367")
+            .addAllPartialErrors(new ArrayList<Status>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    VerifyConfidentialSpaceRequest request =
+        VerifyConfidentialSpaceRequest.newBuilder()
+            .setChallenge(ChallengeName.of("[PROJECT]", "[LOCATION]", "[UUID]").toString())
+            .setGcpCredentials(GcpCredentials.newBuilder().build())
+            .addAllSignedEntities(new ArrayList<SignedEntity>())
+            .setGceShieldedIdentity(GceShieldedIdentity.newBuilder().build())
+            .setOptions(
+                VerifyConfidentialSpaceRequest.ConfidentialSpaceOptions.newBuilder().build())
+            .build();
+
+    VerifyConfidentialSpaceResponse actualResponse = client.verifyConfidentialSpace(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void verifyConfidentialSpaceExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      VerifyConfidentialSpaceRequest request =
+          VerifyConfidentialSpaceRequest.newBuilder()
+              .setChallenge(ChallengeName.of("[PROJECT]", "[LOCATION]", "[UUID]").toString())
+              .setGcpCredentials(GcpCredentials.newBuilder().build())
+              .addAllSignedEntities(new ArrayList<SignedEntity>())
+              .setGceShieldedIdentity(GceShieldedIdentity.newBuilder().build())
+              .setOptions(
+                  VerifyConfidentialSpaceRequest.ConfidentialSpaceOptions.newBuilder().build())
+              .build();
+      client.verifyConfidentialSpace(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void verifyConfidentialGkeTest() throws Exception {
+    VerifyConfidentialGkeResponse expectedResponse =
+        VerifyConfidentialGkeResponse.newBuilder()
+            .setAttestationToken("attestationToken-1730245367")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    VerifyConfidentialGkeRequest request =
+        VerifyConfidentialGkeRequest.newBuilder()
+            .setChallenge(ChallengeName.of("[PROJECT]", "[LOCATION]", "[UUID]").toString())
+            .build();
+
+    VerifyConfidentialGkeResponse actualResponse = client.verifyConfidentialGke(request);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void verifyConfidentialGkeExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      VerifyConfidentialGkeRequest request =
+          VerifyConfidentialGkeRequest.newBuilder()
+              .setChallenge(ChallengeName.of("[PROJECT]", "[LOCATION]", "[UUID]").toString())
+              .build();
+      client.verifyConfidentialGke(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void listLocationsTest() throws Exception {
     Location responsesElement = Location.newBuilder().build();
     ListLocationsResponse expectedResponse =

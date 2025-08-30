@@ -28,11 +28,11 @@ public interface TokenOptionsOrBuilder
    *
    *
    * <pre>
-   * Optional. Options for the Limited AWS token type.
+   * Optional. Options for AWS token type.
    * </pre>
    *
    * <code>
-   * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions aws_principal_tags_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.confidentialcomputing.v1.AwsPrincipalTagsOptions aws_principal_tags_options = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the awsPrincipalTagsOptions field is set.
@@ -43,30 +43,29 @@ public interface TokenOptionsOrBuilder
    *
    *
    * <pre>
-   * Optional. Options for the Limited AWS token type.
+   * Optional. Options for AWS token type.
    * </pre>
    *
    * <code>
-   * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions aws_principal_tags_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.confidentialcomputing.v1.AwsPrincipalTagsOptions aws_principal_tags_options = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The awsPrincipalTagsOptions.
    */
-  com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions
-      getAwsPrincipalTagsOptions();
+  com.google.cloud.confidentialcomputing.v1.AwsPrincipalTagsOptions getAwsPrincipalTagsOptions();
 
   /**
    *
    *
    * <pre>
-   * Optional. Options for the Limited AWS token type.
+   * Optional. Options for AWS token type.
    * </pre>
    *
    * <code>
-   * .google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptions aws_principal_tags_options = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.confidentialcomputing.v1.AwsPrincipalTagsOptions aws_principal_tags_options = 4 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
-  com.google.cloud.confidentialcomputing.v1.TokenOptions.AwsPrincipalTagsOptionsOrBuilder
+  com.google.cloud.confidentialcomputing.v1.AwsPrincipalTagsOptionsOrBuilder
       getAwsPrincipalTagsOptionsOrBuilder();
 
   /**
