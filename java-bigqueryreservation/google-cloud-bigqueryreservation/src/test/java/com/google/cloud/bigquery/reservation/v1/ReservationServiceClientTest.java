@@ -537,6 +537,7 @@ public class ReservationServiceClientTest {
     FailoverReservationRequest request =
         FailoverReservationRequest.newBuilder()
             .setName(ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
+            .setFailoverMode(FailoverMode.forNumber(0))
             .build();
 
     Reservation actualResponse = client.failoverReservation(request);
@@ -547,6 +548,7 @@ public class ReservationServiceClientTest {
     FailoverReservationRequest actualRequest = ((FailoverReservationRequest) actualRequests.get(0));
 
     Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertEquals(request.getFailoverMode(), actualRequest.getFailoverMode());
     Assert.assertTrue(
         channelProvider.isHeaderSent(
             ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
@@ -562,6 +564,7 @@ public class ReservationServiceClientTest {
       FailoverReservationRequest request =
           FailoverReservationRequest.newBuilder()
               .setName(ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
+              .setFailoverMode(FailoverMode.forNumber(0))
               .build();
       client.failoverReservation(request);
       Assert.fail("No exception raised");

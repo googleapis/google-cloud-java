@@ -488,6 +488,139 @@ import javax.annotation.Generated;
  *      </ul>
  *       </td>
  *    </tr>
+ *    <tr>
+ *      <td><p> CreateQueryTemplate</td>
+ *      <td><p> Creates a new QueryTemplate</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createQueryTemplate(CreateQueryTemplateRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createQueryTemplate(DataExchangeName parent, QueryTemplate queryTemplate, String queryTemplateId)
+ *           <li><p> createQueryTemplate(String parent, QueryTemplate queryTemplate, String queryTemplateId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createQueryTemplateCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetQueryTemplate</td>
+ *      <td><p> Gets a QueryTemplate</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getQueryTemplate(GetQueryTemplateRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getQueryTemplate(QueryTemplateName name)
+ *           <li><p> getQueryTemplate(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getQueryTemplateCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListQueryTemplates</td>
+ *      <td><p> Lists all QueryTemplates in a given project and location.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listQueryTemplates(ListQueryTemplatesRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listQueryTemplates(DataExchangeName parent)
+ *           <li><p> listQueryTemplates(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listQueryTemplatesPagedCallable()
+ *           <li><p> listQueryTemplatesCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateQueryTemplate</td>
+ *      <td><p> Updates an existing QueryTemplate</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateQueryTemplate(UpdateQueryTemplateRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateQueryTemplate(QueryTemplate queryTemplate, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateQueryTemplateCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteQueryTemplate</td>
+ *      <td><p> Deletes a query template.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteQueryTemplate(DeleteQueryTemplateRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteQueryTemplate(QueryTemplateName name)
+ *           <li><p> deleteQueryTemplate(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteQueryTemplateCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> SubmitQueryTemplate</td>
+ *      <td><p> Submits a query template for approval.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> submitQueryTemplate(SubmitQueryTemplateRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> submitQueryTemplate(QueryTemplateName name)
+ *           <li><p> submitQueryTemplate(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> submitQueryTemplateCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ApproveQueryTemplate</td>
+ *      <td><p> Approves a query template.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> approveQueryTemplate(ApproveQueryTemplateRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> approveQueryTemplate(QueryTemplateName name)
+ *           <li><p> approveQueryTemplate(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> approveQueryTemplateCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
  *  </table>
  *
  * <p>See the individual methods for example code.
@@ -3365,6 +3498,907 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
     return stub.testIamPermissionsCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new QueryTemplate
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   DataExchangeName parent = DataExchangeName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]");
+   *   QueryTemplate queryTemplate = QueryTemplate.newBuilder().build();
+   *   String queryTemplateId = "queryTemplateId-1884800483";
+   *   QueryTemplate response =
+   *       analyticsHubServiceClient.createQueryTemplate(parent, queryTemplate, queryTemplateId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource path of the QueryTemplate. e.g.
+   *     `projects/myproject/locations/us/dataExchanges/123/queryTemplates/myQueryTemplate`.
+   * @param queryTemplate Required. The QueryTemplate to create.
+   * @param queryTemplateId Required. The ID of the QueryTemplate to create. Must contain only
+   *     Unicode letters, numbers (0-9), underscores (_). Max length: 100 bytes.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QueryTemplate createQueryTemplate(
+      DataExchangeName parent, QueryTemplate queryTemplate, String queryTemplateId) {
+    CreateQueryTemplateRequest request =
+        CreateQueryTemplateRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setQueryTemplate(queryTemplate)
+            .setQueryTemplateId(queryTemplateId)
+            .build();
+    return createQueryTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new QueryTemplate
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   String parent = DataExchangeName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]").toString();
+   *   QueryTemplate queryTemplate = QueryTemplate.newBuilder().build();
+   *   String queryTemplateId = "queryTemplateId-1884800483";
+   *   QueryTemplate response =
+   *       analyticsHubServiceClient.createQueryTemplate(parent, queryTemplate, queryTemplateId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource path of the QueryTemplate. e.g.
+   *     `projects/myproject/locations/us/dataExchanges/123/queryTemplates/myQueryTemplate`.
+   * @param queryTemplate Required. The QueryTemplate to create.
+   * @param queryTemplateId Required. The ID of the QueryTemplate to create. Must contain only
+   *     Unicode letters, numbers (0-9), underscores (_). Max length: 100 bytes.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QueryTemplate createQueryTemplate(
+      String parent, QueryTemplate queryTemplate, String queryTemplateId) {
+    CreateQueryTemplateRequest request =
+        CreateQueryTemplateRequest.newBuilder()
+            .setParent(parent)
+            .setQueryTemplate(queryTemplate)
+            .setQueryTemplateId(queryTemplateId)
+            .build();
+    return createQueryTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new QueryTemplate
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   CreateQueryTemplateRequest request =
+   *       CreateQueryTemplateRequest.newBuilder()
+   *           .setParent(
+   *               DataExchangeName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]").toString())
+   *           .setQueryTemplateId("queryTemplateId-1884800483")
+   *           .setQueryTemplate(QueryTemplate.newBuilder().build())
+   *           .build();
+   *   QueryTemplate response = analyticsHubServiceClient.createQueryTemplate(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QueryTemplate createQueryTemplate(CreateQueryTemplateRequest request) {
+    return createQueryTemplateCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new QueryTemplate
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   CreateQueryTemplateRequest request =
+   *       CreateQueryTemplateRequest.newBuilder()
+   *           .setParent(
+   *               DataExchangeName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]").toString())
+   *           .setQueryTemplateId("queryTemplateId-1884800483")
+   *           .setQueryTemplate(QueryTemplate.newBuilder().build())
+   *           .build();
+   *   ApiFuture<QueryTemplate> future =
+   *       analyticsHubServiceClient.createQueryTemplateCallable().futureCall(request);
+   *   // Do something.
+   *   QueryTemplate response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateQueryTemplateRequest, QueryTemplate>
+      createQueryTemplateCallable() {
+    return stub.createQueryTemplateCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a QueryTemplate
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   QueryTemplateName name =
+   *       QueryTemplateName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]", "[QUERY_TEMPLATE]");
+   *   QueryTemplate response = analyticsHubServiceClient.getQueryTemplate(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The parent resource path of the QueryTemplate. e.g.
+   *     `projects/myproject/locations/us/dataExchanges/123/queryTemplates/myqueryTemplate`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QueryTemplate getQueryTemplate(QueryTemplateName name) {
+    GetQueryTemplateRequest request =
+        GetQueryTemplateRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getQueryTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a QueryTemplate
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   String name =
+   *       QueryTemplateName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]", "[QUERY_TEMPLATE]")
+   *           .toString();
+   *   QueryTemplate response = analyticsHubServiceClient.getQueryTemplate(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The parent resource path of the QueryTemplate. e.g.
+   *     `projects/myproject/locations/us/dataExchanges/123/queryTemplates/myqueryTemplate`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QueryTemplate getQueryTemplate(String name) {
+    GetQueryTemplateRequest request = GetQueryTemplateRequest.newBuilder().setName(name).build();
+    return getQueryTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a QueryTemplate
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   GetQueryTemplateRequest request =
+   *       GetQueryTemplateRequest.newBuilder()
+   *           .setName(
+   *               QueryTemplateName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]", "[QUERY_TEMPLATE]")
+   *                   .toString())
+   *           .build();
+   *   QueryTemplate response = analyticsHubServiceClient.getQueryTemplate(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QueryTemplate getQueryTemplate(GetQueryTemplateRequest request) {
+    return getQueryTemplateCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets a QueryTemplate
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   GetQueryTemplateRequest request =
+   *       GetQueryTemplateRequest.newBuilder()
+   *           .setName(
+   *               QueryTemplateName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]", "[QUERY_TEMPLATE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<QueryTemplate> future =
+   *       analyticsHubServiceClient.getQueryTemplateCallable().futureCall(request);
+   *   // Do something.
+   *   QueryTemplate response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetQueryTemplateRequest, QueryTemplate> getQueryTemplateCallable() {
+    return stub.getQueryTemplateCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all QueryTemplates in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   DataExchangeName parent = DataExchangeName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]");
+   *   for (QueryTemplate element :
+   *       analyticsHubServiceClient.listQueryTemplates(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource path of the QueryTemplates. e.g.
+   *     `projects/myproject/locations/us/dataExchanges/123`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListQueryTemplatesPagedResponse listQueryTemplates(DataExchangeName parent) {
+    ListQueryTemplatesRequest request =
+        ListQueryTemplatesRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listQueryTemplates(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all QueryTemplates in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   String parent = DataExchangeName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]").toString();
+   *   for (QueryTemplate element :
+   *       analyticsHubServiceClient.listQueryTemplates(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource path of the QueryTemplates. e.g.
+   *     `projects/myproject/locations/us/dataExchanges/123`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListQueryTemplatesPagedResponse listQueryTemplates(String parent) {
+    ListQueryTemplatesRequest request =
+        ListQueryTemplatesRequest.newBuilder().setParent(parent).build();
+    return listQueryTemplates(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all QueryTemplates in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   ListQueryTemplatesRequest request =
+   *       ListQueryTemplatesRequest.newBuilder()
+   *           .setParent(
+   *               DataExchangeName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (QueryTemplate element :
+   *       analyticsHubServiceClient.listQueryTemplates(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListQueryTemplatesPagedResponse listQueryTemplates(
+      ListQueryTemplatesRequest request) {
+    return listQueryTemplatesPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all QueryTemplates in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   ListQueryTemplatesRequest request =
+   *       ListQueryTemplatesRequest.newBuilder()
+   *           .setParent(
+   *               DataExchangeName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<QueryTemplate> future =
+   *       analyticsHubServiceClient.listQueryTemplatesPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (QueryTemplate element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListQueryTemplatesRequest, ListQueryTemplatesPagedResponse>
+      listQueryTemplatesPagedCallable() {
+    return stub.listQueryTemplatesPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lists all QueryTemplates in a given project and location.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   ListQueryTemplatesRequest request =
+   *       ListQueryTemplatesRequest.newBuilder()
+   *           .setParent(
+   *               DataExchangeName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListQueryTemplatesResponse response =
+   *         analyticsHubServiceClient.listQueryTemplatesCallable().call(request);
+   *     for (QueryTemplate element : response.getQueryTemplatesList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListQueryTemplatesRequest, ListQueryTemplatesResponse>
+      listQueryTemplatesCallable() {
+    return stub.listQueryTemplatesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an existing QueryTemplate
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   QueryTemplate queryTemplate = QueryTemplate.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   QueryTemplate response =
+   *       analyticsHubServiceClient.updateQueryTemplate(queryTemplate, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param queryTemplate Required. The QueryTemplate to update.
+   * @param updateMask Optional. Field mask specifies the fields to update in the query template
+   *     resource. The fields specified in the `updateMask` are relative to the resource and are not
+   *     a full request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QueryTemplate updateQueryTemplate(
+      QueryTemplate queryTemplate, FieldMask updateMask) {
+    UpdateQueryTemplateRequest request =
+        UpdateQueryTemplateRequest.newBuilder()
+            .setQueryTemplate(queryTemplate)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateQueryTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an existing QueryTemplate
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   UpdateQueryTemplateRequest request =
+   *       UpdateQueryTemplateRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setQueryTemplate(QueryTemplate.newBuilder().build())
+   *           .build();
+   *   QueryTemplate response = analyticsHubServiceClient.updateQueryTemplate(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QueryTemplate updateQueryTemplate(UpdateQueryTemplateRequest request) {
+    return updateQueryTemplateCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates an existing QueryTemplate
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   UpdateQueryTemplateRequest request =
+   *       UpdateQueryTemplateRequest.newBuilder()
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .setQueryTemplate(QueryTemplate.newBuilder().build())
+   *           .build();
+   *   ApiFuture<QueryTemplate> future =
+   *       analyticsHubServiceClient.updateQueryTemplateCallable().futureCall(request);
+   *   // Do something.
+   *   QueryTemplate response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateQueryTemplateRequest, QueryTemplate>
+      updateQueryTemplateCallable() {
+    return stub.updateQueryTemplateCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a query template.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   QueryTemplateName name =
+   *       QueryTemplateName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]", "[QUERY_TEMPLATE]");
+   *   analyticsHubServiceClient.deleteQueryTemplate(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource path of the QueryTemplate. e.g.
+   *     `projects/myproject/locations/us/dataExchanges/123/queryTemplates/myqueryTemplate`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteQueryTemplate(QueryTemplateName name) {
+    DeleteQueryTemplateRequest request =
+        DeleteQueryTemplateRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteQueryTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a query template.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   String name =
+   *       QueryTemplateName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]", "[QUERY_TEMPLATE]")
+   *           .toString();
+   *   analyticsHubServiceClient.deleteQueryTemplate(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource path of the QueryTemplate. e.g.
+   *     `projects/myproject/locations/us/dataExchanges/123/queryTemplates/myqueryTemplate`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteQueryTemplate(String name) {
+    DeleteQueryTemplateRequest request =
+        DeleteQueryTemplateRequest.newBuilder().setName(name).build();
+    deleteQueryTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a query template.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   DeleteQueryTemplateRequest request =
+   *       DeleteQueryTemplateRequest.newBuilder()
+   *           .setName(
+   *               QueryTemplateName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]", "[QUERY_TEMPLATE]")
+   *                   .toString())
+   *           .build();
+   *   analyticsHubServiceClient.deleteQueryTemplate(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteQueryTemplate(DeleteQueryTemplateRequest request) {
+    deleteQueryTemplateCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes a query template.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   DeleteQueryTemplateRequest request =
+   *       DeleteQueryTemplateRequest.newBuilder()
+   *           .setName(
+   *               QueryTemplateName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]", "[QUERY_TEMPLATE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Empty> future =
+   *       analyticsHubServiceClient.deleteQueryTemplateCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteQueryTemplateRequest, Empty> deleteQueryTemplateCallable() {
+    return stub.deleteQueryTemplateCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Submits a query template for approval.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   QueryTemplateName name =
+   *       QueryTemplateName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]", "[QUERY_TEMPLATE]");
+   *   QueryTemplate response = analyticsHubServiceClient.submitQueryTemplate(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource path of the QueryTemplate. e.g.
+   *     `projects/myproject/locations/us/dataExchanges/123/queryTemplates/myqueryTemplate`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QueryTemplate submitQueryTemplate(QueryTemplateName name) {
+    SubmitQueryTemplateRequest request =
+        SubmitQueryTemplateRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return submitQueryTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Submits a query template for approval.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   String name =
+   *       QueryTemplateName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]", "[QUERY_TEMPLATE]")
+   *           .toString();
+   *   QueryTemplate response = analyticsHubServiceClient.submitQueryTemplate(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource path of the QueryTemplate. e.g.
+   *     `projects/myproject/locations/us/dataExchanges/123/queryTemplates/myqueryTemplate`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QueryTemplate submitQueryTemplate(String name) {
+    SubmitQueryTemplateRequest request =
+        SubmitQueryTemplateRequest.newBuilder().setName(name).build();
+    return submitQueryTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Submits a query template for approval.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   SubmitQueryTemplateRequest request =
+   *       SubmitQueryTemplateRequest.newBuilder()
+   *           .setName(
+   *               QueryTemplateName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]", "[QUERY_TEMPLATE]")
+   *                   .toString())
+   *           .build();
+   *   QueryTemplate response = analyticsHubServiceClient.submitQueryTemplate(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QueryTemplate submitQueryTemplate(SubmitQueryTemplateRequest request) {
+    return submitQueryTemplateCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Submits a query template for approval.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   SubmitQueryTemplateRequest request =
+   *       SubmitQueryTemplateRequest.newBuilder()
+   *           .setName(
+   *               QueryTemplateName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]", "[QUERY_TEMPLATE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<QueryTemplate> future =
+   *       analyticsHubServiceClient.submitQueryTemplateCallable().futureCall(request);
+   *   // Do something.
+   *   QueryTemplate response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<SubmitQueryTemplateRequest, QueryTemplate>
+      submitQueryTemplateCallable() {
+    return stub.submitQueryTemplateCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Approves a query template.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   QueryTemplateName name =
+   *       QueryTemplateName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]", "[QUERY_TEMPLATE]");
+   *   QueryTemplate response = analyticsHubServiceClient.approveQueryTemplate(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource path of the QueryTemplate. e.g.
+   *     `projects/myproject/locations/us/dataExchanges/123/queryTemplates/myqueryTemplate`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QueryTemplate approveQueryTemplate(QueryTemplateName name) {
+    ApproveQueryTemplateRequest request =
+        ApproveQueryTemplateRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return approveQueryTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Approves a query template.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   String name =
+   *       QueryTemplateName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]", "[QUERY_TEMPLATE]")
+   *           .toString();
+   *   QueryTemplate response = analyticsHubServiceClient.approveQueryTemplate(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource path of the QueryTemplate. e.g.
+   *     `projects/myproject/locations/us/dataExchanges/123/queryTemplates/myqueryTemplate`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QueryTemplate approveQueryTemplate(String name) {
+    ApproveQueryTemplateRequest request =
+        ApproveQueryTemplateRequest.newBuilder().setName(name).build();
+    return approveQueryTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Approves a query template.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   ApproveQueryTemplateRequest request =
+   *       ApproveQueryTemplateRequest.newBuilder()
+   *           .setName(
+   *               QueryTemplateName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]", "[QUERY_TEMPLATE]")
+   *                   .toString())
+   *           .build();
+   *   QueryTemplate response = analyticsHubServiceClient.approveQueryTemplate(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final QueryTemplate approveQueryTemplate(ApproveQueryTemplateRequest request) {
+    return approveQueryTemplateCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Approves a query template.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsHubServiceClient analyticsHubServiceClient = AnalyticsHubServiceClient.create()) {
+   *   ApproveQueryTemplateRequest request =
+   *       ApproveQueryTemplateRequest.newBuilder()
+   *           .setName(
+   *               QueryTemplateName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]", "[QUERY_TEMPLATE]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<QueryTemplate> future =
+   *       analyticsHubServiceClient.approveQueryTemplateCallable().futureCall(request);
+   *   // Do something.
+   *   QueryTemplate response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ApproveQueryTemplateRequest, QueryTemplate>
+      approveQueryTemplateCallable() {
+    return stub.approveQueryTemplateCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -3808,6 +4842,86 @@ public class AnalyticsHubServiceClient implements BackgroundResource {
     protected ListSharedResourceSubscriptionsFixedSizeCollection createCollection(
         List<ListSharedResourceSubscriptionsPage> pages, int collectionSize) {
       return new ListSharedResourceSubscriptionsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListQueryTemplatesPagedResponse
+      extends AbstractPagedListResponse<
+          ListQueryTemplatesRequest,
+          ListQueryTemplatesResponse,
+          QueryTemplate,
+          ListQueryTemplatesPage,
+          ListQueryTemplatesFixedSizeCollection> {
+
+    public static ApiFuture<ListQueryTemplatesPagedResponse> createAsync(
+        PageContext<ListQueryTemplatesRequest, ListQueryTemplatesResponse, QueryTemplate> context,
+        ApiFuture<ListQueryTemplatesResponse> futureResponse) {
+      ApiFuture<ListQueryTemplatesPage> futurePage =
+          ListQueryTemplatesPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListQueryTemplatesPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListQueryTemplatesPagedResponse(ListQueryTemplatesPage page) {
+      super(page, ListQueryTemplatesFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListQueryTemplatesPage
+      extends AbstractPage<
+          ListQueryTemplatesRequest,
+          ListQueryTemplatesResponse,
+          QueryTemplate,
+          ListQueryTemplatesPage> {
+
+    private ListQueryTemplatesPage(
+        PageContext<ListQueryTemplatesRequest, ListQueryTemplatesResponse, QueryTemplate> context,
+        ListQueryTemplatesResponse response) {
+      super(context, response);
+    }
+
+    private static ListQueryTemplatesPage createEmptyPage() {
+      return new ListQueryTemplatesPage(null, null);
+    }
+
+    @Override
+    protected ListQueryTemplatesPage createPage(
+        PageContext<ListQueryTemplatesRequest, ListQueryTemplatesResponse, QueryTemplate> context,
+        ListQueryTemplatesResponse response) {
+      return new ListQueryTemplatesPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListQueryTemplatesPage> createPageAsync(
+        PageContext<ListQueryTemplatesRequest, ListQueryTemplatesResponse, QueryTemplate> context,
+        ApiFuture<ListQueryTemplatesResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListQueryTemplatesFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListQueryTemplatesRequest,
+          ListQueryTemplatesResponse,
+          QueryTemplate,
+          ListQueryTemplatesPage,
+          ListQueryTemplatesFixedSizeCollection> {
+
+    private ListQueryTemplatesFixedSizeCollection(
+        List<ListQueryTemplatesPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListQueryTemplatesFixedSizeCollection createEmptyCollection() {
+      return new ListQueryTemplatesFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListQueryTemplatesFixedSizeCollection createCollection(
+        List<ListQueryTemplatesPage> pages, int collectionSize) {
+      return new ListQueryTemplatesFixedSizeCollection(pages, collectionSize);
     }
   }
 }

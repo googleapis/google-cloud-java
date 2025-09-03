@@ -41,6 +41,7 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
 
   private DestinationDataset() {
     location_ = "";
+    replicaLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -430,6 +431,82 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
     }
   }
 
+  public static final int REPLICA_LOCATIONS_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList replicaLocations_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The geographic locations where the dataset should be replicated.
+   * See [BigQuery locations](https://cloud.google.com/bigquery/docs/locations)
+   * for supported locations.
+   * </pre>
+   *
+   * <code>repeated string replica_locations = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the replicaLocations.
+   */
+  public com.google.protobuf.ProtocolStringList getReplicaLocationsList() {
+    return replicaLocations_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The geographic locations where the dataset should be replicated.
+   * See [BigQuery locations](https://cloud.google.com/bigquery/docs/locations)
+   * for supported locations.
+   * </pre>
+   *
+   * <code>repeated string replica_locations = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of replicaLocations.
+   */
+  public int getReplicaLocationsCount() {
+    return replicaLocations_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The geographic locations where the dataset should be replicated.
+   * See [BigQuery locations](https://cloud.google.com/bigquery/docs/locations)
+   * for supported locations.
+   * </pre>
+   *
+   * <code>repeated string replica_locations = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The replicaLocations at the given index.
+   */
+  public java.lang.String getReplicaLocations(int index) {
+    return replicaLocations_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The geographic locations where the dataset should be replicated.
+   * See [BigQuery locations](https://cloud.google.com/bigquery/docs/locations)
+   * for supported locations.
+   * </pre>
+   *
+   * <code>repeated string replica_locations = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the replicaLocations at the given index.
+   */
+  public com.google.protobuf.ByteString getReplicaLocationsBytes(int index) {
+    return replicaLocations_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -457,6 +534,9 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 4);
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, location_);
+    }
+    for (int i = 0; i < replicaLocations_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, replicaLocations_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -489,6 +569,14 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, location_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < replicaLocations_.size(); i++) {
+        dataSize += computeStringSizeNoTag(replicaLocations_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getReplicaLocationsList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -519,6 +607,7 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
     }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!getLocation().equals(other.getLocation())) return false;
+    if (!getReplicaLocationsList().equals(other.getReplicaLocationsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -548,6 +637,10 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
     }
     hash = (37 * hash) + LOCATION_FIELD_NUMBER;
     hash = (53 * hash) + getLocation().hashCode();
+    if (getReplicaLocationsCount() > 0) {
+      hash = (37 * hash) + REPLICA_LOCATIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getReplicaLocationsList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -739,6 +832,7 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
       }
       internalGetMutableLabels().clear();
       location_ = "";
+      replicaLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -799,6 +893,10 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.location_ = location_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        replicaLocations_.makeImmutable();
+        result.replicaLocations_ = replicaLocations_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -866,6 +964,16 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
         bitField0_ |= 0x00000010;
         onChanged();
       }
+      if (!other.replicaLocations_.isEmpty()) {
+        if (replicaLocations_.isEmpty()) {
+          replicaLocations_ = other.replicaLocations_;
+          bitField0_ |= 0x00000020;
+        } else {
+          ensureReplicaLocationsIsMutable();
+          replicaLocations_.addAll(other.replicaLocations_);
+        }
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -929,6 +1037,13 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000010;
                 break;
               } // case 42
+            case 50:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureReplicaLocationsIsMutable();
+                replicaLocations_.add(s);
+                break;
+              } // case 50
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1903,6 +2018,207 @@ public final class DestinationDataset extends com.google.protobuf.GeneratedMessa
       checkByteStringIsUtf8(value);
       location_ = value;
       bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList replicaLocations_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureReplicaLocationsIsMutable() {
+      if (!replicaLocations_.isModifiable()) {
+        replicaLocations_ = new com.google.protobuf.LazyStringArrayList(replicaLocations_);
+      }
+      bitField0_ |= 0x00000020;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The geographic locations where the dataset should be replicated.
+     * See [BigQuery locations](https://cloud.google.com/bigquery/docs/locations)
+     * for supported locations.
+     * </pre>
+     *
+     * <code>repeated string replica_locations = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the replicaLocations.
+     */
+    public com.google.protobuf.ProtocolStringList getReplicaLocationsList() {
+      replicaLocations_.makeImmutable();
+      return replicaLocations_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The geographic locations where the dataset should be replicated.
+     * See [BigQuery locations](https://cloud.google.com/bigquery/docs/locations)
+     * for supported locations.
+     * </pre>
+     *
+     * <code>repeated string replica_locations = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of replicaLocations.
+     */
+    public int getReplicaLocationsCount() {
+      return replicaLocations_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The geographic locations where the dataset should be replicated.
+     * See [BigQuery locations](https://cloud.google.com/bigquery/docs/locations)
+     * for supported locations.
+     * </pre>
+     *
+     * <code>repeated string replica_locations = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The replicaLocations at the given index.
+     */
+    public java.lang.String getReplicaLocations(int index) {
+      return replicaLocations_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The geographic locations where the dataset should be replicated.
+     * See [BigQuery locations](https://cloud.google.com/bigquery/docs/locations)
+     * for supported locations.
+     * </pre>
+     *
+     * <code>repeated string replica_locations = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the replicaLocations at the given index.
+     */
+    public com.google.protobuf.ByteString getReplicaLocationsBytes(int index) {
+      return replicaLocations_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The geographic locations where the dataset should be replicated.
+     * See [BigQuery locations](https://cloud.google.com/bigquery/docs/locations)
+     * for supported locations.
+     * </pre>
+     *
+     * <code>repeated string replica_locations = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The replicaLocations to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReplicaLocations(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureReplicaLocationsIsMutable();
+      replicaLocations_.set(index, value);
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The geographic locations where the dataset should be replicated.
+     * See [BigQuery locations](https://cloud.google.com/bigquery/docs/locations)
+     * for supported locations.
+     * </pre>
+     *
+     * <code>repeated string replica_locations = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The replicaLocations to add.
+     * @return This builder for chaining.
+     */
+    public Builder addReplicaLocations(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureReplicaLocationsIsMutable();
+      replicaLocations_.add(value);
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The geographic locations where the dataset should be replicated.
+     * See [BigQuery locations](https://cloud.google.com/bigquery/docs/locations)
+     * for supported locations.
+     * </pre>
+     *
+     * <code>repeated string replica_locations = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param values The replicaLocations to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllReplicaLocations(java.lang.Iterable<java.lang.String> values) {
+      ensureReplicaLocationsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, replicaLocations_);
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The geographic locations where the dataset should be replicated.
+     * See [BigQuery locations](https://cloud.google.com/bigquery/docs/locations)
+     * for supported locations.
+     * </pre>
+     *
+     * <code>repeated string replica_locations = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReplicaLocations() {
+      replicaLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000020);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The geographic locations where the dataset should be replicated.
+     * See [BigQuery locations](https://cloud.google.com/bigquery/docs/locations)
+     * for supported locations.
+     * </pre>
+     *
+     * <code>repeated string replica_locations = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes of the replicaLocations to add.
+     * @return This builder for chaining.
+     */
+    public Builder addReplicaLocationsBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureReplicaLocationsIsMutable();
+      replicaLocations_.add(value);
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }

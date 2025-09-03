@@ -164,7 +164,9 @@ public final class PublicCertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new [ExternalAccountKey][google.cloud.security.publicca.v1beta1.ExternalAccountKey] bound to the project.
+     * Creates a new
+     * [ExternalAccountKey][google.cloud.security.publicca.v1beta1.ExternalAccountKey]
+     * bound to the project.
      * </pre>
      */
     default void createExternalAccountKey(
@@ -221,7 +223,9 @@ public final class PublicCertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new [ExternalAccountKey][google.cloud.security.publicca.v1beta1.ExternalAccountKey] bound to the project.
+     * Creates a new
+     * [ExternalAccountKey][google.cloud.security.publicca.v1beta1.ExternalAccountKey]
+     * bound to the project.
      * </pre>
      */
     public void createExternalAccountKey(
@@ -262,7 +266,9 @@ public final class PublicCertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new [ExternalAccountKey][google.cloud.security.publicca.v1beta1.ExternalAccountKey] bound to the project.
+     * Creates a new
+     * [ExternalAccountKey][google.cloud.security.publicca.v1beta1.ExternalAccountKey]
+     * bound to the project.
      * </pre>
      */
     public com.google.cloud.security.publicca.v1beta1.ExternalAccountKey createExternalAccountKey(
@@ -299,7 +305,9 @@ public final class PublicCertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new [ExternalAccountKey][google.cloud.security.publicca.v1beta1.ExternalAccountKey] bound to the project.
+     * Creates a new
+     * [ExternalAccountKey][google.cloud.security.publicca.v1beta1.ExternalAccountKey]
+     * bound to the project.
      * </pre>
      */
     public com.google.cloud.security.publicca.v1beta1.ExternalAccountKey createExternalAccountKey(
@@ -336,7 +344,9 @@ public final class PublicCertificateAuthorityServiceGrpc {
      *
      *
      * <pre>
-     * Creates a new [ExternalAccountKey][google.cloud.security.publicca.v1beta1.ExternalAccountKey] bound to the project.
+     * Creates a new
+     * [ExternalAccountKey][google.cloud.security.publicca.v1beta1.ExternalAccountKey]
+     * bound to the project.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
