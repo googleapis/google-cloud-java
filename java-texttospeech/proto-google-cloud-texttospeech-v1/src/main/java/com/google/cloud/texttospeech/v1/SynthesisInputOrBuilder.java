@@ -200,6 +200,54 @@ public interface SynthesisInputOrBuilder
    *
    *
    * <pre>
+   * This system instruction is supported only for controllable/promptable voice
+   * models. If this system instruction is used, we pass the unedited text to
+   * Gemini-TTS. Otherwise, a default system instruction is used. AI Studio
+   * calls this system instruction, Style Instructions.
+   * </pre>
+   *
+   * <code>optional string prompt = 6;</code>
+   *
+   * @return Whether the prompt field is set.
+   */
+  boolean hasPrompt();
+
+  /**
+   *
+   *
+   * <pre>
+   * This system instruction is supported only for controllable/promptable voice
+   * models. If this system instruction is used, we pass the unedited text to
+   * Gemini-TTS. Otherwise, a default system instruction is used. AI Studio
+   * calls this system instruction, Style Instructions.
+   * </pre>
+   *
+   * <code>optional string prompt = 6;</code>
+   *
+   * @return The prompt.
+   */
+  java.lang.String getPrompt();
+
+  /**
+   *
+   *
+   * <pre>
+   * This system instruction is supported only for controllable/promptable voice
+   * models. If this system instruction is used, we pass the unedited text to
+   * Gemini-TTS. Otherwise, a default system instruction is used. AI Studio
+   * calls this system instruction, Style Instructions.
+   * </pre>
+   *
+   * <code>optional string prompt = 6;</code>
+   *
+   * @return The bytes for prompt.
+   */
+  com.google.protobuf.ByteString getPromptBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Optional. The pronunciation customizations are applied to the input. If
    * this is set, the input is synthesized using the given pronunciation
    * customizations.
