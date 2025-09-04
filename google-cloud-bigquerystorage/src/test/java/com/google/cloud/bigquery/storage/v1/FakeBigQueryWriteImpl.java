@@ -217,7 +217,9 @@ class FakeBigQueryWriteImpl extends BigQueryWriteGrpc.BigQueryWriteImplBase {
                   responseSleep.toMillis(), TimeUnit.MILLISECONDS);
             }
             if (connectionToFirstRequest.get(responseObserver)) {
-              if (!value.getProtoRows().hasWriterSchema() || value.getWriteStream().isEmpty()) {
+              if (!(value.getProtoRows().hasWriterSchema()
+                      || value.getArrowRows().hasWriterSchema())
+                  || value.getWriteStream().isEmpty()) {
                 LOG.info(
                     String.valueOf(
                         !value.getProtoRows().hasWriterSchema()

@@ -24,6 +24,7 @@ import static org.junit.Assert.assertTrue;
 
 import com.google.api.client.util.Sleeper;
 import com.google.api.core.ApiFuture;
+import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.FixedHeaderProvider;
 import com.google.api.gax.rpc.HeaderProvider;
 import com.google.cloud.ServiceOptions;
@@ -48,8 +49,10 @@ import com.google.protobuf.Descriptors;
 import com.google.protobuf.Descriptors.DescriptorValidationException;
 import io.grpc.Status;
 import io.grpc.Status.Code;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.nio.channels.Channels;
 import java.sql.Timestamp;
 import java.text.ParseException;
 import java.time.Duration;
@@ -61,6 +64,16 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.logging.Logger;
+import org.apache.arrow.memory.BufferAllocator;
+import org.apache.arrow.memory.RootAllocator;
+import org.apache.arrow.vector.*;
+import org.apache.arrow.vector.compression.CompressionCodec;
+import org.apache.arrow.vector.compression.CompressionUtil;
+import org.apache.arrow.vector.compression.NoCompressionCodec;
+import org.apache.arrow.vector.ipc.WriteChannel;
+import org.apache.arrow.vector.ipc.message.MessageSerializer;
+import org.apache.arrow.vector.types.pojo.ArrowType;
+import org.apache.arrow.vector.types.pojo.FieldType;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.junit.AfterClass;
@@ -93,6 +106,8 @@ public class ITBigQueryWriteManualClientTest {
 
   private static String tableIdEU;
   private static BigQuery bigquery;
+
+  private static final BufferAllocator allocator = new RootAllocator();
 
   public class StringWithSecondsNanos {
     public String foo;
@@ -1065,6 +1080,154 @@ public class ITBigQueryWriteManualClientTest {
     } catch (IOException e) {
       throw new RuntimeException(e);
     }
+  }
+
+  @Test
+  public void testArrowIngestionWithSerializedInput()
+      throws IOException, InterruptedException, ExecutionException, TimeoutException {
+    testArrowIngestion(/* serializedInput= */ true);
+  }
+
+  @Test
+  public void testArrowIngestionWithUnSerializedInput()
+      throws IOException, InterruptedException, ExecutionException, TimeoutException {
+    testArrowIngestion(/* serializedInput= */ false);
+  }
+
+  private void testArrowIngestion(boolean serializedInput)
+      throws IOException, InterruptedException, ExecutionException, TimeoutException {
+    String tableName =
+        serializedInput
+            ? "arrowIngestionWithSerializedInput"
+            : "arrowIngestionWithUnSerializedInput";
+    TableInfo tableInfo =
+        TableInfo.newBuilder(
+                TableId.of(DATASET, tableName),
+                StandardTableDefinition.of(
+                    Schema.of(
+                        com.google.cloud.bigquery.Field.newBuilder("foo", LegacySQLTypeName.STRING)
+                            .setMode(Field.Mode.NULLABLE)
+                            .build(),
+                        com.google.cloud.bigquery.Field.newBuilder("bar", LegacySQLTypeName.INTEGER)
+                            .setMode(Field.Mode.NULLABLE)
+                            .build(),
+                        com.google.cloud.bigquery.Field.newBuilder("baz", LegacySQLTypeName.BOOLEAN)
+                            .setMode(Field.Mode.NULLABLE)
+                            .build())))
+            .build();
+    bigquery.create(tableInfo);
+    String tableId =
+        String.format(
+            "projects/%s/datasets/%s/tables/%s",
+            ServiceOptions.getDefaultProjectId(), DATASET, tableName);
+
+    // Define Arrow schema
+    List<org.apache.arrow.vector.types.pojo.Field> fields =
+        ImmutableList.of(
+            new org.apache.arrow.vector.types.pojo.Field(
+                "foo", FieldType.nullable(new ArrowType.Utf8()), null),
+            new org.apache.arrow.vector.types.pojo.Field(
+                "bar", FieldType.nullable(new ArrowType.Int(64, true)), null),
+            new org.apache.arrow.vector.types.pojo.Field(
+                "baz", FieldType.nullable(new ArrowType.Bool()), null));
+    org.apache.arrow.vector.types.pojo.Schema arrowSchema =
+        new org.apache.arrow.vector.types.pojo.Schema(fields, null);
+    ArrowSchema v1ArrowSchema;
+    ArrowRecordBatch v1ArrowRecordBatch;
+    org.apache.arrow.vector.ipc.message.ArrowRecordBatch recordBatch;
+
+    try (VectorSchemaRoot root = VectorSchemaRoot.create(arrowSchema, allocator)) {
+      // Create Arrow data
+      VarCharVector foo = (VarCharVector) root.getVector("foo");
+      foo.allocateNew(3);
+      foo.set(0, "A".getBytes());
+      foo.set(1, "B".getBytes());
+      foo.set(2, "C".getBytes());
+      BigIntVector bar = (BigIntVector) root.getVector("bar");
+      bar.allocateNew(3);
+      bar.set(0, 1);
+      bar.set(1, 2);
+      bar.set(2, 3);
+      BitVector baz = (BitVector) root.getVector("baz");
+      baz.allocateNew(3);
+      baz.set(0, 1);
+      baz.set(1, 0);
+      baz.set(2, 1);
+      root.setRowCount(3);
+
+      // Create IPC payload
+      ByteArrayOutputStream out = new ByteArrayOutputStream();
+      MessageSerializer.serialize(new WriteChannel(Channels.newChannel(out)), arrowSchema);
+      v1ArrowSchema =
+          ArrowSchema.newBuilder()
+              .setSerializedSchema(ByteString.copyFrom(out.toByteArray()))
+              .build();
+
+      CompressionCodec codec =
+          NoCompressionCodec.Factory.INSTANCE.createCodec(CompressionUtil.CodecType.NO_COMPRESSION);
+      VectorUnloader vectorUnloader =
+          new VectorUnloader(root, /* includeNullCount= */ true, codec, /* alignBuffers= */ true);
+      recordBatch = vectorUnloader.getRecordBatch();
+
+      out = new ByteArrayOutputStream();
+      MessageSerializer.serialize(new WriteChannel(Channels.newChannel(out)), recordBatch);
+      v1ArrowRecordBatch =
+          ArrowRecordBatch.newBuilder()
+              .setSerializedRecordBatch(ByteString.copyFrom(out.toByteArray()))
+              .build();
+    }
+    if (serializedInput) {
+      try (StreamWriter streamWriter =
+          StreamWriter.newBuilder(tableId + "/_default", client)
+              .setWriterSchema(v1ArrowSchema)
+              .setTraceId(TEST_TRACE_ID)
+              .setMaxRetryDuration(java.time.Duration.ofSeconds(5))
+              .setRetrySettings(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(java.time.Duration.ofMillis(500))
+                      .setRetryDelayMultiplier(1.3)
+                      .setMaxAttempts(3)
+                      .setMaxRetryDelayDuration(java.time.Duration.ofMinutes(5))
+                      .build())
+              .build()) {
+        ApiFuture<AppendRowsResponse> response = streamWriter.append(v1ArrowRecordBatch);
+        assertEquals(0, response.get().getAppendResult().getOffset().getValue());
+      }
+    } else {
+      try (StreamWriter streamWriter =
+          StreamWriter.newBuilder(tableId + "/_default", client)
+              .setWriterSchema(arrowSchema)
+              .setTraceId(TEST_TRACE_ID)
+              .setMaxRetryDuration(java.time.Duration.ofSeconds(5))
+              .setRetrySettings(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(java.time.Duration.ofMillis(500))
+                      .setRetryDelayMultiplier(1.3)
+                      .setMaxAttempts(3)
+                      .setMaxRetryDelayDuration(java.time.Duration.ofMinutes(5))
+                      .build())
+              .build()) {
+        ApiFuture<AppendRowsResponse> response = streamWriter.append(recordBatch);
+        assertEquals(0, response.get().getAppendResult().getOffset().getValue());
+      }
+    }
+
+    TableResult result =
+        bigquery.listTableData(tableInfo.getTableId(), BigQuery.TableDataListOption.startIndex(0L));
+    Iterator<FieldValueList> iter = result.getValues().iterator();
+    FieldValueList currentRow = iter.next();
+    assertEquals("A", currentRow.get(0).getStringValue());
+    assertEquals("1", currentRow.get(1).getStringValue());
+    assertEquals(true, currentRow.get(2).getBooleanValue());
+    currentRow = iter.next();
+    assertEquals("B", currentRow.get(0).getStringValue());
+    assertEquals("2", currentRow.get(1).getStringValue());
+    assertEquals(false, currentRow.get(2).getBooleanValue());
+    currentRow = iter.next();
+    assertEquals("C", currentRow.get(0).getStringValue());
+    assertEquals("3", currentRow.get(1).getStringValue());
+    assertEquals(true, currentRow.get(2).getBooleanValue());
+    assertEquals(false, iter.hasNext());
   }
 
   // This test runs about 1 min.

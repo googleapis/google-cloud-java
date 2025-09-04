@@ -16,6 +16,7 @@
 package com.google.cloud.bigquery.storage.v1;
 
 import static com.google.common.truth.Truth.assertThat;
+import static java.nio.charset.StandardCharsets.UTF_8;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertThrows;
 import static org.junit.Assert.assertTrue;
@@ -30,12 +31,16 @@ import com.google.cloud.bigquery.storage.test.Test.ComplicateType;
 import com.google.cloud.bigquery.storage.test.Test.FooType;
 import com.google.cloud.bigquery.storage.test.Test.InnerType;
 import com.google.cloud.bigquery.storage.v1.ConnectionWorker.Load;
+import com.google.protobuf.ByteString;
 import com.google.protobuf.DescriptorProtos;
 import com.google.protobuf.Int64Value;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import io.opentelemetry.api.common.Attributes;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.nio.channels.Channels;
 import java.time.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -43,6 +48,18 @@ import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import java.util.logging.Logger;
+import org.apache.arrow.memory.RootAllocator;
+import org.apache.arrow.vector.VarCharVector;
+import org.apache.arrow.vector.VectorSchemaRoot;
+import org.apache.arrow.vector.VectorUnloader;
+import org.apache.arrow.vector.ipc.ReadChannel;
+import org.apache.arrow.vector.ipc.WriteChannel;
+import org.apache.arrow.vector.ipc.message.ArrowRecordBatch;
+import org.apache.arrow.vector.ipc.message.MessageSerializer;
+import org.apache.arrow.vector.types.pojo.ArrowType;
+import org.apache.arrow.vector.types.pojo.Field;
+import org.apache.arrow.vector.types.pojo.FieldType;
+import org.apache.arrow.vector.types.pojo.Schema;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -350,6 +367,124 @@ public class ConnectionWorkerTest {
   }
 
   @Test
+  public void testAppendInSameStreamSwitchArrowSchema() throws Exception {
+    try (ConnectionWorker connectionWorker = createMultiplexedConnectionWorker()) {
+      long appendCount = 60;
+      for (long i = 0; i < appendCount; i++) {
+        testBigQueryWrite.addResponse(createAppendResponse(i));
+      }
+      List<ApiFuture<AppendRowsResponse>> futures = new ArrayList<>();
+
+      // Schema1 and schema2 are the same content, but different instance.
+      ArrowSchema schema1 = createArrowSchema("col1");
+      ArrowSchema schema2 = createArrowSchema("col1");
+      // Schema3 is a different schema
+      ArrowSchema schema3 = createArrowSchema("col2");
+
+      // We do a pattern of:
+      // send to stream1, schema1
+      // send to stream1, schema2
+      // send to stream1, schema3
+      // send to stream1, schema3
+      // send to stream1, schema1
+      // ...
+      StreamWriter sw1 =
+          StreamWriter.newBuilder(TEST_STREAM_1, client)
+              .setLocation("us")
+              .setWriterSchema(schema1)
+              .build();
+      StreamWriter sw2 =
+          StreamWriter.newBuilder(TEST_STREAM_1, client)
+              .setLocation("us")
+              .setWriterSchema(schema2)
+              .build();
+      StreamWriter sw3 =
+          StreamWriter.newBuilder(TEST_STREAM_1, client)
+              .setLocation("us")
+              .setWriterSchema(schema3)
+              .build();
+      for (long i = 0; i < appendCount; i++) {
+        switch ((int) i % 4) {
+          case 0:
+            futures.add(
+                sendTestMessage(
+                    connectionWorker,
+                    sw1,
+                    createArrowRecordBatch(schema1, new String[] {String.valueOf(i)}),
+                    i));
+            break;
+          case 1:
+            futures.add(
+                sendTestMessage(
+                    connectionWorker,
+                    sw2,
+                    createArrowRecordBatch(schema2, new String[] {String.valueOf(i)}),
+                    i));
+            break;
+          case 2:
+          case 3:
+            futures.add(
+                sendTestMessage(
+                    connectionWorker,
+                    sw3,
+                    createArrowRecordBatch(schema3, new String[] {String.valueOf(i)}),
+                    i));
+            break;
+          default: // fall out
+            break;
+        }
+      }
+      // In the real world the response won't contain offset for default stream, but we use offset
+      // here just to test response.
+      for (int i = 0; i < appendCount; i++) {
+        Int64Value offset = futures.get(i).get().getAppendResult().getOffset();
+        assertThat(offset).isEqualTo(Int64Value.of(i));
+      }
+      assertThat(testBigQueryWrite.getAppendRequests().size()).isEqualTo(appendCount);
+      for (int i = 0; i < appendCount; i++) {
+        AppendRowsRequest serverRequest = testBigQueryWrite.getAppendRequests().get(i);
+        assertThat(serverRequest.getArrowRows().getRows().getSerializedRecordBatch().size())
+            .isGreaterThan(0);
+        assertThat(serverRequest.getOffset().getValue()).isEqualTo(i);
+
+        // Since schema 1 equals schema 2, we will get the request as the pattern of:
+        // (writer_stream: TEST_STREAM_1, schema: schema1)
+        // (writer_stream: TEST_STREAM_1, schema: _)
+        // (writer_stream: TEST_STREAM_1, schema: schema3)
+        // (writer_stream: TEST_STREAM_1, schema: _)
+        // (writer_stream: TEST_STREAM_1, schema: schema1)
+        // (writer_stream: TEST_STREAM_1, schema: _)
+        switch (i % 4) {
+          case 0:
+            assertThat(serverRequest.getWriteStream()).isEqualTo(TEST_STREAM_1);
+            assertThat(serverRequest.getArrowRows().getWriterSchema()).isEqualTo(schema1);
+            break;
+          case 1:
+            assertThat(serverRequest.getWriteStream()).isEqualTo(TEST_STREAM_1);
+            // Schema is empty if not at the first request after table switch.
+            assertThat(serverRequest.getArrowRows().hasWriterSchema()).isFalse();
+            break;
+          case 2:
+            assertThat(serverRequest.getWriteStream()).isEqualTo(TEST_STREAM_1);
+            // Schema is populated after table switch.
+            assertThat(serverRequest.getArrowRows().getWriterSchema()).isEqualTo(schema3);
+            break;
+          case 3:
+            assertThat(serverRequest.getWriteStream()).isEqualTo(TEST_STREAM_1);
+            // Schema is empty if not at the first request after table switch.
+            assertThat(serverRequest.getArrowRows().hasWriterSchema()).isFalse();
+            break;
+          default: // fall out
+            break;
+        }
+      }
+
+      assertThat(connectionWorker.getLoad().destinationCount()).isEqualTo(1);
+      assertThat(connectionWorker.getLoad().inFlightRequestsBytes()).isEqualTo(0);
+    }
+  }
+
+  @Test
   public void testAppendButInflightQueueFull() throws Exception {
     ProtoSchema schema1 = createProtoSchema("foo");
     StreamWriter sw1 =
@@ -622,7 +757,22 @@ public class ConnectionWorkerTest {
       ProtoRows protoRows,
       long offset) {
     return connectionWorker.append(
-        streamWriter, protoRows, offset, /* requestUniqueId= */ "request_" + offset);
+        streamWriter,
+        AppendFormats.AppendRowsData.of(protoRows),
+        offset,
+        /* requestUniqueId= */ "request_" + offset);
+  }
+
+  private ApiFuture<AppendRowsResponse> sendTestMessage(
+      ConnectionWorker connectionWorker,
+      StreamWriter streamWriter,
+      com.google.cloud.bigquery.storage.v1.ArrowRecordBatch arrowRecordBatch,
+      long offset) {
+    return connectionWorker.append(
+        streamWriter,
+        AppendFormats.AppendRowsData.of(arrowRecordBatch),
+        offset,
+        /* requestUniqueId= */ "request_" + offset);
   }
 
   private ProtoRows createFooProtoRows(String[] messages) {
@@ -644,6 +794,51 @@ public class ConnectionWorkerTest {
       rowsBuilder.addSerializedRows(complicateType.toByteString());
     }
     return rowsBuilder.build();
+  }
+
+  private ArrowSchema createArrowSchema(String fieldName) {
+    Field col = new Field(fieldName, FieldType.nullable(new ArrowType.Utf8()), null);
+    Schema arrowSchema = new Schema(Arrays.asList(col));
+    final ByteArrayOutputStream out = new ByteArrayOutputStream();
+    try {
+      MessageSerializer.serialize(new WriteChannel(Channels.newChannel(out)), arrowSchema);
+    } catch (IOException e) {
+      throw new IllegalStateException("Failed to serialize arrow schema.", e);
+    }
+    byte[] bytes = out.toByteArray();
+    return ArrowSchema.newBuilder().setSerializedSchema(ByteString.copyFrom(bytes)).build();
+  }
+
+  private com.google.cloud.bigquery.storage.v1.ArrowRecordBatch createArrowRecordBatch(
+      ArrowSchema arrowSchema, String[] messages) {
+    try {
+      Schema schema =
+          MessageSerializer.deserializeSchema(
+              new ReadChannel(
+                  Channels.newChannel(
+                      new ByteArrayInputStream(arrowSchema.getSerializedSchema().toByteArray()))));
+      try (VectorSchemaRoot vectorSchemaRoot =
+          VectorSchemaRoot.create(schema, new RootAllocator())) {
+        VarCharVector varCharVector = (VarCharVector) vectorSchemaRoot.getVector(0);
+        varCharVector.allocateNew(messages.length);
+        for (int i = 0; i < messages.length; i++) {
+          varCharVector.set(i, messages[i].getBytes(UTF_8));
+        }
+        vectorSchemaRoot.setRowCount(messages.length);
+
+        VectorUnloader vectorUnloader = new VectorUnloader(vectorSchemaRoot);
+        try (final ArrowRecordBatch recordBatch = vectorUnloader.getRecordBatch()) {
+          final ByteArrayOutputStream out = new ByteArrayOutputStream();
+          MessageSerializer.serialize(new WriteChannel(Channels.newChannel(out)), recordBatch);
+          ByteString serialized = ByteString.copyFrom(out.toByteArray());
+          return com.google.cloud.bigquery.storage.v1.ArrowRecordBatch.newBuilder()
+              .setSerializedRecordBatch(serialized)
+              .build();
+        }
+      }
+    } catch (IOException e) {
+      throw new RuntimeException(e);
+    }
   }
 
   @Test
@@ -807,12 +1002,11 @@ public class ConnectionWorkerTest {
 
   private void exerciseOpenTelemetryAttributesWithStreamNames(String streamName, String expected)
       throws Exception {
-    ProtoSchema schema1 = createProtoSchema("foo");
     ConnectionWorker connectionWorker =
         new ConnectionWorker(
             streamName,
             null,
-            schema1,
+            createProtoSchema("foo"),
             100000,
             100000,
             Duration.ofSeconds(100),
@@ -850,12 +1044,11 @@ public class ConnectionWorkerTest {
   void exerciseOpenTelemetryAttributesWithTraceId(
       String traceId, String expectedField1, String expectedField2, String expectedField3)
       throws Exception {
-    ProtoSchema schema1 = createProtoSchema("foo");
     ConnectionWorker connectionWorker =
         new ConnectionWorker(
             TEST_STREAM_1,
             null,
-            schema1,
+            createProtoSchema("foo"),
             100000,
             100000,
             Duration.ofSeconds(100),
@@ -926,7 +1119,7 @@ public class ConnectionWorkerTest {
         new ConnectionWorker(
             TEST_STREAM_1,
             "us",
-            schema1,
+            createProtoSchema("foo"),
             100000,
             100000,
             Duration.ofMillis(1), // very small maxRetryDuration

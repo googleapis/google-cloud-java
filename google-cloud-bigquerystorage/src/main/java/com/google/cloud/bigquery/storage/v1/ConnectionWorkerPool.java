@@ -20,6 +20,7 @@ import com.google.api.core.ApiFutures;
 import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.auto.value.AutoValue;
+import com.google.cloud.bigquery.storage.v1.AppendFormats.AppendRowsData;
 import com.google.cloud.bigquery.storage.v1.ConnectionWorker.Load;
 import com.google.cloud.bigquery.storage.v1.ConnectionWorker.TableSchemaAndTimestamp;
 import com.google.common.annotations.VisibleForTesting;
@@ -277,7 +278,7 @@ public class ConnectionWorkerPool {
 
   /** Distributes the writing of a message to an underlying connection. */
   ApiFuture<AppendRowsResponse> append(
-      StreamWriter streamWriter, ProtoRows rows, long offset, String uniqueRequestId) {
+      StreamWriter streamWriter, AppendRowsData rows, long offset, String uniqueRequestId) {
     // We are in multiplexing mode after entering the following logic.
     ConnectionWorker connectionWorker = getConnectionWorker(streamWriter);
     Stopwatch stopwatch = Stopwatch.createStarted();
@@ -315,7 +316,7 @@ public class ConnectionWorkerPool {
       return createConnectionWorker(
           streamWriter.getStreamName(),
           streamWriter.getLocation(),
-          streamWriter.getProtoSchema(),
+          streamWriter.getWriterSchema(),
           streamWriter.getFullTraceId());
     } else {
       ConnectionWorker existingBestConnection =
@@ -335,7 +336,7 @@ public class ConnectionWorkerPool {
         return createConnectionWorker(
             streamWriter.getStreamName(),
             streamWriter.getLocation(),
-            streamWriter.getProtoSchema(),
+            streamWriter.getWriterSchema(),
             streamWriter.getFullTraceId());
       } else {
         // Stick to the original connection if all the connections are overwhelmed.
@@ -392,7 +393,10 @@ public class ConnectionWorkerPool {
    * computeIfAbsent(...) which is at most once per key.
    */
   private ConnectionWorker createConnectionWorker(
-      String streamName, String location, ProtoSchema writeSchema, String fullTraceId)
+      String streamName,
+      String location,
+      AppendFormats.AppendRowsSchema writeSchema,
+      String fullTraceId)
       throws IOException {
     if (enableTesting) {
       // Though atomic integer is super lightweight, add extra if check in case adding future logic.
