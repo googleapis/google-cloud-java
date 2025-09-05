@@ -75,6 +75,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     VMWARE_VMS(1),
     AWS_VMS(3),
+    AZURE_VMS(5),
     SOURCEVMS_NOT_SET(0);
     private final int value;
 
@@ -98,6 +99,8 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
           return VMWARE_VMS;
         case 3:
           return AWS_VMS;
+        case 5:
+          return AZURE_VMS;
         case 0:
           return SOURCEVMS_NOT_SET;
         default:
@@ -222,6 +225,60 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
     return com.google.cloud.vmmigration.v1.AwsVmsDetails.getDefaultInstance();
   }
 
+  public static final int AZURE_VMS_FIELD_NUMBER = 5;
+
+  /**
+   *
+   *
+   * <pre>
+   * The description of the VMs in a Source of type Azure.
+   * </pre>
+   *
+   * <code>.google.cloud.vmmigration.v1.AzureVmsDetails azure_vms = 5;</code>
+   *
+   * @return Whether the azureVms field is set.
+   */
+  @java.lang.Override
+  public boolean hasAzureVms() {
+    return sourceVmsCase_ == 5;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The description of the VMs in a Source of type Azure.
+   * </pre>
+   *
+   * <code>.google.cloud.vmmigration.v1.AzureVmsDetails azure_vms = 5;</code>
+   *
+   * @return The azureVms.
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.AzureVmsDetails getAzureVms() {
+    if (sourceVmsCase_ == 5) {
+      return (com.google.cloud.vmmigration.v1.AzureVmsDetails) sourceVms_;
+    }
+    return com.google.cloud.vmmigration.v1.AzureVmsDetails.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The description of the VMs in a Source of type Azure.
+   * </pre>
+   *
+   * <code>.google.cloud.vmmigration.v1.AzureVmsDetails azure_vms = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.AzureVmsDetailsOrBuilder getAzureVmsOrBuilder() {
+    if (sourceVmsCase_ == 5) {
+      return (com.google.cloud.vmmigration.v1.AzureVmsDetails) sourceVms_;
+    }
+    return com.google.cloud.vmmigration.v1.AzureVmsDetails.getDefaultInstance();
+  }
+
   public static final int UPDATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp updateTime_;
 
@@ -300,6 +357,9 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
     if (sourceVmsCase_ == 3) {
       output.writeMessage(3, (com.google.cloud.vmmigration.v1.AwsVmsDetails) sourceVms_);
     }
+    if (sourceVmsCase_ == 5) {
+      output.writeMessage(5, (com.google.cloud.vmmigration.v1.AzureVmsDetails) sourceVms_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -321,6 +381,11 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               3, (com.google.cloud.vmmigration.v1.AwsVmsDetails) sourceVms_);
+    }
+    if (sourceVmsCase_ == 5) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, (com.google.cloud.vmmigration.v1.AzureVmsDetails) sourceVms_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -350,6 +415,9 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
       case 3:
         if (!getAwsVms().equals(other.getAwsVms())) return false;
         break;
+      case 5:
+        if (!getAzureVms().equals(other.getAzureVms())) return false;
+        break;
       case 0:
       default:
     }
@@ -376,6 +444,10 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
       case 3:
         hash = (37 * hash) + AWS_VMS_FIELD_NUMBER;
         hash = (53 * hash) + getAwsVms().hashCode();
+        break;
+      case 5:
+        hash = (37 * hash) + AZURE_VMS_FIELD_NUMBER;
+        hash = (53 * hash) + getAzureVms().hashCode();
         break;
       case 0:
       default:
@@ -537,6 +609,9 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
       if (awsVmsBuilder_ != null) {
         awsVmsBuilder_.clear();
       }
+      if (azureVmsBuilder_ != null) {
+        azureVmsBuilder_.clear();
+      }
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -582,7 +657,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
     private void buildPartial0(com.google.cloud.vmmigration.v1.FetchInventoryResponse result) {
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
@@ -597,6 +672,9 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
       }
       if (sourceVmsCase_ == 3 && awsVmsBuilder_ != null) {
         result.sourceVms_ = awsVmsBuilder_.build();
+      }
+      if (sourceVmsCase_ == 5 && azureVmsBuilder_ != null) {
+        result.sourceVms_ = azureVmsBuilder_.build();
       }
     }
 
@@ -660,6 +738,11 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
             mergeAwsVms(other.getAwsVms());
             break;
           }
+        case AZURE_VMS:
+          {
+            mergeAzureVms(other.getAzureVms());
+            break;
+          }
         case SOURCEVMS_NOT_SET:
           {
             break;
@@ -700,7 +783,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
             case 18:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 18
             case 26:
@@ -709,6 +792,12 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
                 sourceVmsCase_ = 3;
                 break;
               } // case 26
+            case 42:
+              {
+                input.readMessage(getAzureVmsFieldBuilder().getBuilder(), extensionRegistry);
+                sourceVmsCase_ = 5;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1179,6 +1268,224 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
       return awsVmsBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vmmigration.v1.AzureVmsDetails,
+            com.google.cloud.vmmigration.v1.AzureVmsDetails.Builder,
+            com.google.cloud.vmmigration.v1.AzureVmsDetailsOrBuilder>
+        azureVmsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The description of the VMs in a Source of type Azure.
+     * </pre>
+     *
+     * <code>.google.cloud.vmmigration.v1.AzureVmsDetails azure_vms = 5;</code>
+     *
+     * @return Whether the azureVms field is set.
+     */
+    @java.lang.Override
+    public boolean hasAzureVms() {
+      return sourceVmsCase_ == 5;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The description of the VMs in a Source of type Azure.
+     * </pre>
+     *
+     * <code>.google.cloud.vmmigration.v1.AzureVmsDetails azure_vms = 5;</code>
+     *
+     * @return The azureVms.
+     */
+    @java.lang.Override
+    public com.google.cloud.vmmigration.v1.AzureVmsDetails getAzureVms() {
+      if (azureVmsBuilder_ == null) {
+        if (sourceVmsCase_ == 5) {
+          return (com.google.cloud.vmmigration.v1.AzureVmsDetails) sourceVms_;
+        }
+        return com.google.cloud.vmmigration.v1.AzureVmsDetails.getDefaultInstance();
+      } else {
+        if (sourceVmsCase_ == 5) {
+          return azureVmsBuilder_.getMessage();
+        }
+        return com.google.cloud.vmmigration.v1.AzureVmsDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The description of the VMs in a Source of type Azure.
+     * </pre>
+     *
+     * <code>.google.cloud.vmmigration.v1.AzureVmsDetails azure_vms = 5;</code>
+     */
+    public Builder setAzureVms(com.google.cloud.vmmigration.v1.AzureVmsDetails value) {
+      if (azureVmsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sourceVms_ = value;
+        onChanged();
+      } else {
+        azureVmsBuilder_.setMessage(value);
+      }
+      sourceVmsCase_ = 5;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The description of the VMs in a Source of type Azure.
+     * </pre>
+     *
+     * <code>.google.cloud.vmmigration.v1.AzureVmsDetails azure_vms = 5;</code>
+     */
+    public Builder setAzureVms(
+        com.google.cloud.vmmigration.v1.AzureVmsDetails.Builder builderForValue) {
+      if (azureVmsBuilder_ == null) {
+        sourceVms_ = builderForValue.build();
+        onChanged();
+      } else {
+        azureVmsBuilder_.setMessage(builderForValue.build());
+      }
+      sourceVmsCase_ = 5;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The description of the VMs in a Source of type Azure.
+     * </pre>
+     *
+     * <code>.google.cloud.vmmigration.v1.AzureVmsDetails azure_vms = 5;</code>
+     */
+    public Builder mergeAzureVms(com.google.cloud.vmmigration.v1.AzureVmsDetails value) {
+      if (azureVmsBuilder_ == null) {
+        if (sourceVmsCase_ == 5
+            && sourceVms_ != com.google.cloud.vmmigration.v1.AzureVmsDetails.getDefaultInstance()) {
+          sourceVms_ =
+              com.google.cloud.vmmigration.v1.AzureVmsDetails.newBuilder(
+                      (com.google.cloud.vmmigration.v1.AzureVmsDetails) sourceVms_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          sourceVms_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceVmsCase_ == 5) {
+          azureVmsBuilder_.mergeFrom(value);
+        } else {
+          azureVmsBuilder_.setMessage(value);
+        }
+      }
+      sourceVmsCase_ = 5;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The description of the VMs in a Source of type Azure.
+     * </pre>
+     *
+     * <code>.google.cloud.vmmigration.v1.AzureVmsDetails azure_vms = 5;</code>
+     */
+    public Builder clearAzureVms() {
+      if (azureVmsBuilder_ == null) {
+        if (sourceVmsCase_ == 5) {
+          sourceVmsCase_ = 0;
+          sourceVms_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceVmsCase_ == 5) {
+          sourceVmsCase_ = 0;
+          sourceVms_ = null;
+        }
+        azureVmsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The description of the VMs in a Source of type Azure.
+     * </pre>
+     *
+     * <code>.google.cloud.vmmigration.v1.AzureVmsDetails azure_vms = 5;</code>
+     */
+    public com.google.cloud.vmmigration.v1.AzureVmsDetails.Builder getAzureVmsBuilder() {
+      return getAzureVmsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The description of the VMs in a Source of type Azure.
+     * </pre>
+     *
+     * <code>.google.cloud.vmmigration.v1.AzureVmsDetails azure_vms = 5;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.vmmigration.v1.AzureVmsDetailsOrBuilder getAzureVmsOrBuilder() {
+      if ((sourceVmsCase_ == 5) && (azureVmsBuilder_ != null)) {
+        return azureVmsBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceVmsCase_ == 5) {
+          return (com.google.cloud.vmmigration.v1.AzureVmsDetails) sourceVms_;
+        }
+        return com.google.cloud.vmmigration.v1.AzureVmsDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The description of the VMs in a Source of type Azure.
+     * </pre>
+     *
+     * <code>.google.cloud.vmmigration.v1.AzureVmsDetails azure_vms = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vmmigration.v1.AzureVmsDetails,
+            com.google.cloud.vmmigration.v1.AzureVmsDetails.Builder,
+            com.google.cloud.vmmigration.v1.AzureVmsDetailsOrBuilder>
+        getAzureVmsFieldBuilder() {
+      if (azureVmsBuilder_ == null) {
+        if (!(sourceVmsCase_ == 5)) {
+          sourceVms_ = com.google.cloud.vmmigration.v1.AzureVmsDetails.getDefaultInstance();
+        }
+        azureVmsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vmmigration.v1.AzureVmsDetails,
+                com.google.cloud.vmmigration.v1.AzureVmsDetails.Builder,
+                com.google.cloud.vmmigration.v1.AzureVmsDetailsOrBuilder>(
+                (com.google.cloud.vmmigration.v1.AzureVmsDetails) sourceVms_,
+                getParentForChildren(),
+                isClean());
+        sourceVms_ = null;
+      }
+      sourceVmsCase_ = 5;
+      onChanged();
+      return azureVmsBuilder_;
+    }
+
     private com.google.protobuf.Timestamp updateTime_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.protobuf.Timestamp,
@@ -1201,7 +1508,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -1249,7 +1556,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1272,7 +1579,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1291,7 +1598,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -1302,7 +1609,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
         updateTimeBuilder_.mergeFrom(value);
       }
       if (updateTime_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -1321,7 +1628,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
      * </code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -1344,7 +1651,7 @@ public final class FetchInventoryResponse extends com.google.protobuf.GeneratedM
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }

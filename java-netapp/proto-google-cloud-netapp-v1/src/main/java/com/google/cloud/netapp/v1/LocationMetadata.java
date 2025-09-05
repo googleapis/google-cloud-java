@@ -295,6 +295,25 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
 
   private int supportedFlexPerformanceMemoizedSerializedSize;
 
+  public static final int HAS_VCP_FIELD_NUMBER = 3;
+  private boolean hasVcp_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates if the location has VCP support.
+   * </pre>
+   *
+   * <code>bool has_vcp = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The hasVcp.
+   */
+  @java.lang.Override
+  public boolean getHasVcp() {
+    return hasVcp_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -323,6 +342,9 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
     }
     for (int i = 0; i < supportedFlexPerformance_.size(); i++) {
       output.writeEnumNoTag(supportedFlexPerformance_.get(i));
+    }
+    if (hasVcp_ != false) {
+      output.writeBool(3, hasVcp_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -361,6 +383,9 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       }
       supportedFlexPerformanceMemoizedSerializedSize = dataSize;
     }
+    if (hasVcp_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, hasVcp_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -379,6 +404,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
 
     if (!supportedServiceLevels_.equals(other.supportedServiceLevels_)) return false;
     if (!supportedFlexPerformance_.equals(other.supportedFlexPerformance_)) return false;
+    if (getHasVcp() != other.getHasVcp()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -398,6 +424,8 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       hash = (37 * hash) + SUPPORTED_FLEX_PERFORMANCE_FIELD_NUMBER;
       hash = (53 * hash) + supportedFlexPerformance_.hashCode();
     }
+    hash = (37 * hash) + HAS_VCP_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getHasVcp());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -543,6 +571,7 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       bitField0_ = (bitField0_ & ~0x00000001);
       supportedFlexPerformance_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000002);
+      hasVcp_ = false;
       return this;
     }
 
@@ -594,6 +623,9 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
 
     private void buildPartial0(com.google.cloud.netapp.v1.LocationMetadata result) {
       int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.hasVcp_ = hasVcp_;
+      }
     }
 
     @java.lang.Override
@@ -661,6 +693,9 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
         }
         onChanged();
       }
+      if (other.getHasVcp() != false) {
+        setHasVcp(other.getHasVcp());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -725,6 +760,12 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
                 input.popLimit(oldLimit);
                 break;
               } // case 18
+            case 24:
+              {
+                hasVcp_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1262,6 +1303,62 @@ public final class LocationMetadata extends com.google.protobuf.GeneratedMessage
       for (int value : values) {
         supportedFlexPerformance_.add(value);
       }
+      onChanged();
+      return this;
+    }
+
+    private boolean hasVcp_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates if the location has VCP support.
+     * </pre>
+     *
+     * <code>bool has_vcp = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The hasVcp.
+     */
+    @java.lang.Override
+    public boolean getHasVcp() {
+      return hasVcp_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates if the location has VCP support.
+     * </pre>
+     *
+     * <code>bool has_vcp = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The hasVcp to set.
+     * @return This builder for chaining.
+     */
+    public Builder setHasVcp(boolean value) {
+
+      hasVcp_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates if the location has VCP support.
+     * </pre>
+     *
+     * <code>bool has_vcp = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearHasVcp() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      hasVcp_ = false;
       onChanged();
       return this;
     }

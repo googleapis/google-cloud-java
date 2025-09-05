@@ -23,7 +23,7 @@ package com.google.cloud.vmmigration.v1;
  *
  *
  * <pre>
- * Holds informatiom about the available versions for upgrade.
+ * Holds information about the available versions for upgrade.
  * </pre>
  *
  * Protobuf type {@code google.cloud.vmmigration.v1.AvailableUpdates}
@@ -366,7 +366,7 @@ public final class AvailableUpdates extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Holds informatiom about the available versions for upgrade.
+   * Holds information about the available versions for upgrade.
    * </pre>
    *
    * Protobuf type {@code google.cloud.vmmigration.v1.AvailableUpdates}

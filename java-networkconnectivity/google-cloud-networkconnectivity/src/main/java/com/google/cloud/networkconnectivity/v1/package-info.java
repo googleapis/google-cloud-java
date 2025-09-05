@@ -40,6 +40,27 @@
  * }
  * }</pre>
  *
+ * <p>======================= DataTransferServiceClient =======================
+ *
+ * <p>Service Description: DataTransferService is the service for the Data Transfer API.
+ *
+ * <p>Sample for DataTransferServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (DataTransferServiceClient dataTransferServiceClient = DataTransferServiceClient.create()) {
+ *   MulticloudDataTransferConfigName name =
+ *       MulticloudDataTransferConfigName.of(
+ *           "[PROJECT]", "[LOCATION]", "[MULTICLOUD_DATA_TRANSFER_CONFIG]");
+ *   MulticloudDataTransferConfig response =
+ *       dataTransferServiceClient.getMulticloudDataTransferConfig(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= HubServiceClient =======================
  *
  * <p>Service Description: Network Connectivity Center is a hub-and-spoke abstraction for network

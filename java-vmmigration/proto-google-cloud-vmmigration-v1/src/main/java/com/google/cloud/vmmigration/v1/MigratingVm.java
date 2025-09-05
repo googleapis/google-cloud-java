@@ -220,6 +220,29 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * <code>ERROR = 13;</code>
      */
     ERROR(13),
+    /**
+     *
+     *
+     * <pre>
+     * The migrating VM has passed its expiration date. It might be possible to
+     * bring it back to "Active" state by updating the TTL field. For more
+     * information, see the documentation.
+     * </pre>
+     *
+     * <code>EXPIRED = 14;</code>
+     */
+    EXPIRED(14),
+    /**
+     *
+     *
+     * <pre>
+     * The migrating VM's has been finalized and migration resources have been
+     * removed.
+     * </pre>
+     *
+     * <code>FINALIZED_EXPIRED = 17;</code>
+     */
+    FINALIZED_EXPIRED(17),
     UNRECOGNIZED(-1),
     ;
 
@@ -361,6 +384,31 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      */
     public static final int ERROR_VALUE = 13;
 
+    /**
+     *
+     *
+     * <pre>
+     * The migrating VM has passed its expiration date. It might be possible to
+     * bring it back to "Active" state by updating the TTL field. For more
+     * information, see the documentation.
+     * </pre>
+     *
+     * <code>EXPIRED = 14;</code>
+     */
+    public static final int EXPIRED_VALUE = 14;
+
+    /**
+     *
+     *
+     * <pre>
+     * The migrating VM's has been finalized and migration resources have been
+     * removed.
+     * </pre>
+     *
+     * <code>FINALIZED_EXPIRED = 17;</code>
+     */
+    public static final int FINALIZED_EXPIRED_VALUE = 17;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -409,6 +457,10 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
           return FINALIZED;
         case 13:
           return ERROR;
+        case 14:
+          return EXPIRED;
+        case 17:
+          return FINALIZED_EXPIRED;
         default:
           return null;
       }
@@ -462,6 +514,1018 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
     // @@protoc_insertion_point(enum_scope:google.cloud.vmmigration.v1.MigratingVm.State)
   }
 
+  public interface ExpirationOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.vmmigration.v1.MigratingVm.Expiration)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp of when this resource is considered expired.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp expire_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the expireTime field is set.
+     */
+    boolean hasExpireTime();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp of when this resource is considered expired.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp expire_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The expireTime.
+     */
+    com.google.protobuf.Timestamp getExpireTime();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp of when this resource is considered expired.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp expire_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The number of times expiration was extended.
+     * </pre>
+     *
+     * <code>int32 extension_count = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The extensionCount.
+     */
+    int getExtensionCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Describes whether the expiration can be extended.
+     * </pre>
+     *
+     * <code>bool extendable = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The extendable.
+     */
+    boolean getExtendable();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Expiration holds information about the expiration of a MigratingVm.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.vmmigration.v1.MigratingVm.Expiration}
+   */
+  public static final class Expiration extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.vmmigration.v1.MigratingVm.Expiration)
+      ExpirationOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use Expiration.newBuilder() to construct.
+    private Expiration(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Expiration() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Expiration();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.vmmigration.v1.VmMigrationProto
+          .internal_static_google_cloud_vmmigration_v1_MigratingVm_Expiration_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.vmmigration.v1.VmMigrationProto
+          .internal_static_google_cloud_vmmigration_v1_MigratingVm_Expiration_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.vmmigration.v1.MigratingVm.Expiration.class,
+              com.google.cloud.vmmigration.v1.MigratingVm.Expiration.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int EXPIRE_TIME_FIELD_NUMBER = 1;
+    private com.google.protobuf.Timestamp expireTime_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp of when this resource is considered expired.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp expire_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the expireTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasExpireTime() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp of when this resource is considered expired.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp expire_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The expireTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getExpireTime() {
+      return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timestamp of when this resource is considered expired.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp expire_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
+      return expireTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : expireTime_;
+    }
+
+    public static final int EXTENSION_COUNT_FIELD_NUMBER = 2;
+    private int extensionCount_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The number of times expiration was extended.
+     * </pre>
+     *
+     * <code>int32 extension_count = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The extensionCount.
+     */
+    @java.lang.Override
+    public int getExtensionCount() {
+      return extensionCount_;
+    }
+
+    public static final int EXTENDABLE_FIELD_NUMBER = 3;
+    private boolean extendable_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Describes whether the expiration can be extended.
+     * </pre>
+     *
+     * <code>bool extendable = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The extendable.
+     */
+    @java.lang.Override
+    public boolean getExtendable() {
+      return extendable_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(1, getExpireTime());
+      }
+      if (extensionCount_ != 0) {
+        output.writeInt32(2, extensionCount_);
+      }
+      if (extendable_ != false) {
+        output.writeBool(3, extendable_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getExpireTime());
+      }
+      if (extensionCount_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, extensionCount_);
+      }
+      if (extendable_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, extendable_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.vmmigration.v1.MigratingVm.Expiration)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.vmmigration.v1.MigratingVm.Expiration other =
+          (com.google.cloud.vmmigration.v1.MigratingVm.Expiration) obj;
+
+      if (hasExpireTime() != other.hasExpireTime()) return false;
+      if (hasExpireTime()) {
+        if (!getExpireTime().equals(other.getExpireTime())) return false;
+      }
+      if (getExtensionCount() != other.getExtensionCount()) return false;
+      if (getExtendable() != other.getExtendable()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasExpireTime()) {
+        hash = (37 * hash) + EXPIRE_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getExpireTime().hashCode();
+      }
+      hash = (37 * hash) + EXTENSION_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getExtensionCount();
+      hash = (37 * hash) + EXTENDABLE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getExtendable());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.vmmigration.v1.MigratingVm.Expiration parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.vmmigration.v1.MigratingVm.Expiration parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.vmmigration.v1.MigratingVm.Expiration parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.vmmigration.v1.MigratingVm.Expiration parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.vmmigration.v1.MigratingVm.Expiration parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.vmmigration.v1.MigratingVm.Expiration parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.vmmigration.v1.MigratingVm.Expiration parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.vmmigration.v1.MigratingVm.Expiration parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.vmmigration.v1.MigratingVm.Expiration parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.vmmigration.v1.MigratingVm.Expiration parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.vmmigration.v1.MigratingVm.Expiration parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.vmmigration.v1.MigratingVm.Expiration parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.vmmigration.v1.MigratingVm.Expiration prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Expiration holds information about the expiration of a MigratingVm.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.vmmigration.v1.MigratingVm.Expiration}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.vmmigration.v1.MigratingVm.Expiration)
+        com.google.cloud.vmmigration.v1.MigratingVm.ExpirationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.vmmigration.v1.VmMigrationProto
+            .internal_static_google_cloud_vmmigration_v1_MigratingVm_Expiration_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.vmmigration.v1.VmMigrationProto
+            .internal_static_google_cloud_vmmigration_v1_MigratingVm_Expiration_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.vmmigration.v1.MigratingVm.Expiration.class,
+                com.google.cloud.vmmigration.v1.MigratingVm.Expiration.Builder.class);
+      }
+
+      // Construct using com.google.cloud.vmmigration.v1.MigratingVm.Expiration.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getExpireTimeFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        expireTime_ = null;
+        if (expireTimeBuilder_ != null) {
+          expireTimeBuilder_.dispose();
+          expireTimeBuilder_ = null;
+        }
+        extensionCount_ = 0;
+        extendable_ = false;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.vmmigration.v1.VmMigrationProto
+            .internal_static_google_cloud_vmmigration_v1_MigratingVm_Expiration_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.vmmigration.v1.MigratingVm.Expiration getDefaultInstanceForType() {
+        return com.google.cloud.vmmigration.v1.MigratingVm.Expiration.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.vmmigration.v1.MigratingVm.Expiration build() {
+        com.google.cloud.vmmigration.v1.MigratingVm.Expiration result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.vmmigration.v1.MigratingVm.Expiration buildPartial() {
+        com.google.cloud.vmmigration.v1.MigratingVm.Expiration result =
+            new com.google.cloud.vmmigration.v1.MigratingVm.Expiration(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.vmmigration.v1.MigratingVm.Expiration result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.expireTime_ =
+              expireTimeBuilder_ == null ? expireTime_ : expireTimeBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.extensionCount_ = extensionCount_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.extendable_ = extendable_;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.vmmigration.v1.MigratingVm.Expiration) {
+          return mergeFrom((com.google.cloud.vmmigration.v1.MigratingVm.Expiration) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.vmmigration.v1.MigratingVm.Expiration other) {
+        if (other == com.google.cloud.vmmigration.v1.MigratingVm.Expiration.getDefaultInstance())
+          return this;
+        if (other.hasExpireTime()) {
+          mergeExpireTime(other.getExpireTime());
+        }
+        if (other.getExtensionCount() != 0) {
+          setExtensionCount(other.getExtensionCount());
+        }
+        if (other.getExtendable() != false) {
+          setExtendable(other.getExtendable());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  input.readMessage(getExpireTimeFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 10
+              case 16:
+                {
+                  extensionCount_ = input.readInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              case 24:
+                {
+                  extendable_ = input.readBool();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.Timestamp expireTime_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          expireTimeBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Timestamp of when this resource is considered expired.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp expire_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the expireTime field is set.
+       */
+      public boolean hasExpireTime() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Timestamp of when this resource is considered expired.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp expire_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The expireTime.
+       */
+      public com.google.protobuf.Timestamp getExpireTime() {
+        if (expireTimeBuilder_ == null) {
+          return expireTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : expireTime_;
+        } else {
+          return expireTimeBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Timestamp of when this resource is considered expired.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp expire_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setExpireTime(com.google.protobuf.Timestamp value) {
+        if (expireTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          expireTime_ = value;
+        } else {
+          expireTimeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Timestamp of when this resource is considered expired.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp expire_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setExpireTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (expireTimeBuilder_ == null) {
+          expireTime_ = builderForValue.build();
+        } else {
+          expireTimeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Timestamp of when this resource is considered expired.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp expire_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder mergeExpireTime(com.google.protobuf.Timestamp value) {
+        if (expireTimeBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && expireTime_ != null
+              && expireTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getExpireTimeBuilder().mergeFrom(value);
+          } else {
+            expireTime_ = value;
+          }
+        } else {
+          expireTimeBuilder_.mergeFrom(value);
+        }
+        if (expireTime_ != null) {
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Timestamp of when this resource is considered expired.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp expire_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearExpireTime() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        expireTime_ = null;
+        if (expireTimeBuilder_ != null) {
+          expireTimeBuilder_.dispose();
+          expireTimeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Timestamp of when this resource is considered expired.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp expire_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.protobuf.Timestamp.Builder getExpireTimeBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getExpireTimeFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Timestamp of when this resource is considered expired.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp expire_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder() {
+        if (expireTimeBuilder_ != null) {
+          return expireTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return expireTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : expireTime_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Timestamp of when this resource is considered expired.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp expire_time = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          getExpireTimeFieldBuilder() {
+        if (expireTimeBuilder_ == null) {
+          expireTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getExpireTime(), getParentForChildren(), isClean());
+          expireTime_ = null;
+        }
+        return expireTimeBuilder_;
+      }
+
+      private int extensionCount_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The number of times expiration was extended.
+       * </pre>
+       *
+       * <code>int32 extension_count = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The extensionCount.
+       */
+      @java.lang.Override
+      public int getExtensionCount() {
+        return extensionCount_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The number of times expiration was extended.
+       * </pre>
+       *
+       * <code>int32 extension_count = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The extensionCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setExtensionCount(int value) {
+
+        extensionCount_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The number of times expiration was extended.
+       * </pre>
+       *
+       * <code>int32 extension_count = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearExtensionCount() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        extensionCount_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean extendable_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Describes whether the expiration can be extended.
+       * </pre>
+       *
+       * <code>bool extendable = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The extendable.
+       */
+      @java.lang.Override
+      public boolean getExtendable() {
+        return extendable_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Describes whether the expiration can be extended.
+       * </pre>
+       *
+       * <code>bool extendable = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The extendable to set.
+       * @return This builder for chaining.
+       */
+      public Builder setExtendable(boolean value) {
+
+        extendable_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Describes whether the expiration can be extended.
+       * </pre>
+       *
+       * <code>bool extendable = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearExtendable() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        extendable_ = false;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.vmmigration.v1.MigratingVm.Expiration)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.vmmigration.v1.MigratingVm.Expiration)
+    private static final com.google.cloud.vmmigration.v1.MigratingVm.Expiration DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.vmmigration.v1.MigratingVm.Expiration();
+    }
+
+    public static com.google.cloud.vmmigration.v1.MigratingVm.Expiration getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Expiration> PARSER =
+        new com.google.protobuf.AbstractParser<Expiration>() {
+          @java.lang.Override
+          public Expiration parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<Expiration> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Expiration> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.vmmigration.v1.MigratingVm.Expiration getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   private int targetVmDefaultsCase_ = 0;
 
@@ -473,6 +1537,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     COMPUTE_ENGINE_TARGET_DEFAULTS(26),
+    COMPUTE_ENGINE_DISKS_TARGET_DEFAULTS(34),
     TARGETVMDEFAULTS_NOT_SET(0);
     private final int value;
 
@@ -494,6 +1559,8 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 26:
           return COMPUTE_ENGINE_TARGET_DEFAULTS;
+        case 34:
+          return COMPUTE_ENGINE_DISKS_TARGET_DEFAULTS;
         case 0:
           return TARGETVMDEFAULTS_NOT_SET;
         default:
@@ -519,7 +1586,9 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       implements
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    VMWARE_SOURCE_VM_DETAILS(28),
     AWS_SOURCE_VM_DETAILS(29),
+    AZURE_SOURCE_VM_DETAILS(30),
     SOURCEVMDETAILS_NOT_SET(0);
     private final int value;
 
@@ -539,8 +1608,12 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
 
     public static SourceVmDetailsCase forNumber(int value) {
       switch (value) {
+        case 28:
+          return VMWARE_SOURCE_VM_DETAILS;
         case 29:
           return AWS_SOURCE_VM_DETAILS;
+        case 30:
+          return AZURE_SOURCE_VM_DETAILS;
         case 0:
           return SOURCEVMDETAILS_NOT_SET;
         default:
@@ -619,6 +1692,129 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.vmmigration.v1.ComputeEngineTargetDefaults.getDefaultInstance();
   }
 
+  public static final int COMPUTE_ENGINE_DISKS_TARGET_DEFAULTS_FIELD_NUMBER = 34;
+
+  /**
+   *
+   *
+   * <pre>
+   * Details of the target Persistent Disks in Compute Engine.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaults compute_engine_disks_target_defaults = 34;
+   * </code>
+   *
+   * @return Whether the computeEngineDisksTargetDefaults field is set.
+   */
+  @java.lang.Override
+  public boolean hasComputeEngineDisksTargetDefaults() {
+    return targetVmDefaultsCase_ == 34;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Details of the target Persistent Disks in Compute Engine.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaults compute_engine_disks_target_defaults = 34;
+   * </code>
+   *
+   * @return The computeEngineDisksTargetDefaults.
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaults
+      getComputeEngineDisksTargetDefaults() {
+    if (targetVmDefaultsCase_ == 34) {
+      return (com.google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaults) targetVmDefaults_;
+    }
+    return com.google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaults.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Details of the target Persistent Disks in Compute Engine.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaults compute_engine_disks_target_defaults = 34;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaultsOrBuilder
+      getComputeEngineDisksTargetDefaultsOrBuilder() {
+    if (targetVmDefaultsCase_ == 34) {
+      return (com.google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaults) targetVmDefaults_;
+    }
+    return com.google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaults.getDefaultInstance();
+  }
+
+  public static final int VMWARE_SOURCE_VM_DETAILS_FIELD_NUMBER = 28;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Details of the VM from a Vmware source.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.VmwareSourceVmDetails vmware_source_vm_details = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the vmwareSourceVmDetails field is set.
+   */
+  @java.lang.Override
+  public boolean hasVmwareSourceVmDetails() {
+    return sourceVmDetailsCase_ == 28;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Details of the VM from a Vmware source.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.VmwareSourceVmDetails vmware_source_vm_details = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The vmwareSourceVmDetails.
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.VmwareSourceVmDetails getVmwareSourceVmDetails() {
+    if (sourceVmDetailsCase_ == 28) {
+      return (com.google.cloud.vmmigration.v1.VmwareSourceVmDetails) sourceVmDetails_;
+    }
+    return com.google.cloud.vmmigration.v1.VmwareSourceVmDetails.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Details of the VM from a Vmware source.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.VmwareSourceVmDetails vmware_source_vm_details = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.VmwareSourceVmDetailsOrBuilder
+      getVmwareSourceVmDetailsOrBuilder() {
+    if (sourceVmDetailsCase_ == 28) {
+      return (com.google.cloud.vmmigration.v1.VmwareSourceVmDetails) sourceVmDetails_;
+    }
+    return com.google.cloud.vmmigration.v1.VmwareSourceVmDetails.getDefaultInstance();
+  }
+
   public static final int AWS_SOURCE_VM_DETAILS_FIELD_NUMBER = 29;
 
   /**
@@ -678,6 +1874,67 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       return (com.google.cloud.vmmigration.v1.AwsSourceVmDetails) sourceVmDetails_;
     }
     return com.google.cloud.vmmigration.v1.AwsSourceVmDetails.getDefaultInstance();
+  }
+
+  public static final int AZURE_SOURCE_VM_DETAILS_FIELD_NUMBER = 30;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Details of the VM from an Azure source.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.AzureSourceVmDetails azure_source_vm_details = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the azureSourceVmDetails field is set.
+   */
+  @java.lang.Override
+  public boolean hasAzureSourceVmDetails() {
+    return sourceVmDetailsCase_ == 30;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Details of the VM from an Azure source.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.AzureSourceVmDetails azure_source_vm_details = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The azureSourceVmDetails.
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.AzureSourceVmDetails getAzureSourceVmDetails() {
+    if (sourceVmDetailsCase_ == 30) {
+      return (com.google.cloud.vmmigration.v1.AzureSourceVmDetails) sourceVmDetails_;
+    }
+    return com.google.cloud.vmmigration.v1.AzureSourceVmDetails.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Details of the VM from an Azure source.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.AzureSourceVmDetails azure_source_vm_details = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.AzureSourceVmDetailsOrBuilder
+      getAzureSourceVmDetailsOrBuilder() {
+    if (sourceVmDetailsCase_ == 30) {
+      return (com.google.cloud.vmmigration.v1.AzureSourceVmDetails) sourceVmDetails_;
+    }
+    return com.google.cloud.vmmigration.v1.AzureSourceVmDetails.getDefaultInstance();
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -1218,8 +2475,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The percentage progress of the current running replication
-   * cycle.
+   * Output only. Details of the current running replication cycle.
    * </pre>
    *
    * <code>
@@ -1237,8 +2493,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The percentage progress of the current running replication
-   * cycle.
+   * Output only. Details of the current running replication cycle.
    * </pre>
    *
    * <code>
@@ -1258,8 +2513,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The percentage progress of the current running replication
-   * cycle.
+   * Output only. Details of the current running replication cycle.
    * </pre>
    *
    * <code>
@@ -1271,6 +2525,72 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
     return currentSyncInfo_ == null
         ? com.google.cloud.vmmigration.v1.ReplicationCycle.getDefaultInstance()
         : currentSyncInfo_;
+  }
+
+  public static final int LAST_REPLICATION_CYCLE_FIELD_NUMBER = 32;
+  private com.google.cloud.vmmigration.v1.ReplicationCycle lastReplicationCycle_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Details of the last replication cycle. This will be updated
+   * whenever a replication cycle is finished and is not to be confused with
+   * last_sync which is only updated on successful replication cycles.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.ReplicationCycle last_replication_cycle = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the lastReplicationCycle field is set.
+   */
+  @java.lang.Override
+  public boolean hasLastReplicationCycle() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Details of the last replication cycle. This will be updated
+   * whenever a replication cycle is finished and is not to be confused with
+   * last_sync which is only updated on successful replication cycles.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.ReplicationCycle last_replication_cycle = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The lastReplicationCycle.
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.ReplicationCycle getLastReplicationCycle() {
+    return lastReplicationCycle_ == null
+        ? com.google.cloud.vmmigration.v1.ReplicationCycle.getDefaultInstance()
+        : lastReplicationCycle_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Details of the last replication cycle. This will be updated
+   * whenever a replication cycle is finished and is not to be confused with
+   * last_sync which is only updated on successful replication cycles.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.ReplicationCycle last_replication_cycle = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.ReplicationCycleOrBuilder
+      getLastReplicationCycleOrBuilder() {
+    return lastReplicationCycle_ == null
+        ? com.google.cloud.vmmigration.v1.ReplicationCycle.getDefaultInstance()
+        : lastReplicationCycle_;
   }
 
   public static final int GROUP_FIELD_NUMBER = 15;
@@ -1564,7 +2884,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasError() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000080) != 0);
   }
 
   /**
@@ -1706,6 +3026,130 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
     return recentCutoverJobs_.get(index);
   }
 
+  public static final int CUTOVER_FORECAST_FIELD_NUMBER = 33;
+  private com.google.cloud.vmmigration.v1.CutoverForecast cutoverForecast_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Provides details of future CutoverJobs of a MigratingVm.
+   * Set to empty when cutover forecast is unavailable.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.CutoverForecast cutover_forecast = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the cutoverForecast field is set.
+   */
+  @java.lang.Override
+  public boolean hasCutoverForecast() {
+    return ((bitField0_ & 0x00000100) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Provides details of future CutoverJobs of a MigratingVm.
+   * Set to empty when cutover forecast is unavailable.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.CutoverForecast cutover_forecast = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The cutoverForecast.
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.CutoverForecast getCutoverForecast() {
+    return cutoverForecast_ == null
+        ? com.google.cloud.vmmigration.v1.CutoverForecast.getDefaultInstance()
+        : cutoverForecast_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Provides details of future CutoverJobs of a MigratingVm.
+   * Set to empty when cutover forecast is unavailable.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.CutoverForecast cutover_forecast = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.CutoverForecastOrBuilder getCutoverForecastOrBuilder() {
+    return cutoverForecast_ == null
+        ? com.google.cloud.vmmigration.v1.CutoverForecast.getDefaultInstance()
+        : cutoverForecast_;
+  }
+
+  public static final int EXPIRATION_FIELD_NUMBER = 37;
+  private com.google.cloud.vmmigration.v1.MigratingVm.Expiration expiration_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Provides details about the expiration state of the migrating
+   * VM.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.MigratingVm.Expiration expiration = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the expiration field is set.
+   */
+  @java.lang.Override
+  public boolean hasExpiration() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Provides details about the expiration state of the migrating
+   * VM.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.MigratingVm.Expiration expiration = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The expiration.
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.MigratingVm.Expiration getExpiration() {
+    return expiration_ == null
+        ? com.google.cloud.vmmigration.v1.MigratingVm.Expiration.getDefaultInstance()
+        : expiration_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Provides details about the expiration state of the migrating
+   * VM.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.MigratingVm.Expiration expiration = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.MigratingVm.ExpirationOrBuilder getExpirationOrBuilder() {
+    return expiration_ == null
+        ? com.google.cloud.vmmigration.v1.MigratingVm.Expiration.getDefaultInstance()
+        : expiration_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1755,7 +3199,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18, displayName_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       output.writeMessage(19, getError());
     }
     for (int i = 0; i < recentCutoverJobs_.size(); i++) {
@@ -1771,9 +3215,30 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(
           26, (com.google.cloud.vmmigration.v1.ComputeEngineTargetDefaults) targetVmDefaults_);
     }
+    if (sourceVmDetailsCase_ == 28) {
+      output.writeMessage(
+          28, (com.google.cloud.vmmigration.v1.VmwareSourceVmDetails) sourceVmDetails_);
+    }
     if (sourceVmDetailsCase_ == 29) {
       output.writeMessage(
           29, (com.google.cloud.vmmigration.v1.AwsSourceVmDetails) sourceVmDetails_);
+    }
+    if (sourceVmDetailsCase_ == 30) {
+      output.writeMessage(
+          30, (com.google.cloud.vmmigration.v1.AzureSourceVmDetails) sourceVmDetails_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(32, getLastReplicationCycle());
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      output.writeMessage(33, getCutoverForecast());
+    }
+    if (targetVmDefaultsCase_ == 34) {
+      output.writeMessage(
+          34, (com.google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaults) targetVmDefaults_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      output.writeMessage(37, getExpiration());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1827,7 +3292,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, displayName_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, getError());
     }
     for (int i = 0; i < recentCutoverJobs_.size(); i++) {
@@ -1845,10 +3310,36 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               26, (com.google.cloud.vmmigration.v1.ComputeEngineTargetDefaults) targetVmDefaults_);
     }
+    if (sourceVmDetailsCase_ == 28) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              28, (com.google.cloud.vmmigration.v1.VmwareSourceVmDetails) sourceVmDetails_);
+    }
     if (sourceVmDetailsCase_ == 29) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               29, (com.google.cloud.vmmigration.v1.AwsSourceVmDetails) sourceVmDetails_);
+    }
+    if (sourceVmDetailsCase_ == 30) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              30, (com.google.cloud.vmmigration.v1.AzureSourceVmDetails) sourceVmDetails_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(32, getLastReplicationCycle());
+    }
+    if (((bitField0_ & 0x00000100) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(33, getCutoverForecast());
+    }
+    if (targetVmDefaultsCase_ == 34) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              34,
+              (com.google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaults) targetVmDefaults_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(37, getExpiration());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1895,6 +3386,10 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
     if (hasCurrentSyncInfo()) {
       if (!getCurrentSyncInfo().equals(other.getCurrentSyncInfo())) return false;
     }
+    if (hasLastReplicationCycle() != other.hasLastReplicationCycle()) return false;
+    if (hasLastReplicationCycle()) {
+      if (!getLastReplicationCycle().equals(other.getLastReplicationCycle())) return false;
+    }
     if (!getGroup().equals(other.getGroup())) return false;
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!getRecentCloneJobsList().equals(other.getRecentCloneJobsList())) return false;
@@ -1903,19 +3398,37 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       if (!getError().equals(other.getError())) return false;
     }
     if (!getRecentCutoverJobsList().equals(other.getRecentCutoverJobsList())) return false;
+    if (hasCutoverForecast() != other.hasCutoverForecast()) return false;
+    if (hasCutoverForecast()) {
+      if (!getCutoverForecast().equals(other.getCutoverForecast())) return false;
+    }
+    if (hasExpiration() != other.hasExpiration()) return false;
+    if (hasExpiration()) {
+      if (!getExpiration().equals(other.getExpiration())) return false;
+    }
     if (!getTargetVmDefaultsCase().equals(other.getTargetVmDefaultsCase())) return false;
     switch (targetVmDefaultsCase_) {
       case 26:
         if (!getComputeEngineTargetDefaults().equals(other.getComputeEngineTargetDefaults()))
           return false;
         break;
+      case 34:
+        if (!getComputeEngineDisksTargetDefaults()
+            .equals(other.getComputeEngineDisksTargetDefaults())) return false;
+        break;
       case 0:
       default:
     }
     if (!getSourceVmDetailsCase().equals(other.getSourceVmDetailsCase())) return false;
     switch (sourceVmDetailsCase_) {
+      case 28:
+        if (!getVmwareSourceVmDetails().equals(other.getVmwareSourceVmDetails())) return false;
+        break;
       case 29:
         if (!getAwsSourceVmDetails().equals(other.getAwsSourceVmDetails())) return false;
+        break;
+      case 30:
+        if (!getAzureSourceVmDetails().equals(other.getAzureSourceVmDetails())) return false;
         break;
       case 0:
       default:
@@ -1965,6 +3478,10 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + CURRENT_SYNC_INFO_FIELD_NUMBER;
       hash = (53 * hash) + getCurrentSyncInfo().hashCode();
     }
+    if (hasLastReplicationCycle()) {
+      hash = (37 * hash) + LAST_REPLICATION_CYCLE_FIELD_NUMBER;
+      hash = (53 * hash) + getLastReplicationCycle().hashCode();
+    }
     hash = (37 * hash) + GROUP_FIELD_NUMBER;
     hash = (53 * hash) + getGroup().hashCode();
     if (!internalGetLabels().getMap().isEmpty()) {
@@ -1983,18 +3500,38 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + RECENT_CUTOVER_JOBS_FIELD_NUMBER;
       hash = (53 * hash) + getRecentCutoverJobsList().hashCode();
     }
+    if (hasCutoverForecast()) {
+      hash = (37 * hash) + CUTOVER_FORECAST_FIELD_NUMBER;
+      hash = (53 * hash) + getCutoverForecast().hashCode();
+    }
+    if (hasExpiration()) {
+      hash = (37 * hash) + EXPIRATION_FIELD_NUMBER;
+      hash = (53 * hash) + getExpiration().hashCode();
+    }
     switch (targetVmDefaultsCase_) {
       case 26:
         hash = (37 * hash) + COMPUTE_ENGINE_TARGET_DEFAULTS_FIELD_NUMBER;
         hash = (53 * hash) + getComputeEngineTargetDefaults().hashCode();
         break;
+      case 34:
+        hash = (37 * hash) + COMPUTE_ENGINE_DISKS_TARGET_DEFAULTS_FIELD_NUMBER;
+        hash = (53 * hash) + getComputeEngineDisksTargetDefaults().hashCode();
+        break;
       case 0:
       default:
     }
     switch (sourceVmDetailsCase_) {
+      case 28:
+        hash = (37 * hash) + VMWARE_SOURCE_VM_DETAILS_FIELD_NUMBER;
+        hash = (53 * hash) + getVmwareSourceVmDetails().hashCode();
+        break;
       case 29:
         hash = (37 * hash) + AWS_SOURCE_VM_DETAILS_FIELD_NUMBER;
         hash = (53 * hash) + getAwsSourceVmDetails().hashCode();
+        break;
+      case 30:
+        hash = (37 * hash) + AZURE_SOURCE_VM_DETAILS_FIELD_NUMBER;
+        hash = (53 * hash) + getAzureSourceVmDetails().hashCode();
         break;
       case 0:
       default:
@@ -2169,9 +3706,12 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
         getLastSyncFieldBuilder();
         getStateTimeFieldBuilder();
         getCurrentSyncInfoFieldBuilder();
+        getLastReplicationCycleFieldBuilder();
         getRecentCloneJobsFieldBuilder();
         getErrorFieldBuilder();
         getRecentCutoverJobsFieldBuilder();
+        getCutoverForecastFieldBuilder();
+        getExpirationFieldBuilder();
       }
     }
 
@@ -2182,8 +3722,17 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       if (computeEngineTargetDefaultsBuilder_ != null) {
         computeEngineTargetDefaultsBuilder_.clear();
       }
+      if (computeEngineDisksTargetDefaultsBuilder_ != null) {
+        computeEngineDisksTargetDefaultsBuilder_.clear();
+      }
+      if (vmwareSourceVmDetailsBuilder_ != null) {
+        vmwareSourceVmDetailsBuilder_.clear();
+      }
       if (awsSourceVmDetailsBuilder_ != null) {
         awsSourceVmDetailsBuilder_.clear();
+      }
+      if (azureSourceVmDetailsBuilder_ != null) {
+        azureSourceVmDetailsBuilder_.clear();
       }
       name_ = "";
       sourceVmId_ = "";
@@ -2220,6 +3769,11 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
         currentSyncInfoBuilder_.dispose();
         currentSyncInfoBuilder_ = null;
       }
+      lastReplicationCycle_ = null;
+      if (lastReplicationCycleBuilder_ != null) {
+        lastReplicationCycleBuilder_.dispose();
+        lastReplicationCycleBuilder_ = null;
+      }
       group_ = "";
       internalGetMutableLabels().clear();
       if (recentCloneJobsBuilder_ == null) {
@@ -2228,7 +3782,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
         recentCloneJobs_ = null;
         recentCloneJobsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       error_ = null;
       if (errorBuilder_ != null) {
         errorBuilder_.dispose();
@@ -2240,7 +3794,17 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
         recentCutoverJobs_ = null;
         recentCutoverJobsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00200000);
+      cutoverForecast_ = null;
+      if (cutoverForecastBuilder_ != null) {
+        cutoverForecastBuilder_.dispose();
+        cutoverForecastBuilder_ = null;
+      }
+      expiration_ = null;
+      if (expirationBuilder_ != null) {
+        expirationBuilder_.dispose();
+        expirationBuilder_ = null;
+      }
       targetVmDefaultsCase_ = 0;
       targetVmDefaults_ = null;
       sourceVmDetailsCase_ = 0;
@@ -2283,18 +3847,18 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartialRepeatedFields(com.google.cloud.vmmigration.v1.MigratingVm result) {
       if (recentCloneJobsBuilder_ == null) {
-        if (((bitField0_ & 0x00008000) != 0)) {
+        if (((bitField0_ & 0x00080000) != 0)) {
           recentCloneJobs_ = java.util.Collections.unmodifiableList(recentCloneJobs_);
-          bitField0_ = (bitField0_ & ~0x00008000);
+          bitField0_ = (bitField0_ & ~0x00080000);
         }
         result.recentCloneJobs_ = recentCloneJobs_;
       } else {
         result.recentCloneJobs_ = recentCloneJobsBuilder_.build();
       }
       if (recentCutoverJobsBuilder_ == null) {
-        if (((bitField0_ & 0x00020000) != 0)) {
+        if (((bitField0_ & 0x00200000) != 0)) {
           recentCutoverJobs_ = java.util.Collections.unmodifiableList(recentCutoverJobs_);
-          bitField0_ = (bitField0_ & ~0x00020000);
+          bitField0_ = (bitField0_ & ~0x00200000);
         }
         result.recentCutoverJobs_ = recentCutoverJobs_;
       } else {
@@ -2304,57 +3868,73 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartial0(com.google.cloud.vmmigration.v1.MigratingVm result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.name_ = name_;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.sourceVmId_ = sourceVmId_;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.displayName_ = displayName_;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.description_ = description_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.policy_ = policyBuilder_ == null ? policy_ : policyBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.lastSync_ = lastSyncBuilder_ == null ? lastSync_ : lastSyncBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.state_ = state_;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.stateTime_ = stateTimeBuilder_ == null ? stateTime_ : stateTimeBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.currentSyncInfo_ =
             currentSyncInfoBuilder_ == null ? currentSyncInfo_ : currentSyncInfoBuilder_.build();
         to_bitField0_ |= 0x00000020;
       }
-      if (((from_bitField0_ & 0x00002000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.lastReplicationCycle_ =
+            lastReplicationCycleBuilder_ == null
+                ? lastReplicationCycle_
+                : lastReplicationCycleBuilder_.build();
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.group_ = group_;
       }
-      if (((from_bitField0_ & 0x00004000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.error_ = errorBuilder_ == null ? error_ : errorBuilder_.build();
-        to_bitField0_ |= 0x00000040;
+        to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.cutoverForecast_ =
+            cutoverForecastBuilder_ == null ? cutoverForecast_ : cutoverForecastBuilder_.build();
+        to_bitField0_ |= 0x00000100;
+      }
+      if (((from_bitField0_ & 0x00800000) != 0)) {
+        result.expiration_ = expirationBuilder_ == null ? expiration_ : expirationBuilder_.build();
+        to_bitField0_ |= 0x00000200;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2365,10 +3945,19 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       if (targetVmDefaultsCase_ == 26 && computeEngineTargetDefaultsBuilder_ != null) {
         result.targetVmDefaults_ = computeEngineTargetDefaultsBuilder_.build();
       }
+      if (targetVmDefaultsCase_ == 34 && computeEngineDisksTargetDefaultsBuilder_ != null) {
+        result.targetVmDefaults_ = computeEngineDisksTargetDefaultsBuilder_.build();
+      }
       result.sourceVmDetailsCase_ = sourceVmDetailsCase_;
       result.sourceVmDetails_ = this.sourceVmDetails_;
+      if (sourceVmDetailsCase_ == 28 && vmwareSourceVmDetailsBuilder_ != null) {
+        result.sourceVmDetails_ = vmwareSourceVmDetailsBuilder_.build();
+      }
       if (sourceVmDetailsCase_ == 29 && awsSourceVmDetailsBuilder_ != null) {
         result.sourceVmDetails_ = awsSourceVmDetailsBuilder_.build();
+      }
+      if (sourceVmDetailsCase_ == 30 && azureSourceVmDetailsBuilder_ != null) {
+        result.sourceVmDetails_ = azureSourceVmDetailsBuilder_.build();
       }
     }
 
@@ -2419,22 +4008,22 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       if (other == com.google.cloud.vmmigration.v1.MigratingVm.getDefaultInstance()) return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (!other.getSourceVmId().isEmpty()) {
         sourceVmId_ = other.sourceVmId_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       if (!other.getDisplayName().isEmpty()) {
         displayName_ = other.displayName_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       if (!other.getDescription().isEmpty()) {
         description_ = other.description_;
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       if (other.hasPolicy()) {
@@ -2458,18 +4047,21 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       if (other.hasCurrentSyncInfo()) {
         mergeCurrentSyncInfo(other.getCurrentSyncInfo());
       }
+      if (other.hasLastReplicationCycle()) {
+        mergeLastReplicationCycle(other.getLastReplicationCycle());
+      }
       if (!other.getGroup().isEmpty()) {
         group_ = other.group_;
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00040000;
       if (recentCloneJobsBuilder_ == null) {
         if (!other.recentCloneJobs_.isEmpty()) {
           if (recentCloneJobs_.isEmpty()) {
             recentCloneJobs_ = other.recentCloneJobs_;
-            bitField0_ = (bitField0_ & ~0x00008000);
+            bitField0_ = (bitField0_ & ~0x00080000);
           } else {
             ensureRecentCloneJobsIsMutable();
             recentCloneJobs_.addAll(other.recentCloneJobs_);
@@ -2482,7 +4074,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
             recentCloneJobsBuilder_.dispose();
             recentCloneJobsBuilder_ = null;
             recentCloneJobs_ = other.recentCloneJobs_;
-            bitField0_ = (bitField0_ & ~0x00008000);
+            bitField0_ = (bitField0_ & ~0x00080000);
             recentCloneJobsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getRecentCloneJobsFieldBuilder()
@@ -2499,7 +4091,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
         if (!other.recentCutoverJobs_.isEmpty()) {
           if (recentCutoverJobs_.isEmpty()) {
             recentCutoverJobs_ = other.recentCutoverJobs_;
-            bitField0_ = (bitField0_ & ~0x00020000);
+            bitField0_ = (bitField0_ & ~0x00200000);
           } else {
             ensureRecentCutoverJobsIsMutable();
             recentCutoverJobs_.addAll(other.recentCutoverJobs_);
@@ -2512,7 +4104,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
             recentCutoverJobsBuilder_.dispose();
             recentCutoverJobsBuilder_ = null;
             recentCutoverJobs_ = other.recentCutoverJobs_;
-            bitField0_ = (bitField0_ & ~0x00020000);
+            bitField0_ = (bitField0_ & ~0x00200000);
             recentCutoverJobsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getRecentCutoverJobsFieldBuilder()
@@ -2522,10 +4114,21 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
           }
         }
       }
+      if (other.hasCutoverForecast()) {
+        mergeCutoverForecast(other.getCutoverForecast());
+      }
+      if (other.hasExpiration()) {
+        mergeExpiration(other.getExpiration());
+      }
       switch (other.getTargetVmDefaultsCase()) {
         case COMPUTE_ENGINE_TARGET_DEFAULTS:
           {
             mergeComputeEngineTargetDefaults(other.getComputeEngineTargetDefaults());
+            break;
+          }
+        case COMPUTE_ENGINE_DISKS_TARGET_DEFAULTS:
+          {
+            mergeComputeEngineDisksTargetDefaults(other.getComputeEngineDisksTargetDefaults());
             break;
           }
         case TARGETVMDEFAULTS_NOT_SET:
@@ -2534,9 +4137,19 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
           }
       }
       switch (other.getSourceVmDetailsCase()) {
+        case VMWARE_SOURCE_VM_DETAILS:
+          {
+            mergeVmwareSourceVmDetails(other.getVmwareSourceVmDetails());
+            break;
+          }
         case AWS_SOURCE_VM_DETAILS:
           {
             mergeAwsSourceVmDetails(other.getAwsSourceVmDetails());
+            break;
+          }
+        case AZURE_SOURCE_VM_DETAILS:
+          {
+            mergeAzureSourceVmDetails(other.getAzureSourceVmDetails());
             break;
           }
         case SOURCEVMDETAILS_NOT_SET:
@@ -2573,55 +4186,55 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 10
             case 18:
               {
                 sourceVmId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 18
             case 26:
               {
                 description_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 26
             case 66:
               {
                 input.readMessage(getPolicyFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 66
             case 74:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 74
             case 82:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 82
             case 90:
               {
                 input.readMessage(getLastSyncFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 90
             case 106:
               {
                 input.readMessage(getCurrentSyncInfoFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 106
             case 122:
               {
                 group_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00002000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 122
             case 130:
@@ -2633,7 +4246,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 130
             case 138:
@@ -2652,13 +4265,13 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
             case 146:
               {
                 displayName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 146
             case 154:
               {
                 input.readMessage(getErrorFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 154
             case 162:
@@ -2677,13 +4290,13 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
             case 178:
               {
                 input.readMessage(getStateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 178
             case 184:
               {
                 state_ = input.readEnum();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 184
             case 210:
@@ -2693,6 +4306,13 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
                 targetVmDefaultsCase_ = 26;
                 break;
               } // case 210
+            case 226:
+              {
+                input.readMessage(
+                    getVmwareSourceVmDetailsFieldBuilder().getBuilder(), extensionRegistry);
+                sourceVmDetailsCase_ = 28;
+                break;
+              } // case 226
             case 234:
               {
                 input.readMessage(
@@ -2700,6 +4320,40 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
                 sourceVmDetailsCase_ = 29;
                 break;
               } // case 234
+            case 242:
+              {
+                input.readMessage(
+                    getAzureSourceVmDetailsFieldBuilder().getBuilder(), extensionRegistry);
+                sourceVmDetailsCase_ = 30;
+                break;
+              } // case 242
+            case 258:
+              {
+                input.readMessage(
+                    getLastReplicationCycleFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 258
+            case 266:
+              {
+                input.readMessage(getCutoverForecastFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00400000;
+                break;
+              } // case 266
+            case 274:
+              {
+                input.readMessage(
+                    getComputeEngineDisksTargetDefaultsFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                targetVmDefaultsCase_ = 34;
+                break;
+              } // case 274
+            case 298:
+              {
+                input.readMessage(getExpirationFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00800000;
+                break;
+              } // case 298
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2993,6 +4647,499 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaults,
+            com.google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaults.Builder,
+            com.google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaultsOrBuilder>
+        computeEngineDisksTargetDefaultsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Details of the target Persistent Disks in Compute Engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaults compute_engine_disks_target_defaults = 34;
+     * </code>
+     *
+     * @return Whether the computeEngineDisksTargetDefaults field is set.
+     */
+    @java.lang.Override
+    public boolean hasComputeEngineDisksTargetDefaults() {
+      return targetVmDefaultsCase_ == 34;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Details of the target Persistent Disks in Compute Engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaults compute_engine_disks_target_defaults = 34;
+     * </code>
+     *
+     * @return The computeEngineDisksTargetDefaults.
+     */
+    @java.lang.Override
+    public com.google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaults
+        getComputeEngineDisksTargetDefaults() {
+      if (computeEngineDisksTargetDefaultsBuilder_ == null) {
+        if (targetVmDefaultsCase_ == 34) {
+          return (com.google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaults)
+              targetVmDefaults_;
+        }
+        return com.google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaults
+            .getDefaultInstance();
+      } else {
+        if (targetVmDefaultsCase_ == 34) {
+          return computeEngineDisksTargetDefaultsBuilder_.getMessage();
+        }
+        return com.google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaults
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Details of the target Persistent Disks in Compute Engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaults compute_engine_disks_target_defaults = 34;
+     * </code>
+     */
+    public Builder setComputeEngineDisksTargetDefaults(
+        com.google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaults value) {
+      if (computeEngineDisksTargetDefaultsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        targetVmDefaults_ = value;
+        onChanged();
+      } else {
+        computeEngineDisksTargetDefaultsBuilder_.setMessage(value);
+      }
+      targetVmDefaultsCase_ = 34;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Details of the target Persistent Disks in Compute Engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaults compute_engine_disks_target_defaults = 34;
+     * </code>
+     */
+    public Builder setComputeEngineDisksTargetDefaults(
+        com.google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaults.Builder builderForValue) {
+      if (computeEngineDisksTargetDefaultsBuilder_ == null) {
+        targetVmDefaults_ = builderForValue.build();
+        onChanged();
+      } else {
+        computeEngineDisksTargetDefaultsBuilder_.setMessage(builderForValue.build());
+      }
+      targetVmDefaultsCase_ = 34;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Details of the target Persistent Disks in Compute Engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaults compute_engine_disks_target_defaults = 34;
+     * </code>
+     */
+    public Builder mergeComputeEngineDisksTargetDefaults(
+        com.google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaults value) {
+      if (computeEngineDisksTargetDefaultsBuilder_ == null) {
+        if (targetVmDefaultsCase_ == 34
+            && targetVmDefaults_
+                != com.google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaults
+                    .getDefaultInstance()) {
+          targetVmDefaults_ =
+              com.google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaults.newBuilder(
+                      (com.google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaults)
+                          targetVmDefaults_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          targetVmDefaults_ = value;
+        }
+        onChanged();
+      } else {
+        if (targetVmDefaultsCase_ == 34) {
+          computeEngineDisksTargetDefaultsBuilder_.mergeFrom(value);
+        } else {
+          computeEngineDisksTargetDefaultsBuilder_.setMessage(value);
+        }
+      }
+      targetVmDefaultsCase_ = 34;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Details of the target Persistent Disks in Compute Engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaults compute_engine_disks_target_defaults = 34;
+     * </code>
+     */
+    public Builder clearComputeEngineDisksTargetDefaults() {
+      if (computeEngineDisksTargetDefaultsBuilder_ == null) {
+        if (targetVmDefaultsCase_ == 34) {
+          targetVmDefaultsCase_ = 0;
+          targetVmDefaults_ = null;
+          onChanged();
+        }
+      } else {
+        if (targetVmDefaultsCase_ == 34) {
+          targetVmDefaultsCase_ = 0;
+          targetVmDefaults_ = null;
+        }
+        computeEngineDisksTargetDefaultsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Details of the target Persistent Disks in Compute Engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaults compute_engine_disks_target_defaults = 34;
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaults.Builder
+        getComputeEngineDisksTargetDefaultsBuilder() {
+      return getComputeEngineDisksTargetDefaultsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Details of the target Persistent Disks in Compute Engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaults compute_engine_disks_target_defaults = 34;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaultsOrBuilder
+        getComputeEngineDisksTargetDefaultsOrBuilder() {
+      if ((targetVmDefaultsCase_ == 34) && (computeEngineDisksTargetDefaultsBuilder_ != null)) {
+        return computeEngineDisksTargetDefaultsBuilder_.getMessageOrBuilder();
+      } else {
+        if (targetVmDefaultsCase_ == 34) {
+          return (com.google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaults)
+              targetVmDefaults_;
+        }
+        return com.google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaults
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Details of the target Persistent Disks in Compute Engine.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaults compute_engine_disks_target_defaults = 34;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaults,
+            com.google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaults.Builder,
+            com.google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaultsOrBuilder>
+        getComputeEngineDisksTargetDefaultsFieldBuilder() {
+      if (computeEngineDisksTargetDefaultsBuilder_ == null) {
+        if (!(targetVmDefaultsCase_ == 34)) {
+          targetVmDefaults_ =
+              com.google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaults.getDefaultInstance();
+        }
+        computeEngineDisksTargetDefaultsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaults,
+                com.google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaults.Builder,
+                com.google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaultsOrBuilder>(
+                (com.google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaults)
+                    targetVmDefaults_,
+                getParentForChildren(),
+                isClean());
+        targetVmDefaults_ = null;
+      }
+      targetVmDefaultsCase_ = 34;
+      onChanged();
+      return computeEngineDisksTargetDefaultsBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vmmigration.v1.VmwareSourceVmDetails,
+            com.google.cloud.vmmigration.v1.VmwareSourceVmDetails.Builder,
+            com.google.cloud.vmmigration.v1.VmwareSourceVmDetailsOrBuilder>
+        vmwareSourceVmDetailsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the VM from a Vmware source.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.VmwareSourceVmDetails vmware_source_vm_details = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the vmwareSourceVmDetails field is set.
+     */
+    @java.lang.Override
+    public boolean hasVmwareSourceVmDetails() {
+      return sourceVmDetailsCase_ == 28;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the VM from a Vmware source.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.VmwareSourceVmDetails vmware_source_vm_details = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The vmwareSourceVmDetails.
+     */
+    @java.lang.Override
+    public com.google.cloud.vmmigration.v1.VmwareSourceVmDetails getVmwareSourceVmDetails() {
+      if (vmwareSourceVmDetailsBuilder_ == null) {
+        if (sourceVmDetailsCase_ == 28) {
+          return (com.google.cloud.vmmigration.v1.VmwareSourceVmDetails) sourceVmDetails_;
+        }
+        return com.google.cloud.vmmigration.v1.VmwareSourceVmDetails.getDefaultInstance();
+      } else {
+        if (sourceVmDetailsCase_ == 28) {
+          return vmwareSourceVmDetailsBuilder_.getMessage();
+        }
+        return com.google.cloud.vmmigration.v1.VmwareSourceVmDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the VM from a Vmware source.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.VmwareSourceVmDetails vmware_source_vm_details = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setVmwareSourceVmDetails(
+        com.google.cloud.vmmigration.v1.VmwareSourceVmDetails value) {
+      if (vmwareSourceVmDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sourceVmDetails_ = value;
+        onChanged();
+      } else {
+        vmwareSourceVmDetailsBuilder_.setMessage(value);
+      }
+      sourceVmDetailsCase_ = 28;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the VM from a Vmware source.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.VmwareSourceVmDetails vmware_source_vm_details = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setVmwareSourceVmDetails(
+        com.google.cloud.vmmigration.v1.VmwareSourceVmDetails.Builder builderForValue) {
+      if (vmwareSourceVmDetailsBuilder_ == null) {
+        sourceVmDetails_ = builderForValue.build();
+        onChanged();
+      } else {
+        vmwareSourceVmDetailsBuilder_.setMessage(builderForValue.build());
+      }
+      sourceVmDetailsCase_ = 28;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the VM from a Vmware source.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.VmwareSourceVmDetails vmware_source_vm_details = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeVmwareSourceVmDetails(
+        com.google.cloud.vmmigration.v1.VmwareSourceVmDetails value) {
+      if (vmwareSourceVmDetailsBuilder_ == null) {
+        if (sourceVmDetailsCase_ == 28
+            && sourceVmDetails_
+                != com.google.cloud.vmmigration.v1.VmwareSourceVmDetails.getDefaultInstance()) {
+          sourceVmDetails_ =
+              com.google.cloud.vmmigration.v1.VmwareSourceVmDetails.newBuilder(
+                      (com.google.cloud.vmmigration.v1.VmwareSourceVmDetails) sourceVmDetails_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          sourceVmDetails_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceVmDetailsCase_ == 28) {
+          vmwareSourceVmDetailsBuilder_.mergeFrom(value);
+        } else {
+          vmwareSourceVmDetailsBuilder_.setMessage(value);
+        }
+      }
+      sourceVmDetailsCase_ = 28;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the VM from a Vmware source.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.VmwareSourceVmDetails vmware_source_vm_details = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearVmwareSourceVmDetails() {
+      if (vmwareSourceVmDetailsBuilder_ == null) {
+        if (sourceVmDetailsCase_ == 28) {
+          sourceVmDetailsCase_ = 0;
+          sourceVmDetails_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceVmDetailsCase_ == 28) {
+          sourceVmDetailsCase_ = 0;
+          sourceVmDetails_ = null;
+        }
+        vmwareSourceVmDetailsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the VM from a Vmware source.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.VmwareSourceVmDetails vmware_source_vm_details = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.VmwareSourceVmDetails.Builder
+        getVmwareSourceVmDetailsBuilder() {
+      return getVmwareSourceVmDetailsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the VM from a Vmware source.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.VmwareSourceVmDetails vmware_source_vm_details = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.vmmigration.v1.VmwareSourceVmDetailsOrBuilder
+        getVmwareSourceVmDetailsOrBuilder() {
+      if ((sourceVmDetailsCase_ == 28) && (vmwareSourceVmDetailsBuilder_ != null)) {
+        return vmwareSourceVmDetailsBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceVmDetailsCase_ == 28) {
+          return (com.google.cloud.vmmigration.v1.VmwareSourceVmDetails) sourceVmDetails_;
+        }
+        return com.google.cloud.vmmigration.v1.VmwareSourceVmDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the VM from a Vmware source.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.VmwareSourceVmDetails vmware_source_vm_details = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vmmigration.v1.VmwareSourceVmDetails,
+            com.google.cloud.vmmigration.v1.VmwareSourceVmDetails.Builder,
+            com.google.cloud.vmmigration.v1.VmwareSourceVmDetailsOrBuilder>
+        getVmwareSourceVmDetailsFieldBuilder() {
+      if (vmwareSourceVmDetailsBuilder_ == null) {
+        if (!(sourceVmDetailsCase_ == 28)) {
+          sourceVmDetails_ =
+              com.google.cloud.vmmigration.v1.VmwareSourceVmDetails.getDefaultInstance();
+        }
+        vmwareSourceVmDetailsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vmmigration.v1.VmwareSourceVmDetails,
+                com.google.cloud.vmmigration.v1.VmwareSourceVmDetails.Builder,
+                com.google.cloud.vmmigration.v1.VmwareSourceVmDetailsOrBuilder>(
+                (com.google.cloud.vmmigration.v1.VmwareSourceVmDetails) sourceVmDetails_,
+                getParentForChildren(),
+                isClean());
+        sourceVmDetails_ = null;
+      }
+      sourceVmDetailsCase_ = 28;
+      onChanged();
+      return vmwareSourceVmDetailsBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.vmmigration.v1.AwsSourceVmDetails,
             com.google.cloud.vmmigration.v1.AwsSourceVmDetails.Builder,
             com.google.cloud.vmmigration.v1.AwsSourceVmDetailsOrBuilder>
@@ -3233,6 +5380,248 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       return awsSourceVmDetailsBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vmmigration.v1.AzureSourceVmDetails,
+            com.google.cloud.vmmigration.v1.AzureSourceVmDetails.Builder,
+            com.google.cloud.vmmigration.v1.AzureSourceVmDetailsOrBuilder>
+        azureSourceVmDetailsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the VM from an Azure source.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.AzureSourceVmDetails azure_source_vm_details = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the azureSourceVmDetails field is set.
+     */
+    @java.lang.Override
+    public boolean hasAzureSourceVmDetails() {
+      return sourceVmDetailsCase_ == 30;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the VM from an Azure source.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.AzureSourceVmDetails azure_source_vm_details = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The azureSourceVmDetails.
+     */
+    @java.lang.Override
+    public com.google.cloud.vmmigration.v1.AzureSourceVmDetails getAzureSourceVmDetails() {
+      if (azureSourceVmDetailsBuilder_ == null) {
+        if (sourceVmDetailsCase_ == 30) {
+          return (com.google.cloud.vmmigration.v1.AzureSourceVmDetails) sourceVmDetails_;
+        }
+        return com.google.cloud.vmmigration.v1.AzureSourceVmDetails.getDefaultInstance();
+      } else {
+        if (sourceVmDetailsCase_ == 30) {
+          return azureSourceVmDetailsBuilder_.getMessage();
+        }
+        return com.google.cloud.vmmigration.v1.AzureSourceVmDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the VM from an Azure source.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.AzureSourceVmDetails azure_source_vm_details = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setAzureSourceVmDetails(
+        com.google.cloud.vmmigration.v1.AzureSourceVmDetails value) {
+      if (azureSourceVmDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sourceVmDetails_ = value;
+        onChanged();
+      } else {
+        azureSourceVmDetailsBuilder_.setMessage(value);
+      }
+      sourceVmDetailsCase_ = 30;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the VM from an Azure source.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.AzureSourceVmDetails azure_source_vm_details = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setAzureSourceVmDetails(
+        com.google.cloud.vmmigration.v1.AzureSourceVmDetails.Builder builderForValue) {
+      if (azureSourceVmDetailsBuilder_ == null) {
+        sourceVmDetails_ = builderForValue.build();
+        onChanged();
+      } else {
+        azureSourceVmDetailsBuilder_.setMessage(builderForValue.build());
+      }
+      sourceVmDetailsCase_ = 30;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the VM from an Azure source.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.AzureSourceVmDetails azure_source_vm_details = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeAzureSourceVmDetails(
+        com.google.cloud.vmmigration.v1.AzureSourceVmDetails value) {
+      if (azureSourceVmDetailsBuilder_ == null) {
+        if (sourceVmDetailsCase_ == 30
+            && sourceVmDetails_
+                != com.google.cloud.vmmigration.v1.AzureSourceVmDetails.getDefaultInstance()) {
+          sourceVmDetails_ =
+              com.google.cloud.vmmigration.v1.AzureSourceVmDetails.newBuilder(
+                      (com.google.cloud.vmmigration.v1.AzureSourceVmDetails) sourceVmDetails_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          sourceVmDetails_ = value;
+        }
+        onChanged();
+      } else {
+        if (sourceVmDetailsCase_ == 30) {
+          azureSourceVmDetailsBuilder_.mergeFrom(value);
+        } else {
+          azureSourceVmDetailsBuilder_.setMessage(value);
+        }
+      }
+      sourceVmDetailsCase_ = 30;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the VM from an Azure source.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.AzureSourceVmDetails azure_source_vm_details = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearAzureSourceVmDetails() {
+      if (azureSourceVmDetailsBuilder_ == null) {
+        if (sourceVmDetailsCase_ == 30) {
+          sourceVmDetailsCase_ = 0;
+          sourceVmDetails_ = null;
+          onChanged();
+        }
+      } else {
+        if (sourceVmDetailsCase_ == 30) {
+          sourceVmDetailsCase_ = 0;
+          sourceVmDetails_ = null;
+        }
+        azureSourceVmDetailsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the VM from an Azure source.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.AzureSourceVmDetails azure_source_vm_details = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.AzureSourceVmDetails.Builder
+        getAzureSourceVmDetailsBuilder() {
+      return getAzureSourceVmDetailsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the VM from an Azure source.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.AzureSourceVmDetails azure_source_vm_details = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.vmmigration.v1.AzureSourceVmDetailsOrBuilder
+        getAzureSourceVmDetailsOrBuilder() {
+      if ((sourceVmDetailsCase_ == 30) && (azureSourceVmDetailsBuilder_ != null)) {
+        return azureSourceVmDetailsBuilder_.getMessageOrBuilder();
+      } else {
+        if (sourceVmDetailsCase_ == 30) {
+          return (com.google.cloud.vmmigration.v1.AzureSourceVmDetails) sourceVmDetails_;
+        }
+        return com.google.cloud.vmmigration.v1.AzureSourceVmDetails.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the VM from an Azure source.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.AzureSourceVmDetails azure_source_vm_details = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vmmigration.v1.AzureSourceVmDetails,
+            com.google.cloud.vmmigration.v1.AzureSourceVmDetails.Builder,
+            com.google.cloud.vmmigration.v1.AzureSourceVmDetailsOrBuilder>
+        getAzureSourceVmDetailsFieldBuilder() {
+      if (azureSourceVmDetailsBuilder_ == null) {
+        if (!(sourceVmDetailsCase_ == 30)) {
+          sourceVmDetails_ =
+              com.google.cloud.vmmigration.v1.AzureSourceVmDetails.getDefaultInstance();
+        }
+        azureSourceVmDetailsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vmmigration.v1.AzureSourceVmDetails,
+                com.google.cloud.vmmigration.v1.AzureSourceVmDetails.Builder,
+                com.google.cloud.vmmigration.v1.AzureSourceVmDetailsOrBuilder>(
+                (com.google.cloud.vmmigration.v1.AzureSourceVmDetails) sourceVmDetails_,
+                getParentForChildren(),
+                isClean());
+        sourceVmDetails_ = null;
+      }
+      sourceVmDetailsCase_ = 30;
+      onChanged();
+      return azureSourceVmDetailsBuilder_;
+    }
+
     private java.lang.Object name_ = "";
 
     /**
@@ -3298,7 +5687,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3316,7 +5705,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -3339,7 +5728,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3415,7 +5804,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       sourceVmId_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3435,7 +5824,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSourceVmId() {
       sourceVmId_ = getDefaultInstance().getSourceVmId();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -3460,7 +5849,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       sourceVmId_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3530,7 +5919,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       displayName_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3548,7 +5937,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDisplayName() {
       displayName_ = getDefaultInstance().getDisplayName();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -3571,7 +5960,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       displayName_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3641,7 +6030,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       description_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3659,7 +6048,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDescription() {
       description_ = getDefaultInstance().getDescription();
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -3682,7 +6071,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       description_ = value;
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -3706,7 +6095,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the policy field is set.
      */
     public boolean hasPolicy() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -3748,7 +6137,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       } else {
         policyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3769,7 +6158,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       } else {
         policyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3785,7 +6174,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergePolicy(com.google.cloud.vmmigration.v1.SchedulePolicy value) {
       if (policyBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && policy_ != null
             && policy_ != com.google.cloud.vmmigration.v1.SchedulePolicy.getDefaultInstance()) {
           getPolicyBuilder().mergeFrom(value);
@@ -3796,7 +6185,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
         policyBuilder_.mergeFrom(value);
       }
       if (policy_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -3812,7 +6201,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.vmmigration.v1.SchedulePolicy policy = 8;</code>
      */
     public Builder clearPolicy() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000200);
       policy_ = null;
       if (policyBuilder_ != null) {
         policyBuilder_.dispose();
@@ -3832,7 +6221,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.vmmigration.v1.SchedulePolicy policy = 8;</code>
      */
     public com.google.cloud.vmmigration.v1.SchedulePolicy.Builder getPolicyBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getPolicyFieldBuilder().getBuilder();
     }
@@ -3904,7 +6293,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000400) != 0);
     }
 
     /**
@@ -3952,7 +6341,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3975,7 +6364,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -3994,7 +6383,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000400) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -4005,7 +6394,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       return this;
@@ -4024,7 +6413,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000400);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -4047,7 +6436,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000400;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -4124,7 +6513,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
 
     /**
@@ -4170,7 +6559,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4192,7 +6581,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -4210,7 +6599,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -4221,7 +6610,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
         updateTimeBuilder_.mergeFrom(value);
       }
       if (updateTime_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       return this;
@@ -4239,7 +6628,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000800);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -4261,7 +6650,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000800;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -4337,7 +6726,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the lastSync field is set.
      */
     public boolean hasLastSync() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
@@ -4385,7 +6774,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       } else {
         lastSyncBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4409,7 +6798,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       } else {
         lastSyncBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -4428,7 +6817,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeLastSync(com.google.cloud.vmmigration.v1.ReplicationSync value) {
       if (lastSyncBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00001000) != 0)
             && lastSync_ != null
             && lastSync_ != com.google.cloud.vmmigration.v1.ReplicationSync.getDefaultInstance()) {
           getLastSyncBuilder().mergeFrom(value);
@@ -4439,7 +6828,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
         lastSyncBuilder_.mergeFrom(value);
       }
       if (lastSync_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       return this;
@@ -4458,7 +6847,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearLastSync() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00001000);
       lastSync_ = null;
       if (lastSyncBuilder_ != null) {
         lastSyncBuilder_.dispose();
@@ -4481,7 +6870,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.vmmigration.v1.ReplicationSync.Builder getLastSyncBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00001000;
       onChanged();
       return getLastSyncFieldBuilder().getBuilder();
     }
@@ -4573,7 +6962,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder setStateValue(int value) {
       state_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -4618,7 +7007,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00002000;
       state_ = value.getNumber();
       onChanged();
       return this;
@@ -4638,7 +7027,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * @return This builder for chaining.
      */
     public Builder clearState() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00002000);
       state_ = 0;
       onChanged();
       return this;
@@ -4665,7 +7054,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the stateTime field is set.
      */
     public boolean hasStateTime() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00004000) != 0);
     }
 
     /**
@@ -4709,7 +7098,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       } else {
         stateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4731,7 +7120,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       } else {
         stateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00004000;
       onChanged();
       return this;
     }
@@ -4749,7 +7138,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeStateTime(com.google.protobuf.Timestamp value) {
       if (stateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)
+        if (((bitField0_ & 0x00004000) != 0)
             && stateTime_ != null
             && stateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getStateTimeBuilder().mergeFrom(value);
@@ -4760,7 +7149,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
         stateTimeBuilder_.mergeFrom(value);
       }
       if (stateTime_ != null) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00004000;
         onChanged();
       }
       return this;
@@ -4778,7 +7167,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearStateTime() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00004000);
       stateTime_ = null;
       if (stateTimeBuilder_ != null) {
         stateTimeBuilder_.dispose();
@@ -4800,7 +7189,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getStateTimeBuilder() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00004000;
       onChanged();
       return getStateTimeFieldBuilder().getBuilder();
     }
@@ -4863,8 +7252,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The percentage progress of the current running replication
-     * cycle.
+     * Output only. Details of the current running replication cycle.
      * </pre>
      *
      * <code>
@@ -4874,15 +7262,14 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the currentSyncInfo field is set.
      */
     public boolean hasCurrentSyncInfo() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
 
     /**
      *
      *
      * <pre>
-     * Output only. The percentage progress of the current running replication
-     * cycle.
+     * Output only. Details of the current running replication cycle.
      * </pre>
      *
      * <code>
@@ -4905,8 +7292,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The percentage progress of the current running replication
-     * cycle.
+     * Output only. Details of the current running replication cycle.
      * </pre>
      *
      * <code>
@@ -4922,7 +7308,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       } else {
         currentSyncInfoBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4931,8 +7317,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The percentage progress of the current running replication
-     * cycle.
+     * Output only. Details of the current running replication cycle.
      * </pre>
      *
      * <code>
@@ -4946,7 +7331,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       } else {
         currentSyncInfoBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4955,8 +7340,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The percentage progress of the current running replication
-     * cycle.
+     * Output only. Details of the current running replication cycle.
      * </pre>
      *
      * <code>
@@ -4965,7 +7349,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCurrentSyncInfo(com.google.cloud.vmmigration.v1.ReplicationCycle value) {
       if (currentSyncInfoBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)
+        if (((bitField0_ & 0x00008000) != 0)
             && currentSyncInfo_ != null
             && currentSyncInfo_
                 != com.google.cloud.vmmigration.v1.ReplicationCycle.getDefaultInstance()) {
@@ -4977,7 +7361,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
         currentSyncInfoBuilder_.mergeFrom(value);
       }
       if (currentSyncInfo_ != null) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       return this;
@@ -4987,8 +7371,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The percentage progress of the current running replication
-     * cycle.
+     * Output only. Details of the current running replication cycle.
      * </pre>
      *
      * <code>
@@ -4996,7 +7379,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCurrentSyncInfo() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       currentSyncInfo_ = null;
       if (currentSyncInfoBuilder_ != null) {
         currentSyncInfoBuilder_.dispose();
@@ -5010,8 +7393,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The percentage progress of the current running replication
-     * cycle.
+     * Output only. Details of the current running replication cycle.
      * </pre>
      *
      * <code>
@@ -5019,7 +7401,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.vmmigration.v1.ReplicationCycle.Builder getCurrentSyncInfoBuilder() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return getCurrentSyncInfoFieldBuilder().getBuilder();
     }
@@ -5028,8 +7410,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The percentage progress of the current running replication
-     * cycle.
+     * Output only. Details of the current running replication cycle.
      * </pre>
      *
      * <code>
@@ -5050,8 +7431,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The percentage progress of the current running replication
-     * cycle.
+     * Output only. Details of the current running replication cycle.
      * </pre>
      *
      * <code>
@@ -5073,6 +7453,241 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
         currentSyncInfo_ = null;
       }
       return currentSyncInfoBuilder_;
+    }
+
+    private com.google.cloud.vmmigration.v1.ReplicationCycle lastReplicationCycle_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vmmigration.v1.ReplicationCycle,
+            com.google.cloud.vmmigration.v1.ReplicationCycle.Builder,
+            com.google.cloud.vmmigration.v1.ReplicationCycleOrBuilder>
+        lastReplicationCycleBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the last replication cycle. This will be updated
+     * whenever a replication cycle is finished and is not to be confused with
+     * last_sync which is only updated on successful replication cycles.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.ReplicationCycle last_replication_cycle = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the lastReplicationCycle field is set.
+     */
+    public boolean hasLastReplicationCycle() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the last replication cycle. This will be updated
+     * whenever a replication cycle is finished and is not to be confused with
+     * last_sync which is only updated on successful replication cycles.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.ReplicationCycle last_replication_cycle = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The lastReplicationCycle.
+     */
+    public com.google.cloud.vmmigration.v1.ReplicationCycle getLastReplicationCycle() {
+      if (lastReplicationCycleBuilder_ == null) {
+        return lastReplicationCycle_ == null
+            ? com.google.cloud.vmmigration.v1.ReplicationCycle.getDefaultInstance()
+            : lastReplicationCycle_;
+      } else {
+        return lastReplicationCycleBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the last replication cycle. This will be updated
+     * whenever a replication cycle is finished and is not to be confused with
+     * last_sync which is only updated on successful replication cycles.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.ReplicationCycle last_replication_cycle = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setLastReplicationCycle(com.google.cloud.vmmigration.v1.ReplicationCycle value) {
+      if (lastReplicationCycleBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        lastReplicationCycle_ = value;
+      } else {
+        lastReplicationCycleBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the last replication cycle. This will be updated
+     * whenever a replication cycle is finished and is not to be confused with
+     * last_sync which is only updated on successful replication cycles.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.ReplicationCycle last_replication_cycle = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setLastReplicationCycle(
+        com.google.cloud.vmmigration.v1.ReplicationCycle.Builder builderForValue) {
+      if (lastReplicationCycleBuilder_ == null) {
+        lastReplicationCycle_ = builderForValue.build();
+      } else {
+        lastReplicationCycleBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the last replication cycle. This will be updated
+     * whenever a replication cycle is finished and is not to be confused with
+     * last_sync which is only updated on successful replication cycles.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.ReplicationCycle last_replication_cycle = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeLastReplicationCycle(
+        com.google.cloud.vmmigration.v1.ReplicationCycle value) {
+      if (lastReplicationCycleBuilder_ == null) {
+        if (((bitField0_ & 0x00010000) != 0)
+            && lastReplicationCycle_ != null
+            && lastReplicationCycle_
+                != com.google.cloud.vmmigration.v1.ReplicationCycle.getDefaultInstance()) {
+          getLastReplicationCycleBuilder().mergeFrom(value);
+        } else {
+          lastReplicationCycle_ = value;
+        }
+      } else {
+        lastReplicationCycleBuilder_.mergeFrom(value);
+      }
+      if (lastReplicationCycle_ != null) {
+        bitField0_ |= 0x00010000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the last replication cycle. This will be updated
+     * whenever a replication cycle is finished and is not to be confused with
+     * last_sync which is only updated on successful replication cycles.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.ReplicationCycle last_replication_cycle = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearLastReplicationCycle() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      lastReplicationCycle_ = null;
+      if (lastReplicationCycleBuilder_ != null) {
+        lastReplicationCycleBuilder_.dispose();
+        lastReplicationCycleBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the last replication cycle. This will be updated
+     * whenever a replication cycle is finished and is not to be confused with
+     * last_sync which is only updated on successful replication cycles.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.ReplicationCycle last_replication_cycle = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.ReplicationCycle.Builder
+        getLastReplicationCycleBuilder() {
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return getLastReplicationCycleFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the last replication cycle. This will be updated
+     * whenever a replication cycle is finished and is not to be confused with
+     * last_sync which is only updated on successful replication cycles.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.ReplicationCycle last_replication_cycle = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.ReplicationCycleOrBuilder
+        getLastReplicationCycleOrBuilder() {
+      if (lastReplicationCycleBuilder_ != null) {
+        return lastReplicationCycleBuilder_.getMessageOrBuilder();
+      } else {
+        return lastReplicationCycle_ == null
+            ? com.google.cloud.vmmigration.v1.ReplicationCycle.getDefaultInstance()
+            : lastReplicationCycle_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Details of the last replication cycle. This will be updated
+     * whenever a replication cycle is finished and is not to be confused with
+     * last_sync which is only updated on successful replication cycles.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.ReplicationCycle last_replication_cycle = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vmmigration.v1.ReplicationCycle,
+            com.google.cloud.vmmigration.v1.ReplicationCycle.Builder,
+            com.google.cloud.vmmigration.v1.ReplicationCycleOrBuilder>
+        getLastReplicationCycleFieldBuilder() {
+      if (lastReplicationCycleBuilder_ == null) {
+        lastReplicationCycleBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vmmigration.v1.ReplicationCycle,
+                com.google.cloud.vmmigration.v1.ReplicationCycle.Builder,
+                com.google.cloud.vmmigration.v1.ReplicationCycleOrBuilder>(
+                getLastReplicationCycle(), getParentForChildren(), isClean());
+        lastReplicationCycle_ = null;
+      }
+      return lastReplicationCycleBuilder_;
     }
 
     private java.lang.Object group_ = "";
@@ -5152,7 +7767,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       group_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5174,7 +7789,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearGroup() {
       group_ = getDefaultInstance().getGroup();
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -5201,7 +7816,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       group_ = value;
-      bitField0_ |= 0x00002000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5223,7 +7838,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return labels_;
     }
@@ -5313,7 +7928,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -5338,7 +7953,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00040000;
       return internalGetMutableLabels().getMutableMap();
     }
 
@@ -5359,7 +7974,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00040000;
       return this;
     }
 
@@ -5374,7 +7989,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00040000;
       return this;
     }
 
@@ -5382,10 +7997,10 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureRecentCloneJobsIsMutable() {
-      if (!((bitField0_ & 0x00008000) != 0)) {
+      if (!((bitField0_ & 0x00080000) != 0)) {
         recentCloneJobs_ =
             new java.util.ArrayList<com.google.cloud.vmmigration.v1.CloneJob>(recentCloneJobs_);
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00080000;
       }
     }
 
@@ -5677,7 +8292,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
     public Builder clearRecentCloneJobs() {
       if (recentCloneJobsBuilder_ == null) {
         recentCloneJobs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00008000);
+        bitField0_ = (bitField0_ & ~0x00080000);
         onChanged();
       } else {
         recentCloneJobsBuilder_.clear();
@@ -5850,7 +8465,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.vmmigration.v1.CloneJob.Builder,
                 com.google.cloud.vmmigration.v1.CloneJobOrBuilder>(
                 recentCloneJobs_,
-                ((bitField0_ & 0x00008000) != 0),
+                ((bitField0_ & 0x00080000) != 0),
                 getParentForChildren(),
                 isClean());
         recentCloneJobs_ = null;
@@ -5876,7 +8491,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the error field is set.
      */
     public boolean hasError() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
 
     /**
@@ -5918,7 +8533,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       } else {
         errorBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -5939,7 +8554,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
       } else {
         errorBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -5956,7 +8571,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeError(com.google.rpc.Status value) {
       if (errorBuilder_ == null) {
-        if (((bitField0_ & 0x00010000) != 0)
+        if (((bitField0_ & 0x00100000) != 0)
             && error_ != null
             && error_ != com.google.rpc.Status.getDefaultInstance()) {
           getErrorBuilder().mergeFrom(value);
@@ -5967,7 +8582,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
         errorBuilder_.mergeFrom(value);
       }
       if (error_ != null) {
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       return this;
@@ -5984,7 +8599,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.Status error = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearError() {
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       error_ = null;
       if (errorBuilder_ != null) {
         errorBuilder_.dispose();
@@ -6005,7 +8620,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.rpc.Status error = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.rpc.Status.Builder getErrorBuilder() {
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }
@@ -6056,10 +8671,10 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureRecentCutoverJobsIsMutable() {
-      if (!((bitField0_ & 0x00020000) != 0)) {
+      if (!((bitField0_ & 0x00200000) != 0)) {
         recentCutoverJobs_ =
             new java.util.ArrayList<com.google.cloud.vmmigration.v1.CutoverJob>(recentCutoverJobs_);
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00200000;
       }
     }
 
@@ -6353,7 +8968,7 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
     public Builder clearRecentCutoverJobs() {
       if (recentCutoverJobsBuilder_ == null) {
         recentCutoverJobs_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00020000);
+        bitField0_ = (bitField0_ & ~0x00200000);
         onChanged();
       } else {
         recentCutoverJobsBuilder_.clear();
@@ -6528,12 +9143,459 @@ public final class MigratingVm extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.vmmigration.v1.CutoverJob.Builder,
                 com.google.cloud.vmmigration.v1.CutoverJobOrBuilder>(
                 recentCutoverJobs_,
-                ((bitField0_ & 0x00020000) != 0),
+                ((bitField0_ & 0x00200000) != 0),
                 getParentForChildren(),
                 isClean());
         recentCutoverJobs_ = null;
       }
       return recentCutoverJobsBuilder_;
+    }
+
+    private com.google.cloud.vmmigration.v1.CutoverForecast cutoverForecast_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vmmigration.v1.CutoverForecast,
+            com.google.cloud.vmmigration.v1.CutoverForecast.Builder,
+            com.google.cloud.vmmigration.v1.CutoverForecastOrBuilder>
+        cutoverForecastBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provides details of future CutoverJobs of a MigratingVm.
+     * Set to empty when cutover forecast is unavailable.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.CutoverForecast cutover_forecast = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the cutoverForecast field is set.
+     */
+    public boolean hasCutoverForecast() {
+      return ((bitField0_ & 0x00400000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provides details of future CutoverJobs of a MigratingVm.
+     * Set to empty when cutover forecast is unavailable.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.CutoverForecast cutover_forecast = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The cutoverForecast.
+     */
+    public com.google.cloud.vmmigration.v1.CutoverForecast getCutoverForecast() {
+      if (cutoverForecastBuilder_ == null) {
+        return cutoverForecast_ == null
+            ? com.google.cloud.vmmigration.v1.CutoverForecast.getDefaultInstance()
+            : cutoverForecast_;
+      } else {
+        return cutoverForecastBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provides details of future CutoverJobs of a MigratingVm.
+     * Set to empty when cutover forecast is unavailable.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.CutoverForecast cutover_forecast = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCutoverForecast(com.google.cloud.vmmigration.v1.CutoverForecast value) {
+      if (cutoverForecastBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        cutoverForecast_ = value;
+      } else {
+        cutoverForecastBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provides details of future CutoverJobs of a MigratingVm.
+     * Set to empty when cutover forecast is unavailable.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.CutoverForecast cutover_forecast = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCutoverForecast(
+        com.google.cloud.vmmigration.v1.CutoverForecast.Builder builderForValue) {
+      if (cutoverForecastBuilder_ == null) {
+        cutoverForecast_ = builderForValue.build();
+      } else {
+        cutoverForecastBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provides details of future CutoverJobs of a MigratingVm.
+     * Set to empty when cutover forecast is unavailable.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.CutoverForecast cutover_forecast = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeCutoverForecast(com.google.cloud.vmmigration.v1.CutoverForecast value) {
+      if (cutoverForecastBuilder_ == null) {
+        if (((bitField0_ & 0x00400000) != 0)
+            && cutoverForecast_ != null
+            && cutoverForecast_
+                != com.google.cloud.vmmigration.v1.CutoverForecast.getDefaultInstance()) {
+          getCutoverForecastBuilder().mergeFrom(value);
+        } else {
+          cutoverForecast_ = value;
+        }
+      } else {
+        cutoverForecastBuilder_.mergeFrom(value);
+      }
+      if (cutoverForecast_ != null) {
+        bitField0_ |= 0x00400000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provides details of future CutoverJobs of a MigratingVm.
+     * Set to empty when cutover forecast is unavailable.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.CutoverForecast cutover_forecast = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearCutoverForecast() {
+      bitField0_ = (bitField0_ & ~0x00400000);
+      cutoverForecast_ = null;
+      if (cutoverForecastBuilder_ != null) {
+        cutoverForecastBuilder_.dispose();
+        cutoverForecastBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provides details of future CutoverJobs of a MigratingVm.
+     * Set to empty when cutover forecast is unavailable.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.CutoverForecast cutover_forecast = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.CutoverForecast.Builder getCutoverForecastBuilder() {
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return getCutoverForecastFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provides details of future CutoverJobs of a MigratingVm.
+     * Set to empty when cutover forecast is unavailable.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.CutoverForecast cutover_forecast = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.CutoverForecastOrBuilder getCutoverForecastOrBuilder() {
+      if (cutoverForecastBuilder_ != null) {
+        return cutoverForecastBuilder_.getMessageOrBuilder();
+      } else {
+        return cutoverForecast_ == null
+            ? com.google.cloud.vmmigration.v1.CutoverForecast.getDefaultInstance()
+            : cutoverForecast_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provides details of future CutoverJobs of a MigratingVm.
+     * Set to empty when cutover forecast is unavailable.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.CutoverForecast cutover_forecast = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vmmigration.v1.CutoverForecast,
+            com.google.cloud.vmmigration.v1.CutoverForecast.Builder,
+            com.google.cloud.vmmigration.v1.CutoverForecastOrBuilder>
+        getCutoverForecastFieldBuilder() {
+      if (cutoverForecastBuilder_ == null) {
+        cutoverForecastBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vmmigration.v1.CutoverForecast,
+                com.google.cloud.vmmigration.v1.CutoverForecast.Builder,
+                com.google.cloud.vmmigration.v1.CutoverForecastOrBuilder>(
+                getCutoverForecast(), getParentForChildren(), isClean());
+        cutoverForecast_ = null;
+      }
+      return cutoverForecastBuilder_;
+    }
+
+    private com.google.cloud.vmmigration.v1.MigratingVm.Expiration expiration_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vmmigration.v1.MigratingVm.Expiration,
+            com.google.cloud.vmmigration.v1.MigratingVm.Expiration.Builder,
+            com.google.cloud.vmmigration.v1.MigratingVm.ExpirationOrBuilder>
+        expirationBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provides details about the expiration state of the migrating
+     * VM.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.MigratingVm.Expiration expiration = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the expiration field is set.
+     */
+    public boolean hasExpiration() {
+      return ((bitField0_ & 0x00800000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provides details about the expiration state of the migrating
+     * VM.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.MigratingVm.Expiration expiration = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The expiration.
+     */
+    public com.google.cloud.vmmigration.v1.MigratingVm.Expiration getExpiration() {
+      if (expirationBuilder_ == null) {
+        return expiration_ == null
+            ? com.google.cloud.vmmigration.v1.MigratingVm.Expiration.getDefaultInstance()
+            : expiration_;
+      } else {
+        return expirationBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provides details about the expiration state of the migrating
+     * VM.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.MigratingVm.Expiration expiration = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setExpiration(com.google.cloud.vmmigration.v1.MigratingVm.Expiration value) {
+      if (expirationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        expiration_ = value;
+      } else {
+        expirationBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provides details about the expiration state of the migrating
+     * VM.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.MigratingVm.Expiration expiration = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setExpiration(
+        com.google.cloud.vmmigration.v1.MigratingVm.Expiration.Builder builderForValue) {
+      if (expirationBuilder_ == null) {
+        expiration_ = builderForValue.build();
+      } else {
+        expirationBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provides details about the expiration state of the migrating
+     * VM.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.MigratingVm.Expiration expiration = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeExpiration(com.google.cloud.vmmigration.v1.MigratingVm.Expiration value) {
+      if (expirationBuilder_ == null) {
+        if (((bitField0_ & 0x00800000) != 0)
+            && expiration_ != null
+            && expiration_
+                != com.google.cloud.vmmigration.v1.MigratingVm.Expiration.getDefaultInstance()) {
+          getExpirationBuilder().mergeFrom(value);
+        } else {
+          expiration_ = value;
+        }
+      } else {
+        expirationBuilder_.mergeFrom(value);
+      }
+      if (expiration_ != null) {
+        bitField0_ |= 0x00800000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provides details about the expiration state of the migrating
+     * VM.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.MigratingVm.Expiration expiration = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearExpiration() {
+      bitField0_ = (bitField0_ & ~0x00800000);
+      expiration_ = null;
+      if (expirationBuilder_ != null) {
+        expirationBuilder_.dispose();
+        expirationBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provides details about the expiration state of the migrating
+     * VM.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.MigratingVm.Expiration expiration = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.MigratingVm.Expiration.Builder getExpirationBuilder() {
+      bitField0_ |= 0x00800000;
+      onChanged();
+      return getExpirationFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provides details about the expiration state of the migrating
+     * VM.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.MigratingVm.Expiration expiration = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.MigratingVm.ExpirationOrBuilder
+        getExpirationOrBuilder() {
+      if (expirationBuilder_ != null) {
+        return expirationBuilder_.getMessageOrBuilder();
+      } else {
+        return expiration_ == null
+            ? com.google.cloud.vmmigration.v1.MigratingVm.Expiration.getDefaultInstance()
+            : expiration_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Provides details about the expiration state of the migrating
+     * VM.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.MigratingVm.Expiration expiration = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vmmigration.v1.MigratingVm.Expiration,
+            com.google.cloud.vmmigration.v1.MigratingVm.Expiration.Builder,
+            com.google.cloud.vmmigration.v1.MigratingVm.ExpirationOrBuilder>
+        getExpirationFieldBuilder() {
+      if (expirationBuilder_ == null) {
+        expirationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vmmigration.v1.MigratingVm.Expiration,
+                com.google.cloud.vmmigration.v1.MigratingVm.Expiration.Builder,
+                com.google.cloud.vmmigration.v1.MigratingVm.ExpirationOrBuilder>(
+                getExpiration(), getParentForChildren(), isClean());
+        expiration_ = null;
+      }
+      return expirationBuilder_;
     }
 
     @java.lang.Override

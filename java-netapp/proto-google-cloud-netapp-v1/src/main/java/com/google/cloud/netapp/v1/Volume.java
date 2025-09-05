@@ -2297,7 +2297,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Size of the volume cold tier data in GiB.
+   * Output only. Size of the volume cold tier data rounded down to the nearest
+   * GiB.
    * </pre>
    *
    * <code>int64 cold_tier_size_gib = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -2367,6 +2368,45 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     return hybridReplicationParameters_ == null
         ? com.google.cloud.netapp.v1.HybridReplicationParameters.getDefaultInstance()
         : hybridReplicationParameters_;
+  }
+
+  public static final int THROUGHPUT_MIBPS_FIELD_NUMBER = 41;
+  private double throughputMibps_ = 0D;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Throughput of the volume (in MiB/s)
+   * </pre>
+   *
+   * <code>double throughput_mibps = 41 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The throughputMibps.
+   */
+  @java.lang.Override
+  public double getThroughputMibps() {
+    return throughputMibps_;
+  }
+
+  public static final int HOT_TIER_SIZE_USED_GIB_FIELD_NUMBER = 44;
+  private long hotTierSizeUsedGib_ = 0L;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Total hot tier data rounded down to the nearest GiB used by
+   * the Volume. This field is only used for flex Service Level
+   * </pre>
+   *
+   * <code>int64 hot_tier_size_used_gib = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The hotTierSizeUsedGib.
+   */
+  @java.lang.Override
+  public long getHotTierSizeUsedGib() {
+    return hotTierSizeUsedGib_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2511,6 +2551,12 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000040) != 0)) {
       output.writeMessage(40, getHybridReplicationParameters());
+    }
+    if (java.lang.Double.doubleToRawLongBits(throughputMibps_) != 0) {
+      output.writeDouble(41, throughputMibps_);
+    }
+    if (hotTierSizeUsedGib_ != 0L) {
+      output.writeInt64(44, hotTierSizeUsedGib_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -2675,6 +2721,12 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               40, getHybridReplicationParameters());
     }
+    if (java.lang.Double.doubleToRawLongBits(throughputMibps_) != 0) {
+      size += com.google.protobuf.CodedOutputStream.computeDoubleSize(41, throughputMibps_);
+    }
+    if (hotTierSizeUsedGib_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(44, hotTierSizeUsedGib_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2751,6 +2803,9 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       if (!getHybridReplicationParameters().equals(other.getHybridReplicationParameters()))
         return false;
     }
+    if (java.lang.Double.doubleToLongBits(getThroughputMibps())
+        != java.lang.Double.doubleToLongBits(other.getThroughputMibps())) return false;
+    if (getHotTierSizeUsedGib() != other.getHotTierSizeUsedGib()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2865,6 +2920,13 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + HYBRID_REPLICATION_PARAMETERS_FIELD_NUMBER;
       hash = (53 * hash) + getHybridReplicationParameters().hashCode();
     }
+    hash = (37 * hash) + THROUGHPUT_MIBPS_FIELD_NUMBER;
+    hash =
+        (53 * hash)
+            + com.google.protobuf.Internal.hashLong(
+                java.lang.Double.doubleToLongBits(getThroughputMibps()));
+    hash = (37 * hash) + HOT_TIER_SIZE_USED_GIB_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getHotTierSizeUsedGib());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -3118,6 +3180,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         hybridReplicationParametersBuilder_.dispose();
         hybridReplicationParametersBuilder_ = null;
       }
+      throughputMibps_ = 0D;
+      hotTierSizeUsedGib_ = 0L;
       return this;
     }
 
@@ -3310,6 +3374,12 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
                 ? hybridReplicationParameters_
                 : hybridReplicationParametersBuilder_.build();
         to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField1_ & 0x00000040) != 0)) {
+        result.throughputMibps_ = throughputMibps_;
+      }
+      if (((from_bitField1_ & 0x00000080) != 0)) {
+        result.hotTierSizeUsedGib_ = hotTierSizeUsedGib_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -3540,6 +3610,12 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasHybridReplicationParameters()) {
         mergeHybridReplicationParameters(other.getHybridReplicationParameters());
+      }
+      if (other.getThroughputMibps() != 0D) {
+        setThroughputMibps(other.getThroughputMibps());
+      }
+      if (other.getHotTierSizeUsedGib() != 0L) {
+        setHotTierSizeUsedGib(other.getHotTierSizeUsedGib());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -3849,6 +3925,18 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
                 bitField1_ |= 0x00000020;
                 break;
               } // case 322
+            case 329:
+              {
+                throughputMibps_ = input.readDouble();
+                bitField1_ |= 0x00000040;
+                break;
+              } // case 329
+            case 352:
+              {
+                hotTierSizeUsedGib_ = input.readInt64();
+                bitField1_ |= 0x00000080;
+                break;
+              } // case 352
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8803,7 +8891,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Size of the volume cold tier data in GiB.
+     * Output only. Size of the volume cold tier data rounded down to the nearest
+     * GiB.
      * </pre>
      *
      * <code>int64 cold_tier_size_gib = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -8819,7 +8908,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Size of the volume cold tier data in GiB.
+     * Output only. Size of the volume cold tier data rounded down to the nearest
+     * GiB.
      * </pre>
      *
      * <code>int64 cold_tier_size_gib = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -8839,7 +8929,8 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Size of the volume cold tier data in GiB.
+     * Output only. Size of the volume cold tier data rounded down to the nearest
+     * GiB.
      * </pre>
      *
      * <code>int64 cold_tier_size_gib = 39 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -9069,6 +9160,121 @@ public final class Volume extends com.google.protobuf.GeneratedMessageV3
         hybridReplicationParameters_ = null;
       }
       return hybridReplicationParametersBuilder_;
+    }
+
+    private double throughputMibps_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Throughput of the volume (in MiB/s)
+     * </pre>
+     *
+     * <code>double throughput_mibps = 41 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The throughputMibps.
+     */
+    @java.lang.Override
+    public double getThroughputMibps() {
+      return throughputMibps_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Throughput of the volume (in MiB/s)
+     * </pre>
+     *
+     * <code>double throughput_mibps = 41 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The throughputMibps to set.
+     * @return This builder for chaining.
+     */
+    public Builder setThroughputMibps(double value) {
+
+      throughputMibps_ = value;
+      bitField1_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Throughput of the volume (in MiB/s)
+     * </pre>
+     *
+     * <code>double throughput_mibps = 41 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearThroughputMibps() {
+      bitField1_ = (bitField1_ & ~0x00000040);
+      throughputMibps_ = 0D;
+      onChanged();
+      return this;
+    }
+
+    private long hotTierSizeUsedGib_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Total hot tier data rounded down to the nearest GiB used by
+     * the Volume. This field is only used for flex Service Level
+     * </pre>
+     *
+     * <code>int64 hot_tier_size_used_gib = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The hotTierSizeUsedGib.
+     */
+    @java.lang.Override
+    public long getHotTierSizeUsedGib() {
+      return hotTierSizeUsedGib_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Total hot tier data rounded down to the nearest GiB used by
+     * the Volume. This field is only used for flex Service Level
+     * </pre>
+     *
+     * <code>int64 hot_tier_size_used_gib = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The hotTierSizeUsedGib to set.
+     * @return This builder for chaining.
+     */
+    public Builder setHotTierSizeUsedGib(long value) {
+
+      hotTierSizeUsedGib_ = value;
+      bitField1_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Total hot tier data rounded down to the nearest GiB used by
+     * the Volume. This field is only used for flex Service Level
+     * </pre>
+     *
+     * <code>int64 hot_tier_size_used_gib = 44 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearHotTierSizeUsedGib() {
+      bitField1_ = (bitField1_ & ~0x00000080);
+      hotTierSizeUsedGib_ = 0L;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

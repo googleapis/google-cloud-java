@@ -54,10 +54,10 @@ public interface TargetProjectOrBuilder
    *
    *
    * <pre>
-   * The target project ID (number) or project name.
+   * Required. The target project ID (number) or project name.
    * </pre>
    *
-   * <code>string project = 2;</code>
+   * <code>string project = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The project.
    */
@@ -67,10 +67,10 @@ public interface TargetProjectOrBuilder
    *
    *
    * <pre>
-   * The target project ID (number) or project name.
+   * Required. The target project ID (number) or project name.
    * </pre>
    *
-   * <code>string project = 2;</code>
+   * <code>string project = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for project.
    */

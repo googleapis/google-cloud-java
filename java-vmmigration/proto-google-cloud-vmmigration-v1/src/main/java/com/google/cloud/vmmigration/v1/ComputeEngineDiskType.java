@@ -70,6 +70,16 @@ public enum ComputeEngineDiskType implements com.google.protobuf.ProtocolMessage
    * <code>COMPUTE_ENGINE_DISK_TYPE_BALANCED = 3;</code>
    */
   COMPUTE_ENGINE_DISK_TYPE_BALANCED(3),
+  /**
+   *
+   *
+   * <pre>
+   * Hyperdisk balanced disk type.
+   * </pre>
+   *
+   * <code>COMPUTE_ENGINE_DISK_TYPE_HYPERDISK_BALANCED = 4;</code>
+   */
+  COMPUTE_ENGINE_DISK_TYPE_HYPERDISK_BALANCED(4),
   UNRECOGNIZED(-1),
   ;
 
@@ -118,6 +128,17 @@ public enum ComputeEngineDiskType implements com.google.protobuf.ProtocolMessage
    */
   public static final int COMPUTE_ENGINE_DISK_TYPE_BALANCED_VALUE = 3;
 
+  /**
+   *
+   *
+   * <pre>
+   * Hyperdisk balanced disk type.
+   * </pre>
+   *
+   * <code>COMPUTE_ENGINE_DISK_TYPE_HYPERDISK_BALANCED = 4;</code>
+   */
+  public static final int COMPUTE_ENGINE_DISK_TYPE_HYPERDISK_BALANCED_VALUE = 4;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -150,6 +171,8 @@ public enum ComputeEngineDiskType implements com.google.protobuf.ProtocolMessage
         return COMPUTE_ENGINE_DISK_TYPE_SSD;
       case 3:
         return COMPUTE_ENGINE_DISK_TYPE_BALANCED;
+      case 4:
+        return COMPUTE_ENGINE_DISK_TYPE_HYPERDISK_BALANCED;
       default:
         return null;
     }
@@ -181,7 +204,7 @@ public enum ComputeEngineDiskType implements com.google.protobuf.ProtocolMessage
   }
 
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.cloud.vmmigration.v1.VmMigrationProto.getDescriptor().getEnumTypes().get(2);
+    return com.google.cloud.vmmigration.v1.VmMigrationProto.getDescriptor().getEnumTypes().get(0);
   }
 
   private static final ComputeEngineDiskType[] VALUES = values();

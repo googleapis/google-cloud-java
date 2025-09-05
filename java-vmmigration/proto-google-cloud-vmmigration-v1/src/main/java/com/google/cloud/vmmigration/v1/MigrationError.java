@@ -91,7 +91,7 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Migrate for Compute encountered an unknown error.
+     * Migrate to Virtual Machines encountered an unknown error.
      * </pre>
      *
      * <code>UNKNOWN_ERROR = 1;</code>
@@ -101,8 +101,8 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Migrate for Compute encountered an error while validating replication
-     * source health.
+     * Migrate to Virtual Machines encountered an error while validating
+     * replication source health.
      * </pre>
      *
      * <code>SOURCE_VALIDATION_ERROR = 2;</code>
@@ -112,7 +112,8 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Migrate for Compute encountered an error during source data operation.
+     * Migrate to Virtual Machines encountered an error during source data
+     * operation.
      * </pre>
      *
      * <code>SOURCE_REPLICATION_ERROR = 3;</code>
@@ -122,7 +123,8 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Migrate for Compute encountered an error during target data operation.
+     * Migrate to Virtual Machines encountered an error during target data
+     * operation.
      * </pre>
      *
      * <code>TARGET_REPLICATION_ERROR = 4;</code>
@@ -132,7 +134,7 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Migrate for Compute encountered an error during OS adaptation.
+     * Migrate to Virtual Machines encountered an error during OS adaptation.
      * </pre>
      *
      * <code>OS_ADAPTATION_ERROR = 5;</code>
@@ -142,7 +144,7 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Migrate for Compute encountered an error in clone operation.
+     * Migrate to Virtual Machines encountered an error in clone operation.
      * </pre>
      *
      * <code>CLONE_ERROR = 6;</code>
@@ -152,7 +154,7 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Migrate for Compute encountered an error in cutover operation.
+     * Migrate to Virtual Machines encountered an error in cutover operation.
      * </pre>
      *
      * <code>CUTOVER_ERROR = 7;</code>
@@ -162,8 +164,8 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Migrate for Compute encountered an error during utilization report
-     * creation.
+     * Migrate to Virtual Machines encountered an error during utilization
+     * report creation.
      * </pre>
      *
      * <code>UTILIZATION_REPORT_ERROR = 8;</code>
@@ -173,12 +175,35 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Migrate for Compute encountered an error during appliance upgrade.
+     * Migrate to Virtual Machines encountered an error during appliance
+     * upgrade.
      * </pre>
      *
      * <code>APPLIANCE_UPGRADE_ERROR = 9;</code>
      */
     APPLIANCE_UPGRADE_ERROR(9),
+    /**
+     *
+     *
+     * <pre>
+     * Migrate to Virtual Machines encountered an error in image import
+     * operation.
+     * </pre>
+     *
+     * <code>IMAGE_IMPORT_ERROR = 10;</code>
+     */
+    IMAGE_IMPORT_ERROR(10),
+    /**
+     *
+     *
+     * <pre>
+     * Migrate to Virtual Machines encountered an error in disk migration
+     * operation.
+     * </pre>
+     *
+     * <code>DISK_MIGRATION_ERROR = 11;</code>
+     */
+    DISK_MIGRATION_ERROR(11),
     UNRECOGNIZED(-1),
     ;
 
@@ -197,7 +222,7 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Migrate for Compute encountered an unknown error.
+     * Migrate to Virtual Machines encountered an unknown error.
      * </pre>
      *
      * <code>UNKNOWN_ERROR = 1;</code>
@@ -208,8 +233,8 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Migrate for Compute encountered an error while validating replication
-     * source health.
+     * Migrate to Virtual Machines encountered an error while validating
+     * replication source health.
      * </pre>
      *
      * <code>SOURCE_VALIDATION_ERROR = 2;</code>
@@ -220,7 +245,8 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Migrate for Compute encountered an error during source data operation.
+     * Migrate to Virtual Machines encountered an error during source data
+     * operation.
      * </pre>
      *
      * <code>SOURCE_REPLICATION_ERROR = 3;</code>
@@ -231,7 +257,8 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Migrate for Compute encountered an error during target data operation.
+     * Migrate to Virtual Machines encountered an error during target data
+     * operation.
      * </pre>
      *
      * <code>TARGET_REPLICATION_ERROR = 4;</code>
@@ -242,7 +269,7 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Migrate for Compute encountered an error during OS adaptation.
+     * Migrate to Virtual Machines encountered an error during OS adaptation.
      * </pre>
      *
      * <code>OS_ADAPTATION_ERROR = 5;</code>
@@ -253,7 +280,7 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Migrate for Compute encountered an error in clone operation.
+     * Migrate to Virtual Machines encountered an error in clone operation.
      * </pre>
      *
      * <code>CLONE_ERROR = 6;</code>
@@ -264,7 +291,7 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Migrate for Compute encountered an error in cutover operation.
+     * Migrate to Virtual Machines encountered an error in cutover operation.
      * </pre>
      *
      * <code>CUTOVER_ERROR = 7;</code>
@@ -275,8 +302,8 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Migrate for Compute encountered an error during utilization report
-     * creation.
+     * Migrate to Virtual Machines encountered an error during utilization
+     * report creation.
      * </pre>
      *
      * <code>UTILIZATION_REPORT_ERROR = 8;</code>
@@ -287,12 +314,37 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Migrate for Compute encountered an error during appliance upgrade.
+     * Migrate to Virtual Machines encountered an error during appliance
+     * upgrade.
      * </pre>
      *
      * <code>APPLIANCE_UPGRADE_ERROR = 9;</code>
      */
     public static final int APPLIANCE_UPGRADE_ERROR_VALUE = 9;
+
+    /**
+     *
+     *
+     * <pre>
+     * Migrate to Virtual Machines encountered an error in image import
+     * operation.
+     * </pre>
+     *
+     * <code>IMAGE_IMPORT_ERROR = 10;</code>
+     */
+    public static final int IMAGE_IMPORT_ERROR_VALUE = 10;
+
+    /**
+     *
+     *
+     * <pre>
+     * Migrate to Virtual Machines encountered an error in disk migration
+     * operation.
+     * </pre>
+     *
+     * <code>DISK_MIGRATION_ERROR = 11;</code>
+     */
+    public static final int DISK_MIGRATION_ERROR_VALUE = 11;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -338,6 +390,10 @@ public final class MigrationError extends com.google.protobuf.GeneratedMessageV3
           return UTILIZATION_REPORT_ERROR;
         case 9:
           return APPLIANCE_UPGRADE_ERROR;
+        case 10:
+          return IMAGE_IMPORT_ERROR;
+        case 11:
+          return DISK_MIGRATION_ERROR;
         default:
           return null;
       }

@@ -14,46 +14,46 @@
  * limitations under the License.
  */
 
-package com.google.cloud.vmmigration.v1;
+package com.google.cloud.networkconnectivity.v1;
 
 import com.google.api.core.BetaApi;
-import com.google.iam.v1.IAMPolicyGrpc.IAMPolicyImplBase;
+import com.google.api.gax.grpc.testing.MockGrpcService;
 import com.google.protobuf.AbstractMessage;
-import java.util.ArrayList;
-import java.util.LinkedList;
+import io.grpc.ServerServiceDefinition;
 import java.util.List;
-import java.util.Queue;
 import javax.annotation.Generated;
 
 @BetaApi
 @Generated("by gapic-generator-java")
-public class MockIAMPolicyImpl extends IAMPolicyImplBase {
-  private List<AbstractMessage> requests;
-  private Queue<Object> responses;
+public class MockDataTransferService implements MockGrpcService {
+  private final MockDataTransferServiceImpl serviceImpl;
 
-  public MockIAMPolicyImpl() {
-    requests = new ArrayList<>();
-    responses = new LinkedList<>();
+  public MockDataTransferService() {
+    serviceImpl = new MockDataTransferServiceImpl();
   }
 
+  @Override
   public List<AbstractMessage> getRequests() {
-    return requests;
+    return serviceImpl.getRequests();
   }
 
+  @Override
   public void addResponse(AbstractMessage response) {
-    responses.add(response);
+    serviceImpl.addResponse(response);
   }
 
-  public void setResponses(List<AbstractMessage> responses) {
-    this.responses = new LinkedList<Object>(responses);
-  }
-
+  @Override
   public void addException(Exception exception) {
-    responses.add(exception);
+    serviceImpl.addException(exception);
   }
 
+  @Override
+  public ServerServiceDefinition getServiceDefinition() {
+    return serviceImpl.bindService();
+  }
+
+  @Override
   public void reset() {
-    requests = new ArrayList<>();
-    responses = new LinkedList<>();
+    serviceImpl.reset();
   }
 }

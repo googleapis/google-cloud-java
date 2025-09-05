@@ -221,6 +221,12 @@ public class NetAppClientTest {
             .setCustomPerformanceEnabled(true)
             .setTotalThroughputMibps(-2085075953)
             .setTotalIops(-705711676)
+            .setHotTierSizeGib(369881037)
+            .setEnableHotTierAutoResize(true)
+            .setQosType(QosType.forNumber(0))
+            .setAvailableThroughputMibps(1487662890)
+            .setColdTierSizeUsedGib(-1242809254)
+            .setHotTierSizeUsedGib(-151116719)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -298,6 +304,12 @@ public class NetAppClientTest {
             .setCustomPerformanceEnabled(true)
             .setTotalThroughputMibps(-2085075953)
             .setTotalIops(-705711676)
+            .setHotTierSizeGib(369881037)
+            .setEnableHotTierAutoResize(true)
+            .setQosType(QosType.forNumber(0))
+            .setAvailableThroughputMibps(1487662890)
+            .setColdTierSizeUsedGib(-1242809254)
+            .setHotTierSizeUsedGib(-151116719)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -375,6 +387,12 @@ public class NetAppClientTest {
             .setCustomPerformanceEnabled(true)
             .setTotalThroughputMibps(-2085075953)
             .setTotalIops(-705711676)
+            .setHotTierSizeGib(369881037)
+            .setEnableHotTierAutoResize(true)
+            .setQosType(QosType.forNumber(0))
+            .setAvailableThroughputMibps(1487662890)
+            .setColdTierSizeUsedGib(-1242809254)
+            .setHotTierSizeUsedGib(-151116719)
             .build();
     mockNetApp.addResponse(expectedResponse);
 
@@ -437,6 +455,12 @@ public class NetAppClientTest {
             .setCustomPerformanceEnabled(true)
             .setTotalThroughputMibps(-2085075953)
             .setTotalIops(-705711676)
+            .setHotTierSizeGib(369881037)
+            .setEnableHotTierAutoResize(true)
+            .setQosType(QosType.forNumber(0))
+            .setAvailableThroughputMibps(1487662890)
+            .setColdTierSizeUsedGib(-1242809254)
+            .setHotTierSizeUsedGib(-151116719)
             .build();
     mockNetApp.addResponse(expectedResponse);
 
@@ -499,6 +523,12 @@ public class NetAppClientTest {
             .setCustomPerformanceEnabled(true)
             .setTotalThroughputMibps(-2085075953)
             .setTotalIops(-705711676)
+            .setHotTierSizeGib(369881037)
+            .setEnableHotTierAutoResize(true)
+            .setQosType(QosType.forNumber(0))
+            .setAvailableThroughputMibps(1487662890)
+            .setColdTierSizeUsedGib(-1242809254)
+            .setHotTierSizeUsedGib(-151116719)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -708,6 +738,12 @@ public class NetAppClientTest {
             .setCustomPerformanceEnabled(true)
             .setTotalThroughputMibps(-2085075953)
             .setTotalIops(-705711676)
+            .setHotTierSizeGib(369881037)
+            .setEnableHotTierAutoResize(true)
+            .setQosType(QosType.forNumber(0))
+            .setAvailableThroughputMibps(1487662890)
+            .setColdTierSizeUsedGib(-1242809254)
+            .setHotTierSizeUsedGib(-151116719)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -887,6 +923,8 @@ public class NetAppClientTest {
             .setZone("zone3744684")
             .setColdTierSizeGib(212809252)
             .setHybridReplicationParameters(HybridReplicationParameters.newBuilder().build())
+            .setThroughputMibps(1498696820)
+            .setHotTierSizeUsedGib(-151116719)
             .build();
     mockNetApp.addResponse(expectedResponse);
 
@@ -963,6 +1001,8 @@ public class NetAppClientTest {
             .setZone("zone3744684")
             .setColdTierSizeGib(212809252)
             .setHybridReplicationParameters(HybridReplicationParameters.newBuilder().build())
+            .setThroughputMibps(1498696820)
+            .setHotTierSizeUsedGib(-151116719)
             .build();
     mockNetApp.addResponse(expectedResponse);
 
@@ -1039,6 +1079,8 @@ public class NetAppClientTest {
             .setZone("zone3744684")
             .setColdTierSizeGib(212809252)
             .setHybridReplicationParameters(HybridReplicationParameters.newBuilder().build())
+            .setThroughputMibps(1498696820)
+            .setHotTierSizeUsedGib(-151116719)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1129,6 +1171,8 @@ public class NetAppClientTest {
             .setZone("zone3744684")
             .setColdTierSizeGib(212809252)
             .setHybridReplicationParameters(HybridReplicationParameters.newBuilder().build())
+            .setThroughputMibps(1498696820)
+            .setHotTierSizeUsedGib(-151116719)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1219,6 +1263,8 @@ public class NetAppClientTest {
             .setZone("zone3744684")
             .setColdTierSizeGib(212809252)
             .setHybridReplicationParameters(HybridReplicationParameters.newBuilder().build())
+            .setThroughputMibps(1498696820)
+            .setHotTierSizeUsedGib(-151116719)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1390,6 +1436,8 @@ public class NetAppClientTest {
             .setZone("zone3744684")
             .setColdTierSizeGib(212809252)
             .setHybridReplicationParameters(HybridReplicationParameters.newBuilder().build())
+            .setThroughputMibps(1498696820)
+            .setHotTierSizeUsedGib(-151116719)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3038,6 +3086,7 @@ public class NetAppClientTest {
             .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
             .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
             .setClusterLocation("clusterLocation-732398641")
+            .setHybridReplicationUserCommands(UserCommands.newBuilder().build())
             .build();
     mockNetApp.addResponse(expectedResponse);
 
@@ -3091,6 +3140,7 @@ public class NetAppClientTest {
             .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
             .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
             .setClusterLocation("clusterLocation-732398641")
+            .setHybridReplicationUserCommands(UserCommands.newBuilder().build())
             .build();
     mockNetApp.addResponse(expectedResponse);
 
@@ -3142,6 +3192,7 @@ public class NetAppClientTest {
             .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
             .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
             .setClusterLocation("clusterLocation-732398641")
+            .setHybridReplicationUserCommands(UserCommands.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3208,6 +3259,7 @@ public class NetAppClientTest {
             .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
             .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
             .setClusterLocation("clusterLocation-732398641")
+            .setHybridReplicationUserCommands(UserCommands.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3360,6 +3412,7 @@ public class NetAppClientTest {
             .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
             .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
             .setClusterLocation("clusterLocation-732398641")
+            .setHybridReplicationUserCommands(UserCommands.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3422,6 +3475,7 @@ public class NetAppClientTest {
             .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
             .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
             .setClusterLocation("clusterLocation-732398641")
+            .setHybridReplicationUserCommands(UserCommands.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3494,6 +3548,7 @@ public class NetAppClientTest {
             .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
             .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
             .setClusterLocation("clusterLocation-732398641")
+            .setHybridReplicationUserCommands(UserCommands.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3563,6 +3618,7 @@ public class NetAppClientTest {
             .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
             .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
             .setClusterLocation("clusterLocation-732398641")
+            .setHybridReplicationUserCommands(UserCommands.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3633,6 +3689,7 @@ public class NetAppClientTest {
             .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
             .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
             .setClusterLocation("clusterLocation-732398641")
+            .setHybridReplicationUserCommands(UserCommands.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3714,6 +3771,7 @@ public class NetAppClientTest {
             .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
             .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
             .setClusterLocation("clusterLocation-732398641")
+            .setHybridReplicationUserCommands(UserCommands.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

@@ -72,6 +72,95 @@ public interface MigratingVmOrBuilder
    *
    *
    * <pre>
+   * Details of the target Persistent Disks in Compute Engine.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaults compute_engine_disks_target_defaults = 34;
+   * </code>
+   *
+   * @return Whether the computeEngineDisksTargetDefaults field is set.
+   */
+  boolean hasComputeEngineDisksTargetDefaults();
+
+  /**
+   *
+   *
+   * <pre>
+   * Details of the target Persistent Disks in Compute Engine.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaults compute_engine_disks_target_defaults = 34;
+   * </code>
+   *
+   * @return The computeEngineDisksTargetDefaults.
+   */
+  com.google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaults
+      getComputeEngineDisksTargetDefaults();
+
+  /**
+   *
+   *
+   * <pre>
+   * Details of the target Persistent Disks in Compute Engine.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaults compute_engine_disks_target_defaults = 34;
+   * </code>
+   */
+  com.google.cloud.vmmigration.v1.ComputeEngineDisksTargetDefaultsOrBuilder
+      getComputeEngineDisksTargetDefaultsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Details of the VM from a Vmware source.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.VmwareSourceVmDetails vmware_source_vm_details = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the vmwareSourceVmDetails field is set.
+   */
+  boolean hasVmwareSourceVmDetails();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Details of the VM from a Vmware source.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.VmwareSourceVmDetails vmware_source_vm_details = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The vmwareSourceVmDetails.
+   */
+  com.google.cloud.vmmigration.v1.VmwareSourceVmDetails getVmwareSourceVmDetails();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Details of the VM from a Vmware source.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.VmwareSourceVmDetails vmware_source_vm_details = 28 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.vmmigration.v1.VmwareSourceVmDetailsOrBuilder
+      getVmwareSourceVmDetailsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Details of the VM from an AWS source.
    * </pre>
    *
@@ -110,6 +199,49 @@ public interface MigratingVmOrBuilder
    * </code>
    */
   com.google.cloud.vmmigration.v1.AwsSourceVmDetailsOrBuilder getAwsSourceVmDetailsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Details of the VM from an Azure source.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.AzureSourceVmDetails azure_source_vm_details = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the azureSourceVmDetails field is set.
+   */
+  boolean hasAzureSourceVmDetails();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Details of the VM from an Azure source.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.AzureSourceVmDetails azure_source_vm_details = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The azureSourceVmDetails.
+   */
+  com.google.cloud.vmmigration.v1.AzureSourceVmDetails getAzureSourceVmDetails();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Details of the VM from an Azure source.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.AzureSourceVmDetails azure_source_vm_details = 30 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.vmmigration.v1.AzureSourceVmDetailsOrBuilder getAzureSourceVmDetailsOrBuilder();
 
   /**
    *
@@ -459,8 +591,7 @@ public interface MigratingVmOrBuilder
    *
    *
    * <pre>
-   * Output only. The percentage progress of the current running replication
-   * cycle.
+   * Output only. Details of the current running replication cycle.
    * </pre>
    *
    * <code>
@@ -475,8 +606,7 @@ public interface MigratingVmOrBuilder
    *
    *
    * <pre>
-   * Output only. The percentage progress of the current running replication
-   * cycle.
+   * Output only. Details of the current running replication cycle.
    * </pre>
    *
    * <code>
@@ -491,8 +621,7 @@ public interface MigratingVmOrBuilder
    *
    *
    * <pre>
-   * Output only. The percentage progress of the current running replication
-   * cycle.
+   * Output only. Details of the current running replication cycle.
    * </pre>
    *
    * <code>
@@ -500,6 +629,55 @@ public interface MigratingVmOrBuilder
    * </code>
    */
   com.google.cloud.vmmigration.v1.ReplicationCycleOrBuilder getCurrentSyncInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Details of the last replication cycle. This will be updated
+   * whenever a replication cycle is finished and is not to be confused with
+   * last_sync which is only updated on successful replication cycles.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.ReplicationCycle last_replication_cycle = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the lastReplicationCycle field is set.
+   */
+  boolean hasLastReplicationCycle();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Details of the last replication cycle. This will be updated
+   * whenever a replication cycle is finished and is not to be confused with
+   * last_sync which is only updated on successful replication cycles.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.ReplicationCycle last_replication_cycle = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The lastReplicationCycle.
+   */
+  com.google.cloud.vmmigration.v1.ReplicationCycle getLastReplicationCycle();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Details of the last replication cycle. This will be updated
+   * whenever a replication cycle is finished and is not to be confused with
+   * last_sync which is only updated on successful replication cycles.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.ReplicationCycle last_replication_cycle = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.vmmigration.v1.ReplicationCycleOrBuilder getLastReplicationCycleOrBuilder();
 
   /**
    *
@@ -809,6 +987,98 @@ public interface MigratingVmOrBuilder
    * </code>
    */
   com.google.cloud.vmmigration.v1.CutoverJobOrBuilder getRecentCutoverJobsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Provides details of future CutoverJobs of a MigratingVm.
+   * Set to empty when cutover forecast is unavailable.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.CutoverForecast cutover_forecast = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the cutoverForecast field is set.
+   */
+  boolean hasCutoverForecast();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Provides details of future CutoverJobs of a MigratingVm.
+   * Set to empty when cutover forecast is unavailable.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.CutoverForecast cutover_forecast = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The cutoverForecast.
+   */
+  com.google.cloud.vmmigration.v1.CutoverForecast getCutoverForecast();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Provides details of future CutoverJobs of a MigratingVm.
+   * Set to empty when cutover forecast is unavailable.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.CutoverForecast cutover_forecast = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.vmmigration.v1.CutoverForecastOrBuilder getCutoverForecastOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Provides details about the expiration state of the migrating
+   * VM.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.MigratingVm.Expiration expiration = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the expiration field is set.
+   */
+  boolean hasExpiration();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Provides details about the expiration state of the migrating
+   * VM.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.MigratingVm.Expiration expiration = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The expiration.
+   */
+  com.google.cloud.vmmigration.v1.MigratingVm.Expiration getExpiration();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Provides details about the expiration state of the migrating
+   * VM.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.MigratingVm.Expiration expiration = 37 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.vmmigration.v1.MigratingVm.ExpirationOrBuilder getExpirationOrBuilder();
 
   com.google.cloud.vmmigration.v1.MigratingVm.TargetVmDefaultsCase getTargetVmDefaultsCase();
 
