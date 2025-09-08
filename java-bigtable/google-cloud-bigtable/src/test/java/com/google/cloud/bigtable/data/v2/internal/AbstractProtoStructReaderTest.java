@@ -24,6 +24,7 @@ import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.bytesVa
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.columnMetadata;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.dateType;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.dateValue;
+import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.enumType;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.float32Type;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.float64Type;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.floatValue;
@@ -34,6 +35,7 @@ import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.mapType
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.mapValue;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.metadata;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.nullValue;
+import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.protoType;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.stringType;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.stringValue;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.structField;
@@ -52,10 +54,15 @@ import com.google.bigtable.v2.Type;
 import com.google.bigtable.v2.Type.KindCase;
 import com.google.bigtable.v2.Value;
 import com.google.cloud.Date;
+import com.google.cloud.bigtable.common.Type.SchemalessEnum;
+import com.google.cloud.bigtable.common.Type.SchemalessProto;
 import com.google.cloud.bigtable.data.v2.models.sql.ResultSetMetadata;
 import com.google.cloud.bigtable.data.v2.models.sql.SqlType;
 import com.google.cloud.bigtable.data.v2.models.sql.Struct;
 import com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory;
+import com.google.cloud.bigtable.data.v2.test.AlbumProto.Album;
+import com.google.cloud.bigtable.data.v2.test.SingerProto.Genre;
+import com.google.cloud.bigtable.data.v2.test.SingerProto.Singer;
 import com.google.protobuf.ByteString;
 import java.time.Instant;
 import java.util.ArrayList;
@@ -236,6 +243,135 @@ public class AbstractProtoStructReaderTest {
       assertThat(floatList.get(0)).isEqualTo(1.1f);
       assertThat(floatList.get(1)).isEqualTo(1.2f);
     }
+
+    // Test this independently since it verifies that parsing fails when data is deserialized into
+    // an incompatible Protobuf message, which is highly proto-specific.
+    @Test
+    public void mapField_accessingProto() {
+      Singer singer = Singer.newBuilder().setName("Foo").setGenre(Genre.POP).build();
+      TestProtoStruct structWithMap =
+          TestProtoStruct.create(
+              ProtoResultSetMetadata.fromProto(
+                  metadata(
+                      columnMetadata(
+                          "testField",
+                          mapType(
+                              bytesType(),
+                              protoType("com.google.cloud.bigtable.data.v2.test.Singer"))))),
+              Collections.singletonList(
+                  mapValue(mapElement(bytesValue("key"), bytesValue(singer.toByteArray())))));
+      HashMap<ByteString, Singer> expectedMap = new HashMap<>();
+      expectedMap.put(ByteString.copyFromUtf8("key"), singer);
+
+      assertThat(
+              structWithMap.getMap(
+                  "testField",
+                  SqlType.mapOf(SqlType.bytes(), SqlType.protoOf(Singer.getDefaultInstance()))))
+          .isEqualTo(expectedMap);
+      assertThat(
+              structWithMap.getMap(
+                  0, SqlType.mapOf(SqlType.bytes(), SqlType.protoOf(Singer.getDefaultInstance()))))
+          .isEqualTo(expectedMap);
+
+      assertThrows(
+          UnsupportedOperationException.class,
+          () ->
+              structWithMap.getMap(
+                  "testField",
+                  SqlType.mapOf(
+                      SqlType.bytes(),
+                      SchemalessProto.create("com.google.cloud.bigtable.data.v2.test.Singer"))));
+      assertThrows(
+          UnsupportedOperationException.class,
+          () ->
+              structWithMap.getMap(
+                  0,
+                  SqlType.mapOf(
+                      SqlType.bytes(),
+                      SchemalessProto.create("com.google.cloud.bigtable.data.v2.test.Singer"))));
+      assertThrows(
+          IllegalStateException.class,
+          () ->
+              structWithMap.getMap(
+                  "testField",
+                  SqlType.mapOf(SqlType.bytes(), SqlType.protoOf(Album.getDefaultInstance()))));
+      assertThrows(
+          IllegalStateException.class,
+          () ->
+              structWithMap.getMap(
+                  0, SqlType.mapOf(SqlType.bytes(), SqlType.protoOf(Album.getDefaultInstance()))));
+      assertThrows(
+          IllegalStateException.class,
+          () -> structWithMap.getMap("testField", SqlType.mapOf(SqlType.bytes(), SqlType.bytes())));
+      assertThrows(
+          IllegalStateException.class,
+          () -> structWithMap.getMap(0, SqlType.mapOf(SqlType.bytes(), SqlType.bytes())));
+    }
+
+    // Test this independently since it performs enum-specific verifications.
+    @Test
+    public void mapField_accessingEnum() {
+      TestProtoStruct structWithMap =
+          TestProtoStruct.create(
+              ProtoResultSetMetadata.fromProto(
+                  metadata(
+                      columnMetadata(
+                          "testField",
+                          mapType(
+                              bytesType(),
+                              enumType("com.google.cloud.bigtable.data.v2.test.Genre"))))),
+              Collections.singletonList(mapValue(mapElement(bytesValue("key"), int64Value(0)))));
+      HashMap<ByteString, Genre> expectedMap = new HashMap<>();
+      expectedMap.put(ByteString.copyFromUtf8("key"), Genre.POP);
+
+      assertThat(
+              structWithMap.getMap(
+                  "testField", SqlType.mapOf(SqlType.bytes(), SqlType.enumOf(Genre::forNumber))))
+          .isEqualTo(expectedMap);
+      assertThat(
+              structWithMap.getMap(
+                  0, SqlType.mapOf(SqlType.bytes(), SqlType.enumOf(Genre::forNumber))))
+          .isEqualTo(expectedMap);
+
+      assertThrows(
+          UnsupportedOperationException.class,
+          () ->
+              structWithMap.getMap(
+                  "testField",
+                  SqlType.mapOf(
+                      SqlType.bytes(),
+                      SchemalessEnum.create("com.google.cloud.bigtable.data.v2.test.Genre"))));
+      assertThrows(
+          UnsupportedOperationException.class,
+          () ->
+              structWithMap.getMap(
+                  0,
+                  SqlType.mapOf(
+                      SqlType.bytes(),
+                      SchemalessEnum.create("com.google.cloud.bigtable.data.v2.test.Genre"))));
+      assertThrows(
+          UnsupportedOperationException.class,
+          () ->
+              structWithMap.getMap(
+                  "testField",
+                  SqlType.mapOf(
+                      SqlType.bytes(),
+                      SchemalessEnum.create("com.google.cloud.bigtable.data.v2.test.Genre"))));
+      assertThrows(
+          UnsupportedOperationException.class,
+          () ->
+              structWithMap.getMap(
+                  0,
+                  SqlType.mapOf(
+                      SqlType.bytes(),
+                      SchemalessEnum.create("com.google.cloud.bigtable.data.v2.test.Genre"))));
+      assertThrows(
+          IllegalStateException.class,
+          () -> structWithMap.getMap("testField", SqlType.mapOf(SqlType.bytes(), SqlType.bytes())));
+      assertThrows(
+          IllegalStateException.class,
+          () -> structWithMap.getMap(0, SqlType.mapOf(SqlType.bytes(), SqlType.bytes())));
+    }
   }
 
   @RunWith(Parameterized.class)
@@ -344,12 +480,16 @@ public class AbstractProtoStructReaderTest {
                       structType(
                           structField("stringField", stringType()),
                           structField("intField", int64Type()),
-                          structField("listField", arrayType(stringType()))))),
+                          structField("listField", arrayType(stringType())),
+                          structField("protoField", protoType("MyMessage")),
+                          structField("enumField", enumType("MyEnum"))))),
               Collections.singletonList(
                   arrayValue(
                       stringValue("test"),
                       int64Value(100),
-                      arrayValue(stringValue("nested"), stringValue("nested2")))),
+                      arrayValue(stringValue("nested"), stringValue("nested2")),
+                      bytesValue("proto"),
+                      int64Value(1))),
               0,
               "testField",
               (BiFunction<TestProtoStruct, String, Struct>) TestProtoStruct::getStruct,
@@ -360,11 +500,15 @@ public class AbstractProtoStructReaderTest {
                           structType(
                               structField("stringField", stringType()),
                               structField("intField", int64Type()),
-                              structField("listField", arrayType(stringType())))),
+                              structField("listField", arrayType(stringType())),
+                              structField("protoField", protoType("MyMessage")),
+                              structField("enumField", enumType("MyEnum")))),
                   arrayValue(
                           stringValue("test"),
                           int64Value(100),
-                          arrayValue(stringValue("nested"), stringValue("nested2")))
+                          arrayValue(stringValue("nested"), stringValue("nested2")),
+                          bytesValue("proto"),
+                          int64Value(1))
                       .getArrayValue())
             },
             // Simple List
@@ -537,6 +681,170 @@ public class AbstractProtoStructReaderTest {
                                   .getArrayValue())));
                 }
               },
+            },
+            // Proto
+            {
+              Collections.singletonList(
+                  columnMetadata(
+                      "testField", protoType("com.google.cloud.bigtable.data.v2.test.Singer"))),
+              Collections.singletonList(
+                  bytesValue(
+                      Singer.newBuilder()
+                          .setName("Foo")
+                          .setGenre(Genre.POP)
+                          .build()
+                          .toByteArray())),
+              0,
+              "testField",
+              (BiFunction<TestProtoStruct, String, Singer>)
+                  (row, field) -> row.getProtoMessage(field, Singer.getDefaultInstance()),
+              (BiFunction<TestProtoStruct, Integer, Singer>)
+                  (row, index) -> row.getProtoMessage(index, Singer.getDefaultInstance()),
+              Singer.newBuilder().setName("Foo").setGenre(Genre.POP).build()
+            },
+            // Proto List
+            {
+              Collections.singletonList(
+                  columnMetadata(
+                      "testField",
+                      arrayType(protoType("com.google.cloud.bigtable.data.v2.test.Singer")))),
+              Collections.singletonList(
+                  arrayValue(
+                      bytesValue(
+                          Singer.newBuilder()
+                              .setName("Foo")
+                              .setGenre(Genre.POP)
+                              .build()
+                              .toByteArray()),
+                      bytesValue(
+                          Singer.newBuilder()
+                              .setName("Bar")
+                              .setGenre(Genre.JAZZ)
+                              .build()
+                              .toByteArray()))),
+              0,
+              "testField",
+              (BiFunction<TestProtoStruct, String, List<Singer>>)
+                  (row, field) ->
+                      row.getList(
+                          field, SqlType.arrayOf(SqlType.protoOf(Singer.getDefaultInstance()))),
+              (BiFunction<TestProtoStruct, Integer, List<Singer>>)
+                  (row, index) ->
+                      row.getList(
+                          index, SqlType.arrayOf(SqlType.protoOf(Singer.getDefaultInstance()))),
+              Arrays.asList(
+                  Singer.newBuilder().setName("Foo").setGenre(Genre.POP).build(),
+                  Singer.newBuilder().setName("Bar").setGenre(Genre.JAZZ).build())
+            },
+            // Proto Map
+            {
+              Collections.singletonList(
+                  columnMetadata(
+                      "testField",
+                      mapType(
+                          bytesType(),
+                          protoType("com.google.cloud.bigtable.data.v2.test.Singer")))),
+              Collections.singletonList(
+                  mapValue(
+                      mapElement(
+                          bytesValue("foo"),
+                          bytesValue(
+                              Singer.newBuilder()
+                                  .setName("Foo")
+                                  .setGenre(Genre.POP)
+                                  .build()
+                                  .toByteArray())),
+                      mapElement(
+                          bytesValue("key"),
+                          bytesValue(
+                              Singer.newBuilder()
+                                  .setName("Bar")
+                                  .setGenre(Genre.JAZZ)
+                                  .build()
+                                  .toByteArray())))),
+              0,
+              "testField",
+              (BiFunction<TestProtoStruct, String, Map<ByteString, Singer>>)
+                  (row, field) ->
+                      row.getMap(
+                          field,
+                          SqlType.mapOf(
+                              SqlType.bytes(), SqlType.protoOf(Singer.getDefaultInstance()))),
+              (BiFunction<TestProtoStruct, Integer, Map<ByteString, Singer>>)
+                  (row, index) ->
+                      row.getMap(
+                          index,
+                          SqlType.mapOf(
+                              SqlType.bytes(), SqlType.protoOf(Singer.getDefaultInstance()))),
+              new HashMap<ByteString, Singer>() {
+                {
+                  put(
+                      ByteString.copyFromUtf8("foo"),
+                      Singer.newBuilder().setName("Foo").setGenre(Genre.POP).build());
+                  put(
+                      ByteString.copyFromUtf8("key"),
+                      Singer.newBuilder().setName("Bar").setGenre(Genre.JAZZ).build());
+                }
+              }
+            },
+            // Enum
+            {
+              Collections.singletonList(
+                  columnMetadata(
+                      "testField", enumType("com.google.cloud.bigtable.data.v2.test.Genre"))),
+              Collections.singletonList(int64Value(1)),
+              0,
+              "testField",
+              (BiFunction<TestProtoStruct, String, Genre>)
+                  (row, field) -> row.getProtoEnum(field, Genre::forNumber),
+              (BiFunction<TestProtoStruct, Integer, Genre>)
+                  (row, index) -> row.getProtoEnum(index, Genre::forNumber),
+              Genre.JAZZ
+            },
+            // Enum List
+            {
+              Collections.singletonList(
+                  columnMetadata(
+                      "testField",
+                      arrayType(enumType("com.google.cloud.bigtable.data.v2.test.Genre")))),
+              Collections.singletonList(arrayValue(nullValue(), int64Value(2), int64Value(100))),
+              0,
+              "testField",
+              (BiFunction<TestProtoStruct, String, List<Genre>>)
+                  (row, field) ->
+                      row.getList(field, SqlType.arrayOf(SqlType.enumOf(Genre::forNumber))),
+              (BiFunction<TestProtoStruct, Integer, List<Genre>>)
+                  (row, index) ->
+                      row.getList(index, SqlType.arrayOf(SqlType.enumOf(Genre::forNumber))),
+              Arrays.asList(null, Genre.FOLK, null)
+            },
+            // Enum Map
+            {
+              Collections.singletonList(
+                  columnMetadata(
+                      "testField",
+                      mapType(
+                          bytesType(), enumType("com.google.cloud.bigtable.data.v2.test.Genre")))),
+              Collections.singletonList(
+                  mapValue(
+                      mapElement(bytesValue("foo"), int64Value(1)),
+                      mapElement(bytesValue("key"), int64Value(2)))),
+              0,
+              "testField",
+              (BiFunction<TestProtoStruct, String, Map<ByteString, Genre>>)
+                  (row, field) ->
+                      row.getMap(
+                          field, SqlType.mapOf(SqlType.bytes(), SqlType.enumOf(Genre::forNumber))),
+              (BiFunction<TestProtoStruct, Integer, Map<ByteString, Genre>>)
+                  (row, index) ->
+                      row.getMap(
+                          index, SqlType.mapOf(SqlType.bytes(), SqlType.enumOf(Genre::forNumber))),
+              new HashMap<ByteString, Genre>() {
+                {
+                  put(ByteString.copyFromUtf8("foo"), Genre.JAZZ);
+                  put(ByteString.copyFromUtf8("key"), Genre.FOLK);
+                }
+              }
             }
           });
     }

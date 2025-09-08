@@ -15,11 +15,15 @@
  */
 package com.google.cloud.bigtable.data.v2.models.sql;
 
+import com.google.api.core.BetaApi;
 import com.google.cloud.Date;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.ByteString;
+import com.google.protobuf.ProtocolMessageEnum;
 import java.time.Instant;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 
 /**
  * An interface for reading the columns of a {@code Struct} or {@code
@@ -196,4 +200,58 @@ public interface StructReader {
    * @param <V> Java type of the map values
    */
   <K, V> Map<K, V> getMap(String columnName, SqlType.Map<K, V> mapType);
+
+  /**
+   * Returns the value of a non-{@code NULL} column with a protobuf message type.
+   *
+   * @param columnIndex index of the column.
+   * @param message an instance of the message. This is used to determine the message type and
+   *     parser. {@code MyMessage.getDefaultInstance()} can be used.
+   * @param <MsgType> the message type.
+   * @see <a
+   *     href="https://developers.google.com/protocol-buffers/docs/reference/java-generated#message">getDefaultInstance()</a>
+   */
+  @BetaApi("This feature is currently experimental and can change in the future")
+  <MsgType extends AbstractMessage> MsgType getProtoMessage(int columnIndex, MsgType message);
+
+  /**
+   * Returns the value of a non-{@code NULL} column with a protobuf message type.
+   *
+   * @param columnName name of the column.
+   * @param message an instance of the message. This is used to determine the message type and
+   *     parser. {@code MyMessage.getDefaultInstance()} can be used.
+   * @param <MsgType> the message type.
+   * @see <a
+   *     href="https://developers.google.com/protocol-buffers/docs/reference/java-generated#message">getDefaultInstance()</a>
+   */
+  @BetaApi("This feature is currently experimental and can change in the future")
+  <MsgType extends AbstractMessage> MsgType getProtoMessage(String columnName, MsgType message);
+
+  /**
+   * Returns the value of a non-{@code NULL} column with a protobuf enum type.
+   *
+   * @param columnIndex index of the column.
+   * @param forNumber a function to convert an integer to the enum value. This is usually {@code
+   *     MyEnum::forNumber}.
+   * @param <EnumType> the enum type.
+   * @see <a
+   *     href="https://developers.google.com/protocol-buffers/docs/reference/java-generated#enum">forNumber()</a>
+   */
+  @BetaApi("This feature is currently experimental and can change in the future")
+  <EnumType extends ProtocolMessageEnum> EnumType getProtoEnum(
+      int columnIndex, Function<Integer, EnumType> forNumber);
+
+  /**
+   * Returns the value of a non-{@code NULL} column with a protobuf enum type.
+   *
+   * @param columnName name of the column.
+   * @param forNumber a function to convert an integer to the enum value. This is usually {@code
+   *     MyEnum::forNumber}.
+   * @param <EnumType> the enum type.
+   * @see <a
+   *     href="https://developers.google.com/protocol-buffers/docs/reference/java-generated#enum">forNumber()</a>
+   */
+  @BetaApi("This feature is currently experimental and can change in the future")
+  <EnumType extends ProtocolMessageEnum> EnumType getProtoEnum(
+      String columnName, Function<Integer, EnumType> forNumber);
 }

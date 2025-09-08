@@ -27,11 +27,14 @@ import com.google.cloud.bigtable.data.v2.models.sql.Struct;
 import com.google.cloud.bigtable.data.v2.models.sql.StructReader;
 import com.google.cloud.bigtable.data.v2.stub.sql.SqlServerStream;
 import com.google.common.base.Preconditions;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.ByteString;
+import com.google.protobuf.ProtocolMessageEnum;
 import java.time.Instant;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 
 /**
  * The primary implementation of a ResultSet.
@@ -214,5 +217,29 @@ public class ResultSetImpl implements ResultSet, StructReader {
   @Override
   public <K, V> Map<K, V> getMap(String columnName, SqlType.Map<K, V> mapType) {
     return getCurrentRow().getMap(columnName, mapType);
+  }
+
+  @Override
+  public <EnumType extends ProtocolMessageEnum> EnumType getProtoEnum(
+      int columnIndex, Function<Integer, EnumType> forNumber) {
+    return getCurrentRow().getProtoEnum(columnIndex, forNumber);
+  }
+
+  @Override
+  public <EnumType extends ProtocolMessageEnum> EnumType getProtoEnum(
+      String columnName, Function<Integer, EnumType> forNumber) {
+    return getCurrentRow().getProtoEnum(columnName, forNumber);
+  }
+
+  @Override
+  public <MsgType extends AbstractMessage> MsgType getProtoMessage(
+      int columnIndex, MsgType message) {
+    return getCurrentRow().getProtoMessage(columnIndex, message);
+  }
+
+  @Override
+  public <MsgType extends AbstractMessage> MsgType getProtoMessage(
+      String columnName, MsgType message) {
+    return getCurrentRow().getProtoMessage(columnName, message);
   }
 }

@@ -25,6 +25,7 @@ import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.callCon
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.columnMetadata;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.dateType;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.dateValue;
+import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.enumType;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.float32Type;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.float64Type;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.floatValue;
@@ -34,6 +35,7 @@ import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.mapElem
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.mapType;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.mapValue;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.metadata;
+import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.protoType;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.stringType;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.stringValue;
 import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.structField;
@@ -55,6 +57,8 @@ import com.google.cloud.bigtable.data.v2.stub.sql.ExecuteQueryCallContext;
 import com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory;
 import com.google.cloud.bigtable.data.v2.stub.sql.SqlServerStream;
 import com.google.cloud.bigtable.data.v2.stub.sql.SqlServerStreamImpl;
+import com.google.cloud.bigtable.data.v2.test.SingerProto.Genre;
+import com.google.cloud.bigtable.data.v2.test.SingerProto.Singer;
 import com.google.cloud.bigtable.gaxx.testing.FakeStreamingApi.ServerStreamingStashCallable;
 import com.google.protobuf.ByteString;
 import java.time.Instant;
@@ -85,6 +89,7 @@ public class ResultSetImplTest {
   @SuppressWarnings("DoubleBraceInitialization")
   @Test
   public void testSingleRow() throws ExecutionException, InterruptedException {
+    Singer singer = Singer.newBuilder().setName("Foo").setGenre(Genre.POP).build();
     com.google.bigtable.v2.ResultSetMetadata protoMetadata =
         metadata(
             columnMetadata("string", stringType()),
@@ -97,7 +102,9 @@ public class ResultSetImplTest {
             columnMetadata("date", dateType()),
             columnMetadata("struct", structType(structField("string", stringType()))),
             columnMetadata("list", arrayType(stringType())),
-            columnMetadata("map", mapType(stringType(), stringType())));
+            columnMetadata("map", mapType(stringType(), stringType())),
+            columnMetadata("proto", protoType("com.google.cloud.bigtable.data.v2.test.Singer")),
+            columnMetadata("enum", enumType("com.google.cloud.bigtable.data.v2.test.Genre")));
     ResultSetMetadata metadata = ProtoResultSetMetadata.fromProto(protoMetadata);
     ResultSet resultSet =
         resultSetWithFakeStream(
@@ -115,7 +122,9 @@ public class ResultSetImplTest {
                     dateValue(2024, 6, 5),
                     structValue(stringValue("foo")),
                     arrayValue(stringValue("foo"), stringValue("bar")),
-                    mapValue(mapElement(stringValue("key"), stringValue("val"))))));
+                    mapValue(mapElement(stringValue("key"), stringValue("val"))),
+                    bytesValue(singer.toByteArray()),
+                    int64Value(0))));
     int rows = 0;
     while (resultSet.next()) {
       rows++;
@@ -166,7 +175,12 @@ public class ResultSetImplTest {
                   put("key", "val");
                 }
               });
+      assertThat(resultSet.getProtoMessage(11, Singer.getDefaultInstance())).isEqualTo(singer);
+      assertThat(resultSet.getProtoMessage("proto", Singer.getDefaultInstance())).isEqualTo(singer);
+      assertThat(resultSet.getProtoEnum(12, Genre::forNumber)).isEqualTo(Genre.POP);
+      assertThat(resultSet.getProtoEnum("enum", Genre::forNumber)).isEqualTo(Genre.POP);
     }
+
     assertThat(rows).isEqualTo(1);
     assertThat(resultSet.next()).isFalse();
     assertThat(resultSet.getMetadata()).isEqualTo(metadata);

@@ -26,10 +26,16 @@ import static com.google.cloud.bigtable.data.v2.stub.sql.SqlProtoFactory.timesta
 import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertThrows;
 
+import com.google.cloud.bigtable.common.Type.SchemalessEnum;
+import com.google.cloud.bigtable.common.Type.SchemalessProto;
 import com.google.cloud.bigtable.common.Type.SchemalessStruct;
 import com.google.cloud.bigtable.common.Type.StructWithSchema;
 import com.google.cloud.bigtable.data.v2.models.sql.SqlType;
 import com.google.cloud.bigtable.data.v2.models.sql.Struct;
+import com.google.cloud.bigtable.data.v2.test.AlbumProto.Album;
+import com.google.cloud.bigtable.data.v2.test.AlbumProto.Format;
+import com.google.cloud.bigtable.data.v2.test.SingerProto.Genre;
+import com.google.cloud.bigtable.data.v2.test.SingerProto.Singer;
 import com.google.common.testing.EqualsTester;
 import com.google.protobuf.ByteString;
 import java.util.List;
@@ -51,6 +57,9 @@ public class TypeTest {
     assertThat(Type.Timestamp.create().toString()).isEqualTo("TIMESTAMP");
     assertThat(Type.Date.create().toString()).isEqualTo("DATE");
     assertThat(Type.SchemalessStruct.create().toString()).isEqualTo("STRUCT");
+    assertThat(Type.SchemalessProto.create("MyMessage").toString())
+        .isEqualTo("PROTO{messageName=MyMessage}");
+    assertThat(Type.SchemalessEnum.create("MyEnum").toString()).isEqualTo("ENUM{enumName=MyEnum}");
   }
 
   @Test
@@ -110,6 +119,41 @@ public class TypeTest {
         .isNotEqualTo(
             Type.Map.create(
                 Type.Bytes.create(), Type.Map.create(Type.String.create(), Type.String.create())));
+  }
+
+  @Test
+  public void proto_equals() {
+    assertThat(Type.SchemalessProto.create("MyMessage"))
+        .isEqualTo(Type.SchemalessProto.create("MyMessage"));
+    assertThat(Type.Proto.create(Singer.getDefaultInstance()))
+        .isEqualTo(Type.Proto.create(Singer.getDefaultInstance()));
+
+    assertThat(Type.SchemalessProto.create("MyMessage"))
+        .isNotEqualTo(Type.SchemalessProto.create("AnotherMessage"));
+    assertThat(Type.Proto.create(Singer.getDefaultInstance()))
+        .isNotEqualTo(Type.Proto.create(Album.getDefaultInstance()));
+
+    assertThat(Type.SchemalessProto.create("com.google.cloud.bigtable.data.v2.test.Singer"))
+        .isNotEqualTo(Type.Proto.create(Singer.getDefaultInstance()));
+    assertThat(Type.Proto.create(Singer.getDefaultInstance()))
+        .isNotEqualTo(Type.SchemalessProto.create("com.google.cloud.bigtable.data.v2.test.Singer"));
+  }
+
+  @Test
+  public void enum_equals() {
+    assertThat(Type.SchemalessEnum.create("MyEnum"))
+        .isEqualTo(Type.SchemalessEnum.create("MyEnum"));
+    assertThat(Type.Enum.create(Genre::forNumber)).isEqualTo(Type.Enum.create(Genre::forNumber));
+
+    assertThat(Type.SchemalessEnum.create("MyEnum"))
+        .isNotEqualTo(Type.SchemalessEnum.create("AnotherEnum"));
+    assertThat(Type.Enum.create(Genre::forNumber))
+        .isNotEqualTo(Type.Enum.create(Format::forNumber));
+
+    assertThat(Type.SchemalessEnum.create("com.google.cloud.bigtable.data.v2.test.Genre"))
+        .isNotEqualTo(Type.Enum.create(Genre::forNumber));
+    assertThat(Type.Enum.create(Genre::forNumber))
+        .isNotEqualTo(Type.SchemalessEnum.create("com.google.cloud.bigtable.data.v2.test.Genre"));
   }
 
   @Test
@@ -185,6 +229,18 @@ public class TypeTest {
   }
 
   @Test
+  public void schemalessProto_throwsExceptionOnGetParser() {
+    SchemalessProto proto = Type.SchemalessProto.create("MyMessage");
+    assertThrows(UnsupportedOperationException.class, proto::getParserForType);
+  }
+
+  @Test
+  public void schemalessEnum_throwsExceptionOnGetForNumber() {
+    SchemalessEnum myEnum = Type.SchemalessEnum.create("MyEnum");
+    assertThrows(UnsupportedOperationException.class, myEnum::getForNumber);
+  }
+
+  @Test
   public void array_toString() {
     Type array = Type.Array.create(Type.String.create());
 
@@ -204,5 +260,21 @@ public class TypeTest {
 
     assertThat(historicalMap.toString())
         .isEqualTo("MAP{keyType=BYTES, valueType=ARRAY{elementType=STRUCT}}");
+  }
+
+  @Test
+  public void proto_toString() {
+    SqlType.Proto<Singer> proto = Type.Proto.create(Singer.getDefaultInstance());
+
+    assertThat(proto.toString())
+        .isEqualTo("PROTO{message=com.google.cloud.bigtable.data.v2.test.Singer}");
+  }
+
+  @Test
+  public void enum_toString() {
+    SqlType.Enum<Genre> myEnum = Type.Enum.create(Genre::forNumber);
+
+    assertThat(myEnum.toString())
+        .isEqualTo("ENUM{enum=com.google.cloud.bigtable.data.v2.test.Genre}");
   }
 }

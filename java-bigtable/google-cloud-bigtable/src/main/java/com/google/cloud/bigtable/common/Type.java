@@ -21,10 +21,16 @@ import com.google.auto.value.AutoValue;
 import com.google.cloud.bigtable.data.v2.internal.ColumnToIndexMapper;
 import com.google.cloud.bigtable.data.v2.models.sql.SqlType;
 import com.google.common.base.Objects;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.ByteString;
+import com.google.protobuf.Parser;
+import com.google.protobuf.ProtocolMessageEnum;
 import java.time.Instant;
 import java.util.List;
+import java.util.function.Function;
+import javax.annotation.Nonnull;
 
 /**
  * Shared type implementations. Right now this is only used by SqlType but this will become a shared
@@ -385,10 +391,188 @@ public interface Type {
     }
   }
 
+  @AutoValue
+  abstract class Proto<T extends AbstractMessage> implements Type, SqlType.Proto<T> {
+
+    public static <T extends AbstractMessage> SqlType.Proto<T> create(T message) {
+      Preconditions.checkNotNull(
+          message,
+          "Proto message may not be null. Use 'MyProtoMessage::getDefaultInstance()' as a parameter value.");
+      return new AutoValue_Type_Proto<>(message);
+    }
+
+    @Nonnull
+    abstract T getMessage();
+
+    @Override
+    public Code getCode() {
+      return Code.PROTO;
+    }
+
+    @Nonnull
+    @Override
+    public Parser<T> getParserForType() {
+      return (Parser<T>) getMessage().getParserForType();
+    }
+
+    @Override
+    public java.lang.String getMessageName() {
+      return getMessage().getDescriptorForType().getFullName();
+    }
+
+    @Override
+    public java.lang.String toString() {
+      return getCode().name() + "{message=" + getMessageName() + "}";
+    }
+  }
+
+  @AutoValue
+  abstract class Enum<T extends ProtocolMessageEnum> implements Type, SqlType.Enum<T> {
+
+    public static <T extends ProtocolMessageEnum> SqlType.Enum<T> create(
+        Function<Integer, T> forNumber) {
+      Preconditions.checkNotNull(
+          forNumber, "Method may not be null. Use 'MyProtoEnum::forNumber' as a parameter value.");
+      return new AutoValue_Type_Enum<>(forNumber);
+    }
+
+    @Nonnull
+    @Override
+    public abstract Function<Integer, T> getForNumber();
+
+    @Override
+    public java.lang.String getEnumName() {
+      T thisEnum = getForNumber().apply(0);
+      if (thisEnum == null) {
+        return "";
+      }
+      return thisEnum.getDescriptorForType().getFullName();
+    }
+
+    @Override
+    public Code getCode() {
+      return Code.ENUM;
+    }
+
+    @Override
+    public java.lang.String toString() {
+      return getCode().name() + "{enum=" + getEnumName() + "}";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) {
+        return true;
+      }
+      if (!(o instanceof Type.Enum)) {
+        return false;
+      }
+      Type.Enum<?> that = (Type.Enum<?>) o;
+      // We don't want to compare functions directly, so try to get the enum descriptor and compare
+      // those.
+      T thisEnum = getForNumber().apply(0);
+      Object thatEnum = that.getForNumber().apply(0);
+
+      if (thisEnum == null || thatEnum == null) {
+        // Can't determine equality, fallback to object equality on the function.
+        return getForNumber().equals(that.getForNumber());
+      }
+      return thisEnum
+          .getDescriptorForType()
+          .getFullName()
+          .equals(((ProtocolMessageEnum) thatEnum).getDescriptorForType().getFullName());
+    }
+
+    @Override
+    public int hashCode() {
+      T thisEnum = getForNumber().apply(0);
+      if (thisEnum == null) {
+        return getForNumber().hashCode();
+      }
+      return java.util.Objects.hash(getCode(), thisEnum.getDescriptorForType().getFullName());
+    }
+  }
+
+  /**
+   * This is a special version of proto that is intended to only be used internally, to facilitate
+   * proto schema parsing, which does not have the full information required to parse the protobuf
+   * messages.
+   *
+   * <p>Any attempts to call getParserForType() will throw an exception.
+   */
+  @AutoValue
+  abstract class SchemalessProto implements SqlType.Proto {
+
+    public static SchemalessProto fromProto(com.google.bigtable.v2.Type.Proto proto) {
+      return create(proto.getMessageName());
+    }
+
+    public static SchemalessProto create(java.lang.String messageName) {
+      return new AutoValue_Type_SchemalessProto(messageName);
+    }
+
+    @Override
+    public abstract java.lang.String getMessageName();
+
+    @Override
+    public Parser<AbstractMessage> getParserForType() {
+      throw new UnsupportedOperationException(
+          "Cannot get parser for unresolved proto type. Please use the getProtoMessage overload that takes a message instance.");
+    }
+
+    @Override
+    public Code getCode() {
+      return Code.PROTO;
+    }
+
+    @Override
+    public java.lang.String toString() {
+      return getCode().name() + "{messageName=" + getMessageName() + "}";
+    }
+  }
+
+  /**
+   * This is a special version of enum that is intended to only be used internally, to facilitate
+   * enum schema parsing, which does not have the full information required to parse the protobuf
+   * enum messages.
+   *
+   * <p>Any attempts to call getForNumber() will throw an exception.
+   */
+  @AutoValue
+  abstract class SchemalessEnum implements SqlType.Enum {
+
+    public static SchemalessEnum fromProto(com.google.bigtable.v2.Type.Enum proto) {
+      return create(proto.getEnumName());
+    }
+
+    public static SchemalessEnum create(java.lang.String enumName) {
+      return new AutoValue_Type_SchemalessEnum(enumName);
+    }
+
+    public abstract java.lang.String getEnumName();
+
+    @Override
+    public Function<Integer, ProtocolMessageEnum> getForNumber() {
+      throw new UnsupportedOperationException(
+          "Cannot get forNumber for unresolved enum type. Please use the getProtoEnum overload that takes a forNumber function.");
+    }
+
+    @Override
+    public Code getCode() {
+      return Code.ENUM;
+    }
+
+    @Override
+    public java.lang.String toString() {
+      return getCode().name() + "{enumName=" + getEnumName() + "}";
+    }
+  }
+
   // Implementation detail to make singleton instances private without referencing the concrete
   // autovalue generated class from the abstract base classes.
   @InternalApi
   class DefaultInstances {
+
     private static final Bytes BYTES = new AutoValue_Type_Bytes();
     private static final String STRING = new AutoValue_Type_String();
     private static final Int64 INT64 = new AutoValue_Type_Int64();

@@ -23,13 +23,17 @@ import com.google.cloud.bigtable.data.v2.models.sql.SqlType;
 import com.google.cloud.bigtable.data.v2.models.sql.Struct;
 import com.google.cloud.bigtable.data.v2.models.sql.StructReader;
 import com.google.common.base.Preconditions;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.ByteString;
+import com.google.protobuf.InvalidProtocolBufferException;
+import com.google.protobuf.ProtocolMessageEnum;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 
 @InternalApi
 public abstract class AbstractProtoStructReader implements StructReader {
@@ -220,6 +224,12 @@ public abstract class AbstractProtoStructReader implements StructReader {
     SqlType<?> actualType = getColumnType(columnIndex);
     checkNonNullOfType(columnIndex, arrayType, actualType, columnIndex);
     Value value = values().get(columnIndex);
+    // If the element type is proto/enum, we should use the user passed type, which contains the
+    // schema. Otherwise, we should use the type from metadata.
+    SqlType<?> elementType = arrayType.getElementType();
+    if (elementType.getCode() == SqlType.Code.PROTO || elementType.getCode() == SqlType.Code.ENUM) {
+      return (List<ElemType>) decodeValue(value, arrayType);
+    }
     return (List<ElemType>) decodeValue(value, actualType);
   }
 
@@ -231,6 +241,12 @@ public abstract class AbstractProtoStructReader implements StructReader {
     SqlType<?> actualType = getColumnType(columnIndex);
     checkNonNullOfType(columnIndex, arrayType, actualType, columnName);
     Value value = values().get(columnIndex);
+    // If the element type is proto/enum, we should use the user passed type, which contains the
+    // schema. Otherwise, we should use the type from metadata.
+    SqlType<?> elementType = arrayType.getElementType();
+    if (elementType.getCode() == SqlType.Code.PROTO || elementType.getCode() == SqlType.Code.ENUM) {
+      return (List<ElemType>) decodeValue(value, arrayType);
+    }
     return (List<ElemType>) decodeValue(value, actualType);
   }
 
@@ -241,6 +257,12 @@ public abstract class AbstractProtoStructReader implements StructReader {
     SqlType<?> actualType = getColumnType(columnIndex);
     checkNonNullOfType(columnIndex, mapType, actualType, columnIndex);
     Value value = values().get(columnIndex);
+    // If the value type is proto/enum, we should use the user passed type, which contains the
+    // schema. Otherwise, we should use the type from metadata.
+    SqlType<?> valueType = mapType.getValueType();
+    if (valueType.getCode() == SqlType.Code.PROTO || valueType.getCode() == SqlType.Code.ENUM) {
+      return (Map<K, V>) decodeValue(value, mapType);
+    }
     return (Map<K, V>) decodeValue(value, actualType);
   }
 
@@ -252,7 +274,59 @@ public abstract class AbstractProtoStructReader implements StructReader {
     SqlType<?> actualType = getColumnType(columnIndex);
     checkNonNullOfType(columnIndex, mapType, actualType, columnName);
     Value value = values().get(columnIndex);
+    // If the value type is proto/enum, we should use the user passed type, which contains the
+    // schema. Otherwise, we should use the type from metadata.
+    SqlType<?> valueType = mapType.getValueType();
+    if (valueType.getCode() == SqlType.Code.PROTO || valueType.getCode() == SqlType.Code.ENUM) {
+      return (Map<K, V>) decodeValue(value, mapType);
+    }
     return (Map<K, V>) decodeValue(value, actualType);
+  }
+
+  @Override
+  public <MsgType extends AbstractMessage> MsgType getProtoMessage(
+      int columnIndex, MsgType message) {
+    // Note it is import that we use the user passed message object to decode, because the type in
+    // the corresponding column metadata only have a message name and doesn't have schemas
+    SqlType.Proto<MsgType> actualType = SqlType.protoOf(message);
+    checkNonNullOfType(columnIndex, getColumnType(columnIndex), actualType, columnIndex);
+    Value value = values().get(columnIndex);
+    return (MsgType) decodeValue(value, actualType);
+  }
+
+  @Override
+  public <MsgType extends AbstractMessage> MsgType getProtoMessage(
+      String columnName, MsgType message) {
+    int columnIndex = getColumnIndex(columnName);
+    // Note it is import that we use the user passed message object to decode, because the type in
+    // the corresponding column metadata only have a message name and doesn't have schemas
+    SqlType.Proto<MsgType> actualType = SqlType.protoOf(message);
+    checkNonNullOfType(columnIndex, getColumnType(columnIndex), actualType, columnName);
+    Value value = values().get(columnIndex);
+    return (MsgType) decodeValue(value, actualType);
+  }
+
+  @Override
+  public <EnumType extends ProtocolMessageEnum> EnumType getProtoEnum(
+      int columnIndex, Function<Integer, EnumType> forNumber) {
+    // Note it is import that we use the user passed function to decode, because the type in
+    // the corresponding column metadata only have an enum message name and doesn't have schemas
+    SqlType.Enum<EnumType> actualType = SqlType.enumOf(forNumber);
+    checkNonNullOfType(columnIndex, getColumnType(columnIndex), actualType, columnIndex);
+    Value value = values().get(columnIndex);
+    return (EnumType) decodeValue(value, actualType);
+  }
+
+  @Override
+  public <EnumType extends ProtocolMessageEnum> EnumType getProtoEnum(
+      String columnName, Function<Integer, EnumType> forNumber) {
+    int columnIndex = getColumnIndex(columnName);
+    // Note it is import that we use the user passed function to decode, because the type in
+    // the corresponding column metadata only have an enum message name and doesn't have schemas
+    SqlType.Enum<EnumType> actualType = SqlType.enumOf(forNumber);
+    checkNonNullOfType(columnIndex, getColumnType(columnIndex), actualType, columnName);
+    Value value = values().get(columnIndex);
+    return (EnumType) decodeValue(value, actualType);
   }
 
   Object decodeValue(Value value, SqlType<?> type) {
@@ -281,6 +355,15 @@ public abstract class AbstractProtoStructReader implements StructReader {
         SqlType.Struct schema = (SqlType.Struct) type;
         // A struct value is represented as an array
         return ProtoStruct.create(schema, value.getArrayValue());
+      case PROTO:
+        try {
+          SqlType.Proto protoType = (SqlType.Proto) type;
+          return protoType.getParserForType().parseFrom(value.getBytesValue());
+        } catch (InvalidProtocolBufferException e) {
+          throw new IllegalStateException("Unable to parse value to proto " + type, e);
+        }
+      case ENUM:
+        return ((SqlType.Enum<?>) type).getForNumber().apply((int) value.getIntValue());
       case ARRAY:
         ArrayList<Object> listBuilder = new ArrayList<>();
         SqlType.Array<?> arrayType = (SqlType.Array<?>) type;

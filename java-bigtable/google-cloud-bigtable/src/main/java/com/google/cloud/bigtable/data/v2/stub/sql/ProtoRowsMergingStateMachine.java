@@ -253,6 +253,10 @@ final class ProtoRowsMergingStateMachine {
               mapType.getValueType(), mapElement.getArrayValue().getValuesList().get(1));
         }
         break;
+      case PROTO:
+        checkExpectedKind(value, Value.KindCase.BYTES_VALUE, type);
+      case ENUM:
+        checkExpectedKind(value, Value.KindCase.INT_VALUE, type);
       default:
         // This should be caught already at ResultSetMetadata creation
         throw new IllegalStateException("Unrecognized type: " + type);

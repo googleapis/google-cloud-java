@@ -48,6 +48,7 @@ import com.google.bigtable.v2.PartialResultSet;
 import com.google.bigtable.v2.ProtoRows;
 import com.google.bigtable.v2.ProtoRowsBatch;
 import com.google.bigtable.v2.Value;
+import com.google.cloud.bigtable.common.Type;
 import com.google.cloud.bigtable.data.v2.internal.ProtoResultSetMetadata;
 import com.google.cloud.bigtable.data.v2.internal.ProtoSqlRow;
 import com.google.cloud.bigtable.data.v2.models.sql.ResultSetMetadata;
@@ -653,6 +654,20 @@ public final class ProtoRowsMergingStateMachineTest {
                           mapElement(stringValue("key"), bytesValue("val")),
                           structValue(
                               stringValue("key2"), bytesValue("val2"), bytesValue("val3")))));
+          break;
+        case PROTO:
+          assertThrows(
+              IllegalStateException.class,
+              () ->
+                  ProtoRowsMergingStateMachine.validateValueAndType(
+                      Type.SchemalessProto.create("test"), stringValue("test")));
+          break;
+        case ENUM:
+          assertThrows(
+              IllegalStateException.class,
+              () ->
+                  ProtoRowsMergingStateMachine.validateValueAndType(
+                      Type.SchemalessEnum.create("test"), bytesValue("val")));
           break;
         default:
           assertWithMessage(
