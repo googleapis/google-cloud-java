@@ -1761,7 +1761,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Details regarding the upgrade of instaces associated with a cluster.
+   * Details regarding the upgrade of instances associated with a cluster.
    * </pre>
    *
    * Protobuf type {@code google.cloud.alloydb.v1.UpgradeClusterResponse.InstanceUpgradeDetails}
@@ -2135,7 +2135,7 @@ public final class UpgradeClusterResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Details regarding the upgrade of instaces associated with a cluster.
+     * Details regarding the upgrade of instances associated with a cluster.
      * </pre>
      *
      * Protobuf type {@code google.cloud.alloydb.v1.UpgradeClusterResponse.InstanceUpgradeDetails}

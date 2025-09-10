@@ -52,6 +52,7 @@ public class GrpcBusinessInfoServiceStub extends BusinessInfoServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetBusinessInfoRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BusinessInfo.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateBusinessInfoRequest, BusinessInfo>
@@ -63,6 +64,7 @@ public class GrpcBusinessInfoServiceStub extends BusinessInfoServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateBusinessInfoRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BusinessInfo.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetBusinessInfoRequest, BusinessInfo> getBusinessInfoCallable;

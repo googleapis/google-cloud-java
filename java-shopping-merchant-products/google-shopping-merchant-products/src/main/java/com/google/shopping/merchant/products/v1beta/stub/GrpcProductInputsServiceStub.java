@@ -54,6 +54,7 @@ public class GrpcProductInputsServiceStub extends ProductInputsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(InsertProductInputRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ProductInput.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateProductInputRequest, ProductInput>
@@ -65,6 +66,7 @@ public class GrpcProductInputsServiceStub extends ProductInputsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateProductInputRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ProductInput.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteProductInputRequest, Empty>
@@ -76,6 +78,7 @@ public class GrpcProductInputsServiceStub extends ProductInputsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteProductInputRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<InsertProductInputRequest, ProductInput> insertProductInputCallable;

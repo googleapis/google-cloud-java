@@ -67,6 +67,48 @@ public interface SynthesisInputOrBuilder
    *
    *
    * <pre>
+   * Markup for HD voices specifically. This field may not be used with any
+   * other voices.
+   * </pre>
+   *
+   * <code>string markup = 5;</code>
+   *
+   * @return Whether the markup field is set.
+   */
+  boolean hasMarkup();
+
+  /**
+   *
+   *
+   * <pre>
+   * Markup for HD voices specifically. This field may not be used with any
+   * other voices.
+   * </pre>
+   *
+   * <code>string markup = 5;</code>
+   *
+   * @return The markup.
+   */
+  java.lang.String getMarkup();
+
+  /**
+   *
+   *
+   * <pre>
+   * Markup for HD voices specifically. This field may not be used with any
+   * other voices.
+   * </pre>
+   *
+   * <code>string markup = 5;</code>
+   *
+   * @return The bytes for markup.
+   */
+  com.google.protobuf.ByteString getMarkupBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The SSML document to be synthesized. The SSML document must be valid
    * and well-formed. Otherwise the RPC will fail and return
    * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT]. For
@@ -159,18 +201,16 @@ public interface SynthesisInputOrBuilder
    *
    *
    * <pre>
-   * Optional. The pronunciation customizations to be applied to the input. If
-   * this is set, the input will be synthesized using the given pronunciation
+   * Optional. The pronunciation customizations are applied to the input. If
+   * this is set, the input is synthesized using the given pronunciation
    * customizations.
    *
-   * The initial support will be for EFIGS (English, French,
-   * Italian, German, Spanish) languages, as provided in
-   * VoiceSelectionParams. Journey and Instant Clone voices are
-   * not supported yet.
+   * The initial support is for en-us, with plans to expand to other locales in
+   * the future. Instant Clone voices aren't supported.
    *
    * In order to customize the pronunciation of a phrase, there must be an exact
    * match of the phrase in the input types. If using SSML, the phrase must not
-   * be inside a phoneme tag (entirely or partially).
+   * be inside a phoneme tag.
    * </pre>
    *
    * <code>
@@ -185,18 +225,16 @@ public interface SynthesisInputOrBuilder
    *
    *
    * <pre>
-   * Optional. The pronunciation customizations to be applied to the input. If
-   * this is set, the input will be synthesized using the given pronunciation
+   * Optional. The pronunciation customizations are applied to the input. If
+   * this is set, the input is synthesized using the given pronunciation
    * customizations.
    *
-   * The initial support will be for EFIGS (English, French,
-   * Italian, German, Spanish) languages, as provided in
-   * VoiceSelectionParams. Journey and Instant Clone voices are
-   * not supported yet.
+   * The initial support is for en-us, with plans to expand to other locales in
+   * the future. Instant Clone voices aren't supported.
    *
    * In order to customize the pronunciation of a phrase, there must be an exact
    * match of the phrase in the input types. If using SSML, the phrase must not
-   * be inside a phoneme tag (entirely or partially).
+   * be inside a phoneme tag.
    * </pre>
    *
    * <code>
@@ -211,18 +249,16 @@ public interface SynthesisInputOrBuilder
    *
    *
    * <pre>
-   * Optional. The pronunciation customizations to be applied to the input. If
-   * this is set, the input will be synthesized using the given pronunciation
+   * Optional. The pronunciation customizations are applied to the input. If
+   * this is set, the input is synthesized using the given pronunciation
    * customizations.
    *
-   * The initial support will be for EFIGS (English, French,
-   * Italian, German, Spanish) languages, as provided in
-   * VoiceSelectionParams. Journey and Instant Clone voices are
-   * not supported yet.
+   * The initial support is for en-us, with plans to expand to other locales in
+   * the future. Instant Clone voices aren't supported.
    *
    * In order to customize the pronunciation of a phrase, there must be an exact
    * match of the phrase in the input types. If using SSML, the phrase must not
-   * be inside a phoneme tag (entirely or partially).
+   * be inside a phoneme tag.
    * </pre>
    *
    * <code>

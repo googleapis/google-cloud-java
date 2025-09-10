@@ -49,6 +49,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
     ports_ = java.util.Collections.emptyList();
     predictRoute_ = "";
     healthRoute_ = "";
+    invokeRoutePrefix_ = "";
     grpcPorts_ = java.util.Collections.emptyList();
   }
 
@@ -1234,6 +1235,73 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
     }
   }
 
+  public static final int INVOKE_ROUTE_PREFIX_FIELD_NUMBER = 15;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object invokeRoutePrefix_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Invoke route prefix for the custom container. "/&#42;" is the only
+   * supported value right now. By setting this field, any non-root route on
+   * this model will be accessible with [PredictionService.Invoke] eg:
+   * "/invoke/foo/bar".
+   *
+   * Only one of `predict_route` or `invoke_route_prefix` can be set, and we
+   * default to using `predict_route` if this field is not set. If this field
+   * is set, the Model can only be deployed to dedicated endpoint.
+   * </pre>
+   *
+   * <code>string invoke_route_prefix = 15 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   *
+   * @return The invokeRoutePrefix.
+   */
+  @java.lang.Override
+  public java.lang.String getInvokeRoutePrefix() {
+    java.lang.Object ref = invokeRoutePrefix_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      invokeRoutePrefix_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Invoke route prefix for the custom container. "/&#42;" is the only
+   * supported value right now. By setting this field, any non-root route on
+   * this model will be accessible with [PredictionService.Invoke] eg:
+   * "/invoke/foo/bar".
+   *
+   * Only one of `predict_route` or `invoke_route_prefix` can be set, and we
+   * default to using `predict_route` if this field is not set. If this field
+   * is set, the Model can only be deployed to dedicated endpoint.
+   * </pre>
+   *
+   * <code>string invoke_route_prefix = 15 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   *
+   * @return The bytes for invokeRoutePrefix.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getInvokeRoutePrefixBytes() {
+    java.lang.Object ref = invokeRoutePrefix_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      invokeRoutePrefix_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int GRPC_PORTS_FIELD_NUMBER = 9;
 
   @SuppressWarnings("serial")
@@ -1672,6 +1740,9 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(14, getLivenessProbe());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(invokeRoutePrefix_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 15, invokeRoutePrefix_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1730,6 +1801,9 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getLivenessProbe());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(invokeRoutePrefix_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, invokeRoutePrefix_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1753,6 +1827,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
     if (!getPortsList().equals(other.getPortsList())) return false;
     if (!getPredictRoute().equals(other.getPredictRoute())) return false;
     if (!getHealthRoute().equals(other.getHealthRoute())) return false;
+    if (!getInvokeRoutePrefix().equals(other.getInvokeRoutePrefix())) return false;
     if (!getGrpcPortsList().equals(other.getGrpcPortsList())) return false;
     if (hasDeploymentTimeout() != other.hasDeploymentTimeout()) return false;
     if (hasDeploymentTimeout()) {
@@ -1804,6 +1879,8 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
     hash = (53 * hash) + getPredictRoute().hashCode();
     hash = (37 * hash) + HEALTH_ROUTE_FIELD_NUMBER;
     hash = (53 * hash) + getHealthRoute().hashCode();
+    hash = (37 * hash) + INVOKE_ROUTE_PREFIX_FIELD_NUMBER;
+    hash = (53 * hash) + getInvokeRoutePrefix().hashCode();
     if (getGrpcPortsCount() > 0) {
       hash = (37 * hash) + GRPC_PORTS_FIELD_NUMBER;
       hash = (53 * hash) + getGrpcPortsList().hashCode();
@@ -2003,13 +2080,14 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
       bitField0_ = (bitField0_ & ~0x00000010);
       predictRoute_ = "";
       healthRoute_ = "";
+      invokeRoutePrefix_ = "";
       if (grpcPortsBuilder_ == null) {
         grpcPorts_ = java.util.Collections.emptyList();
       } else {
         grpcPorts_ = null;
         grpcPortsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       deploymentTimeout_ = null;
       if (deploymentTimeoutBuilder_ != null) {
         deploymentTimeoutBuilder_.dispose();
@@ -2087,9 +2165,9 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
         result.ports_ = portsBuilder_.build();
       }
       if (grpcPortsBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)) {
+        if (((bitField0_ & 0x00000100) != 0)) {
           grpcPorts_ = java.util.Collections.unmodifiableList(grpcPorts_);
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000100);
         }
         result.grpcPorts_ = grpcPorts_;
       } else {
@@ -2116,28 +2194,31 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.healthRoute_ = healthRoute_;
       }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.invokeRoutePrefix_ = invokeRoutePrefix_;
+      }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.deploymentTimeout_ =
             deploymentTimeoutBuilder_ == null
                 ? deploymentTimeout_
                 : deploymentTimeoutBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.sharedMemorySizeMb_ = sharedMemorySizeMb_;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000800) != 0)) {
         result.startupProbe_ =
             startupProbeBuilder_ == null ? startupProbe_ : startupProbeBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00001000) != 0)) {
         result.healthProbe_ =
             healthProbeBuilder_ == null ? healthProbe_ : healthProbeBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00002000) != 0)) {
         result.livenessProbe_ =
             livenessProbeBuilder_ == null ? livenessProbe_ : livenessProbeBuilder_.build();
         to_bitField0_ |= 0x00000008;
@@ -2280,11 +2361,16 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
         bitField0_ |= 0x00000040;
         onChanged();
       }
+      if (!other.getInvokeRoutePrefix().isEmpty()) {
+        invokeRoutePrefix_ = other.invokeRoutePrefix_;
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
       if (grpcPortsBuilder_ == null) {
         if (!other.grpcPorts_.isEmpty()) {
           if (grpcPorts_.isEmpty()) {
             grpcPorts_ = other.grpcPorts_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000100);
           } else {
             ensureGrpcPortsIsMutable();
             grpcPorts_.addAll(other.grpcPorts_);
@@ -2297,7 +2383,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
             grpcPortsBuilder_.dispose();
             grpcPortsBuilder_ = null;
             grpcPorts_ = other.grpcPorts_;
-            bitField0_ = (bitField0_ & ~0x00000080);
+            bitField0_ = (bitField0_ & ~0x00000100);
             grpcPortsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getGrpcPortsFieldBuilder()
@@ -2423,33 +2509,39 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
               {
                 input.readMessage(
                     getDeploymentTimeoutFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 82
             case 88:
               {
                 sharedMemorySizeMb_ = input.readInt64();
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 88
             case 98:
               {
                 input.readMessage(getStartupProbeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000800;
                 break;
               } // case 98
             case 106:
               {
                 input.readMessage(getHealthProbeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00001000;
                 break;
               } // case 106
             case 114:
               {
                 input.readMessage(getLivenessProbeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00002000;
                 break;
               } // case 114
+            case 122:
+              {
+                invokeRoutePrefix_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 122
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5898,13 +5990,159 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
       return this;
     }
 
+    private java.lang.Object invokeRoutePrefix_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Invoke route prefix for the custom container. "/&#42;" is the only
+     * supported value right now. By setting this field, any non-root route on
+     * this model will be accessible with [PredictionService.Invoke] eg:
+     * "/invoke/foo/bar".
+     *
+     * Only one of `predict_route` or `invoke_route_prefix` can be set, and we
+     * default to using `predict_route` if this field is not set. If this field
+     * is set, the Model can only be deployed to dedicated endpoint.
+     * </pre>
+     *
+     * <code>string invoke_route_prefix = 15 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The invokeRoutePrefix.
+     */
+    public java.lang.String getInvokeRoutePrefix() {
+      java.lang.Object ref = invokeRoutePrefix_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        invokeRoutePrefix_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Invoke route prefix for the custom container. "/&#42;" is the only
+     * supported value right now. By setting this field, any non-root route on
+     * this model will be accessible with [PredictionService.Invoke] eg:
+     * "/invoke/foo/bar".
+     *
+     * Only one of `predict_route` or `invoke_route_prefix` can be set, and we
+     * default to using `predict_route` if this field is not set. If this field
+     * is set, the Model can only be deployed to dedicated endpoint.
+     * </pre>
+     *
+     * <code>string invoke_route_prefix = 15 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The bytes for invokeRoutePrefix.
+     */
+    public com.google.protobuf.ByteString getInvokeRoutePrefixBytes() {
+      java.lang.Object ref = invokeRoutePrefix_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        invokeRoutePrefix_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Invoke route prefix for the custom container. "/&#42;" is the only
+     * supported value right now. By setting this field, any non-root route on
+     * this model will be accessible with [PredictionService.Invoke] eg:
+     * "/invoke/foo/bar".
+     *
+     * Only one of `predict_route` or `invoke_route_prefix` can be set, and we
+     * default to using `predict_route` if this field is not set. If this field
+     * is set, the Model can only be deployed to dedicated endpoint.
+     * </pre>
+     *
+     * <code>string invoke_route_prefix = 15 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @param value The invokeRoutePrefix to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInvokeRoutePrefix(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      invokeRoutePrefix_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Invoke route prefix for the custom container. "/&#42;" is the only
+     * supported value right now. By setting this field, any non-root route on
+     * this model will be accessible with [PredictionService.Invoke] eg:
+     * "/invoke/foo/bar".
+     *
+     * Only one of `predict_route` or `invoke_route_prefix` can be set, and we
+     * default to using `predict_route` if this field is not set. If this field
+     * is set, the Model can only be deployed to dedicated endpoint.
+     * </pre>
+     *
+     * <code>string invoke_route_prefix = 15 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearInvokeRoutePrefix() {
+      invokeRoutePrefix_ = getDefaultInstance().getInvokeRoutePrefix();
+      bitField0_ = (bitField0_ & ~0x00000080);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. Invoke route prefix for the custom container. "/&#42;" is the only
+     * supported value right now. By setting this field, any non-root route on
+     * this model will be accessible with [PredictionService.Invoke] eg:
+     * "/invoke/foo/bar".
+     *
+     * Only one of `predict_route` or `invoke_route_prefix` can be set, and we
+     * default to using `predict_route` if this field is not set. If this field
+     * is set, the Model can only be deployed to dedicated endpoint.
+     * </pre>
+     *
+     * <code>string invoke_route_prefix = 15 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @param value The bytes for invokeRoutePrefix to set.
+     * @return This builder for chaining.
+     */
+    public Builder setInvokeRoutePrefixBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      invokeRoutePrefix_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
     private java.util.List<com.google.cloud.aiplatform.v1beta1.Port> grpcPorts_ =
         java.util.Collections.emptyList();
 
     private void ensureGrpcPortsIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         grpcPorts_ = new java.util.ArrayList<com.google.cloud.aiplatform.v1beta1.Port>(grpcPorts_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
       }
     }
 
@@ -6239,7 +6477,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
     public Builder clearGrpcPorts() {
       if (grpcPortsBuilder_ == null) {
         grpcPorts_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000100);
         onChanged();
       } else {
         grpcPortsBuilder_.clear();
@@ -6438,7 +6676,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
                 com.google.cloud.aiplatform.v1beta1.Port,
                 com.google.cloud.aiplatform.v1beta1.Port.Builder,
                 com.google.cloud.aiplatform.v1beta1.PortOrBuilder>(
-                grpcPorts_, ((bitField0_ & 0x00000080) != 0), getParentForChildren(), isClean());
+                grpcPorts_, ((bitField0_ & 0x00000100) != 0), getParentForChildren(), isClean());
         grpcPorts_ = null;
       }
       return grpcPortsBuilder_;
@@ -6466,7 +6704,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * @return Whether the deploymentTimeout field is set.
      */
     public boolean hasDeploymentTimeout() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000200) != 0);
     }
 
     /**
@@ -6514,7 +6752,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
       } else {
         deploymentTimeoutBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -6537,7 +6775,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
       } else {
         deploymentTimeoutBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -6556,7 +6794,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeDeploymentTimeout(com.google.protobuf.Duration value) {
       if (deploymentTimeoutBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000200) != 0)
             && deploymentTimeout_ != null
             && deploymentTimeout_ != com.google.protobuf.Duration.getDefaultInstance()) {
           getDeploymentTimeoutBuilder().mergeFrom(value);
@@ -6567,7 +6805,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
         deploymentTimeoutBuilder_.mergeFrom(value);
       }
       if (deploymentTimeout_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000200;
         onChanged();
       }
       return this;
@@ -6586,7 +6824,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearDeploymentTimeout() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       deploymentTimeout_ = null;
       if (deploymentTimeoutBuilder_ != null) {
         deploymentTimeoutBuilder_.dispose();
@@ -6609,7 +6847,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.protobuf.Duration.Builder getDeploymentTimeoutBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return getDeploymentTimeoutFieldBuilder().getBuilder();
     }
@@ -6700,7 +6938,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
     public Builder setSharedMemorySizeMb(long value) {
 
       sharedMemorySizeMb_ = value;
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -6718,7 +6956,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * @return This builder for chaining.
      */
     public Builder clearSharedMemorySizeMb() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000400);
       sharedMemorySizeMb_ = 0L;
       onChanged();
       return this;
@@ -6745,7 +6983,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * @return Whether the startupProbe field is set.
      */
     public boolean hasStartupProbe() {
-      return ((bitField0_ & 0x00000400) != 0);
+      return ((bitField0_ & 0x00000800) != 0);
     }
 
     /**
@@ -6791,7 +7029,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
       } else {
         startupProbeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -6814,7 +7052,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
       } else {
         startupProbeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }
@@ -6832,7 +7070,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeStartupProbe(com.google.cloud.aiplatform.v1beta1.Probe value) {
       if (startupProbeBuilder_ == null) {
-        if (((bitField0_ & 0x00000400) != 0)
+        if (((bitField0_ & 0x00000800) != 0)
             && startupProbe_ != null
             && startupProbe_ != com.google.cloud.aiplatform.v1beta1.Probe.getDefaultInstance()) {
           getStartupProbeBuilder().mergeFrom(value);
@@ -6843,7 +7081,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
         startupProbeBuilder_.mergeFrom(value);
       }
       if (startupProbe_ != null) {
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000800;
         onChanged();
       }
       return this;
@@ -6861,7 +7099,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearStartupProbe() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000800);
       startupProbe_ = null;
       if (startupProbeBuilder_ != null) {
         startupProbeBuilder_.dispose();
@@ -6883,7 +7121,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.Probe.Builder getStartupProbeBuilder() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000800;
       onChanged();
       return getStartupProbeFieldBuilder().getBuilder();
     }
@@ -6958,7 +7196,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * @return Whether the healthProbe field is set.
      */
     public boolean hasHealthProbe() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00001000) != 0);
     }
 
     /**
@@ -7004,7 +7242,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
       } else {
         healthProbeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -7027,7 +7265,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
       } else {
         healthProbeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return this;
     }
@@ -7045,7 +7283,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeHealthProbe(com.google.cloud.aiplatform.v1beta1.Probe value) {
       if (healthProbeBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)
+        if (((bitField0_ & 0x00001000) != 0)
             && healthProbe_ != null
             && healthProbe_ != com.google.cloud.aiplatform.v1beta1.Probe.getDefaultInstance()) {
           getHealthProbeBuilder().mergeFrom(value);
@@ -7056,7 +7294,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
         healthProbeBuilder_.mergeFrom(value);
       }
       if (healthProbe_ != null) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00001000;
         onChanged();
       }
       return this;
@@ -7074,7 +7312,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearHealthProbe() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00001000);
       healthProbe_ = null;
       if (healthProbeBuilder_ != null) {
         healthProbeBuilder_.dispose();
@@ -7096,7 +7334,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.Probe.Builder getHealthProbeBuilder() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00001000;
       onChanged();
       return getHealthProbeFieldBuilder().getBuilder();
     }
@@ -7171,7 +7409,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * @return Whether the livenessProbe field is set.
      */
     public boolean hasLivenessProbe() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00002000) != 0);
     }
 
     /**
@@ -7217,7 +7455,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
       } else {
         livenessProbeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -7240,7 +7478,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
       } else {
         livenessProbeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return this;
     }
@@ -7258,7 +7496,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      */
     public Builder mergeLivenessProbe(com.google.cloud.aiplatform.v1beta1.Probe value) {
       if (livenessProbeBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)
+        if (((bitField0_ & 0x00002000) != 0)
             && livenessProbe_ != null
             && livenessProbe_ != com.google.cloud.aiplatform.v1beta1.Probe.getDefaultInstance()) {
           getLivenessProbeBuilder().mergeFrom(value);
@@ -7269,7 +7507,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
         livenessProbeBuilder_.mergeFrom(value);
       }
       if (livenessProbe_ != null) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00002000;
         onChanged();
       }
       return this;
@@ -7287,7 +7525,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public Builder clearLivenessProbe() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00002000);
       livenessProbe_ = null;
       if (livenessProbeBuilder_ != null) {
         livenessProbeBuilder_.dispose();
@@ -7309,7 +7547,7 @@ public final class ModelContainerSpec extends com.google.protobuf.GeneratedMessa
      * </code>
      */
     public com.google.cloud.aiplatform.v1beta1.Probe.Builder getLivenessProbeBuilder() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00002000;
       onChanged();
       return getLivenessProbeFieldBuilder().getBuilder();
     }

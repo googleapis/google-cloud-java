@@ -48,6 +48,7 @@ public class GrpcAreaInsightsStub extends AreaInsightsStub {
                   ProtoUtils.marshaller(ComputeInsightsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ComputeInsightsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ComputeInsightsRequest, ComputeInsightsResponse>

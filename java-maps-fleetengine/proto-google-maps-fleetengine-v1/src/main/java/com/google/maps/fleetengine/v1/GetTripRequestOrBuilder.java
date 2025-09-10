@@ -173,46 +173,53 @@ public interface GetTripRequestOrBuilder
    *
    *
    * <pre>
-   * Indicates the minimum timestamp (exclusive) for which
-   * `Trip.remaining_waypoints` are retrieved. If they are unchanged since this
-   * timestamp, the `remaining_waypoints` are not set in the response. If this
-   * field is unspecified, `remaining_waypoints` is always retrieved.
+   * Deprecated: `Trip.remaining_waypoints` are always retrieved. Use
+   * `remaining_waypoints_route_version` to control when
+   * `Trip.remaining_waypoints.traffic_to_waypoint` and
+   * `Trip.remaining_waypoints.path_to_waypoint` data are retrieved.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp remaining_waypoints_version = 7;</code>
+   * <code>.google.protobuf.Timestamp remaining_waypoints_version = 7 [deprecated = true];</code>
    *
+   * @deprecated maps.fleetengine.v1.GetTripRequest.remaining_waypoints_version is deprecated. See
+   *     google/maps/fleetengine/v1/trip_api.proto;l=228
    * @return Whether the remainingWaypointsVersion field is set.
    */
+  @java.lang.Deprecated
   boolean hasRemainingWaypointsVersion();
 
   /**
    *
    *
    * <pre>
-   * Indicates the minimum timestamp (exclusive) for which
-   * `Trip.remaining_waypoints` are retrieved. If they are unchanged since this
-   * timestamp, the `remaining_waypoints` are not set in the response. If this
-   * field is unspecified, `remaining_waypoints` is always retrieved.
+   * Deprecated: `Trip.remaining_waypoints` are always retrieved. Use
+   * `remaining_waypoints_route_version` to control when
+   * `Trip.remaining_waypoints.traffic_to_waypoint` and
+   * `Trip.remaining_waypoints.path_to_waypoint` data are retrieved.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp remaining_waypoints_version = 7;</code>
+   * <code>.google.protobuf.Timestamp remaining_waypoints_version = 7 [deprecated = true];</code>
    *
+   * @deprecated maps.fleetengine.v1.GetTripRequest.remaining_waypoints_version is deprecated. See
+   *     google/maps/fleetengine/v1/trip_api.proto;l=228
    * @return The remainingWaypointsVersion.
    */
+  @java.lang.Deprecated
   com.google.protobuf.Timestamp getRemainingWaypointsVersion();
 
   /**
    *
    *
    * <pre>
-   * Indicates the minimum timestamp (exclusive) for which
-   * `Trip.remaining_waypoints` are retrieved. If they are unchanged since this
-   * timestamp, the `remaining_waypoints` are not set in the response. If this
-   * field is unspecified, `remaining_waypoints` is always retrieved.
+   * Deprecated: `Trip.remaining_waypoints` are always retrieved. Use
+   * `remaining_waypoints_route_version` to control when
+   * `Trip.remaining_waypoints.traffic_to_waypoint` and
+   * `Trip.remaining_waypoints.path_to_waypoint` data are retrieved.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp remaining_waypoints_version = 7;</code>
+   * <code>.google.protobuf.Timestamp remaining_waypoints_version = 7 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   com.google.protobuf.TimestampOrBuilder getRemainingWaypointsVersionOrBuilder();
 
   /**

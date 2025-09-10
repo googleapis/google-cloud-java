@@ -1133,6 +1133,91 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
     com.google.analytics.admin.v1alpha.ReportingDataAnnotationOrBuilder
         getReportingDataAnnotationOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a SubpropertySyncConfig resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.SubpropertySyncConfig subproperty_sync_config = 33;
+     * </code>
+     *
+     * @return Whether the subpropertySyncConfig field is set.
+     */
+    boolean hasSubpropertySyncConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a SubpropertySyncConfig resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.SubpropertySyncConfig subproperty_sync_config = 33;
+     * </code>
+     *
+     * @return The subpropertySyncConfig.
+     */
+    com.google.analytics.admin.v1alpha.SubpropertySyncConfig getSubpropertySyncConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a SubpropertySyncConfig resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.SubpropertySyncConfig subproperty_sync_config = 33;
+     * </code>
+     */
+    com.google.analytics.admin.v1alpha.SubpropertySyncConfigOrBuilder
+        getSubpropertySyncConfigOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a ReportingIdentitySettings resource in change history.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.ReportingIdentitySettings reporting_identity_settings = 34;
+     * </code>
+     *
+     * @return Whether the reportingIdentitySettings field is set.
+     */
+    boolean hasReportingIdentitySettings();
+
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a ReportingIdentitySettings resource in change history.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.ReportingIdentitySettings reporting_identity_settings = 34;
+     * </code>
+     *
+     * @return The reportingIdentitySettings.
+     */
+    com.google.analytics.admin.v1alpha.ReportingIdentitySettings getReportingIdentitySettings();
+
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a ReportingIdentitySettings resource in change history.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.ReportingIdentitySettings reporting_identity_settings = 34;
+     * </code>
+     */
+    com.google.analytics.admin.v1alpha.ReportingIdentitySettingsOrBuilder
+        getReportingIdentitySettingsOrBuilder();
+
     com.google.analytics.admin.v1alpha.ChangeHistoryChange.ChangeHistoryResource.ResourceCase
         getResourceCase();
   }
@@ -1218,6 +1303,8 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       KEY_EVENT(30),
       CALCULATED_METRIC(31),
       REPORTING_DATA_ANNOTATION(32),
+      SUBPROPERTY_SYNC_CONFIG(33),
+      REPORTING_IDENTITY_SETTINGS(34),
       RESOURCE_NOT_SET(0);
       private final int value;
 
@@ -1291,6 +1378,10 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
             return CALCULATED_METRIC;
           case 32:
             return REPORTING_DATA_ANNOTATION;
+          case 33:
+            return SUBPROPERTY_SYNC_CONFIG;
+          case 34:
+            return REPORTING_IDENTITY_SETTINGS;
           case 0:
             return RESOURCE_NOT_SET;
           default:
@@ -2841,6 +2932,126 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       return com.google.analytics.admin.v1alpha.ReportingDataAnnotation.getDefaultInstance();
     }
 
+    public static final int SUBPROPERTY_SYNC_CONFIG_FIELD_NUMBER = 33;
+
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a SubpropertySyncConfig resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.SubpropertySyncConfig subproperty_sync_config = 33;
+     * </code>
+     *
+     * @return Whether the subpropertySyncConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasSubpropertySyncConfig() {
+      return resourceCase_ == 33;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a SubpropertySyncConfig resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.SubpropertySyncConfig subproperty_sync_config = 33;
+     * </code>
+     *
+     * @return The subpropertySyncConfig.
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.SubpropertySyncConfig getSubpropertySyncConfig() {
+      if (resourceCase_ == 33) {
+        return (com.google.analytics.admin.v1alpha.SubpropertySyncConfig) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.SubpropertySyncConfig.getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a SubpropertySyncConfig resource in change history.
+     * </pre>
+     *
+     * <code>.google.analytics.admin.v1alpha.SubpropertySyncConfig subproperty_sync_config = 33;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.SubpropertySyncConfigOrBuilder
+        getSubpropertySyncConfigOrBuilder() {
+      if (resourceCase_ == 33) {
+        return (com.google.analytics.admin.v1alpha.SubpropertySyncConfig) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.SubpropertySyncConfig.getDefaultInstance();
+    }
+
+    public static final int REPORTING_IDENTITY_SETTINGS_FIELD_NUMBER = 34;
+
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a ReportingIdentitySettings resource in change history.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.ReportingIdentitySettings reporting_identity_settings = 34;
+     * </code>
+     *
+     * @return Whether the reportingIdentitySettings field is set.
+     */
+    @java.lang.Override
+    public boolean hasReportingIdentitySettings() {
+      return resourceCase_ == 34;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a ReportingIdentitySettings resource in change history.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.ReportingIdentitySettings reporting_identity_settings = 34;
+     * </code>
+     *
+     * @return The reportingIdentitySettings.
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.ReportingIdentitySettings
+        getReportingIdentitySettings() {
+      if (resourceCase_ == 34) {
+        return (com.google.analytics.admin.v1alpha.ReportingIdentitySettings) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.ReportingIdentitySettings.getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A snapshot of a ReportingIdentitySettings resource in change history.
+     * </pre>
+     *
+     * <code>
+     * .google.analytics.admin.v1alpha.ReportingIdentitySettings reporting_identity_settings = 34;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.analytics.admin.v1alpha.ReportingIdentitySettingsOrBuilder
+        getReportingIdentitySettingsOrBuilder() {
+      if (resourceCase_ == 34) {
+        return (com.google.analytics.admin.v1alpha.ReportingIdentitySettings) resource_;
+      }
+      return com.google.analytics.admin.v1alpha.ReportingIdentitySettings.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -2945,6 +3156,14 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
       if (resourceCase_ == 32) {
         output.writeMessage(
             32, (com.google.analytics.admin.v1alpha.ReportingDataAnnotation) resource_);
+      }
+      if (resourceCase_ == 33) {
+        output.writeMessage(
+            33, (com.google.analytics.admin.v1alpha.SubpropertySyncConfig) resource_);
+      }
+      if (resourceCase_ == 34) {
+        output.writeMessage(
+            34, (com.google.analytics.admin.v1alpha.ReportingIdentitySettings) resource_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -3093,6 +3312,16 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 32, (com.google.analytics.admin.v1alpha.ReportingDataAnnotation) resource_);
       }
+      if (resourceCase_ == 33) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                33, (com.google.analytics.admin.v1alpha.SubpropertySyncConfig) resource_);
+      }
+      if (resourceCase_ == 34) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                34, (com.google.analytics.admin.v1alpha.ReportingIdentitySettings) resource_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -3198,6 +3427,13 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           break;
         case 32:
           if (!getReportingDataAnnotation().equals(other.getReportingDataAnnotation()))
+            return false;
+          break;
+        case 33:
+          if (!getSubpropertySyncConfig().equals(other.getSubpropertySyncConfig())) return false;
+          break;
+        case 34:
+          if (!getReportingIdentitySettings().equals(other.getReportingIdentitySettings()))
             return false;
           break;
         case 0:
@@ -3322,6 +3558,14 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         case 32:
           hash = (37 * hash) + REPORTING_DATA_ANNOTATION_FIELD_NUMBER;
           hash = (53 * hash) + getReportingDataAnnotation().hashCode();
+          break;
+        case 33:
+          hash = (37 * hash) + SUBPROPERTY_SYNC_CONFIG_FIELD_NUMBER;
+          hash = (53 * hash) + getSubpropertySyncConfig().hashCode();
+          break;
+        case 34:
+          hash = (37 * hash) + REPORTING_IDENTITY_SETTINGS_FIELD_NUMBER;
+          hash = (53 * hash) + getReportingIdentitySettings().hashCode();
           break;
         case 0:
         default:
@@ -3560,6 +3804,12 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         if (reportingDataAnnotationBuilder_ != null) {
           reportingDataAnnotationBuilder_.clear();
         }
+        if (subpropertySyncConfigBuilder_ != null) {
+          subpropertySyncConfigBuilder_.clear();
+        }
+        if (reportingIdentitySettingsBuilder_ != null) {
+          reportingIdentitySettingsBuilder_.clear();
+        }
         resourceCase_ = 0;
         resource_ = null;
         return this;
@@ -3690,6 +3940,12 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         }
         if (resourceCase_ == 32 && reportingDataAnnotationBuilder_ != null) {
           result.resource_ = reportingDataAnnotationBuilder_.build();
+        }
+        if (resourceCase_ == 33 && subpropertySyncConfigBuilder_ != null) {
+          result.resource_ = subpropertySyncConfigBuilder_.build();
+        }
+        if (resourceCase_ == 34 && reportingIdentitySettingsBuilder_ != null) {
+          result.resource_ = reportingIdentitySettingsBuilder_.build();
         }
       }
 
@@ -3881,6 +4137,16 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
           case REPORTING_DATA_ANNOTATION:
             {
               mergeReportingDataAnnotation(other.getReportingDataAnnotation());
+              break;
+            }
+          case SUBPROPERTY_SYNC_CONFIG:
+            {
+              mergeSubpropertySyncConfig(other.getSubpropertySyncConfig());
+              break;
+            }
+          case REPORTING_IDENTITY_SETTINGS:
+            {
+              mergeReportingIdentitySettings(other.getReportingIdentitySettings());
               break;
             }
           case RESOURCE_NOT_SET:
@@ -4095,6 +4361,20 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
                   resourceCase_ = 32;
                   break;
                 } // case 258
+              case 266:
+                {
+                  input.readMessage(
+                      getSubpropertySyncConfigFieldBuilder().getBuilder(), extensionRegistry);
+                  resourceCase_ = 33;
+                  break;
+                } // case 266
+              case 274:
+                {
+                  input.readMessage(
+                      getReportingIdentitySettingsFieldBuilder().getBuilder(), extensionRegistry);
+                  resourceCase_ = 34;
+                  break;
+                } // case 274
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -10304,6 +10584,484 @@ public final class ChangeHistoryChange extends com.google.protobuf.GeneratedMess
         resourceCase_ = 32;
         onChanged();
         return reportingDataAnnotationBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.analytics.admin.v1alpha.SubpropertySyncConfig,
+              com.google.analytics.admin.v1alpha.SubpropertySyncConfig.Builder,
+              com.google.analytics.admin.v1alpha.SubpropertySyncConfigOrBuilder>
+          subpropertySyncConfigBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a SubpropertySyncConfig resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.SubpropertySyncConfig subproperty_sync_config = 33;
+       * </code>
+       *
+       * @return Whether the subpropertySyncConfig field is set.
+       */
+      @java.lang.Override
+      public boolean hasSubpropertySyncConfig() {
+        return resourceCase_ == 33;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a SubpropertySyncConfig resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.SubpropertySyncConfig subproperty_sync_config = 33;
+       * </code>
+       *
+       * @return The subpropertySyncConfig.
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.SubpropertySyncConfig getSubpropertySyncConfig() {
+        if (subpropertySyncConfigBuilder_ == null) {
+          if (resourceCase_ == 33) {
+            return (com.google.analytics.admin.v1alpha.SubpropertySyncConfig) resource_;
+          }
+          return com.google.analytics.admin.v1alpha.SubpropertySyncConfig.getDefaultInstance();
+        } else {
+          if (resourceCase_ == 33) {
+            return subpropertySyncConfigBuilder_.getMessage();
+          }
+          return com.google.analytics.admin.v1alpha.SubpropertySyncConfig.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a SubpropertySyncConfig resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.SubpropertySyncConfig subproperty_sync_config = 33;
+       * </code>
+       */
+      public Builder setSubpropertySyncConfig(
+          com.google.analytics.admin.v1alpha.SubpropertySyncConfig value) {
+        if (subpropertySyncConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resource_ = value;
+          onChanged();
+        } else {
+          subpropertySyncConfigBuilder_.setMessage(value);
+        }
+        resourceCase_ = 33;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a SubpropertySyncConfig resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.SubpropertySyncConfig subproperty_sync_config = 33;
+       * </code>
+       */
+      public Builder setSubpropertySyncConfig(
+          com.google.analytics.admin.v1alpha.SubpropertySyncConfig.Builder builderForValue) {
+        if (subpropertySyncConfigBuilder_ == null) {
+          resource_ = builderForValue.build();
+          onChanged();
+        } else {
+          subpropertySyncConfigBuilder_.setMessage(builderForValue.build());
+        }
+        resourceCase_ = 33;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a SubpropertySyncConfig resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.SubpropertySyncConfig subproperty_sync_config = 33;
+       * </code>
+       */
+      public Builder mergeSubpropertySyncConfig(
+          com.google.analytics.admin.v1alpha.SubpropertySyncConfig value) {
+        if (subpropertySyncConfigBuilder_ == null) {
+          if (resourceCase_ == 33
+              && resource_
+                  != com.google.analytics.admin.v1alpha.SubpropertySyncConfig
+                      .getDefaultInstance()) {
+            resource_ =
+                com.google.analytics.admin.v1alpha.SubpropertySyncConfig.newBuilder(
+                        (com.google.analytics.admin.v1alpha.SubpropertySyncConfig) resource_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            resource_ = value;
+          }
+          onChanged();
+        } else {
+          if (resourceCase_ == 33) {
+            subpropertySyncConfigBuilder_.mergeFrom(value);
+          } else {
+            subpropertySyncConfigBuilder_.setMessage(value);
+          }
+        }
+        resourceCase_ = 33;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a SubpropertySyncConfig resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.SubpropertySyncConfig subproperty_sync_config = 33;
+       * </code>
+       */
+      public Builder clearSubpropertySyncConfig() {
+        if (subpropertySyncConfigBuilder_ == null) {
+          if (resourceCase_ == 33) {
+            resourceCase_ = 0;
+            resource_ = null;
+            onChanged();
+          }
+        } else {
+          if (resourceCase_ == 33) {
+            resourceCase_ = 0;
+            resource_ = null;
+          }
+          subpropertySyncConfigBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a SubpropertySyncConfig resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.SubpropertySyncConfig subproperty_sync_config = 33;
+       * </code>
+       */
+      public com.google.analytics.admin.v1alpha.SubpropertySyncConfig.Builder
+          getSubpropertySyncConfigBuilder() {
+        return getSubpropertySyncConfigFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a SubpropertySyncConfig resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.SubpropertySyncConfig subproperty_sync_config = 33;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.SubpropertySyncConfigOrBuilder
+          getSubpropertySyncConfigOrBuilder() {
+        if ((resourceCase_ == 33) && (subpropertySyncConfigBuilder_ != null)) {
+          return subpropertySyncConfigBuilder_.getMessageOrBuilder();
+        } else {
+          if (resourceCase_ == 33) {
+            return (com.google.analytics.admin.v1alpha.SubpropertySyncConfig) resource_;
+          }
+          return com.google.analytics.admin.v1alpha.SubpropertySyncConfig.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a SubpropertySyncConfig resource in change history.
+       * </pre>
+       *
+       * <code>.google.analytics.admin.v1alpha.SubpropertySyncConfig subproperty_sync_config = 33;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.analytics.admin.v1alpha.SubpropertySyncConfig,
+              com.google.analytics.admin.v1alpha.SubpropertySyncConfig.Builder,
+              com.google.analytics.admin.v1alpha.SubpropertySyncConfigOrBuilder>
+          getSubpropertySyncConfigFieldBuilder() {
+        if (subpropertySyncConfigBuilder_ == null) {
+          if (!(resourceCase_ == 33)) {
+            resource_ =
+                com.google.analytics.admin.v1alpha.SubpropertySyncConfig.getDefaultInstance();
+          }
+          subpropertySyncConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.analytics.admin.v1alpha.SubpropertySyncConfig,
+                  com.google.analytics.admin.v1alpha.SubpropertySyncConfig.Builder,
+                  com.google.analytics.admin.v1alpha.SubpropertySyncConfigOrBuilder>(
+                  (com.google.analytics.admin.v1alpha.SubpropertySyncConfig) resource_,
+                  getParentForChildren(),
+                  isClean());
+          resource_ = null;
+        }
+        resourceCase_ = 33;
+        onChanged();
+        return subpropertySyncConfigBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.analytics.admin.v1alpha.ReportingIdentitySettings,
+              com.google.analytics.admin.v1alpha.ReportingIdentitySettings.Builder,
+              com.google.analytics.admin.v1alpha.ReportingIdentitySettingsOrBuilder>
+          reportingIdentitySettingsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a ReportingIdentitySettings resource in change history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.ReportingIdentitySettings reporting_identity_settings = 34;
+       * </code>
+       *
+       * @return Whether the reportingIdentitySettings field is set.
+       */
+      @java.lang.Override
+      public boolean hasReportingIdentitySettings() {
+        return resourceCase_ == 34;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a ReportingIdentitySettings resource in change history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.ReportingIdentitySettings reporting_identity_settings = 34;
+       * </code>
+       *
+       * @return The reportingIdentitySettings.
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.ReportingIdentitySettings
+          getReportingIdentitySettings() {
+        if (reportingIdentitySettingsBuilder_ == null) {
+          if (resourceCase_ == 34) {
+            return (com.google.analytics.admin.v1alpha.ReportingIdentitySettings) resource_;
+          }
+          return com.google.analytics.admin.v1alpha.ReportingIdentitySettings.getDefaultInstance();
+        } else {
+          if (resourceCase_ == 34) {
+            return reportingIdentitySettingsBuilder_.getMessage();
+          }
+          return com.google.analytics.admin.v1alpha.ReportingIdentitySettings.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a ReportingIdentitySettings resource in change history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.ReportingIdentitySettings reporting_identity_settings = 34;
+       * </code>
+       */
+      public Builder setReportingIdentitySettings(
+          com.google.analytics.admin.v1alpha.ReportingIdentitySettings value) {
+        if (reportingIdentitySettingsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          resource_ = value;
+          onChanged();
+        } else {
+          reportingIdentitySettingsBuilder_.setMessage(value);
+        }
+        resourceCase_ = 34;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a ReportingIdentitySettings resource in change history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.ReportingIdentitySettings reporting_identity_settings = 34;
+       * </code>
+       */
+      public Builder setReportingIdentitySettings(
+          com.google.analytics.admin.v1alpha.ReportingIdentitySettings.Builder builderForValue) {
+        if (reportingIdentitySettingsBuilder_ == null) {
+          resource_ = builderForValue.build();
+          onChanged();
+        } else {
+          reportingIdentitySettingsBuilder_.setMessage(builderForValue.build());
+        }
+        resourceCase_ = 34;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a ReportingIdentitySettings resource in change history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.ReportingIdentitySettings reporting_identity_settings = 34;
+       * </code>
+       */
+      public Builder mergeReportingIdentitySettings(
+          com.google.analytics.admin.v1alpha.ReportingIdentitySettings value) {
+        if (reportingIdentitySettingsBuilder_ == null) {
+          if (resourceCase_ == 34
+              && resource_
+                  != com.google.analytics.admin.v1alpha.ReportingIdentitySettings
+                      .getDefaultInstance()) {
+            resource_ =
+                com.google.analytics.admin.v1alpha.ReportingIdentitySettings.newBuilder(
+                        (com.google.analytics.admin.v1alpha.ReportingIdentitySettings) resource_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            resource_ = value;
+          }
+          onChanged();
+        } else {
+          if (resourceCase_ == 34) {
+            reportingIdentitySettingsBuilder_.mergeFrom(value);
+          } else {
+            reportingIdentitySettingsBuilder_.setMessage(value);
+          }
+        }
+        resourceCase_ = 34;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a ReportingIdentitySettings resource in change history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.ReportingIdentitySettings reporting_identity_settings = 34;
+       * </code>
+       */
+      public Builder clearReportingIdentitySettings() {
+        if (reportingIdentitySettingsBuilder_ == null) {
+          if (resourceCase_ == 34) {
+            resourceCase_ = 0;
+            resource_ = null;
+            onChanged();
+          }
+        } else {
+          if (resourceCase_ == 34) {
+            resourceCase_ = 0;
+            resource_ = null;
+          }
+          reportingIdentitySettingsBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a ReportingIdentitySettings resource in change history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.ReportingIdentitySettings reporting_identity_settings = 34;
+       * </code>
+       */
+      public com.google.analytics.admin.v1alpha.ReportingIdentitySettings.Builder
+          getReportingIdentitySettingsBuilder() {
+        return getReportingIdentitySettingsFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a ReportingIdentitySettings resource in change history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.ReportingIdentitySettings reporting_identity_settings = 34;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.analytics.admin.v1alpha.ReportingIdentitySettingsOrBuilder
+          getReportingIdentitySettingsOrBuilder() {
+        if ((resourceCase_ == 34) && (reportingIdentitySettingsBuilder_ != null)) {
+          return reportingIdentitySettingsBuilder_.getMessageOrBuilder();
+        } else {
+          if (resourceCase_ == 34) {
+            return (com.google.analytics.admin.v1alpha.ReportingIdentitySettings) resource_;
+          }
+          return com.google.analytics.admin.v1alpha.ReportingIdentitySettings.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A snapshot of a ReportingIdentitySettings resource in change history.
+       * </pre>
+       *
+       * <code>
+       * .google.analytics.admin.v1alpha.ReportingIdentitySettings reporting_identity_settings = 34;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.analytics.admin.v1alpha.ReportingIdentitySettings,
+              com.google.analytics.admin.v1alpha.ReportingIdentitySettings.Builder,
+              com.google.analytics.admin.v1alpha.ReportingIdentitySettingsOrBuilder>
+          getReportingIdentitySettingsFieldBuilder() {
+        if (reportingIdentitySettingsBuilder_ == null) {
+          if (!(resourceCase_ == 34)) {
+            resource_ =
+                com.google.analytics.admin.v1alpha.ReportingIdentitySettings.getDefaultInstance();
+          }
+          reportingIdentitySettingsBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.analytics.admin.v1alpha.ReportingIdentitySettings,
+                  com.google.analytics.admin.v1alpha.ReportingIdentitySettings.Builder,
+                  com.google.analytics.admin.v1alpha.ReportingIdentitySettingsOrBuilder>(
+                  (com.google.analytics.admin.v1alpha.ReportingIdentitySettings) resource_,
+                  getParentForChildren(),
+                  isClean());
+          resource_ = null;
+        }
+        resourceCase_ = 34;
+        onChanged();
+        return reportingIdentitySettingsBuilder_;
       }
 
       @java.lang.Override

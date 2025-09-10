@@ -56,6 +56,7 @@ public class GrpcValidationHelperV1Stub extends ValidationHelperV1Stub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       Service.ValidateAttestationOccurrenceResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<

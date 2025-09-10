@@ -282,7 +282,9 @@ public interface ParameterOrBuilder
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
    * </pre>
    *
-   * <code>optional string kms_key = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * optional string kms_key = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return Whether the kmsKey field is set.
    */
@@ -299,7 +301,9 @@ public interface ParameterOrBuilder
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
    * </pre>
    *
-   * <code>optional string kms_key = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * optional string kms_key = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The kmsKey.
    */
@@ -316,7 +320,9 @@ public interface ParameterOrBuilder
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;`.
    * </pre>
    *
-   * <code>optional string kms_key = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * optional string kms_key = 7 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
    *
    * @return The bytes for kmsKey.
    */

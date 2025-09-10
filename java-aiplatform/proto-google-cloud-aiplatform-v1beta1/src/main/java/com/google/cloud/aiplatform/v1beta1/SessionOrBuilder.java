@@ -28,14 +28,101 @@ public interface SessionOrBuilder
    *
    *
    * <pre>
-   * Required. Identifier. The resource name of the session.
+   * Optional. Timestamp of when this session is considered expired.
+   * This is *always* provided on output, regardless of what was sent
+   * on input.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expire_time = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the expireTime field is set.
+   */
+  boolean hasExpireTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Timestamp of when this session is considered expired.
+   * This is *always* provided on output, regardless of what was sent
+   * on input.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expire_time = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The expireTime.
+   */
+  com.google.protobuf.Timestamp getExpireTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Timestamp of when this session is considered expired.
+   * This is *always* provided on output, regardless of what was sent
+   * on input.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp expire_time = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getExpireTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. The TTL for this session.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration ttl = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the ttl field is set.
+   */
+  boolean hasTtl();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. The TTL for this session.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration ttl = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   *
+   * @return The ttl.
+   */
+  com.google.protobuf.Duration getTtl();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Input only. The TTL for this session.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Duration ttl = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = INPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.DurationOrBuilder getTtlOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Identifier. The resource name of the session.
    * Format:
    * 'projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}/sessions/{session}'.
    * </pre>
    *
-   * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER];
-   * </code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -45,14 +132,12 @@ public interface SessionOrBuilder
    *
    *
    * <pre>
-   * Required. Identifier. The resource name of the session.
+   * Identifier. The resource name of the session.
    * Format:
    * 'projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}/sessions/{session}'.
    * </pre>
    *
-   * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER];
-   * </code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -233,4 +318,6 @@ public interface SessionOrBuilder
    * @return The bytes for userId.
    */
   com.google.protobuf.ByteString getUserIdBytes();
+
+  com.google.cloud.aiplatform.v1beta1.Session.ExpirationCase getExpirationCase();
 }

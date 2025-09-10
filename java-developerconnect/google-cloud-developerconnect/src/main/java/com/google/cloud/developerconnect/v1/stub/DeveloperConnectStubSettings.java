@@ -18,9 +18,11 @@ package com.google.cloud.developerconnect.v1.stub;
 
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.FetchGitRefsPagedResponse;
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.FetchLinkableGitRepositoriesPagedResponse;
+import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.ListAccountConnectorsPagedResponse;
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.ListConnectionsPagedResponse;
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.ListGitRepositoryLinksPagedResponse;
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.ListLocationsPagedResponse;
+import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.ListUsersPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
@@ -52,11 +54,18 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.developerconnect.v1.AccountConnector;
 import com.google.cloud.developerconnect.v1.Connection;
+import com.google.cloud.developerconnect.v1.CreateAccountConnectorRequest;
 import com.google.cloud.developerconnect.v1.CreateConnectionRequest;
 import com.google.cloud.developerconnect.v1.CreateGitRepositoryLinkRequest;
+import com.google.cloud.developerconnect.v1.DeleteAccountConnectorRequest;
 import com.google.cloud.developerconnect.v1.DeleteConnectionRequest;
 import com.google.cloud.developerconnect.v1.DeleteGitRepositoryLinkRequest;
+import com.google.cloud.developerconnect.v1.DeleteSelfRequest;
+import com.google.cloud.developerconnect.v1.DeleteUserRequest;
+import com.google.cloud.developerconnect.v1.FetchAccessTokenRequest;
+import com.google.cloud.developerconnect.v1.FetchAccessTokenResponse;
 import com.google.cloud.developerconnect.v1.FetchGitHubInstallationsRequest;
 import com.google.cloud.developerconnect.v1.FetchGitHubInstallationsResponse;
 import com.google.cloud.developerconnect.v1.FetchGitRefsRequest;
@@ -67,16 +76,24 @@ import com.google.cloud.developerconnect.v1.FetchReadTokenRequest;
 import com.google.cloud.developerconnect.v1.FetchReadTokenResponse;
 import com.google.cloud.developerconnect.v1.FetchReadWriteTokenRequest;
 import com.google.cloud.developerconnect.v1.FetchReadWriteTokenResponse;
+import com.google.cloud.developerconnect.v1.FetchSelfRequest;
+import com.google.cloud.developerconnect.v1.GetAccountConnectorRequest;
 import com.google.cloud.developerconnect.v1.GetConnectionRequest;
 import com.google.cloud.developerconnect.v1.GetGitRepositoryLinkRequest;
 import com.google.cloud.developerconnect.v1.GitRepositoryLink;
 import com.google.cloud.developerconnect.v1.LinkableGitRepository;
+import com.google.cloud.developerconnect.v1.ListAccountConnectorsRequest;
+import com.google.cloud.developerconnect.v1.ListAccountConnectorsResponse;
 import com.google.cloud.developerconnect.v1.ListConnectionsRequest;
 import com.google.cloud.developerconnect.v1.ListConnectionsResponse;
 import com.google.cloud.developerconnect.v1.ListGitRepositoryLinksRequest;
 import com.google.cloud.developerconnect.v1.ListGitRepositoryLinksResponse;
+import com.google.cloud.developerconnect.v1.ListUsersRequest;
+import com.google.cloud.developerconnect.v1.ListUsersResponse;
 import com.google.cloud.developerconnect.v1.OperationMetadata;
+import com.google.cloud.developerconnect.v1.UpdateAccountConnectorRequest;
 import com.google.cloud.developerconnect.v1.UpdateConnectionRequest;
+import com.google.cloud.developerconnect.v1.User;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -218,6 +235,38 @@ public class DeveloperConnectStubSettings extends StubSettings<DeveloperConnectS
   private final PagedCallSettings<
           FetchGitRefsRequest, FetchGitRefsResponse, FetchGitRefsPagedResponse>
       fetchGitRefsSettings;
+  private final PagedCallSettings<
+          ListAccountConnectorsRequest,
+          ListAccountConnectorsResponse,
+          ListAccountConnectorsPagedResponse>
+      listAccountConnectorsSettings;
+  private final UnaryCallSettings<GetAccountConnectorRequest, AccountConnector>
+      getAccountConnectorSettings;
+  private final UnaryCallSettings<CreateAccountConnectorRequest, Operation>
+      createAccountConnectorSettings;
+  private final OperationCallSettings<
+          CreateAccountConnectorRequest, AccountConnector, OperationMetadata>
+      createAccountConnectorOperationSettings;
+  private final UnaryCallSettings<UpdateAccountConnectorRequest, Operation>
+      updateAccountConnectorSettings;
+  private final OperationCallSettings<
+          UpdateAccountConnectorRequest, AccountConnector, OperationMetadata>
+      updateAccountConnectorOperationSettings;
+  private final UnaryCallSettings<DeleteAccountConnectorRequest, Operation>
+      deleteAccountConnectorSettings;
+  private final OperationCallSettings<DeleteAccountConnectorRequest, Empty, OperationMetadata>
+      deleteAccountConnectorOperationSettings;
+  private final UnaryCallSettings<FetchAccessTokenRequest, FetchAccessTokenResponse>
+      fetchAccessTokenSettings;
+  private final PagedCallSettings<ListUsersRequest, ListUsersResponse, ListUsersPagedResponse>
+      listUsersSettings;
+  private final UnaryCallSettings<DeleteUserRequest, Operation> deleteUserSettings;
+  private final OperationCallSettings<DeleteUserRequest, Empty, OperationMetadata>
+      deleteUserOperationSettings;
+  private final UnaryCallSettings<FetchSelfRequest, User> fetchSelfSettings;
+  private final UnaryCallSettings<DeleteSelfRequest, Operation> deleteSelfSettings;
+  private final OperationCallSettings<DeleteSelfRequest, Empty, OperationMetadata>
+      deleteSelfOperationSettings;
   private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
@@ -382,6 +431,79 @@ public class DeveloperConnectStubSettings extends StubSettings<DeveloperConnectS
             }
           };
 
+  private static final PagedListDescriptor<
+          ListAccountConnectorsRequest, ListAccountConnectorsResponse, AccountConnector>
+      LIST_ACCOUNT_CONNECTORS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListAccountConnectorsRequest, ListAccountConnectorsResponse, AccountConnector>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListAccountConnectorsRequest injectToken(
+                ListAccountConnectorsRequest payload, String token) {
+              return ListAccountConnectorsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListAccountConnectorsRequest injectPageSize(
+                ListAccountConnectorsRequest payload, int pageSize) {
+              return ListAccountConnectorsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListAccountConnectorsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListAccountConnectorsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<AccountConnector> extractResources(
+                ListAccountConnectorsResponse payload) {
+              return payload.getAccountConnectorsList();
+            }
+          };
+
+  private static final PagedListDescriptor<ListUsersRequest, ListUsersResponse, User>
+      LIST_USERS_PAGE_STR_DESC =
+          new PagedListDescriptor<ListUsersRequest, ListUsersResponse, User>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListUsersRequest injectToken(ListUsersRequest payload, String token) {
+              return ListUsersRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListUsersRequest injectPageSize(ListUsersRequest payload, int pageSize) {
+              return ListUsersRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListUsersRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListUsersResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<User> extractResources(ListUsersResponse payload) {
+              return payload.getUsersList();
+            }
+          };
+
   private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
       LIST_LOCATIONS_PAGE_STR_DESC =
           new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
@@ -506,6 +628,47 @@ public class DeveloperConnectStubSettings extends StubSettings<DeveloperConnectS
               PageContext<FetchGitRefsRequest, FetchGitRefsResponse, String> pageContext =
                   PageContext.create(callable, FETCH_GIT_REFS_PAGE_STR_DESC, request, context);
               return FetchGitRefsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListAccountConnectorsRequest,
+          ListAccountConnectorsResponse,
+          ListAccountConnectorsPagedResponse>
+      LIST_ACCOUNT_CONNECTORS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListAccountConnectorsRequest,
+              ListAccountConnectorsResponse,
+              ListAccountConnectorsPagedResponse>() {
+            @Override
+            public ApiFuture<ListAccountConnectorsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListAccountConnectorsRequest, ListAccountConnectorsResponse> callable,
+                ListAccountConnectorsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListAccountConnectorsResponse> futureResponse) {
+              PageContext<
+                      ListAccountConnectorsRequest, ListAccountConnectorsResponse, AccountConnector>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_ACCOUNT_CONNECTORS_PAGE_STR_DESC, request, context);
+              return ListAccountConnectorsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListUsersRequest, ListUsersResponse, ListUsersPagedResponse>
+      LIST_USERS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListUsersRequest, ListUsersResponse, ListUsersPagedResponse>() {
+            @Override
+            public ApiFuture<ListUsersPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListUsersRequest, ListUsersResponse> callable,
+                ListUsersRequest request,
+                ApiCallContext context,
+                ApiFuture<ListUsersResponse> futureResponse) {
+              PageContext<ListUsersRequest, ListUsersResponse, User> pageContext =
+                  PageContext.create(callable, LIST_USERS_PAGE_STR_DESC, request, context);
+              return ListUsersPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -640,6 +803,96 @@ public class DeveloperConnectStubSettings extends StubSettings<DeveloperConnectS
   public PagedCallSettings<FetchGitRefsRequest, FetchGitRefsResponse, FetchGitRefsPagedResponse>
       fetchGitRefsSettings() {
     return fetchGitRefsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listAccountConnectors. */
+  public PagedCallSettings<
+          ListAccountConnectorsRequest,
+          ListAccountConnectorsResponse,
+          ListAccountConnectorsPagedResponse>
+      listAccountConnectorsSettings() {
+    return listAccountConnectorsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getAccountConnector. */
+  public UnaryCallSettings<GetAccountConnectorRequest, AccountConnector>
+      getAccountConnectorSettings() {
+    return getAccountConnectorSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createAccountConnector. */
+  public UnaryCallSettings<CreateAccountConnectorRequest, Operation>
+      createAccountConnectorSettings() {
+    return createAccountConnectorSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createAccountConnector. */
+  public OperationCallSettings<CreateAccountConnectorRequest, AccountConnector, OperationMetadata>
+      createAccountConnectorOperationSettings() {
+    return createAccountConnectorOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateAccountConnector. */
+  public UnaryCallSettings<UpdateAccountConnectorRequest, Operation>
+      updateAccountConnectorSettings() {
+    return updateAccountConnectorSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateAccountConnector. */
+  public OperationCallSettings<UpdateAccountConnectorRequest, AccountConnector, OperationMetadata>
+      updateAccountConnectorOperationSettings() {
+    return updateAccountConnectorOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteAccountConnector. */
+  public UnaryCallSettings<DeleteAccountConnectorRequest, Operation>
+      deleteAccountConnectorSettings() {
+    return deleteAccountConnectorSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteAccountConnector. */
+  public OperationCallSettings<DeleteAccountConnectorRequest, Empty, OperationMetadata>
+      deleteAccountConnectorOperationSettings() {
+    return deleteAccountConnectorOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to fetchAccessToken. */
+  public UnaryCallSettings<FetchAccessTokenRequest, FetchAccessTokenResponse>
+      fetchAccessTokenSettings() {
+    return fetchAccessTokenSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listUsers. */
+  public PagedCallSettings<ListUsersRequest, ListUsersResponse, ListUsersPagedResponse>
+      listUsersSettings() {
+    return listUsersSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteUser. */
+  public UnaryCallSettings<DeleteUserRequest, Operation> deleteUserSettings() {
+    return deleteUserSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteUser. */
+  public OperationCallSettings<DeleteUserRequest, Empty, OperationMetadata>
+      deleteUserOperationSettings() {
+    return deleteUserOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to fetchSelf. */
+  public UnaryCallSettings<FetchSelfRequest, User> fetchSelfSettings() {
+    return fetchSelfSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteSelf. */
+  public UnaryCallSettings<DeleteSelfRequest, Operation> deleteSelfSettings() {
+    return deleteSelfSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteSelf. */
+  public OperationCallSettings<DeleteSelfRequest, Empty, OperationMetadata>
+      deleteSelfOperationSettings() {
+    return deleteSelfOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -786,6 +1039,24 @@ public class DeveloperConnectStubSettings extends StubSettings<DeveloperConnectS
         settingsBuilder.fetchLinkableGitRepositoriesSettings().build();
     fetchGitHubInstallationsSettings = settingsBuilder.fetchGitHubInstallationsSettings().build();
     fetchGitRefsSettings = settingsBuilder.fetchGitRefsSettings().build();
+    listAccountConnectorsSettings = settingsBuilder.listAccountConnectorsSettings().build();
+    getAccountConnectorSettings = settingsBuilder.getAccountConnectorSettings().build();
+    createAccountConnectorSettings = settingsBuilder.createAccountConnectorSettings().build();
+    createAccountConnectorOperationSettings =
+        settingsBuilder.createAccountConnectorOperationSettings().build();
+    updateAccountConnectorSettings = settingsBuilder.updateAccountConnectorSettings().build();
+    updateAccountConnectorOperationSettings =
+        settingsBuilder.updateAccountConnectorOperationSettings().build();
+    deleteAccountConnectorSettings = settingsBuilder.deleteAccountConnectorSettings().build();
+    deleteAccountConnectorOperationSettings =
+        settingsBuilder.deleteAccountConnectorOperationSettings().build();
+    fetchAccessTokenSettings = settingsBuilder.fetchAccessTokenSettings().build();
+    listUsersSettings = settingsBuilder.listUsersSettings().build();
+    deleteUserSettings = settingsBuilder.deleteUserSettings().build();
+    deleteUserOperationSettings = settingsBuilder.deleteUserOperationSettings().build();
+    fetchSelfSettings = settingsBuilder.fetchSelfSettings().build();
+    deleteSelfSettings = settingsBuilder.deleteSelfSettings().build();
+    deleteSelfOperationSettings = settingsBuilder.deleteSelfOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -843,6 +1114,40 @@ public class DeveloperConnectStubSettings extends StubSettings<DeveloperConnectS
     private final PagedCallSettings.Builder<
             FetchGitRefsRequest, FetchGitRefsResponse, FetchGitRefsPagedResponse>
         fetchGitRefsSettings;
+    private final PagedCallSettings.Builder<
+            ListAccountConnectorsRequest,
+            ListAccountConnectorsResponse,
+            ListAccountConnectorsPagedResponse>
+        listAccountConnectorsSettings;
+    private final UnaryCallSettings.Builder<GetAccountConnectorRequest, AccountConnector>
+        getAccountConnectorSettings;
+    private final UnaryCallSettings.Builder<CreateAccountConnectorRequest, Operation>
+        createAccountConnectorSettings;
+    private final OperationCallSettings.Builder<
+            CreateAccountConnectorRequest, AccountConnector, OperationMetadata>
+        createAccountConnectorOperationSettings;
+    private final UnaryCallSettings.Builder<UpdateAccountConnectorRequest, Operation>
+        updateAccountConnectorSettings;
+    private final OperationCallSettings.Builder<
+            UpdateAccountConnectorRequest, AccountConnector, OperationMetadata>
+        updateAccountConnectorOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteAccountConnectorRequest, Operation>
+        deleteAccountConnectorSettings;
+    private final OperationCallSettings.Builder<
+            DeleteAccountConnectorRequest, Empty, OperationMetadata>
+        deleteAccountConnectorOperationSettings;
+    private final UnaryCallSettings.Builder<FetchAccessTokenRequest, FetchAccessTokenResponse>
+        fetchAccessTokenSettings;
+    private final PagedCallSettings.Builder<
+            ListUsersRequest, ListUsersResponse, ListUsersPagedResponse>
+        listUsersSettings;
+    private final UnaryCallSettings.Builder<DeleteUserRequest, Operation> deleteUserSettings;
+    private final OperationCallSettings.Builder<DeleteUserRequest, Empty, OperationMetadata>
+        deleteUserOperationSettings;
+    private final UnaryCallSettings.Builder<FetchSelfRequest, User> fetchSelfSettings;
+    private final UnaryCallSettings.Builder<DeleteSelfRequest, Operation> deleteSelfSettings;
+    private final OperationCallSettings.Builder<DeleteSelfRequest, Empty, OperationMetadata>
+        deleteSelfOperationSettings;
     private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
@@ -909,6 +1214,22 @@ public class DeveloperConnectStubSettings extends StubSettings<DeveloperConnectS
           PagedCallSettings.newBuilder(FETCH_LINKABLE_GIT_REPOSITORIES_PAGE_STR_FACT);
       fetchGitHubInstallationsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       fetchGitRefsSettings = PagedCallSettings.newBuilder(FETCH_GIT_REFS_PAGE_STR_FACT);
+      listAccountConnectorsSettings =
+          PagedCallSettings.newBuilder(LIST_ACCOUNT_CONNECTORS_PAGE_STR_FACT);
+      getAccountConnectorSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createAccountConnectorSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createAccountConnectorOperationSettings = OperationCallSettings.newBuilder();
+      updateAccountConnectorSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateAccountConnectorOperationSettings = OperationCallSettings.newBuilder();
+      deleteAccountConnectorSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteAccountConnectorOperationSettings = OperationCallSettings.newBuilder();
+      fetchAccessTokenSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listUsersSettings = PagedCallSettings.newBuilder(LIST_USERS_PAGE_STR_FACT);
+      deleteUserSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteUserOperationSettings = OperationCallSettings.newBuilder();
+      fetchSelfSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteSelfSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteSelfOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -928,6 +1249,16 @@ public class DeveloperConnectStubSettings extends StubSettings<DeveloperConnectS
               fetchLinkableGitRepositoriesSettings,
               fetchGitHubInstallationsSettings,
               fetchGitRefsSettings,
+              listAccountConnectorsSettings,
+              getAccountConnectorSettings,
+              createAccountConnectorSettings,
+              updateAccountConnectorSettings,
+              deleteAccountConnectorSettings,
+              fetchAccessTokenSettings,
+              listUsersSettings,
+              deleteUserSettings,
+              fetchSelfSettings,
+              deleteSelfSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -958,6 +1289,24 @@ public class DeveloperConnectStubSettings extends StubSettings<DeveloperConnectS
           settings.fetchLinkableGitRepositoriesSettings.toBuilder();
       fetchGitHubInstallationsSettings = settings.fetchGitHubInstallationsSettings.toBuilder();
       fetchGitRefsSettings = settings.fetchGitRefsSettings.toBuilder();
+      listAccountConnectorsSettings = settings.listAccountConnectorsSettings.toBuilder();
+      getAccountConnectorSettings = settings.getAccountConnectorSettings.toBuilder();
+      createAccountConnectorSettings = settings.createAccountConnectorSettings.toBuilder();
+      createAccountConnectorOperationSettings =
+          settings.createAccountConnectorOperationSettings.toBuilder();
+      updateAccountConnectorSettings = settings.updateAccountConnectorSettings.toBuilder();
+      updateAccountConnectorOperationSettings =
+          settings.updateAccountConnectorOperationSettings.toBuilder();
+      deleteAccountConnectorSettings = settings.deleteAccountConnectorSettings.toBuilder();
+      deleteAccountConnectorOperationSettings =
+          settings.deleteAccountConnectorOperationSettings.toBuilder();
+      fetchAccessTokenSettings = settings.fetchAccessTokenSettings.toBuilder();
+      listUsersSettings = settings.listUsersSettings.toBuilder();
+      deleteUserSettings = settings.deleteUserSettings.toBuilder();
+      deleteUserOperationSettings = settings.deleteUserOperationSettings.toBuilder();
+      fetchSelfSettings = settings.fetchSelfSettings.toBuilder();
+      deleteSelfSettings = settings.deleteSelfSettings.toBuilder();
+      deleteSelfOperationSettings = settings.deleteSelfOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -977,6 +1326,16 @@ public class DeveloperConnectStubSettings extends StubSettings<DeveloperConnectS
               fetchLinkableGitRepositoriesSettings,
               fetchGitHubInstallationsSettings,
               fetchGitRefsSettings,
+              listAccountConnectorsSettings,
+              getAccountConnectorSettings,
+              createAccountConnectorSettings,
+              updateAccountConnectorSettings,
+              deleteAccountConnectorSettings,
+              fetchAccessTokenSettings,
+              listUsersSettings,
+              deleteUserSettings,
+              fetchSelfSettings,
+              deleteSelfSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -1073,6 +1432,56 @@ public class DeveloperConnectStubSettings extends StubSettings<DeveloperConnectS
 
       builder
           .fetchGitRefsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listAccountConnectorsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .getAccountConnectorSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .createAccountConnectorSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .updateAccountConnectorSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteAccountConnectorSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .fetchAccessTokenSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .listUsersSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteUserSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .fetchSelfSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
+
+      builder
+          .deleteSelfSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
@@ -1189,6 +1598,124 @@ public class DeveloperConnectStubSettings extends StubSettings<DeveloperConnectS
                   .<DeleteGitRepositoryLinkRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
                   .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
                   .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createAccountConnectorOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateAccountConnectorRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(AccountConnector.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateAccountConnectorOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateAccountConnectorRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(AccountConnector.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteAccountConnectorOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteAccountConnectorRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteUserOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<DeleteUserRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteSelfOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings.<DeleteSelfRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"))
                   .build())
           .setResponseTransformer(
               ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
@@ -1345,6 +1872,98 @@ public class DeveloperConnectStubSettings extends StubSettings<DeveloperConnectS
             FetchGitRefsRequest, FetchGitRefsResponse, FetchGitRefsPagedResponse>
         fetchGitRefsSettings() {
       return fetchGitRefsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listAccountConnectors. */
+    public PagedCallSettings.Builder<
+            ListAccountConnectorsRequest,
+            ListAccountConnectorsResponse,
+            ListAccountConnectorsPagedResponse>
+        listAccountConnectorsSettings() {
+      return listAccountConnectorsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getAccountConnector. */
+    public UnaryCallSettings.Builder<GetAccountConnectorRequest, AccountConnector>
+        getAccountConnectorSettings() {
+      return getAccountConnectorSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createAccountConnector. */
+    public UnaryCallSettings.Builder<CreateAccountConnectorRequest, Operation>
+        createAccountConnectorSettings() {
+      return createAccountConnectorSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createAccountConnector. */
+    public OperationCallSettings.Builder<
+            CreateAccountConnectorRequest, AccountConnector, OperationMetadata>
+        createAccountConnectorOperationSettings() {
+      return createAccountConnectorOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateAccountConnector. */
+    public UnaryCallSettings.Builder<UpdateAccountConnectorRequest, Operation>
+        updateAccountConnectorSettings() {
+      return updateAccountConnectorSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateAccountConnector. */
+    public OperationCallSettings.Builder<
+            UpdateAccountConnectorRequest, AccountConnector, OperationMetadata>
+        updateAccountConnectorOperationSettings() {
+      return updateAccountConnectorOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAccountConnector. */
+    public UnaryCallSettings.Builder<DeleteAccountConnectorRequest, Operation>
+        deleteAccountConnectorSettings() {
+      return deleteAccountConnectorSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteAccountConnector. */
+    public OperationCallSettings.Builder<DeleteAccountConnectorRequest, Empty, OperationMetadata>
+        deleteAccountConnectorOperationSettings() {
+      return deleteAccountConnectorOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to fetchAccessToken. */
+    public UnaryCallSettings.Builder<FetchAccessTokenRequest, FetchAccessTokenResponse>
+        fetchAccessTokenSettings() {
+      return fetchAccessTokenSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listUsers. */
+    public PagedCallSettings.Builder<ListUsersRequest, ListUsersResponse, ListUsersPagedResponse>
+        listUsersSettings() {
+      return listUsersSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteUser. */
+    public UnaryCallSettings.Builder<DeleteUserRequest, Operation> deleteUserSettings() {
+      return deleteUserSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteUser. */
+    public OperationCallSettings.Builder<DeleteUserRequest, Empty, OperationMetadata>
+        deleteUserOperationSettings() {
+      return deleteUserOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to fetchSelf. */
+    public UnaryCallSettings.Builder<FetchSelfRequest, User> fetchSelfSettings() {
+      return fetchSelfSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSelf. */
+    public UnaryCallSettings.Builder<DeleteSelfRequest, Operation> deleteSelfSettings() {
+      return deleteSelfSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteSelf. */
+    public OperationCallSettings.Builder<DeleteSelfRequest, Empty, OperationMetadata>
+        deleteSelfOperationSettings() {
+      return deleteSelfOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

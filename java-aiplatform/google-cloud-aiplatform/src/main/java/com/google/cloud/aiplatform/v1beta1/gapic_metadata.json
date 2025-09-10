@@ -1001,6 +1001,51 @@
         }
       }
     },
+    "MemoryBankService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "MemoryBankServiceClient",
+          "rpcs": {
+            "CreateMemory": {
+              "methods": ["createMemoryAsync", "createMemoryOperationCallable", "createMemoryCallable"]
+            },
+            "DeleteMemory": {
+              "methods": ["deleteMemoryAsync", "deleteMemoryAsync", "deleteMemoryAsync", "deleteMemoryOperationCallable", "deleteMemoryCallable"]
+            },
+            "GenerateMemories": {
+              "methods": ["generateMemoriesAsync", "generateMemoriesAsync", "generateMemoriesAsync", "generateMemoriesOperationCallable", "generateMemoriesCallable"]
+            },
+            "GetIamPolicy": {
+              "methods": ["getIamPolicy", "getIamPolicyCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "GetMemory": {
+              "methods": ["getMemory", "getMemory", "getMemory", "getMemoryCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListMemories": {
+              "methods": ["listMemories", "listMemories", "listMemories", "listMemoriesPagedCallable", "listMemoriesCallable"]
+            },
+            "RetrieveMemories": {
+              "methods": ["retrieveMemories", "retrieveMemories", "retrieveMemories", "retrieveMemoriesCallable"]
+            },
+            "SetIamPolicy": {
+              "methods": ["setIamPolicy", "setIamPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissionsCallable"]
+            },
+            "UpdateMemory": {
+              "methods": ["updateMemoryAsync", "updateMemoryAsync", "updateMemoryOperationCallable", "updateMemoryCallable"]
+            }
+          }
+        }
+      }
+    },
     "MetadataService": {
       "clients": {
         "grpc": {
@@ -1314,6 +1359,9 @@
             },
             "MergeVersionAliases": {
               "methods": ["mergeVersionAliases", "mergeVersionAliases", "mergeVersionAliases", "mergeVersionAliasesCallable"]
+            },
+            "RecommendSpec": {
+              "methods": ["recommendSpec", "recommendSpecCallable"]
             },
             "SetIamPolicy": {
               "methods": ["setIamPolicy", "setIamPolicyCallable"]

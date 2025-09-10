@@ -1,5 +1,61 @@
 # Changelog
 
+## 1.33.0 (2025-08-25)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.52.0 ([#11727](https://github.com/googleapis/google-cloud-java/issues/11727)) ([31d8698](https://github.com/googleapis/google-cloud-java/commit/31d86980d0e27e0a948727d778cf46fbcf227239))
+
+
+## 1.32.0 (2025-08-13)
+
+* No change
+
+
+## 1.31.0 (2025-08-08)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.51.0 ([#11695](https://github.com/googleapis/google-cloud-java/issues/11695)) ([b82ce00](https://github.com/googleapis/google-cloud-java/commit/b82ce005c30551b8714099b7219b71bda85aa3a5))
+
+
+## 1.30.0 (2025-07-30)
+
+* No change
+
+
+## 1.29.0 (2025-07-28)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.50.2 ([#11680](https://github.com/googleapis/google-cloud-java/issues/11680)) ([d1b99a7](https://github.com/googleapis/google-cloud-java/commit/d1b99a706daa10c487b56edbb5170b41530628ca))
+
+
+## 1.28.0 (2025-07-11)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.50.1 ([#11655](https://github.com/googleapis/google-cloud-java/issues/11655)) ([9b34528](https://github.com/googleapis/google-cloud-java/commit/9b34528f85043049e3349fffc30bb2dbfe01836c))
+
+
+## 1.27.0 (2025-06-25)
+
+### Bug Fixes
+
+* Add deprecation note in README and pom ([#11638](https://github.com/googleapis/google-cloud-java/issues/11638)) ([8cc7c69](https://github.com/googleapis/google-cloud-java/commit/8cc7c693055c29428bb022c762cf4023a2cfacd2))
+* Add deprecation notice for generativeai package ([033b5f4](https://github.com/googleapis/google-cloud-java/commit/033b5f4eef7ecf31543f848dac86f758643d13ca))
+* Add deprecation notice for generativeai package ([#11637](https://github.com/googleapis/google-cloud-java/issues/11637)) ([033b5f4](https://github.com/googleapis/google-cloud-java/commit/033b5f4eef7ecf31543f848dac86f758643d13ca))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.50.0 ([#11624](https://github.com/googleapis/google-cloud-java/issues/11624)) ([a19f457](https://github.com/googleapis/google-cloud-java/commit/a19f457d10f15437ac26ce379048ff8b3cc6be5d))
+
+
+## 1.25.0 (2025-06-16)
+
+* No change
+
+
 ## 1.24.0 (2025-06-04)
 
 ### Dependencies

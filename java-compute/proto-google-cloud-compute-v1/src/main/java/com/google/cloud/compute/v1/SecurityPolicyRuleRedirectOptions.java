@@ -69,7 +69,7 @@ public final class SecurityPolicyRuleRedirectOptions extends com.google.protobuf
    *
    *
    * <pre>
-   * Type of the redirect action.
+   * Type of the redirect action. Possible values are: - GOOGLE_RECAPTCHA: redirect to reCAPTCHA for manual challenge assessment. - EXTERNAL_302: redirect to a different URL via a 302 response.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.compute.v1.SecurityPolicyRuleRedirectOptions.Type}
@@ -273,7 +273,7 @@ public final class SecurityPolicyRuleRedirectOptions extends com.google.protobuf
    *
    *
    * <pre>
-   * Type of the redirect action.
+   * Type of the redirect action. Possible values are: - GOOGLE_RECAPTCHA: redirect to reCAPTCHA for manual challenge assessment. - EXTERNAL_302: redirect to a different URL via a 302 response.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -290,7 +290,7 @@ public final class SecurityPolicyRuleRedirectOptions extends com.google.protobuf
    *
    *
    * <pre>
-   * Type of the redirect action.
+   * Type of the redirect action. Possible values are: - GOOGLE_RECAPTCHA: redirect to reCAPTCHA for manual challenge assessment. - EXTERNAL_302: redirect to a different URL via a 302 response.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -315,7 +315,7 @@ public final class SecurityPolicyRuleRedirectOptions extends com.google.protobuf
    *
    *
    * <pre>
-   * Type of the redirect action.
+   * Type of the redirect action. Possible values are: - GOOGLE_RECAPTCHA: redirect to reCAPTCHA for manual challenge assessment. - EXTERNAL_302: redirect to a different URL via a 302 response.
    * Check the Type enum for the list of possible values.
    * </pre>
    *
@@ -852,7 +852,7 @@ public final class SecurityPolicyRuleRedirectOptions extends com.google.protobuf
      *
      *
      * <pre>
-     * Type of the redirect action.
+     * Type of the redirect action. Possible values are: - GOOGLE_RECAPTCHA: redirect to reCAPTCHA for manual challenge assessment. - EXTERNAL_302: redirect to a different URL via a 302 response.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -868,7 +868,7 @@ public final class SecurityPolicyRuleRedirectOptions extends com.google.protobuf
      *
      *
      * <pre>
-     * Type of the redirect action.
+     * Type of the redirect action. Possible values are: - GOOGLE_RECAPTCHA: redirect to reCAPTCHA for manual challenge assessment. - EXTERNAL_302: redirect to a different URL via a 302 response.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -892,7 +892,7 @@ public final class SecurityPolicyRuleRedirectOptions extends com.google.protobuf
      *
      *
      * <pre>
-     * Type of the redirect action.
+     * Type of the redirect action. Possible values are: - GOOGLE_RECAPTCHA: redirect to reCAPTCHA for manual challenge assessment. - EXTERNAL_302: redirect to a different URL via a 302 response.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -916,7 +916,7 @@ public final class SecurityPolicyRuleRedirectOptions extends com.google.protobuf
      *
      *
      * <pre>
-     * Type of the redirect action.
+     * Type of the redirect action. Possible values are: - GOOGLE_RECAPTCHA: redirect to reCAPTCHA for manual challenge assessment. - EXTERNAL_302: redirect to a different URL via a 302 response.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -939,7 +939,7 @@ public final class SecurityPolicyRuleRedirectOptions extends com.google.protobuf
      *
      *
      * <pre>
-     * Type of the redirect action.
+     * Type of the redirect action. Possible values are: - GOOGLE_RECAPTCHA: redirect to reCAPTCHA for manual challenge assessment. - EXTERNAL_302: redirect to a different URL via a 302 response.
      * Check the Type enum for the list of possible values.
      * </pre>
      *
@@ -958,7 +958,7 @@ public final class SecurityPolicyRuleRedirectOptions extends com.google.protobuf
      *
      *
      * <pre>
-     * Type of the redirect action.
+     * Type of the redirect action. Possible values are: - GOOGLE_RECAPTCHA: redirect to reCAPTCHA for manual challenge assessment. - EXTERNAL_302: redirect to a different URL via a 302 response.
      * Check the Type enum for the list of possible values.
      * </pre>
      *

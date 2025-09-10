@@ -64,6 +64,7 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateMigrationWorkflowRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(MigrationWorkflow.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetMigrationWorkflowRequest, MigrationWorkflow>
@@ -75,6 +76,7 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetMigrationWorkflowRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(MigrationWorkflow.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -89,6 +91,7 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
                   ProtoUtils.marshaller(ListMigrationWorkflowsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListMigrationWorkflowsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteMigrationWorkflowRequest, Empty>
@@ -100,6 +103,7 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteMigrationWorkflowRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StartMigrationWorkflowRequest, Empty>
@@ -111,6 +115,7 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(StartMigrationWorkflowRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetMigrationSubtaskRequest, MigrationSubtask>
@@ -122,6 +127,7 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetMigrationSubtaskRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(MigrationSubtask.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListMigrationSubtasksRequest, ListMigrationSubtasksResponse>
@@ -134,6 +140,7 @@ public class GrpcMigrationServiceStub extends MigrationServiceStub {
                   ProtoUtils.marshaller(ListMigrationSubtasksRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListMigrationSubtasksResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateMigrationWorkflowRequest, MigrationWorkflow>

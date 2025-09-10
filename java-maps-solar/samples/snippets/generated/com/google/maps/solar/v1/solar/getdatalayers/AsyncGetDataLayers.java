@@ -20,10 +20,12 @@ package com.google.maps.solar.v1.samples;
 import com.google.api.core.ApiFuture;
 import com.google.maps.solar.v1.DataLayerView;
 import com.google.maps.solar.v1.DataLayers;
+import com.google.maps.solar.v1.Experiment;
 import com.google.maps.solar.v1.GetDataLayersRequest;
 import com.google.maps.solar.v1.ImageryQuality;
 import com.google.maps.solar.v1.SolarClient;
 import com.google.type.LatLng;
+import java.util.ArrayList;
 
 public class AsyncGetDataLayers {
 
@@ -46,6 +48,7 @@ public class AsyncGetDataLayers {
               .setRequiredQuality(ImageryQuality.forNumber(0))
               .setPixelSizeMeters(-1623742513)
               .setExactQualityRequired(true)
+              .addAllExperiments(new ArrayList<Experiment>())
               .build();
       ApiFuture<DataLayers> future = solarClient.getDataLayersCallable().futureCall(request);
       // Do something.

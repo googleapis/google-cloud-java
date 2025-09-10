@@ -54,6 +54,50 @@ public interface NetworkPeeringOrBuilder
    *
    *
    * <pre>
+   * [Output Only] The effective state of the peering connection as a whole.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.NetworkPeeringConnectionStatus connection_status = 525629555;
+   * </code>
+   *
+   * @return Whether the connectionStatus field is set.
+   */
+  boolean hasConnectionStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The effective state of the peering connection as a whole.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.NetworkPeeringConnectionStatus connection_status = 525629555;
+   * </code>
+   *
+   * @return The connectionStatus.
+   */
+  com.google.cloud.compute.v1.NetworkPeeringConnectionStatus getConnectionStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The effective state of the peering connection as a whole.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.NetworkPeeringConnectionStatus connection_status = 525629555;
+   * </code>
+   */
+  com.google.cloud.compute.v1.NetworkPeeringConnectionStatusOrBuilder
+      getConnectionStatusOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Indicates whether full mesh connectivity is created and managed automatically between peered networks. Currently this field should always be true since Google Compute Engine will automatically create and manage subnetwork routes between two networks when peering state is ACTIVE.
    * </pre>
    *
@@ -406,4 +450,46 @@ public interface NetworkPeeringOrBuilder
    * @return The bytes for stateDetails.
    */
   com.google.protobuf.ByteString getStateDetailsBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The update strategy determines the semantics for updates and deletes to the peering connection configuration.
+   * Check the UpdateStrategy enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string update_strategy = 6123049;</code>
+   *
+   * @return Whether the updateStrategy field is set.
+   */
+  boolean hasUpdateStrategy();
+
+  /**
+   *
+   *
+   * <pre>
+   * The update strategy determines the semantics for updates and deletes to the peering connection configuration.
+   * Check the UpdateStrategy enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string update_strategy = 6123049;</code>
+   *
+   * @return The updateStrategy.
+   */
+  java.lang.String getUpdateStrategy();
+
+  /**
+   *
+   *
+   * <pre>
+   * The update strategy determines the semantics for updates and deletes to the peering connection configuration.
+   * Check the UpdateStrategy enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string update_strategy = 6123049;</code>
+   *
+   * @return The bytes for updateStrategy.
+   */
+  com.google.protobuf.ByteString getUpdateStrategyBytes();
 }

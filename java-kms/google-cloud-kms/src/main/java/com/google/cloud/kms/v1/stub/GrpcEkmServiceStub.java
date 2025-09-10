@@ -70,6 +70,7 @@ public class GrpcEkmServiceStub extends EkmServiceStub {
                   ProtoUtils.marshaller(ListEkmConnectionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEkmConnectionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetEkmConnectionRequest, EkmConnection>
@@ -80,6 +81,7 @@ public class GrpcEkmServiceStub extends EkmServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetEkmConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(EkmConnection.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateEkmConnectionRequest, EkmConnection>
@@ -90,6 +92,7 @@ public class GrpcEkmServiceStub extends EkmServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateEkmConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(EkmConnection.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateEkmConnectionRequest, EkmConnection>
@@ -100,6 +103,7 @@ public class GrpcEkmServiceStub extends EkmServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateEkmConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(EkmConnection.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetEkmConfigRequest, EkmConfig>
@@ -109,6 +113,7 @@ public class GrpcEkmServiceStub extends EkmServiceStub {
               .setFullMethodName("google.cloud.kms.v1.EkmService/GetEkmConfig")
               .setRequestMarshaller(ProtoUtils.marshaller(GetEkmConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(EkmConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateEkmConfigRequest, EkmConfig>
@@ -119,6 +124,7 @@ public class GrpcEkmServiceStub extends EkmServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateEkmConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(EkmConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<VerifyConnectivityRequest, VerifyConnectivityResponse>
@@ -130,6 +136,7 @@ public class GrpcEkmServiceStub extends EkmServiceStub {
                   ProtoUtils.marshaller(VerifyConnectivityRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(VerifyConnectivityResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -141,6 +148,7 @@ public class GrpcEkmServiceStub extends EkmServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -149,6 +157,7 @@ public class GrpcEkmServiceStub extends EkmServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -157,6 +166,7 @@ public class GrpcEkmServiceStub extends EkmServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -165,6 +175,7 @@ public class GrpcEkmServiceStub extends EkmServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -176,6 +187,7 @@ public class GrpcEkmServiceStub extends EkmServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListEkmConnectionsRequest, ListEkmConnectionsResponse>

@@ -58,6 +58,7 @@ public class GrpcTagHoldsStub extends TagHoldsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateTagHoldRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteTagHoldRequest, Operation>
@@ -68,6 +69,7 @@ public class GrpcTagHoldsStub extends TagHoldsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteTagHoldRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListTagHoldsRequest, ListTagHoldsResponse>
@@ -78,6 +80,7 @@ public class GrpcTagHoldsStub extends TagHoldsStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListTagHoldsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTagHoldsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateTagHoldRequest, Operation> createTagHoldCallable;

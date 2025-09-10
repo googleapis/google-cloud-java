@@ -75,7 +75,7 @@ public final class ListServiceBindingsRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. The project and location from which the ServiceBindings should be
-   * listed, specified in the format `projects/&#42;&#47;locations/global`.
+   * listed, specified in the format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>
@@ -102,7 +102,7 @@ public final class ListServiceBindingsRequest extends com.google.protobuf.Genera
    *
    * <pre>
    * Required. The project and location from which the ServiceBindings should be
-   * listed, specified in the format `projects/&#42;&#47;locations/global`.
+   * listed, specified in the format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>
@@ -600,7 +600,7 @@ public final class ListServiceBindingsRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The project and location from which the ServiceBindings should be
-     * listed, specified in the format `projects/&#42;&#47;locations/global`.
+     * listed, specified in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -626,7 +626,7 @@ public final class ListServiceBindingsRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The project and location from which the ServiceBindings should be
-     * listed, specified in the format `projects/&#42;&#47;locations/global`.
+     * listed, specified in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -652,7 +652,7 @@ public final class ListServiceBindingsRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The project and location from which the ServiceBindings should be
-     * listed, specified in the format `projects/&#42;&#47;locations/global`.
+     * listed, specified in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -677,7 +677,7 @@ public final class ListServiceBindingsRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The project and location from which the ServiceBindings should be
-     * listed, specified in the format `projects/&#42;&#47;locations/global`.
+     * listed, specified in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>
@@ -698,7 +698,7 @@ public final class ListServiceBindingsRequest extends com.google.protobuf.Genera
      *
      * <pre>
      * Required. The project and location from which the ServiceBindings should be
-     * listed, specified in the format `projects/&#42;&#47;locations/global`.
+     * listed, specified in the format `projects/&#42;&#47;locations/&#42;`.
      * </pre>
      *
      * <code>

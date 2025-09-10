@@ -19,6 +19,36 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
+ * <p>======================= OrgPolicyViolationsPreviewServiceClient =======================
+ *
+ * <p>Service Description: Violations Preview API service for OrgPolicy.
+ *
+ * <p>An [OrgPolicyViolationsPreview][google.cloud.policysimulator.v1.OrgPolicyViolationsPreview] is
+ * a preview of the violations that will exist as soon as a proposed OrgPolicy change is submitted.
+ * To create an
+ * [OrgPolicyViolationsPreview][google.cloud.policysimulator.v1.OrgPolicyViolationsPreview], the API
+ * user specifies the changes they wish to make and requests the generation of a preview via
+ * [GenerateViolationsPreview][]. the OrgPolicy Simulator service then scans the API user's
+ * currently existing resources to determine these resources violate the newly set OrgPolicy.
+ *
+ * <p>Sample for OrgPolicyViolationsPreviewServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (OrgPolicyViolationsPreviewServiceClient orgPolicyViolationsPreviewServiceClient =
+ *     OrgPolicyViolationsPreviewServiceClient.create()) {
+ *   OrgPolicyViolationsPreviewName name =
+ *       OrgPolicyViolationsPreviewName.of(
+ *           "[ORGANIZATION]", "[LOCATION]", "[ORG_POLICY_VIOLATIONS_PREVIEW]");
+ *   OrgPolicyViolationsPreview response =
+ *       orgPolicyViolationsPreviewServiceClient.getOrgPolicyViolationsPreview(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= SimulatorClient =======================
  *
  * <p>Service Description: Policy Simulator API service.

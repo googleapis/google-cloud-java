@@ -56,8 +56,9 @@ public interface EditAtomOrBuilder
    *
    *
    * <pre>
-   * List of `Input.key`s identifying files that should be used in this atom.
-   * The listed `inputs` must have the same timeline.
+   * List of [Input.key][google.cloud.video.transcoder.v1.Input.key] values
+   * identifying files that should be used in this atom. The listed `inputs`
+   * must have the same timeline.
    * </pre>
    *
    * <code>repeated string inputs = 2;</code>
@@ -70,8 +71,9 @@ public interface EditAtomOrBuilder
    *
    *
    * <pre>
-   * List of `Input.key`s identifying files that should be used in this atom.
-   * The listed `inputs` must have the same timeline.
+   * List of [Input.key][google.cloud.video.transcoder.v1.Input.key] values
+   * identifying files that should be used in this atom. The listed `inputs`
+   * must have the same timeline.
    * </pre>
    *
    * <code>repeated string inputs = 2;</code>
@@ -84,8 +86,9 @@ public interface EditAtomOrBuilder
    *
    *
    * <pre>
-   * List of `Input.key`s identifying files that should be used in this atom.
-   * The listed `inputs` must have the same timeline.
+   * List of [Input.key][google.cloud.video.transcoder.v1.Input.key] values
+   * identifying files that should be used in this atom. The listed `inputs`
+   * must have the same timeline.
    * </pre>
    *
    * <code>repeated string inputs = 2;</code>
@@ -99,8 +102,9 @@ public interface EditAtomOrBuilder
    *
    *
    * <pre>
-   * List of `Input.key`s identifying files that should be used in this atom.
-   * The listed `inputs` must have the same timeline.
+   * List of [Input.key][google.cloud.video.transcoder.v1.Input.key] values
+   * identifying files that should be used in this atom. The listed `inputs`
+   * must have the same timeline.
    * </pre>
    *
    * <code>repeated string inputs = 2;</code>

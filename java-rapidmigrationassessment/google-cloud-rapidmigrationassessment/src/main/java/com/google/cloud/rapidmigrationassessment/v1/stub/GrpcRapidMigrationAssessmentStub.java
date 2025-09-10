@@ -70,6 +70,7 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateCollectorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateAnnotationRequest, Operation>
@@ -81,6 +82,7 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateAnnotationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAnnotationRequest, Annotation>
@@ -92,6 +94,7 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAnnotationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Annotation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListCollectorsRequest, ListCollectorsResponse>
@@ -104,6 +107,7 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
                   ProtoUtils.marshaller(ListCollectorsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCollectorsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetCollectorRequest, Collector>
@@ -114,6 +118,7 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
                   "google.cloud.rapidmigrationassessment.v1.RapidMigrationAssessment/GetCollector")
               .setRequestMarshaller(ProtoUtils.marshaller(GetCollectorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Collector.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateCollectorRequest, Operation>
@@ -125,6 +130,7 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateCollectorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteCollectorRequest, Operation>
@@ -136,6 +142,7 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteCollectorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ResumeCollectorRequest, Operation>
@@ -147,6 +154,7 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ResumeCollectorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RegisterCollectorRequest, Operation>
@@ -158,6 +166,7 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RegisterCollectorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<PauseCollectorRequest, Operation>
@@ -169,6 +178,7 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
               .setRequestMarshaller(
                   ProtoUtils.marshaller(PauseCollectorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -180,6 +190,7 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -188,6 +199,7 @@ public class GrpcRapidMigrationAssessmentStub extends RapidMigrationAssessmentSt
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CreateCollectorRequest, Operation> createCollectorCallable;

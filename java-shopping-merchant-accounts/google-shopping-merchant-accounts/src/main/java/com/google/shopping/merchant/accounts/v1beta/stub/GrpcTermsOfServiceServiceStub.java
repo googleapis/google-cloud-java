@@ -54,6 +54,7 @@ public class GrpcTermsOfServiceServiceStub extends TermsOfServiceServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetTermsOfServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TermsOfService.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RetrieveLatestTermsOfServiceRequest, TermsOfService>
@@ -65,6 +66,7 @@ public class GrpcTermsOfServiceServiceStub extends TermsOfServiceServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RetrieveLatestTermsOfServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TermsOfService.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AcceptTermsOfServiceRequest, Empty>
@@ -76,6 +78,7 @@ public class GrpcTermsOfServiceServiceStub extends TermsOfServiceServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(AcceptTermsOfServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetTermsOfServiceRequest, TermsOfService> getTermsOfServiceCallable;

@@ -54,6 +54,7 @@ public class GrpcBudgetServiceStub extends BudgetServiceStub {
           .setFullMethodName("google.cloud.billing.budgets.v1.BudgetService/CreateBudget")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateBudgetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Budget.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateBudgetRequest, Budget> updateBudgetMethodDescriptor =
@@ -62,6 +63,7 @@ public class GrpcBudgetServiceStub extends BudgetServiceStub {
           .setFullMethodName("google.cloud.billing.budgets.v1.BudgetService/UpdateBudget")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateBudgetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Budget.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetBudgetRequest, Budget> getBudgetMethodDescriptor =
@@ -70,6 +72,7 @@ public class GrpcBudgetServiceStub extends BudgetServiceStub {
           .setFullMethodName("google.cloud.billing.budgets.v1.BudgetService/GetBudget")
           .setRequestMarshaller(ProtoUtils.marshaller(GetBudgetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Budget.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListBudgetsRequest, ListBudgetsResponse>
@@ -80,6 +83,7 @@ public class GrpcBudgetServiceStub extends BudgetServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListBudgetsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBudgetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteBudgetRequest, Empty> deleteBudgetMethodDescriptor =
@@ -88,6 +92,7 @@ public class GrpcBudgetServiceStub extends BudgetServiceStub {
           .setFullMethodName("google.cloud.billing.budgets.v1.BudgetService/DeleteBudget")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteBudgetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CreateBudgetRequest, Budget> createBudgetCallable;

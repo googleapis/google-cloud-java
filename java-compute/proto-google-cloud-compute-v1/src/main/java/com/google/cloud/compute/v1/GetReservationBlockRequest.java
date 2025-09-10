@@ -43,6 +43,7 @@ public final class GetReservationBlockRequest extends com.google.protobuf.Genera
     project_ = "";
     reservation_ = "";
     reservationBlock_ = "";
+    view_ = "";
     zone_ = "";
   }
 
@@ -67,6 +68,191 @@ public final class GetReservationBlockRequest extends com.google.protobuf.Genera
             com.google.cloud.compute.v1.GetReservationBlockRequest.Builder.class);
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * View of the Block.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.compute.v1.GetReservationBlockRequest.View}
+   */
+  public enum View implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_VIEW = 0;</code>
+     */
+    UNDEFINED_VIEW(0),
+    /**
+     *
+     *
+     * <pre>
+     * This view includes basic information about the reservation block
+     * </pre>
+     *
+     * <code>BASIC = 62970894;</code>
+     */
+    BASIC(62970894),
+    /**
+     *
+     *
+     * <pre>
+     * The default / unset value. The API will default to the BASIC view.
+     * </pre>
+     *
+     * <code>BLOCK_VIEW_UNSPECIFIED = 275070479;</code>
+     */
+    BLOCK_VIEW_UNSPECIFIED(275070479),
+    /**
+     *
+     *
+     * <pre>
+     * Includes detailed topology view.
+     * </pre>
+     *
+     * <code>FULL = 2169487;</code>
+     */
+    FULL(2169487),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * A value indicating that the enum field is not set.
+     * </pre>
+     *
+     * <code>UNDEFINED_VIEW = 0;</code>
+     */
+    public static final int UNDEFINED_VIEW_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * This view includes basic information about the reservation block
+     * </pre>
+     *
+     * <code>BASIC = 62970894;</code>
+     */
+    public static final int BASIC_VALUE = 62970894;
+
+    /**
+     *
+     *
+     * <pre>
+     * The default / unset value. The API will default to the BASIC view.
+     * </pre>
+     *
+     * <code>BLOCK_VIEW_UNSPECIFIED = 275070479;</code>
+     */
+    public static final int BLOCK_VIEW_UNSPECIFIED_VALUE = 275070479;
+
+    /**
+     *
+     *
+     * <pre>
+     * Includes detailed topology view.
+     * </pre>
+     *
+     * <code>FULL = 2169487;</code>
+     */
+    public static final int FULL_VALUE = 2169487;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static View valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static View forNumber(int value) {
+      switch (value) {
+        case 0:
+          return UNDEFINED_VIEW;
+        case 62970894:
+          return BASIC;
+        case 275070479:
+          return BLOCK_VIEW_UNSPECIFIED;
+        case 2169487:
+          return FULL;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<View> internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<View> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<View>() {
+          public View findValueByNumber(int number) {
+            return View.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.compute.v1.GetReservationBlockRequest.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final View[] VALUES = values();
+
+    public static View valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private View(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.compute.v1.GetReservationBlockRequest.View)
+  }
+
+  private int bitField0_;
   public static final int PROJECT_FIELD_NUMBER = 227560217;
 
   @SuppressWarnings("serial")
@@ -226,6 +412,78 @@ public final class GetReservationBlockRequest extends com.google.protobuf.Genera
     }
   }
 
+  public static final int VIEW_FIELD_NUMBER = 3619493;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object view_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * View of the Block.
+   * Check the View enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string view = 3619493;</code>
+   *
+   * @return Whether the view field is set.
+   */
+  @java.lang.Override
+  public boolean hasView() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * View of the Block.
+   * Check the View enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string view = 3619493;</code>
+   *
+   * @return The view.
+   */
+  @java.lang.Override
+  public java.lang.String getView() {
+    java.lang.Object ref = view_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      view_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * View of the Block.
+   * Check the View enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string view = 3619493;</code>
+   *
+   * @return The bytes for view.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getViewBytes() {
+    java.lang.Object ref = view_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      view_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int ZONE_FIELD_NUMBER = 3744684;
 
   @SuppressWarnings("serial")
@@ -293,6 +551,9 @@ public final class GetReservationBlockRequest extends com.google.protobuf.Genera
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 3619493, view_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zone_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3744684, zone_);
     }
@@ -314,6 +575,9 @@ public final class GetReservationBlockRequest extends com.google.protobuf.Genera
     if (size != -1) return size;
 
     size = 0;
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3619493, view_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(zone_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3744684, zone_);
     }
@@ -346,6 +610,10 @@ public final class GetReservationBlockRequest extends com.google.protobuf.Genera
     if (!getProject().equals(other.getProject())) return false;
     if (!getReservation().equals(other.getReservation())) return false;
     if (!getReservationBlock().equals(other.getReservationBlock())) return false;
+    if (hasView() != other.hasView()) return false;
+    if (hasView()) {
+      if (!getView().equals(other.getView())) return false;
+    }
     if (!getZone().equals(other.getZone())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -364,6 +632,10 @@ public final class GetReservationBlockRequest extends com.google.protobuf.Genera
     hash = (53 * hash) + getReservation().hashCode();
     hash = (37 * hash) + RESERVATION_BLOCK_FIELD_NUMBER;
     hash = (53 * hash) + getReservationBlock().hashCode();
+    if (hasView()) {
+      hash = (37 * hash) + VIEW_FIELD_NUMBER;
+      hash = (53 * hash) + getView().hashCode();
+    }
     hash = (37 * hash) + ZONE_FIELD_NUMBER;
     hash = (53 * hash) + getZone().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
@@ -510,6 +782,7 @@ public final class GetReservationBlockRequest extends com.google.protobuf.Genera
       project_ = "";
       reservation_ = "";
       reservationBlock_ = "";
+      view_ = "";
       zone_ = "";
       return this;
     }
@@ -556,9 +829,15 @@ public final class GetReservationBlockRequest extends com.google.protobuf.Genera
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.reservationBlock_ = reservationBlock_;
       }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.view_ = view_;
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.zone_ = zone_;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -622,9 +901,14 @@ public final class GetReservationBlockRequest extends com.google.protobuf.Genera
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (other.hasView()) {
+        view_ = other.view_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
       if (!other.getZone().isEmpty()) {
         zone_ = other.zone_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -653,10 +937,16 @@ public final class GetReservationBlockRequest extends com.google.protobuf.Genera
             case 0:
               done = true;
               break;
+            case 28955946:
+              {
+                view_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 28955946
             case 29957474:
               {
                 zone_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 29957474
             case 380247650:
@@ -1029,6 +1319,138 @@ public final class GetReservationBlockRequest extends com.google.protobuf.Genera
       return this;
     }
 
+    private java.lang.Object view_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * View of the Block.
+     * Check the View enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string view = 3619493;</code>
+     *
+     * @return Whether the view field is set.
+     */
+    public boolean hasView() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * View of the Block.
+     * Check the View enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string view = 3619493;</code>
+     *
+     * @return The view.
+     */
+    public java.lang.String getView() {
+      java.lang.Object ref = view_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        view_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * View of the Block.
+     * Check the View enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string view = 3619493;</code>
+     *
+     * @return The bytes for view.
+     */
+    public com.google.protobuf.ByteString getViewBytes() {
+      java.lang.Object ref = view_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        view_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * View of the Block.
+     * Check the View enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string view = 3619493;</code>
+     *
+     * @param value The view to set.
+     * @return This builder for chaining.
+     */
+    public Builder setView(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      view_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * View of the Block.
+     * Check the View enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string view = 3619493;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearView() {
+      view_ = getDefaultInstance().getView();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * View of the Block.
+     * Check the View enum for the list of possible values.
+     * </pre>
+     *
+     * <code>optional string view = 3619493;</code>
+     *
+     * @param value The bytes for view to set.
+     * @return This builder for chaining.
+     */
+    public Builder setViewBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      view_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object zone_ = "";
 
     /**
@@ -1094,7 +1516,7 @@ public final class GetReservationBlockRequest extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       zone_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1112,7 +1534,7 @@ public final class GetReservationBlockRequest extends com.google.protobuf.Genera
      */
     public Builder clearZone() {
       zone_ = getDefaultInstance().getZone();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -1135,7 +1557,7 @@ public final class GetReservationBlockRequest extends com.google.protobuf.Genera
       }
       checkByteStringIsUtf8(value);
       zone_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

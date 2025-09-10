@@ -192,6 +192,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateConversationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Conversation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UploadConversationRequest, Operation>
@@ -203,6 +204,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UploadConversationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateConversationRequest, Conversation>
@@ -214,6 +216,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateConversationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Conversation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetConversationRequest, Conversation>
@@ -225,6 +228,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetConversationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Conversation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListConversationsRequest, ListConversationsResponse>
@@ -237,6 +241,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   ProtoUtils.marshaller(ListConversationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListConversationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteConversationRequest, Empty>
@@ -248,6 +253,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteConversationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateAnalysisRequest, Operation>
@@ -259,6 +265,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateAnalysisRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAnalysisRequest, Analysis> getAnalysisMethodDescriptor =
@@ -268,6 +275,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               "google.cloud.contactcenterinsights.v1.ContactCenterInsights/GetAnalysis")
           .setRequestMarshaller(ProtoUtils.marshaller(GetAnalysisRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Analysis.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListAnalysesRequest, ListAnalysesResponse>
@@ -279,6 +287,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListAnalysesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAnalysesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteAnalysisRequest, Empty>
@@ -290,6 +299,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteAnalysisRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BulkAnalyzeConversationsRequest, Operation>
@@ -301,6 +311,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BulkAnalyzeConversationsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BulkDeleteConversationsRequest, Operation>
@@ -312,6 +323,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BulkDeleteConversationsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<IngestConversationsRequest, Operation>
@@ -323,6 +335,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(IngestConversationsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ExportInsightsDataRequest, Operation>
@@ -334,6 +347,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ExportInsightsDataRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateIssueModelRequest, Operation>
@@ -345,6 +359,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateIssueModelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateIssueModelRequest, IssueModel>
@@ -356,6 +371,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateIssueModelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(IssueModel.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetIssueModelRequest, IssueModel>
@@ -367,6 +383,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetIssueModelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(IssueModel.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListIssueModelsRequest, ListIssueModelsResponse>
@@ -379,6 +396,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   ProtoUtils.marshaller(ListIssueModelsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListIssueModelsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteIssueModelRequest, Operation>
@@ -390,6 +408,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteIssueModelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeployIssueModelRequest, Operation>
@@ -401,6 +420,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeployIssueModelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UndeployIssueModelRequest, Operation>
@@ -412,6 +432,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UndeployIssueModelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ExportIssueModelRequest, Operation>
@@ -423,6 +444,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ExportIssueModelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportIssueModelRequest, Operation>
@@ -434,6 +456,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ImportIssueModelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetIssueRequest, Issue> getIssueMethodDescriptor =
@@ -442,6 +465,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
           .setFullMethodName("google.cloud.contactcenterinsights.v1.ContactCenterInsights/GetIssue")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIssueRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Issue.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListIssuesRequest, ListIssuesResponse>
@@ -452,6 +476,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   "google.cloud.contactcenterinsights.v1.ContactCenterInsights/ListIssues")
               .setRequestMarshaller(ProtoUtils.marshaller(ListIssuesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListIssuesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateIssueRequest, Issue> updateIssueMethodDescriptor =
@@ -461,6 +486,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               "google.cloud.contactcenterinsights.v1.ContactCenterInsights/UpdateIssue")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateIssueRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Issue.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteIssueRequest, Empty> deleteIssueMethodDescriptor =
@@ -470,6 +496,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               "google.cloud.contactcenterinsights.v1.ContactCenterInsights/DeleteIssue")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteIssueRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<
@@ -484,6 +511,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   ProtoUtils.marshaller(CalculateIssueModelStatsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(CalculateIssueModelStatsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreatePhraseMatcherRequest, PhraseMatcher>
@@ -495,6 +523,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreatePhraseMatcherRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PhraseMatcher.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetPhraseMatcherRequest, PhraseMatcher>
@@ -506,6 +535,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetPhraseMatcherRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PhraseMatcher.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListPhraseMatchersRequest, ListPhraseMatchersResponse>
@@ -518,6 +548,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   ProtoUtils.marshaller(ListPhraseMatchersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListPhraseMatchersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeletePhraseMatcherRequest, Empty>
@@ -529,6 +560,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeletePhraseMatcherRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdatePhraseMatcherRequest, PhraseMatcher>
@@ -540,6 +572,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdatePhraseMatcherRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PhraseMatcher.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CalculateStatsRequest, CalculateStatsResponse>
@@ -552,6 +585,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   ProtoUtils.marshaller(CalculateStatsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(CalculateStatsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSettingsRequest, Settings> getSettingsMethodDescriptor =
@@ -561,6 +595,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               "google.cloud.contactcenterinsights.v1.ContactCenterInsights/GetSettings")
           .setRequestMarshaller(ProtoUtils.marshaller(GetSettingsRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Settings.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateSettingsRequest, Settings>
@@ -572,6 +607,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Settings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateAnalysisRuleRequest, AnalysisRule>
@@ -583,6 +619,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateAnalysisRuleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AnalysisRule.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAnalysisRuleRequest, AnalysisRule>
@@ -594,6 +631,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAnalysisRuleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AnalysisRule.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListAnalysisRulesRequest, ListAnalysisRulesResponse>
@@ -606,6 +644,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   ProtoUtils.marshaller(ListAnalysisRulesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAnalysisRulesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateAnalysisRuleRequest, AnalysisRule>
@@ -617,6 +656,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateAnalysisRuleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AnalysisRule.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteAnalysisRuleRequest, Empty>
@@ -628,6 +668,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteAnalysisRuleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetEncryptionSpecRequest, EncryptionSpec>
@@ -639,6 +680,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetEncryptionSpecRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(EncryptionSpec.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<InitializeEncryptionSpecRequest, Operation>
@@ -650,6 +692,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(InitializeEncryptionSpecRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateViewRequest, View> createViewMethodDescriptor =
@@ -659,6 +702,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               "google.cloud.contactcenterinsights.v1.ContactCenterInsights/CreateView")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateViewRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(View.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetViewRequest, View> getViewMethodDescriptor =
@@ -667,6 +711,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
           .setFullMethodName("google.cloud.contactcenterinsights.v1.ContactCenterInsights/GetView")
           .setRequestMarshaller(ProtoUtils.marshaller(GetViewRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(View.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListViewsRequest, ListViewsResponse>
@@ -677,6 +722,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   "google.cloud.contactcenterinsights.v1.ContactCenterInsights/ListViews")
               .setRequestMarshaller(ProtoUtils.marshaller(ListViewsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListViewsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateViewRequest, View> updateViewMethodDescriptor =
@@ -686,6 +732,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               "google.cloud.contactcenterinsights.v1.ContactCenterInsights/UpdateView")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateViewRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(View.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteViewRequest, Empty> deleteViewMethodDescriptor =
@@ -695,6 +742,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               "google.cloud.contactcenterinsights.v1.ContactCenterInsights/DeleteView")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteViewRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<QueryMetricsRequest, Operation>
@@ -705,6 +753,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   "google.cloud.contactcenterinsights.v1.ContactCenterInsights/QueryMetrics")
               .setRequestMarshaller(ProtoUtils.marshaller(QueryMetricsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateQaQuestionRequest, QaQuestion>
@@ -716,6 +765,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateQaQuestionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(QaQuestion.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetQaQuestionRequest, QaQuestion>
@@ -727,6 +777,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetQaQuestionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(QaQuestion.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateQaQuestionRequest, QaQuestion>
@@ -738,6 +789,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateQaQuestionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(QaQuestion.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteQaQuestionRequest, Empty>
@@ -749,6 +801,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteQaQuestionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListQaQuestionsRequest, ListQaQuestionsResponse>
@@ -761,6 +814,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   ProtoUtils.marshaller(ListQaQuestionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListQaQuestionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateQaScorecardRequest, QaScorecard>
@@ -772,6 +826,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateQaScorecardRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(QaScorecard.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetQaScorecardRequest, QaScorecard>
@@ -783,6 +838,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetQaScorecardRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(QaScorecard.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateQaScorecardRequest, QaScorecard>
@@ -794,6 +850,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateQaScorecardRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(QaScorecard.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteQaScorecardRequest, Empty>
@@ -805,6 +862,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteQaScorecardRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListQaScorecardsRequest, ListQaScorecardsResponse>
@@ -817,6 +875,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   ProtoUtils.marshaller(ListQaScorecardsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListQaScorecardsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateQaScorecardRevisionRequest, QaScorecardRevision>
@@ -829,6 +888,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   ProtoUtils.marshaller(CreateQaScorecardRevisionRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(QaScorecardRevision.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetQaScorecardRevisionRequest, QaScorecardRevision>
@@ -841,6 +901,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   ProtoUtils.marshaller(GetQaScorecardRevisionRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(QaScorecardRevision.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<TuneQaScorecardRevisionRequest, Operation>
@@ -852,6 +913,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(TuneQaScorecardRevisionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeployQaScorecardRevisionRequest, QaScorecardRevision>
@@ -864,6 +926,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   ProtoUtils.marshaller(DeployQaScorecardRevisionRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(QaScorecardRevision.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UndeployQaScorecardRevisionRequest, QaScorecardRevision>
@@ -876,6 +939,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   ProtoUtils.marshaller(UndeployQaScorecardRevisionRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(QaScorecardRevision.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteQaScorecardRevisionRequest, Empty>
@@ -887,6 +951,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteQaScorecardRevisionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -901,6 +966,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   ProtoUtils.marshaller(ListQaScorecardRevisionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListQaScorecardRevisionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateFeedbackLabelRequest, FeedbackLabel>
@@ -912,6 +978,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateFeedbackLabelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(FeedbackLabel.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListFeedbackLabelsRequest, ListFeedbackLabelsResponse>
@@ -924,6 +991,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   ProtoUtils.marshaller(ListFeedbackLabelsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListFeedbackLabelsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetFeedbackLabelRequest, FeedbackLabel>
@@ -935,6 +1003,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetFeedbackLabelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(FeedbackLabel.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateFeedbackLabelRequest, FeedbackLabel>
@@ -946,6 +1015,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateFeedbackLabelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(FeedbackLabel.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteFeedbackLabelRequest, Empty>
@@ -957,6 +1027,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteFeedbackLabelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListAllFeedbackLabelsRequest, ListAllFeedbackLabelsResponse>
@@ -969,6 +1040,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
                   ProtoUtils.marshaller(ListAllFeedbackLabelsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAllFeedbackLabelsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BulkUploadFeedbackLabelsRequest, Operation>
@@ -980,6 +1052,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BulkUploadFeedbackLabelsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BulkDownloadFeedbackLabelsRequest, Operation>
@@ -991,6 +1064,7 @@ public class GrpcContactCenterInsightsStub extends ContactCenterInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BulkDownloadFeedbackLabelsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateConversationRequest, Conversation> createConversationCallable;

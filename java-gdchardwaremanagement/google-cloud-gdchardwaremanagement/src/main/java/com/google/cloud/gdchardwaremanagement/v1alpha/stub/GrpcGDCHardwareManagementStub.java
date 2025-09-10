@@ -117,6 +117,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
                   "google.cloud.gdchardwaremanagement.v1alpha.GDCHardwareManagement/ListOrders")
               .setRequestMarshaller(ProtoUtils.marshaller(ListOrdersRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListOrdersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetOrderRequest, Order> getOrderMethodDescriptor =
@@ -126,6 +127,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
               "google.cloud.gdchardwaremanagement.v1alpha.GDCHardwareManagement/GetOrder")
           .setRequestMarshaller(ProtoUtils.marshaller(GetOrderRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Order.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateOrderRequest, Operation> createOrderMethodDescriptor =
@@ -135,6 +137,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
               "google.cloud.gdchardwaremanagement.v1alpha.GDCHardwareManagement/CreateOrder")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateOrderRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateOrderRequest, Operation> updateOrderMethodDescriptor =
@@ -144,6 +147,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
               "google.cloud.gdchardwaremanagement.v1alpha.GDCHardwareManagement/UpdateOrder")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateOrderRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteOrderRequest, Operation> deleteOrderMethodDescriptor =
@@ -153,6 +157,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
               "google.cloud.gdchardwaremanagement.v1alpha.GDCHardwareManagement/DeleteOrder")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteOrderRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SubmitOrderRequest, Operation> submitOrderMethodDescriptor =
@@ -162,6 +167,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
               "google.cloud.gdchardwaremanagement.v1alpha.GDCHardwareManagement/SubmitOrder")
           .setRequestMarshaller(ProtoUtils.marshaller(SubmitOrderRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListSitesRequest, ListSitesResponse>
@@ -172,6 +178,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
                   "google.cloud.gdchardwaremanagement.v1alpha.GDCHardwareManagement/ListSites")
               .setRequestMarshaller(ProtoUtils.marshaller(ListSitesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListSitesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSiteRequest, Site> getSiteMethodDescriptor =
@@ -181,6 +188,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
               "google.cloud.gdchardwaremanagement.v1alpha.GDCHardwareManagement/GetSite")
           .setRequestMarshaller(ProtoUtils.marshaller(GetSiteRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Site.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateSiteRequest, Operation> createSiteMethodDescriptor =
@@ -190,6 +198,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
               "google.cloud.gdchardwaremanagement.v1alpha.GDCHardwareManagement/CreateSite")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateSiteRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateSiteRequest, Operation> updateSiteMethodDescriptor =
@@ -199,6 +208,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
               "google.cloud.gdchardwaremanagement.v1alpha.GDCHardwareManagement/UpdateSite")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateSiteRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteSiteRequest, Operation> deleteSiteMethodDescriptor =
@@ -208,6 +218,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
               "google.cloud.gdchardwaremanagement.v1alpha.GDCHardwareManagement/DeleteSite")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteSiteRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListHardwareGroupsRequest, ListHardwareGroupsResponse>
@@ -220,6 +231,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
                   ProtoUtils.marshaller(ListHardwareGroupsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListHardwareGroupsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetHardwareGroupRequest, HardwareGroup>
@@ -231,6 +243,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetHardwareGroupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(HardwareGroup.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateHardwareGroupRequest, Operation>
@@ -242,6 +255,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateHardwareGroupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateHardwareGroupRequest, Operation>
@@ -253,6 +267,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateHardwareGroupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteHardwareGroupRequest, Operation>
@@ -264,6 +279,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteHardwareGroupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListHardwareRequest, ListHardwareResponse>
@@ -275,6 +291,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListHardwareRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListHardwareResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetHardwareRequest, Hardware> getHardwareMethodDescriptor =
@@ -284,6 +301,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
               "google.cloud.gdchardwaremanagement.v1alpha.GDCHardwareManagement/GetHardware")
           .setRequestMarshaller(ProtoUtils.marshaller(GetHardwareRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Hardware.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateHardwareRequest, Operation>
@@ -295,6 +313,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateHardwareRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateHardwareRequest, Operation>
@@ -306,6 +325,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateHardwareRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteHardwareRequest, Operation>
@@ -317,6 +337,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteHardwareRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListCommentsRequest, ListCommentsResponse>
@@ -328,6 +349,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListCommentsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCommentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetCommentRequest, Comment> getCommentMethodDescriptor =
@@ -337,6 +359,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
               "google.cloud.gdchardwaremanagement.v1alpha.GDCHardwareManagement/GetComment")
           .setRequestMarshaller(ProtoUtils.marshaller(GetCommentRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Comment.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateCommentRequest, Operation>
@@ -348,6 +371,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateCommentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RecordActionOnCommentRequest, Comment>
@@ -359,6 +383,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RecordActionOnCommentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Comment.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListChangeLogEntriesRequest, ListChangeLogEntriesResponse>
@@ -371,6 +396,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
                   ProtoUtils.marshaller(ListChangeLogEntriesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListChangeLogEntriesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetChangeLogEntryRequest, ChangeLogEntry>
@@ -382,6 +408,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetChangeLogEntryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ChangeLogEntry.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListSkusRequest, ListSkusResponse>
@@ -392,6 +419,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
                   "google.cloud.gdchardwaremanagement.v1alpha.GDCHardwareManagement/ListSkus")
               .setRequestMarshaller(ProtoUtils.marshaller(ListSkusRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListSkusResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSkuRequest, Sku> getSkuMethodDescriptor =
@@ -401,6 +429,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
               "google.cloud.gdchardwaremanagement.v1alpha.GDCHardwareManagement/GetSku")
           .setRequestMarshaller(ProtoUtils.marshaller(GetSkuRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Sku.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListZonesRequest, ListZonesResponse>
@@ -411,6 +440,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
                   "google.cloud.gdchardwaremanagement.v1alpha.GDCHardwareManagement/ListZones")
               .setRequestMarshaller(ProtoUtils.marshaller(ListZonesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListZonesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetZoneRequest, Zone> getZoneMethodDescriptor =
@@ -420,6 +450,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
               "google.cloud.gdchardwaremanagement.v1alpha.GDCHardwareManagement/GetZone")
           .setRequestMarshaller(ProtoUtils.marshaller(GetZoneRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Zone.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateZoneRequest, Operation> createZoneMethodDescriptor =
@@ -429,6 +460,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
               "google.cloud.gdchardwaremanagement.v1alpha.GDCHardwareManagement/CreateZone")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateZoneRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateZoneRequest, Operation> updateZoneMethodDescriptor =
@@ -438,6 +470,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
               "google.cloud.gdchardwaremanagement.v1alpha.GDCHardwareManagement/UpdateZone")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateZoneRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteZoneRequest, Operation> deleteZoneMethodDescriptor =
@@ -447,6 +480,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
               "google.cloud.gdchardwaremanagement.v1alpha.GDCHardwareManagement/DeleteZone")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteZoneRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SignalZoneStateRequest, Operation>
@@ -458,6 +492,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(SignalZoneStateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -469,6 +504,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -477,6 +513,7 @@ public class GrpcGDCHardwareManagementStub extends GDCHardwareManagementStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListOrdersRequest, ListOrdersResponse> listOrdersCallable;

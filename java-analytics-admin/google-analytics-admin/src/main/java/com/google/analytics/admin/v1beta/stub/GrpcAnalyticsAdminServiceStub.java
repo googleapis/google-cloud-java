@@ -141,6 +141,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
           .setFullMethodName("google.analytics.admin.v1beta.AnalyticsAdminService/GetAccount")
           .setRequestMarshaller(ProtoUtils.marshaller(GetAccountRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Account.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListAccountsRequest, ListAccountsResponse>
@@ -151,6 +152,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListAccountsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAccountsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteAccountRequest, Empty> deleteAccountMethodDescriptor =
@@ -159,6 +161,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
           .setFullMethodName("google.analytics.admin.v1beta.AnalyticsAdminService/DeleteAccount")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteAccountRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateAccountRequest, Account>
@@ -170,6 +173,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateAccountRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Account.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -184,6 +188,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(ProvisionAccountTicketRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ProvisionAccountTicketResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListAccountSummariesRequest, ListAccountSummariesResponse>
@@ -196,6 +201,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(ListAccountSummariesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAccountSummariesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetPropertyRequest, Property> getPropertyMethodDescriptor =
@@ -204,6 +210,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
           .setFullMethodName("google.analytics.admin.v1beta.AnalyticsAdminService/GetProperty")
           .setRequestMarshaller(ProtoUtils.marshaller(GetPropertyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Property.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListPropertiesRequest, ListPropertiesResponse>
@@ -216,6 +223,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(ListPropertiesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListPropertiesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreatePropertyRequest, Property>
@@ -227,6 +235,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreatePropertyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Property.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeletePropertyRequest, Property>
@@ -238,6 +247,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeletePropertyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Property.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdatePropertyRequest, Property>
@@ -249,6 +259,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdatePropertyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Property.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateFirebaseLinkRequest, FirebaseLink>
@@ -260,6 +271,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateFirebaseLinkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(FirebaseLink.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteFirebaseLinkRequest, Empty>
@@ -271,6 +283,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteFirebaseLinkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListFirebaseLinksRequest, ListFirebaseLinksResponse>
@@ -283,6 +296,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(ListFirebaseLinksRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListFirebaseLinksResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateGoogleAdsLinkRequest, GoogleAdsLink>
@@ -294,6 +308,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateGoogleAdsLinkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(GoogleAdsLink.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateGoogleAdsLinkRequest, GoogleAdsLink>
@@ -305,6 +320,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateGoogleAdsLinkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(GoogleAdsLink.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteGoogleAdsLinkRequest, Empty>
@@ -316,6 +332,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteGoogleAdsLinkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListGoogleAdsLinksRequest, ListGoogleAdsLinksResponse>
@@ -328,6 +345,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(ListGoogleAdsLinksRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListGoogleAdsLinksResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDataSharingSettingsRequest, DataSharingSettings>
@@ -340,6 +358,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(GetDataSharingSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(DataSharingSettings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -354,6 +373,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(GetMeasurementProtocolSecretRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(MeasurementProtocolSecret.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -370,6 +390,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       ListMeasurementProtocolSecretsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -385,6 +406,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       CreateMeasurementProtocolSecretRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(MeasurementProtocolSecret.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteMeasurementProtocolSecretRequest, Empty>
@@ -397,6 +419,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(
                       DeleteMeasurementProtocolSecretRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -412,6 +435,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                       UpdateMeasurementProtocolSecretRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(MeasurementProtocolSecret.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -427,6 +451,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(AcknowledgeUserDataCollectionRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AcknowledgeUserDataCollectionResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -441,6 +466,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(SearchChangeHistoryEventsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchChangeHistoryEventsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateConversionEventRequest, ConversionEvent>
@@ -452,6 +478,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateConversionEventRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ConversionEvent.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateConversionEventRequest, ConversionEvent>
@@ -463,6 +490,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateConversionEventRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ConversionEvent.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetConversionEventRequest, ConversionEvent>
@@ -474,6 +502,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetConversionEventRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ConversionEvent.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteConversionEventRequest, Empty>
@@ -485,6 +514,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteConversionEventRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListConversionEventsRequest, ListConversionEventsResponse>
@@ -497,6 +527,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(ListConversionEventsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListConversionEventsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateKeyEventRequest, KeyEvent>
@@ -508,6 +539,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateKeyEventRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(KeyEvent.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateKeyEventRequest, KeyEvent>
@@ -519,6 +551,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateKeyEventRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(KeyEvent.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetKeyEventRequest, KeyEvent> getKeyEventMethodDescriptor =
@@ -527,6 +560,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
           .setFullMethodName("google.analytics.admin.v1beta.AnalyticsAdminService/GetKeyEvent")
           .setRequestMarshaller(ProtoUtils.marshaller(GetKeyEventRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(KeyEvent.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteKeyEventRequest, Empty>
@@ -538,6 +572,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteKeyEventRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListKeyEventsRequest, ListKeyEventsResponse>
@@ -550,6 +585,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(ListKeyEventsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListKeyEventsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateCustomDimensionRequest, CustomDimension>
@@ -561,6 +597,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateCustomDimensionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CustomDimension.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateCustomDimensionRequest, CustomDimension>
@@ -572,6 +609,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateCustomDimensionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CustomDimension.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListCustomDimensionsRequest, ListCustomDimensionsResponse>
@@ -584,6 +622,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(ListCustomDimensionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCustomDimensionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ArchiveCustomDimensionRequest, Empty>
@@ -595,6 +634,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ArchiveCustomDimensionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetCustomDimensionRequest, CustomDimension>
@@ -606,6 +646,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetCustomDimensionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CustomDimension.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateCustomMetricRequest, CustomMetric>
@@ -617,6 +658,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateCustomMetricRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CustomMetric.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateCustomMetricRequest, CustomMetric>
@@ -628,6 +670,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateCustomMetricRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CustomMetric.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListCustomMetricsRequest, ListCustomMetricsResponse>
@@ -640,6 +683,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(ListCustomMetricsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCustomMetricsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ArchiveCustomMetricRequest, Empty>
@@ -651,6 +695,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ArchiveCustomMetricRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetCustomMetricRequest, CustomMetric>
@@ -662,6 +707,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetCustomMetricRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CustomMetric.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDataRetentionSettingsRequest, DataRetentionSettings>
@@ -674,6 +720,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(GetDataRetentionSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(DataRetentionSettings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDataRetentionSettingsRequest, DataRetentionSettings>
@@ -686,6 +733,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(UpdateDataRetentionSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(DataRetentionSettings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateDataStreamRequest, DataStream>
@@ -697,6 +745,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDataStreamRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DataStream.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDataStreamRequest, Empty>
@@ -708,6 +757,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDataStreamRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDataStreamRequest, DataStream>
@@ -719,6 +769,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDataStreamRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DataStream.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListDataStreamsRequest, ListDataStreamsResponse>
@@ -731,6 +782,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(ListDataStreamsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDataStreamsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDataStreamRequest, DataStream>
@@ -742,6 +794,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetDataStreamRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DataStream.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RunAccessReportRequest, RunAccessReportResponse>
@@ -754,6 +807,7 @@ public class GrpcAnalyticsAdminServiceStub extends AnalyticsAdminServiceStub {
                   ProtoUtils.marshaller(RunAccessReportRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RunAccessReportResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetAccountRequest, Account> getAccountCallable;

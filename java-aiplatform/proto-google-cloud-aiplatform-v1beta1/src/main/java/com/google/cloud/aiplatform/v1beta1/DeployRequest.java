@@ -65,6 +65,830 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1beta1.DeployRequest.Builder.class);
   }
 
+  public interface CustomModelOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The Google Cloud Storage URI of the custom model, storing
+     * weights and config files (which can be used to infer the base model).
+     * </pre>
+     *
+     * <code>string gcs_uri = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return Whether the gcsUri field is set.
+     */
+    boolean hasGcsUri();
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The Google Cloud Storage URI of the custom model, storing
+     * weights and config files (which can be used to infer the base model).
+     * </pre>
+     *
+     * <code>string gcs_uri = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The gcsUri.
+     */
+    java.lang.String getGcsUri();
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The Google Cloud Storage URI of the custom model, storing
+     * weights and config files (which can be used to infer the base model).
+     * </pre>
+     *
+     * <code>string gcs_uri = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The bytes for gcsUri.
+     */
+    com.google.protobuf.ByteString getGcsUriBytes();
+
+    com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel.ModelSourceCase
+        getModelSourceCase();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The custom model to deploy from model weights in a Google Cloud Storage URI
+   * or Model Registry model.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel}
+   */
+  public static final class CustomModel extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel)
+      CustomModelOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use CustomModel.newBuilder() to construct.
+    private CustomModel(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private CustomModel() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new CustomModel();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.ModelGardenServiceProto
+          .internal_static_google_cloud_aiplatform_v1beta1_DeployRequest_CustomModel_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.ModelGardenServiceProto
+          .internal_static_google_cloud_aiplatform_v1beta1_DeployRequest_CustomModel_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel.class,
+              com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel.Builder.class);
+    }
+
+    private int modelSourceCase_ = 0;
+
+    @SuppressWarnings("serial")
+    private java.lang.Object modelSource_;
+
+    public enum ModelSourceCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      GCS_URI(2),
+      MODELSOURCE_NOT_SET(0);
+      private final int value;
+
+      private ModelSourceCase(int value) {
+        this.value = value;
+      }
+
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static ModelSourceCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static ModelSourceCase forNumber(int value) {
+        switch (value) {
+          case 2:
+            return GCS_URI;
+          case 0:
+            return MODELSOURCE_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public ModelSourceCase getModelSourceCase() {
+      return ModelSourceCase.forNumber(modelSourceCase_);
+    }
+
+    public static final int GCS_URI_FIELD_NUMBER = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The Google Cloud Storage URI of the custom model, storing
+     * weights and config files (which can be used to infer the base model).
+     * </pre>
+     *
+     * <code>string gcs_uri = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return Whether the gcsUri field is set.
+     */
+    public boolean hasGcsUri() {
+      return modelSourceCase_ == 2;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The Google Cloud Storage URI of the custom model, storing
+     * weights and config files (which can be used to infer the base model).
+     * </pre>
+     *
+     * <code>string gcs_uri = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The gcsUri.
+     */
+    public java.lang.String getGcsUri() {
+      java.lang.Object ref = "";
+      if (modelSourceCase_ == 2) {
+        ref = modelSource_;
+      }
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (modelSourceCase_ == 2) {
+          modelSource_ = s;
+        }
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The Google Cloud Storage URI of the custom model, storing
+     * weights and config files (which can be used to infer the base model).
+     * </pre>
+     *
+     * <code>string gcs_uri = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+     *
+     * @return The bytes for gcsUri.
+     */
+    public com.google.protobuf.ByteString getGcsUriBytes() {
+      java.lang.Object ref = "";
+      if (modelSourceCase_ == 2) {
+        ref = modelSource_;
+      }
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (modelSourceCase_ == 2) {
+          modelSource_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (modelSourceCase_ == 2) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, modelSource_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (modelSourceCase_ == 2) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, modelSource_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel other =
+          (com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel) obj;
+
+      if (!getModelSourceCase().equals(other.getModelSourceCase())) return false;
+      switch (modelSourceCase_) {
+        case 2:
+          if (!getGcsUri().equals(other.getGcsUri())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      switch (modelSourceCase_) {
+        case 2:
+          hash = (37 * hash) + GCS_URI_FIELD_NUMBER;
+          hash = (53 * hash) + getGcsUri().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The custom model to deploy from model weights in a Google Cloud Storage URI
+     * or Model Registry model.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel)
+        com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModelOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.ModelGardenServiceProto
+            .internal_static_google_cloud_aiplatform_v1beta1_DeployRequest_CustomModel_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.ModelGardenServiceProto
+            .internal_static_google_cloud_aiplatform_v1beta1_DeployRequest_CustomModel_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel.class,
+                com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel.Builder.class);
+      }
+
+      // Construct using com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        modelSourceCase_ = 0;
+        modelSource_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.ModelGardenServiceProto
+            .internal_static_google_cloud_aiplatform_v1beta1_DeployRequest_CustomModel_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel build() {
+        com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel result =
+            new com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel result) {
+        int from_bitField0_ = bitField0_;
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel result) {
+        result.modelSourceCase_ = modelSourceCase_;
+        result.modelSource_ = this.modelSource_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel) {
+          return mergeFrom((com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel other) {
+        if (other
+            == com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel.getDefaultInstance())
+          return this;
+        switch (other.getModelSourceCase()) {
+          case GCS_URI:
+            {
+              modelSourceCase_ = 2;
+              modelSource_ = other.modelSource_;
+              onChanged();
+              break;
+            }
+          case MODELSOURCE_NOT_SET:
+            {
+              break;
+            }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 18:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  modelSourceCase_ = 2;
+                  modelSource_ = s;
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int modelSourceCase_ = 0;
+      private java.lang.Object modelSource_;
+
+      public ModelSourceCase getModelSourceCase() {
+        return ModelSourceCase.forNumber(modelSourceCase_);
+      }
+
+      public Builder clearModelSource() {
+        modelSourceCase_ = 0;
+        modelSource_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Immutable. The Google Cloud Storage URI of the custom model, storing
+       * weights and config files (which can be used to infer the base model).
+       * </pre>
+       *
+       * <code>string gcs_uri = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       *
+       * @return Whether the gcsUri field is set.
+       */
+      @java.lang.Override
+      public boolean hasGcsUri() {
+        return modelSourceCase_ == 2;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Immutable. The Google Cloud Storage URI of the custom model, storing
+       * weights and config files (which can be used to infer the base model).
+       * </pre>
+       *
+       * <code>string gcs_uri = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       *
+       * @return The gcsUri.
+       */
+      @java.lang.Override
+      public java.lang.String getGcsUri() {
+        java.lang.Object ref = "";
+        if (modelSourceCase_ == 2) {
+          ref = modelSource_;
+        }
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (modelSourceCase_ == 2) {
+            modelSource_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Immutable. The Google Cloud Storage URI of the custom model, storing
+       * weights and config files (which can be used to infer the base model).
+       * </pre>
+       *
+       * <code>string gcs_uri = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       *
+       * @return The bytes for gcsUri.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getGcsUriBytes() {
+        java.lang.Object ref = "";
+        if (modelSourceCase_ == 2) {
+          ref = modelSource_;
+        }
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          if (modelSourceCase_ == 2) {
+            modelSource_ = b;
+          }
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Immutable. The Google Cloud Storage URI of the custom model, storing
+       * weights and config files (which can be used to infer the base model).
+       * </pre>
+       *
+       * <code>string gcs_uri = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       *
+       * @param value The gcsUri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGcsUri(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modelSourceCase_ = 2;
+        modelSource_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Immutable. The Google Cloud Storage URI of the custom model, storing
+       * weights and config files (which can be used to infer the base model).
+       * </pre>
+       *
+       * <code>string gcs_uri = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearGcsUri() {
+        if (modelSourceCase_ == 2) {
+          modelSourceCase_ = 0;
+          modelSource_ = null;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Immutable. The Google Cloud Storage URI of the custom model, storing
+       * weights and config files (which can be used to infer the base model).
+       * </pre>
+       *
+       * <code>string gcs_uri = 2 [(.google.api.field_behavior) = IMMUTABLE];</code>
+       *
+       * @param value The bytes for gcsUri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGcsUriBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        modelSourceCase_ = 2;
+        modelSource_ = value;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel)
+    private static final com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<CustomModel> PARSER =
+        new com.google.protobuf.AbstractParser<CustomModel>() {
+          @java.lang.Override
+          public CustomModel parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<CustomModel> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<CustomModel> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface ModelConfigOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.DeployRequest.ModelConfig)
@@ -200,6 +1024,44 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     com.google.cloud.aiplatform.v1beta1.ModelContainerSpecOrBuilder getContainerSpecOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ID to use for the uploaded Model, which will become the
+     * final component of the model resource name. When not provided, Vertex AI
+     * will generate a value for this ID. When Model Registry model is provided,
+     * this field will be ignored.
+     *
+     * This value may be up to 63 characters, and valid characters are
+     * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
+     * </pre>
+     *
+     * <code>string model_user_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The modelUserId.
+     */
+    java.lang.String getModelUserId();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ID to use for the uploaded Model, which will become the
+     * final component of the model resource name. When not provided, Vertex AI
+     * will generate a value for this ID. When Model Registry model is provided,
+     * this field will be ignored.
+     *
+     * This value may be up to 63 characters, and valid characters are
+     * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
+     * </pre>
+     *
+     * <code>string model_user_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for modelUserId.
+     */
+    com.google.protobuf.ByteString getModelUserIdBytes();
   }
 
   /**
@@ -225,6 +1087,7 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
     private ModelConfig() {
       huggingFaceAccessToken_ = "";
       modelDisplayName_ = "";
+      modelUserId_ = "";
     }
 
     @java.lang.Override
@@ -463,6 +1326,71 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
           : containerSpec_;
     }
 
+    public static final int MODEL_USER_ID_FIELD_NUMBER = 6;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object modelUserId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ID to use for the uploaded Model, which will become the
+     * final component of the model resource name. When not provided, Vertex AI
+     * will generate a value for this ID. When Model Registry model is provided,
+     * this field will be ignored.
+     *
+     * This value may be up to 63 characters, and valid characters are
+     * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
+     * </pre>
+     *
+     * <code>string model_user_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The modelUserId.
+     */
+    @java.lang.Override
+    public java.lang.String getModelUserId() {
+      java.lang.Object ref = modelUserId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        modelUserId_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The ID to use for the uploaded Model, which will become the
+     * final component of the model resource name. When not provided, Vertex AI
+     * will generate a value for this ID. When Model Registry model is provided,
+     * this field will be ignored.
+     *
+     * This value may be up to 63 characters, and valid characters are
+     * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
+     * </pre>
+     *
+     * <code>string model_user_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for modelUserId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getModelUserIdBytes() {
+      java.lang.Object ref = modelUserId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        modelUserId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -492,6 +1420,9 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(5, getContainerSpec());
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelUserId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, modelUserId_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -517,6 +1448,9 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
       if (((bitField0_ & 0x00000001) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getContainerSpec());
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(modelUserId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, modelUserId_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -541,6 +1475,7 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
       if (hasContainerSpec()) {
         if (!getContainerSpec().equals(other.getContainerSpec())) return false;
       }
+      if (!getModelUserId().equals(other.getModelUserId())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -564,6 +1499,8 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
         hash = (37 * hash) + CONTAINER_SPEC_FIELD_NUMBER;
         hash = (53 * hash) + getContainerSpec().hashCode();
       }
+      hash = (37 * hash) + MODEL_USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getModelUserId().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -725,6 +1662,7 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
           containerSpecBuilder_.dispose();
           containerSpecBuilder_ = null;
         }
+        modelUserId_ = "";
         return this;
       }
 
@@ -780,6 +1718,9 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
           result.containerSpec_ =
               containerSpecBuilder_ == null ? containerSpec_ : containerSpecBuilder_.build();
           to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.modelUserId_ = modelUserId_;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -853,6 +1794,11 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
         if (other.hasContainerSpec()) {
           mergeContainerSpec(other.getContainerSpec());
         }
+        if (!other.getModelUserId().isEmpty()) {
+          modelUserId_ = other.modelUserId_;
+          bitField0_ |= 0x00000020;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -909,6 +1855,12 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000010;
                   break;
                 } // case 42
+              case 50:
+                {
+                  modelUserId_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 50
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1513,6 +2465,147 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
         return containerSpecBuilder_;
       }
 
+      private java.lang.Object modelUserId_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The ID to use for the uploaded Model, which will become the
+       * final component of the model resource name. When not provided, Vertex AI
+       * will generate a value for this ID. When Model Registry model is provided,
+       * this field will be ignored.
+       *
+       * This value may be up to 63 characters, and valid characters are
+       * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
+       * </pre>
+       *
+       * <code>string model_user_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The modelUserId.
+       */
+      public java.lang.String getModelUserId() {
+        java.lang.Object ref = modelUserId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          modelUserId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The ID to use for the uploaded Model, which will become the
+       * final component of the model resource name. When not provided, Vertex AI
+       * will generate a value for this ID. When Model Registry model is provided,
+       * this field will be ignored.
+       *
+       * This value may be up to 63 characters, and valid characters are
+       * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
+       * </pre>
+       *
+       * <code>string model_user_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for modelUserId.
+       */
+      public com.google.protobuf.ByteString getModelUserIdBytes() {
+        java.lang.Object ref = modelUserId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          modelUserId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The ID to use for the uploaded Model, which will become the
+       * final component of the model resource name. When not provided, Vertex AI
+       * will generate a value for this ID. When Model Registry model is provided,
+       * this field will be ignored.
+       *
+       * This value may be up to 63 characters, and valid characters are
+       * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
+       * </pre>
+       *
+       * <code>string model_user_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The modelUserId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModelUserId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        modelUserId_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The ID to use for the uploaded Model, which will become the
+       * final component of the model resource name. When not provided, Vertex AI
+       * will generate a value for this ID. When Model Registry model is provided,
+       * this field will be ignored.
+       *
+       * This value may be up to 63 characters, and valid characters are
+       * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
+       * </pre>
+       *
+       * <code>string model_user_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearModelUserId() {
+        modelUserId_ = getDefaultInstance().getModelUserId();
+        bitField0_ = (bitField0_ & ~0x00000020);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The ID to use for the uploaded Model, which will become the
+       * final component of the model resource name. When not provided, Vertex AI
+       * will generate a value for this ID. When Model Registry model is provided,
+       * this field will be ignored.
+       *
+       * This value may be up to 63 characters, and valid characters are
+       * `[a-z0-9_-]`. The first character cannot be a number or hyphen.
+       * </pre>
+       *
+       * <code>string model_user_id = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for modelUserId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setModelUserIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        modelUserId_ = value;
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return this;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1617,19 +2710,107 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If true, the endpoint will be exposed through a dedicated
-     * DNS [Endpoint.dedicated_endpoint_dns]. Your request to the dedicated DNS
-     * will be isolated from other users' traffic and will have better
-     * performance and reliability. Note: Once you enabled dedicated endpoint,
-     * you won't be able to send request to the shared DNS
+     * Optional. Deprecated. Use dedicated_endpoint_disabled instead.
+     * If true, the endpoint will be exposed through a
+     * dedicated DNS [Endpoint.dedicated_endpoint_dns]. Your request to the
+     * dedicated DNS will be isolated from other users' traffic and will have
+     * better performance and reliability. Note: Once you enabled dedicated
+     * endpoint, you won't be able to send request to the shared DNS
      * {region}-aiplatform.googleapis.com. The limitations will be removed soon.
      * </pre>
      *
-     * <code>bool dedicated_endpoint_enabled = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * bool dedicated_endpoint_enabled = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated
+     *     google.cloud.aiplatform.v1beta1.DeployRequest.EndpointConfig.dedicated_endpoint_enabled
+     *     is deprecated. See google/cloud/aiplatform/v1beta1/model_garden_service.proto;l=281
      * @return The dedicatedEndpointEnabled.
      */
+    @java.lang.Deprecated
     boolean getDedicatedEndpointEnabled();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. By default, if dedicated endpoint is enabled, the endpoint will
+     * be exposed through a dedicated DNS [Endpoint.dedicated_endpoint_dns].
+     * Your request to the dedicated DNS will be isolated from other users'
+     * traffic and will have better performance and reliability. Note: Once you
+     * enabled dedicated endpoint, you won't be able to send request to the
+     * shared DNS {region}-aiplatform.googleapis.com. The limitations will be
+     * removed soon.
+     *
+     * If this field is set to true, the dedicated endpoint will be disabled
+     * and the deployed model will be exposed through the shared DNS
+     * {region}-aiplatform.googleapis.com.
+     * </pre>
+     *
+     * <code>bool dedicated_endpoint_disabled = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The dedicatedEndpointDisabled.
+     */
+    boolean getDedicatedEndpointDisabled();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The ID to use for endpoint, which will become the
+     * final component of the endpoint resource name. If not provided, Vertex AI
+     * will generate a value for this ID.
+     *
+     * If the first character is a letter, this value may be up to 63
+     * characters, and valid characters are `[a-z0-9-]`. The last character must
+     * be a letter or number.
+     *
+     * If the first character is a number, this value may be up to 9 characters,
+     * and valid characters are `[0-9]` with no leading zeros.
+     *
+     * When using HTTP/JSON, this field is populated
+     * based on a query string argument, such as `?endpoint_id=12345`. This is
+     * the fallback for fields that are not included in either the URI or the
+     * body.
+     * </pre>
+     *
+     * <code>
+     * string endpoint_user_id = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The endpointUserId.
+     */
+    java.lang.String getEndpointUserId();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The ID to use for endpoint, which will become the
+     * final component of the endpoint resource name. If not provided, Vertex AI
+     * will generate a value for this ID.
+     *
+     * If the first character is a letter, this value may be up to 63
+     * characters, and valid characters are `[a-z0-9-]`. The last character must
+     * be a letter or number.
+     *
+     * If the first character is a number, this value may be up to 9 characters,
+     * and valid characters are `[0-9]` with no leading zeros.
+     *
+     * When using HTTP/JSON, this field is populated
+     * based on a query string argument, such as `?endpoint_id=12345`. This is
+     * the fallback for fields that are not included in either the URI or the
+     * body.
+     * </pre>
+     *
+     * <code>
+     * string endpoint_user_id = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for endpointUserId.
+     */
+    com.google.protobuf.ByteString getEndpointUserIdBytes();
   }
 
   /**
@@ -1654,6 +2835,7 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
 
     private EndpointConfig() {
       endpointDisplayName_ = "";
+      endpointUserId_ = "";
     }
 
     @java.lang.Override
@@ -1739,21 +2921,142 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. If true, the endpoint will be exposed through a dedicated
-     * DNS [Endpoint.dedicated_endpoint_dns]. Your request to the dedicated DNS
-     * will be isolated from other users' traffic and will have better
-     * performance and reliability. Note: Once you enabled dedicated endpoint,
-     * you won't be able to send request to the shared DNS
+     * Optional. Deprecated. Use dedicated_endpoint_disabled instead.
+     * If true, the endpoint will be exposed through a
+     * dedicated DNS [Endpoint.dedicated_endpoint_dns]. Your request to the
+     * dedicated DNS will be isolated from other users' traffic and will have
+     * better performance and reliability. Note: Once you enabled dedicated
+     * endpoint, you won't be able to send request to the shared DNS
      * {region}-aiplatform.googleapis.com. The limitations will be removed soon.
      * </pre>
      *
-     * <code>bool dedicated_endpoint_enabled = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * bool dedicated_endpoint_enabled = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
+     * @deprecated
+     *     google.cloud.aiplatform.v1beta1.DeployRequest.EndpointConfig.dedicated_endpoint_enabled
+     *     is deprecated. See google/cloud/aiplatform/v1beta1/model_garden_service.proto;l=281
      * @return The dedicatedEndpointEnabled.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean getDedicatedEndpointEnabled() {
       return dedicatedEndpointEnabled_;
+    }
+
+    public static final int DEDICATED_ENDPOINT_DISABLED_FIELD_NUMBER = 4;
+    private boolean dedicatedEndpointDisabled_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. By default, if dedicated endpoint is enabled, the endpoint will
+     * be exposed through a dedicated DNS [Endpoint.dedicated_endpoint_dns].
+     * Your request to the dedicated DNS will be isolated from other users'
+     * traffic and will have better performance and reliability. Note: Once you
+     * enabled dedicated endpoint, you won't be able to send request to the
+     * shared DNS {region}-aiplatform.googleapis.com. The limitations will be
+     * removed soon.
+     *
+     * If this field is set to true, the dedicated endpoint will be disabled
+     * and the deployed model will be exposed through the shared DNS
+     * {region}-aiplatform.googleapis.com.
+     * </pre>
+     *
+     * <code>bool dedicated_endpoint_disabled = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The dedicatedEndpointDisabled.
+     */
+    @java.lang.Override
+    public boolean getDedicatedEndpointDisabled() {
+      return dedicatedEndpointDisabled_;
+    }
+
+    public static final int ENDPOINT_USER_ID_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object endpointUserId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The ID to use for endpoint, which will become the
+     * final component of the endpoint resource name. If not provided, Vertex AI
+     * will generate a value for this ID.
+     *
+     * If the first character is a letter, this value may be up to 63
+     * characters, and valid characters are `[a-z0-9-]`. The last character must
+     * be a letter or number.
+     *
+     * If the first character is a number, this value may be up to 9 characters,
+     * and valid characters are `[0-9]` with no leading zeros.
+     *
+     * When using HTTP/JSON, this field is populated
+     * based on a query string argument, such as `?endpoint_id=12345`. This is
+     * the fallback for fields that are not included in either the URI or the
+     * body.
+     * </pre>
+     *
+     * <code>
+     * string endpoint_user_id = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The endpointUserId.
+     */
+    @java.lang.Override
+    public java.lang.String getEndpointUserId() {
+      java.lang.Object ref = endpointUserId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        endpointUserId_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The ID to use for endpoint, which will become the
+     * final component of the endpoint resource name. If not provided, Vertex AI
+     * will generate a value for this ID.
+     *
+     * If the first character is a letter, this value may be up to 63
+     * characters, and valid characters are `[a-z0-9-]`. The last character must
+     * be a letter or number.
+     *
+     * If the first character is a number, this value may be up to 9 characters,
+     * and valid characters are `[0-9]` with no leading zeros.
+     *
+     * When using HTTP/JSON, this field is populated
+     * based on a query string argument, such as `?endpoint_id=12345`. This is
+     * the fallback for fields that are not included in either the URI or the
+     * body.
+     * </pre>
+     *
+     * <code>
+     * string endpoint_user_id = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for endpointUserId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getEndpointUserIdBytes() {
+      java.lang.Object ref = endpointUserId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        endpointUserId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -1776,6 +3079,12 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
       if (dedicatedEndpointEnabled_ != false) {
         output.writeBool(2, dedicatedEndpointEnabled_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endpointUserId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, endpointUserId_);
+      }
+      if (dedicatedEndpointDisabled_ != false) {
+        output.writeBool(4, dedicatedEndpointDisabled_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1790,6 +3099,13 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
       }
       if (dedicatedEndpointEnabled_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, dedicatedEndpointEnabled_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(endpointUserId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, endpointUserId_);
+      }
+      if (dedicatedEndpointDisabled_ != false) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeBoolSize(4, dedicatedEndpointDisabled_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1809,6 +3125,8 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
 
       if (!getEndpointDisplayName().equals(other.getEndpointDisplayName())) return false;
       if (getDedicatedEndpointEnabled() != other.getDedicatedEndpointEnabled()) return false;
+      if (getDedicatedEndpointDisabled() != other.getDedicatedEndpointDisabled()) return false;
+      if (!getEndpointUserId().equals(other.getEndpointUserId())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1824,6 +3142,10 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
       hash = (53 * hash) + getEndpointDisplayName().hashCode();
       hash = (37 * hash) + DEDICATED_ENDPOINT_ENABLED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDedicatedEndpointEnabled());
+      hash = (37 * hash) + DEDICATED_ENDPOINT_DISABLED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDedicatedEndpointDisabled());
+      hash = (37 * hash) + ENDPOINT_USER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getEndpointUserId().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -1971,6 +3293,8 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
         bitField0_ = 0;
         endpointDisplayName_ = "";
         dedicatedEndpointEnabled_ = false;
+        dedicatedEndpointDisabled_ = false;
+        endpointUserId_ = "";
         return this;
       }
 
@@ -2015,6 +3339,12 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.dedicatedEndpointEnabled_ = dedicatedEndpointEnabled_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.dedicatedEndpointDisabled_ = dedicatedEndpointDisabled_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.endpointUserId_ = endpointUserId_;
         }
       }
 
@@ -2077,6 +3407,14 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
         if (other.getDedicatedEndpointEnabled() != false) {
           setDedicatedEndpointEnabled(other.getDedicatedEndpointEnabled());
         }
+        if (other.getDedicatedEndpointDisabled() != false) {
+          setDedicatedEndpointDisabled(other.getDedicatedEndpointDisabled());
+        }
+        if (!other.getEndpointUserId().isEmpty()) {
+          endpointUserId_ = other.endpointUserId_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -2115,6 +3453,18 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 16
+              case 26:
+                {
+                  endpointUserId_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 26
+              case 32:
+                {
+                  dedicatedEndpointDisabled_ = input.readBool();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 32
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2256,19 +3606,26 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. If true, the endpoint will be exposed through a dedicated
-       * DNS [Endpoint.dedicated_endpoint_dns]. Your request to the dedicated DNS
-       * will be isolated from other users' traffic and will have better
-       * performance and reliability. Note: Once you enabled dedicated endpoint,
-       * you won't be able to send request to the shared DNS
+       * Optional. Deprecated. Use dedicated_endpoint_disabled instead.
+       * If true, the endpoint will be exposed through a
+       * dedicated DNS [Endpoint.dedicated_endpoint_dns]. Your request to the
+       * dedicated DNS will be isolated from other users' traffic and will have
+       * better performance and reliability. Note: Once you enabled dedicated
+       * endpoint, you won't be able to send request to the shared DNS
        * {region}-aiplatform.googleapis.com. The limitations will be removed soon.
        * </pre>
        *
-       * <code>bool dedicated_endpoint_enabled = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * <code>
+       * bool dedicated_endpoint_enabled = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
+       * @deprecated
+       *     google.cloud.aiplatform.v1beta1.DeployRequest.EndpointConfig.dedicated_endpoint_enabled
+       *     is deprecated. See google/cloud/aiplatform/v1beta1/model_garden_service.proto;l=281
        * @return The dedicatedEndpointEnabled.
        */
       @java.lang.Override
+      @java.lang.Deprecated
       public boolean getDedicatedEndpointEnabled() {
         return dedicatedEndpointEnabled_;
       }
@@ -2277,19 +3634,26 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. If true, the endpoint will be exposed through a dedicated
-       * DNS [Endpoint.dedicated_endpoint_dns]. Your request to the dedicated DNS
-       * will be isolated from other users' traffic and will have better
-       * performance and reliability. Note: Once you enabled dedicated endpoint,
-       * you won't be able to send request to the shared DNS
+       * Optional. Deprecated. Use dedicated_endpoint_disabled instead.
+       * If true, the endpoint will be exposed through a
+       * dedicated DNS [Endpoint.dedicated_endpoint_dns]. Your request to the
+       * dedicated DNS will be isolated from other users' traffic and will have
+       * better performance and reliability. Note: Once you enabled dedicated
+       * endpoint, you won't be able to send request to the shared DNS
        * {region}-aiplatform.googleapis.com. The limitations will be removed soon.
        * </pre>
        *
-       * <code>bool dedicated_endpoint_enabled = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * <code>
+       * bool dedicated_endpoint_enabled = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
+       * @deprecated
+       *     google.cloud.aiplatform.v1beta1.DeployRequest.EndpointConfig.dedicated_endpoint_enabled
+       *     is deprecated. See google/cloud/aiplatform/v1beta1/model_garden_service.proto;l=281
        * @param value The dedicatedEndpointEnabled to set.
        * @return This builder for chaining.
        */
+      @java.lang.Deprecated
       public Builder setDedicatedEndpointEnabled(boolean value) {
 
         dedicatedEndpointEnabled_ = value;
@@ -2302,21 +3666,308 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Optional. If true, the endpoint will be exposed through a dedicated
-       * DNS [Endpoint.dedicated_endpoint_dns]. Your request to the dedicated DNS
-       * will be isolated from other users' traffic and will have better
-       * performance and reliability. Note: Once you enabled dedicated endpoint,
-       * you won't be able to send request to the shared DNS
+       * Optional. Deprecated. Use dedicated_endpoint_disabled instead.
+       * If true, the endpoint will be exposed through a
+       * dedicated DNS [Endpoint.dedicated_endpoint_dns]. Your request to the
+       * dedicated DNS will be isolated from other users' traffic and will have
+       * better performance and reliability. Note: Once you enabled dedicated
+       * endpoint, you won't be able to send request to the shared DNS
        * {region}-aiplatform.googleapis.com. The limitations will be removed soon.
        * </pre>
        *
-       * <code>bool dedicated_endpoint_enabled = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       * <code>
+       * bool dedicated_endpoint_enabled = 2 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
+       * @deprecated
+       *     google.cloud.aiplatform.v1beta1.DeployRequest.EndpointConfig.dedicated_endpoint_enabled
+       *     is deprecated. See google/cloud/aiplatform/v1beta1/model_garden_service.proto;l=281
        * @return This builder for chaining.
        */
+      @java.lang.Deprecated
       public Builder clearDedicatedEndpointEnabled() {
         bitField0_ = (bitField0_ & ~0x00000002);
         dedicatedEndpointEnabled_ = false;
+        onChanged();
+        return this;
+      }
+
+      private boolean dedicatedEndpointDisabled_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. By default, if dedicated endpoint is enabled, the endpoint will
+       * be exposed through a dedicated DNS [Endpoint.dedicated_endpoint_dns].
+       * Your request to the dedicated DNS will be isolated from other users'
+       * traffic and will have better performance and reliability. Note: Once you
+       * enabled dedicated endpoint, you won't be able to send request to the
+       * shared DNS {region}-aiplatform.googleapis.com. The limitations will be
+       * removed soon.
+       *
+       * If this field is set to true, the dedicated endpoint will be disabled
+       * and the deployed model will be exposed through the shared DNS
+       * {region}-aiplatform.googleapis.com.
+       * </pre>
+       *
+       * <code>bool dedicated_endpoint_disabled = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The dedicatedEndpointDisabled.
+       */
+      @java.lang.Override
+      public boolean getDedicatedEndpointDisabled() {
+        return dedicatedEndpointDisabled_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. By default, if dedicated endpoint is enabled, the endpoint will
+       * be exposed through a dedicated DNS [Endpoint.dedicated_endpoint_dns].
+       * Your request to the dedicated DNS will be isolated from other users'
+       * traffic and will have better performance and reliability. Note: Once you
+       * enabled dedicated endpoint, you won't be able to send request to the
+       * shared DNS {region}-aiplatform.googleapis.com. The limitations will be
+       * removed soon.
+       *
+       * If this field is set to true, the dedicated endpoint will be disabled
+       * and the deployed model will be exposed through the shared DNS
+       * {region}-aiplatform.googleapis.com.
+       * </pre>
+       *
+       * <code>bool dedicated_endpoint_disabled = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The dedicatedEndpointDisabled to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDedicatedEndpointDisabled(boolean value) {
+
+        dedicatedEndpointDisabled_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. By default, if dedicated endpoint is enabled, the endpoint will
+       * be exposed through a dedicated DNS [Endpoint.dedicated_endpoint_dns].
+       * Your request to the dedicated DNS will be isolated from other users'
+       * traffic and will have better performance and reliability. Note: Once you
+       * enabled dedicated endpoint, you won't be able to send request to the
+       * shared DNS {region}-aiplatform.googleapis.com. The limitations will be
+       * removed soon.
+       *
+       * If this field is set to true, the dedicated endpoint will be disabled
+       * and the deployed model will be exposed through the shared DNS
+       * {region}-aiplatform.googleapis.com.
+       * </pre>
+       *
+       * <code>bool dedicated_endpoint_disabled = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDedicatedEndpointDisabled() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        dedicatedEndpointDisabled_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object endpointUserId_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Immutable. The ID to use for endpoint, which will become the
+       * final component of the endpoint resource name. If not provided, Vertex AI
+       * will generate a value for this ID.
+       *
+       * If the first character is a letter, this value may be up to 63
+       * characters, and valid characters are `[a-z0-9-]`. The last character must
+       * be a letter or number.
+       *
+       * If the first character is a number, this value may be up to 9 characters,
+       * and valid characters are `[0-9]` with no leading zeros.
+       *
+       * When using HTTP/JSON, this field is populated
+       * based on a query string argument, such as `?endpoint_id=12345`. This is
+       * the fallback for fields that are not included in either the URI or the
+       * body.
+       * </pre>
+       *
+       * <code>
+       * string endpoint_user_id = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The endpointUserId.
+       */
+      public java.lang.String getEndpointUserId() {
+        java.lang.Object ref = endpointUserId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          endpointUserId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Immutable. The ID to use for endpoint, which will become the
+       * final component of the endpoint resource name. If not provided, Vertex AI
+       * will generate a value for this ID.
+       *
+       * If the first character is a letter, this value may be up to 63
+       * characters, and valid characters are `[a-z0-9-]`. The last character must
+       * be a letter or number.
+       *
+       * If the first character is a number, this value may be up to 9 characters,
+       * and valid characters are `[0-9]` with no leading zeros.
+       *
+       * When using HTTP/JSON, this field is populated
+       * based on a query string argument, such as `?endpoint_id=12345`. This is
+       * the fallback for fields that are not included in either the URI or the
+       * body.
+       * </pre>
+       *
+       * <code>
+       * string endpoint_user_id = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The bytes for endpointUserId.
+       */
+      public com.google.protobuf.ByteString getEndpointUserIdBytes() {
+        java.lang.Object ref = endpointUserId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          endpointUserId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Immutable. The ID to use for endpoint, which will become the
+       * final component of the endpoint resource name. If not provided, Vertex AI
+       * will generate a value for this ID.
+       *
+       * If the first character is a letter, this value may be up to 63
+       * characters, and valid characters are `[a-z0-9-]`. The last character must
+       * be a letter or number.
+       *
+       * If the first character is a number, this value may be up to 9 characters,
+       * and valid characters are `[0-9]` with no leading zeros.
+       *
+       * When using HTTP/JSON, this field is populated
+       * based on a query string argument, such as `?endpoint_id=12345`. This is
+       * the fallback for fields that are not included in either the URI or the
+       * body.
+       * </pre>
+       *
+       * <code>
+       * string endpoint_user_id = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The endpointUserId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEndpointUserId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        endpointUserId_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Immutable. The ID to use for endpoint, which will become the
+       * final component of the endpoint resource name. If not provided, Vertex AI
+       * will generate a value for this ID.
+       *
+       * If the first character is a letter, this value may be up to 63
+       * characters, and valid characters are `[a-z0-9-]`. The last character must
+       * be a letter or number.
+       *
+       * If the first character is a number, this value may be up to 9 characters,
+       * and valid characters are `[0-9]` with no leading zeros.
+       *
+       * When using HTTP/JSON, this field is populated
+       * based on a query string argument, such as `?endpoint_id=12345`. This is
+       * the fallback for fields that are not included in either the URI or the
+       * body.
+       * </pre>
+       *
+       * <code>
+       * string endpoint_user_id = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEndpointUserId() {
+        endpointUserId_ = getDefaultInstance().getEndpointUserId();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Immutable. The ID to use for endpoint, which will become the
+       * final component of the endpoint resource name. If not provided, Vertex AI
+       * will generate a value for this ID.
+       *
+       * If the first character is a letter, this value may be up to 63
+       * characters, and valid characters are `[a-z0-9-]`. The last character must
+       * be a letter or number.
+       *
+       * If the first character is a number, this value may be up to 9 characters,
+       * and valid characters are `[0-9]` with no leading zeros.
+       *
+       * When using HTTP/JSON, this field is populated
+       * based on a query string argument, such as `?endpoint_id=12345`. This is
+       * the fallback for fields that are not included in either the URI or the
+       * body.
+       * </pre>
+       *
+       * <code>
+       * string endpoint_user_id = 3 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The bytes for endpointUserId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEndpointUserIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        endpointUserId_ = value;
+        bitField0_ |= 0x00000008;
         onChanged();
         return this;
       }
@@ -3801,6 +5452,7 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     PUBLISHER_MODEL_NAME(1),
     HUGGING_FACE_MODEL_ID(2),
+    CUSTOM_MODEL(3),
     ARTIFACTS_NOT_SET(0);
     private final int value;
 
@@ -3824,6 +5476,8 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
           return PUBLISHER_MODEL_NAME;
         case 2:
           return HUGGING_FACE_MODEL_ID;
+        case 3:
+          return CUSTOM_MODEL;
         case 0:
           return ARTIFACTS_NOT_SET;
         default:
@@ -3996,6 +5650,61 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int CUSTOM_MODEL_FIELD_NUMBER = 3;
+
+  /**
+   *
+   *
+   * <pre>
+   * The custom model to deploy from a Google Cloud Storage URI.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel custom_model = 3;</code>
+   *
+   * @return Whether the customModel field is set.
+   */
+  @java.lang.Override
+  public boolean hasCustomModel() {
+    return artifactsCase_ == 3;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The custom model to deploy from a Google Cloud Storage URI.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel custom_model = 3;</code>
+   *
+   * @return The customModel.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel getCustomModel() {
+    if (artifactsCase_ == 3) {
+      return (com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel) artifacts_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The custom model to deploy from a Google Cloud Storage URI.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel custom_model = 3;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModelOrBuilder
+      getCustomModelOrBuilder() {
+    if (artifactsCase_ == 3) {
+      return (com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel) artifacts_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel.getDefaultInstance();
   }
 
   public static final int DESTINATION_FIELD_NUMBER = 4;
@@ -4266,6 +5975,10 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
     if (artifactsCase_ == 2) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, artifacts_);
     }
+    if (artifactsCase_ == 3) {
+      output.writeMessage(
+          3, (com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel) artifacts_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(destination_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, destination_);
     }
@@ -4292,6 +6005,11 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
     }
     if (artifactsCase_ == 2) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, artifacts_);
+    }
+    if (artifactsCase_ == 3) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel) artifacts_);
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(destination_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, destination_);
@@ -4342,6 +6060,9 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
       case 2:
         if (!getHuggingFaceModelId().equals(other.getHuggingFaceModelId())) return false;
         break;
+      case 3:
+        if (!getCustomModel().equals(other.getCustomModel())) return false;
+        break;
       case 0:
       default:
     }
@@ -4378,6 +6099,10 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
       case 2:
         hash = (37 * hash) + HUGGING_FACE_MODEL_ID_FIELD_NUMBER;
         hash = (53 * hash) + getHuggingFaceModelId().hashCode();
+        break;
+      case 3:
+        hash = (37 * hash) + CUSTOM_MODEL_FIELD_NUMBER;
+        hash = (53 * hash) + getCustomModel().hashCode();
         break;
       case 0:
       default:
@@ -4534,6 +6259,9 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      if (customModelBuilder_ != null) {
+        customModelBuilder_.clear();
+      }
       destination_ = "";
       modelConfig_ = null;
       if (modelConfigBuilder_ != null) {
@@ -4589,21 +6317,21 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.DeployRequest result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000004) != 0)) {
+      if (((from_bitField0_ & 0x00000008) != 0)) {
         result.destination_ = destination_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.modelConfig_ =
             modelConfigBuilder_ == null ? modelConfig_ : modelConfigBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.endpointConfig_ =
             endpointConfigBuilder_ == null ? endpointConfig_ : endpointConfigBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
+      if (((from_bitField0_ & 0x00000040) != 0)) {
         result.deployConfig_ =
             deployConfigBuilder_ == null ? deployConfig_ : deployConfigBuilder_.build();
         to_bitField0_ |= 0x00000004;
@@ -4614,6 +6342,9 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
     private void buildPartialOneofs(com.google.cloud.aiplatform.v1beta1.DeployRequest result) {
       result.artifactsCase_ = artifactsCase_;
       result.artifacts_ = this.artifacts_;
+      if (artifactsCase_ == 3 && customModelBuilder_ != null) {
+        result.artifacts_ = customModelBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -4664,7 +6395,7 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
         return this;
       if (!other.getDestination().isEmpty()) {
         destination_ = other.destination_;
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       if (other.hasModelConfig()) {
@@ -4689,6 +6420,11 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
             artifactsCase_ = 2;
             artifacts_ = other.artifacts_;
             onChanged();
+            break;
+          }
+        case CUSTOM_MODEL:
+          {
+            mergeCustomModel(other.getCustomModel());
             break;
           }
         case ARTIFACTS_NOT_SET:
@@ -4736,28 +6472,34 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
                 artifacts_ = s;
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(getCustomModelFieldBuilder().getBuilder(), extensionRegistry);
+                artifactsCase_ = 3;
+                break;
+              } // case 26
             case 34:
               {
                 destination_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case 34
             case 42:
               {
                 input.readMessage(getModelConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             case 50:
               {
                 input.readMessage(getEndpointConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
               {
                 input.readMessage(getDeployConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 58
             default:
@@ -5095,6 +6837,231 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel,
+            com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel.Builder,
+            com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModelOrBuilder>
+        customModelBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The custom model to deploy from a Google Cloud Storage URI.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel custom_model = 3;</code>
+     *
+     * @return Whether the customModel field is set.
+     */
+    @java.lang.Override
+    public boolean hasCustomModel() {
+      return artifactsCase_ == 3;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The custom model to deploy from a Google Cloud Storage URI.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel custom_model = 3;</code>
+     *
+     * @return The customModel.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel getCustomModel() {
+      if (customModelBuilder_ == null) {
+        if (artifactsCase_ == 3) {
+          return (com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel) artifacts_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel.getDefaultInstance();
+      } else {
+        if (artifactsCase_ == 3) {
+          return customModelBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The custom model to deploy from a Google Cloud Storage URI.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel custom_model = 3;</code>
+     */
+    public Builder setCustomModel(
+        com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel value) {
+      if (customModelBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        artifacts_ = value;
+        onChanged();
+      } else {
+        customModelBuilder_.setMessage(value);
+      }
+      artifactsCase_ = 3;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The custom model to deploy from a Google Cloud Storage URI.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel custom_model = 3;</code>
+     */
+    public Builder setCustomModel(
+        com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel.Builder builderForValue) {
+      if (customModelBuilder_ == null) {
+        artifacts_ = builderForValue.build();
+        onChanged();
+      } else {
+        customModelBuilder_.setMessage(builderForValue.build());
+      }
+      artifactsCase_ = 3;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The custom model to deploy from a Google Cloud Storage URI.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel custom_model = 3;</code>
+     */
+    public Builder mergeCustomModel(
+        com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel value) {
+      if (customModelBuilder_ == null) {
+        if (artifactsCase_ == 3
+            && artifacts_
+                != com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel
+                    .getDefaultInstance()) {
+          artifacts_ =
+              com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel) artifacts_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          artifacts_ = value;
+        }
+        onChanged();
+      } else {
+        if (artifactsCase_ == 3) {
+          customModelBuilder_.mergeFrom(value);
+        } else {
+          customModelBuilder_.setMessage(value);
+        }
+      }
+      artifactsCase_ = 3;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The custom model to deploy from a Google Cloud Storage URI.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel custom_model = 3;</code>
+     */
+    public Builder clearCustomModel() {
+      if (customModelBuilder_ == null) {
+        if (artifactsCase_ == 3) {
+          artifactsCase_ = 0;
+          artifacts_ = null;
+          onChanged();
+        }
+      } else {
+        if (artifactsCase_ == 3) {
+          artifactsCase_ = 0;
+          artifacts_ = null;
+        }
+        customModelBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The custom model to deploy from a Google Cloud Storage URI.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel custom_model = 3;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel.Builder
+        getCustomModelBuilder() {
+      return getCustomModelFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The custom model to deploy from a Google Cloud Storage URI.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel custom_model = 3;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModelOrBuilder
+        getCustomModelOrBuilder() {
+      if ((artifactsCase_ == 3) && (customModelBuilder_ != null)) {
+        return customModelBuilder_.getMessageOrBuilder();
+      } else {
+        if (artifactsCase_ == 3) {
+          return (com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel) artifacts_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The custom model to deploy from a Google Cloud Storage URI.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel custom_model = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel,
+            com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel.Builder,
+            com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModelOrBuilder>
+        getCustomModelFieldBuilder() {
+      if (customModelBuilder_ == null) {
+        if (!(artifactsCase_ == 3)) {
+          artifacts_ =
+              com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel.getDefaultInstance();
+        }
+        customModelBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel,
+                com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel.Builder,
+                com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModelOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.DeployRequest.CustomModel) artifacts_,
+                getParentForChildren(),
+                isClean());
+        artifacts_ = null;
+      }
+      artifactsCase_ = 3;
+      onChanged();
+      return customModelBuilder_;
+    }
+
     private java.lang.Object destination_ = "";
 
     /**
@@ -5169,7 +7136,7 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       destination_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -5190,7 +7157,7 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearDestination() {
       destination_ = getDefaultInstance().getDestination();
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       onChanged();
       return this;
     }
@@ -5216,7 +7183,7 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       destination_ = value;
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -5243,7 +7210,7 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the modelConfig field is set.
      */
     public boolean hasModelConfig() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -5292,7 +7259,7 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         modelConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -5316,7 +7283,7 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         modelConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -5336,7 +7303,7 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeModelConfig(
         com.google.cloud.aiplatform.v1beta1.DeployRequest.ModelConfig value) {
       if (modelConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && modelConfig_ != null
             && modelConfig_
                 != com.google.cloud.aiplatform.v1beta1.DeployRequest.ModelConfig
@@ -5349,7 +7316,7 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
         modelConfigBuilder_.mergeFrom(value);
       }
       if (modelConfig_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -5368,7 +7335,7 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearModelConfig() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       modelConfig_ = null;
       if (modelConfigBuilder_ != null) {
         modelConfigBuilder_.dispose();
@@ -5392,7 +7359,7 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.aiplatform.v1beta1.DeployRequest.ModelConfig.Builder
         getModelConfigBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getModelConfigFieldBuilder().getBuilder();
     }
@@ -5471,7 +7438,7 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the endpointConfig field is set.
      */
     public boolean hasEndpointConfig() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -5520,7 +7487,7 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         endpointConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -5544,7 +7511,7 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         endpointConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -5564,7 +7531,7 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeEndpointConfig(
         com.google.cloud.aiplatform.v1beta1.DeployRequest.EndpointConfig value) {
       if (endpointConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && endpointConfig_ != null
             && endpointConfig_
                 != com.google.cloud.aiplatform.v1beta1.DeployRequest.EndpointConfig
@@ -5577,7 +7544,7 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
         endpointConfigBuilder_.mergeFrom(value);
       }
       if (endpointConfig_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -5596,7 +7563,7 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearEndpointConfig() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       endpointConfig_ = null;
       if (endpointConfigBuilder_ != null) {
         endpointConfigBuilder_.dispose();
@@ -5620,7 +7587,7 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.aiplatform.v1beta1.DeployRequest.EndpointConfig.Builder
         getEndpointConfigBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getEndpointConfigFieldBuilder().getBuilder();
     }
@@ -5699,7 +7666,7 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the deployConfig field is set.
      */
     public boolean hasDeployConfig() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -5748,7 +7715,7 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         deployConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -5772,7 +7739,7 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
       } else {
         deployConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -5792,7 +7759,7 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeDeployConfig(
         com.google.cloud.aiplatform.v1beta1.DeployRequest.DeployConfig value) {
       if (deployConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && deployConfig_ != null
             && deployConfig_
                 != com.google.cloud.aiplatform.v1beta1.DeployRequest.DeployConfig
@@ -5805,7 +7772,7 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
         deployConfigBuilder_.mergeFrom(value);
       }
       if (deployConfig_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -5824,7 +7791,7 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearDeployConfig() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       deployConfig_ = null;
       if (deployConfigBuilder_ != null) {
         deployConfigBuilder_.dispose();
@@ -5848,7 +7815,7 @@ public final class DeployRequest extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.aiplatform.v1beta1.DeployRequest.DeployConfig.Builder
         getDeployConfigBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return getDeployConfigFieldBuilder().getBuilder();
     }

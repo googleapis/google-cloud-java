@@ -5295,124 +5295,6 @@ public final class AnalyticsAdminServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
-          com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutRequest,
-          com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutResponse>
-      getSetAutomatedGa4ConfigurationOptOutMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "SetAutomatedGa4ConfigurationOptOut",
-      requestType =
-          com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutRequest.class,
-      responseType =
-          com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutRequest,
-          com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutResponse>
-      getSetAutomatedGa4ConfigurationOptOutMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutRequest,
-            com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutResponse>
-        getSetAutomatedGa4ConfigurationOptOutMethod;
-    if ((getSetAutomatedGa4ConfigurationOptOutMethod =
-            AnalyticsAdminServiceGrpc.getSetAutomatedGa4ConfigurationOptOutMethod)
-        == null) {
-      synchronized (AnalyticsAdminServiceGrpc.class) {
-        if ((getSetAutomatedGa4ConfigurationOptOutMethod =
-                AnalyticsAdminServiceGrpc.getSetAutomatedGa4ConfigurationOptOutMethod)
-            == null) {
-          AnalyticsAdminServiceGrpc.getSetAutomatedGa4ConfigurationOptOutMethod =
-              getSetAutomatedGa4ConfigurationOptOutMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.analytics.admin.v1alpha
-                              .SetAutomatedGa4ConfigurationOptOutRequest,
-                          com.google.analytics.admin.v1alpha
-                              .SetAutomatedGa4ConfigurationOptOutResponse>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              SERVICE_NAME, "SetAutomatedGa4ConfigurationOptOut"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.analytics.admin.v1alpha
-                                  .SetAutomatedGa4ConfigurationOptOutRequest.getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.analytics.admin.v1alpha
-                                  .SetAutomatedGa4ConfigurationOptOutResponse.getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new AnalyticsAdminServiceMethodDescriptorSupplier(
-                              "SetAutomatedGa4ConfigurationOptOut"))
-                      .build();
-        }
-      }
-    }
-    return getSetAutomatedGa4ConfigurationOptOutMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutRequest,
-          com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutResponse>
-      getFetchAutomatedGa4ConfigurationOptOutMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "FetchAutomatedGa4ConfigurationOptOut",
-      requestType =
-          com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutRequest.class,
-      responseType =
-          com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutRequest,
-          com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutResponse>
-      getFetchAutomatedGa4ConfigurationOptOutMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutRequest,
-            com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutResponse>
-        getFetchAutomatedGa4ConfigurationOptOutMethod;
-    if ((getFetchAutomatedGa4ConfigurationOptOutMethod =
-            AnalyticsAdminServiceGrpc.getFetchAutomatedGa4ConfigurationOptOutMethod)
-        == null) {
-      synchronized (AnalyticsAdminServiceGrpc.class) {
-        if ((getFetchAutomatedGa4ConfigurationOptOutMethod =
-                AnalyticsAdminServiceGrpc.getFetchAutomatedGa4ConfigurationOptOutMethod)
-            == null) {
-          AnalyticsAdminServiceGrpc.getFetchAutomatedGa4ConfigurationOptOutMethod =
-              getFetchAutomatedGa4ConfigurationOptOutMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.analytics.admin.v1alpha
-                              .FetchAutomatedGa4ConfigurationOptOutRequest,
-                          com.google.analytics.admin.v1alpha
-                              .FetchAutomatedGa4ConfigurationOptOutResponse>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(
-                              SERVICE_NAME, "FetchAutomatedGa4ConfigurationOptOut"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.analytics.admin.v1alpha
-                                  .FetchAutomatedGa4ConfigurationOptOutRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.analytics.admin.v1alpha
-                                  .FetchAutomatedGa4ConfigurationOptOutResponse
-                                  .getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new AnalyticsAdminServiceMethodDescriptorSupplier(
-                              "FetchAutomatedGa4ConfigurationOptOut"))
-                      .build();
-        }
-      }
-    }
-    return getFetchAutomatedGa4ConfigurationOptOutMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
           com.google.analytics.admin.v1alpha.CreateBigQueryLinkRequest,
           com.google.analytics.admin.v1alpha.BigQueryLink>
       getCreateBigQueryLinkMethod;
@@ -5754,216 +5636,6 @@ public final class AnalyticsAdminServiceGrpc {
       }
     }
     return getUpdateEnhancedMeasurementSettingsMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.analytics.admin.v1alpha.CreateConnectedSiteTagRequest,
-          com.google.analytics.admin.v1alpha.CreateConnectedSiteTagResponse>
-      getCreateConnectedSiteTagMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "CreateConnectedSiteTag",
-      requestType = com.google.analytics.admin.v1alpha.CreateConnectedSiteTagRequest.class,
-      responseType = com.google.analytics.admin.v1alpha.CreateConnectedSiteTagResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.analytics.admin.v1alpha.CreateConnectedSiteTagRequest,
-          com.google.analytics.admin.v1alpha.CreateConnectedSiteTagResponse>
-      getCreateConnectedSiteTagMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.analytics.admin.v1alpha.CreateConnectedSiteTagRequest,
-            com.google.analytics.admin.v1alpha.CreateConnectedSiteTagResponse>
-        getCreateConnectedSiteTagMethod;
-    if ((getCreateConnectedSiteTagMethod =
-            AnalyticsAdminServiceGrpc.getCreateConnectedSiteTagMethod)
-        == null) {
-      synchronized (AnalyticsAdminServiceGrpc.class) {
-        if ((getCreateConnectedSiteTagMethod =
-                AnalyticsAdminServiceGrpc.getCreateConnectedSiteTagMethod)
-            == null) {
-          AnalyticsAdminServiceGrpc.getCreateConnectedSiteTagMethod =
-              getCreateConnectedSiteTagMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.analytics.admin.v1alpha.CreateConnectedSiteTagRequest,
-                          com.google.analytics.admin.v1alpha.CreateConnectedSiteTagResponse>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(SERVICE_NAME, "CreateConnectedSiteTag"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.analytics.admin.v1alpha.CreateConnectedSiteTagRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.analytics.admin.v1alpha.CreateConnectedSiteTagResponse
-                                  .getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new AnalyticsAdminServiceMethodDescriptorSupplier(
-                              "CreateConnectedSiteTag"))
-                      .build();
-        }
-      }
-    }
-    return getCreateConnectedSiteTagMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.analytics.admin.v1alpha.DeleteConnectedSiteTagRequest,
-          com.google.protobuf.Empty>
-      getDeleteConnectedSiteTagMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "DeleteConnectedSiteTag",
-      requestType = com.google.analytics.admin.v1alpha.DeleteConnectedSiteTagRequest.class,
-      responseType = com.google.protobuf.Empty.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.analytics.admin.v1alpha.DeleteConnectedSiteTagRequest,
-          com.google.protobuf.Empty>
-      getDeleteConnectedSiteTagMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.analytics.admin.v1alpha.DeleteConnectedSiteTagRequest,
-            com.google.protobuf.Empty>
-        getDeleteConnectedSiteTagMethod;
-    if ((getDeleteConnectedSiteTagMethod =
-            AnalyticsAdminServiceGrpc.getDeleteConnectedSiteTagMethod)
-        == null) {
-      synchronized (AnalyticsAdminServiceGrpc.class) {
-        if ((getDeleteConnectedSiteTagMethod =
-                AnalyticsAdminServiceGrpc.getDeleteConnectedSiteTagMethod)
-            == null) {
-          AnalyticsAdminServiceGrpc.getDeleteConnectedSiteTagMethod =
-              getDeleteConnectedSiteTagMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.analytics.admin.v1alpha.DeleteConnectedSiteTagRequest,
-                          com.google.protobuf.Empty>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(SERVICE_NAME, "DeleteConnectedSiteTag"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.analytics.admin.v1alpha.DeleteConnectedSiteTagRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.protobuf.Empty.getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new AnalyticsAdminServiceMethodDescriptorSupplier(
-                              "DeleteConnectedSiteTag"))
-                      .build();
-        }
-      }
-    }
-    return getDeleteConnectedSiteTagMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.analytics.admin.v1alpha.ListConnectedSiteTagsRequest,
-          com.google.analytics.admin.v1alpha.ListConnectedSiteTagsResponse>
-      getListConnectedSiteTagsMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "ListConnectedSiteTags",
-      requestType = com.google.analytics.admin.v1alpha.ListConnectedSiteTagsRequest.class,
-      responseType = com.google.analytics.admin.v1alpha.ListConnectedSiteTagsResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.analytics.admin.v1alpha.ListConnectedSiteTagsRequest,
-          com.google.analytics.admin.v1alpha.ListConnectedSiteTagsResponse>
-      getListConnectedSiteTagsMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.analytics.admin.v1alpha.ListConnectedSiteTagsRequest,
-            com.google.analytics.admin.v1alpha.ListConnectedSiteTagsResponse>
-        getListConnectedSiteTagsMethod;
-    if ((getListConnectedSiteTagsMethod = AnalyticsAdminServiceGrpc.getListConnectedSiteTagsMethod)
-        == null) {
-      synchronized (AnalyticsAdminServiceGrpc.class) {
-        if ((getListConnectedSiteTagsMethod =
-                AnalyticsAdminServiceGrpc.getListConnectedSiteTagsMethod)
-            == null) {
-          AnalyticsAdminServiceGrpc.getListConnectedSiteTagsMethod =
-              getListConnectedSiteTagsMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.analytics.admin.v1alpha.ListConnectedSiteTagsRequest,
-                          com.google.analytics.admin.v1alpha.ListConnectedSiteTagsResponse>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(SERVICE_NAME, "ListConnectedSiteTags"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.analytics.admin.v1alpha.ListConnectedSiteTagsRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.analytics.admin.v1alpha.ListConnectedSiteTagsResponse
-                                  .getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new AnalyticsAdminServiceMethodDescriptorSupplier(
-                              "ListConnectedSiteTags"))
-                      .build();
-        }
-      }
-    }
-    return getListConnectedSiteTagsMethod;
-  }
-
-  private static volatile io.grpc.MethodDescriptor<
-          com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyRequest,
-          com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyResponse>
-      getFetchConnectedGa4PropertyMethod;
-
-  @io.grpc.stub.annotations.RpcMethod(
-      fullMethodName = SERVICE_NAME + '/' + "FetchConnectedGa4Property",
-      requestType = com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyRequest.class,
-      responseType = com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyResponse.class,
-      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<
-          com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyRequest,
-          com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyResponse>
-      getFetchConnectedGa4PropertyMethod() {
-    io.grpc.MethodDescriptor<
-            com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyRequest,
-            com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyResponse>
-        getFetchConnectedGa4PropertyMethod;
-    if ((getFetchConnectedGa4PropertyMethod =
-            AnalyticsAdminServiceGrpc.getFetchConnectedGa4PropertyMethod)
-        == null) {
-      synchronized (AnalyticsAdminServiceGrpc.class) {
-        if ((getFetchConnectedGa4PropertyMethod =
-                AnalyticsAdminServiceGrpc.getFetchConnectedGa4PropertyMethod)
-            == null) {
-          AnalyticsAdminServiceGrpc.getFetchConnectedGa4PropertyMethod =
-              getFetchConnectedGa4PropertyMethod =
-                  io.grpc.MethodDescriptor
-                      .<com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyRequest,
-                          com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyResponse>
-                          newBuilder()
-                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-                      .setFullMethodName(
-                          generateFullMethodName(SERVICE_NAME, "FetchConnectedGa4Property"))
-                      .setSampledToLocalTracing(true)
-                      .setRequestMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyRequest
-                                  .getDefaultInstance()))
-                      .setResponseMarshaller(
-                          io.grpc.protobuf.ProtoUtils.marshaller(
-                              com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyResponse
-                                  .getDefaultInstance()))
-                      .setSchemaDescriptor(
-                          new AnalyticsAdminServiceMethodDescriptorSupplier(
-                              "FetchConnectedGa4Property"))
-                      .build();
-        }
-      }
-    }
-    return getFetchConnectedGa4PropertyMethod;
   }
 
   private static volatile io.grpc.MethodDescriptor<
@@ -7959,6 +7631,218 @@ public final class AnalyticsAdminServiceGrpc {
     return getSubmitUserDeletionMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsRequest,
+          com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsResponse>
+      getListSubpropertySyncConfigsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "ListSubpropertySyncConfigs",
+      requestType = com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsRequest,
+          com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsResponse>
+      getListSubpropertySyncConfigsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsRequest,
+            com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsResponse>
+        getListSubpropertySyncConfigsMethod;
+    if ((getListSubpropertySyncConfigsMethod =
+            AnalyticsAdminServiceGrpc.getListSubpropertySyncConfigsMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getListSubpropertySyncConfigsMethod =
+                AnalyticsAdminServiceGrpc.getListSubpropertySyncConfigsMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getListSubpropertySyncConfigsMethod =
+              getListSubpropertySyncConfigsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsRequest,
+                          com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "ListSubpropertySyncConfigs"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsResponse
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "ListSubpropertySyncConfigs"))
+                      .build();
+        }
+      }
+    }
+    return getListSubpropertySyncConfigsMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateSubpropertySyncConfigRequest,
+          com.google.analytics.admin.v1alpha.SubpropertySyncConfig>
+      getUpdateSubpropertySyncConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "UpdateSubpropertySyncConfig",
+      requestType = com.google.analytics.admin.v1alpha.UpdateSubpropertySyncConfigRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.SubpropertySyncConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.UpdateSubpropertySyncConfigRequest,
+          com.google.analytics.admin.v1alpha.SubpropertySyncConfig>
+      getUpdateSubpropertySyncConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.UpdateSubpropertySyncConfigRequest,
+            com.google.analytics.admin.v1alpha.SubpropertySyncConfig>
+        getUpdateSubpropertySyncConfigMethod;
+    if ((getUpdateSubpropertySyncConfigMethod =
+            AnalyticsAdminServiceGrpc.getUpdateSubpropertySyncConfigMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getUpdateSubpropertySyncConfigMethod =
+                AnalyticsAdminServiceGrpc.getUpdateSubpropertySyncConfigMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getUpdateSubpropertySyncConfigMethod =
+              getUpdateSubpropertySyncConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.UpdateSubpropertySyncConfigRequest,
+                          com.google.analytics.admin.v1alpha.SubpropertySyncConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "UpdateSubpropertySyncConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.UpdateSubpropertySyncConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.SubpropertySyncConfig
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "UpdateSubpropertySyncConfig"))
+                      .build();
+        }
+      }
+    }
+    return getUpdateSubpropertySyncConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetSubpropertySyncConfigRequest,
+          com.google.analytics.admin.v1alpha.SubpropertySyncConfig>
+      getGetSubpropertySyncConfigMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetSubpropertySyncConfig",
+      requestType = com.google.analytics.admin.v1alpha.GetSubpropertySyncConfigRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.SubpropertySyncConfig.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetSubpropertySyncConfigRequest,
+          com.google.analytics.admin.v1alpha.SubpropertySyncConfig>
+      getGetSubpropertySyncConfigMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.GetSubpropertySyncConfigRequest,
+            com.google.analytics.admin.v1alpha.SubpropertySyncConfig>
+        getGetSubpropertySyncConfigMethod;
+    if ((getGetSubpropertySyncConfigMethod =
+            AnalyticsAdminServiceGrpc.getGetSubpropertySyncConfigMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getGetSubpropertySyncConfigMethod =
+                AnalyticsAdminServiceGrpc.getGetSubpropertySyncConfigMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getGetSubpropertySyncConfigMethod =
+              getGetSubpropertySyncConfigMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.GetSubpropertySyncConfigRequest,
+                          com.google.analytics.admin.v1alpha.SubpropertySyncConfig>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetSubpropertySyncConfig"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.GetSubpropertySyncConfigRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.SubpropertySyncConfig
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "GetSubpropertySyncConfig"))
+                      .build();
+        }
+      }
+    }
+    return getGetSubpropertySyncConfigMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetReportingIdentitySettingsRequest,
+          com.google.analytics.admin.v1alpha.ReportingIdentitySettings>
+      getGetReportingIdentitySettingsMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "GetReportingIdentitySettings",
+      requestType = com.google.analytics.admin.v1alpha.GetReportingIdentitySettingsRequest.class,
+      responseType = com.google.analytics.admin.v1alpha.ReportingIdentitySettings.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.analytics.admin.v1alpha.GetReportingIdentitySettingsRequest,
+          com.google.analytics.admin.v1alpha.ReportingIdentitySettings>
+      getGetReportingIdentitySettingsMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.analytics.admin.v1alpha.GetReportingIdentitySettingsRequest,
+            com.google.analytics.admin.v1alpha.ReportingIdentitySettings>
+        getGetReportingIdentitySettingsMethod;
+    if ((getGetReportingIdentitySettingsMethod =
+            AnalyticsAdminServiceGrpc.getGetReportingIdentitySettingsMethod)
+        == null) {
+      synchronized (AnalyticsAdminServiceGrpc.class) {
+        if ((getGetReportingIdentitySettingsMethod =
+                AnalyticsAdminServiceGrpc.getGetReportingIdentitySettingsMethod)
+            == null) {
+          AnalyticsAdminServiceGrpc.getGetReportingIdentitySettingsMethod =
+              getGetReportingIdentitySettingsMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.analytics.admin.v1alpha.GetReportingIdentitySettingsRequest,
+                          com.google.analytics.admin.v1alpha.ReportingIdentitySettings>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(SERVICE_NAME, "GetReportingIdentitySettings"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.GetReportingIdentitySettingsRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.analytics.admin.v1alpha.ReportingIdentitySettings
+                                  .getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AnalyticsAdminServiceMethodDescriptorSupplier(
+                              "GetReportingIdentitySettings"))
+                      .build();
+        }
+      }
+    }
+    return getGetReportingIdentitySettingsMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static AnalyticsAdminServiceStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<AnalyticsAdminServiceStub> factory =
@@ -9663,42 +9547,6 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Sets the opt out status for the automated GA4 setup process for a UA
-     * property.
-     * Note: this has no effect on GA4 property.
-     * </pre>
-     */
-    default void setAutomatedGa4ConfigurationOptOut(
-        com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutRequest request,
-        io.grpc.stub.StreamObserver<
-                com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutResponse>
-            responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getSetAutomatedGa4ConfigurationOptOutMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Fetches the opt out status for the automated GA4 setup process for a UA
-     * property.
-     * Note: this has no effect on GA4 property.
-     * </pre>
-     */
-    default void fetchAutomatedGa4ConfigurationOptOut(
-        com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutRequest request,
-        io.grpc.stub.StreamObserver<
-                com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutResponse>
-            responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getFetchAutomatedGa4ConfigurationOptOutMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Creates a BigQueryLink.
      * </pre>
      */
@@ -9801,74 +9649,6 @@ public final class AnalyticsAdminServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getUpdateEnhancedMeasurementSettingsMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates a connected site tag for a Universal Analytics property. You can
-     * create a maximum of 20 connected site tags per property.
-     * Note: This API cannot be used on GA4 properties.
-     * </pre>
-     */
-    default void createConnectedSiteTag(
-        com.google.analytics.admin.v1alpha.CreateConnectedSiteTagRequest request,
-        io.grpc.stub.StreamObserver<
-                com.google.analytics.admin.v1alpha.CreateConnectedSiteTagResponse>
-            responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getCreateConnectedSiteTagMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes a connected site tag for a Universal Analytics property.
-     * Note: this has no effect on GA4 properties.
-     * </pre>
-     */
-    default void deleteConnectedSiteTag(
-        com.google.analytics.admin.v1alpha.DeleteConnectedSiteTagRequest request,
-        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getDeleteConnectedSiteTagMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Lists the connected site tags for a Universal Analytics property. A maximum
-     * of 20 connected site tags will be returned. Note: this has no effect on GA4
-     * property.
-     * </pre>
-     */
-    default void listConnectedSiteTags(
-        com.google.analytics.admin.v1alpha.ListConnectedSiteTagsRequest request,
-        io.grpc.stub.StreamObserver<
-                com.google.analytics.admin.v1alpha.ListConnectedSiteTagsResponse>
-            responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getListConnectedSiteTagsMethod(), responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Given a specified UA property, looks up the GA4 property connected to it.
-     * Note: this cannot be used with GA4 properties.
-     * </pre>
-     */
-    default void fetchConnectedGa4Property(
-        com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyRequest request,
-        io.grpc.stub.StreamObserver<
-                com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyResponse>
-            responseObserver) {
-      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
-          getFetchConnectedGa4PropertyMethod(), responseObserver);
     }
 
     /**
@@ -10459,6 +10239,67 @@ public final class AnalyticsAdminServiceGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getSubmitUserDeletionMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all `SubpropertySyncConfig` resources for a property.
+     * </pre>
+     */
+    default void listSubpropertySyncConfigs(
+        com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsResponse>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getListSubpropertySyncConfigsMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a `SubpropertySyncConfig`.
+     * </pre>
+     */
+    default void updateSubpropertySyncConfig(
+        com.google.analytics.admin.v1alpha.UpdateSubpropertySyncConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.SubpropertySyncConfig>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getUpdateSubpropertySyncConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single `SubpropertySyncConfig`.
+     * </pre>
+     */
+    default void getSubpropertySyncConfig(
+        com.google.analytics.admin.v1alpha.GetSubpropertySyncConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.SubpropertySyncConfig>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetSubpropertySyncConfigMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the singleton data retention settings for this property.
+     * </pre>
+     */
+    default void getReportingIdentitySettings(
+        com.google.analytics.admin.v1alpha.GetReportingIdentitySettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ReportingIdentitySettings>
+            responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getGetReportingIdentitySettingsMethod(), responseObserver);
     }
   }
 
@@ -12351,46 +12192,6 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Sets the opt out status for the automated GA4 setup process for a UA
-     * property.
-     * Note: this has no effect on GA4 property.
-     * </pre>
-     */
-    public void setAutomatedGa4ConfigurationOptOut(
-        com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutRequest request,
-        io.grpc.stub.StreamObserver<
-                com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutResponse>
-            responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getSetAutomatedGa4ConfigurationOptOutMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Fetches the opt out status for the automated GA4 setup process for a UA
-     * property.
-     * Note: this has no effect on GA4 property.
-     * </pre>
-     */
-    public void fetchAutomatedGa4ConfigurationOptOut(
-        com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutRequest request,
-        io.grpc.stub.StreamObserver<
-                com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutResponse>
-            responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getFetchAutomatedGa4ConfigurationOptOutMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Creates a BigQueryLink.
      * </pre>
      */
@@ -12505,82 +12306,6 @@ public final class AnalyticsAdminServiceGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getUpdateEnhancedMeasurementSettingsMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates a connected site tag for a Universal Analytics property. You can
-     * create a maximum of 20 connected site tags per property.
-     * Note: This API cannot be used on GA4 properties.
-     * </pre>
-     */
-    public void createConnectedSiteTag(
-        com.google.analytics.admin.v1alpha.CreateConnectedSiteTagRequest request,
-        io.grpc.stub.StreamObserver<
-                com.google.analytics.admin.v1alpha.CreateConnectedSiteTagResponse>
-            responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getCreateConnectedSiteTagMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes a connected site tag for a Universal Analytics property.
-     * Note: this has no effect on GA4 properties.
-     * </pre>
-     */
-    public void deleteConnectedSiteTag(
-        com.google.analytics.admin.v1alpha.DeleteConnectedSiteTagRequest request,
-        io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getDeleteConnectedSiteTagMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Lists the connected site tags for a Universal Analytics property. A maximum
-     * of 20 connected site tags will be returned. Note: this has no effect on GA4
-     * property.
-     * </pre>
-     */
-    public void listConnectedSiteTags(
-        com.google.analytics.admin.v1alpha.ListConnectedSiteTagsRequest request,
-        io.grpc.stub.StreamObserver<
-                com.google.analytics.admin.v1alpha.ListConnectedSiteTagsResponse>
-            responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getListConnectedSiteTagsMethod(), getCallOptions()),
-          request,
-          responseObserver);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Given a specified UA property, looks up the GA4 property connected to it.
-     * Note: this cannot be used with GA4 properties.
-     * </pre>
-     */
-    public void fetchConnectedGa4Property(
-        com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyRequest request,
-        io.grpc.stub.StreamObserver<
-                com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyResponse>
-            responseObserver) {
-      io.grpc.stub.ClientCalls.asyncUnaryCall(
-          getChannel().newCall(getFetchConnectedGa4PropertyMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -13249,6 +12974,75 @@ public final class AnalyticsAdminServiceGrpc {
             responseObserver) {
       io.grpc.stub.ClientCalls.asyncUnaryCall(
           getChannel().newCall(getSubmitUserDeletionMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all `SubpropertySyncConfig` resources for a property.
+     * </pre>
+     */
+    public void listSubpropertySyncConfigs(
+        com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsRequest request,
+        io.grpc.stub.StreamObserver<
+                com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsResponse>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getListSubpropertySyncConfigsMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a `SubpropertySyncConfig`.
+     * </pre>
+     */
+    public void updateSubpropertySyncConfig(
+        com.google.analytics.admin.v1alpha.UpdateSubpropertySyncConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.SubpropertySyncConfig>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getUpdateSubpropertySyncConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single `SubpropertySyncConfig`.
+     * </pre>
+     */
+    public void getSubpropertySyncConfig(
+        com.google.analytics.admin.v1alpha.GetSubpropertySyncConfigRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.SubpropertySyncConfig>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetSubpropertySyncConfigMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the singleton data retention settings for this property.
+     * </pre>
+     */
+    public void getReportingIdentitySettings(
+        com.google.analytics.admin.v1alpha.GetReportingIdentitySettingsRequest request,
+        io.grpc.stub.StreamObserver<com.google.analytics.admin.v1alpha.ReportingIdentitySettings>
+            responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getGetReportingIdentitySettingsMethod(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -14770,39 +14564,6 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Sets the opt out status for the automated GA4 setup process for a UA
-     * property.
-     * Note: this has no effect on GA4 property.
-     * </pre>
-     */
-    public com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutResponse
-        setAutomatedGa4ConfigurationOptOut(
-            com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getSetAutomatedGa4ConfigurationOptOutMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Fetches the opt out status for the automated GA4 setup process for a UA
-     * property.
-     * Note: this has no effect on GA4 property.
-     * </pre>
-     */
-    public com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutResponse
-        fetchAutomatedGa4ConfigurationOptOut(
-            com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getFetchAutomatedGa4ConfigurationOptOutMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Creates a BigQueryLink.
      * </pre>
      */
@@ -14894,65 +14655,6 @@ public final class AnalyticsAdminServiceGrpc {
             com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateEnhancedMeasurementSettingsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates a connected site tag for a Universal Analytics property. You can
-     * create a maximum of 20 connected site tags per property.
-     * Note: This API cannot be used on GA4 properties.
-     * </pre>
-     */
-    public com.google.analytics.admin.v1alpha.CreateConnectedSiteTagResponse createConnectedSiteTag(
-        com.google.analytics.admin.v1alpha.CreateConnectedSiteTagRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateConnectedSiteTagMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes a connected site tag for a Universal Analytics property.
-     * Note: this has no effect on GA4 properties.
-     * </pre>
-     */
-    public com.google.protobuf.Empty deleteConnectedSiteTag(
-        com.google.analytics.admin.v1alpha.DeleteConnectedSiteTagRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteConnectedSiteTagMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Lists the connected site tags for a Universal Analytics property. A maximum
-     * of 20 connected site tags will be returned. Note: this has no effect on GA4
-     * property.
-     * </pre>
-     */
-    public com.google.analytics.admin.v1alpha.ListConnectedSiteTagsResponse listConnectedSiteTags(
-        com.google.analytics.admin.v1alpha.ListConnectedSiteTagsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListConnectedSiteTagsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Given a specified UA property, looks up the GA4 property connected to it.
-     * Note: this cannot be used with GA4 properties.
-     * </pre>
-     */
-    public com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyResponse
-        fetchConnectedGa4Property(
-            com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getFetchConnectedGa4PropertyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -15473,6 +15175,60 @@ public final class AnalyticsAdminServiceGrpc {
         com.google.analytics.admin.v1alpha.SubmitUserDeletionRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSubmitUserDeletionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all `SubpropertySyncConfig` resources for a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsResponse
+        listSubpropertySyncConfigs(
+            com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSubpropertySyncConfigsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a `SubpropertySyncConfig`.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.SubpropertySyncConfig updateSubpropertySyncConfig(
+        com.google.analytics.admin.v1alpha.UpdateSubpropertySyncConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSubpropertySyncConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single `SubpropertySyncConfig`.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.SubpropertySyncConfig getSubpropertySyncConfig(
+        com.google.analytics.admin.v1alpha.GetSubpropertySyncConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSubpropertySyncConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the singleton data retention settings for this property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ReportingIdentitySettings
+        getReportingIdentitySettings(
+            com.google.analytics.admin.v1alpha.GetReportingIdentitySettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetReportingIdentitySettingsMethod(), getCallOptions(), request);
     }
   }
 
@@ -16992,39 +16748,6 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Sets the opt out status for the automated GA4 setup process for a UA
-     * property.
-     * Note: this has no effect on GA4 property.
-     * </pre>
-     */
-    public com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutResponse
-        setAutomatedGa4ConfigurationOptOut(
-            com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getSetAutomatedGa4ConfigurationOptOutMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Fetches the opt out status for the automated GA4 setup process for a UA
-     * property.
-     * Note: this has no effect on GA4 property.
-     * </pre>
-     */
-    public com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutResponse
-        fetchAutomatedGa4ConfigurationOptOut(
-            com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutRequest
-                request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getFetchAutomatedGa4ConfigurationOptOutMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Creates a BigQueryLink.
      * </pre>
      */
@@ -17116,65 +16839,6 @@ public final class AnalyticsAdminServiceGrpc {
             com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getUpdateEnhancedMeasurementSettingsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates a connected site tag for a Universal Analytics property. You can
-     * create a maximum of 20 connected site tags per property.
-     * Note: This API cannot be used on GA4 properties.
-     * </pre>
-     */
-    public com.google.analytics.admin.v1alpha.CreateConnectedSiteTagResponse createConnectedSiteTag(
-        com.google.analytics.admin.v1alpha.CreateConnectedSiteTagRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getCreateConnectedSiteTagMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes a connected site tag for a Universal Analytics property.
-     * Note: this has no effect on GA4 properties.
-     * </pre>
-     */
-    public com.google.protobuf.Empty deleteConnectedSiteTag(
-        com.google.analytics.admin.v1alpha.DeleteConnectedSiteTagRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getDeleteConnectedSiteTagMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Lists the connected site tags for a Universal Analytics property. A maximum
-     * of 20 connected site tags will be returned. Note: this has no effect on GA4
-     * property.
-     * </pre>
-     */
-    public com.google.analytics.admin.v1alpha.ListConnectedSiteTagsResponse listConnectedSiteTags(
-        com.google.analytics.admin.v1alpha.ListConnectedSiteTagsRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getListConnectedSiteTagsMethod(), getCallOptions(), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Given a specified UA property, looks up the GA4 property connected to it.
-     * Note: this cannot be used with GA4 properties.
-     * </pre>
-     */
-    public com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyResponse
-        fetchConnectedGa4Property(
-            com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyRequest request) {
-      return io.grpc.stub.ClientCalls.blockingUnaryCall(
-          getChannel(), getFetchConnectedGa4PropertyMethod(), getCallOptions(), request);
     }
 
     /**
@@ -17695,6 +17359,60 @@ public final class AnalyticsAdminServiceGrpc {
         com.google.analytics.admin.v1alpha.SubmitUserDeletionRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getSubmitUserDeletionMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all `SubpropertySyncConfig` resources for a property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsResponse
+        listSubpropertySyncConfigs(
+            com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getListSubpropertySyncConfigsMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a `SubpropertySyncConfig`.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.SubpropertySyncConfig updateSubpropertySyncConfig(
+        com.google.analytics.admin.v1alpha.UpdateSubpropertySyncConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getUpdateSubpropertySyncConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single `SubpropertySyncConfig`.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.SubpropertySyncConfig getSubpropertySyncConfig(
+        com.google.analytics.admin.v1alpha.GetSubpropertySyncConfigRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetSubpropertySyncConfigMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the singleton data retention settings for this property.
+     * </pre>
+     */
+    public com.google.analytics.admin.v1alpha.ReportingIdentitySettings
+        getReportingIdentitySettings(
+            com.google.analytics.admin.v1alpha.GetReportingIdentitySettingsRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getGetReportingIdentitySettingsMethod(), getCallOptions(), request);
     }
   }
 
@@ -19330,43 +19048,6 @@ public final class AnalyticsAdminServiceGrpc {
      *
      *
      * <pre>
-     * Sets the opt out status for the automated GA4 setup process for a UA
-     * property.
-     * Note: this has no effect on GA4 property.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutResponse>
-        setAutomatedGa4ConfigurationOptOut(
-            com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getSetAutomatedGa4ConfigurationOptOutMethod(), getCallOptions()),
-          request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Fetches the opt out status for the automated GA4 setup process for a UA
-     * property.
-     * Note: this has no effect on GA4 property.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutResponse>
-        fetchAutomatedGa4ConfigurationOptOut(
-            com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutRequest
-                request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getFetchAutomatedGa4ConfigurationOptOutMethod(), getCallOptions()),
-          request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
      * Creates a BigQueryLink.
      * </pre>
      */
@@ -19466,71 +19147,6 @@ public final class AnalyticsAdminServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getUpdateEnhancedMeasurementSettingsMethod(), getCallOptions()),
           request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Creates a connected site tag for a Universal Analytics property. You can
-     * create a maximum of 20 connected site tags per property.
-     * Note: This API cannot be used on GA4 properties.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.analytics.admin.v1alpha.CreateConnectedSiteTagResponse>
-        createConnectedSiteTag(
-            com.google.analytics.admin.v1alpha.CreateConnectedSiteTagRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getCreateConnectedSiteTagMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Deletes a connected site tag for a Universal Analytics property.
-     * Note: this has no effect on GA4 properties.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.protobuf.Empty>
-        deleteConnectedSiteTag(
-            com.google.analytics.admin.v1alpha.DeleteConnectedSiteTagRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getDeleteConnectedSiteTagMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Lists the connected site tags for a Universal Analytics property. A maximum
-     * of 20 connected site tags will be returned. Note: this has no effect on GA4
-     * property.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.analytics.admin.v1alpha.ListConnectedSiteTagsResponse>
-        listConnectedSiteTags(
-            com.google.analytics.admin.v1alpha.ListConnectedSiteTagsRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getListConnectedSiteTagsMethod(), getCallOptions()), request);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Given a specified UA property, looks up the GA4 property connected to it.
-     * Note: this cannot be used with GA4 properties.
-     * </pre>
-     */
-    public com.google.common.util.concurrent.ListenableFuture<
-            com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyResponse>
-        fetchConnectedGa4Property(
-            com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyRequest request) {
-      return io.grpc.stub.ClientCalls.futureUnaryCall(
-          getChannel().newCall(getFetchConnectedGa4PropertyMethod(), getCallOptions()), request);
     }
 
     /**
@@ -20112,6 +19728,66 @@ public final class AnalyticsAdminServiceGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getSubmitUserDeletionMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * List all `SubpropertySyncConfig` resources for a property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsResponse>
+        listSubpropertySyncConfigs(
+            com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getListSubpropertySyncConfigsMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Updates a `SubpropertySyncConfig`.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.SubpropertySyncConfig>
+        updateSubpropertySyncConfig(
+            com.google.analytics.admin.v1alpha.UpdateSubpropertySyncConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getUpdateSubpropertySyncConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Lookup for a single `SubpropertySyncConfig`.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.SubpropertySyncConfig>
+        getSubpropertySyncConfig(
+            com.google.analytics.admin.v1alpha.GetSubpropertySyncConfigRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetSubpropertySyncConfigMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Returns the singleton data retention settings for this property.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.analytics.admin.v1alpha.ReportingIdentitySettings>
+        getReportingIdentitySettings(
+            com.google.analytics.admin.v1alpha.GetReportingIdentitySettingsRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getGetReportingIdentitySettingsMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_GET_ACCOUNT = 0;
@@ -20218,58 +19894,56 @@ public final class AnalyticsAdminServiceGrpc {
   private static final int METHODID_CREATE_CHANNEL_GROUP = 101;
   private static final int METHODID_UPDATE_CHANNEL_GROUP = 102;
   private static final int METHODID_DELETE_CHANNEL_GROUP = 103;
-  private static final int METHODID_SET_AUTOMATED_GA4CONFIGURATION_OPT_OUT = 104;
-  private static final int METHODID_FETCH_AUTOMATED_GA4CONFIGURATION_OPT_OUT = 105;
-  private static final int METHODID_CREATE_BIG_QUERY_LINK = 106;
-  private static final int METHODID_GET_BIG_QUERY_LINK = 107;
-  private static final int METHODID_LIST_BIG_QUERY_LINKS = 108;
-  private static final int METHODID_DELETE_BIG_QUERY_LINK = 109;
-  private static final int METHODID_UPDATE_BIG_QUERY_LINK = 110;
-  private static final int METHODID_GET_ENHANCED_MEASUREMENT_SETTINGS = 111;
-  private static final int METHODID_UPDATE_ENHANCED_MEASUREMENT_SETTINGS = 112;
-  private static final int METHODID_CREATE_CONNECTED_SITE_TAG = 113;
-  private static final int METHODID_DELETE_CONNECTED_SITE_TAG = 114;
-  private static final int METHODID_LIST_CONNECTED_SITE_TAGS = 115;
-  private static final int METHODID_FETCH_CONNECTED_GA4PROPERTY = 116;
-  private static final int METHODID_GET_AD_SENSE_LINK = 117;
-  private static final int METHODID_CREATE_AD_SENSE_LINK = 118;
-  private static final int METHODID_DELETE_AD_SENSE_LINK = 119;
-  private static final int METHODID_LIST_AD_SENSE_LINKS = 120;
-  private static final int METHODID_GET_EVENT_CREATE_RULE = 121;
-  private static final int METHODID_LIST_EVENT_CREATE_RULES = 122;
-  private static final int METHODID_CREATE_EVENT_CREATE_RULE = 123;
-  private static final int METHODID_UPDATE_EVENT_CREATE_RULE = 124;
-  private static final int METHODID_DELETE_EVENT_CREATE_RULE = 125;
-  private static final int METHODID_GET_EVENT_EDIT_RULE = 126;
-  private static final int METHODID_LIST_EVENT_EDIT_RULES = 127;
-  private static final int METHODID_CREATE_EVENT_EDIT_RULE = 128;
-  private static final int METHODID_UPDATE_EVENT_EDIT_RULE = 129;
-  private static final int METHODID_DELETE_EVENT_EDIT_RULE = 130;
-  private static final int METHODID_REORDER_EVENT_EDIT_RULES = 131;
-  private static final int METHODID_UPDATE_DATA_REDACTION_SETTINGS = 132;
-  private static final int METHODID_GET_DATA_REDACTION_SETTINGS = 133;
-  private static final int METHODID_GET_CALCULATED_METRIC = 134;
-  private static final int METHODID_CREATE_CALCULATED_METRIC = 135;
-  private static final int METHODID_LIST_CALCULATED_METRICS = 136;
-  private static final int METHODID_UPDATE_CALCULATED_METRIC = 137;
-  private static final int METHODID_DELETE_CALCULATED_METRIC = 138;
-  private static final int METHODID_CREATE_ROLLUP_PROPERTY = 139;
-  private static final int METHODID_GET_ROLLUP_PROPERTY_SOURCE_LINK = 140;
-  private static final int METHODID_LIST_ROLLUP_PROPERTY_SOURCE_LINKS = 141;
-  private static final int METHODID_CREATE_ROLLUP_PROPERTY_SOURCE_LINK = 142;
-  private static final int METHODID_DELETE_ROLLUP_PROPERTY_SOURCE_LINK = 143;
-  private static final int METHODID_PROVISION_SUBPROPERTY = 144;
-  private static final int METHODID_CREATE_SUBPROPERTY_EVENT_FILTER = 145;
-  private static final int METHODID_GET_SUBPROPERTY_EVENT_FILTER = 146;
-  private static final int METHODID_LIST_SUBPROPERTY_EVENT_FILTERS = 147;
-  private static final int METHODID_UPDATE_SUBPROPERTY_EVENT_FILTER = 148;
-  private static final int METHODID_DELETE_SUBPROPERTY_EVENT_FILTER = 149;
-  private static final int METHODID_CREATE_REPORTING_DATA_ANNOTATION = 150;
-  private static final int METHODID_GET_REPORTING_DATA_ANNOTATION = 151;
-  private static final int METHODID_LIST_REPORTING_DATA_ANNOTATIONS = 152;
-  private static final int METHODID_UPDATE_REPORTING_DATA_ANNOTATION = 153;
-  private static final int METHODID_DELETE_REPORTING_DATA_ANNOTATION = 154;
-  private static final int METHODID_SUBMIT_USER_DELETION = 155;
+  private static final int METHODID_CREATE_BIG_QUERY_LINK = 104;
+  private static final int METHODID_GET_BIG_QUERY_LINK = 105;
+  private static final int METHODID_LIST_BIG_QUERY_LINKS = 106;
+  private static final int METHODID_DELETE_BIG_QUERY_LINK = 107;
+  private static final int METHODID_UPDATE_BIG_QUERY_LINK = 108;
+  private static final int METHODID_GET_ENHANCED_MEASUREMENT_SETTINGS = 109;
+  private static final int METHODID_UPDATE_ENHANCED_MEASUREMENT_SETTINGS = 110;
+  private static final int METHODID_GET_AD_SENSE_LINK = 111;
+  private static final int METHODID_CREATE_AD_SENSE_LINK = 112;
+  private static final int METHODID_DELETE_AD_SENSE_LINK = 113;
+  private static final int METHODID_LIST_AD_SENSE_LINKS = 114;
+  private static final int METHODID_GET_EVENT_CREATE_RULE = 115;
+  private static final int METHODID_LIST_EVENT_CREATE_RULES = 116;
+  private static final int METHODID_CREATE_EVENT_CREATE_RULE = 117;
+  private static final int METHODID_UPDATE_EVENT_CREATE_RULE = 118;
+  private static final int METHODID_DELETE_EVENT_CREATE_RULE = 119;
+  private static final int METHODID_GET_EVENT_EDIT_RULE = 120;
+  private static final int METHODID_LIST_EVENT_EDIT_RULES = 121;
+  private static final int METHODID_CREATE_EVENT_EDIT_RULE = 122;
+  private static final int METHODID_UPDATE_EVENT_EDIT_RULE = 123;
+  private static final int METHODID_DELETE_EVENT_EDIT_RULE = 124;
+  private static final int METHODID_REORDER_EVENT_EDIT_RULES = 125;
+  private static final int METHODID_UPDATE_DATA_REDACTION_SETTINGS = 126;
+  private static final int METHODID_GET_DATA_REDACTION_SETTINGS = 127;
+  private static final int METHODID_GET_CALCULATED_METRIC = 128;
+  private static final int METHODID_CREATE_CALCULATED_METRIC = 129;
+  private static final int METHODID_LIST_CALCULATED_METRICS = 130;
+  private static final int METHODID_UPDATE_CALCULATED_METRIC = 131;
+  private static final int METHODID_DELETE_CALCULATED_METRIC = 132;
+  private static final int METHODID_CREATE_ROLLUP_PROPERTY = 133;
+  private static final int METHODID_GET_ROLLUP_PROPERTY_SOURCE_LINK = 134;
+  private static final int METHODID_LIST_ROLLUP_PROPERTY_SOURCE_LINKS = 135;
+  private static final int METHODID_CREATE_ROLLUP_PROPERTY_SOURCE_LINK = 136;
+  private static final int METHODID_DELETE_ROLLUP_PROPERTY_SOURCE_LINK = 137;
+  private static final int METHODID_PROVISION_SUBPROPERTY = 138;
+  private static final int METHODID_CREATE_SUBPROPERTY_EVENT_FILTER = 139;
+  private static final int METHODID_GET_SUBPROPERTY_EVENT_FILTER = 140;
+  private static final int METHODID_LIST_SUBPROPERTY_EVENT_FILTERS = 141;
+  private static final int METHODID_UPDATE_SUBPROPERTY_EVENT_FILTER = 142;
+  private static final int METHODID_DELETE_SUBPROPERTY_EVENT_FILTER = 143;
+  private static final int METHODID_CREATE_REPORTING_DATA_ANNOTATION = 144;
+  private static final int METHODID_GET_REPORTING_DATA_ANNOTATION = 145;
+  private static final int METHODID_LIST_REPORTING_DATA_ANNOTATIONS = 146;
+  private static final int METHODID_UPDATE_REPORTING_DATA_ANNOTATION = 147;
+  private static final int METHODID_DELETE_REPORTING_DATA_ANNOTATION = 148;
+  private static final int METHODID_SUBMIT_USER_DELETION = 149;
+  private static final int METHODID_LIST_SUBPROPERTY_SYNC_CONFIGS = 150;
+  private static final int METHODID_UPDATE_SUBPROPERTY_SYNC_CONFIG = 151;
+  private static final int METHODID_GET_SUBPROPERTY_SYNC_CONFIG = 152;
+  private static final int METHODID_GET_REPORTING_IDENTITY_SETTINGS = 153;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -20959,24 +20633,6 @@ public final class AnalyticsAdminServiceGrpc {
               (com.google.analytics.admin.v1alpha.DeleteChannelGroupRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
           break;
-        case METHODID_SET_AUTOMATED_GA4CONFIGURATION_OPT_OUT:
-          serviceImpl.setAutomatedGa4ConfigurationOptOut(
-              (com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutRequest)
-                  request,
-              (io.grpc.stub.StreamObserver<
-                      com.google.analytics.admin.v1alpha
-                          .SetAutomatedGa4ConfigurationOptOutResponse>)
-                  responseObserver);
-          break;
-        case METHODID_FETCH_AUTOMATED_GA4CONFIGURATION_OPT_OUT:
-          serviceImpl.fetchAutomatedGa4ConfigurationOptOut(
-              (com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutRequest)
-                  request,
-              (io.grpc.stub.StreamObserver<
-                      com.google.analytics.admin.v1alpha
-                          .FetchAutomatedGa4ConfigurationOptOutResponse>)
-                  responseObserver);
-          break;
         case METHODID_CREATE_BIG_QUERY_LINK:
           serviceImpl.createBigQueryLink(
               (com.google.analytics.admin.v1alpha.CreateBigQueryLinkRequest) request,
@@ -21019,32 +20675,6 @@ public final class AnalyticsAdminServiceGrpc {
               (com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings>)
-                  responseObserver);
-          break;
-        case METHODID_CREATE_CONNECTED_SITE_TAG:
-          serviceImpl.createConnectedSiteTag(
-              (com.google.analytics.admin.v1alpha.CreateConnectedSiteTagRequest) request,
-              (io.grpc.stub.StreamObserver<
-                      com.google.analytics.admin.v1alpha.CreateConnectedSiteTagResponse>)
-                  responseObserver);
-          break;
-        case METHODID_DELETE_CONNECTED_SITE_TAG:
-          serviceImpl.deleteConnectedSiteTag(
-              (com.google.analytics.admin.v1alpha.DeleteConnectedSiteTagRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
-          break;
-        case METHODID_LIST_CONNECTED_SITE_TAGS:
-          serviceImpl.listConnectedSiteTags(
-              (com.google.analytics.admin.v1alpha.ListConnectedSiteTagsRequest) request,
-              (io.grpc.stub.StreamObserver<
-                      com.google.analytics.admin.v1alpha.ListConnectedSiteTagsResponse>)
-                  responseObserver);
-          break;
-        case METHODID_FETCH_CONNECTED_GA4PROPERTY:
-          serviceImpl.fetchConnectedGa4Property(
-              (com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyRequest) request,
-              (io.grpc.stub.StreamObserver<
-                      com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyResponse>)
                   responseObserver);
           break;
         case METHODID_GET_AD_SENSE_LINK:
@@ -21291,6 +20921,34 @@ public final class AnalyticsAdminServiceGrpc {
               (com.google.analytics.admin.v1alpha.SubmitUserDeletionRequest) request,
               (io.grpc.stub.StreamObserver<
                       com.google.analytics.admin.v1alpha.SubmitUserDeletionResponse>)
+                  responseObserver);
+          break;
+        case METHODID_LIST_SUBPROPERTY_SYNC_CONFIGS:
+          serviceImpl.listSubpropertySyncConfigs(
+              (com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsResponse>)
+                  responseObserver);
+          break;
+        case METHODID_UPDATE_SUBPROPERTY_SYNC_CONFIG:
+          serviceImpl.updateSubpropertySyncConfig(
+              (com.google.analytics.admin.v1alpha.UpdateSubpropertySyncConfigRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.SubpropertySyncConfig>)
+                  responseObserver);
+          break;
+        case METHODID_GET_SUBPROPERTY_SYNC_CONFIG:
+          serviceImpl.getSubpropertySyncConfig(
+              (com.google.analytics.admin.v1alpha.GetSubpropertySyncConfigRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.SubpropertySyncConfig>)
+                  responseObserver);
+          break;
+        case METHODID_GET_REPORTING_IDENTITY_SETTINGS:
+          serviceImpl.getReportingIdentitySettings(
+              (com.google.analytics.admin.v1alpha.GetReportingIdentitySettingsRequest) request,
+              (io.grpc.stub.StreamObserver<
+                      com.google.analytics.admin.v1alpha.ReportingIdentitySettings>)
                   responseObserver);
           break;
         default:
@@ -22033,21 +21691,6 @@ public final class AnalyticsAdminServiceGrpc {
                     com.google.analytics.admin.v1alpha.DeleteChannelGroupRequest,
                     com.google.protobuf.Empty>(service, METHODID_DELETE_CHANNEL_GROUP)))
         .addMethod(
-            getSetAutomatedGa4ConfigurationOptOutMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-                new MethodHandlers<
-                    com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutRequest,
-                    com.google.analytics.admin.v1alpha.SetAutomatedGa4ConfigurationOptOutResponse>(
-                    service, METHODID_SET_AUTOMATED_GA4CONFIGURATION_OPT_OUT)))
-        .addMethod(
-            getFetchAutomatedGa4ConfigurationOptOutMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-                new MethodHandlers<
-                    com.google.analytics.admin.v1alpha.FetchAutomatedGa4ConfigurationOptOutRequest,
-                    com.google.analytics.admin.v1alpha
-                        .FetchAutomatedGa4ConfigurationOptOutResponse>(
-                    service, METHODID_FETCH_AUTOMATED_GA4CONFIGURATION_OPT_OUT)))
-        .addMethod(
             getCreateBigQueryLinkMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -22095,33 +21738,6 @@ public final class AnalyticsAdminServiceGrpc {
                     com.google.analytics.admin.v1alpha.UpdateEnhancedMeasurementSettingsRequest,
                     com.google.analytics.admin.v1alpha.EnhancedMeasurementSettings>(
                     service, METHODID_UPDATE_ENHANCED_MEASUREMENT_SETTINGS)))
-        .addMethod(
-            getCreateConnectedSiteTagMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-                new MethodHandlers<
-                    com.google.analytics.admin.v1alpha.CreateConnectedSiteTagRequest,
-                    com.google.analytics.admin.v1alpha.CreateConnectedSiteTagResponse>(
-                    service, METHODID_CREATE_CONNECTED_SITE_TAG)))
-        .addMethod(
-            getDeleteConnectedSiteTagMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-                new MethodHandlers<
-                    com.google.analytics.admin.v1alpha.DeleteConnectedSiteTagRequest,
-                    com.google.protobuf.Empty>(service, METHODID_DELETE_CONNECTED_SITE_TAG)))
-        .addMethod(
-            getListConnectedSiteTagsMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-                new MethodHandlers<
-                    com.google.analytics.admin.v1alpha.ListConnectedSiteTagsRequest,
-                    com.google.analytics.admin.v1alpha.ListConnectedSiteTagsResponse>(
-                    service, METHODID_LIST_CONNECTED_SITE_TAGS)))
-        .addMethod(
-            getFetchConnectedGa4PropertyMethod(),
-            io.grpc.stub.ServerCalls.asyncUnaryCall(
-                new MethodHandlers<
-                    com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyRequest,
-                    com.google.analytics.admin.v1alpha.FetchConnectedGa4PropertyResponse>(
-                    service, METHODID_FETCH_CONNECTED_GA4PROPERTY)))
         .addMethod(
             getGetAdSenseLinkMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
@@ -22388,6 +22004,34 @@ public final class AnalyticsAdminServiceGrpc {
                     com.google.analytics.admin.v1alpha.SubmitUserDeletionRequest,
                     com.google.analytics.admin.v1alpha.SubmitUserDeletionResponse>(
                     service, METHODID_SUBMIT_USER_DELETION)))
+        .addMethod(
+            getListSubpropertySyncConfigsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsRequest,
+                    com.google.analytics.admin.v1alpha.ListSubpropertySyncConfigsResponse>(
+                    service, METHODID_LIST_SUBPROPERTY_SYNC_CONFIGS)))
+        .addMethod(
+            getUpdateSubpropertySyncConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.UpdateSubpropertySyncConfigRequest,
+                    com.google.analytics.admin.v1alpha.SubpropertySyncConfig>(
+                    service, METHODID_UPDATE_SUBPROPERTY_SYNC_CONFIG)))
+        .addMethod(
+            getGetSubpropertySyncConfigMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.GetSubpropertySyncConfigRequest,
+                    com.google.analytics.admin.v1alpha.SubpropertySyncConfig>(
+                    service, METHODID_GET_SUBPROPERTY_SYNC_CONFIG)))
+        .addMethod(
+            getGetReportingIdentitySettingsMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.analytics.admin.v1alpha.GetReportingIdentitySettingsRequest,
+                    com.google.analytics.admin.v1alpha.ReportingIdentitySettings>(
+                    service, METHODID_GET_REPORTING_IDENTITY_SETTINGS)))
         .build();
   }
 
@@ -22543,8 +22187,6 @@ public final class AnalyticsAdminServiceGrpc {
                       .addMethod(getCreateChannelGroupMethod())
                       .addMethod(getUpdateChannelGroupMethod())
                       .addMethod(getDeleteChannelGroupMethod())
-                      .addMethod(getSetAutomatedGa4ConfigurationOptOutMethod())
-                      .addMethod(getFetchAutomatedGa4ConfigurationOptOutMethod())
                       .addMethod(getCreateBigQueryLinkMethod())
                       .addMethod(getGetBigQueryLinkMethod())
                       .addMethod(getListBigQueryLinksMethod())
@@ -22552,10 +22194,6 @@ public final class AnalyticsAdminServiceGrpc {
                       .addMethod(getUpdateBigQueryLinkMethod())
                       .addMethod(getGetEnhancedMeasurementSettingsMethod())
                       .addMethod(getUpdateEnhancedMeasurementSettingsMethod())
-                      .addMethod(getCreateConnectedSiteTagMethod())
-                      .addMethod(getDeleteConnectedSiteTagMethod())
-                      .addMethod(getListConnectedSiteTagsMethod())
-                      .addMethod(getFetchConnectedGa4PropertyMethod())
                       .addMethod(getGetAdSenseLinkMethod())
                       .addMethod(getCreateAdSenseLinkMethod())
                       .addMethod(getDeleteAdSenseLinkMethod())
@@ -22595,6 +22233,10 @@ public final class AnalyticsAdminServiceGrpc {
                       .addMethod(getUpdateReportingDataAnnotationMethod())
                       .addMethod(getDeleteReportingDataAnnotationMethod())
                       .addMethod(getSubmitUserDeletionMethod())
+                      .addMethod(getListSubpropertySyncConfigsMethod())
+                      .addMethod(getUpdateSubpropertySyncConfigMethod())
+                      .addMethod(getGetSubpropertySyncConfigMethod())
+                      .addMethod(getGetReportingIdentitySettingsMethod())
                       .build();
         }
       }

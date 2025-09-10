@@ -63,6 +63,7 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
               .setFullMethodName("google.cloud.scheduler.v1.CloudScheduler/ListJobs")
               .setRequestMarshaller(ProtoUtils.marshaller(ListJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetJobRequest, Job> getJobMethodDescriptor =
@@ -71,6 +72,7 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
           .setFullMethodName("google.cloud.scheduler.v1.CloudScheduler/GetJob")
           .setRequestMarshaller(ProtoUtils.marshaller(GetJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateJobRequest, Job> createJobMethodDescriptor =
@@ -79,6 +81,7 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
           .setFullMethodName("google.cloud.scheduler.v1.CloudScheduler/CreateJob")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateJobRequest, Job> updateJobMethodDescriptor =
@@ -87,6 +90,7 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
           .setFullMethodName("google.cloud.scheduler.v1.CloudScheduler/UpdateJob")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteJobRequest, Empty> deleteJobMethodDescriptor =
@@ -95,6 +99,7 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
           .setFullMethodName("google.cloud.scheduler.v1.CloudScheduler/DeleteJob")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<PauseJobRequest, Job> pauseJobMethodDescriptor =
@@ -103,6 +108,7 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
           .setFullMethodName("google.cloud.scheduler.v1.CloudScheduler/PauseJob")
           .setRequestMarshaller(ProtoUtils.marshaller(PauseJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ResumeJobRequest, Job> resumeJobMethodDescriptor =
@@ -111,6 +117,7 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
           .setFullMethodName("google.cloud.scheduler.v1.CloudScheduler/ResumeJob")
           .setRequestMarshaller(ProtoUtils.marshaller(ResumeJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<RunJobRequest, Job> runJobMethodDescriptor =
@@ -119,6 +126,7 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
           .setFullMethodName("google.cloud.scheduler.v1.CloudScheduler/RunJob")
           .setRequestMarshaller(ProtoUtils.marshaller(RunJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -130,6 +138,7 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -138,6 +147,7 @@ public class GrpcCloudSchedulerStub extends CloudSchedulerStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListJobsRequest, ListJobsResponse> listJobsCallable;

@@ -86,6 +86,9 @@ public class HttpJsonReservationBlocksStub extends ReservationBlocksStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetReservationBlockRequest> serializer =
                                 ProtoRestSerializer.create();
+                            if (request.hasView()) {
+                              serializer.putQueryParam(fields, "view", request.getView());
+                            }
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

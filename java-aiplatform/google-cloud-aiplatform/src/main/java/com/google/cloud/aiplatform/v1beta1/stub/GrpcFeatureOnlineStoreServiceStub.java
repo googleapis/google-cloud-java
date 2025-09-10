@@ -70,6 +70,7 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
                   ProtoUtils.marshaller(FetchFeatureValuesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FetchFeatureValuesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -84,6 +85,7 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
                   ProtoUtils.marshaller(StreamingFetchFeatureValuesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(StreamingFetchFeatureValuesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SearchNearestEntitiesRequest, SearchNearestEntitiesResponse>
@@ -96,6 +98,7 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
                   ProtoUtils.marshaller(SearchNearestEntitiesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchNearestEntitiesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -110,6 +113,7 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
                   ProtoUtils.marshaller(FeatureViewDirectWriteRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FeatureViewDirectWriteResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -121,6 +125,7 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -129,6 +134,7 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -137,6 +143,7 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -145,6 +152,7 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -156,6 +164,7 @@ public class GrpcFeatureOnlineStoreServiceStub extends FeatureOnlineStoreService
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<FetchFeatureValuesRequest, FetchFeatureValuesResponse>

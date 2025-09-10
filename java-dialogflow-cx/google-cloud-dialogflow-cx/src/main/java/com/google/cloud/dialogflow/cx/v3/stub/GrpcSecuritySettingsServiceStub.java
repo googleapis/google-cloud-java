@@ -62,6 +62,7 @@ public class GrpcSecuritySettingsServiceStub extends SecuritySettingsServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateSecuritySettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SecuritySettings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSecuritySettingsRequest, SecuritySettings>
@@ -73,6 +74,7 @@ public class GrpcSecuritySettingsServiceStub extends SecuritySettingsServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetSecuritySettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SecuritySettings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateSecuritySettingsRequest, SecuritySettings>
@@ -84,6 +86,7 @@ public class GrpcSecuritySettingsServiceStub extends SecuritySettingsServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateSecuritySettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SecuritySettings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListSecuritySettingsRequest, ListSecuritySettingsResponse>
@@ -96,6 +99,7 @@ public class GrpcSecuritySettingsServiceStub extends SecuritySettingsServiceStub
                   ProtoUtils.marshaller(ListSecuritySettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSecuritySettingsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteSecuritySettingsRequest, Empty>
@@ -107,6 +111,7 @@ public class GrpcSecuritySettingsServiceStub extends SecuritySettingsServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteSecuritySettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -118,6 +123,7 @@ public class GrpcSecuritySettingsServiceStub extends SecuritySettingsServiceStub
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -126,6 +132,7 @@ public class GrpcSecuritySettingsServiceStub extends SecuritySettingsServiceStub
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CreateSecuritySettingsRequest, SecuritySettings>

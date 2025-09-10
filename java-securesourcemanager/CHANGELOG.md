@@ -1,5 +1,63 @@
 # Changelog
 
+## 0.43.0 (2025-08-25)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.52.0 ([#11727](https://github.com/googleapis/google-cloud-java/issues/11727)) ([31d8698](https://github.com/googleapis/google-cloud-java/commit/31d86980d0e27e0a948727d778cf46fbcf227239))
+
+
+## 0.42.0 (2025-08-13)
+
+* No change
+
+
+## 0.41.0 (2025-08-08)
+
+### Bug Fixes
+
+* update comments for rpc BatchCreatePullRequestComments, ResolvePullRequestComments and UnresolvePullRequestComments ([42bda69](https://github.com/googleapis/google-cloud-java/commit/42bda696749f1d5b4cfd3529f74724fad52fdeca))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.51.0 ([#11695](https://github.com/googleapis/google-cloud-java/issues/11695)) ([b82ce00](https://github.com/googleapis/google-cloud-java/commit/b82ce005c30551b8714099b7219b71bda85aa3a5))
+
+
+## 0.40.0 (2025-07-30)
+
+* No change
+
+
+## 0.39.0 (2025-07-28)
+
+### Features
+
+* add support for new API resources: Issues, IssueComments, PullRequests, PullRequestComments, Blobs ([abbb5a3](https://github.com/googleapis/google-cloud-java/commit/abbb5a3df4c3f149fe7b4dac4c13f6502de8e0a7))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.50.2 ([#11680](https://github.com/googleapis/google-cloud-java/issues/11680)) ([d1b99a7](https://github.com/googleapis/google-cloud-java/commit/d1b99a706daa10c487b56edbb5170b41530628ca))
+
+
+## 0.38.0 (2025-07-11)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.50.1 ([#11655](https://github.com/googleapis/google-cloud-java/issues/11655)) ([9b34528](https://github.com/googleapis/google-cloud-java/commit/9b34528f85043049e3349fffc30bb2dbfe01836c))
+
+
+## 0.37.0 (2025-06-25)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.50.0 ([#11624](https://github.com/googleapis/google-cloud-java/issues/11624)) ([a19f457](https://github.com/googleapis/google-cloud-java/commit/a19f457d10f15437ac26ce379048ff8b3cc6be5d))
+
+
+## 0.35.0 (2025-06-16)
+
+* No change
+
+
 ## 0.34.0 (2025-06-04)
 
 ### Dependencies

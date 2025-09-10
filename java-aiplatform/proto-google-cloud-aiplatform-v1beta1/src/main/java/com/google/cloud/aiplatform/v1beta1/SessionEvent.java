@@ -78,13 +78,11 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Identifier. The resource name of the event.
+   * Identifier. The resource name of the event.
    * Format:`projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}/sessions/{session}/events/{event}`.
    * </pre>
    *
-   * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER];
-   * </code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -105,13 +103,11 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Identifier. The resource name of the event.
+   * Identifier. The resource name of the event.
    * Format:`projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}/sessions/{session}/events/{event}`.
    * </pre>
    *
-   * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER];
-   * </code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -1159,13 +1155,11 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Identifier. The resource name of the event.
+     * Identifier. The resource name of the event.
      * Format:`projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}/sessions/{session}/events/{event}`.
      * </pre>
      *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER];
-     * </code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -1185,13 +1179,11 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Identifier. The resource name of the event.
+     * Identifier. The resource name of the event.
      * Format:`projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}/sessions/{session}/events/{event}`.
      * </pre>
      *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER];
-     * </code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -1211,13 +1203,11 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Identifier. The resource name of the event.
+     * Identifier. The resource name of the event.
      * Format:`projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}/sessions/{session}/events/{event}`.
      * </pre>
      *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER];
-     * </code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1236,13 +1226,11 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Identifier. The resource name of the event.
+     * Identifier. The resource name of the event.
      * Format:`projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}/sessions/{session}/events/{event}`.
      * </pre>
      *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER];
-     * </code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -1257,13 +1245,11 @@ public final class SessionEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Identifier. The resource name of the event.
+     * Identifier. The resource name of the event.
      * Format:`projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}/sessions/{session}/events/{event}`.
      * </pre>
      *
-     * <code>
-     * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER];
-     * </code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

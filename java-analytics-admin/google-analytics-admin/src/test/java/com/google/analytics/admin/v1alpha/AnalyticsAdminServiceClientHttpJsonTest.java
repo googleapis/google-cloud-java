@@ -43,6 +43,7 @@ import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.Lis
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSKAdNetworkConversionValueSchemasPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSearchAds360LinksPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSubpropertyEventFiltersPagedResponse;
+import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.ListSubpropertySyncConfigsPagedResponse;
 import static com.google.analytics.admin.v1alpha.AnalyticsAdminServiceClient.SearchChangeHistoryEventsPagedResponse;
 
 import com.google.analytics.admin.v1alpha.stub.HttpJsonAnalyticsAdminServiceStub;
@@ -9151,106 +9152,6 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
   }
 
   @Test
-  public void setAutomatedGa4ConfigurationOptOutTest() throws Exception {
-    SetAutomatedGa4ConfigurationOptOutResponse expectedResponse =
-        SetAutomatedGa4ConfigurationOptOutResponse.newBuilder().build();
-    mockService.addResponse(expectedResponse);
-
-    SetAutomatedGa4ConfigurationOptOutRequest request =
-        SetAutomatedGa4ConfigurationOptOutRequest.newBuilder()
-            .setProperty("property-993141291")
-            .setOptOut(true)
-            .build();
-
-    SetAutomatedGa4ConfigurationOptOutResponse actualResponse =
-        client.setAutomatedGa4ConfigurationOptOut(request);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void setAutomatedGa4ConfigurationOptOutExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      SetAutomatedGa4ConfigurationOptOutRequest request =
-          SetAutomatedGa4ConfigurationOptOutRequest.newBuilder()
-              .setProperty("property-993141291")
-              .setOptOut(true)
-              .build();
-      client.setAutomatedGa4ConfigurationOptOut(request);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void fetchAutomatedGa4ConfigurationOptOutTest() throws Exception {
-    FetchAutomatedGa4ConfigurationOptOutResponse expectedResponse =
-        FetchAutomatedGa4ConfigurationOptOutResponse.newBuilder().setOptOut(true).build();
-    mockService.addResponse(expectedResponse);
-
-    FetchAutomatedGa4ConfigurationOptOutRequest request =
-        FetchAutomatedGa4ConfigurationOptOutRequest.newBuilder()
-            .setProperty("property-993141291")
-            .build();
-
-    FetchAutomatedGa4ConfigurationOptOutResponse actualResponse =
-        client.fetchAutomatedGa4ConfigurationOptOut(request);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void fetchAutomatedGa4ConfigurationOptOutExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      FetchAutomatedGa4ConfigurationOptOutRequest request =
-          FetchAutomatedGa4ConfigurationOptOutRequest.newBuilder()
-              .setProperty("property-993141291")
-              .build();
-      client.fetchAutomatedGa4ConfigurationOptOut(request);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
   public void createBigQueryLinkTest() throws Exception {
     BigQueryLink expectedResponse =
         BigQueryLink.newBuilder()
@@ -9914,200 +9815,6 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateEnhancedMeasurementSettings(enhancedMeasurementSettings, updateMask);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void createConnectedSiteTagTest() throws Exception {
-    CreateConnectedSiteTagResponse expectedResponse =
-        CreateConnectedSiteTagResponse.newBuilder().build();
-    mockService.addResponse(expectedResponse);
-
-    CreateConnectedSiteTagRequest request =
-        CreateConnectedSiteTagRequest.newBuilder()
-            .setProperty("property-993141291")
-            .setConnectedSiteTag(ConnectedSiteTag.newBuilder().build())
-            .build();
-
-    CreateConnectedSiteTagResponse actualResponse = client.createConnectedSiteTag(request);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void createConnectedSiteTagExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      CreateConnectedSiteTagRequest request =
-          CreateConnectedSiteTagRequest.newBuilder()
-              .setProperty("property-993141291")
-              .setConnectedSiteTag(ConnectedSiteTag.newBuilder().build())
-              .build();
-      client.createConnectedSiteTag(request);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void deleteConnectedSiteTagTest() throws Exception {
-    Empty expectedResponse = Empty.newBuilder().build();
-    mockService.addResponse(expectedResponse);
-
-    DeleteConnectedSiteTagRequest request =
-        DeleteConnectedSiteTagRequest.newBuilder()
-            .setProperty("property-993141291")
-            .setTagId("tagId110119509")
-            .build();
-
-    client.deleteConnectedSiteTag(request);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void deleteConnectedSiteTagExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      DeleteConnectedSiteTagRequest request =
-          DeleteConnectedSiteTagRequest.newBuilder()
-              .setProperty("property-993141291")
-              .setTagId("tagId110119509")
-              .build();
-      client.deleteConnectedSiteTag(request);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void listConnectedSiteTagsTest() throws Exception {
-    ListConnectedSiteTagsResponse expectedResponse =
-        ListConnectedSiteTagsResponse.newBuilder()
-            .addAllConnectedSiteTags(new ArrayList<ConnectedSiteTag>())
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    ListConnectedSiteTagsRequest request =
-        ListConnectedSiteTagsRequest.newBuilder().setProperty("property-993141291").build();
-
-    ListConnectedSiteTagsResponse actualResponse = client.listConnectedSiteTags(request);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void listConnectedSiteTagsExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      ListConnectedSiteTagsRequest request =
-          ListConnectedSiteTagsRequest.newBuilder().setProperty("property-993141291").build();
-      client.listConnectedSiteTags(request);
-      Assert.fail("No exception raised");
-    } catch (InvalidArgumentException e) {
-      // Expected exception.
-    }
-  }
-
-  @Test
-  public void fetchConnectedGa4PropertyTest() throws Exception {
-    FetchConnectedGa4PropertyResponse expectedResponse =
-        FetchConnectedGa4PropertyResponse.newBuilder()
-            .setProperty(PropertyName.of("[PROPERTY]").toString())
-            .build();
-    mockService.addResponse(expectedResponse);
-
-    FetchConnectedGa4PropertyRequest request =
-        FetchConnectedGa4PropertyRequest.newBuilder()
-            .setProperty(PropertyName.of("[PROPERTY]").toString())
-            .build();
-
-    FetchConnectedGa4PropertyResponse actualResponse = client.fetchConnectedGa4Property(request);
-    Assert.assertEquals(expectedResponse, actualResponse);
-
-    List<String> actualRequests = mockService.getRequestPaths();
-    Assert.assertEquals(1, actualRequests.size());
-
-    String apiClientHeaderKey =
-        mockService
-            .getRequestHeaders()
-            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
-            .iterator()
-            .next();
-    Assert.assertTrue(
-        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
-            .matcher(apiClientHeaderKey)
-            .matches());
-  }
-
-  @Test
-  public void fetchConnectedGa4PropertyExceptionTest() throws Exception {
-    ApiException exception =
-        ApiExceptionFactory.createException(
-            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
-    mockService.addException(exception);
-
-    try {
-      FetchConnectedGa4PropertyRequest request =
-          FetchConnectedGa4PropertyRequest.newBuilder()
-              .setProperty(PropertyName.of("[PROPERTY]").toString())
-              .build();
-      client.fetchConnectedGa4Property(request);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -13549,6 +13256,350 @@ public class AnalyticsAdminServiceClientHttpJsonTest {
     try {
       String name = "properties/propertie-7337";
       client.submitUserDeletion(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSubpropertySyncConfigsTest() throws Exception {
+    SubpropertySyncConfig responsesElement = SubpropertySyncConfig.newBuilder().build();
+    ListSubpropertySyncConfigsResponse expectedResponse =
+        ListSubpropertySyncConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSubpropertySyncConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    PropertyName parent = PropertyName.of("[PROPERTY]");
+
+    ListSubpropertySyncConfigsPagedResponse pagedListResponse =
+        client.listSubpropertySyncConfigs(parent);
+
+    List<SubpropertySyncConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSubpropertySyncConfigsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listSubpropertySyncConfigsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      PropertyName parent = PropertyName.of("[PROPERTY]");
+      client.listSubpropertySyncConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listSubpropertySyncConfigsTest2() throws Exception {
+    SubpropertySyncConfig responsesElement = SubpropertySyncConfig.newBuilder().build();
+    ListSubpropertySyncConfigsResponse expectedResponse =
+        ListSubpropertySyncConfigsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllSubpropertySyncConfigs(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "properties/propertie-2024";
+
+    ListSubpropertySyncConfigsPagedResponse pagedListResponse =
+        client.listSubpropertySyncConfigs(parent);
+
+    List<SubpropertySyncConfig> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getSubpropertySyncConfigsList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listSubpropertySyncConfigsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent = "properties/propertie-2024";
+      client.listSubpropertySyncConfigs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateSubpropertySyncConfigTest() throws Exception {
+    SubpropertySyncConfig expectedResponse =
+        SubpropertySyncConfig.newBuilder()
+            .setName(
+                SubpropertySyncConfigName.of("[PROPERTY]", "[SUBPROPERTY_SYNC_CONFIG]").toString())
+            .setApplyToProperty("applyToProperty267785086")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SubpropertySyncConfig subpropertySyncConfig =
+        SubpropertySyncConfig.newBuilder()
+            .setName(
+                SubpropertySyncConfigName.of("[PROPERTY]", "[SUBPROPERTY_SYNC_CONFIG]").toString())
+            .setApplyToProperty("applyToProperty267785086")
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    SubpropertySyncConfig actualResponse =
+        client.updateSubpropertySyncConfig(subpropertySyncConfig, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateSubpropertySyncConfigExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SubpropertySyncConfig subpropertySyncConfig =
+          SubpropertySyncConfig.newBuilder()
+              .setName(
+                  SubpropertySyncConfigName.of("[PROPERTY]", "[SUBPROPERTY_SYNC_CONFIG]")
+                      .toString())
+              .setApplyToProperty("applyToProperty267785086")
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateSubpropertySyncConfig(subpropertySyncConfig, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSubpropertySyncConfigTest() throws Exception {
+    SubpropertySyncConfig expectedResponse =
+        SubpropertySyncConfig.newBuilder()
+            .setName(
+                SubpropertySyncConfigName.of("[PROPERTY]", "[SUBPROPERTY_SYNC_CONFIG]").toString())
+            .setApplyToProperty("applyToProperty267785086")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    SubpropertySyncConfigName name =
+        SubpropertySyncConfigName.of("[PROPERTY]", "[SUBPROPERTY_SYNC_CONFIG]");
+
+    SubpropertySyncConfig actualResponse = client.getSubpropertySyncConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getSubpropertySyncConfigExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      SubpropertySyncConfigName name =
+          SubpropertySyncConfigName.of("[PROPERTY]", "[SUBPROPERTY_SYNC_CONFIG]");
+      client.getSubpropertySyncConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getSubpropertySyncConfigTest2() throws Exception {
+    SubpropertySyncConfig expectedResponse =
+        SubpropertySyncConfig.newBuilder()
+            .setName(
+                SubpropertySyncConfigName.of("[PROPERTY]", "[SUBPROPERTY_SYNC_CONFIG]").toString())
+            .setApplyToProperty("applyToProperty267785086")
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "properties/propertie-7358/subpropertySyncConfigs/subpropertySyncConfig-7358";
+
+    SubpropertySyncConfig actualResponse = client.getSubpropertySyncConfig(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getSubpropertySyncConfigExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "properties/propertie-7358/subpropertySyncConfigs/subpropertySyncConfig-7358";
+      client.getSubpropertySyncConfig(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getReportingIdentitySettingsTest() throws Exception {
+    ReportingIdentitySettings expectedResponse =
+        ReportingIdentitySettings.newBuilder()
+            .setName(ReportingIdentitySettingsName.of("[PROPERTY]").toString())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ReportingIdentitySettingsName name = ReportingIdentitySettingsName.of("[PROPERTY]");
+
+    ReportingIdentitySettings actualResponse = client.getReportingIdentitySettings(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getReportingIdentitySettingsExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ReportingIdentitySettingsName name = ReportingIdentitySettingsName.of("[PROPERTY]");
+      client.getReportingIdentitySettings(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getReportingIdentitySettingsTest2() throws Exception {
+    ReportingIdentitySettings expectedResponse =
+        ReportingIdentitySettings.newBuilder()
+            .setName(ReportingIdentitySettingsName.of("[PROPERTY]").toString())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name = "properties/propertie-7385/reportingIdentitySettings";
+
+    ReportingIdentitySettings actualResponse = client.getReportingIdentitySettings(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getReportingIdentitySettingsExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name = "properties/propertie-7385/reportingIdentitySettings";
+      client.getReportingIdentitySettings(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

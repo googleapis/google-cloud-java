@@ -54,6 +54,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
     ipv6AccessType_ = 0;
     subnetIpv6CidrBlock_ = "";
     servicesIpv6CidrBlock_ = "";
+    additionalIpRangesConfigs_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -511,7 +512,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2053
+   *     google/container/v1beta1/cluster_service.proto;l=2333
    * @return The clusterIpv4Cidr.
    */
   @java.lang.Override
@@ -538,7 +539,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2053
+   *     google/container/v1beta1/cluster_service.proto;l=2333
    * @return The bytes for clusterIpv4Cidr.
    */
   @java.lang.Override
@@ -570,7 +571,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2056
+   *     google/container/v1beta1/cluster_service.proto;l=2336
    * @return The nodeIpv4Cidr.
    */
   @java.lang.Override
@@ -597,7 +598,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2056
+   *     google/container/v1beta1/cluster_service.proto;l=2336
    * @return The bytes for nodeIpv4Cidr.
    */
   @java.lang.Override
@@ -629,7 +630,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2059
+   *     google/container/v1beta1/cluster_service.proto;l=2339
    * @return The servicesIpv4Cidr.
    */
   @java.lang.Override
@@ -656,7 +657,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2059
+   *     google/container/v1beta1/cluster_service.proto;l=2339
    * @return The bytes for servicesIpv4Cidr.
    */
   @java.lang.Override
@@ -1104,7 +1105,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string tpu_ipv4_cidr_block = 13 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.tpu_ipv4_cidr_block is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2159
+   *     google/container/v1beta1/cluster_service.proto;l=2439
    * @return The tpuIpv4CidrBlock.
    */
   @java.lang.Override
@@ -1146,7 +1147,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
    * <code>string tpu_ipv4_cidr_block = 13 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.tpu_ipv4_cidr_block is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2159
+   *     google/container/v1beta1/cluster_service.proto;l=2439
    * @return The bytes for tpuIpv4CidrBlock.
    */
   @java.lang.Override
@@ -1551,6 +1552,175 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
     return defaultPodIpv4RangeUtilization_;
   }
 
+  public static final int ADDITIONAL_IP_RANGES_CONFIGS_FIELD_NUMBER = 29;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.container.v1beta1.AdditionalIPRangesConfig>
+      additionalIpRangesConfigs_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The additional IP ranges that are added to the cluster.
+   * These IP ranges can be used by new node pools to allocate node and pod IPs
+   * automatically.
+   * Each AdditionalIPRangesConfig corresponds to a single subnetwork.
+   * Once a range is removed it will not show up in IPAllocationPolicy.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1beta1.AdditionalIPRangesConfig additional_ip_ranges_configs = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.container.v1beta1.AdditionalIPRangesConfig>
+      getAdditionalIpRangesConfigsList() {
+    return additionalIpRangesConfigs_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The additional IP ranges that are added to the cluster.
+   * These IP ranges can be used by new node pools to allocate node and pod IPs
+   * automatically.
+   * Each AdditionalIPRangesConfig corresponds to a single subnetwork.
+   * Once a range is removed it will not show up in IPAllocationPolicy.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1beta1.AdditionalIPRangesConfig additional_ip_ranges_configs = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.container.v1beta1.AdditionalIPRangesConfigOrBuilder>
+      getAdditionalIpRangesConfigsOrBuilderList() {
+    return additionalIpRangesConfigs_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The additional IP ranges that are added to the cluster.
+   * These IP ranges can be used by new node pools to allocate node and pod IPs
+   * automatically.
+   * Each AdditionalIPRangesConfig corresponds to a single subnetwork.
+   * Once a range is removed it will not show up in IPAllocationPolicy.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1beta1.AdditionalIPRangesConfig additional_ip_ranges_configs = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getAdditionalIpRangesConfigsCount() {
+    return additionalIpRangesConfigs_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The additional IP ranges that are added to the cluster.
+   * These IP ranges can be used by new node pools to allocate node and pod IPs
+   * automatically.
+   * Each AdditionalIPRangesConfig corresponds to a single subnetwork.
+   * Once a range is removed it will not show up in IPAllocationPolicy.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1beta1.AdditionalIPRangesConfig additional_ip_ranges_configs = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.AdditionalIPRangesConfig getAdditionalIpRangesConfigs(
+      int index) {
+    return additionalIpRangesConfigs_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The additional IP ranges that are added to the cluster.
+   * These IP ranges can be used by new node pools to allocate node and pod IPs
+   * automatically.
+   * Each AdditionalIPRangesConfig corresponds to a single subnetwork.
+   * Once a range is removed it will not show up in IPAllocationPolicy.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1beta1.AdditionalIPRangesConfig additional_ip_ranges_configs = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.AdditionalIPRangesConfigOrBuilder
+      getAdditionalIpRangesConfigsOrBuilder(int index) {
+    return additionalIpRangesConfigs_.get(index);
+  }
+
+  public static final int AUTO_IPAM_CONFIG_FIELD_NUMBER = 30;
+  private com.google.container.v1beta1.AutoIpamConfig autoIpamConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. AutoIpamConfig contains all information related to Auto IPAM
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.AutoIpamConfig auto_ipam_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the autoIpamConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasAutoIpamConfig() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. AutoIpamConfig contains all information related to Auto IPAM
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.AutoIpamConfig auto_ipam_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The autoIpamConfig.
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.AutoIpamConfig getAutoIpamConfig() {
+    return autoIpamConfig_ == null
+        ? com.google.container.v1beta1.AutoIpamConfig.getDefaultInstance()
+        : autoIpamConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. AutoIpamConfig contains all information related to Auto IPAM
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.AutoIpamConfig auto_ipam_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.container.v1beta1.AutoIpamConfigOrBuilder getAutoIpamConfigOrBuilder() {
+    return autoIpamConfig_ == null
+        ? com.google.container.v1beta1.AutoIpamConfig.getDefaultInstance()
+        : autoIpamConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1632,6 +1802,12 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
     }
     if (java.lang.Double.doubleToRawLongBits(defaultPodIpv4RangeUtilization_) != 0) {
       output.writeDouble(25, defaultPodIpv4RangeUtilization_);
+    }
+    for (int i = 0; i < additionalIpRangesConfigs_.size(); i++) {
+      output.writeMessage(29, additionalIpRangesConfigs_.get(i));
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(30, getAutoIpamConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1718,6 +1894,14 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
           com.google.protobuf.CodedOutputStream.computeDoubleSize(
               25, defaultPodIpv4RangeUtilization_);
     }
+    for (int i = 0; i < additionalIpRangesConfigs_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              29, additionalIpRangesConfigs_.get(i));
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(30, getAutoIpamConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1766,6 +1950,12 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
     if (java.lang.Double.doubleToLongBits(getDefaultPodIpv4RangeUtilization())
         != java.lang.Double.doubleToLongBits(other.getDefaultPodIpv4RangeUtilization()))
       return false;
+    if (!getAdditionalIpRangesConfigsList().equals(other.getAdditionalIpRangesConfigsList()))
+      return false;
+    if (hasAutoIpamConfig() != other.hasAutoIpamConfig()) return false;
+    if (hasAutoIpamConfig()) {
+      if (!getAutoIpamConfig().equals(other.getAutoIpamConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1826,6 +2016,14 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
         (53 * hash)
             + com.google.protobuf.Internal.hashLong(
                 java.lang.Double.doubleToLongBits(getDefaultPodIpv4RangeUtilization()));
+    if (getAdditionalIpRangesConfigsCount() > 0) {
+      hash = (37 * hash) + ADDITIONAL_IP_RANGES_CONFIGS_FIELD_NUMBER;
+      hash = (53 * hash) + getAdditionalIpRangesConfigsList().hashCode();
+    }
+    if (hasAutoIpamConfig()) {
+      hash = (37 * hash) + AUTO_IPAM_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getAutoIpamConfig().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1969,6 +2167,8 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getPodCidrOverprovisionConfigFieldBuilder();
         getAdditionalPodRangesConfigFieldBuilder();
+        getAdditionalIpRangesConfigsFieldBuilder();
+        getAutoIpamConfigFieldBuilder();
       }
     }
 
@@ -2005,6 +2205,18 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
         additionalPodRangesConfigBuilder_ = null;
       }
       defaultPodIpv4RangeUtilization_ = 0D;
+      if (additionalIpRangesConfigsBuilder_ == null) {
+        additionalIpRangesConfigs_ = java.util.Collections.emptyList();
+      } else {
+        additionalIpRangesConfigs_ = null;
+        additionalIpRangesConfigsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00200000);
+      autoIpamConfig_ = null;
+      if (autoIpamConfigBuilder_ != null) {
+        autoIpamConfigBuilder_.dispose();
+        autoIpamConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -2032,11 +2244,26 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
     public com.google.container.v1beta1.IPAllocationPolicy buildPartial() {
       com.google.container.v1beta1.IPAllocationPolicy result =
           new com.google.container.v1beta1.IPAllocationPolicy(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.container.v1beta1.IPAllocationPolicy result) {
+      if (additionalIpRangesConfigsBuilder_ == null) {
+        if (((bitField0_ & 0x00200000) != 0)) {
+          additionalIpRangesConfigs_ =
+              java.util.Collections.unmodifiableList(additionalIpRangesConfigs_);
+          bitField0_ = (bitField0_ & ~0x00200000);
+        }
+        result.additionalIpRangesConfigs_ = additionalIpRangesConfigs_;
+      } else {
+        result.additionalIpRangesConfigs_ = additionalIpRangesConfigsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.container.v1beta1.IPAllocationPolicy result) {
@@ -2112,6 +2339,11 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
       }
       if (((from_bitField0_ & 0x00100000) != 0)) {
         result.defaultPodIpv4RangeUtilization_ = defaultPodIpv4RangeUtilization_;
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        result.autoIpamConfig_ =
+            autoIpamConfigBuilder_ == null ? autoIpamConfig_ : autoIpamConfigBuilder_.build();
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2248,6 +2480,36 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
       }
       if (other.getDefaultPodIpv4RangeUtilization() != 0D) {
         setDefaultPodIpv4RangeUtilization(other.getDefaultPodIpv4RangeUtilization());
+      }
+      if (additionalIpRangesConfigsBuilder_ == null) {
+        if (!other.additionalIpRangesConfigs_.isEmpty()) {
+          if (additionalIpRangesConfigs_.isEmpty()) {
+            additionalIpRangesConfigs_ = other.additionalIpRangesConfigs_;
+            bitField0_ = (bitField0_ & ~0x00200000);
+          } else {
+            ensureAdditionalIpRangesConfigsIsMutable();
+            additionalIpRangesConfigs_.addAll(other.additionalIpRangesConfigs_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.additionalIpRangesConfigs_.isEmpty()) {
+          if (additionalIpRangesConfigsBuilder_.isEmpty()) {
+            additionalIpRangesConfigsBuilder_.dispose();
+            additionalIpRangesConfigsBuilder_ = null;
+            additionalIpRangesConfigs_ = other.additionalIpRangesConfigs_;
+            bitField0_ = (bitField0_ & ~0x00200000);
+            additionalIpRangesConfigsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getAdditionalIpRangesConfigsFieldBuilder()
+                    : null;
+          } else {
+            additionalIpRangesConfigsBuilder_.addAllMessages(other.additionalIpRangesConfigs_);
+          }
+        }
+      }
+      if (other.hasAutoIpamConfig()) {
+        mergeAutoIpamConfig(other.getAutoIpamConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2403,6 +2665,26 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00100000;
                 break;
               } // case 201
+            case 234:
+              {
+                com.google.container.v1beta1.AdditionalIPRangesConfig m =
+                    input.readMessage(
+                        com.google.container.v1beta1.AdditionalIPRangesConfig.parser(),
+                        extensionRegistry);
+                if (additionalIpRangesConfigsBuilder_ == null) {
+                  ensureAdditionalIpRangesConfigsIsMutable();
+                  additionalIpRangesConfigs_.add(m);
+                } else {
+                  additionalIpRangesConfigsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 234
+            case 242:
+              {
+                input.readMessage(getAutoIpamConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00400000;
+                break;
+              } // case 242
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2682,7 +2964,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2053
+     *     google/container/v1beta1/cluster_service.proto;l=2333
      * @return The clusterIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2708,7 +2990,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2053
+     *     google/container/v1beta1/cluster_service.proto;l=2333
      * @return The bytes for clusterIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2734,7 +3016,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2053
+     *     google/container/v1beta1/cluster_service.proto;l=2333
      * @param value The clusterIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -2759,7 +3041,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2053
+     *     google/container/v1beta1/cluster_service.proto;l=2333
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2780,7 +3062,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2053
+     *     google/container/v1beta1/cluster_service.proto;l=2333
      * @param value The bytes for clusterIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -2808,7 +3090,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2056
+     *     google/container/v1beta1/cluster_service.proto;l=2336
      * @return The nodeIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2834,7 +3116,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2056
+     *     google/container/v1beta1/cluster_service.proto;l=2336
      * @return The bytes for nodeIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2860,7 +3142,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2056
+     *     google/container/v1beta1/cluster_service.proto;l=2336
      * @param value The nodeIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -2885,7 +3167,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2056
+     *     google/container/v1beta1/cluster_service.proto;l=2336
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2906,7 +3188,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2056
+     *     google/container/v1beta1/cluster_service.proto;l=2336
      * @param value The bytes for nodeIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -2934,7 +3216,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2059
+     *     google/container/v1beta1/cluster_service.proto;l=2339
      * @return The servicesIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2960,7 +3242,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2059
+     *     google/container/v1beta1/cluster_service.proto;l=2339
      * @return The bytes for servicesIpv4Cidr.
      */
     @java.lang.Deprecated
@@ -2986,7 +3268,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2059
+     *     google/container/v1beta1/cluster_service.proto;l=2339
      * @param value The servicesIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -3011,7 +3293,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2059
+     *     google/container/v1beta1/cluster_service.proto;l=2339
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -3032,7 +3314,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=2059
+     *     google/container/v1beta1/cluster_service.proto;l=2339
      * @param value The bytes for servicesIpv4Cidr to set.
      * @return This builder for chaining.
      */
@@ -3984,7 +4266,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string tpu_ipv4_cidr_block = 13 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.tpu_ipv4_cidr_block is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=2159
+     *     See google/container/v1beta1/cluster_service.proto;l=2439
      * @return The tpuIpv4CidrBlock.
      */
     @java.lang.Deprecated
@@ -4025,7 +4307,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string tpu_ipv4_cidr_block = 13 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.tpu_ipv4_cidr_block is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=2159
+     *     See google/container/v1beta1/cluster_service.proto;l=2439
      * @return The bytes for tpuIpv4CidrBlock.
      */
     @java.lang.Deprecated
@@ -4066,7 +4348,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string tpu_ipv4_cidr_block = 13 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.tpu_ipv4_cidr_block is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=2159
+     *     See google/container/v1beta1/cluster_service.proto;l=2439
      * @param value The tpuIpv4CidrBlock to set.
      * @return This builder for chaining.
      */
@@ -4106,7 +4388,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string tpu_ipv4_cidr_block = 13 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.tpu_ipv4_cidr_block is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=2159
+     *     See google/container/v1beta1/cluster_service.proto;l=2439
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -4142,7 +4424,7 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
      * <code>string tpu_ipv4_cidr_block = 13 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.IPAllocationPolicy.tpu_ipv4_cidr_block is deprecated.
-     *     See google/container/v1beta1/cluster_service.proto;l=2159
+     *     See google/container/v1beta1/cluster_service.proto;l=2439
      * @param value The bytes for tpuIpv4CidrBlock to set.
      * @return This builder for chaining.
      */
@@ -5278,6 +5560,711 @@ public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessa
       defaultPodIpv4RangeUtilization_ = 0D;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.container.v1beta1.AdditionalIPRangesConfig>
+        additionalIpRangesConfigs_ = java.util.Collections.emptyList();
+
+    private void ensureAdditionalIpRangesConfigsIsMutable() {
+      if (!((bitField0_ & 0x00200000) != 0)) {
+        additionalIpRangesConfigs_ =
+            new java.util.ArrayList<com.google.container.v1beta1.AdditionalIPRangesConfig>(
+                additionalIpRangesConfigs_);
+        bitField0_ |= 0x00200000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.container.v1beta1.AdditionalIPRangesConfig,
+            com.google.container.v1beta1.AdditionalIPRangesConfig.Builder,
+            com.google.container.v1beta1.AdditionalIPRangesConfigOrBuilder>
+        additionalIpRangesConfigsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The additional IP ranges that are added to the cluster.
+     * These IP ranges can be used by new node pools to allocate node and pod IPs
+     * automatically.
+     * Each AdditionalIPRangesConfig corresponds to a single subnetwork.
+     * Once a range is removed it will not show up in IPAllocationPolicy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.AdditionalIPRangesConfig additional_ip_ranges_configs = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.container.v1beta1.AdditionalIPRangesConfig>
+        getAdditionalIpRangesConfigsList() {
+      if (additionalIpRangesConfigsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(additionalIpRangesConfigs_);
+      } else {
+        return additionalIpRangesConfigsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The additional IP ranges that are added to the cluster.
+     * These IP ranges can be used by new node pools to allocate node and pod IPs
+     * automatically.
+     * Each AdditionalIPRangesConfig corresponds to a single subnetwork.
+     * Once a range is removed it will not show up in IPAllocationPolicy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.AdditionalIPRangesConfig additional_ip_ranges_configs = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getAdditionalIpRangesConfigsCount() {
+      if (additionalIpRangesConfigsBuilder_ == null) {
+        return additionalIpRangesConfigs_.size();
+      } else {
+        return additionalIpRangesConfigsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The additional IP ranges that are added to the cluster.
+     * These IP ranges can be used by new node pools to allocate node and pod IPs
+     * automatically.
+     * Each AdditionalIPRangesConfig corresponds to a single subnetwork.
+     * Once a range is removed it will not show up in IPAllocationPolicy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.AdditionalIPRangesConfig additional_ip_ranges_configs = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.container.v1beta1.AdditionalIPRangesConfig getAdditionalIpRangesConfigs(
+        int index) {
+      if (additionalIpRangesConfigsBuilder_ == null) {
+        return additionalIpRangesConfigs_.get(index);
+      } else {
+        return additionalIpRangesConfigsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The additional IP ranges that are added to the cluster.
+     * These IP ranges can be used by new node pools to allocate node and pod IPs
+     * automatically.
+     * Each AdditionalIPRangesConfig corresponds to a single subnetwork.
+     * Once a range is removed it will not show up in IPAllocationPolicy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.AdditionalIPRangesConfig additional_ip_ranges_configs = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setAdditionalIpRangesConfigs(
+        int index, com.google.container.v1beta1.AdditionalIPRangesConfig value) {
+      if (additionalIpRangesConfigsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAdditionalIpRangesConfigsIsMutable();
+        additionalIpRangesConfigs_.set(index, value);
+        onChanged();
+      } else {
+        additionalIpRangesConfigsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The additional IP ranges that are added to the cluster.
+     * These IP ranges can be used by new node pools to allocate node and pod IPs
+     * automatically.
+     * Each AdditionalIPRangesConfig corresponds to a single subnetwork.
+     * Once a range is removed it will not show up in IPAllocationPolicy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.AdditionalIPRangesConfig additional_ip_ranges_configs = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setAdditionalIpRangesConfigs(
+        int index, com.google.container.v1beta1.AdditionalIPRangesConfig.Builder builderForValue) {
+      if (additionalIpRangesConfigsBuilder_ == null) {
+        ensureAdditionalIpRangesConfigsIsMutable();
+        additionalIpRangesConfigs_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        additionalIpRangesConfigsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The additional IP ranges that are added to the cluster.
+     * These IP ranges can be used by new node pools to allocate node and pod IPs
+     * automatically.
+     * Each AdditionalIPRangesConfig corresponds to a single subnetwork.
+     * Once a range is removed it will not show up in IPAllocationPolicy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.AdditionalIPRangesConfig additional_ip_ranges_configs = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAdditionalIpRangesConfigs(
+        com.google.container.v1beta1.AdditionalIPRangesConfig value) {
+      if (additionalIpRangesConfigsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAdditionalIpRangesConfigsIsMutable();
+        additionalIpRangesConfigs_.add(value);
+        onChanged();
+      } else {
+        additionalIpRangesConfigsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The additional IP ranges that are added to the cluster.
+     * These IP ranges can be used by new node pools to allocate node and pod IPs
+     * automatically.
+     * Each AdditionalIPRangesConfig corresponds to a single subnetwork.
+     * Once a range is removed it will not show up in IPAllocationPolicy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.AdditionalIPRangesConfig additional_ip_ranges_configs = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAdditionalIpRangesConfigs(
+        int index, com.google.container.v1beta1.AdditionalIPRangesConfig value) {
+      if (additionalIpRangesConfigsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAdditionalIpRangesConfigsIsMutable();
+        additionalIpRangesConfigs_.add(index, value);
+        onChanged();
+      } else {
+        additionalIpRangesConfigsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The additional IP ranges that are added to the cluster.
+     * These IP ranges can be used by new node pools to allocate node and pod IPs
+     * automatically.
+     * Each AdditionalIPRangesConfig corresponds to a single subnetwork.
+     * Once a range is removed it will not show up in IPAllocationPolicy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.AdditionalIPRangesConfig additional_ip_ranges_configs = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAdditionalIpRangesConfigs(
+        com.google.container.v1beta1.AdditionalIPRangesConfig.Builder builderForValue) {
+      if (additionalIpRangesConfigsBuilder_ == null) {
+        ensureAdditionalIpRangesConfigsIsMutable();
+        additionalIpRangesConfigs_.add(builderForValue.build());
+        onChanged();
+      } else {
+        additionalIpRangesConfigsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The additional IP ranges that are added to the cluster.
+     * These IP ranges can be used by new node pools to allocate node and pod IPs
+     * automatically.
+     * Each AdditionalIPRangesConfig corresponds to a single subnetwork.
+     * Once a range is removed it will not show up in IPAllocationPolicy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.AdditionalIPRangesConfig additional_ip_ranges_configs = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAdditionalIpRangesConfigs(
+        int index, com.google.container.v1beta1.AdditionalIPRangesConfig.Builder builderForValue) {
+      if (additionalIpRangesConfigsBuilder_ == null) {
+        ensureAdditionalIpRangesConfigsIsMutable();
+        additionalIpRangesConfigs_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        additionalIpRangesConfigsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The additional IP ranges that are added to the cluster.
+     * These IP ranges can be used by new node pools to allocate node and pod IPs
+     * automatically.
+     * Each AdditionalIPRangesConfig corresponds to a single subnetwork.
+     * Once a range is removed it will not show up in IPAllocationPolicy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.AdditionalIPRangesConfig additional_ip_ranges_configs = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllAdditionalIpRangesConfigs(
+        java.lang.Iterable<? extends com.google.container.v1beta1.AdditionalIPRangesConfig>
+            values) {
+      if (additionalIpRangesConfigsBuilder_ == null) {
+        ensureAdditionalIpRangesConfigsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, additionalIpRangesConfigs_);
+        onChanged();
+      } else {
+        additionalIpRangesConfigsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The additional IP ranges that are added to the cluster.
+     * These IP ranges can be used by new node pools to allocate node and pod IPs
+     * automatically.
+     * Each AdditionalIPRangesConfig corresponds to a single subnetwork.
+     * Once a range is removed it will not show up in IPAllocationPolicy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.AdditionalIPRangesConfig additional_ip_ranges_configs = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearAdditionalIpRangesConfigs() {
+      if (additionalIpRangesConfigsBuilder_ == null) {
+        additionalIpRangesConfigs_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00200000);
+        onChanged();
+      } else {
+        additionalIpRangesConfigsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The additional IP ranges that are added to the cluster.
+     * These IP ranges can be used by new node pools to allocate node and pod IPs
+     * automatically.
+     * Each AdditionalIPRangesConfig corresponds to a single subnetwork.
+     * Once a range is removed it will not show up in IPAllocationPolicy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.AdditionalIPRangesConfig additional_ip_ranges_configs = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeAdditionalIpRangesConfigs(int index) {
+      if (additionalIpRangesConfigsBuilder_ == null) {
+        ensureAdditionalIpRangesConfigsIsMutable();
+        additionalIpRangesConfigs_.remove(index);
+        onChanged();
+      } else {
+        additionalIpRangesConfigsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The additional IP ranges that are added to the cluster.
+     * These IP ranges can be used by new node pools to allocate node and pod IPs
+     * automatically.
+     * Each AdditionalIPRangesConfig corresponds to a single subnetwork.
+     * Once a range is removed it will not show up in IPAllocationPolicy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.AdditionalIPRangesConfig additional_ip_ranges_configs = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.container.v1beta1.AdditionalIPRangesConfig.Builder
+        getAdditionalIpRangesConfigsBuilder(int index) {
+      return getAdditionalIpRangesConfigsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The additional IP ranges that are added to the cluster.
+     * These IP ranges can be used by new node pools to allocate node and pod IPs
+     * automatically.
+     * Each AdditionalIPRangesConfig corresponds to a single subnetwork.
+     * Once a range is removed it will not show up in IPAllocationPolicy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.AdditionalIPRangesConfig additional_ip_ranges_configs = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.container.v1beta1.AdditionalIPRangesConfigOrBuilder
+        getAdditionalIpRangesConfigsOrBuilder(int index) {
+      if (additionalIpRangesConfigsBuilder_ == null) {
+        return additionalIpRangesConfigs_.get(index);
+      } else {
+        return additionalIpRangesConfigsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The additional IP ranges that are added to the cluster.
+     * These IP ranges can be used by new node pools to allocate node and pod IPs
+     * automatically.
+     * Each AdditionalIPRangesConfig corresponds to a single subnetwork.
+     * Once a range is removed it will not show up in IPAllocationPolicy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.AdditionalIPRangesConfig additional_ip_ranges_configs = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<? extends com.google.container.v1beta1.AdditionalIPRangesConfigOrBuilder>
+        getAdditionalIpRangesConfigsOrBuilderList() {
+      if (additionalIpRangesConfigsBuilder_ != null) {
+        return additionalIpRangesConfigsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(additionalIpRangesConfigs_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The additional IP ranges that are added to the cluster.
+     * These IP ranges can be used by new node pools to allocate node and pod IPs
+     * automatically.
+     * Each AdditionalIPRangesConfig corresponds to a single subnetwork.
+     * Once a range is removed it will not show up in IPAllocationPolicy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.AdditionalIPRangesConfig additional_ip_ranges_configs = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.container.v1beta1.AdditionalIPRangesConfig.Builder
+        addAdditionalIpRangesConfigsBuilder() {
+      return getAdditionalIpRangesConfigsFieldBuilder()
+          .addBuilder(com.google.container.v1beta1.AdditionalIPRangesConfig.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The additional IP ranges that are added to the cluster.
+     * These IP ranges can be used by new node pools to allocate node and pod IPs
+     * automatically.
+     * Each AdditionalIPRangesConfig corresponds to a single subnetwork.
+     * Once a range is removed it will not show up in IPAllocationPolicy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.AdditionalIPRangesConfig additional_ip_ranges_configs = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.container.v1beta1.AdditionalIPRangesConfig.Builder
+        addAdditionalIpRangesConfigsBuilder(int index) {
+      return getAdditionalIpRangesConfigsFieldBuilder()
+          .addBuilder(
+              index, com.google.container.v1beta1.AdditionalIPRangesConfig.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The additional IP ranges that are added to the cluster.
+     * These IP ranges can be used by new node pools to allocate node and pod IPs
+     * automatically.
+     * Each AdditionalIPRangesConfig corresponds to a single subnetwork.
+     * Once a range is removed it will not show up in IPAllocationPolicy.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.container.v1beta1.AdditionalIPRangesConfig additional_ip_ranges_configs = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.container.v1beta1.AdditionalIPRangesConfig.Builder>
+        getAdditionalIpRangesConfigsBuilderList() {
+      return getAdditionalIpRangesConfigsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.container.v1beta1.AdditionalIPRangesConfig,
+            com.google.container.v1beta1.AdditionalIPRangesConfig.Builder,
+            com.google.container.v1beta1.AdditionalIPRangesConfigOrBuilder>
+        getAdditionalIpRangesConfigsFieldBuilder() {
+      if (additionalIpRangesConfigsBuilder_ == null) {
+        additionalIpRangesConfigsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.container.v1beta1.AdditionalIPRangesConfig,
+                com.google.container.v1beta1.AdditionalIPRangesConfig.Builder,
+                com.google.container.v1beta1.AdditionalIPRangesConfigOrBuilder>(
+                additionalIpRangesConfigs_,
+                ((bitField0_ & 0x00200000) != 0),
+                getParentForChildren(),
+                isClean());
+        additionalIpRangesConfigs_ = null;
+      }
+      return additionalIpRangesConfigsBuilder_;
+    }
+
+    private com.google.container.v1beta1.AutoIpamConfig autoIpamConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.AutoIpamConfig,
+            com.google.container.v1beta1.AutoIpamConfig.Builder,
+            com.google.container.v1beta1.AutoIpamConfigOrBuilder>
+        autoIpamConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. AutoIpamConfig contains all information related to Auto IPAM
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.AutoIpamConfig auto_ipam_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the autoIpamConfig field is set.
+     */
+    public boolean hasAutoIpamConfig() {
+      return ((bitField0_ & 0x00400000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. AutoIpamConfig contains all information related to Auto IPAM
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.AutoIpamConfig auto_ipam_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The autoIpamConfig.
+     */
+    public com.google.container.v1beta1.AutoIpamConfig getAutoIpamConfig() {
+      if (autoIpamConfigBuilder_ == null) {
+        return autoIpamConfig_ == null
+            ? com.google.container.v1beta1.AutoIpamConfig.getDefaultInstance()
+            : autoIpamConfig_;
+      } else {
+        return autoIpamConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. AutoIpamConfig contains all information related to Auto IPAM
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.AutoIpamConfig auto_ipam_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAutoIpamConfig(com.google.container.v1beta1.AutoIpamConfig value) {
+      if (autoIpamConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        autoIpamConfig_ = value;
+      } else {
+        autoIpamConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. AutoIpamConfig contains all information related to Auto IPAM
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.AutoIpamConfig auto_ipam_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setAutoIpamConfig(
+        com.google.container.v1beta1.AutoIpamConfig.Builder builderForValue) {
+      if (autoIpamConfigBuilder_ == null) {
+        autoIpamConfig_ = builderForValue.build();
+      } else {
+        autoIpamConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. AutoIpamConfig contains all information related to Auto IPAM
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.AutoIpamConfig auto_ipam_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeAutoIpamConfig(com.google.container.v1beta1.AutoIpamConfig value) {
+      if (autoIpamConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00400000) != 0)
+            && autoIpamConfig_ != null
+            && autoIpamConfig_
+                != com.google.container.v1beta1.AutoIpamConfig.getDefaultInstance()) {
+          getAutoIpamConfigBuilder().mergeFrom(value);
+        } else {
+          autoIpamConfig_ = value;
+        }
+      } else {
+        autoIpamConfigBuilder_.mergeFrom(value);
+      }
+      if (autoIpamConfig_ != null) {
+        bitField0_ |= 0x00400000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. AutoIpamConfig contains all information related to Auto IPAM
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.AutoIpamConfig auto_ipam_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearAutoIpamConfig() {
+      bitField0_ = (bitField0_ & ~0x00400000);
+      autoIpamConfig_ = null;
+      if (autoIpamConfigBuilder_ != null) {
+        autoIpamConfigBuilder_.dispose();
+        autoIpamConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. AutoIpamConfig contains all information related to Auto IPAM
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.AutoIpamConfig auto_ipam_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1beta1.AutoIpamConfig.Builder getAutoIpamConfigBuilder() {
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return getAutoIpamConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. AutoIpamConfig contains all information related to Auto IPAM
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.AutoIpamConfig auto_ipam_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.container.v1beta1.AutoIpamConfigOrBuilder getAutoIpamConfigOrBuilder() {
+      if (autoIpamConfigBuilder_ != null) {
+        return autoIpamConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return autoIpamConfig_ == null
+            ? com.google.container.v1beta1.AutoIpamConfig.getDefaultInstance()
+            : autoIpamConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. AutoIpamConfig contains all information related to Auto IPAM
+     * </pre>
+     *
+     * <code>
+     * .google.container.v1beta1.AutoIpamConfig auto_ipam_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.container.v1beta1.AutoIpamConfig,
+            com.google.container.v1beta1.AutoIpamConfig.Builder,
+            com.google.container.v1beta1.AutoIpamConfigOrBuilder>
+        getAutoIpamConfigFieldBuilder() {
+      if (autoIpamConfigBuilder_ == null) {
+        autoIpamConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1beta1.AutoIpamConfig,
+                com.google.container.v1beta1.AutoIpamConfig.Builder,
+                com.google.container.v1beta1.AutoIpamConfigOrBuilder>(
+                getAutoIpamConfig(), getParentForChildren(), isClean());
+        autoIpamConfig_ = null;
+      }
+      return autoIpamConfigBuilder_;
     }
 
     @java.lang.Override

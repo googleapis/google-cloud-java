@@ -212,6 +212,7 @@ public class ReservationsClientTest {
   public void getTest() throws Exception {
     Reservation expectedResponse =
         Reservation.newBuilder()
+            .setAdvancedDeploymentControl(ReservationAdvancedDeploymentControl.newBuilder().build())
             .setAggregateReservation(AllocationAggregateReservation.newBuilder().build())
             .setCommitment("commitment1019005717")
             .setCreationTimestamp("creationTimestamp-370203401")
@@ -228,6 +229,7 @@ public class ReservationsClientTest {
             .putAllResourcePolicies(new HashMap<String, String>())
             .setResourceStatus(AllocationResourceStatus.newBuilder().build())
             .setSatisfiesPzs(true)
+            .setSchedulingType("schedulingType144670446")
             .setSelfLink("selfLink1191800166")
             .setShareSettings(ShareSettings.newBuilder().build())
             .setSpecificReservation(AllocationSpecificSKUReservation.newBuilder().build())

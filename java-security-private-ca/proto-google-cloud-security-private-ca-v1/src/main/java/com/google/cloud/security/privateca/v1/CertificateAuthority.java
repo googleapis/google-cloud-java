@@ -3120,6 +3120,1376 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
     }
   }
 
+  public interface UserDefinedAccessUrlsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of URLs where the issuer CA certificate may be
+     * downloaded, which appears in the "Authority Information Access" extension
+     * in the certificate. If specified, the default [Cloud Storage
+     * URLs][google.cloud.security.privateca.v1.CertificateAuthority.AccessUrls.ca_certificate_access_url]
+     * will be omitted.
+     * </pre>
+     *
+     * <code>
+     * repeated string aia_issuing_certificate_urls = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the aiaIssuingCertificateUrls.
+     */
+    java.util.List<java.lang.String> getAiaIssuingCertificateUrlsList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of URLs where the issuer CA certificate may be
+     * downloaded, which appears in the "Authority Information Access" extension
+     * in the certificate. If specified, the default [Cloud Storage
+     * URLs][google.cloud.security.privateca.v1.CertificateAuthority.AccessUrls.ca_certificate_access_url]
+     * will be omitted.
+     * </pre>
+     *
+     * <code>
+     * repeated string aia_issuing_certificate_urls = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of aiaIssuingCertificateUrls.
+     */
+    int getAiaIssuingCertificateUrlsCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of URLs where the issuer CA certificate may be
+     * downloaded, which appears in the "Authority Information Access" extension
+     * in the certificate. If specified, the default [Cloud Storage
+     * URLs][google.cloud.security.privateca.v1.CertificateAuthority.AccessUrls.ca_certificate_access_url]
+     * will be omitted.
+     * </pre>
+     *
+     * <code>
+     * repeated string aia_issuing_certificate_urls = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The aiaIssuingCertificateUrls at the given index.
+     */
+    java.lang.String getAiaIssuingCertificateUrls(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of URLs where the issuer CA certificate may be
+     * downloaded, which appears in the "Authority Information Access" extension
+     * in the certificate. If specified, the default [Cloud Storage
+     * URLs][google.cloud.security.privateca.v1.CertificateAuthority.AccessUrls.ca_certificate_access_url]
+     * will be omitted.
+     * </pre>
+     *
+     * <code>
+     * repeated string aia_issuing_certificate_urls = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the aiaIssuingCertificateUrls at the given index.
+     */
+    com.google.protobuf.ByteString getAiaIssuingCertificateUrlsBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of URLs where to obtain CRL information, i.e.
+     * the DistributionPoint.fullName described by
+     * https://tools.ietf.org/html/rfc5280#section-4.2.1.13.
+     * If specified, the default
+     * [Cloud Storage
+     * URLs][google.cloud.security.privateca.v1.CertificateAuthority.AccessUrls.crl_access_urls]
+     * will be omitted.
+     * </pre>
+     *
+     * <code>repeated string crl_access_urls = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the crlAccessUrls.
+     */
+    java.util.List<java.lang.String> getCrlAccessUrlsList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of URLs where to obtain CRL information, i.e.
+     * the DistributionPoint.fullName described by
+     * https://tools.ietf.org/html/rfc5280#section-4.2.1.13.
+     * If specified, the default
+     * [Cloud Storage
+     * URLs][google.cloud.security.privateca.v1.CertificateAuthority.AccessUrls.crl_access_urls]
+     * will be omitted.
+     * </pre>
+     *
+     * <code>repeated string crl_access_urls = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of crlAccessUrls.
+     */
+    int getCrlAccessUrlsCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of URLs where to obtain CRL information, i.e.
+     * the DistributionPoint.fullName described by
+     * https://tools.ietf.org/html/rfc5280#section-4.2.1.13.
+     * If specified, the default
+     * [Cloud Storage
+     * URLs][google.cloud.security.privateca.v1.CertificateAuthority.AccessUrls.crl_access_urls]
+     * will be omitted.
+     * </pre>
+     *
+     * <code>repeated string crl_access_urls = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The crlAccessUrls at the given index.
+     */
+    java.lang.String getCrlAccessUrls(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of URLs where to obtain CRL information, i.e.
+     * the DistributionPoint.fullName described by
+     * https://tools.ietf.org/html/rfc5280#section-4.2.1.13.
+     * If specified, the default
+     * [Cloud Storage
+     * URLs][google.cloud.security.privateca.v1.CertificateAuthority.AccessUrls.crl_access_urls]
+     * will be omitted.
+     * </pre>
+     *
+     * <code>repeated string crl_access_urls = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the crlAccessUrls at the given index.
+     */
+    com.google.protobuf.ByteString getCrlAccessUrlsBytes(int index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * User-defined URLs for accessing content published by this
+   * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+   * </pre>
+   *
+   * Protobuf type {@code
+   * google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls}
+   */
+  public static final class UserDefinedAccessUrls extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls)
+      UserDefinedAccessUrlsOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use UserDefinedAccessUrls.newBuilder() to construct.
+    private UserDefinedAccessUrls(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private UserDefinedAccessUrls() {
+      aiaIssuingCertificateUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      crlAccessUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new UserDefinedAccessUrls();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.security.privateca.v1.PrivateCaResourcesProto
+          .internal_static_google_cloud_security_privateca_v1_CertificateAuthority_UserDefinedAccessUrls_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.security.privateca.v1.PrivateCaResourcesProto
+          .internal_static_google_cloud_security_privateca_v1_CertificateAuthority_UserDefinedAccessUrls_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls
+                  .class,
+              com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls
+                  .Builder.class);
+    }
+
+    public static final int AIA_ISSUING_CERTIFICATE_URLS_FIELD_NUMBER = 1;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList aiaIssuingCertificateUrls_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of URLs where the issuer CA certificate may be
+     * downloaded, which appears in the "Authority Information Access" extension
+     * in the certificate. If specified, the default [Cloud Storage
+     * URLs][google.cloud.security.privateca.v1.CertificateAuthority.AccessUrls.ca_certificate_access_url]
+     * will be omitted.
+     * </pre>
+     *
+     * <code>
+     * repeated string aia_issuing_certificate_urls = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the aiaIssuingCertificateUrls.
+     */
+    public com.google.protobuf.ProtocolStringList getAiaIssuingCertificateUrlsList() {
+      return aiaIssuingCertificateUrls_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of URLs where the issuer CA certificate may be
+     * downloaded, which appears in the "Authority Information Access" extension
+     * in the certificate. If specified, the default [Cloud Storage
+     * URLs][google.cloud.security.privateca.v1.CertificateAuthority.AccessUrls.ca_certificate_access_url]
+     * will be omitted.
+     * </pre>
+     *
+     * <code>
+     * repeated string aia_issuing_certificate_urls = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of aiaIssuingCertificateUrls.
+     */
+    public int getAiaIssuingCertificateUrlsCount() {
+      return aiaIssuingCertificateUrls_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of URLs where the issuer CA certificate may be
+     * downloaded, which appears in the "Authority Information Access" extension
+     * in the certificate. If specified, the default [Cloud Storage
+     * URLs][google.cloud.security.privateca.v1.CertificateAuthority.AccessUrls.ca_certificate_access_url]
+     * will be omitted.
+     * </pre>
+     *
+     * <code>
+     * repeated string aia_issuing_certificate_urls = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The aiaIssuingCertificateUrls at the given index.
+     */
+    public java.lang.String getAiaIssuingCertificateUrls(int index) {
+      return aiaIssuingCertificateUrls_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of URLs where the issuer CA certificate may be
+     * downloaded, which appears in the "Authority Information Access" extension
+     * in the certificate. If specified, the default [Cloud Storage
+     * URLs][google.cloud.security.privateca.v1.CertificateAuthority.AccessUrls.ca_certificate_access_url]
+     * will be omitted.
+     * </pre>
+     *
+     * <code>
+     * repeated string aia_issuing_certificate_urls = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the aiaIssuingCertificateUrls at the given index.
+     */
+    public com.google.protobuf.ByteString getAiaIssuingCertificateUrlsBytes(int index) {
+      return aiaIssuingCertificateUrls_.getByteString(index);
+    }
+
+    public static final int CRL_ACCESS_URLS_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList crlAccessUrls_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of URLs where to obtain CRL information, i.e.
+     * the DistributionPoint.fullName described by
+     * https://tools.ietf.org/html/rfc5280#section-4.2.1.13.
+     * If specified, the default
+     * [Cloud Storage
+     * URLs][google.cloud.security.privateca.v1.CertificateAuthority.AccessUrls.crl_access_urls]
+     * will be omitted.
+     * </pre>
+     *
+     * <code>repeated string crl_access_urls = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the crlAccessUrls.
+     */
+    public com.google.protobuf.ProtocolStringList getCrlAccessUrlsList() {
+      return crlAccessUrls_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of URLs where to obtain CRL information, i.e.
+     * the DistributionPoint.fullName described by
+     * https://tools.ietf.org/html/rfc5280#section-4.2.1.13.
+     * If specified, the default
+     * [Cloud Storage
+     * URLs][google.cloud.security.privateca.v1.CertificateAuthority.AccessUrls.crl_access_urls]
+     * will be omitted.
+     * </pre>
+     *
+     * <code>repeated string crl_access_urls = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of crlAccessUrls.
+     */
+    public int getCrlAccessUrlsCount() {
+      return crlAccessUrls_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of URLs where to obtain CRL information, i.e.
+     * the DistributionPoint.fullName described by
+     * https://tools.ietf.org/html/rfc5280#section-4.2.1.13.
+     * If specified, the default
+     * [Cloud Storage
+     * URLs][google.cloud.security.privateca.v1.CertificateAuthority.AccessUrls.crl_access_urls]
+     * will be omitted.
+     * </pre>
+     *
+     * <code>repeated string crl_access_urls = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The crlAccessUrls at the given index.
+     */
+    public java.lang.String getCrlAccessUrls(int index) {
+      return crlAccessUrls_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of URLs where to obtain CRL information, i.e.
+     * the DistributionPoint.fullName described by
+     * https://tools.ietf.org/html/rfc5280#section-4.2.1.13.
+     * If specified, the default
+     * [Cloud Storage
+     * URLs][google.cloud.security.privateca.v1.CertificateAuthority.AccessUrls.crl_access_urls]
+     * will be omitted.
+     * </pre>
+     *
+     * <code>repeated string crl_access_urls = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the crlAccessUrls at the given index.
+     */
+    public com.google.protobuf.ByteString getCrlAccessUrlsBytes(int index) {
+      return crlAccessUrls_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < aiaIssuingCertificateUrls_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(
+            output, 1, aiaIssuingCertificateUrls_.getRaw(i));
+      }
+      for (int i = 0; i < crlAccessUrls_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, crlAccessUrls_.getRaw(i));
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < aiaIssuingCertificateUrls_.size(); i++) {
+          dataSize += computeStringSizeNoTag(aiaIssuingCertificateUrls_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getAiaIssuingCertificateUrlsList().size();
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < crlAccessUrls_.size(); i++) {
+          dataSize += computeStringSizeNoTag(crlAccessUrls_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getCrlAccessUrlsList().size();
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj
+          instanceof
+          com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls other =
+          (com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls) obj;
+
+      if (!getAiaIssuingCertificateUrlsList().equals(other.getAiaIssuingCertificateUrlsList()))
+        return false;
+      if (!getCrlAccessUrlsList().equals(other.getCrlAccessUrlsList())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (getAiaIssuingCertificateUrlsCount() > 0) {
+        hash = (37 * hash) + AIA_ISSUING_CERTIFICATE_URLS_FIELD_NUMBER;
+        hash = (53 * hash) + getAiaIssuingCertificateUrlsList().hashCode();
+      }
+      if (getCrlAccessUrlsCount() > 0) {
+        hash = (37 * hash) + CRL_ACCESS_URLS_FIELD_NUMBER;
+        hash = (53 * hash) + getCrlAccessUrlsList().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls
+        parseFrom(java.nio.ByteBuffer data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls
+        parseFrom(
+            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls
+        parseFrom(com.google.protobuf.ByteString data)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls
+        parseFrom(
+            com.google.protobuf.ByteString data,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls
+        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls
+        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls
+        parseFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls
+        parseFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls
+        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls
+        parseFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls
+            prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * User-defined URLs for accessing content published by this
+     * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority].
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls)
+        com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrlsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.security.privateca.v1.PrivateCaResourcesProto
+            .internal_static_google_cloud_security_privateca_v1_CertificateAuthority_UserDefinedAccessUrls_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.security.privateca.v1.PrivateCaResourcesProto
+            .internal_static_google_cloud_security_privateca_v1_CertificateAuthority_UserDefinedAccessUrls_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls
+                    .class,
+                com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls
+                    .Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        aiaIssuingCertificateUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        crlAccessUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.security.privateca.v1.PrivateCaResourcesProto
+            .internal_static_google_cloud_security_privateca_v1_CertificateAuthority_UserDefinedAccessUrls_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls
+          getDefaultInstanceForType() {
+        return com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls
+          build() {
+        com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls
+          buildPartial() {
+        com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls result =
+            new com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls(
+                this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls
+              result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          aiaIssuingCertificateUrls_.makeImmutable();
+          result.aiaIssuingCertificateUrls_ = aiaIssuingCertificateUrls_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          crlAccessUrls_.makeImmutable();
+          result.crlAccessUrls_ = crlAccessUrls_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof
+            com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls) {
+          return mergeFrom(
+              (com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls)
+                  other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls other) {
+        if (other
+            == com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls
+                .getDefaultInstance()) return this;
+        if (!other.aiaIssuingCertificateUrls_.isEmpty()) {
+          if (aiaIssuingCertificateUrls_.isEmpty()) {
+            aiaIssuingCertificateUrls_ = other.aiaIssuingCertificateUrls_;
+            bitField0_ |= 0x00000001;
+          } else {
+            ensureAiaIssuingCertificateUrlsIsMutable();
+            aiaIssuingCertificateUrls_.addAll(other.aiaIssuingCertificateUrls_);
+          }
+          onChanged();
+        }
+        if (!other.crlAccessUrls_.isEmpty()) {
+          if (crlAccessUrls_.isEmpty()) {
+            crlAccessUrls_ = other.crlAccessUrls_;
+            bitField0_ |= 0x00000002;
+          } else {
+            ensureCrlAccessUrlsIsMutable();
+            crlAccessUrls_.addAll(other.crlAccessUrls_);
+          }
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureAiaIssuingCertificateUrlsIsMutable();
+                  aiaIssuingCertificateUrls_.add(s);
+                  break;
+                } // case 10
+              case 18:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureCrlAccessUrlsIsMutable();
+                  crlAccessUrls_.add(s);
+                  break;
+                } // case 18
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.LazyStringArrayList aiaIssuingCertificateUrls_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureAiaIssuingCertificateUrlsIsMutable() {
+        if (!aiaIssuingCertificateUrls_.isModifiable()) {
+          aiaIssuingCertificateUrls_ =
+              new com.google.protobuf.LazyStringArrayList(aiaIssuingCertificateUrls_);
+        }
+        bitField0_ |= 0x00000001;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of URLs where the issuer CA certificate may be
+       * downloaded, which appears in the "Authority Information Access" extension
+       * in the certificate. If specified, the default [Cloud Storage
+       * URLs][google.cloud.security.privateca.v1.CertificateAuthority.AccessUrls.ca_certificate_access_url]
+       * will be omitted.
+       * </pre>
+       *
+       * <code>
+       * repeated string aia_issuing_certificate_urls = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return A list containing the aiaIssuingCertificateUrls.
+       */
+      public com.google.protobuf.ProtocolStringList getAiaIssuingCertificateUrlsList() {
+        aiaIssuingCertificateUrls_.makeImmutable();
+        return aiaIssuingCertificateUrls_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of URLs where the issuer CA certificate may be
+       * downloaded, which appears in the "Authority Information Access" extension
+       * in the certificate. If specified, the default [Cloud Storage
+       * URLs][google.cloud.security.privateca.v1.CertificateAuthority.AccessUrls.ca_certificate_access_url]
+       * will be omitted.
+       * </pre>
+       *
+       * <code>
+       * repeated string aia_issuing_certificate_urls = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The count of aiaIssuingCertificateUrls.
+       */
+      public int getAiaIssuingCertificateUrlsCount() {
+        return aiaIssuingCertificateUrls_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of URLs where the issuer CA certificate may be
+       * downloaded, which appears in the "Authority Information Access" extension
+       * in the certificate. If specified, the default [Cloud Storage
+       * URLs][google.cloud.security.privateca.v1.CertificateAuthority.AccessUrls.ca_certificate_access_url]
+       * will be omitted.
+       * </pre>
+       *
+       * <code>
+       * repeated string aia_issuing_certificate_urls = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The aiaIssuingCertificateUrls at the given index.
+       */
+      public java.lang.String getAiaIssuingCertificateUrls(int index) {
+        return aiaIssuingCertificateUrls_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of URLs where the issuer CA certificate may be
+       * downloaded, which appears in the "Authority Information Access" extension
+       * in the certificate. If specified, the default [Cloud Storage
+       * URLs][google.cloud.security.privateca.v1.CertificateAuthority.AccessUrls.ca_certificate_access_url]
+       * will be omitted.
+       * </pre>
+       *
+       * <code>
+       * repeated string aia_issuing_certificate_urls = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the aiaIssuingCertificateUrls at the given index.
+       */
+      public com.google.protobuf.ByteString getAiaIssuingCertificateUrlsBytes(int index) {
+        return aiaIssuingCertificateUrls_.getByteString(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of URLs where the issuer CA certificate may be
+       * downloaded, which appears in the "Authority Information Access" extension
+       * in the certificate. If specified, the default [Cloud Storage
+       * URLs][google.cloud.security.privateca.v1.CertificateAuthority.AccessUrls.ca_certificate_access_url]
+       * will be omitted.
+       * </pre>
+       *
+       * <code>
+       * repeated string aia_issuing_certificate_urls = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index to set the value at.
+       * @param value The aiaIssuingCertificateUrls to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAiaIssuingCertificateUrls(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAiaIssuingCertificateUrlsIsMutable();
+        aiaIssuingCertificateUrls_.set(index, value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of URLs where the issuer CA certificate may be
+       * downloaded, which appears in the "Authority Information Access" extension
+       * in the certificate. If specified, the default [Cloud Storage
+       * URLs][google.cloud.security.privateca.v1.CertificateAuthority.AccessUrls.ca_certificate_access_url]
+       * will be omitted.
+       * </pre>
+       *
+       * <code>
+       * repeated string aia_issuing_certificate_urls = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The aiaIssuingCertificateUrls to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAiaIssuingCertificateUrls(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureAiaIssuingCertificateUrlsIsMutable();
+        aiaIssuingCertificateUrls_.add(value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of URLs where the issuer CA certificate may be
+       * downloaded, which appears in the "Authority Information Access" extension
+       * in the certificate. If specified, the default [Cloud Storage
+       * URLs][google.cloud.security.privateca.v1.CertificateAuthority.AccessUrls.ca_certificate_access_url]
+       * will be omitted.
+       * </pre>
+       *
+       * <code>
+       * repeated string aia_issuing_certificate_urls = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param values The aiaIssuingCertificateUrls to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllAiaIssuingCertificateUrls(java.lang.Iterable<java.lang.String> values) {
+        ensureAiaIssuingCertificateUrlsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, aiaIssuingCertificateUrls_);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of URLs where the issuer CA certificate may be
+       * downloaded, which appears in the "Authority Information Access" extension
+       * in the certificate. If specified, the default [Cloud Storage
+       * URLs][google.cloud.security.privateca.v1.CertificateAuthority.AccessUrls.ca_certificate_access_url]
+       * will be omitted.
+       * </pre>
+       *
+       * <code>
+       * repeated string aia_issuing_certificate_urls = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAiaIssuingCertificateUrls() {
+        aiaIssuingCertificateUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        ;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of URLs where the issuer CA certificate may be
+       * downloaded, which appears in the "Authority Information Access" extension
+       * in the certificate. If specified, the default [Cloud Storage
+       * URLs][google.cloud.security.privateca.v1.CertificateAuthority.AccessUrls.ca_certificate_access_url]
+       * will be omitted.
+       * </pre>
+       *
+       * <code>
+       * repeated string aia_issuing_certificate_urls = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The bytes of the aiaIssuingCertificateUrls to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAiaIssuingCertificateUrlsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureAiaIssuingCertificateUrlsIsMutable();
+        aiaIssuingCertificateUrls_.add(value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringArrayList crlAccessUrls_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureCrlAccessUrlsIsMutable() {
+        if (!crlAccessUrls_.isModifiable()) {
+          crlAccessUrls_ = new com.google.protobuf.LazyStringArrayList(crlAccessUrls_);
+        }
+        bitField0_ |= 0x00000002;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of URLs where to obtain CRL information, i.e.
+       * the DistributionPoint.fullName described by
+       * https://tools.ietf.org/html/rfc5280#section-4.2.1.13.
+       * If specified, the default
+       * [Cloud Storage
+       * URLs][google.cloud.security.privateca.v1.CertificateAuthority.AccessUrls.crl_access_urls]
+       * will be omitted.
+       * </pre>
+       *
+       * <code>repeated string crl_access_urls = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return A list containing the crlAccessUrls.
+       */
+      public com.google.protobuf.ProtocolStringList getCrlAccessUrlsList() {
+        crlAccessUrls_.makeImmutable();
+        return crlAccessUrls_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of URLs where to obtain CRL information, i.e.
+       * the DistributionPoint.fullName described by
+       * https://tools.ietf.org/html/rfc5280#section-4.2.1.13.
+       * If specified, the default
+       * [Cloud Storage
+       * URLs][google.cloud.security.privateca.v1.CertificateAuthority.AccessUrls.crl_access_urls]
+       * will be omitted.
+       * </pre>
+       *
+       * <code>repeated string crl_access_urls = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The count of crlAccessUrls.
+       */
+      public int getCrlAccessUrlsCount() {
+        return crlAccessUrls_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of URLs where to obtain CRL information, i.e.
+       * the DistributionPoint.fullName described by
+       * https://tools.ietf.org/html/rfc5280#section-4.2.1.13.
+       * If specified, the default
+       * [Cloud Storage
+       * URLs][google.cloud.security.privateca.v1.CertificateAuthority.AccessUrls.crl_access_urls]
+       * will be omitted.
+       * </pre>
+       *
+       * <code>repeated string crl_access_urls = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The crlAccessUrls at the given index.
+       */
+      public java.lang.String getCrlAccessUrls(int index) {
+        return crlAccessUrls_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of URLs where to obtain CRL information, i.e.
+       * the DistributionPoint.fullName described by
+       * https://tools.ietf.org/html/rfc5280#section-4.2.1.13.
+       * If specified, the default
+       * [Cloud Storage
+       * URLs][google.cloud.security.privateca.v1.CertificateAuthority.AccessUrls.crl_access_urls]
+       * will be omitted.
+       * </pre>
+       *
+       * <code>repeated string crl_access_urls = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the crlAccessUrls at the given index.
+       */
+      public com.google.protobuf.ByteString getCrlAccessUrlsBytes(int index) {
+        return crlAccessUrls_.getByteString(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of URLs where to obtain CRL information, i.e.
+       * the DistributionPoint.fullName described by
+       * https://tools.ietf.org/html/rfc5280#section-4.2.1.13.
+       * If specified, the default
+       * [Cloud Storage
+       * URLs][google.cloud.security.privateca.v1.CertificateAuthority.AccessUrls.crl_access_urls]
+       * will be omitted.
+       * </pre>
+       *
+       * <code>repeated string crl_access_urls = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The crlAccessUrls to set.
+       * @return This builder for chaining.
+       */
+      public Builder setCrlAccessUrls(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCrlAccessUrlsIsMutable();
+        crlAccessUrls_.set(index, value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of URLs where to obtain CRL information, i.e.
+       * the DistributionPoint.fullName described by
+       * https://tools.ietf.org/html/rfc5280#section-4.2.1.13.
+       * If specified, the default
+       * [Cloud Storage
+       * URLs][google.cloud.security.privateca.v1.CertificateAuthority.AccessUrls.crl_access_urls]
+       * will be omitted.
+       * </pre>
+       *
+       * <code>repeated string crl_access_urls = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The crlAccessUrls to add.
+       * @return This builder for chaining.
+       */
+      public Builder addCrlAccessUrls(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureCrlAccessUrlsIsMutable();
+        crlAccessUrls_.add(value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of URLs where to obtain CRL information, i.e.
+       * the DistributionPoint.fullName described by
+       * https://tools.ietf.org/html/rfc5280#section-4.2.1.13.
+       * If specified, the default
+       * [Cloud Storage
+       * URLs][google.cloud.security.privateca.v1.CertificateAuthority.AccessUrls.crl_access_urls]
+       * will be omitted.
+       * </pre>
+       *
+       * <code>repeated string crl_access_urls = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param values The crlAccessUrls to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllCrlAccessUrls(java.lang.Iterable<java.lang.String> values) {
+        ensureCrlAccessUrlsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, crlAccessUrls_);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of URLs where to obtain CRL information, i.e.
+       * the DistributionPoint.fullName described by
+       * https://tools.ietf.org/html/rfc5280#section-4.2.1.13.
+       * If specified, the default
+       * [Cloud Storage
+       * URLs][google.cloud.security.privateca.v1.CertificateAuthority.AccessUrls.crl_access_urls]
+       * will be omitted.
+       * </pre>
+       *
+       * <code>repeated string crl_access_urls = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearCrlAccessUrls() {
+        crlAccessUrls_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        ;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of URLs where to obtain CRL information, i.e.
+       * the DistributionPoint.fullName described by
+       * https://tools.ietf.org/html/rfc5280#section-4.2.1.13.
+       * If specified, the default
+       * [Cloud Storage
+       * URLs][google.cloud.security.privateca.v1.CertificateAuthority.AccessUrls.crl_access_urls]
+       * will be omitted.
+       * </pre>
+       *
+       * <code>repeated string crl_access_urls = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes of the crlAccessUrls to add.
+       * @return This builder for chaining.
+       */
+      public Builder addCrlAccessUrlsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureCrlAccessUrlsIsMutable();
+        crlAccessUrls_.add(value);
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls)
+    private static final com.google.cloud.security.privateca.v1.CertificateAuthority
+            .UserDefinedAccessUrls
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls();
+    }
+
+    public static com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UserDefinedAccessUrls> PARSER =
+        new com.google.protobuf.AbstractParser<UserDefinedAccessUrls>() {
+          @java.lang.Override
+          public UserDefinedAccessUrls parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<UserDefinedAccessUrls> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UserDefinedAccessUrls> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
@@ -3130,12 +4500,12 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. The resource name for this
+   * Identifier. The resource name for this
    * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
    * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -3156,12 +4526,12 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Output only. The resource name for this
+   * Identifier. The resource name for this
    * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
    * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -4286,6 +5656,114 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
     return map.get(key);
   }
 
+  public static final int USER_DEFINED_ACCESS_URLS_FIELD_NUMBER = 18;
+  private com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls
+      userDefinedAccessUrls_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. User-defined URLs for CA certificate and CRLs. The service does
+   * not publish content to these URLs. It is up to the user to mirror content
+   * to these URLs.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls user_defined_access_urls = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the userDefinedAccessUrls field is set.
+   */
+  @java.lang.Override
+  public boolean hasUserDefinedAccessUrls() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. User-defined URLs for CA certificate and CRLs. The service does
+   * not publish content to these URLs. It is up to the user to mirror content
+   * to these URLs.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls user_defined_access_urls = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The userDefinedAccessUrls.
+   */
+  @java.lang.Override
+  public com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls
+      getUserDefinedAccessUrls() {
+    return userDefinedAccessUrls_ == null
+        ? com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls
+            .getDefaultInstance()
+        : userDefinedAccessUrls_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. User-defined URLs for CA certificate and CRLs. The service does
+   * not publish content to these URLs. It is up to the user to mirror content
+   * to these URLs.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls user_defined_access_urls = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrlsOrBuilder
+      getUserDefinedAccessUrlsOrBuilder() {
+    return userDefinedAccessUrls_ == null
+        ? com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls
+            .getDefaultInstance()
+        : userDefinedAccessUrls_;
+  }
+
+  public static final int SATISFIES_PZS_FIELD_NUMBER = 19;
+  private boolean satisfiesPzs_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzs() {
+    return satisfiesPzs_;
+  }
+
+  public static final int SATISFIES_PZI_FIELD_NUMBER = 20;
+  private boolean satisfiesPzi_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Reserved for future use.
+   * </pre>
+   *
+   * <code>bool satisfies_pzi = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzi.
+   */
+  @java.lang.Override
+  public boolean getSatisfiesPzi() {
+    return satisfiesPzi_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -4354,6 +5832,15 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 17);
+    if (((bitField0_ & 0x00000200) != 0)) {
+      output.writeMessage(18, getUserDefinedAccessUrls());
+    }
+    if (satisfiesPzs_ != false) {
+      output.writeBool(19, satisfiesPzs_);
+    }
+    if (satisfiesPzi_ != false) {
+      output.writeBool(20, satisfiesPzi_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -4432,6 +5919,16 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(17, labels__);
     }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(18, getUserDefinedAccessUrls());
+    }
+    if (satisfiesPzs_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(19, satisfiesPzs_);
+    }
+    if (satisfiesPzi_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(20, satisfiesPzi_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -4493,6 +5990,12 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       if (!getExpireTime().equals(other.getExpireTime())) return false;
     }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+    if (hasUserDefinedAccessUrls() != other.hasUserDefinedAccessUrls()) return false;
+    if (hasUserDefinedAccessUrls()) {
+      if (!getUserDefinedAccessUrls().equals(other.getUserDefinedAccessUrls())) return false;
+    }
+    if (getSatisfiesPzs() != other.getSatisfiesPzs()) return false;
+    if (getSatisfiesPzi() != other.getSatisfiesPzi()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -4562,6 +6065,14 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
     }
+    if (hasUserDefinedAccessUrls()) {
+      hash = (37 * hash) + USER_DEFINED_ACCESS_URLS_FIELD_NUMBER;
+      hash = (53 * hash) + getUserDefinedAccessUrls().hashCode();
+    }
+    hash = (37 * hash) + SATISFIES_PZS_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzs());
+    hash = (37 * hash) + SATISFIES_PZI_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSatisfiesPzi());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -4741,6 +6252,7 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         getUpdateTimeFieldBuilder();
         getDeleteTimeFieldBuilder();
         getExpireTimeFieldBuilder();
+        getUserDefinedAccessUrlsFieldBuilder();
       }
     }
 
@@ -4807,6 +6319,13 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
         expireTimeBuilder_ = null;
       }
       internalGetMutableLabels().clear();
+      userDefinedAccessUrls_ = null;
+      if (userDefinedAccessUrlsBuilder_ != null) {
+        userDefinedAccessUrlsBuilder_.dispose();
+        userDefinedAccessUrlsBuilder_ = null;
+      }
+      satisfiesPzs_ = false;
+      satisfiesPzi_ = false;
       return this;
     }
 
@@ -4920,6 +6439,19 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       if (((from_bitField0_ & 0x00010000) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.userDefinedAccessUrls_ =
+            userDefinedAccessUrlsBuilder_ == null
+                ? userDefinedAccessUrls_
+                : userDefinedAccessUrlsBuilder_.build();
+        to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.satisfiesPzs_ = satisfiesPzs_;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.satisfiesPzi_ = satisfiesPzi_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -5055,6 +6587,15 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
       bitField0_ |= 0x00010000;
+      if (other.hasUserDefinedAccessUrls()) {
+        mergeUserDefinedAccessUrls(other.getUserDefinedAccessUrls());
+      }
+      if (other.getSatisfiesPzs() != false) {
+        setSatisfiesPzs(other.getSatisfiesPzs());
+      }
+      if (other.getSatisfiesPzi() != false) {
+        setSatisfiesPzi(other.getSatisfiesPzi());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -5199,6 +6740,25 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
                 bitField0_ |= 0x00010000;
                 break;
               } // case 138
+            case 146:
+              {
+                input.readMessage(
+                    getUserDefinedAccessUrlsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 146
+            case 152:
+              {
+                satisfiesPzs_ = input.readBool();
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 152
+            case 160:
+              {
+                satisfiesPzi_ = input.readBool();
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 160
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5224,12 +6784,12 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The resource name for this
+     * Identifier. The resource name for this
      * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
      * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -5249,12 +6809,12 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The resource name for this
+     * Identifier. The resource name for this
      * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
      * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -5274,12 +6834,12 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The resource name for this
+     * Identifier. The resource name for this
      * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
      * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -5298,12 +6858,12 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The resource name for this
+     * Identifier. The resource name for this
      * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
      * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -5318,12 +6878,12 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Output only. The resource name for this
+     * Identifier. The resource name for this
      * [CertificateAuthority][google.cloud.security.privateca.v1.CertificateAuthority]
      * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;&#47;certificateAuthorities/&#42;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -8906,6 +10466,367 @@ public final class CertificateAuthority extends com.google.protobuf.GeneratedMes
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
       bitField0_ |= 0x00010000;
+      return this;
+    }
+
+    private com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls
+        userDefinedAccessUrls_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls,
+            com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls
+                .Builder,
+            com.google.cloud.security.privateca.v1.CertificateAuthority
+                .UserDefinedAccessUrlsOrBuilder>
+        userDefinedAccessUrlsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. User-defined URLs for CA certificate and CRLs. The service does
+     * not publish content to these URLs. It is up to the user to mirror content
+     * to these URLs.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls user_defined_access_urls = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the userDefinedAccessUrls field is set.
+     */
+    public boolean hasUserDefinedAccessUrls() {
+      return ((bitField0_ & 0x00020000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. User-defined URLs for CA certificate and CRLs. The service does
+     * not publish content to these URLs. It is up to the user to mirror content
+     * to these URLs.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls user_defined_access_urls = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The userDefinedAccessUrls.
+     */
+    public com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls
+        getUserDefinedAccessUrls() {
+      if (userDefinedAccessUrlsBuilder_ == null) {
+        return userDefinedAccessUrls_ == null
+            ? com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls
+                .getDefaultInstance()
+            : userDefinedAccessUrls_;
+      } else {
+        return userDefinedAccessUrlsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. User-defined URLs for CA certificate and CRLs. The service does
+     * not publish content to these URLs. It is up to the user to mirror content
+     * to these URLs.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls user_defined_access_urls = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setUserDefinedAccessUrls(
+        com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls value) {
+      if (userDefinedAccessUrlsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        userDefinedAccessUrls_ = value;
+      } else {
+        userDefinedAccessUrlsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. User-defined URLs for CA certificate and CRLs. The service does
+     * not publish content to these URLs. It is up to the user to mirror content
+     * to these URLs.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls user_defined_access_urls = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setUserDefinedAccessUrls(
+        com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls.Builder
+            builderForValue) {
+      if (userDefinedAccessUrlsBuilder_ == null) {
+        userDefinedAccessUrls_ = builderForValue.build();
+      } else {
+        userDefinedAccessUrlsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. User-defined URLs for CA certificate and CRLs. The service does
+     * not publish content to these URLs. It is up to the user to mirror content
+     * to these URLs.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls user_defined_access_urls = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeUserDefinedAccessUrls(
+        com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls value) {
+      if (userDefinedAccessUrlsBuilder_ == null) {
+        if (((bitField0_ & 0x00020000) != 0)
+            && userDefinedAccessUrls_ != null
+            && userDefinedAccessUrls_
+                != com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls
+                    .getDefaultInstance()) {
+          getUserDefinedAccessUrlsBuilder().mergeFrom(value);
+        } else {
+          userDefinedAccessUrls_ = value;
+        }
+      } else {
+        userDefinedAccessUrlsBuilder_.mergeFrom(value);
+      }
+      if (userDefinedAccessUrls_ != null) {
+        bitField0_ |= 0x00020000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. User-defined URLs for CA certificate and CRLs. The service does
+     * not publish content to these URLs. It is up to the user to mirror content
+     * to these URLs.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls user_defined_access_urls = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearUserDefinedAccessUrls() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      userDefinedAccessUrls_ = null;
+      if (userDefinedAccessUrlsBuilder_ != null) {
+        userDefinedAccessUrlsBuilder_.dispose();
+        userDefinedAccessUrlsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. User-defined URLs for CA certificate and CRLs. The service does
+     * not publish content to these URLs. It is up to the user to mirror content
+     * to these URLs.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls user_defined_access_urls = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls.Builder
+        getUserDefinedAccessUrlsBuilder() {
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return getUserDefinedAccessUrlsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. User-defined URLs for CA certificate and CRLs. The service does
+     * not publish content to these URLs. It is up to the user to mirror content
+     * to these URLs.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls user_defined_access_urls = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.security.privateca.v1.CertificateAuthority
+            .UserDefinedAccessUrlsOrBuilder
+        getUserDefinedAccessUrlsOrBuilder() {
+      if (userDefinedAccessUrlsBuilder_ != null) {
+        return userDefinedAccessUrlsBuilder_.getMessageOrBuilder();
+      } else {
+        return userDefinedAccessUrls_ == null
+            ? com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls
+                .getDefaultInstance()
+            : userDefinedAccessUrls_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. User-defined URLs for CA certificate and CRLs. The service does
+     * not publish content to these URLs. It is up to the user to mirror content
+     * to these URLs.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls user_defined_access_urls = 18 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls,
+            com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls
+                .Builder,
+            com.google.cloud.security.privateca.v1.CertificateAuthority
+                .UserDefinedAccessUrlsOrBuilder>
+        getUserDefinedAccessUrlsFieldBuilder() {
+      if (userDefinedAccessUrlsBuilder_ == null) {
+        userDefinedAccessUrlsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls,
+                com.google.cloud.security.privateca.v1.CertificateAuthority.UserDefinedAccessUrls
+                    .Builder,
+                com.google.cloud.security.privateca.v1.CertificateAuthority
+                    .UserDefinedAccessUrlsOrBuilder>(
+                getUserDefinedAccessUrls(), getParentForChildren(), isClean());
+        userDefinedAccessUrls_ = null;
+      }
+      return userDefinedAccessUrlsBuilder_;
+    }
+
+    private boolean satisfiesPzs_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzs.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzs() {
+      return satisfiesPzs_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzs to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzs(boolean value) {
+
+      satisfiesPzs_ = value;
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzs = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzs() {
+      bitField0_ = (bitField0_ & ~0x00040000);
+      satisfiesPzs_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean satisfiesPzi_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The satisfiesPzi.
+     */
+    @java.lang.Override
+    public boolean getSatisfiesPzi() {
+      return satisfiesPzi_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The satisfiesPzi to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSatisfiesPzi(boolean value) {
+
+      satisfiesPzi_ = value;
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Reserved for future use.
+     * </pre>
+     *
+     * <code>bool satisfies_pzi = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSatisfiesPzi() {
+      bitField0_ = (bitField0_ & ~0x00080000);
+      satisfiesPzi_ = false;
+      onChanged();
       return this;
     }
 

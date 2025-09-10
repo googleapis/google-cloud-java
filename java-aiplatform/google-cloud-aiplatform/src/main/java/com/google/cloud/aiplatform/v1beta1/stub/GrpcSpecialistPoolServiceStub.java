@@ -74,6 +74,7 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateSpecialistPoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSpecialistPoolRequest, SpecialistPool>
@@ -85,6 +86,7 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetSpecialistPoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SpecialistPool.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListSpecialistPoolsRequest, ListSpecialistPoolsResponse>
@@ -97,6 +99,7 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
                   ProtoUtils.marshaller(ListSpecialistPoolsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSpecialistPoolsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteSpecialistPoolRequest, Operation>
@@ -108,6 +111,7 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteSpecialistPoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateSpecialistPoolRequest, Operation>
@@ -119,6 +123,7 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateSpecialistPoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -130,6 +135,7 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -138,6 +144,7 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -146,6 +153,7 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -154,6 +162,7 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -165,6 +174,7 @@ public class GrpcSpecialistPoolServiceStub extends SpecialistPoolServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateSpecialistPoolRequest, Operation> createSpecialistPoolCallable;

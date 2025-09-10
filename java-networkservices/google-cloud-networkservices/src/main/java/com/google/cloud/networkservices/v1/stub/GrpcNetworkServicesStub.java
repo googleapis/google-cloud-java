@@ -17,14 +17,19 @@
 package com.google.cloud.networkservices.v1.stub;
 
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListEndpointPoliciesPagedResponse;
+import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListGatewayRouteViewsPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListGatewaysPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListGrpcRoutesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListHttpRoutesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListLocationsPagedResponse;
+import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListMeshRouteViewsPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListMeshesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListServiceBindingsPagedResponse;
+import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListServiceLbPoliciesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListTcpRoutesPagedResponse;
 import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListTlsRoutesPagedResponse;
+import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListWasmPluginVersionsPagedResponse;
+import static com.google.cloud.networkservices.v1.NetworkServicesClient.ListWasmPluginsPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -44,47 +49,71 @@ import com.google.cloud.networkservices.v1.CreateGrpcRouteRequest;
 import com.google.cloud.networkservices.v1.CreateHttpRouteRequest;
 import com.google.cloud.networkservices.v1.CreateMeshRequest;
 import com.google.cloud.networkservices.v1.CreateServiceBindingRequest;
+import com.google.cloud.networkservices.v1.CreateServiceLbPolicyRequest;
 import com.google.cloud.networkservices.v1.CreateTcpRouteRequest;
 import com.google.cloud.networkservices.v1.CreateTlsRouteRequest;
+import com.google.cloud.networkservices.v1.CreateWasmPluginRequest;
+import com.google.cloud.networkservices.v1.CreateWasmPluginVersionRequest;
 import com.google.cloud.networkservices.v1.DeleteEndpointPolicyRequest;
 import com.google.cloud.networkservices.v1.DeleteGatewayRequest;
 import com.google.cloud.networkservices.v1.DeleteGrpcRouteRequest;
 import com.google.cloud.networkservices.v1.DeleteHttpRouteRequest;
 import com.google.cloud.networkservices.v1.DeleteMeshRequest;
 import com.google.cloud.networkservices.v1.DeleteServiceBindingRequest;
+import com.google.cloud.networkservices.v1.DeleteServiceLbPolicyRequest;
 import com.google.cloud.networkservices.v1.DeleteTcpRouteRequest;
 import com.google.cloud.networkservices.v1.DeleteTlsRouteRequest;
+import com.google.cloud.networkservices.v1.DeleteWasmPluginRequest;
+import com.google.cloud.networkservices.v1.DeleteWasmPluginVersionRequest;
 import com.google.cloud.networkservices.v1.EndpointPolicy;
 import com.google.cloud.networkservices.v1.Gateway;
+import com.google.cloud.networkservices.v1.GatewayRouteView;
 import com.google.cloud.networkservices.v1.GetEndpointPolicyRequest;
 import com.google.cloud.networkservices.v1.GetGatewayRequest;
+import com.google.cloud.networkservices.v1.GetGatewayRouteViewRequest;
 import com.google.cloud.networkservices.v1.GetGrpcRouteRequest;
 import com.google.cloud.networkservices.v1.GetHttpRouteRequest;
 import com.google.cloud.networkservices.v1.GetMeshRequest;
+import com.google.cloud.networkservices.v1.GetMeshRouteViewRequest;
 import com.google.cloud.networkservices.v1.GetServiceBindingRequest;
+import com.google.cloud.networkservices.v1.GetServiceLbPolicyRequest;
 import com.google.cloud.networkservices.v1.GetTcpRouteRequest;
 import com.google.cloud.networkservices.v1.GetTlsRouteRequest;
+import com.google.cloud.networkservices.v1.GetWasmPluginRequest;
+import com.google.cloud.networkservices.v1.GetWasmPluginVersionRequest;
 import com.google.cloud.networkservices.v1.GrpcRoute;
 import com.google.cloud.networkservices.v1.HttpRoute;
 import com.google.cloud.networkservices.v1.ListEndpointPoliciesRequest;
 import com.google.cloud.networkservices.v1.ListEndpointPoliciesResponse;
+import com.google.cloud.networkservices.v1.ListGatewayRouteViewsRequest;
+import com.google.cloud.networkservices.v1.ListGatewayRouteViewsResponse;
 import com.google.cloud.networkservices.v1.ListGatewaysRequest;
 import com.google.cloud.networkservices.v1.ListGatewaysResponse;
 import com.google.cloud.networkservices.v1.ListGrpcRoutesRequest;
 import com.google.cloud.networkservices.v1.ListGrpcRoutesResponse;
 import com.google.cloud.networkservices.v1.ListHttpRoutesRequest;
 import com.google.cloud.networkservices.v1.ListHttpRoutesResponse;
+import com.google.cloud.networkservices.v1.ListMeshRouteViewsRequest;
+import com.google.cloud.networkservices.v1.ListMeshRouteViewsResponse;
 import com.google.cloud.networkservices.v1.ListMeshesRequest;
 import com.google.cloud.networkservices.v1.ListMeshesResponse;
 import com.google.cloud.networkservices.v1.ListServiceBindingsRequest;
 import com.google.cloud.networkservices.v1.ListServiceBindingsResponse;
+import com.google.cloud.networkservices.v1.ListServiceLbPoliciesRequest;
+import com.google.cloud.networkservices.v1.ListServiceLbPoliciesResponse;
 import com.google.cloud.networkservices.v1.ListTcpRoutesRequest;
 import com.google.cloud.networkservices.v1.ListTcpRoutesResponse;
 import com.google.cloud.networkservices.v1.ListTlsRoutesRequest;
 import com.google.cloud.networkservices.v1.ListTlsRoutesResponse;
+import com.google.cloud.networkservices.v1.ListWasmPluginVersionsRequest;
+import com.google.cloud.networkservices.v1.ListWasmPluginVersionsResponse;
+import com.google.cloud.networkservices.v1.ListWasmPluginsRequest;
+import com.google.cloud.networkservices.v1.ListWasmPluginsResponse;
 import com.google.cloud.networkservices.v1.Mesh;
+import com.google.cloud.networkservices.v1.MeshRouteView;
 import com.google.cloud.networkservices.v1.OperationMetadata;
 import com.google.cloud.networkservices.v1.ServiceBinding;
+import com.google.cloud.networkservices.v1.ServiceLbPolicy;
 import com.google.cloud.networkservices.v1.TcpRoute;
 import com.google.cloud.networkservices.v1.TlsRoute;
 import com.google.cloud.networkservices.v1.UpdateEndpointPolicyRequest;
@@ -92,8 +121,13 @@ import com.google.cloud.networkservices.v1.UpdateGatewayRequest;
 import com.google.cloud.networkservices.v1.UpdateGrpcRouteRequest;
 import com.google.cloud.networkservices.v1.UpdateHttpRouteRequest;
 import com.google.cloud.networkservices.v1.UpdateMeshRequest;
+import com.google.cloud.networkservices.v1.UpdateServiceBindingRequest;
+import com.google.cloud.networkservices.v1.UpdateServiceLbPolicyRequest;
 import com.google.cloud.networkservices.v1.UpdateTcpRouteRequest;
 import com.google.cloud.networkservices.v1.UpdateTlsRouteRequest;
+import com.google.cloud.networkservices.v1.UpdateWasmPluginRequest;
+import com.google.cloud.networkservices.v1.WasmPlugin;
+import com.google.cloud.networkservices.v1.WasmPluginVersion;
 import com.google.iam.v1.GetIamPolicyRequest;
 import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
@@ -126,6 +160,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   ProtoUtils.marshaller(ListEndpointPoliciesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEndpointPoliciesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetEndpointPolicyRequest, EndpointPolicy>
@@ -137,6 +172,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetEndpointPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(EndpointPolicy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateEndpointPolicyRequest, Operation>
@@ -148,6 +184,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateEndpointPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateEndpointPolicyRequest, Operation>
@@ -159,6 +196,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateEndpointPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteEndpointPolicyRequest, Operation>
@@ -170,6 +208,114 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteEndpointPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<
+          ListWasmPluginVersionsRequest, ListWasmPluginVersionsResponse>
+      listWasmPluginVersionsMethodDescriptor =
+          MethodDescriptor
+              .<ListWasmPluginVersionsRequest, ListWasmPluginVersionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.networkservices.v1.NetworkServices/ListWasmPluginVersions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListWasmPluginVersionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListWasmPluginVersionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetWasmPluginVersionRequest, WasmPluginVersion>
+      getWasmPluginVersionMethodDescriptor =
+          MethodDescriptor.<GetWasmPluginVersionRequest, WasmPluginVersion>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.networkservices.v1.NetworkServices/GetWasmPluginVersion")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetWasmPluginVersionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(WasmPluginVersion.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateWasmPluginVersionRequest, Operation>
+      createWasmPluginVersionMethodDescriptor =
+          MethodDescriptor.<CreateWasmPluginVersionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.networkservices.v1.NetworkServices/CreateWasmPluginVersion")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateWasmPluginVersionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteWasmPluginVersionRequest, Operation>
+      deleteWasmPluginVersionMethodDescriptor =
+          MethodDescriptor.<DeleteWasmPluginVersionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.networkservices.v1.NetworkServices/DeleteWasmPluginVersion")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteWasmPluginVersionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListWasmPluginsRequest, ListWasmPluginsResponse>
+      listWasmPluginsMethodDescriptor =
+          MethodDescriptor.<ListWasmPluginsRequest, ListWasmPluginsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.networkservices.v1.NetworkServices/ListWasmPlugins")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListWasmPluginsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListWasmPluginsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetWasmPluginRequest, WasmPlugin>
+      getWasmPluginMethodDescriptor =
+          MethodDescriptor.<GetWasmPluginRequest, WasmPlugin>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.networkservices.v1.NetworkServices/GetWasmPlugin")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetWasmPluginRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(WasmPlugin.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateWasmPluginRequest, Operation>
+      createWasmPluginMethodDescriptor =
+          MethodDescriptor.<CreateWasmPluginRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.networkservices.v1.NetworkServices/CreateWasmPlugin")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateWasmPluginRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateWasmPluginRequest, Operation>
+      updateWasmPluginMethodDescriptor =
+          MethodDescriptor.<UpdateWasmPluginRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.networkservices.v1.NetworkServices/UpdateWasmPlugin")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateWasmPluginRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteWasmPluginRequest, Operation>
+      deleteWasmPluginMethodDescriptor =
+          MethodDescriptor.<DeleteWasmPluginRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.networkservices.v1.NetworkServices/DeleteWasmPlugin")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteWasmPluginRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListGatewaysRequest, ListGatewaysResponse>
@@ -180,6 +326,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListGatewaysRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListGatewaysResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetGatewayRequest, Gateway> getGatewayMethodDescriptor =
@@ -188,6 +335,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
           .setFullMethodName("google.cloud.networkservices.v1.NetworkServices/GetGateway")
           .setRequestMarshaller(ProtoUtils.marshaller(GetGatewayRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Gateway.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateGatewayRequest, Operation>
@@ -198,6 +346,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateGatewayRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateGatewayRequest, Operation>
@@ -208,6 +357,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateGatewayRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteGatewayRequest, Operation>
@@ -218,6 +368,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteGatewayRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListGrpcRoutesRequest, ListGrpcRoutesResponse>
@@ -229,6 +380,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   ProtoUtils.marshaller(ListGrpcRoutesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListGrpcRoutesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetGrpcRouteRequest, GrpcRoute>
@@ -238,6 +390,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setFullMethodName("google.cloud.networkservices.v1.NetworkServices/GetGrpcRoute")
               .setRequestMarshaller(ProtoUtils.marshaller(GetGrpcRouteRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(GrpcRoute.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateGrpcRouteRequest, Operation>
@@ -248,6 +401,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateGrpcRouteRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateGrpcRouteRequest, Operation>
@@ -258,6 +412,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateGrpcRouteRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteGrpcRouteRequest, Operation>
@@ -268,6 +423,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteGrpcRouteRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListHttpRoutesRequest, ListHttpRoutesResponse>
@@ -279,6 +435,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   ProtoUtils.marshaller(ListHttpRoutesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListHttpRoutesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetHttpRouteRequest, HttpRoute>
@@ -288,6 +445,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setFullMethodName("google.cloud.networkservices.v1.NetworkServices/GetHttpRoute")
               .setRequestMarshaller(ProtoUtils.marshaller(GetHttpRouteRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(HttpRoute.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateHttpRouteRequest, Operation>
@@ -298,6 +456,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateHttpRouteRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateHttpRouteRequest, Operation>
@@ -308,6 +467,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateHttpRouteRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteHttpRouteRequest, Operation>
@@ -318,6 +478,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteHttpRouteRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListTcpRoutesRequest, ListTcpRoutesResponse>
@@ -329,6 +490,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   ProtoUtils.marshaller(ListTcpRoutesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTcpRoutesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTcpRouteRequest, TcpRoute> getTcpRouteMethodDescriptor =
@@ -337,6 +499,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
           .setFullMethodName("google.cloud.networkservices.v1.NetworkServices/GetTcpRoute")
           .setRequestMarshaller(ProtoUtils.marshaller(GetTcpRouteRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(TcpRoute.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateTcpRouteRequest, Operation>
@@ -347,6 +510,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateTcpRouteRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateTcpRouteRequest, Operation>
@@ -357,6 +521,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateTcpRouteRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteTcpRouteRequest, Operation>
@@ -367,6 +532,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteTcpRouteRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListTlsRoutesRequest, ListTlsRoutesResponse>
@@ -378,6 +544,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   ProtoUtils.marshaller(ListTlsRoutesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTlsRoutesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTlsRouteRequest, TlsRoute> getTlsRouteMethodDescriptor =
@@ -386,6 +553,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
           .setFullMethodName("google.cloud.networkservices.v1.NetworkServices/GetTlsRoute")
           .setRequestMarshaller(ProtoUtils.marshaller(GetTlsRouteRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(TlsRoute.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateTlsRouteRequest, Operation>
@@ -396,6 +564,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateTlsRouteRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateTlsRouteRequest, Operation>
@@ -406,6 +575,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateTlsRouteRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteTlsRouteRequest, Operation>
@@ -416,6 +586,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteTlsRouteRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListServiceBindingsRequest, ListServiceBindingsResponse>
@@ -428,6 +599,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   ProtoUtils.marshaller(ListServiceBindingsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListServiceBindingsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetServiceBindingRequest, ServiceBinding>
@@ -439,6 +611,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetServiceBindingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ServiceBinding.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateServiceBindingRequest, Operation>
@@ -450,6 +623,19 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateServiceBindingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateServiceBindingRequest, Operation>
+      updateServiceBindingMethodDescriptor =
+          MethodDescriptor.<UpdateServiceBindingRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.networkservices.v1.NetworkServices/UpdateServiceBinding")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateServiceBindingRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteServiceBindingRequest, Operation>
@@ -461,6 +647,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteServiceBindingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListMeshesRequest, ListMeshesResponse>
@@ -470,6 +657,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
               .setFullMethodName("google.cloud.networkservices.v1.NetworkServices/ListMeshes")
               .setRequestMarshaller(ProtoUtils.marshaller(ListMeshesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListMeshesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetMeshRequest, Mesh> getMeshMethodDescriptor =
@@ -478,6 +666,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
           .setFullMethodName("google.cloud.networkservices.v1.NetworkServices/GetMesh")
           .setRequestMarshaller(ProtoUtils.marshaller(GetMeshRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Mesh.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateMeshRequest, Operation> createMeshMethodDescriptor =
@@ -486,6 +675,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
           .setFullMethodName("google.cloud.networkservices.v1.NetworkServices/CreateMesh")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateMeshRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateMeshRequest, Operation> updateMeshMethodDescriptor =
@@ -494,6 +684,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
           .setFullMethodName("google.cloud.networkservices.v1.NetworkServices/UpdateMesh")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateMeshRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteMeshRequest, Operation> deleteMeshMethodDescriptor =
@@ -502,7 +693,118 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
           .setFullMethodName("google.cloud.networkservices.v1.NetworkServices/DeleteMesh")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteMeshRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
+
+  private static final MethodDescriptor<ListServiceLbPoliciesRequest, ListServiceLbPoliciesResponse>
+      listServiceLbPoliciesMethodDescriptor =
+          MethodDescriptor.<ListServiceLbPoliciesRequest, ListServiceLbPoliciesResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.networkservices.v1.NetworkServices/ListServiceLbPolicies")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListServiceLbPoliciesRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListServiceLbPoliciesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetServiceLbPolicyRequest, ServiceLbPolicy>
+      getServiceLbPolicyMethodDescriptor =
+          MethodDescriptor.<GetServiceLbPolicyRequest, ServiceLbPolicy>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.networkservices.v1.NetworkServices/GetServiceLbPolicy")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetServiceLbPolicyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ServiceLbPolicy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateServiceLbPolicyRequest, Operation>
+      createServiceLbPolicyMethodDescriptor =
+          MethodDescriptor.<CreateServiceLbPolicyRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.networkservices.v1.NetworkServices/CreateServiceLbPolicy")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateServiceLbPolicyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateServiceLbPolicyRequest, Operation>
+      updateServiceLbPolicyMethodDescriptor =
+          MethodDescriptor.<UpdateServiceLbPolicyRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.networkservices.v1.NetworkServices/UpdateServiceLbPolicy")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateServiceLbPolicyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteServiceLbPolicyRequest, Operation>
+      deleteServiceLbPolicyMethodDescriptor =
+          MethodDescriptor.<DeleteServiceLbPolicyRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.networkservices.v1.NetworkServices/DeleteServiceLbPolicy")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteServiceLbPolicyRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetGatewayRouteViewRequest, GatewayRouteView>
+      getGatewayRouteViewMethodDescriptor =
+          MethodDescriptor.<GetGatewayRouteViewRequest, GatewayRouteView>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.networkservices.v1.NetworkServices/GetGatewayRouteView")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetGatewayRouteViewRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(GatewayRouteView.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetMeshRouteViewRequest, MeshRouteView>
+      getMeshRouteViewMethodDescriptor =
+          MethodDescriptor.<GetMeshRouteViewRequest, MeshRouteView>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.networkservices.v1.NetworkServices/GetMeshRouteView")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetMeshRouteViewRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(MeshRouteView.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListGatewayRouteViewsRequest, ListGatewayRouteViewsResponse>
+      listGatewayRouteViewsMethodDescriptor =
+          MethodDescriptor.<ListGatewayRouteViewsRequest, ListGatewayRouteViewsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.networkservices.v1.NetworkServices/ListGatewayRouteViews")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListGatewayRouteViewsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListGatewayRouteViewsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListMeshRouteViewsRequest, ListMeshRouteViewsResponse>
+      listMeshRouteViewsMethodDescriptor =
+          MethodDescriptor.<ListMeshRouteViewsRequest, ListMeshRouteViewsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.networkservices.v1.NetworkServices/ListMeshRouteViews")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListMeshRouteViewsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListMeshRouteViewsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
@@ -513,6 +815,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -521,6 +824,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -529,6 +833,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -537,6 +842,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -548,6 +854,7 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListEndpointPoliciesRequest, ListEndpointPoliciesResponse>
@@ -564,6 +871,35 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
   private final UnaryCallable<DeleteEndpointPolicyRequest, Operation> deleteEndpointPolicyCallable;
   private final OperationCallable<DeleteEndpointPolicyRequest, Empty, OperationMetadata>
       deleteEndpointPolicyOperationCallable;
+  private final UnaryCallable<ListWasmPluginVersionsRequest, ListWasmPluginVersionsResponse>
+      listWasmPluginVersionsCallable;
+  private final UnaryCallable<ListWasmPluginVersionsRequest, ListWasmPluginVersionsPagedResponse>
+      listWasmPluginVersionsPagedCallable;
+  private final UnaryCallable<GetWasmPluginVersionRequest, WasmPluginVersion>
+      getWasmPluginVersionCallable;
+  private final UnaryCallable<CreateWasmPluginVersionRequest, Operation>
+      createWasmPluginVersionCallable;
+  private final OperationCallable<
+          CreateWasmPluginVersionRequest, WasmPluginVersion, OperationMetadata>
+      createWasmPluginVersionOperationCallable;
+  private final UnaryCallable<DeleteWasmPluginVersionRequest, Operation>
+      deleteWasmPluginVersionCallable;
+  private final OperationCallable<DeleteWasmPluginVersionRequest, Empty, OperationMetadata>
+      deleteWasmPluginVersionOperationCallable;
+  private final UnaryCallable<ListWasmPluginsRequest, ListWasmPluginsResponse>
+      listWasmPluginsCallable;
+  private final UnaryCallable<ListWasmPluginsRequest, ListWasmPluginsPagedResponse>
+      listWasmPluginsPagedCallable;
+  private final UnaryCallable<GetWasmPluginRequest, WasmPlugin> getWasmPluginCallable;
+  private final UnaryCallable<CreateWasmPluginRequest, Operation> createWasmPluginCallable;
+  private final OperationCallable<CreateWasmPluginRequest, WasmPlugin, OperationMetadata>
+      createWasmPluginOperationCallable;
+  private final UnaryCallable<UpdateWasmPluginRequest, Operation> updateWasmPluginCallable;
+  private final OperationCallable<UpdateWasmPluginRequest, WasmPlugin, OperationMetadata>
+      updateWasmPluginOperationCallable;
+  private final UnaryCallable<DeleteWasmPluginRequest, Operation> deleteWasmPluginCallable;
+  private final OperationCallable<DeleteWasmPluginRequest, Empty, OperationMetadata>
+      deleteWasmPluginOperationCallable;
   private final UnaryCallable<ListGatewaysRequest, ListGatewaysResponse> listGatewaysCallable;
   private final UnaryCallable<ListGatewaysRequest, ListGatewaysPagedResponse>
       listGatewaysPagedCallable;
@@ -637,6 +973,9 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
   private final UnaryCallable<CreateServiceBindingRequest, Operation> createServiceBindingCallable;
   private final OperationCallable<CreateServiceBindingRequest, ServiceBinding, OperationMetadata>
       createServiceBindingOperationCallable;
+  private final UnaryCallable<UpdateServiceBindingRequest, Operation> updateServiceBindingCallable;
+  private final OperationCallable<UpdateServiceBindingRequest, ServiceBinding, OperationMetadata>
+      updateServiceBindingOperationCallable;
   private final UnaryCallable<DeleteServiceBindingRequest, Operation> deleteServiceBindingCallable;
   private final OperationCallable<DeleteServiceBindingRequest, Empty, OperationMetadata>
       deleteServiceBindingOperationCallable;
@@ -652,6 +991,35 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
   private final UnaryCallable<DeleteMeshRequest, Operation> deleteMeshCallable;
   private final OperationCallable<DeleteMeshRequest, Empty, OperationMetadata>
       deleteMeshOperationCallable;
+  private final UnaryCallable<ListServiceLbPoliciesRequest, ListServiceLbPoliciesResponse>
+      listServiceLbPoliciesCallable;
+  private final UnaryCallable<ListServiceLbPoliciesRequest, ListServiceLbPoliciesPagedResponse>
+      listServiceLbPoliciesPagedCallable;
+  private final UnaryCallable<GetServiceLbPolicyRequest, ServiceLbPolicy>
+      getServiceLbPolicyCallable;
+  private final UnaryCallable<CreateServiceLbPolicyRequest, Operation>
+      createServiceLbPolicyCallable;
+  private final OperationCallable<CreateServiceLbPolicyRequest, ServiceLbPolicy, OperationMetadata>
+      createServiceLbPolicyOperationCallable;
+  private final UnaryCallable<UpdateServiceLbPolicyRequest, Operation>
+      updateServiceLbPolicyCallable;
+  private final OperationCallable<UpdateServiceLbPolicyRequest, ServiceLbPolicy, OperationMetadata>
+      updateServiceLbPolicyOperationCallable;
+  private final UnaryCallable<DeleteServiceLbPolicyRequest, Operation>
+      deleteServiceLbPolicyCallable;
+  private final OperationCallable<DeleteServiceLbPolicyRequest, Empty, OperationMetadata>
+      deleteServiceLbPolicyOperationCallable;
+  private final UnaryCallable<GetGatewayRouteViewRequest, GatewayRouteView>
+      getGatewayRouteViewCallable;
+  private final UnaryCallable<GetMeshRouteViewRequest, MeshRouteView> getMeshRouteViewCallable;
+  private final UnaryCallable<ListGatewayRouteViewsRequest, ListGatewayRouteViewsResponse>
+      listGatewayRouteViewsCallable;
+  private final UnaryCallable<ListGatewayRouteViewsRequest, ListGatewayRouteViewsPagedResponse>
+      listGatewayRouteViewsPagedCallable;
+  private final UnaryCallable<ListMeshRouteViewsRequest, ListMeshRouteViewsResponse>
+      listMeshRouteViewsCallable;
+  private final UnaryCallable<ListMeshRouteViewsRequest, ListMeshRouteViewsPagedResponse>
+      listMeshRouteViewsPagedCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -751,6 +1119,103 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
     GrpcCallSettings<DeleteEndpointPolicyRequest, Operation> deleteEndpointPolicyTransportSettings =
         GrpcCallSettings.<DeleteEndpointPolicyRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteEndpointPolicyMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListWasmPluginVersionsRequest, ListWasmPluginVersionsResponse>
+        listWasmPluginVersionsTransportSettings =
+            GrpcCallSettings
+                .<ListWasmPluginVersionsRequest, ListWasmPluginVersionsResponse>newBuilder()
+                .setMethodDescriptor(listWasmPluginVersionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetWasmPluginVersionRequest, WasmPluginVersion>
+        getWasmPluginVersionTransportSettings =
+            GrpcCallSettings.<GetWasmPluginVersionRequest, WasmPluginVersion>newBuilder()
+                .setMethodDescriptor(getWasmPluginVersionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<CreateWasmPluginVersionRequest, Operation>
+        createWasmPluginVersionTransportSettings =
+            GrpcCallSettings.<CreateWasmPluginVersionRequest, Operation>newBuilder()
+                .setMethodDescriptor(createWasmPluginVersionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteWasmPluginVersionRequest, Operation>
+        deleteWasmPluginVersionTransportSettings =
+            GrpcCallSettings.<DeleteWasmPluginVersionRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteWasmPluginVersionMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListWasmPluginsRequest, ListWasmPluginsResponse>
+        listWasmPluginsTransportSettings =
+            GrpcCallSettings.<ListWasmPluginsRequest, ListWasmPluginsResponse>newBuilder()
+                .setMethodDescriptor(listWasmPluginsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetWasmPluginRequest, WasmPlugin> getWasmPluginTransportSettings =
+        GrpcCallSettings.<GetWasmPluginRequest, WasmPlugin>newBuilder()
+            .setMethodDescriptor(getWasmPluginMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<CreateWasmPluginRequest, Operation> createWasmPluginTransportSettings =
+        GrpcCallSettings.<CreateWasmPluginRequest, Operation>newBuilder()
+            .setMethodDescriptor(createWasmPluginMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<UpdateWasmPluginRequest, Operation> updateWasmPluginTransportSettings =
+        GrpcCallSettings.<UpdateWasmPluginRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateWasmPluginMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "wasm_plugin.name", String.valueOf(request.getWasmPlugin().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteWasmPluginRequest, Operation> deleteWasmPluginTransportSettings =
+        GrpcCallSettings.<DeleteWasmPluginRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteWasmPluginMethodDescriptor)
             .setParamsExtractor(
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -1041,6 +1506,18 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<UpdateServiceBindingRequest, Operation> updateServiceBindingTransportSettings =
+        GrpcCallSettings.<UpdateServiceBindingRequest, Operation>newBuilder()
+            .setMethodDescriptor(updateServiceBindingMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add(
+                      "service_binding.name",
+                      String.valueOf(request.getServiceBinding().getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<DeleteServiceBindingRequest, Operation> deleteServiceBindingTransportSettings =
         GrpcCallSettings.<DeleteServiceBindingRequest, Operation>newBuilder()
             .setMethodDescriptor(deleteServiceBindingMethodDescriptor)
@@ -1101,6 +1578,108 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<ListServiceLbPoliciesRequest, ListServiceLbPoliciesResponse>
+        listServiceLbPoliciesTransportSettings =
+            GrpcCallSettings
+                .<ListServiceLbPoliciesRequest, ListServiceLbPoliciesResponse>newBuilder()
+                .setMethodDescriptor(listServiceLbPoliciesMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetServiceLbPolicyRequest, ServiceLbPolicy>
+        getServiceLbPolicyTransportSettings =
+            GrpcCallSettings.<GetServiceLbPolicyRequest, ServiceLbPolicy>newBuilder()
+                .setMethodDescriptor(getServiceLbPolicyMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<CreateServiceLbPolicyRequest, Operation>
+        createServiceLbPolicyTransportSettings =
+            GrpcCallSettings.<CreateServiceLbPolicyRequest, Operation>newBuilder()
+                .setMethodDescriptor(createServiceLbPolicyMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateServiceLbPolicyRequest, Operation>
+        updateServiceLbPolicyTransportSettings =
+            GrpcCallSettings.<UpdateServiceLbPolicyRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateServiceLbPolicyMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "service_lb_policy.name",
+                          String.valueOf(request.getServiceLbPolicy().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteServiceLbPolicyRequest, Operation>
+        deleteServiceLbPolicyTransportSettings =
+            GrpcCallSettings.<DeleteServiceLbPolicyRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteServiceLbPolicyMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetGatewayRouteViewRequest, GatewayRouteView>
+        getGatewayRouteViewTransportSettings =
+            GrpcCallSettings.<GetGatewayRouteViewRequest, GatewayRouteView>newBuilder()
+                .setMethodDescriptor(getGatewayRouteViewMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetMeshRouteViewRequest, MeshRouteView> getMeshRouteViewTransportSettings =
+        GrpcCallSettings.<GetMeshRouteViewRequest, MeshRouteView>newBuilder()
+            .setMethodDescriptor(getMeshRouteViewMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListGatewayRouteViewsRequest, ListGatewayRouteViewsResponse>
+        listGatewayRouteViewsTransportSettings =
+            GrpcCallSettings
+                .<ListGatewayRouteViewsRequest, ListGatewayRouteViewsResponse>newBuilder()
+                .setMethodDescriptor(listGatewayRouteViewsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListMeshRouteViewsRequest, ListMeshRouteViewsResponse>
+        listMeshRouteViewsTransportSettings =
+            GrpcCallSettings.<ListMeshRouteViewsRequest, ListMeshRouteViewsResponse>newBuilder()
+                .setMethodDescriptor(listMeshRouteViewsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -1199,6 +1778,79 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
         callableFactory.createOperationCallable(
             deleteEndpointPolicyTransportSettings,
             settings.deleteEndpointPolicyOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.listWasmPluginVersionsCallable =
+        callableFactory.createUnaryCallable(
+            listWasmPluginVersionsTransportSettings,
+            settings.listWasmPluginVersionsSettings(),
+            clientContext);
+    this.listWasmPluginVersionsPagedCallable =
+        callableFactory.createPagedCallable(
+            listWasmPluginVersionsTransportSettings,
+            settings.listWasmPluginVersionsSettings(),
+            clientContext);
+    this.getWasmPluginVersionCallable =
+        callableFactory.createUnaryCallable(
+            getWasmPluginVersionTransportSettings,
+            settings.getWasmPluginVersionSettings(),
+            clientContext);
+    this.createWasmPluginVersionCallable =
+        callableFactory.createUnaryCallable(
+            createWasmPluginVersionTransportSettings,
+            settings.createWasmPluginVersionSettings(),
+            clientContext);
+    this.createWasmPluginVersionOperationCallable =
+        callableFactory.createOperationCallable(
+            createWasmPluginVersionTransportSettings,
+            settings.createWasmPluginVersionOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteWasmPluginVersionCallable =
+        callableFactory.createUnaryCallable(
+            deleteWasmPluginVersionTransportSettings,
+            settings.deleteWasmPluginVersionSettings(),
+            clientContext);
+    this.deleteWasmPluginVersionOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteWasmPluginVersionTransportSettings,
+            settings.deleteWasmPluginVersionOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.listWasmPluginsCallable =
+        callableFactory.createUnaryCallable(
+            listWasmPluginsTransportSettings, settings.listWasmPluginsSettings(), clientContext);
+    this.listWasmPluginsPagedCallable =
+        callableFactory.createPagedCallable(
+            listWasmPluginsTransportSettings, settings.listWasmPluginsSettings(), clientContext);
+    this.getWasmPluginCallable =
+        callableFactory.createUnaryCallable(
+            getWasmPluginTransportSettings, settings.getWasmPluginSettings(), clientContext);
+    this.createWasmPluginCallable =
+        callableFactory.createUnaryCallable(
+            createWasmPluginTransportSettings, settings.createWasmPluginSettings(), clientContext);
+    this.createWasmPluginOperationCallable =
+        callableFactory.createOperationCallable(
+            createWasmPluginTransportSettings,
+            settings.createWasmPluginOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateWasmPluginCallable =
+        callableFactory.createUnaryCallable(
+            updateWasmPluginTransportSettings, settings.updateWasmPluginSettings(), clientContext);
+    this.updateWasmPluginOperationCallable =
+        callableFactory.createOperationCallable(
+            updateWasmPluginTransportSettings,
+            settings.updateWasmPluginOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteWasmPluginCallable =
+        callableFactory.createUnaryCallable(
+            deleteWasmPluginTransportSettings, settings.deleteWasmPluginSettings(), clientContext);
+    this.deleteWasmPluginOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteWasmPluginTransportSettings,
+            settings.deleteWasmPluginOperationSettings(),
             clientContext,
             operationsStub);
     this.listGatewaysCallable =
@@ -1407,6 +2059,17 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
             settings.createServiceBindingOperationSettings(),
             clientContext,
             operationsStub);
+    this.updateServiceBindingCallable =
+        callableFactory.createUnaryCallable(
+            updateServiceBindingTransportSettings,
+            settings.updateServiceBindingSettings(),
+            clientContext);
+    this.updateServiceBindingOperationCallable =
+        callableFactory.createOperationCallable(
+            updateServiceBindingTransportSettings,
+            settings.updateServiceBindingOperationSettings(),
+            clientContext,
+            operationsStub);
     this.deleteServiceBindingCallable =
         callableFactory.createUnaryCallable(
             deleteServiceBindingTransportSettings,
@@ -1454,6 +2117,82 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
             settings.deleteMeshOperationSettings(),
             clientContext,
             operationsStub);
+    this.listServiceLbPoliciesCallable =
+        callableFactory.createUnaryCallable(
+            listServiceLbPoliciesTransportSettings,
+            settings.listServiceLbPoliciesSettings(),
+            clientContext);
+    this.listServiceLbPoliciesPagedCallable =
+        callableFactory.createPagedCallable(
+            listServiceLbPoliciesTransportSettings,
+            settings.listServiceLbPoliciesSettings(),
+            clientContext);
+    this.getServiceLbPolicyCallable =
+        callableFactory.createUnaryCallable(
+            getServiceLbPolicyTransportSettings,
+            settings.getServiceLbPolicySettings(),
+            clientContext);
+    this.createServiceLbPolicyCallable =
+        callableFactory.createUnaryCallable(
+            createServiceLbPolicyTransportSettings,
+            settings.createServiceLbPolicySettings(),
+            clientContext);
+    this.createServiceLbPolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            createServiceLbPolicyTransportSettings,
+            settings.createServiceLbPolicyOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateServiceLbPolicyCallable =
+        callableFactory.createUnaryCallable(
+            updateServiceLbPolicyTransportSettings,
+            settings.updateServiceLbPolicySettings(),
+            clientContext);
+    this.updateServiceLbPolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            updateServiceLbPolicyTransportSettings,
+            settings.updateServiceLbPolicyOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteServiceLbPolicyCallable =
+        callableFactory.createUnaryCallable(
+            deleteServiceLbPolicyTransportSettings,
+            settings.deleteServiceLbPolicySettings(),
+            clientContext);
+    this.deleteServiceLbPolicyOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteServiceLbPolicyTransportSettings,
+            settings.deleteServiceLbPolicyOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.getGatewayRouteViewCallable =
+        callableFactory.createUnaryCallable(
+            getGatewayRouteViewTransportSettings,
+            settings.getGatewayRouteViewSettings(),
+            clientContext);
+    this.getMeshRouteViewCallable =
+        callableFactory.createUnaryCallable(
+            getMeshRouteViewTransportSettings, settings.getMeshRouteViewSettings(), clientContext);
+    this.listGatewayRouteViewsCallable =
+        callableFactory.createUnaryCallable(
+            listGatewayRouteViewsTransportSettings,
+            settings.listGatewayRouteViewsSettings(),
+            clientContext);
+    this.listGatewayRouteViewsPagedCallable =
+        callableFactory.createPagedCallable(
+            listGatewayRouteViewsTransportSettings,
+            settings.listGatewayRouteViewsSettings(),
+            clientContext);
+    this.listMeshRouteViewsCallable =
+        callableFactory.createUnaryCallable(
+            listMeshRouteViewsTransportSettings,
+            settings.listMeshRouteViewsSettings(),
+            clientContext);
+    this.listMeshRouteViewsPagedCallable =
+        callableFactory.createPagedCallable(
+            listMeshRouteViewsTransportSettings,
+            settings.listMeshRouteViewsSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1531,6 +2270,97 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
   public OperationCallable<DeleteEndpointPolicyRequest, Empty, OperationMetadata>
       deleteEndpointPolicyOperationCallable() {
     return deleteEndpointPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListWasmPluginVersionsRequest, ListWasmPluginVersionsResponse>
+      listWasmPluginVersionsCallable() {
+    return listWasmPluginVersionsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListWasmPluginVersionsRequest, ListWasmPluginVersionsPagedResponse>
+      listWasmPluginVersionsPagedCallable() {
+    return listWasmPluginVersionsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetWasmPluginVersionRequest, WasmPluginVersion>
+      getWasmPluginVersionCallable() {
+    return getWasmPluginVersionCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateWasmPluginVersionRequest, Operation>
+      createWasmPluginVersionCallable() {
+    return createWasmPluginVersionCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateWasmPluginVersionRequest, WasmPluginVersion, OperationMetadata>
+      createWasmPluginVersionOperationCallable() {
+    return createWasmPluginVersionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteWasmPluginVersionRequest, Operation>
+      deleteWasmPluginVersionCallable() {
+    return deleteWasmPluginVersionCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteWasmPluginVersionRequest, Empty, OperationMetadata>
+      deleteWasmPluginVersionOperationCallable() {
+    return deleteWasmPluginVersionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListWasmPluginsRequest, ListWasmPluginsResponse> listWasmPluginsCallable() {
+    return listWasmPluginsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListWasmPluginsRequest, ListWasmPluginsPagedResponse>
+      listWasmPluginsPagedCallable() {
+    return listWasmPluginsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetWasmPluginRequest, WasmPlugin> getWasmPluginCallable() {
+    return getWasmPluginCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateWasmPluginRequest, Operation> createWasmPluginCallable() {
+    return createWasmPluginCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateWasmPluginRequest, WasmPlugin, OperationMetadata>
+      createWasmPluginOperationCallable() {
+    return createWasmPluginOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateWasmPluginRequest, Operation> updateWasmPluginCallable() {
+    return updateWasmPluginCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateWasmPluginRequest, WasmPlugin, OperationMetadata>
+      updateWasmPluginOperationCallable() {
+    return updateWasmPluginOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteWasmPluginRequest, Operation> deleteWasmPluginCallable() {
+    return deleteWasmPluginCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteWasmPluginRequest, Empty, OperationMetadata>
+      deleteWasmPluginOperationCallable() {
+    return deleteWasmPluginOperationCallable;
   }
 
   @Override
@@ -1806,6 +2636,17 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
   }
 
   @Override
+  public UnaryCallable<UpdateServiceBindingRequest, Operation> updateServiceBindingCallable() {
+    return updateServiceBindingCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateServiceBindingRequest, ServiceBinding, OperationMetadata>
+      updateServiceBindingOperationCallable() {
+    return updateServiceBindingOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteServiceBindingRequest, Operation> deleteServiceBindingCallable() {
     return deleteServiceBindingCallable;
   }
@@ -1862,6 +2703,90 @@ public class GrpcNetworkServicesStub extends NetworkServicesStub {
   public OperationCallable<DeleteMeshRequest, Empty, OperationMetadata>
       deleteMeshOperationCallable() {
     return deleteMeshOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListServiceLbPoliciesRequest, ListServiceLbPoliciesResponse>
+      listServiceLbPoliciesCallable() {
+    return listServiceLbPoliciesCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListServiceLbPoliciesRequest, ListServiceLbPoliciesPagedResponse>
+      listServiceLbPoliciesPagedCallable() {
+    return listServiceLbPoliciesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetServiceLbPolicyRequest, ServiceLbPolicy> getServiceLbPolicyCallable() {
+    return getServiceLbPolicyCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateServiceLbPolicyRequest, Operation> createServiceLbPolicyCallable() {
+    return createServiceLbPolicyCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateServiceLbPolicyRequest, ServiceLbPolicy, OperationMetadata>
+      createServiceLbPolicyOperationCallable() {
+    return createServiceLbPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateServiceLbPolicyRequest, Operation> updateServiceLbPolicyCallable() {
+    return updateServiceLbPolicyCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateServiceLbPolicyRequest, ServiceLbPolicy, OperationMetadata>
+      updateServiceLbPolicyOperationCallable() {
+    return updateServiceLbPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteServiceLbPolicyRequest, Operation> deleteServiceLbPolicyCallable() {
+    return deleteServiceLbPolicyCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteServiceLbPolicyRequest, Empty, OperationMetadata>
+      deleteServiceLbPolicyOperationCallable() {
+    return deleteServiceLbPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetGatewayRouteViewRequest, GatewayRouteView> getGatewayRouteViewCallable() {
+    return getGatewayRouteViewCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetMeshRouteViewRequest, MeshRouteView> getMeshRouteViewCallable() {
+    return getMeshRouteViewCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListGatewayRouteViewsRequest, ListGatewayRouteViewsResponse>
+      listGatewayRouteViewsCallable() {
+    return listGatewayRouteViewsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListGatewayRouteViewsRequest, ListGatewayRouteViewsPagedResponse>
+      listGatewayRouteViewsPagedCallable() {
+    return listGatewayRouteViewsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListMeshRouteViewsRequest, ListMeshRouteViewsResponse>
+      listMeshRouteViewsCallable() {
+    return listMeshRouteViewsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListMeshRouteViewsRequest, ListMeshRouteViewsPagedResponse>
+      listMeshRouteViewsPagedCallable() {
+    return listMeshRouteViewsPagedCallable;
   }
 
   @Override

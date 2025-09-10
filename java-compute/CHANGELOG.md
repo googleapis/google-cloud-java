@@ -1,5 +1,73 @@
 # Changelog
 
+## 1.83.0 (2025-08-25)
+
+### Features
+
+* Update Compute Engine v1 API to revision 20250807 ([b53e708](https://github.com/googleapis/google-cloud-java/commit/b53e70867b39fc16a3e381950c23ef39ec66be0c))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.52.0 ([#11727](https://github.com/googleapis/google-cloud-java/issues/11727)) ([31d8698](https://github.com/googleapis/google-cloud-java/commit/31d86980d0e27e0a948727d778cf46fbcf227239))
+
+
+## 1.82.0 (2025-08-13)
+
+* No change
+
+
+## 1.81.0 (2025-08-08)
+
+### Features
+
+* Update Compute Engine v1 API to revision 20250717 ([#1074](https://github.com/googleapis/google-cloud-java/issues/1074)) ([42bda69](https://github.com/googleapis/google-cloud-java/commit/42bda696749f1d5b4cfd3529f74724fad52fdeca))
+* Update Compute Engine v1 API to revision 20250728 ([#1081](https://github.com/googleapis/google-cloud-java/issues/1081)) ([9f13f97](https://github.com/googleapis/google-cloud-java/commit/9f13f97d36a783f3387ab28f4db865f03ecbd9a8))
+* Update Compute Engine v1 API to revision 20250729 ([#1085](https://github.com/googleapis/google-cloud-java/issues/1085)) ([9f28cd5](https://github.com/googleapis/google-cloud-java/commit/9f28cd5bcd951333fb2a3847edba015840b5029b))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.51.0 ([#11695](https://github.com/googleapis/google-cloud-java/issues/11695)) ([b82ce00](https://github.com/googleapis/google-cloud-java/commit/b82ce005c30551b8714099b7219b71bda85aa3a5))
+
+
+## 1.80.0 (2025-07-30)
+
+* No change
+
+
+## 1.79.0 (2025-07-28)
+
+### Features
+
+* Update Compute Engine v1 API to revision 20250708 ([#1073](https://github.com/googleapis/google-cloud-java/issues/1073)) ([abbb5a3](https://github.com/googleapis/google-cloud-java/commit/abbb5a3df4c3f149fe7b4dac4c13f6502de8e0a7))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.50.2 ([#11680](https://github.com/googleapis/google-cloud-java/issues/11680)) ([d1b99a7](https://github.com/googleapis/google-cloud-java/commit/d1b99a706daa10c487b56edbb5170b41530628ca))
+
+
+## 1.78.0 (2025-07-11)
+
+### Features
+
+* Update Compute Engine v1 API to revision 20250626 ([961af18](https://github.com/googleapis/google-cloud-java/commit/961af1881e5332f33a231baef0ba291b3648b038))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.50.1 ([#11655](https://github.com/googleapis/google-cloud-java/issues/11655)) ([9b34528](https://github.com/googleapis/google-cloud-java/commit/9b34528f85043049e3349fffc30bb2dbfe01836c))
+
+
+## 1.77.0 (2025-06-25)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.50.0 ([#11624](https://github.com/googleapis/google-cloud-java/issues/11624)) ([a19f457](https://github.com/googleapis/google-cloud-java/commit/a19f457d10f15437ac26ce379048ff8b3cc6be5d))
+
+
+## 1.75.0 (2025-06-16)
+
+* No change
+
+
 ## 1.74.0 (2025-06-04)
 
 ### Features

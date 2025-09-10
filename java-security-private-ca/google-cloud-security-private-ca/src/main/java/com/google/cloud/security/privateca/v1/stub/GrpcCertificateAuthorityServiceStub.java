@@ -108,6 +108,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateCertificateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Certificate.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetCertificateRequest, Certificate>
@@ -119,6 +120,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetCertificateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Certificate.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListCertificatesRequest, ListCertificatesResponse>
@@ -131,6 +133,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                   ProtoUtils.marshaller(ListCertificatesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCertificatesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RevokeCertificateRequest, Certificate>
@@ -142,6 +145,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RevokeCertificateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Certificate.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateCertificateRequest, Certificate>
@@ -153,6 +157,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateCertificateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Certificate.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ActivateCertificateAuthorityRequest, Operation>
@@ -164,6 +169,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ActivateCertificateAuthorityRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateCertificateAuthorityRequest, Operation>
@@ -175,6 +181,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateCertificateAuthorityRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DisableCertificateAuthorityRequest, Operation>
@@ -186,6 +193,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DisableCertificateAuthorityRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<EnableCertificateAuthorityRequest, Operation>
@@ -197,6 +205,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
               .setRequestMarshaller(
                   ProtoUtils.marshaller(EnableCertificateAuthorityRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -212,6 +221,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                   ProtoUtils.marshaller(FetchCertificateAuthorityCsrRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FetchCertificateAuthorityCsrResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetCertificateAuthorityRequest, CertificateAuthority>
@@ -224,6 +234,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                   ProtoUtils.marshaller(GetCertificateAuthorityRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(CertificateAuthority.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -238,6 +249,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                   ProtoUtils.marshaller(ListCertificateAuthoritiesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCertificateAuthoritiesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UndeleteCertificateAuthorityRequest, Operation>
@@ -249,6 +261,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UndeleteCertificateAuthorityRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteCertificateAuthorityRequest, Operation>
@@ -260,6 +273,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteCertificateAuthorityRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateCertificateAuthorityRequest, Operation>
@@ -271,6 +285,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateCertificateAuthorityRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateCaPoolRequest, Operation>
@@ -281,6 +296,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                   "google.cloud.security.privateca.v1.CertificateAuthorityService/CreateCaPool")
               .setRequestMarshaller(ProtoUtils.marshaller(CreateCaPoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateCaPoolRequest, Operation>
@@ -291,6 +307,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                   "google.cloud.security.privateca.v1.CertificateAuthorityService/UpdateCaPool")
               .setRequestMarshaller(ProtoUtils.marshaller(UpdateCaPoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetCaPoolRequest, CaPool> getCaPoolMethodDescriptor =
@@ -300,6 +317,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
               "google.cloud.security.privateca.v1.CertificateAuthorityService/GetCaPool")
           .setRequestMarshaller(ProtoUtils.marshaller(GetCaPoolRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(CaPool.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListCaPoolsRequest, ListCaPoolsResponse>
@@ -311,6 +329,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
               .setRequestMarshaller(ProtoUtils.marshaller(ListCaPoolsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCaPoolsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteCaPoolRequest, Operation>
@@ -321,6 +340,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                   "google.cloud.security.privateca.v1.CertificateAuthorityService/DeleteCaPool")
               .setRequestMarshaller(ProtoUtils.marshaller(DeleteCaPoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<FetchCaCertsRequest, FetchCaCertsResponse>
@@ -332,6 +352,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
               .setRequestMarshaller(ProtoUtils.marshaller(FetchCaCertsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FetchCaCertsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -346,6 +367,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                   ProtoUtils.marshaller(GetCertificateRevocationListRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(CertificateRevocationList.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -362,6 +384,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       ListCertificateRevocationListsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateCertificateRevocationListRequest, Operation>
@@ -374,6 +397,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                   ProtoUtils.marshaller(
                       UpdateCertificateRevocationListRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateCertificateTemplateRequest, Operation>
@@ -385,6 +409,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateCertificateTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteCertificateTemplateRequest, Operation>
@@ -396,6 +421,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteCertificateTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetCertificateTemplateRequest, CertificateTemplate>
@@ -408,6 +434,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                   ProtoUtils.marshaller(GetCertificateTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(CertificateTemplate.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -422,6 +449,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                   ProtoUtils.marshaller(ListCertificateTemplatesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCertificateTemplatesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateCertificateTemplateRequest, Operation>
@@ -433,6 +461,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateCertificateTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -444,6 +473,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -452,6 +482,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -460,6 +491,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -468,6 +500,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -479,6 +512,7 @@ public class GrpcCertificateAuthorityServiceStub extends CertificateAuthoritySer
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateCertificateRequest, Certificate> createCertificateCallable;

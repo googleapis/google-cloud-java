@@ -33,6 +33,10 @@ public final class AttachmentServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_support_v2beta_ListAttachmentsRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_support_v2beta_GetAttachmentRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_support_v2beta_GetAttachmentRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_support_v2beta_ListAttachmentsResponse_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_support_v2beta_ListAttachmentsResponse_fieldAccessorTable;
@@ -54,24 +58,30 @@ public final class AttachmentServiceProto {
           + "roto\"y\n\026ListAttachmentsRequest\0228\n\006parent"
           + "\030\001 \001(\tB(\340A\002\372A\"\n cloudsupport.googleapis."
           + "com/Case\022\021\n\tpage_size\030\002 \001(\005\022\022\n\npage_toke"
-          + "n\030\003 \001(\t\"p\n\027ListAttachmentsResponse\022<\n\013at"
-          + "tachments\030\001 \003(\0132\'.google.cloud.support.v"
-          + "2beta.Attachment\022\027\n\017next_page_token\030\002 \001("
-          + "\t2\341\002\n\025CaseAttachmentService\022\366\001\n\017ListAtta"
-          + "chments\0223.google.cloud.support.v2beta.Li"
-          + "stAttachmentsRequest\0324.google.cloud.supp"
-          + "ort.v2beta.ListAttachmentsResponse\"x\332A\006p"
-          + "arent\202\323\344\223\002i\022//v2beta/{parent=projects/*/"
-          + "cases/*}/attachmentsZ6\0224/v2beta/{parent="
-          + "organizations/*/cases/*}/attachments\032O\312A"
-          + "\033cloudsupport.googleapis.com\322A.https://w"
-          + "ww.googleapis.com/auth/cloud-platformB\323\001"
-          + "\n\037com.google.cloud.support.v2betaB\026Attac"
-          + "hmentServiceProtoP\001Z9cloud.google.com/go"
-          + "/support/apiv2beta/supportpb;supportpb\252\002"
-          + "\033Google.Cloud.Support.V2Beta\312\002\033Google\\Cl"
-          + "oud\\Support\\V2beta\352\002\036Google::Cloud::Supp"
-          + "ort::V2betab\006proto3"
+          + "n\030\003 \001(\t\"T\n\024GetAttachmentRequest\022<\n\004name\030"
+          + "\001 \001(\tB.\340A\002\372A(\n&cloudsupport.googleapis.c"
+          + "om/Attachment\"p\n\027ListAttachmentsResponse"
+          + "\022<\n\013attachments\030\001 \003(\0132\'.google.cloud.sup"
+          + "port.v2beta.Attachment\022\027\n\017next_page_toke"
+          + "n\030\002 \001(\t2\210\004\n\025CaseAttachmentService\022\366\001\n\017Li"
+          + "stAttachments\0223.google.cloud.support.v2b"
+          + "eta.ListAttachmentsRequest\0324.google.clou"
+          + "d.support.v2beta.ListAttachmentsResponse"
+          + "\"x\332A\006parent\202\323\344\223\002i\022//v2beta/{parent=proje"
+          + "cts/*/cases/*}/attachmentsZ6\0224/v2beta/{p"
+          + "arent=organizations/*/cases/*}/attachmen"
+          + "ts\022\244\001\n\rGetAttachment\0221.google.cloud.supp"
+          + "ort.v2beta.GetAttachmentRequest\032\'.google"
+          + ".cloud.support.v2beta.Attachment\"7\332A\004nam"
+          + "e\202\323\344\223\002*\022(/v2beta/{name=*/*/cases/*/attac"
+          + "hments/*}\032O\312A\033cloudsupport.googleapis.co"
+          + "m\322A.https://www.googleapis.com/auth/clou"
+          + "d-platformB\323\001\n\037com.google.cloud.support."
+          + "v2betaB\026AttachmentServiceProtoP\001Z9cloud."
+          + "google.com/go/support/apiv2beta/supportp"
+          + "b;supportpb\252\002\033Google.Cloud.Support.V2Bet"
+          + "a\312\002\033Google\\Cloud\\Support\\V2beta\352\002\036Google"
+          + "::Cloud::Support::V2betab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -91,8 +101,16 @@ public final class AttachmentServiceProto {
             new java.lang.String[] {
               "Parent", "PageSize", "PageToken",
             });
-    internal_static_google_cloud_support_v2beta_ListAttachmentsResponse_descriptor =
+    internal_static_google_cloud_support_v2beta_GetAttachmentRequest_descriptor =
         getDescriptor().getMessageTypes().get(1);
+    internal_static_google_cloud_support_v2beta_GetAttachmentRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_support_v2beta_GetAttachmentRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_support_v2beta_ListAttachmentsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(2);
     internal_static_google_cloud_support_v2beta_ListAttachmentsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_support_v2beta_ListAttachmentsResponse_descriptor,

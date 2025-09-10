@@ -34,6 +34,7 @@ import com.google.cloud.aiplatform.v1.DeleteOperationMetadata;
 import com.google.cloud.aiplatform.v1.DeleteRagCorpusRequest;
 import com.google.cloud.aiplatform.v1.DeleteRagFileRequest;
 import com.google.cloud.aiplatform.v1.GetRagCorpusRequest;
+import com.google.cloud.aiplatform.v1.GetRagEngineConfigRequest;
 import com.google.cloud.aiplatform.v1.GetRagFileRequest;
 import com.google.cloud.aiplatform.v1.ImportRagFilesOperationMetadata;
 import com.google.cloud.aiplatform.v1.ImportRagFilesRequest;
@@ -43,9 +44,12 @@ import com.google.cloud.aiplatform.v1.ListRagCorporaResponse;
 import com.google.cloud.aiplatform.v1.ListRagFilesRequest;
 import com.google.cloud.aiplatform.v1.ListRagFilesResponse;
 import com.google.cloud.aiplatform.v1.RagCorpus;
+import com.google.cloud.aiplatform.v1.RagEngineConfig;
 import com.google.cloud.aiplatform.v1.RagFile;
 import com.google.cloud.aiplatform.v1.UpdateRagCorpusOperationMetadata;
 import com.google.cloud.aiplatform.v1.UpdateRagCorpusRequest;
+import com.google.cloud.aiplatform.v1.UpdateRagEngineConfigOperationMetadata;
+import com.google.cloud.aiplatform.v1.UpdateRagEngineConfigRequest;
 import com.google.cloud.aiplatform.v1.UploadRagFileRequest;
 import com.google.cloud.aiplatform.v1.UploadRagFileResponse;
 import com.google.cloud.location.GetLocationRequest;
@@ -82,6 +86,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateRagCorpusRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateRagCorpusRequest, Operation>
@@ -92,6 +97,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateRagCorpusRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetRagCorpusRequest, RagCorpus>
@@ -101,6 +107,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
               .setFullMethodName("google.cloud.aiplatform.v1.VertexRagDataService/GetRagCorpus")
               .setRequestMarshaller(ProtoUtils.marshaller(GetRagCorpusRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(RagCorpus.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListRagCorporaRequest, ListRagCorporaResponse>
@@ -112,6 +119,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
                   ProtoUtils.marshaller(ListRagCorporaRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListRagCorporaResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteRagCorpusRequest, Operation>
@@ -122,6 +130,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteRagCorpusRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UploadRagFileRequest, UploadRagFileResponse>
@@ -133,6 +142,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
                   ProtoUtils.marshaller(UploadRagFileRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(UploadRagFileResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportRagFilesRequest, Operation>
@@ -143,6 +153,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ImportRagFilesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetRagFileRequest, RagFile> getRagFileMethodDescriptor =
@@ -151,6 +162,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1.VertexRagDataService/GetRagFile")
           .setRequestMarshaller(ProtoUtils.marshaller(GetRagFileRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(RagFile.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListRagFilesRequest, ListRagFilesResponse>
@@ -161,6 +173,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListRagFilesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListRagFilesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteRagFileRequest, Operation>
@@ -171,6 +184,31 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteRagFileRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateRagEngineConfigRequest, Operation>
+      updateRagEngineConfigMethodDescriptor =
+          MethodDescriptor.<UpdateRagEngineConfigRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1.VertexRagDataService/UpdateRagEngineConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateRagEngineConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetRagEngineConfigRequest, RagEngineConfig>
+      getRagEngineConfigMethodDescriptor =
+          MethodDescriptor.<GetRagEngineConfigRequest, RagEngineConfig>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.aiplatform.v1.VertexRagDataService/GetRagEngineConfig")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetRagEngineConfigRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(RagEngineConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -182,6 +220,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -190,6 +229,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -198,6 +238,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -206,6 +247,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -217,6 +259,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateRagCorpusRequest, Operation> createRagCorpusCallable;
@@ -246,6 +289,13 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
   private final UnaryCallable<DeleteRagFileRequest, Operation> deleteRagFileCallable;
   private final OperationCallable<DeleteRagFileRequest, Empty, DeleteOperationMetadata>
       deleteRagFileOperationCallable;
+  private final UnaryCallable<UpdateRagEngineConfigRequest, Operation>
+      updateRagEngineConfigCallable;
+  private final OperationCallable<
+          UpdateRagEngineConfigRequest, RagEngineConfig, UpdateRagEngineConfigOperationMetadata>
+      updateRagEngineConfigOperationCallable;
+  private final UnaryCallable<GetRagEngineConfigRequest, RagEngineConfig>
+      getRagEngineConfigCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -400,6 +450,30 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<UpdateRagEngineConfigRequest, Operation>
+        updateRagEngineConfigTransportSettings =
+            GrpcCallSettings.<UpdateRagEngineConfigRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateRagEngineConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "rag_engine_config.name",
+                          String.valueOf(request.getRagEngineConfig().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetRagEngineConfigRequest, RagEngineConfig>
+        getRagEngineConfigTransportSettings =
+            GrpcCallSettings.<GetRagEngineConfigRequest, RagEngineConfig>newBuilder()
+                .setMethodDescriptor(getRagEngineConfigMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -518,6 +592,22 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
             settings.deleteRagFileOperationSettings(),
             clientContext,
             operationsStub);
+    this.updateRagEngineConfigCallable =
+        callableFactory.createUnaryCallable(
+            updateRagEngineConfigTransportSettings,
+            settings.updateRagEngineConfigSettings(),
+            clientContext);
+    this.updateRagEngineConfigOperationCallable =
+        callableFactory.createOperationCallable(
+            updateRagEngineConfigTransportSettings,
+            settings.updateRagEngineConfigOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.getRagEngineConfigCallable =
+        callableFactory.createUnaryCallable(
+            getRagEngineConfigTransportSettings,
+            settings.getRagEngineConfigSettings(),
+            clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -637,6 +727,23 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
   public OperationCallable<DeleteRagFileRequest, Empty, DeleteOperationMetadata>
       deleteRagFileOperationCallable() {
     return deleteRagFileOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateRagEngineConfigRequest, Operation> updateRagEngineConfigCallable() {
+    return updateRagEngineConfigCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          UpdateRagEngineConfigRequest, RagEngineConfig, UpdateRagEngineConfigOperationMetadata>
+      updateRagEngineConfigOperationCallable() {
+    return updateRagEngineConfigOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetRagEngineConfigRequest, RagEngineConfig> getRagEngineConfigCallable() {
+    return getRagEngineConfigCallable;
   }
 
   @Override

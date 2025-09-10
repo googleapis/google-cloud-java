@@ -275,7 +275,7 @@ public final class TextToSpeechGrpc {
      *
      *
      * <pre>
-     * Performs bidirectional streaming speech synthesis: receive audio while
+     * Performs bidirectional streaming speech synthesis: receives audio while
      * sending text.
      * </pre>
      */
@@ -361,7 +361,7 @@ public final class TextToSpeechGrpc {
      *
      *
      * <pre>
-     * Performs bidirectional streaming speech synthesis: receive audio while
+     * Performs bidirectional streaming speech synthesis: receives audio while
      * sending text.
      * </pre>
      */
@@ -426,7 +426,7 @@ public final class TextToSpeechGrpc {
      *
      *
      * <pre>
-     * Performs bidirectional streaming speech synthesis: receive audio while
+     * Performs bidirectional streaming speech synthesis: receives audio while
      * sending text.
      * </pre>
      */

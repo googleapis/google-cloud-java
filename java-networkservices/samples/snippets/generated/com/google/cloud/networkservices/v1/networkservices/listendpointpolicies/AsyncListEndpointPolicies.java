@@ -41,6 +41,7 @@ public class AsyncListEndpointPolicies {
               .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
+              .setReturnPartialSuccess(true)
               .build();
       ApiFuture<EndpointPolicy> future =
           networkServicesClient.listEndpointPoliciesPagedCallable().futureCall(request);

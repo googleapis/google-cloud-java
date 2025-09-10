@@ -51,6 +51,7 @@ public class GrpcFeedServiceStub extends FeedServiceStub {
               .setFullMethodName("google.cloud.support.v2beta.FeedService/ShowFeed")
               .setRequestMarshaller(ProtoUtils.marshaller(ShowFeedRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ShowFeedResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ShowFeedRequest, ShowFeedResponse> showFeedCallable;

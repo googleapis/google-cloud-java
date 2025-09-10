@@ -25,7 +25,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        java: [8, 11, 17, 21]
+        java: [8, 11, 17, 21, 24]
     steps:
     - name: Get current week within the year
       id: date
@@ -64,23 +64,19 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-    - name: Get current week within the year
-      id: date
-      run: echo "::set-output name=week_of_year::$(date +'%W' --utc)"
     - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
     - uses: actions/setup-java@v4
       with:
         distribution: temurin
         java-version: 17
     - run: java -version
-    - uses: actions/cache@v4
-      id: mvn-cache
-      with:
-        path: ~/.m2/repository
-        key: ${{ runner.os }}-maven-unified-${{ steps.date.outputs.week_of_year }}
-    - run: java -version
-    - run: mvn -B -ntp com.spotify.fmt:fmt-maven-plugin:check -T 1C
-    - run: mvn -B -ntp checkstyle:check@checkstyle
+    - run: .kokoro/build.sh
+      env:
+        JOB_TYPE: lint
+        HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        BASE_SHA: ${{ github.event.pull_request.base.sha }}
   enforcer:
     runs-on: ubuntu-latest
     steps:
@@ -131,7 +127,7 @@ jobs:
           gcr.io/cloud-devrel-public-resources/java-library-generation:"${library_generation_image_tag}" \
           /src/library_generation/cli/entry_point.py validate-generation-config
       env:
-        library_generation_image_tag: 2.59.0
+        library_generation_image_tag: 2.62.0
         workspace_name: /workspace
 
 # TODO: Uncomment the needed Github Actions

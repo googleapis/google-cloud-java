@@ -27,10 +27,14 @@ import com.google.api.gax.core.InstantiatingExecutorProvider;
 import com.google.api.gax.httpjson.GaxHttpJsonProperties;
 import com.google.api.gax.httpjson.HttpJsonTransportChannel;
 import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
+import com.google.api.gax.httpjson.ProtoOperationTransformers;
+import com.google.api.gax.longrunning.OperationSnapshot;
+import com.google.api.gax.longrunning.OperationTimedPollAlgorithm;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PageContext;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.PagedListDescriptor;
@@ -42,6 +46,8 @@ import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.compute.v1.GetReservationSubBlockRequest;
 import com.google.cloud.compute.v1.ListReservationSubBlocksRequest;
+import com.google.cloud.compute.v1.Operation;
+import com.google.cloud.compute.v1.PerformMaintenanceReservationSubBlockRequest;
 import com.google.cloud.compute.v1.ReservationSubBlock;
 import com.google.cloud.compute.v1.ReservationSubBlocksGetResponse;
 import com.google.cloud.compute.v1.ReservationSubBlocksListResponse;
@@ -104,6 +110,32 @@ import javax.annotation.Generated;
  * Please refer to the [Client Side Retry
  * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
  * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for performMaintenance:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * ReservationSubBlocksStubSettings.Builder reservationSubBlocksSettingsBuilder =
+ *     ReservationSubBlocksStubSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * reservationSubBlocksSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 public class ReservationSubBlocksStubSettings
@@ -111,7 +143,6 @@ public class ReservationSubBlocksStubSettings
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
       ImmutableList.<String>builder()
-          .add("https://www.googleapis.com/auth/compute.readonly")
           .add("https://www.googleapis.com/auth/compute")
           .add("https://www.googleapis.com/auth/cloud-platform")
           .build();
@@ -121,6 +152,11 @@ public class ReservationSubBlocksStubSettings
   private final PagedCallSettings<
           ListReservationSubBlocksRequest, ReservationSubBlocksListResponse, ListPagedResponse>
       listSettings;
+  private final UnaryCallSettings<PerformMaintenanceReservationSubBlockRequest, Operation>
+      performMaintenanceSettings;
+  private final OperationCallSettings<
+          PerformMaintenanceReservationSubBlockRequest, Operation, Operation>
+      performMaintenanceOperationSettings;
 
   private static final PagedListDescriptor<
           ListReservationSubBlocksRequest, ReservationSubBlocksListResponse, ReservationSubBlock>
@@ -201,6 +237,18 @@ public class ReservationSubBlocksStubSettings
           ListReservationSubBlocksRequest, ReservationSubBlocksListResponse, ListPagedResponse>
       listSettings() {
     return listSettings;
+  }
+
+  /** Returns the object with the settings used for calls to performMaintenance. */
+  public UnaryCallSettings<PerformMaintenanceReservationSubBlockRequest, Operation>
+      performMaintenanceSettings() {
+    return performMaintenanceSettings;
+  }
+
+  /** Returns the object with the settings used for calls to performMaintenance. */
+  public OperationCallSettings<PerformMaintenanceReservationSubBlockRequest, Operation, Operation>
+      performMaintenanceOperationSettings() {
+    return performMaintenanceOperationSettings;
   }
 
   public ReservationSubBlocksStub createStub() throws IOException {
@@ -287,6 +335,9 @@ public class ReservationSubBlocksStubSettings
 
     getSettings = settingsBuilder.getSettings().build();
     listSettings = settingsBuilder.listSettings().build();
+    performMaintenanceSettings = settingsBuilder.performMaintenanceSettings().build();
+    performMaintenanceOperationSettings =
+        settingsBuilder.performMaintenanceOperationSettings().build();
   }
 
   /** Builder for ReservationSubBlocksStubSettings. */
@@ -299,6 +350,11 @@ public class ReservationSubBlocksStubSettings
     private final PagedCallSettings.Builder<
             ListReservationSubBlocksRequest, ReservationSubBlocksListResponse, ListPagedResponse>
         listSettings;
+    private final UnaryCallSettings.Builder<PerformMaintenanceReservationSubBlockRequest, Operation>
+        performMaintenanceSettings;
+    private final OperationCallSettings.Builder<
+            PerformMaintenanceReservationSubBlockRequest, Operation, Operation>
+        performMaintenanceOperationSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -310,6 +366,8 @@ public class ReservationSubBlocksStubSettings
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
+      definitions.put(
+          "no_retry_1_codes", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
       RETRYABLE_CODE_DEFINITIONS = definitions.build();
     }
 
@@ -329,6 +387,14 @@ public class ReservationSubBlocksStubSettings
               .setTotalTimeoutDuration(Duration.ofMillis(600000L))
               .build();
       definitions.put("retry_policy_0_params", settings);
+      settings =
+          RetrySettings.newBuilder()
+              .setInitialRpcTimeoutDuration(Duration.ofMillis(600000L))
+              .setRpcTimeoutMultiplier(1.0)
+              .setMaxRpcTimeoutDuration(Duration.ofMillis(600000L))
+              .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+              .build();
+      definitions.put("no_retry_1_params", settings);
       RETRY_PARAM_DEFINITIONS = definitions.build();
     }
 
@@ -341,9 +407,12 @@ public class ReservationSubBlocksStubSettings
 
       getSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listSettings = PagedCallSettings.newBuilder(LIST_PAGE_STR_FACT);
+      performMaintenanceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      performMaintenanceOperationSettings = OperationCallSettings.newBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(getSettings, listSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              getSettings, listSettings, performMaintenanceSettings);
       initDefaults(this);
     }
 
@@ -352,9 +421,13 @@ public class ReservationSubBlocksStubSettings
 
       getSettings = settings.getSettings.toBuilder();
       listSettings = settings.listSettings.toBuilder();
+      performMaintenanceSettings = settings.performMaintenanceSettings.toBuilder();
+      performMaintenanceOperationSettings =
+          settings.performMaintenanceOperationSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
-          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(getSettings, listSettings);
+          ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
+              getSettings, listSettings, performMaintenanceSettings);
     }
 
     private static Builder createDefault() {
@@ -379,6 +452,36 @@ public class ReservationSubBlocksStubSettings
           .listSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .performMaintenanceSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .performMaintenanceOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<PerformMaintenanceReservationSubBlockRequest, OperationSnapshot>
+                      newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Operation.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(Operation.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(500L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(20000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(600000L))
+                      .build()));
 
       return builder;
     }
@@ -409,6 +512,19 @@ public class ReservationSubBlocksStubSettings
             ListReservationSubBlocksRequest, ReservationSubBlocksListResponse, ListPagedResponse>
         listSettings() {
       return listSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to performMaintenance. */
+    public UnaryCallSettings.Builder<PerformMaintenanceReservationSubBlockRequest, Operation>
+        performMaintenanceSettings() {
+      return performMaintenanceSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to performMaintenance. */
+    public OperationCallSettings.Builder<
+            PerformMaintenanceReservationSubBlockRequest, Operation, Operation>
+        performMaintenanceOperationSettings() {
+      return performMaintenanceOperationSettings;
     }
 
     @Override

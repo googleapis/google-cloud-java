@@ -169,6 +169,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BulkMuteFindingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -186,6 +187,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       CreateSecurityHealthAnalyticsCustomModuleRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SecurityHealthAnalyticsCustomModule.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateSourceRequest, Source> createSourceMethodDescriptor =
@@ -194,6 +196,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
           .setFullMethodName("google.cloud.securitycenter.v1.SecurityCenter/CreateSource")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateSourceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Source.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateFindingRequest, Finding>
@@ -204,6 +207,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateFindingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Finding.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateMuteConfigRequest, MuteConfig>
@@ -214,6 +218,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateMuteConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(MuteConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateNotificationConfigRequest, NotificationConfig>
@@ -225,6 +230,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateNotificationConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(NotificationConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteMuteConfigRequest, Empty>
@@ -235,6 +241,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteMuteConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteNotificationConfigRequest, Empty>
@@ -246,6 +253,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteNotificationConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteSecurityHealthAnalyticsCustomModuleRequest, Empty>
@@ -258,6 +266,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(
                       DeleteSecurityHealthAnalyticsCustomModuleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSimulationRequest, Simulation>
@@ -268,6 +277,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetSimulationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Simulation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetValuedResourceRequest, ValuedResource>
@@ -278,6 +288,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetValuedResourceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ValuedResource.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetBigQueryExportRequest, BigQueryExport>
@@ -288,6 +299,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetBigQueryExportRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BigQueryExport.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -296,6 +308,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
           .setFullMethodName("google.cloud.securitycenter.v1.SecurityCenter/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetMuteConfigRequest, MuteConfig>
@@ -306,6 +319,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetMuteConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(MuteConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetNotificationConfigRequest, NotificationConfig>
@@ -317,6 +331,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetNotificationConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(NotificationConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetOrganizationSettingsRequest, OrganizationSettings>
@@ -329,6 +344,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(GetOrganizationSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(OrganizationSettings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -348,6 +364,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       EffectiveSecurityHealthAnalyticsCustomModule.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -364,6 +381,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       GetSecurityHealthAnalyticsCustomModuleRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SecurityHealthAnalyticsCustomModule.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSourceRequest, Source> getSourceMethodDescriptor =
@@ -372,6 +390,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
           .setFullMethodName("google.cloud.securitycenter.v1.SecurityCenter/GetSource")
           .setRequestMarshaller(ProtoUtils.marshaller(GetSourceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Source.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GroupAssetsRequest, GroupAssetsResponse>
@@ -382,6 +401,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(ProtoUtils.marshaller(GroupAssetsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GroupAssetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GroupFindingsRequest, GroupFindingsResponse>
@@ -393,6 +413,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(GroupFindingsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GroupFindingsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListAssetsRequest, ListAssetsResponse>
@@ -402,6 +423,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setFullMethodName("google.cloud.securitycenter.v1.SecurityCenter/ListAssets")
               .setRequestMarshaller(ProtoUtils.marshaller(ListAssetsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListAssetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -423,6 +445,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(
                       ListDescendantSecurityHealthAnalyticsCustomModulesResponse
                           .getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListFindingsRequest, ListFindingsResponse>
@@ -433,6 +456,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListFindingsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListFindingsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListMuteConfigsRequest, ListMuteConfigsResponse>
@@ -444,6 +468,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(ListMuteConfigsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListMuteConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -458,6 +483,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(ListNotificationConfigsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListNotificationConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -479,6 +505,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(
                       ListEffectiveSecurityHealthAnalyticsCustomModulesResponse
                           .getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -498,6 +525,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       ListSecurityHealthAnalyticsCustomModulesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListSourcesRequest, ListSourcesResponse>
@@ -508,6 +536,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListSourcesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSourcesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RunAssetDiscoveryRequest, Operation>
@@ -518,6 +547,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RunAssetDiscoveryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SetFindingStateRequest, Finding>
@@ -528,6 +558,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(SetFindingStateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Finding.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SetMuteRequest, Finding> setMuteMethodDescriptor =
@@ -536,6 +567,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
           .setFullMethodName("google.cloud.securitycenter.v1.SecurityCenter/SetMute")
           .setRequestMarshaller(ProtoUtils.marshaller(SetMuteRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Finding.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -544,6 +576,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
           .setFullMethodName("google.cloud.securitycenter.v1.SecurityCenter/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -555,6 +588,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -574,6 +608,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       SimulateSecurityHealthAnalyticsCustomModuleResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateExternalSystemRequest, ExternalSystem>
@@ -585,6 +620,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateExternalSystemRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ExternalSystem.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateFindingRequest, Finding>
@@ -595,6 +631,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateFindingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Finding.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateMuteConfigRequest, MuteConfig>
@@ -605,6 +642,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateMuteConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(MuteConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateNotificationConfigRequest, NotificationConfig>
@@ -616,6 +654,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateNotificationConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(NotificationConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateOrganizationSettingsRequest, OrganizationSettings>
@@ -628,6 +667,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(UpdateOrganizationSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(OrganizationSettings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -645,6 +685,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       UpdateSecurityHealthAnalyticsCustomModuleRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SecurityHealthAnalyticsCustomModule.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateSourceRequest, Source> updateSourceMethodDescriptor =
@@ -653,6 +694,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
           .setFullMethodName("google.cloud.securitycenter.v1.SecurityCenter/UpdateSource")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateSourceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Source.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateSecurityMarksRequest, SecurityMarks>
@@ -664,6 +706,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateSecurityMarksRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(SecurityMarks.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateBigQueryExportRequest, BigQueryExport>
@@ -675,6 +718,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateBigQueryExportRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BigQueryExport.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteBigQueryExportRequest, Empty>
@@ -686,6 +730,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteBigQueryExportRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateBigQueryExportRequest, BigQueryExport>
@@ -697,6 +742,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateBigQueryExportRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BigQueryExport.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListBigQueryExportsRequest, ListBigQueryExportsResponse>
@@ -709,6 +755,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(ListBigQueryExportsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBigQueryExportsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -725,6 +772,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       CreateEventThreatDetectionCustomModuleRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(EventThreatDetectionCustomModule.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteEventThreatDetectionCustomModuleRequest, Empty>
@@ -737,6 +785,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(
                       DeleteEventThreatDetectionCustomModuleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -753,6 +802,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       GetEventThreatDetectionCustomModuleRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(EventThreatDetectionCustomModule.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -772,6 +822,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       ListDescendantEventThreatDetectionCustomModulesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -791,6 +842,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       ListEventThreatDetectionCustomModulesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -807,6 +859,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                       UpdateEventThreatDetectionCustomModuleRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(EventThreatDetectionCustomModule.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -826,6 +879,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       ValidateEventThreatDetectionCustomModuleResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -845,6 +899,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       EffectiveEventThreatDetectionCustomModule.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -864,6 +919,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       ListEffectiveEventThreatDetectionCustomModulesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -881,6 +937,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       BatchCreateResourceValueConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteResourceValueConfigRequest, Empty>
@@ -892,6 +949,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteResourceValueConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetResourceValueConfigRequest, ResourceValueConfig>
@@ -904,6 +962,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(GetResourceValueConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ResourceValueConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -918,6 +977,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(ListResourceValueConfigsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListResourceValueConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateResourceValueConfigRequest, ResourceValueConfig>
@@ -930,6 +990,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(UpdateResourceValueConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ResourceValueConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListValuedResourcesRequest, ListValuedResourcesResponse>
@@ -942,6 +1003,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(ListValuedResourcesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListValuedResourcesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListAttackPathsRequest, ListAttackPathsResponse>
@@ -953,6 +1015,7 @@ public class GrpcSecurityCenterStub extends SecurityCenterStub {
                   ProtoUtils.marshaller(ListAttackPathsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAttackPathsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<BulkMuteFindingsRequest, Operation> bulkMuteFindingsCallable;

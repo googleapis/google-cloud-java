@@ -1868,7 +1868,7 @@ public final class ProductStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether the issue can be resolved by the merchant.
+     * Whether the issue can be resolved by the business.
      * </pre>
      *
      * <code>string resolution = 3;</code>
@@ -1881,7 +1881,7 @@ public final class ProductStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether the issue can be resolved by the merchant.
+     * Whether the issue can be resolved by the business.
      * </pre>
      *
      * <code>string resolution = 3;</code>
@@ -2433,7 +2433,7 @@ public final class ProductStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether the issue can be resolved by the merchant.
+     * Whether the issue can be resolved by the business.
      * </pre>
      *
      * <code>string resolution = 3;</code>
@@ -2457,7 +2457,7 @@ public final class ProductStatus extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Whether the issue can be resolved by the merchant.
+     * Whether the issue can be resolved by the business.
      * </pre>
      *
      * <code>string resolution = 3;</code>
@@ -3613,7 +3613,7 @@ public final class ProductStatus extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Whether the issue can be resolved by the merchant.
+       * Whether the issue can be resolved by the business.
        * </pre>
        *
        * <code>string resolution = 3;</code>
@@ -3636,7 +3636,7 @@ public final class ProductStatus extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Whether the issue can be resolved by the merchant.
+       * Whether the issue can be resolved by the business.
        * </pre>
        *
        * <code>string resolution = 3;</code>
@@ -3659,7 +3659,7 @@ public final class ProductStatus extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Whether the issue can be resolved by the merchant.
+       * Whether the issue can be resolved by the business.
        * </pre>
        *
        * <code>string resolution = 3;</code>
@@ -3681,7 +3681,7 @@ public final class ProductStatus extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Whether the issue can be resolved by the merchant.
+       * Whether the issue can be resolved by the business.
        * </pre>
        *
        * <code>string resolution = 3;</code>
@@ -3699,7 +3699,7 @@ public final class ProductStatus extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Whether the issue can be resolved by the merchant.
+       * Whether the issue can be resolved by the business.
        * </pre>
        *
        * <code>string resolution = 3;</code>

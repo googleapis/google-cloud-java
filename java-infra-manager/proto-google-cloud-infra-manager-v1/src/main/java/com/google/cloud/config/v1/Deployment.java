@@ -992,11 +992,11 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Resource name of the deployment.
+   * Identifier. Resource name of the deployment.
    * Format: `projects/{project}/locations/{location}/deployments/{deployment}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -1017,11 +1017,11 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Resource name of the deployment.
+   * Identifier. Resource name of the deployment.
    * Format: `projects/{project}/locations/{location}/deployments/{deployment}`
    * </pre>
    *
-   * <code>string name = 1;</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -1173,10 +1173,10 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User-defined metadata for the deployment.
+   * Optional. User-defined metadata for the deployment.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public boolean containsLabels(java.lang.String key) {
@@ -1197,10 +1197,10 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User-defined metadata for the deployment.
+   * Optional. User-defined metadata for the deployment.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -1211,10 +1211,10 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User-defined metadata for the deployment.
+   * Optional. User-defined metadata for the deployment.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public /* nullable */ java.lang.String getLabelsOrDefault(
@@ -1232,10 +1232,10 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * User-defined metadata for the deployment.
+   * Optional. User-defined metadata for the deployment.
    * </pre>
    *
-   * <code>map&lt;string, string&gt; labels = 4;</code>
+   * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   @java.lang.Override
   public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -3722,11 +3722,11 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource name of the deployment.
+     * Identifier. Resource name of the deployment.
      * Format: `projects/{project}/locations/{location}/deployments/{deployment}`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -3746,11 +3746,11 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource name of the deployment.
+     * Identifier. Resource name of the deployment.
      * Format: `projects/{project}/locations/{location}/deployments/{deployment}`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -3770,11 +3770,11 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource name of the deployment.
+     * Identifier. Resource name of the deployment.
      * Format: `projects/{project}/locations/{location}/deployments/{deployment}`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -3793,11 +3793,11 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource name of the deployment.
+     * Identifier. Resource name of the deployment.
      * Format: `projects/{project}/locations/{location}/deployments/{deployment}`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -3812,11 +3812,11 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Resource name of the deployment.
+     * Identifier. Resource name of the deployment.
      * Format: `projects/{project}/locations/{location}/deployments/{deployment}`
      * </pre>
      *
-     * <code>string name = 1;</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -4286,10 +4286,10 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-defined metadata for the deployment.
+     * Optional. User-defined metadata for the deployment.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public boolean containsLabels(java.lang.String key) {
@@ -4310,10 +4310,10 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-defined metadata for the deployment.
+     * Optional. User-defined metadata for the deployment.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
@@ -4324,10 +4324,10 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-defined metadata for the deployment.
+     * Optional. User-defined metadata for the deployment.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public /* nullable */ java.lang.String getLabelsOrDefault(
@@ -4345,10 +4345,10 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-defined metadata for the deployment.
+     * Optional. User-defined metadata for the deployment.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     @java.lang.Override
     public java.lang.String getLabelsOrThrow(java.lang.String key) {
@@ -4372,10 +4372,10 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-defined metadata for the deployment.
+     * Optional. User-defined metadata for the deployment.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder removeLabels(java.lang.String key) {
       if (key == null) {
@@ -4396,10 +4396,10 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-defined metadata for the deployment.
+     * Optional. User-defined metadata for the deployment.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putLabels(java.lang.String key, java.lang.String value) {
       if (key == null) {
@@ -4417,10 +4417,10 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * User-defined metadata for the deployment.
+     * Optional. User-defined metadata for the deployment.
      * </pre>
      *
-     * <code>map&lt;string, string&gt; labels = 4;</code>
+     * <code>map&lt;string, string&gt; labels = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);

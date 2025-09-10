@@ -22,4 +22,31 @@ package com.google.container.v1beta1;
 public interface AnonymousAuthenticationConfigOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.container.v1beta1.AnonymousAuthenticationConfig)
-    com.google.protobuf.MessageOrBuilder {}
+    com.google.protobuf.MessageOrBuilder {
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines the mode of limiting anonymous access in the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.AnonymousAuthenticationConfig.Mode mode = 1;</code>
+   *
+   * @return The enum numeric value on the wire for mode.
+   */
+  int getModeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Defines the mode of limiting anonymous access in the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1beta1.AnonymousAuthenticationConfig.Mode mode = 1;</code>
+   *
+   * @return The mode.
+   */
+  com.google.container.v1beta1.AnonymousAuthenticationConfig.Mode getMode();
+}

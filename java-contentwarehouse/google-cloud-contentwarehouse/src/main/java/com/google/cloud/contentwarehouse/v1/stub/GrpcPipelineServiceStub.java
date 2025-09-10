@@ -49,6 +49,7 @@ public class GrpcPipelineServiceStub extends PipelineServiceStub {
           .setFullMethodName("google.cloud.contentwarehouse.v1.PipelineService/RunPipeline")
           .setRequestMarshaller(ProtoUtils.marshaller(RunPipelineRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<RunPipelineRequest, Operation> runPipelineCallable;

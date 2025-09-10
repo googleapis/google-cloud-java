@@ -209,12 +209,11 @@ public final class SimulatorProto {
           + "/replays/*}/resultsZ6\0224/v1/{parent=folders/*/locations/*/replays/*}/resultsZ<\022:/"
           + "v1/{parent=organizations/*/locations/*/r"
           + "eplays/*}/results\032R\312A\036policysimulator.go"
-          + "ogleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\362\001\n"
+          + "ogleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\357\001\n"
           + "#com.google.cloud.policysimulator.v1B\016SimulatorProtoP\001Z"
-          + "Mcloud.google.com/go/policysimulator/apiv1/policysimulatorpb;policysimulatorpb\370\001"
-          + "\001\252\002\037Google.Cloud.PolicySimulator.V1\312\002\037Go"
-          + "ogle\\Cloud\\PolicySimulator\\V1\352\002\"Google::"
-          + "Cloud::PolicySimulator::V1b\006proto3"
+          + "Mcloud.google.com/go/policysimulator/apiv1/policysimulatorpb;policysimulatorpb\252\002"
+          + "\037Google.Cloud.PolicySimulator.V1\312\002\037Googl"
+          + "e\\Cloud\\PolicySimulator\\V1\352\002\"Google::Cloud::PolicySimulator::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

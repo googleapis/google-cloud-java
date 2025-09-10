@@ -238,7 +238,7 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.aiplatform.v1.Retrieval.disable_attribution is deprecated. See
-   *     google/cloud/aiplatform/v1/tool.proto;l=253
+   *     google/cloud/aiplatform/v1/tool.proto;l=283
    * @return The disableAttribution.
    */
   @java.lang.Override
@@ -1146,7 +1146,7 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1.Retrieval.disable_attribution is deprecated. See
-     *     google/cloud/aiplatform/v1/tool.proto;l=253
+     *     google/cloud/aiplatform/v1/tool.proto;l=283
      * @return The disableAttribution.
      */
     @java.lang.Override
@@ -1167,7 +1167,7 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1.Retrieval.disable_attribution is deprecated. See
-     *     google/cloud/aiplatform/v1/tool.proto;l=253
+     *     google/cloud/aiplatform/v1/tool.proto;l=283
      * @param value The disableAttribution to set.
      * @return This builder for chaining.
      */
@@ -1192,7 +1192,7 @@ public final class Retrieval extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.aiplatform.v1.Retrieval.disable_attribution is deprecated. See
-     *     google/cloud/aiplatform/v1/tool.proto;l=253
+     *     google/cloud/aiplatform/v1/tool.proto;l=283
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

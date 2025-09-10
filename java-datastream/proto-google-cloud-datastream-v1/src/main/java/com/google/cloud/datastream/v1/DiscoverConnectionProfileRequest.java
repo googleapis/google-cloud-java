@@ -178,6 +178,8 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
     MYSQL_RDBMS(101),
     POSTGRESQL_RDBMS(102),
     SQL_SERVER_RDBMS(103),
+    SALESFORCE_ORG(104),
+    MONGODB_CLUSTER(105),
     DATAOBJECT_NOT_SET(0);
     private final int value;
 
@@ -205,6 +207,10 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
           return POSTGRESQL_RDBMS;
         case 103:
           return SQL_SERVER_RDBMS;
+        case 104:
+          return SALESFORCE_ORG;
+        case 105:
+          return MONGODB_CLUSTER;
         case 0:
           return DATAOBJECT_NOT_SET;
         default:
@@ -699,6 +705,114 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
     return com.google.cloud.datastream.v1.SqlServerRdbms.getDefaultInstance();
   }
 
+  public static final int SALESFORCE_ORG_FIELD_NUMBER = 104;
+
+  /**
+   *
+   *
+   * <pre>
+   * Salesforce organization to enrich with child data objects and metadata.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SalesforceOrg salesforce_org = 104;</code>
+   *
+   * @return Whether the salesforceOrg field is set.
+   */
+  @java.lang.Override
+  public boolean hasSalesforceOrg() {
+    return dataObjectCase_ == 104;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Salesforce organization to enrich with child data objects and metadata.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SalesforceOrg salesforce_org = 104;</code>
+   *
+   * @return The salesforceOrg.
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.SalesforceOrg getSalesforceOrg() {
+    if (dataObjectCase_ == 104) {
+      return (com.google.cloud.datastream.v1.SalesforceOrg) dataObject_;
+    }
+    return com.google.cloud.datastream.v1.SalesforceOrg.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Salesforce organization to enrich with child data objects and metadata.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SalesforceOrg salesforce_org = 104;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.SalesforceOrgOrBuilder getSalesforceOrgOrBuilder() {
+    if (dataObjectCase_ == 104) {
+      return (com.google.cloud.datastream.v1.SalesforceOrg) dataObject_;
+    }
+    return com.google.cloud.datastream.v1.SalesforceOrg.getDefaultInstance();
+  }
+
+  public static final int MONGODB_CLUSTER_FIELD_NUMBER = 105;
+
+  /**
+   *
+   *
+   * <pre>
+   * MongoDB cluster to enrich with child data objects and metadata.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.MongodbCluster mongodb_cluster = 105;</code>
+   *
+   * @return Whether the mongodbCluster field is set.
+   */
+  @java.lang.Override
+  public boolean hasMongodbCluster() {
+    return dataObjectCase_ == 105;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * MongoDB cluster to enrich with child data objects and metadata.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.MongodbCluster mongodb_cluster = 105;</code>
+   *
+   * @return The mongodbCluster.
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.MongodbCluster getMongodbCluster() {
+    if (dataObjectCase_ == 105) {
+      return (com.google.cloud.datastream.v1.MongodbCluster) dataObject_;
+    }
+    return com.google.cloud.datastream.v1.MongodbCluster.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * MongoDB cluster to enrich with child data objects and metadata.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.MongodbCluster mongodb_cluster = 105;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.datastream.v1.MongodbClusterOrBuilder getMongodbClusterOrBuilder() {
+    if (dataObjectCase_ == 105) {
+      return (com.google.cloud.datastream.v1.MongodbCluster) dataObject_;
+    }
+    return com.google.cloud.datastream.v1.MongodbCluster.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -733,6 +847,12 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
     }
     if (dataObjectCase_ == 103) {
       output.writeMessage(103, (com.google.cloud.datastream.v1.SqlServerRdbms) dataObject_);
+    }
+    if (dataObjectCase_ == 104) {
+      output.writeMessage(104, (com.google.cloud.datastream.v1.SalesforceOrg) dataObject_);
+    }
+    if (dataObjectCase_ == 105) {
+      output.writeMessage(105, (com.google.cloud.datastream.v1.MongodbCluster) dataObject_);
     }
     if (targetCase_ == 200) {
       output.writeMessage(200, (com.google.cloud.datastream.v1.ConnectionProfile) target_);
@@ -781,6 +901,16 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               103, (com.google.cloud.datastream.v1.SqlServerRdbms) dataObject_);
+    }
+    if (dataObjectCase_ == 104) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              104, (com.google.cloud.datastream.v1.SalesforceOrg) dataObject_);
+    }
+    if (dataObjectCase_ == 105) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              105, (com.google.cloud.datastream.v1.MongodbCluster) dataObject_);
     }
     if (targetCase_ == 200) {
       size +=
@@ -843,6 +973,12 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
       case 103:
         if (!getSqlServerRdbms().equals(other.getSqlServerRdbms())) return false;
         break;
+      case 104:
+        if (!getSalesforceOrg().equals(other.getSalesforceOrg())) return false;
+        break;
+      case 105:
+        if (!getMongodbCluster().equals(other.getMongodbCluster())) return false;
+        break;
       case 0:
       default:
     }
@@ -899,6 +1035,14 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
       case 103:
         hash = (37 * hash) + SQL_SERVER_RDBMS_FIELD_NUMBER;
         hash = (53 * hash) + getSqlServerRdbms().hashCode();
+        break;
+      case 104:
+        hash = (37 * hash) + SALESFORCE_ORG_FIELD_NUMBER;
+        hash = (53 * hash) + getSalesforceOrg().hashCode();
+        break;
+      case 105:
+        hash = (37 * hash) + MONGODB_CLUSTER_FIELD_NUMBER;
+        hash = (53 * hash) + getMongodbCluster().hashCode();
         break;
       case 0:
       default:
@@ -1060,6 +1204,12 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
       if (sqlServerRdbmsBuilder_ != null) {
         sqlServerRdbmsBuilder_.clear();
       }
+      if (salesforceOrgBuilder_ != null) {
+        salesforceOrgBuilder_.clear();
+      }
+      if (mongodbClusterBuilder_ != null) {
+        mongodbClusterBuilder_.clear();
+      }
       targetCase_ = 0;
       target_ = null;
       hierarchyCase_ = 0;
@@ -1132,6 +1282,12 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
       }
       if (dataObjectCase_ == 103 && sqlServerRdbmsBuilder_ != null) {
         result.dataObject_ = sqlServerRdbmsBuilder_.build();
+      }
+      if (dataObjectCase_ == 104 && salesforceOrgBuilder_ != null) {
+        result.dataObject_ = salesforceOrgBuilder_.build();
+      }
+      if (dataObjectCase_ == 105 && mongodbClusterBuilder_ != null) {
+        result.dataObject_ = mongodbClusterBuilder_.build();
       }
     }
 
@@ -1243,6 +1399,16 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
             mergeSqlServerRdbms(other.getSqlServerRdbms());
             break;
           }
+        case SALESFORCE_ORG:
+          {
+            mergeSalesforceOrg(other.getSalesforceOrg());
+            break;
+          }
+        case MONGODB_CLUSTER:
+          {
+            mergeMongodbCluster(other.getMongodbCluster());
+            break;
+          }
         case DATAOBJECT_NOT_SET:
           {
             break;
@@ -1316,6 +1482,18 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
                 dataObjectCase_ = 103;
                 break;
               } // case 826
+            case 834:
+              {
+                input.readMessage(getSalesforceOrgFieldBuilder().getBuilder(), extensionRegistry);
+                dataObjectCase_ = 104;
+                break;
+              } // case 834
+            case 842:
+              {
+                input.readMessage(getMongodbClusterFieldBuilder().getBuilder(), extensionRegistry);
+                dataObjectCase_ = 105;
+                break;
+              } // case 842
             case 1602:
               {
                 input.readMessage(
@@ -2895,6 +3073,442 @@ public final class DiscoverConnectionProfileRequest extends com.google.protobuf.
       dataObjectCase_ = 103;
       onChanged();
       return sqlServerRdbmsBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.SalesforceOrg,
+            com.google.cloud.datastream.v1.SalesforceOrg.Builder,
+            com.google.cloud.datastream.v1.SalesforceOrgOrBuilder>
+        salesforceOrgBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce organization to enrich with child data objects and metadata.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SalesforceOrg salesforce_org = 104;</code>
+     *
+     * @return Whether the salesforceOrg field is set.
+     */
+    @java.lang.Override
+    public boolean hasSalesforceOrg() {
+      return dataObjectCase_ == 104;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce organization to enrich with child data objects and metadata.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SalesforceOrg salesforce_org = 104;</code>
+     *
+     * @return The salesforceOrg.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SalesforceOrg getSalesforceOrg() {
+      if (salesforceOrgBuilder_ == null) {
+        if (dataObjectCase_ == 104) {
+          return (com.google.cloud.datastream.v1.SalesforceOrg) dataObject_;
+        }
+        return com.google.cloud.datastream.v1.SalesforceOrg.getDefaultInstance();
+      } else {
+        if (dataObjectCase_ == 104) {
+          return salesforceOrgBuilder_.getMessage();
+        }
+        return com.google.cloud.datastream.v1.SalesforceOrg.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce organization to enrich with child data objects and metadata.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SalesforceOrg salesforce_org = 104;</code>
+     */
+    public Builder setSalesforceOrg(com.google.cloud.datastream.v1.SalesforceOrg value) {
+      if (salesforceOrgBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dataObject_ = value;
+        onChanged();
+      } else {
+        salesforceOrgBuilder_.setMessage(value);
+      }
+      dataObjectCase_ = 104;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce organization to enrich with child data objects and metadata.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SalesforceOrg salesforce_org = 104;</code>
+     */
+    public Builder setSalesforceOrg(
+        com.google.cloud.datastream.v1.SalesforceOrg.Builder builderForValue) {
+      if (salesforceOrgBuilder_ == null) {
+        dataObject_ = builderForValue.build();
+        onChanged();
+      } else {
+        salesforceOrgBuilder_.setMessage(builderForValue.build());
+      }
+      dataObjectCase_ = 104;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce organization to enrich with child data objects and metadata.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SalesforceOrg salesforce_org = 104;</code>
+     */
+    public Builder mergeSalesforceOrg(com.google.cloud.datastream.v1.SalesforceOrg value) {
+      if (salesforceOrgBuilder_ == null) {
+        if (dataObjectCase_ == 104
+            && dataObject_ != com.google.cloud.datastream.v1.SalesforceOrg.getDefaultInstance()) {
+          dataObject_ =
+              com.google.cloud.datastream.v1.SalesforceOrg.newBuilder(
+                      (com.google.cloud.datastream.v1.SalesforceOrg) dataObject_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          dataObject_ = value;
+        }
+        onChanged();
+      } else {
+        if (dataObjectCase_ == 104) {
+          salesforceOrgBuilder_.mergeFrom(value);
+        } else {
+          salesforceOrgBuilder_.setMessage(value);
+        }
+      }
+      dataObjectCase_ = 104;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce organization to enrich with child data objects and metadata.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SalesforceOrg salesforce_org = 104;</code>
+     */
+    public Builder clearSalesforceOrg() {
+      if (salesforceOrgBuilder_ == null) {
+        if (dataObjectCase_ == 104) {
+          dataObjectCase_ = 0;
+          dataObject_ = null;
+          onChanged();
+        }
+      } else {
+        if (dataObjectCase_ == 104) {
+          dataObjectCase_ = 0;
+          dataObject_ = null;
+        }
+        salesforceOrgBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce organization to enrich with child data objects and metadata.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SalesforceOrg salesforce_org = 104;</code>
+     */
+    public com.google.cloud.datastream.v1.SalesforceOrg.Builder getSalesforceOrgBuilder() {
+      return getSalesforceOrgFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce organization to enrich with child data objects and metadata.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SalesforceOrg salesforce_org = 104;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.SalesforceOrgOrBuilder getSalesforceOrgOrBuilder() {
+      if ((dataObjectCase_ == 104) && (salesforceOrgBuilder_ != null)) {
+        return salesforceOrgBuilder_.getMessageOrBuilder();
+      } else {
+        if (dataObjectCase_ == 104) {
+          return (com.google.cloud.datastream.v1.SalesforceOrg) dataObject_;
+        }
+        return com.google.cloud.datastream.v1.SalesforceOrg.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Salesforce organization to enrich with child data objects and metadata.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.SalesforceOrg salesforce_org = 104;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.SalesforceOrg,
+            com.google.cloud.datastream.v1.SalesforceOrg.Builder,
+            com.google.cloud.datastream.v1.SalesforceOrgOrBuilder>
+        getSalesforceOrgFieldBuilder() {
+      if (salesforceOrgBuilder_ == null) {
+        if (!(dataObjectCase_ == 104)) {
+          dataObject_ = com.google.cloud.datastream.v1.SalesforceOrg.getDefaultInstance();
+        }
+        salesforceOrgBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datastream.v1.SalesforceOrg,
+                com.google.cloud.datastream.v1.SalesforceOrg.Builder,
+                com.google.cloud.datastream.v1.SalesforceOrgOrBuilder>(
+                (com.google.cloud.datastream.v1.SalesforceOrg) dataObject_,
+                getParentForChildren(),
+                isClean());
+        dataObject_ = null;
+      }
+      dataObjectCase_ = 104;
+      onChanged();
+      return salesforceOrgBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.MongodbCluster,
+            com.google.cloud.datastream.v1.MongodbCluster.Builder,
+            com.google.cloud.datastream.v1.MongodbClusterOrBuilder>
+        mongodbClusterBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB cluster to enrich with child data objects and metadata.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MongodbCluster mongodb_cluster = 105;</code>
+     *
+     * @return Whether the mongodbCluster field is set.
+     */
+    @java.lang.Override
+    public boolean hasMongodbCluster() {
+      return dataObjectCase_ == 105;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB cluster to enrich with child data objects and metadata.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MongodbCluster mongodb_cluster = 105;</code>
+     *
+     * @return The mongodbCluster.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.MongodbCluster getMongodbCluster() {
+      if (mongodbClusterBuilder_ == null) {
+        if (dataObjectCase_ == 105) {
+          return (com.google.cloud.datastream.v1.MongodbCluster) dataObject_;
+        }
+        return com.google.cloud.datastream.v1.MongodbCluster.getDefaultInstance();
+      } else {
+        if (dataObjectCase_ == 105) {
+          return mongodbClusterBuilder_.getMessage();
+        }
+        return com.google.cloud.datastream.v1.MongodbCluster.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB cluster to enrich with child data objects and metadata.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MongodbCluster mongodb_cluster = 105;</code>
+     */
+    public Builder setMongodbCluster(com.google.cloud.datastream.v1.MongodbCluster value) {
+      if (mongodbClusterBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        dataObject_ = value;
+        onChanged();
+      } else {
+        mongodbClusterBuilder_.setMessage(value);
+      }
+      dataObjectCase_ = 105;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB cluster to enrich with child data objects and metadata.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MongodbCluster mongodb_cluster = 105;</code>
+     */
+    public Builder setMongodbCluster(
+        com.google.cloud.datastream.v1.MongodbCluster.Builder builderForValue) {
+      if (mongodbClusterBuilder_ == null) {
+        dataObject_ = builderForValue.build();
+        onChanged();
+      } else {
+        mongodbClusterBuilder_.setMessage(builderForValue.build());
+      }
+      dataObjectCase_ = 105;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB cluster to enrich with child data objects and metadata.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MongodbCluster mongodb_cluster = 105;</code>
+     */
+    public Builder mergeMongodbCluster(com.google.cloud.datastream.v1.MongodbCluster value) {
+      if (mongodbClusterBuilder_ == null) {
+        if (dataObjectCase_ == 105
+            && dataObject_ != com.google.cloud.datastream.v1.MongodbCluster.getDefaultInstance()) {
+          dataObject_ =
+              com.google.cloud.datastream.v1.MongodbCluster.newBuilder(
+                      (com.google.cloud.datastream.v1.MongodbCluster) dataObject_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          dataObject_ = value;
+        }
+        onChanged();
+      } else {
+        if (dataObjectCase_ == 105) {
+          mongodbClusterBuilder_.mergeFrom(value);
+        } else {
+          mongodbClusterBuilder_.setMessage(value);
+        }
+      }
+      dataObjectCase_ = 105;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB cluster to enrich with child data objects and metadata.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MongodbCluster mongodb_cluster = 105;</code>
+     */
+    public Builder clearMongodbCluster() {
+      if (mongodbClusterBuilder_ == null) {
+        if (dataObjectCase_ == 105) {
+          dataObjectCase_ = 0;
+          dataObject_ = null;
+          onChanged();
+        }
+      } else {
+        if (dataObjectCase_ == 105) {
+          dataObjectCase_ = 0;
+          dataObject_ = null;
+        }
+        mongodbClusterBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB cluster to enrich with child data objects and metadata.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MongodbCluster mongodb_cluster = 105;</code>
+     */
+    public com.google.cloud.datastream.v1.MongodbCluster.Builder getMongodbClusterBuilder() {
+      return getMongodbClusterFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB cluster to enrich with child data objects and metadata.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MongodbCluster mongodb_cluster = 105;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.MongodbClusterOrBuilder getMongodbClusterOrBuilder() {
+      if ((dataObjectCase_ == 105) && (mongodbClusterBuilder_ != null)) {
+        return mongodbClusterBuilder_.getMessageOrBuilder();
+      } else {
+        if (dataObjectCase_ == 105) {
+          return (com.google.cloud.datastream.v1.MongodbCluster) dataObject_;
+        }
+        return com.google.cloud.datastream.v1.MongodbCluster.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB cluster to enrich with child data objects and metadata.
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MongodbCluster mongodb_cluster = 105;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.datastream.v1.MongodbCluster,
+            com.google.cloud.datastream.v1.MongodbCluster.Builder,
+            com.google.cloud.datastream.v1.MongodbClusterOrBuilder>
+        getMongodbClusterFieldBuilder() {
+      if (mongodbClusterBuilder_ == null) {
+        if (!(dataObjectCase_ == 105)) {
+          dataObject_ = com.google.cloud.datastream.v1.MongodbCluster.getDefaultInstance();
+        }
+        mongodbClusterBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.datastream.v1.MongodbCluster,
+                com.google.cloud.datastream.v1.MongodbCluster.Builder,
+                com.google.cloud.datastream.v1.MongodbClusterOrBuilder>(
+                (com.google.cloud.datastream.v1.MongodbCluster) dataObject_,
+                getParentForChildren(),
+                isClean());
+        dataObject_ = null;
+      }
+      dataObjectCase_ = 105;
+      onChanged();
+      return mongodbClusterBuilder_;
     }
 
     @java.lang.Override

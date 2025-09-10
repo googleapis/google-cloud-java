@@ -45,6 +45,7 @@ public interface LinuxNodeConfigOrBuilder
    * net.ipv4.tcp_rmem
    * net.ipv4.tcp_wmem
    * net.ipv4.tcp_tw_reuse
+   * net.ipv4.tcp_max_orphans
    * net.netfilter.nf_conntrack_max
    * net.netfilter.nf_conntrack_buckets
    * net.netfilter.nf_conntrack_tcp_timeout_close_wait
@@ -54,7 +55,22 @@ public interface LinuxNodeConfigOrBuilder
    * kernel.shmmni
    * kernel.shmmax
    * kernel.shmall
+   * fs.aio-max-nr
+   * fs.file-max
+   * fs.inotify.max_user_instances
+   * fs.inotify.max_user_watches
+   * fs.nr_open
+   * vm.dirty_background_ratio
+   * vm.dirty_expire_centisecs
+   * vm.dirty_ratio
+   * vm.dirty_writeback_centisecs
    * vm.max_map_count
+   * vm.overcommit_memory
+   * vm.overcommit_ratio
+   * vm.vfs_cache_pressure
+   * vm.swappiness
+   * vm.watermark_scale_factor
+   * vm.min_free_kbytes
    * </pre>
    *
    * <code>map&lt;string, string&gt; sysctls = 1;</code>
@@ -82,6 +98,7 @@ public interface LinuxNodeConfigOrBuilder
    * net.ipv4.tcp_rmem
    * net.ipv4.tcp_wmem
    * net.ipv4.tcp_tw_reuse
+   * net.ipv4.tcp_max_orphans
    * net.netfilter.nf_conntrack_max
    * net.netfilter.nf_conntrack_buckets
    * net.netfilter.nf_conntrack_tcp_timeout_close_wait
@@ -91,7 +108,22 @@ public interface LinuxNodeConfigOrBuilder
    * kernel.shmmni
    * kernel.shmmax
    * kernel.shmall
+   * fs.aio-max-nr
+   * fs.file-max
+   * fs.inotify.max_user_instances
+   * fs.inotify.max_user_watches
+   * fs.nr_open
+   * vm.dirty_background_ratio
+   * vm.dirty_expire_centisecs
+   * vm.dirty_ratio
+   * vm.dirty_writeback_centisecs
    * vm.max_map_count
+   * vm.overcommit_memory
+   * vm.overcommit_ratio
+   * vm.vfs_cache_pressure
+   * vm.swappiness
+   * vm.watermark_scale_factor
+   * vm.min_free_kbytes
    * </pre>
    *
    * <code>map&lt;string, string&gt; sysctls = 1;</code>
@@ -123,6 +155,7 @@ public interface LinuxNodeConfigOrBuilder
    * net.ipv4.tcp_rmem
    * net.ipv4.tcp_wmem
    * net.ipv4.tcp_tw_reuse
+   * net.ipv4.tcp_max_orphans
    * net.netfilter.nf_conntrack_max
    * net.netfilter.nf_conntrack_buckets
    * net.netfilter.nf_conntrack_tcp_timeout_close_wait
@@ -132,7 +165,22 @@ public interface LinuxNodeConfigOrBuilder
    * kernel.shmmni
    * kernel.shmmax
    * kernel.shmall
+   * fs.aio-max-nr
+   * fs.file-max
+   * fs.inotify.max_user_instances
+   * fs.inotify.max_user_watches
+   * fs.nr_open
+   * vm.dirty_background_ratio
+   * vm.dirty_expire_centisecs
+   * vm.dirty_ratio
+   * vm.dirty_writeback_centisecs
    * vm.max_map_count
+   * vm.overcommit_memory
+   * vm.overcommit_ratio
+   * vm.vfs_cache_pressure
+   * vm.swappiness
+   * vm.watermark_scale_factor
+   * vm.min_free_kbytes
    * </pre>
    *
    * <code>map&lt;string, string&gt; sysctls = 1;</code>
@@ -160,6 +208,7 @@ public interface LinuxNodeConfigOrBuilder
    * net.ipv4.tcp_rmem
    * net.ipv4.tcp_wmem
    * net.ipv4.tcp_tw_reuse
+   * net.ipv4.tcp_max_orphans
    * net.netfilter.nf_conntrack_max
    * net.netfilter.nf_conntrack_buckets
    * net.netfilter.nf_conntrack_tcp_timeout_close_wait
@@ -169,7 +218,22 @@ public interface LinuxNodeConfigOrBuilder
    * kernel.shmmni
    * kernel.shmmax
    * kernel.shmall
+   * fs.aio-max-nr
+   * fs.file-max
+   * fs.inotify.max_user_instances
+   * fs.inotify.max_user_watches
+   * fs.nr_open
+   * vm.dirty_background_ratio
+   * vm.dirty_expire_centisecs
+   * vm.dirty_ratio
+   * vm.dirty_writeback_centisecs
    * vm.max_map_count
+   * vm.overcommit_memory
+   * vm.overcommit_ratio
+   * vm.vfs_cache_pressure
+   * vm.swappiness
+   * vm.watermark_scale_factor
+   * vm.min_free_kbytes
    * </pre>
    *
    * <code>map&lt;string, string&gt; sysctls = 1;</code>
@@ -201,6 +265,7 @@ public interface LinuxNodeConfigOrBuilder
    * net.ipv4.tcp_rmem
    * net.ipv4.tcp_wmem
    * net.ipv4.tcp_tw_reuse
+   * net.ipv4.tcp_max_orphans
    * net.netfilter.nf_conntrack_max
    * net.netfilter.nf_conntrack_buckets
    * net.netfilter.nf_conntrack_tcp_timeout_close_wait
@@ -210,7 +275,22 @@ public interface LinuxNodeConfigOrBuilder
    * kernel.shmmni
    * kernel.shmmax
    * kernel.shmall
+   * fs.aio-max-nr
+   * fs.file-max
+   * fs.inotify.max_user_instances
+   * fs.inotify.max_user_watches
+   * fs.nr_open
+   * vm.dirty_background_ratio
+   * vm.dirty_expire_centisecs
+   * vm.dirty_ratio
+   * vm.dirty_writeback_centisecs
    * vm.max_map_count
+   * vm.overcommit_memory
+   * vm.overcommit_ratio
+   * vm.vfs_cache_pressure
+   * vm.swappiness
+   * vm.watermark_scale_factor
+   * vm.min_free_kbytes
    * </pre>
    *
    * <code>map&lt;string, string&gt; sysctls = 1;</code>
@@ -285,4 +365,89 @@ public interface LinuxNodeConfigOrBuilder
    * </code>
    */
   com.google.container.v1.LinuxNodeConfig.HugepagesConfigOrBuilder getHugepagesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Transparent hugepage support for anonymous memory can be entirely
+   * disabled (mostly for debugging purposes) or only enabled inside
+   * MADV_HUGEPAGE regions (to avoid the risk of consuming more memory
+   * resources) or enabled system wide.
+   *
+   * See https://docs.kernel.org/admin-guide/mm/transhuge.html
+   * for more details.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.LinuxNodeConfig.TransparentHugepageEnabled transparent_hugepage_enabled = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for transparentHugepageEnabled.
+   */
+  int getTransparentHugepageEnabledValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Transparent hugepage support for anonymous memory can be entirely
+   * disabled (mostly for debugging purposes) or only enabled inside
+   * MADV_HUGEPAGE regions (to avoid the risk of consuming more memory
+   * resources) or enabled system wide.
+   *
+   * See https://docs.kernel.org/admin-guide/mm/transhuge.html
+   * for more details.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.LinuxNodeConfig.TransparentHugepageEnabled transparent_hugepage_enabled = 4 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The transparentHugepageEnabled.
+   */
+  com.google.container.v1.LinuxNodeConfig.TransparentHugepageEnabled
+      getTransparentHugepageEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defines the transparent hugepage defrag configuration on the
+   * node. VM hugepage allocation can be managed by either limiting
+   * defragmentation for delayed allocation or skipping it entirely for
+   * immediate allocation only.
+   *
+   * See https://docs.kernel.org/admin-guide/mm/transhuge.html
+   * for more details.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.LinuxNodeConfig.TransparentHugepageDefrag transparent_hugepage_defrag = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for transparentHugepageDefrag.
+   */
+  int getTransparentHugepageDefragValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defines the transparent hugepage defrag configuration on the
+   * node. VM hugepage allocation can be managed by either limiting
+   * defragmentation for delayed allocation or skipping it entirely for
+   * immediate allocation only.
+   *
+   * See https://docs.kernel.org/admin-guide/mm/transhuge.html
+   * for more details.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.LinuxNodeConfig.TransparentHugepageDefrag transparent_hugepage_defrag = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The transparentHugepageDefrag.
+   */
+  com.google.container.v1.LinuxNodeConfig.TransparentHugepageDefrag getTransparentHugepageDefrag();
 }

@@ -56,6 +56,7 @@ public class GrpcContainerAnalysisV1Beta1Stub extends ContainerAnalysisV1Beta1St
               "google.devtools.containeranalysis.v1beta1.ContainerAnalysisV1Beta1/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -65,6 +66,7 @@ public class GrpcContainerAnalysisV1Beta1Stub extends ContainerAnalysisV1Beta1St
               "google.devtools.containeranalysis.v1beta1.ContainerAnalysisV1Beta1/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -77,6 +79,7 @@ public class GrpcContainerAnalysisV1Beta1Stub extends ContainerAnalysisV1Beta1St
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GeneratePackagesSummaryRequest, PackagesSummaryResponse>
@@ -89,6 +92,7 @@ public class GrpcContainerAnalysisV1Beta1Stub extends ContainerAnalysisV1Beta1St
                   ProtoUtils.marshaller(GeneratePackagesSummaryRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(PackagesSummaryResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ExportSBOMRequest, ExportSBOMResponse>
@@ -99,6 +103,7 @@ public class GrpcContainerAnalysisV1Beta1Stub extends ContainerAnalysisV1Beta1St
                   "google.devtools.containeranalysis.v1beta1.ContainerAnalysisV1Beta1/ExportSBOM")
               .setRequestMarshaller(ProtoUtils.marshaller(ExportSBOMRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ExportSBOMResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<SetIamPolicyRequest, Policy> setIamPolicyCallable;

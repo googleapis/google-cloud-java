@@ -120,9 +120,10 @@ public interface TranslateTextRequestOrBuilder
    * <pre>
    * Optional. The ISO-639 language code of the input text if
    * known, for example, "en-US" or "sr-Latn". Supported language codes are
-   * listed in Language Support. If the source language isn't specified, the API
-   * attempts to identify the source language automatically and returns the
-   * source language within the response.
+   * listed in [Language
+   * Support](https://cloud.google.com/translate/docs/languages). If the source
+   * language isn't specified, the API attempts to identify the source language
+   * automatically and returns the source language within the response.
    * </pre>
    *
    * <code>string source_language_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -137,9 +138,10 @@ public interface TranslateTextRequestOrBuilder
    * <pre>
    * Optional. The ISO-639 language code of the input text if
    * known, for example, "en-US" or "sr-Latn". Supported language codes are
-   * listed in Language Support. If the source language isn't specified, the API
-   * attempts to identify the source language automatically and returns the
-   * source language within the response.
+   * listed in [Language
+   * Support](https://cloud.google.com/translate/docs/languages). If the source
+   * language isn't specified, the API attempts to identify the source language
+   * automatically and returns the source language within the response.
    * </pre>
    *
    * <code>string source_language_code = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -153,7 +155,8 @@ public interface TranslateTextRequestOrBuilder
    *
    * <pre>
    * Required. The ISO-639 language code to use for translation of the input
-   * text, set to one of the language codes listed in Language Support.
+   * text, set to one of the language codes listed in [Language
+   * Support](https://cloud.google.com/translate/docs/languages).
    * </pre>
    *
    * <code>string target_language_code = 5 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -167,7 +170,8 @@ public interface TranslateTextRequestOrBuilder
    *
    * <pre>
    * Required. The ISO-639 language code to use for translation of the input
-   * text, set to one of the language codes listed in Language Support.
+   * text, set to one of the language codes listed in [Language
+   * Support](https://cloud.google.com/translate/docs/languages).
    * </pre>
    *
    * <code>string target_language_code = 5 [(.google.api.field_behavior) = REQUIRED];</code>

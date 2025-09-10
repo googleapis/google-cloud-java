@@ -73,6 +73,7 @@ public class GrpcBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
               .setFullMethodName("google.analytics.data.v1beta.BetaAnalyticsData/RunReport")
               .setRequestMarshaller(ProtoUtils.marshaller(RunReportRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(RunReportResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RunPivotReportRequest, RunPivotReportResponse>
@@ -84,6 +85,7 @@ public class GrpcBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
                   ProtoUtils.marshaller(RunPivotReportRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RunPivotReportResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchRunReportsRequest, BatchRunReportsResponse>
@@ -95,6 +97,7 @@ public class GrpcBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
                   ProtoUtils.marshaller(BatchRunReportsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(BatchRunReportsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchRunPivotReportsRequest, BatchRunPivotReportsResponse>
@@ -107,6 +110,7 @@ public class GrpcBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
                   ProtoUtils.marshaller(BatchRunPivotReportsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(BatchRunPivotReportsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetMetadataRequest, Metadata> getMetadataMethodDescriptor =
@@ -115,6 +119,7 @@ public class GrpcBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
           .setFullMethodName("google.analytics.data.v1beta.BetaAnalyticsData/GetMetadata")
           .setRequestMarshaller(ProtoUtils.marshaller(GetMetadataRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Metadata.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<RunRealtimeReportRequest, RunRealtimeReportResponse>
@@ -126,6 +131,7 @@ public class GrpcBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
                   ProtoUtils.marshaller(RunRealtimeReportRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RunRealtimeReportResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CheckCompatibilityRequest, CheckCompatibilityResponse>
@@ -138,6 +144,7 @@ public class GrpcBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
                   ProtoUtils.marshaller(CheckCompatibilityRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(CheckCompatibilityResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateAudienceExportRequest, Operation>
@@ -149,6 +156,7 @@ public class GrpcBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateAudienceExportRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<QueryAudienceExportRequest, QueryAudienceExportResponse>
@@ -161,6 +169,7 @@ public class GrpcBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
                   ProtoUtils.marshaller(QueryAudienceExportRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(QueryAudienceExportResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetAudienceExportRequest, AudienceExport>
@@ -171,6 +180,7 @@ public class GrpcBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAudienceExportRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AudienceExport.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListAudienceExportsRequest, ListAudienceExportsResponse>
@@ -183,6 +193,7 @@ public class GrpcBetaAnalyticsDataStub extends BetaAnalyticsDataStub {
                   ProtoUtils.marshaller(ListAudienceExportsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAudienceExportsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<RunReportRequest, RunReportResponse> runReportCallable;

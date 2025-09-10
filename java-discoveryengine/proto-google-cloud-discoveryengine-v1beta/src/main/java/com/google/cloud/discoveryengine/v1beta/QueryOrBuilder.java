@@ -67,10 +67,10 @@ public interface QueryOrBuilder
    *
    *
    * <pre>
-   * Unique Id for the query.
+   * Output only. Unique Id for the query.
    * </pre>
    *
-   * <code>string query_id = 1;</code>
+   * <code>string query_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The queryId.
    */
@@ -80,10 +80,10 @@ public interface QueryOrBuilder
    *
    *
    * <pre>
-   * Unique Id for the query.
+   * Output only. Unique Id for the query.
    * </pre>
    *
-   * <code>string query_id = 1;</code>
+   * <code>string query_id = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for queryId.
    */

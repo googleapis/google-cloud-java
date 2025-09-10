@@ -148,6 +148,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   ProtoUtils.marshaller(ListStoragePoolsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListStoragePoolsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateStoragePoolRequest, Operation>
@@ -158,6 +159,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateStoragePoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetStoragePoolRequest, StoragePool>
@@ -168,6 +170,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetStoragePoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(StoragePool.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateStoragePoolRequest, Operation>
@@ -178,6 +181,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateStoragePoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteStoragePoolRequest, Operation>
@@ -188,6 +192,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteStoragePoolRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ValidateDirectoryServiceRequest, Operation>
@@ -198,6 +203,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ValidateDirectoryServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SwitchActiveReplicaZoneRequest, Operation>
@@ -208,6 +214,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(SwitchActiveReplicaZoneRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListVolumesRequest, ListVolumesResponse>
@@ -218,6 +225,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListVolumesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListVolumesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetVolumeRequest, Volume> getVolumeMethodDescriptor =
@@ -226,6 +234,7 @@ public class GrpcNetAppStub extends NetAppStub {
           .setFullMethodName("google.cloud.netapp.v1.NetApp/GetVolume")
           .setRequestMarshaller(ProtoUtils.marshaller(GetVolumeRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Volume.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateVolumeRequest, Operation>
@@ -235,6 +244,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setFullMethodName("google.cloud.netapp.v1.NetApp/CreateVolume")
               .setRequestMarshaller(ProtoUtils.marshaller(CreateVolumeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateVolumeRequest, Operation>
@@ -244,6 +254,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setFullMethodName("google.cloud.netapp.v1.NetApp/UpdateVolume")
               .setRequestMarshaller(ProtoUtils.marshaller(UpdateVolumeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteVolumeRequest, Operation>
@@ -253,6 +264,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setFullMethodName("google.cloud.netapp.v1.NetApp/DeleteVolume")
               .setRequestMarshaller(ProtoUtils.marshaller(DeleteVolumeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RevertVolumeRequest, Operation>
@@ -262,6 +274,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setFullMethodName("google.cloud.netapp.v1.NetApp/RevertVolume")
               .setRequestMarshaller(ProtoUtils.marshaller(RevertVolumeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListSnapshotsRequest, ListSnapshotsResponse>
@@ -273,6 +286,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   ProtoUtils.marshaller(ListSnapshotsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSnapshotsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSnapshotRequest, Snapshot> getSnapshotMethodDescriptor =
@@ -281,6 +295,7 @@ public class GrpcNetAppStub extends NetAppStub {
           .setFullMethodName("google.cloud.netapp.v1.NetApp/GetSnapshot")
           .setRequestMarshaller(ProtoUtils.marshaller(GetSnapshotRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Snapshot.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateSnapshotRequest, Operation>
@@ -291,6 +306,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateSnapshotRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteSnapshotRequest, Operation>
@@ -301,6 +317,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteSnapshotRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateSnapshotRequest, Operation>
@@ -311,6 +328,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateSnapshotRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListActiveDirectoriesRequest, ListActiveDirectoriesResponse>
@@ -322,6 +340,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   ProtoUtils.marshaller(ListActiveDirectoriesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListActiveDirectoriesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetActiveDirectoryRequest, ActiveDirectory>
@@ -332,6 +351,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetActiveDirectoryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ActiveDirectory.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateActiveDirectoryRequest, Operation>
@@ -342,6 +362,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateActiveDirectoryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateActiveDirectoryRequest, Operation>
@@ -352,6 +373,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateActiveDirectoryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteActiveDirectoryRequest, Operation>
@@ -362,6 +384,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteActiveDirectoryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListKmsConfigsRequest, ListKmsConfigsResponse>
@@ -373,6 +396,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   ProtoUtils.marshaller(ListKmsConfigsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListKmsConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateKmsConfigRequest, Operation>
@@ -383,6 +407,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateKmsConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetKmsConfigRequest, KmsConfig>
@@ -392,6 +417,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setFullMethodName("google.cloud.netapp.v1.NetApp/GetKmsConfig")
               .setRequestMarshaller(ProtoUtils.marshaller(GetKmsConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(KmsConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateKmsConfigRequest, Operation>
@@ -402,6 +428,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateKmsConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<EncryptVolumesRequest, Operation>
@@ -412,6 +439,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(EncryptVolumesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<VerifyKmsConfigRequest, VerifyKmsConfigResponse>
@@ -423,6 +451,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   ProtoUtils.marshaller(VerifyKmsConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(VerifyKmsConfigResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteKmsConfigRequest, Operation>
@@ -433,6 +462,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteKmsConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListReplicationsRequest, ListReplicationsResponse>
@@ -444,6 +474,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   ProtoUtils.marshaller(ListReplicationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListReplicationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetReplicationRequest, Replication>
@@ -454,6 +485,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetReplicationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Replication.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateReplicationRequest, Operation>
@@ -464,6 +496,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateReplicationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteReplicationRequest, Operation>
@@ -474,6 +507,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteReplicationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateReplicationRequest, Operation>
@@ -484,6 +518,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateReplicationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StopReplicationRequest, Operation>
@@ -494,6 +529,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(StopReplicationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ResumeReplicationRequest, Operation>
@@ -504,6 +540,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ResumeReplicationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ReverseReplicationDirectionRequest, Operation>
@@ -514,6 +551,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ReverseReplicationDirectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<EstablishPeeringRequest, Operation>
@@ -524,6 +562,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(EstablishPeeringRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SyncReplicationRequest, Operation>
@@ -534,6 +573,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(SyncReplicationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateBackupVaultRequest, Operation>
@@ -544,6 +584,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateBackupVaultRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetBackupVaultRequest, BackupVault>
@@ -554,6 +595,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetBackupVaultRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BackupVault.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListBackupVaultsRequest, ListBackupVaultsResponse>
@@ -565,6 +607,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   ProtoUtils.marshaller(ListBackupVaultsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBackupVaultsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateBackupVaultRequest, Operation>
@@ -575,6 +618,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateBackupVaultRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteBackupVaultRequest, Operation>
@@ -585,6 +629,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteBackupVaultRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateBackupRequest, Operation>
@@ -594,6 +639,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setFullMethodName("google.cloud.netapp.v1.NetApp/CreateBackup")
               .setRequestMarshaller(ProtoUtils.marshaller(CreateBackupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetBackupRequest, Backup> getBackupMethodDescriptor =
@@ -602,6 +648,7 @@ public class GrpcNetAppStub extends NetAppStub {
           .setFullMethodName("google.cloud.netapp.v1.NetApp/GetBackup")
           .setRequestMarshaller(ProtoUtils.marshaller(GetBackupRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Backup.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListBackupsRequest, ListBackupsResponse>
@@ -612,6 +659,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListBackupsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBackupsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteBackupRequest, Operation>
@@ -621,6 +669,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setFullMethodName("google.cloud.netapp.v1.NetApp/DeleteBackup")
               .setRequestMarshaller(ProtoUtils.marshaller(DeleteBackupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateBackupRequest, Operation>
@@ -630,6 +679,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setFullMethodName("google.cloud.netapp.v1.NetApp/UpdateBackup")
               .setRequestMarshaller(ProtoUtils.marshaller(UpdateBackupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateBackupPolicyRequest, Operation>
@@ -640,6 +690,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateBackupPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetBackupPolicyRequest, BackupPolicy>
@@ -650,6 +701,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetBackupPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BackupPolicy.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListBackupPoliciesRequest, ListBackupPoliciesResponse>
@@ -661,6 +713,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   ProtoUtils.marshaller(ListBackupPoliciesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBackupPoliciesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateBackupPolicyRequest, Operation>
@@ -671,6 +724,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateBackupPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteBackupPolicyRequest, Operation>
@@ -681,6 +735,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteBackupPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListQuotaRulesRequest, ListQuotaRulesResponse>
@@ -692,6 +747,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   ProtoUtils.marshaller(ListQuotaRulesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListQuotaRulesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetQuotaRuleRequest, QuotaRule>
@@ -701,6 +757,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setFullMethodName("google.cloud.netapp.v1.NetApp/GetQuotaRule")
               .setRequestMarshaller(ProtoUtils.marshaller(GetQuotaRuleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(QuotaRule.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateQuotaRuleRequest, Operation>
@@ -711,6 +768,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateQuotaRuleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateQuotaRuleRequest, Operation>
@@ -721,6 +779,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateQuotaRuleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteQuotaRuleRequest, Operation>
@@ -731,6 +790,7 @@ public class GrpcNetAppStub extends NetAppStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteQuotaRuleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -742,6 +802,7 @@ public class GrpcNetAppStub extends NetAppStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -750,6 +811,7 @@ public class GrpcNetAppStub extends NetAppStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListStoragePoolsRequest, ListStoragePoolsResponse>

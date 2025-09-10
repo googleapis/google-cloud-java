@@ -25,6 +25,7 @@ package com.google.cloud.alloydb.v1;
  * <pre>
  * Message for restoring a Cluster from a backup or another cluster at a given
  * point in time.
+ * NEXT_ID: 11
  * </pre>
  *
  * Protobuf type {@code google.cloud.alloydb.v1.RestoreClusterRequest}
@@ -738,6 +739,7 @@ public final class RestoreClusterRequest extends com.google.protobuf.GeneratedMe
    * <pre>
    * Message for restoring a Cluster from a backup or another cluster at a given
    * point in time.
+   * NEXT_ID: 11
    * </pre>
    *
    * Protobuf type {@code google.cloud.alloydb.v1.RestoreClusterRequest}

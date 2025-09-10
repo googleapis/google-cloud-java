@@ -52,6 +52,7 @@ public class GrpcAutofeedSettingsServiceStub extends AutofeedSettingsServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetAutofeedSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AutofeedSettings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateAutofeedSettingsRequest, AutofeedSettings>
@@ -63,6 +64,7 @@ public class GrpcAutofeedSettingsServiceStub extends AutofeedSettingsServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateAutofeedSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AutofeedSettings.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetAutofeedSettingsRequest, AutofeedSettings>

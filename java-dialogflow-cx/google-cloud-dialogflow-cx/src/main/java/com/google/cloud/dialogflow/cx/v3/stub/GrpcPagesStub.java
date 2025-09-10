@@ -60,6 +60,7 @@ public class GrpcPagesStub extends PagesStub {
               .setFullMethodName("google.cloud.dialogflow.cx.v3.Pages/ListPages")
               .setRequestMarshaller(ProtoUtils.marshaller(ListPagesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListPagesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetPageRequest, Page> getPageMethodDescriptor =
@@ -68,6 +69,7 @@ public class GrpcPagesStub extends PagesStub {
           .setFullMethodName("google.cloud.dialogflow.cx.v3.Pages/GetPage")
           .setRequestMarshaller(ProtoUtils.marshaller(GetPageRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Page.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreatePageRequest, Page> createPageMethodDescriptor =
@@ -76,6 +78,7 @@ public class GrpcPagesStub extends PagesStub {
           .setFullMethodName("google.cloud.dialogflow.cx.v3.Pages/CreatePage")
           .setRequestMarshaller(ProtoUtils.marshaller(CreatePageRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Page.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdatePageRequest, Page> updatePageMethodDescriptor =
@@ -84,6 +87,7 @@ public class GrpcPagesStub extends PagesStub {
           .setFullMethodName("google.cloud.dialogflow.cx.v3.Pages/UpdatePage")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdatePageRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Page.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeletePageRequest, Empty> deletePageMethodDescriptor =
@@ -92,6 +96,7 @@ public class GrpcPagesStub extends PagesStub {
           .setFullMethodName("google.cloud.dialogflow.cx.v3.Pages/DeletePage")
           .setRequestMarshaller(ProtoUtils.marshaller(DeletePageRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -103,6 +108,7 @@ public class GrpcPagesStub extends PagesStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -111,6 +117,7 @@ public class GrpcPagesStub extends PagesStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListPagesRequest, ListPagesResponse> listPagesCallable;

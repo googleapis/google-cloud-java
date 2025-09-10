@@ -185,4 +185,19 @@ public interface CreatePrivateConnectionRequestOrBuilder
    * @return The force.
    */
   boolean getForce();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. When supplied with PSC Interface config, will get/create the
+   * tenant project required for the customer to allow list and won't actually
+   * create the private connection.
+   * </pre>
+   *
+   * <code>bool validate_only = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The validateOnly.
+   */
+  boolean getValidateOnly();
 }

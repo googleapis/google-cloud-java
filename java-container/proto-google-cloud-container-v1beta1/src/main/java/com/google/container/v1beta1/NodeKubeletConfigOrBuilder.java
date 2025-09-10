@@ -615,4 +615,229 @@ public interface NodeKubeletConfigOrBuilder
    * @return The bytes of the allowedUnsafeSysctls at the given index.
    */
   com.google.protobuf.ByteString getAllowedUnsafeSysctlsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. eviction_soft is a map of signal names to quantities that defines
+   * soft eviction thresholds. Each signal is compared to its corresponding
+   * threshold to determine if a pod eviction should occur.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.EvictionSignals eviction_soft = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the evictionSoft field is set.
+   */
+  boolean hasEvictionSoft();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. eviction_soft is a map of signal names to quantities that defines
+   * soft eviction thresholds. Each signal is compared to its corresponding
+   * threshold to determine if a pod eviction should occur.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.EvictionSignals eviction_soft = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The evictionSoft.
+   */
+  com.google.container.v1beta1.EvictionSignals getEvictionSoft();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. eviction_soft is a map of signal names to quantities that defines
+   * soft eviction thresholds. Each signal is compared to its corresponding
+   * threshold to determine if a pod eviction should occur.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.EvictionSignals eviction_soft = 17 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.container.v1beta1.EvictionSignalsOrBuilder getEvictionSoftOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. eviction_soft_grace_period is a map of signal names to quantities
+   * that defines grace periods for each soft eviction signal. The grace period
+   * is the amount of time that a pod must be under pressure before an eviction
+   * occurs.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.EvictionGracePeriod eviction_soft_grace_period = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the evictionSoftGracePeriod field is set.
+   */
+  boolean hasEvictionSoftGracePeriod();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. eviction_soft_grace_period is a map of signal names to quantities
+   * that defines grace periods for each soft eviction signal. The grace period
+   * is the amount of time that a pod must be under pressure before an eviction
+   * occurs.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.EvictionGracePeriod eviction_soft_grace_period = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The evictionSoftGracePeriod.
+   */
+  com.google.container.v1beta1.EvictionGracePeriod getEvictionSoftGracePeriod();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. eviction_soft_grace_period is a map of signal names to quantities
+   * that defines grace periods for each soft eviction signal. The grace period
+   * is the amount of time that a pod must be under pressure before an eviction
+   * occurs.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.EvictionGracePeriod eviction_soft_grace_period = 18 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.container.v1beta1.EvictionGracePeriodOrBuilder getEvictionSoftGracePeriodOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. eviction_minimum_reclaim is a map of signal names to quantities
+   * that defines minimum reclaims, which describe the minimum amount of a given
+   * resource the kubelet will reclaim when performing a pod eviction while that
+   * resource is under pressure.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.EvictionMinimumReclaim eviction_minimum_reclaim = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the evictionMinimumReclaim field is set.
+   */
+  boolean hasEvictionMinimumReclaim();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. eviction_minimum_reclaim is a map of signal names to quantities
+   * that defines minimum reclaims, which describe the minimum amount of a given
+   * resource the kubelet will reclaim when performing a pod eviction while that
+   * resource is under pressure.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.EvictionMinimumReclaim eviction_minimum_reclaim = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The evictionMinimumReclaim.
+   */
+  com.google.container.v1beta1.EvictionMinimumReclaim getEvictionMinimumReclaim();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. eviction_minimum_reclaim is a map of signal names to quantities
+   * that defines minimum reclaims, which describe the minimum amount of a given
+   * resource the kubelet will reclaim when performing a pod eviction while that
+   * resource is under pressure.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.EvictionMinimumReclaim eviction_minimum_reclaim = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.container.v1beta1.EvictionMinimumReclaimOrBuilder getEvictionMinimumReclaimOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. eviction_max_pod_grace_period_seconds is the maximum allowed
+   * grace period (in seconds) to use when terminating pods in response to a
+   * soft eviction threshold being met. This value effectively caps the Pod's
+   * terminationGracePeriodSeconds value during soft evictions. Default: 0.
+   * Range: [0, 300].
+   * </pre>
+   *
+   * <code>
+   * int32 eviction_max_pod_grace_period_seconds = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The evictionMaxPodGracePeriodSeconds.
+   */
+  int getEvictionMaxPodGracePeriodSeconds();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defines the maximum number of image pulls in parallel.
+   * The range is 2 to 5, inclusive.
+   * The default value is 2 or 3 depending on the disk type.
+   *
+   * See
+   * https://kubernetes.io/docs/concepts/containers/images/#maximum-parallel-image-pulls
+   * for more details.
+   * </pre>
+   *
+   * <code>int32 max_parallel_image_pulls = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The maxParallelImagePulls.
+   */
+  int getMaxParallelImagePulls();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defines whether to enable single process OOM killer.
+   * If true, will prevent the memory.oom.group flag from being set for
+   * container cgroups in cgroups v2. This causes processes in the container to
+   * be OOM killed individually instead of as a group.
+   * </pre>
+   *
+   * <code>optional bool single_process_oom_kill = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the singleProcessOomKill field is set.
+   */
+  boolean hasSingleProcessOomKill();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defines whether to enable single process OOM killer.
+   * If true, will prevent the memory.oom.group flag from being set for
+   * container cgroups in cgroups v2. This causes processes in the container to
+   * be OOM killed individually instead of as a group.
+   * </pre>
+   *
+   * <code>optional bool single_process_oom_kill = 22 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The singleProcessOomKill.
+   */
+  boolean getSingleProcessOomKill();
 }

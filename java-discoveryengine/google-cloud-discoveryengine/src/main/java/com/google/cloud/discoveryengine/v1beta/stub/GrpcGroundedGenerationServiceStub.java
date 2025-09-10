@@ -57,6 +57,7 @@ public class GrpcGroundedGenerationServiceStub extends GroundedGenerationService
                   ProtoUtils.marshaller(GenerateGroundedContentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GenerateGroundedContentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -71,6 +72,7 @@ public class GrpcGroundedGenerationServiceStub extends GroundedGenerationService
                   ProtoUtils.marshaller(GenerateGroundedContentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(GenerateGroundedContentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CheckGroundingRequest, CheckGroundingResponse>
@@ -83,6 +85,7 @@ public class GrpcGroundedGenerationServiceStub extends GroundedGenerationService
                   ProtoUtils.marshaller(CheckGroundingRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(CheckGroundingResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final BidiStreamingCallable<

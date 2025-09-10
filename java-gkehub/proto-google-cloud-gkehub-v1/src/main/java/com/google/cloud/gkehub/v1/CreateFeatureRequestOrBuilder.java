@@ -28,8 +28,8 @@ public interface CreateFeatureRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent (project and location) where the Feature will be created.
-   * Specified in the format `projects/&#42;&#47;locations/&#42;`.
+   * Required. The parent (project and location) where the Feature will be
+   * created. Specified in the format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>
@@ -42,8 +42,8 @@ public interface CreateFeatureRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent (project and location) where the Feature will be created.
-   * Specified in the format `projects/&#42;&#47;locations/&#42;`.
+   * Required. The parent (project and location) where the Feature will be
+   * created. Specified in the format `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.resource_reference) = { ... }</code>

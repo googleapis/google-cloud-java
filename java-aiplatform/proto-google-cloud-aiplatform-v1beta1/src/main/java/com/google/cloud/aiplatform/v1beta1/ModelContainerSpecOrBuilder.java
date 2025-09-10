@@ -1039,6 +1039,46 @@ public interface ModelContainerSpecOrBuilder
    *
    *
    * <pre>
+   * Immutable. Invoke route prefix for the custom container. "/&#42;" is the only
+   * supported value right now. By setting this field, any non-root route on
+   * this model will be accessible with [PredictionService.Invoke] eg:
+   * "/invoke/foo/bar".
+   *
+   * Only one of `predict_route` or `invoke_route_prefix` can be set, and we
+   * default to using `predict_route` if this field is not set. If this field
+   * is set, the Model can only be deployed to dedicated endpoint.
+   * </pre>
+   *
+   * <code>string invoke_route_prefix = 15 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   *
+   * @return The invokeRoutePrefix.
+   */
+  java.lang.String getInvokeRoutePrefix();
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. Invoke route prefix for the custom container. "/&#42;" is the only
+   * supported value right now. By setting this field, any non-root route on
+   * this model will be accessible with [PredictionService.Invoke] eg:
+   * "/invoke/foo/bar".
+   *
+   * Only one of `predict_route` or `invoke_route_prefix` can be set, and we
+   * default to using `predict_route` if this field is not set. If this field
+   * is set, the Model can only be deployed to dedicated endpoint.
+   * </pre>
+   *
+   * <code>string invoke_route_prefix = 15 [(.google.api.field_behavior) = IMMUTABLE];</code>
+   *
+   * @return The bytes for invokeRoutePrefix.
+   */
+  com.google.protobuf.ByteString getInvokeRoutePrefixBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Immutable. List of ports to expose from the container. Vertex AI sends gRPC
    * prediction requests that it receives to the first port on this list. Vertex
    * AI also sends liveness and health checks to this port.

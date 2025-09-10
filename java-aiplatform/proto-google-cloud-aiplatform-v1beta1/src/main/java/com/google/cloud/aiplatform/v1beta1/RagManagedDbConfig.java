@@ -62,6 +62,7 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
             com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Builder.class);
   }
 
+  @java.lang.Deprecated
   public interface EnterpriseOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise)
@@ -71,15 +72,15 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
+   * Deprecated: Please use `Scaled` tier instead.
    * Enterprise tier offers production grade performance along with
    * autoscaling functionality. It is suitable for customers with large
    * amounts of data or performance sensitive workloads.
-   *
-   * NOTE: This is the default tier if not explicitly chosen.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise}
    */
+  @java.lang.Deprecated
   public static final class Enterprise extends com.google.protobuf.GeneratedMessageV3
       implements
       // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise)
@@ -272,11 +273,10 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
+     * Deprecated: Please use `Scaled` tier instead.
      * Enterprise tier offers production grade performance along with
      * autoscaling functionality. It is suitable for customers with large
      * amounts of data or performance sensitive workloads.
-     *
-     * NOTE: This is the default tier if not explicitly chosen.
      * </pre>
      *
      * Protobuf type {@code google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise}
@@ -506,6 +506,442 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
     }
   }
 
+  public interface ScaledOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled)
+      com.google.protobuf.MessageOrBuilder {}
+
+  /**
+   *
+   *
+   * <pre>
+   * Scaled tier offers production grade performance along with
+   * autoscaling functionality. It is suitable for customers with large
+   * amounts of data or performance sensitive workloads.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled}
+   */
+  public static final class Scaled extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled)
+      ScaledOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use Scaled.newBuilder() to construct.
+    private Scaled(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Scaled() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Scaled();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.VertexRagDataProto
+          .internal_static_google_cloud_aiplatform_v1beta1_RagManagedDbConfig_Scaled_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.VertexRagDataProto
+          .internal_static_google_cloud_aiplatform_v1beta1_RagManagedDbConfig_Scaled_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled.class,
+              com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled other =
+          (com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled) obj;
+
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Scaled tier offers production grade performance along with
+     * autoscaling functionality. It is suitable for customers with large
+     * amounts of data or performance sensitive workloads.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled)
+        com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.ScaledOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.VertexRagDataProto
+            .internal_static_google_cloud_aiplatform_v1beta1_RagManagedDbConfig_Scaled_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.VertexRagDataProto
+            .internal_static_google_cloud_aiplatform_v1beta1_RagManagedDbConfig_Scaled_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled.class,
+                com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled.Builder.class);
+      }
+
+      // Construct using com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.VertexRagDataProto
+            .internal_static_google_cloud_aiplatform_v1beta1_RagManagedDbConfig_Scaled_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled build() {
+        com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled result =
+            new com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled) {
+          return mergeFrom((com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled other) {
+        if (other
+            == com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled.getDefaultInstance())
+          return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled)
+    private static final com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Scaled> PARSER =
+        new com.google.protobuf.AbstractParser<Scaled>() {
+          @java.lang.Override
+          public Scaled parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<Scaled> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Scaled> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public interface BasicOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Basic)
@@ -521,6 +957,8 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
    * * Small data size.
    * * Latency insensitive workload.
    * * Only using RAG Engine with external vector DBs.
+   *
+   * NOTE: This is the default tier if not explicitly chosen.
    * </pre>
    *
    * Protobuf type {@code google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Basic}
@@ -722,6 +1160,8 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
      * * Small data size.
      * * Latency insensitive workload.
      * * Only using RAG Engine with external vector DBs.
+     *
+     * NOTE: This is the default tier if not explicitly chosen.
      * </pre>
      *
      * Protobuf type {@code google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Basic}
@@ -947,6 +1387,453 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
     }
   }
 
+  public interface UnprovisionedOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned)
+      com.google.protobuf.MessageOrBuilder {}
+
+  /**
+   *
+   *
+   * <pre>
+   * Disables the RAG Engine service and deletes all your data held
+   * within this service. This will halt the billing of the service.
+   *
+   * NOTE: Once deleted the data cannot be recovered. To start using
+   * RAG Engine again, you will need to update the tier by calling the
+   * UpdateRagEngineConfig API.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned}
+   */
+  public static final class Unprovisioned extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned)
+      UnprovisionedOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use Unprovisioned.newBuilder() to construct.
+    private Unprovisioned(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private Unprovisioned() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new Unprovisioned();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1beta1.VertexRagDataProto
+          .internal_static_google_cloud_aiplatform_v1beta1_RagManagedDbConfig_Unprovisioned_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1beta1.VertexRagDataProto
+          .internal_static_google_cloud_aiplatform_v1beta1_RagManagedDbConfig_Unprovisioned_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned.class,
+              com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned.Builder.class);
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned other =
+          (com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned) obj;
+
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Disables the RAG Engine service and deletes all your data held
+     * within this service. This will halt the billing of the service.
+     *
+     * NOTE: Once deleted the data cannot be recovered. To start using
+     * RAG Engine again, you will need to update the tier by calling the
+     * UpdateRagEngineConfig API.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned)
+        com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.UnprovisionedOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1beta1.VertexRagDataProto
+            .internal_static_google_cloud_aiplatform_v1beta1_RagManagedDbConfig_Unprovisioned_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1beta1.VertexRagDataProto
+            .internal_static_google_cloud_aiplatform_v1beta1_RagManagedDbConfig_Unprovisioned_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned.class,
+                com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1beta1.VertexRagDataProto
+            .internal_static_google_cloud_aiplatform_v1beta1_RagManagedDbConfig_Unprovisioned_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned
+          getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned build() {
+        com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned buildPartial() {
+        com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned result =
+            new com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned(this);
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned) {
+          return mergeFrom(
+              (com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned other) {
+        if (other
+            == com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned
+                .getDefaultInstance()) return this;
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned)
+    private static final com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned();
+    }
+
+    public static com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<Unprovisioned> PARSER =
+        new com.google.protobuf.AbstractParser<Unprovisioned>() {
+          @java.lang.Override
+          public Unprovisioned parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<Unprovisioned> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Unprovisioned> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int tierCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -956,8 +1843,11 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
       implements
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    @java.lang.Deprecated
     ENTERPRISE(1),
+    SCALED(4),
     BASIC(2),
+    UNPROVISIONED(3),
     TIER_NOT_SET(0);
     private final int value;
 
@@ -979,8 +1869,12 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
       switch (value) {
         case 1:
           return ENTERPRISE;
+        case 4:
+          return SCALED;
         case 2:
           return BASIC;
+        case 3:
+          return UNPROVISIONED;
         case 0:
           return TIER_NOT_SET;
         default:
@@ -1003,15 +1897,21 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
+   * Deprecated: Please use `Scaled` tier instead.
    * Sets the RagManagedDb to the Enterprise tier. This is the default tier
    * if not explicitly chosen.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise enterprise = 1;</code>
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise enterprise = 1 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.RagManagedDbConfig.enterprise is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=796
    * @return Whether the enterprise field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasEnterprise() {
     return tierCase_ == 1;
   }
@@ -1020,15 +1920,21 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
+   * Deprecated: Please use `Scaled` tier instead.
    * Sets the RagManagedDb to the Enterprise tier. This is the default tier
    * if not explicitly chosen.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise enterprise = 1;</code>
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise enterprise = 1 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.cloud.aiplatform.v1beta1.RagManagedDbConfig.enterprise is deprecated. See
+   *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=796
    * @return The enterprise.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise getEnterprise() {
     if (tierCase_ == 1) {
       return (com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise) tier_;
@@ -1040,19 +1946,78 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
+   * Deprecated: Please use `Scaled` tier instead.
    * Sets the RagManagedDb to the Enterprise tier. This is the default tier
    * if not explicitly chosen.
    * </pre>
    *
-   * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise enterprise = 1;</code>
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise enterprise = 1 [deprecated = true];
+   * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.EnterpriseOrBuilder
       getEnterpriseOrBuilder() {
     if (tierCase_ == 1) {
       return (com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise) tier_;
     }
     return com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise.getDefaultInstance();
+  }
+
+  public static final int SCALED_FIELD_NUMBER = 4;
+
+  /**
+   *
+   *
+   * <pre>
+   * Sets the RagManagedDb to the Scaled tier.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled scaled = 4;</code>
+   *
+   * @return Whether the scaled field is set.
+   */
+  @java.lang.Override
+  public boolean hasScaled() {
+    return tierCase_ == 4;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Sets the RagManagedDb to the Scaled tier.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled scaled = 4;</code>
+   *
+   * @return The scaled.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled getScaled() {
+    if (tierCase_ == 4) {
+      return (com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled) tier_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Sets the RagManagedDb to the Scaled tier.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled scaled = 4;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.ScaledOrBuilder
+      getScaledOrBuilder() {
+    if (tierCase_ == 4) {
+      return (com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled) tier_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled.getDefaultInstance();
   }
 
   public static final int BASIC_FIELD_NUMBER = 2;
@@ -1109,6 +2074,66 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
     return com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Basic.getDefaultInstance();
   }
 
+  public static final int UNPROVISIONED_FIELD_NUMBER = 3;
+
+  /**
+   *
+   *
+   * <pre>
+   * Sets the RagManagedDb to the Unprovisioned tier.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned unprovisioned = 3;
+   * </code>
+   *
+   * @return Whether the unprovisioned field is set.
+   */
+  @java.lang.Override
+  public boolean hasUnprovisioned() {
+    return tierCase_ == 3;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Sets the RagManagedDb to the Unprovisioned tier.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned unprovisioned = 3;
+   * </code>
+   *
+   * @return The unprovisioned.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned getUnprovisioned() {
+    if (tierCase_ == 3) {
+      return (com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned) tier_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned
+        .getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Sets the RagManagedDb to the Unprovisioned tier.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned unprovisioned = 3;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.UnprovisionedOrBuilder
+      getUnprovisionedOrBuilder() {
+    if (tierCase_ == 3) {
+      return (com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned) tier_;
+    }
+    return com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned
+        .getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1130,6 +2155,13 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
     if (tierCase_ == 2) {
       output.writeMessage(2, (com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Basic) tier_);
     }
+    if (tierCase_ == 3) {
+      output.writeMessage(
+          3, (com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned) tier_);
+    }
+    if (tierCase_ == 4) {
+      output.writeMessage(4, (com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled) tier_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1148,6 +2180,16 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               2, (com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Basic) tier_);
+    }
+    if (tierCase_ == 3) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned) tier_);
+    }
+    if (tierCase_ == 4) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, (com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled) tier_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1170,8 +2212,14 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
       case 1:
         if (!getEnterprise().equals(other.getEnterprise())) return false;
         break;
+      case 4:
+        if (!getScaled().equals(other.getScaled())) return false;
+        break;
       case 2:
         if (!getBasic().equals(other.getBasic())) return false;
+        break;
+      case 3:
+        if (!getUnprovisioned().equals(other.getUnprovisioned())) return false;
         break;
       case 0:
       default:
@@ -1192,9 +2240,17 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
         hash = (37 * hash) + ENTERPRISE_FIELD_NUMBER;
         hash = (53 * hash) + getEnterprise().hashCode();
         break;
+      case 4:
+        hash = (37 * hash) + SCALED_FIELD_NUMBER;
+        hash = (53 * hash) + getScaled().hashCode();
+        break;
       case 2:
         hash = (37 * hash) + BASIC_FIELD_NUMBER;
         hash = (53 * hash) + getBasic().hashCode();
+        break;
+      case 3:
+        hash = (37 * hash) + UNPROVISIONED_FIELD_NUMBER;
+        hash = (53 * hash) + getUnprovisioned().hashCode();
         break;
       case 0:
       default:
@@ -1343,8 +2399,14 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
       if (enterpriseBuilder_ != null) {
         enterpriseBuilder_.clear();
       }
+      if (scaledBuilder_ != null) {
+        scaledBuilder_.clear();
+      }
       if (basicBuilder_ != null) {
         basicBuilder_.clear();
+      }
+      if (unprovisionedBuilder_ != null) {
+        unprovisionedBuilder_.clear();
       }
       tierCase_ = 0;
       tier_ = null;
@@ -1393,8 +2455,14 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
       if (tierCase_ == 1 && enterpriseBuilder_ != null) {
         result.tier_ = enterpriseBuilder_.build();
       }
+      if (tierCase_ == 4 && scaledBuilder_ != null) {
+        result.tier_ = scaledBuilder_.build();
+      }
       if (tierCase_ == 2 && basicBuilder_ != null) {
         result.tier_ = basicBuilder_.build();
+      }
+      if (tierCase_ == 3 && unprovisionedBuilder_ != null) {
+        result.tier_ = unprovisionedBuilder_.build();
       }
     }
 
@@ -1450,9 +2518,19 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
             mergeEnterprise(other.getEnterprise());
             break;
           }
+        case SCALED:
+          {
+            mergeScaled(other.getScaled());
+            break;
+          }
         case BASIC:
           {
             mergeBasic(other.getBasic());
+            break;
+          }
+        case UNPROVISIONED:
+          {
+            mergeUnprovisioned(other.getUnprovisioned());
             break;
           }
         case TIER_NOT_SET:
@@ -1498,6 +2576,18 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
                 tierCase_ = 2;
                 break;
               } // case 18
+            case 26:
+              {
+                input.readMessage(getUnprovisionedFieldBuilder().getBuilder(), extensionRegistry);
+                tierCase_ = 3;
+                break;
+              } // case 26
+            case 34:
+              {
+                input.readMessage(getScaledFieldBuilder().getBuilder(), extensionRegistry);
+                tierCase_ = 4;
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1541,15 +2631,21 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
+     * Deprecated: Please use `Scaled` tier instead.
      * Sets the RagManagedDb to the Enterprise tier. This is the default tier
      * if not explicitly chosen.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise enterprise = 1;</code>
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise enterprise = 1 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.RagManagedDbConfig.enterprise is deprecated. See
+     *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=796
      * @return Whether the enterprise field is set.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public boolean hasEnterprise() {
       return tierCase_ == 1;
     }
@@ -1558,15 +2654,21 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
+     * Deprecated: Please use `Scaled` tier instead.
      * Sets the RagManagedDb to the Enterprise tier. This is the default tier
      * if not explicitly chosen.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise enterprise = 1;</code>
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise enterprise = 1 [deprecated = true];
+     * </code>
      *
+     * @deprecated google.cloud.aiplatform.v1beta1.RagManagedDbConfig.enterprise is deprecated. See
+     *     google/cloud/aiplatform/v1beta1/vertex_rag_data.proto;l=796
      * @return The enterprise.
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise getEnterprise() {
       if (enterpriseBuilder_ == null) {
         if (tierCase_ == 1) {
@@ -1587,12 +2689,16 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
+     * Deprecated: Please use `Scaled` tier instead.
      * Sets the RagManagedDb to the Enterprise tier. This is the default tier
      * if not explicitly chosen.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise enterprise = 1;</code>
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise enterprise = 1 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setEnterprise(
         com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise value) {
       if (enterpriseBuilder_ == null) {
@@ -1612,12 +2718,16 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
+     * Deprecated: Please use `Scaled` tier instead.
      * Sets the RagManagedDb to the Enterprise tier. This is the default tier
      * if not explicitly chosen.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise enterprise = 1;</code>
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise enterprise = 1 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder setEnterprise(
         com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise.Builder builderForValue) {
       if (enterpriseBuilder_ == null) {
@@ -1634,12 +2744,16 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
+     * Deprecated: Please use `Scaled` tier instead.
      * Sets the RagManagedDb to the Enterprise tier. This is the default tier
      * if not explicitly chosen.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise enterprise = 1;</code>
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise enterprise = 1 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeEnterprise(
         com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise value) {
       if (enterpriseBuilder_ == null) {
@@ -1671,12 +2785,16 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
+     * Deprecated: Please use `Scaled` tier instead.
      * Sets the RagManagedDb to the Enterprise tier. This is the default tier
      * if not explicitly chosen.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise enterprise = 1;</code>
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise enterprise = 1 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public Builder clearEnterprise() {
       if (enterpriseBuilder_ == null) {
         if (tierCase_ == 1) {
@@ -1698,12 +2816,16 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
+     * Deprecated: Please use `Scaled` tier instead.
      * Sets the RagManagedDb to the Enterprise tier. This is the default tier
      * if not explicitly chosen.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise enterprise = 1;</code>
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise enterprise = 1 [deprecated = true];
+     * </code>
      */
+    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise.Builder
         getEnterpriseBuilder() {
       return getEnterpriseFieldBuilder().getBuilder();
@@ -1713,13 +2835,17 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
+     * Deprecated: Please use `Scaled` tier instead.
      * Sets the RagManagedDb to the Enterprise tier. This is the default tier
      * if not explicitly chosen.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise enterprise = 1;</code>
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise enterprise = 1 [deprecated = true];
+     * </code>
      */
     @java.lang.Override
+    @java.lang.Deprecated
     public com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.EnterpriseOrBuilder
         getEnterpriseOrBuilder() {
       if ((tierCase_ == 1) && (enterpriseBuilder_ != null)) {
@@ -1737,11 +2863,14 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
+     * Deprecated: Please use `Scaled` tier instead.
      * Sets the RagManagedDb to the Enterprise tier. This is the default tier
      * if not explicitly chosen.
      * </pre>
      *
-     * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise enterprise = 1;</code>
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise enterprise = 1 [deprecated = true];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Enterprise,
@@ -1767,6 +2896,230 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
       tierCase_ = 1;
       onChanged();
       return enterpriseBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled,
+            com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled.Builder,
+            com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.ScaledOrBuilder>
+        scaledBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the RagManagedDb to the Scaled tier.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled scaled = 4;</code>
+     *
+     * @return Whether the scaled field is set.
+     */
+    @java.lang.Override
+    public boolean hasScaled() {
+      return tierCase_ == 4;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the RagManagedDb to the Scaled tier.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled scaled = 4;</code>
+     *
+     * @return The scaled.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled getScaled() {
+      if (scaledBuilder_ == null) {
+        if (tierCase_ == 4) {
+          return (com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled) tier_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled.getDefaultInstance();
+      } else {
+        if (tierCase_ == 4) {
+          return scaledBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the RagManagedDb to the Scaled tier.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled scaled = 4;</code>
+     */
+    public Builder setScaled(com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled value) {
+      if (scaledBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        tier_ = value;
+        onChanged();
+      } else {
+        scaledBuilder_.setMessage(value);
+      }
+      tierCase_ = 4;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the RagManagedDb to the Scaled tier.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled scaled = 4;</code>
+     */
+    public Builder setScaled(
+        com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled.Builder builderForValue) {
+      if (scaledBuilder_ == null) {
+        tier_ = builderForValue.build();
+        onChanged();
+      } else {
+        scaledBuilder_.setMessage(builderForValue.build());
+      }
+      tierCase_ = 4;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the RagManagedDb to the Scaled tier.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled scaled = 4;</code>
+     */
+    public Builder mergeScaled(
+        com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled value) {
+      if (scaledBuilder_ == null) {
+        if (tierCase_ == 4
+            && tier_
+                != com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled
+                    .getDefaultInstance()) {
+          tier_ =
+              com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled) tier_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          tier_ = value;
+        }
+        onChanged();
+      } else {
+        if (tierCase_ == 4) {
+          scaledBuilder_.mergeFrom(value);
+        } else {
+          scaledBuilder_.setMessage(value);
+        }
+      }
+      tierCase_ = 4;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the RagManagedDb to the Scaled tier.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled scaled = 4;</code>
+     */
+    public Builder clearScaled() {
+      if (scaledBuilder_ == null) {
+        if (tierCase_ == 4) {
+          tierCase_ = 0;
+          tier_ = null;
+          onChanged();
+        }
+      } else {
+        if (tierCase_ == 4) {
+          tierCase_ = 0;
+          tier_ = null;
+        }
+        scaledBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the RagManagedDb to the Scaled tier.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled scaled = 4;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled.Builder
+        getScaledBuilder() {
+      return getScaledFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the RagManagedDb to the Scaled tier.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled scaled = 4;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.ScaledOrBuilder
+        getScaledOrBuilder() {
+      if ((tierCase_ == 4) && (scaledBuilder_ != null)) {
+        return scaledBuilder_.getMessageOrBuilder();
+      } else {
+        if (tierCase_ == 4) {
+          return (com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled) tier_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the RagManagedDb to the Scaled tier.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled scaled = 4;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled,
+            com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled.Builder,
+            com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.ScaledOrBuilder>
+        getScaledFieldBuilder() {
+      if (scaledBuilder_ == null) {
+        if (!(tierCase_ == 4)) {
+          tier_ =
+              com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled.getDefaultInstance();
+        }
+        scaledBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled,
+                com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled.Builder,
+                com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.ScaledOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Scaled) tier_,
+                getParentForChildren(),
+                isClean());
+        tier_ = null;
+      }
+      tierCase_ = 4;
+      onChanged();
+      return scaledBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1988,6 +3341,245 @@ public final class RagManagedDbConfig extends com.google.protobuf.GeneratedMessa
       tierCase_ = 2;
       onChanged();
       return basicBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned,
+            com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned.Builder,
+            com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.UnprovisionedOrBuilder>
+        unprovisionedBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the RagManagedDb to the Unprovisioned tier.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned unprovisioned = 3;
+     * </code>
+     *
+     * @return Whether the unprovisioned field is set.
+     */
+    @java.lang.Override
+    public boolean hasUnprovisioned() {
+      return tierCase_ == 3;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the RagManagedDb to the Unprovisioned tier.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned unprovisioned = 3;
+     * </code>
+     *
+     * @return The unprovisioned.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned getUnprovisioned() {
+      if (unprovisionedBuilder_ == null) {
+        if (tierCase_ == 3) {
+          return (com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned) tier_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned
+            .getDefaultInstance();
+      } else {
+        if (tierCase_ == 3) {
+          return unprovisionedBuilder_.getMessage();
+        }
+        return com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the RagManagedDb to the Unprovisioned tier.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned unprovisioned = 3;
+     * </code>
+     */
+    public Builder setUnprovisioned(
+        com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned value) {
+      if (unprovisionedBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        tier_ = value;
+        onChanged();
+      } else {
+        unprovisionedBuilder_.setMessage(value);
+      }
+      tierCase_ = 3;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the RagManagedDb to the Unprovisioned tier.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned unprovisioned = 3;
+     * </code>
+     */
+    public Builder setUnprovisioned(
+        com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned.Builder
+            builderForValue) {
+      if (unprovisionedBuilder_ == null) {
+        tier_ = builderForValue.build();
+        onChanged();
+      } else {
+        unprovisionedBuilder_.setMessage(builderForValue.build());
+      }
+      tierCase_ = 3;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the RagManagedDb to the Unprovisioned tier.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned unprovisioned = 3;
+     * </code>
+     */
+    public Builder mergeUnprovisioned(
+        com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned value) {
+      if (unprovisionedBuilder_ == null) {
+        if (tierCase_ == 3
+            && tier_
+                != com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned
+                    .getDefaultInstance()) {
+          tier_ =
+              com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned.newBuilder(
+                      (com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned) tier_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          tier_ = value;
+        }
+        onChanged();
+      } else {
+        if (tierCase_ == 3) {
+          unprovisionedBuilder_.mergeFrom(value);
+        } else {
+          unprovisionedBuilder_.setMessage(value);
+        }
+      }
+      tierCase_ = 3;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the RagManagedDb to the Unprovisioned tier.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned unprovisioned = 3;
+     * </code>
+     */
+    public Builder clearUnprovisioned() {
+      if (unprovisionedBuilder_ == null) {
+        if (tierCase_ == 3) {
+          tierCase_ = 0;
+          tier_ = null;
+          onChanged();
+        }
+      } else {
+        if (tierCase_ == 3) {
+          tierCase_ = 0;
+          tier_ = null;
+        }
+        unprovisionedBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the RagManagedDb to the Unprovisioned tier.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned unprovisioned = 3;
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned.Builder
+        getUnprovisionedBuilder() {
+      return getUnprovisionedFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the RagManagedDb to the Unprovisioned tier.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned unprovisioned = 3;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.UnprovisionedOrBuilder
+        getUnprovisionedOrBuilder() {
+      if ((tierCase_ == 3) && (unprovisionedBuilder_ != null)) {
+        return unprovisionedBuilder_.getMessageOrBuilder();
+      } else {
+        if (tierCase_ == 3) {
+          return (com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned) tier_;
+        }
+        return com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sets the RagManagedDb to the Unprovisioned tier.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned unprovisioned = 3;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned,
+            com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned.Builder,
+            com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.UnprovisionedOrBuilder>
+        getUnprovisionedFieldBuilder() {
+      if (unprovisionedBuilder_ == null) {
+        if (!(tierCase_ == 3)) {
+          tier_ =
+              com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned
+                  .getDefaultInstance();
+        }
+        unprovisionedBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned,
+                com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned.Builder,
+                com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.UnprovisionedOrBuilder>(
+                (com.google.cloud.aiplatform.v1beta1.RagManagedDbConfig.Unprovisioned) tier_,
+                getParentForChildren(),
+                isClean());
+        tier_ = null;
+      }
+      tierCase_ = 3;
+      onChanged();
+      return unprovisionedBuilder_;
     }
 
     @java.lang.Override

@@ -47,6 +47,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     displayName_ = "";
     spaceThreadingState_ = 0;
     spaceHistoryState_ = 0;
+    customer_ = "";
     spaceUri_ = "";
   }
 
@@ -2418,8 +2419,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * with [administrator
      * approval](https://support.google.com/a?p=chat-app-auth)
-     * with the `chat.app.spaces` scope in [Developer
-     * Preview](https://developers.google.com/workspace/preview).
+     * with the `chat.app.spaces` scope.
      *
      * This field is not populated when using the `chat.bot` scope with [app
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
@@ -2460,8 +2460,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * with [administrator
      * approval](https://support.google.com/a?p=chat-app-auth)
-     * with the `chat.app.spaces` scope in [Developer
-     * Preview](https://developers.google.com/workspace/preview).
+     * with the `chat.app.spaces` scope.
      *
      * This field is not populated when using the `chat.bot` scope with [app
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
@@ -2775,8 +2774,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * with [administrator
      * approval](https://support.google.com/a?p=chat-app-auth)
-     * with the `chat.app.spaces` scope in [Developer
-     * Preview](https://developers.google.com/workspace/preview).
+     * with the `chat.app.spaces` scope.
      *
      * This field is not populated when using the `chat.bot` scope with [app
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
@@ -2828,8 +2826,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
      * with [administrator
      * approval](https://support.google.com/a?p=chat-app-auth)
-     * with the `chat.app.spaces` scope in [Developer
-     * Preview](https://developers.google.com/workspace/preview).
+     * with the `chat.app.spaces` scope.
      *
      * This field is not populated when using the `chat.bot` scope with [app
      * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
@@ -3362,8 +3359,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
        * with [administrator
        * approval](https://support.google.com/a?p=chat-app-auth)
-       * with the `chat.app.spaces` scope in [Developer
-       * Preview](https://developers.google.com/workspace/preview).
+       * with the `chat.app.spaces` scope.
        *
        * This field is not populated when using the `chat.bot` scope with [app
        * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
@@ -3414,8 +3410,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
        * with [administrator
        * approval](https://support.google.com/a?p=chat-app-auth)
-       * with the `chat.app.spaces` scope in [Developer
-       * Preview](https://developers.google.com/workspace/preview).
+       * with the `chat.app.spaces` scope.
        *
        * This field is not populated when using the `chat.bot` scope with [app
        * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
@@ -3466,8 +3461,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
        * with [administrator
        * approval](https://support.google.com/a?p=chat-app-auth)
-       * with the `chat.app.spaces` scope in [Developer
-       * Preview](https://developers.google.com/workspace/preview).
+       * with the `chat.app.spaces` scope.
        *
        * This field is not populated when using the `chat.bot` scope with [app
        * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
@@ -3517,8 +3511,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
        * with [administrator
        * approval](https://support.google.com/a?p=chat-app-auth)
-       * with the `chat.app.spaces` scope in [Developer
-       * Preview](https://developers.google.com/workspace/preview).
+       * with the `chat.app.spaces` scope.
        *
        * This field is not populated when using the `chat.bot` scope with [app
        * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
@@ -3564,8 +3557,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
        * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
        * with [administrator
        * approval](https://support.google.com/a?p=chat-app-auth)
-       * with the `chat.app.spaces` scope in [Developer
-       * Preview](https://developers.google.com/workspace/preview).
+       * with the `chat.app.spaces` scope.
        *
        * This field is not populated when using the `chat.bot` scope with [app
        * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app).
@@ -7726,7 +7718,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=256
+   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=255
    * @return The enum numeric value on the wire for type.
    */
   @java.lang.Override
@@ -7747,7 +7739,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=256
+   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=255
    * @return The type.
    */
   @java.lang.Override
@@ -7833,7 +7825,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    *
    * <code>bool threaded = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
-   * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=268
+   * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=267
    * @return The threaded.
    */
   @java.lang.Override
@@ -8396,6 +8388,114 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         : accessSettings_;
   }
 
+  public static final int CUSTOMER_FIELD_NUMBER = 24;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object customer_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The customer id of the domain of the space.
+   * Required only when creating a space with [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * and `SpaceType` is `SPACE`, otherwise should not be set.
+   *
+   * In the format `customers/{customer}`, where `customer` is the `id` from the
+   * [Admin SDK customer resource](
+   * https://developers.google.com/admin-sdk/directory/reference/rest/v1/customers).
+   * Private apps can also use the `customers/my_customer` alias to create
+   * the space in the same Google Workspace organization as the app.
+   *
+   * For DMs, this field isn't populated.
+   * </pre>
+   *
+   * <code>
+   * optional string customer = 24 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the customer field is set.
+   */
+  @java.lang.Override
+  public boolean hasCustomer() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The customer id of the domain of the space.
+   * Required only when creating a space with [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * and `SpaceType` is `SPACE`, otherwise should not be set.
+   *
+   * In the format `customers/{customer}`, where `customer` is the `id` from the
+   * [Admin SDK customer resource](
+   * https://developers.google.com/admin-sdk/directory/reference/rest/v1/customers).
+   * Private apps can also use the `customers/my_customer` alias to create
+   * the space in the same Google Workspace organization as the app.
+   *
+   * For DMs, this field isn't populated.
+   * </pre>
+   *
+   * <code>
+   * optional string customer = 24 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The customer.
+   */
+  @java.lang.Override
+  public java.lang.String getCustomer() {
+    java.lang.Object ref = customer_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      customer_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The customer id of the domain of the space.
+   * Required only when creating a space with [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * and `SpaceType` is `SPACE`, otherwise should not be set.
+   *
+   * In the format `customers/{customer}`, where `customer` is the `id` from the
+   * [Admin SDK customer resource](
+   * https://developers.google.com/admin-sdk/directory/reference/rest/v1/customers).
+   * Private apps can also use the `customers/my_customer` alias to create
+   * the space in the same Google Workspace organization as the app.
+   *
+   * For DMs, this field isn't populated.
+   * </pre>
+   *
+   * <code>
+   * optional string customer = 24 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bytes for customer.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getCustomerBytes() {
+    java.lang.Object ref = customer_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      customer_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int SPACE_URI_FIELD_NUMBER = 25;
 
   @SuppressWarnings("serial")
@@ -8459,6 +8559,17 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    * when creating a space. If the field is not set, a collaboration space is
    * created. After you create the space, settings are populated in the
    * `PermissionSettings` field.
+   *
+   * Setting predefined permission settings supports:
+   *
+   * - [App
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * with [administrator
+   * approval](https://support.google.com/a?p=chat-app-auth) with the
+   * `chat.app.spaces` or `chat.app.spaces.create` scopes.
+   *
+   * - [User
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
    * </pre>
    *
    * <code>
@@ -8479,6 +8590,17 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    * when creating a space. If the field is not set, a collaboration space is
    * created. After you create the space, settings are populated in the
    * `PermissionSettings` field.
+   *
+   * Setting predefined permission settings supports:
+   *
+   * - [App
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * with [administrator
+   * approval](https://support.google.com/a?p=chat-app-auth) with the
+   * `chat.app.spaces` or `chat.app.spaces.create` scopes.
+   *
+   * - [User
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
    * </pre>
    *
    * <code>
@@ -8502,6 +8624,17 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    * when creating a space. If the field is not set, a collaboration space is
    * created. After you create the space, settings are populated in the
    * `PermissionSettings` field.
+   *
+   * Setting predefined permission settings supports:
+   *
+   * - [App
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * with [administrator
+   * approval](https://support.google.com/a?p=chat-app-auth) with the
+   * `chat.app.spaces` or `chat.app.spaces.create` scopes.
+   *
+   * - [User
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
    * </pre>
    *
    * <code>
@@ -8532,6 +8665,18 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    * Optional. Space permission settings for existing spaces. Input for
    * updating exact space permission settings, where existing permission
    * settings are replaced. Output lists current permission settings.
+   *
+   * Reading and updating permission settings supports:
+   *
+   * - [App
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * with [administrator
+   * approval](https://support.google.com/a?p=chat-app-auth) with the
+   * `chat.app.spaces` scope. Only populated and settable when the Chat app
+   * created the space.
+   *
+   * - [User
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
    * </pre>
    *
    * <code>
@@ -8552,6 +8697,18 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    * Optional. Space permission settings for existing spaces. Input for
    * updating exact space permission settings, where existing permission
    * settings are replaced. Output lists current permission settings.
+   *
+   * Reading and updating permission settings supports:
+   *
+   * - [App
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * with [administrator
+   * approval](https://support.google.com/a?p=chat-app-auth) with the
+   * `chat.app.spaces` scope. Only populated and settable when the Chat app
+   * created the space.
+   *
+   * - [User
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
    * </pre>
    *
    * <code>
@@ -8575,6 +8732,18 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    * Optional. Space permission settings for existing spaces. Input for
    * updating exact space permission settings, where existing permission
    * settings are replaced. Output lists current permission settings.
+   *
+   * Reading and updating permission settings supports:
+   *
+   * - [App
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * with [administrator
+   * approval](https://support.google.com/a?p=chat-app-auth) with the
+   * `chat.app.spaces` scope. Only populated and settable when the Chat app
+   * created the space.
+   *
+   * - [User
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
    * </pre>
    *
    * <code>
@@ -8613,7 +8782,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasImportModeExpireTime() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
 
   /**
@@ -8731,6 +8900,9 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(23, getAccessSettings());
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 24, customer_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceUri_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 25, spaceUri_);
     }
@@ -8741,7 +8913,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(
           27, (com.google.chat.v1.Space.PermissionSettings) spacePermissionSettings_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeMessage(28, getImportModeExpireTime());
     }
     getUnknownFields().writeTo(output);
@@ -8804,6 +8976,9 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(23, getAccessSettings());
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(24, customer_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(spaceUri_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(25, spaceUri_);
     }
@@ -8817,7 +8992,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               27, (com.google.chat.v1.Space.PermissionSettings) spacePermissionSettings_);
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(28, getImportModeExpireTime());
     }
@@ -8866,6 +9041,10 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     if (hasAccessSettings() != other.hasAccessSettings()) return false;
     if (hasAccessSettings()) {
       if (!getAccessSettings().equals(other.getAccessSettings())) return false;
+    }
+    if (hasCustomer() != other.hasCustomer()) return false;
+    if (hasCustomer()) {
+      if (!getCustomer().equals(other.getCustomer())) return false;
     }
     if (!getSpaceUri().equals(other.getSpaceUri())) return false;
     if (hasImportModeExpireTime() != other.hasImportModeExpireTime()) return false;
@@ -8937,6 +9116,10 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
     if (hasAccessSettings()) {
       hash = (37 * hash) + ACCESS_SETTINGS_FIELD_NUMBER;
       hash = (53 * hash) + getAccessSettings().hashCode();
+    }
+    if (hasCustomer()) {
+      hash = (37 * hash) + CUSTOMER_FIELD_NUMBER;
+      hash = (53 * hash) + getCustomer().hashCode();
     }
     hash = (37 * hash) + SPACE_URI_FIELD_NUMBER;
     hash = (53 * hash) + getSpaceUri().hashCode();
@@ -9143,6 +9326,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         accessSettingsBuilder_.dispose();
         accessSettingsBuilder_ = null;
       }
+      customer_ = "";
       spaceUri_ = "";
       if (permissionSettingsBuilder_ != null) {
         permissionSettingsBuilder_.clear();
@@ -9248,14 +9432,18 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.customer_ = customer_;
+        to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.spaceUri_ = spaceUri_;
       }
-      if (((from_bitField0_ & 0x00080000) != 0)) {
+      if (((from_bitField0_ & 0x00100000) != 0)) {
         result.importModeExpireTime_ =
             importModeExpireTimeBuilder_ == null
                 ? importModeExpireTime_
                 : importModeExpireTimeBuilder_.build();
-        to_bitField0_ |= 0x00000020;
+        to_bitField0_ |= 0x00000040;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -9365,9 +9553,14 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       if (other.hasAccessSettings()) {
         mergeAccessSettings(other.getAccessSettings());
       }
+      if (other.hasCustomer()) {
+        customer_ = other.customer_;
+        bitField0_ |= 0x00010000;
+        onChanged();
+      }
       if (!other.getSpaceUri().isEmpty()) {
         spaceUri_ = other.spaceUri_;
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       if (other.hasImportModeExpireTime()) {
@@ -9511,10 +9704,16 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00008000;
                 break;
               } // case 186
+            case 194:
+              {
+                customer_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 194
             case 202:
               {
                 spaceUri_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 202
             case 208:
@@ -9535,7 +9734,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
               {
                 input.readMessage(
                     getImportModeExpireTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 226
             default:
@@ -9741,7 +9940,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=256
+     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=255
      * @return The enum numeric value on the wire for type.
      */
     @java.lang.Override
@@ -9762,7 +9961,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=256
+     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=255
      * @param value The enum numeric value on the wire for type to set.
      * @return This builder for chaining.
      */
@@ -9786,7 +9985,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=256
+     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=255
      * @return The type.
      */
     @java.lang.Override
@@ -9808,7 +10007,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=256
+     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=255
      * @param value The type to set.
      * @return This builder for chaining.
      */
@@ -9835,7 +10034,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=256
+     * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=255
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -10028,7 +10227,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * <code>bool threaded = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=268
+     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=267
      * @return The threaded.
      */
     @java.lang.Override
@@ -10048,7 +10247,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * <code>bool threaded = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=268
+     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=267
      * @param value The threaded to set.
      * @return This builder for chaining.
      */
@@ -10072,7 +10271,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * <code>bool threaded = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
-     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=268
+     * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=267
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -11838,6 +12037,210 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       return accessSettingsBuilder_;
     }
 
+    private java.lang.Object customer_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The customer id of the domain of the space.
+     * Required only when creating a space with [app
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * and `SpaceType` is `SPACE`, otherwise should not be set.
+     *
+     * In the format `customers/{customer}`, where `customer` is the `id` from the
+     * [Admin SDK customer resource](
+     * https://developers.google.com/admin-sdk/directory/reference/rest/v1/customers).
+     * Private apps can also use the `customers/my_customer` alias to create
+     * the space in the same Google Workspace organization as the app.
+     *
+     * For DMs, this field isn't populated.
+     * </pre>
+     *
+     * <code>
+     * optional string customer = 24 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the customer field is set.
+     */
+    public boolean hasCustomer() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The customer id of the domain of the space.
+     * Required only when creating a space with [app
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * and `SpaceType` is `SPACE`, otherwise should not be set.
+     *
+     * In the format `customers/{customer}`, where `customer` is the `id` from the
+     * [Admin SDK customer resource](
+     * https://developers.google.com/admin-sdk/directory/reference/rest/v1/customers).
+     * Private apps can also use the `customers/my_customer` alias to create
+     * the space in the same Google Workspace organization as the app.
+     *
+     * For DMs, this field isn't populated.
+     * </pre>
+     *
+     * <code>
+     * optional string customer = 24 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The customer.
+     */
+    public java.lang.String getCustomer() {
+      java.lang.Object ref = customer_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        customer_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The customer id of the domain of the space.
+     * Required only when creating a space with [app
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * and `SpaceType` is `SPACE`, otherwise should not be set.
+     *
+     * In the format `customers/{customer}`, where `customer` is the `id` from the
+     * [Admin SDK customer resource](
+     * https://developers.google.com/admin-sdk/directory/reference/rest/v1/customers).
+     * Private apps can also use the `customers/my_customer` alias to create
+     * the space in the same Google Workspace organization as the app.
+     *
+     * For DMs, this field isn't populated.
+     * </pre>
+     *
+     * <code>
+     * optional string customer = 24 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bytes for customer.
+     */
+    public com.google.protobuf.ByteString getCustomerBytes() {
+      java.lang.Object ref = customer_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        customer_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The customer id of the domain of the space.
+     * Required only when creating a space with [app
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * and `SpaceType` is `SPACE`, otherwise should not be set.
+     *
+     * In the format `customers/{customer}`, where `customer` is the `id` from the
+     * [Admin SDK customer resource](
+     * https://developers.google.com/admin-sdk/directory/reference/rest/v1/customers).
+     * Private apps can also use the `customers/my_customer` alias to create
+     * the space in the same Google Workspace organization as the app.
+     *
+     * For DMs, this field isn't populated.
+     * </pre>
+     *
+     * <code>
+     * optional string customer = 24 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The customer to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCustomer(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      customer_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The customer id of the domain of the space.
+     * Required only when creating a space with [app
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * and `SpaceType` is `SPACE`, otherwise should not be set.
+     *
+     * In the format `customers/{customer}`, where `customer` is the `id` from the
+     * [Admin SDK customer resource](
+     * https://developers.google.com/admin-sdk/directory/reference/rest/v1/customers).
+     * Private apps can also use the `customers/my_customer` alias to create
+     * the space in the same Google Workspace organization as the app.
+     *
+     * For DMs, this field isn't populated.
+     * </pre>
+     *
+     * <code>
+     * optional string customer = 24 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCustomer() {
+      customer_ = getDefaultInstance().getCustomer();
+      bitField0_ = (bitField0_ & ~0x00010000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. The customer id of the domain of the space.
+     * Required only when creating a space with [app
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * and `SpaceType` is `SPACE`, otherwise should not be set.
+     *
+     * In the format `customers/{customer}`, where `customer` is the `id` from the
+     * [Admin SDK customer resource](
+     * https://developers.google.com/admin-sdk/directory/reference/rest/v1/customers).
+     * Private apps can also use the `customers/my_customer` alias to create
+     * the space in the same Google Workspace organization as the app.
+     *
+     * For DMs, this field isn't populated.
+     * </pre>
+     *
+     * <code>
+     * optional string customer = 24 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes for customer to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCustomerBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      customer_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object spaceUri_ = "";
 
     /**
@@ -11903,7 +12306,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       spaceUri_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -11921,7 +12324,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSpaceUri() {
       spaceUri_ = getDefaultInstance().getSpaceUri();
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -11944,7 +12347,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       spaceUri_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -11957,6 +12360,17 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * when creating a space. If the field is not set, a collaboration space is
      * created. After you create the space, settings are populated in the
      * `PermissionSettings` field.
+     *
+     * Setting predefined permission settings supports:
+     *
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator
+     * approval](https://support.google.com/a?p=chat-app-auth) with the
+     * `chat.app.spaces` or `chat.app.spaces.create` scopes.
+     *
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * </pre>
      *
      * <code>
@@ -11978,6 +12392,17 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * when creating a space. If the field is not set, a collaboration space is
      * created. After you create the space, settings are populated in the
      * `PermissionSettings` field.
+     *
+     * Setting predefined permission settings supports:
+     *
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator
+     * approval](https://support.google.com/a?p=chat-app-auth) with the
+     * `chat.app.spaces` or `chat.app.spaces.create` scopes.
+     *
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * </pre>
      *
      * <code>
@@ -12002,6 +12427,17 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * when creating a space. If the field is not set, a collaboration space is
      * created. After you create the space, settings are populated in the
      * `PermissionSettings` field.
+     *
+     * Setting predefined permission settings supports:
+     *
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator
+     * approval](https://support.google.com/a?p=chat-app-auth) with the
+     * `chat.app.spaces` or `chat.app.spaces.create` scopes.
+     *
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * </pre>
      *
      * <code>
@@ -12026,6 +12462,17 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * when creating a space. If the field is not set, a collaboration space is
      * created. After you create the space, settings are populated in the
      * `PermissionSettings` field.
+     *
+     * Setting predefined permission settings supports:
+     *
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator
+     * approval](https://support.google.com/a?p=chat-app-auth) with the
+     * `chat.app.spaces` or `chat.app.spaces.create` scopes.
+     *
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * </pre>
      *
      * <code>
@@ -12056,6 +12503,17 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * when creating a space. If the field is not set, a collaboration space is
      * created. After you create the space, settings are populated in the
      * `PermissionSettings` field.
+     *
+     * Setting predefined permission settings supports:
+     *
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator
+     * approval](https://support.google.com/a?p=chat-app-auth) with the
+     * `chat.app.spaces` or `chat.app.spaces.create` scopes.
+     *
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * </pre>
      *
      * <code>
@@ -12084,6 +12542,17 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * when creating a space. If the field is not set, a collaboration space is
      * created. After you create the space, settings are populated in the
      * `PermissionSettings` field.
+     *
+     * Setting predefined permission settings supports:
+     *
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator
+     * approval](https://support.google.com/a?p=chat-app-auth) with the
+     * `chat.app.spaces` or `chat.app.spaces.create` scopes.
+     *
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * </pre>
      *
      * <code>
@@ -12114,6 +12583,18 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * Optional. Space permission settings for existing spaces. Input for
      * updating exact space permission settings, where existing permission
      * settings are replaced. Output lists current permission settings.
+     *
+     * Reading and updating permission settings supports:
+     *
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator
+     * approval](https://support.google.com/a?p=chat-app-auth) with the
+     * `chat.app.spaces` scope. Only populated and settable when the Chat app
+     * created the space.
+     *
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * </pre>
      *
      * <code>
@@ -12134,6 +12615,18 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * Optional. Space permission settings for existing spaces. Input for
      * updating exact space permission settings, where existing permission
      * settings are replaced. Output lists current permission settings.
+     *
+     * Reading and updating permission settings supports:
+     *
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator
+     * approval](https://support.google.com/a?p=chat-app-auth) with the
+     * `chat.app.spaces` scope. Only populated and settable when the Chat app
+     * created the space.
+     *
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * </pre>
      *
      * <code>
@@ -12164,6 +12657,18 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * Optional. Space permission settings for existing spaces. Input for
      * updating exact space permission settings, where existing permission
      * settings are replaced. Output lists current permission settings.
+     *
+     * Reading and updating permission settings supports:
+     *
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator
+     * approval](https://support.google.com/a?p=chat-app-auth) with the
+     * `chat.app.spaces` scope. Only populated and settable when the Chat app
+     * created the space.
+     *
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * </pre>
      *
      * <code>
@@ -12191,6 +12696,18 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * Optional. Space permission settings for existing spaces. Input for
      * updating exact space permission settings, where existing permission
      * settings are replaced. Output lists current permission settings.
+     *
+     * Reading and updating permission settings supports:
+     *
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator
+     * approval](https://support.google.com/a?p=chat-app-auth) with the
+     * `chat.app.spaces` scope. Only populated and settable when the Chat app
+     * created the space.
+     *
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * </pre>
      *
      * <code>
@@ -12216,6 +12733,18 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * Optional. Space permission settings for existing spaces. Input for
      * updating exact space permission settings, where existing permission
      * settings are replaced. Output lists current permission settings.
+     *
+     * Reading and updating permission settings supports:
+     *
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator
+     * approval](https://support.google.com/a?p=chat-app-auth) with the
+     * `chat.app.spaces` scope. Only populated and settable when the Chat app
+     * created the space.
+     *
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * </pre>
      *
      * <code>
@@ -12254,6 +12783,18 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * Optional. Space permission settings for existing spaces. Input for
      * updating exact space permission settings, where existing permission
      * settings are replaced. Output lists current permission settings.
+     *
+     * Reading and updating permission settings supports:
+     *
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator
+     * approval](https://support.google.com/a?p=chat-app-auth) with the
+     * `chat.app.spaces` scope. Only populated and settable when the Chat app
+     * created the space.
+     *
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * </pre>
      *
      * <code>
@@ -12284,6 +12825,18 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * Optional. Space permission settings for existing spaces. Input for
      * updating exact space permission settings, where existing permission
      * settings are replaced. Output lists current permission settings.
+     *
+     * Reading and updating permission settings supports:
+     *
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator
+     * approval](https://support.google.com/a?p=chat-app-auth) with the
+     * `chat.app.spaces` scope. Only populated and settable when the Chat app
+     * created the space.
+     *
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * </pre>
      *
      * <code>
@@ -12301,6 +12854,18 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * Optional. Space permission settings for existing spaces. Input for
      * updating exact space permission settings, where existing permission
      * settings are replaced. Output lists current permission settings.
+     *
+     * Reading and updating permission settings supports:
+     *
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator
+     * approval](https://support.google.com/a?p=chat-app-auth) with the
+     * `chat.app.spaces` scope. Only populated and settable when the Chat app
+     * created the space.
+     *
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * </pre>
      *
      * <code>
@@ -12326,6 +12891,18 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * Optional. Space permission settings for existing spaces. Input for
      * updating exact space permission settings, where existing permission
      * settings are replaced. Output lists current permission settings.
+     *
+     * Reading and updating permission settings supports:
+     *
+     * - [App
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+     * with [administrator
+     * approval](https://support.google.com/a?p=chat-app-auth) with the
+     * `chat.app.spaces` scope. Only populated and settable when the Chat app
+     * created the space.
+     *
+     * - [User
+     * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
      * </pre>
      *
      * <code>
@@ -12384,7 +12961,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the importModeExpireTime field is set.
      */
     public boolean hasImportModeExpireTime() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
 
     /**
@@ -12442,7 +13019,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       } else {
         importModeExpireTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -12470,7 +13047,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
       } else {
         importModeExpireTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -12494,7 +13071,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeImportModeExpireTime(com.google.protobuf.Timestamp value) {
       if (importModeExpireTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00080000) != 0)
+        if (((bitField0_ & 0x00100000) != 0)
             && importModeExpireTime_ != null
             && importModeExpireTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getImportModeExpireTimeBuilder().mergeFrom(value);
@@ -12505,7 +13082,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
         importModeExpireTimeBuilder_.mergeFrom(value);
       }
       if (importModeExpireTime_ != null) {
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       return this;
@@ -12529,7 +13106,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearImportModeExpireTime() {
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       importModeExpireTime_ = null;
       if (importModeExpireTimeBuilder_ != null) {
         importModeExpireTimeBuilder_.dispose();
@@ -12557,7 +13134,7 @@ public final class Space extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getImportModeExpireTimeBuilder() {
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return getImportModeExpireTimeFieldBuilder().getBuilder();
     }

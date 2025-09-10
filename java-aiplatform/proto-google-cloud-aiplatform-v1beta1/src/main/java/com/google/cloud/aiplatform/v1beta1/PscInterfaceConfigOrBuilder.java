@@ -28,15 +28,10 @@ public interface PscInterfaceConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The full name of the Compute Engine
+   * Optional. The name of the Compute Engine
    * [network
    * attachment](https://cloud.google.com/vpc/docs/about-network-attachments) to
-   * attach to the resource.
-   * For example, `projects/12345/regions/us-central1/networkAttachments/myNA`.
-   * is of the form
-   * `projects/{project}/regions/{region}/networkAttachments/{networkAttachment}`.
-   * Where {project} is a project number, as in `12345`, and {networkAttachment}
-   * is a network attachment name.
+   * attach to the resource within the region and user project.
    * To specify this field, you must have already [created a network attachment]
    * (https://cloud.google.com/vpc/docs/create-manage-network-attachments#create-network-attachments).
    * This field is only used for resources using PSC-I.
@@ -54,15 +49,10 @@ public interface PscInterfaceConfigOrBuilder
    *
    *
    * <pre>
-   * Optional. The full name of the Compute Engine
+   * Optional. The name of the Compute Engine
    * [network
    * attachment](https://cloud.google.com/vpc/docs/about-network-attachments) to
-   * attach to the resource.
-   * For example, `projects/12345/regions/us-central1/networkAttachments/myNA`.
-   * is of the form
-   * `projects/{project}/regions/{region}/networkAttachments/{networkAttachment}`.
-   * Where {project} is a project number, as in `12345`, and {networkAttachment}
-   * is a network attachment name.
+   * attach to the resource within the region and user project.
    * To specify this field, you must have already [created a network attachment]
    * (https://cloud.google.com/vpc/docs/create-manage-network-attachments#create-network-attachments).
    * This field is only used for resources using PSC-I.
@@ -75,4 +65,91 @@ public interface PscInterfaceConfigOrBuilder
    * @return The bytes for networkAttachment.
    */
   com.google.protobuf.ByteString getNetworkAttachmentBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. DNS peering configurations. When specified, Vertex AI will
+   * attempt to configure DNS peering zones in the tenant project VPC
+   * to resolve the specified domains using the target network's Cloud DNS.
+   * The user must grant the dns.peer role to the Vertex AI Service Agent
+   * on the target project.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.DnsPeeringConfig dns_peering_configs = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.aiplatform.v1beta1.DnsPeeringConfig> getDnsPeeringConfigsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. DNS peering configurations. When specified, Vertex AI will
+   * attempt to configure DNS peering zones in the tenant project VPC
+   * to resolve the specified domains using the target network's Cloud DNS.
+   * The user must grant the dns.peer role to the Vertex AI Service Agent
+   * on the target project.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.DnsPeeringConfig dns_peering_configs = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.DnsPeeringConfig getDnsPeeringConfigs(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. DNS peering configurations. When specified, Vertex AI will
+   * attempt to configure DNS peering zones in the tenant project VPC
+   * to resolve the specified domains using the target network's Cloud DNS.
+   * The user must grant the dns.peer role to the Vertex AI Service Agent
+   * on the target project.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.DnsPeeringConfig dns_peering_configs = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getDnsPeeringConfigsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. DNS peering configurations. When specified, Vertex AI will
+   * attempt to configure DNS peering zones in the tenant project VPC
+   * to resolve the specified domains using the target network's Cloud DNS.
+   * The user must grant the dns.peer role to the Vertex AI Service Agent
+   * on the target project.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.DnsPeeringConfig dns_peering_configs = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.aiplatform.v1beta1.DnsPeeringConfigOrBuilder>
+      getDnsPeeringConfigsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. DNS peering configurations. When specified, Vertex AI will
+   * attempt to configure DNS peering zones in the tenant project VPC
+   * to resolve the specified domains using the target network's Cloud DNS.
+   * The user must grant the dns.peer role to the Vertex AI Service Agent
+   * on the target project.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.DnsPeeringConfig dns_peering_configs = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.DnsPeeringConfigOrBuilder getDnsPeeringConfigsOrBuilder(
+      int index);
 }

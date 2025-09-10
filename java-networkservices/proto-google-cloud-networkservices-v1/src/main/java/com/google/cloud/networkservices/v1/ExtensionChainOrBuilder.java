@@ -112,7 +112,8 @@ public interface ExtensionChainOrBuilder
    * At least one extension is required.
    * Up to 3 extensions can be defined for each extension chain
    * for `LbTrafficExtension` resource.
-   * `LbRouteExtension` chains are limited to 1 extension per extension chain.
+   * `LbRouteExtension` and `LbEdgeExtension` chains are limited to 1 extension
+   * per extension chain.
    * </pre>
    *
    * <code>
@@ -129,7 +130,8 @@ public interface ExtensionChainOrBuilder
    * At least one extension is required.
    * Up to 3 extensions can be defined for each extension chain
    * for `LbTrafficExtension` resource.
-   * `LbRouteExtension` chains are limited to 1 extension per extension chain.
+   * `LbRouteExtension` and `LbEdgeExtension` chains are limited to 1 extension
+   * per extension chain.
    * </pre>
    *
    * <code>
@@ -146,7 +148,8 @@ public interface ExtensionChainOrBuilder
    * At least one extension is required.
    * Up to 3 extensions can be defined for each extension chain
    * for `LbTrafficExtension` resource.
-   * `LbRouteExtension` chains are limited to 1 extension per extension chain.
+   * `LbRouteExtension` and `LbEdgeExtension` chains are limited to 1 extension
+   * per extension chain.
    * </pre>
    *
    * <code>
@@ -163,7 +166,8 @@ public interface ExtensionChainOrBuilder
    * At least one extension is required.
    * Up to 3 extensions can be defined for each extension chain
    * for `LbTrafficExtension` resource.
-   * `LbRouteExtension` chains are limited to 1 extension per extension chain.
+   * `LbRouteExtension` and `LbEdgeExtension` chains are limited to 1 extension
+   * per extension chain.
    * </pre>
    *
    * <code>
@@ -181,7 +185,8 @@ public interface ExtensionChainOrBuilder
    * At least one extension is required.
    * Up to 3 extensions can be defined for each extension chain
    * for `LbTrafficExtension` resource.
-   * `LbRouteExtension` chains are limited to 1 extension per extension chain.
+   * `LbRouteExtension` and `LbEdgeExtension` chains are limited to 1 extension
+   * per extension chain.
    * </pre>
    *
    * <code>

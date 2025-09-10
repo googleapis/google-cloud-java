@@ -80,7 +80,7 @@ public interface SpaceOrBuilder
    * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=256
+   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=255
    * @return The enum numeric value on the wire for type.
    */
   @java.lang.Deprecated
@@ -98,7 +98,7 @@ public interface SpaceOrBuilder
    * .google.chat.v1.Space.Type type = 2 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
-   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=256
+   * @deprecated google.chat.v1.Space.type is deprecated. See google/chat/v1/space.proto;l=255
    * @return The type.
    */
   @java.lang.Deprecated
@@ -160,7 +160,7 @@ public interface SpaceOrBuilder
    *
    * <code>bool threaded = 5 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
-   * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=268
+   * @deprecated google.chat.v1.Space.threaded is deprecated. See google/chat/v1/space.proto;l=267
    * @return The threaded.
    */
   @java.lang.Deprecated
@@ -581,6 +581,84 @@ public interface SpaceOrBuilder
    *
    *
    * <pre>
+   * Optional. Immutable. The customer id of the domain of the space.
+   * Required only when creating a space with [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * and `SpaceType` is `SPACE`, otherwise should not be set.
+   *
+   * In the format `customers/{customer}`, where `customer` is the `id` from the
+   * [Admin SDK customer resource](
+   * https://developers.google.com/admin-sdk/directory/reference/rest/v1/customers).
+   * Private apps can also use the `customers/my_customer` alias to create
+   * the space in the same Google Workspace organization as the app.
+   *
+   * For DMs, this field isn't populated.
+   * </pre>
+   *
+   * <code>
+   * optional string customer = 24 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the customer field is set.
+   */
+  boolean hasCustomer();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The customer id of the domain of the space.
+   * Required only when creating a space with [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * and `SpaceType` is `SPACE`, otherwise should not be set.
+   *
+   * In the format `customers/{customer}`, where `customer` is the `id` from the
+   * [Admin SDK customer resource](
+   * https://developers.google.com/admin-sdk/directory/reference/rest/v1/customers).
+   * Private apps can also use the `customers/my_customer` alias to create
+   * the space in the same Google Workspace organization as the app.
+   *
+   * For DMs, this field isn't populated.
+   * </pre>
+   *
+   * <code>
+   * optional string customer = 24 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The customer.
+   */
+  java.lang.String getCustomer();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The customer id of the domain of the space.
+   * Required only when creating a space with [app
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * and `SpaceType` is `SPACE`, otherwise should not be set.
+   *
+   * In the format `customers/{customer}`, where `customer` is the `id` from the
+   * [Admin SDK customer resource](
+   * https://developers.google.com/admin-sdk/directory/reference/rest/v1/customers).
+   * Private apps can also use the `customers/my_customer` alias to create
+   * the space in the same Google Workspace organization as the app.
+   *
+   * For DMs, this field isn't populated.
+   * </pre>
+   *
+   * <code>
+   * optional string customer = 24 [(.google.api.field_behavior) = IMMUTABLE, (.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bytes for customer.
+   */
+  com.google.protobuf.ByteString getCustomerBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The URI for a user to access the space.
    * </pre>
    *
@@ -611,6 +689,17 @@ public interface SpaceOrBuilder
    * when creating a space. If the field is not set, a collaboration space is
    * created. After you create the space, settings are populated in the
    * `PermissionSettings` field.
+   *
+   * Setting predefined permission settings supports:
+   *
+   * - [App
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * with [administrator
+   * approval](https://support.google.com/a?p=chat-app-auth) with the
+   * `chat.app.spaces` or `chat.app.spaces.create` scopes.
+   *
+   * - [User
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
    * </pre>
    *
    * <code>
@@ -629,6 +718,17 @@ public interface SpaceOrBuilder
    * when creating a space. If the field is not set, a collaboration space is
    * created. After you create the space, settings are populated in the
    * `PermissionSettings` field.
+   *
+   * Setting predefined permission settings supports:
+   *
+   * - [App
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * with [administrator
+   * approval](https://support.google.com/a?p=chat-app-auth) with the
+   * `chat.app.spaces` or `chat.app.spaces.create` scopes.
+   *
+   * - [User
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
    * </pre>
    *
    * <code>
@@ -647,6 +747,17 @@ public interface SpaceOrBuilder
    * when creating a space. If the field is not set, a collaboration space is
    * created. After you create the space, settings are populated in the
    * `PermissionSettings` field.
+   *
+   * Setting predefined permission settings supports:
+   *
+   * - [App
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * with [administrator
+   * approval](https://support.google.com/a?p=chat-app-auth) with the
+   * `chat.app.spaces` or `chat.app.spaces.create` scopes.
+   *
+   * - [User
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
    * </pre>
    *
    * <code>
@@ -664,6 +775,18 @@ public interface SpaceOrBuilder
    * Optional. Space permission settings for existing spaces. Input for
    * updating exact space permission settings, where existing permission
    * settings are replaced. Output lists current permission settings.
+   *
+   * Reading and updating permission settings supports:
+   *
+   * - [App
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * with [administrator
+   * approval](https://support.google.com/a?p=chat-app-auth) with the
+   * `chat.app.spaces` scope. Only populated and settable when the Chat app
+   * created the space.
+   *
+   * - [User
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
    * </pre>
    *
    * <code>
@@ -681,6 +804,18 @@ public interface SpaceOrBuilder
    * Optional. Space permission settings for existing spaces. Input for
    * updating exact space permission settings, where existing permission
    * settings are replaced. Output lists current permission settings.
+   *
+   * Reading and updating permission settings supports:
+   *
+   * - [App
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * with [administrator
+   * approval](https://support.google.com/a?p=chat-app-auth) with the
+   * `chat.app.spaces` scope. Only populated and settable when the Chat app
+   * created the space.
+   *
+   * - [User
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
    * </pre>
    *
    * <code>
@@ -698,6 +833,18 @@ public interface SpaceOrBuilder
    * Optional. Space permission settings for existing spaces. Input for
    * updating exact space permission settings, where existing permission
    * settings are replaced. Output lists current permission settings.
+   *
+   * Reading and updating permission settings supports:
+   *
+   * - [App
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-app)
+   * with [administrator
+   * approval](https://support.google.com/a?p=chat-app-auth) with the
+   * `chat.app.spaces` scope. Only populated and settable when the Chat app
+   * created the space.
+   *
+   * - [User
+   * authentication](https://developers.google.com/workspace/chat/authenticate-authorize-chat-user)
    * </pre>
    *
    * <code>

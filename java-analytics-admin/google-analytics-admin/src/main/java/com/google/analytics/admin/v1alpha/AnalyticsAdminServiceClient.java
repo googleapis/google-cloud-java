@@ -1991,34 +1991,6 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
- *      <td><p> SetAutomatedGa4ConfigurationOptOut</td>
- *      <td><p> Sets the opt out status for the automated GA4 setup process for a UA property. Note: this has no effect on GA4 property.</td>
- *      <td>
- *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
- *      <ul>
- *           <li><p> setAutomatedGa4ConfigurationOptOut(SetAutomatedGa4ConfigurationOptOutRequest request)
- *      </ul>
- *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
- *      <ul>
- *           <li><p> setAutomatedGa4ConfigurationOptOutCallable()
- *      </ul>
- *       </td>
- *    </tr>
- *    <tr>
- *      <td><p> FetchAutomatedGa4ConfigurationOptOut</td>
- *      <td><p> Fetches the opt out status for the automated GA4 setup process for a UA property. Note: this has no effect on GA4 property.</td>
- *      <td>
- *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
- *      <ul>
- *           <li><p> fetchAutomatedGa4ConfigurationOptOut(FetchAutomatedGa4ConfigurationOptOutRequest request)
- *      </ul>
- *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
- *      <ul>
- *           <li><p> fetchAutomatedGa4ConfigurationOptOutCallable()
- *      </ul>
- *       </td>
- *    </tr>
- *    <tr>
  *      <td><p> CreateBigQueryLink</td>
  *      <td><p> Creates a BigQueryLink.</td>
  *      <td>
@@ -2147,62 +2119,6 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> updateEnhancedMeasurementSettingsCallable()
- *      </ul>
- *       </td>
- *    </tr>
- *    <tr>
- *      <td><p> CreateConnectedSiteTag</td>
- *      <td><p> Creates a connected site tag for a Universal Analytics property. You can create a maximum of 20 connected site tags per property. Note: This API cannot be used on GA4 properties.</td>
- *      <td>
- *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
- *      <ul>
- *           <li><p> createConnectedSiteTag(CreateConnectedSiteTagRequest request)
- *      </ul>
- *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
- *      <ul>
- *           <li><p> createConnectedSiteTagCallable()
- *      </ul>
- *       </td>
- *    </tr>
- *    <tr>
- *      <td><p> DeleteConnectedSiteTag</td>
- *      <td><p> Deletes a connected site tag for a Universal Analytics property. Note: this has no effect on GA4 properties.</td>
- *      <td>
- *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
- *      <ul>
- *           <li><p> deleteConnectedSiteTag(DeleteConnectedSiteTagRequest request)
- *      </ul>
- *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
- *      <ul>
- *           <li><p> deleteConnectedSiteTagCallable()
- *      </ul>
- *       </td>
- *    </tr>
- *    <tr>
- *      <td><p> ListConnectedSiteTags</td>
- *      <td><p> Lists the connected site tags for a Universal Analytics property. A maximum of 20 connected site tags will be returned. Note: this has no effect on GA4 property.</td>
- *      <td>
- *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
- *      <ul>
- *           <li><p> listConnectedSiteTags(ListConnectedSiteTagsRequest request)
- *      </ul>
- *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
- *      <ul>
- *           <li><p> listConnectedSiteTagsCallable()
- *      </ul>
- *       </td>
- *    </tr>
- *    <tr>
- *      <td><p> FetchConnectedGa4Property</td>
- *      <td><p> Given a specified UA property, looks up the GA4 property connected to it. Note: this cannot be used with GA4 properties.</td>
- *      <td>
- *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
- *      <ul>
- *           <li><p> fetchConnectedGa4Property(FetchConnectedGa4PropertyRequest request)
- *      </ul>
- *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
- *      <ul>
- *           <li><p> fetchConnectedGa4PropertyCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -2930,6 +2846,82 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> submitUserDeletionCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> ListSubpropertySyncConfigs</td>
+ *      <td><p> List all `SubpropertySyncConfig` resources for a property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> listSubpropertySyncConfigs(ListSubpropertySyncConfigsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> listSubpropertySyncConfigs(PropertyName parent)
+ *           <li><p> listSubpropertySyncConfigs(String parent)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> listSubpropertySyncConfigsPagedCallable()
+ *           <li><p> listSubpropertySyncConfigsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateSubpropertySyncConfig</td>
+ *      <td><p> Updates a `SubpropertySyncConfig`.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateSubpropertySyncConfig(UpdateSubpropertySyncConfigRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateSubpropertySyncConfig(SubpropertySyncConfig subpropertySyncConfig, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateSubpropertySyncConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetSubpropertySyncConfig</td>
+ *      <td><p> Lookup for a single `SubpropertySyncConfig`.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getSubpropertySyncConfig(GetSubpropertySyncConfigRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getSubpropertySyncConfig(SubpropertySyncConfigName name)
+ *           <li><p> getSubpropertySyncConfig(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getSubpropertySyncConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetReportingIdentitySettings</td>
+ *      <td><p> Returns the singleton data retention settings for this property.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getReportingIdentitySettings(GetReportingIdentitySettingsRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getReportingIdentitySettings(ReportingIdentitySettingsName name)
+ *           <li><p> getReportingIdentitySettings(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getReportingIdentitySettingsCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -15951,140 +15943,6 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Sets the opt out status for the automated GA4 setup process for a UA property. Note: this has
-   * no effect on GA4 property.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   SetAutomatedGa4ConfigurationOptOutRequest request =
-   *       SetAutomatedGa4ConfigurationOptOutRequest.newBuilder()
-   *           .setProperty("property-993141291")
-   *           .setOptOut(true)
-   *           .build();
-   *   SetAutomatedGa4ConfigurationOptOutResponse response =
-   *       analyticsAdminServiceClient.setAutomatedGa4ConfigurationOptOut(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final SetAutomatedGa4ConfigurationOptOutResponse setAutomatedGa4ConfigurationOptOut(
-      SetAutomatedGa4ConfigurationOptOutRequest request) {
-    return setAutomatedGa4ConfigurationOptOutCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Sets the opt out status for the automated GA4 setup process for a UA property. Note: this has
-   * no effect on GA4 property.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   SetAutomatedGa4ConfigurationOptOutRequest request =
-   *       SetAutomatedGa4ConfigurationOptOutRequest.newBuilder()
-   *           .setProperty("property-993141291")
-   *           .setOptOut(true)
-   *           .build();
-   *   ApiFuture<SetAutomatedGa4ConfigurationOptOutResponse> future =
-   *       analyticsAdminServiceClient
-   *           .setAutomatedGa4ConfigurationOptOutCallable()
-   *           .futureCall(request);
-   *   // Do something.
-   *   SetAutomatedGa4ConfigurationOptOutResponse response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<
-          SetAutomatedGa4ConfigurationOptOutRequest, SetAutomatedGa4ConfigurationOptOutResponse>
-      setAutomatedGa4ConfigurationOptOutCallable() {
-    return stub.setAutomatedGa4ConfigurationOptOutCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Fetches the opt out status for the automated GA4 setup process for a UA property. Note: this
-   * has no effect on GA4 property.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   FetchAutomatedGa4ConfigurationOptOutRequest request =
-   *       FetchAutomatedGa4ConfigurationOptOutRequest.newBuilder()
-   *           .setProperty("property-993141291")
-   *           .build();
-   *   FetchAutomatedGa4ConfigurationOptOutResponse response =
-   *       analyticsAdminServiceClient.fetchAutomatedGa4ConfigurationOptOut(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final FetchAutomatedGa4ConfigurationOptOutResponse fetchAutomatedGa4ConfigurationOptOut(
-      FetchAutomatedGa4ConfigurationOptOutRequest request) {
-    return fetchAutomatedGa4ConfigurationOptOutCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Fetches the opt out status for the automated GA4 setup process for a UA property. Note: this
-   * has no effect on GA4 property.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   FetchAutomatedGa4ConfigurationOptOutRequest request =
-   *       FetchAutomatedGa4ConfigurationOptOutRequest.newBuilder()
-   *           .setProperty("property-993141291")
-   *           .build();
-   *   ApiFuture<FetchAutomatedGa4ConfigurationOptOutResponse> future =
-   *       analyticsAdminServiceClient
-   *           .fetchAutomatedGa4ConfigurationOptOutCallable()
-   *           .futureCall(request);
-   *   // Do something.
-   *   FetchAutomatedGa4ConfigurationOptOutResponse response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<
-          FetchAutomatedGa4ConfigurationOptOutRequest, FetchAutomatedGa4ConfigurationOptOutResponse>
-      fetchAutomatedGa4ConfigurationOptOutCallable() {
-    return stub.fetchAutomatedGa4ConfigurationOptOutCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
    * Creates a BigQueryLink.
    *
    * <p>Sample code:
@@ -16953,256 +16811,6 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
   public final UnaryCallable<UpdateEnhancedMeasurementSettingsRequest, EnhancedMeasurementSettings>
       updateEnhancedMeasurementSettingsCallable() {
     return stub.updateEnhancedMeasurementSettingsCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Creates a connected site tag for a Universal Analytics property. You can create a maximum of 20
-   * connected site tags per property. Note: This API cannot be used on GA4 properties.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   CreateConnectedSiteTagRequest request =
-   *       CreateConnectedSiteTagRequest.newBuilder()
-   *           .setProperty("property-993141291")
-   *           .setConnectedSiteTag(ConnectedSiteTag.newBuilder().build())
-   *           .build();
-   *   CreateConnectedSiteTagResponse response =
-   *       analyticsAdminServiceClient.createConnectedSiteTag(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final CreateConnectedSiteTagResponse createConnectedSiteTag(
-      CreateConnectedSiteTagRequest request) {
-    return createConnectedSiteTagCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Creates a connected site tag for a Universal Analytics property. You can create a maximum of 20
-   * connected site tags per property. Note: This API cannot be used on GA4 properties.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   CreateConnectedSiteTagRequest request =
-   *       CreateConnectedSiteTagRequest.newBuilder()
-   *           .setProperty("property-993141291")
-   *           .setConnectedSiteTag(ConnectedSiteTag.newBuilder().build())
-   *           .build();
-   *   ApiFuture<CreateConnectedSiteTagResponse> future =
-   *       analyticsAdminServiceClient.createConnectedSiteTagCallable().futureCall(request);
-   *   // Do something.
-   *   CreateConnectedSiteTagResponse response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<CreateConnectedSiteTagRequest, CreateConnectedSiteTagResponse>
-      createConnectedSiteTagCallable() {
-    return stub.createConnectedSiteTagCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Deletes a connected site tag for a Universal Analytics property. Note: this has no effect on
-   * GA4 properties.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   DeleteConnectedSiteTagRequest request =
-   *       DeleteConnectedSiteTagRequest.newBuilder()
-   *           .setProperty("property-993141291")
-   *           .setTagId("tagId110119509")
-   *           .build();
-   *   analyticsAdminServiceClient.deleteConnectedSiteTag(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final void deleteConnectedSiteTag(DeleteConnectedSiteTagRequest request) {
-    deleteConnectedSiteTagCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Deletes a connected site tag for a Universal Analytics property. Note: this has no effect on
-   * GA4 properties.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   DeleteConnectedSiteTagRequest request =
-   *       DeleteConnectedSiteTagRequest.newBuilder()
-   *           .setProperty("property-993141291")
-   *           .setTagId("tagId110119509")
-   *           .build();
-   *   ApiFuture<Empty> future =
-   *       analyticsAdminServiceClient.deleteConnectedSiteTagCallable().futureCall(request);
-   *   // Do something.
-   *   future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<DeleteConnectedSiteTagRequest, Empty>
-      deleteConnectedSiteTagCallable() {
-    return stub.deleteConnectedSiteTagCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Lists the connected site tags for a Universal Analytics property. A maximum of 20 connected
-   * site tags will be returned. Note: this has no effect on GA4 property.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   ListConnectedSiteTagsRequest request =
-   *       ListConnectedSiteTagsRequest.newBuilder().setProperty("property-993141291").build();
-   *   ListConnectedSiteTagsResponse response =
-   *       analyticsAdminServiceClient.listConnectedSiteTags(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final ListConnectedSiteTagsResponse listConnectedSiteTags(
-      ListConnectedSiteTagsRequest request) {
-    return listConnectedSiteTagsCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Lists the connected site tags for a Universal Analytics property. A maximum of 20 connected
-   * site tags will be returned. Note: this has no effect on GA4 property.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   ListConnectedSiteTagsRequest request =
-   *       ListConnectedSiteTagsRequest.newBuilder().setProperty("property-993141291").build();
-   *   ApiFuture<ListConnectedSiteTagsResponse> future =
-   *       analyticsAdminServiceClient.listConnectedSiteTagsCallable().futureCall(request);
-   *   // Do something.
-   *   ListConnectedSiteTagsResponse response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<ListConnectedSiteTagsRequest, ListConnectedSiteTagsResponse>
-      listConnectedSiteTagsCallable() {
-    return stub.listConnectedSiteTagsCallable();
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Given a specified UA property, looks up the GA4 property connected to it. Note: this cannot be
-   * used with GA4 properties.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   FetchConnectedGa4PropertyRequest request =
-   *       FetchConnectedGa4PropertyRequest.newBuilder()
-   *           .setProperty(PropertyName.of("[PROPERTY]").toString())
-   *           .build();
-   *   FetchConnectedGa4PropertyResponse response =
-   *       analyticsAdminServiceClient.fetchConnectedGa4Property(request);
-   * }
-   * }</pre>
-   *
-   * @param request The request object containing all of the parameters for the API call.
-   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
-   */
-  public final FetchConnectedGa4PropertyResponse fetchConnectedGa4Property(
-      FetchConnectedGa4PropertyRequest request) {
-    return fetchConnectedGa4PropertyCallable().call(request);
-  }
-
-  // AUTO-GENERATED DOCUMENTATION AND METHOD.
-  /**
-   * Given a specified UA property, looks up the GA4 property connected to it. Note: this cannot be
-   * used with GA4 properties.
-   *
-   * <p>Sample code:
-   *
-   * <pre>{@code
-   * // This snippet has been automatically generated and should be regarded as a code template only.
-   * // It will require modifications to work:
-   * // - It may require correct/in-range values for request initialization.
-   * // - It may require specifying regional endpoints when creating the service client as shown in
-   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
-   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
-   *     AnalyticsAdminServiceClient.create()) {
-   *   FetchConnectedGa4PropertyRequest request =
-   *       FetchConnectedGa4PropertyRequest.newBuilder()
-   *           .setProperty(PropertyName.of("[PROPERTY]").toString())
-   *           .build();
-   *   ApiFuture<FetchConnectedGa4PropertyResponse> future =
-   *       analyticsAdminServiceClient.fetchConnectedGa4PropertyCallable().futureCall(request);
-   *   // Do something.
-   *   FetchConnectedGa4PropertyResponse response = future.get();
-   * }
-   * }</pre>
-   */
-  public final UnaryCallable<FetchConnectedGa4PropertyRequest, FetchConnectedGa4PropertyResponse>
-      fetchConnectedGa4PropertyCallable() {
-    return stub.fetchConnectedGa4PropertyCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -22180,6 +21788,540 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
     return stub.submitUserDeletionCallable();
   }
 
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all `SubpropertySyncConfig` resources for a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   PropertyName parent = PropertyName.of("[PROPERTY]");
+   *   for (SubpropertySyncConfig element :
+   *       analyticsAdminServiceClient.listSubpropertySyncConfigs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the property. Format: properties/property_id Example:
+   *     properties/123
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSubpropertySyncConfigsPagedResponse listSubpropertySyncConfigs(
+      PropertyName parent) {
+    ListSubpropertySyncConfigsRequest request =
+        ListSubpropertySyncConfigsRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .build();
+    return listSubpropertySyncConfigs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all `SubpropertySyncConfig` resources for a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String parent = PropertyName.of("[PROPERTY]").toString();
+   *   for (SubpropertySyncConfig element :
+   *       analyticsAdminServiceClient.listSubpropertySyncConfigs(parent).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param parent Required. Resource name of the property. Format: properties/property_id Example:
+   *     properties/123
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSubpropertySyncConfigsPagedResponse listSubpropertySyncConfigs(String parent) {
+    ListSubpropertySyncConfigsRequest request =
+        ListSubpropertySyncConfigsRequest.newBuilder().setParent(parent).build();
+    return listSubpropertySyncConfigs(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all `SubpropertySyncConfig` resources for a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListSubpropertySyncConfigsRequest request =
+   *       ListSubpropertySyncConfigsRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   for (SubpropertySyncConfig element :
+   *       analyticsAdminServiceClient.listSubpropertySyncConfigs(request).iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ListSubpropertySyncConfigsPagedResponse listSubpropertySyncConfigs(
+      ListSubpropertySyncConfigsRequest request) {
+    return listSubpropertySyncConfigsPagedCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all `SubpropertySyncConfig` resources for a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListSubpropertySyncConfigsRequest request =
+   *       ListSubpropertySyncConfigsRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   ApiFuture<SubpropertySyncConfig> future =
+   *       analyticsAdminServiceClient.listSubpropertySyncConfigsPagedCallable().futureCall(request);
+   *   // Do something.
+   *   for (SubpropertySyncConfig element : future.get().iterateAll()) {
+   *     // doThingsWith(element);
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<
+          ListSubpropertySyncConfigsRequest, ListSubpropertySyncConfigsPagedResponse>
+      listSubpropertySyncConfigsPagedCallable() {
+    return stub.listSubpropertySyncConfigsPagedCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * List all `SubpropertySyncConfig` resources for a property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ListSubpropertySyncConfigsRequest request =
+   *       ListSubpropertySyncConfigsRequest.newBuilder()
+   *           .setParent(PropertyName.of("[PROPERTY]").toString())
+   *           .setPageSize(883849137)
+   *           .setPageToken("pageToken873572522")
+   *           .build();
+   *   while (true) {
+   *     ListSubpropertySyncConfigsResponse response =
+   *         analyticsAdminServiceClient.listSubpropertySyncConfigsCallable().call(request);
+   *     for (SubpropertySyncConfig element : response.getSubpropertySyncConfigsList()) {
+   *       // doThingsWith(element);
+   *     }
+   *     String nextPageToken = response.getNextPageToken();
+   *     if (!Strings.isNullOrEmpty(nextPageToken)) {
+   *       request = request.toBuilder().setPageToken(nextPageToken).build();
+   *     } else {
+   *       break;
+   *     }
+   *   }
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<ListSubpropertySyncConfigsRequest, ListSubpropertySyncConfigsResponse>
+      listSubpropertySyncConfigsCallable() {
+    return stub.listSubpropertySyncConfigsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a `SubpropertySyncConfig`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   SubpropertySyncConfig subpropertySyncConfig = SubpropertySyncConfig.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   SubpropertySyncConfig response =
+   *       analyticsAdminServiceClient.updateSubpropertySyncConfig(
+   *           subpropertySyncConfig, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param subpropertySyncConfig Required. The `SubpropertySyncConfig` to update.
+   * @param updateMask Optional. The list of fields to update. Field names must be in snake case
+   *     (for example, "field_to_update"). Omitted fields will not be updated. To replace the entire
+   *     entity, use one path with the string "&#42;" to match all fields.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SubpropertySyncConfig updateSubpropertySyncConfig(
+      SubpropertySyncConfig subpropertySyncConfig, FieldMask updateMask) {
+    UpdateSubpropertySyncConfigRequest request =
+        UpdateSubpropertySyncConfigRequest.newBuilder()
+            .setSubpropertySyncConfig(subpropertySyncConfig)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateSubpropertySyncConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a `SubpropertySyncConfig`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateSubpropertySyncConfigRequest request =
+   *       UpdateSubpropertySyncConfigRequest.newBuilder()
+   *           .setSubpropertySyncConfig(SubpropertySyncConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   SubpropertySyncConfig response =
+   *       analyticsAdminServiceClient.updateSubpropertySyncConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SubpropertySyncConfig updateSubpropertySyncConfig(
+      UpdateSubpropertySyncConfigRequest request) {
+    return updateSubpropertySyncConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates a `SubpropertySyncConfig`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   UpdateSubpropertySyncConfigRequest request =
+   *       UpdateSubpropertySyncConfigRequest.newBuilder()
+   *           .setSubpropertySyncConfig(SubpropertySyncConfig.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<SubpropertySyncConfig> future =
+   *       analyticsAdminServiceClient.updateSubpropertySyncConfigCallable().futureCall(request);
+   *   // Do something.
+   *   SubpropertySyncConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateSubpropertySyncConfigRequest, SubpropertySyncConfig>
+      updateSubpropertySyncConfigCallable() {
+    return stub.updateSubpropertySyncConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single `SubpropertySyncConfig`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   SubpropertySyncConfigName name =
+   *       SubpropertySyncConfigName.of("[PROPERTY]", "[SUBPROPERTY_SYNC_CONFIG]");
+   *   SubpropertySyncConfig response = analyticsAdminServiceClient.getSubpropertySyncConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the SubpropertySyncConfig to lookup. Format:
+   *     properties/{ordinary_property_id}/subpropertySyncConfigs/{subproperty_id} Example:
+   *     properties/1234/subpropertySyncConfigs/5678
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SubpropertySyncConfig getSubpropertySyncConfig(SubpropertySyncConfigName name) {
+    GetSubpropertySyncConfigRequest request =
+        GetSubpropertySyncConfigRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getSubpropertySyncConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single `SubpropertySyncConfig`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name =
+   *       SubpropertySyncConfigName.of("[PROPERTY]", "[SUBPROPERTY_SYNC_CONFIG]").toString();
+   *   SubpropertySyncConfig response = analyticsAdminServiceClient.getSubpropertySyncConfig(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. Resource name of the SubpropertySyncConfig to lookup. Format:
+   *     properties/{ordinary_property_id}/subpropertySyncConfigs/{subproperty_id} Example:
+   *     properties/1234/subpropertySyncConfigs/5678
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SubpropertySyncConfig getSubpropertySyncConfig(String name) {
+    GetSubpropertySyncConfigRequest request =
+        GetSubpropertySyncConfigRequest.newBuilder().setName(name).build();
+    return getSubpropertySyncConfig(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single `SubpropertySyncConfig`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetSubpropertySyncConfigRequest request =
+   *       GetSubpropertySyncConfigRequest.newBuilder()
+   *           .setName(
+   *               SubpropertySyncConfigName.of("[PROPERTY]", "[SUBPROPERTY_SYNC_CONFIG]")
+   *                   .toString())
+   *           .build();
+   *   SubpropertySyncConfig response =
+   *       analyticsAdminServiceClient.getSubpropertySyncConfig(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final SubpropertySyncConfig getSubpropertySyncConfig(
+      GetSubpropertySyncConfigRequest request) {
+    return getSubpropertySyncConfigCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Lookup for a single `SubpropertySyncConfig`.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetSubpropertySyncConfigRequest request =
+   *       GetSubpropertySyncConfigRequest.newBuilder()
+   *           .setName(
+   *               SubpropertySyncConfigName.of("[PROPERTY]", "[SUBPROPERTY_SYNC_CONFIG]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<SubpropertySyncConfig> future =
+   *       analyticsAdminServiceClient.getSubpropertySyncConfigCallable().futureCall(request);
+   *   // Do something.
+   *   SubpropertySyncConfig response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetSubpropertySyncConfigRequest, SubpropertySyncConfig>
+      getSubpropertySyncConfigCallable() {
+    return stub.getSubpropertySyncConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the singleton data retention settings for this property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   ReportingIdentitySettingsName name = ReportingIdentitySettingsName.of("[PROPERTY]");
+   *   ReportingIdentitySettings response =
+   *       analyticsAdminServiceClient.getReportingIdentitySettings(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the settings to lookup. Format:
+   *     properties/{property}/reportingIdentitySettings Example:
+   *     "properties/1000/reportingIdentitySettings"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReportingIdentitySettings getReportingIdentitySettings(
+      ReportingIdentitySettingsName name) {
+    GetReportingIdentitySettingsRequest request =
+        GetReportingIdentitySettingsRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return getReportingIdentitySettings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the singleton data retention settings for this property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   String name = ReportingIdentitySettingsName.of("[PROPERTY]").toString();
+   *   ReportingIdentitySettings response =
+   *       analyticsAdminServiceClient.getReportingIdentitySettings(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the settings to lookup. Format:
+   *     properties/{property}/reportingIdentitySettings Example:
+   *     "properties/1000/reportingIdentitySettings"
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReportingIdentitySettings getReportingIdentitySettings(String name) {
+    GetReportingIdentitySettingsRequest request =
+        GetReportingIdentitySettingsRequest.newBuilder().setName(name).build();
+    return getReportingIdentitySettings(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the singleton data retention settings for this property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetReportingIdentitySettingsRequest request =
+   *       GetReportingIdentitySettingsRequest.newBuilder()
+   *           .setName(ReportingIdentitySettingsName.of("[PROPERTY]").toString())
+   *           .build();
+   *   ReportingIdentitySettings response =
+   *       analyticsAdminServiceClient.getReportingIdentitySettings(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ReportingIdentitySettings getReportingIdentitySettings(
+      GetReportingIdentitySettingsRequest request) {
+    return getReportingIdentitySettingsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns the singleton data retention settings for this property.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AnalyticsAdminServiceClient analyticsAdminServiceClient =
+   *     AnalyticsAdminServiceClient.create()) {
+   *   GetReportingIdentitySettingsRequest request =
+   *       GetReportingIdentitySettingsRequest.newBuilder()
+   *           .setName(ReportingIdentitySettingsName.of("[PROPERTY]").toString())
+   *           .build();
+   *   ApiFuture<ReportingIdentitySettings> future =
+   *       analyticsAdminServiceClient.getReportingIdentitySettingsCallable().futureCall(request);
+   *   // Do something.
+   *   ReportingIdentitySettings response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetReportingIdentitySettingsRequest, ReportingIdentitySettings>
+      getReportingIdentitySettingsCallable() {
+    return stub.getReportingIdentitySettingsCallable();
+  }
+
   @Override
   public final void close() {
     stub.close();
@@ -24595,6 +24737,102 @@ public class AnalyticsAdminServiceClient implements BackgroundResource {
     protected ListReportingDataAnnotationsFixedSizeCollection createCollection(
         List<ListReportingDataAnnotationsPage> pages, int collectionSize) {
       return new ListReportingDataAnnotationsFixedSizeCollection(pages, collectionSize);
+    }
+  }
+
+  public static class ListSubpropertySyncConfigsPagedResponse
+      extends AbstractPagedListResponse<
+          ListSubpropertySyncConfigsRequest,
+          ListSubpropertySyncConfigsResponse,
+          SubpropertySyncConfig,
+          ListSubpropertySyncConfigsPage,
+          ListSubpropertySyncConfigsFixedSizeCollection> {
+
+    public static ApiFuture<ListSubpropertySyncConfigsPagedResponse> createAsync(
+        PageContext<
+                ListSubpropertySyncConfigsRequest,
+                ListSubpropertySyncConfigsResponse,
+                SubpropertySyncConfig>
+            context,
+        ApiFuture<ListSubpropertySyncConfigsResponse> futureResponse) {
+      ApiFuture<ListSubpropertySyncConfigsPage> futurePage =
+          ListSubpropertySyncConfigsPage.createEmptyPage().createPageAsync(context, futureResponse);
+      return ApiFutures.transform(
+          futurePage,
+          input -> new ListSubpropertySyncConfigsPagedResponse(input),
+          MoreExecutors.directExecutor());
+    }
+
+    private ListSubpropertySyncConfigsPagedResponse(ListSubpropertySyncConfigsPage page) {
+      super(page, ListSubpropertySyncConfigsFixedSizeCollection.createEmptyCollection());
+    }
+  }
+
+  public static class ListSubpropertySyncConfigsPage
+      extends AbstractPage<
+          ListSubpropertySyncConfigsRequest,
+          ListSubpropertySyncConfigsResponse,
+          SubpropertySyncConfig,
+          ListSubpropertySyncConfigsPage> {
+
+    private ListSubpropertySyncConfigsPage(
+        PageContext<
+                ListSubpropertySyncConfigsRequest,
+                ListSubpropertySyncConfigsResponse,
+                SubpropertySyncConfig>
+            context,
+        ListSubpropertySyncConfigsResponse response) {
+      super(context, response);
+    }
+
+    private static ListSubpropertySyncConfigsPage createEmptyPage() {
+      return new ListSubpropertySyncConfigsPage(null, null);
+    }
+
+    @Override
+    protected ListSubpropertySyncConfigsPage createPage(
+        PageContext<
+                ListSubpropertySyncConfigsRequest,
+                ListSubpropertySyncConfigsResponse,
+                SubpropertySyncConfig>
+            context,
+        ListSubpropertySyncConfigsResponse response) {
+      return new ListSubpropertySyncConfigsPage(context, response);
+    }
+
+    @Override
+    public ApiFuture<ListSubpropertySyncConfigsPage> createPageAsync(
+        PageContext<
+                ListSubpropertySyncConfigsRequest,
+                ListSubpropertySyncConfigsResponse,
+                SubpropertySyncConfig>
+            context,
+        ApiFuture<ListSubpropertySyncConfigsResponse> futureResponse) {
+      return super.createPageAsync(context, futureResponse);
+    }
+  }
+
+  public static class ListSubpropertySyncConfigsFixedSizeCollection
+      extends AbstractFixedSizeCollection<
+          ListSubpropertySyncConfigsRequest,
+          ListSubpropertySyncConfigsResponse,
+          SubpropertySyncConfig,
+          ListSubpropertySyncConfigsPage,
+          ListSubpropertySyncConfigsFixedSizeCollection> {
+
+    private ListSubpropertySyncConfigsFixedSizeCollection(
+        List<ListSubpropertySyncConfigsPage> pages, int collectionSize) {
+      super(pages, collectionSize);
+    }
+
+    private static ListSubpropertySyncConfigsFixedSizeCollection createEmptyCollection() {
+      return new ListSubpropertySyncConfigsFixedSizeCollection(null, 0);
+    }
+
+    @Override
+    protected ListSubpropertySyncConfigsFixedSizeCollection createCollection(
+        List<ListSubpropertySyncConfigsPage> pages, int collectionSize) {
+      return new ListSubpropertySyncConfigsFixedSizeCollection(pages, collectionSize);
     }
   }
 }

@@ -65,6 +65,7 @@
     <module>java-cloudsupport</module>
     <module>java-compute</module>
     <module>java-confidentialcomputing</module>
+    <module>java-configdelivery</module>
     <module>java-connectgateway</module>
     <module>java-contact-center-insights</module>
     <module>java-container</module>
@@ -102,6 +103,7 @@
     <module>java-financialservices</module>
     <module>java-functions</module>
     <module>java-gdchardwaremanagement</module>
+    <module>java-geminidataanalytics</module>
     <module>java-gke-backup</module>
     <module>java-gke-connect-gateway</module>
     <module>java-gke-multi-cloud</module>
@@ -120,8 +122,10 @@
     <module>java-kms</module>
     <module>java-kmsinventory</module>
     <module>java-language</module>
+    <module>java-licensemanager</module>
     <module>java-life-sciences</module>
     <module>java-lustre</module>
+    <module>java-maintenance</module>
     <module>java-managed-identities</module>
     <module>java-managedkafka</module>
     <module>java-maps-addressvalidation</module>
@@ -173,6 +177,7 @@
     <module>java-resourcemanager</module>
     <module>java-retail</module>
     <module>java-run</module>
+    <module>java-saasservicemgmt</module>
     <module>java-samples</module>
     <module>java-scheduler</module>
     <module>java-secretmanager</module>

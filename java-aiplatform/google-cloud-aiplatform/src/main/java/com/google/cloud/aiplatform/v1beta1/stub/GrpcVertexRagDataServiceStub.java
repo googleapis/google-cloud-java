@@ -89,6 +89,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateRagCorpusRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateRagCorpusRequest, Operation>
@@ -100,6 +101,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateRagCorpusRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetRagCorpusRequest, RagCorpus>
@@ -110,6 +112,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
                   "google.cloud.aiplatform.v1beta1.VertexRagDataService/GetRagCorpus")
               .setRequestMarshaller(ProtoUtils.marshaller(GetRagCorpusRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(RagCorpus.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListRagCorporaRequest, ListRagCorporaResponse>
@@ -122,6 +125,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
                   ProtoUtils.marshaller(ListRagCorporaRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListRagCorporaResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteRagCorpusRequest, Operation>
@@ -133,6 +137,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteRagCorpusRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UploadRagFileRequest, UploadRagFileResponse>
@@ -145,6 +150,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
                   ProtoUtils.marshaller(UploadRagFileRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(UploadRagFileResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportRagFilesRequest, Operation>
@@ -156,6 +162,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ImportRagFilesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetRagFileRequest, RagFile> getRagFileMethodDescriptor =
@@ -164,6 +171,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.VertexRagDataService/GetRagFile")
           .setRequestMarshaller(ProtoUtils.marshaller(GetRagFileRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(RagFile.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListRagFilesRequest, ListRagFilesResponse>
@@ -175,6 +183,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListRagFilesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListRagFilesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteRagFileRequest, Operation>
@@ -186,6 +195,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteRagFileRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateRagEngineConfigRequest, Operation>
@@ -197,6 +207,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateRagEngineConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetRagEngineConfigRequest, RagEngineConfig>
@@ -208,6 +219,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetRagEngineConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(RagEngineConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -219,6 +231,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -227,6 +240,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -235,6 +249,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -243,6 +258,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -254,6 +270,7 @@ public class GrpcVertexRagDataServiceStub extends VertexRagDataServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateRagCorpusRequest, Operation> createRagCorpusCallable;

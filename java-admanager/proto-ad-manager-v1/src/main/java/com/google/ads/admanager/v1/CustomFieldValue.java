@@ -194,7 +194,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Represent custom field value type.
-   * Next Id: 5
    * </pre>
    *
    * Protobuf type {@code google.ads.admanager.v1.CustomFieldValue.Value}
@@ -701,7 +700,6 @@ public final class CustomFieldValue extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Represent custom field value type.
-     * Next Id: 5
      * </pre>
      *
      * Protobuf type {@code google.ads.admanager.v1.CustomFieldValue.Value}

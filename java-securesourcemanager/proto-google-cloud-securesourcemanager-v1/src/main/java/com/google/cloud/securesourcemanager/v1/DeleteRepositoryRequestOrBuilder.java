@@ -30,7 +30,7 @@ public interface DeleteRepositoryRequestOrBuilder
    * <pre>
    * Required. Name of the repository to delete.
    * The format is
-   * projects/{project_number}/locations/{location_id}/repositories/{repository_id}.
+   * `projects/{project_number}/locations/{location_id}/repositories/{repository_id}`.
    * </pre>
    *
    * <code>
@@ -47,7 +47,7 @@ public interface DeleteRepositoryRequestOrBuilder
    * <pre>
    * Required. Name of the repository to delete.
    * The format is
-   * projects/{project_number}/locations/{location_id}/repositories/{repository_id}.
+   * `projects/{project_number}/locations/{location_id}/repositories/{repository_id}`.
    * </pre>
    *
    * <code>

@@ -103,6 +103,25 @@ import javax.annotation.Generated;
  *      </ul>
  *       </td>
  *    </tr>
+ *    <tr>
+ *      <td><p> GetComment</td>
+ *      <td><p> Retrieve a comment.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getComment(GetCommentRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getComment(CommentName name)
+ *           <li><p> getComment(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getCommentCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
  *  </table>
  *
  * <p>See the individual methods for example code.
@@ -495,6 +514,121 @@ public class CommentServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<CreateCommentRequest, Comment> createCommentCallable() {
     return stub.createCommentCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieve a comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CommentServiceClient commentServiceClient = CommentServiceClient.create()) {
+   *   CommentName name =
+   *       CommentName.ofOrganizationCaseCommentName("[ORGANIZATION]", "[CASE]", "[COMMENT]");
+   *   Comment response = commentServiceClient.getComment(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the comment to retrieve.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Comment getComment(CommentName name) {
+    GetCommentRequest request =
+        GetCommentRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getComment(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieve a comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CommentServiceClient commentServiceClient = CommentServiceClient.create()) {
+   *   String name =
+   *       CommentName.ofOrganizationCaseCommentName("[ORGANIZATION]", "[CASE]", "[COMMENT]")
+   *           .toString();
+   *   Comment response = commentServiceClient.getComment(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the comment to retrieve.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Comment getComment(String name) {
+    GetCommentRequest request = GetCommentRequest.newBuilder().setName(name).build();
+    return getComment(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieve a comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CommentServiceClient commentServiceClient = CommentServiceClient.create()) {
+   *   GetCommentRequest request =
+   *       GetCommentRequest.newBuilder()
+   *           .setName(
+   *               CommentName.ofOrganizationCaseCommentName("[ORGANIZATION]", "[CASE]", "[COMMENT]")
+   *                   .toString())
+   *           .build();
+   *   Comment response = commentServiceClient.getComment(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final Comment getComment(GetCommentRequest request) {
+    return getCommentCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Retrieve a comment.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CommentServiceClient commentServiceClient = CommentServiceClient.create()) {
+   *   GetCommentRequest request =
+   *       GetCommentRequest.newBuilder()
+   *           .setName(
+   *               CommentName.ofOrganizationCaseCommentName("[ORGANIZATION]", "[CASE]", "[COMMENT]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Comment> future = commentServiceClient.getCommentCallable().futureCall(request);
+   *   // Do something.
+   *   Comment response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetCommentRequest, Comment> getCommentCallable() {
+    return stub.getCommentCallable();
   }
 
   @Override

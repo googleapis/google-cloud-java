@@ -57,8 +57,8 @@ public interface SetMaintenancePolicyRequestOrBuilder
    *
    * <pre>
    * Required. The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-   * cluster resides.
+   * [zone](https://cloud.google.com/compute/docs/zones#available)
+   * in which the cluster resides.
    * </pre>
    *
    * <code>string zone = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -72,8 +72,8 @@ public interface SetMaintenancePolicyRequestOrBuilder
    *
    * <pre>
    * Required. The name of the Google Compute Engine
-   * [zone](https://cloud.google.com/compute/docs/zones#available) in which the
-   * cluster resides.
+   * [zone](https://cloud.google.com/compute/docs/zones#available)
+   * in which the cluster resides.
    * </pre>
    *
    * <code>string zone = 2 [(.google.api.field_behavior) = REQUIRED];</code>

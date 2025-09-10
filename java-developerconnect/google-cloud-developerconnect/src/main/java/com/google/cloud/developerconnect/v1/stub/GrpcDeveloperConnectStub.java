@@ -18,9 +18,11 @@ package com.google.cloud.developerconnect.v1.stub;
 
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.FetchGitRefsPagedResponse;
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.FetchLinkableGitRepositoriesPagedResponse;
+import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.ListAccountConnectorsPagedResponse;
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.ListConnectionsPagedResponse;
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.ListGitRepositoryLinksPagedResponse;
 import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.ListLocationsPagedResponse;
+import static com.google.cloud.developerconnect.v1.DeveloperConnectClient.ListUsersPagedResponse;
 
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.BackgroundResourceAggregation;
@@ -30,11 +32,18 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.developerconnect.v1.AccountConnector;
 import com.google.cloud.developerconnect.v1.Connection;
+import com.google.cloud.developerconnect.v1.CreateAccountConnectorRequest;
 import com.google.cloud.developerconnect.v1.CreateConnectionRequest;
 import com.google.cloud.developerconnect.v1.CreateGitRepositoryLinkRequest;
+import com.google.cloud.developerconnect.v1.DeleteAccountConnectorRequest;
 import com.google.cloud.developerconnect.v1.DeleteConnectionRequest;
 import com.google.cloud.developerconnect.v1.DeleteGitRepositoryLinkRequest;
+import com.google.cloud.developerconnect.v1.DeleteSelfRequest;
+import com.google.cloud.developerconnect.v1.DeleteUserRequest;
+import com.google.cloud.developerconnect.v1.FetchAccessTokenRequest;
+import com.google.cloud.developerconnect.v1.FetchAccessTokenResponse;
 import com.google.cloud.developerconnect.v1.FetchGitHubInstallationsRequest;
 import com.google.cloud.developerconnect.v1.FetchGitHubInstallationsResponse;
 import com.google.cloud.developerconnect.v1.FetchGitRefsRequest;
@@ -45,15 +54,23 @@ import com.google.cloud.developerconnect.v1.FetchReadTokenRequest;
 import com.google.cloud.developerconnect.v1.FetchReadTokenResponse;
 import com.google.cloud.developerconnect.v1.FetchReadWriteTokenRequest;
 import com.google.cloud.developerconnect.v1.FetchReadWriteTokenResponse;
+import com.google.cloud.developerconnect.v1.FetchSelfRequest;
+import com.google.cloud.developerconnect.v1.GetAccountConnectorRequest;
 import com.google.cloud.developerconnect.v1.GetConnectionRequest;
 import com.google.cloud.developerconnect.v1.GetGitRepositoryLinkRequest;
 import com.google.cloud.developerconnect.v1.GitRepositoryLink;
+import com.google.cloud.developerconnect.v1.ListAccountConnectorsRequest;
+import com.google.cloud.developerconnect.v1.ListAccountConnectorsResponse;
 import com.google.cloud.developerconnect.v1.ListConnectionsRequest;
 import com.google.cloud.developerconnect.v1.ListConnectionsResponse;
 import com.google.cloud.developerconnect.v1.ListGitRepositoryLinksRequest;
 import com.google.cloud.developerconnect.v1.ListGitRepositoryLinksResponse;
+import com.google.cloud.developerconnect.v1.ListUsersRequest;
+import com.google.cloud.developerconnect.v1.ListUsersResponse;
 import com.google.cloud.developerconnect.v1.OperationMetadata;
+import com.google.cloud.developerconnect.v1.UpdateAccountConnectorRequest;
 import com.google.cloud.developerconnect.v1.UpdateConnectionRequest;
+import com.google.cloud.developerconnect.v1.User;
 import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
@@ -85,6 +102,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
                   ProtoUtils.marshaller(ListConnectionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListConnectionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetConnectionRequest, Connection>
@@ -95,6 +113,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Connection.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateConnectionRequest, Operation>
@@ -106,6 +125,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateConnectionRequest, Operation>
@@ -117,6 +137,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteConnectionRequest, Operation>
@@ -128,6 +149,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateGitRepositoryLinkRequest, Operation>
@@ -139,6 +161,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateGitRepositoryLinkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteGitRepositoryLinkRequest, Operation>
@@ -150,6 +173,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteGitRepositoryLinkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -164,6 +188,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
                   ProtoUtils.marshaller(ListGitRepositoryLinksRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListGitRepositoryLinksResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetGitRepositoryLinkRequest, GitRepositoryLink>
@@ -175,6 +200,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetGitRepositoryLinkRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(GitRepositoryLink.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<FetchReadWriteTokenRequest, FetchReadWriteTokenResponse>
@@ -187,6 +213,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
                   ProtoUtils.marshaller(FetchReadWriteTokenRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FetchReadWriteTokenResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<FetchReadTokenRequest, FetchReadTokenResponse>
@@ -198,6 +225,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
                   ProtoUtils.marshaller(FetchReadTokenRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FetchReadTokenResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -213,6 +241,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
                   ProtoUtils.marshaller(FetchLinkableGitRepositoriesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FetchLinkableGitRepositoriesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -227,6 +256,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
                   ProtoUtils.marshaller(FetchGitHubInstallationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FetchGitHubInstallationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<FetchGitRefsRequest, FetchGitRefsResponse>
@@ -237,7 +267,119 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
               .setRequestMarshaller(ProtoUtils.marshaller(FetchGitRefsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FetchGitRefsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
+
+  private static final MethodDescriptor<ListAccountConnectorsRequest, ListAccountConnectorsResponse>
+      listAccountConnectorsMethodDescriptor =
+          MethodDescriptor.<ListAccountConnectorsRequest, ListAccountConnectorsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.developerconnect.v1.DeveloperConnect/ListAccountConnectors")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListAccountConnectorsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListAccountConnectorsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetAccountConnectorRequest, AccountConnector>
+      getAccountConnectorMethodDescriptor =
+          MethodDescriptor.<GetAccountConnectorRequest, AccountConnector>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.developerconnect.v1.DeveloperConnect/GetAccountConnector")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetAccountConnectorRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(AccountConnector.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateAccountConnectorRequest, Operation>
+      createAccountConnectorMethodDescriptor =
+          MethodDescriptor.<CreateAccountConnectorRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.developerconnect.v1.DeveloperConnect/CreateAccountConnector")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateAccountConnectorRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateAccountConnectorRequest, Operation>
+      updateAccountConnectorMethodDescriptor =
+          MethodDescriptor.<UpdateAccountConnectorRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.developerconnect.v1.DeveloperConnect/UpdateAccountConnector")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateAccountConnectorRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteAccountConnectorRequest, Operation>
+      deleteAccountConnectorMethodDescriptor =
+          MethodDescriptor.<DeleteAccountConnectorRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.developerconnect.v1.DeveloperConnect/DeleteAccountConnector")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteAccountConnectorRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<FetchAccessTokenRequest, FetchAccessTokenResponse>
+      fetchAccessTokenMethodDescriptor =
+          MethodDescriptor.<FetchAccessTokenRequest, FetchAccessTokenResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.developerconnect.v1.DeveloperConnect/FetchAccessToken")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(FetchAccessTokenRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(FetchAccessTokenResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListUsersRequest, ListUsersResponse>
+      listUsersMethodDescriptor =
+          MethodDescriptor.<ListUsersRequest, ListUsersResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.developerconnect.v1.DeveloperConnect/ListUsers")
+              .setRequestMarshaller(ProtoUtils.marshaller(ListUsersRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ListUsersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteUserRequest, Operation> deleteUserMethodDescriptor =
+      MethodDescriptor.<DeleteUserRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.developerconnect.v1.DeveloperConnect/DeleteUser")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteUserRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<FetchSelfRequest, User> fetchSelfMethodDescriptor =
+      MethodDescriptor.<FetchSelfRequest, User>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.developerconnect.v1.DeveloperConnect/FetchSelf")
+          .setRequestMarshaller(ProtoUtils.marshaller(FetchSelfRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(User.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
+
+  private static final MethodDescriptor<DeleteSelfRequest, Operation> deleteSelfMethodDescriptor =
+      MethodDescriptor.<DeleteSelfRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.developerconnect.v1.DeveloperConnect/DeleteSelf")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeleteSelfRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
@@ -248,6 +390,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -256,6 +399,7 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListConnectionsRequest, ListConnectionsResponse>
@@ -301,6 +445,37 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
   private final UnaryCallable<FetchGitRefsRequest, FetchGitRefsResponse> fetchGitRefsCallable;
   private final UnaryCallable<FetchGitRefsRequest, FetchGitRefsPagedResponse>
       fetchGitRefsPagedCallable;
+  private final UnaryCallable<ListAccountConnectorsRequest, ListAccountConnectorsResponse>
+      listAccountConnectorsCallable;
+  private final UnaryCallable<ListAccountConnectorsRequest, ListAccountConnectorsPagedResponse>
+      listAccountConnectorsPagedCallable;
+  private final UnaryCallable<GetAccountConnectorRequest, AccountConnector>
+      getAccountConnectorCallable;
+  private final UnaryCallable<CreateAccountConnectorRequest, Operation>
+      createAccountConnectorCallable;
+  private final OperationCallable<
+          CreateAccountConnectorRequest, AccountConnector, OperationMetadata>
+      createAccountConnectorOperationCallable;
+  private final UnaryCallable<UpdateAccountConnectorRequest, Operation>
+      updateAccountConnectorCallable;
+  private final OperationCallable<
+          UpdateAccountConnectorRequest, AccountConnector, OperationMetadata>
+      updateAccountConnectorOperationCallable;
+  private final UnaryCallable<DeleteAccountConnectorRequest, Operation>
+      deleteAccountConnectorCallable;
+  private final OperationCallable<DeleteAccountConnectorRequest, Empty, OperationMetadata>
+      deleteAccountConnectorOperationCallable;
+  private final UnaryCallable<FetchAccessTokenRequest, FetchAccessTokenResponse>
+      fetchAccessTokenCallable;
+  private final UnaryCallable<ListUsersRequest, ListUsersResponse> listUsersCallable;
+  private final UnaryCallable<ListUsersRequest, ListUsersPagedResponse> listUsersPagedCallable;
+  private final UnaryCallable<DeleteUserRequest, Operation> deleteUserCallable;
+  private final OperationCallable<DeleteUserRequest, Empty, OperationMetadata>
+      deleteUserOperationCallable;
+  private final UnaryCallable<FetchSelfRequest, User> fetchSelfCallable;
+  private final UnaryCallable<DeleteSelfRequest, Operation> deleteSelfCallable;
+  private final OperationCallable<DeleteSelfRequest, Empty, OperationMetadata>
+      deleteSelfOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -506,6 +681,116 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<ListAccountConnectorsRequest, ListAccountConnectorsResponse>
+        listAccountConnectorsTransportSettings =
+            GrpcCallSettings
+                .<ListAccountConnectorsRequest, ListAccountConnectorsResponse>newBuilder()
+                .setMethodDescriptor(listAccountConnectorsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetAccountConnectorRequest, AccountConnector>
+        getAccountConnectorTransportSettings =
+            GrpcCallSettings.<GetAccountConnectorRequest, AccountConnector>newBuilder()
+                .setMethodDescriptor(getAccountConnectorMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<CreateAccountConnectorRequest, Operation>
+        createAccountConnectorTransportSettings =
+            GrpcCallSettings.<CreateAccountConnectorRequest, Operation>newBuilder()
+                .setMethodDescriptor(createAccountConnectorMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateAccountConnectorRequest, Operation>
+        updateAccountConnectorTransportSettings =
+            GrpcCallSettings.<UpdateAccountConnectorRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateAccountConnectorMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "account_connector.name",
+                          String.valueOf(request.getAccountConnector().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteAccountConnectorRequest, Operation>
+        deleteAccountConnectorTransportSettings =
+            GrpcCallSettings.<DeleteAccountConnectorRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteAccountConnectorMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<FetchAccessTokenRequest, FetchAccessTokenResponse>
+        fetchAccessTokenTransportSettings =
+            GrpcCallSettings.<FetchAccessTokenRequest, FetchAccessTokenResponse>newBuilder()
+                .setMethodDescriptor(fetchAccessTokenMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "account_connector", String.valueOf(request.getAccountConnector()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListUsersRequest, ListUsersResponse> listUsersTransportSettings =
+        GrpcCallSettings.<ListUsersRequest, ListUsersResponse>newBuilder()
+            .setMethodDescriptor(listUsersMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteUserRequest, Operation> deleteUserTransportSettings =
+        GrpcCallSettings.<DeleteUserRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteUserMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<FetchSelfRequest, User> fetchSelfTransportSettings =
+        GrpcCallSettings.<FetchSelfRequest, User>newBuilder()
+            .setMethodDescriptor(fetchSelfMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteSelfRequest, Operation> deleteSelfTransportSettings =
+        GrpcCallSettings.<DeleteSelfRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteSelfMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -629,6 +914,84 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
     this.fetchGitRefsPagedCallable =
         callableFactory.createPagedCallable(
             fetchGitRefsTransportSettings, settings.fetchGitRefsSettings(), clientContext);
+    this.listAccountConnectorsCallable =
+        callableFactory.createUnaryCallable(
+            listAccountConnectorsTransportSettings,
+            settings.listAccountConnectorsSettings(),
+            clientContext);
+    this.listAccountConnectorsPagedCallable =
+        callableFactory.createPagedCallable(
+            listAccountConnectorsTransportSettings,
+            settings.listAccountConnectorsSettings(),
+            clientContext);
+    this.getAccountConnectorCallable =
+        callableFactory.createUnaryCallable(
+            getAccountConnectorTransportSettings,
+            settings.getAccountConnectorSettings(),
+            clientContext);
+    this.createAccountConnectorCallable =
+        callableFactory.createUnaryCallable(
+            createAccountConnectorTransportSettings,
+            settings.createAccountConnectorSettings(),
+            clientContext);
+    this.createAccountConnectorOperationCallable =
+        callableFactory.createOperationCallable(
+            createAccountConnectorTransportSettings,
+            settings.createAccountConnectorOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.updateAccountConnectorCallable =
+        callableFactory.createUnaryCallable(
+            updateAccountConnectorTransportSettings,
+            settings.updateAccountConnectorSettings(),
+            clientContext);
+    this.updateAccountConnectorOperationCallable =
+        callableFactory.createOperationCallable(
+            updateAccountConnectorTransportSettings,
+            settings.updateAccountConnectorOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteAccountConnectorCallable =
+        callableFactory.createUnaryCallable(
+            deleteAccountConnectorTransportSettings,
+            settings.deleteAccountConnectorSettings(),
+            clientContext);
+    this.deleteAccountConnectorOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteAccountConnectorTransportSettings,
+            settings.deleteAccountConnectorOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.fetchAccessTokenCallable =
+        callableFactory.createUnaryCallable(
+            fetchAccessTokenTransportSettings, settings.fetchAccessTokenSettings(), clientContext);
+    this.listUsersCallable =
+        callableFactory.createUnaryCallable(
+            listUsersTransportSettings, settings.listUsersSettings(), clientContext);
+    this.listUsersPagedCallable =
+        callableFactory.createPagedCallable(
+            listUsersTransportSettings, settings.listUsersSettings(), clientContext);
+    this.deleteUserCallable =
+        callableFactory.createUnaryCallable(
+            deleteUserTransportSettings, settings.deleteUserSettings(), clientContext);
+    this.deleteUserOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteUserTransportSettings,
+            settings.deleteUserOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.fetchSelfCallable =
+        callableFactory.createUnaryCallable(
+            fetchSelfTransportSettings, settings.fetchSelfSettings(), clientContext);
+    this.deleteSelfCallable =
+        callableFactory.createUnaryCallable(
+            deleteSelfTransportSettings, settings.deleteSelfSettings(), clientContext);
+    this.deleteSelfOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteSelfTransportSettings,
+            settings.deleteSelfOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -776,6 +1139,99 @@ public class GrpcDeveloperConnectStub extends DeveloperConnectStub {
   @Override
   public UnaryCallable<FetchGitRefsRequest, FetchGitRefsPagedResponse> fetchGitRefsPagedCallable() {
     return fetchGitRefsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAccountConnectorsRequest, ListAccountConnectorsResponse>
+      listAccountConnectorsCallable() {
+    return listAccountConnectorsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListAccountConnectorsRequest, ListAccountConnectorsPagedResponse>
+      listAccountConnectorsPagedCallable() {
+    return listAccountConnectorsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetAccountConnectorRequest, AccountConnector> getAccountConnectorCallable() {
+    return getAccountConnectorCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateAccountConnectorRequest, Operation> createAccountConnectorCallable() {
+    return createAccountConnectorCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateAccountConnectorRequest, AccountConnector, OperationMetadata>
+      createAccountConnectorOperationCallable() {
+    return createAccountConnectorOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateAccountConnectorRequest, Operation> updateAccountConnectorCallable() {
+    return updateAccountConnectorCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateAccountConnectorRequest, AccountConnector, OperationMetadata>
+      updateAccountConnectorOperationCallable() {
+    return updateAccountConnectorOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteAccountConnectorRequest, Operation> deleteAccountConnectorCallable() {
+    return deleteAccountConnectorCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteAccountConnectorRequest, Empty, OperationMetadata>
+      deleteAccountConnectorOperationCallable() {
+    return deleteAccountConnectorOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchAccessTokenRequest, FetchAccessTokenResponse>
+      fetchAccessTokenCallable() {
+    return fetchAccessTokenCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListUsersRequest, ListUsersResponse> listUsersCallable() {
+    return listUsersCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListUsersRequest, ListUsersPagedResponse> listUsersPagedCallable() {
+    return listUsersPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteUserRequest, Operation> deleteUserCallable() {
+    return deleteUserCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteUserRequest, Empty, OperationMetadata>
+      deleteUserOperationCallable() {
+    return deleteUserOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchSelfRequest, User> fetchSelfCallable() {
+    return fetchSelfCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteSelfRequest, Operation> deleteSelfCallable() {
+    return deleteSelfCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteSelfRequest, Empty, OperationMetadata>
+      deleteSelfOperationCallable() {
+    return deleteSelfOperationCallable;
   }
 
   @Override

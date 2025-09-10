@@ -3389,56 +3389,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
     return AssessmentConfigCase.forNumber(assessmentConfigCase_);
   }
 
-  private int readConfigCase_ = 0;
-
-  @SuppressWarnings("serial")
-  private java.lang.Object readConfig_;
-
-  public enum ReadConfigCase
-      implements
-          com.google.protobuf.Internal.EnumLite,
-          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-    GEMINI_TEMPLATE_CONFIG(4),
-    REQUEST_COLUMN_NAME(5),
-    READCONFIG_NOT_SET(0);
-    private final int value;
-
-    private ReadConfigCase(int value) {
-      this.value = value;
-    }
-
-    /**
-     * @param value The number of the enum to look for.
-     * @return The enum associated with the given number.
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
-    @java.lang.Deprecated
-    public static ReadConfigCase valueOf(int value) {
-      return forNumber(value);
-    }
-
-    public static ReadConfigCase forNumber(int value) {
-      switch (value) {
-        case 4:
-          return GEMINI_TEMPLATE_CONFIG;
-        case 5:
-          return REQUEST_COLUMN_NAME;
-        case 0:
-          return READCONFIG_NOT_SET;
-        default:
-          return null;
-      }
-    }
-
-    public int getNumber() {
-      return this.value;
-    }
-  };
-
-  public ReadConfigCase getReadConfigCase() {
-    return ReadConfigCase.forNumber(readConfigCase_);
-  }
-
   public static final int TUNING_VALIDATION_ASSESSMENT_CONFIG_FIELD_NUMBER = 2;
 
   /**
@@ -3720,146 +3670,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
         .BatchPredictionResourceUsageAssessmentConfig.getDefaultInstance();
   }
 
-  public static final int GEMINI_TEMPLATE_CONFIG_FIELD_NUMBER = 4;
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Config for assembling templates with a Gemini API structure to
-   * assess assembled data.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.aiplatform.v1beta1.GeminiTemplateConfig gemini_template_config = 4 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   *
-   * @return Whether the geminiTemplateConfig field is set.
-   */
-  @java.lang.Override
-  public boolean hasGeminiTemplateConfig() {
-    return readConfigCase_ == 4;
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Config for assembling templates with a Gemini API structure to
-   * assess assembled data.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.aiplatform.v1beta1.GeminiTemplateConfig gemini_template_config = 4 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   *
-   * @return The geminiTemplateConfig.
-   */
-  @java.lang.Override
-  public com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig getGeminiTemplateConfig() {
-    if (readConfigCase_ == 4) {
-      return (com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig) readConfig_;
-    }
-    return com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig.getDefaultInstance();
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. Config for assembling templates with a Gemini API structure to
-   * assess assembled data.
-   * </pre>
-   *
-   * <code>
-   * .google.cloud.aiplatform.v1beta1.GeminiTemplateConfig gemini_template_config = 4 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   */
-  @java.lang.Override
-  public com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfigOrBuilder
-      getGeminiTemplateConfigOrBuilder() {
-    if (readConfigCase_ == 4) {
-      return (com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig) readConfig_;
-    }
-    return com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig.getDefaultInstance();
-  }
-
-  public static final int REQUEST_COLUMN_NAME_FIELD_NUMBER = 5;
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The column name in the underlying table that contains already
-   * fully assembled requests.
-   * </pre>
-   *
-   * <code>string request_column_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return Whether the requestColumnName field is set.
-   */
-  public boolean hasRequestColumnName() {
-    return readConfigCase_ == 5;
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The column name in the underlying table that contains already
-   * fully assembled requests.
-   * </pre>
-   *
-   * <code>string request_column_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return The requestColumnName.
-   */
-  public java.lang.String getRequestColumnName() {
-    java.lang.Object ref = "";
-    if (readConfigCase_ == 5) {
-      ref = readConfig_;
-    }
-    if (ref instanceof java.lang.String) {
-      return (java.lang.String) ref;
-    } else {
-      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-      java.lang.String s = bs.toStringUtf8();
-      if (readConfigCase_ == 5) {
-        readConfig_ = s;
-      }
-      return s;
-    }
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The column name in the underlying table that contains already
-   * fully assembled requests.
-   * </pre>
-   *
-   * <code>string request_column_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-   *
-   * @return The bytes for requestColumnName.
-   */
-  public com.google.protobuf.ByteString getRequestColumnNameBytes() {
-    java.lang.Object ref = "";
-    if (readConfigCase_ == 5) {
-      ref = readConfig_;
-    }
-    if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b =
-          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-      if (readConfigCase_ == 5) {
-        readConfig_ = b;
-      }
-      return b;
-    } else {
-      return (com.google.protobuf.ByteString) ref;
-    }
-  }
-
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -4011,13 +3821,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
                   .TuningResourceUsageAssessmentConfig)
               assessmentConfig_);
     }
-    if (readConfigCase_ == 4) {
-      output.writeMessage(
-          4, (com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig) readConfig_);
-    }
-    if (readConfigCase_ == 5) {
-      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, readConfig_);
-    }
     if (assessmentConfigCase_ == 6) {
       output.writeMessage(
           6,
@@ -4062,14 +3865,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
               (com.google.cloud.aiplatform.v1beta1.AssessDataRequest
                       .TuningResourceUsageAssessmentConfig)
                   assessmentConfig_);
-    }
-    if (readConfigCase_ == 4) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              4, (com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig) readConfig_);
-    }
-    if (readConfigCase_ == 5) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, readConfig_);
     }
     if (assessmentConfigCase_ == 6) {
       size +=
@@ -4133,17 +3928,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       case 0:
       default:
     }
-    if (!getReadConfigCase().equals(other.getReadConfigCase())) return false;
-    switch (readConfigCase_) {
-      case 4:
-        if (!getGeminiTemplateConfig().equals(other.getGeminiTemplateConfig())) return false;
-        break;
-      case 5:
-        if (!getRequestColumnName().equals(other.getRequestColumnName())) return false;
-        break;
-      case 0:
-      default:
-    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -4177,18 +3961,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       case 7:
         hash = (37 * hash) + BATCH_PREDICTION_RESOURCE_USAGE_ASSESSMENT_CONFIG_FIELD_NUMBER;
         hash = (53 * hash) + getBatchPredictionResourceUsageAssessmentConfig().hashCode();
-        break;
-      case 0:
-      default:
-    }
-    switch (readConfigCase_) {
-      case 4:
-        hash = (37 * hash) + GEMINI_TEMPLATE_CONFIG_FIELD_NUMBER;
-        hash = (53 * hash) + getGeminiTemplateConfig().hashCode();
-        break;
-      case 5:
-        hash = (37 * hash) + REQUEST_COLUMN_NAME_FIELD_NUMBER;
-        hash = (53 * hash) + getRequestColumnName().hashCode();
         break;
       case 0:
       default:
@@ -4357,9 +4129,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       if (batchPredictionResourceUsageAssessmentConfigBuilder_ != null) {
         batchPredictionResourceUsageAssessmentConfigBuilder_.clear();
       }
-      if (geminiTemplateConfigBuilder_ != null) {
-        geminiTemplateConfigBuilder_.clear();
-      }
       name_ = "";
       geminiRequestReadConfig_ = null;
       if (geminiRequestReadConfigBuilder_ != null) {
@@ -4368,8 +4137,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       }
       assessmentConfigCase_ = 0;
       assessmentConfig_ = null;
-      readConfigCase_ = 0;
-      readConfig_ = null;
       return this;
     }
 
@@ -4407,11 +4174,11 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
 
     private void buildPartial0(com.google.cloud.aiplatform.v1beta1.AssessDataRequest result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000040) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.name_ = name_;
       }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000080) != 0)) {
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.geminiRequestReadConfig_ =
             geminiRequestReadConfigBuilder_ == null
                 ? geminiRequestReadConfig_
@@ -4436,11 +4203,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       if (assessmentConfigCase_ == 7
           && batchPredictionResourceUsageAssessmentConfigBuilder_ != null) {
         result.assessmentConfig_ = batchPredictionResourceUsageAssessmentConfigBuilder_.build();
-      }
-      result.readConfigCase_ = readConfigCase_;
-      result.readConfig_ = this.readConfig_;
-      if (readConfigCase_ == 4 && geminiTemplateConfigBuilder_ != null) {
-        result.readConfig_ = geminiTemplateConfigBuilder_.build();
       }
     }
 
@@ -4492,7 +4254,7 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
         return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       if (other.hasGeminiRequestReadConfig()) {
@@ -4527,24 +4289,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
             break;
           }
       }
-      switch (other.getReadConfigCase()) {
-        case GEMINI_TEMPLATE_CONFIG:
-          {
-            mergeGeminiTemplateConfig(other.getGeminiTemplateConfig());
-            break;
-          }
-        case REQUEST_COLUMN_NAME:
-          {
-            readConfigCase_ = 5;
-            readConfig_ = other.readConfig_;
-            onChanged();
-            break;
-          }
-        case READCONFIG_NOT_SET:
-          {
-            break;
-          }
-      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -4574,7 +4318,7 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
             case 10:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 10
             case 18:
@@ -4593,20 +4337,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
                 assessmentConfigCase_ = 3;
                 break;
               } // case 26
-            case 34:
-              {
-                input.readMessage(
-                    getGeminiTemplateConfigFieldBuilder().getBuilder(), extensionRegistry);
-                readConfigCase_ = 4;
-                break;
-              } // case 34
-            case 42:
-              {
-                java.lang.String s = input.readStringRequireUtf8();
-                readConfigCase_ = 5;
-                readConfig_ = s;
-                break;
-              } // case 42
             case 50:
               {
                 input.readMessage(
@@ -4627,7 +4357,7 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
               {
                 input.readMessage(
                     getGeminiRequestReadConfigFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 66
             default:
@@ -4657,20 +4387,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
     public Builder clearAssessmentConfig() {
       assessmentConfigCase_ = 0;
       assessmentConfig_ = null;
-      onChanged();
-      return this;
-    }
-
-    private int readConfigCase_ = 0;
-    private java.lang.Object readConfig_;
-
-    public ReadConfigCase getReadConfigCase() {
-      return ReadConfigCase.forNumber(readConfigCase_);
-    }
-
-    public Builder clearReadConfig() {
-      readConfigCase_ = 0;
-      readConfig_ = null;
       onChanged();
       return this;
     }
@@ -5780,402 +5496,6 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       return batchPredictionResourceUsageAssessmentConfigBuilder_;
     }
 
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig,
-            com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig.Builder,
-            com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfigOrBuilder>
-        geminiTemplateConfigBuilder_;
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Config for assembling templates with a Gemini API structure to
-     * assess assembled data.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.GeminiTemplateConfig gemini_template_config = 4 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     *
-     * @return Whether the geminiTemplateConfig field is set.
-     */
-    @java.lang.Override
-    public boolean hasGeminiTemplateConfig() {
-      return readConfigCase_ == 4;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Config for assembling templates with a Gemini API structure to
-     * assess assembled data.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.GeminiTemplateConfig gemini_template_config = 4 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     *
-     * @return The geminiTemplateConfig.
-     */
-    @java.lang.Override
-    public com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig getGeminiTemplateConfig() {
-      if (geminiTemplateConfigBuilder_ == null) {
-        if (readConfigCase_ == 4) {
-          return (com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig) readConfig_;
-        }
-        return com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig.getDefaultInstance();
-      } else {
-        if (readConfigCase_ == 4) {
-          return geminiTemplateConfigBuilder_.getMessage();
-        }
-        return com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig.getDefaultInstance();
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Config for assembling templates with a Gemini API structure to
-     * assess assembled data.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.GeminiTemplateConfig gemini_template_config = 4 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder setGeminiTemplateConfig(
-        com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig value) {
-      if (geminiTemplateConfigBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        readConfig_ = value;
-        onChanged();
-      } else {
-        geminiTemplateConfigBuilder_.setMessage(value);
-      }
-      readConfigCase_ = 4;
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Config for assembling templates with a Gemini API structure to
-     * assess assembled data.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.GeminiTemplateConfig gemini_template_config = 4 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder setGeminiTemplateConfig(
-        com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig.Builder builderForValue) {
-      if (geminiTemplateConfigBuilder_ == null) {
-        readConfig_ = builderForValue.build();
-        onChanged();
-      } else {
-        geminiTemplateConfigBuilder_.setMessage(builderForValue.build());
-      }
-      readConfigCase_ = 4;
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Config for assembling templates with a Gemini API structure to
-     * assess assembled data.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.GeminiTemplateConfig gemini_template_config = 4 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder mergeGeminiTemplateConfig(
-        com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig value) {
-      if (geminiTemplateConfigBuilder_ == null) {
-        if (readConfigCase_ == 4
-            && readConfig_
-                != com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig.getDefaultInstance()) {
-          readConfig_ =
-              com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig.newBuilder(
-                      (com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig) readConfig_)
-                  .mergeFrom(value)
-                  .buildPartial();
-        } else {
-          readConfig_ = value;
-        }
-        onChanged();
-      } else {
-        if (readConfigCase_ == 4) {
-          geminiTemplateConfigBuilder_.mergeFrom(value);
-        } else {
-          geminiTemplateConfigBuilder_.setMessage(value);
-        }
-      }
-      readConfigCase_ = 4;
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Config for assembling templates with a Gemini API structure to
-     * assess assembled data.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.GeminiTemplateConfig gemini_template_config = 4 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder clearGeminiTemplateConfig() {
-      if (geminiTemplateConfigBuilder_ == null) {
-        if (readConfigCase_ == 4) {
-          readConfigCase_ = 0;
-          readConfig_ = null;
-          onChanged();
-        }
-      } else {
-        if (readConfigCase_ == 4) {
-          readConfigCase_ = 0;
-          readConfig_ = null;
-        }
-        geminiTemplateConfigBuilder_.clear();
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Config for assembling templates with a Gemini API structure to
-     * assess assembled data.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.GeminiTemplateConfig gemini_template_config = 4 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig.Builder
-        getGeminiTemplateConfigBuilder() {
-      return getGeminiTemplateConfigFieldBuilder().getBuilder();
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Config for assembling templates with a Gemini API structure to
-     * assess assembled data.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.GeminiTemplateConfig gemini_template_config = 4 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    @java.lang.Override
-    public com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfigOrBuilder
-        getGeminiTemplateConfigOrBuilder() {
-      if ((readConfigCase_ == 4) && (geminiTemplateConfigBuilder_ != null)) {
-        return geminiTemplateConfigBuilder_.getMessageOrBuilder();
-      } else {
-        if (readConfigCase_ == 4) {
-          return (com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig) readConfig_;
-        }
-        return com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig.getDefaultInstance();
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. Config for assembling templates with a Gemini API structure to
-     * assess assembled data.
-     * </pre>
-     *
-     * <code>
-     * .google.cloud.aiplatform.v1beta1.GeminiTemplateConfig gemini_template_config = 4 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    private com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig,
-            com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig.Builder,
-            com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfigOrBuilder>
-        getGeminiTemplateConfigFieldBuilder() {
-      if (geminiTemplateConfigBuilder_ == null) {
-        if (!(readConfigCase_ == 4)) {
-          readConfig_ =
-              com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig.getDefaultInstance();
-        }
-        geminiTemplateConfigBuilder_ =
-            new com.google.protobuf.SingleFieldBuilderV3<
-                com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig,
-                com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig.Builder,
-                com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfigOrBuilder>(
-                (com.google.cloud.aiplatform.v1beta1.GeminiTemplateConfig) readConfig_,
-                getParentForChildren(),
-                isClean());
-        readConfig_ = null;
-      }
-      readConfigCase_ = 4;
-      onChanged();
-      return geminiTemplateConfigBuilder_;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The column name in the underlying table that contains already
-     * fully assembled requests.
-     * </pre>
-     *
-     * <code>string request_column_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return Whether the requestColumnName field is set.
-     */
-    @java.lang.Override
-    public boolean hasRequestColumnName() {
-      return readConfigCase_ == 5;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The column name in the underlying table that contains already
-     * fully assembled requests.
-     * </pre>
-     *
-     * <code>string request_column_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The requestColumnName.
-     */
-    @java.lang.Override
-    public java.lang.String getRequestColumnName() {
-      java.lang.Object ref = "";
-      if (readConfigCase_ == 5) {
-        ref = readConfig_;
-      }
-      if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
-        java.lang.String s = bs.toStringUtf8();
-        if (readConfigCase_ == 5) {
-          readConfig_ = s;
-        }
-        return s;
-      } else {
-        return (java.lang.String) ref;
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The column name in the underlying table that contains already
-     * fully assembled requests.
-     * </pre>
-     *
-     * <code>string request_column_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return The bytes for requestColumnName.
-     */
-    @java.lang.Override
-    public com.google.protobuf.ByteString getRequestColumnNameBytes() {
-      java.lang.Object ref = "";
-      if (readConfigCase_ == 5) {
-        ref = readConfig_;
-      }
-      if (ref instanceof String) {
-        com.google.protobuf.ByteString b =
-            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
-        if (readConfigCase_ == 5) {
-          readConfig_ = b;
-        }
-        return b;
-      } else {
-        return (com.google.protobuf.ByteString) ref;
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The column name in the underlying table that contains already
-     * fully assembled requests.
-     * </pre>
-     *
-     * <code>string request_column_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @param value The requestColumnName to set.
-     * @return This builder for chaining.
-     */
-    public Builder setRequestColumnName(java.lang.String value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      readConfigCase_ = 5;
-      readConfig_ = value;
-      onChanged();
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The column name in the underlying table that contains already
-     * fully assembled requests.
-     * </pre>
-     *
-     * <code>string request_column_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @return This builder for chaining.
-     */
-    public Builder clearRequestColumnName() {
-      if (readConfigCase_ == 5) {
-        readConfigCase_ = 0;
-        readConfig_ = null;
-        onChanged();
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The column name in the underlying table that contains already
-     * fully assembled requests.
-     * </pre>
-     *
-     * <code>string request_column_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
-     *
-     * @param value The bytes for requestColumnName to set.
-     * @return This builder for chaining.
-     */
-    public Builder setRequestColumnNameBytes(com.google.protobuf.ByteString value) {
-      if (value == null) {
-        throw new NullPointerException();
-      }
-      checkByteStringIsUtf8(value);
-      readConfigCase_ = 5;
-      readConfig_ = value;
-      onChanged();
-      return this;
-    }
-
     private java.lang.Object name_ = "";
 
     /**
@@ -6253,7 +5573,7 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -6275,7 +5595,7 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -6302,7 +5622,7 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -6328,7 +5648,7 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
      * @return Whether the geminiRequestReadConfig field is set.
      */
     public boolean hasGeminiRequestReadConfig() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -6376,7 +5696,7 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       } else {
         geminiRequestReadConfigBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -6399,7 +5719,7 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
       } else {
         geminiRequestReadConfigBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -6418,7 +5738,7 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
     public Builder mergeGeminiRequestReadConfig(
         com.google.cloud.aiplatform.v1beta1.GeminiRequestReadConfig value) {
       if (geminiRequestReadConfigBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && geminiRequestReadConfig_ != null
             && geminiRequestReadConfig_
                 != com.google.cloud.aiplatform.v1beta1.GeminiRequestReadConfig
@@ -6431,7 +5751,7 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
         geminiRequestReadConfigBuilder_.mergeFrom(value);
       }
       if (geminiRequestReadConfig_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -6449,7 +5769,7 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearGeminiRequestReadConfig() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000020);
       geminiRequestReadConfig_ = null;
       if (geminiRequestReadConfigBuilder_ != null) {
         geminiRequestReadConfigBuilder_.dispose();
@@ -6472,7 +5792,7 @@ public final class AssessDataRequest extends com.google.protobuf.GeneratedMessag
      */
     public com.google.cloud.aiplatform.v1beta1.GeminiRequestReadConfig.Builder
         getGeminiRequestReadConfigBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getGeminiRequestReadConfigFieldBuilder().getBuilder();
     }

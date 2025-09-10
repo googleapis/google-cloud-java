@@ -1821,7 +1821,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * A [Cloud Run](https://cloud.google.com/run)
      * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
      * URI. The format is:
-     * projects/{project}/locations/{location}/revisions/{revision}
+     * `projects/{project}/locations/{location}/revisions/{revision}`
      * </pre>
      *
      * <code>string uri = 1;</code>
@@ -1837,7 +1837,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * A [Cloud Run](https://cloud.google.com/run)
      * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
      * URI. The format is:
-     * projects/{project}/locations/{location}/revisions/{revision}
+     * `projects/{project}/locations/{location}/revisions/{revision}`
      * </pre>
      *
      * <code>string uri = 1;</code>
@@ -1845,6 +1845,36 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * @return The bytes for uri.
      */
     com.google.protobuf.ByteString getUriBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The URI of the Cloud Run service that the revision belongs
+     * to. The format is:
+     * `projects/{project}/locations/{location}/services/{service}`
+     * </pre>
+     *
+     * <code>string service_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The serviceUri.
+     */
+    java.lang.String getServiceUri();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The URI of the Cloud Run service that the revision belongs
+     * to. The format is:
+     * `projects/{project}/locations/{location}/services/{service}`
+     * </pre>
+     *
+     * <code>string service_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for serviceUri.
+     */
+    com.google.protobuf.ByteString getServiceUriBytes();
   }
 
   /**
@@ -1869,6 +1899,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
 
     private CloudRunRevisionEndpoint() {
       uri_ = "";
+      serviceUri_ = "";
     }
 
     @java.lang.Override
@@ -1905,7 +1936,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * A [Cloud Run](https://cloud.google.com/run)
      * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
      * URI. The format is:
-     * projects/{project}/locations/{location}/revisions/{revision}
+     * `projects/{project}/locations/{location}/revisions/{revision}`
      * </pre>
      *
      * <code>string uri = 1;</code>
@@ -1932,7 +1963,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * A [Cloud Run](https://cloud.google.com/run)
      * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
      * URI. The format is:
-     * projects/{project}/locations/{location}/revisions/{revision}
+     * `projects/{project}/locations/{location}/revisions/{revision}`
      * </pre>
      *
      * <code>string uri = 1;</code>
@@ -1946,6 +1977,63 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         com.google.protobuf.ByteString b =
             com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         uri_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SERVICE_URI_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object serviceUri_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The URI of the Cloud Run service that the revision belongs
+     * to. The format is:
+     * `projects/{project}/locations/{location}/services/{service}`
+     * </pre>
+     *
+     * <code>string service_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The serviceUri.
+     */
+    @java.lang.Override
+    public java.lang.String getServiceUri() {
+      java.lang.Object ref = serviceUri_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serviceUri_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The URI of the Cloud Run service that the revision belongs
+     * to. The format is:
+     * `projects/{project}/locations/{location}/services/{service}`
+     * </pre>
+     *
+     * <code>string service_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for serviceUri.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getServiceUriBytes() {
+      java.lang.Object ref = serviceUri_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        serviceUri_ = b;
         return b;
       } else {
         return (com.google.protobuf.ByteString) ref;
@@ -1969,6 +2057,9 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, uri_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceUri_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, serviceUri_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1980,6 +2071,9 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       size = 0;
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(uri_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, uri_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(serviceUri_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, serviceUri_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1999,6 +2093,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
           (com.google.cloud.networkmanagement.v1.Endpoint.CloudRunRevisionEndpoint) obj;
 
       if (!getUri().equals(other.getUri())) return false;
+      if (!getServiceUri().equals(other.getServiceUri())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -2012,6 +2107,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + URI_FIELD_NUMBER;
       hash = (53 * hash) + getUri().hashCode();
+      hash = (37 * hash) + SERVICE_URI_FIELD_NUMBER;
+      hash = (53 * hash) + getServiceUri().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2159,6 +2256,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         super.clear();
         bitField0_ = 0;
         uri_ = "";
+        serviceUri_ = "";
         return this;
       }
 
@@ -2202,6 +2300,9 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.uri_ = uri_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.serviceUri_ = serviceUri_;
         }
       }
 
@@ -2262,6 +2363,11 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
           bitField0_ |= 0x00000001;
           onChanged();
         }
+        if (!other.getServiceUri().isEmpty()) {
+          serviceUri_ = other.serviceUri_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -2294,6 +2400,12 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 10
+              case 18:
+                {
+                  serviceUri_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2322,7 +2434,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
        * A [Cloud Run](https://cloud.google.com/run)
        * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
        * URI. The format is:
-       * projects/{project}/locations/{location}/revisions/{revision}
+       * `projects/{project}/locations/{location}/revisions/{revision}`
        * </pre>
        *
        * <code>string uri = 1;</code>
@@ -2348,7 +2460,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
        * A [Cloud Run](https://cloud.google.com/run)
        * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
        * URI. The format is:
-       * projects/{project}/locations/{location}/revisions/{revision}
+       * `projects/{project}/locations/{location}/revisions/{revision}`
        * </pre>
        *
        * <code>string uri = 1;</code>
@@ -2374,7 +2486,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
        * A [Cloud Run](https://cloud.google.com/run)
        * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
        * URI. The format is:
-       * projects/{project}/locations/{location}/revisions/{revision}
+       * `projects/{project}/locations/{location}/revisions/{revision}`
        * </pre>
        *
        * <code>string uri = 1;</code>
@@ -2399,7 +2511,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
        * A [Cloud Run](https://cloud.google.com/run)
        * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
        * URI. The format is:
-       * projects/{project}/locations/{location}/revisions/{revision}
+       * `projects/{project}/locations/{location}/revisions/{revision}`
        * </pre>
        *
        * <code>string uri = 1;</code>
@@ -2420,7 +2532,7 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
        * A [Cloud Run](https://cloud.google.com/run)
        * [revision](https://cloud.google.com/run/docs/reference/rest/v1/namespaces.revisions/get)
        * URI. The format is:
-       * projects/{project}/locations/{location}/revisions/{revision}
+       * `projects/{project}/locations/{location}/revisions/{revision}`
        * </pre>
        *
        * <code>string uri = 1;</code>
@@ -2435,6 +2547,127 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         uri_ = value;
         bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object serviceUri_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The URI of the Cloud Run service that the revision belongs
+       * to. The format is:
+       * `projects/{project}/locations/{location}/services/{service}`
+       * </pre>
+       *
+       * <code>string service_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The serviceUri.
+       */
+      public java.lang.String getServiceUri() {
+        java.lang.Object ref = serviceUri_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          serviceUri_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The URI of the Cloud Run service that the revision belongs
+       * to. The format is:
+       * `projects/{project}/locations/{location}/services/{service}`
+       * </pre>
+       *
+       * <code>string service_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for serviceUri.
+       */
+      public com.google.protobuf.ByteString getServiceUriBytes() {
+        java.lang.Object ref = serviceUri_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          serviceUri_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The URI of the Cloud Run service that the revision belongs
+       * to. The format is:
+       * `projects/{project}/locations/{location}/services/{service}`
+       * </pre>
+       *
+       * <code>string service_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The serviceUri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setServiceUri(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        serviceUri_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The URI of the Cloud Run service that the revision belongs
+       * to. The format is:
+       * `projects/{project}/locations/{location}/services/{service}`
+       * </pre>
+       *
+       * <code>string service_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearServiceUri() {
+        serviceUri_ = getDefaultInstance().getServiceUri();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The URI of the Cloud Run service that the revision belongs
+       * to. The format is:
+       * `projects/{project}/locations/{location}/services/{service}`
+       * </pre>
+       *
+       * <code>string service_uri = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for serviceUri to set.
+       * @return This builder for chaining.
+       */
+      public Builder setServiceUriBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        serviceUri_ = value;
+        bitField0_ |= 0x00000002;
         onChanged();
         return this;
       }
@@ -2648,8 +2881,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    * used for protocol forwarding, Private Service Connect and other network
    * services to provide forwarding information in the control plane. Applicable
    * only to destination endpoint. Format:
-   *  projects/{project}/global/forwardingRules/{id} or
-   *  projects/{project}/regions/{region}/forwardingRules/{id}
+   *  `projects/{project}/global/forwardingRules/{id}` or
+   *  `projects/{project}/regions/{region}/forwardingRules/{id}`
    * </pre>
    *
    * <code>string forwarding_rule = 13;</code>
@@ -2678,8 +2911,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
    * used for protocol forwarding, Private Service Connect and other network
    * services to provide forwarding information in the control plane. Applicable
    * only to destination endpoint. Format:
-   *  projects/{project}/global/forwardingRules/{id} or
-   *  projects/{project}/regions/{region}/forwardingRules/{id}
+   *  `projects/{project}/global/forwardingRules/{id}` or
+   *  `projects/{project}/regions/{region}/forwardingRules/{id}`
    * </pre>
    *
    * <code>string forwarding_rule = 13;</code>
@@ -4636,8 +4869,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * used for protocol forwarding, Private Service Connect and other network
      * services to provide forwarding information in the control plane. Applicable
      * only to destination endpoint. Format:
-     *  projects/{project}/global/forwardingRules/{id} or
-     *  projects/{project}/regions/{region}/forwardingRules/{id}
+     *  `projects/{project}/global/forwardingRules/{id}` or
+     *  `projects/{project}/regions/{region}/forwardingRules/{id}`
      * </pre>
      *
      * <code>string forwarding_rule = 13;</code>
@@ -4665,8 +4898,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * used for protocol forwarding, Private Service Connect and other network
      * services to provide forwarding information in the control plane. Applicable
      * only to destination endpoint. Format:
-     *  projects/{project}/global/forwardingRules/{id} or
-     *  projects/{project}/regions/{region}/forwardingRules/{id}
+     *  `projects/{project}/global/forwardingRules/{id}` or
+     *  `projects/{project}/regions/{region}/forwardingRules/{id}`
      * </pre>
      *
      * <code>string forwarding_rule = 13;</code>
@@ -4694,8 +4927,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * used for protocol forwarding, Private Service Connect and other network
      * services to provide forwarding information in the control plane. Applicable
      * only to destination endpoint. Format:
-     *  projects/{project}/global/forwardingRules/{id} or
-     *  projects/{project}/regions/{region}/forwardingRules/{id}
+     *  `projects/{project}/global/forwardingRules/{id}` or
+     *  `projects/{project}/regions/{region}/forwardingRules/{id}`
      * </pre>
      *
      * <code>string forwarding_rule = 13;</code>
@@ -4722,8 +4955,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * used for protocol forwarding, Private Service Connect and other network
      * services to provide forwarding information in the control plane. Applicable
      * only to destination endpoint. Format:
-     *  projects/{project}/global/forwardingRules/{id} or
-     *  projects/{project}/regions/{region}/forwardingRules/{id}
+     *  `projects/{project}/global/forwardingRules/{id}` or
+     *  `projects/{project}/regions/{region}/forwardingRules/{id}`
      * </pre>
      *
      * <code>string forwarding_rule = 13;</code>
@@ -4746,8 +4979,8 @@ public final class Endpoint extends com.google.protobuf.GeneratedMessageV3
      * used for protocol forwarding, Private Service Connect and other network
      * services to provide forwarding information in the control plane. Applicable
      * only to destination endpoint. Format:
-     *  projects/{project}/global/forwardingRules/{id} or
-     *  projects/{project}/regions/{region}/forwardingRules/{id}
+     *  `projects/{project}/global/forwardingRules/{id}` or
+     *  `projects/{project}/regions/{region}/forwardingRules/{id}`
      * </pre>
      *
      * <code>string forwarding_rule = 13;</code>

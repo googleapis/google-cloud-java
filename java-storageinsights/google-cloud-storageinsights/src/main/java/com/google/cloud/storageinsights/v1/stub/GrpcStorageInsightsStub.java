@@ -82,6 +82,7 @@ public class GrpcStorageInsightsStub extends StorageInsightsStub {
                   ProtoUtils.marshaller(ListReportConfigsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListReportConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetReportConfigRequest, ReportConfig>
@@ -92,6 +93,7 @@ public class GrpcStorageInsightsStub extends StorageInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetReportConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ReportConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateReportConfigRequest, ReportConfig>
@@ -103,6 +105,7 @@ public class GrpcStorageInsightsStub extends StorageInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateReportConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ReportConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateReportConfigRequest, ReportConfig>
@@ -114,6 +117,7 @@ public class GrpcStorageInsightsStub extends StorageInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateReportConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ReportConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteReportConfigRequest, Empty>
@@ -125,6 +129,7 @@ public class GrpcStorageInsightsStub extends StorageInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteReportConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListReportDetailsRequest, ListReportDetailsResponse>
@@ -137,6 +142,7 @@ public class GrpcStorageInsightsStub extends StorageInsightsStub {
                   ProtoUtils.marshaller(ListReportDetailsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListReportDetailsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetReportDetailRequest, ReportDetail>
@@ -147,6 +153,7 @@ public class GrpcStorageInsightsStub extends StorageInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetReportDetailRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ReportDetail.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListDatasetConfigsRequest, ListDatasetConfigsResponse>
@@ -159,6 +166,7 @@ public class GrpcStorageInsightsStub extends StorageInsightsStub {
                   ProtoUtils.marshaller(ListDatasetConfigsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDatasetConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDatasetConfigRequest, DatasetConfig>
@@ -169,6 +177,7 @@ public class GrpcStorageInsightsStub extends StorageInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetDatasetConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DatasetConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateDatasetConfigRequest, Operation>
@@ -180,6 +189,7 @@ public class GrpcStorageInsightsStub extends StorageInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDatasetConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDatasetConfigRequest, Operation>
@@ -191,6 +201,7 @@ public class GrpcStorageInsightsStub extends StorageInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDatasetConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDatasetConfigRequest, Operation>
@@ -202,6 +213,7 @@ public class GrpcStorageInsightsStub extends StorageInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDatasetConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<LinkDatasetRequest, Operation> linkDatasetMethodDescriptor =
@@ -210,6 +222,7 @@ public class GrpcStorageInsightsStub extends StorageInsightsStub {
           .setFullMethodName("google.cloud.storageinsights.v1.StorageInsights/LinkDataset")
           .setRequestMarshaller(ProtoUtils.marshaller(LinkDatasetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UnlinkDatasetRequest, Operation>
@@ -220,6 +233,7 @@ public class GrpcStorageInsightsStub extends StorageInsightsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UnlinkDatasetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -231,6 +245,7 @@ public class GrpcStorageInsightsStub extends StorageInsightsStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -239,6 +254,7 @@ public class GrpcStorageInsightsStub extends StorageInsightsStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListReportConfigsRequest, ListReportConfigsResponse>

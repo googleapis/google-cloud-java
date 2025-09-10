@@ -68,6 +68,7 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
           .setFullMethodName("google.cloud.batch.v1.BatchService/CreateJob")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetJobRequest, Job> getJobMethodDescriptor =
@@ -76,6 +77,7 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
           .setFullMethodName("google.cloud.batch.v1.BatchService/GetJob")
           .setRequestMarshaller(ProtoUtils.marshaller(GetJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Job.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteJobRequest, Operation> deleteJobMethodDescriptor =
@@ -84,6 +86,7 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
           .setFullMethodName("google.cloud.batch.v1.BatchService/DeleteJob")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CancelJobRequest, Operation> cancelJobMethodDescriptor =
@@ -92,6 +95,7 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
           .setFullMethodName("google.cloud.batch.v1.BatchService/CancelJob")
           .setRequestMarshaller(ProtoUtils.marshaller(CancelJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListJobsRequest, ListJobsResponse>
@@ -101,6 +105,7 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
               .setFullMethodName("google.cloud.batch.v1.BatchService/ListJobs")
               .setRequestMarshaller(ProtoUtils.marshaller(ListJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTaskRequest, Task> getTaskMethodDescriptor =
@@ -109,6 +114,7 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
           .setFullMethodName("google.cloud.batch.v1.BatchService/GetTask")
           .setRequestMarshaller(ProtoUtils.marshaller(GetTaskRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Task.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListTasksRequest, ListTasksResponse>
@@ -118,6 +124,7 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
               .setFullMethodName("google.cloud.batch.v1.BatchService/ListTasks")
               .setRequestMarshaller(ProtoUtils.marshaller(ListTasksRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListTasksResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -129,6 +136,7 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -137,6 +145,7 @@ public class GrpcBatchServiceStub extends BatchServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CreateJobRequest, Job> createJobCallable;

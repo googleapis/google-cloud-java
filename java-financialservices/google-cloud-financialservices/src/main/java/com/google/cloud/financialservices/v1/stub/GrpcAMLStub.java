@@ -122,6 +122,7 @@ public class GrpcAMLStub extends AMLStub {
                   ProtoUtils.marshaller(ListInstancesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListInstancesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetInstanceRequest, Instance> getInstanceMethodDescriptor =
@@ -130,6 +131,7 @@ public class GrpcAMLStub extends AMLStub {
           .setFullMethodName("google.cloud.financialservices.v1.AML/GetInstance")
           .setRequestMarshaller(ProtoUtils.marshaller(GetInstanceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Instance.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateInstanceRequest, Operation>
@@ -140,6 +142,7 @@ public class GrpcAMLStub extends AMLStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateInstanceRequest, Operation>
@@ -150,6 +153,7 @@ public class GrpcAMLStub extends AMLStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteInstanceRequest, Operation>
@@ -160,6 +164,7 @@ public class GrpcAMLStub extends AMLStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteInstanceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportRegisteredPartiesRequest, Operation>
@@ -170,6 +175,7 @@ public class GrpcAMLStub extends AMLStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ImportRegisteredPartiesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ExportRegisteredPartiesRequest, Operation>
@@ -180,6 +186,7 @@ public class GrpcAMLStub extends AMLStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ExportRegisteredPartiesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListDatasetsRequest, ListDatasetsResponse>
@@ -190,6 +197,7 @@ public class GrpcAMLStub extends AMLStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListDatasetsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDatasetsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDatasetRequest, Dataset> getDatasetMethodDescriptor =
@@ -198,6 +206,7 @@ public class GrpcAMLStub extends AMLStub {
           .setFullMethodName("google.cloud.financialservices.v1.AML/GetDataset")
           .setRequestMarshaller(ProtoUtils.marshaller(GetDatasetRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Dataset.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateDatasetRequest, Operation>
@@ -208,6 +217,7 @@ public class GrpcAMLStub extends AMLStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDatasetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDatasetRequest, Operation>
@@ -218,6 +228,7 @@ public class GrpcAMLStub extends AMLStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDatasetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDatasetRequest, Operation>
@@ -228,6 +239,7 @@ public class GrpcAMLStub extends AMLStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDatasetRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListModelsRequest, ListModelsResponse>
@@ -237,6 +249,7 @@ public class GrpcAMLStub extends AMLStub {
               .setFullMethodName("google.cloud.financialservices.v1.AML/ListModels")
               .setRequestMarshaller(ProtoUtils.marshaller(ListModelsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListModelsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetModelRequest, Model> getModelMethodDescriptor =
@@ -245,6 +258,7 @@ public class GrpcAMLStub extends AMLStub {
           .setFullMethodName("google.cloud.financialservices.v1.AML/GetModel")
           .setRequestMarshaller(ProtoUtils.marshaller(GetModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Model.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateModelRequest, Operation> createModelMethodDescriptor =
@@ -253,6 +267,7 @@ public class GrpcAMLStub extends AMLStub {
           .setFullMethodName("google.cloud.financialservices.v1.AML/CreateModel")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateModelRequest, Operation> updateModelMethodDescriptor =
@@ -261,6 +276,7 @@ public class GrpcAMLStub extends AMLStub {
           .setFullMethodName("google.cloud.financialservices.v1.AML/UpdateModel")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ExportModelMetadataRequest, Operation>
@@ -271,6 +287,7 @@ public class GrpcAMLStub extends AMLStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ExportModelMetadataRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteModelRequest, Operation> deleteModelMethodDescriptor =
@@ -279,6 +296,7 @@ public class GrpcAMLStub extends AMLStub {
           .setFullMethodName("google.cloud.financialservices.v1.AML/DeleteModel")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteModelRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListEngineConfigsRequest, ListEngineConfigsResponse>
@@ -290,6 +308,7 @@ public class GrpcAMLStub extends AMLStub {
                   ProtoUtils.marshaller(ListEngineConfigsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEngineConfigsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetEngineConfigRequest, EngineConfig>
@@ -300,6 +319,7 @@ public class GrpcAMLStub extends AMLStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetEngineConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(EngineConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateEngineConfigRequest, Operation>
@@ -310,6 +330,7 @@ public class GrpcAMLStub extends AMLStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateEngineConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateEngineConfigRequest, Operation>
@@ -320,6 +341,7 @@ public class GrpcAMLStub extends AMLStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateEngineConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ExportEngineConfigMetadataRequest, Operation>
@@ -330,6 +352,7 @@ public class GrpcAMLStub extends AMLStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ExportEngineConfigMetadataRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteEngineConfigRequest, Operation>
@@ -340,6 +363,7 @@ public class GrpcAMLStub extends AMLStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteEngineConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetEngineVersionRequest, EngineVersion>
@@ -350,6 +374,7 @@ public class GrpcAMLStub extends AMLStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetEngineVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(EngineVersion.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListEngineVersionsRequest, ListEngineVersionsResponse>
@@ -361,6 +386,7 @@ public class GrpcAMLStub extends AMLStub {
                   ProtoUtils.marshaller(ListEngineVersionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEngineVersionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListPredictionResultsRequest, ListPredictionResultsResponse>
@@ -372,6 +398,7 @@ public class GrpcAMLStub extends AMLStub {
                   ProtoUtils.marshaller(ListPredictionResultsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListPredictionResultsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetPredictionResultRequest, PredictionResult>
@@ -382,6 +409,7 @@ public class GrpcAMLStub extends AMLStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetPredictionResultRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PredictionResult.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreatePredictionResultRequest, Operation>
@@ -392,6 +420,7 @@ public class GrpcAMLStub extends AMLStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreatePredictionResultRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdatePredictionResultRequest, Operation>
@@ -402,6 +431,7 @@ public class GrpcAMLStub extends AMLStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdatePredictionResultRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ExportPredictionResultMetadataRequest, Operation>
@@ -413,6 +443,7 @@ public class GrpcAMLStub extends AMLStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ExportPredictionResultMetadataRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeletePredictionResultRequest, Operation>
@@ -423,6 +454,7 @@ public class GrpcAMLStub extends AMLStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeletePredictionResultRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListBacktestResultsRequest, ListBacktestResultsResponse>
@@ -434,6 +466,7 @@ public class GrpcAMLStub extends AMLStub {
                   ProtoUtils.marshaller(ListBacktestResultsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBacktestResultsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetBacktestResultRequest, BacktestResult>
@@ -444,6 +477,7 @@ public class GrpcAMLStub extends AMLStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetBacktestResultRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BacktestResult.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateBacktestResultRequest, Operation>
@@ -454,6 +488,7 @@ public class GrpcAMLStub extends AMLStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateBacktestResultRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateBacktestResultRequest, Operation>
@@ -464,6 +499,7 @@ public class GrpcAMLStub extends AMLStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateBacktestResultRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ExportBacktestResultMetadataRequest, Operation>
@@ -475,6 +511,7 @@ public class GrpcAMLStub extends AMLStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ExportBacktestResultMetadataRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteBacktestResultRequest, Operation>
@@ -485,6 +522,7 @@ public class GrpcAMLStub extends AMLStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteBacktestResultRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -496,6 +534,7 @@ public class GrpcAMLStub extends AMLStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -504,6 +543,7 @@ public class GrpcAMLStub extends AMLStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListInstancesRequest, ListInstancesResponse> listInstancesCallable;

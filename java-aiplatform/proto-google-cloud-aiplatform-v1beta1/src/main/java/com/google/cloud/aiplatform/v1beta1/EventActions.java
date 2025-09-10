@@ -276,7 +276,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
    * <code>bool transfer_to_agent = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.aiplatform.v1beta1.EventActions.transfer_to_agent is deprecated. See
-   *     google/cloud/aiplatform/v1beta1/session.proto;l=163
+   *     google/cloud/aiplatform/v1beta1/session.proto;l=176
    * @return The transferToAgent.
    */
   @java.lang.Override
@@ -1436,7 +1436,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
      * <code>bool transfer_to_agent = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.EventActions.transfer_to_agent is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/session.proto;l=163
+     *     google/cloud/aiplatform/v1beta1/session.proto;l=176
      * @return The transferToAgent.
      */
     @java.lang.Override
@@ -1455,7 +1455,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
      * <code>bool transfer_to_agent = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.EventActions.transfer_to_agent is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/session.proto;l=163
+     *     google/cloud/aiplatform/v1beta1/session.proto;l=176
      * @param value The transferToAgent to set.
      * @return This builder for chaining.
      */
@@ -1478,7 +1478,7 @@ public final class EventActions extends com.google.protobuf.GeneratedMessageV3
      * <code>bool transfer_to_agent = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.aiplatform.v1beta1.EventActions.transfer_to_agent is deprecated. See
-     *     google/cloud/aiplatform/v1beta1/session.proto;l=163
+     *     google/cloud/aiplatform/v1beta1/session.proto;l=176
      * @return This builder for chaining.
      */
     @java.lang.Deprecated

@@ -1,5 +1,63 @@
 # Changelog
 
+## 3.75.0 (2025-08-25)
+
+### Features
+
+* Add option to enable nested virtualization if available ([0193b28](https://github.com/googleapis/google-cloud-java/commit/0193b28c0639ee80ddb0bcf51f6b1c18d67b7494))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.52.0 ([#11727](https://github.com/googleapis/google-cloud-java/issues/11727)) ([31d8698](https://github.com/googleapis/google-cloud-java/commit/31d86980d0e27e0a948727d778cf46fbcf227239))
+
+
+## 3.74.0 (2025-08-13)
+
+* No change
+
+
+## 3.73.0 (2025-08-08)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.51.0 ([#11695](https://github.com/googleapis/google-cloud-java/issues/11695)) ([b82ce00](https://github.com/googleapis/google-cloud-java/commit/b82ce005c30551b8714099b7219b71bda85aa3a5))
+
+
+## 3.72.0 (2025-07-30)
+
+* No change
+
+
+## 3.71.0 (2025-07-28)
+
+### Bug Fixes
+
+* Updated Private Service Connect IP ranges when route_all_traffic is false ([df87c7e](https://github.com/googleapis/google-cloud-java/commit/df87c7e0327ef0d0f2c2bcee9721bda202f912f4))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.50.2 ([#11680](https://github.com/googleapis/google-cloud-java/issues/11680)) ([d1b99a7](https://github.com/googleapis/google-cloud-java/commit/d1b99a706daa10c487b56edbb5170b41530628ca))
+
+
+## 3.70.0 (2025-07-11)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.50.1 ([#11655](https://github.com/googleapis/google-cloud-java/issues/11655)) ([9b34528](https://github.com/googleapis/google-cloud-java/commit/9b34528f85043049e3349fffc30bb2dbfe01836c))
+
+
+## 3.69.0 (2025-06-25)
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.50.0 ([#11624](https://github.com/googleapis/google-cloud-java/issues/11624)) ([a19f457](https://github.com/googleapis/google-cloud-java/commit/a19f457d10f15437ac26ce379048ff8b3cc6be5d))
+
+
+## 3.67.0 (2025-06-16)
+
+* No change
+
+
 ## 3.66.0 (2025-06-04)
 
 ### Dependencies

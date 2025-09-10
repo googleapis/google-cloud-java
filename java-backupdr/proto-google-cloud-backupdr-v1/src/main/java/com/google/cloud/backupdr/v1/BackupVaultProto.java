@@ -190,17 +190,18 @@ public final class BackupVaultProto {
           + "roto\022\030google.cloud.backupdr.v1\032\037google/a"
           + "pi/field_behavior.proto\032\033google/api/fiel"
           + "d_info.proto\032\031google/api/resource.proto\032"
-          + "-google/cloud/backupdr/v1/backupvault_ba.proto\032.google/cloud/backupdr/v1/backupv"
-          + "ault_gce.proto\032\036google/protobuf/duration.proto\032"
-          + " google/protobuf/field_mask.proto"
-          + "\032\037google/protobuf/timestamp.proto\032\027google/rpc/status.proto\"\230\013\n"
+          + "-google/cloud/backupdr/v1/backupvault_ba.proto\0323google/cloud/backupdr/v1/backupv"
+          + "ault_cloudsql.proto\032/google/cloud/backupdr/v1/backupvault_disk.proto\032.google/clo"
+          + "ud/backupdr/v1/backupvault_gce.proto\032\036google/protobuf/duration.proto\032"
+          + " google/protobuf/field_mask.proto\032\037google/protobuf/"
+          + "timestamp.proto\032\027google/rpc/status.proto\"\246\013\n"
           + "\013BackupVault\022\024\n"
           + "\004name\030\001 \001(\tB\006\340A\003\340A\010\022\035\n"
           + "\013description\030\002 \001(\tB\003\340A\001H\000\210\001\001\022F\n"
-          + "\006labels\030\003 \003(\01321.google.cloud.b"
-          + "ackupdr.v1.BackupVault.LabelsEntryB\003\340A\001\0229\n"
-          + "\013create_time\030\004"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003H\001\210\001\001\0229\n"
+          + "\006labels\030\003"
+          + " \003(\01321.google.cloud.backupdr.v1.BackupVault.LabelsEntryB\003\340A\001\0229\n"
+          + "\013create_time\030\004 \001"
+          + "(\0132\032.google.protobuf.TimestampB\003\340A\003H\001\210\001\001\0229\n"
           + "\013update_time\030\005"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003H\002\210\001\001\022W\n"
           + "*backup_minimum_enforced_retention_duration\030\024"
@@ -215,70 +216,72 @@ public final class BackupVaultProto {
           + "\017service_account\030\022 \001(\tB\003\340A\003\022\037\n"
           + "\022total_stored_bytes\030\023 \001(\003B\003\340A\003\022\030\n"
           + "\003uid\030\025 \001(\tB\013\340A\003\342\214\317\327\010\002\010\001\022P\n"
-          + "\013annotations\030\026 "
-          + "\003(\01326.google.cloud.backupdr.v1.BackupVault.AnnotationsEntryB\003\340A\001\022X\n"
-          + "\022access_restriction\030\030"
-          + " \001(\01627.google.cloud.backupdr.v1.BackupVault.AccessRestrictionB\003\340A\001\032-\n"
+          + "\013annotations\030\026 \003(\01326.google.cloud"
+          + ".backupdr.v1.BackupVault.AnnotationsEntryB\003\340A\001\022X\n"
+          + "\022access_restriction\030\030 \001(\01627.goo"
+          + "gle.cloud.backupdr.v1.BackupVault.AccessRestrictionB\003\340A\001\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\0322\n"
           + "\020AnnotationsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
-          + "\005value\030\002 \001(\t:\0028\001\"Q\n"
+          + "\005value\030\002 \001(\t:\0028\001\"_\n"
           + "\005State\022\025\n"
           + "\021STATE_UNSPECIFIED\020\000\022\014\n"
           + "\010CREATING\020\001\022\n\n"
           + "\006ACTIVE\020\002\022\014\n"
           + "\010DELETING\020\003\022\t\n"
-          + "\005ERROR\020\004\"\236\001\n"
+          + "\005ERROR\020\004\022\014\n"
+          + "\010UPDATING\020\005\"\236\001\n"
           + "\021AccessRestriction\022\"\n"
           + "\036ACCESS_RESTRICTION_UNSPECIFIED\020\000\022\022\n"
           + "\016WITHIN_PROJECT\020\001\022\027\n"
           + "\023WITHIN_ORGANIZATION\020\002\022\020\n"
           + "\014UNRESTRICTED\020\003\022&\n"
           + "\"WITHIN_ORG_BUT_UNRESTRICTED_FOR_BA\020\004:\210\001\352A\204\001\n"
-          + "#backupdr.googleapis.com/BackupVault\022Bprojects/{project"
-          + "}/locations/{location}/backupVaults/{backupvault}*\014backupVaults2\013backupVaultB\016\n"
+          + "#backupdr.googleapis.com/BackupVault\022Bprojects/{project}/lo"
+          + "cations/{location}/backupVaults/{backupvault}*\014backupVaults2\013backupVaultB\016\n"
           + "\014_descriptionB\016\n"
           + "\014_create_timeB\016\n"
           + "\014_update_timeB-\n"
           + "+_backup_minimum_enforced_retention_durationB\014\n\n"
           + "_deletableB\007\n"
           + "\005_etagB\021\n"
-          + "\017_effective_time\"\323\010\n\n"
+          + "\017_effective_time\"\214\t\n\n"
           + "DataSource\022\024\n"
           + "\004name\030\001 \001(\tB\006\340A\003\340A\010\022>\n"
           + "\005state\030\025"
           + " \001(\0162*.google.cloud.backupdr.v1.DataSource.StateB\003\340A\003\022E\n"
           + "\006labels\030\004"
           + " \003(\01320.google.cloud.backupdr.v1.DataSource.LabelsEntryB\003\340A\001\0229\n"
-          + "\013create_time\030\005"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003H\001\210\001\001\0229\n"
+          + "\013create_time\030\005 \001"
+          + "(\0132\032.google.protobuf.TimestampB\003\340A\003H\001\210\001\001\0229\n"
           + "\013update_time\030\006"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003H\002\210\001\001\022\031\n"
           + "\014backup_count\030\007 \001(\003H\003\210\001\001\022\021\n"
           + "\004etag\030\016 \001(\tH\004\210\001\001\022\037\n"
           + "\022total_stored_bytes\030\027 \001(\003H\005\210\001\001\022F\n"
-          + "\014config_state\030\030"
-          + " \001(\0162+.google.cloud.backupdr.v1.BackupConfigStateB\003\340A\003\022K\n"
-          + "\022backup_config_info\030\031 \001"
-          + "(\0132*.google.cloud.backupdr.v1.BackupConfigInfoB\003\340A\003\022S\n"
-          + "\030data_source_gcp_resource\030\032"
-          + " \001(\0132/.google.cloud.backupdr.v1.DataSourceGcpResourceH\000\022r\n"
-          + "(data_source_backup_appliance_application\030\033 \001(\0132>.google.clou"
-          + "d.backupdr.v1.DataSourceBackupApplianceApplicationH\000\032-\n"
+          + "\014config_state\030\030 \001(\016"
+          + "2+.google.cloud.backupdr.v1.BackupConfigStateB\003\340A\003\022K\n"
+          + "\022backup_config_info\030\031 \001(\0132*"
+          + ".google.cloud.backupdr.v1.BackupConfigInfoB\003\340A\003\022S\n"
+          + "\030data_source_gcp_resource\030\032 \001("
+          + "\0132/.google.cloud.backupdr.v1.DataSourceGcpResourceH\000\022r\n"
+          + "(data_source_backup_appliance_application\030\033 \001(\0132>.google.cloud.ba"
+          + "ckupdr.v1.DataSourceBackupApplianceApplicationH\000\0227\n"
+          + "*backup_blocked_by_vault_access_restriction\030\034 \001(\010B\003\340A\003\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\"Q\n"
           + "\005State\022\025\n"
           + "\021STATE_UNSPECIFIED\020\000\022\014\n"
-          + "\010CREATING\020\001\022\n\n"
+          + "\010CREATING\020\001\022\n"
+          + "\n"
           + "\006ACTIVE\020\002\022\014\n"
           + "\010DELETING\020\003\022\t\n"
           + "\005ERROR\020\004:\236\001\352A\232\001\n"
-          + "\"backupdr.googleapis.com/DataSource\022[projects/{pro"
-          + "ject}/locations/{location}/backupVaults/"
-          + "{backupvault}/dataSources/{datasource}*\013dataSources2\n"
+          + "\"backupdr.googleapis.com/DataSource\022[projects/{project}/locations/{location}/"
+          + "backupVaults/{backupvault}/dataSources/{datasource}*\013dataSources2\n"
           + "dataSourceB\021\n"
           + "\017source_resourceB\016\n"
           + "\014_create_timeB\016\n"
@@ -287,29 +290,31 @@ public final class BackupVaultProto {
           + "\005_etagB\025\n"
           + "\023_total_stored_bytes\"\261\004\n"
           + "\020BackupConfigInfo\022Z\n"
-          + "\021last_backup_state\030\001"
-          + " \001(\0162:.google.cloud.backupdr.v1.BackupConfigInfo.LastBackupStateB\003\340A\003\022P\n"
+          + "\021last_backup_state\030\001 \001(\0162:.google.cloud."
+          + "backupdr.v1.BackupConfigInfo.LastBackupStateB\003\340A\003\022P\n"
           + "\'last_successful_backup_consistency_time\030\002"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0222\n"
           + "\021last_backup_error\030\003 \001(\0132\022.google.rpc.StatusB\003\340A\003\022F\n"
-          + "\021gcp_backup_config\030\004 \001(\0132)."
-          + "google.cloud.backupdr.v1.GcpBackupConfigH\000\022_\n"
-          + "\036backup_appliance_backup_config\030\005 \001"
-          + "(\01325.google.cloud.backupdr.v1.BackupApplianceBackupConfigH\000\"\200\001\n"
+          + "\021gcp_backup_config\030\004"
+          + " \001(\0132).google.cloud.backupdr.v1.GcpBackupConfigH\000\022_\n"
+          + "\036backup_appliance_backup_config\030\005"
+          + " \001(\01325.google.cloud.backupdr.v1.BackupApplianceBackupConfigH\000\"\200\001\n"
           + "\017LastBackupState\022!\n"
           + "\035LAST_BACKUP_STATE_UNSPECIFIED\020\000\022\030\n"
           + "\024FIRST_BACKUP_PENDING\020\001\022\r\n"
           + "\tSUCCEEDED\020\002\022\n\n"
           + "\006FAILED\020\003\022\025\n"
           + "\021PERMISSION_DENIED\020\004B\017\n\r"
-          + "backup_config\"\340\001\n"
+          + "backup_config\"\244\002\n"
           + "\017GcpBackupConfig\022<\n"
           + "\013backup_plan\030\001 \001(\tB\'\372A$\n"
           + "\"backupdr.googleapis.com/BackupPlan\022\037\n"
           + "\027backup_plan_description\030\002 \001(\t\022S\n"
           + "\027backup_plan_association\030\003 \001(\tB2\372A/\n"
           + "-backupdr.googleapis.com/BackupPlanAssociation\022\031\n"
-          + "\021backup_plan_rules\030\004 \003(\t\"\272\001\n"
+          + "\021backup_plan_rules\030\004 \003(\t\022!\n"
+          + "\031backup_plan_revision_name\030\005 \001(\t\022\037\n"
+          + "\027backup_plan_revision_id\030\006 \001(\t\"\272\001\n"
           + "\033BackupApplianceBackupConfig\022\035\n"
           + "\025backup_appliance_name\030\001 \001(\t\022\033\n"
           + "\023backup_appliance_id\030\002 \001(\003\022\016\n"
@@ -317,13 +322,17 @@ public final class BackupVaultProto {
           + "\020application_name\030\004 \001(\t\022\021\n"
           + "\thost_name\030\005 \001(\t\022\020\n"
           + "\010slt_name\030\006 \001(\t\022\020\n"
-          + "\010slp_name\030\007 \001(\t\"\342\001\n"
+          + "\010slp_name\030\007 \001(\t\"\265\003\n"
           + "\025DataSourceGcpResource\022\035\n"
           + "\020gcp_resourcename\030\001 \001(\tB\003\340A\003\022\020\n"
           + "\010location\030\002 \001(\t\022\014\n"
           + "\004type\030\003 \001(\t\022o\n"
-          + "&compute_instance_datasource_properties\030\004 \001(\013"
-          + "2=.google.cloud.backupdr.v1.ComputeInstanceDataSourcePropertiesH\000B\031\n"
+          + "&compute_instance_datasource_properties\030\004 \001("
+          + "\0132=.google.cloud.backupdr.v1.ComputeInstanceDataSourcePropertiesH\000\022w\n"
+          + "(cloud_sql_instance_datasource_properties\030\005 \001(\0132>.g"
+          + "oogle.cloud.backupdr.v1.CloudSqlInstanceDataSourcePropertiesB\003\340A\003H\000\022X\n"
+          + "\032disk_datasource_properties\030\007"
+          + " \001(\01322.google.cloud.backupdr.v1.DiskDataSourcePropertiesH\000B\031\n"
           + "\027gcp_resource_properties\"\271\001\n"
           + "$DataSourceBackupApplianceApplication\022\030\n"
           + "\020application_name\030\001 \001(\t\022\030\n"
@@ -346,11 +355,11 @@ public final class BackupVaultProto {
           + "BackupLock\0228\n"
           + "\017lock_until_time\030\001"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\002\022W\n"
-          + "\032backup_appliance_lock_info\030\003 \001(\01321.goog"
-          + "le.cloud.backupdr.v1.BackupApplianceLockInfoH\000\022K\n"
-          + "\021service_lock_info\030\004 \001(\0132).goog"
-          + "le.cloud.backupdr.v1.ServiceLockInfoB\003\340A\003H\000B\020\n"
-          + "\016ClientLockInfo\"\274\r\n"
+          + "\032backup_appliance_lock_info\030\003"
+          + " \001(\01321.google.cloud.backupdr.v1.BackupApplianceLockInfoH\000\022K\n"
+          + "\021service_lock_info\030\004"
+          + " \001(\0132).google.cloud.backupdr.v1.ServiceLockInfoB\003\340A\003H\000B\020\n"
+          + "\016ClientLockInfo\"\337\020\n"
           + "\006Backup\022\024\n"
           + "\004name\030\001 \001(\tB\006\340A\003\340A\010\022\035\n"
           + "\013description\030\002 \001(\tB\003\340A\003H\002\210\001\001\0229\n"
@@ -358,51 +367,62 @@ public final class BackupVaultProto {
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003H\003\210\001\001\0229\n"
           + "\013update_time\030\004"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003H\004\210\001\001\022A\n"
-          + "\006labels\030\005"
-          + " \003(\0132,.google.cloud.backupdr.v1.Backup.LabelsEntryB\003\340A\001\022I\n"
+          + "\006labels\030\005 \003(\0132,.google"
+          + ".cloud.backupdr.v1.Backup.LabelsEntryB\003\340A\001\022I\n"
           + "\033enforced_retention_end_time\030\006"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\001H\005\210\001\001\0229\n"
           + "\013expire_time\030\007"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\001H\006\210\001\001\022>\n"
-          + "\020consistency_time\030\t"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003H\007\210\001\001\022\026\n"
+          + "\020consistency_time\030\t \001"
+          + "(\0132\032.google.protobuf.TimestampB\003\340A\003H\007\210\001\001\022\026\n"
           + "\004etag\030\013 \001(\tB\003\340A\001H\010\210\001\001\022:\n"
-          + "\005state\030\017"
-          + " \001(\0162&.google.cloud.backupdr.v1.Backup.StateB\003\340A\003\022@\n\r"
+          + "\005state\030\017 \001(\0162"
+          + "&.google.cloud.backupdr.v1.Backup.StateB\003\340A\003\022@\n\r"
           + "service_locks\030\021"
           + " \003(\0132$.google.cloud.backupdr.v1.BackupLockB\003\340A\003\022I\n"
           + "\026backup_appliance_locks\030\022"
           + " \003(\0132$.google.cloud.backupdr.v1.BackupLockB\003\340A\001\022l\n"
-          + "\"compute_instance_backup_properties\030\023 \001(\01329.google.cloud.backupd"
-          + "r.v1.ComputeInstanceBackupPropertiesB\003\340A\003H\000\022l\n"
-          + "\"backup_appliance_backup_properties\030\025"
-          + " \001(\01329.google.cloud.backupdr.v1.BackupApplianceBackupPropertiesB\003\340A\003H\000\022E\n"
+          + "\"compute_instance_backup_properties\030\023 \001(\01329.google.c"
+          + "loud.backupdr.v1.ComputeInstanceBackupPropertiesB\003\340A\003H\000\022o\n"
+          + "$cloud_sql_instance_backup_properties\030\032 \001(\0132:.google.cloud.bac"
+          + "kupdr.v1.CloudSqlInstanceBackupPropertiesB\003\340A\003H\000\022l\n"
+          + "\"backup_appliance_backup_properties\030\025 \001(\01329.google.cloud.backupdr.v1."
+          + "BackupApplianceBackupPropertiesB\003\340A\003H\000\022U\n"
+          + "\026disk_backup_properties\030\034 \001(\0132..google."
+          + "cloud.backupdr.v1.DiskBackupPropertiesB\003\340A\003H\000\022E\n"
           + "\013backup_type\030\024"
           + " \001(\0162+.google.cloud.backupdr.v1.Backup.BackupTypeB\003\340A\003\022W\n"
-          + "\024gcp_backup_plan_info\030\026"
-          + " \001(\01322.google.cloud.backupdr.v1.Backup.GCPBackupPlanInfoB\003\340A\003H\001\022"
-          + " \n"
-          + "\023resource_size_bytes\030\027 \001(\003B\003\340A\003\032n\n"
+          + "\024gcp_backup_plan_info\030\026 \001(\01322.google.clou"
+          + "d.backupdr.v1.Backup.GCPBackupPlanInfoB\003\340A\003H\001\022 \n"
+          + "\023resource_size_bytes\030\027 \001(\003B\003\340A\003\022\"\n\r"
+          + "satisfies_pzs\030\030 \001(\010B\006\340A\003\340A\001H\t\210\001\001\022\"\n\r"
+          + "satisfies_pzi\030\031 \001(\010B\006\340A\003\340A\001H\n"
+          + "\210\001\001\032\262\001\n"
           + "\021GCPBackupPlanInfo\022<\n"
           + "\013backup_plan\030\001 \001(\tB\'\372A$\n"
           + "\"backupdr.googleapis.com/BackupPlan\022\033\n"
-          + "\023backup_plan_rule_id\030\002 \001(\t\032-\n"
+          + "\023backup_plan_rule_id\030\002 \001(\t\022!\n"
+          + "\031backup_plan_revision_name\030\003 \001(\t\022\037\n"
+          + "\027backup_plan_revision_id\030\004 \001(\t\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
-          + "\005value\030\002 \001(\t:\0028\001\"Q\n"
+          + "\005value\030\002 \001(\t:\0028\001\"`\n"
           + "\005State\022\025\n"
           + "\021STATE_UNSPECIFIED\020\000\022\014\n"
           + "\010CREATING\020\001\022\n\n"
           + "\006ACTIVE\020\002\022\014\n"
           + "\010DELETING\020\003\022\t\n"
-          + "\005ERROR\020\004\"G\n\n"
+          + "\005ERROR\020\004\022\r\n"
+          + "\tUPLOADING\020\005\"b\n"
+          + "\n"
           + "BackupType\022\033\n"
           + "\027BACKUP_TYPE_UNSPECIFIED\020\000\022\r\n"
           + "\tSCHEDULED\020\001\022\r\n"
-          + "\tON_DEMAND\020\002:\243\001\352A\237\001\n"
-          + "\036backupdr.googleapis.com/Backup\022lprojects/{project"
-          + "}/locations/{location}/backupVaults/{bac"
-          + "kupvault}/dataSources/{datasource}/backups/{backup}*\007backups2\006backupB\023\n"
+          + "\tON_DEMAND\020\002\022\031\n"
+          + "\025ON_DEMAND_OPERATIONAL\020\003:\243\001\352A\237\001\n"
+          + "\036backupdr.googleapis.com/Backup\022lprojects/{project}/loc"
+          + "ations/{location}/backupVaults/{backupva"
+          + "ult}/dataSources/{datasource}/backups/{backup}*\007backups2\006backupB\023\n"
           + "\021backup_propertiesB\013\n"
           + "\tplan_infoB\016\n"
           + "\014_descriptionB\016\n"
@@ -411,24 +431,26 @@ public final class BackupVaultProto {
           + "\034_enforced_retention_end_timeB\016\n"
           + "\014_expire_timeB\023\n"
           + "\021_consistency_timeB\007\n"
-          + "\005_etag\"\364\001\n"
+          + "\005_etagB\020\n"
+          + "\016_satisfies_pzsB\020\n"
+          + "\016_satisfies_pzi\"\364\001\n"
           + "\030CreateBackupVaultRequest\022;\n"
-          + "\006parent\030\001 \001(\tB+\340A\002\372A"
-          + "%\022#backupdr.googleapis.com/BackupVault\022\034\n"
+          + "\006parent\030\001 \001("
+          + "\tB+\340A\002\372A%\022#backupdr.googleapis.com/BackupVault\022\034\n"
           + "\017backup_vault_id\030\002 \001(\tB\003\340A\002\022@\n"
-          + "\014backup_vault\030\003"
-          + " \001(\0132%.google.cloud.backupdr.v1.BackupVaultB\003\340A\002\022\037\n\n"
+          + "\014backup_vault\030\003 \001("
+          + "\0132%.google.cloud.backupdr.v1.BackupVaultB\003\340A\002\022\037\n\n"
           + "request_id\030\004 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\022\032\n\r"
           + "validate_only\030\005 \001(\010B\003\340A\001\"\361\001\n"
           + "\027ListBackupVaultsRequest\022;\n"
-          + "\006parent\030\001 \001(\tB"
-          + "+\340A\002\372A%\022#backupdr.googleapis.com/BackupVault\022\026\n"
+          + "\006parent\030\001 \001("
+          + "\tB+\340A\002\372A%\022#backupdr.googleapis.com/BackupVault\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
           + "\010order_by\030\005 \001(\tB\003\340A\001\022<\n"
-          + "\004view\030\006 \001(\0162).google"
-          + ".cloud.backupdr.v1.BackupVaultViewB\003\340A\001\"\206\001\n"
+          + "\004view\030\006"
+          + " \001(\0162).google.cloud.backupdr.v1.BackupVaultViewB\003\340A\001\"\206\001\n"
           + "\030ListBackupVaultsResponse\022<\n\r"
           + "backup_vaults\030\001 \003(\0132%.google.cloud.backupdr.v1.BackupVault\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\023\n"
@@ -447,15 +469,16 @@ public final class BackupVaultProto {
           + "\025GetBackupVaultRequest\0229\n"
           + "\004name\030\001 \001(\tB+\340A\002\372A%\n"
           + "#backupdr.googleapis.com/BackupVault\022<\n"
-          + "\004view\030\002"
-          + " \001(\0162).google.cloud.backupdr.v1.BackupVaultViewB\003\340A\001\"\343\001\n"
+          + "\004view\030\002 \001(\0162"
+          + ").google.cloud.backupdr.v1.BackupVaultViewB\003\340A\001\"\221\002\n"
           + "\030UpdateBackupVaultRequest\0224\n"
           + "\013update_mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\022@\n"
-          + "\014backup_vault\030\002 \001("
-          + "\0132%.google.cloud.backupdr.v1.BackupVaultB\003\340A\002\022\037\n\n"
+          + "\014backup_vault\030\002"
+          + " \001(\0132%.google.cloud.backupdr.v1.BackupVaultB\003\340A\002\022\037\n\n"
           + "request_id\030\003 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\022\032\n\r"
           + "validate_only\030\004 \001(\010B\003\340A\001\022\022\n"
-          + "\005force\030\005 \001(\010B\003\340A\001\"\374\001\n"
+          + "\005force\030\005 \001(\010B\003\340A\001\022,\n"
+          + "\037force_update_access_restriction\030\006 \001(\010B\003\340A\001\"\374\001\n"
           + "\030DeleteBackupVaultRequest\0229\n"
           + "\004name\030\001 \001(\tB+\340A\002\372A%\n"
           + "#backupdr.googleapis.com/BackupVault\022\037\n\n"
@@ -481,8 +504,8 @@ public final class BackupVaultProto {
           + "\"backupdr.googleapis.com/DataSource\"\314\001\n"
           + "\027UpdateDataSourceRequest\0224\n"
           + "\013update_mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\022>\n"
-          + "\013data_source\030\002 \001(\013"
-          + "2$.google.cloud.backupdr.v1.DataSourceB\003\340A\002\022\037\n\n"
+          + "\013data_source\030\002 \001(\0132$."
+          + "google.cloud.backupdr.v1.DataSourceB\003\340A\002\022\037\n\n"
           + "request_id\030\003 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\022\032\n\r"
           + "allow_missing\030\004 \001(\010B\003\340A\001\"\342\001\n"
           + "\022ListBackupsRequest\0226\n"
@@ -510,15 +533,21 @@ public final class BackupVaultProto {
           + "\023DeleteBackupRequest\0224\n"
           + "\004name\030\001 \001(\tB&\340A\002\372A \n"
           + "\036backupdr.googleapis.com/Backup\022\037\n\n"
-          + "request_id\030\002 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\360\002\n"
+          + "request_id\030\002 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\371\004\n"
           + "\024RestoreBackupRequest\0224\n"
           + "\004name\030\001 \001(\tB&\340A\002\372A \n"
           + "\036backupdr.googleapis.com/Backup\022\037\n\n"
           + "request_id\030\002 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\022i\n"
-          + "#compute_instance_target_environment\030\003 \001(\0132:.google.cloud.backup"
-          + "dr.v1.ComputeInstanceTargetEnvironmentH\000\022i\n"
-          + "#compute_instance_restore_properties\030\004"
-          + " \001(\0132:.google.cloud.backupdr.v1.ComputeInstanceRestorePropertiesH\001B\024\n"
+          + "#compute_instance_target_environment\030\003"
+          + " \001(\0132:.google.cloud.backupdr.v1.ComputeInstanceTargetEnvironmentH\000\022R\n"
+          + "\027disk_target_environment\030\005 \001(\0132/.google."
+          + "cloud.backupdr.v1.DiskTargetEnvironmentH\000\022_\n"
+          + "\036region_disk_target_environment\030\006 \001("
+          + "\01325.google.cloud.backupdr.v1.RegionDiskTargetEnvironmentH\000\022i\n"
+          + "#compute_instance_restore_properties\030\004 \001(\0132:.google.cloud.b"
+          + "ackupdr.v1.ComputeInstanceRestorePropertiesH\001\022R\n"
+          + "\027disk_restore_properties\030\007 \001(\0132/"
+          + ".google.cloud.backupdr.v1.DiskRestorePropertiesH\001B\024\n"
           + "\022target_environmentB\025\n"
           + "\023instance_properties\"Z\n"
           + "\025RestoreBackupResponse\022A\n"
@@ -542,11 +571,10 @@ public final class BackupVaultProto {
           + "\035BACKUP_VAULT_VIEW_UNSPECIFIED\020\000\022\033\n"
           + "\027BACKUP_VAULT_VIEW_BASIC\020\001\022\032\n"
           + "\026BACKUP_VAULT_VIEW_FULL\020\002B\300\001\n"
-          + "\034com.google.cloud.backupdr.v1B\020BackupVaultProtoP\001Z8c"
-          + "loud.google.com/go/backupdr/apiv1/backup"
-          + "drpb;backupdrpb\252\002\030Google.Cloud.BackupDR."
-          + "V1\312\002\030Google\\Cloud\\BackupDR\\V1\352\002\033Google::"
-          + "Cloud::BackupDR::V1b\006proto3"
+          + "\034com.google.cloud.backupdr.v1B\020BackupVaultProtoP\001Z8cloud.google.com/go"
+          + "/backupdr/apiv1/backupdrpb;backupdrpb\252\002\030"
+          + "Google.Cloud.BackupDR.V1\312\002\030Google\\Cloud\\"
+          + "BackupDR\\V1\352\002\033Google::Cloud::BackupDR::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -556,6 +584,8 @@ public final class BackupVaultProto {
               com.google.api.FieldInfoProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.backupdr.v1.BackupvaultBaProto.getDescriptor(),
+              com.google.cloud.backupdr.v1.BackupvaultCloudSqlProto.getDescriptor(),
+              com.google.cloud.backupdr.v1.BackupvaultDiskProto.getDescriptor(),
               com.google.cloud.backupdr.v1.BackupvaultGceProto.getDescriptor(),
               com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
@@ -619,6 +649,7 @@ public final class BackupVaultProto {
               "BackupConfigInfo",
               "DataSourceGcpResource",
               "DataSourceBackupApplianceApplication",
+              "BackupBlockedByVaultAccessRestriction",
               "SourceResource",
             });
     internal_static_google_cloud_backupdr_v1_DataSource_LabelsEntry_descriptor =
@@ -648,7 +679,12 @@ public final class BackupVaultProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_backupdr_v1_GcpBackupConfig_descriptor,
             new java.lang.String[] {
-              "BackupPlan", "BackupPlanDescription", "BackupPlanAssociation", "BackupPlanRules",
+              "BackupPlan",
+              "BackupPlanDescription",
+              "BackupPlanAssociation",
+              "BackupPlanRules",
+              "BackupPlanRevisionName",
+              "BackupPlanRevisionId",
             });
     internal_static_google_cloud_backupdr_v1_BackupApplianceBackupConfig_descriptor =
         getDescriptor().getMessageTypes().get(4);
@@ -674,6 +710,8 @@ public final class BackupVaultProto {
               "Location",
               "Type",
               "ComputeInstanceDatasourceProperties",
+              "CloudSqlInstanceDatasourceProperties",
+              "DiskDatasourceProperties",
               "GcpResourceProperties",
             });
     internal_static_google_cloud_backupdr_v1_DataSourceBackupApplianceApplication_descriptor =
@@ -739,10 +777,14 @@ public final class BackupVaultProto {
               "ServiceLocks",
               "BackupApplianceLocks",
               "ComputeInstanceBackupProperties",
+              "CloudSqlInstanceBackupProperties",
               "BackupApplianceBackupProperties",
+              "DiskBackupProperties",
               "BackupType",
               "GcpBackupPlanInfo",
               "ResourceSizeBytes",
+              "SatisfiesPzs",
+              "SatisfiesPzi",
               "BackupProperties",
               "PlanInfo",
             });
@@ -752,7 +794,7 @@ public final class BackupVaultProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_backupdr_v1_Backup_GCPBackupPlanInfo_descriptor,
             new java.lang.String[] {
-              "BackupPlan", "BackupPlanRuleId",
+              "BackupPlan", "BackupPlanRuleId", "BackupPlanRevisionName", "BackupPlanRevisionId",
             });
     internal_static_google_cloud_backupdr_v1_Backup_LabelsEntry_descriptor =
         internal_static_google_cloud_backupdr_v1_Backup_descriptor.getNestedTypes().get(1);
@@ -816,7 +858,12 @@ public final class BackupVaultProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_backupdr_v1_UpdateBackupVaultRequest_descriptor,
             new java.lang.String[] {
-              "UpdateMask", "BackupVault", "RequestId", "ValidateOnly", "Force",
+              "UpdateMask",
+              "BackupVault",
+              "RequestId",
+              "ValidateOnly",
+              "Force",
+              "ForceUpdateAccessRestriction",
             });
     internal_static_google_cloud_backupdr_v1_DeleteBackupVaultRequest_descriptor =
         getDescriptor().getMessageTypes().get(18);
@@ -913,7 +960,10 @@ public final class BackupVaultProto {
               "Name",
               "RequestId",
               "ComputeInstanceTargetEnvironment",
+              "DiskTargetEnvironment",
+              "RegionDiskTargetEnvironment",
               "ComputeInstanceRestoreProperties",
+              "DiskRestoreProperties",
               "TargetEnvironment",
               "InstanceProperties",
             });
@@ -953,6 +1003,8 @@ public final class BackupVaultProto {
     com.google.api.FieldInfoProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.backupdr.v1.BackupvaultBaProto.getDescriptor();
+    com.google.cloud.backupdr.v1.BackupvaultCloudSqlProto.getDescriptor();
+    com.google.cloud.backupdr.v1.BackupvaultDiskProto.getDescriptor();
     com.google.cloud.backupdr.v1.BackupvaultGceProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();

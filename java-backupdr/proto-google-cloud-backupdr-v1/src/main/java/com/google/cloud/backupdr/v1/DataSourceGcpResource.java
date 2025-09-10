@@ -78,6 +78,8 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     COMPUTE_INSTANCE_DATASOURCE_PROPERTIES(4),
+    CLOUD_SQL_INSTANCE_DATASOURCE_PROPERTIES(5),
+    DISK_DATASOURCE_PROPERTIES(7),
     GCPRESOURCEPROPERTIES_NOT_SET(0);
     private final int value;
 
@@ -99,6 +101,10 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
       switch (value) {
         case 4:
           return COMPUTE_INSTANCE_DATASOURCE_PROPERTIES;
+        case 5:
+          return CLOUD_SQL_INSTANCE_DATASOURCE_PROPERTIES;
+        case 7:
+          return DISK_DATASOURCE_PROPERTIES;
         case 0:
           return GCPRESOURCEPROPERTIES_NOT_SET;
         default:
@@ -345,6 +351,131 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
     return com.google.cloud.backupdr.v1.ComputeInstanceDataSourceProperties.getDefaultInstance();
   }
 
+  public static final int CLOUD_SQL_INSTANCE_DATASOURCE_PROPERTIES_FIELD_NUMBER = 5;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. CloudSqlInstanceDataSourceProperties has a subset of Cloud
+   * SQL Instance properties that are useful at the Datasource level.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.CloudSqlInstanceDataSourceProperties cloud_sql_instance_datasource_properties = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the cloudSqlInstanceDatasourceProperties field is set.
+   */
+  @java.lang.Override
+  public boolean hasCloudSqlInstanceDatasourceProperties() {
+    return gcpResourcePropertiesCase_ == 5;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. CloudSqlInstanceDataSourceProperties has a subset of Cloud
+   * SQL Instance properties that are useful at the Datasource level.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.CloudSqlInstanceDataSourceProperties cloud_sql_instance_datasource_properties = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The cloudSqlInstanceDatasourceProperties.
+   */
+  @java.lang.Override
+  public com.google.cloud.backupdr.v1.CloudSqlInstanceDataSourceProperties
+      getCloudSqlInstanceDatasourceProperties() {
+    if (gcpResourcePropertiesCase_ == 5) {
+      return (com.google.cloud.backupdr.v1.CloudSqlInstanceDataSourceProperties)
+          gcpResourceProperties_;
+    }
+    return com.google.cloud.backupdr.v1.CloudSqlInstanceDataSourceProperties.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. CloudSqlInstanceDataSourceProperties has a subset of Cloud
+   * SQL Instance properties that are useful at the Datasource level.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.CloudSqlInstanceDataSourceProperties cloud_sql_instance_datasource_properties = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.backupdr.v1.CloudSqlInstanceDataSourcePropertiesOrBuilder
+      getCloudSqlInstanceDatasourcePropertiesOrBuilder() {
+    if (gcpResourcePropertiesCase_ == 5) {
+      return (com.google.cloud.backupdr.v1.CloudSqlInstanceDataSourceProperties)
+          gcpResourceProperties_;
+    }
+    return com.google.cloud.backupdr.v1.CloudSqlInstanceDataSourceProperties.getDefaultInstance();
+  }
+
+  public static final int DISK_DATASOURCE_PROPERTIES_FIELD_NUMBER = 7;
+
+  /**
+   *
+   *
+   * <pre>
+   * DiskDataSourceProperties has a subset of Disk properties that are useful
+   * at the Datasource level.
+   * </pre>
+   *
+   * <code>.google.cloud.backupdr.v1.DiskDataSourceProperties disk_datasource_properties = 7;</code>
+   *
+   * @return Whether the diskDatasourceProperties field is set.
+   */
+  @java.lang.Override
+  public boolean hasDiskDatasourceProperties() {
+    return gcpResourcePropertiesCase_ == 7;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * DiskDataSourceProperties has a subset of Disk properties that are useful
+   * at the Datasource level.
+   * </pre>
+   *
+   * <code>.google.cloud.backupdr.v1.DiskDataSourceProperties disk_datasource_properties = 7;</code>
+   *
+   * @return The diskDatasourceProperties.
+   */
+  @java.lang.Override
+  public com.google.cloud.backupdr.v1.DiskDataSourceProperties getDiskDatasourceProperties() {
+    if (gcpResourcePropertiesCase_ == 7) {
+      return (com.google.cloud.backupdr.v1.DiskDataSourceProperties) gcpResourceProperties_;
+    }
+    return com.google.cloud.backupdr.v1.DiskDataSourceProperties.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * DiskDataSourceProperties has a subset of Disk properties that are useful
+   * at the Datasource level.
+   * </pre>
+   *
+   * <code>.google.cloud.backupdr.v1.DiskDataSourceProperties disk_datasource_properties = 7;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.backupdr.v1.DiskDataSourcePropertiesOrBuilder
+      getDiskDatasourcePropertiesOrBuilder() {
+    if (gcpResourcePropertiesCase_ == 7) {
+      return (com.google.cloud.backupdr.v1.DiskDataSourceProperties) gcpResourceProperties_;
+    }
+    return com.google.cloud.backupdr.v1.DiskDataSourceProperties.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -374,6 +505,16 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
           (com.google.cloud.backupdr.v1.ComputeInstanceDataSourceProperties)
               gcpResourceProperties_);
     }
+    if (gcpResourcePropertiesCase_ == 5) {
+      output.writeMessage(
+          5,
+          (com.google.cloud.backupdr.v1.CloudSqlInstanceDataSourceProperties)
+              gcpResourceProperties_);
+    }
+    if (gcpResourcePropertiesCase_ == 7) {
+      output.writeMessage(
+          7, (com.google.cloud.backupdr.v1.DiskDataSourceProperties) gcpResourceProperties_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -398,6 +539,18 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
               4,
               (com.google.cloud.backupdr.v1.ComputeInstanceDataSourceProperties)
                   gcpResourceProperties_);
+    }
+    if (gcpResourcePropertiesCase_ == 5) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5,
+              (com.google.cloud.backupdr.v1.CloudSqlInstanceDataSourceProperties)
+                  gcpResourceProperties_);
+    }
+    if (gcpResourcePropertiesCase_ == 7) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              7, (com.google.cloud.backupdr.v1.DiskDataSourceProperties) gcpResourceProperties_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -424,6 +577,14 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
         if (!getComputeInstanceDatasourceProperties()
             .equals(other.getComputeInstanceDatasourceProperties())) return false;
         break;
+      case 5:
+        if (!getCloudSqlInstanceDatasourceProperties()
+            .equals(other.getCloudSqlInstanceDatasourceProperties())) return false;
+        break;
+      case 7:
+        if (!getDiskDatasourceProperties().equals(other.getDiskDatasourceProperties()))
+          return false;
+        break;
       case 0:
       default:
     }
@@ -448,6 +609,14 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
       case 4:
         hash = (37 * hash) + COMPUTE_INSTANCE_DATASOURCE_PROPERTIES_FIELD_NUMBER;
         hash = (53 * hash) + getComputeInstanceDatasourceProperties().hashCode();
+        break;
+      case 5:
+        hash = (37 * hash) + CLOUD_SQL_INSTANCE_DATASOURCE_PROPERTIES_FIELD_NUMBER;
+        hash = (53 * hash) + getCloudSqlInstanceDatasourceProperties().hashCode();
+        break;
+      case 7:
+        hash = (37 * hash) + DISK_DATASOURCE_PROPERTIES_FIELD_NUMBER;
+        hash = (53 * hash) + getDiskDatasourceProperties().hashCode();
         break;
       case 0:
       default:
@@ -600,6 +769,12 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
       if (computeInstanceDatasourcePropertiesBuilder_ != null) {
         computeInstanceDatasourcePropertiesBuilder_.clear();
       }
+      if (cloudSqlInstanceDatasourcePropertiesBuilder_ != null) {
+        cloudSqlInstanceDatasourcePropertiesBuilder_.clear();
+      }
+      if (diskDatasourcePropertiesBuilder_ != null) {
+        diskDatasourcePropertiesBuilder_.clear();
+      }
       gcpResourcePropertiesCase_ = 0;
       gcpResourceProperties_ = null;
       return this;
@@ -655,6 +830,12 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
       result.gcpResourceProperties_ = this.gcpResourceProperties_;
       if (gcpResourcePropertiesCase_ == 4 && computeInstanceDatasourcePropertiesBuilder_ != null) {
         result.gcpResourceProperties_ = computeInstanceDatasourcePropertiesBuilder_.build();
+      }
+      if (gcpResourcePropertiesCase_ == 5 && cloudSqlInstanceDatasourcePropertiesBuilder_ != null) {
+        result.gcpResourceProperties_ = cloudSqlInstanceDatasourcePropertiesBuilder_.build();
+      }
+      if (gcpResourcePropertiesCase_ == 7 && diskDatasourcePropertiesBuilder_ != null) {
+        result.gcpResourceProperties_ = diskDatasourcePropertiesBuilder_.build();
       }
     }
 
@@ -726,6 +907,17 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
                 other.getComputeInstanceDatasourceProperties());
             break;
           }
+        case CLOUD_SQL_INSTANCE_DATASOURCE_PROPERTIES:
+          {
+            mergeCloudSqlInstanceDatasourceProperties(
+                other.getCloudSqlInstanceDatasourceProperties());
+            break;
+          }
+        case DISK_DATASOURCE_PROPERTIES:
+          {
+            mergeDiskDatasourceProperties(other.getDiskDatasourceProperties());
+            break;
+          }
         case GCPRESOURCEPROPERTIES_NOT_SET:
           {
             break;
@@ -783,6 +975,21 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
                 gcpResourcePropertiesCase_ = 4;
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(
+                    getCloudSqlInstanceDatasourcePropertiesFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                gcpResourcePropertiesCase_ = 5;
+                break;
+              } // case 42
+            case 58:
+              {
+                input.readMessage(
+                    getDiskDatasourcePropertiesFieldBuilder().getBuilder(), extensionRegistry);
+                gcpResourcePropertiesCase_ = 7;
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1418,6 +1625,511 @@ public final class DataSourceGcpResource extends com.google.protobuf.GeneratedMe
       gcpResourcePropertiesCase_ = 4;
       onChanged();
       return computeInstanceDatasourcePropertiesBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.backupdr.v1.CloudSqlInstanceDataSourceProperties,
+            com.google.cloud.backupdr.v1.CloudSqlInstanceDataSourceProperties.Builder,
+            com.google.cloud.backupdr.v1.CloudSqlInstanceDataSourcePropertiesOrBuilder>
+        cloudSqlInstanceDatasourcePropertiesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. CloudSqlInstanceDataSourceProperties has a subset of Cloud
+     * SQL Instance properties that are useful at the Datasource level.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.CloudSqlInstanceDataSourceProperties cloud_sql_instance_datasource_properties = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the cloudSqlInstanceDatasourceProperties field is set.
+     */
+    @java.lang.Override
+    public boolean hasCloudSqlInstanceDatasourceProperties() {
+      return gcpResourcePropertiesCase_ == 5;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. CloudSqlInstanceDataSourceProperties has a subset of Cloud
+     * SQL Instance properties that are useful at the Datasource level.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.CloudSqlInstanceDataSourceProperties cloud_sql_instance_datasource_properties = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The cloudSqlInstanceDatasourceProperties.
+     */
+    @java.lang.Override
+    public com.google.cloud.backupdr.v1.CloudSqlInstanceDataSourceProperties
+        getCloudSqlInstanceDatasourceProperties() {
+      if (cloudSqlInstanceDatasourcePropertiesBuilder_ == null) {
+        if (gcpResourcePropertiesCase_ == 5) {
+          return (com.google.cloud.backupdr.v1.CloudSqlInstanceDataSourceProperties)
+              gcpResourceProperties_;
+        }
+        return com.google.cloud.backupdr.v1.CloudSqlInstanceDataSourceProperties
+            .getDefaultInstance();
+      } else {
+        if (gcpResourcePropertiesCase_ == 5) {
+          return cloudSqlInstanceDatasourcePropertiesBuilder_.getMessage();
+        }
+        return com.google.cloud.backupdr.v1.CloudSqlInstanceDataSourceProperties
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. CloudSqlInstanceDataSourceProperties has a subset of Cloud
+     * SQL Instance properties that are useful at the Datasource level.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.CloudSqlInstanceDataSourceProperties cloud_sql_instance_datasource_properties = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCloudSqlInstanceDatasourceProperties(
+        com.google.cloud.backupdr.v1.CloudSqlInstanceDataSourceProperties value) {
+      if (cloudSqlInstanceDatasourcePropertiesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        gcpResourceProperties_ = value;
+        onChanged();
+      } else {
+        cloudSqlInstanceDatasourcePropertiesBuilder_.setMessage(value);
+      }
+      gcpResourcePropertiesCase_ = 5;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. CloudSqlInstanceDataSourceProperties has a subset of Cloud
+     * SQL Instance properties that are useful at the Datasource level.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.CloudSqlInstanceDataSourceProperties cloud_sql_instance_datasource_properties = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCloudSqlInstanceDatasourceProperties(
+        com.google.cloud.backupdr.v1.CloudSqlInstanceDataSourceProperties.Builder builderForValue) {
+      if (cloudSqlInstanceDatasourcePropertiesBuilder_ == null) {
+        gcpResourceProperties_ = builderForValue.build();
+        onChanged();
+      } else {
+        cloudSqlInstanceDatasourcePropertiesBuilder_.setMessage(builderForValue.build());
+      }
+      gcpResourcePropertiesCase_ = 5;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. CloudSqlInstanceDataSourceProperties has a subset of Cloud
+     * SQL Instance properties that are useful at the Datasource level.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.CloudSqlInstanceDataSourceProperties cloud_sql_instance_datasource_properties = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeCloudSqlInstanceDatasourceProperties(
+        com.google.cloud.backupdr.v1.CloudSqlInstanceDataSourceProperties value) {
+      if (cloudSqlInstanceDatasourcePropertiesBuilder_ == null) {
+        if (gcpResourcePropertiesCase_ == 5
+            && gcpResourceProperties_
+                != com.google.cloud.backupdr.v1.CloudSqlInstanceDataSourceProperties
+                    .getDefaultInstance()) {
+          gcpResourceProperties_ =
+              com.google.cloud.backupdr.v1.CloudSqlInstanceDataSourceProperties.newBuilder(
+                      (com.google.cloud.backupdr.v1.CloudSqlInstanceDataSourceProperties)
+                          gcpResourceProperties_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          gcpResourceProperties_ = value;
+        }
+        onChanged();
+      } else {
+        if (gcpResourcePropertiesCase_ == 5) {
+          cloudSqlInstanceDatasourcePropertiesBuilder_.mergeFrom(value);
+        } else {
+          cloudSqlInstanceDatasourcePropertiesBuilder_.setMessage(value);
+        }
+      }
+      gcpResourcePropertiesCase_ = 5;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. CloudSqlInstanceDataSourceProperties has a subset of Cloud
+     * SQL Instance properties that are useful at the Datasource level.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.CloudSqlInstanceDataSourceProperties cloud_sql_instance_datasource_properties = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearCloudSqlInstanceDatasourceProperties() {
+      if (cloudSqlInstanceDatasourcePropertiesBuilder_ == null) {
+        if (gcpResourcePropertiesCase_ == 5) {
+          gcpResourcePropertiesCase_ = 0;
+          gcpResourceProperties_ = null;
+          onChanged();
+        }
+      } else {
+        if (gcpResourcePropertiesCase_ == 5) {
+          gcpResourcePropertiesCase_ = 0;
+          gcpResourceProperties_ = null;
+        }
+        cloudSqlInstanceDatasourcePropertiesBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. CloudSqlInstanceDataSourceProperties has a subset of Cloud
+     * SQL Instance properties that are useful at the Datasource level.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.CloudSqlInstanceDataSourceProperties cloud_sql_instance_datasource_properties = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.backupdr.v1.CloudSqlInstanceDataSourceProperties.Builder
+        getCloudSqlInstanceDatasourcePropertiesBuilder() {
+      return getCloudSqlInstanceDatasourcePropertiesFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. CloudSqlInstanceDataSourceProperties has a subset of Cloud
+     * SQL Instance properties that are useful at the Datasource level.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.CloudSqlInstanceDataSourceProperties cloud_sql_instance_datasource_properties = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.backupdr.v1.CloudSqlInstanceDataSourcePropertiesOrBuilder
+        getCloudSqlInstanceDatasourcePropertiesOrBuilder() {
+      if ((gcpResourcePropertiesCase_ == 5)
+          && (cloudSqlInstanceDatasourcePropertiesBuilder_ != null)) {
+        return cloudSqlInstanceDatasourcePropertiesBuilder_.getMessageOrBuilder();
+      } else {
+        if (gcpResourcePropertiesCase_ == 5) {
+          return (com.google.cloud.backupdr.v1.CloudSqlInstanceDataSourceProperties)
+              gcpResourceProperties_;
+        }
+        return com.google.cloud.backupdr.v1.CloudSqlInstanceDataSourceProperties
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. CloudSqlInstanceDataSourceProperties has a subset of Cloud
+     * SQL Instance properties that are useful at the Datasource level.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.CloudSqlInstanceDataSourceProperties cloud_sql_instance_datasource_properties = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.backupdr.v1.CloudSqlInstanceDataSourceProperties,
+            com.google.cloud.backupdr.v1.CloudSqlInstanceDataSourceProperties.Builder,
+            com.google.cloud.backupdr.v1.CloudSqlInstanceDataSourcePropertiesOrBuilder>
+        getCloudSqlInstanceDatasourcePropertiesFieldBuilder() {
+      if (cloudSqlInstanceDatasourcePropertiesBuilder_ == null) {
+        if (!(gcpResourcePropertiesCase_ == 5)) {
+          gcpResourceProperties_ =
+              com.google.cloud.backupdr.v1.CloudSqlInstanceDataSourceProperties
+                  .getDefaultInstance();
+        }
+        cloudSqlInstanceDatasourcePropertiesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.backupdr.v1.CloudSqlInstanceDataSourceProperties,
+                com.google.cloud.backupdr.v1.CloudSqlInstanceDataSourceProperties.Builder,
+                com.google.cloud.backupdr.v1.CloudSqlInstanceDataSourcePropertiesOrBuilder>(
+                (com.google.cloud.backupdr.v1.CloudSqlInstanceDataSourceProperties)
+                    gcpResourceProperties_,
+                getParentForChildren(),
+                isClean());
+        gcpResourceProperties_ = null;
+      }
+      gcpResourcePropertiesCase_ = 5;
+      onChanged();
+      return cloudSqlInstanceDatasourcePropertiesBuilder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.backupdr.v1.DiskDataSourceProperties,
+            com.google.cloud.backupdr.v1.DiskDataSourceProperties.Builder,
+            com.google.cloud.backupdr.v1.DiskDataSourcePropertiesOrBuilder>
+        diskDatasourcePropertiesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * DiskDataSourceProperties has a subset of Disk properties that are useful
+     * at the Datasource level.
+     * </pre>
+     *
+     * <code>.google.cloud.backupdr.v1.DiskDataSourceProperties disk_datasource_properties = 7;
+     * </code>
+     *
+     * @return Whether the diskDatasourceProperties field is set.
+     */
+    @java.lang.Override
+    public boolean hasDiskDatasourceProperties() {
+      return gcpResourcePropertiesCase_ == 7;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * DiskDataSourceProperties has a subset of Disk properties that are useful
+     * at the Datasource level.
+     * </pre>
+     *
+     * <code>.google.cloud.backupdr.v1.DiskDataSourceProperties disk_datasource_properties = 7;
+     * </code>
+     *
+     * @return The diskDatasourceProperties.
+     */
+    @java.lang.Override
+    public com.google.cloud.backupdr.v1.DiskDataSourceProperties getDiskDatasourceProperties() {
+      if (diskDatasourcePropertiesBuilder_ == null) {
+        if (gcpResourcePropertiesCase_ == 7) {
+          return (com.google.cloud.backupdr.v1.DiskDataSourceProperties) gcpResourceProperties_;
+        }
+        return com.google.cloud.backupdr.v1.DiskDataSourceProperties.getDefaultInstance();
+      } else {
+        if (gcpResourcePropertiesCase_ == 7) {
+          return diskDatasourcePropertiesBuilder_.getMessage();
+        }
+        return com.google.cloud.backupdr.v1.DiskDataSourceProperties.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * DiskDataSourceProperties has a subset of Disk properties that are useful
+     * at the Datasource level.
+     * </pre>
+     *
+     * <code>.google.cloud.backupdr.v1.DiskDataSourceProperties disk_datasource_properties = 7;
+     * </code>
+     */
+    public Builder setDiskDatasourceProperties(
+        com.google.cloud.backupdr.v1.DiskDataSourceProperties value) {
+      if (diskDatasourcePropertiesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        gcpResourceProperties_ = value;
+        onChanged();
+      } else {
+        diskDatasourcePropertiesBuilder_.setMessage(value);
+      }
+      gcpResourcePropertiesCase_ = 7;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * DiskDataSourceProperties has a subset of Disk properties that are useful
+     * at the Datasource level.
+     * </pre>
+     *
+     * <code>.google.cloud.backupdr.v1.DiskDataSourceProperties disk_datasource_properties = 7;
+     * </code>
+     */
+    public Builder setDiskDatasourceProperties(
+        com.google.cloud.backupdr.v1.DiskDataSourceProperties.Builder builderForValue) {
+      if (diskDatasourcePropertiesBuilder_ == null) {
+        gcpResourceProperties_ = builderForValue.build();
+        onChanged();
+      } else {
+        diskDatasourcePropertiesBuilder_.setMessage(builderForValue.build());
+      }
+      gcpResourcePropertiesCase_ = 7;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * DiskDataSourceProperties has a subset of Disk properties that are useful
+     * at the Datasource level.
+     * </pre>
+     *
+     * <code>.google.cloud.backupdr.v1.DiskDataSourceProperties disk_datasource_properties = 7;
+     * </code>
+     */
+    public Builder mergeDiskDatasourceProperties(
+        com.google.cloud.backupdr.v1.DiskDataSourceProperties value) {
+      if (diskDatasourcePropertiesBuilder_ == null) {
+        if (gcpResourcePropertiesCase_ == 7
+            && gcpResourceProperties_
+                != com.google.cloud.backupdr.v1.DiskDataSourceProperties.getDefaultInstance()) {
+          gcpResourceProperties_ =
+              com.google.cloud.backupdr.v1.DiskDataSourceProperties.newBuilder(
+                      (com.google.cloud.backupdr.v1.DiskDataSourceProperties)
+                          gcpResourceProperties_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          gcpResourceProperties_ = value;
+        }
+        onChanged();
+      } else {
+        if (gcpResourcePropertiesCase_ == 7) {
+          diskDatasourcePropertiesBuilder_.mergeFrom(value);
+        } else {
+          diskDatasourcePropertiesBuilder_.setMessage(value);
+        }
+      }
+      gcpResourcePropertiesCase_ = 7;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * DiskDataSourceProperties has a subset of Disk properties that are useful
+     * at the Datasource level.
+     * </pre>
+     *
+     * <code>.google.cloud.backupdr.v1.DiskDataSourceProperties disk_datasource_properties = 7;
+     * </code>
+     */
+    public Builder clearDiskDatasourceProperties() {
+      if (diskDatasourcePropertiesBuilder_ == null) {
+        if (gcpResourcePropertiesCase_ == 7) {
+          gcpResourcePropertiesCase_ = 0;
+          gcpResourceProperties_ = null;
+          onChanged();
+        }
+      } else {
+        if (gcpResourcePropertiesCase_ == 7) {
+          gcpResourcePropertiesCase_ = 0;
+          gcpResourceProperties_ = null;
+        }
+        diskDatasourcePropertiesBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * DiskDataSourceProperties has a subset of Disk properties that are useful
+     * at the Datasource level.
+     * </pre>
+     *
+     * <code>.google.cloud.backupdr.v1.DiskDataSourceProperties disk_datasource_properties = 7;
+     * </code>
+     */
+    public com.google.cloud.backupdr.v1.DiskDataSourceProperties.Builder
+        getDiskDatasourcePropertiesBuilder() {
+      return getDiskDatasourcePropertiesFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * DiskDataSourceProperties has a subset of Disk properties that are useful
+     * at the Datasource level.
+     * </pre>
+     *
+     * <code>.google.cloud.backupdr.v1.DiskDataSourceProperties disk_datasource_properties = 7;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.backupdr.v1.DiskDataSourcePropertiesOrBuilder
+        getDiskDatasourcePropertiesOrBuilder() {
+      if ((gcpResourcePropertiesCase_ == 7) && (diskDatasourcePropertiesBuilder_ != null)) {
+        return diskDatasourcePropertiesBuilder_.getMessageOrBuilder();
+      } else {
+        if (gcpResourcePropertiesCase_ == 7) {
+          return (com.google.cloud.backupdr.v1.DiskDataSourceProperties) gcpResourceProperties_;
+        }
+        return com.google.cloud.backupdr.v1.DiskDataSourceProperties.getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * DiskDataSourceProperties has a subset of Disk properties that are useful
+     * at the Datasource level.
+     * </pre>
+     *
+     * <code>.google.cloud.backupdr.v1.DiskDataSourceProperties disk_datasource_properties = 7;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.backupdr.v1.DiskDataSourceProperties,
+            com.google.cloud.backupdr.v1.DiskDataSourceProperties.Builder,
+            com.google.cloud.backupdr.v1.DiskDataSourcePropertiesOrBuilder>
+        getDiskDatasourcePropertiesFieldBuilder() {
+      if (diskDatasourcePropertiesBuilder_ == null) {
+        if (!(gcpResourcePropertiesCase_ == 7)) {
+          gcpResourceProperties_ =
+              com.google.cloud.backupdr.v1.DiskDataSourceProperties.getDefaultInstance();
+        }
+        diskDatasourcePropertiesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.backupdr.v1.DiskDataSourceProperties,
+                com.google.cloud.backupdr.v1.DiskDataSourceProperties.Builder,
+                com.google.cloud.backupdr.v1.DiskDataSourcePropertiesOrBuilder>(
+                (com.google.cloud.backupdr.v1.DiskDataSourceProperties) gcpResourceProperties_,
+                getParentForChildren(),
+                isClean());
+        gcpResourceProperties_ = null;
+      }
+      gcpResourcePropertiesCase_ = 7;
+      onChanged();
+      return diskDatasourcePropertiesBuilder_;
     }
 
     @java.lang.Override

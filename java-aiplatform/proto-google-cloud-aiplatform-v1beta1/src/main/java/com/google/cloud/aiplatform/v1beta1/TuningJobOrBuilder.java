@@ -186,6 +186,43 @@ public interface TuningJobOrBuilder
    *
    *
    * <pre>
+   * Tuning Spec for Veo Tuning.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.VeoTuningSpec veo_tuning_spec = 33;</code>
+   *
+   * @return Whether the veoTuningSpec field is set.
+   */
+  boolean hasVeoTuningSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Tuning Spec for Veo Tuning.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.VeoTuningSpec veo_tuning_spec = 33;</code>
+   *
+   * @return The veoTuningSpec.
+   */
+  com.google.cloud.aiplatform.v1beta1.VeoTuningSpec getVeoTuningSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Tuning Spec for Veo Tuning.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.VeoTuningSpec veo_tuning_spec = 33;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.VeoTuningSpecOrBuilder getVeoTuningSpecOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. Identifier. Resource name of a TuningJob. Format:
    * `projects/{project}/locations/{location}/tuningJobs/{tuning_job}`
    * </pre>
@@ -271,6 +308,42 @@ public interface TuningJobOrBuilder
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user-provided path to custom model weights. Set this field
+   * to tune a custom model. The path must be a Cloud Storage directory that
+   * contains the model weights in .safetensors format along with associated
+   * model metadata files. If this field is set, the base_model field must still
+   * be set to indicate which base model the custom model is derived from. This
+   * feature is only available for open source models.
+   * </pre>
+   *
+   * <code>string custom_base_model = 26 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The customBaseModel.
+   */
+  java.lang.String getCustomBaseModel();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The user-provided path to custom model weights. Set this field
+   * to tune a custom model. The path must be a Cloud Storage directory that
+   * contains the model weights in .safetensors format along with associated
+   * model metadata files. If this field is set, the base_model field must still
+   * be set to indicate which base model the custom model is derived from. This
+   * feature is only available for open source models.
+   * </pre>
+   *
+   * <code>string custom_base_model = 26 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for customBaseModel.
+   */
+  com.google.protobuf.ByteString getCustomBaseModelBytes();
 
   /**
    *
@@ -869,6 +942,104 @@ public interface TuningJobOrBuilder
    * @return The bytes for serviceAccount.
    */
   com.google.protobuf.ByteString getServiceAccountBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Cloud Storage path to the directory where tuning job outputs are
+   * written to. This field is only available and required for open source
+   * models.
+   * </pre>
+   *
+   * <code>string output_uri = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The outputUri.
+   */
+  java.lang.String getOutputUri();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Cloud Storage path to the directory where tuning job outputs are
+   * written to. This field is only available and required for open source
+   * models.
+   * </pre>
+   *
+   * <code>string output_uri = 25 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for outputUri.
+   */
+  com.google.protobuf.ByteString getOutputUriBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Evaluation runs for the Tuning Job.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.EvaluateDatasetRun evaluate_dataset_runs = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRun>
+      getEvaluateDatasetRunsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Evaluation runs for the Tuning Job.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.EvaluateDatasetRun evaluate_dataset_runs = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRun getEvaluateDatasetRuns(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Evaluation runs for the Tuning Job.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.EvaluateDatasetRun evaluate_dataset_runs = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getEvaluateDatasetRunsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Evaluation runs for the Tuning Job.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.EvaluateDatasetRun evaluate_dataset_runs = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRunOrBuilder>
+      getEvaluateDatasetRunsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Evaluation runs for the Tuning Job.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1beta1.EvaluateDatasetRun evaluate_dataset_runs = 32 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.EvaluateDatasetRunOrBuilder getEvaluateDatasetRunsOrBuilder(
+      int index);
 
   com.google.cloud.aiplatform.v1beta1.TuningJob.SourceModelCase getSourceModelCase();
 

@@ -28,13 +28,11 @@ public interface SessionEventOrBuilder
    *
    *
    * <pre>
-   * Required. Identifier. The resource name of the event.
+   * Identifier. The resource name of the event.
    * Format:`projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}/sessions/{session}/events/{event}`.
    * </pre>
    *
-   * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER];
-   * </code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -44,13 +42,11 @@ public interface SessionEventOrBuilder
    *
    *
    * <pre>
-   * Required. Identifier. The resource name of the event.
+   * Identifier. The resource name of the event.
    * Format:`projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}/sessions/{session}/events/{event}`.
    * </pre>
    *
-   * <code>
-   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.field_behavior) = IDENTIFIER];
-   * </code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */

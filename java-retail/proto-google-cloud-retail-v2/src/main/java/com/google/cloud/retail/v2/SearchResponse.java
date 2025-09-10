@@ -624,6 +624,69 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      * @return The bytes of the personalLabels at the given index.
      */
     com.google.protobuf.ByteString getPersonalLabelsBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Google provided available scores.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.retail.v2.DoubleList&gt; model_scores = 8;</code>
+     */
+    int getModelScoresCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Google provided available scores.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.retail.v2.DoubleList&gt; model_scores = 8;</code>
+     */
+    boolean containsModelScores(java.lang.String key);
+
+    /** Use {@link #getModelScoresMap()} instead. */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, com.google.cloud.retail.v2.DoubleList> getModelScores();
+
+    /**
+     *
+     *
+     * <pre>
+     * Google provided available scores.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.retail.v2.DoubleList&gt; model_scores = 8;</code>
+     */
+    java.util.Map<java.lang.String, com.google.cloud.retail.v2.DoubleList> getModelScoresMap();
+
+    /**
+     *
+     *
+     * <pre>
+     * Google provided available scores.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.retail.v2.DoubleList&gt; model_scores = 8;</code>
+     */
+    /* nullable */
+    com.google.cloud.retail.v2.DoubleList getModelScoresOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.cloud.retail.v2.DoubleList defaultValue);
+
+    /**
+     *
+     *
+     * <pre>
+     * Google provided available scores.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.retail.v2.DoubleList&gt; model_scores = 8;</code>
+     */
+    com.google.cloud.retail.v2.DoubleList getModelScoresOrThrow(java.lang.String key);
   }
 
   /**
@@ -671,6 +734,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           return internalGetMatchingVariantFields();
         case 5:
           return internalGetVariantRollupValues();
+        case 8:
+          return internalGetModelScores();
         default:
           throw new RuntimeException("Invalid map field number: " + number);
       }
@@ -1357,6 +1422,122 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       return personalLabels_.getByteString(index);
     }
 
+    public static final int MODEL_SCORES_FIELD_NUMBER = 8;
+
+    private static final class ModelScoresDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+              java.lang.String, com.google.cloud.retail.v2.DoubleList>
+          defaultEntry =
+              com.google.protobuf.MapEntry
+                  .<java.lang.String, com.google.cloud.retail.v2.DoubleList>newDefaultInstance(
+                      com.google.cloud.retail.v2.SearchServiceProto
+                          .internal_static_google_cloud_retail_v2_SearchResponse_SearchResult_ModelScoresEntry_descriptor,
+                      com.google.protobuf.WireFormat.FieldType.STRING,
+                      "",
+                      com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                      com.google.cloud.retail.v2.DoubleList.getDefaultInstance());
+    }
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.MapField<java.lang.String, com.google.cloud.retail.v2.DoubleList>
+        modelScores_;
+
+    private com.google.protobuf.MapField<java.lang.String, com.google.cloud.retail.v2.DoubleList>
+        internalGetModelScores() {
+      if (modelScores_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ModelScoresDefaultEntryHolder.defaultEntry);
+      }
+      return modelScores_;
+    }
+
+    public int getModelScoresCount() {
+      return internalGetModelScores().getMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Google provided available scores.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.retail.v2.DoubleList&gt; model_scores = 8;</code>
+     */
+    @java.lang.Override
+    public boolean containsModelScores(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetModelScores().getMap().containsKey(key);
+    }
+
+    /** Use {@link #getModelScoresMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, com.google.cloud.retail.v2.DoubleList> getModelScores() {
+      return getModelScoresMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Google provided available scores.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.retail.v2.DoubleList&gt; model_scores = 8;</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, com.google.cloud.retail.v2.DoubleList>
+        getModelScoresMap() {
+      return internalGetModelScores().getMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Google provided available scores.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.retail.v2.DoubleList&gt; model_scores = 8;</code>
+     */
+    @java.lang.Override
+    public /* nullable */ com.google.cloud.retail.v2.DoubleList getModelScoresOrDefault(
+        java.lang.String key,
+        /* nullable */
+        com.google.cloud.retail.v2.DoubleList defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.cloud.retail.v2.DoubleList> map =
+          internalGetModelScores().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Google provided available scores.
+     * </pre>
+     *
+     * <code>map&lt;string, .google.cloud.retail.v2.DoubleList&gt; model_scores = 8;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.retail.v2.DoubleList getModelScoresOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, com.google.cloud.retail.v2.DoubleList> map =
+          internalGetModelScores().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1393,6 +1574,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       for (int i = 0; i < personalLabels_.size(); i++) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 7, personalLabels_.getRaw(i));
       }
+      com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+          output, internalGetModelScores(), ModelScoresDefaultEntryHolder.defaultEntry, 8);
       getUnknownFields().writeTo(output);
     }
 
@@ -1442,6 +1625,17 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         size += dataSize;
         size += 1 * getPersonalLabelsList().size();
       }
+      for (java.util.Map.Entry<java.lang.String, com.google.cloud.retail.v2.DoubleList> entry :
+          internalGetModelScores().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, com.google.cloud.retail.v2.DoubleList>
+            modelScores__ =
+                ModelScoresDefaultEntryHolder.defaultEntry
+                    .newBuilderForType()
+                    .setKey(entry.getKey())
+                    .setValue(entry.getValue())
+                    .build();
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, modelScores__);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -1469,6 +1663,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       if (!internalGetVariantRollupValues().equals(other.internalGetVariantRollupValues()))
         return false;
       if (!getPersonalLabelsList().equals(other.getPersonalLabelsList())) return false;
+      if (!internalGetModelScores().equals(other.internalGetModelScores())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1499,6 +1694,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       if (getPersonalLabelsCount() > 0) {
         hash = (37 * hash) + PERSONAL_LABELS_FIELD_NUMBER;
         hash = (53 * hash) + getPersonalLabelsList().hashCode();
+      }
+      if (!internalGetModelScores().getMap().isEmpty()) {
+        hash = (37 * hash) + MODEL_SCORES_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetModelScores().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -1630,6 +1829,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
             return internalGetMatchingVariantFields();
           case 5:
             return internalGetVariantRollupValues();
+          case 8:
+            return internalGetModelScores();
           default:
             throw new RuntimeException("Invalid map field number: " + number);
         }
@@ -1643,6 +1844,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
             return internalGetMutableMatchingVariantFields();
           case 5:
             return internalGetMutableVariantRollupValues();
+          case 8:
+            return internalGetMutableModelScores();
           default:
             throw new RuntimeException("Invalid map field number: " + number);
         }
@@ -1688,6 +1891,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         internalGetMutableMatchingVariantFields().clear();
         internalGetMutableVariantRollupValues().clear();
         personalLabels_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        internalGetMutableModelScores().clear();
         return this;
       }
 
@@ -1748,6 +1952,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         if (((from_bitField0_ & 0x00000020) != 0)) {
           personalLabels_.makeImmutable();
           result.personalLabels_ = personalLabels_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.modelScores_ =
+              internalGetModelScores().build(ModelScoresDefaultEntryHolder.defaultEntry);
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -1826,6 +2034,8 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           }
           onChanged();
         }
+        internalGetMutableModelScores().mergeFrom(other.internalGetModelScores());
+        bitField0_ |= 0x00000040;
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1904,6 +2114,20 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
                   personalLabels_.add(s);
                   break;
                 } // case 58
+              case 66:
+                {
+                  com.google.protobuf.MapEntry<
+                          java.lang.String, com.google.cloud.retail.v2.DoubleList>
+                      modelScores__ =
+                          input.readMessage(
+                              ModelScoresDefaultEntryHolder.defaultEntry.getParserForType(),
+                              extensionRegistry);
+                  internalGetMutableModelScores()
+                      .ensureBuilderMap()
+                      .put(modelScores__.getKey(), modelScores__.getValue());
+                  bitField0_ |= 0x00000040;
+                  break;
+                } // case 66
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3513,6 +3737,251 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000020;
         onChanged();
         return this;
+      }
+
+      private static final class ModelScoresConverter
+          implements com.google.protobuf.MapFieldBuilder.Converter<
+              java.lang.String,
+              com.google.cloud.retail.v2.DoubleListOrBuilder,
+              com.google.cloud.retail.v2.DoubleList> {
+        @java.lang.Override
+        public com.google.cloud.retail.v2.DoubleList build(
+            com.google.cloud.retail.v2.DoubleListOrBuilder val) {
+          if (val instanceof com.google.cloud.retail.v2.DoubleList) {
+            return (com.google.cloud.retail.v2.DoubleList) val;
+          }
+          return ((com.google.cloud.retail.v2.DoubleList.Builder) val).build();
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.MapEntry<java.lang.String, com.google.cloud.retail.v2.DoubleList>
+            defaultEntry() {
+          return ModelScoresDefaultEntryHolder.defaultEntry;
+        }
+      }
+      ;
+
+      private static final ModelScoresConverter modelScoresConverter = new ModelScoresConverter();
+
+      private com.google.protobuf.MapFieldBuilder<
+              java.lang.String,
+              com.google.cloud.retail.v2.DoubleListOrBuilder,
+              com.google.cloud.retail.v2.DoubleList,
+              com.google.cloud.retail.v2.DoubleList.Builder>
+          modelScores_;
+
+      private com.google.protobuf.MapFieldBuilder<
+              java.lang.String,
+              com.google.cloud.retail.v2.DoubleListOrBuilder,
+              com.google.cloud.retail.v2.DoubleList,
+              com.google.cloud.retail.v2.DoubleList.Builder>
+          internalGetModelScores() {
+        if (modelScores_ == null) {
+          return new com.google.protobuf.MapFieldBuilder<>(modelScoresConverter);
+        }
+        return modelScores_;
+      }
+
+      private com.google.protobuf.MapFieldBuilder<
+              java.lang.String,
+              com.google.cloud.retail.v2.DoubleListOrBuilder,
+              com.google.cloud.retail.v2.DoubleList,
+              com.google.cloud.retail.v2.DoubleList.Builder>
+          internalGetMutableModelScores() {
+        if (modelScores_ == null) {
+          modelScores_ = new com.google.protobuf.MapFieldBuilder<>(modelScoresConverter);
+        }
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return modelScores_;
+      }
+
+      public int getModelScoresCount() {
+        return internalGetModelScores().ensureBuilderMap().size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Google provided available scores.
+       * </pre>
+       *
+       * <code>map&lt;string, .google.cloud.retail.v2.DoubleList&gt; model_scores = 8;</code>
+       */
+      @java.lang.Override
+      public boolean containsModelScores(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        return internalGetModelScores().ensureBuilderMap().containsKey(key);
+      }
+
+      /** Use {@link #getModelScoresMap()} instead. */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, com.google.cloud.retail.v2.DoubleList>
+          getModelScores() {
+        return getModelScoresMap();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Google provided available scores.
+       * </pre>
+       *
+       * <code>map&lt;string, .google.cloud.retail.v2.DoubleList&gt; model_scores = 8;</code>
+       */
+      @java.lang.Override
+      public java.util.Map<java.lang.String, com.google.cloud.retail.v2.DoubleList>
+          getModelScoresMap() {
+        return internalGetModelScores().getImmutableMap();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Google provided available scores.
+       * </pre>
+       *
+       * <code>map&lt;string, .google.cloud.retail.v2.DoubleList&gt; model_scores = 8;</code>
+       */
+      @java.lang.Override
+      public /* nullable */ com.google.cloud.retail.v2.DoubleList getModelScoresOrDefault(
+          java.lang.String key,
+          /* nullable */
+          com.google.cloud.retail.v2.DoubleList defaultValue) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<java.lang.String, com.google.cloud.retail.v2.DoubleListOrBuilder> map =
+            internalGetMutableModelScores().ensureBuilderMap();
+        return map.containsKey(key) ? modelScoresConverter.build(map.get(key)) : defaultValue;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Google provided available scores.
+       * </pre>
+       *
+       * <code>map&lt;string, .google.cloud.retail.v2.DoubleList&gt; model_scores = 8;</code>
+       */
+      @java.lang.Override
+      public com.google.cloud.retail.v2.DoubleList getModelScoresOrThrow(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<java.lang.String, com.google.cloud.retail.v2.DoubleListOrBuilder> map =
+            internalGetMutableModelScores().ensureBuilderMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return modelScoresConverter.build(map.get(key));
+      }
+
+      public Builder clearModelScores() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        internalGetMutableModelScores().clear();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Google provided available scores.
+       * </pre>
+       *
+       * <code>map&lt;string, .google.cloud.retail.v2.DoubleList&gt; model_scores = 8;</code>
+       */
+      public Builder removeModelScores(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        internalGetMutableModelScores().ensureBuilderMap().remove(key);
+        return this;
+      }
+
+      /** Use alternate mutation accessors instead. */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, com.google.cloud.retail.v2.DoubleList>
+          getMutableModelScores() {
+        bitField0_ |= 0x00000040;
+        return internalGetMutableModelScores().ensureMessageMap();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Google provided available scores.
+       * </pre>
+       *
+       * <code>map&lt;string, .google.cloud.retail.v2.DoubleList&gt; model_scores = 8;</code>
+       */
+      public Builder putModelScores(
+          java.lang.String key, com.google.cloud.retail.v2.DoubleList value) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        if (value == null) {
+          throw new NullPointerException("map value");
+        }
+        internalGetMutableModelScores().ensureBuilderMap().put(key, value);
+        bitField0_ |= 0x00000040;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Google provided available scores.
+       * </pre>
+       *
+       * <code>map&lt;string, .google.cloud.retail.v2.DoubleList&gt; model_scores = 8;</code>
+       */
+      public Builder putAllModelScores(
+          java.util.Map<java.lang.String, com.google.cloud.retail.v2.DoubleList> values) {
+        for (java.util.Map.Entry<java.lang.String, com.google.cloud.retail.v2.DoubleList> e :
+            values.entrySet()) {
+          if (e.getKey() == null || e.getValue() == null) {
+            throw new NullPointerException();
+          }
+        }
+        internalGetMutableModelScores().ensureBuilderMap().putAll(values);
+        bitField0_ |= 0x00000040;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Google provided available scores.
+       * </pre>
+       *
+       * <code>map&lt;string, .google.cloud.retail.v2.DoubleList&gt; model_scores = 8;</code>
+       */
+      public com.google.cloud.retail.v2.DoubleList.Builder putModelScoresBuilderIfAbsent(
+          java.lang.String key) {
+        java.util.Map<java.lang.String, com.google.cloud.retail.v2.DoubleListOrBuilder> builderMap =
+            internalGetMutableModelScores().ensureBuilderMap();
+        com.google.cloud.retail.v2.DoubleListOrBuilder entry = builderMap.get(key);
+        if (entry == null) {
+          entry = com.google.cloud.retail.v2.DoubleList.newBuilder();
+          builderMap.put(key, entry);
+        }
+        if (entry instanceof com.google.cloud.retail.v2.DoubleList) {
+          entry = ((com.google.cloud.retail.v2.DoubleList) entry).toBuilder();
+          builderMap.put(key, entry);
+        }
+        return (com.google.cloud.retail.v2.DoubleList.Builder) entry;
       }
 
       @java.lang.Override

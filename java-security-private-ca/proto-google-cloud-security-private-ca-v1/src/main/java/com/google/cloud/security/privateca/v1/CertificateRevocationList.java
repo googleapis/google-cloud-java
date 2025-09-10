@@ -1420,13 +1420,13 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Output only. The resource name for this
+   * Identifier. The resource name for this
    * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
    * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;certificateAuthorities/&#42;&#47;
    *    certificateRevocationLists/&#42;`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -1447,13 +1447,13 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Output only. The resource name for this
+   * Identifier. The resource name for this
    * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
    * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;certificateAuthorities/&#42;&#47;
    *    certificateRevocationLists/&#42;`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -2710,13 +2710,13 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The resource name for this
+     * Identifier. The resource name for this
      * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
      * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;certificateAuthorities/&#42;&#47;
      *    certificateRevocationLists/&#42;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -2736,13 +2736,13 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The resource name for this
+     * Identifier. The resource name for this
      * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
      * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;certificateAuthorities/&#42;&#47;
      *    certificateRevocationLists/&#42;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -2762,13 +2762,13 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The resource name for this
+     * Identifier. The resource name for this
      * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
      * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;certificateAuthorities/&#42;&#47;
      *    certificateRevocationLists/&#42;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -2787,13 +2787,13 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The resource name for this
+     * Identifier. The resource name for this
      * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
      * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;certificateAuthorities/&#42;&#47;
      *    certificateRevocationLists/&#42;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -2808,13 +2808,13 @@ public final class CertificateRevocationList extends com.google.protobuf.Generat
      *
      *
      * <pre>
-     * Output only. The resource name for this
+     * Identifier. The resource name for this
      * [CertificateRevocationList][google.cloud.security.privateca.v1.CertificateRevocationList]
      * in the format `projects/&#42;&#47;locations/&#42;&#47;caPools/&#42;certificateAuthorities/&#42;&#47;
      *    certificateRevocationLists/&#42;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.

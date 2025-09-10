@@ -172,6 +172,80 @@ public interface DiscoverConnectionProfileResponseOrBuilder
    */
   com.google.cloud.datastream.v1.SqlServerRdbmsOrBuilder getSqlServerRdbmsOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Enriched Salesforce organization.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SalesforceOrg salesforce_org = 104;</code>
+   *
+   * @return Whether the salesforceOrg field is set.
+   */
+  boolean hasSalesforceOrg();
+
+  /**
+   *
+   *
+   * <pre>
+   * Enriched Salesforce organization.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SalesforceOrg salesforce_org = 104;</code>
+   *
+   * @return The salesforceOrg.
+   */
+  com.google.cloud.datastream.v1.SalesforceOrg getSalesforceOrg();
+
+  /**
+   *
+   *
+   * <pre>
+   * Enriched Salesforce organization.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SalesforceOrg salesforce_org = 104;</code>
+   */
+  com.google.cloud.datastream.v1.SalesforceOrgOrBuilder getSalesforceOrgOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Enriched MongoDB cluster.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.MongodbCluster mongodb_cluster = 105;</code>
+   *
+   * @return Whether the mongodbCluster field is set.
+   */
+  boolean hasMongodbCluster();
+
+  /**
+   *
+   *
+   * <pre>
+   * Enriched MongoDB cluster.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.MongodbCluster mongodb_cluster = 105;</code>
+   *
+   * @return The mongodbCluster.
+   */
+  com.google.cloud.datastream.v1.MongodbCluster getMongodbCluster();
+
+  /**
+   *
+   *
+   * <pre>
+   * Enriched MongoDB cluster.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.MongodbCluster mongodb_cluster = 105;</code>
+   */
+  com.google.cloud.datastream.v1.MongodbClusterOrBuilder getMongodbClusterOrBuilder();
+
   com.google.cloud.datastream.v1.DiscoverConnectionProfileResponse.DataObjectCase
       getDataObjectCase();
 }

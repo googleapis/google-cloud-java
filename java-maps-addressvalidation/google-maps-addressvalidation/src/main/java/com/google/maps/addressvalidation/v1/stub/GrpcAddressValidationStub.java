@@ -51,6 +51,7 @@ public class GrpcAddressValidationStub extends AddressValidationStub {
                   ProtoUtils.marshaller(ValidateAddressRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ValidateAddressResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -65,6 +66,7 @@ public class GrpcAddressValidationStub extends AddressValidationStub {
                   ProtoUtils.marshaller(ProvideValidationFeedbackRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ProvideValidationFeedbackResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ValidateAddressRequest, ValidateAddressResponse>

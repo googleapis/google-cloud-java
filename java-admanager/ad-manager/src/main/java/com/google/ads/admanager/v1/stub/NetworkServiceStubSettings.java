@@ -97,7 +97,7 @@ import javax.annotation.Generated;
 public class NetworkServiceStubSettings extends StubSettings<NetworkServiceStubSettings> {
   /** The default scopes of the service. */
   private static final ImmutableList<String> DEFAULT_SERVICE_SCOPES =
-      ImmutableList.<String>builder().build();
+      ImmutableList.<String>builder().add("https://www.googleapis.com/auth/admanager").build();
 
   private final UnaryCallSettings<GetNetworkRequest, Network> getNetworkSettings;
   private final UnaryCallSettings<ListNetworksRequest, ListNetworksResponse> listNetworksSettings;

@@ -23,8 +23,12 @@ import com.google.api.gax.core.BackgroundResourceAggregation;
 import com.google.api.gax.grpc.GrpcCallSettings;
 import com.google.api.gax.grpc.GrpcStubCallableFactory;
 import com.google.api.gax.rpc.ClientContext;
+import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.aiplatform.v1.DeployOperationMetadata;
+import com.google.cloud.aiplatform.v1.DeployRequest;
+import com.google.cloud.aiplatform.v1.DeployResponse;
 import com.google.cloud.aiplatform.v1.GetPublisherModelRequest;
 import com.google.cloud.aiplatform.v1.PublisherModel;
 import com.google.cloud.location.GetLocationRequest;
@@ -36,6 +40,7 @@ import com.google.iam.v1.Policy;
 import com.google.iam.v1.SetIamPolicyRequest;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
+import com.google.longrunning.Operation;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import io.grpc.MethodDescriptor;
 import io.grpc.protobuf.ProtoUtils;
@@ -59,7 +64,17 @@ public class GrpcModelGardenServiceStub extends ModelGardenServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetPublisherModelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PublisherModel.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
+
+  private static final MethodDescriptor<DeployRequest, Operation> deployMethodDescriptor =
+      MethodDescriptor.<DeployRequest, Operation>newBuilder()
+          .setType(MethodDescriptor.MethodType.UNARY)
+          .setFullMethodName("google.cloud.aiplatform.v1.ModelGardenService/Deploy")
+          .setRequestMarshaller(ProtoUtils.marshaller(DeployRequest.getDefaultInstance()))
+          .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
+          .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
@@ -70,6 +85,7 @@ public class GrpcModelGardenServiceStub extends ModelGardenServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -78,6 +94,7 @@ public class GrpcModelGardenServiceStub extends ModelGardenServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -86,6 +103,7 @@ public class GrpcModelGardenServiceStub extends ModelGardenServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -94,6 +112,7 @@ public class GrpcModelGardenServiceStub extends ModelGardenServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -105,9 +124,13 @@ public class GrpcModelGardenServiceStub extends ModelGardenServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetPublisherModelRequest, PublisherModel> getPublisherModelCallable;
+  private final UnaryCallable<DeployRequest, Operation> deployCallable;
+  private final OperationCallable<DeployRequest, DeployResponse, DeployOperationMetadata>
+      deployOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -171,6 +194,16 @@ public class GrpcModelGardenServiceStub extends ModelGardenServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<DeployRequest, Operation> deployTransportSettings =
+        GrpcCallSettings.<DeployRequest, Operation>newBuilder()
+            .setMethodDescriptor(deployMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("destination", String.valueOf(request.getDestination()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -228,6 +261,15 @@ public class GrpcModelGardenServiceStub extends ModelGardenServiceStub {
             getPublisherModelTransportSettings,
             settings.getPublisherModelSettings(),
             clientContext);
+    this.deployCallable =
+        callableFactory.createUnaryCallable(
+            deployTransportSettings, settings.deploySettings(), clientContext);
+    this.deployOperationCallable =
+        callableFactory.createOperationCallable(
+            deployTransportSettings,
+            settings.deployOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -260,6 +302,17 @@ public class GrpcModelGardenServiceStub extends ModelGardenServiceStub {
   @Override
   public UnaryCallable<GetPublisherModelRequest, PublisherModel> getPublisherModelCallable() {
     return getPublisherModelCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeployRequest, Operation> deployCallable() {
+    return deployCallable;
+  }
+
+  @Override
+  public OperationCallable<DeployRequest, DeployResponse, DeployOperationMetadata>
+      deployOperationCallable() {
+    return deployOperationCallable;
   }
 
   @Override

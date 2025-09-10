@@ -95,7 +95,8 @@ public class BuildsClientTest {
             .setParent("parent-995424086")
             .setImageUri("imageUri-859610607")
             .setServiceAccount("serviceAccount1079137720")
-            .setWorkerPool(WorkerPoolName.of("[PROJECT]", "[LOCATION]", "[WORKER_POOL]").toString())
+            .setWorkerPool(
+                BuildWorkerPoolName.of("[PROJECT]", "[LOCATION]", "[WORKER_POOL]").toString())
             .addAllTags(new ArrayList<String>())
             .build();
 
@@ -132,7 +133,7 @@ public class BuildsClientTest {
               .setImageUri("imageUri-859610607")
               .setServiceAccount("serviceAccount1079137720")
               .setWorkerPool(
-                  WorkerPoolName.of("[PROJECT]", "[LOCATION]", "[WORKER_POOL]").toString())
+                  BuildWorkerPoolName.of("[PROJECT]", "[LOCATION]", "[WORKER_POOL]").toString())
               .addAllTags(new ArrayList<String>())
               .build();
       client.submitBuild(request);

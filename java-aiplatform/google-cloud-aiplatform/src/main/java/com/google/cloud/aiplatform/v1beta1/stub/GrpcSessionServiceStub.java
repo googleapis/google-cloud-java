@@ -77,6 +77,7 @@ public class GrpcSessionServiceStub extends SessionServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateSessionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSessionRequest, Session> getSessionMethodDescriptor =
@@ -85,6 +86,7 @@ public class GrpcSessionServiceStub extends SessionServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.SessionService/GetSession")
           .setRequestMarshaller(ProtoUtils.marshaller(GetSessionRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Session.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListSessionsRequest, ListSessionsResponse>
@@ -95,6 +97,7 @@ public class GrpcSessionServiceStub extends SessionServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListSessionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSessionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateSessionRequest, Session>
@@ -105,6 +108,7 @@ public class GrpcSessionServiceStub extends SessionServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateSessionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Session.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteSessionRequest, Operation>
@@ -115,6 +119,7 @@ public class GrpcSessionServiceStub extends SessionServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteSessionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListEventsRequest, ListEventsResponse>
@@ -124,6 +129,7 @@ public class GrpcSessionServiceStub extends SessionServiceStub {
               .setFullMethodName("google.cloud.aiplatform.v1beta1.SessionService/ListEvents")
               .setRequestMarshaller(ProtoUtils.marshaller(ListEventsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListEventsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AppendEventRequest, AppendEventResponse>
@@ -134,6 +140,7 @@ public class GrpcSessionServiceStub extends SessionServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(AppendEventRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AppendEventResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -145,6 +152,7 @@ public class GrpcSessionServiceStub extends SessionServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -153,6 +161,7 @@ public class GrpcSessionServiceStub extends SessionServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -161,6 +170,7 @@ public class GrpcSessionServiceStub extends SessionServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -169,6 +179,7 @@ public class GrpcSessionServiceStub extends SessionServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -180,6 +191,7 @@ public class GrpcSessionServiceStub extends SessionServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateSessionRequest, Operation> createSessionCallable;

@@ -63,6 +63,7 @@ public class GrpcVersionsStub extends VersionsStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListVersionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListVersionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetVersionRequest, Version> getVersionMethodDescriptor =
@@ -71,6 +72,7 @@ public class GrpcVersionsStub extends VersionsStub {
           .setFullMethodName("google.cloud.dialogflow.v2beta1.Versions/GetVersion")
           .setRequestMarshaller(ProtoUtils.marshaller(GetVersionRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Version.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateVersionRequest, Version>
@@ -81,6 +83,7 @@ public class GrpcVersionsStub extends VersionsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Version.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateVersionRequest, Version>
@@ -91,6 +94,7 @@ public class GrpcVersionsStub extends VersionsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateVersionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Version.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteVersionRequest, Empty> deleteVersionMethodDescriptor =
@@ -99,6 +103,7 @@ public class GrpcVersionsStub extends VersionsStub {
           .setFullMethodName("google.cloud.dialogflow.v2beta1.Versions/DeleteVersion")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteVersionRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -110,6 +115,7 @@ public class GrpcVersionsStub extends VersionsStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -118,6 +124,7 @@ public class GrpcVersionsStub extends VersionsStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListVersionsRequest, ListVersionsResponse> listVersionsCallable;

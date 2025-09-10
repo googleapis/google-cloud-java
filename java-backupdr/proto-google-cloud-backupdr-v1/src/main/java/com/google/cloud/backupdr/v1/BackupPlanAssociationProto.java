@@ -49,6 +49,14 @@ public final class BackupPlanAssociationProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_backupdr_v1_ListBackupPlanAssociationsResponse_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_backupdr_v1_FetchBackupPlanAssociationsForResourceTypeRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_backupdr_v1_FetchBackupPlanAssociationsForResourceTypeRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_backupdr_v1_FetchBackupPlanAssociationsForResourceTypeResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_backupdr_v1_FetchBackupPlanAssociationsForResourceTypeResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_backupdr_v1_GetBackupPlanAssociationRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_backupdr_v1_GetBackupPlanAssociationRequest_fieldAccessorTable;
@@ -56,6 +64,10 @@ public final class BackupPlanAssociationProto {
       internal_static_google_cloud_backupdr_v1_DeleteBackupPlanAssociationRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_backupdr_v1_DeleteBackupPlanAssociationRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_backupdr_v1_UpdateBackupPlanAssociationRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_backupdr_v1_UpdateBackupPlanAssociationRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_backupdr_v1_TriggerBackupRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -73,7 +85,8 @@ public final class BackupPlanAssociationProto {
           + "4google/cloud/backupdr/v1/backupplanassociation.proto\022\030google.cloud.backupdr.v1"
           + "\032\037google/api/field_behavior.proto\032\033googl"
           + "e/api/field_info.proto\032\031google/api/resou"
-          + "rce.proto\032\037google/protobuf/timestamp.proto\032\027google/rpc/status.proto\"\327\005\n"
+          + "rce.proto\0323google/cloud/backupdr/v1/backupvault_cloudsql.proto\032 google/protobuf/"
+          + "field_mask.proto\032\037google/protobuf/timestamp.proto\032\027google/rpc/status.proto\"\334\007\n"
           + "\025BackupPlanAssociation\022\024\n"
           + "\004name\030\001 \001(\tB\006\340A\010\340A\003\022\035\n\r"
           + "resource_type\030\002 \001(\tB\006\340A\005\340A\002\022\030\n"
@@ -82,24 +95,31 @@ public final class BackupPlanAssociationProto {
           + "\"backupdr.googleapis.com/BackupPlan\0224\n"
           + "\013create_time\030\005 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\006 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022I\n"
-          + "\005state\030\007 \001(\016"
-          + "25.google.cloud.backupdr.v1.BackupPlanAssociation.StateB\003\340A\003\022H\n"
+          + "\005state\030\007"
+          + " \001(\01625.google.cloud.backupdr.v1.BackupPlanAssociation.StateB\003\340A\003\022H\n"
           + "\021rules_config_info\030\010"
           + " \003(\0132(.google.cloud.backupdr.v1.RuleConfigInfoB\003\340A\003\022\030\n"
-          + "\013data_source\030\t \001(\tB\003\340A\003\"T\n"
+          + "\013data_source\030\t \001(\tB\003\340A\003\022\217\001\n"
+          + "5cloud_sql_instance_backup_plan_association_properties\030\n"
+          + " \001(\0132I.google"
+          + ".cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationPropertiesB\003\340A\003H\000\022$\n"
+          + "\027backup_plan_revision_id\030\013 \001(\tB\003\340A\003\022&\n"
+          + "\031backup_plan_revision_name\030\014 \001(\tB\003\340A\003\"b\n"
           + "\005State\022\025\n"
           + "\021STATE_UNSPECIFIED\020\000\022\014\n"
           + "\010CREATING\020\001\022\n\n"
           + "\006ACTIVE\020\002\022\014\n"
           + "\010DELETING\020\003\022\014\n"
-          + "\010INACTIVE\020\004:\274\001\352A\270\001\n"
-          + "-backupdr.googleapis.com/BackupPlanAssociation\022Xprojects/{project}"
-          + "/locations/{location}/backupPlanAssociations/{backup_plan_association}*\026backupPl"
-          + "anAssociations2\025backupPlanAssociation\"\211\003\n"
+          + "\010INACTIVE\020\004\022\014\n"
+          + "\010UPDATING\020\005:\274\001\352A\270\001\n"
+          + "-backupdr.googleapis.com/BackupPlanAssociation\022Xprojects/{pro"
+          + "ject}/locations/{location}/backupPlanAssociations/{backup_plan_association}*\026bac"
+          + "kupPlanAssociations2\025backupPlanAssociationB\025\n"
+          + "\023resource_properties\"\211\003\n"
           + "\016RuleConfigInfo\022\024\n"
           + "\007rule_id\030\001 \001(\tB\003\340A\003\022X\n"
-          + "\021last_backup_state\030\003 \001(\01628.google.cloud"
-          + ".backupdr.v1.RuleConfigInfo.LastBackupStateB\003\340A\003\0222\n"
+          + "\021last_backup_state\030\003"
+          + " \001(\01628.google.cloud.backupdr.v1.RuleConfigInfo.LastBackupStateB\003\340A\003\0222\n"
           + "\021last_backup_error\030\004 \001(\0132\022.google.rpc.StatusB\003\340A\003\022P\n"
           + "\'last_successful_backup_consistency_time\030\005"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\"\200\001\n"
@@ -110,40 +130,58 @@ public final class BackupPlanAssociationProto {
           + "\tSUCCEEDED\020\003\022\n\n"
           + "\006FAILED\020\004\"\214\002\n"
           + "\"CreateBackupPlanAssociationRequest\022E\n"
-          + "\006parent\030\001 \001("
-          + "\tB5\340A\002\372A/\022-backupdr.googleapis.com/BackupPlanAssociation\022\'\n"
+          + "\006parent\030\001 \001(\tB5\340A"
+          + "\002\372A/\022-backupdr.googleapis.com/BackupPlanAssociation\022\'\n"
           + "\032backup_plan_association_id\030\002 \001(\tB\003\340A\002\022U\n"
           + "\027backup_plan_association\030\003"
           + " \001(\0132/.google.cloud.backupdr.v1.BackupPlanAssociationB\003\340A\002\022\037\n\n"
           + "request_id\030\004 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\260\001\n"
           + "!ListBackupPlanAssociationsRequest\022E\n"
-          + "\006parent\030\001 \001(\tB5"
-          + "\340A\002\372A/\022-backupdr.googleapis.com/BackupPlanAssociation\022\026\n"
-          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n"
-          + "\n"
+          + "\006parent\030\001 \001(\tB5\340A\002\372A/\022-back"
+          + "updr.googleapis.com/BackupPlanAssociation\022\026\n"
+          + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\"\245\001\n"
           + "\"ListBackupPlanAssociationsResponse\022Q\n"
-          + "\030backup_plan_associations\030\001 \003(\0132/.g"
-          + "oogle.cloud.backupdr.v1.BackupPlanAssociation\022\027\n"
+          + "\030backup_plan_associations\030\001"
+          + " \003(\0132/.google.cloud.backupdr.v1.BackupPlanAssociation\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\023\n"
-          + "\013unreachable\030\003 \003(\t\"f\n"
+          + "\013unreachable\030\003 \003(\t\"\363\001\n"
+          + "1FetchBackupPlanAssociationsForResourceTypeRequest\022E\n"
+          + "\006parent\030\001 \001(\tB5\340A\002\372A/\022-b"
+          + "ackupdr.googleapis.com/BackupPlanAssociation\022\032\n\r"
+          + "resource_type\030\002 \001(\tB\003\340A\002\022\026\n"
+          + "\tpage_size\030\003 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\004 \001(\tB\003\340A\001\022\023\n"
+          + "\006filter\030\005 \001(\tB\003\340A\001\022\025\n"
+          + "\010order_by\030\006 \001(\tB\003\340A\001\"\252\001\n"
+          + "2FetchBackupPlanAssociationsForResourceTypeResponse\022V\n"
+          + "\030backup_plan_associations\030\001"
+          + " \003(\0132/.google.cloud.backupdr.v1.BackupPlanAssociationB\003\340A\003\022\034\n"
+          + "\017next_page_token\030\002 \001(\tB\003\340A\003\"f\n"
           + "\037GetBackupPlanAssociationRequest\022C\n"
           + "\004name\030\001 \001(\tB5\340A\002\372A/\n"
           + "-backupdr.googleapis.com/BackupPlanAssociation\"\212\001\n"
           + "\"DeleteBackupPlanAssociationRequest\022C\n"
           + "\004name\030\001 \001(\tB5\340A\002\372A/\n"
           + "-backupdr.googleapis.com/BackupPlanAssociation\022\037\n\n"
-          + "request_id\030\002 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\222\001\n"
+          + "request_id\030\002 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\322\001\n"
+          + "\"UpdateBackupPlanAssociationRequest\022U\n"
+          + "\027backup_plan_association\030\001"
+          + " \001(\0132/.google.cloud.backupdr.v1.BackupPlanAssociationB\003\340A\002\0224\n"
+          + "\013update_mask\030\002"
+          + " \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\022\037\n\n"
+          + "request_id\030\003 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\222\001\n"
           + "\024TriggerBackupRequest\022C\n"
           + "\004name\030\001 \001(\tB5\340A\002\372A/\n"
           + "-backupdr.googleapis.com/BackupPlanAssociation\022\024\n"
           + "\007rule_id\030\002 \001(\tB\003\340A\002\022\037\n\n"
           + "request_id\030\003 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001B\312\001\n"
-          + "\034com.google.cloud.backupdr.v1B\032BackupPlanAssociationProtoP\001Z8cloud.goog"
-          + "le.com/go/backupdr/apiv1/backupdrpb;back"
-          + "updrpb\252\002\030Google.Cloud.BackupDR.V1\312\002\030Goog"
-          + "le\\Cloud\\BackupDR\\V1\352\002\033Google::Cloud::BackupDR::V1b\006proto3"
+          + "\034com.google.cloud.backupdr.v1B\032BackupPlanAssociatio"
+          + "nProtoP\001Z8cloud.google.com/go/backupdr/a"
+          + "piv1/backupdrpb;backupdrpb\252\002\030Google.Clou"
+          + "d.BackupDR.V1\312\002\030Google\\Cloud\\BackupDR\\V1"
+          + "\352\002\033Google::Cloud::BackupDR::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -152,6 +190,8 @@ public final class BackupPlanAssociationProto {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.FieldInfoProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.backupdr.v1.BackupvaultCloudSqlProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
               com.google.rpc.StatusProto.getDescriptor(),
             });
@@ -170,6 +210,10 @@ public final class BackupPlanAssociationProto {
               "State",
               "RulesConfigInfo",
               "DataSource",
+              "CloudSqlInstanceBackupPlanAssociationProperties",
+              "BackupPlanRevisionId",
+              "BackupPlanRevisionName",
+              "ResourceProperties",
             });
     internal_static_google_cloud_backupdr_v1_RuleConfigInfo_descriptor =
         getDescriptor().getMessageTypes().get(1);
@@ -203,8 +247,24 @@ public final class BackupPlanAssociationProto {
             new java.lang.String[] {
               "BackupPlanAssociations", "NextPageToken", "Unreachable",
             });
-    internal_static_google_cloud_backupdr_v1_GetBackupPlanAssociationRequest_descriptor =
+    internal_static_google_cloud_backupdr_v1_FetchBackupPlanAssociationsForResourceTypeRequest_descriptor =
         getDescriptor().getMessageTypes().get(5);
+    internal_static_google_cloud_backupdr_v1_FetchBackupPlanAssociationsForResourceTypeRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_backupdr_v1_FetchBackupPlanAssociationsForResourceTypeRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "ResourceType", "PageSize", "PageToken", "Filter", "OrderBy",
+            });
+    internal_static_google_cloud_backupdr_v1_FetchBackupPlanAssociationsForResourceTypeResponse_descriptor =
+        getDescriptor().getMessageTypes().get(6);
+    internal_static_google_cloud_backupdr_v1_FetchBackupPlanAssociationsForResourceTypeResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_backupdr_v1_FetchBackupPlanAssociationsForResourceTypeResponse_descriptor,
+            new java.lang.String[] {
+              "BackupPlanAssociations", "NextPageToken",
+            });
+    internal_static_google_cloud_backupdr_v1_GetBackupPlanAssociationRequest_descriptor =
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_backupdr_v1_GetBackupPlanAssociationRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_backupdr_v1_GetBackupPlanAssociationRequest_descriptor,
@@ -212,15 +272,23 @@ public final class BackupPlanAssociationProto {
               "Name",
             });
     internal_static_google_cloud_backupdr_v1_DeleteBackupPlanAssociationRequest_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_backupdr_v1_DeleteBackupPlanAssociationRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_backupdr_v1_DeleteBackupPlanAssociationRequest_descriptor,
             new java.lang.String[] {
               "Name", "RequestId",
             });
+    internal_static_google_cloud_backupdr_v1_UpdateBackupPlanAssociationRequest_descriptor =
+        getDescriptor().getMessageTypes().get(9);
+    internal_static_google_cloud_backupdr_v1_UpdateBackupPlanAssociationRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_backupdr_v1_UpdateBackupPlanAssociationRequest_descriptor,
+            new java.lang.String[] {
+              "BackupPlanAssociation", "UpdateMask", "RequestId",
+            });
     internal_static_google_cloud_backupdr_v1_TriggerBackupRequest_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_backupdr_v1_TriggerBackupRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_backupdr_v1_TriggerBackupRequest_descriptor,
@@ -238,6 +306,8 @@ public final class BackupPlanAssociationProto {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.FieldInfoProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.backupdr.v1.BackupvaultCloudSqlProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
     com.google.rpc.StatusProto.getDescriptor();
   }

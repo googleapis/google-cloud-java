@@ -48,6 +48,8 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
     state_ = 0;
     rulesConfigInfo_ = java.util.Collections.emptyList();
     dataSource_ = "";
+    backupPlanRevisionId_ = "";
+    backupPlanRevisionName_ = "";
   }
 
   @java.lang.Override
@@ -131,6 +133,16 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
      * <code>INACTIVE = 4;</code>
      */
     INACTIVE(4),
+    /**
+     *
+     *
+     * <pre>
+     * The resource is being updated.
+     * </pre>
+     *
+     * <code>UPDATING = 5;</code>
+     */
+    UPDATING(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -189,6 +201,17 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
      */
     public static final int INACTIVE_VALUE = 4;
 
+    /**
+     *
+     *
+     * <pre>
+     * The resource is being updated.
+     * </pre>
+     *
+     * <code>UPDATING = 5;</code>
+     */
+    public static final int UPDATING_VALUE = 5;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -223,6 +246,8 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
           return DELETING;
         case 4:
           return INACTIVE;
+        case 5:
+          return UPDATING;
         default:
           return null;
       }
@@ -279,6 +304,53 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
   }
 
   private int bitField0_;
+  private int resourcePropertiesCase_ = 0;
+
+  @SuppressWarnings("serial")
+  private java.lang.Object resourceProperties_;
+
+  public enum ResourcePropertiesCase
+      implements
+          com.google.protobuf.Internal.EnumLite,
+          com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    CLOUD_SQL_INSTANCE_BACKUP_PLAN_ASSOCIATION_PROPERTIES(10),
+    RESOURCEPROPERTIES_NOT_SET(0);
+    private final int value;
+
+    private ResourcePropertiesCase(int value) {
+      this.value = value;
+    }
+
+    /**
+     * @param value The number of the enum to look for.
+     * @return The enum associated with the given number.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static ResourcePropertiesCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static ResourcePropertiesCase forNumber(int value) {
+      switch (value) {
+        case 10:
+          return CLOUD_SQL_INSTANCE_BACKUP_PLAN_ASSOCIATION_PROPERTIES;
+        case 0:
+          return RESOURCEPROPERTIES_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public ResourcePropertiesCase getResourcePropertiesCase() {
+    return ResourcePropertiesCase.forNumber(resourcePropertiesCase_);
+  }
+
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -408,8 +480,13 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. Immutable. Resource name of workload on which backupplan is
-   * applied
+   * Required. Immutable. Resource name of workload on which the backup plan is
+   * applied.
+   *
+   * The format can either be the resource name (e.g.,
+   * "projects/my-project/zones/us-central1-a/instances/my-instance") or the
+   * full resource URI (e.g.,
+   * "https://www.googleapis.com/compute/v1/projects/my-project/zones/us-central1-a/instances/my-instance").
    * </pre>
    *
    * <code>
@@ -435,8 +512,13 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. Immutable. Resource name of workload on which backupplan is
-   * applied
+   * Required. Immutable. Resource name of workload on which the backup plan is
+   * applied.
+   *
+   * The format can either be the resource name (e.g.,
+   * "projects/my-project/zones/us-central1-a/instances/my-instance") or the
+   * full resource URI (e.g.,
+   * "https://www.googleapis.com/compute/v1/projects/my-project/zones/us-central1-a/instances/my-instance").
    * </pre>
    *
    * <code>
@@ -810,6 +892,190 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
     }
   }
 
+  public static final int CLOUD_SQL_INSTANCE_BACKUP_PLAN_ASSOCIATION_PROPERTIES_FIELD_NUMBER = 10;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Cloud SQL instance's backup plan association properties.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationProperties cloud_sql_instance_backup_plan_association_properties = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the cloudSqlInstanceBackupPlanAssociationProperties field is set.
+   */
+  @java.lang.Override
+  public boolean hasCloudSqlInstanceBackupPlanAssociationProperties() {
+    return resourcePropertiesCase_ == 10;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Cloud SQL instance's backup plan association properties.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationProperties cloud_sql_instance_backup_plan_association_properties = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The cloudSqlInstanceBackupPlanAssociationProperties.
+   */
+  @java.lang.Override
+  public com.google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationProperties
+      getCloudSqlInstanceBackupPlanAssociationProperties() {
+    if (resourcePropertiesCase_ == 10) {
+      return (com.google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationProperties)
+          resourceProperties_;
+    }
+    return com.google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationProperties
+        .getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Cloud SQL instance's backup plan association properties.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationProperties cloud_sql_instance_backup_plan_association_properties = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationPropertiesOrBuilder
+      getCloudSqlInstanceBackupPlanAssociationPropertiesOrBuilder() {
+    if (resourcePropertiesCase_ == 10) {
+      return (com.google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationProperties)
+          resourceProperties_;
+    }
+    return com.google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationProperties
+        .getDefaultInstance();
+  }
+
+  public static final int BACKUP_PLAN_REVISION_ID_FIELD_NUMBER = 11;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object backupPlanRevisionId_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The user friendly revision ID of the `BackupPlanRevision`.
+   *
+   * Example: v0, v1, v2, etc.
+   * </pre>
+   *
+   * <code>string backup_plan_revision_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The backupPlanRevisionId.
+   */
+  @java.lang.Override
+  public java.lang.String getBackupPlanRevisionId() {
+    java.lang.Object ref = backupPlanRevisionId_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      backupPlanRevisionId_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The user friendly revision ID of the `BackupPlanRevision`.
+   *
+   * Example: v0, v1, v2, etc.
+   * </pre>
+   *
+   * <code>string backup_plan_revision_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for backupPlanRevisionId.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getBackupPlanRevisionIdBytes() {
+    java.lang.Object ref = backupPlanRevisionId_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      backupPlanRevisionId_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int BACKUP_PLAN_REVISION_NAME_FIELD_NUMBER = 12;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object backupPlanRevisionName_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource id of the `BackupPlanRevision`.
+   *
+   * Format:
+   * `projects/{project}/locations/{location}/backupPlans/{backup_plan}/revisions/{revision_id}`
+   * </pre>
+   *
+   * <code>string backup_plan_revision_name = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The backupPlanRevisionName.
+   */
+  @java.lang.Override
+  public java.lang.String getBackupPlanRevisionName() {
+    java.lang.Object ref = backupPlanRevisionName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      backupPlanRevisionName_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource id of the `BackupPlanRevision`.
+   *
+   * Format:
+   * `projects/{project}/locations/{location}/backupPlans/{backup_plan}/revisions/{revision_id}`
+   * </pre>
+   *
+   * <code>string backup_plan_revision_name = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The bytes for backupPlanRevisionName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getBackupPlanRevisionNameBytes() {
+    java.lang.Object ref = backupPlanRevisionName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      backupPlanRevisionName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -852,6 +1118,18 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dataSource_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, dataSource_);
     }
+    if (resourcePropertiesCase_ == 10) {
+      output.writeMessage(
+          10,
+          (com.google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationProperties)
+              resourceProperties_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(backupPlanRevisionId_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 11, backupPlanRevisionId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(backupPlanRevisionName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 12, backupPlanRevisionName_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -889,6 +1167,19 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(dataSource_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, dataSource_);
     }
+    if (resourcePropertiesCase_ == 10) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              10,
+              (com.google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationProperties)
+                  resourceProperties_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(backupPlanRevisionId_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, backupPlanRevisionId_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(backupPlanRevisionName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, backupPlanRevisionName_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -920,6 +1211,17 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
     if (state_ != other.state_) return false;
     if (!getRulesConfigInfoList().equals(other.getRulesConfigInfoList())) return false;
     if (!getDataSource().equals(other.getDataSource())) return false;
+    if (!getBackupPlanRevisionId().equals(other.getBackupPlanRevisionId())) return false;
+    if (!getBackupPlanRevisionName().equals(other.getBackupPlanRevisionName())) return false;
+    if (!getResourcePropertiesCase().equals(other.getResourcePropertiesCase())) return false;
+    switch (resourcePropertiesCase_) {
+      case 10:
+        if (!getCloudSqlInstanceBackupPlanAssociationProperties()
+            .equals(other.getCloudSqlInstanceBackupPlanAssociationProperties())) return false;
+        break;
+      case 0:
+      default:
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -955,6 +1257,18 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
     }
     hash = (37 * hash) + DATA_SOURCE_FIELD_NUMBER;
     hash = (53 * hash) + getDataSource().hashCode();
+    hash = (37 * hash) + BACKUP_PLAN_REVISION_ID_FIELD_NUMBER;
+    hash = (53 * hash) + getBackupPlanRevisionId().hashCode();
+    hash = (37 * hash) + BACKUP_PLAN_REVISION_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getBackupPlanRevisionName().hashCode();
+    switch (resourcePropertiesCase_) {
+      case 10:
+        hash = (37 * hash) + CLOUD_SQL_INSTANCE_BACKUP_PLAN_ASSOCIATION_PROPERTIES_FIELD_NUMBER;
+        hash = (53 * hash) + getCloudSqlInstanceBackupPlanAssociationProperties().hashCode();
+        break;
+      case 0:
+      default:
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1130,6 +1444,13 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       }
       bitField0_ = (bitField0_ & ~0x00000080);
       dataSource_ = "";
+      if (cloudSqlInstanceBackupPlanAssociationPropertiesBuilder_ != null) {
+        cloudSqlInstanceBackupPlanAssociationPropertiesBuilder_.clear();
+      }
+      backupPlanRevisionId_ = "";
+      backupPlanRevisionName_ = "";
+      resourcePropertiesCase_ = 0;
+      resourceProperties_ = null;
       return this;
     }
 
@@ -1161,6 +1482,7 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
+      buildPartialOneofs(result);
       onBuilt();
       return result;
     }
@@ -1207,7 +1529,23 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.dataSource_ = dataSource_;
       }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.backupPlanRevisionId_ = backupPlanRevisionId_;
+      }
+      if (((from_bitField0_ & 0x00000800) != 0)) {
+        result.backupPlanRevisionName_ = backupPlanRevisionName_;
+      }
       result.bitField0_ |= to_bitField0_;
+    }
+
+    private void buildPartialOneofs(com.google.cloud.backupdr.v1.BackupPlanAssociation result) {
+      result.resourcePropertiesCase_ = resourcePropertiesCase_;
+      result.resourceProperties_ = this.resourceProperties_;
+      if (resourcePropertiesCase_ == 10
+          && cloudSqlInstanceBackupPlanAssociationPropertiesBuilder_ != null) {
+        result.resourceProperties_ =
+            cloudSqlInstanceBackupPlanAssociationPropertiesBuilder_.build();
+      }
     }
 
     @java.lang.Override
@@ -1317,6 +1655,28 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
         bitField0_ |= 0x00000100;
         onChanged();
       }
+      if (!other.getBackupPlanRevisionId().isEmpty()) {
+        backupPlanRevisionId_ = other.backupPlanRevisionId_;
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      if (!other.getBackupPlanRevisionName().isEmpty()) {
+        backupPlanRevisionName_ = other.backupPlanRevisionName_;
+        bitField0_ |= 0x00000800;
+        onChanged();
+      }
+      switch (other.getResourcePropertiesCase()) {
+        case CLOUD_SQL_INSTANCE_BACKUP_PLAN_ASSOCIATION_PROPERTIES:
+          {
+            mergeCloudSqlInstanceBackupPlanAssociationProperties(
+                other.getCloudSqlInstanceBackupPlanAssociationProperties());
+            break;
+          }
+        case RESOURCEPROPERTIES_NOT_SET:
+          {
+            break;
+          }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1404,6 +1764,26 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
                 bitField0_ |= 0x00000100;
                 break;
               } // case 74
+            case 82:
+              {
+                input.readMessage(
+                    getCloudSqlInstanceBackupPlanAssociationPropertiesFieldBuilder().getBuilder(),
+                    extensionRegistry);
+                resourcePropertiesCase_ = 10;
+                break;
+              } // case 82
+            case 90:
+              {
+                backupPlanRevisionId_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 90
+            case 98:
+              {
+                backupPlanRevisionName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000800;
+                break;
+              } // case 98
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1418,6 +1798,20 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       } finally {
         onChanged();
       } // finally
+      return this;
+    }
+
+    private int resourcePropertiesCase_ = 0;
+    private java.lang.Object resourceProperties_;
+
+    public ResourcePropertiesCase getResourcePropertiesCase() {
+      return ResourcePropertiesCase.forNumber(resourcePropertiesCase_);
+    }
+
+    public Builder clearResourceProperties() {
+      resourcePropertiesCase_ = 0;
+      resourceProperties_ = null;
+      onChanged();
       return this;
     }
 
@@ -1686,8 +2080,13 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Immutable. Resource name of workload on which backupplan is
-     * applied
+     * Required. Immutable. Resource name of workload on which the backup plan is
+     * applied.
+     *
+     * The format can either be the resource name (e.g.,
+     * "projects/my-project/zones/us-central1-a/instances/my-instance") or the
+     * full resource URI (e.g.,
+     * "https://www.googleapis.com/compute/v1/projects/my-project/zones/us-central1-a/instances/my-instance").
      * </pre>
      *
      * <code>
@@ -1712,8 +2111,13 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Immutable. Resource name of workload on which backupplan is
-     * applied
+     * Required. Immutable. Resource name of workload on which the backup plan is
+     * applied.
+     *
+     * The format can either be the resource name (e.g.,
+     * "projects/my-project/zones/us-central1-a/instances/my-instance") or the
+     * full resource URI (e.g.,
+     * "https://www.googleapis.com/compute/v1/projects/my-project/zones/us-central1-a/instances/my-instance").
      * </pre>
      *
      * <code>
@@ -1738,8 +2142,13 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Immutable. Resource name of workload on which backupplan is
-     * applied
+     * Required. Immutable. Resource name of workload on which the backup plan is
+     * applied.
+     *
+     * The format can either be the resource name (e.g.,
+     * "projects/my-project/zones/us-central1-a/instances/my-instance") or the
+     * full resource URI (e.g.,
+     * "https://www.googleapis.com/compute/v1/projects/my-project/zones/us-central1-a/instances/my-instance").
      * </pre>
      *
      * <code>
@@ -1763,8 +2172,13 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Immutable. Resource name of workload on which backupplan is
-     * applied
+     * Required. Immutable. Resource name of workload on which the backup plan is
+     * applied.
+     *
+     * The format can either be the resource name (e.g.,
+     * "projects/my-project/zones/us-central1-a/instances/my-instance") or the
+     * full resource URI (e.g.,
+     * "https://www.googleapis.com/compute/v1/projects/my-project/zones/us-central1-a/instances/my-instance").
      * </pre>
      *
      * <code>
@@ -1784,8 +2198,13 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Immutable. Resource name of workload on which backupplan is
-     * applied
+     * Required. Immutable. Resource name of workload on which the backup plan is
+     * applied.
+     *
+     * The format can either be the resource name (e.g.,
+     * "projects/my-project/zones/us-central1-a/instances/my-instance") or the
+     * full resource URI (e.g.,
+     * "https://www.googleapis.com/compute/v1/projects/my-project/zones/us-central1-a/instances/my-instance").
      * </pre>
      *
      * <code>
@@ -2997,6 +3416,520 @@ public final class BackupPlanAssociation extends com.google.protobuf.GeneratedMe
       checkByteStringIsUtf8(value);
       dataSource_ = value;
       bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationProperties,
+            com.google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationProperties.Builder,
+            com.google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationPropertiesOrBuilder>
+        cloudSqlInstanceBackupPlanAssociationPropertiesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cloud SQL instance's backup plan association properties.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationProperties cloud_sql_instance_backup_plan_association_properties = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the cloudSqlInstanceBackupPlanAssociationProperties field is set.
+     */
+    @java.lang.Override
+    public boolean hasCloudSqlInstanceBackupPlanAssociationProperties() {
+      return resourcePropertiesCase_ == 10;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cloud SQL instance's backup plan association properties.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationProperties cloud_sql_instance_backup_plan_association_properties = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The cloudSqlInstanceBackupPlanAssociationProperties.
+     */
+    @java.lang.Override
+    public com.google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationProperties
+        getCloudSqlInstanceBackupPlanAssociationProperties() {
+      if (cloudSqlInstanceBackupPlanAssociationPropertiesBuilder_ == null) {
+        if (resourcePropertiesCase_ == 10) {
+          return (com.google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationProperties)
+              resourceProperties_;
+        }
+        return com.google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationProperties
+            .getDefaultInstance();
+      } else {
+        if (resourcePropertiesCase_ == 10) {
+          return cloudSqlInstanceBackupPlanAssociationPropertiesBuilder_.getMessage();
+        }
+        return com.google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationProperties
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cloud SQL instance's backup plan association properties.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationProperties cloud_sql_instance_backup_plan_association_properties = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCloudSqlInstanceBackupPlanAssociationProperties(
+        com.google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationProperties value) {
+      if (cloudSqlInstanceBackupPlanAssociationPropertiesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        resourceProperties_ = value;
+        onChanged();
+      } else {
+        cloudSqlInstanceBackupPlanAssociationPropertiesBuilder_.setMessage(value);
+      }
+      resourcePropertiesCase_ = 10;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cloud SQL instance's backup plan association properties.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationProperties cloud_sql_instance_backup_plan_association_properties = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setCloudSqlInstanceBackupPlanAssociationProperties(
+        com.google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationProperties.Builder
+            builderForValue) {
+      if (cloudSqlInstanceBackupPlanAssociationPropertiesBuilder_ == null) {
+        resourceProperties_ = builderForValue.build();
+        onChanged();
+      } else {
+        cloudSqlInstanceBackupPlanAssociationPropertiesBuilder_.setMessage(builderForValue.build());
+      }
+      resourcePropertiesCase_ = 10;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cloud SQL instance's backup plan association properties.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationProperties cloud_sql_instance_backup_plan_association_properties = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeCloudSqlInstanceBackupPlanAssociationProperties(
+        com.google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationProperties value) {
+      if (cloudSqlInstanceBackupPlanAssociationPropertiesBuilder_ == null) {
+        if (resourcePropertiesCase_ == 10
+            && resourceProperties_
+                != com.google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationProperties
+                    .getDefaultInstance()) {
+          resourceProperties_ =
+              com.google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationProperties
+                  .newBuilder(
+                      (com.google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationProperties)
+                          resourceProperties_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          resourceProperties_ = value;
+        }
+        onChanged();
+      } else {
+        if (resourcePropertiesCase_ == 10) {
+          cloudSqlInstanceBackupPlanAssociationPropertiesBuilder_.mergeFrom(value);
+        } else {
+          cloudSqlInstanceBackupPlanAssociationPropertiesBuilder_.setMessage(value);
+        }
+      }
+      resourcePropertiesCase_ = 10;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cloud SQL instance's backup plan association properties.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationProperties cloud_sql_instance_backup_plan_association_properties = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearCloudSqlInstanceBackupPlanAssociationProperties() {
+      if (cloudSqlInstanceBackupPlanAssociationPropertiesBuilder_ == null) {
+        if (resourcePropertiesCase_ == 10) {
+          resourcePropertiesCase_ = 0;
+          resourceProperties_ = null;
+          onChanged();
+        }
+      } else {
+        if (resourcePropertiesCase_ == 10) {
+          resourcePropertiesCase_ = 0;
+          resourceProperties_ = null;
+        }
+        cloudSqlInstanceBackupPlanAssociationPropertiesBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cloud SQL instance's backup plan association properties.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationProperties cloud_sql_instance_backup_plan_association_properties = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationProperties.Builder
+        getCloudSqlInstanceBackupPlanAssociationPropertiesBuilder() {
+      return getCloudSqlInstanceBackupPlanAssociationPropertiesFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cloud SQL instance's backup plan association properties.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationProperties cloud_sql_instance_backup_plan_association_properties = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationPropertiesOrBuilder
+        getCloudSqlInstanceBackupPlanAssociationPropertiesOrBuilder() {
+      if ((resourcePropertiesCase_ == 10)
+          && (cloudSqlInstanceBackupPlanAssociationPropertiesBuilder_ != null)) {
+        return cloudSqlInstanceBackupPlanAssociationPropertiesBuilder_.getMessageOrBuilder();
+      } else {
+        if (resourcePropertiesCase_ == 10) {
+          return (com.google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationProperties)
+              resourceProperties_;
+        }
+        return com.google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationProperties
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Cloud SQL instance's backup plan association properties.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationProperties cloud_sql_instance_backup_plan_association_properties = 10 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationProperties,
+            com.google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationProperties.Builder,
+            com.google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationPropertiesOrBuilder>
+        getCloudSqlInstanceBackupPlanAssociationPropertiesFieldBuilder() {
+      if (cloudSqlInstanceBackupPlanAssociationPropertiesBuilder_ == null) {
+        if (!(resourcePropertiesCase_ == 10)) {
+          resourceProperties_ =
+              com.google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationProperties
+                  .getDefaultInstance();
+        }
+        cloudSqlInstanceBackupPlanAssociationPropertiesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationProperties,
+                com.google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationProperties
+                    .Builder,
+                com.google.cloud.backupdr.v1
+                    .CloudSqlInstanceBackupPlanAssociationPropertiesOrBuilder>(
+                (com.google.cloud.backupdr.v1.CloudSqlInstanceBackupPlanAssociationProperties)
+                    resourceProperties_,
+                getParentForChildren(),
+                isClean());
+        resourceProperties_ = null;
+      }
+      resourcePropertiesCase_ = 10;
+      onChanged();
+      return cloudSqlInstanceBackupPlanAssociationPropertiesBuilder_;
+    }
+
+    private java.lang.Object backupPlanRevisionId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The user friendly revision ID of the `BackupPlanRevision`.
+     *
+     * Example: v0, v1, v2, etc.
+     * </pre>
+     *
+     * <code>string backup_plan_revision_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The backupPlanRevisionId.
+     */
+    public java.lang.String getBackupPlanRevisionId() {
+      java.lang.Object ref = backupPlanRevisionId_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        backupPlanRevisionId_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The user friendly revision ID of the `BackupPlanRevision`.
+     *
+     * Example: v0, v1, v2, etc.
+     * </pre>
+     *
+     * <code>string backup_plan_revision_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for backupPlanRevisionId.
+     */
+    public com.google.protobuf.ByteString getBackupPlanRevisionIdBytes() {
+      java.lang.Object ref = backupPlanRevisionId_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        backupPlanRevisionId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The user friendly revision ID of the `BackupPlanRevision`.
+     *
+     * Example: v0, v1, v2, etc.
+     * </pre>
+     *
+     * <code>string backup_plan_revision_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The backupPlanRevisionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBackupPlanRevisionId(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      backupPlanRevisionId_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The user friendly revision ID of the `BackupPlanRevision`.
+     *
+     * Example: v0, v1, v2, etc.
+     * </pre>
+     *
+     * <code>string backup_plan_revision_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBackupPlanRevisionId() {
+      backupPlanRevisionId_ = getDefaultInstance().getBackupPlanRevisionId();
+      bitField0_ = (bitField0_ & ~0x00000400);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The user friendly revision ID of the `BackupPlanRevision`.
+     *
+     * Example: v0, v1, v2, etc.
+     * </pre>
+     *
+     * <code>string backup_plan_revision_id = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes for backupPlanRevisionId to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBackupPlanRevisionIdBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      backupPlanRevisionId_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object backupPlanRevisionName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource id of the `BackupPlanRevision`.
+     *
+     * Format:
+     * `projects/{project}/locations/{location}/backupPlans/{backup_plan}/revisions/{revision_id}`
+     * </pre>
+     *
+     * <code>string backup_plan_revision_name = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The backupPlanRevisionName.
+     */
+    public java.lang.String getBackupPlanRevisionName() {
+      java.lang.Object ref = backupPlanRevisionName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        backupPlanRevisionName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource id of the `BackupPlanRevision`.
+     *
+     * Format:
+     * `projects/{project}/locations/{location}/backupPlans/{backup_plan}/revisions/{revision_id}`
+     * </pre>
+     *
+     * <code>string backup_plan_revision_name = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The bytes for backupPlanRevisionName.
+     */
+    public com.google.protobuf.ByteString getBackupPlanRevisionNameBytes() {
+      java.lang.Object ref = backupPlanRevisionName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        backupPlanRevisionName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource id of the `BackupPlanRevision`.
+     *
+     * Format:
+     * `projects/{project}/locations/{location}/backupPlans/{backup_plan}/revisions/{revision_id}`
+     * </pre>
+     *
+     * <code>string backup_plan_revision_name = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The backupPlanRevisionName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBackupPlanRevisionName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      backupPlanRevisionName_ = value;
+      bitField0_ |= 0x00000800;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource id of the `BackupPlanRevision`.
+     *
+     * Format:
+     * `projects/{project}/locations/{location}/backupPlans/{backup_plan}/revisions/{revision_id}`
+     * </pre>
+     *
+     * <code>string backup_plan_revision_name = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBackupPlanRevisionName() {
+      backupPlanRevisionName_ = getDefaultInstance().getBackupPlanRevisionName();
+      bitField0_ = (bitField0_ & ~0x00000800);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource id of the `BackupPlanRevision`.
+     *
+     * Format:
+     * `projects/{project}/locations/{location}/backupPlans/{backup_plan}/revisions/{revision_id}`
+     * </pre>
+     *
+     * <code>string backup_plan_revision_name = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The bytes for backupPlanRevisionName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBackupPlanRevisionNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      backupPlanRevisionName_ = value;
+      bitField0_ |= 0x00000800;
       onChanged();
       return this;
     }

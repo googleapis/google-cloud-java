@@ -29,33 +29,26 @@ import javax.annotation.Generated;
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 @Generated("by gapic-generator-java")
 public class CustomTargetingValueName implements ResourceName {
-  private static final PathTemplate NETWORK_CODE_CUSTOM_TARGETING_KEY_CUSTOM_TARGETING_VALUE =
+  private static final PathTemplate NETWORK_CODE_CUSTOM_TARGETING_VALUE =
       PathTemplate.createWithoutUrlEncoding(
-          "networks/{network_code}/customTargetingKeys/{custom_targeting_key}/customTargetingValues/{custom_targeting_value}");
+          "networks/{network_code}/customTargetingValues/{custom_targeting_value}");
   private volatile Map<String, String> fieldValuesMap;
   private final String networkCode;
-  private final String customTargetingKey;
   private final String customTargetingValue;
 
   @Deprecated
   protected CustomTargetingValueName() {
     networkCode = null;
-    customTargetingKey = null;
     customTargetingValue = null;
   }
 
   private CustomTargetingValueName(Builder builder) {
     networkCode = Preconditions.checkNotNull(builder.getNetworkCode());
-    customTargetingKey = Preconditions.checkNotNull(builder.getCustomTargetingKey());
     customTargetingValue = Preconditions.checkNotNull(builder.getCustomTargetingValue());
   }
 
   public String getNetworkCode() {
     return networkCode;
-  }
-
-  public String getCustomTargetingKey() {
-    return customTargetingKey;
   }
 
   public String getCustomTargetingValue() {
@@ -70,20 +63,16 @@ public class CustomTargetingValueName implements ResourceName {
     return new Builder(this);
   }
 
-  public static CustomTargetingValueName of(
-      String networkCode, String customTargetingKey, String customTargetingValue) {
+  public static CustomTargetingValueName of(String networkCode, String customTargetingValue) {
     return newBuilder()
         .setNetworkCode(networkCode)
-        .setCustomTargetingKey(customTargetingKey)
         .setCustomTargetingValue(customTargetingValue)
         .build();
   }
 
-  public static String format(
-      String networkCode, String customTargetingKey, String customTargetingValue) {
+  public static String format(String networkCode, String customTargetingValue) {
     return newBuilder()
         .setNetworkCode(networkCode)
-        .setCustomTargetingKey(customTargetingKey)
         .setCustomTargetingValue(customTargetingValue)
         .build()
         .toString();
@@ -94,12 +83,9 @@ public class CustomTargetingValueName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        NETWORK_CODE_CUSTOM_TARGETING_KEY_CUSTOM_TARGETING_VALUE.validatedMatch(
+        NETWORK_CODE_CUSTOM_TARGETING_VALUE.validatedMatch(
             formattedString, "CustomTargetingValueName.parse: formattedString not in valid format");
-    return of(
-        matchMap.get("network_code"),
-        matchMap.get("custom_targeting_key"),
-        matchMap.get("custom_targeting_value"));
+    return of(matchMap.get("network_code"), matchMap.get("custom_targeting_value"));
   }
 
   public static List<CustomTargetingValueName> parseList(List<String> formattedStrings) {
@@ -123,7 +109,7 @@ public class CustomTargetingValueName implements ResourceName {
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return NETWORK_CODE_CUSTOM_TARGETING_KEY_CUSTOM_TARGETING_VALUE.matches(formattedString);
+    return NETWORK_CODE_CUSTOM_TARGETING_VALUE.matches(formattedString);
   }
 
   @Override
@@ -134,9 +120,6 @@ public class CustomTargetingValueName implements ResourceName {
           ImmutableMap.Builder<String, String> fieldMapBuilder = ImmutableMap.builder();
           if (networkCode != null) {
             fieldMapBuilder.put("network_code", networkCode);
-          }
-          if (customTargetingKey != null) {
-            fieldMapBuilder.put("custom_targeting_key", customTargetingKey);
           }
           if (customTargetingValue != null) {
             fieldMapBuilder.put("custom_targeting_value", customTargetingValue);
@@ -154,13 +137,8 @@ public class CustomTargetingValueName implements ResourceName {
 
   @Override
   public String toString() {
-    return NETWORK_CODE_CUSTOM_TARGETING_KEY_CUSTOM_TARGETING_VALUE.instantiate(
-        "network_code",
-        networkCode,
-        "custom_targeting_key",
-        customTargetingKey,
-        "custom_targeting_value",
-        customTargetingValue);
+    return NETWORK_CODE_CUSTOM_TARGETING_VALUE.instantiate(
+        "network_code", networkCode, "custom_targeting_value", customTargetingValue);
   }
 
   @Override
@@ -171,7 +149,6 @@ public class CustomTargetingValueName implements ResourceName {
     if (o != null && getClass() == o.getClass()) {
       CustomTargetingValueName that = ((CustomTargetingValueName) o);
       return Objects.equals(this.networkCode, that.networkCode)
-          && Objects.equals(this.customTargetingKey, that.customTargetingKey)
           && Objects.equals(this.customTargetingValue, that.customTargetingValue);
     }
     return false;
@@ -183,29 +160,19 @@ public class CustomTargetingValueName implements ResourceName {
     h *= 1000003;
     h ^= Objects.hashCode(networkCode);
     h *= 1000003;
-    h ^= Objects.hashCode(customTargetingKey);
-    h *= 1000003;
     h ^= Objects.hashCode(customTargetingValue);
     return h;
   }
 
-  /**
-   * Builder for
-   * networks/{network_code}/customTargetingKeys/{custom_targeting_key}/customTargetingValues/{custom_targeting_value}.
-   */
+  /** Builder for networks/{network_code}/customTargetingValues/{custom_targeting_value}. */
   public static class Builder {
     private String networkCode;
-    private String customTargetingKey;
     private String customTargetingValue;
 
     protected Builder() {}
 
     public String getNetworkCode() {
       return networkCode;
-    }
-
-    public String getCustomTargetingKey() {
-      return customTargetingKey;
     }
 
     public String getCustomTargetingValue() {
@@ -217,11 +184,6 @@ public class CustomTargetingValueName implements ResourceName {
       return this;
     }
 
-    public Builder setCustomTargetingKey(String customTargetingKey) {
-      this.customTargetingKey = customTargetingKey;
-      return this;
-    }
-
     public Builder setCustomTargetingValue(String customTargetingValue) {
       this.customTargetingValue = customTargetingValue;
       return this;
@@ -229,7 +191,6 @@ public class CustomTargetingValueName implements ResourceName {
 
     private Builder(CustomTargetingValueName customTargetingValueName) {
       this.networkCode = customTargetingValueName.networkCode;
-      this.customTargetingKey = customTargetingValueName.customTargetingKey;
       this.customTargetingValue = customTargetingValueName.customTargetingValue;
     }
 

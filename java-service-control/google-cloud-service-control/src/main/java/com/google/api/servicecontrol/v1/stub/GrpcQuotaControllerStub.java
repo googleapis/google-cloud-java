@@ -49,6 +49,7 @@ public class GrpcQuotaControllerStub extends QuotaControllerStub {
                   ProtoUtils.marshaller(AllocateQuotaRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AllocateQuotaResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<AllocateQuotaRequest, AllocateQuotaResponse> allocateQuotaCallable;

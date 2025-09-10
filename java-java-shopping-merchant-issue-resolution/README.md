@@ -8,9 +8,6 @@ Java idiomatic client for [Merchant Issue Resolution API][product-docs].
 - [Product Documentation][product-docs]
 - [Client Library Documentation][javadocs]
 
-> Note: This client is a work-in-progress, and may occasionally
-> make backwards-incompatible changes.
-
 
 ## Quickstart
 
@@ -23,7 +20,7 @@ If you are using Maven with [BOM][libraries-bom], add this to your pom.xml file:
     <dependency>
       <groupId>com.google.cloud</groupId>
       <artifactId>libraries-bom</artifactId>
-      <version>26.61.0</version>
+      <version>26.66.0</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -45,20 +42,20 @@ If you are using Maven without the BOM, add this to your dependencies:
 <dependency>
   <groupId>com.google.shopping</groupId>
   <artifactId>google-shopping-merchant-issue-resolution</artifactId>
-  <version>0.3.0</version>
+  <version>1.0.0</version>
 </dependency>
 ```
 
 If you are using Gradle without BOM, add this to your dependencies:
 
 ```Groovy
-implementation 'com.google.shopping:google-shopping-merchant-issue-resolution:0.3.0'
+implementation 'com.google.shopping:google-shopping-merchant-issue-resolution:1.0.0'
 ```
 
 If you are using SBT, add this to your dependencies:
 
 ```Scala
-libraryDependencies += "com.google.shopping" % "google-shopping-merchant-issue-resolution" % "0.3.0"
+libraryDependencies += "com.google.shopping" % "google-shopping-merchant-issue-resolution" % "1.0.0"
 ```
 
 ## Authentication
@@ -155,9 +152,6 @@ and on [google-cloud-java][g-c-j].
 This library follows [Semantic Versioning](http://semver.org/).
 
 
-It is currently in major version zero (``0.y.z``), which means that anything may change at any time
-and the public API should not be considered stable.
-
 
 ## Contributing
 
@@ -198,9 +192,9 @@ Java is a registered trademark of Oracle and/or its affiliates.
 [kokoro-badge-link-4]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java8-win.html
 [kokoro-badge-image-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java11.svg
 [kokoro-badge-link-5]: http://storage.googleapis.com/cloud-devrel-public/java/badges/google-cloud-java/java11.html
-[stability-image]: https://img.shields.io/badge/stability-preview-yellow
+[stability-image]: https://img.shields.io/badge/stability-stable-green
 [maven-version-image]: https://img.shields.io/maven-central/v/com.google.shopping/google-shopping-merchant-issue-resolution.svg
-[maven-version-link]: https://central.sonatype.com/artifact/com.google.shopping/google-shopping-merchant-issue-resolution/0.3.0
+[maven-version-link]: https://central.sonatype.com/artifact/com.google.shopping/google-shopping-merchant-issue-resolution/1.0.0
 [authentication]: https://github.com/googleapis/google-cloud-java#authentication
 [auth-scopes]: https://developers.google.com/identity/protocols/oauth2/scopes
 [predefined-iam-roles]: https://cloud.google.com/iam/docs/understanding-roles#predefined_roles

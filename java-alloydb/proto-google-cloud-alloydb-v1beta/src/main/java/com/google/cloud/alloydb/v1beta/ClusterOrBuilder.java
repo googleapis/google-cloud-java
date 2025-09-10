@@ -570,7 +570,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=625
+   *     google/cloud/alloydb/v1beta/resources.proto;l=659
    * @return The network.
    */
   @java.lang.Deprecated
@@ -592,7 +592,7 @@ public interface ClusterOrBuilder
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=625
+   *     google/cloud/alloydb/v1beta/resources.proto;l=659
    * @return The bytes for network.
    */
   @java.lang.Deprecated
@@ -826,7 +826,7 @@ public interface ClusterOrBuilder
    * <code>.google.cloud.alloydb.v1beta.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.ssl_config is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=660
+   *     google/cloud/alloydb/v1beta/resources.proto;l=694
    * @return Whether the sslConfig field is set.
    */
   @java.lang.Deprecated
@@ -842,7 +842,7 @@ public interface ClusterOrBuilder
    * <code>.google.cloud.alloydb.v1beta.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.ssl_config is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=660
+   *     google/cloud/alloydb/v1beta/resources.proto;l=694
    * @return The sslConfig.
    */
   @java.lang.Deprecated
@@ -1281,46 +1281,53 @@ public interface ClusterOrBuilder
    *
    *
    * <pre>
-   * Optional. Configuration parameters related to the Gemini in Databases
-   * add-on.
+   * Optional. Deprecated and unused. This field will be removed in the near
+   * future.
    * </pre>
    *
    * <code>
-   * .google.cloud.alloydb.v1beta.GeminiClusterConfig gemini_config = 36 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.alloydb.v1beta.GeminiClusterConfig gemini_config = 36 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.alloydb.v1beta.Cluster.gemini_config is deprecated. See
+   *     google/cloud/alloydb/v1beta/resources.proto;l=741
    * @return Whether the geminiConfig field is set.
    */
+  @java.lang.Deprecated
   boolean hasGeminiConfig();
 
   /**
    *
    *
    * <pre>
-   * Optional. Configuration parameters related to the Gemini in Databases
-   * add-on.
+   * Optional. Deprecated and unused. This field will be removed in the near
+   * future.
    * </pre>
    *
    * <code>
-   * .google.cloud.alloydb.v1beta.GeminiClusterConfig gemini_config = 36 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.alloydb.v1beta.GeminiClusterConfig gemini_config = 36 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.alloydb.v1beta.Cluster.gemini_config is deprecated. See
+   *     google/cloud/alloydb/v1beta/resources.proto;l=741
    * @return The geminiConfig.
    */
+  @java.lang.Deprecated
   com.google.cloud.alloydb.v1beta.GeminiClusterConfig getGeminiConfig();
 
   /**
    *
    *
    * <pre>
-   * Optional. Configuration parameters related to the Gemini in Databases
-   * add-on.
+   * Optional. Deprecated and unused. This field will be removed in the near
+   * future.
    * </pre>
    *
    * <code>
-   * .google.cloud.alloydb.v1beta.GeminiClusterConfig gemini_config = 36 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.cloud.alloydb.v1beta.GeminiClusterConfig gemini_config = 36 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Deprecated
   com.google.cloud.alloydb.v1beta.GeminiClusterConfigOrBuilder getGeminiConfigOrBuilder();
 
   /**
@@ -1493,6 +1500,38 @@ public interface ClusterOrBuilder
    * </code>
    */
   java.lang.String getTagsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. AlloyDB per-cluster service agent email. This service account
+   * is created per-cluster per-project, and is different from that of the
+   * primary service agent which is created per-project. The service account
+   * naming format is subject to change.
+   * </pre>
+   *
+   * <code>string service_account_email = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The serviceAccountEmail.
+   */
+  java.lang.String getServiceAccountEmail();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. AlloyDB per-cluster service agent email. This service account
+   * is created per-cluster per-project, and is different from that of the
+   * primary service agent which is created per-project. The service account
+   * naming format is subject to change.
+   * </pre>
+   *
+   * <code>string service_account_email = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for serviceAccountEmail.
+   */
+  com.google.protobuf.ByteString getServiceAccountEmailBytes();
 
   com.google.cloud.alloydb.v1beta.Cluster.SourceCase getSourceCase();
 }

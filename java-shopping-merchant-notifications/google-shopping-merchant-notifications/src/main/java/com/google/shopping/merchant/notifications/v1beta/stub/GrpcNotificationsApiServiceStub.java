@@ -1,5 +1,5 @@
 /*
- * Copyright 2024 Google LLC
+ * Copyright 2025 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -62,6 +62,7 @@ public class GrpcNotificationsApiServiceStub extends NotificationsApiServiceStub
                   ProtoUtils.marshaller(GetNotificationSubscriptionRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(NotificationSubscription.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -76,6 +77,7 @@ public class GrpcNotificationsApiServiceStub extends NotificationsApiServiceStub
                   ProtoUtils.marshaller(CreateNotificationSubscriptionRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(NotificationSubscription.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -90,6 +92,7 @@ public class GrpcNotificationsApiServiceStub extends NotificationsApiServiceStub
                   ProtoUtils.marshaller(UpdateNotificationSubscriptionRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(NotificationSubscription.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteNotificationSubscriptionRequest, Empty>
@@ -101,6 +104,7 @@ public class GrpcNotificationsApiServiceStub extends NotificationsApiServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteNotificationSubscriptionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -116,6 +120,7 @@ public class GrpcNotificationsApiServiceStub extends NotificationsApiServiceStub
                   ProtoUtils.marshaller(ListNotificationSubscriptionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListNotificationSubscriptionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetNotificationSubscriptionRequest, NotificationSubscription>

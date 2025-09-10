@@ -94,4 +94,76 @@ public interface MaintenanceUpdatePolicyOrBuilder
    */
   com.google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy.MaintenanceWindowOrBuilder
       getMaintenanceWindowsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Periods to deny maintenance. Currently limited to 1.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy.DenyMaintenancePeriod deny_maintenance_periods = 2;
+   * </code>
+   */
+  java.util.List<com.google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy.DenyMaintenancePeriod>
+      getDenyMaintenancePeriodsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Periods to deny maintenance. Currently limited to 1.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy.DenyMaintenancePeriod deny_maintenance_periods = 2;
+   * </code>
+   */
+  com.google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy.DenyMaintenancePeriod
+      getDenyMaintenancePeriods(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Periods to deny maintenance. Currently limited to 1.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy.DenyMaintenancePeriod deny_maintenance_periods = 2;
+   * </code>
+   */
+  int getDenyMaintenancePeriodsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Periods to deny maintenance. Currently limited to 1.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy.DenyMaintenancePeriod deny_maintenance_periods = 2;
+   * </code>
+   */
+  java.util.List<
+          ? extends
+              com.google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy
+                  .DenyMaintenancePeriodOrBuilder>
+      getDenyMaintenancePeriodsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Periods to deny maintenance. Currently limited to 1.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy.DenyMaintenancePeriod deny_maintenance_periods = 2;
+   * </code>
+   */
+  com.google.cloud.alloydb.v1beta.MaintenanceUpdatePolicy.DenyMaintenancePeriodOrBuilder
+      getDenyMaintenancePeriodsOrBuilder(int index);
 }

@@ -86,6 +86,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.VizierService/CreateStudy")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateStudyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Study.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetStudyRequest, Study> getStudyMethodDescriptor =
@@ -94,6 +95,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.VizierService/GetStudy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetStudyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Study.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListStudiesRequest, ListStudiesResponse>
@@ -104,6 +106,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListStudiesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListStudiesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteStudyRequest, Empty> deleteStudyMethodDescriptor =
@@ -112,6 +115,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.VizierService/DeleteStudy")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteStudyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<LookupStudyRequest, Study> lookupStudyMethodDescriptor =
@@ -120,6 +124,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.VizierService/LookupStudy")
           .setRequestMarshaller(ProtoUtils.marshaller(LookupStudyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Study.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SuggestTrialsRequest, Operation>
@@ -130,6 +135,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(SuggestTrialsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateTrialRequest, Trial> createTrialMethodDescriptor =
@@ -138,6 +144,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.VizierService/CreateTrial")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateTrialRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Trial.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetTrialRequest, Trial> getTrialMethodDescriptor =
@@ -146,6 +153,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.VizierService/GetTrial")
           .setRequestMarshaller(ProtoUtils.marshaller(GetTrialRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Trial.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListTrialsRequest, ListTrialsResponse>
@@ -155,6 +163,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
               .setFullMethodName("google.cloud.aiplatform.v1beta1.VizierService/ListTrials")
               .setRequestMarshaller(ProtoUtils.marshaller(ListTrialsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListTrialsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AddTrialMeasurementRequest, Trial>
@@ -166,6 +175,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(AddTrialMeasurementRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Trial.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CompleteTrialRequest, Trial> completeTrialMethodDescriptor =
@@ -174,6 +184,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.VizierService/CompleteTrial")
           .setRequestMarshaller(ProtoUtils.marshaller(CompleteTrialRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Trial.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteTrialRequest, Empty> deleteTrialMethodDescriptor =
@@ -182,6 +193,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.VizierService/DeleteTrial")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteTrialRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CheckTrialEarlyStoppingStateRequest, Operation>
@@ -193,6 +205,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CheckTrialEarlyStoppingStateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StopTrialRequest, Trial> stopTrialMethodDescriptor =
@@ -201,6 +214,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
           .setFullMethodName("google.cloud.aiplatform.v1beta1.VizierService/StopTrial")
           .setRequestMarshaller(ProtoUtils.marshaller(StopTrialRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Trial.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListOptimalTrialsRequest, ListOptimalTrialsResponse>
@@ -212,6 +226,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
                   ProtoUtils.marshaller(ListOptimalTrialsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListOptimalTrialsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -223,6 +238,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -231,6 +247,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -239,6 +256,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -247,6 +265,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -258,6 +277,7 @@ public class GrpcVizierServiceStub extends VizierServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateStudyRequest, Study> createStudyCallable;

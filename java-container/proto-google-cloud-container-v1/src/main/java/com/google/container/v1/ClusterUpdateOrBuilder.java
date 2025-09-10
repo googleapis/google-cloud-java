@@ -490,8 +490,8 @@ public interface ClusterUpdateOrBuilder
    *
    * <pre>
    * The desired list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-   * cluster's nodes should be located.
+   * [zones](https://cloud.google.com/compute/docs/zones#available)
+   * in which the cluster's nodes should be located.
    *
    * This list must always include the cluster's primary zone.
    *
@@ -510,8 +510,8 @@ public interface ClusterUpdateOrBuilder
    *
    * <pre>
    * The desired list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-   * cluster's nodes should be located.
+   * [zones](https://cloud.google.com/compute/docs/zones#available)
+   * in which the cluster's nodes should be located.
    *
    * This list must always include the cluster's primary zone.
    *
@@ -530,8 +530,8 @@ public interface ClusterUpdateOrBuilder
    *
    * <pre>
    * The desired list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-   * cluster's nodes should be located.
+   * [zones](https://cloud.google.com/compute/docs/zones#available)
+   * in which the cluster's nodes should be located.
    *
    * This list must always include the cluster's primary zone.
    *
@@ -551,8 +551,8 @@ public interface ClusterUpdateOrBuilder
    *
    * <pre>
    * The desired list of Google Compute Engine
-   * [zones](https://cloud.google.com/compute/docs/zones#available) in which the
-   * cluster's nodes should be located.
+   * [zones](https://cloud.google.com/compute/docs/zones#available)
+   * in which the cluster's nodes should be located.
    *
    * This list must always include the cluster's primary zone.
    *
@@ -583,7 +583,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_master_authorized_networks_config is
-   *     deprecated. See google/container/v1/cluster_service.proto;l=2741
+   *     deprecated. See google/container/v1/cluster_service.proto;l=3056
    * @return Whether the desiredMasterAuthorizedNetworksConfig field is set.
    */
   @java.lang.Deprecated
@@ -605,7 +605,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_master_authorized_networks_config is
-   *     deprecated. See google/container/v1/cluster_service.proto;l=2741
+   *     deprecated. See google/container/v1/cluster_service.proto;l=3056
    * @return The desiredMasterAuthorizedNetworksConfig.
    */
   @java.lang.Deprecated
@@ -850,7 +850,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_private_cluster_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2779
+   *     google/container/v1/cluster_service.proto;l=3094
    * @return Whether the desiredPrivateClusterConfig field is set.
    */
   @java.lang.Deprecated
@@ -877,7 +877,7 @@ public interface ClusterUpdateOrBuilder
    * </code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_private_cluster_config is deprecated. See
-   *     google/container/v1/cluster_service.proto;l=2779
+   *     google/container/v1/cluster_service.proto;l=3094
    * @return The desiredPrivateClusterConfig.
    */
   @java.lang.Deprecated
@@ -1360,7 +1360,7 @@ public interface ClusterUpdateOrBuilder
    * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_enable_private_endpoint is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=2824
+   *     See google/container/v1/cluster_service.proto;l=3139
    * @return Whether the desiredEnablePrivateEndpoint field is set.
    */
   @java.lang.Deprecated
@@ -1381,7 +1381,7 @@ public interface ClusterUpdateOrBuilder
    * <code>optional bool desired_enable_private_endpoint = 71 [deprecated = true];</code>
    *
    * @deprecated google.container.v1.ClusterUpdate.desired_enable_private_endpoint is deprecated.
-   *     See google/container/v1/cluster_service.proto;l=2824
+   *     See google/container/v1/cluster_service.proto;l=3139
    * @return The desiredEnablePrivateEndpoint.
    */
   @java.lang.Deprecated
@@ -2464,12 +2464,22 @@ public interface ClusterUpdateOrBuilder
    *
    * <pre>
    * The Custom keys configuration for the cluster.
+   *
+   * This field is deprecated.
+   * Use
+   * [ClusterUpdate.desired_user_managed_keys_config][google.container.v1.ClusterUpdate.desired_user_managed_keys_config]
+   * instead.
    * </pre>
    *
-   * <code>.google.container.v1.UserManagedKeysConfig user_managed_keys_config = 143;</code>
+   * <code>
+   * .google.container.v1.UserManagedKeysConfig user_managed_keys_config = 143 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.container.v1.ClusterUpdate.user_managed_keys_config is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=3255
    * @return Whether the userManagedKeysConfig field is set.
    */
+  @java.lang.Deprecated
   boolean hasUserManagedKeysConfig();
 
   /**
@@ -2477,12 +2487,22 @@ public interface ClusterUpdateOrBuilder
    *
    * <pre>
    * The Custom keys configuration for the cluster.
+   *
+   * This field is deprecated.
+   * Use
+   * [ClusterUpdate.desired_user_managed_keys_config][google.container.v1.ClusterUpdate.desired_user_managed_keys_config]
+   * instead.
    * </pre>
    *
-   * <code>.google.container.v1.UserManagedKeysConfig user_managed_keys_config = 143;</code>
+   * <code>
+   * .google.container.v1.UserManagedKeysConfig user_managed_keys_config = 143 [deprecated = true];
+   * </code>
    *
+   * @deprecated google.container.v1.ClusterUpdate.user_managed_keys_config is deprecated. See
+   *     google/container/v1/cluster_service.proto;l=3255
    * @return The userManagedKeysConfig.
    */
+  @java.lang.Deprecated
   com.google.container.v1.UserManagedKeysConfig getUserManagedKeysConfig();
 
   /**
@@ -2490,10 +2510,18 @@ public interface ClusterUpdateOrBuilder
    *
    * <pre>
    * The Custom keys configuration for the cluster.
+   *
+   * This field is deprecated.
+   * Use
+   * [ClusterUpdate.desired_user_managed_keys_config][google.container.v1.ClusterUpdate.desired_user_managed_keys_config]
+   * instead.
    * </pre>
    *
-   * <code>.google.container.v1.UserManagedKeysConfig user_managed_keys_config = 143;</code>
+   * <code>
+   * .google.container.v1.UserManagedKeysConfig user_managed_keys_config = 143 [deprecated = true];
+   * </code>
    */
+  @java.lang.Deprecated
   com.google.container.v1.UserManagedKeysConfigOrBuilder getUserManagedKeysConfigOrBuilder();
 
   /**
@@ -2540,6 +2568,50 @@ public interface ClusterUpdateOrBuilder
    *
    *
    * <pre>
+   * The desired config for additional subnetworks attached to the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.DesiredAdditionalIPRangesConfig desired_additional_ip_ranges_config = 145;
+   * </code>
+   *
+   * @return Whether the desiredAdditionalIpRangesConfig field is set.
+   */
+  boolean hasDesiredAdditionalIpRangesConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired config for additional subnetworks attached to the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.DesiredAdditionalIPRangesConfig desired_additional_ip_ranges_config = 145;
+   * </code>
+   *
+   * @return The desiredAdditionalIpRangesConfig.
+   */
+  com.google.container.v1.DesiredAdditionalIPRangesConfig getDesiredAdditionalIpRangesConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired config for additional subnetworks attached to the cluster.
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1.DesiredAdditionalIPRangesConfig desired_additional_ip_ranges_config = 145;
+   * </code>
+   */
+  com.google.container.v1.DesiredAdditionalIPRangesConfigOrBuilder
+      getDesiredAdditionalIpRangesConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The desired enterprise configuration for the cluster.
    * </pre>
    *
@@ -2572,6 +2644,43 @@ public interface ClusterUpdateOrBuilder
    * <code>.google.container.v1.DesiredEnterpriseConfig desired_enterprise_config = 147;</code>
    */
   com.google.container.v1.DesiredEnterpriseConfigOrBuilder getDesiredEnterpriseConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * AutoIpamConfig contains all information related to Auto IPAM
+   * </pre>
+   *
+   * <code>.google.container.v1.AutoIpamConfig desired_auto_ipam_config = 148;</code>
+   *
+   * @return Whether the desiredAutoIpamConfig field is set.
+   */
+  boolean hasDesiredAutoIpamConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * AutoIpamConfig contains all information related to Auto IPAM
+   * </pre>
+   *
+   * <code>.google.container.v1.AutoIpamConfig desired_auto_ipam_config = 148;</code>
+   *
+   * @return The desiredAutoIpamConfig.
+   */
+  com.google.container.v1.AutoIpamConfig getDesiredAutoIpamConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * AutoIpamConfig contains all information related to Auto IPAM
+   * </pre>
+   *
+   * <code>.google.container.v1.AutoIpamConfig desired_auto_ipam_config = 148;</code>
+   */
+  com.google.container.v1.AutoIpamConfigOrBuilder getDesiredAutoIpamConfigOrBuilder();
 
   /**
    *
@@ -2656,6 +2765,43 @@ public interface ClusterUpdateOrBuilder
    *
    *
    * <pre>
+   * The desired user managed keys config for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.UserManagedKeysConfig desired_user_managed_keys_config = 152;</code>
+   *
+   * @return Whether the desiredUserManagedKeysConfig field is set.
+   */
+  boolean hasDesiredUserManagedKeysConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired user managed keys config for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.UserManagedKeysConfig desired_user_managed_keys_config = 152;</code>
+   *
+   * @return The desiredUserManagedKeysConfig.
+   */
+  com.google.container.v1.UserManagedKeysConfig getDesiredUserManagedKeysConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * The desired user managed keys config for the cluster.
+   * </pre>
+   *
+   * <code>.google.container.v1.UserManagedKeysConfig desired_user_managed_keys_config = 152;</code>
+   */
+  com.google.container.v1.UserManagedKeysConfigOrBuilder getDesiredUserManagedKeysConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Configuration for limiting anonymous access to all endpoints except the
    * health checks.
    * </pre>
@@ -2698,4 +2844,41 @@ public interface ClusterUpdateOrBuilder
    */
   com.google.container.v1.AnonymousAuthenticationConfigOrBuilder
       getDesiredAnonymousAuthenticationConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for GKE auto upgrade.
+   * </pre>
+   *
+   * <code>.google.container.v1.GkeAutoUpgradeConfig gke_auto_upgrade_config = 154;</code>
+   *
+   * @return Whether the gkeAutoUpgradeConfig field is set.
+   */
+  boolean hasGkeAutoUpgradeConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for GKE auto upgrade.
+   * </pre>
+   *
+   * <code>.google.container.v1.GkeAutoUpgradeConfig gke_auto_upgrade_config = 154;</code>
+   *
+   * @return The gkeAutoUpgradeConfig.
+   */
+  com.google.container.v1.GkeAutoUpgradeConfig getGkeAutoUpgradeConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for GKE auto upgrade.
+   * </pre>
+   *
+   * <code>.google.container.v1.GkeAutoUpgradeConfig gke_auto_upgrade_config = 154;</code>
+   */
+  com.google.container.v1.GkeAutoUpgradeConfigOrBuilder getGkeAutoUpgradeConfigOrBuilder();
 }

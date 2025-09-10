@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.shopping</groupId>
   <artifactId>google-shopping-merchant-issue-resolution</artifactId>
-  <version>0.5.0-SNAPSHOT</version><!-- {x-version-update:google-shopping-merchant-issue-resolution:current} -->
+  <version>1.2.0-SNAPSHOT</version><!-- {x-version-update:google-shopping-merchant-issue-resolution:current} -->
   <packaging>jar</packaging>
   <name>Google Merchant Issue Resolution API</name>
   <description>Merchant Issue Resolution API Programatically manage your Merchant Issues</description>
   <parent>
     <groupId>com.google.shopping</groupId>
     <artifactId>google-shopping-merchant-issue-resolution-parent</artifactId>
-    <version>0.5.0-SNAPSHOT</version><!-- {x-version-update:google-shopping-merchant-issue-resolution:current} -->
+    <version>1.2.0-SNAPSHOT</version><!-- {x-version-update:google-shopping-merchant-issue-resolution:current} -->
   </parent>
   <properties>
     <site.installationModule>google-shopping-merchant-issue-resolution</site.installationModule>
@@ -41,6 +41,10 @@
       <artifactId>proto-google-common-protos</artifactId>
     </dependency>
 
+    <dependency>
+      <groupId>com.google.shopping.api.grpc</groupId>
+      <artifactId>proto-google-shopping-merchant-issue-resolution-v1</artifactId>
+    </dependency>
     <dependency>
       <groupId>com.google.shopping.api.grpc</groupId>
       <artifactId>proto-google-shopping-merchant-issue-resolution-v1beta</artifactId>
@@ -74,6 +78,11 @@
     <dependency>
       <groupId>com.google.api.grpc</groupId>
       <artifactId>grpc-google-common-protos</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.google.shopping.api.grpc</groupId>
+      <artifactId>grpc-google-shopping-merchant-issue-resolution-v1</artifactId>
       <scope>test</scope>
     </dependency>
     <dependency>

@@ -208,4 +208,41 @@ public interface EventMetadataOrBuilder
    * @return The bytes for branch.
    */
   com.google.protobuf.ByteString getBranchBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The custom metadata of the LlmResponse.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct custom_metadata = 7;</code>
+   *
+   * @return Whether the customMetadata field is set.
+   */
+  boolean hasCustomMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * The custom metadata of the LlmResponse.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct custom_metadata = 7;</code>
+   *
+   * @return The customMetadata.
+   */
+  com.google.protobuf.Struct getCustomMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * The custom metadata of the LlmResponse.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct custom_metadata = 7;</code>
+   */
+  com.google.protobuf.StructOrBuilder getCustomMetadataOrBuilder();
 }

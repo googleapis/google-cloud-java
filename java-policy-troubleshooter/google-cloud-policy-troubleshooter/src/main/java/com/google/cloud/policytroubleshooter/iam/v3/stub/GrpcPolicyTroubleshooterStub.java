@@ -49,6 +49,7 @@ public class GrpcPolicyTroubleshooterStub extends PolicyTroubleshooterStub {
                   ProtoUtils.marshaller(TroubleshootIamPolicyRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TroubleshootIamPolicyResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<TroubleshootIamPolicyRequest, TroubleshootIamPolicyResponse>

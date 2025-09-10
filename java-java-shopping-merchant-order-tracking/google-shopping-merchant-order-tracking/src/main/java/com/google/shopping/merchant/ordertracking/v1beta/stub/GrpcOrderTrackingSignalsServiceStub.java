@@ -52,6 +52,7 @@ public class GrpcOrderTrackingSignalsServiceStub extends OrderTrackingSignalsSer
                   ProtoUtils.marshaller(CreateOrderTrackingSignalRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(OrderTrackingSignal.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateOrderTrackingSignalRequest, OrderTrackingSignal>

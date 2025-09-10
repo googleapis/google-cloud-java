@@ -45,6 +45,7 @@ public final class Mesh extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     selfLink_ = "";
     description_ = "";
+    envoyHeaders_ = 0;
   }
 
   @java.lang.Override
@@ -90,11 +91,11 @@ public final class Mesh extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Name of the Mesh resource. It matches pattern
+   * Identifier. Name of the Mesh resource. It matches pattern
    * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The name.
    */
@@ -115,11 +116,11 @@ public final class Mesh extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. Name of the Mesh resource. It matches pattern
+   * Identifier. Name of the Mesh resource. It matches pattern
    * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`.
    * </pre>
    *
-   * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
    *
    * @return The bytes for name.
    */
@@ -479,6 +480,71 @@ public final class Mesh extends com.google.protobuf.GeneratedMessageV3
     return interceptionPort_;
   }
 
+  public static final int ENVOY_HEADERS_FIELD_NUMBER = 16;
+  private int envoyHeaders_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Determines if envoy will insert internal debug headers into
+   * upstream requests. Other Envoy headers may still be injected. By default,
+   * envoy will not insert any debug headers.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.networkservices.v1.EnvoyHeaders envoy_headers = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the envoyHeaders field is set.
+   */
+  @java.lang.Override
+  public boolean hasEnvoyHeaders() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Determines if envoy will insert internal debug headers into
+   * upstream requests. Other Envoy headers may still be injected. By default,
+   * envoy will not insert any debug headers.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.networkservices.v1.EnvoyHeaders envoy_headers = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for envoyHeaders.
+   */
+  @java.lang.Override
+  public int getEnvoyHeadersValue() {
+    return envoyHeaders_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Determines if envoy will insert internal debug headers into
+   * upstream requests. Other Envoy headers may still be injected. By default,
+   * envoy will not insert any debug headers.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.networkservices.v1.EnvoyHeaders envoy_headers = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The envoyHeaders.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkservices.v1.EnvoyHeaders getEnvoyHeaders() {
+    com.google.cloud.networkservices.v1.EnvoyHeaders result =
+        com.google.cloud.networkservices.v1.EnvoyHeaders.forNumber(envoyHeaders_);
+    return result == null ? com.google.cloud.networkservices.v1.EnvoyHeaders.UNRECOGNIZED : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -512,6 +578,9 @@ public final class Mesh extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(selfLink_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, selfLink_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeEnum(16, envoyHeaders_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -550,6 +619,9 @@ public final class Mesh extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(selfLink_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, selfLink_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(16, envoyHeaders_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -578,6 +650,10 @@ public final class Mesh extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (!getDescription().equals(other.getDescription())) return false;
     if (getInterceptionPort() != other.getInterceptionPort()) return false;
+    if (hasEnvoyHeaders() != other.hasEnvoyHeaders()) return false;
+    if (hasEnvoyHeaders()) {
+      if (envoyHeaders_ != other.envoyHeaders_) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -609,6 +685,10 @@ public final class Mesh extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getDescription().hashCode();
     hash = (37 * hash) + INTERCEPTION_PORT_FIELD_NUMBER;
     hash = (53 * hash) + getInterceptionPort();
+    if (hasEnvoyHeaders()) {
+      hash = (37 * hash) + ENVOY_HEADERS_FIELD_NUMBER;
+      hash = (53 * hash) + envoyHeaders_;
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -798,6 +878,7 @@ public final class Mesh extends com.google.protobuf.GeneratedMessageV3
       internalGetMutableLabels().clear();
       description_ = "";
       interceptionPort_ = 0;
+      envoyHeaders_ = 0;
       return this;
     }
 
@@ -858,6 +939,10 @@ public final class Mesh extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.interceptionPort_ = interceptionPort_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.envoyHeaders_ = envoyHeaders_;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -933,6 +1018,9 @@ public final class Mesh extends com.google.protobuf.GeneratedMessageV3
       if (other.getInterceptionPort() != 0) {
         setInterceptionPort(other.getInterceptionPort());
       }
+      if (other.hasEnvoyHeaders()) {
+        setEnvoyHeaders(other.getEnvoyHeaders());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1007,6 +1095,12 @@ public final class Mesh extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000002;
                 break;
               } // case 74
+            case 128:
+              {
+                envoyHeaders_ = input.readEnum();
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 128
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1032,11 +1126,11 @@ public final class Mesh extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the Mesh resource. It matches pattern
+     * Identifier. Name of the Mesh resource. It matches pattern
      * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The name.
      */
@@ -1056,11 +1150,11 @@ public final class Mesh extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the Mesh resource. It matches pattern
+     * Identifier. Name of the Mesh resource. It matches pattern
      * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return The bytes for name.
      */
@@ -1080,11 +1174,11 @@ public final class Mesh extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the Mesh resource. It matches pattern
+     * Identifier. Name of the Mesh resource. It matches pattern
      * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The name to set.
      * @return This builder for chaining.
@@ -1103,11 +1197,11 @@ public final class Mesh extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the Mesh resource. It matches pattern
+     * Identifier. Name of the Mesh resource. It matches pattern
      * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @return This builder for chaining.
      */
@@ -1122,11 +1216,11 @@ public final class Mesh extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. Name of the Mesh resource. It matches pattern
+     * Identifier. Name of the Mesh resource. It matches pattern
      * `projects/&#42;&#47;locations/global/meshes/&lt;mesh_name&gt;`.
      * </pre>
      *
-     * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
      *
      * @param value The bytes for name to set.
      * @return This builder for chaining.
@@ -2032,6 +2126,143 @@ public final class Mesh extends com.google.protobuf.GeneratedMessageV3
     public Builder clearInterceptionPort() {
       bitField0_ = (bitField0_ & ~0x00000040);
       interceptionPort_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int envoyHeaders_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Determines if envoy will insert internal debug headers into
+     * upstream requests. Other Envoy headers may still be injected. By default,
+     * envoy will not insert any debug headers.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.networkservices.v1.EnvoyHeaders envoy_headers = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the envoyHeaders field is set.
+     */
+    @java.lang.Override
+    public boolean hasEnvoyHeaders() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Determines if envoy will insert internal debug headers into
+     * upstream requests. Other Envoy headers may still be injected. By default,
+     * envoy will not insert any debug headers.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.networkservices.v1.EnvoyHeaders envoy_headers = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for envoyHeaders.
+     */
+    @java.lang.Override
+    public int getEnvoyHeadersValue() {
+      return envoyHeaders_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Determines if envoy will insert internal debug headers into
+     * upstream requests. Other Envoy headers may still be injected. By default,
+     * envoy will not insert any debug headers.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.networkservices.v1.EnvoyHeaders envoy_headers = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for envoyHeaders to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnvoyHeadersValue(int value) {
+      envoyHeaders_ = value;
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Determines if envoy will insert internal debug headers into
+     * upstream requests. Other Envoy headers may still be injected. By default,
+     * envoy will not insert any debug headers.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.networkservices.v1.EnvoyHeaders envoy_headers = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The envoyHeaders.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkservices.v1.EnvoyHeaders getEnvoyHeaders() {
+      com.google.cloud.networkservices.v1.EnvoyHeaders result =
+          com.google.cloud.networkservices.v1.EnvoyHeaders.forNumber(envoyHeaders_);
+      return result == null
+          ? com.google.cloud.networkservices.v1.EnvoyHeaders.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Determines if envoy will insert internal debug headers into
+     * upstream requests. Other Envoy headers may still be injected. By default,
+     * envoy will not insert any debug headers.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.networkservices.v1.EnvoyHeaders envoy_headers = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The envoyHeaders to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnvoyHeaders(com.google.cloud.networkservices.v1.EnvoyHeaders value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000080;
+      envoyHeaders_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Determines if envoy will insert internal debug headers into
+     * upstream requests. Other Envoy headers may still be injected. By default,
+     * envoy will not insert any debug headers.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.networkservices.v1.EnvoyHeaders envoy_headers = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnvoyHeaders() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      envoyHeaders_ = 0;
       onChanged();
       return this;
     }

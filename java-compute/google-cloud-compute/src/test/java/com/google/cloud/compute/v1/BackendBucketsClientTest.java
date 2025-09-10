@@ -316,6 +316,7 @@ public class BackendBucketsClientTest {
             .setKind("kind3292052")
             .setLoadBalancingScheme("loadBalancingScheme-1223583272")
             .setName("name3373707")
+            .setParams(BackendBucketParams.newBuilder().build())
             .setSelfLink("selfLink1191800166")
             .addAllUsedBy(new ArrayList<BackendBucketUsedBy>())
             .build();

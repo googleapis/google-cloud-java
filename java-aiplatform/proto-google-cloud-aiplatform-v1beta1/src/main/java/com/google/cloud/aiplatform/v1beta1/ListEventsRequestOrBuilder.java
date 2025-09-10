@@ -106,4 +106,40 @@ public interface ListEventsRequestOrBuilder
    * @return The bytes for pageToken.
    */
   com.google.protobuf.ByteString getPageTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The standard list filter.
+   * Supported fields:
+   *    * `timestamp` range (i.e. `timestamp&gt;="2025-01-31T11:30:00-04:00"` where
+   *    the timestamp is in RFC 3339 format)
+   *
+   * More detail in [AIP-160](https://google.aip.dev/160).
+   * </pre>
+   *
+   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The filter.
+   */
+  java.lang.String getFilter();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The standard list filter.
+   * Supported fields:
+   *    * `timestamp` range (i.e. `timestamp&gt;="2025-01-31T11:30:00-04:00"` where
+   *    the timestamp is in RFC 3339 format)
+   *
+   * More detail in [AIP-160](https://google.aip.dev/160).
+   * </pre>
+   *
+   * <code>string filter = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for filter.
+   */
+  com.google.protobuf.ByteString getFilterBytes();
 }

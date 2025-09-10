@@ -309,6 +309,26 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    * <code>REPORTING_DATA_ANNOTATION = 32;</code>
    */
   REPORTING_DATA_ANNOTATION(32),
+  /**
+   *
+   *
+   * <pre>
+   * SubpropertySyncConfig resource
+   * </pre>
+   *
+   * <code>SUBPROPERTY_SYNC_CONFIG = 33;</code>
+   */
+  SUBPROPERTY_SYNC_CONFIG(33),
+  /**
+   *
+   *
+   * <pre>
+   * ReportingIdentitySettings resource
+   * </pre>
+   *
+   * <code>REPORTING_IDENTITY_SETTINGS = 34;</code>
+   */
+  REPORTING_IDENTITY_SETTINGS(34),
   UNRECOGNIZED(-1),
   ;
 
@@ -620,6 +640,28 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
    */
   public static final int REPORTING_DATA_ANNOTATION_VALUE = 32;
 
+  /**
+   *
+   *
+   * <pre>
+   * SubpropertySyncConfig resource
+   * </pre>
+   *
+   * <code>SUBPROPERTY_SYNC_CONFIG = 33;</code>
+   */
+  public static final int SUBPROPERTY_SYNC_CONFIG_VALUE = 33;
+
+  /**
+   *
+   *
+   * <pre>
+   * ReportingIdentitySettings resource
+   * </pre>
+   *
+   * <code>REPORTING_IDENTITY_SETTINGS = 34;</code>
+   */
+  public static final int REPORTING_IDENTITY_SETTINGS_VALUE = 34;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -700,6 +742,10 @@ public enum ChangeHistoryResourceType implements com.google.protobuf.ProtocolMes
         return CALCULATED_METRIC;
       case 32:
         return REPORTING_DATA_ANNOTATION;
+      case 33:
+        return SUBPROPERTY_SYNC_CONFIG;
+      case 34:
+        return REPORTING_IDENTITY_SETTINGS;
       default:
         return null;
     }

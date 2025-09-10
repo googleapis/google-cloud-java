@@ -139,6 +139,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListSourcesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListSourcesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetSourceRequest, Source> getSourceMethodDescriptor =
@@ -147,6 +148,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
           .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/GetSource")
           .setRequestMarshaller(ProtoUtils.marshaller(GetSourceRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Source.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateSourceRequest, Operation>
@@ -156,6 +158,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
               .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/CreateSource")
               .setRequestMarshaller(ProtoUtils.marshaller(CreateSourceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateSourceRequest, Operation>
@@ -165,6 +168,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
               .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/UpdateSource")
               .setRequestMarshaller(ProtoUtils.marshaller(UpdateSourceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteSourceRequest, Operation>
@@ -174,6 +178,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
               .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/DeleteSource")
               .setRequestMarshaller(ProtoUtils.marshaller(DeleteSourceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<FetchInventoryRequest, FetchInventoryResponse>
@@ -185,6 +190,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                   ProtoUtils.marshaller(FetchInventoryRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FetchInventoryResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -198,6 +204,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                   ProtoUtils.marshaller(ListUtilizationReportsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListUtilizationReportsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetUtilizationReportRequest, UtilizationReport>
@@ -208,6 +215,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetUtilizationReportRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(UtilizationReport.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateUtilizationReportRequest, Operation>
@@ -218,6 +226,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateUtilizationReportRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteUtilizationReportRequest, Operation>
@@ -228,6 +237,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteUtilizationReportRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -241,6 +251,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                   ProtoUtils.marshaller(ListDatacenterConnectorsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDatacenterConnectorsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDatacenterConnectorRequest, DatacenterConnector>
@@ -252,6 +263,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                   ProtoUtils.marshaller(GetDatacenterConnectorRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(DatacenterConnector.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateDatacenterConnectorRequest, Operation>
@@ -263,6 +275,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDatacenterConnectorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDatacenterConnectorRequest, Operation>
@@ -274,6 +287,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDatacenterConnectorRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpgradeApplianceRequest, Operation>
@@ -284,6 +298,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpgradeApplianceRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateMigratingVmRequest, Operation>
@@ -294,6 +309,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateMigratingVmRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListMigratingVmsRequest, ListMigratingVmsResponse>
@@ -305,6 +321,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                   ProtoUtils.marshaller(ListMigratingVmsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListMigratingVmsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetMigratingVmRequest, MigratingVm>
@@ -315,6 +332,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetMigratingVmRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(MigratingVm.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateMigratingVmRequest, Operation>
@@ -325,6 +343,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateMigratingVmRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteMigratingVmRequest, Operation>
@@ -335,6 +354,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteMigratingVmRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StartMigrationRequest, Operation>
@@ -345,6 +365,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(StartMigrationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ResumeMigrationRequest, Operation>
@@ -355,6 +376,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ResumeMigrationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<PauseMigrationRequest, Operation>
@@ -365,6 +387,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(PauseMigrationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<FinalizeMigrationRequest, Operation>
@@ -375,6 +398,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(FinalizeMigrationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateCloneJobRequest, Operation>
@@ -385,6 +409,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateCloneJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CancelCloneJobRequest, Operation>
@@ -395,6 +420,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CancelCloneJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListCloneJobsRequest, ListCloneJobsResponse>
@@ -406,6 +432,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                   ProtoUtils.marshaller(ListCloneJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCloneJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetCloneJobRequest, CloneJob> getCloneJobMethodDescriptor =
@@ -414,6 +441,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
           .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/GetCloneJob")
           .setRequestMarshaller(ProtoUtils.marshaller(GetCloneJobRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(CloneJob.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateCutoverJobRequest, Operation>
@@ -424,6 +452,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateCutoverJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CancelCutoverJobRequest, Operation>
@@ -434,6 +463,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CancelCutoverJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListCutoverJobsRequest, ListCutoverJobsResponse>
@@ -445,6 +475,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                   ProtoUtils.marshaller(ListCutoverJobsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCutoverJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetCutoverJobRequest, CutoverJob>
@@ -455,6 +486,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetCutoverJobRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(CutoverJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListGroupsRequest, ListGroupsResponse>
@@ -464,6 +496,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
               .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/ListGroups")
               .setRequestMarshaller(ProtoUtils.marshaller(ListGroupsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListGroupsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetGroupRequest, Group> getGroupMethodDescriptor =
@@ -472,6 +505,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
           .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/GetGroup")
           .setRequestMarshaller(ProtoUtils.marshaller(GetGroupRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Group.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateGroupRequest, Operation> createGroupMethodDescriptor =
@@ -480,6 +514,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
           .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/CreateGroup")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateGroupRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateGroupRequest, Operation> updateGroupMethodDescriptor =
@@ -488,6 +523,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
           .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/UpdateGroup")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateGroupRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteGroupRequest, Operation> deleteGroupMethodDescriptor =
@@ -496,6 +532,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
           .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/DeleteGroup")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteGroupRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<AddGroupMigrationRequest, Operation>
@@ -506,6 +543,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(AddGroupMigrationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RemoveGroupMigrationRequest, Operation>
@@ -516,6 +554,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RemoveGroupMigrationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListTargetProjectsRequest, ListTargetProjectsResponse>
@@ -527,6 +566,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                   ProtoUtils.marshaller(ListTargetProjectsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTargetProjectsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTargetProjectRequest, TargetProject>
@@ -537,6 +577,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetTargetProjectRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TargetProject.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateTargetProjectRequest, Operation>
@@ -547,6 +588,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateTargetProjectRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateTargetProjectRequest, Operation>
@@ -557,6 +599,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateTargetProjectRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteTargetProjectRequest, Operation>
@@ -567,6 +610,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteTargetProjectRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListReplicationCyclesRequest, ListReplicationCyclesResponse>
@@ -578,6 +622,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                   ProtoUtils.marshaller(ListReplicationCyclesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListReplicationCyclesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetReplicationCycleRequest, ReplicationCycle>
@@ -588,6 +633,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetReplicationCycleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ReplicationCycle.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -599,6 +645,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -607,6 +654,7 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListSourcesRequest, ListSourcesResponse> listSourcesCallable;

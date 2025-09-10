@@ -68,6 +68,7 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
             com.google.ads.admanager.v1.TaxonomyCategory.Builder.class);
   }
 
+  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -133,7 +134,25 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
    * Output only. `TaxonomyCategory` ID.
    * </pre>
    *
-   * <code>int64 taxonomy_category_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional int64 taxonomy_category_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the taxonomyCategoryId field is set.
+   */
+  @java.lang.Override
+  public boolean hasTaxonomyCategoryId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. `TaxonomyCategory` ID.
+   * </pre>
+   *
+   * <code>optional int64 taxonomy_category_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The taxonomyCategoryId.
    */
@@ -154,7 +173,23 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
    * Output only. Display name of the `TaxonomyCategory`.
    * </pre>
    *
-   * <code>string display_name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional string display_name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the displayName field is set.
+   */
+  @java.lang.Override
+  public boolean hasDisplayName() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Display name of the `TaxonomyCategory`.
+   * </pre>
+   *
+   * <code>optional string display_name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The displayName.
    */
@@ -178,7 +213,7 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
    * Output only. Display name of the `TaxonomyCategory`.
    * </pre>
    *
-   * <code>string display_name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional string display_name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for displayName.
    */
@@ -206,7 +241,24 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
    * children.
    * </pre>
    *
-   * <code>bool grouping_only = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool grouping_only = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the groupingOnly field is set.
+   */
+  @java.lang.Override
+  public boolean hasGroupingOnly() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether this `TaxonomyCategory` only serves to group its
+   * children.
+   * </pre>
+   *
+   * <code>optional bool grouping_only = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The groupingOnly.
    */
@@ -226,7 +278,27 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
    * from.
    * </pre>
    *
-   * <code>int64 parent_taxonomy_category_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * optional int64 parent_taxonomy_category_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the parentTaxonomyCategoryId field is set.
+   */
+  @java.lang.Override
+  public boolean hasParentTaxonomyCategoryId() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The ID of the parent category this `TaxonomyCategory` descends
+   * from.
+   * </pre>
+   *
+   * <code>
+   * optional int64 parent_taxonomy_category_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The parentTaxonomyCategoryId.
@@ -247,7 +319,25 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.TaxonomyTypeEnum.TaxonomyType taxonomy_type = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * optional .google.ads.admanager.v1.TaxonomyTypeEnum.TaxonomyType taxonomy_type = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the taxonomyType field is set.
+   */
+  @java.lang.Override
+  public boolean hasTaxonomyType() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The taxonomy that this `TaxonomyCategory` belongs to.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.TaxonomyTypeEnum.TaxonomyType taxonomy_type = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The enum numeric value on the wire for taxonomyType.
@@ -265,7 +355,7 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.TaxonomyTypeEnum.TaxonomyType taxonomy_type = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * optional .google.ads.admanager.v1.TaxonomyTypeEnum.TaxonomyType taxonomy_type = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The taxonomyType.
@@ -425,16 +515,16 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (taxonomyCategoryId_ != 0L) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeInt64(2, taxonomyCategoryId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, displayName_);
     }
-    if (groupingOnly_ != false) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeBool(5, groupingOnly_);
     }
-    if (parentTaxonomyCategoryId_ != 0L) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeInt64(6, parentTaxonomyCategoryId_);
     }
     for (int i = 0; i < ancestorNames_.size(); i++) {
@@ -447,9 +537,7 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
     for (int i = 0; i < ancestorTaxonomyCategoryIds_.size(); i++) {
       output.writeInt64NoTag(ancestorTaxonomyCategoryIds_.getLong(i));
     }
-    if (taxonomyType_
-        != com.google.ads.admanager.v1.TaxonomyTypeEnum.TaxonomyType.TAXONOMY_TYPE_UNSPECIFIED
-            .getNumber()) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeEnum(9, taxonomyType_);
     }
     getUnknownFields().writeTo(output);
@@ -464,16 +552,16 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (taxonomyCategoryId_ != 0L) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, taxonomyCategoryId_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, displayName_);
     }
-    if (groupingOnly_ != false) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, groupingOnly_);
     }
-    if (parentTaxonomyCategoryId_ != 0L) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(6, parentTaxonomyCategoryId_);
     }
     {
@@ -498,9 +586,7 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
       }
       ancestorTaxonomyCategoryIdsMemoizedSerializedSize = dataSize;
     }
-    if (taxonomyType_
-        != com.google.ads.admanager.v1.TaxonomyTypeEnum.TaxonomyType.TAXONOMY_TYPE_UNSPECIFIED
-            .getNumber()) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(9, taxonomyType_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -520,11 +606,26 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
         (com.google.ads.admanager.v1.TaxonomyCategory) obj;
 
     if (!getName().equals(other.getName())) return false;
-    if (getTaxonomyCategoryId() != other.getTaxonomyCategoryId()) return false;
-    if (!getDisplayName().equals(other.getDisplayName())) return false;
-    if (getGroupingOnly() != other.getGroupingOnly()) return false;
-    if (getParentTaxonomyCategoryId() != other.getParentTaxonomyCategoryId()) return false;
-    if (taxonomyType_ != other.taxonomyType_) return false;
+    if (hasTaxonomyCategoryId() != other.hasTaxonomyCategoryId()) return false;
+    if (hasTaxonomyCategoryId()) {
+      if (getTaxonomyCategoryId() != other.getTaxonomyCategoryId()) return false;
+    }
+    if (hasDisplayName() != other.hasDisplayName()) return false;
+    if (hasDisplayName()) {
+      if (!getDisplayName().equals(other.getDisplayName())) return false;
+    }
+    if (hasGroupingOnly() != other.hasGroupingOnly()) return false;
+    if (hasGroupingOnly()) {
+      if (getGroupingOnly() != other.getGroupingOnly()) return false;
+    }
+    if (hasParentTaxonomyCategoryId() != other.hasParentTaxonomyCategoryId()) return false;
+    if (hasParentTaxonomyCategoryId()) {
+      if (getParentTaxonomyCategoryId() != other.getParentTaxonomyCategoryId()) return false;
+    }
+    if (hasTaxonomyType() != other.hasTaxonomyType()) return false;
+    if (hasTaxonomyType()) {
+      if (taxonomyType_ != other.taxonomyType_) return false;
+    }
     if (!getAncestorNamesList().equals(other.getAncestorNamesList())) return false;
     if (!getAncestorTaxonomyCategoryIdsList().equals(other.getAncestorTaxonomyCategoryIdsList()))
       return false;
@@ -541,16 +642,26 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + TAXONOMY_CATEGORY_ID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTaxonomyCategoryId());
-    hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getDisplayName().hashCode();
-    hash = (37 * hash) + GROUPING_ONLY_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getGroupingOnly());
-    hash = (37 * hash) + PARENT_TAXONOMY_CATEGORY_ID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getParentTaxonomyCategoryId());
-    hash = (37 * hash) + TAXONOMY_TYPE_FIELD_NUMBER;
-    hash = (53 * hash) + taxonomyType_;
+    if (hasTaxonomyCategoryId()) {
+      hash = (37 * hash) + TAXONOMY_CATEGORY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getTaxonomyCategoryId());
+    }
+    if (hasDisplayName()) {
+      hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getDisplayName().hashCode();
+    }
+    if (hasGroupingOnly()) {
+      hash = (37 * hash) + GROUPING_ONLY_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getGroupingOnly());
+    }
+    if (hasParentTaxonomyCategoryId()) {
+      hash = (37 * hash) + PARENT_TAXONOMY_CATEGORY_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getParentTaxonomyCategoryId());
+    }
+    if (hasTaxonomyType()) {
+      hash = (37 * hash) + TAXONOMY_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + taxonomyType_;
+    }
     if (getAncestorNamesCount() > 0) {
       hash = (37 * hash) + ANCESTOR_NAMES_FIELD_NUMBER;
       hash = (53 * hash) + getAncestorNamesList().hashCode();
@@ -746,20 +857,26 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
       }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.taxonomyCategoryId_ = taxonomyCategoryId_;
+        to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.displayName_ = displayName_;
+        to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.groupingOnly_ = groupingOnly_;
+        to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.parentTaxonomyCategoryId_ = parentTaxonomyCategoryId_;
+        to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         result.taxonomyType_ = taxonomyType_;
+        to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         ancestorNames_.makeImmutable();
@@ -769,6 +886,7 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
         ancestorTaxonomyCategoryIds_.makeImmutable();
         result.ancestorTaxonomyCategoryIds_ = ancestorTaxonomyCategoryIds_;
       }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -821,22 +939,22 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000001;
         onChanged();
       }
-      if (other.getTaxonomyCategoryId() != 0L) {
+      if (other.hasTaxonomyCategoryId()) {
         setTaxonomyCategoryId(other.getTaxonomyCategoryId());
       }
-      if (!other.getDisplayName().isEmpty()) {
+      if (other.hasDisplayName()) {
         displayName_ = other.displayName_;
         bitField0_ |= 0x00000004;
         onChanged();
       }
-      if (other.getGroupingOnly() != false) {
+      if (other.hasGroupingOnly()) {
         setGroupingOnly(other.getGroupingOnly());
       }
-      if (other.getParentTaxonomyCategoryId() != 0L) {
+      if (other.hasParentTaxonomyCategoryId()) {
         setParentTaxonomyCategoryId(other.getParentTaxonomyCategoryId());
       }
-      if (other.taxonomyType_ != 0) {
-        setTaxonomyTypeValue(other.getTaxonomyTypeValue());
+      if (other.hasTaxonomyType()) {
+        setTaxonomyType(other.getTaxonomyType());
       }
       if (!other.ancestorNames_.isEmpty()) {
         if (ancestorNames_.isEmpty()) {
@@ -1090,7 +1208,25 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
      * Output only. `TaxonomyCategory` ID.
      * </pre>
      *
-     * <code>int64 taxonomy_category_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 taxonomy_category_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the taxonomyCategoryId field is set.
+     */
+    @java.lang.Override
+    public boolean hasTaxonomyCategoryId() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. `TaxonomyCategory` ID.
+     * </pre>
+     *
+     * <code>optional int64 taxonomy_category_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The taxonomyCategoryId.
      */
@@ -1106,7 +1242,8 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
      * Output only. `TaxonomyCategory` ID.
      * </pre>
      *
-     * <code>int64 taxonomy_category_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 taxonomy_category_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The taxonomyCategoryId to set.
      * @return This builder for chaining.
@@ -1126,7 +1263,8 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
      * Output only. `TaxonomyCategory` ID.
      * </pre>
      *
-     * <code>int64 taxonomy_category_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 taxonomy_category_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -1146,7 +1284,22 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
      * Output only. Display name of the `TaxonomyCategory`.
      * </pre>
      *
-     * <code>string display_name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string display_name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the displayName field is set.
+     */
+    public boolean hasDisplayName() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Display name of the `TaxonomyCategory`.
+     * </pre>
+     *
+     * <code>optional string display_name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The displayName.
      */
@@ -1169,7 +1322,7 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
      * Output only. Display name of the `TaxonomyCategory`.
      * </pre>
      *
-     * <code>string display_name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string display_name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for displayName.
      */
@@ -1192,7 +1345,7 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
      * Output only. Display name of the `TaxonomyCategory`.
      * </pre>
      *
-     * <code>string display_name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string display_name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The displayName to set.
      * @return This builder for chaining.
@@ -1214,7 +1367,7 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
      * Output only. Display name of the `TaxonomyCategory`.
      * </pre>
      *
-     * <code>string display_name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string display_name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -1232,7 +1385,7 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
      * Output only. Display name of the `TaxonomyCategory`.
      * </pre>
      *
-     * <code>string display_name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string display_name = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.
@@ -1258,7 +1411,24 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
      * children.
      * </pre>
      *
-     * <code>bool grouping_only = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool grouping_only = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the groupingOnly field is set.
+     */
+    @java.lang.Override
+    public boolean hasGroupingOnly() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether this `TaxonomyCategory` only serves to group its
+     * children.
+     * </pre>
+     *
+     * <code>optional bool grouping_only = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The groupingOnly.
      */
@@ -1275,7 +1445,7 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
      * children.
      * </pre>
      *
-     * <code>bool grouping_only = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool grouping_only = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The groupingOnly to set.
      * @return This builder for chaining.
@@ -1296,7 +1466,7 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
      * children.
      * </pre>
      *
-     * <code>bool grouping_only = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool grouping_only = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -1317,7 +1487,27 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
      * from.
      * </pre>
      *
-     * <code>int64 parent_taxonomy_category_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * optional int64 parent_taxonomy_category_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the parentTaxonomyCategoryId field is set.
+     */
+    @java.lang.Override
+    public boolean hasParentTaxonomyCategoryId() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The ID of the parent category this `TaxonomyCategory` descends
+     * from.
+     * </pre>
+     *
+     * <code>
+     * optional int64 parent_taxonomy_category_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The parentTaxonomyCategoryId.
@@ -1335,7 +1525,8 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
      * from.
      * </pre>
      *
-     * <code>int64 parent_taxonomy_category_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * optional int64 parent_taxonomy_category_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param value The parentTaxonomyCategoryId to set.
@@ -1357,7 +1548,8 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
      * from.
      * </pre>
      *
-     * <code>int64 parent_taxonomy_category_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * optional int64 parent_taxonomy_category_id = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return This builder for chaining.
@@ -1379,7 +1571,25 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.TaxonomyTypeEnum.TaxonomyType taxonomy_type = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.ads.admanager.v1.TaxonomyTypeEnum.TaxonomyType taxonomy_type = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the taxonomyType field is set.
+     */
+    @java.lang.Override
+    public boolean hasTaxonomyType() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The taxonomy that this `TaxonomyCategory` belongs to.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.TaxonomyTypeEnum.TaxonomyType taxonomy_type = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The enum numeric value on the wire for taxonomyType.
@@ -1397,7 +1607,7 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.TaxonomyTypeEnum.TaxonomyType taxonomy_type = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.ads.admanager.v1.TaxonomyTypeEnum.TaxonomyType taxonomy_type = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param value The enum numeric value on the wire for taxonomyType to set.
@@ -1418,7 +1628,7 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.TaxonomyTypeEnum.TaxonomyType taxonomy_type = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.ads.admanager.v1.TaxonomyTypeEnum.TaxonomyType taxonomy_type = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The taxonomyType.
@@ -1440,7 +1650,7 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.TaxonomyTypeEnum.TaxonomyType taxonomy_type = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.ads.admanager.v1.TaxonomyTypeEnum.TaxonomyType taxonomy_type = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param value The taxonomyType to set.
@@ -1465,7 +1675,7 @@ public final class TaxonomyCategory extends com.google.protobuf.GeneratedMessage
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.TaxonomyTypeEnum.TaxonomyType taxonomy_type = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.ads.admanager.v1.TaxonomyTypeEnum.TaxonomyType taxonomy_type = 9 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return This builder for chaining.

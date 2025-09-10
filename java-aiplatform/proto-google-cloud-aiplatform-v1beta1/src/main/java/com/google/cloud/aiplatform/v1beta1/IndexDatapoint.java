@@ -5335,6 +5335,62 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         : crowdingTag_;
   }
 
+  public static final int EMBEDDING_METADATA_FIELD_NUMBER = 8;
+  private com.google.protobuf.Struct embeddingMetadata_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The key-value map of additional metadata for the datapoint.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct embedding_metadata = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the embeddingMetadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasEmbeddingMetadata() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The key-value map of additional metadata for the datapoint.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct embedding_metadata = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The embeddingMetadata.
+   */
+  @java.lang.Override
+  public com.google.protobuf.Struct getEmbeddingMetadata() {
+    return embeddingMetadata_ == null
+        ? com.google.protobuf.Struct.getDefaultInstance()
+        : embeddingMetadata_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The key-value map of additional metadata for the datapoint.
+   * </pre>
+   *
+   * <code>.google.protobuf.Struct embedding_metadata = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.protobuf.StructOrBuilder getEmbeddingMetadataOrBuilder() {
+    return embeddingMetadata_ == null
+        ? com.google.protobuf.Struct.getDefaultInstance()
+        : embeddingMetadata_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -5372,6 +5428,9 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(7, getSparseEmbedding());
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(8, getEmbeddingMetadata());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -5406,6 +5465,9 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getSparseEmbedding());
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getEmbeddingMetadata());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -5433,6 +5495,10 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     if (hasCrowdingTag() != other.hasCrowdingTag()) return false;
     if (hasCrowdingTag()) {
       if (!getCrowdingTag().equals(other.getCrowdingTag())) return false;
+    }
+    if (hasEmbeddingMetadata() != other.hasEmbeddingMetadata()) return false;
+    if (hasEmbeddingMetadata()) {
+      if (!getEmbeddingMetadata().equals(other.getEmbeddingMetadata())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -5466,6 +5532,10 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
     if (hasCrowdingTag()) {
       hash = (37 * hash) + CROWDING_TAG_FIELD_NUMBER;
       hash = (53 * hash) + getCrowdingTag().hashCode();
+    }
+    if (hasEmbeddingMetadata()) {
+      hash = (37 * hash) + EMBEDDING_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getEmbeddingMetadata().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -5612,6 +5682,7 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         getRestrictsFieldBuilder();
         getNumericRestrictsFieldBuilder();
         getCrowdingTagFieldBuilder();
+        getEmbeddingMetadataFieldBuilder();
       }
     }
 
@@ -5644,6 +5715,11 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       if (crowdingTagBuilder_ != null) {
         crowdingTagBuilder_.dispose();
         crowdingTagBuilder_ = null;
+      }
+      embeddingMetadata_ = null;
+      if (embeddingMetadataBuilder_ != null) {
+        embeddingMetadataBuilder_.dispose();
+        embeddingMetadataBuilder_ = null;
       }
       return this;
     }
@@ -5721,6 +5797,13 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         result.crowdingTag_ =
             crowdingTagBuilder_ == null ? crowdingTag_ : crowdingTagBuilder_.build();
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000040) != 0)) {
+        result.embeddingMetadata_ =
+            embeddingMetadataBuilder_ == null
+                ? embeddingMetadata_
+                : embeddingMetadataBuilder_.build();
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -5847,6 +5930,9 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
       if (other.hasCrowdingTag()) {
         mergeCrowdingTag(other.getCrowdingTag());
       }
+      if (other.hasEmbeddingMetadata()) {
+        mergeEmbeddingMetadata(other.getEmbeddingMetadata());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -5939,6 +6025,13 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 58
+            case 66:
+              {
+                input.readMessage(
+                    getEmbeddingMetadataFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000040;
+                break;
+              } // case 66
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -7611,6 +7704,218 @@ public final class IndexDatapoint extends com.google.protobuf.GeneratedMessageV3
         crowdingTag_ = null;
       }
       return crowdingTagBuilder_;
+    }
+
+    private com.google.protobuf.Struct embeddingMetadata_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        embeddingMetadataBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The key-value map of additional metadata for the datapoint.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct embedding_metadata = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the embeddingMetadata field is set.
+     */
+    public boolean hasEmbeddingMetadata() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The key-value map of additional metadata for the datapoint.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct embedding_metadata = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The embeddingMetadata.
+     */
+    public com.google.protobuf.Struct getEmbeddingMetadata() {
+      if (embeddingMetadataBuilder_ == null) {
+        return embeddingMetadata_ == null
+            ? com.google.protobuf.Struct.getDefaultInstance()
+            : embeddingMetadata_;
+      } else {
+        return embeddingMetadataBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The key-value map of additional metadata for the datapoint.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct embedding_metadata = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEmbeddingMetadata(com.google.protobuf.Struct value) {
+      if (embeddingMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        embeddingMetadata_ = value;
+      } else {
+        embeddingMetadataBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The key-value map of additional metadata for the datapoint.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct embedding_metadata = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEmbeddingMetadata(com.google.protobuf.Struct.Builder builderForValue) {
+      if (embeddingMetadataBuilder_ == null) {
+        embeddingMetadata_ = builderForValue.build();
+      } else {
+        embeddingMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The key-value map of additional metadata for the datapoint.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct embedding_metadata = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeEmbeddingMetadata(com.google.protobuf.Struct value) {
+      if (embeddingMetadataBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)
+            && embeddingMetadata_ != null
+            && embeddingMetadata_ != com.google.protobuf.Struct.getDefaultInstance()) {
+          getEmbeddingMetadataBuilder().mergeFrom(value);
+        } else {
+          embeddingMetadata_ = value;
+        }
+      } else {
+        embeddingMetadataBuilder_.mergeFrom(value);
+      }
+      if (embeddingMetadata_ != null) {
+        bitField0_ |= 0x00000040;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The key-value map of additional metadata for the datapoint.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct embedding_metadata = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearEmbeddingMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000040);
+      embeddingMetadata_ = null;
+      if (embeddingMetadataBuilder_ != null) {
+        embeddingMetadataBuilder_.dispose();
+        embeddingMetadataBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The key-value map of additional metadata for the datapoint.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct embedding_metadata = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.Struct.Builder getEmbeddingMetadataBuilder() {
+      bitField0_ |= 0x00000040;
+      onChanged();
+      return getEmbeddingMetadataFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The key-value map of additional metadata for the datapoint.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct embedding_metadata = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.protobuf.StructOrBuilder getEmbeddingMetadataOrBuilder() {
+      if (embeddingMetadataBuilder_ != null) {
+        return embeddingMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        return embeddingMetadata_ == null
+            ? com.google.protobuf.Struct.getDefaultInstance()
+            : embeddingMetadata_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The key-value map of additional metadata for the datapoint.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Struct embedding_metadata = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        getEmbeddingMetadataFieldBuilder() {
+      if (embeddingMetadataBuilder_ == null) {
+        embeddingMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Struct,
+                com.google.protobuf.Struct.Builder,
+                com.google.protobuf.StructOrBuilder>(
+                getEmbeddingMetadata(), getParentForChildren(), isClean());
+        embeddingMetadata_ = null;
+      }
+      return embeddingMetadataBuilder_;
     }
 
     @java.lang.Override

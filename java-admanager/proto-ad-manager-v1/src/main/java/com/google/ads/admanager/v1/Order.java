@@ -150,7 +150,23 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    * Output only. Order ID.
    * </pre>
    *
-   * <code>int64 order_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional int64 order_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the orderId field is set.
+   */
+  @java.lang.Override
+  public boolean hasOrderId() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Order ID.
+   * </pre>
+   *
+   * <code>optional int64 order_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The orderId.
    */
@@ -172,7 +188,24 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    * of 255 characters.
    * </pre>
    *
-   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   *
+   * @return Whether the displayName field is set.
+   */
+  @java.lang.Override
+  public boolean hasDisplayName() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The display name of the Order.  This value has a maximum length
+   * of 255 characters.
+   * </pre>
+   *
+   * <code>optional string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The displayName.
    */
@@ -197,7 +230,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    * of 255 characters.
    * </pre>
    *
-   * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+   * <code>optional string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for displayName.
    */
@@ -224,7 +257,23 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    * Optional. Specifies whether or not the Order is a programmatic order.
    * </pre>
    *
-   * <code>bool programmatic = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional bool programmatic = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the programmatic field is set.
+   */
+  @java.lang.Override
+  public boolean hasProgrammatic() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Specifies whether or not the Order is a programmatic order.
+   * </pre>
+   *
+   * <code>optional bool programmatic = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The programmatic.
    */
@@ -247,7 +296,26 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * string trafficker = 23 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * optional string trafficker = 23 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the trafficker field is set.
+   */
+  @java.lang.Override
+  public boolean hasTrafficker() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The resource name of the User responsible for trafficking the
+   * Order. Format: "networks/{network_code}/users/{user_id}"
+   * </pre>
+   *
+   * <code>
+   * optional string trafficker = 23 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The trafficker.
@@ -274,7 +342,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * string trafficker = 23 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * optional string trafficker = 23 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for trafficker.
@@ -387,7 +455,27 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * string advertiser = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * optional string advertiser = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the advertiser field is set.
+   */
+  @java.lang.Override
+  public boolean hasAdvertiser() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Required. The resource name of the Company, which is of type
+   * Company.Type.ADVERTISER, to which this order belongs. Format:
+   * "networks/{network_code}/companies/{company_id}"
+   * </pre>
+   *
+   * <code>
+   * optional string advertiser = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The advertiser.
@@ -415,7 +503,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * string advertiser = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+   * optional string advertiser = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for advertiser.
@@ -528,7 +616,27 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * string agency = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * optional string agency = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the agency field is set.
+   */
+  @java.lang.Override
+  public boolean hasAgency() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource name of the Company, which is of type
+   * Company.Type.AGENCY, with which this order is associated. Format:
+   * "networks/{network_code}/companies/{company_id}"
+   * </pre>
+   *
+   * <code>
+   * optional string agency = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The agency.
@@ -556,7 +664,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * string agency = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * optional string agency = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for agency.
@@ -749,7 +857,27 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * string creator = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * optional string creator = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the creator field is set.
+   */
+  @java.lang.Override
+  public boolean hasCreator() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The resource name of the User who created the Order on behalf
+   * of the advertiser. This value is assigned by Google. Format:
+   * "networks/{network_code}/users/{user_id}"
+   * </pre>
+   *
+   * <code>
+   * optional string creator = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The creator.
@@ -777,7 +905,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * string creator = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * optional string creator = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for creator.
@@ -808,7 +936,24 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    * the Order. This value is the network's currency code.
    * </pre>
    *
-   * <code>string currency_code = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional string currency_code = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the currencyCode field is set.
+   */
+  @java.lang.Override
+  public boolean hasCurrencyCode() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The ISO 4217 3-letter currency code for the currency used by
+   * the Order. This value is the network's currency code.
+   * </pre>
+   *
+   * <code>optional string currency_code = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The currencyCode.
    */
@@ -833,7 +978,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    * the Order. This value is the network's currency code.
    * </pre>
    *
-   * <code>string currency_code = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional string currency_code = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for currencyCode.
    */
@@ -862,14 +1007,15 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    * of the order that has the earliest LineItem.start_time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp start_time = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * optional .google.protobuf.Timestamp start_time = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the startTime field is set.
    */
   @java.lang.Override
   public boolean hasStartTime() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
 
   /**
@@ -881,7 +1027,8 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    * of the order that has the earliest LineItem.start_time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp start_time = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * optional .google.protobuf.Timestamp start_time = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The startTime.
@@ -900,7 +1047,8 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    * of the order that has the earliest LineItem.start_time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp start_time = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * optional .google.protobuf.Timestamp start_time = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   @java.lang.Override
@@ -920,14 +1068,15 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    * order that has the latest LineItem.end_time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * optional .google.protobuf.Timestamp end_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the endTime field is set.
    */
   @java.lang.Override
   public boolean hasEndTime() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
 
   /**
@@ -939,7 +1088,8 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    * order that has the latest LineItem.end_time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * optional .google.protobuf.Timestamp end_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The endTime.
@@ -958,7 +1108,8 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    * order that has the latest LineItem.end_time.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp end_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * optional .google.protobuf.Timestamp end_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   @java.lang.Override
@@ -976,7 +1127,25 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    * Output only. Indicates whether or not this Order has an end time.
    * </pre>
    *
-   * <code>bool unlimited_end_time = 45 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool unlimited_end_time = 45 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the unlimitedEndTime field is set.
+   */
+  @java.lang.Override
+  public boolean hasUnlimitedEndTime() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates whether or not this Order has an end time.
+   * </pre>
+   *
+   * <code>optional bool unlimited_end_time = 45 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The unlimitedEndTime.
    */
@@ -986,7 +1155,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
   }
 
   public static final int EXTERNAL_ORDER_ID_FIELD_NUMBER = 13;
-  private long externalOrderId_ = 0L;
+  private int externalOrderId_ = 0;
 
   /**
    *
@@ -996,12 +1165,29 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    * key to an external system.
    * </pre>
    *
-   * <code>int64 external_order_id = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional int32 external_order_id = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the externalOrderId field is set.
+   */
+  @java.lang.Override
+  public boolean hasExternalOrderId() {
+    return ((bitField0_ & 0x00000800) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. An arbitrary ID to associate to the Order, which can be used as a
+   * key to an external system.
+   * </pre>
+   *
+   * <code>optional int32 external_order_id = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The externalOrderId.
    */
   @java.lang.Override
-  public long getExternalOrderId() {
+  public int getExternalOrderId() {
     return externalOrderId_;
   }
 
@@ -1015,7 +1201,23 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    * Output only. The archival status of the Order.
    * </pre>
    *
-   * <code>bool archived = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional bool archived = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return Whether the archived field is set.
+   */
+  @java.lang.Override
+  public boolean hasArchived() {
+    return ((bitField0_ & 0x00001000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The archival status of the Order.
+   * </pre>
+   *
+   * <code>optional bool archived = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The archived.
    */
@@ -1037,7 +1239,26 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    * assigned by Google.
    * </pre>
    *
-   * <code>string last_modified_by_app = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional string last_modified_by_app = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the lastModifiedByApp field is set.
+   */
+  @java.lang.Override
+  public boolean hasLastModifiedByApp() {
+    return ((bitField0_ & 0x00002000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The application which modified this order. This attribute is
+   * assigned by Google.
+   * </pre>
+   *
+   * <code>optional string last_modified_by_app = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The lastModifiedByApp.
    */
@@ -1062,7 +1283,8 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    * assigned by Google.
    * </pre>
    *
-   * <code>string last_modified_by_app = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>optional string last_modified_by_app = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The bytes for lastModifiedByApp.
    */
@@ -1089,14 +1311,15 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    * Output only. The instant this Order was last modified.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * optional .google.protobuf.Timestamp update_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the updateTime field is set.
    */
   @java.lang.Override
   public boolean hasUpdateTime() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00004000) != 0);
   }
 
   /**
@@ -1106,7 +1329,8 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    * Output only. The instant this Order was last modified.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * optional .google.protobuf.Timestamp update_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The updateTime.
@@ -1123,7 +1347,8 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    * Output only. The instant this Order was last modified.
    * </pre>
    *
-   * <code>.google.protobuf.Timestamp update_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * <code>
+   * optional .google.protobuf.Timestamp update_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   @java.lang.Override
@@ -1144,7 +1369,24 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    * attribute has a maximum length of 65,535 characters.
    * </pre>
    *
-   * <code>string notes = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string notes = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the notes field is set.
+   */
+  @java.lang.Override
+  public boolean hasNotes() {
+    return ((bitField0_ & 0x00008000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Provides any additional notes that may annotate the Order. This
+   * attribute has a maximum length of 65,535 characters.
+   * </pre>
+   *
+   * <code>optional string notes = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The notes.
    */
@@ -1169,7 +1411,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    * attribute has a maximum length of 65,535 characters.
    * </pre>
    *
-   * <code>string notes = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string notes = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for notes.
    */
@@ -1199,7 +1441,24 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    * length of 63 characters.
    * </pre>
    *
-   * <code>string po_number = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string po_number = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the poNumber field is set.
+   */
+  @java.lang.Override
+  public boolean hasPoNumber() {
+    return ((bitField0_ & 0x00010000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The purchase order number for the Order. This value has a maximum
+   * length of 63 characters.
+   * </pre>
+   *
+   * <code>optional string po_number = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The poNumber.
    */
@@ -1224,7 +1483,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    * length of 63 characters.
    * </pre>
    *
-   * <code>string po_number = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>optional string po_number = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for poNumber.
    */
@@ -1252,7 +1511,25 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.OrderStatusEnum.OrderStatus status = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * optional .google.ads.admanager.v1.OrderStatusEnum.OrderStatus status = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the status field is set.
+   */
+  @java.lang.Override
+  public boolean hasStatus() {
+    return ((bitField0_ & 0x00020000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The status of the Order.
+   * </pre>
+   *
+   * <code>
+   * optional .google.ads.admanager.v1.OrderStatusEnum.OrderStatus status = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The enum numeric value on the wire for status.
@@ -1270,7 +1547,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * .google.ads.admanager.v1.OrderStatusEnum.OrderStatus status = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * optional .google.ads.admanager.v1.OrderStatusEnum.OrderStatus status = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The status.
@@ -1298,7 +1575,26 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * string salesperson = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * optional string salesperson = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * </code>
+   *
+   * @return Whether the salesperson field is set.
+   */
+  @java.lang.Override
+  public boolean hasSalesperson() {
+    return ((bitField0_ & 0x00040000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The resource name of the User responsible for the sales of the
+   * Order. Format: "networks/{network_code}/users/{user_id}"
+   * </pre>
+   *
+   * <code>
+   * optional string salesperson = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The salesperson.
@@ -1325,7 +1621,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
    * </pre>
    *
    * <code>
-   * string salesperson = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+   * optional string salesperson = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for salesperson.
@@ -1803,73 +2099,71 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, displayName_);
     }
-    if (programmatic_ != false) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeBool(3, programmatic_);
     }
-    if (orderId_ != 0L) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       output.writeInt64(4, orderId_);
     }
     for (int i = 0; i < advertiserContacts_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, advertiserContacts_.getRaw(i));
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(advertiser_)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, advertiser_);
     }
     for (int i = 0; i < agencyContacts_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, agencyContacts_.getRaw(i));
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agency_)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, agency_);
     }
     for (int i = 0; i < appliedTeams_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 9, appliedTeams_.getRaw(i));
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(creator_)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, creator_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currencyCode_)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, currencyCode_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeMessage(12, getEndTime());
     }
-    if (externalOrderId_ != 0L) {
-      output.writeInt64(13, externalOrderId_);
+    if (((bitField0_ & 0x00000800) != 0)) {
+      output.writeInt32(13, externalOrderId_);
     }
-    if (archived_ != false) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       output.writeBool(14, archived_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lastModifiedByApp_)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, lastModifiedByApp_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       output.writeMessage(16, getUpdateTime());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notes_)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 17, notes_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(poNumber_)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18, poNumber_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       output.writeMessage(19, getStartTime());
     }
-    if (status_
-        != com.google.ads.admanager.v1.OrderStatusEnum.OrderStatus.ORDER_STATUS_UNSPECIFIED
-            .getNumber()) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       output.writeEnum(20, status_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(salesperson_)) {
+    if (((bitField0_ & 0x00040000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 21, salesperson_);
     }
     for (int i = 0; i < secondarySalespeople_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 22, secondarySalespeople_.getRaw(i));
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(trafficker_)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 23, trafficker_);
     }
     for (int i = 0; i < secondaryTraffickers_.size(); i++) {
@@ -1888,7 +2182,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     for (int i = 0; i < customFieldValues_.size(); i++) {
       output.writeMessage(38, customFieldValues_.get(i));
     }
-    if (unlimitedEndTime_ != false) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       output.writeBool(45, unlimitedEndTime_);
     }
     getUnknownFields().writeTo(output);
@@ -1903,13 +2197,13 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, displayName_);
     }
-    if (programmatic_ != false) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, programmatic_);
     }
-    if (orderId_ != 0L) {
+    if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(4, orderId_);
     }
     {
@@ -1920,7 +2214,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getAdvertiserContactsList().size();
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(advertiser_)) {
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, advertiser_);
     }
     {
@@ -1931,7 +2225,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getAgencyContactsList().size();
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agency_)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, agency_);
     }
     {
@@ -1942,42 +2236,40 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 1 * getAppliedTeamsList().size();
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(creator_)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, creator_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(currencyCode_)) {
+    if (((bitField0_ & 0x00000080) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, currencyCode_);
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getEndTime());
     }
-    if (externalOrderId_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream.computeInt64Size(13, externalOrderId_);
+    if (((bitField0_ & 0x00000800) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(13, externalOrderId_);
     }
-    if (archived_ != false) {
+    if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(14, archived_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(lastModifiedByApp_)) {
+    if (((bitField0_ & 0x00002000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, lastModifiedByApp_);
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00004000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, getUpdateTime());
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(notes_)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, notes_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(poNumber_)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, poNumber_);
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, getStartTime());
     }
-    if (status_
-        != com.google.ads.admanager.v1.OrderStatusEnum.OrderStatus.ORDER_STATUS_UNSPECIFIED
-            .getNumber()) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(20, status_);
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(salesperson_)) {
+    if (((bitField0_ & 0x00040000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(21, salesperson_);
     }
     {
@@ -1988,7 +2280,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       size += dataSize;
       size += 2 * getSecondarySalespeopleList().size();
     }
-    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(trafficker_)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(23, trafficker_);
     }
     {
@@ -2019,7 +2311,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(38, customFieldValues_.get(i));
     }
-    if (unlimitedEndTime_ != false) {
+    if (((bitField0_ & 0x00000400) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeBoolSize(45, unlimitedEndTime_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -2038,18 +2330,42 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     com.google.ads.admanager.v1.Order other = (com.google.ads.admanager.v1.Order) obj;
 
     if (!getName().equals(other.getName())) return false;
-    if (getOrderId() != other.getOrderId()) return false;
-    if (!getDisplayName().equals(other.getDisplayName())) return false;
-    if (getProgrammatic() != other.getProgrammatic()) return false;
-    if (!getTrafficker().equals(other.getTrafficker())) return false;
+    if (hasOrderId() != other.hasOrderId()) return false;
+    if (hasOrderId()) {
+      if (getOrderId() != other.getOrderId()) return false;
+    }
+    if (hasDisplayName() != other.hasDisplayName()) return false;
+    if (hasDisplayName()) {
+      if (!getDisplayName().equals(other.getDisplayName())) return false;
+    }
+    if (hasProgrammatic() != other.hasProgrammatic()) return false;
+    if (hasProgrammatic()) {
+      if (getProgrammatic() != other.getProgrammatic()) return false;
+    }
+    if (hasTrafficker() != other.hasTrafficker()) return false;
+    if (hasTrafficker()) {
+      if (!getTrafficker().equals(other.getTrafficker())) return false;
+    }
     if (!getAdvertiserContactsList().equals(other.getAdvertiserContactsList())) return false;
-    if (!getAdvertiser().equals(other.getAdvertiser())) return false;
+    if (hasAdvertiser() != other.hasAdvertiser()) return false;
+    if (hasAdvertiser()) {
+      if (!getAdvertiser().equals(other.getAdvertiser())) return false;
+    }
     if (!getAgencyContactsList().equals(other.getAgencyContactsList())) return false;
-    if (!getAgency().equals(other.getAgency())) return false;
+    if (hasAgency() != other.hasAgency()) return false;
+    if (hasAgency()) {
+      if (!getAgency().equals(other.getAgency())) return false;
+    }
     if (!getAppliedTeamsList().equals(other.getAppliedTeamsList())) return false;
     if (!getEffectiveTeamsList().equals(other.getEffectiveTeamsList())) return false;
-    if (!getCreator().equals(other.getCreator())) return false;
-    if (!getCurrencyCode().equals(other.getCurrencyCode())) return false;
+    if (hasCreator() != other.hasCreator()) return false;
+    if (hasCreator()) {
+      if (!getCreator().equals(other.getCreator())) return false;
+    }
+    if (hasCurrencyCode() != other.hasCurrencyCode()) return false;
+    if (hasCurrencyCode()) {
+      if (!getCurrencyCode().equals(other.getCurrencyCode())) return false;
+    }
     if (hasStartTime() != other.hasStartTime()) return false;
     if (hasStartTime()) {
       if (!getStartTime().equals(other.getStartTime())) return false;
@@ -2058,18 +2374,42 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     if (hasEndTime()) {
       if (!getEndTime().equals(other.getEndTime())) return false;
     }
-    if (getUnlimitedEndTime() != other.getUnlimitedEndTime()) return false;
-    if (getExternalOrderId() != other.getExternalOrderId()) return false;
-    if (getArchived() != other.getArchived()) return false;
-    if (!getLastModifiedByApp().equals(other.getLastModifiedByApp())) return false;
+    if (hasUnlimitedEndTime() != other.hasUnlimitedEndTime()) return false;
+    if (hasUnlimitedEndTime()) {
+      if (getUnlimitedEndTime() != other.getUnlimitedEndTime()) return false;
+    }
+    if (hasExternalOrderId() != other.hasExternalOrderId()) return false;
+    if (hasExternalOrderId()) {
+      if (getExternalOrderId() != other.getExternalOrderId()) return false;
+    }
+    if (hasArchived() != other.hasArchived()) return false;
+    if (hasArchived()) {
+      if (getArchived() != other.getArchived()) return false;
+    }
+    if (hasLastModifiedByApp() != other.hasLastModifiedByApp()) return false;
+    if (hasLastModifiedByApp()) {
+      if (!getLastModifiedByApp().equals(other.getLastModifiedByApp())) return false;
+    }
     if (hasUpdateTime() != other.hasUpdateTime()) return false;
     if (hasUpdateTime()) {
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
-    if (!getNotes().equals(other.getNotes())) return false;
-    if (!getPoNumber().equals(other.getPoNumber())) return false;
-    if (status_ != other.status_) return false;
-    if (!getSalesperson().equals(other.getSalesperson())) return false;
+    if (hasNotes() != other.hasNotes()) return false;
+    if (hasNotes()) {
+      if (!getNotes().equals(other.getNotes())) return false;
+    }
+    if (hasPoNumber() != other.hasPoNumber()) return false;
+    if (hasPoNumber()) {
+      if (!getPoNumber().equals(other.getPoNumber())) return false;
+    }
+    if (hasStatus() != other.hasStatus()) return false;
+    if (hasStatus()) {
+      if (status_ != other.status_) return false;
+    }
+    if (hasSalesperson() != other.hasSalesperson()) return false;
+    if (hasSalesperson()) {
+      if (!getSalesperson().equals(other.getSalesperson())) return false;
+    }
     if (!getSecondarySalespeopleList().equals(other.getSecondarySalespeopleList())) return false;
     if (!getSecondaryTraffickersList().equals(other.getSecondaryTraffickersList())) return false;
     if (!getAppliedLabelsList().equals(other.getAppliedLabelsList())) return false;
@@ -2089,26 +2429,38 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
-    hash = (37 * hash) + ORDER_ID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getOrderId());
-    hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
-    hash = (53 * hash) + getDisplayName().hashCode();
-    hash = (37 * hash) + PROGRAMMATIC_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getProgrammatic());
-    hash = (37 * hash) + TRAFFICKER_FIELD_NUMBER;
-    hash = (53 * hash) + getTrafficker().hashCode();
+    if (hasOrderId()) {
+      hash = (37 * hash) + ORDER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getOrderId());
+    }
+    if (hasDisplayName()) {
+      hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+      hash = (53 * hash) + getDisplayName().hashCode();
+    }
+    if (hasProgrammatic()) {
+      hash = (37 * hash) + PROGRAMMATIC_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getProgrammatic());
+    }
+    if (hasTrafficker()) {
+      hash = (37 * hash) + TRAFFICKER_FIELD_NUMBER;
+      hash = (53 * hash) + getTrafficker().hashCode();
+    }
     if (getAdvertiserContactsCount() > 0) {
       hash = (37 * hash) + ADVERTISER_CONTACTS_FIELD_NUMBER;
       hash = (53 * hash) + getAdvertiserContactsList().hashCode();
     }
-    hash = (37 * hash) + ADVERTISER_FIELD_NUMBER;
-    hash = (53 * hash) + getAdvertiser().hashCode();
+    if (hasAdvertiser()) {
+      hash = (37 * hash) + ADVERTISER_FIELD_NUMBER;
+      hash = (53 * hash) + getAdvertiser().hashCode();
+    }
     if (getAgencyContactsCount() > 0) {
       hash = (37 * hash) + AGENCY_CONTACTS_FIELD_NUMBER;
       hash = (53 * hash) + getAgencyContactsList().hashCode();
     }
-    hash = (37 * hash) + AGENCY_FIELD_NUMBER;
-    hash = (53 * hash) + getAgency().hashCode();
+    if (hasAgency()) {
+      hash = (37 * hash) + AGENCY_FIELD_NUMBER;
+      hash = (53 * hash) + getAgency().hashCode();
+    }
     if (getAppliedTeamsCount() > 0) {
       hash = (37 * hash) + APPLIED_TEAMS_FIELD_NUMBER;
       hash = (53 * hash) + getAppliedTeamsList().hashCode();
@@ -2117,10 +2469,14 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + EFFECTIVE_TEAMS_FIELD_NUMBER;
       hash = (53 * hash) + getEffectiveTeamsList().hashCode();
     }
-    hash = (37 * hash) + CREATOR_FIELD_NUMBER;
-    hash = (53 * hash) + getCreator().hashCode();
-    hash = (37 * hash) + CURRENCY_CODE_FIELD_NUMBER;
-    hash = (53 * hash) + getCurrencyCode().hashCode();
+    if (hasCreator()) {
+      hash = (37 * hash) + CREATOR_FIELD_NUMBER;
+      hash = (53 * hash) + getCreator().hashCode();
+    }
+    if (hasCurrencyCode()) {
+      hash = (37 * hash) + CURRENCY_CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getCurrencyCode().hashCode();
+    }
     if (hasStartTime()) {
       hash = (37 * hash) + START_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getStartTime().hashCode();
@@ -2129,26 +2485,42 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + END_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getEndTime().hashCode();
     }
-    hash = (37 * hash) + UNLIMITED_END_TIME_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUnlimitedEndTime());
-    hash = (37 * hash) + EXTERNAL_ORDER_ID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getExternalOrderId());
-    hash = (37 * hash) + ARCHIVED_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getArchived());
-    hash = (37 * hash) + LAST_MODIFIED_BY_APP_FIELD_NUMBER;
-    hash = (53 * hash) + getLastModifiedByApp().hashCode();
+    if (hasUnlimitedEndTime()) {
+      hash = (37 * hash) + UNLIMITED_END_TIME_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUnlimitedEndTime());
+    }
+    if (hasExternalOrderId()) {
+      hash = (37 * hash) + EXTERNAL_ORDER_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getExternalOrderId();
+    }
+    if (hasArchived()) {
+      hash = (37 * hash) + ARCHIVED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getArchived());
+    }
+    if (hasLastModifiedByApp()) {
+      hash = (37 * hash) + LAST_MODIFIED_BY_APP_FIELD_NUMBER;
+      hash = (53 * hash) + getLastModifiedByApp().hashCode();
+    }
     if (hasUpdateTime()) {
       hash = (37 * hash) + UPDATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getUpdateTime().hashCode();
     }
-    hash = (37 * hash) + NOTES_FIELD_NUMBER;
-    hash = (53 * hash) + getNotes().hashCode();
-    hash = (37 * hash) + PO_NUMBER_FIELD_NUMBER;
-    hash = (53 * hash) + getPoNumber().hashCode();
-    hash = (37 * hash) + STATUS_FIELD_NUMBER;
-    hash = (53 * hash) + status_;
-    hash = (37 * hash) + SALESPERSON_FIELD_NUMBER;
-    hash = (53 * hash) + getSalesperson().hashCode();
+    if (hasNotes()) {
+      hash = (37 * hash) + NOTES_FIELD_NUMBER;
+      hash = (53 * hash) + getNotes().hashCode();
+    }
+    if (hasPoNumber()) {
+      hash = (37 * hash) + PO_NUMBER_FIELD_NUMBER;
+      hash = (53 * hash) + getPoNumber().hashCode();
+    }
+    if (hasStatus()) {
+      hash = (37 * hash) + STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + status_;
+    }
+    if (hasSalesperson()) {
+      hash = (37 * hash) + SALESPERSON_FIELD_NUMBER;
+      hash = (53 * hash) + getSalesperson().hashCode();
+    }
     if (getSecondarySalespeopleCount() > 0) {
       hash = (37 * hash) + SECONDARY_SALESPEOPLE_FIELD_NUMBER;
       hash = (53 * hash) + getSecondarySalespeopleList().hashCode();
@@ -2346,7 +2718,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         endTimeBuilder_ = null;
       }
       unlimitedEndTime_ = false;
-      externalOrderId_ = 0L;
+      externalOrderId_ = 0;
       archived_ = false;
       lastModifiedByApp_ = "";
       updateTime_ = null;
@@ -2450,17 +2822,22 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.name_ = name_;
       }
+      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.orderId_ = orderId_;
+        to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.displayName_ = displayName_;
+        to_bitField0_ |= 0x00000002;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.programmatic_ = programmatic_;
+        to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.trafficker_ = trafficker_;
+        to_bitField0_ |= 0x00000008;
       }
       if (((from_bitField0_ & 0x00000020) != 0)) {
         advertiserContacts_.makeImmutable();
@@ -2468,6 +2845,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.advertiser_ = advertiser_;
+        to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         agencyContacts_.makeImmutable();
@@ -2475,6 +2853,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000100) != 0)) {
         result.agency_ = agency_;
+        to_bitField0_ |= 0x00000020;
       }
       if (((from_bitField0_ & 0x00000200) != 0)) {
         appliedTeams_.makeImmutable();
@@ -2486,46 +2865,55 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.creator_ = creator_;
+        to_bitField0_ |= 0x00000040;
       }
       if (((from_bitField0_ & 0x00001000) != 0)) {
         result.currencyCode_ = currencyCode_;
+        to_bitField0_ |= 0x00000080;
       }
-      int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00002000) != 0)) {
         result.startTime_ = startTimeBuilder_ == null ? startTime_ : startTimeBuilder_.build();
-        to_bitField0_ |= 0x00000001;
+        to_bitField0_ |= 0x00000100;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
         result.endTime_ = endTimeBuilder_ == null ? endTime_ : endTimeBuilder_.build();
-        to_bitField0_ |= 0x00000002;
+        to_bitField0_ |= 0x00000200;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
         result.unlimitedEndTime_ = unlimitedEndTime_;
+        to_bitField0_ |= 0x00000400;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
         result.externalOrderId_ = externalOrderId_;
+        to_bitField0_ |= 0x00000800;
       }
       if (((from_bitField0_ & 0x00020000) != 0)) {
         result.archived_ = archived_;
+        to_bitField0_ |= 0x00001000;
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
         result.lastModifiedByApp_ = lastModifiedByApp_;
+        to_bitField0_ |= 0x00002000;
       }
       if (((from_bitField0_ & 0x00080000) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
-        to_bitField0_ |= 0x00000004;
+        to_bitField0_ |= 0x00004000;
       }
       if (((from_bitField0_ & 0x00100000) != 0)) {
         result.notes_ = notes_;
+        to_bitField0_ |= 0x00008000;
       }
       if (((from_bitField0_ & 0x00200000) != 0)) {
         result.poNumber_ = poNumber_;
+        to_bitField0_ |= 0x00010000;
       }
       if (((from_bitField0_ & 0x00400000) != 0)) {
         result.status_ = status_;
+        to_bitField0_ |= 0x00020000;
       }
       if (((from_bitField0_ & 0x00800000) != 0)) {
         result.salesperson_ = salesperson_;
+        to_bitField0_ |= 0x00040000;
       }
       if (((from_bitField0_ & 0x01000000) != 0)) {
         secondarySalespeople_.makeImmutable();
@@ -2588,18 +2976,18 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000001;
         onChanged();
       }
-      if (other.getOrderId() != 0L) {
+      if (other.hasOrderId()) {
         setOrderId(other.getOrderId());
       }
-      if (!other.getDisplayName().isEmpty()) {
+      if (other.hasDisplayName()) {
         displayName_ = other.displayName_;
         bitField0_ |= 0x00000004;
         onChanged();
       }
-      if (other.getProgrammatic() != false) {
+      if (other.hasProgrammatic()) {
         setProgrammatic(other.getProgrammatic());
       }
-      if (!other.getTrafficker().isEmpty()) {
+      if (other.hasTrafficker()) {
         trafficker_ = other.trafficker_;
         bitField0_ |= 0x00000010;
         onChanged();
@@ -2614,7 +3002,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         }
         onChanged();
       }
-      if (!other.getAdvertiser().isEmpty()) {
+      if (other.hasAdvertiser()) {
         advertiser_ = other.advertiser_;
         bitField0_ |= 0x00000040;
         onChanged();
@@ -2629,7 +3017,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         }
         onChanged();
       }
-      if (!other.getAgency().isEmpty()) {
+      if (other.hasAgency()) {
         agency_ = other.agency_;
         bitField0_ |= 0x00000100;
         onChanged();
@@ -2654,12 +3042,12 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
         }
         onChanged();
       }
-      if (!other.getCreator().isEmpty()) {
+      if (other.hasCreator()) {
         creator_ = other.creator_;
         bitField0_ |= 0x00000800;
         onChanged();
       }
-      if (!other.getCurrencyCode().isEmpty()) {
+      if (other.hasCurrencyCode()) {
         currencyCode_ = other.currencyCode_;
         bitField0_ |= 0x00001000;
         onChanged();
@@ -2670,16 +3058,16 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       if (other.hasEndTime()) {
         mergeEndTime(other.getEndTime());
       }
-      if (other.getUnlimitedEndTime() != false) {
+      if (other.hasUnlimitedEndTime()) {
         setUnlimitedEndTime(other.getUnlimitedEndTime());
       }
-      if (other.getExternalOrderId() != 0L) {
+      if (other.hasExternalOrderId()) {
         setExternalOrderId(other.getExternalOrderId());
       }
-      if (other.getArchived() != false) {
+      if (other.hasArchived()) {
         setArchived(other.getArchived());
       }
-      if (!other.getLastModifiedByApp().isEmpty()) {
+      if (other.hasLastModifiedByApp()) {
         lastModifiedByApp_ = other.lastModifiedByApp_;
         bitField0_ |= 0x00040000;
         onChanged();
@@ -2687,20 +3075,20 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       if (other.hasUpdateTime()) {
         mergeUpdateTime(other.getUpdateTime());
       }
-      if (!other.getNotes().isEmpty()) {
+      if (other.hasNotes()) {
         notes_ = other.notes_;
         bitField0_ |= 0x00100000;
         onChanged();
       }
-      if (!other.getPoNumber().isEmpty()) {
+      if (other.hasPoNumber()) {
         poNumber_ = other.poNumber_;
         bitField0_ |= 0x00200000;
         onChanged();
       }
-      if (other.status_ != 0) {
-        setStatusValue(other.getStatusValue());
+      if (other.hasStatus()) {
+        setStatus(other.getStatus());
       }
-      if (!other.getSalesperson().isEmpty()) {
+      if (other.hasSalesperson()) {
         salesperson_ = other.salesperson_;
         bitField0_ |= 0x00800000;
         onChanged();
@@ -2909,7 +3297,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
               } // case 98
             case 104:
               {
-                externalOrderId_ = input.readInt64();
+                externalOrderId_ = input.readInt32();
                 bitField0_ |= 0x00010000;
                 break;
               } // case 104
@@ -3177,7 +3565,23 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * Output only. Order ID.
      * </pre>
      *
-     * <code>int64 order_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 order_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the orderId field is set.
+     */
+    @java.lang.Override
+    public boolean hasOrderId() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Order ID.
+     * </pre>
+     *
+     * <code>optional int64 order_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The orderId.
      */
@@ -3193,7 +3597,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * Output only. Order ID.
      * </pre>
      *
-     * <code>int64 order_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 order_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The orderId to set.
      * @return This builder for chaining.
@@ -3213,7 +3617,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * Output only. Order ID.
      * </pre>
      *
-     * <code>int64 order_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional int64 order_id = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -3234,7 +3638,23 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * of 255 characters.
      * </pre>
      *
-     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return Whether the displayName field is set.
+     */
+    public boolean hasDisplayName() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The display name of the Order.  This value has a maximum length
+     * of 255 characters.
+     * </pre>
+     *
+     * <code>optional string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The displayName.
      */
@@ -3258,7 +3678,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * of 255 characters.
      * </pre>
      *
-     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for displayName.
      */
@@ -3282,7 +3702,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * of 255 characters.
      * </pre>
      *
-     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The displayName to set.
      * @return This builder for chaining.
@@ -3305,7 +3725,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * of 255 characters.
      * </pre>
      *
-     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -3324,7 +3744,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * of 255 characters.
      * </pre>
      *
-     * <code>string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>optional string display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for displayName to set.
      * @return This builder for chaining.
@@ -3349,7 +3769,23 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * Optional. Specifies whether or not the Order is a programmatic order.
      * </pre>
      *
-     * <code>bool programmatic = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional bool programmatic = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the programmatic field is set.
+     */
+    @java.lang.Override
+    public boolean hasProgrammatic() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies whether or not the Order is a programmatic order.
+     * </pre>
+     *
+     * <code>optional bool programmatic = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The programmatic.
      */
@@ -3365,7 +3801,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * Optional. Specifies whether or not the Order is a programmatic order.
      * </pre>
      *
-     * <code>bool programmatic = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional bool programmatic = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The programmatic to set.
      * @return This builder for chaining.
@@ -3385,7 +3821,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * Optional. Specifies whether or not the Order is a programmatic order.
      * </pre>
      *
-     * <code>bool programmatic = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional bool programmatic = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -3407,7 +3843,25 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string trafficker = 23 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * optional string trafficker = 23 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return Whether the trafficker field is set.
+     */
+    public boolean hasTrafficker() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The resource name of the User responsible for trafficking the
+     * Order. Format: "networks/{network_code}/users/{user_id}"
+     * </pre>
+     *
+     * <code>
+     * optional string trafficker = 23 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The trafficker.
@@ -3433,7 +3887,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string trafficker = 23 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * optional string trafficker = 23 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for trafficker.
@@ -3459,7 +3913,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string trafficker = 23 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * optional string trafficker = 23 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The trafficker to set.
@@ -3484,7 +3938,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string trafficker = 23 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * optional string trafficker = 23 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
@@ -3505,7 +3959,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string trafficker = 23 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * optional string trafficker = 23 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The bytes for trafficker to set.
@@ -3744,7 +4198,26 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string advertiser = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * optional string advertiser = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return Whether the advertiser field is set.
+     */
+    public boolean hasAdvertiser() {
+      return ((bitField0_ & 0x00000040) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The resource name of the Company, which is of type
+     * Company.Type.ADVERTISER, to which this order belongs. Format:
+     * "networks/{network_code}/companies/{company_id}"
+     * </pre>
+     *
+     * <code>
+     * optional string advertiser = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The advertiser.
@@ -3771,7 +4244,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string advertiser = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * optional string advertiser = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for advertiser.
@@ -3798,7 +4271,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string advertiser = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * optional string advertiser = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The advertiser to set.
@@ -3824,7 +4297,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string advertiser = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * optional string advertiser = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
@@ -3846,7 +4319,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string advertiser = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
+     * optional string advertiser = 6 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The bytes for advertiser to set.
@@ -4085,7 +4558,26 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string agency = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * optional string agency = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return Whether the agency field is set.
+     */
+    public boolean hasAgency() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of the Company, which is of type
+     * Company.Type.AGENCY, with which this order is associated. Format:
+     * "networks/{network_code}/companies/{company_id}"
+     * </pre>
+     *
+     * <code>
+     * optional string agency = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The agency.
@@ -4112,7 +4604,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string agency = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * optional string agency = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for agency.
@@ -4139,7 +4631,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string agency = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * optional string agency = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The agency to set.
@@ -4165,7 +4657,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string agency = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * optional string agency = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
@@ -4187,7 +4679,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string agency = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * optional string agency = 8 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The bytes for agency to set.
@@ -4636,7 +5128,26 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string creator = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * optional string creator = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return Whether the creator field is set.
+     */
+    public boolean hasCreator() {
+      return ((bitField0_ & 0x00000800) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The resource name of the User who created the Order on behalf
+     * of the advertiser. This value is assigned by Google. Format:
+     * "networks/{network_code}/users/{user_id}"
+     * </pre>
+     *
+     * <code>
+     * optional string creator = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The creator.
@@ -4663,7 +5174,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string creator = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * optional string creator = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for creator.
@@ -4690,7 +5201,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string creator = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * optional string creator = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The creator to set.
@@ -4716,7 +5227,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string creator = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * optional string creator = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
@@ -4738,7 +5249,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string creator = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * optional string creator = 10 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The bytes for creator to set.
@@ -4765,7 +5276,23 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * the Order. This value is the network's currency code.
      * </pre>
      *
-     * <code>string currency_code = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string currency_code = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the currencyCode field is set.
+     */
+    public boolean hasCurrencyCode() {
+      return ((bitField0_ & 0x00001000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The ISO 4217 3-letter currency code for the currency used by
+     * the Order. This value is the network's currency code.
+     * </pre>
+     *
+     * <code>optional string currency_code = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The currencyCode.
      */
@@ -4789,7 +5316,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * the Order. This value is the network's currency code.
      * </pre>
      *
-     * <code>string currency_code = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string currency_code = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for currencyCode.
      */
@@ -4813,7 +5340,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * the Order. This value is the network's currency code.
      * </pre>
      *
-     * <code>string currency_code = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string currency_code = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The currencyCode to set.
      * @return This builder for chaining.
@@ -4836,7 +5363,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * the Order. This value is the network's currency code.
      * </pre>
      *
-     * <code>string currency_code = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string currency_code = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -4855,7 +5382,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * the Order. This value is the network's currency code.
      * </pre>
      *
-     * <code>string currency_code = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string currency_code = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for currencyCode to set.
      * @return This builder for chaining.
@@ -4888,7 +5415,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp start_time = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.protobuf.Timestamp start_time = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return Whether the startTime field is set.
@@ -4907,7 +5434,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp start_time = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.protobuf.Timestamp start_time = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The startTime.
@@ -4930,7 +5457,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp start_time = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.protobuf.Timestamp start_time = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setStartTime(com.google.protobuf.Timestamp value) {
@@ -4957,7 +5484,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp start_time = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.protobuf.Timestamp start_time = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -4981,7 +5508,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp start_time = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.protobuf.Timestamp start_time = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder mergeStartTime(com.google.protobuf.Timestamp value) {
@@ -5013,7 +5540,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp start_time = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.protobuf.Timestamp start_time = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder clearStartTime() {
@@ -5037,7 +5564,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp start_time = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.protobuf.Timestamp start_time = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
@@ -5056,7 +5583,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp start_time = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.protobuf.Timestamp start_time = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder() {
@@ -5077,7 +5604,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp start_time = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.protobuf.Timestamp start_time = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -5113,7 +5640,8 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * order that has the latest LineItem.end_time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * optional .google.protobuf.Timestamp end_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return Whether the endTime field is set.
@@ -5131,7 +5659,8 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * order that has the latest LineItem.end_time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * optional .google.protobuf.Timestamp end_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The endTime.
@@ -5153,7 +5682,8 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * order that has the latest LineItem.end_time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * optional .google.protobuf.Timestamp end_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setEndTime(com.google.protobuf.Timestamp value) {
@@ -5179,7 +5709,8 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * order that has the latest LineItem.end_time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * optional .google.protobuf.Timestamp end_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -5202,7 +5733,8 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * order that has the latest LineItem.end_time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * optional .google.protobuf.Timestamp end_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder mergeEndTime(com.google.protobuf.Timestamp value) {
@@ -5233,7 +5765,8 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * order that has the latest LineItem.end_time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * optional .google.protobuf.Timestamp end_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder clearEndTime() {
@@ -5256,7 +5789,8 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * order that has the latest LineItem.end_time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * optional .google.protobuf.Timestamp end_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
@@ -5274,7 +5808,8 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * order that has the latest LineItem.end_time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * optional .google.protobuf.Timestamp end_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder() {
@@ -5294,7 +5829,8 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * order that has the latest LineItem.end_time.
      * </pre>
      *
-     * <code>.google.protobuf.Timestamp end_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * <code>
+     * optional .google.protobuf.Timestamp end_time = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -5323,7 +5859,25 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * Output only. Indicates whether or not this Order has an end time.
      * </pre>
      *
-     * <code>bool unlimited_end_time = 45 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool unlimited_end_time = 45 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the unlimitedEndTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasUnlimitedEndTime() {
+      return ((bitField0_ & 0x00008000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether or not this Order has an end time.
+     * </pre>
+     *
+     * <code>optional bool unlimited_end_time = 45 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The unlimitedEndTime.
      */
@@ -5339,7 +5893,8 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * Output only. Indicates whether or not this Order has an end time.
      * </pre>
      *
-     * <code>bool unlimited_end_time = 45 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool unlimited_end_time = 45 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The unlimitedEndTime to set.
      * @return This builder for chaining.
@@ -5359,7 +5914,8 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * Output only. Indicates whether or not this Order has an end time.
      * </pre>
      *
-     * <code>bool unlimited_end_time = 45 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool unlimited_end_time = 45 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -5370,7 +5926,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private long externalOrderId_;
+    private int externalOrderId_;
 
     /**
      *
@@ -5380,12 +5936,29 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * key to an external system.
      * </pre>
      *
-     * <code>int64 external_order_id = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional int32 external_order_id = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the externalOrderId field is set.
+     */
+    @java.lang.Override
+    public boolean hasExternalOrderId() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. An arbitrary ID to associate to the Order, which can be used as a
+     * key to an external system.
+     * </pre>
+     *
+     * <code>optional int32 external_order_id = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The externalOrderId.
      */
     @java.lang.Override
-    public long getExternalOrderId() {
+    public int getExternalOrderId() {
       return externalOrderId_;
     }
 
@@ -5397,12 +5970,12 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * key to an external system.
      * </pre>
      *
-     * <code>int64 external_order_id = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional int32 external_order_id = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The externalOrderId to set.
      * @return This builder for chaining.
      */
-    public Builder setExternalOrderId(long value) {
+    public Builder setExternalOrderId(int value) {
 
       externalOrderId_ = value;
       bitField0_ |= 0x00010000;
@@ -5418,13 +5991,13 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * key to an external system.
      * </pre>
      *
-     * <code>int64 external_order_id = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional int32 external_order_id = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearExternalOrderId() {
       bitField0_ = (bitField0_ & ~0x00010000);
-      externalOrderId_ = 0L;
+      externalOrderId_ = 0;
       onChanged();
       return this;
     }
@@ -5438,7 +6011,23 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * Output only. The archival status of the Order.
      * </pre>
      *
-     * <code>bool archived = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool archived = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return Whether the archived field is set.
+     */
+    @java.lang.Override
+    public boolean hasArchived() {
+      return ((bitField0_ & 0x00020000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The archival status of the Order.
+     * </pre>
+     *
+     * <code>optional bool archived = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The archived.
      */
@@ -5454,7 +6043,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * Output only. The archival status of the Order.
      * </pre>
      *
-     * <code>bool archived = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool archived = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The archived to set.
      * @return This builder for chaining.
@@ -5474,7 +6063,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * Output only. The archival status of the Order.
      * </pre>
      *
-     * <code>bool archived = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional bool archived = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -5495,7 +6084,25 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * assigned by Google.
      * </pre>
      *
-     * <code>string last_modified_by_app = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string last_modified_by_app = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the lastModifiedByApp field is set.
+     */
+    public boolean hasLastModifiedByApp() {
+      return ((bitField0_ & 0x00040000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The application which modified this order. This attribute is
+     * assigned by Google.
+     * </pre>
+     *
+     * <code>optional string last_modified_by_app = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The lastModifiedByApp.
      */
@@ -5519,7 +6126,8 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * assigned by Google.
      * </pre>
      *
-     * <code>string last_modified_by_app = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string last_modified_by_app = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The bytes for lastModifiedByApp.
      */
@@ -5543,7 +6151,8 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * assigned by Google.
      * </pre>
      *
-     * <code>string last_modified_by_app = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string last_modified_by_app = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The lastModifiedByApp to set.
      * @return This builder for chaining.
@@ -5566,7 +6175,8 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * assigned by Google.
      * </pre>
      *
-     * <code>string last_modified_by_app = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string last_modified_by_app = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -5585,7 +6195,8 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * assigned by Google.
      * </pre>
      *
-     * <code>string last_modified_by_app = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>optional string last_modified_by_app = 15 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The bytes for lastModifiedByApp to set.
      * @return This builder for chaining.
@@ -5616,7 +6227,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp update_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.protobuf.Timestamp update_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return Whether the updateTime field is set.
@@ -5633,7 +6244,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp update_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.protobuf.Timestamp update_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The updateTime.
@@ -5656,7 +6267,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp update_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.protobuf.Timestamp update_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setUpdateTime(com.google.protobuf.Timestamp value) {
@@ -5681,7 +6292,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp update_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.protobuf.Timestamp update_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -5703,7 +6314,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp update_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.protobuf.Timestamp update_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
@@ -5733,7 +6344,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp update_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.protobuf.Timestamp update_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder clearUpdateTime() {
@@ -5755,7 +6366,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp update_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.protobuf.Timestamp update_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
@@ -5772,7 +6383,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp update_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.protobuf.Timestamp update_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder() {
@@ -5793,7 +6404,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp update_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.protobuf.Timestamp update_time = 16 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -5823,7 +6434,23 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * attribute has a maximum length of 65,535 characters.
      * </pre>
      *
-     * <code>string notes = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string notes = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the notes field is set.
+     */
+    public boolean hasNotes() {
+      return ((bitField0_ & 0x00100000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Provides any additional notes that may annotate the Order. This
+     * attribute has a maximum length of 65,535 characters.
+     * </pre>
+     *
+     * <code>optional string notes = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The notes.
      */
@@ -5847,7 +6474,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * attribute has a maximum length of 65,535 characters.
      * </pre>
      *
-     * <code>string notes = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string notes = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for notes.
      */
@@ -5871,7 +6498,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * attribute has a maximum length of 65,535 characters.
      * </pre>
      *
-     * <code>string notes = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string notes = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The notes to set.
      * @return This builder for chaining.
@@ -5894,7 +6521,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * attribute has a maximum length of 65,535 characters.
      * </pre>
      *
-     * <code>string notes = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string notes = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -5913,7 +6540,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * attribute has a maximum length of 65,535 characters.
      * </pre>
      *
-     * <code>string notes = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string notes = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for notes to set.
      * @return This builder for chaining.
@@ -5939,7 +6566,23 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * length of 63 characters.
      * </pre>
      *
-     * <code>string po_number = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string po_number = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the poNumber field is set.
+     */
+    public boolean hasPoNumber() {
+      return ((bitField0_ & 0x00200000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The purchase order number for the Order. This value has a maximum
+     * length of 63 characters.
+     * </pre>
+     *
+     * <code>optional string po_number = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The poNumber.
      */
@@ -5963,7 +6606,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * length of 63 characters.
      * </pre>
      *
-     * <code>string po_number = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string po_number = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for poNumber.
      */
@@ -5987,7 +6630,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * length of 63 characters.
      * </pre>
      *
-     * <code>string po_number = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string po_number = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The poNumber to set.
      * @return This builder for chaining.
@@ -6010,7 +6653,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * length of 63 characters.
      * </pre>
      *
-     * <code>string po_number = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string po_number = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -6029,7 +6672,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * length of 63 characters.
      * </pre>
      *
-     * <code>string po_number = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>optional string po_number = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for poNumber to set.
      * @return This builder for chaining.
@@ -6055,7 +6698,25 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.OrderStatusEnum.OrderStatus status = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.ads.admanager.v1.OrderStatusEnum.OrderStatus status = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the status field is set.
+     */
+    @java.lang.Override
+    public boolean hasStatus() {
+      return ((bitField0_ & 0x00400000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The status of the Order.
+     * </pre>
+     *
+     * <code>
+     * optional .google.ads.admanager.v1.OrderStatusEnum.OrderStatus status = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The enum numeric value on the wire for status.
@@ -6073,7 +6734,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.OrderStatusEnum.OrderStatus status = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.ads.admanager.v1.OrderStatusEnum.OrderStatus status = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param value The enum numeric value on the wire for status to set.
@@ -6094,7 +6755,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.OrderStatusEnum.OrderStatus status = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.ads.admanager.v1.OrderStatusEnum.OrderStatus status = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The status.
@@ -6116,7 +6777,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.OrderStatusEnum.OrderStatus status = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.ads.admanager.v1.OrderStatusEnum.OrderStatus status = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @param value The status to set.
@@ -6140,7 +6801,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * .google.ads.admanager.v1.OrderStatusEnum.OrderStatus status = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * optional .google.ads.admanager.v1.OrderStatusEnum.OrderStatus status = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return This builder for chaining.
@@ -6163,7 +6824,25 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string salesperson = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * optional string salesperson = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * </code>
+     *
+     * @return Whether the salesperson field is set.
+     */
+    public boolean hasSalesperson() {
+      return ((bitField0_ & 0x00800000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The resource name of the User responsible for the sales of the
+     * Order. Format: "networks/{network_code}/users/{user_id}"
+     * </pre>
+     *
+     * <code>
+     * optional string salesperson = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The salesperson.
@@ -6189,7 +6868,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string salesperson = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * optional string salesperson = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The bytes for salesperson.
@@ -6215,7 +6894,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string salesperson = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * optional string salesperson = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The salesperson to set.
@@ -6240,7 +6919,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string salesperson = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * optional string salesperson = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return This builder for chaining.
@@ -6261,7 +6940,7 @@ public final class Order extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * string salesperson = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
+     * optional string salesperson = 21 [(.google.api.field_behavior) = OPTIONAL, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param value The bytes for salesperson to set.

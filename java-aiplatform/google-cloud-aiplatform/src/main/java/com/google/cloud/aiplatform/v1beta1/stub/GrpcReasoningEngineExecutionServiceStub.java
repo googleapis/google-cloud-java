@@ -66,6 +66,7 @@ public class GrpcReasoningEngineExecutionServiceStub extends ReasoningEngineExec
                   ProtoUtils.marshaller(QueryReasoningEngineRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(QueryReasoningEngineResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StreamQueryReasoningEngineRequest, HttpBody>
@@ -77,6 +78,7 @@ public class GrpcReasoningEngineExecutionServiceStub extends ReasoningEngineExec
               .setRequestMarshaller(
                   ProtoUtils.marshaller(StreamQueryReasoningEngineRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(HttpBody.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -88,6 +90,7 @@ public class GrpcReasoningEngineExecutionServiceStub extends ReasoningEngineExec
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -96,6 +99,7 @@ public class GrpcReasoningEngineExecutionServiceStub extends ReasoningEngineExec
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -104,6 +108,7 @@ public class GrpcReasoningEngineExecutionServiceStub extends ReasoningEngineExec
           .setFullMethodName("google.iam.v1.IAMPolicy/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -112,6 +117,7 @@ public class GrpcReasoningEngineExecutionServiceStub extends ReasoningEngineExec
           .setFullMethodName("google.iam.v1.IAMPolicy/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -123,6 +129,7 @@ public class GrpcReasoningEngineExecutionServiceStub extends ReasoningEngineExec
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<QueryReasoningEngineRequest, QueryReasoningEngineResponse>

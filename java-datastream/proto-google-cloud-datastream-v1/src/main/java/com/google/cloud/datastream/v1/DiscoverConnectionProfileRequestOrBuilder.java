@@ -334,6 +334,80 @@ public interface DiscoverConnectionProfileRequestOrBuilder
    */
   com.google.cloud.datastream.v1.SqlServerRdbmsOrBuilder getSqlServerRdbmsOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Salesforce organization to enrich with child data objects and metadata.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SalesforceOrg salesforce_org = 104;</code>
+   *
+   * @return Whether the salesforceOrg field is set.
+   */
+  boolean hasSalesforceOrg();
+
+  /**
+   *
+   *
+   * <pre>
+   * Salesforce organization to enrich with child data objects and metadata.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SalesforceOrg salesforce_org = 104;</code>
+   *
+   * @return The salesforceOrg.
+   */
+  com.google.cloud.datastream.v1.SalesforceOrg getSalesforceOrg();
+
+  /**
+   *
+   *
+   * <pre>
+   * Salesforce organization to enrich with child data objects and metadata.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.SalesforceOrg salesforce_org = 104;</code>
+   */
+  com.google.cloud.datastream.v1.SalesforceOrgOrBuilder getSalesforceOrgOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * MongoDB cluster to enrich with child data objects and metadata.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.MongodbCluster mongodb_cluster = 105;</code>
+   *
+   * @return Whether the mongodbCluster field is set.
+   */
+  boolean hasMongodbCluster();
+
+  /**
+   *
+   *
+   * <pre>
+   * MongoDB cluster to enrich with child data objects and metadata.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.MongodbCluster mongodb_cluster = 105;</code>
+   *
+   * @return The mongodbCluster.
+   */
+  com.google.cloud.datastream.v1.MongodbCluster getMongodbCluster();
+
+  /**
+   *
+   *
+   * <pre>
+   * MongoDB cluster to enrich with child data objects and metadata.
+   * </pre>
+   *
+   * <code>.google.cloud.datastream.v1.MongodbCluster mongodb_cluster = 105;</code>
+   */
+  com.google.cloud.datastream.v1.MongodbClusterOrBuilder getMongodbClusterOrBuilder();
+
   com.google.cloud.datastream.v1.DiscoverConnectionProfileRequest.TargetCase getTargetCase();
 
   com.google.cloud.datastream.v1.DiscoverConnectionProfileRequest.HierarchyCase getHierarchyCase();

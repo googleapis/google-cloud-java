@@ -72,6 +72,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateParticipantRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Participant.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetParticipantRequest, Participant>
@@ -82,6 +83,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetParticipantRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Participant.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListParticipantsRequest, ListParticipantsResponse>
@@ -93,6 +95,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                   ProtoUtils.marshaller(ListParticipantsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListParticipantsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateParticipantRequest, Participant>
@@ -103,6 +106,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateParticipantRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Participant.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AnalyzeContentRequest, AnalyzeContentResponse>
@@ -114,6 +118,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                   ProtoUtils.marshaller(AnalyzeContentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(AnalyzeContentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -127,6 +132,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                   ProtoUtils.marshaller(StreamingAnalyzeContentRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(StreamingAnalyzeContentResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SuggestArticlesRequest, SuggestArticlesResponse>
@@ -138,6 +144,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                   ProtoUtils.marshaller(SuggestArticlesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SuggestArticlesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SuggestFaqAnswersRequest, SuggestFaqAnswersResponse>
@@ -149,6 +156,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                   ProtoUtils.marshaller(SuggestFaqAnswersRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SuggestFaqAnswersResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SuggestSmartRepliesRequest, SuggestSmartRepliesResponse>
@@ -160,6 +168,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                   ProtoUtils.marshaller(SuggestSmartRepliesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SuggestSmartRepliesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -173,6 +182,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                   ProtoUtils.marshaller(SuggestKnowledgeAssistRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SuggestKnowledgeAssistResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -184,6 +194,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -192,6 +203,7 @@ public class GrpcParticipantsStub extends ParticipantsStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CreateParticipantRequest, Participant> createParticipantCallable;

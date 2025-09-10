@@ -575,6 +575,43 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
      */
     com.google.cloud.datastream.v1.SalesforceOrgOrBuilder getSalesforceExcludedObjectsOrBuilder();
 
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB data source objects to avoid backfilling
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MongodbCluster mongodb_excluded_objects = 6;</code>
+     *
+     * @return Whether the mongodbExcludedObjects field is set.
+     */
+    boolean hasMongodbExcludedObjects();
+
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB data source objects to avoid backfilling
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MongodbCluster mongodb_excluded_objects = 6;</code>
+     *
+     * @return The mongodbExcludedObjects.
+     */
+    com.google.cloud.datastream.v1.MongodbCluster getMongodbExcludedObjects();
+
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB data source objects to avoid backfilling
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MongodbCluster mongodb_excluded_objects = 6;</code>
+     */
+    com.google.cloud.datastream.v1.MongodbClusterOrBuilder getMongodbExcludedObjectsOrBuilder();
+
     com.google.cloud.datastream.v1.Stream.BackfillAllStrategy.ExcludedObjectsCase
         getExcludedObjectsCase();
   }
@@ -637,6 +674,7 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       POSTGRESQL_EXCLUDED_OBJECTS(3),
       SQL_SERVER_EXCLUDED_OBJECTS(4),
       SALESFORCE_EXCLUDED_OBJECTS(5),
+      MONGODB_EXCLUDED_OBJECTS(6),
       EXCLUDEDOBJECTS_NOT_SET(0);
       private final int value;
 
@@ -666,6 +704,8 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
             return SQL_SERVER_EXCLUDED_OBJECTS;
           case 5:
             return SALESFORCE_EXCLUDED_OBJECTS;
+          case 6:
+            return MONGODB_EXCLUDED_OBJECTS;
           case 0:
             return EXCLUDEDOBJECTS_NOT_SET;
           default:
@@ -955,6 +995,61 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       return com.google.cloud.datastream.v1.SalesforceOrg.getDefaultInstance();
     }
 
+    public static final int MONGODB_EXCLUDED_OBJECTS_FIELD_NUMBER = 6;
+
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB data source objects to avoid backfilling
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MongodbCluster mongodb_excluded_objects = 6;</code>
+     *
+     * @return Whether the mongodbExcludedObjects field is set.
+     */
+    @java.lang.Override
+    public boolean hasMongodbExcludedObjects() {
+      return excludedObjectsCase_ == 6;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB data source objects to avoid backfilling
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MongodbCluster mongodb_excluded_objects = 6;</code>
+     *
+     * @return The mongodbExcludedObjects.
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.MongodbCluster getMongodbExcludedObjects() {
+      if (excludedObjectsCase_ == 6) {
+        return (com.google.cloud.datastream.v1.MongodbCluster) excludedObjects_;
+      }
+      return com.google.cloud.datastream.v1.MongodbCluster.getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * MongoDB data source objects to avoid backfilling
+     * </pre>
+     *
+     * <code>.google.cloud.datastream.v1.MongodbCluster mongodb_excluded_objects = 6;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.datastream.v1.MongodbClusterOrBuilder
+        getMongodbExcludedObjectsOrBuilder() {
+      if (excludedObjectsCase_ == 6) {
+        return (com.google.cloud.datastream.v1.MongodbCluster) excludedObjects_;
+      }
+      return com.google.cloud.datastream.v1.MongodbCluster.getDefaultInstance();
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -983,6 +1078,9 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
       }
       if (excludedObjectsCase_ == 5) {
         output.writeMessage(5, (com.google.cloud.datastream.v1.SalesforceOrg) excludedObjects_);
+      }
+      if (excludedObjectsCase_ == 6) {
+        output.writeMessage(6, (com.google.cloud.datastream.v1.MongodbCluster) excludedObjects_);
       }
       getUnknownFields().writeTo(output);
     }
@@ -1017,6 +1115,11 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 5, (com.google.cloud.datastream.v1.SalesforceOrg) excludedObjects_);
+      }
+      if (excludedObjectsCase_ == 6) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                6, (com.google.cloud.datastream.v1.MongodbCluster) excludedObjects_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1054,6 +1157,9 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
           if (!getSalesforceExcludedObjects().equals(other.getSalesforceExcludedObjects()))
             return false;
           break;
+        case 6:
+          if (!getMongodbExcludedObjects().equals(other.getMongodbExcludedObjects())) return false;
+          break;
         case 0:
         default:
       }
@@ -1088,6 +1194,10 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         case 5:
           hash = (37 * hash) + SALESFORCE_EXCLUDED_OBJECTS_FIELD_NUMBER;
           hash = (53 * hash) + getSalesforceExcludedObjects().hashCode();
+          break;
+        case 6:
+          hash = (37 * hash) + MONGODB_EXCLUDED_OBJECTS_FIELD_NUMBER;
+          hash = (53 * hash) + getMongodbExcludedObjects().hashCode();
           break;
         case 0:
         default:
@@ -1251,6 +1361,9 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         if (salesforceExcludedObjectsBuilder_ != null) {
           salesforceExcludedObjectsBuilder_.clear();
         }
+        if (mongodbExcludedObjectsBuilder_ != null) {
+          mongodbExcludedObjectsBuilder_.clear();
+        }
         excludedObjectsCase_ = 0;
         excludedObjects_ = null;
         return this;
@@ -1310,6 +1423,9 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         }
         if (excludedObjectsCase_ == 5 && salesforceExcludedObjectsBuilder_ != null) {
           result.excludedObjects_ = salesforceExcludedObjectsBuilder_.build();
+        }
+        if (excludedObjectsCase_ == 6 && mongodbExcludedObjectsBuilder_ != null) {
+          result.excludedObjects_ = mongodbExcludedObjectsBuilder_.build();
         }
       }
 
@@ -1387,6 +1503,11 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
               mergeSalesforceExcludedObjects(other.getSalesforceExcludedObjects());
               break;
             }
+          case MONGODB_EXCLUDED_OBJECTS:
+            {
+              mergeMongodbExcludedObjects(other.getMongodbExcludedObjects());
+              break;
+            }
           case EXCLUDEDOBJECTS_NOT_SET:
             {
               break;
@@ -1453,6 +1574,13 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
                   excludedObjectsCase_ = 5;
                   break;
                 } // case 42
+              case 50:
+                {
+                  input.readMessage(
+                      getMongodbExcludedObjectsFieldBuilder().getBuilder(), extensionRegistry);
+                  excludedObjectsCase_ = 6;
+                  break;
+                } // case 50
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2592,6 +2720,229 @@ public final class Stream extends com.google.protobuf.GeneratedMessageV3
         excludedObjectsCase_ = 5;
         onChanged();
         return salesforceExcludedObjectsBuilder_;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.datastream.v1.MongodbCluster,
+              com.google.cloud.datastream.v1.MongodbCluster.Builder,
+              com.google.cloud.datastream.v1.MongodbClusterOrBuilder>
+          mongodbExcludedObjectsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * MongoDB data source objects to avoid backfilling
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.MongodbCluster mongodb_excluded_objects = 6;</code>
+       *
+       * @return Whether the mongodbExcludedObjects field is set.
+       */
+      @java.lang.Override
+      public boolean hasMongodbExcludedObjects() {
+        return excludedObjectsCase_ == 6;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * MongoDB data source objects to avoid backfilling
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.MongodbCluster mongodb_excluded_objects = 6;</code>
+       *
+       * @return The mongodbExcludedObjects.
+       */
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.MongodbCluster getMongodbExcludedObjects() {
+        if (mongodbExcludedObjectsBuilder_ == null) {
+          if (excludedObjectsCase_ == 6) {
+            return (com.google.cloud.datastream.v1.MongodbCluster) excludedObjects_;
+          }
+          return com.google.cloud.datastream.v1.MongodbCluster.getDefaultInstance();
+        } else {
+          if (excludedObjectsCase_ == 6) {
+            return mongodbExcludedObjectsBuilder_.getMessage();
+          }
+          return com.google.cloud.datastream.v1.MongodbCluster.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * MongoDB data source objects to avoid backfilling
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.MongodbCluster mongodb_excluded_objects = 6;</code>
+       */
+      public Builder setMongodbExcludedObjects(
+          com.google.cloud.datastream.v1.MongodbCluster value) {
+        if (mongodbExcludedObjectsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          excludedObjects_ = value;
+          onChanged();
+        } else {
+          mongodbExcludedObjectsBuilder_.setMessage(value);
+        }
+        excludedObjectsCase_ = 6;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * MongoDB data source objects to avoid backfilling
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.MongodbCluster mongodb_excluded_objects = 6;</code>
+       */
+      public Builder setMongodbExcludedObjects(
+          com.google.cloud.datastream.v1.MongodbCluster.Builder builderForValue) {
+        if (mongodbExcludedObjectsBuilder_ == null) {
+          excludedObjects_ = builderForValue.build();
+          onChanged();
+        } else {
+          mongodbExcludedObjectsBuilder_.setMessage(builderForValue.build());
+        }
+        excludedObjectsCase_ = 6;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * MongoDB data source objects to avoid backfilling
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.MongodbCluster mongodb_excluded_objects = 6;</code>
+       */
+      public Builder mergeMongodbExcludedObjects(
+          com.google.cloud.datastream.v1.MongodbCluster value) {
+        if (mongodbExcludedObjectsBuilder_ == null) {
+          if (excludedObjectsCase_ == 6
+              && excludedObjects_
+                  != com.google.cloud.datastream.v1.MongodbCluster.getDefaultInstance()) {
+            excludedObjects_ =
+                com.google.cloud.datastream.v1.MongodbCluster.newBuilder(
+                        (com.google.cloud.datastream.v1.MongodbCluster) excludedObjects_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            excludedObjects_ = value;
+          }
+          onChanged();
+        } else {
+          if (excludedObjectsCase_ == 6) {
+            mongodbExcludedObjectsBuilder_.mergeFrom(value);
+          } else {
+            mongodbExcludedObjectsBuilder_.setMessage(value);
+          }
+        }
+        excludedObjectsCase_ = 6;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * MongoDB data source objects to avoid backfilling
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.MongodbCluster mongodb_excluded_objects = 6;</code>
+       */
+      public Builder clearMongodbExcludedObjects() {
+        if (mongodbExcludedObjectsBuilder_ == null) {
+          if (excludedObjectsCase_ == 6) {
+            excludedObjectsCase_ = 0;
+            excludedObjects_ = null;
+            onChanged();
+          }
+        } else {
+          if (excludedObjectsCase_ == 6) {
+            excludedObjectsCase_ = 0;
+            excludedObjects_ = null;
+          }
+          mongodbExcludedObjectsBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * MongoDB data source objects to avoid backfilling
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.MongodbCluster mongodb_excluded_objects = 6;</code>
+       */
+      public com.google.cloud.datastream.v1.MongodbCluster.Builder
+          getMongodbExcludedObjectsBuilder() {
+        return getMongodbExcludedObjectsFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * MongoDB data source objects to avoid backfilling
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.MongodbCluster mongodb_excluded_objects = 6;</code>
+       */
+      @java.lang.Override
+      public com.google.cloud.datastream.v1.MongodbClusterOrBuilder
+          getMongodbExcludedObjectsOrBuilder() {
+        if ((excludedObjectsCase_ == 6) && (mongodbExcludedObjectsBuilder_ != null)) {
+          return mongodbExcludedObjectsBuilder_.getMessageOrBuilder();
+        } else {
+          if (excludedObjectsCase_ == 6) {
+            return (com.google.cloud.datastream.v1.MongodbCluster) excludedObjects_;
+          }
+          return com.google.cloud.datastream.v1.MongodbCluster.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * MongoDB data source objects to avoid backfilling
+       * </pre>
+       *
+       * <code>.google.cloud.datastream.v1.MongodbCluster mongodb_excluded_objects = 6;</code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.datastream.v1.MongodbCluster,
+              com.google.cloud.datastream.v1.MongodbCluster.Builder,
+              com.google.cloud.datastream.v1.MongodbClusterOrBuilder>
+          getMongodbExcludedObjectsFieldBuilder() {
+        if (mongodbExcludedObjectsBuilder_ == null) {
+          if (!(excludedObjectsCase_ == 6)) {
+            excludedObjects_ = com.google.cloud.datastream.v1.MongodbCluster.getDefaultInstance();
+          }
+          mongodbExcludedObjectsBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.datastream.v1.MongodbCluster,
+                  com.google.cloud.datastream.v1.MongodbCluster.Builder,
+                  com.google.cloud.datastream.v1.MongodbClusterOrBuilder>(
+                  (com.google.cloud.datastream.v1.MongodbCluster) excludedObjects_,
+                  getParentForChildren(),
+                  isClean());
+          excludedObjects_ = null;
+        }
+        excludedObjectsCase_ = 6;
+        onChanged();
+        return mongodbExcludedObjectsBuilder_;
       }
 
       @java.lang.Override

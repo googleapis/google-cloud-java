@@ -44,6 +44,10 @@ public final class ServiceNetworkingProto {
       internal_static_google_cloud_aiplatform_v1beta1_PscInterfaceConfig_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_aiplatform_v1beta1_PscInterfaceConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_aiplatform_v1beta1_DnsPeeringConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_aiplatform_v1beta1_DnsPeeringConfig_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -53,31 +57,48 @@ public final class ServiceNetworkingProto {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n8google/cloud/aiplatform/v1beta1/servic"
-          + "e_networking.proto\022\037google.cloud.aiplatf"
-          + "orm.v1beta1\032\037google/api/field_behavior.p"
-          + "roto\032\031google/api/resource.proto\"D\n\023PSCAu"
-          + "tomationConfig\022\027\n\nproject_id\030\001 \001(\tB\003\340A\002\022"
-          + "\024\n\007network\030\002 \001(\tB\003\340A\002\"\272\001\n\033PrivateService"
-          + "ConnectConfig\022+\n\036enable_private_service_"
-          + "connect\030\001 \001(\010B\003\340A\002\022\031\n\021project_allowlist\030"
-          + "\002 \003(\t\0222\n%enable_secure_private_service_c"
-          + "onnect\030\004 \001(\010B\003\340A\001\022\037\n\022service_attachment\030"
-          + "\005 \001(\tB\003\340A\003\"S\n\025PscAutomatedEndpoints\022\022\n\np"
-          + "roject_id\030\001 \001(\t\022\017\n\007network\030\002 \001(\t\022\025\n\rmatc"
-          + "h_address\030\003 \001(\t\"b\n\022PscInterfaceConfig\022L\n"
-          + "\022network_attachment\030\001 \001(\tB0\340A\001\372A*\n(compu"
-          + "te.googleapis.com/NetworkAttachmentB\346\002\n#"
-          + "com.google.cloud.aiplatform.v1beta1B\026Ser"
-          + "viceNetworkingProtoP\001ZCcloud.google.com/"
-          + "go/aiplatform/apiv1beta1/aiplatformpb;ai"
-          + "platformpb\252\002\037Google.Cloud.AIPlatform.V1B"
-          + "eta1\312\002\037Google\\Cloud\\AIPlatform\\V1beta1\352\002"
-          + "\"Google::Cloud::AIPlatform::V1beta1\352Av\n("
-          + "compute.googleapis.com/NetworkAttachment"
-          + "\022Jprojects/{project}/regions/{region}/ne"
-          + "tworkAttachments/{networkattachment}b\006pr"
-          + "oto3"
+      "\n"
+          + "8google/cloud/aiplatform/v1beta1/service_networking.proto\022\037google.cloud.aiplatf"
+          + "orm.v1beta1\032\037google/api/field_behavior.proto\032\031google/api/resource.proto\"\340\001\n"
+          + "\023PSCAutomationConfig\022\027\n\n"
+          + "project_id\030\001 \001(\tB\003\340A\002\022\024\n"
+          + "\007network\030\002 \001(\tB\003\340A\002\022\027\n\n"
+          + "ip_address\030\003 \001(\tB\003\340A\003\022\034\n"
+          + "\017forwarding_rule\030\004 \001(\tB\003\340A\003\022G\n"
+          + "\005state\030\005"
+          + " \001(\01623.google.cloud.aiplatform.v1beta1.PSCAutomationStateB\003\340A\003\022\032\n\r"
+          + "error_message\030\006 \001(\tB\003\340A\003\"\225\002\n"
+          + "\033PrivateServiceConnectConfig\022+\n"
+          + "\036enable_private_service_connect\030\001 \001(\010B\003\340A\002\022\031\n"
+          + "\021project_allowlist\030\002 \003(\t\022Y\n"
+          + "\026psc_automation_configs\030\003 \003(\01324.goo"
+          + "gle.cloud.aiplatform.v1beta1.PSCAutomationConfigB\003\340A\001\0222\n"
+          + "%enable_secure_private_service_connect\030\004 \001(\010B\003\340A\001\022\037\n"
+          + "\022service_attachment\030\005 \001(\tB\003\340A\003\"S\n"
+          + "\025PscAutomatedEndpoints\022\022\n\n"
+          + "project_id\030\001 \001(\t\022\017\n"
+          + "\007network\030\002 \001(\t\022\025\n\r"
+          + "match_address\030\003 \001(\t\"\267\001\n"
+          + "\022PscInterfaceConfig\022L\n"
+          + "\022network_attachment\030\001 \001(\tB0\340A\001\372A*\n"
+          + "(compute.googleapis.com/NetworkAttachment\022S\n"
+          + "\023dns_peering_configs\030\002 \003(\01321.goog"
+          + "le.cloud.aiplatform.v1beta1.DnsPeeringConfigB\003\340A\001\"a\n"
+          + "\020DnsPeeringConfig\022\023\n"
+          + "\006domain\030\001 \001(\tB\003\340A\002\022\033\n"
+          + "\016target_project\030\002 \001(\tB\003\340A\002\022\033\n"
+          + "\016target_network\030\003 \001(\tB\003\340A\002*\200\001\n"
+          + "\022PSCAutomationState\022$\n"
+          + " PSC_AUTOMATION_STATE_UNSPECIFIED\020\000\022#\n"
+          + "\037PSC_AUTOMATION_STATE_SUCCESSFUL\020\001\022\037\n"
+          + "\033PSC_AUTOMATION_STATE_FAILED\020\002B\346\002\n"
+          + "#com.google.cloud.aiplatform.v1beta1B\026ServiceNetworkingProtoP\001ZCcloud.google."
+          + "com/go/aiplatform/apiv1beta1/aiplatformp"
+          + "b;aiplatformpb\252\002\037Google.Cloud.AIPlatform"
+          + ".V1Beta1\312\002\037Google\\Cloud\\AIPlatform\\V1bet"
+          + "a1\352\002\"Google::Cloud::AIPlatform::V1beta1\352Av\n"
+          + "(compute.googleapis.com/NetworkAttachment\022Jprojects/{project}/regions/{region"
+          + "}/networkAttachments/{networkattachment}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -92,7 +113,7 @@ public final class ServiceNetworkingProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_PSCAutomationConfig_descriptor,
             new java.lang.String[] {
-              "ProjectId", "Network",
+              "ProjectId", "Network", "IpAddress", "ForwardingRule", "State", "ErrorMessage",
             });
     internal_static_google_cloud_aiplatform_v1beta1_PrivateServiceConnectConfig_descriptor =
         getDescriptor().getMessageTypes().get(1);
@@ -102,6 +123,7 @@ public final class ServiceNetworkingProto {
             new java.lang.String[] {
               "EnablePrivateServiceConnect",
               "ProjectAllowlist",
+              "PscAutomationConfigs",
               "EnableSecurePrivateServiceConnect",
               "ServiceAttachment",
             });
@@ -119,7 +141,15 @@ public final class ServiceNetworkingProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_aiplatform_v1beta1_PscInterfaceConfig_descriptor,
             new java.lang.String[] {
-              "NetworkAttachment",
+              "NetworkAttachment", "DnsPeeringConfigs",
+            });
+    internal_static_google_cloud_aiplatform_v1beta1_DnsPeeringConfig_descriptor =
+        getDescriptor().getMessageTypes().get(4);
+    internal_static_google_cloud_aiplatform_v1beta1_DnsPeeringConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_aiplatform_v1beta1_DnsPeeringConfig_descriptor,
+            new java.lang.String[] {
+              "Domain", "TargetProject", "TargetNetwork",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

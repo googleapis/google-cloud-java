@@ -650,6 +650,68 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
         : translationConfig_;
   }
 
+  public static final int DENOISER_CONFIG_FIELD_NUMBER = 16;
+  private com.google.cloud.speech.v2.DenoiserConfig denoiserConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional denoiser config. May not be supported for all models
+   * and may have no effect.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v2.DenoiserConfig denoiser_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the denoiserConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasDenoiserConfig() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional denoiser config. May not be supported for all models
+   * and may have no effect.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v2.DenoiserConfig denoiser_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The denoiserConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.speech.v2.DenoiserConfig getDenoiserConfig() {
+    return denoiserConfig_ == null
+        ? com.google.cloud.speech.v2.DenoiserConfig.getDefaultInstance()
+        : denoiserConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Optional denoiser config. May not be supported for all models
+   * and may have no effect.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.speech.v2.DenoiserConfig denoiser_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.speech.v2.DenoiserConfigOrBuilder getDenoiserConfigOrBuilder() {
+    return denoiserConfig_ == null
+        ? com.google.cloud.speech.v2.DenoiserConfig.getDefaultInstance()
+        : denoiserConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -687,6 +749,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     }
     if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(15, getTranslationConfig());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(16, getDenoiserConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -732,6 +797,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getTranslationConfig());
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, getDenoiserConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -765,6 +833,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     if (hasTranslationConfig() != other.hasTranslationConfig()) return false;
     if (hasTranslationConfig()) {
       if (!getTranslationConfig().equals(other.getTranslationConfig())) return false;
+    }
+    if (hasDenoiserConfig() != other.hasDenoiserConfig()) return false;
+    if (hasDenoiserConfig()) {
+      if (!getDenoiserConfig().equals(other.getDenoiserConfig())) return false;
     }
     if (!getDecodingConfigCase().equals(other.getDecodingConfigCase())) return false;
     switch (decodingConfigCase_) {
@@ -809,6 +881,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
     if (hasTranslationConfig()) {
       hash = (37 * hash) + TRANSLATION_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getTranslationConfig().hashCode();
+    }
+    if (hasDenoiserConfig()) {
+      hash = (37 * hash) + DENOISER_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getDenoiserConfig().hashCode();
     }
     switch (decodingConfigCase_) {
       case 7:
@@ -968,6 +1044,7 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
         getAdaptationFieldBuilder();
         getTranscriptNormalizationFieldBuilder();
         getTranslationConfigFieldBuilder();
+        getDenoiserConfigFieldBuilder();
       }
     }
 
@@ -1002,6 +1079,11 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       if (translationConfigBuilder_ != null) {
         translationConfigBuilder_.dispose();
         translationConfigBuilder_ = null;
+      }
+      denoiserConfig_ = null;
+      if (denoiserConfigBuilder_ != null) {
+        denoiserConfigBuilder_.dispose();
+        denoiserConfigBuilder_ = null;
       }
       decodingConfigCase_ = 0;
       decodingConfig_ = null;
@@ -1071,6 +1153,11 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
                 ? translationConfig_
                 : translationConfigBuilder_.build();
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.denoiserConfig_ =
+            denoiserConfigBuilder_ == null ? denoiserConfig_ : denoiserConfigBuilder_.build();
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1157,6 +1244,9 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
       }
       if (other.hasTranslationConfig()) {
         mergeTranslationConfig(other.getTranslationConfig());
+      }
+      if (other.hasDenoiserConfig()) {
+        mergeDenoiserConfig(other.getDenoiserConfig());
       }
       switch (other.getDecodingConfigCase()) {
         case AUTO_DECODING_CONFIG:
@@ -1253,6 +1343,12 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
                 bitField0_ |= 0x00000080;
                 break;
               } // case 122
+            case 130:
+              {
+                input.readMessage(getDenoiserConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 130
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3040,6 +3136,228 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
         translationConfig_ = null;
       }
       return translationConfigBuilder_;
+    }
+
+    private com.google.cloud.speech.v2.DenoiserConfig denoiserConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.speech.v2.DenoiserConfig,
+            com.google.cloud.speech.v2.DenoiserConfig.Builder,
+            com.google.cloud.speech.v2.DenoiserConfigOrBuilder>
+        denoiserConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional denoiser config. May not be supported for all models
+     * and may have no effect.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v2.DenoiserConfig denoiser_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the denoiserConfig field is set.
+     */
+    public boolean hasDenoiserConfig() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional denoiser config. May not be supported for all models
+     * and may have no effect.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v2.DenoiserConfig denoiser_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The denoiserConfig.
+     */
+    public com.google.cloud.speech.v2.DenoiserConfig getDenoiserConfig() {
+      if (denoiserConfigBuilder_ == null) {
+        return denoiserConfig_ == null
+            ? com.google.cloud.speech.v2.DenoiserConfig.getDefaultInstance()
+            : denoiserConfig_;
+      } else {
+        return denoiserConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional denoiser config. May not be supported for all models
+     * and may have no effect.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v2.DenoiserConfig denoiser_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDenoiserConfig(com.google.cloud.speech.v2.DenoiserConfig value) {
+      if (denoiserConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        denoiserConfig_ = value;
+      } else {
+        denoiserConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional denoiser config. May not be supported for all models
+     * and may have no effect.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v2.DenoiserConfig denoiser_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setDenoiserConfig(
+        com.google.cloud.speech.v2.DenoiserConfig.Builder builderForValue) {
+      if (denoiserConfigBuilder_ == null) {
+        denoiserConfig_ = builderForValue.build();
+      } else {
+        denoiserConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional denoiser config. May not be supported for all models
+     * and may have no effect.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v2.DenoiserConfig denoiser_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeDenoiserConfig(com.google.cloud.speech.v2.DenoiserConfig value) {
+      if (denoiserConfigBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && denoiserConfig_ != null
+            && denoiserConfig_ != com.google.cloud.speech.v2.DenoiserConfig.getDefaultInstance()) {
+          getDenoiserConfigBuilder().mergeFrom(value);
+        } else {
+          denoiserConfig_ = value;
+        }
+      } else {
+        denoiserConfigBuilder_.mergeFrom(value);
+      }
+      if (denoiserConfig_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional denoiser config. May not be supported for all models
+     * and may have no effect.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v2.DenoiserConfig denoiser_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearDenoiserConfig() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      denoiserConfig_ = null;
+      if (denoiserConfigBuilder_ != null) {
+        denoiserConfigBuilder_.dispose();
+        denoiserConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional denoiser config. May not be supported for all models
+     * and may have no effect.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v2.DenoiserConfig denoiser_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.speech.v2.DenoiserConfig.Builder getDenoiserConfigBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return getDenoiserConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional denoiser config. May not be supported for all models
+     * and may have no effect.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v2.DenoiserConfig denoiser_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.speech.v2.DenoiserConfigOrBuilder getDenoiserConfigOrBuilder() {
+      if (denoiserConfigBuilder_ != null) {
+        return denoiserConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return denoiserConfig_ == null
+            ? com.google.cloud.speech.v2.DenoiserConfig.getDefaultInstance()
+            : denoiserConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Optional denoiser config. May not be supported for all models
+     * and may have no effect.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.speech.v2.DenoiserConfig denoiser_config = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.speech.v2.DenoiserConfig,
+            com.google.cloud.speech.v2.DenoiserConfig.Builder,
+            com.google.cloud.speech.v2.DenoiserConfigOrBuilder>
+        getDenoiserConfigFieldBuilder() {
+      if (denoiserConfigBuilder_ == null) {
+        denoiserConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.speech.v2.DenoiserConfig,
+                com.google.cloud.speech.v2.DenoiserConfig.Builder,
+                com.google.cloud.speech.v2.DenoiserConfigOrBuilder>(
+                getDenoiserConfig(), getParentForChildren(), isClean());
+        denoiserConfig_ = null;
+      }
+      return denoiserConfigBuilder_;
     }
 
     @java.lang.Override

@@ -59,6 +59,7 @@ public class GrpcOmnichannelSettingsServiceStub extends OmnichannelSettingsServi
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetOmnichannelSettingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(OmnichannelSetting.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -73,6 +74,7 @@ public class GrpcOmnichannelSettingsServiceStub extends OmnichannelSettingsServi
                   ProtoUtils.marshaller(ListOmnichannelSettingsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListOmnichannelSettingsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateOmnichannelSettingRequest, OmnichannelSetting>
@@ -84,6 +86,7 @@ public class GrpcOmnichannelSettingsServiceStub extends OmnichannelSettingsServi
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateOmnichannelSettingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(OmnichannelSetting.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateOmnichannelSettingRequest, OmnichannelSetting>
@@ -95,6 +98,7 @@ public class GrpcOmnichannelSettingsServiceStub extends OmnichannelSettingsServi
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateOmnichannelSettingRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(OmnichannelSetting.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -110,6 +114,7 @@ public class GrpcOmnichannelSettingsServiceStub extends OmnichannelSettingsServi
                   ProtoUtils.marshaller(RequestInventoryVerificationRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RequestInventoryVerificationResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetOmnichannelSettingRequest, OmnichannelSetting>

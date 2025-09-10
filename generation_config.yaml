@@ -1,6 +1,6 @@
-gapic_generator_version: 2.59.0
-googleapis_commitish: f1859b90227eb09ecd2fa85c96e89b60dbf688b5
-libraries_bom_version: 26.61.0
+gapic_generator_version: 2.62.0
+googleapis_commitish: b738e78ed63effb7d199ed2d61c9e03291b6077f
+libraries_bom_version: 26.66.0
 
 # the libraries are ordered with respect to library name, which is
 # java-{library.library_name} or java-{library.api-shortname} when
@@ -396,6 +396,8 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/bigquery/datapolicies/v1
   - proto_path: google/cloud/bigquery/datapolicies/v1beta1
+  - proto_path: google/cloud/bigquery/datapolicies/v2beta1
+  - proto_path: google/cloud/bigquery/datapolicies/v2
 
 - api_shortname: bigquerydatatransfer
   name_pretty: BigQuery Data Transfer Service
@@ -592,6 +594,26 @@ libraries:
   - proto_path: google/cloud/confidentialcomputing/v1
   - proto_path: google/cloud/confidentialcomputing/v1alpha1
 
+- api_shortname: configdelivery
+  name_pretty: Config Delivery API
+  product_documentation: 
+    https://cloud.google.com/kubernetes-engine/enterprise/config-sync/docs/concepts/fleet-packages
+  api_description: ConfigDelivery service manages the deployment of kubernetes configuration
+    to a fleet of kubernetes clusters.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-configdelivery/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-configdelivery
+  api_id: configdelivery.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  requires_billing: true
+  rest_documentation: 
+    https://cloud.google.com/kubernetes-engine/enterprise/config-sync/docs/reference/rest
+  GAPICs:
+  - proto_path: google/cloud/configdelivery/v1beta
+  - proto_path: google/cloud/configdelivery/v1
 - api_shortname: connectgateway
   name_pretty: Connect Gateway API
   product_documentation: 
@@ -1050,6 +1072,24 @@ libraries:
   requires_billing: true
   rpc_documentation: 
     https://cloud.google.com/distributed-cloud/edge/latest/docs/reference/hardware/rpc
+- api_shortname: geminidataanalytics
+  name_pretty: Data Analytics API with Gemini
+  product_documentation: https://cloud.google.com/gemini/docs/conversational-analytics-api/overview
+  api_description: Use Conversational Analytics API to build an artificial intelligence
+    (AI)-powered chat interface, or data agent, that answers questions about structured
+    data using natural language.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-geminidataanalytics/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-geminidataanalytics
+  api_id: geminidataanalytics.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/geminidataanalytics/v1beta
+  requires_billing: true
+  rpc_documentation: https://cloud.google.com/gemini/docs/conversational-analytics-api/reference
 - api_shortname: gke-backup
   name_pretty: Backup for GKE
   product_documentation: 'https://cloud.google.com/kubernetes-engine/docs/add-on/backup-for-gke/concepts/backup-for-gke '
@@ -1213,13 +1253,14 @@ libraries:
   api_description: Programatically manage your Merchant Issues
   client_documentation: 
     https://cloud.google.com/java/docs/reference/google-shopping-merchant-issue-resolution/latest/overview
-  release_level: preview
+  release_level: stable
   distribution_name: com.google.shopping:google-shopping-merchant-issue-resolution
   api_id: merchantapi.googleapis.com
   library_type: GAPIC_AUTO
   group_id: com.google.shopping
   cloud_api: false
   GAPICs:
+  - proto_path: google/shopping/merchant/issueresolution/v1
   - proto_path: google/shopping/merchant/issueresolution/v1beta
   library_name: java-shopping-merchant-issue-resolution
   requires_billing: true
@@ -1230,13 +1271,14 @@ libraries:
   api_description: Programmatically manage your Merchant Center Accounts
   client_documentation: 
     https://cloud.google.com/java/docs/reference/google-shopping-merchant-order-tracking/latest/overview
-  release_level: preview
+  release_level: stable
   distribution_name: com.google.shopping:google-shopping-merchant-order-tracking
   api_id: merchantapi.googleapis.com
   library_type: GAPIC_AUTO
   group_id: com.google.shopping
   cloud_api: false
   GAPICs:
+  - proto_path: google/shopping/merchant/ordertracking/v1
   - proto_path: google/shopping/merchant/ordertracking/v1beta
   library_name: java-shopping-merchant-order-tracking
   requires_billing: true
@@ -1282,6 +1324,22 @@ libraries:
   - proto_path: google/cloud/language/v1beta2
   - proto_path: google/cloud/language/v2
 
+- api_shortname: licensemanager
+  name_pretty: License Manager API
+  product_documentation: https://cloud.google.com/compute/docs/instances/windows/ms-licensing
+  api_description: License Manager is a tool to manage and track third-party licenses
+    on Google Cloud.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-licensemanager/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-licensemanager
+  api_id: licensemanager.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/licensemanager/v1
+  requires_billing: true
 - api_shortname: lifesciences
   name_pretty: Cloud Life Sciences
   product_documentation: https://cloud.google.com/life-sciences/docs
@@ -1308,6 +1366,23 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/lustre/v1
   requires_billing: true
+- api_shortname: maintenance
+  name_pretty: Maintenance API
+  product_documentation: https://cloud.google.com/unified-maintenance/docs/overview
+  api_description: The Maintenance API provides a centralized view of planned disruptive
+    maintenance events across supported Google Cloud products.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-maintenance/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-maintenance
+  api_id: maintenance.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/maintenance/api/v1beta
+  requires_billing: true
+  rpc_documentation: https://cloud.google.com/unified-maintenance/docs/reference/rpc
 - api_shortname: managedidentities
   name_pretty: Managed Service for Microsoft Active Directory
   product_documentation: https://cloud.google.com/managed-microsoft-ad/
@@ -1973,6 +2048,22 @@ libraries:
   GAPICs:
   - proto_path: google/cloud/run/v2
 
+- api_shortname: saasservicemgmt
+  name_pretty: SaaS Runtime API
+  product_documentation: https://cloud.google.com/saas-runtime/docs/overview
+  api_description: "Model, deploy, and operate your SaaS at scale.\t"
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-saasservicemgmt/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-saasservicemgmt
+  api_id: saasservicemgmt.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/saasplatform/saasservicemgmt/v1beta1
+  requires_billing: true
+  rpc_documentation: https://cloud.google.com/saas-runtime/docs/apis
 - api_shortname: cloudscheduler
   name_pretty: Google Cloud Scheduler
   product_documentation: https://cloud.google.com/scheduler/docs
@@ -2170,13 +2261,14 @@ libraries:
   api_description: Programmatically manage your Merchant Center accounts.
   client_documentation: 
     https://cloud.google.com/java/docs/reference/google-shopping-merchant-accounts/latest/overview
-  release_level: preview
+  release_level: stable
   distribution_name: com.google.shopping:google-shopping-merchant-accounts
   api_id: merchantapi.googleapis.com
   library_type: GAPIC_AUTO
   group_id: com.google.shopping
   cloud_api: false
   GAPICs:
+  - proto_path: google/shopping/merchant/accounts/v1
   - proto_path: google/shopping/merchant/accounts/v1beta
   library_name: shopping-merchant-accounts
   requires_billing: true
@@ -2186,13 +2278,14 @@ libraries:
   api_description: Programmatically manage your Merchant Center accounts.
   client_documentation: 
     https://cloud.google.com/java/docs/reference/google-shopping-merchant-conversions/latest/overview
-  release_level: preview
+  release_level: stable
   distribution_name: com.google.shopping:google-shopping-merchant-conversions
   api_id: shopping-merchant-conversions.googleapis.com
   library_type: GAPIC_AUTO
   group_id: com.google.shopping
   cloud_api: false
   GAPICs:
+  - proto_path: google/shopping/merchant/conversions/v1
   - proto_path: google/shopping/merchant/conversions/v1beta
   requires_billing: true
 
@@ -2202,13 +2295,14 @@ libraries:
   api_description: Programmatically manage your Merchant Center accounts.
   client_documentation: 
     https://cloud.google.com/java/docs/reference/google-shopping-merchant-datasources/latest/overview
-  release_level: preview
+  release_level: stable
   distribution_name: com.google.shopping:google-shopping-merchant-datasources
   api_id: merchantapi.googleapis.com
   library_type: GAPIC_AUTO
   group_id: com.google.shopping
   cloud_api: false
   GAPICs:
+  - proto_path: google/shopping/merchant/datasources/v1
   - proto_path: google/shopping/merchant/datasources/v1beta
   library_name: shopping-merchant-datasources
   requires_billing: true
@@ -2218,26 +2312,44 @@ libraries:
   api_description: Programmatically manage your Merchant Center accounts.
   library_name: shopping-merchant-inventories
   cloud_api: false
+  release_level: stable
   distribution_name: com.google.shopping:google-shopping-merchant-inventories
   GAPICs:
+  - proto_path: google/shopping/merchant/inventories/v1
   - proto_path: google/shopping/merchant/inventories/v1beta
-
 - api_shortname: shopping-merchant-lfp
   name_pretty: Merchant LFP API
   product_documentation: https://developers.google.com/merchant/api
   api_description: Programmatically manage your Merchant Center accounts.
   client_documentation: 
     https://cloud.google.com/java/docs/reference/google-shopping-merchant-lfp/latest/overview
-  release_level: preview
+  release_level: stable
   distribution_name: com.google.shopping:google-shopping-merchant-lfp
   api_id: shopping-merchant-lfp.googleapis.com
   library_type: GAPIC_AUTO
   group_id: com.google.shopping
   cloud_api: false
   GAPICs:
+  - proto_path: google/shopping/merchant/lfp/v1
   - proto_path: google/shopping/merchant/lfp/v1beta
   requires_billing: true
 
+- api_shortname: shopping-merchant-notifications
+  name_pretty: Merchant Notifications API
+  product_documentation: https://developers.google.com/merchant/api
+  api_description: Programmatically manage your Merchant Center accounts.
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-shopping-merchant-notifications/latest/overview
+  release_level: stable
+  distribution_name: com.google.shopping:google-shopping-merchant-notifications
+  api_id: shopping-merchant-notifications.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.shopping
+  cloud_api: false
+  GAPICs:
+  - proto_path: google/shopping/merchant/notifications/v1
+  - proto_path: google/shopping/merchant/notifications/v1beta
+  requires_billing: true
 - api_shortname: merchantapi
   name_pretty: Merchant API
   product_documentation: https://developers.google.com/merchant/api
@@ -2260,13 +2372,14 @@ libraries:
   api_description: Programmatically manage your Merchant Center accounts.
   client_documentation: 
     https://cloud.google.com/java/docs/reference/google-shopping-merchant-products/latest/overview
-  release_level: preview
+  release_level: stable
   distribution_name: com.google.shopping:google-shopping-merchant-products
   api_id: merchantapi.googleapis.com
   library_type: GAPIC_AUTO
   group_id: com.google.shopping
   cloud_api: false
   GAPICs:
+  - proto_path: google/shopping/merchant/products/v1
   - proto_path: google/shopping/merchant/products/v1beta
   library_name: shopping-merchant-products
 - api_shortname: merchantapi
@@ -2275,13 +2388,14 @@ libraries:
   api_description: Programmatically manage your Merchant Center accounts.
   client_documentation: 
     https://cloud.google.com/java/docs/reference/google-shopping-merchant-promotions/latest/overview
-  release_level: preview
+  release_level: stable
   distribution_name: com.google.shopping:google-shopping-merchant-promotions
   api_id: merchantapi.googleapis.com
   library_type: GAPIC_AUTO
   group_id: com.google.shopping
   cloud_api: false
   GAPICs:
+  - proto_path: google/shopping/merchant/promotions/v1
   - proto_path: google/shopping/merchant/promotions/v1beta
   library_name: shopping-merchant-promotions
   requires_billing: true
@@ -2291,13 +2405,14 @@ libraries:
   api_description: Programmatically manage your Merchant Center accounts.
   client_documentation: 
     https://cloud.google.com/java/docs/reference/google-shopping-merchant-quota/latest/overview
-  release_level: preview
+  release_level: stable
   distribution_name: com.google.shopping:google-shopping-merchant-quota
   api_id: shopping-merchant-quota.googleapis.com
   library_type: GAPIC_AUTO
   group_id: com.google.shopping
   cloud_api: false
   GAPICs:
+  - proto_path: google/shopping/merchant/quota/v1
   - proto_path: google/shopping/merchant/quota/v1beta
   requires_billing: true
 
@@ -2307,9 +2422,12 @@ libraries:
   api_description: Programmatically manage your Merchant Center accounts.
   library_name: shopping-merchant-reports
   cloud_api: false
+  release_level: stable
   distribution_name: com.google.shopping:google-shopping-merchant-reports
   GAPICs:
+  - proto_path: google/shopping/merchant/reports/v1
   - proto_path: google/shopping/merchant/reports/v1beta
+  - proto_path: google/shopping/merchant/reports/v1alpha
 
 - api_shortname: merchantapi
   name_pretty: Merchant API
@@ -2697,6 +2815,7 @@ libraries:
   rest_documentation: https://developers.google.com/workspace/events/reference/rest
   GAPICs:
   - proto_path: google/apps/events/subscriptions/v1
+  - proto_path: google/apps/events/subscriptions/v1beta
 
 - api_shortname: workstations
   name_pretty: Cloud Workstations

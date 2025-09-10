@@ -28,8 +28,9 @@ public interface SupervisedTuningSpecOrBuilder
    *
    *
    * <pre>
-   * Required. Cloud Storage path to file containing training dataset for
-   * tuning. The dataset must be formatted as a JSONL file.
+   * Required. Training dataset used for tuning. The dataset can be specified as
+   * either a Cloud Storage path to a JSONL file or as the resource name of a
+   * Vertex Multimodal Dataset.
    * </pre>
    *
    * <code>string training_dataset_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -42,8 +43,9 @@ public interface SupervisedTuningSpecOrBuilder
    *
    *
    * <pre>
-   * Required. Cloud Storage path to file containing training dataset for
-   * tuning. The dataset must be formatted as a JSONL file.
+   * Required. Training dataset used for tuning. The dataset can be specified as
+   * either a Cloud Storage path to a JSONL file or as the resource name of a
+   * Vertex Multimodal Dataset.
    * </pre>
    *
    * <code>string training_dataset_uri = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -56,8 +58,9 @@ public interface SupervisedTuningSpecOrBuilder
    *
    *
    * <pre>
-   * Optional. Cloud Storage path to file containing validation dataset for
-   * tuning. The dataset must be formatted as a JSONL file.
+   * Optional. Validation dataset used for tuning. The dataset can be specified
+   * as either a Cloud Storage path to a JSONL file or as the resource name of a
+   * Vertex Multimodal Dataset.
    * </pre>
    *
    * <code>string validation_dataset_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -70,8 +73,9 @@ public interface SupervisedTuningSpecOrBuilder
    *
    *
    * <pre>
-   * Optional. Cloud Storage path to file containing validation dataset for
-   * tuning. The dataset must be formatted as a JSONL file.
+   * Optional. Validation dataset used for tuning. The dataset can be specified
+   * as either a Cloud Storage path to a JSONL file or as the resource name of a
+   * Vertex Multimodal Dataset.
    * </pre>
    *
    * <code>string validation_dataset_uri = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -138,4 +142,73 @@ public interface SupervisedTuningSpecOrBuilder
    * @return The exportLastCheckpointOnly.
    */
   boolean getExportLastCheckpointOnly();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Evaluation Config for Tuning Job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.EvaluationConfig evaluation_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the evaluationConfig field is set.
+   */
+  boolean hasEvaluationConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Evaluation Config for Tuning Job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.EvaluationConfig evaluation_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The evaluationConfig.
+   */
+  com.google.cloud.aiplatform.v1beta1.EvaluationConfig getEvaluationConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Evaluation Config for Tuning Job.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.EvaluationConfig evaluation_config = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.EvaluationConfigOrBuilder getEvaluationConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Tuning mode.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.SupervisedTuningSpec.TuningMode tuning_mode = 7;</code>
+   *
+   * @return The enum numeric value on the wire for tuningMode.
+   */
+  int getTuningModeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Tuning mode.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.SupervisedTuningSpec.TuningMode tuning_mode = 7;</code>
+   *
+   * @return The tuningMode.
+   */
+  com.google.cloud.aiplatform.v1beta1.SupervisedTuningSpec.TuningMode getTuningMode();
 }

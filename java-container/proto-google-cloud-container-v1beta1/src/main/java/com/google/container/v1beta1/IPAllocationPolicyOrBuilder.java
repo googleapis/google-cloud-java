@@ -95,7 +95,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2053
+   *     google/container/v1beta1/cluster_service.proto;l=2333
    * @return The clusterIpv4Cidr.
    */
   @java.lang.Deprecated
@@ -111,7 +111,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.cluster_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2053
+   *     google/container/v1beta1/cluster_service.proto;l=2333
    * @return The bytes for clusterIpv4Cidr.
    */
   @java.lang.Deprecated
@@ -127,7 +127,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2056
+   *     google/container/v1beta1/cluster_service.proto;l=2336
    * @return The nodeIpv4Cidr.
    */
   @java.lang.Deprecated
@@ -143,7 +143,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.node_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2056
+   *     google/container/v1beta1/cluster_service.proto;l=2336
    * @return The bytes for nodeIpv4Cidr.
    */
   @java.lang.Deprecated
@@ -159,7 +159,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2059
+   *     google/container/v1beta1/cluster_service.proto;l=2339
    * @return The servicesIpv4Cidr.
    */
   @java.lang.Deprecated
@@ -175,7 +175,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.services_ipv4_cidr is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2059
+   *     google/container/v1beta1/cluster_service.proto;l=2339
    * @return The bytes for servicesIpv4Cidr.
    */
   @java.lang.Deprecated
@@ -466,7 +466,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string tpu_ipv4_cidr_block = 13 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.tpu_ipv4_cidr_block is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2159
+   *     google/container/v1beta1/cluster_service.proto;l=2439
    * @return The tpuIpv4CidrBlock.
    */
   @java.lang.Deprecated
@@ -497,7 +497,7 @@ public interface IPAllocationPolicyOrBuilder
    * <code>string tpu_ipv4_cidr_block = 13 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.IPAllocationPolicy.tpu_ipv4_cidr_block is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=2159
+   *     google/container/v1beta1/cluster_service.proto;l=2439
    * @return The bytes for tpuIpv4CidrBlock.
    */
   @java.lang.Deprecated
@@ -766,4 +766,135 @@ public interface IPAllocationPolicyOrBuilder
    * @return The defaultPodIpv4RangeUtilization.
    */
   double getDefaultPodIpv4RangeUtilization();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The additional IP ranges that are added to the cluster.
+   * These IP ranges can be used by new node pools to allocate node and pod IPs
+   * automatically.
+   * Each AdditionalIPRangesConfig corresponds to a single subnetwork.
+   * Once a range is removed it will not show up in IPAllocationPolicy.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1beta1.AdditionalIPRangesConfig additional_ip_ranges_configs = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.container.v1beta1.AdditionalIPRangesConfig>
+      getAdditionalIpRangesConfigsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The additional IP ranges that are added to the cluster.
+   * These IP ranges can be used by new node pools to allocate node and pod IPs
+   * automatically.
+   * Each AdditionalIPRangesConfig corresponds to a single subnetwork.
+   * Once a range is removed it will not show up in IPAllocationPolicy.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1beta1.AdditionalIPRangesConfig additional_ip_ranges_configs = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.container.v1beta1.AdditionalIPRangesConfig getAdditionalIpRangesConfigs(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The additional IP ranges that are added to the cluster.
+   * These IP ranges can be used by new node pools to allocate node and pod IPs
+   * automatically.
+   * Each AdditionalIPRangesConfig corresponds to a single subnetwork.
+   * Once a range is removed it will not show up in IPAllocationPolicy.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1beta1.AdditionalIPRangesConfig additional_ip_ranges_configs = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getAdditionalIpRangesConfigsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The additional IP ranges that are added to the cluster.
+   * These IP ranges can be used by new node pools to allocate node and pod IPs
+   * automatically.
+   * Each AdditionalIPRangesConfig corresponds to a single subnetwork.
+   * Once a range is removed it will not show up in IPAllocationPolicy.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1beta1.AdditionalIPRangesConfig additional_ip_ranges_configs = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.container.v1beta1.AdditionalIPRangesConfigOrBuilder>
+      getAdditionalIpRangesConfigsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The additional IP ranges that are added to the cluster.
+   * These IP ranges can be used by new node pools to allocate node and pod IPs
+   * automatically.
+   * Each AdditionalIPRangesConfig corresponds to a single subnetwork.
+   * Once a range is removed it will not show up in IPAllocationPolicy.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.container.v1beta1.AdditionalIPRangesConfig additional_ip_ranges_configs = 29 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.container.v1beta1.AdditionalIPRangesConfigOrBuilder
+      getAdditionalIpRangesConfigsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. AutoIpamConfig contains all information related to Auto IPAM
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.AutoIpamConfig auto_ipam_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the autoIpamConfig field is set.
+   */
+  boolean hasAutoIpamConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. AutoIpamConfig contains all information related to Auto IPAM
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.AutoIpamConfig auto_ipam_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The autoIpamConfig.
+   */
+  com.google.container.v1beta1.AutoIpamConfig getAutoIpamConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. AutoIpamConfig contains all information related to Auto IPAM
+   * </pre>
+   *
+   * <code>
+   * .google.container.v1beta1.AutoIpamConfig auto_ipam_config = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.container.v1beta1.AutoIpamConfigOrBuilder getAutoIpamConfigOrBuilder();
 }

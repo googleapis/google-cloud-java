@@ -48,6 +48,7 @@ public class GrpcRankServiceStub extends RankServiceStub {
           .setFullMethodName("google.cloud.discoveryengine.v1alpha.RankService/Rank")
           .setRequestMarshaller(ProtoUtils.marshaller(RankRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(RankResponse.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<RankRequest, RankResponse> rankCallable;

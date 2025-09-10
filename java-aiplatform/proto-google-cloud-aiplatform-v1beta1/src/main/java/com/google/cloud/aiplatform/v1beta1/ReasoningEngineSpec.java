@@ -40,6 +40,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
   }
 
   private ReasoningEngineSpec() {
+    serviceAccount_ = "";
     classMethods_ = java.util.Collections.emptyList();
     agentFramework_ = "";
   }
@@ -1549,6 +1550,244 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * </code>
      */
     com.google.cloud.aiplatform.v1beta1.SecretEnvVarOrBuilder getSecretEnvOrBuilder(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for PSC-I.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PscInterfaceConfig psc_interface_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the pscInterfaceConfig field is set.
+     */
+    boolean hasPscInterfaceConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for PSC-I.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PscInterfaceConfig psc_interface_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The pscInterfaceConfig.
+     */
+    com.google.cloud.aiplatform.v1beta1.PscInterfaceConfig getPscInterfaceConfig();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for PSC-I.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PscInterfaceConfig psc_interface_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1beta1.PscInterfaceConfigOrBuilder
+        getPscInterfaceConfigOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The minimum number of application instances that will be kept
+     * running at all times. Defaults to 1.
+     * </pre>
+     *
+     * <code>optional int32 min_instances = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the minInstances field is set.
+     */
+    boolean hasMinInstances();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The minimum number of application instances that will be kept
+     * running at all times. Defaults to 1.
+     * </pre>
+     *
+     * <code>optional int32 min_instances = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The minInstances.
+     */
+    int getMinInstances();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maximum number of application instances that can be
+     * launched to handle increased traffic. Defaults to 100.
+     * </pre>
+     *
+     * <code>optional int32 max_instances = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the maxInstances field is set.
+     */
+    boolean hasMaxInstances();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maximum number of application instances that can be
+     * launched to handle increased traffic. Defaults to 100.
+     * </pre>
+     *
+     * <code>optional int32 max_instances = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The maxInstances.
+     */
+    int getMaxInstances();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource limits for each container. Only 'cpu' and 'memory'
+     * keys are supported. Defaults to {"cpu": "4", "memory": "4Gi"}.
+     *
+     *   * The only supported values for CPU are '1', '2', '4', and '8'. For
+     *   more information, go to
+     *   https://cloud.google.com/run/docs/configuring/cpu.
+     *   * For supported 'memory' values and syntax, go to
+     *   https://cloud.google.com/run/docs/configuring/memory-limits
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; resource_limits = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    int getResourceLimitsCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource limits for each container. Only 'cpu' and 'memory'
+     * keys are supported. Defaults to {"cpu": "4", "memory": "4Gi"}.
+     *
+     *   * The only supported values for CPU are '1', '2', '4', and '8'. For
+     *   more information, go to
+     *   https://cloud.google.com/run/docs/configuring/cpu.
+     *   * For supported 'memory' values and syntax, go to
+     *   https://cloud.google.com/run/docs/configuring/memory-limits
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; resource_limits = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    boolean containsResourceLimits(java.lang.String key);
+
+    /** Use {@link #getResourceLimitsMap()} instead. */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String> getResourceLimits();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource limits for each container. Only 'cpu' and 'memory'
+     * keys are supported. Defaults to {"cpu": "4", "memory": "4Gi"}.
+     *
+     *   * The only supported values for CPU are '1', '2', '4', and '8'. For
+     *   more information, go to
+     *   https://cloud.google.com/run/docs/configuring/cpu.
+     *   * For supported 'memory' values and syntax, go to
+     *   https://cloud.google.com/run/docs/configuring/memory-limits
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; resource_limits = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.util.Map<java.lang.String, java.lang.String> getResourceLimitsMap();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource limits for each container. Only 'cpu' and 'memory'
+     * keys are supported. Defaults to {"cpu": "4", "memory": "4Gi"}.
+     *
+     *   * The only supported values for CPU are '1', '2', '4', and '8'. For
+     *   more information, go to
+     *   https://cloud.google.com/run/docs/configuring/cpu.
+     *   * For supported 'memory' values and syntax, go to
+     *   https://cloud.google.com/run/docs/configuring/memory-limits
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; resource_limits = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    /* nullable */
+    java.lang.String getResourceLimitsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource limits for each container. Only 'cpu' and 'memory'
+     * keys are supported. Defaults to {"cpu": "4", "memory": "4Gi"}.
+     *
+     *   * The only supported values for CPU are '1', '2', '4', and '8'. For
+     *   more information, go to
+     *   https://cloud.google.com/run/docs/configuring/cpu.
+     *   * For supported 'memory' values and syntax, go to
+     *   https://cloud.google.com/run/docs/configuring/memory-limits
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; resource_limits = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    java.lang.String getResourceLimitsOrThrow(java.lang.String key);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Concurrency for each container and agent server. Recommended
+     * value: 2 * cpu + 1. Defaults to 9.
+     * </pre>
+     *
+     * <code>optional int32 container_concurrency = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the containerConcurrency field is set.
+     */
+    boolean hasContainerConcurrency();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Concurrency for each container and agent server. Recommended
+     * value: 2 * cpu + 1. Defaults to 9.
+     * </pre>
+     *
+     * <code>optional int32 container_concurrency = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The containerConcurrency.
+     */
+    int getContainerConcurrency();
   }
 
   /**
@@ -1587,6 +1826,18 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
           .internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_DeploymentSpec_descriptor;
     }
 
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 7:
+          return internalGetResourceLimits();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
     @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
@@ -1597,6 +1848,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
               com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.DeploymentSpec.Builder.class);
     }
 
+    private int bitField0_;
     public static final int ENV_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
@@ -1800,6 +2052,324 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       return secretEnv_.get(index);
     }
 
+    public static final int PSC_INTERFACE_CONFIG_FIELD_NUMBER = 4;
+    private com.google.cloud.aiplatform.v1beta1.PscInterfaceConfig pscInterfaceConfig_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for PSC-I.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PscInterfaceConfig psc_interface_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the pscInterfaceConfig field is set.
+     */
+    @java.lang.Override
+    public boolean hasPscInterfaceConfig() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for PSC-I.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PscInterfaceConfig psc_interface_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The pscInterfaceConfig.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.PscInterfaceConfig getPscInterfaceConfig() {
+      return pscInterfaceConfig_ == null
+          ? com.google.cloud.aiplatform.v1beta1.PscInterfaceConfig.getDefaultInstance()
+          : pscInterfaceConfig_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for PSC-I.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.PscInterfaceConfig psc_interface_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1beta1.PscInterfaceConfigOrBuilder
+        getPscInterfaceConfigOrBuilder() {
+      return pscInterfaceConfig_ == null
+          ? com.google.cloud.aiplatform.v1beta1.PscInterfaceConfig.getDefaultInstance()
+          : pscInterfaceConfig_;
+    }
+
+    public static final int MIN_INSTANCES_FIELD_NUMBER = 5;
+    private int minInstances_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The minimum number of application instances that will be kept
+     * running at all times. Defaults to 1.
+     * </pre>
+     *
+     * <code>optional int32 min_instances = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the minInstances field is set.
+     */
+    @java.lang.Override
+    public boolean hasMinInstances() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The minimum number of application instances that will be kept
+     * running at all times. Defaults to 1.
+     * </pre>
+     *
+     * <code>optional int32 min_instances = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The minInstances.
+     */
+    @java.lang.Override
+    public int getMinInstances() {
+      return minInstances_;
+    }
+
+    public static final int MAX_INSTANCES_FIELD_NUMBER = 6;
+    private int maxInstances_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maximum number of application instances that can be
+     * launched to handle increased traffic. Defaults to 100.
+     * </pre>
+     *
+     * <code>optional int32 max_instances = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the maxInstances field is set.
+     */
+    @java.lang.Override
+    public boolean hasMaxInstances() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The maximum number of application instances that can be
+     * launched to handle increased traffic. Defaults to 100.
+     * </pre>
+     *
+     * <code>optional int32 max_instances = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The maxInstances.
+     */
+    @java.lang.Override
+    public int getMaxInstances() {
+      return maxInstances_;
+    }
+
+    public static final int RESOURCE_LIMITS_FIELD_NUMBER = 7;
+
+    private static final class ResourceLimitsDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+          com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+              com.google.cloud.aiplatform.v1beta1.ReasoningEngineProto
+                  .internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_DeploymentSpec_ResourceLimitsEntry_descriptor,
+              com.google.protobuf.WireFormat.FieldType.STRING,
+              "",
+              com.google.protobuf.WireFormat.FieldType.STRING,
+              "");
+    }
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> resourceLimits_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+        internalGetResourceLimits() {
+      if (resourceLimits_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            ResourceLimitsDefaultEntryHolder.defaultEntry);
+      }
+      return resourceLimits_;
+    }
+
+    public int getResourceLimitsCount() {
+      return internalGetResourceLimits().getMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource limits for each container. Only 'cpu' and 'memory'
+     * keys are supported. Defaults to {"cpu": "4", "memory": "4Gi"}.
+     *
+     *   * The only supported values for CPU are '1', '2', '4', and '8'. For
+     *   more information, go to
+     *   https://cloud.google.com/run/docs/configuring/cpu.
+     *   * For supported 'memory' values and syntax, go to
+     *   https://cloud.google.com/run/docs/configuring/memory-limits
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; resource_limits = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public boolean containsResourceLimits(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetResourceLimits().getMap().containsKey(key);
+    }
+
+    /** Use {@link #getResourceLimitsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getResourceLimits() {
+      return getResourceLimitsMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource limits for each container. Only 'cpu' and 'memory'
+     * keys are supported. Defaults to {"cpu": "4", "memory": "4Gi"}.
+     *
+     *   * The only supported values for CPU are '1', '2', '4', and '8'. For
+     *   more information, go to
+     *   https://cloud.google.com/run/docs/configuring/cpu.
+     *   * For supported 'memory' values and syntax, go to
+     *   https://cloud.google.com/run/docs/configuring/memory-limits
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; resource_limits = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getResourceLimitsMap() {
+      return internalGetResourceLimits().getMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource limits for each container. Only 'cpu' and 'memory'
+     * keys are supported. Defaults to {"cpu": "4", "memory": "4Gi"}.
+     *
+     *   * The only supported values for CPU are '1', '2', '4', and '8'. For
+     *   more information, go to
+     *   https://cloud.google.com/run/docs/configuring/cpu.
+     *   * For supported 'memory' values and syntax, go to
+     *   https://cloud.google.com/run/docs/configuring/memory-limits
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; resource_limits = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getResourceLimitsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetResourceLimits().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Resource limits for each container. Only 'cpu' and 'memory'
+     * keys are supported. Defaults to {"cpu": "4", "memory": "4Gi"}.
+     *
+     *   * The only supported values for CPU are '1', '2', '4', and '8'. For
+     *   more information, go to
+     *   https://cloud.google.com/run/docs/configuring/cpu.
+     *   * For supported 'memory' values and syntax, go to
+     *   https://cloud.google.com/run/docs/configuring/memory-limits
+     * </pre>
+     *
+     * <code>
+     * map&lt;string, string&gt; resource_limits = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public java.lang.String getResourceLimitsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetResourceLimits().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public static final int CONTAINER_CONCURRENCY_FIELD_NUMBER = 8;
+    private int containerConcurrency_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Concurrency for each container and agent server. Recommended
+     * value: 2 * cpu + 1. Defaults to 9.
+     * </pre>
+     *
+     * <code>optional int32 container_concurrency = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the containerConcurrency field is set.
+     */
+    @java.lang.Override
+    public boolean hasContainerConcurrency() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Concurrency for each container and agent server. Recommended
+     * value: 2 * cpu + 1. Defaults to 9.
+     * </pre>
+     *
+     * <code>optional int32 container_concurrency = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The containerConcurrency.
+     */
+    @java.lang.Override
+    public int getContainerConcurrency() {
+      return containerConcurrency_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1820,6 +2390,20 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       for (int i = 0; i < secretEnv_.size(); i++) {
         output.writeMessage(2, secretEnv_.get(i));
       }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(4, getPscInterfaceConfig());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeInt32(5, minInstances_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeInt32(6, maxInstances_);
+      }
+      com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+          output, internalGetResourceLimits(), ResourceLimitsDefaultEntryHolder.defaultEntry, 7);
+      if (((bitField0_ & 0x00000008) != 0)) {
+        output.writeInt32(8, containerConcurrency_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1834,6 +2418,29 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       }
       for (int i = 0; i < secretEnv_.size(); i++) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, secretEnv_.get(i));
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(4, getPscInterfaceConfig());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(5, minInstances_);
+      }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(6, maxInstances_);
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+          internalGetResourceLimits().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String> resourceLimits__ =
+            ResourceLimitsDefaultEntryHolder.defaultEntry
+                .newBuilderForType()
+                .setKey(entry.getKey())
+                .setValue(entry.getValue())
+                .build();
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, resourceLimits__);
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(8, containerConcurrency_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1854,6 +2461,23 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
 
       if (!getEnvList().equals(other.getEnvList())) return false;
       if (!getSecretEnvList().equals(other.getSecretEnvList())) return false;
+      if (hasPscInterfaceConfig() != other.hasPscInterfaceConfig()) return false;
+      if (hasPscInterfaceConfig()) {
+        if (!getPscInterfaceConfig().equals(other.getPscInterfaceConfig())) return false;
+      }
+      if (hasMinInstances() != other.hasMinInstances()) return false;
+      if (hasMinInstances()) {
+        if (getMinInstances() != other.getMinInstances()) return false;
+      }
+      if (hasMaxInstances() != other.hasMaxInstances()) return false;
+      if (hasMaxInstances()) {
+        if (getMaxInstances() != other.getMaxInstances()) return false;
+      }
+      if (!internalGetResourceLimits().equals(other.internalGetResourceLimits())) return false;
+      if (hasContainerConcurrency() != other.hasContainerConcurrency()) return false;
+      if (hasContainerConcurrency()) {
+        if (getContainerConcurrency() != other.getContainerConcurrency()) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1872,6 +2496,26 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       if (getSecretEnvCount() > 0) {
         hash = (37 * hash) + SECRET_ENV_FIELD_NUMBER;
         hash = (53 * hash) + getSecretEnvList().hashCode();
+      }
+      if (hasPscInterfaceConfig()) {
+        hash = (37 * hash) + PSC_INTERFACE_CONFIG_FIELD_NUMBER;
+        hash = (53 * hash) + getPscInterfaceConfig().hashCode();
+      }
+      if (hasMinInstances()) {
+        hash = (37 * hash) + MIN_INSTANCES_FIELD_NUMBER;
+        hash = (53 * hash) + getMinInstances();
+      }
+      if (hasMaxInstances()) {
+        hash = (37 * hash) + MAX_INSTANCES_FIELD_NUMBER;
+        hash = (53 * hash) + getMaxInstances();
+      }
+      if (!internalGetResourceLimits().getMap().isEmpty()) {
+        hash = (37 * hash) + RESOURCE_LIMITS_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetResourceLimits().hashCode();
+      }
+      if (hasContainerConcurrency()) {
+        hash = (37 * hash) + CONTAINER_CONCURRENCY_FIELD_NUMBER;
+        hash = (53 * hash) + getContainerConcurrency();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -1996,6 +2640,28 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
             .internal_static_google_cloud_aiplatform_v1beta1_ReasoningEngineSpec_DeploymentSpec_descriptor;
       }
 
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 7:
+            return internalGetResourceLimits();
+          default:
+            throw new RuntimeException("Invalid map field number: " + number);
+        }
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 7:
+            return internalGetMutableResourceLimits();
+          default:
+            throw new RuntimeException("Invalid map field number: " + number);
+        }
+      }
+
       @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
@@ -2009,10 +2675,21 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
 
       // Construct using
       // com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.DeploymentSpec.newBuilder()
-      private Builder() {}
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getEnvFieldBuilder();
+          getSecretEnvFieldBuilder();
+          getPscInterfaceConfigFieldBuilder();
+        }
       }
 
       @java.lang.Override
@@ -2033,6 +2710,15 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
           secretEnvBuilder_.clear();
         }
         bitField0_ = (bitField0_ & ~0x00000002);
+        pscInterfaceConfig_ = null;
+        if (pscInterfaceConfigBuilder_ != null) {
+          pscInterfaceConfigBuilder_.dispose();
+          pscInterfaceConfigBuilder_ = null;
+        }
+        minInstances_ = 0;
+        maxInstances_ = 0;
+        internalGetMutableResourceLimits().clear();
+        containerConcurrency_ = 0;
         return this;
       }
 
@@ -2096,6 +2782,31 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       private void buildPartial0(
           com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.DeploymentSpec result) {
         int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.pscInterfaceConfig_ =
+              pscInterfaceConfigBuilder_ == null
+                  ? pscInterfaceConfig_
+                  : pscInterfaceConfigBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.minInstances_ = minInstances_;
+          to_bitField0_ |= 0x00000002;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.maxInstances_ = maxInstances_;
+          to_bitField0_ |= 0x00000004;
+        }
+        if (((from_bitField0_ & 0x00000020) != 0)) {
+          result.resourceLimits_ = internalGetResourceLimits();
+          result.resourceLimits_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.containerConcurrency_ = containerConcurrency_;
+          to_bitField0_ |= 0x00000008;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       @java.lang.Override
@@ -2204,6 +2915,20 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
             }
           }
         }
+        if (other.hasPscInterfaceConfig()) {
+          mergePscInterfaceConfig(other.getPscInterfaceConfig());
+        }
+        if (other.hasMinInstances()) {
+          setMinInstances(other.getMinInstances());
+        }
+        if (other.hasMaxInstances()) {
+          setMaxInstances(other.getMaxInstances());
+        }
+        internalGetMutableResourceLimits().mergeFrom(other.internalGetResourceLimits());
+        bitField0_ |= 0x00000020;
+        if (other.hasContainerConcurrency()) {
+          setContainerConcurrency(other.getContainerConcurrency());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -2257,6 +2982,44 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
                   }
                   break;
                 } // case 18
+              case 34:
+                {
+                  input.readMessage(
+                      getPscInterfaceConfigFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 34
+              case 40:
+                {
+                  minInstances_ = input.readInt32();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 40
+              case 48:
+                {
+                  maxInstances_ = input.readInt32();
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 48
+              case 58:
+                {
+                  com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
+                      resourceLimits__ =
+                          input.readMessage(
+                              ResourceLimitsDefaultEntryHolder.defaultEntry.getParserForType(),
+                              extensionRegistry);
+                  internalGetMutableResourceLimits()
+                      .getMutableMap()
+                      .put(resourceLimits__.getKey(), resourceLimits__.getValue());
+                  bitField0_ |= 0x00000020;
+                  break;
+                } // case 58
+              case 64:
+                {
+                  containerConcurrency_ = input.readInt32();
+                  bitField0_ |= 0x00000040;
+                  break;
+                } // case 64
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3196,6 +3959,698 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         return secretEnvBuilder_;
       }
 
+      private com.google.cloud.aiplatform.v1beta1.PscInterfaceConfig pscInterfaceConfig_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.PscInterfaceConfig,
+              com.google.cloud.aiplatform.v1beta1.PscInterfaceConfig.Builder,
+              com.google.cloud.aiplatform.v1beta1.PscInterfaceConfigOrBuilder>
+          pscInterfaceConfigBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for PSC-I.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PscInterfaceConfig psc_interface_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the pscInterfaceConfig field is set.
+       */
+      public boolean hasPscInterfaceConfig() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for PSC-I.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PscInterfaceConfig psc_interface_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The pscInterfaceConfig.
+       */
+      public com.google.cloud.aiplatform.v1beta1.PscInterfaceConfig getPscInterfaceConfig() {
+        if (pscInterfaceConfigBuilder_ == null) {
+          return pscInterfaceConfig_ == null
+              ? com.google.cloud.aiplatform.v1beta1.PscInterfaceConfig.getDefaultInstance()
+              : pscInterfaceConfig_;
+        } else {
+          return pscInterfaceConfigBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for PSC-I.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PscInterfaceConfig psc_interface_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setPscInterfaceConfig(
+          com.google.cloud.aiplatform.v1beta1.PscInterfaceConfig value) {
+        if (pscInterfaceConfigBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          pscInterfaceConfig_ = value;
+        } else {
+          pscInterfaceConfigBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for PSC-I.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PscInterfaceConfig psc_interface_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setPscInterfaceConfig(
+          com.google.cloud.aiplatform.v1beta1.PscInterfaceConfig.Builder builderForValue) {
+        if (pscInterfaceConfigBuilder_ == null) {
+          pscInterfaceConfig_ = builderForValue.build();
+        } else {
+          pscInterfaceConfigBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for PSC-I.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PscInterfaceConfig psc_interface_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergePscInterfaceConfig(
+          com.google.cloud.aiplatform.v1beta1.PscInterfaceConfig value) {
+        if (pscInterfaceConfigBuilder_ == null) {
+          if (((bitField0_ & 0x00000004) != 0)
+              && pscInterfaceConfig_ != null
+              && pscInterfaceConfig_
+                  != com.google.cloud.aiplatform.v1beta1.PscInterfaceConfig.getDefaultInstance()) {
+            getPscInterfaceConfigBuilder().mergeFrom(value);
+          } else {
+            pscInterfaceConfig_ = value;
+          }
+        } else {
+          pscInterfaceConfigBuilder_.mergeFrom(value);
+        }
+        if (pscInterfaceConfig_ != null) {
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for PSC-I.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PscInterfaceConfig psc_interface_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearPscInterfaceConfig() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        pscInterfaceConfig_ = null;
+        if (pscInterfaceConfigBuilder_ != null) {
+          pscInterfaceConfigBuilder_.dispose();
+          pscInterfaceConfigBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for PSC-I.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PscInterfaceConfig psc_interface_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.PscInterfaceConfig.Builder
+          getPscInterfaceConfigBuilder() {
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return getPscInterfaceConfigFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for PSC-I.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PscInterfaceConfig psc_interface_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1beta1.PscInterfaceConfigOrBuilder
+          getPscInterfaceConfigOrBuilder() {
+        if (pscInterfaceConfigBuilder_ != null) {
+          return pscInterfaceConfigBuilder_.getMessageOrBuilder();
+        } else {
+          return pscInterfaceConfig_ == null
+              ? com.google.cloud.aiplatform.v1beta1.PscInterfaceConfig.getDefaultInstance()
+              : pscInterfaceConfig_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Configuration for PSC-I.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1beta1.PscInterfaceConfig psc_interface_config = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1beta1.PscInterfaceConfig,
+              com.google.cloud.aiplatform.v1beta1.PscInterfaceConfig.Builder,
+              com.google.cloud.aiplatform.v1beta1.PscInterfaceConfigOrBuilder>
+          getPscInterfaceConfigFieldBuilder() {
+        if (pscInterfaceConfigBuilder_ == null) {
+          pscInterfaceConfigBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1beta1.PscInterfaceConfig,
+                  com.google.cloud.aiplatform.v1beta1.PscInterfaceConfig.Builder,
+                  com.google.cloud.aiplatform.v1beta1.PscInterfaceConfigOrBuilder>(
+                  getPscInterfaceConfig(), getParentForChildren(), isClean());
+          pscInterfaceConfig_ = null;
+        }
+        return pscInterfaceConfigBuilder_;
+      }
+
+      private int minInstances_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The minimum number of application instances that will be kept
+       * running at all times. Defaults to 1.
+       * </pre>
+       *
+       * <code>optional int32 min_instances = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the minInstances field is set.
+       */
+      @java.lang.Override
+      public boolean hasMinInstances() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The minimum number of application instances that will be kept
+       * running at all times. Defaults to 1.
+       * </pre>
+       *
+       * <code>optional int32 min_instances = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The minInstances.
+       */
+      @java.lang.Override
+      public int getMinInstances() {
+        return minInstances_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The minimum number of application instances that will be kept
+       * running at all times. Defaults to 1.
+       * </pre>
+       *
+       * <code>optional int32 min_instances = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The minInstances to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMinInstances(int value) {
+
+        minInstances_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The minimum number of application instances that will be kept
+       * running at all times. Defaults to 1.
+       * </pre>
+       *
+       * <code>optional int32 min_instances = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMinInstances() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        minInstances_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int maxInstances_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The maximum number of application instances that can be
+       * launched to handle increased traffic. Defaults to 100.
+       * </pre>
+       *
+       * <code>optional int32 max_instances = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the maxInstances field is set.
+       */
+      @java.lang.Override
+      public boolean hasMaxInstances() {
+        return ((bitField0_ & 0x00000010) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The maximum number of application instances that can be
+       * launched to handle increased traffic. Defaults to 100.
+       * </pre>
+       *
+       * <code>optional int32 max_instances = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The maxInstances.
+       */
+      @java.lang.Override
+      public int getMaxInstances() {
+        return maxInstances_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The maximum number of application instances that can be
+       * launched to handle increased traffic. Defaults to 100.
+       * </pre>
+       *
+       * <code>optional int32 max_instances = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The maxInstances to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMaxInstances(int value) {
+
+        maxInstances_ = value;
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The maximum number of application instances that can be
+       * launched to handle increased traffic. Defaults to 100.
+       * </pre>
+       *
+       * <code>optional int32 max_instances = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMaxInstances() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        maxInstances_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String> resourceLimits_;
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+          internalGetResourceLimits() {
+        if (resourceLimits_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              ResourceLimitsDefaultEntryHolder.defaultEntry);
+        }
+        return resourceLimits_;
+      }
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+          internalGetMutableResourceLimits() {
+        if (resourceLimits_ == null) {
+          resourceLimits_ =
+              com.google.protobuf.MapField.newMapField(
+                  ResourceLimitsDefaultEntryHolder.defaultEntry);
+        }
+        if (!resourceLimits_.isMutable()) {
+          resourceLimits_ = resourceLimits_.copy();
+        }
+        bitField0_ |= 0x00000020;
+        onChanged();
+        return resourceLimits_;
+      }
+
+      public int getResourceLimitsCount() {
+        return internalGetResourceLimits().getMap().size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Resource limits for each container. Only 'cpu' and 'memory'
+       * keys are supported. Defaults to {"cpu": "4", "memory": "4Gi"}.
+       *
+       *   * The only supported values for CPU are '1', '2', '4', and '8'. For
+       *   more information, go to
+       *   https://cloud.google.com/run/docs/configuring/cpu.
+       *   * For supported 'memory' values and syntax, go to
+       *   https://cloud.google.com/run/docs/configuring/memory-limits
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, string&gt; resource_limits = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public boolean containsResourceLimits(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        return internalGetResourceLimits().getMap().containsKey(key);
+      }
+
+      /** Use {@link #getResourceLimitsMap()} instead. */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getResourceLimits() {
+        return getResourceLimitsMap();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Resource limits for each container. Only 'cpu' and 'memory'
+       * keys are supported. Defaults to {"cpu": "4", "memory": "4Gi"}.
+       *
+       *   * The only supported values for CPU are '1', '2', '4', and '8'. For
+       *   more information, go to
+       *   https://cloud.google.com/run/docs/configuring/cpu.
+       *   * For supported 'memory' values and syntax, go to
+       *   https://cloud.google.com/run/docs/configuring/memory-limits
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, string&gt; resource_limits = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.Map<java.lang.String, java.lang.String> getResourceLimitsMap() {
+        return internalGetResourceLimits().getMap();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Resource limits for each container. Only 'cpu' and 'memory'
+       * keys are supported. Defaults to {"cpu": "4", "memory": "4Gi"}.
+       *
+       *   * The only supported values for CPU are '1', '2', '4', and '8'. For
+       *   more information, go to
+       *   https://cloud.google.com/run/docs/configuring/cpu.
+       *   * For supported 'memory' values and syntax, go to
+       *   https://cloud.google.com/run/docs/configuring/memory-limits
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, string&gt; resource_limits = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public /* nullable */ java.lang.String getResourceLimitsOrDefault(
+          java.lang.String key,
+          /* nullable */
+          java.lang.String defaultValue) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetResourceLimits().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Resource limits for each container. Only 'cpu' and 'memory'
+       * keys are supported. Defaults to {"cpu": "4", "memory": "4Gi"}.
+       *
+       *   * The only supported values for CPU are '1', '2', '4', and '8'. For
+       *   more information, go to
+       *   https://cloud.google.com/run/docs/configuring/cpu.
+       *   * For supported 'memory' values and syntax, go to
+       *   https://cloud.google.com/run/docs/configuring/memory-limits
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, string&gt; resource_limits = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public java.lang.String getResourceLimitsOrThrow(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<java.lang.String, java.lang.String> map =
+            internalGetResourceLimits().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearResourceLimits() {
+        bitField0_ = (bitField0_ & ~0x00000020);
+        internalGetMutableResourceLimits().getMutableMap().clear();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Resource limits for each container. Only 'cpu' and 'memory'
+       * keys are supported. Defaults to {"cpu": "4", "memory": "4Gi"}.
+       *
+       *   * The only supported values for CPU are '1', '2', '4', and '8'. For
+       *   more information, go to
+       *   https://cloud.google.com/run/docs/configuring/cpu.
+       *   * For supported 'memory' values and syntax, go to
+       *   https://cloud.google.com/run/docs/configuring/memory-limits
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, string&gt; resource_limits = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder removeResourceLimits(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        internalGetMutableResourceLimits().getMutableMap().remove(key);
+        return this;
+      }
+
+      /** Use alternate mutation accessors instead. */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getMutableResourceLimits() {
+        bitField0_ |= 0x00000020;
+        return internalGetMutableResourceLimits().getMutableMap();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Resource limits for each container. Only 'cpu' and 'memory'
+       * keys are supported. Defaults to {"cpu": "4", "memory": "4Gi"}.
+       *
+       *   * The only supported values for CPU are '1', '2', '4', and '8'. For
+       *   more information, go to
+       *   https://cloud.google.com/run/docs/configuring/cpu.
+       *   * For supported 'memory' values and syntax, go to
+       *   https://cloud.google.com/run/docs/configuring/memory-limits
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, string&gt; resource_limits = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder putResourceLimits(java.lang.String key, java.lang.String value) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        if (value == null) {
+          throw new NullPointerException("map value");
+        }
+        internalGetMutableResourceLimits().getMutableMap().put(key, value);
+        bitField0_ |= 0x00000020;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Resource limits for each container. Only 'cpu' and 'memory'
+       * keys are supported. Defaults to {"cpu": "4", "memory": "4Gi"}.
+       *
+       *   * The only supported values for CPU are '1', '2', '4', and '8'. For
+       *   more information, go to
+       *   https://cloud.google.com/run/docs/configuring/cpu.
+       *   * For supported 'memory' values and syntax, go to
+       *   https://cloud.google.com/run/docs/configuring/memory-limits
+       * </pre>
+       *
+       * <code>
+       * map&lt;string, string&gt; resource_limits = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder putAllResourceLimits(
+          java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableResourceLimits().getMutableMap().putAll(values);
+        bitField0_ |= 0x00000020;
+        return this;
+      }
+
+      private int containerConcurrency_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Concurrency for each container and agent server. Recommended
+       * value: 2 * cpu + 1. Defaults to 9.
+       * </pre>
+       *
+       * <code>optional int32 container_concurrency = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the containerConcurrency field is set.
+       */
+      @java.lang.Override
+      public boolean hasContainerConcurrency() {
+        return ((bitField0_ & 0x00000040) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Concurrency for each container and agent server. Recommended
+       * value: 2 * cpu + 1. Defaults to 9.
+       * </pre>
+       *
+       * <code>optional int32 container_concurrency = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The containerConcurrency.
+       */
+      @java.lang.Override
+      public int getContainerConcurrency() {
+        return containerConcurrency_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Concurrency for each container and agent server. Recommended
+       * value: 2 * cpu + 1. Defaults to 9.
+       * </pre>
+       *
+       * <code>optional int32 container_concurrency = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The containerConcurrency to set.
+       * @return This builder for chaining.
+       */
+      public Builder setContainerConcurrency(int value) {
+
+        containerConcurrency_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Concurrency for each container and agent server. Recommended
+       * value: 2 * cpu + 1. Defaults to 9.
+       * </pre>
+       *
+       * <code>optional int32 container_concurrency = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearContainerConcurrency() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        containerConcurrency_ = 0;
+        onChanged();
+        return this;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -3265,6 +4720,87 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
   }
 
   private int bitField0_;
+  public static final int SERVICE_ACCOUNT_FIELD_NUMBER = 1;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object serviceAccount_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The service account that the Reasoning Engine artifact runs as.
+   * It should have "roles/storage.objectViewer" for reading the user project's
+   * Cloud Storage and "roles/aiplatform.user" for using Vertex extensions. If
+   * not specified, the Vertex AI Reasoning Engine Service Agent in the project
+   * will be used.
+   * </pre>
+   *
+   * <code>optional string service_account = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the serviceAccount field is set.
+   */
+  @java.lang.Override
+  public boolean hasServiceAccount() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The service account that the Reasoning Engine artifact runs as.
+   * It should have "roles/storage.objectViewer" for reading the user project's
+   * Cloud Storage and "roles/aiplatform.user" for using Vertex extensions. If
+   * not specified, the Vertex AI Reasoning Engine Service Agent in the project
+   * will be used.
+   * </pre>
+   *
+   * <code>optional string service_account = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The serviceAccount.
+   */
+  @java.lang.Override
+  public java.lang.String getServiceAccount() {
+    java.lang.Object ref = serviceAccount_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      serviceAccount_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The service account that the Reasoning Engine artifact runs as.
+   * It should have "roles/storage.objectViewer" for reading the user project's
+   * Cloud Storage and "roles/aiplatform.user" for using Vertex extensions. If
+   * not specified, the Vertex AI Reasoning Engine Service Agent in the project
+   * will be used.
+   * </pre>
+   *
+   * <code>optional string service_account = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for serviceAccount.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getServiceAccountBytes() {
+    java.lang.Object ref = serviceAccount_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      serviceAccount_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int PACKAGE_SPEC_FIELD_NUMBER = 2;
   private com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.PackageSpec packageSpec_;
 
@@ -3286,7 +4822,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public boolean hasPackageSpec() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
 
   /**
@@ -3352,7 +4888,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public boolean hasDeploymentSpec() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
@@ -3498,7 +5034,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Optional. The OSS agent framework used to develop the agent.
-   * Currently supported values: "langchain", "langgraph", "ag2", "custom".
+   * Currently supported values: "google-adk", "langchain", "langgraph", "ag2",
+   * "llama-index", "custom".
    * </pre>
    *
    * <code>string agent_framework = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3523,7 +5060,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Optional. The OSS agent framework used to develop the agent.
-   * Currently supported values: "langchain", "langgraph", "ag2", "custom".
+   * Currently supported values: "google-adk", "langchain", "langgraph", "ag2",
+   * "llama-index", "custom".
    * </pre>
    *
    * <code>string agent_framework = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -3558,12 +5096,15 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (((bitField0_ & 0x00000001) != 0)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 1, serviceAccount_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(2, getPackageSpec());
     }
     for (int i = 0; i < classMethods_.size(); i++) {
       output.writeMessage(3, classMethods_.get(i));
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(4, getDeploymentSpec());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agentFramework_)) {
@@ -3579,12 +5120,15 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
 
     size = 0;
     if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, serviceAccount_);
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getPackageSpec());
     }
     for (int i = 0; i < classMethods_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, classMethods_.get(i));
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getDeploymentSpec());
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(agentFramework_)) {
@@ -3606,6 +5150,10 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec other =
         (com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec) obj;
 
+    if (hasServiceAccount() != other.hasServiceAccount()) return false;
+    if (hasServiceAccount()) {
+      if (!getServiceAccount().equals(other.getServiceAccount())) return false;
+    }
     if (hasPackageSpec() != other.hasPackageSpec()) return false;
     if (hasPackageSpec()) {
       if (!getPackageSpec().equals(other.getPackageSpec())) return false;
@@ -3627,6 +5175,10 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasServiceAccount()) {
+      hash = (37 * hash) + SERVICE_ACCOUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getServiceAccount().hashCode();
+    }
     if (hasPackageSpec()) {
       hash = (37 * hash) + PACKAGE_SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getPackageSpec().hashCode();
@@ -3793,6 +5345,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      serviceAccount_ = "";
       packageSpec_ = null;
       if (packageSpecBuilder_ != null) {
         packageSpecBuilder_.dispose();
@@ -3809,7 +5362,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         classMethods_ = null;
         classMethodsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       agentFramework_ = "";
       return this;
     }
@@ -3849,9 +5402,9 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     private void buildPartialRepeatedFields(
         com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec result) {
       if (classMethodsBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)) {
+        if (((bitField0_ & 0x00000008) != 0)) {
           classMethods_ = java.util.Collections.unmodifiableList(classMethods_);
-          bitField0_ = (bitField0_ & ~0x00000004);
+          bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.classMethods_ = classMethods_;
       } else {
@@ -3863,16 +5416,20 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.packageSpec_ =
-            packageSpecBuilder_ == null ? packageSpec_ : packageSpecBuilder_.build();
+        result.serviceAccount_ = serviceAccount_;
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
-        result.deploymentSpec_ =
-            deploymentSpecBuilder_ == null ? deploymentSpec_ : deploymentSpecBuilder_.build();
+        result.packageSpec_ =
+            packageSpecBuilder_ == null ? packageSpec_ : packageSpecBuilder_.build();
         to_bitField0_ |= 0x00000002;
       }
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.deploymentSpec_ =
+            deploymentSpecBuilder_ == null ? deploymentSpec_ : deploymentSpecBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.agentFramework_ = agentFramework_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -3924,6 +5481,11 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     public Builder mergeFrom(com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec other) {
       if (other == com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.getDefaultInstance())
         return this;
+      if (other.hasServiceAccount()) {
+        serviceAccount_ = other.serviceAccount_;
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
       if (other.hasPackageSpec()) {
         mergePackageSpec(other.getPackageSpec());
       }
@@ -3934,7 +5496,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         if (!other.classMethods_.isEmpty()) {
           if (classMethods_.isEmpty()) {
             classMethods_ = other.classMethods_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
           } else {
             ensureClassMethodsIsMutable();
             classMethods_.addAll(other.classMethods_);
@@ -3947,7 +5509,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
             classMethodsBuilder_.dispose();
             classMethodsBuilder_ = null;
             classMethods_ = other.classMethods_;
-            bitField0_ = (bitField0_ & ~0x00000004);
+            bitField0_ = (bitField0_ & ~0x00000008);
             classMethodsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getClassMethodsFieldBuilder()
@@ -3959,7 +5521,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       }
       if (!other.getAgentFramework().isEmpty()) {
         agentFramework_ = other.agentFramework_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -3988,10 +5550,16 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
             case 0:
               done = true;
               break;
+            case 10:
+              {
+                serviceAccount_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 10
             case 18:
               {
                 input.readMessage(getPackageSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case 18
             case 26:
@@ -4009,13 +5577,13 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
             case 34:
               {
                 input.readMessage(getDeploymentSpecFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case 34
             case 42:
               {
                 agentFramework_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 42
             default:
@@ -4036,6 +5604,156 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     }
 
     private int bitField0_;
+
+    private java.lang.Object serviceAccount_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The service account that the Reasoning Engine artifact runs as.
+     * It should have "roles/storage.objectViewer" for reading the user project's
+     * Cloud Storage and "roles/aiplatform.user" for using Vertex extensions. If
+     * not specified, the Vertex AI Reasoning Engine Service Agent in the project
+     * will be used.
+     * </pre>
+     *
+     * <code>optional string service_account = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the serviceAccount field is set.
+     */
+    public boolean hasServiceAccount() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The service account that the Reasoning Engine artifact runs as.
+     * It should have "roles/storage.objectViewer" for reading the user project's
+     * Cloud Storage and "roles/aiplatform.user" for using Vertex extensions. If
+     * not specified, the Vertex AI Reasoning Engine Service Agent in the project
+     * will be used.
+     * </pre>
+     *
+     * <code>optional string service_account = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The serviceAccount.
+     */
+    public java.lang.String getServiceAccount() {
+      java.lang.Object ref = serviceAccount_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serviceAccount_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The service account that the Reasoning Engine artifact runs as.
+     * It should have "roles/storage.objectViewer" for reading the user project's
+     * Cloud Storage and "roles/aiplatform.user" for using Vertex extensions. If
+     * not specified, the Vertex AI Reasoning Engine Service Agent in the project
+     * will be used.
+     * </pre>
+     *
+     * <code>optional string service_account = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for serviceAccount.
+     */
+    public com.google.protobuf.ByteString getServiceAccountBytes() {
+      java.lang.Object ref = serviceAccount_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        serviceAccount_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The service account that the Reasoning Engine artifact runs as.
+     * It should have "roles/storage.objectViewer" for reading the user project's
+     * Cloud Storage and "roles/aiplatform.user" for using Vertex extensions. If
+     * not specified, the Vertex AI Reasoning Engine Service Agent in the project
+     * will be used.
+     * </pre>
+     *
+     * <code>optional string service_account = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The serviceAccount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceAccount(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      serviceAccount_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The service account that the Reasoning Engine artifact runs as.
+     * It should have "roles/storage.objectViewer" for reading the user project's
+     * Cloud Storage and "roles/aiplatform.user" for using Vertex extensions. If
+     * not specified, the Vertex AI Reasoning Engine Service Agent in the project
+     * will be used.
+     * </pre>
+     *
+     * <code>optional string service_account = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearServiceAccount() {
+      serviceAccount_ = getDefaultInstance().getServiceAccount();
+      bitField0_ = (bitField0_ & ~0x00000001);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The service account that the Reasoning Engine artifact runs as.
+     * It should have "roles/storage.objectViewer" for reading the user project's
+     * Cloud Storage and "roles/aiplatform.user" for using Vertex extensions. If
+     * not specified, the Vertex AI Reasoning Engine Service Agent in the project
+     * will be used.
+     * </pre>
+     *
+     * <code>optional string service_account = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for serviceAccount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setServiceAccountBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      serviceAccount_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
 
     private com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.PackageSpec packageSpec_;
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -4061,7 +5779,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * @return Whether the packageSpec field is set.
      */
     public boolean hasPackageSpec() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
 
     /**
@@ -4115,7 +5833,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       } else {
         packageSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -4142,7 +5860,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       } else {
         packageSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -4164,7 +5882,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     public Builder mergePackageSpec(
         com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.PackageSpec value) {
       if (packageSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00000001) != 0)
+        if (((bitField0_ & 0x00000002) != 0)
             && packageSpec_ != null
             && packageSpec_
                 != com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.PackageSpec
@@ -4177,7 +5895,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         packageSpecBuilder_.mergeFrom(value);
       }
       if (packageSpec_ != null) {
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       return this;
@@ -4198,7 +5916,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearPackageSpec() {
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       packageSpec_ = null;
       if (packageSpecBuilder_ != null) {
         packageSpecBuilder_.dispose();
@@ -4224,7 +5942,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      */
     public com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.PackageSpec.Builder
         getPackageSpecBuilder() {
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return getPackageSpecFieldBuilder().getBuilder();
     }
@@ -4307,7 +6025,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * @return Whether the deploymentSpec field is set.
      */
     public boolean hasDeploymentSpec() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
 
     /**
@@ -4356,7 +6074,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       } else {
         deploymentSpecBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -4380,7 +6098,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       } else {
         deploymentSpecBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -4399,7 +6117,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     public Builder mergeDeploymentSpec(
         com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.DeploymentSpec value) {
       if (deploymentSpecBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)
+        if (((bitField0_ & 0x00000004) != 0)
             && deploymentSpec_ != null
             && deploymentSpec_
                 != com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.DeploymentSpec
@@ -4412,7 +6130,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         deploymentSpecBuilder_.mergeFrom(value);
       }
       if (deploymentSpec_ != null) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       return this;
@@ -4430,7 +6148,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearDeploymentSpec() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       deploymentSpec_ = null;
       if (deploymentSpecBuilder_ != null) {
         deploymentSpecBuilder_.dispose();
@@ -4453,7 +6171,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      */
     public com.google.cloud.aiplatform.v1beta1.ReasoningEngineSpec.DeploymentSpec.Builder
         getDeploymentSpecBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return getDeploymentSpecFieldBuilder().getBuilder();
     }
@@ -4513,9 +6231,9 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         java.util.Collections.emptyList();
 
     private void ensureClassMethodsIsMutable() {
-      if (!((bitField0_ & 0x00000004) != 0)) {
+      if (!((bitField0_ & 0x00000008) != 0)) {
         classMethods_ = new java.util.ArrayList<com.google.protobuf.Struct>(classMethods_);
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
       }
     }
 
@@ -4771,7 +6489,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
     public Builder clearClassMethods() {
       if (classMethodsBuilder_ == null) {
         classMethods_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000004);
+        bitField0_ = (bitField0_ & ~0x00000008);
         onChanged();
       } else {
         classMethodsBuilder_.clear();
@@ -4920,7 +6638,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
                 com.google.protobuf.Struct,
                 com.google.protobuf.Struct.Builder,
                 com.google.protobuf.StructOrBuilder>(
-                classMethods_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+                classMethods_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
         classMethods_ = null;
       }
       return classMethodsBuilder_;
@@ -4933,7 +6651,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. The OSS agent framework used to develop the agent.
-     * Currently supported values: "langchain", "langgraph", "ag2", "custom".
+     * Currently supported values: "google-adk", "langchain", "langgraph", "ag2",
+     * "llama-index", "custom".
      * </pre>
      *
      * <code>string agent_framework = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4957,7 +6676,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. The OSS agent framework used to develop the agent.
-     * Currently supported values: "langchain", "langgraph", "ag2", "custom".
+     * Currently supported values: "google-adk", "langchain", "langgraph", "ag2",
+     * "llama-index", "custom".
      * </pre>
      *
      * <code>string agent_framework = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4981,7 +6701,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. The OSS agent framework used to develop the agent.
-     * Currently supported values: "langchain", "langgraph", "ag2", "custom".
+     * Currently supported values: "google-adk", "langchain", "langgraph", "ag2",
+     * "llama-index", "custom".
      * </pre>
      *
      * <code>string agent_framework = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4994,7 +6715,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       agentFramework_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -5004,7 +6725,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. The OSS agent framework used to develop the agent.
-     * Currently supported values: "langchain", "langgraph", "ag2", "custom".
+     * Currently supported values: "google-adk", "langchain", "langgraph", "ag2",
+     * "llama-index", "custom".
      * </pre>
      *
      * <code>string agent_framework = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5013,7 +6735,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      */
     public Builder clearAgentFramework() {
       agentFramework_ = getDefaultInstance().getAgentFramework();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -5023,7 +6745,8 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. The OSS agent framework used to develop the agent.
-     * Currently supported values: "langchain", "langgraph", "ag2", "custom".
+     * Currently supported values: "google-adk", "langchain", "langgraph", "ag2",
+     * "llama-index", "custom".
      * </pre>
      *
      * <code>string agent_framework = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -5037,7 +6760,7 @@ public final class ReasoningEngineSpec extends com.google.protobuf.GeneratedMess
       }
       checkByteStringIsUtf8(value);
       agentFramework_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

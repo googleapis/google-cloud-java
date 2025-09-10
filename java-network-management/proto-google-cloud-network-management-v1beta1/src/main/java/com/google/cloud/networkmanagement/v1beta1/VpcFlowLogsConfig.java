@@ -47,6 +47,8 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
     metadata_ = 0;
     metadataFields_ = com.google.protobuf.LazyStringArrayList.emptyList();
     filterExpr_ = "";
+    crossProjectMetadata_ = 0;
+    targetResourceState_ = 0;
   }
 
   @java.lang.Override
@@ -87,7 +89,6 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Determines whether this configuration will be generating logs.
-   * Setting state=DISABLED will pause the log generation for this config.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig.State}
@@ -685,6 +686,342 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
     // @@protoc_insertion_point(enum_scope:google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig.Metadata)
   }
 
+  /**
+   *
+   *
+   * <pre>
+   * Determines whether to include cross project annotations in the logs.
+   * Project configurations will always have CROSS_PROJECT_METADATA_DISABLED.
+   * </pre>
+   *
+   * Protobuf enum {@code
+   * google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig.CrossProjectMetadata}
+   */
+  public enum CrossProjectMetadata implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * If not specified, the default is CROSS_PROJECT_METADATA_ENABLED.
+     * </pre>
+     *
+     * <code>CROSS_PROJECT_METADATA_UNSPECIFIED = 0;</code>
+     */
+    CROSS_PROJECT_METADATA_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * When CROSS_PROJECT_METADATA_ENABLED, metadata from other projects will be
+     * included in the logs.
+     * </pre>
+     *
+     * <code>CROSS_PROJECT_METADATA_ENABLED = 1;</code>
+     */
+    CROSS_PROJECT_METADATA_ENABLED(1),
+    /**
+     *
+     *
+     * <pre>
+     * When CROSS_PROJECT_METADATA_DISABLED, metadata from other projects will
+     * not be included in the logs.
+     * </pre>
+     *
+     * <code>CROSS_PROJECT_METADATA_DISABLED = 2;</code>
+     */
+    CROSS_PROJECT_METADATA_DISABLED(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * If not specified, the default is CROSS_PROJECT_METADATA_ENABLED.
+     * </pre>
+     *
+     * <code>CROSS_PROJECT_METADATA_UNSPECIFIED = 0;</code>
+     */
+    public static final int CROSS_PROJECT_METADATA_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * When CROSS_PROJECT_METADATA_ENABLED, metadata from other projects will be
+     * included in the logs.
+     * </pre>
+     *
+     * <code>CROSS_PROJECT_METADATA_ENABLED = 1;</code>
+     */
+    public static final int CROSS_PROJECT_METADATA_ENABLED_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * When CROSS_PROJECT_METADATA_DISABLED, metadata from other projects will
+     * not be included in the logs.
+     * </pre>
+     *
+     * <code>CROSS_PROJECT_METADATA_DISABLED = 2;</code>
+     */
+    public static final int CROSS_PROJECT_METADATA_DISABLED_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static CrossProjectMetadata valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static CrossProjectMetadata forNumber(int value) {
+      switch (value) {
+        case 0:
+          return CROSS_PROJECT_METADATA_UNSPECIFIED;
+        case 1:
+          return CROSS_PROJECT_METADATA_ENABLED;
+        case 2:
+          return CROSS_PROJECT_METADATA_DISABLED;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<CrossProjectMetadata>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<CrossProjectMetadata>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<CrossProjectMetadata>() {
+              public CrossProjectMetadata findValueByNumber(int number) {
+                return CrossProjectMetadata.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig.getDescriptor()
+          .getEnumTypes()
+          .get(3);
+    }
+
+    private static final CrossProjectMetadata[] VALUES = values();
+
+    public static CrossProjectMetadata valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private CrossProjectMetadata(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig.CrossProjectMetadata)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates whether the target resource exists, for diagnostic
+   * purposes.
+   * </pre>
+   *
+   * Protobuf enum {@code
+   * google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig.TargetResourceState}
+   */
+  public enum TargetResourceState implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified target resource state.
+     * </pre>
+     *
+     * <code>TARGET_RESOURCE_STATE_UNSPECIFIED = 0;</code>
+     */
+    TARGET_RESOURCE_STATE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that the target resource exists.
+     * </pre>
+     *
+     * <code>TARGET_RESOURCE_EXISTS = 1;</code>
+     */
+    TARGET_RESOURCE_EXISTS(1),
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that the target resource does not exist.
+     * </pre>
+     *
+     * <code>TARGET_RESOURCE_DOES_NOT_EXIST = 2;</code>
+     */
+    TARGET_RESOURCE_DOES_NOT_EXIST(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified target resource state.
+     * </pre>
+     *
+     * <code>TARGET_RESOURCE_STATE_UNSPECIFIED = 0;</code>
+     */
+    public static final int TARGET_RESOURCE_STATE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that the target resource exists.
+     * </pre>
+     *
+     * <code>TARGET_RESOURCE_EXISTS = 1;</code>
+     */
+    public static final int TARGET_RESOURCE_EXISTS_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Indicates that the target resource does not exist.
+     * </pre>
+     *
+     * <code>TARGET_RESOURCE_DOES_NOT_EXIST = 2;</code>
+     */
+    public static final int TARGET_RESOURCE_DOES_NOT_EXIST_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static TargetResourceState valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static TargetResourceState forNumber(int value) {
+      switch (value) {
+        case 0:
+          return TARGET_RESOURCE_STATE_UNSPECIFIED;
+        case 1:
+          return TARGET_RESOURCE_EXISTS;
+        case 2:
+          return TARGET_RESOURCE_DOES_NOT_EXIST;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<TargetResourceState>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<TargetResourceState>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<TargetResourceState>() {
+              public TargetResourceState findValueByNumber(int number) {
+                return TargetResourceState.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig.getDescriptor()
+          .getEnumTypes()
+          .get(4);
+    }
+
+    private static final TargetResourceState[] VALUES = values();
+
+    public static TargetResourceState valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private TargetResourceState(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig.TargetResourceState)
+  }
+
   private int bitField0_;
   private int targetResourceCase_ = 0;
 
@@ -695,6 +1032,8 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       implements
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+    NETWORK(100),
+    SUBNET(101),
     INTERCONNECT_ATTACHMENT(102),
     VPN_TUNNEL(103),
     TARGETRESOURCE_NOT_SET(0);
@@ -716,6 +1055,10 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
 
     public static TargetResourceCase forNumber(int value) {
       switch (value) {
+        case 100:
+          return NETWORK;
+        case 101:
+          return SUBNET;
         case 102:
           return INTERCONNECT_ATTACHMENT;
         case 103:
@@ -745,8 +1088,14 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Identifier. Unique name of the configuration using the form:
-   *     `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
+   * Identifier. Unique name of the configuration. The name can have one of the
+   * following forms:
+   *
+   * - For project-level configurations:
+   * `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
+   *
+   * - For organization-level configurations:
+   * `organizations/{organization_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -770,8 +1119,14 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Identifier. Unique name of the configuration using the form:
-   *     `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
+   * Identifier. Unique name of the configuration. The name can have one of the
+   * following forms:
+   *
+   * - For project-level configurations:
+   * `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
+   *
+   * - For organization-level configurations:
+   * `organizations/{organization_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -871,7 +1226,8 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Optional. The state of the VPC Flow Log configuration. Default value is
-   * ENABLED. When creating a new configuration, it must be enabled.
+   * ENABLED. When creating a new configuration, it must be enabled. Setting
+   * state=DISABLED will pause the log generation for this config.
    * </pre>
    *
    * <code>
@@ -890,7 +1246,8 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Optional. The state of the VPC Flow Log configuration. Default value is
-   * ENABLED. When creating a new configuration, it must be enabled.
+   * ENABLED. When creating a new configuration, it must be enabled. Setting
+   * state=DISABLED will pause the log generation for this config.
    * </pre>
    *
    * <code>
@@ -909,7 +1266,8 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
    *
    * <pre>
    * Optional. The state of the VPC Flow Log configuration. Default value is
-   * ENABLED. When creating a new configuration, it must be enabled.
+   * ENABLED. When creating a new configuration, it must be enabled. Setting
+   * state=DISABLED will pause the log generation for this config.
    * </pre>
    *
    * <code>
@@ -1246,6 +1604,298 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
     }
   }
 
+  public static final int CROSS_PROJECT_METADATA_FIELD_NUMBER = 13;
+  private int crossProjectMetadata_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Determines whether to include cross project annotations in the
+   * logs. This field is available only for organization configurations. If not
+   * specified in org configs will be set to CROSS_PROJECT_METADATA_ENABLED.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig.CrossProjectMetadata cross_project_metadata = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the crossProjectMetadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasCrossProjectMetadata() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Determines whether to include cross project annotations in the
+   * logs. This field is available only for organization configurations. If not
+   * specified in org configs will be set to CROSS_PROJECT_METADATA_ENABLED.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig.CrossProjectMetadata cross_project_metadata = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for crossProjectMetadata.
+   */
+  @java.lang.Override
+  public int getCrossProjectMetadataValue() {
+    return crossProjectMetadata_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Determines whether to include cross project annotations in the
+   * logs. This field is available only for organization configurations. If not
+   * specified in org configs will be set to CROSS_PROJECT_METADATA_ENABLED.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig.CrossProjectMetadata cross_project_metadata = 13 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The crossProjectMetadata.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig.CrossProjectMetadata
+      getCrossProjectMetadata() {
+    com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig.CrossProjectMetadata result =
+        com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig.CrossProjectMetadata.forNumber(
+            crossProjectMetadata_);
+    return result == null
+        ? com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig.CrossProjectMetadata
+            .UNRECOGNIZED
+        : result;
+  }
+
+  public static final int TARGET_RESOURCE_STATE_FIELD_NUMBER = 12;
+  private int targetResourceState_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Describes the state of the configured target resource for
+   * diagnostic purposes.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig.TargetResourceState target_resource_state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the targetResourceState field is set.
+   */
+  @java.lang.Override
+  public boolean hasTargetResourceState() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Describes the state of the configured target resource for
+   * diagnostic purposes.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig.TargetResourceState target_resource_state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for targetResourceState.
+   */
+  @java.lang.Override
+  public int getTargetResourceStateValue() {
+    return targetResourceState_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Describes the state of the configured target resource for
+   * diagnostic purposes.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig.TargetResourceState target_resource_state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The targetResourceState.
+   */
+  @java.lang.Override
+  public com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig.TargetResourceState
+      getTargetResourceState() {
+    com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig.TargetResourceState result =
+        com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig.TargetResourceState.forNumber(
+            targetResourceState_);
+    return result == null
+        ? com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig.TargetResourceState
+            .UNRECOGNIZED
+        : result;
+  }
+
+  public static final int NETWORK_FIELD_NUMBER = 100;
+
+  /**
+   *
+   *
+   * <pre>
+   * Traffic will be logged from VMs, VPN tunnels and Interconnect Attachments
+   * within the network.
+   * Format: projects/{project_id}/global/networks/{name}
+   * </pre>
+   *
+   * <code>string network = 100;</code>
+   *
+   * @return Whether the network field is set.
+   */
+  public boolean hasNetwork() {
+    return targetResourceCase_ == 100;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Traffic will be logged from VMs, VPN tunnels and Interconnect Attachments
+   * within the network.
+   * Format: projects/{project_id}/global/networks/{name}
+   * </pre>
+   *
+   * <code>string network = 100;</code>
+   *
+   * @return The network.
+   */
+  public java.lang.String getNetwork() {
+    java.lang.Object ref = "";
+    if (targetResourceCase_ == 100) {
+      ref = targetResource_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (targetResourceCase_ == 100) {
+        targetResource_ = s;
+      }
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Traffic will be logged from VMs, VPN tunnels and Interconnect Attachments
+   * within the network.
+   * Format: projects/{project_id}/global/networks/{name}
+   * </pre>
+   *
+   * <code>string network = 100;</code>
+   *
+   * @return The bytes for network.
+   */
+  public com.google.protobuf.ByteString getNetworkBytes() {
+    java.lang.Object ref = "";
+    if (targetResourceCase_ == 100) {
+      ref = targetResource_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (targetResourceCase_ == 100) {
+        targetResource_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SUBNET_FIELD_NUMBER = 101;
+
+  /**
+   *
+   *
+   * <pre>
+   * Traffic will be logged from VMs within the subnetwork.
+   * Format: projects/{project_id}/regions/{region}/subnetworks/{name}
+   * </pre>
+   *
+   * <code>string subnet = 101;</code>
+   *
+   * @return Whether the subnet field is set.
+   */
+  public boolean hasSubnet() {
+    return targetResourceCase_ == 101;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Traffic will be logged from VMs within the subnetwork.
+   * Format: projects/{project_id}/regions/{region}/subnetworks/{name}
+   * </pre>
+   *
+   * <code>string subnet = 101;</code>
+   *
+   * @return The subnet.
+   */
+  public java.lang.String getSubnet() {
+    java.lang.Object ref = "";
+    if (targetResourceCase_ == 101) {
+      ref = targetResource_;
+    }
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      if (targetResourceCase_ == 101) {
+        targetResource_ = s;
+      }
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Traffic will be logged from VMs within the subnetwork.
+   * Format: projects/{project_id}/regions/{region}/subnetworks/{name}
+   * </pre>
+   *
+   * <code>string subnet = 101;</code>
+   *
+   * @return The bytes for subnet.
+   */
+  public com.google.protobuf.ByteString getSubnetBytes() {
+    java.lang.Object ref = "";
+    if (targetResourceCase_ == 101) {
+      ref = targetResource_;
+    }
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      if (targetResourceCase_ == 101) {
+        targetResource_ = b;
+      }
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   public static final int INTERCONNECT_ATTACHMENT_FIELD_NUMBER = 102;
 
   /**
@@ -1525,7 +2175,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasCreateTime() {
-    return ((bitField0_ & 0x00000040) != 0);
+    return ((bitField0_ & 0x00000100) != 0);
   }
 
   /**
@@ -1577,7 +2227,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
    */
   @java.lang.Override
   public boolean hasUpdateTime() {
-    return ((bitField0_ & 0x00000080) != 0);
+    return ((bitField0_ & 0x00000200) != 0);
   }
 
   /**
@@ -1650,14 +2300,26 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, filterExpr_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       output.writeMessage(9, getCreateTime());
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       output.writeMessage(10, getUpdateTime());
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 11);
+    if (((bitField0_ & 0x00000080) != 0)) {
+      output.writeEnum(12, targetResourceState_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeEnum(13, crossProjectMetadata_);
+    }
+    if (targetResourceCase_ == 100) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 100, targetResource_);
+    }
+    if (targetResourceCase_ == 101) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 101, targetResource_);
+    }
     if (targetResourceCase_ == 102) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 102, targetResource_);
     }
@@ -1702,10 +2364,10 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, filterExpr_);
     }
-    if (((bitField0_ & 0x00000040) != 0)) {
+    if (((bitField0_ & 0x00000100) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getCreateTime());
     }
-    if (((bitField0_ & 0x00000080) != 0)) {
+    if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getUpdateTime());
     }
     for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
@@ -1717,6 +2379,18 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
               .setValue(entry.getValue())
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, labels__);
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(12, targetResourceState_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(13, crossProjectMetadata_);
+    }
+    if (targetResourceCase_ == 100) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(100, targetResource_);
+    }
+    if (targetResourceCase_ == 101) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(101, targetResource_);
     }
     if (targetResourceCase_ == 102) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(102, targetResource_);
@@ -1767,6 +2441,14 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
     if (hasFilterExpr()) {
       if (!getFilterExpr().equals(other.getFilterExpr())) return false;
     }
+    if (hasCrossProjectMetadata() != other.hasCrossProjectMetadata()) return false;
+    if (hasCrossProjectMetadata()) {
+      if (crossProjectMetadata_ != other.crossProjectMetadata_) return false;
+    }
+    if (hasTargetResourceState() != other.hasTargetResourceState()) return false;
+    if (hasTargetResourceState()) {
+      if (targetResourceState_ != other.targetResourceState_) return false;
+    }
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
     if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
@@ -1778,6 +2460,12 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
     }
     if (!getTargetResourceCase().equals(other.getTargetResourceCase())) return false;
     switch (targetResourceCase_) {
+      case 100:
+        if (!getNetwork().equals(other.getNetwork())) return false;
+        break;
+      case 101:
+        if (!getSubnet().equals(other.getSubnet())) return false;
+        break;
       case 102:
         if (!getInterconnectAttachment().equals(other.getInterconnectAttachment())) return false;
         break;
@@ -1828,6 +2516,14 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       hash = (37 * hash) + FILTER_EXPR_FIELD_NUMBER;
       hash = (53 * hash) + getFilterExpr().hashCode();
     }
+    if (hasCrossProjectMetadata()) {
+      hash = (37 * hash) + CROSS_PROJECT_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + crossProjectMetadata_;
+    }
+    if (hasTargetResourceState()) {
+      hash = (37 * hash) + TARGET_RESOURCE_STATE_FIELD_NUMBER;
+      hash = (53 * hash) + targetResourceState_;
+    }
     if (!internalGetLabels().getMap().isEmpty()) {
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
@@ -1841,6 +2537,14 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       hash = (53 * hash) + getUpdateTime().hashCode();
     }
     switch (targetResourceCase_) {
+      case 100:
+        hash = (37 * hash) + NETWORK_FIELD_NUMBER;
+        hash = (53 * hash) + getNetwork().hashCode();
+        break;
+      case 101:
+        hash = (37 * hash) + SUBNET_FIELD_NUMBER;
+        hash = (53 * hash) + getSubnet().hashCode();
+        break;
       case 102:
         hash = (37 * hash) + INTERCONNECT_ATTACHMENT_FIELD_NUMBER;
         hash = (53 * hash) + getInterconnectAttachment().hashCode();
@@ -2033,6 +2737,8 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       metadata_ = 0;
       metadataFields_ = com.google.protobuf.LazyStringArrayList.emptyList();
       filterExpr_ = "";
+      crossProjectMetadata_ = 0;
+      targetResourceState_ = 0;
       internalGetMutableLabels().clear();
       createTime_ = null;
       if (createTimeBuilder_ != null) {
@@ -2117,17 +2823,25 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
         result.filterExpr_ = filterExpr_;
         to_bitField0_ |= 0x00000020;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.crossProjectMetadata_ = crossProjectMetadata_;
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.targetResourceState_ = targetResourceState_;
+        to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00000800) != 0)) {
+      if (((from_bitField0_ & 0x00008000) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
-        to_bitField0_ |= 0x00000040;
+        to_bitField0_ |= 0x00000100;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00010000) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
-        to_bitField0_ |= 0x00000080;
+        to_bitField0_ |= 0x00000200;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2222,8 +2936,14 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
         bitField0_ |= 0x00000080;
         onChanged();
       }
+      if (other.hasCrossProjectMetadata()) {
+        setCrossProjectMetadata(other.getCrossProjectMetadata());
+      }
+      if (other.hasTargetResourceState()) {
+        setTargetResourceState(other.getTargetResourceState());
+      }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00004000;
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
       }
@@ -2231,6 +2951,20 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
         mergeUpdateTime(other.getUpdateTime());
       }
       switch (other.getTargetResourceCase()) {
+        case NETWORK:
+          {
+            targetResourceCase_ = 100;
+            targetResource_ = other.targetResource_;
+            onChanged();
+            break;
+          }
+        case SUBNET:
+          {
+            targetResourceCase_ = 101;
+            targetResource_ = other.targetResource_;
+            onChanged();
+            break;
+          }
         case INTERCONNECT_ATTACHMENT:
           {
             targetResourceCase_ = 102;
@@ -2328,13 +3062,13 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
             case 74:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000800;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 74
             case 82:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 82
             case 90:
@@ -2346,9 +3080,35 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
                 internalGetMutableLabels()
                     .getMutableMap()
                     .put(labels__.getKey(), labels__.getValue());
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00004000;
                 break;
               } // case 90
+            case 96:
+              {
+                targetResourceState_ = input.readEnum();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 96
+            case 104:
+              {
+                crossProjectMetadata_ = input.readEnum();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 104
+            case 802:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                targetResourceCase_ = 100;
+                targetResource_ = s;
+                break;
+              } // case 802
+            case 810:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                targetResourceCase_ = 101;
+                targetResource_ = s;
+                break;
+              } // case 810
             case 818:
               {
                 java.lang.String s = input.readStringRequireUtf8();
@@ -2402,8 +3162,14 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Identifier. Unique name of the configuration using the form:
-     *     `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
+     * Identifier. Unique name of the configuration. The name can have one of the
+     * following forms:
+     *
+     * - For project-level configurations:
+     * `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
+     *
+     * - For organization-level configurations:
+     * `organizations/{organization_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -2426,8 +3192,14 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Identifier. Unique name of the configuration using the form:
-     *     `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
+     * Identifier. Unique name of the configuration. The name can have one of the
+     * following forms:
+     *
+     * - For project-level configurations:
+     * `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
+     *
+     * - For organization-level configurations:
+     * `organizations/{organization_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -2450,8 +3222,14 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Identifier. Unique name of the configuration using the form:
-     *     `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
+     * Identifier. Unique name of the configuration. The name can have one of the
+     * following forms:
+     *
+     * - For project-level configurations:
+     * `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
+     *
+     * - For organization-level configurations:
+     * `organizations/{organization_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -2473,8 +3251,14 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Identifier. Unique name of the configuration using the form:
-     *     `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
+     * Identifier. Unique name of the configuration. The name can have one of the
+     * following forms:
+     *
+     * - For project-level configurations:
+     * `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
+     *
+     * - For organization-level configurations:
+     * `organizations/{organization_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -2492,8 +3276,14 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * Identifier. Unique name of the configuration using the form:
-     *     `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
+     * Identifier. Unique name of the configuration. The name can have one of the
+     * following forms:
+     *
+     * - For project-level configurations:
+     * `projects/{project_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
+     *
+     * - For organization-level configurations:
+     * `organizations/{organization_id}/locations/global/vpcFlowLogsConfigs/{vpc_flow_logs_config_id}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -2651,7 +3441,8 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The state of the VPC Flow Log configuration. Default value is
-     * ENABLED. When creating a new configuration, it must be enabled.
+     * ENABLED. When creating a new configuration, it must be enabled. Setting
+     * state=DISABLED will pause the log generation for this config.
      * </pre>
      *
      * <code>
@@ -2670,7 +3461,8 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The state of the VPC Flow Log configuration. Default value is
-     * ENABLED. When creating a new configuration, it must be enabled.
+     * ENABLED. When creating a new configuration, it must be enabled. Setting
+     * state=DISABLED will pause the log generation for this config.
      * </pre>
      *
      * <code>
@@ -2689,7 +3481,8 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The state of the VPC Flow Log configuration. Default value is
-     * ENABLED. When creating a new configuration, it must be enabled.
+     * ENABLED. When creating a new configuration, it must be enabled. Setting
+     * state=DISABLED will pause the log generation for this config.
      * </pre>
      *
      * <code>
@@ -2711,7 +3504,8 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The state of the VPC Flow Log configuration. Default value is
-     * ENABLED. When creating a new configuration, it must be enabled.
+     * ENABLED. When creating a new configuration, it must be enabled. Setting
+     * state=DISABLED will pause the log generation for this config.
      * </pre>
      *
      * <code>
@@ -2734,7 +3528,8 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The state of the VPC Flow Log configuration. Default value is
-     * ENABLED. When creating a new configuration, it must be enabled.
+     * ENABLED. When creating a new configuration, it must be enabled. Setting
+     * state=DISABLED will pause the log generation for this config.
      * </pre>
      *
      * <code>
@@ -2760,7 +3555,8 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
      *
      * <pre>
      * Optional. The state of the VPC Flow Log configuration. Default value is
-     * ENABLED. When creating a new configuration, it must be enabled.
+     * ENABLED. When creating a new configuration, it must be enabled. Setting
+     * state=DISABLED will pause the log generation for this config.
      * </pre>
      *
      * <code>
@@ -3458,6 +4254,578 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       return this;
     }
 
+    private int crossProjectMetadata_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Determines whether to include cross project annotations in the
+     * logs. This field is available only for organization configurations. If not
+     * specified in org configs will be set to CROSS_PROJECT_METADATA_ENABLED.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig.CrossProjectMetadata cross_project_metadata = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the crossProjectMetadata field is set.
+     */
+    @java.lang.Override
+    public boolean hasCrossProjectMetadata() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Determines whether to include cross project annotations in the
+     * logs. This field is available only for organization configurations. If not
+     * specified in org configs will be set to CROSS_PROJECT_METADATA_ENABLED.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig.CrossProjectMetadata cross_project_metadata = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for crossProjectMetadata.
+     */
+    @java.lang.Override
+    public int getCrossProjectMetadataValue() {
+      return crossProjectMetadata_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Determines whether to include cross project annotations in the
+     * logs. This field is available only for organization configurations. If not
+     * specified in org configs will be set to CROSS_PROJECT_METADATA_ENABLED.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig.CrossProjectMetadata cross_project_metadata = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for crossProjectMetadata to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCrossProjectMetadataValue(int value) {
+      crossProjectMetadata_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Determines whether to include cross project annotations in the
+     * logs. This field is available only for organization configurations. If not
+     * specified in org configs will be set to CROSS_PROJECT_METADATA_ENABLED.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig.CrossProjectMetadata cross_project_metadata = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The crossProjectMetadata.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig.CrossProjectMetadata
+        getCrossProjectMetadata() {
+      com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig.CrossProjectMetadata result =
+          com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig.CrossProjectMetadata
+              .forNumber(crossProjectMetadata_);
+      return result == null
+          ? com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig.CrossProjectMetadata
+              .UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Determines whether to include cross project annotations in the
+     * logs. This field is available only for organization configurations. If not
+     * specified in org configs will be set to CROSS_PROJECT_METADATA_ENABLED.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig.CrossProjectMetadata cross_project_metadata = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The crossProjectMetadata to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCrossProjectMetadata(
+        com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig.CrossProjectMetadata value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000100;
+      crossProjectMetadata_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Determines whether to include cross project annotations in the
+     * logs. This field is available only for organization configurations. If not
+     * specified in org configs will be set to CROSS_PROJECT_METADATA_ENABLED.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig.CrossProjectMetadata cross_project_metadata = 13 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCrossProjectMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      crossProjectMetadata_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int targetResourceState_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Describes the state of the configured target resource for
+     * diagnostic purposes.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig.TargetResourceState target_resource_state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the targetResourceState field is set.
+     */
+    @java.lang.Override
+    public boolean hasTargetResourceState() {
+      return ((bitField0_ & 0x00000200) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Describes the state of the configured target resource for
+     * diagnostic purposes.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig.TargetResourceState target_resource_state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for targetResourceState.
+     */
+    @java.lang.Override
+    public int getTargetResourceStateValue() {
+      return targetResourceState_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Describes the state of the configured target resource for
+     * diagnostic purposes.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig.TargetResourceState target_resource_state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for targetResourceState to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTargetResourceStateValue(int value) {
+      targetResourceState_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Describes the state of the configured target resource for
+     * diagnostic purposes.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig.TargetResourceState target_resource_state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The targetResourceState.
+     */
+    @java.lang.Override
+    public com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig.TargetResourceState
+        getTargetResourceState() {
+      com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig.TargetResourceState result =
+          com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig.TargetResourceState
+              .forNumber(targetResourceState_);
+      return result == null
+          ? com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig.TargetResourceState
+              .UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Describes the state of the configured target resource for
+     * diagnostic purposes.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig.TargetResourceState target_resource_state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The targetResourceState to set.
+     * @return This builder for chaining.
+     */
+    public Builder setTargetResourceState(
+        com.google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig.TargetResourceState value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000200;
+      targetResourceState_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Describes the state of the configured target resource for
+     * diagnostic purposes.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.networkmanagement.v1beta1.VpcFlowLogsConfig.TargetResourceState target_resource_state = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearTargetResourceState() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      targetResourceState_ = 0;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Traffic will be logged from VMs, VPN tunnels and Interconnect Attachments
+     * within the network.
+     * Format: projects/{project_id}/global/networks/{name}
+     * </pre>
+     *
+     * <code>string network = 100;</code>
+     *
+     * @return Whether the network field is set.
+     */
+    @java.lang.Override
+    public boolean hasNetwork() {
+      return targetResourceCase_ == 100;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Traffic will be logged from VMs, VPN tunnels and Interconnect Attachments
+     * within the network.
+     * Format: projects/{project_id}/global/networks/{name}
+     * </pre>
+     *
+     * <code>string network = 100;</code>
+     *
+     * @return The network.
+     */
+    @java.lang.Override
+    public java.lang.String getNetwork() {
+      java.lang.Object ref = "";
+      if (targetResourceCase_ == 100) {
+        ref = targetResource_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (targetResourceCase_ == 100) {
+          targetResource_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Traffic will be logged from VMs, VPN tunnels and Interconnect Attachments
+     * within the network.
+     * Format: projects/{project_id}/global/networks/{name}
+     * </pre>
+     *
+     * <code>string network = 100;</code>
+     *
+     * @return The bytes for network.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getNetworkBytes() {
+      java.lang.Object ref = "";
+      if (targetResourceCase_ == 100) {
+        ref = targetResource_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (targetResourceCase_ == 100) {
+          targetResource_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Traffic will be logged from VMs, VPN tunnels and Interconnect Attachments
+     * within the network.
+     * Format: projects/{project_id}/global/networks/{name}
+     * </pre>
+     *
+     * <code>string network = 100;</code>
+     *
+     * @param value The network to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNetwork(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      targetResourceCase_ = 100;
+      targetResource_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Traffic will be logged from VMs, VPN tunnels and Interconnect Attachments
+     * within the network.
+     * Format: projects/{project_id}/global/networks/{name}
+     * </pre>
+     *
+     * <code>string network = 100;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNetwork() {
+      if (targetResourceCase_ == 100) {
+        targetResourceCase_ = 0;
+        targetResource_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Traffic will be logged from VMs, VPN tunnels and Interconnect Attachments
+     * within the network.
+     * Format: projects/{project_id}/global/networks/{name}
+     * </pre>
+     *
+     * <code>string network = 100;</code>
+     *
+     * @param value The bytes for network to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNetworkBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      targetResourceCase_ = 100;
+      targetResource_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Traffic will be logged from VMs within the subnetwork.
+     * Format: projects/{project_id}/regions/{region}/subnetworks/{name}
+     * </pre>
+     *
+     * <code>string subnet = 101;</code>
+     *
+     * @return Whether the subnet field is set.
+     */
+    @java.lang.Override
+    public boolean hasSubnet() {
+      return targetResourceCase_ == 101;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Traffic will be logged from VMs within the subnetwork.
+     * Format: projects/{project_id}/regions/{region}/subnetworks/{name}
+     * </pre>
+     *
+     * <code>string subnet = 101;</code>
+     *
+     * @return The subnet.
+     */
+    @java.lang.Override
+    public java.lang.String getSubnet() {
+      java.lang.Object ref = "";
+      if (targetResourceCase_ == 101) {
+        ref = targetResource_;
+      }
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (targetResourceCase_ == 101) {
+          targetResource_ = s;
+        }
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Traffic will be logged from VMs within the subnetwork.
+     * Format: projects/{project_id}/regions/{region}/subnetworks/{name}
+     * </pre>
+     *
+     * <code>string subnet = 101;</code>
+     *
+     * @return The bytes for subnet.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getSubnetBytes() {
+      java.lang.Object ref = "";
+      if (targetResourceCase_ == 101) {
+        ref = targetResource_;
+      }
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        if (targetResourceCase_ == 101) {
+          targetResource_ = b;
+        }
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Traffic will be logged from VMs within the subnetwork.
+     * Format: projects/{project_id}/regions/{region}/subnetworks/{name}
+     * </pre>
+     *
+     * <code>string subnet = 101;</code>
+     *
+     * @param value The subnet to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSubnet(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      targetResourceCase_ = 101;
+      targetResource_ = value;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Traffic will be logged from VMs within the subnetwork.
+     * Format: projects/{project_id}/regions/{region}/subnetworks/{name}
+     * </pre>
+     *
+     * <code>string subnet = 101;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSubnet() {
+      if (targetResourceCase_ == 101) {
+        targetResourceCase_ = 0;
+        targetResource_ = null;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Traffic will be logged from VMs within the subnetwork.
+     * Format: projects/{project_id}/regions/{region}/subnetworks/{name}
+     * </pre>
+     *
+     * <code>string subnet = 101;</code>
+     *
+     * @param value The bytes for subnet to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSubnetBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      targetResourceCase_ = 101;
+      targetResource_ = value;
+      onChanged();
+      return this;
+    }
+
     /**
      *
      *
@@ -3771,7 +5139,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
       }
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00004000;
       onChanged();
       return labels_;
     }
@@ -3861,7 +5229,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
     }
 
     public Builder clearLabels() {
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00004000);
       internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
@@ -3886,7 +5254,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00004000;
       return internalGetMutableLabels().getMutableMap();
     }
 
@@ -3907,7 +5275,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
         throw new NullPointerException("map value");
       }
       internalGetMutableLabels().getMutableMap().put(key, value);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00004000;
       return this;
     }
 
@@ -3922,7 +5290,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00004000;
       return this;
     }
 
@@ -3947,7 +5315,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000800) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
 
     /**
@@ -3993,7 +5361,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4015,7 +5383,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4033,7 +5401,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)
+        if (((bitField0_ & 0x00008000) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -4044,7 +5412,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000800;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       return this;
@@ -4062,7 +5430,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000800);
+      bitField0_ = (bitField0_ & ~0x00008000);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -4084,7 +5452,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000800;
+      bitField0_ |= 0x00008000;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -4159,7 +5527,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00001000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
 
     /**
@@ -4205,7 +5573,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4227,7 +5595,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4245,7 +5613,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00001000) != 0)
+        if (((bitField0_ & 0x00010000) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -4256,7 +5624,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
         updateTimeBuilder_.mergeFrom(value);
       }
       if (updateTime_ != null) {
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       return this;
@@ -4274,7 +5642,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -4296,7 +5664,7 @@ public final class VpcFlowLogsConfig extends com.google.protobuf.GeneratedMessag
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }

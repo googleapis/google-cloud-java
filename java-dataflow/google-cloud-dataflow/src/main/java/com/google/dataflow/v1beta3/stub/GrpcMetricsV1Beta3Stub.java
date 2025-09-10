@@ -57,6 +57,7 @@ public class GrpcMetricsV1Beta3Stub extends MetricsV1Beta3Stub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetJobMetricsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(JobMetrics.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetJobExecutionDetailsRequest, JobExecutionDetails>
@@ -68,6 +69,7 @@ public class GrpcMetricsV1Beta3Stub extends MetricsV1Beta3Stub {
                   ProtoUtils.marshaller(GetJobExecutionDetailsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(JobExecutionDetails.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetStageExecutionDetailsRequest, StageExecutionDetails>
@@ -79,6 +81,7 @@ public class GrpcMetricsV1Beta3Stub extends MetricsV1Beta3Stub {
                   ProtoUtils.marshaller(GetStageExecutionDetailsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(StageExecutionDetails.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetJobMetricsRequest, JobMetrics> getJobMetricsCallable;

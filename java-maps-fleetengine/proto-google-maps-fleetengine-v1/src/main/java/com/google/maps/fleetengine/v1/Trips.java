@@ -52,7 +52,7 @@ public final class Trips {
           + "o\032,google/maps/fleetengine/v1/fleetengine.proto\032(google/maps/fleetengine/v1/traf"
           + "fic.proto\032\036google/protobuf/duration.prot"
           + "o\032\037google/protobuf/timestamp.proto\032\036goog"
-          + "le/protobuf/wrappers.proto\032\030google/type/latlng.proto\"\267\020\n"
+          + "le/protobuf/wrappers.proto\032\030google/type/latlng.proto\"\357\020\n"
           + "\004Trip\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\003\022\022\n\n"
           + "vehicle_id\030\002 \001(\t\0224\n"
@@ -105,13 +105,14 @@ public final class Trips {
           + "last_location\030\013 \001(\0132"
           + "$.maps.fleetengine.v1.VehicleLocationB\003\340A\003\022$\n"
           + "\027last_location_snappable\030\032 \001(\010B\003\340A\003\022+\n"
-          + "\004view\030\037 \001(\0162\035.maps.fleetengine.v1.TripView:G\352AD\n"
+          + "\004view\030\037 \001(\0162\035.maps.fleetengine.v1.TripView\0226\n\n"
+          + "attributes\030# \003(\0132\".maps.fleetengine.v1.TripAttribute:G\352AD\n"
           + "\037fleetengine.googleapis.com/Trip\022!providers/{provider}/trips/{trip}\"\234\001\n"
           + "\014StopLocation\022\'\n"
           + "\005point\030\001 \001(\0132\023.google.type.LatLngB\003\340A\002\022-\n"
           + "\ttimestamp\030\002 \001(\0132\032.google.protobuf.Timestamp\0224\n"
-          + "\tstop_time\030\003 \001"
-          + "(\0132\032.google.protobuf.TimestampB\005\030\001\340A\004*\342\001\n\n"
+          + "\tstop_time\030\003"
+          + " \001(\0132\032.google.protobuf.TimestampB\005\030\001\340A\004*\342\001\n\n"
           + "TripStatus\022\027\n"
           + "\023UNKNOWN_TRIP_STATUS\020\000\022\007\n"
           + "\003NEW\020\001\022\025\n"
@@ -133,11 +134,10 @@ public final class Trips {
           + "\025TRIP_VIEW_UNSPECIFIED\020\000\022\007\n"
           + "\003SDK\020\001\022\027\n"
           + "\023JOURNEY_SHARING_V1S\020\002B\321\001\n"
-          + "\036com.google.maps.fleetengine.v1B\005TripsP\001ZFcloud."
-          + "google.com/go/maps/fleetengine/apiv1/fle"
-          + "etenginepb;fleetenginepb\242\002\003CFE\252\002\032Google."
-          + "Maps.FleetEngine.V1\312\002\032Google\\Maps\\FleetE"
-          + "ngine\\V1\352\002\035Google::Maps::FleetEngine::V1b\006proto3"
+          + "\036com.google.maps.fleetengine.v1B\005TripsP\001ZFcloud.google.com/go/maps/fleet"
+          + "engine/apiv1/fleetenginepb;fleetenginepb"
+          + "\242\002\003CFE\252\002\032Google.Maps.FleetEngine.V1\312\002\032Go"
+          + "ogle\\Maps\\FleetEngine\\V1\352\002\035Google::Maps::FleetEngine::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -190,6 +190,7 @@ public final class Trips {
               "LastLocation",
               "LastLocationSnappable",
               "View",
+              "Attributes",
             });
     internal_static_maps_fleetengine_v1_StopLocation_descriptor =
         getDescriptor().getMessageTypes().get(1);

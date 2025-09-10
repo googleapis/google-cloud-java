@@ -53,6 +53,7 @@ public class GrpcProjectServiceStub extends ProjectServiceStub {
           .setFullMethodName("google.cloud.discoveryengine.v1alpha.ProjectService/GetProject")
           .setRequestMarshaller(ProtoUtils.marshaller(GetProjectRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Project.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ProvisionProjectRequest, Operation>
@@ -64,6 +65,7 @@ public class GrpcProjectServiceStub extends ProjectServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ProvisionProjectRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ReportConsentChangeRequest, Project>
@@ -75,6 +77,7 @@ public class GrpcProjectServiceStub extends ProjectServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ReportConsentChangeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Project.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetProjectRequest, Project> getProjectCallable;

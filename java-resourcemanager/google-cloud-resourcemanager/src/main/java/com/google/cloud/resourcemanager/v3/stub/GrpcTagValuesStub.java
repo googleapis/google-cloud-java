@@ -67,6 +67,7 @@ public class GrpcTagValuesStub extends TagValuesStub {
                   ProtoUtils.marshaller(ListTagValuesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTagValuesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTagValueRequest, TagValue> getTagValueMethodDescriptor =
@@ -75,6 +76,7 @@ public class GrpcTagValuesStub extends TagValuesStub {
           .setFullMethodName("google.cloud.resourcemanager.v3.TagValues/GetTagValue")
           .setRequestMarshaller(ProtoUtils.marshaller(GetTagValueRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(TagValue.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetNamespacedTagValueRequest, TagValue>
@@ -85,6 +87,7 @@ public class GrpcTagValuesStub extends TagValuesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetNamespacedTagValueRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TagValue.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateTagValueRequest, Operation>
@@ -95,6 +98,7 @@ public class GrpcTagValuesStub extends TagValuesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateTagValueRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateTagValueRequest, Operation>
@@ -105,6 +109,7 @@ public class GrpcTagValuesStub extends TagValuesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateTagValueRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteTagValueRequest, Operation>
@@ -115,6 +120,7 @@ public class GrpcTagValuesStub extends TagValuesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteTagValueRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -123,6 +129,7 @@ public class GrpcTagValuesStub extends TagValuesStub {
           .setFullMethodName("google.cloud.resourcemanager.v3.TagValues/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -131,6 +138,7 @@ public class GrpcTagValuesStub extends TagValuesStub {
           .setFullMethodName("google.cloud.resourcemanager.v3.TagValues/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -142,6 +150,7 @@ public class GrpcTagValuesStub extends TagValuesStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListTagValuesRequest, ListTagValuesResponse> listTagValuesCallable;

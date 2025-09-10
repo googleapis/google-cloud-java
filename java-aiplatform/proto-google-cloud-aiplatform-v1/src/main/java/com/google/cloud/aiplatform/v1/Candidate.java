@@ -183,6 +183,16 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      * <code>MALFORMED_FUNCTION_CALL = 9;</code>
      */
     MALFORMED_FUNCTION_CALL(9),
+    /**
+     *
+     *
+     * <pre>
+     * The model response was blocked by Model Armor.
+     * </pre>
+     *
+     * <code>MODEL_ARMOR = 10;</code>
+     */
+    MODEL_ARMOR(10),
     UNRECOGNIZED(-1),
     ;
 
@@ -302,6 +312,17 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
      */
     public static final int MALFORMED_FUNCTION_CALL_VALUE = 9;
 
+    /**
+     *
+     *
+     * <pre>
+     * The model response was blocked by Model Armor.
+     * </pre>
+     *
+     * <code>MODEL_ARMOR = 10;</code>
+     */
+    public static final int MODEL_ARMOR_VALUE = 10;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -346,6 +367,8 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
           return SPII;
         case 9:
           return MALFORMED_FUNCTION_CALL;
+        case 10:
+          return MODEL_ARMOR;
         default:
           return null;
       }
@@ -906,6 +929,66 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
         : groundingMetadata_;
   }
 
+  public static final int URL_CONTEXT_METADATA_FIELD_NUMBER = 11;
+  private com.google.cloud.aiplatform.v1.UrlContextMetadata urlContextMetadata_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata related to url context retrieval tool.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.UrlContextMetadata url_context_metadata = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the urlContextMetadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasUrlContextMetadata() {
+    return ((bitField0_ & 0x00000020) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata related to url context retrieval tool.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.UrlContextMetadata url_context_metadata = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The urlContextMetadata.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.UrlContextMetadata getUrlContextMetadata() {
+    return urlContextMetadata_ == null
+        ? com.google.cloud.aiplatform.v1.UrlContextMetadata.getDefaultInstance()
+        : urlContextMetadata_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Metadata related to url context retrieval tool.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.UrlContextMetadata url_context_metadata = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.UrlContextMetadataOrBuilder
+      getUrlContextMetadataOrBuilder() {
+    return urlContextMetadata_ == null
+        ? com.google.cloud.aiplatform.v1.UrlContextMetadata.getDefaultInstance()
+        : urlContextMetadata_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -952,6 +1035,9 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(10, getLogprobsResult());
     }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      output.writeMessage(11, getUrlContextMetadata());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -992,6 +1078,9 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getLogprobsResult());
+    }
+    if (((bitField0_ & 0x00000020) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getUrlContextMetadata());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1034,6 +1123,10 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
     if (hasGroundingMetadata() != other.hasGroundingMetadata()) return false;
     if (hasGroundingMetadata()) {
       if (!getGroundingMetadata().equals(other.getGroundingMetadata())) return false;
+    }
+    if (hasUrlContextMetadata() != other.hasUrlContextMetadata()) return false;
+    if (hasUrlContextMetadata()) {
+      if (!getUrlContextMetadata().equals(other.getUrlContextMetadata())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1082,6 +1175,10 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
     if (hasGroundingMetadata()) {
       hash = (37 * hash) + GROUNDING_METADATA_FIELD_NUMBER;
       hash = (53 * hash) + getGroundingMetadata().hashCode();
+    }
+    if (hasUrlContextMetadata()) {
+      hash = (37 * hash) + URL_CONTEXT_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getUrlContextMetadata().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1229,6 +1326,7 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
         getSafetyRatingsFieldBuilder();
         getCitationMetadataFieldBuilder();
         getGroundingMetadataFieldBuilder();
+        getUrlContextMetadataFieldBuilder();
       }
     }
 
@@ -1267,6 +1365,11 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       if (groundingMetadataBuilder_ != null) {
         groundingMetadataBuilder_.dispose();
         groundingMetadataBuilder_ = null;
+      }
+      urlContextMetadata_ = null;
+      if (urlContextMetadataBuilder_ != null) {
+        urlContextMetadataBuilder_.dispose();
+        urlContextMetadataBuilder_ = null;
       }
       return this;
     }
@@ -1354,6 +1457,13 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
                 ? groundingMetadata_
                 : groundingMetadataBuilder_.build();
         to_bitField0_ |= 0x00000010;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.urlContextMetadata_ =
+            urlContextMetadataBuilder_ == null
+                ? urlContextMetadata_
+                : urlContextMetadataBuilder_.build();
+        to_bitField0_ |= 0x00000020;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1459,6 +1569,9 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
       if (other.hasGroundingMetadata()) {
         mergeGroundingMetadata(other.getGroundingMetadata());
       }
+      if (other.hasUrlContextMetadata()) {
+        mergeUrlContextMetadata(other.getUrlContextMetadata());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1554,6 +1667,13 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000010;
                 break;
               } // case 82
+            case 90:
+              {
+                input.readMessage(
+                    getUrlContextMetadataFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3282,6 +3402,223 @@ public final class Candidate extends com.google.protobuf.GeneratedMessageV3
         groundingMetadata_ = null;
       }
       return groundingMetadataBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1.UrlContextMetadata urlContextMetadata_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.UrlContextMetadata,
+            com.google.cloud.aiplatform.v1.UrlContextMetadata.Builder,
+            com.google.cloud.aiplatform.v1.UrlContextMetadataOrBuilder>
+        urlContextMetadataBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata related to url context retrieval tool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.UrlContextMetadata url_context_metadata = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the urlContextMetadata field is set.
+     */
+    public boolean hasUrlContextMetadata() {
+      return ((bitField0_ & 0x00000400) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata related to url context retrieval tool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.UrlContextMetadata url_context_metadata = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The urlContextMetadata.
+     */
+    public com.google.cloud.aiplatform.v1.UrlContextMetadata getUrlContextMetadata() {
+      if (urlContextMetadataBuilder_ == null) {
+        return urlContextMetadata_ == null
+            ? com.google.cloud.aiplatform.v1.UrlContextMetadata.getDefaultInstance()
+            : urlContextMetadata_;
+      } else {
+        return urlContextMetadataBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata related to url context retrieval tool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.UrlContextMetadata url_context_metadata = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUrlContextMetadata(com.google.cloud.aiplatform.v1.UrlContextMetadata value) {
+      if (urlContextMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        urlContextMetadata_ = value;
+      } else {
+        urlContextMetadataBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata related to url context retrieval tool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.UrlContextMetadata url_context_metadata = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setUrlContextMetadata(
+        com.google.cloud.aiplatform.v1.UrlContextMetadata.Builder builderForValue) {
+      if (urlContextMetadataBuilder_ == null) {
+        urlContextMetadata_ = builderForValue.build();
+      } else {
+        urlContextMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata related to url context retrieval tool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.UrlContextMetadata url_context_metadata = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeUrlContextMetadata(
+        com.google.cloud.aiplatform.v1.UrlContextMetadata value) {
+      if (urlContextMetadataBuilder_ == null) {
+        if (((bitField0_ & 0x00000400) != 0)
+            && urlContextMetadata_ != null
+            && urlContextMetadata_
+                != com.google.cloud.aiplatform.v1.UrlContextMetadata.getDefaultInstance()) {
+          getUrlContextMetadataBuilder().mergeFrom(value);
+        } else {
+          urlContextMetadata_ = value;
+        }
+      } else {
+        urlContextMetadataBuilder_.mergeFrom(value);
+      }
+      if (urlContextMetadata_ != null) {
+        bitField0_ |= 0x00000400;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata related to url context retrieval tool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.UrlContextMetadata url_context_metadata = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearUrlContextMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      urlContextMetadata_ = null;
+      if (urlContextMetadataBuilder_ != null) {
+        urlContextMetadataBuilder_.dispose();
+        urlContextMetadataBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata related to url context retrieval tool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.UrlContextMetadata url_context_metadata = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.UrlContextMetadata.Builder
+        getUrlContextMetadataBuilder() {
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return getUrlContextMetadataFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata related to url context retrieval tool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.UrlContextMetadata url_context_metadata = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.UrlContextMetadataOrBuilder
+        getUrlContextMetadataOrBuilder() {
+      if (urlContextMetadataBuilder_ != null) {
+        return urlContextMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        return urlContextMetadata_ == null
+            ? com.google.cloud.aiplatform.v1.UrlContextMetadata.getDefaultInstance()
+            : urlContextMetadata_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Metadata related to url context retrieval tool.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.UrlContextMetadata url_context_metadata = 11 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.UrlContextMetadata,
+            com.google.cloud.aiplatform.v1.UrlContextMetadata.Builder,
+            com.google.cloud.aiplatform.v1.UrlContextMetadataOrBuilder>
+        getUrlContextMetadataFieldBuilder() {
+      if (urlContextMetadataBuilder_ == null) {
+        urlContextMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.UrlContextMetadata,
+                com.google.cloud.aiplatform.v1.UrlContextMetadata.Builder,
+                com.google.cloud.aiplatform.v1.UrlContextMetadataOrBuilder>(
+                getUrlContextMetadata(), getParentForChildren(), isClean());
+        urlContextMetadata_ = null;
+      }
+      return urlContextMetadataBuilder_;
     }
 
     @java.lang.Override

@@ -116,6 +116,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                   ProtoUtils.marshaller(SearchCatalogRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SearchCatalogResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateEntryGroupRequest, EntryGroup>
@@ -126,6 +127,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateEntryGroupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(EntryGroup.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetEntryGroupRequest, EntryGroup>
@@ -136,6 +138,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetEntryGroupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(EntryGroup.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateEntryGroupRequest, EntryGroup>
@@ -146,6 +149,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateEntryGroupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(EntryGroup.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteEntryGroupRequest, Empty>
@@ -156,6 +160,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteEntryGroupRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListEntryGroupsRequest, ListEntryGroupsResponse>
@@ -167,6 +172,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                   ProtoUtils.marshaller(ListEntryGroupsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEntryGroupsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateEntryRequest, Entry> createEntryMethodDescriptor =
@@ -175,6 +181,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
           .setFullMethodName("google.cloud.datacatalog.v1.DataCatalog/CreateEntry")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateEntryRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Entry.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateEntryRequest, Entry> updateEntryMethodDescriptor =
@@ -183,6 +190,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
           .setFullMethodName("google.cloud.datacatalog.v1.DataCatalog/UpdateEntry")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateEntryRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Entry.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteEntryRequest, Empty> deleteEntryMethodDescriptor =
@@ -191,6 +199,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
           .setFullMethodName("google.cloud.datacatalog.v1.DataCatalog/DeleteEntry")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteEntryRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetEntryRequest, Entry> getEntryMethodDescriptor =
@@ -199,6 +208,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
           .setFullMethodName("google.cloud.datacatalog.v1.DataCatalog/GetEntry")
           .setRequestMarshaller(ProtoUtils.marshaller(GetEntryRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Entry.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<LookupEntryRequest, Entry> lookupEntryMethodDescriptor =
@@ -207,6 +217,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
           .setFullMethodName("google.cloud.datacatalog.v1.DataCatalog/LookupEntry")
           .setRequestMarshaller(ProtoUtils.marshaller(LookupEntryRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Entry.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListEntriesRequest, ListEntriesResponse>
@@ -217,6 +228,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListEntriesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListEntriesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ModifyEntryOverviewRequest, EntryOverview>
@@ -227,6 +239,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ModifyEntryOverviewRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(EntryOverview.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ModifyEntryContactsRequest, Contacts>
@@ -237,6 +250,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ModifyEntryContactsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Contacts.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateTagTemplateRequest, TagTemplate>
@@ -247,6 +261,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateTagTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TagTemplate.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTagTemplateRequest, TagTemplate>
@@ -257,6 +272,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetTagTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TagTemplate.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateTagTemplateRequest, TagTemplate>
@@ -267,6 +283,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateTagTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TagTemplate.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteTagTemplateRequest, Empty>
@@ -277,6 +294,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteTagTemplateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateTagTemplateFieldRequest, TagTemplateField>
@@ -287,6 +305,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateTagTemplateFieldRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TagTemplateField.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateTagTemplateFieldRequest, TagTemplateField>
@@ -297,6 +316,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateTagTemplateFieldRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TagTemplateField.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RenameTagTemplateFieldRequest, TagTemplateField>
@@ -307,6 +327,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RenameTagTemplateFieldRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TagTemplateField.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RenameTagTemplateFieldEnumValueRequest, TagTemplateField>
@@ -319,6 +340,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                   ProtoUtils.marshaller(
                       RenameTagTemplateFieldEnumValueRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TagTemplateField.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteTagTemplateFieldRequest, Empty>
@@ -329,6 +351,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteTagTemplateFieldRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateTagRequest, Tag> createTagMethodDescriptor =
@@ -337,6 +360,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
           .setFullMethodName("google.cloud.datacatalog.v1.DataCatalog/CreateTag")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateTagRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Tag.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateTagRequest, Tag> updateTagMethodDescriptor =
@@ -345,6 +369,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
           .setFullMethodName("google.cloud.datacatalog.v1.DataCatalog/UpdateTag")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateTagRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Tag.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteTagRequest, Empty> deleteTagMethodDescriptor =
@@ -353,6 +378,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
           .setFullMethodName("google.cloud.datacatalog.v1.DataCatalog/DeleteTag")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteTagRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListTagsRequest, ListTagsResponse>
@@ -362,6 +388,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
               .setFullMethodName("google.cloud.datacatalog.v1.DataCatalog/ListTags")
               .setRequestMarshaller(ProtoUtils.marshaller(ListTagsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListTagsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ReconcileTagsRequest, Operation>
@@ -372,6 +399,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ReconcileTagsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<StarEntryRequest, StarEntryResponse>
@@ -381,6 +409,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
               .setFullMethodName("google.cloud.datacatalog.v1.DataCatalog/StarEntry")
               .setRequestMarshaller(ProtoUtils.marshaller(StarEntryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(StarEntryResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UnstarEntryRequest, UnstarEntryResponse>
@@ -391,6 +420,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
               .setRequestMarshaller(ProtoUtils.marshaller(UnstarEntryRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(UnstarEntryResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -399,6 +429,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
           .setFullMethodName("google.cloud.datacatalog.v1.DataCatalog/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -407,6 +438,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
           .setFullMethodName("google.cloud.datacatalog.v1.DataCatalog/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -418,6 +450,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportEntriesRequest, Operation>
@@ -428,6 +461,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ImportEntriesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SetConfigRequest, MigrationConfig>
@@ -437,6 +471,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
               .setFullMethodName("google.cloud.datacatalog.v1.DataCatalog/SetConfig")
               .setRequestMarshaller(ProtoUtils.marshaller(SetConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(MigrationConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RetrieveConfigRequest, OrganizationConfig>
@@ -447,6 +482,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RetrieveConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(OrganizationConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RetrieveEffectiveConfigRequest, MigrationConfig>
@@ -457,6 +493,7 @@ public class GrpcDataCatalogStub extends DataCatalogStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RetrieveEffectiveConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(MigrationConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<SearchCatalogRequest, SearchCatalogResponse> searchCatalogCallable;

@@ -51,6 +51,7 @@ public class GrpcLfpMerchantStateServiceStub extends LfpMerchantStateServiceStub
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetLfpMerchantStateRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(LfpMerchantState.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetLfpMerchantStateRequest, LfpMerchantState>

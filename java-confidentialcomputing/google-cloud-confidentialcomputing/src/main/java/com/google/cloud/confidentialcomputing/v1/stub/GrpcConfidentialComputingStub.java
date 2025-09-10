@@ -57,6 +57,7 @@ public class GrpcConfidentialComputingStub extends ConfidentialComputingStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateChallengeRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Challenge.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<VerifyAttestationRequest, VerifyAttestationResponse>
@@ -69,6 +70,7 @@ public class GrpcConfidentialComputingStub extends ConfidentialComputingStub {
                   ProtoUtils.marshaller(VerifyAttestationRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(VerifyAttestationResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -80,6 +82,7 @@ public class GrpcConfidentialComputingStub extends ConfidentialComputingStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -88,6 +91,7 @@ public class GrpcConfidentialComputingStub extends ConfidentialComputingStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<CreateChallengeRequest, Challenge> createChallengeCallable;

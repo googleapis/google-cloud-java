@@ -587,12 +587,11 @@ public final class TranslationServiceProto {
           + "\344\223\0025*3/v3beta1/{name=projects/*/location"
           + "s/*/glossaries/*}\032~\312A\030translate.googleap"
           + "is.com\322A`https://www.googleapis.com/auth"
-          + "/cloud-platform,https://www.googleapis.com/auth/cloud-translationB\360\001\n"
+          + "/cloud-platform,https://www.googleapis.com/auth/cloud-translationB\355\001\n"
           + "\"com.google.cloud.translate.v3beta1B\027TranslationSer"
           + "viceProtoP\001ZFcloud.google.com/go/translation/apiv3beta1/translationpb;translatio"
-          + "npb\370\001\001\252\002\036Google.Cloud.Translate.V3Beta1\312"
-          + "\002\036Google\\Cloud\\Translate\\V3beta1\352\002!Googl"
-          + "e::Cloud::Translate::V3beta1b\006proto3"
+          + "npb\252\002\036Google.Cloud.Translate.V3Beta1\312\002\036G"
+          + "oogle\\Cloud\\Translate\\V3beta1\352\002!Google::Cloud::Translate::V3beta1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

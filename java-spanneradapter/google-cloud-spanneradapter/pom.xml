@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-spanneradapter</artifactId>
-  <version>0.1.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-spanneradapter:current} -->
+  <version>0.10.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-spanneradapter:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Spanner Adapter API</name>
   <description>Cloud Spanner Adapter API The Cloud Spanner Adapter service allows native drivers of supported     database dialects to interact directly with Cloud Spanner by wrapping the underlying     wire protocol used by the driver in a gRPC stream.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-spanneradapter-parent</artifactId>
-    <version>0.1.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-spanneradapter:current} -->
+    <version>0.10.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-spanneradapter:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-spanneradapter</site.installationModule>

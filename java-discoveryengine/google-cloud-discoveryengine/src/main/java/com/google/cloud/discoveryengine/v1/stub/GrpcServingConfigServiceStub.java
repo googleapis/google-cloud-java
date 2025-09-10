@@ -49,6 +49,7 @@ public class GrpcServingConfigServiceStub extends ServingConfigServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateServingConfigRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ServingConfig.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<UpdateServingConfigRequest, ServingConfig>

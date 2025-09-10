@@ -279,4 +279,113 @@ public class MockDepServiceImpl extends DepServiceImplBase {
                   Exception.class.getName())));
     }
   }
+
+  @Override
+  public void listAuthzExtensions(
+      ListAuthzExtensionsRequest request,
+      StreamObserver<ListAuthzExtensionsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof ListAuthzExtensionsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((ListAuthzExtensionsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method ListAuthzExtensions, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  ListAuthzExtensionsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void getAuthzExtension(
+      GetAuthzExtensionRequest request, StreamObserver<AuthzExtension> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof AuthzExtension) {
+      requests.add(request);
+      responseObserver.onNext(((AuthzExtension) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method GetAuthzExtension, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  AuthzExtension.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void createAuthzExtension(
+      CreateAuthzExtensionRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CreateAuthzExtension, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void updateAuthzExtension(
+      UpdateAuthzExtensionRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method UpdateAuthzExtension, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void deleteAuthzExtension(
+      DeleteAuthzExtensionRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method DeleteAuthzExtension, expected %s or"
+                      + " %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
 }

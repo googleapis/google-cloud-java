@@ -54,6 +54,7 @@ public class GrpcCompletionServiceStub extends CompletionServiceStub {
                   ProtoUtils.marshaller(CompleteQueryRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(CompleteQueryResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportCompletionDataRequest, Operation>
@@ -64,6 +65,7 @@ public class GrpcCompletionServiceStub extends CompletionServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ImportCompletionDataRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CompleteQueryRequest, CompleteQueryResponse> completeQueryCallable;

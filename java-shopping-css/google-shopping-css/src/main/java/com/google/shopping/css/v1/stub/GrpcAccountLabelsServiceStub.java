@@ -56,6 +56,7 @@ public class GrpcAccountLabelsServiceStub extends AccountLabelsServiceStub {
                   ProtoUtils.marshaller(ListAccountLabelsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListAccountLabelsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateAccountLabelRequest, AccountLabel>
@@ -66,6 +67,7 @@ public class GrpcAccountLabelsServiceStub extends AccountLabelsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateAccountLabelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AccountLabel.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateAccountLabelRequest, AccountLabel>
@@ -76,6 +78,7 @@ public class GrpcAccountLabelsServiceStub extends AccountLabelsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateAccountLabelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AccountLabel.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteAccountLabelRequest, Empty>
@@ -86,6 +89,7 @@ public class GrpcAccountLabelsServiceStub extends AccountLabelsServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteAccountLabelRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<ListAccountLabelsRequest, ListAccountLabelsResponse>

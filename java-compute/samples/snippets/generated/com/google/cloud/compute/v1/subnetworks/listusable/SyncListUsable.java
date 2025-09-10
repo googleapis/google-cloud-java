@@ -42,6 +42,7 @@ public class SyncListUsable {
               .setPageToken("pageToken873572522")
               .setProject("project-309310695")
               .setReturnPartialSuccess(true)
+              .setServiceProject("serviceProject1947145892")
               .build();
       for (UsableSubnetwork element : subnetworksClient.listUsable(request).iterateAll()) {
         // doThingsWith(element);

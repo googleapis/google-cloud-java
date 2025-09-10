@@ -73,7 +73,70 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
   public interface GoogleSearchOrBuilder
       extends
       // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1.Tool.GoogleSearch)
-      com.google.protobuf.MessageOrBuilder {}
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of domains to be excluded from the search results.
+     * The default limit is 2000 domains.
+     * Example: ["amazon.com", "facebook.com"].
+     * </pre>
+     *
+     * <code>repeated string exclude_domains = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the excludeDomains.
+     */
+    java.util.List<java.lang.String> getExcludeDomainsList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of domains to be excluded from the search results.
+     * The default limit is 2000 domains.
+     * Example: ["amazon.com", "facebook.com"].
+     * </pre>
+     *
+     * <code>repeated string exclude_domains = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of excludeDomains.
+     */
+    int getExcludeDomainsCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of domains to be excluded from the search results.
+     * The default limit is 2000 domains.
+     * Example: ["amazon.com", "facebook.com"].
+     * </pre>
+     *
+     * <code>repeated string exclude_domains = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The excludeDomains at the given index.
+     */
+    java.lang.String getExcludeDomains(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of domains to be excluded from the search results.
+     * The default limit is 2000 domains.
+     * Example: ["amazon.com", "facebook.com"].
+     * </pre>
+     *
+     * <code>repeated string exclude_domains = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the excludeDomains at the given index.
+     */
+    com.google.protobuf.ByteString getExcludeDomainsBytes(int index);
+  }
 
   /**
    *
@@ -96,7 +159,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       super(builder);
     }
 
-    private GoogleSearch() {}
+    private GoogleSearch() {
+      excludeDomains_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    }
 
     @java.lang.Override
     @SuppressWarnings({"unused"})
@@ -119,6 +184,82 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.aiplatform.v1.Tool.GoogleSearch.Builder.class);
     }
 
+    public static final int EXCLUDE_DOMAINS_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList excludeDomains_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of domains to be excluded from the search results.
+     * The default limit is 2000 domains.
+     * Example: ["amazon.com", "facebook.com"].
+     * </pre>
+     *
+     * <code>repeated string exclude_domains = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the excludeDomains.
+     */
+    public com.google.protobuf.ProtocolStringList getExcludeDomainsList() {
+      return excludeDomains_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of domains to be excluded from the search results.
+     * The default limit is 2000 domains.
+     * Example: ["amazon.com", "facebook.com"].
+     * </pre>
+     *
+     * <code>repeated string exclude_domains = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of excludeDomains.
+     */
+    public int getExcludeDomainsCount() {
+      return excludeDomains_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of domains to be excluded from the search results.
+     * The default limit is 2000 domains.
+     * Example: ["amazon.com", "facebook.com"].
+     * </pre>
+     *
+     * <code>repeated string exclude_domains = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The excludeDomains at the given index.
+     */
+    public java.lang.String getExcludeDomains(int index) {
+      return excludeDomains_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. List of domains to be excluded from the search results.
+     * The default limit is 2000 domains.
+     * Example: ["amazon.com", "facebook.com"].
+     * </pre>
+     *
+     * <code>repeated string exclude_domains = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the excludeDomains at the given index.
+     */
+    public com.google.protobuf.ByteString getExcludeDomainsBytes(int index) {
+      return excludeDomains_.getByteString(index);
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -133,6 +274,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      for (int i = 0; i < excludeDomains_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, excludeDomains_.getRaw(i));
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -142,6 +286,14 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       if (size != -1) return size;
 
       size = 0;
+      {
+        int dataSize = 0;
+        for (int i = 0; i < excludeDomains_.size(); i++) {
+          dataSize += computeStringSizeNoTag(excludeDomains_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getExcludeDomainsList().size();
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -158,6 +310,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       com.google.cloud.aiplatform.v1.Tool.GoogleSearch other =
           (com.google.cloud.aiplatform.v1.Tool.GoogleSearch) obj;
 
+      if (!getExcludeDomainsList().equals(other.getExcludeDomainsList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -169,6 +322,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       }
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
+      if (getExcludeDomainsCount() > 0) {
+        hash = (37 * hash) + EXCLUDE_DOMAINS_FIELD_NUMBER;
+        hash = (53 * hash) + getExcludeDomainsList().hashCode();
+      }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -311,6 +468,8 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       @java.lang.Override
       public Builder clear() {
         super.clear();
+        bitField0_ = 0;
+        excludeDomains_ = com.google.protobuf.LazyStringArrayList.emptyList();
         return this;
       }
 
@@ -338,8 +497,19 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       public com.google.cloud.aiplatform.v1.Tool.GoogleSearch buildPartial() {
         com.google.cloud.aiplatform.v1.Tool.GoogleSearch result =
             new com.google.cloud.aiplatform.v1.Tool.GoogleSearch(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
         onBuilt();
         return result;
+      }
+
+      private void buildPartial0(com.google.cloud.aiplatform.v1.Tool.GoogleSearch result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          excludeDomains_.makeImmutable();
+          result.excludeDomains_ = excludeDomains_;
+        }
       }
 
       @java.lang.Override
@@ -390,6 +560,16 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       public Builder mergeFrom(com.google.cloud.aiplatform.v1.Tool.GoogleSearch other) {
         if (other == com.google.cloud.aiplatform.v1.Tool.GoogleSearch.getDefaultInstance())
           return this;
+        if (!other.excludeDomains_.isEmpty()) {
+          if (excludeDomains_.isEmpty()) {
+            excludeDomains_ = other.excludeDomains_;
+            bitField0_ |= 0x00000001;
+          } else {
+            ensureExcludeDomainsIsMutable();
+            excludeDomains_.addAll(other.excludeDomains_);
+          }
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -416,6 +596,13 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
               case 0:
                 done = true;
                 break;
+              case 26:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureExcludeDomainsIsMutable();
+                  excludeDomains_.add(s);
+                  break;
+                } // case 26
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -430,6 +617,209 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         } finally {
           onChanged();
         } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.protobuf.LazyStringArrayList excludeDomains_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureExcludeDomainsIsMutable() {
+        if (!excludeDomains_.isModifiable()) {
+          excludeDomains_ = new com.google.protobuf.LazyStringArrayList(excludeDomains_);
+        }
+        bitField0_ |= 0x00000001;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of domains to be excluded from the search results.
+       * The default limit is 2000 domains.
+       * Example: ["amazon.com", "facebook.com"].
+       * </pre>
+       *
+       * <code>repeated string exclude_domains = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return A list containing the excludeDomains.
+       */
+      public com.google.protobuf.ProtocolStringList getExcludeDomainsList() {
+        excludeDomains_.makeImmutable();
+        return excludeDomains_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of domains to be excluded from the search results.
+       * The default limit is 2000 domains.
+       * Example: ["amazon.com", "facebook.com"].
+       * </pre>
+       *
+       * <code>repeated string exclude_domains = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The count of excludeDomains.
+       */
+      public int getExcludeDomainsCount() {
+        return excludeDomains_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of domains to be excluded from the search results.
+       * The default limit is 2000 domains.
+       * Example: ["amazon.com", "facebook.com"].
+       * </pre>
+       *
+       * <code>repeated string exclude_domains = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the element to return.
+       * @return The excludeDomains at the given index.
+       */
+      public java.lang.String getExcludeDomains(int index) {
+        return excludeDomains_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of domains to be excluded from the search results.
+       * The default limit is 2000 domains.
+       * Example: ["amazon.com", "facebook.com"].
+       * </pre>
+       *
+       * <code>repeated string exclude_domains = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the excludeDomains at the given index.
+       */
+      public com.google.protobuf.ByteString getExcludeDomainsBytes(int index) {
+        return excludeDomains_.getByteString(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of domains to be excluded from the search results.
+       * The default limit is 2000 domains.
+       * Example: ["amazon.com", "facebook.com"].
+       * </pre>
+       *
+       * <code>repeated string exclude_domains = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param index The index to set the value at.
+       * @param value The excludeDomains to set.
+       * @return This builder for chaining.
+       */
+      public Builder setExcludeDomains(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExcludeDomainsIsMutable();
+        excludeDomains_.set(index, value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of domains to be excluded from the search results.
+       * The default limit is 2000 domains.
+       * Example: ["amazon.com", "facebook.com"].
+       * </pre>
+       *
+       * <code>repeated string exclude_domains = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The excludeDomains to add.
+       * @return This builder for chaining.
+       */
+      public Builder addExcludeDomains(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureExcludeDomainsIsMutable();
+        excludeDomains_.add(value);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of domains to be excluded from the search results.
+       * The default limit is 2000 domains.
+       * Example: ["amazon.com", "facebook.com"].
+       * </pre>
+       *
+       * <code>repeated string exclude_domains = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param values The excludeDomains to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllExcludeDomains(java.lang.Iterable<java.lang.String> values) {
+        ensureExcludeDomainsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, excludeDomains_);
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of domains to be excluded from the search results.
+       * The default limit is 2000 domains.
+       * Example: ["amazon.com", "facebook.com"].
+       * </pre>
+       *
+       * <code>repeated string exclude_domains = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearExcludeDomains() {
+        excludeDomains_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        ;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. List of domains to be excluded from the search results.
+       * The default limit is 2000 domains.
+       * Example: ["amazon.com", "facebook.com"].
+       * </pre>
+       *
+       * <code>repeated string exclude_domains = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes of the excludeDomains to add.
+       * @return This builder for chaining.
+       */
+      public Builder addExcludeDomainsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureExcludeDomainsIsMutable();
+        excludeDomains_.add(value);
+        bitField0_ |= 0x00000001;
+        onChanged();
         return this;
       }
 
@@ -930,6 +1320,789 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface ComputerUseOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1.Tool.ComputerUse)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The environment being operated.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Tool.ComputerUse.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for environment.
+     */
+    int getEnvironmentValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The environment being operated.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Tool.ComputerUse.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The environment.
+     */
+    com.google.cloud.aiplatform.v1.Tool.ComputerUse.Environment getEnvironment();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Tool to support computer use.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.aiplatform.v1.Tool.ComputerUse}
+   */
+  public static final class ComputerUse extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.Tool.ComputerUse)
+      ComputerUseOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use ComputerUse.newBuilder() to construct.
+    private ComputerUse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ComputerUse() {
+      environment_ = 0;
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ComputerUse();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.aiplatform.v1.ToolProto
+          .internal_static_google_cloud_aiplatform_v1_Tool_ComputerUse_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.aiplatform.v1.ToolProto
+          .internal_static_google_cloud_aiplatform_v1_Tool_ComputerUse_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.aiplatform.v1.Tool.ComputerUse.class,
+              com.google.cloud.aiplatform.v1.Tool.ComputerUse.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents the environment being operated, such as a web browser.
+     * </pre>
+     *
+     * Protobuf enum {@code google.cloud.aiplatform.v1.Tool.ComputerUse.Environment}
+     */
+    public enum Environment implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Defaults to browser.
+       * </pre>
+       *
+       * <code>ENVIRONMENT_UNSPECIFIED = 0;</code>
+       */
+      ENVIRONMENT_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Operates in a web browser.
+       * </pre>
+       *
+       * <code>ENVIRONMENT_BROWSER = 1;</code>
+       */
+      ENVIRONMENT_BROWSER(1),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Defaults to browser.
+       * </pre>
+       *
+       * <code>ENVIRONMENT_UNSPECIFIED = 0;</code>
+       */
+      public static final int ENVIRONMENT_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Operates in a web browser.
+       * </pre>
+       *
+       * <code>ENVIRONMENT_BROWSER = 1;</code>
+       */
+      public static final int ENVIRONMENT_BROWSER_VALUE = 1;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Environment valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Environment forNumber(int value) {
+        switch (value) {
+          case 0:
+            return ENVIRONMENT_UNSPECIFIED;
+          case 1:
+            return ENVIRONMENT_BROWSER;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Environment> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<Environment> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Environment>() {
+            public Environment findValueByNumber(int number) {
+              return Environment.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1.Tool.ComputerUse.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final Environment[] VALUES = values();
+
+      public static Environment valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Environment(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.aiplatform.v1.Tool.ComputerUse.Environment)
+    }
+
+    public static final int ENVIRONMENT_FIELD_NUMBER = 1;
+    private int environment_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The environment being operated.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Tool.ComputerUse.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for environment.
+     */
+    @java.lang.Override
+    public int getEnvironmentValue() {
+      return environment_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The environment being operated.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Tool.ComputerUse.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED];
+     * </code>
+     *
+     * @return The environment.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.Tool.ComputerUse.Environment getEnvironment() {
+      com.google.cloud.aiplatform.v1.Tool.ComputerUse.Environment result =
+          com.google.cloud.aiplatform.v1.Tool.ComputerUse.Environment.forNumber(environment_);
+      return result == null
+          ? com.google.cloud.aiplatform.v1.Tool.ComputerUse.Environment.UNRECOGNIZED
+          : result;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (environment_
+          != com.google.cloud.aiplatform.v1.Tool.ComputerUse.Environment.ENVIRONMENT_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(1, environment_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (environment_
+          != com.google.cloud.aiplatform.v1.Tool.ComputerUse.Environment.ENVIRONMENT_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, environment_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.aiplatform.v1.Tool.ComputerUse)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.aiplatform.v1.Tool.ComputerUse other =
+          (com.google.cloud.aiplatform.v1.Tool.ComputerUse) obj;
+
+      if (environment_ != other.environment_) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ENVIRONMENT_FIELD_NUMBER;
+      hash = (53 * hash) + environment_;
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.aiplatform.v1.Tool.ComputerUse parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Tool.ComputerUse parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Tool.ComputerUse parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Tool.ComputerUse parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Tool.ComputerUse parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Tool.ComputerUse parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Tool.ComputerUse parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Tool.ComputerUse parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Tool.ComputerUse parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Tool.ComputerUse parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Tool.ComputerUse parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.aiplatform.v1.Tool.ComputerUse parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.cloud.aiplatform.v1.Tool.ComputerUse prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Tool to support computer use.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.aiplatform.v1.Tool.ComputerUse}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1.Tool.ComputerUse)
+        com.google.cloud.aiplatform.v1.Tool.ComputerUseOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1.ToolProto
+            .internal_static_google_cloud_aiplatform_v1_Tool_ComputerUse_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1.ToolProto
+            .internal_static_google_cloud_aiplatform_v1_Tool_ComputerUse_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1.Tool.ComputerUse.class,
+                com.google.cloud.aiplatform.v1.Tool.ComputerUse.Builder.class);
+      }
+
+      // Construct using com.google.cloud.aiplatform.v1.Tool.ComputerUse.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        environment_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.aiplatform.v1.ToolProto
+            .internal_static_google_cloud_aiplatform_v1_Tool_ComputerUse_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.Tool.ComputerUse getDefaultInstanceForType() {
+        return com.google.cloud.aiplatform.v1.Tool.ComputerUse.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.Tool.ComputerUse build() {
+        com.google.cloud.aiplatform.v1.Tool.ComputerUse result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.Tool.ComputerUse buildPartial() {
+        com.google.cloud.aiplatform.v1.Tool.ComputerUse result =
+            new com.google.cloud.aiplatform.v1.Tool.ComputerUse(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.aiplatform.v1.Tool.ComputerUse result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.environment_ = environment_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.aiplatform.v1.Tool.ComputerUse) {
+          return mergeFrom((com.google.cloud.aiplatform.v1.Tool.ComputerUse) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.aiplatform.v1.Tool.ComputerUse other) {
+        if (other == com.google.cloud.aiplatform.v1.Tool.ComputerUse.getDefaultInstance())
+          return this;
+        if (other.environment_ != 0) {
+          setEnvironmentValue(other.getEnvironmentValue());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  environment_ = input.readEnum();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int environment_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The environment being operated.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.Tool.ComputerUse.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for environment.
+       */
+      @java.lang.Override
+      public int getEnvironmentValue() {
+        return environment_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The environment being operated.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.Tool.ComputerUse.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for environment to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnvironmentValue(int value) {
+        environment_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The environment being operated.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.Tool.ComputerUse.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return The environment.
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.Tool.ComputerUse.Environment getEnvironment() {
+        com.google.cloud.aiplatform.v1.Tool.ComputerUse.Environment result =
+            com.google.cloud.aiplatform.v1.Tool.ComputerUse.Environment.forNumber(environment_);
+        return result == null
+            ? com.google.cloud.aiplatform.v1.Tool.ComputerUse.Environment.UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The environment being operated.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.Tool.ComputerUse.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @param value The environment to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnvironment(
+          com.google.cloud.aiplatform.v1.Tool.ComputerUse.Environment value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000001;
+        environment_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The environment being operated.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.Tool.ComputerUse.Environment environment = 1 [(.google.api.field_behavior) = REQUIRED];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnvironment() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        environment_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1.Tool.ComputerUse)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1.Tool.ComputerUse)
+    private static final com.google.cloud.aiplatform.v1.Tool.ComputerUse DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.aiplatform.v1.Tool.ComputerUse();
+    }
+
+    public static com.google.cloud.aiplatform.v1.Tool.ComputerUse getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ComputerUse> PARSER =
+        new com.google.protobuf.AbstractParser<ComputerUse>() {
+          @java.lang.Override
+          public ComputerUse parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ComputerUse> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ComputerUse> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.Tool.ComputerUse getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int FUNCTION_DECLARATIONS_FIELD_NUMBER = 1;
 
@@ -1252,6 +2425,68 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         : googleSearchRetrieval_;
   }
 
+  public static final int GOOGLE_MAPS_FIELD_NUMBER = 5;
+  private com.google.cloud.aiplatform.v1.GoogleMaps googleMaps_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. GoogleMaps tool type.
+   * Tool to support Google Maps in Model.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.GoogleMaps google_maps = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the googleMaps field is set.
+   */
+  @java.lang.Override
+  public boolean hasGoogleMaps() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. GoogleMaps tool type.
+   * Tool to support Google Maps in Model.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.GoogleMaps google_maps = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The googleMaps.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.GoogleMaps getGoogleMaps() {
+    return googleMaps_ == null
+        ? com.google.cloud.aiplatform.v1.GoogleMaps.getDefaultInstance()
+        : googleMaps_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. GoogleMaps tool type.
+   * Tool to support Google Maps in Model.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.GoogleMaps google_maps = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.GoogleMapsOrBuilder getGoogleMapsOrBuilder() {
+    return googleMaps_ == null
+        ? com.google.cloud.aiplatform.v1.GoogleMaps.getDefaultInstance()
+        : googleMaps_;
+  }
+
   public static final int ENTERPRISE_WEB_SEARCH_FIELD_NUMBER = 6;
   private com.google.cloud.aiplatform.v1.EnterpriseWebSearch enterpriseWebSearch_;
 
@@ -1271,7 +2506,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasEnterpriseWebSearch() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
 
   /**
@@ -1334,7 +2569,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasCodeExecution() {
-    return ((bitField0_ & 0x00000010) != 0);
+    return ((bitField0_ & 0x00000020) != 0);
   }
 
   /**
@@ -1395,7 +2630,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasUrlContext() {
-    return ((bitField0_ & 0x00000020) != 0);
+    return ((bitField0_ & 0x00000040) != 0);
   }
 
   /**
@@ -1436,6 +2671,71 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         : urlContext_;
   }
 
+  public static final int COMPUTER_USE_FIELD_NUMBER = 11;
+  private com.google.cloud.aiplatform.v1.Tool.ComputerUse computerUse_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Tool to support the model interacting directly with the computer.
+   * If enabled, it automatically populates computer-use specific Function
+   * Declarations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.Tool.ComputerUse computer_use = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the computerUse field is set.
+   */
+  @java.lang.Override
+  public boolean hasComputerUse() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Tool to support the model interacting directly with the computer.
+   * If enabled, it automatically populates computer-use specific Function
+   * Declarations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.Tool.ComputerUse computer_use = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The computerUse.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.Tool.ComputerUse getComputerUse() {
+    return computerUse_ == null
+        ? com.google.cloud.aiplatform.v1.Tool.ComputerUse.getDefaultInstance()
+        : computerUse_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Tool to support the model interacting directly with the computer.
+   * If enabled, it automatically populates computer-use specific Function
+   * Declarations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1.Tool.ComputerUse computer_use = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1.Tool.ComputerUseOrBuilder getComputerUseOrBuilder() {
+    return computerUse_ == null
+        ? com.google.cloud.aiplatform.v1.Tool.ComputerUse.getDefaultInstance()
+        : computerUse_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1459,17 +2759,23 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(3, getGoogleSearchRetrieval());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(4, getCodeExecution());
     }
     if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(5, getGoogleMaps());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(6, getEnterpriseWebSearch());
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(7, getGoogleSearch());
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       output.writeMessage(8, getUrlContext());
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      output.writeMessage(11, getComputerUse());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1491,17 +2797,23 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(3, getGoogleSearchRetrieval());
     }
-    if (((bitField0_ & 0x00000010) != 0)) {
+    if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getCodeExecution());
     }
     if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getGoogleMaps());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getEnterpriseWebSearch());
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getGoogleSearch());
     }
-    if (((bitField0_ & 0x00000020) != 0)) {
+    if (((bitField0_ & 0x00000040) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getUrlContext());
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getComputerUse());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -1531,6 +2843,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     if (hasGoogleSearchRetrieval()) {
       if (!getGoogleSearchRetrieval().equals(other.getGoogleSearchRetrieval())) return false;
     }
+    if (hasGoogleMaps() != other.hasGoogleMaps()) return false;
+    if (hasGoogleMaps()) {
+      if (!getGoogleMaps().equals(other.getGoogleMaps())) return false;
+    }
     if (hasEnterpriseWebSearch() != other.hasEnterpriseWebSearch()) return false;
     if (hasEnterpriseWebSearch()) {
       if (!getEnterpriseWebSearch().equals(other.getEnterpriseWebSearch())) return false;
@@ -1542,6 +2858,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     if (hasUrlContext() != other.hasUrlContext()) return false;
     if (hasUrlContext()) {
       if (!getUrlContext().equals(other.getUrlContext())) return false;
+    }
+    if (hasComputerUse() != other.hasComputerUse()) return false;
+    if (hasComputerUse()) {
+      if (!getComputerUse().equals(other.getComputerUse())) return false;
     }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
@@ -1570,6 +2890,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + GOOGLE_SEARCH_RETRIEVAL_FIELD_NUMBER;
       hash = (53 * hash) + getGoogleSearchRetrieval().hashCode();
     }
+    if (hasGoogleMaps()) {
+      hash = (37 * hash) + GOOGLE_MAPS_FIELD_NUMBER;
+      hash = (53 * hash) + getGoogleMaps().hashCode();
+    }
     if (hasEnterpriseWebSearch()) {
       hash = (37 * hash) + ENTERPRISE_WEB_SEARCH_FIELD_NUMBER;
       hash = (53 * hash) + getEnterpriseWebSearch().hashCode();
@@ -1581,6 +2905,10 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     if (hasUrlContext()) {
       hash = (37 * hash) + URL_CONTEXT_FIELD_NUMBER;
       hash = (53 * hash) + getUrlContext().hashCode();
+    }
+    if (hasComputerUse()) {
+      hash = (37 * hash) + COMPUTER_USE_FIELD_NUMBER;
+      hash = (53 * hash) + getComputerUse().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -1732,9 +3060,11 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         getRetrievalFieldBuilder();
         getGoogleSearchFieldBuilder();
         getGoogleSearchRetrievalFieldBuilder();
+        getGoogleMapsFieldBuilder();
         getEnterpriseWebSearchFieldBuilder();
         getCodeExecutionFieldBuilder();
         getUrlContextFieldBuilder();
+        getComputerUseFieldBuilder();
       }
     }
 
@@ -1764,6 +3094,11 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         googleSearchRetrievalBuilder_.dispose();
         googleSearchRetrievalBuilder_ = null;
       }
+      googleMaps_ = null;
+      if (googleMapsBuilder_ != null) {
+        googleMapsBuilder_.dispose();
+        googleMapsBuilder_ = null;
+      }
       enterpriseWebSearch_ = null;
       if (enterpriseWebSearchBuilder_ != null) {
         enterpriseWebSearchBuilder_.dispose();
@@ -1778,6 +3113,11 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       if (urlContextBuilder_ != null) {
         urlContextBuilder_.dispose();
         urlContextBuilder_ = null;
+      }
+      computerUse_ = null;
+      if (computerUseBuilder_ != null) {
+        computerUseBuilder_.dispose();
+        computerUseBuilder_ = null;
       }
       return this;
     }
@@ -1845,20 +3185,29 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.googleMaps_ = googleMapsBuilder_ == null ? googleMaps_ : googleMapsBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
         result.enterpriseWebSearch_ =
             enterpriseWebSearchBuilder_ == null
                 ? enterpriseWebSearch_
                 : enterpriseWebSearchBuilder_.build();
-        to_bitField0_ |= 0x00000008;
-      }
-      if (((from_bitField0_ & 0x00000020) != 0)) {
-        result.codeExecution_ =
-            codeExecutionBuilder_ == null ? codeExecution_ : codeExecutionBuilder_.build();
         to_bitField0_ |= 0x00000010;
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
-        result.urlContext_ = urlContextBuilder_ == null ? urlContext_ : urlContextBuilder_.build();
+        result.codeExecution_ =
+            codeExecutionBuilder_ == null ? codeExecution_ : codeExecutionBuilder_.build();
         to_bitField0_ |= 0x00000020;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.urlContext_ = urlContextBuilder_ == null ? urlContext_ : urlContextBuilder_.build();
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.computerUse_ =
+            computerUseBuilder_ == null ? computerUse_ : computerUseBuilder_.build();
+        to_bitField0_ |= 0x00000080;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1944,6 +3293,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       if (other.hasGoogleSearchRetrieval()) {
         mergeGoogleSearchRetrieval(other.getGoogleSearchRetrieval());
       }
+      if (other.hasGoogleMaps()) {
+        mergeGoogleMaps(other.getGoogleMaps());
+      }
       if (other.hasEnterpriseWebSearch()) {
         mergeEnterpriseWebSearch(other.getEnterpriseWebSearch());
       }
@@ -1952,6 +3304,9 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasUrlContext()) {
         mergeUrlContext(other.getUrlContext());
+      }
+      if (other.hasComputerUse()) {
+        mergeComputerUse(other.getComputerUse());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2009,14 +3364,20 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
             case 34:
               {
                 input.readMessage(getCodeExecutionFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000020;
+                bitField0_ |= 0x00000040;
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(getGoogleMapsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
             case 50:
               {
                 input.readMessage(
                     getEnterpriseWebSearchFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 50
             case 58:
@@ -2028,9 +3389,15 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
             case 66:
               {
                 input.readMessage(getUrlContextFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000040;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 66
+            case 90:
+              {
+                input.readMessage(getComputerUseFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3300,6 +4667,228 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       return googleSearchRetrievalBuilder_;
     }
 
+    private com.google.cloud.aiplatform.v1.GoogleMaps googleMaps_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.GoogleMaps,
+            com.google.cloud.aiplatform.v1.GoogleMaps.Builder,
+            com.google.cloud.aiplatform.v1.GoogleMapsOrBuilder>
+        googleMapsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. GoogleMaps tool type.
+     * Tool to support Google Maps in Model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.GoogleMaps google_maps = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the googleMaps field is set.
+     */
+    public boolean hasGoogleMaps() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. GoogleMaps tool type.
+     * Tool to support Google Maps in Model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.GoogleMaps google_maps = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The googleMaps.
+     */
+    public com.google.cloud.aiplatform.v1.GoogleMaps getGoogleMaps() {
+      if (googleMapsBuilder_ == null) {
+        return googleMaps_ == null
+            ? com.google.cloud.aiplatform.v1.GoogleMaps.getDefaultInstance()
+            : googleMaps_;
+      } else {
+        return googleMapsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. GoogleMaps tool type.
+     * Tool to support Google Maps in Model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.GoogleMaps google_maps = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGoogleMaps(com.google.cloud.aiplatform.v1.GoogleMaps value) {
+      if (googleMapsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        googleMaps_ = value;
+      } else {
+        googleMapsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. GoogleMaps tool type.
+     * Tool to support Google Maps in Model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.GoogleMaps google_maps = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setGoogleMaps(
+        com.google.cloud.aiplatform.v1.GoogleMaps.Builder builderForValue) {
+      if (googleMapsBuilder_ == null) {
+        googleMaps_ = builderForValue.build();
+      } else {
+        googleMapsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. GoogleMaps tool type.
+     * Tool to support Google Maps in Model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.GoogleMaps google_maps = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeGoogleMaps(com.google.cloud.aiplatform.v1.GoogleMaps value) {
+      if (googleMapsBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && googleMaps_ != null
+            && googleMaps_ != com.google.cloud.aiplatform.v1.GoogleMaps.getDefaultInstance()) {
+          getGoogleMapsBuilder().mergeFrom(value);
+        } else {
+          googleMaps_ = value;
+        }
+      } else {
+        googleMapsBuilder_.mergeFrom(value);
+      }
+      if (googleMaps_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. GoogleMaps tool type.
+     * Tool to support Google Maps in Model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.GoogleMaps google_maps = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearGoogleMaps() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      googleMaps_ = null;
+      if (googleMapsBuilder_ != null) {
+        googleMapsBuilder_.dispose();
+        googleMapsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. GoogleMaps tool type.
+     * Tool to support Google Maps in Model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.GoogleMaps google_maps = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.GoogleMaps.Builder getGoogleMapsBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getGoogleMapsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. GoogleMaps tool type.
+     * Tool to support Google Maps in Model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.GoogleMaps google_maps = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.GoogleMapsOrBuilder getGoogleMapsOrBuilder() {
+      if (googleMapsBuilder_ != null) {
+        return googleMapsBuilder_.getMessageOrBuilder();
+      } else {
+        return googleMaps_ == null
+            ? com.google.cloud.aiplatform.v1.GoogleMaps.getDefaultInstance()
+            : googleMaps_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. GoogleMaps tool type.
+     * Tool to support Google Maps in Model.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.GoogleMaps google_maps = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.GoogleMaps,
+            com.google.cloud.aiplatform.v1.GoogleMaps.Builder,
+            com.google.cloud.aiplatform.v1.GoogleMapsOrBuilder>
+        getGoogleMapsFieldBuilder() {
+      if (googleMapsBuilder_ == null) {
+        googleMapsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.GoogleMaps,
+                com.google.cloud.aiplatform.v1.GoogleMaps.Builder,
+                com.google.cloud.aiplatform.v1.GoogleMapsOrBuilder>(
+                getGoogleMaps(), getParentForChildren(), isClean());
+        googleMaps_ = null;
+      }
+      return googleMapsBuilder_;
+    }
+
     private com.google.cloud.aiplatform.v1.EnterpriseWebSearch enterpriseWebSearch_;
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.aiplatform.v1.EnterpriseWebSearch,
@@ -3322,7 +4911,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the enterpriseWebSearch field is set.
      */
     public boolean hasEnterpriseWebSearch() {
-      return ((bitField0_ & 0x00000010) != 0);
+      return ((bitField0_ & 0x00000020) != 0);
     }
 
     /**
@@ -3371,7 +4960,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       } else {
         enterpriseWebSearchBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3395,7 +4984,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       } else {
         enterpriseWebSearchBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -3415,7 +5004,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
     public Builder mergeEnterpriseWebSearch(
         com.google.cloud.aiplatform.v1.EnterpriseWebSearch value) {
       if (enterpriseWebSearchBuilder_ == null) {
-        if (((bitField0_ & 0x00000010) != 0)
+        if (((bitField0_ & 0x00000020) != 0)
             && enterpriseWebSearch_ != null
             && enterpriseWebSearch_
                 != com.google.cloud.aiplatform.v1.EnterpriseWebSearch.getDefaultInstance()) {
@@ -3427,7 +5016,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         enterpriseWebSearchBuilder_.mergeFrom(value);
       }
       if (enterpriseWebSearch_ != null) {
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       return this;
@@ -3446,7 +5035,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearEnterpriseWebSearch() {
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       enterpriseWebSearch_ = null;
       if (enterpriseWebSearchBuilder_ != null) {
         enterpriseWebSearchBuilder_.dispose();
@@ -3470,7 +5059,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.aiplatform.v1.EnterpriseWebSearch.Builder
         getEnterpriseWebSearchBuilder() {
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return getEnterpriseWebSearchFieldBuilder().getBuilder();
     }
@@ -3549,7 +5138,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the codeExecution field is set.
      */
     public boolean hasCodeExecution() {
-      return ((bitField0_ & 0x00000020) != 0);
+      return ((bitField0_ & 0x00000040) != 0);
     }
 
     /**
@@ -3597,7 +5186,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       } else {
         codeExecutionBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3621,7 +5210,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       } else {
         codeExecutionBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return this;
     }
@@ -3640,7 +5229,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeCodeExecution(com.google.cloud.aiplatform.v1.Tool.CodeExecution value) {
       if (codeExecutionBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)
+        if (((bitField0_ & 0x00000040) != 0)
             && codeExecution_ != null
             && codeExecution_
                 != com.google.cloud.aiplatform.v1.Tool.CodeExecution.getDefaultInstance()) {
@@ -3652,7 +5241,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         codeExecutionBuilder_.mergeFrom(value);
       }
       if (codeExecution_ != null) {
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
         onChanged();
       }
       return this;
@@ -3671,7 +5260,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearCodeExecution() {
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       codeExecution_ = null;
       if (codeExecutionBuilder_ != null) {
         codeExecutionBuilder_.dispose();
@@ -3694,7 +5283,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.aiplatform.v1.Tool.CodeExecution.Builder getCodeExecutionBuilder() {
-      bitField0_ |= 0x00000020;
+      bitField0_ |= 0x00000040;
       onChanged();
       return getCodeExecutionFieldBuilder().getBuilder();
     }
@@ -3771,7 +5360,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the urlContext field is set.
      */
     public boolean hasUrlContext() {
-      return ((bitField0_ & 0x00000040) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -3817,7 +5406,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       } else {
         urlContextBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3840,7 +5429,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
       } else {
         urlContextBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3858,7 +5447,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUrlContext(com.google.cloud.aiplatform.v1.UrlContext value) {
       if (urlContextBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && urlContext_ != null
             && urlContext_ != com.google.cloud.aiplatform.v1.UrlContext.getDefaultInstance()) {
           getUrlContextBuilder().mergeFrom(value);
@@ -3869,7 +5458,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         urlContextBuilder_.mergeFrom(value);
       }
       if (urlContext_ != null) {
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -3887,7 +5476,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUrlContext() {
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       urlContext_ = null;
       if (urlContextBuilder_ != null) {
         urlContextBuilder_.dispose();
@@ -3909,7 +5498,7 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.aiplatform.v1.UrlContext.Builder getUrlContextBuilder() {
-      bitField0_ |= 0x00000040;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getUrlContextFieldBuilder().getBuilder();
     }
@@ -3961,6 +5550,238 @@ public final class Tool extends com.google.protobuf.GeneratedMessageV3
         urlContext_ = null;
       }
       return urlContextBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1.Tool.ComputerUse computerUse_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.Tool.ComputerUse,
+            com.google.cloud.aiplatform.v1.Tool.ComputerUse.Builder,
+            com.google.cloud.aiplatform.v1.Tool.ComputerUseOrBuilder>
+        computerUseBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Tool to support the model interacting directly with the computer.
+     * If enabled, it automatically populates computer-use specific Function
+     * Declarations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Tool.ComputerUse computer_use = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the computerUse field is set.
+     */
+    public boolean hasComputerUse() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Tool to support the model interacting directly with the computer.
+     * If enabled, it automatically populates computer-use specific Function
+     * Declarations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Tool.ComputerUse computer_use = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The computerUse.
+     */
+    public com.google.cloud.aiplatform.v1.Tool.ComputerUse getComputerUse() {
+      if (computerUseBuilder_ == null) {
+        return computerUse_ == null
+            ? com.google.cloud.aiplatform.v1.Tool.ComputerUse.getDefaultInstance()
+            : computerUse_;
+      } else {
+        return computerUseBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Tool to support the model interacting directly with the computer.
+     * If enabled, it automatically populates computer-use specific Function
+     * Declarations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Tool.ComputerUse computer_use = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setComputerUse(com.google.cloud.aiplatform.v1.Tool.ComputerUse value) {
+      if (computerUseBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        computerUse_ = value;
+      } else {
+        computerUseBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Tool to support the model interacting directly with the computer.
+     * If enabled, it automatically populates computer-use specific Function
+     * Declarations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Tool.ComputerUse computer_use = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setComputerUse(
+        com.google.cloud.aiplatform.v1.Tool.ComputerUse.Builder builderForValue) {
+      if (computerUseBuilder_ == null) {
+        computerUse_ = builderForValue.build();
+      } else {
+        computerUseBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Tool to support the model interacting directly with the computer.
+     * If enabled, it automatically populates computer-use specific Function
+     * Declarations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Tool.ComputerUse computer_use = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeComputerUse(com.google.cloud.aiplatform.v1.Tool.ComputerUse value) {
+      if (computerUseBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && computerUse_ != null
+            && computerUse_
+                != com.google.cloud.aiplatform.v1.Tool.ComputerUse.getDefaultInstance()) {
+          getComputerUseBuilder().mergeFrom(value);
+        } else {
+          computerUse_ = value;
+        }
+      } else {
+        computerUseBuilder_.mergeFrom(value);
+      }
+      if (computerUse_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Tool to support the model interacting directly with the computer.
+     * If enabled, it automatically populates computer-use specific Function
+     * Declarations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Tool.ComputerUse computer_use = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearComputerUse() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      computerUse_ = null;
+      if (computerUseBuilder_ != null) {
+        computerUseBuilder_.dispose();
+        computerUseBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Tool to support the model interacting directly with the computer.
+     * If enabled, it automatically populates computer-use specific Function
+     * Declarations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Tool.ComputerUse computer_use = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.Tool.ComputerUse.Builder getComputerUseBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return getComputerUseFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Tool to support the model interacting directly with the computer.
+     * If enabled, it automatically populates computer-use specific Function
+     * Declarations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Tool.ComputerUse computer_use = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1.Tool.ComputerUseOrBuilder getComputerUseOrBuilder() {
+      if (computerUseBuilder_ != null) {
+        return computerUseBuilder_.getMessageOrBuilder();
+      } else {
+        return computerUse_ == null
+            ? com.google.cloud.aiplatform.v1.Tool.ComputerUse.getDefaultInstance()
+            : computerUse_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Tool to support the model interacting directly with the computer.
+     * If enabled, it automatically populates computer-use specific Function
+     * Declarations.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.Tool.ComputerUse computer_use = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1.Tool.ComputerUse,
+            com.google.cloud.aiplatform.v1.Tool.ComputerUse.Builder,
+            com.google.cloud.aiplatform.v1.Tool.ComputerUseOrBuilder>
+        getComputerUseFieldBuilder() {
+      if (computerUseBuilder_ == null) {
+        computerUseBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.Tool.ComputerUse,
+                com.google.cloud.aiplatform.v1.Tool.ComputerUse.Builder,
+                com.google.cloud.aiplatform.v1.Tool.ComputerUseOrBuilder>(
+                getComputerUse(), getParentForChildren(), isClean());
+        computerUse_ = null;
+      }
+      return computerUseBuilder_;
     }
 
     @java.lang.Override

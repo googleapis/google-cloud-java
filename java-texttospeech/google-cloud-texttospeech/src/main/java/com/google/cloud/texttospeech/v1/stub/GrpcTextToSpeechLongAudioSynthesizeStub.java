@@ -52,6 +52,7 @@ public class GrpcTextToSpeechLongAudioSynthesizeStub extends TextToSpeechLongAud
               .setRequestMarshaller(
                   ProtoUtils.marshaller(SynthesizeLongAudioRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<SynthesizeLongAudioRequest, Operation> synthesizeLongAudioCallable;

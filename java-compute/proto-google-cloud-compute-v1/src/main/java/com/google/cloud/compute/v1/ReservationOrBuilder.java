@@ -28,6 +28,50 @@ public interface ReservationOrBuilder
    *
    *
    * <pre>
+   * Advanced control for cluster management, applicable only to DENSE deployment type reservations.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ReservationAdvancedDeploymentControl advanced_deployment_control = 410618144;
+   * </code>
+   *
+   * @return Whether the advancedDeploymentControl field is set.
+   */
+  boolean hasAdvancedDeploymentControl();
+
+  /**
+   *
+   *
+   * <pre>
+   * Advanced control for cluster management, applicable only to DENSE deployment type reservations.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ReservationAdvancedDeploymentControl advanced_deployment_control = 410618144;
+   * </code>
+   *
+   * @return The advancedDeploymentControl.
+   */
+  com.google.cloud.compute.v1.ReservationAdvancedDeploymentControl getAdvancedDeploymentControl();
+
+  /**
+   *
+   *
+   * <pre>
+   * Advanced control for cluster management, applicable only to DENSE deployment type reservations.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ReservationAdvancedDeploymentControl advanced_deployment_control = 410618144;
+   * </code>
+   */
+  com.google.cloud.compute.v1.ReservationAdvancedDeploymentControlOrBuilder
+      getAdvancedDeploymentControlOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Reservation for aggregated resources, providing shape flexibility.
    * </pre>
    *
@@ -659,6 +703,48 @@ public interface ReservationOrBuilder
    * @return The satisfiesPzs.
    */
   boolean getSatisfiesPzs();
+
+  /**
+   *
+   *
+   * <pre>
+   * The type of maintenance for the reservation.
+   * Check the SchedulingType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string scheduling_type = 199835397;</code>
+   *
+   * @return Whether the schedulingType field is set.
+   */
+  boolean hasSchedulingType();
+
+  /**
+   *
+   *
+   * <pre>
+   * The type of maintenance for the reservation.
+   * Check the SchedulingType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string scheduling_type = 199835397;</code>
+   *
+   * @return The schedulingType.
+   */
+  java.lang.String getSchedulingType();
+
+  /**
+   *
+   *
+   * <pre>
+   * The type of maintenance for the reservation.
+   * Check the SchedulingType enum for the list of possible values.
+   * </pre>
+   *
+   * <code>optional string scheduling_type = 199835397;</code>
+   *
+   * @return The bytes for schedulingType.
+   */
+  com.google.protobuf.ByteString getSchedulingTypeBytes();
 
   /**
    *

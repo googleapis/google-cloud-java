@@ -46095,6 +46095,36 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * @return The redacted.
      */
     boolean getRedacted();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies how the entity's value is obtained.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.Document.Entity.Method method = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for method.
+     */
+    int getMethodValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies how the entity's value is obtained.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.Document.Entity.Method method = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The method.
+     */
+    com.google.cloud.documentai.v1.Document.Entity.Method getMethod();
   }
 
   /**
@@ -46125,6 +46155,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       mentionId_ = "";
       id_ = "";
       properties_ = java.util.Collections.emptyList();
+      method_ = 0;
     }
 
     @java.lang.Override
@@ -46146,6 +46177,169 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           .ensureFieldAccessorsInitialized(
               com.google.cloud.documentai.v1.Document.Entity.class,
               com.google.cloud.documentai.v1.Document.Entity.Builder.class);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Specifies how the entity's value is obtained.
+     * </pre>
+     *
+     * Protobuf enum {@code google.cloud.documentai.v1.Document.Entity.Method}
+     */
+    public enum Method implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * When the method is not specified, it should be treated as `EXTRACT`.
+       * </pre>
+       *
+       * <code>METHOD_UNSPECIFIED = 0;</code>
+       */
+      METHOD_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * The entity's value is directly extracted as-is from the document
+       * text.
+       * </pre>
+       *
+       * <code>EXTRACT = 1;</code>
+       */
+      EXTRACT(1),
+      /**
+       *
+       *
+       * <pre>
+       * The entity's value is derived through inference and is not
+       * necessarily an exact text extraction from the document.
+       * </pre>
+       *
+       * <code>DERIVE = 2;</code>
+       */
+      DERIVE(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * When the method is not specified, it should be treated as `EXTRACT`.
+       * </pre>
+       *
+       * <code>METHOD_UNSPECIFIED = 0;</code>
+       */
+      public static final int METHOD_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * The entity's value is directly extracted as-is from the document
+       * text.
+       * </pre>
+       *
+       * <code>EXTRACT = 1;</code>
+       */
+      public static final int EXTRACT_VALUE = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * The entity's value is derived through inference and is not
+       * necessarily an exact text extraction from the document.
+       * </pre>
+       *
+       * <code>DERIVE = 2;</code>
+       */
+      public static final int DERIVE_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static Method valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static Method forNumber(int value) {
+        switch (value) {
+          case 0:
+            return METHOD_UNSPECIFIED;
+          case 1:
+            return EXTRACT;
+          case 2:
+            return DERIVE;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<Method> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<Method> internalValueMap =
+          new com.google.protobuf.Internal.EnumLiteMap<Method>() {
+            public Method findValueByNumber(int number) {
+              return Method.forNumber(number);
+            }
+          };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.documentai.v1.Document.Entity.getDescriptor().getEnumTypes().get(0);
+      }
+
+      private static final Method[] VALUES = values();
+
+      public static Method valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private Method(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.documentai.v1.Document.Entity.Method)
     }
 
     public interface NormalizedValueOrBuilder
@@ -46394,6 +46588,20 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       float getFloatValue();
 
       /**
+       * <code>bool signature_value = 10;</code>
+       *
+       * @return Whether the signatureValue field is set.
+       */
+      boolean hasSignatureValue();
+
+      /**
+       * <code>bool signature_value = 10;</code>
+       *
+       * @return The signatureValue.
+       */
+      boolean getSignatureValue();
+
+      /**
        *
        *
        * <pre>
@@ -46504,6 +46712,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         BOOLEAN_VALUE(6),
         INTEGER_VALUE(7),
         FLOAT_VALUE(8),
+        SIGNATURE_VALUE(10),
         STRUCTUREDVALUE_NOT_SET(0);
         private final int value;
 
@@ -46537,6 +46746,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
               return INTEGER_VALUE;
             case 8:
               return FLOAT_VALUE;
+            case 10:
+              return SIGNATURE_VALUE;
             case 0:
               return STRUCTUREDVALUE_NOT_SET;
             default:
@@ -46894,6 +47105,31 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         return 0F;
       }
 
+      public static final int SIGNATURE_VALUE_FIELD_NUMBER = 10;
+
+      /**
+       * <code>bool signature_value = 10;</code>
+       *
+       * @return Whether the signatureValue field is set.
+       */
+      @java.lang.Override
+      public boolean hasSignatureValue() {
+        return structuredValueCase_ == 10;
+      }
+
+      /**
+       * <code>bool signature_value = 10;</code>
+       *
+       * @return The signatureValue.
+       */
+      @java.lang.Override
+      public boolean getSignatureValue() {
+        if (structuredValueCase_ == 10) {
+          return (java.lang.Boolean) structuredValue_;
+        }
+        return false;
+      }
+
       public static final int TEXT_FIELD_NUMBER = 1;
 
       @SuppressWarnings("serial")
@@ -47005,6 +47241,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (structuredValueCase_ == 8) {
           output.writeFloat(8, (float) ((java.lang.Float) structuredValue_));
         }
+        if (structuredValueCase_ == 10) {
+          output.writeBool(10, (boolean) ((java.lang.Boolean) structuredValue_));
+        }
         getUnknownFields().writeTo(output);
       }
 
@@ -47052,6 +47291,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
               com.google.protobuf.CodedOutputStream.computeFloatSize(
                   8, (float) ((java.lang.Float) structuredValue_));
         }
+        if (structuredValueCase_ == 10) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeBoolSize(
+                  10, (boolean) ((java.lang.Boolean) structuredValue_));
+        }
         size += getUnknownFields().getSerializedSize();
         memoizedSize = size;
         return size;
@@ -47092,6 +47336,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           case 8:
             if (java.lang.Float.floatToIntBits(getFloatValue())
                 != java.lang.Float.floatToIntBits(other.getFloatValue())) return false;
+            break;
+          case 10:
+            if (getSignatureValue() != other.getSignatureValue()) return false;
             break;
           case 0:
           default:
@@ -47137,6 +47384,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           case 8:
             hash = (37 * hash) + FLOAT_VALUE_FIELD_NUMBER;
             hash = (53 * hash) + java.lang.Float.floatToIntBits(getFloatValue());
+            break;
+          case 10:
+            hash = (37 * hash) + SIGNATURE_VALUE_FIELD_NUMBER;
+            hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSignatureValue());
             break;
           case 0:
           default:
@@ -47342,7 +47593,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         private void buildPartial0(
             com.google.cloud.documentai.v1.Document.Entity.NormalizedValue result) {
           int from_bitField0_ = bitField0_;
-          if (((from_bitField0_ & 0x00000080) != 0)) {
+          if (((from_bitField0_ & 0x00000100) != 0)) {
             result.text_ = text_;
           }
         }
@@ -47418,7 +47669,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                   .getDefaultInstance()) return this;
           if (!other.getText().isEmpty()) {
             text_ = other.text_;
-            bitField0_ |= 0x00000080;
+            bitField0_ |= 0x00000100;
             onChanged();
           }
           switch (other.getStructuredValueCase()) {
@@ -47457,6 +47708,11 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                 setFloatValue(other.getFloatValue());
                 break;
               }
+            case SIGNATURE_VALUE:
+              {
+                setSignatureValue(other.getSignatureValue());
+                break;
+              }
             case STRUCTUREDVALUE_NOT_SET:
               {
                 break;
@@ -47491,7 +47747,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                 case 10:
                   {
                     text_ = input.readStringRequireUtf8();
-                    bitField0_ |= 0x00000080;
+                    bitField0_ |= 0x00000100;
                     break;
                   } // case 10
                 case 18:
@@ -47538,6 +47794,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                     structuredValueCase_ = 8;
                     break;
                   } // case 69
+                case 80:
+                  {
+                    structuredValue_ = input.readBool();
+                    structuredValueCase_ = 10;
+                    break;
+                  } // case 80
                 default:
                   {
                     if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -48685,6 +48947,55 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           return this;
         }
 
+        /**
+         * <code>bool signature_value = 10;</code>
+         *
+         * @return Whether the signatureValue field is set.
+         */
+        public boolean hasSignatureValue() {
+          return structuredValueCase_ == 10;
+        }
+
+        /**
+         * <code>bool signature_value = 10;</code>
+         *
+         * @return The signatureValue.
+         */
+        public boolean getSignatureValue() {
+          if (structuredValueCase_ == 10) {
+            return (java.lang.Boolean) structuredValue_;
+          }
+          return false;
+        }
+
+        /**
+         * <code>bool signature_value = 10;</code>
+         *
+         * @param value The signatureValue to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSignatureValue(boolean value) {
+
+          structuredValueCase_ = 10;
+          structuredValue_ = value;
+          onChanged();
+          return this;
+        }
+
+        /**
+         * <code>bool signature_value = 10;</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearSignatureValue() {
+          if (structuredValueCase_ == 10) {
+            structuredValueCase_ = 0;
+            structuredValue_ = null;
+            onChanged();
+          }
+          return this;
+        }
+
         private java.lang.Object text_ = "";
 
         /**
@@ -48780,7 +49091,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
             throw new NullPointerException();
           }
           text_ = value;
-          bitField0_ |= 0x00000080;
+          bitField0_ |= 0x00000100;
           onChanged();
           return this;
         }
@@ -48808,7 +49119,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          */
         public Builder clearText() {
           text_ = getDefaultInstance().getText();
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000100);
           onChanged();
           return this;
         }
@@ -48841,7 +49152,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           }
           checkByteStringIsUtf8(value);
           text_ = value;
-          bitField0_ |= 0x00000080;
+          bitField0_ |= 0x00000100;
           onChanged();
           return this;
         }
@@ -49514,6 +49825,49 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       return redacted_;
     }
 
+    public static final int METHOD_FIELD_NUMBER = 15;
+    private int method_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies how the entity's value is obtained.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.Document.Entity.Method method = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for method.
+     */
+    @java.lang.Override
+    public int getMethodValue() {
+      return method_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specifies how the entity's value is obtained.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.documentai.v1.Document.Entity.Method method = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The method.
+     */
+    @java.lang.Override
+    public com.google.cloud.documentai.v1.Document.Entity.Method getMethod() {
+      com.google.cloud.documentai.v1.Document.Entity.Method result =
+          com.google.cloud.documentai.v1.Document.Entity.Method.forNumber(method_);
+      return result == null
+          ? com.google.cloud.documentai.v1.Document.Entity.Method.UNRECOGNIZED
+          : result;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -49561,6 +49915,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (redacted_ != false) {
         output.writeBool(12, redacted_);
       }
+      if (method_
+          != com.google.cloud.documentai.v1.Document.Entity.Method.METHOD_UNSPECIFIED.getNumber()) {
+        output.writeEnum(15, method_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -49603,6 +49961,10 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       if (redacted_ != false) {
         size += com.google.protobuf.CodedOutputStream.computeBoolSize(12, redacted_);
       }
+      if (method_
+          != com.google.cloud.documentai.v1.Document.Entity.Method.METHOD_UNSPECIFIED.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(15, method_);
+      }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
       return size;
@@ -49643,6 +50005,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (!getProvenance().equals(other.getProvenance())) return false;
       }
       if (getRedacted() != other.getRedacted()) return false;
+      if (method_ != other.method_) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -49686,6 +50049,8 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       }
       hash = (37 * hash) + REDACTED_FIELD_NUMBER;
       hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRedacted());
+      hash = (37 * hash) + METHOD_FIELD_NUMBER;
+      hash = (53 * hash) + method_;
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -49876,6 +50241,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
           provenanceBuilder_ = null;
         }
         redacted_ = false;
+        method_ = 0;
         return this;
       }
 
@@ -49964,6 +50330,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         }
         if (((from_bitField0_ & 0x00000400) != 0)) {
           result.redacted_ = redacted_;
+        }
+        if (((from_bitField0_ & 0x00000800) != 0)) {
+          result.method_ = method_;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -50081,6 +50450,9 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
         if (other.getRedacted() != false) {
           setRedacted(other.getRedacted());
         }
+        if (other.method_ != 0) {
+          setMethodValue(other.getMethodValue());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -50182,6 +50554,12 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000400;
                   break;
                 } // case 96
+              case 120:
+                {
+                  method_ = input.readEnum();
+                  bitField0_ |= 0x00000800;
+                  break;
+                } // case 120
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -52103,6 +52481,113 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
       public Builder clearRedacted() {
         bitField0_ = (bitField0_ & ~0x00000400);
         redacted_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int method_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies how the entity's value is obtained.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1.Document.Entity.Method method = 15 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for method.
+       */
+      @java.lang.Override
+      public int getMethodValue() {
+        return method_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies how the entity's value is obtained.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1.Document.Entity.Method method = 15 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for method to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMethodValue(int value) {
+        method_ = value;
+        bitField0_ |= 0x00000800;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies how the entity's value is obtained.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1.Document.Entity.Method method = 15 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The method.
+       */
+      @java.lang.Override
+      public com.google.cloud.documentai.v1.Document.Entity.Method getMethod() {
+        com.google.cloud.documentai.v1.Document.Entity.Method result =
+            com.google.cloud.documentai.v1.Document.Entity.Method.forNumber(method_);
+        return result == null
+            ? com.google.cloud.documentai.v1.Document.Entity.Method.UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies how the entity's value is obtained.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1.Document.Entity.Method method = 15 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The method to set.
+       * @return This builder for chaining.
+       */
+      public Builder setMethod(com.google.cloud.documentai.v1.Document.Entity.Method value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000800;
+        method_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specifies how the entity's value is obtained.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.documentai.v1.Document.Entity.Method method = 15 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearMethod() {
+        bitField0_ = (bitField0_ & ~0x00000800);
+        method_ = 0;
         onChanged();
         return this;
       }
@@ -55483,7 +55968,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.PageAnchor.PageRef.layout_id is deprecated.
-       *     See google/cloud/documentai/v1/document.proto;l=752
+       *     See google/cloud/documentai/v1/document.proto;l=771
        * @return The layoutId.
        */
       @java.lang.Deprecated
@@ -55502,7 +55987,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.PageAnchor.PageRef.layout_id is deprecated.
-       *     See google/cloud/documentai/v1/document.proto;l=752
+       *     See google/cloud/documentai/v1/document.proto;l=771
        * @return The bytes for layoutId.
        */
       @java.lang.Deprecated
@@ -56010,7 +56495,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.PageAnchor.PageRef.layout_id is deprecated.
-       *     See google/cloud/documentai/v1/document.proto;l=752
+       *     See google/cloud/documentai/v1/document.proto;l=771
        * @return The layoutId.
        */
       @java.lang.Override
@@ -56040,7 +56525,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * </code>
        *
        * @deprecated google.cloud.documentai.v1.Document.PageAnchor.PageRef.layout_id is deprecated.
-       *     See google/cloud/documentai/v1/document.proto;l=752
+       *     See google/cloud/documentai/v1/document.proto;l=771
        * @return The bytes for layoutId.
        */
       @java.lang.Override
@@ -56812,7 +57297,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * </code>
          *
          * @deprecated google.cloud.documentai.v1.Document.PageAnchor.PageRef.layout_id is
-         *     deprecated. See google/cloud/documentai/v1/document.proto;l=752
+         *     deprecated. See google/cloud/documentai/v1/document.proto;l=771
          * @return The layoutId.
          */
         @java.lang.Deprecated
@@ -56841,7 +57326,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * </code>
          *
          * @deprecated google.cloud.documentai.v1.Document.PageAnchor.PageRef.layout_id is
-         *     deprecated. See google/cloud/documentai/v1/document.proto;l=752
+         *     deprecated. See google/cloud/documentai/v1/document.proto;l=771
          * @return The bytes for layoutId.
          */
         @java.lang.Deprecated
@@ -56870,7 +57355,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * </code>
          *
          * @deprecated google.cloud.documentai.v1.Document.PageAnchor.PageRef.layout_id is
-         *     deprecated. See google/cloud/documentai/v1/document.proto;l=752
+         *     deprecated. See google/cloud/documentai/v1/document.proto;l=771
          * @param value The layoutId to set.
          * @return This builder for chaining.
          */
@@ -56898,7 +57383,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * </code>
          *
          * @deprecated google.cloud.documentai.v1.Document.PageAnchor.PageRef.layout_id is
-         *     deprecated. See google/cloud/documentai/v1/document.proto;l=752
+         *     deprecated. See google/cloud/documentai/v1/document.proto;l=771
          * @return This builder for chaining.
          */
         @java.lang.Deprecated
@@ -56922,7 +57407,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * </code>
          *
          * @deprecated google.cloud.documentai.v1.Document.PageAnchor.PageRef.layout_id is
-         *     deprecated. See google/cloud/documentai/v1/document.proto;l=752
+         *     deprecated. See google/cloud/documentai/v1/document.proto;l=771
          * @param value The bytes for layoutId to set.
          * @return This builder for chaining.
          */
@@ -58254,7 +58739,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>int32 revision = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Provenance.revision is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=820
+     *     google/cloud/documentai/v1/document.proto;l=839
      * @return The revision.
      */
     @java.lang.Deprecated
@@ -58271,7 +58756,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>int32 id = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Provenance.id is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=824
+     *     google/cloud/documentai/v1/document.proto;l=843
      * @return The id.
      */
     @java.lang.Deprecated
@@ -58743,7 +59228,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>int32 id = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Provenance.Parent.id is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=783
+       *     google/cloud/documentai/v1/document.proto;l=802
        * @return The id.
        */
       @java.lang.Deprecated
@@ -58846,7 +59331,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>int32 id = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Provenance.Parent.id is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=783
+       *     google/cloud/documentai/v1/document.proto;l=802
        * @return The id.
        */
       @java.lang.Override
@@ -59376,7 +59861,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <code>int32 id = 2 [deprecated = true];</code>
          *
          * @deprecated google.cloud.documentai.v1.Document.Provenance.Parent.id is deprecated. See
-         *     google/cloud/documentai/v1/document.proto;l=783
+         *     google/cloud/documentai/v1/document.proto;l=802
          * @return The id.
          */
         @java.lang.Override
@@ -59395,7 +59880,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <code>int32 id = 2 [deprecated = true];</code>
          *
          * @deprecated google.cloud.documentai.v1.Document.Provenance.Parent.id is deprecated. See
-         *     google/cloud/documentai/v1/document.proto;l=783
+         *     google/cloud/documentai/v1/document.proto;l=802
          * @param value The id to set.
          * @return This builder for chaining.
          */
@@ -59418,7 +59903,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
          * <code>int32 id = 2 [deprecated = true];</code>
          *
          * @deprecated google.cloud.documentai.v1.Document.Provenance.Parent.id is deprecated. See
-         *     google/cloud/documentai/v1/document.proto;l=783
+         *     google/cloud/documentai/v1/document.proto;l=802
          * @return This builder for chaining.
          */
         @java.lang.Deprecated
@@ -59507,7 +59992,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>int32 revision = 1 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Provenance.revision is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=820
+     *     google/cloud/documentai/v1/document.proto;l=839
      * @return The revision.
      */
     @java.lang.Override
@@ -59530,7 +60015,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>int32 id = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Provenance.id is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=824
+     *     google/cloud/documentai/v1/document.proto;l=843
      * @return The id.
      */
     @java.lang.Override
@@ -60138,7 +60623,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>int32 revision = 1 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Provenance.revision is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=820
+       *     google/cloud/documentai/v1/document.proto;l=839
        * @return The revision.
        */
       @java.lang.Override
@@ -60157,7 +60642,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>int32 revision = 1 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Provenance.revision is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=820
+       *     google/cloud/documentai/v1/document.proto;l=839
        * @param value The revision to set.
        * @return This builder for chaining.
        */
@@ -60180,7 +60665,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>int32 revision = 1 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Provenance.revision is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=820
+       *     google/cloud/documentai/v1/document.proto;l=839
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -60204,7 +60689,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>int32 id = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Provenance.id is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=824
+       *     google/cloud/documentai/v1/document.proto;l=843
        * @return The id.
        */
       @java.lang.Override
@@ -60224,7 +60709,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>int32 id = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Provenance.id is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=824
+       *     google/cloud/documentai/v1/document.proto;l=843
        * @param value The id to set.
        * @return This builder for chaining.
        */
@@ -60248,7 +60733,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>int32 id = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Provenance.id is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=824
+       *     google/cloud/documentai/v1/document.proto;l=843
        * @return This builder for chaining.
        */
       @java.lang.Deprecated
@@ -60932,7 +61417,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=863
+     *     google/cloud/documentai/v1/document.proto;l=882
      * @return A list containing the parent.
      */
     @java.lang.Deprecated
@@ -60950,7 +61435,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=863
+     *     google/cloud/documentai/v1/document.proto;l=882
      * @return The count of parent.
      */
     @java.lang.Deprecated
@@ -60968,7 +61453,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=863
+     *     google/cloud/documentai/v1/document.proto;l=882
      * @param index The index of the element to return.
      * @return The parent at the given index.
      */
@@ -62323,7 +62808,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=863
+     *     google/cloud/documentai/v1/document.proto;l=882
      * @return A list containing the parent.
      */
     @java.lang.Override
@@ -62344,7 +62829,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=863
+     *     google/cloud/documentai/v1/document.proto;l=882
      * @return The count of parent.
      */
     @java.lang.Deprecated
@@ -62364,7 +62849,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
      * <code>repeated int32 parent = 2 [deprecated = true];</code>
      *
      * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-     *     google/cloud/documentai/v1/document.proto;l=863
+     *     google/cloud/documentai/v1/document.proto;l=882
      * @param index The index of the element to return.
      * @return The parent at the given index.
      */
@@ -63598,7 +64083,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=863
+       *     google/cloud/documentai/v1/document.proto;l=882
        * @return A list containing the parent.
        */
       @java.lang.Deprecated
@@ -63619,7 +64104,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=863
+       *     google/cloud/documentai/v1/document.proto;l=882
        * @return The count of parent.
        */
       @java.lang.Deprecated
@@ -63639,7 +64124,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=863
+       *     google/cloud/documentai/v1/document.proto;l=882
        * @param index The index of the element to return.
        * @return The parent at the given index.
        */
@@ -63660,7 +64145,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=863
+       *     google/cloud/documentai/v1/document.proto;l=882
        * @param index The index to set the value at.
        * @param value The parent to set.
        * @return This builder for chaining.
@@ -63687,7 +64172,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=863
+       *     google/cloud/documentai/v1/document.proto;l=882
        * @param value The parent to add.
        * @return This builder for chaining.
        */
@@ -63713,7 +64198,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=863
+       *     google/cloud/documentai/v1/document.proto;l=882
        * @param values The parent to add.
        * @return This builder for chaining.
        */
@@ -63738,7 +64223,7 @@ public final class Document extends com.google.protobuf.GeneratedMessageV3
        * <code>repeated int32 parent = 2 [deprecated = true];</code>
        *
        * @deprecated google.cloud.documentai.v1.Document.Revision.parent is deprecated. See
-       *     google/cloud/documentai/v1/document.proto;l=863
+       *     google/cloud/documentai/v1/document.proto;l=882
        * @return This builder for chaining.
        */
       @java.lang.Deprecated

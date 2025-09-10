@@ -452,4 +452,38 @@ public interface NodeNetworkConfigOrBuilder
    * @return The podIpv4RangeUtilization.
    */
   double getPodIpv4RangeUtilization();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The subnetwork path for the node pool.
+   * Format: projects/{project}/regions/{region}/subnetworks/{subnetwork}
+   * If the cluster is associated with multiple subnetworks, the subnetwork for
+   * the node pool is picked based on the IP utilization during node pool
+   * creation and is immutable.
+   * </pre>
+   *
+   * <code>string subnetwork = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The subnetwork.
+   */
+  java.lang.String getSubnetwork();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The subnetwork path for the node pool.
+   * Format: projects/{project}/regions/{region}/subnetworks/{subnetwork}
+   * If the cluster is associated with multiple subnetworks, the subnetwork for
+   * the node pool is picked based on the IP utilization during node pool
+   * creation and is immutable.
+   * </pre>
+   *
+   * <code>string subnetwork = 19 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for subnetwork.
+   */
+  com.google.protobuf.ByteString getSubnetworkBytes();
 }

@@ -40,6 +40,7 @@ public class SyncListTlsRoutes {
               .setParent(LocationName.of("[PROJECT]", "[LOCATION]").toString())
               .setPageSize(883849137)
               .setPageToken("pageToken873572522")
+              .setReturnPartialSuccess(true)
               .build();
       for (TlsRoute element : networkServicesClient.listTlsRoutes(request).iterateAll()) {
         // doThingsWith(element);

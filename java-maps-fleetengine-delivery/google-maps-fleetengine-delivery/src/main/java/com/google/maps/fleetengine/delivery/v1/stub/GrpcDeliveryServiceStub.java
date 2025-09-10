@@ -70,6 +70,7 @@ public class GrpcDeliveryServiceStub extends DeliveryServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDeliveryVehicleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DeliveryVehicle.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDeliveryVehicleRequest, DeliveryVehicle>
@@ -80,6 +81,7 @@ public class GrpcDeliveryServiceStub extends DeliveryServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetDeliveryVehicleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DeliveryVehicle.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDeliveryVehicleRequest, Empty>
@@ -91,6 +93,7 @@ public class GrpcDeliveryServiceStub extends DeliveryServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDeliveryVehicleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDeliveryVehicleRequest, DeliveryVehicle>
@@ -102,6 +105,7 @@ public class GrpcDeliveryServiceStub extends DeliveryServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDeliveryVehicleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(DeliveryVehicle.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchCreateTasksRequest, BatchCreateTasksResponse>
@@ -113,6 +117,7 @@ public class GrpcDeliveryServiceStub extends DeliveryServiceStub {
                   ProtoUtils.marshaller(BatchCreateTasksRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(BatchCreateTasksResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateTaskRequest, Task> createTaskMethodDescriptor =
@@ -121,6 +126,7 @@ public class GrpcDeliveryServiceStub extends DeliveryServiceStub {
           .setFullMethodName("maps.fleetengine.delivery.v1.DeliveryService/CreateTask")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateTaskRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Task.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetTaskRequest, Task> getTaskMethodDescriptor =
@@ -129,6 +135,7 @@ public class GrpcDeliveryServiceStub extends DeliveryServiceStub {
           .setFullMethodName("maps.fleetengine.delivery.v1.DeliveryService/GetTask")
           .setRequestMarshaller(ProtoUtils.marshaller(GetTaskRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Task.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteTaskRequest, Empty> deleteTaskMethodDescriptor =
@@ -137,6 +144,7 @@ public class GrpcDeliveryServiceStub extends DeliveryServiceStub {
           .setFullMethodName("maps.fleetengine.delivery.v1.DeliveryService/DeleteTask")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteTaskRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateTaskRequest, Task> updateTaskMethodDescriptor =
@@ -145,6 +153,7 @@ public class GrpcDeliveryServiceStub extends DeliveryServiceStub {
           .setFullMethodName("maps.fleetengine.delivery.v1.DeliveryService/UpdateTask")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateTaskRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Task.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListTasksRequest, ListTasksResponse>
@@ -154,6 +163,7 @@ public class GrpcDeliveryServiceStub extends DeliveryServiceStub {
               .setFullMethodName("maps.fleetengine.delivery.v1.DeliveryService/ListTasks")
               .setRequestMarshaller(ProtoUtils.marshaller(ListTasksRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListTasksResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTaskTrackingInfoRequest, TaskTrackingInfo>
@@ -164,6 +174,7 @@ public class GrpcDeliveryServiceStub extends DeliveryServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetTaskTrackingInfoRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TaskTrackingInfo.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListDeliveryVehiclesRequest, ListDeliveryVehiclesResponse>
@@ -176,6 +187,7 @@ public class GrpcDeliveryServiceStub extends DeliveryServiceStub {
                   ProtoUtils.marshaller(ListDeliveryVehiclesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDeliveryVehiclesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateDeliveryVehicleRequest, DeliveryVehicle>

@@ -20,6 +20,7 @@ package com.google.cloud.container.v1.samples;
 import com.google.api.core.ApiFuture;
 import com.google.cloud.container.v1.ClusterManagerClient;
 import com.google.container.v1.AcceleratorConfig;
+import com.google.container.v1.BootDisk;
 import com.google.container.v1.ConfidentialNodes;
 import com.google.container.v1.ContainerdConfig;
 import com.google.container.v1.FastSocket;
@@ -91,6 +92,7 @@ public class AsyncUpdateNodePool {
               .addAllStoragePools(new ArrayList<String>())
               .setMaxRunDuration(Duration.newBuilder().build())
               .setFlexStart(true)
+              .setBootDisk(BootDisk.newBuilder().build())
               .build();
       ApiFuture<Operation> future =
           clusterManagerClient.updateNodePoolCallable().futureCall(request);

@@ -62,6 +62,7 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Connection.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetConnectionRequest, Connection>
@@ -73,6 +74,7 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Connection.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListConnectionsRequest, ListConnectionsResponse>
@@ -85,6 +87,7 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
                   ProtoUtils.marshaller(ListConnectionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListConnectionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateConnectionRequest, Connection>
@@ -96,6 +99,7 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Connection.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteConnectionRequest, Empty>
@@ -107,6 +111,7 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteConnectionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetIamPolicyRequest, Policy> getIamPolicyMethodDescriptor =
@@ -115,6 +120,7 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
           .setFullMethodName("google.cloud.bigquery.connection.v1.ConnectionService/GetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<SetIamPolicyRequest, Policy> setIamPolicyMethodDescriptor =
@@ -123,6 +129,7 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
           .setFullMethodName("google.cloud.bigquery.connection.v1.ConnectionService/SetIamPolicy")
           .setRequestMarshaller(ProtoUtils.marshaller(SetIamPolicyRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Policy.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -135,6 +142,7 @@ public class GrpcConnectionServiceStub extends ConnectionServiceStub {
                   ProtoUtils.marshaller(TestIamPermissionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(TestIamPermissionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateConnectionRequest, Connection> createConnectionCallable;

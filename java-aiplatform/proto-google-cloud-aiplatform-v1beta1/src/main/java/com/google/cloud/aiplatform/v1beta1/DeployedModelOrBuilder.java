@@ -185,9 +185,8 @@ public interface DeployedModelOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the Model that this is the deployment of.
-   * Note that the Model may be in a different location than the DeployedModel's
-   * Endpoint.
+   * The resource name of the Model that this is the deployment of. Note that
+   * the Model may be in a different location than the DeployedModel's Endpoint.
    *
    * The resource name may contain version id or version alias to specify the
    * version.
@@ -197,9 +196,7 @@ public interface DeployedModelOrBuilder
    * if no version is specified, the default version will be deployed.
    * </pre>
    *
-   * <code>
-   * string model = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string model = 2 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The model.
    */
@@ -209,9 +206,8 @@ public interface DeployedModelOrBuilder
    *
    *
    * <pre>
-   * Required. The resource name of the Model that this is the deployment of.
-   * Note that the Model may be in a different location than the DeployedModel's
-   * Endpoint.
+   * The resource name of the Model that this is the deployment of. Note that
+   * the Model may be in a different location than the DeployedModel's Endpoint.
    *
    * The resource name may contain version id or version alias to specify the
    * version.
@@ -221,9 +217,7 @@ public interface DeployedModelOrBuilder
    * if no version is specified, the default version will be deployed.
    * </pre>
    *
-   * <code>
-   * string model = 2 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
-   * </code>
+   * <code>string model = 2 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for model.
    */
@@ -478,6 +472,25 @@ public interface DeployedModelOrBuilder
    * @return The enableContainerLogging.
    */
   boolean getEnableContainerLogging();
+
+  /**
+   *
+   *
+   * <pre>
+   * For custom-trained Models and AutoML Tabular Models, the container of the
+   * DeployedModel instances will send `stderr` and `stdout` streams to
+   * Cloud Logging by default. Please note that the logs incur cost,
+   * which are subject to [Cloud Logging
+   * pricing](https://cloud.google.com/logging/pricing).
+   *
+   * User can disable container logging by setting this flag to true.
+   * </pre>
+   *
+   * <code>bool disable_container_logging = 15;</code>
+   *
+   * @return The disableContainerLogging.
+   */
+  boolean getDisableContainerLogging();
 
   /**
    *
@@ -765,6 +778,50 @@ public interface DeployedModelOrBuilder
    * @return The bytes for checkpointId.
    */
   com.google.protobuf.ByteString getCheckpointIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Spec for configuring speculative decoding.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the speculativeDecodingSpec field is set.
+   */
+  boolean hasSpeculativeDecodingSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Spec for configuring speculative decoding.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The speculativeDecodingSpec.
+   */
+  com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec getSpeculativeDecodingSpec();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Spec for configuring speculative decoding.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpec speculative_decoding_spec = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1beta1.SpeculativeDecodingSpecOrBuilder
+      getSpeculativeDecodingSpecOrBuilder();
 
   com.google.cloud.aiplatform.v1beta1.DeployedModel.PredictionResourcesCase
       getPredictionResourcesCase();

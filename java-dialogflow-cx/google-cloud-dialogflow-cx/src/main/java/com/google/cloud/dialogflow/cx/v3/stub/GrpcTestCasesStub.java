@@ -83,6 +83,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
                   ProtoUtils.marshaller(ListTestCasesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTestCasesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchDeleteTestCasesRequest, Empty>
@@ -93,6 +94,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchDeleteTestCasesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTestCaseRequest, TestCase> getTestCaseMethodDescriptor =
@@ -101,6 +103,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
           .setFullMethodName("google.cloud.dialogflow.cx.v3.TestCases/GetTestCase")
           .setRequestMarshaller(ProtoUtils.marshaller(GetTestCaseRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(TestCase.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<CreateTestCaseRequest, TestCase>
@@ -111,6 +114,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateTestCaseRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TestCase.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateTestCaseRequest, TestCase>
@@ -121,6 +125,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateTestCaseRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TestCase.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RunTestCaseRequest, Operation> runTestCaseMethodDescriptor =
@@ -129,6 +134,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
           .setFullMethodName("google.cloud.dialogflow.cx.v3.TestCases/RunTestCase")
           .setRequestMarshaller(ProtoUtils.marshaller(RunTestCaseRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<BatchRunTestCasesRequest, Operation>
@@ -139,6 +145,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchRunTestCasesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CalculateCoverageRequest, CalculateCoverageResponse>
@@ -150,6 +157,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
                   ProtoUtils.marshaller(CalculateCoverageRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(CalculateCoverageResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportTestCasesRequest, Operation>
@@ -160,6 +168,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ImportTestCasesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ExportTestCasesRequest, Operation>
@@ -170,6 +179,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ExportTestCasesRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListTestCaseResultsRequest, ListTestCaseResultsResponse>
@@ -181,6 +191,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
                   ProtoUtils.marshaller(ListTestCaseResultsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListTestCaseResultsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetTestCaseResultRequest, TestCaseResult>
@@ -191,6 +202,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetTestCaseResultRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(TestCaseResult.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -202,6 +214,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -210,6 +223,7 @@ public class GrpcTestCasesStub extends TestCasesStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ListTestCasesRequest, ListTestCasesResponse> listTestCasesCallable;

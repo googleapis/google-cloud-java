@@ -1519,6 +1519,9 @@
             "RemovePeering": {
               "methods": ["removePeeringAsync", "removePeeringAsync", "removePeeringOperationCallable", "removePeeringCallable"]
             },
+            "RequestRemovePeering": {
+              "methods": ["requestRemovePeeringAsync", "requestRemovePeeringAsync", "requestRemovePeeringOperationCallable", "requestRemovePeeringCallable"]
+            },
             "SwitchToCustomMode": {
               "methods": ["switchToCustomModeAsync", "switchToCustomModeAsync", "switchToCustomModeOperationCallable", "switchToCustomModeCallable"]
             },
@@ -2544,6 +2547,9 @@
             },
             "List": {
               "methods": ["list", "list", "listPagedCallable", "listCallable"]
+            },
+            "PerformMaintenance": {
+              "methods": ["performMaintenanceAsync", "performMaintenanceAsync", "performMaintenanceOperationCallable", "performMaintenanceCallable"]
             }
           }
         }

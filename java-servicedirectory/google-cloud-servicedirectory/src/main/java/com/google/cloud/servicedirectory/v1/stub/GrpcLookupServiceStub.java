@@ -55,6 +55,7 @@ public class GrpcLookupServiceStub extends LookupServiceStub {
                   ProtoUtils.marshaller(ResolveServiceRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ResolveServiceResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
@@ -66,6 +67,7 @@ public class GrpcLookupServiceStub extends LookupServiceStub {
                   ProtoUtils.marshaller(ListLocationsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListLocationsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetLocationRequest, Location> getLocationMethodDescriptor =
@@ -74,6 +76,7 @@ public class GrpcLookupServiceStub extends LookupServiceStub {
           .setFullMethodName("google.cloud.location.Locations/GetLocation")
           .setRequestMarshaller(ProtoUtils.marshaller(GetLocationRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Location.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private final UnaryCallable<ResolveServiceRequest, ResolveServiceResponse> resolveServiceCallable;

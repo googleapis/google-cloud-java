@@ -30,8 +30,8 @@ public interface QuotaPreferenceOrBuilder
    * <pre>
    * Required except in the CREATE requests.
    * The resource name of the quota preference.
-   * The ID component following "locations/" must be "global".
-   * Example:
+   * The path that follows `/locations` must be `/global`.
+   * For example:
    * `projects/123/locations/global/quotaPreferences/my-config-for-us-east1`
    * </pre>
    *
@@ -47,8 +47,8 @@ public interface QuotaPreferenceOrBuilder
    * <pre>
    * Required except in the CREATE requests.
    * The resource name of the quota preference.
-   * The ID component following "locations/" must be "global".
-   * Example:
+   * The path that follows `/locations` must be `/global`.
+   * For example:
    * `projects/123/locations/global/quotaPreferences/my-config-for-us-east1`
    * </pre>
    *
@@ -63,19 +63,20 @@ public interface QuotaPreferenceOrBuilder
    *
    * <pre>
    * Immutable. The dimensions that this quota preference applies to. The key of
-   * the map entry is the name of a dimension, such as "region", "zone",
-   * "network_id", and the value of the map entry is the dimension value.
+   * the map entry is the name of a dimension, such as `region`, `zone`,
+   * `network_id`, and the value of the map entry is the dimension value.
    *
    * If a dimension is missing from the map of dimensions, the quota preference
    * applies to all the dimension values except for those that have other quota
    * preferences configured for the specific value.
    *
-   * NOTE: QuotaPreferences can only be applied across all values of "user" and
-   * "resource" dimension. Do not set values for "user" or "resource" in the
+   * Note: QuotaPreferences can only be applied across all values of `user` and
+   * `resource` dimension. Do not set values for `user` or `resource` in the
    * dimension map.
    *
-   * Example: {"provider", "Foo Inc"} where "provider" is a service specific
-   * dimension.
+   * For example: `{"provider" : "Example Organization"}` where `provider` is a
+   * service-specific quota dimension and `Example Organization` is the provider
+   * name.
    * </pre>
    *
    * <code>map&lt;string, string&gt; dimensions = 2 [(.google.api.field_behavior) = IMMUTABLE];
@@ -88,19 +89,20 @@ public interface QuotaPreferenceOrBuilder
    *
    * <pre>
    * Immutable. The dimensions that this quota preference applies to. The key of
-   * the map entry is the name of a dimension, such as "region", "zone",
-   * "network_id", and the value of the map entry is the dimension value.
+   * the map entry is the name of a dimension, such as `region`, `zone`,
+   * `network_id`, and the value of the map entry is the dimension value.
    *
    * If a dimension is missing from the map of dimensions, the quota preference
    * applies to all the dimension values except for those that have other quota
    * preferences configured for the specific value.
    *
-   * NOTE: QuotaPreferences can only be applied across all values of "user" and
-   * "resource" dimension. Do not set values for "user" or "resource" in the
+   * Note: QuotaPreferences can only be applied across all values of `user` and
+   * `resource` dimension. Do not set values for `user` or `resource` in the
    * dimension map.
    *
-   * Example: {"provider", "Foo Inc"} where "provider" is a service specific
-   * dimension.
+   * For example: `{"provider" : "Example Organization"}` where `provider` is a
+   * service-specific quota dimension and `Example Organization` is the provider
+   * name.
    * </pre>
    *
    * <code>map&lt;string, string&gt; dimensions = 2 [(.google.api.field_behavior) = IMMUTABLE];
@@ -117,19 +119,20 @@ public interface QuotaPreferenceOrBuilder
    *
    * <pre>
    * Immutable. The dimensions that this quota preference applies to. The key of
-   * the map entry is the name of a dimension, such as "region", "zone",
-   * "network_id", and the value of the map entry is the dimension value.
+   * the map entry is the name of a dimension, such as `region`, `zone`,
+   * `network_id`, and the value of the map entry is the dimension value.
    *
    * If a dimension is missing from the map of dimensions, the quota preference
    * applies to all the dimension values except for those that have other quota
    * preferences configured for the specific value.
    *
-   * NOTE: QuotaPreferences can only be applied across all values of "user" and
-   * "resource" dimension. Do not set values for "user" or "resource" in the
+   * Note: QuotaPreferences can only be applied across all values of `user` and
+   * `resource` dimension. Do not set values for `user` or `resource` in the
    * dimension map.
    *
-   * Example: {"provider", "Foo Inc"} where "provider" is a service specific
-   * dimension.
+   * For example: `{"provider" : "Example Organization"}` where `provider` is a
+   * service-specific quota dimension and `Example Organization` is the provider
+   * name.
    * </pre>
    *
    * <code>map&lt;string, string&gt; dimensions = 2 [(.google.api.field_behavior) = IMMUTABLE];
@@ -142,19 +145,20 @@ public interface QuotaPreferenceOrBuilder
    *
    * <pre>
    * Immutable. The dimensions that this quota preference applies to. The key of
-   * the map entry is the name of a dimension, such as "region", "zone",
-   * "network_id", and the value of the map entry is the dimension value.
+   * the map entry is the name of a dimension, such as `region`, `zone`,
+   * `network_id`, and the value of the map entry is the dimension value.
    *
    * If a dimension is missing from the map of dimensions, the quota preference
    * applies to all the dimension values except for those that have other quota
    * preferences configured for the specific value.
    *
-   * NOTE: QuotaPreferences can only be applied across all values of "user" and
-   * "resource" dimension. Do not set values for "user" or "resource" in the
+   * Note: QuotaPreferences can only be applied across all values of `user` and
+   * `resource` dimension. Do not set values for `user` or `resource` in the
    * dimension map.
    *
-   * Example: {"provider", "Foo Inc"} where "provider" is a service specific
-   * dimension.
+   * For example: `{"provider" : "Example Organization"}` where `provider` is a
+   * service-specific quota dimension and `Example Organization` is the provider
+   * name.
    * </pre>
    *
    * <code>map&lt;string, string&gt; dimensions = 2 [(.google.api.field_behavior) = IMMUTABLE];
@@ -171,19 +175,20 @@ public interface QuotaPreferenceOrBuilder
    *
    * <pre>
    * Immutable. The dimensions that this quota preference applies to. The key of
-   * the map entry is the name of a dimension, such as "region", "zone",
-   * "network_id", and the value of the map entry is the dimension value.
+   * the map entry is the name of a dimension, such as `region`, `zone`,
+   * `network_id`, and the value of the map entry is the dimension value.
    *
    * If a dimension is missing from the map of dimensions, the quota preference
    * applies to all the dimension values except for those that have other quota
    * preferences configured for the specific value.
    *
-   * NOTE: QuotaPreferences can only be applied across all values of "user" and
-   * "resource" dimension. Do not set values for "user" or "resource" in the
+   * Note: QuotaPreferences can only be applied across all values of `user` and
+   * `resource` dimension. Do not set values for `user` or `resource` in the
    * dimension map.
    *
-   * Example: {"provider", "Foo Inc"} where "provider" is a service specific
-   * dimension.
+   * For example: `{"provider" : "Example Organization"}` where `provider` is a
+   * service-specific quota dimension and `Example Organization` is the provider
+   * name.
    * </pre>
    *
    * <code>map&lt;string, string&gt; dimensions = 2 [(.google.api.field_behavior) = IMMUTABLE];
@@ -377,7 +382,7 @@ public interface QuotaPreferenceOrBuilder
    *
    * <pre>
    * Required. The id of the quota to which the quota preference is applied. A
-   * quota name is unique in the service. Example: `CpusPerProjectPerRegion`
+   * quota name is unique in the service. For example, `CpusPerProjectPerRegion`
    * </pre>
    *
    * <code>string quota_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -391,7 +396,7 @@ public interface QuotaPreferenceOrBuilder
    *
    * <pre>
    * Required. The id of the quota to which the quota preference is applied. A
-   * quota name is unique in the service. Example: `CpusPerProjectPerRegion`
+   * quota name is unique in the service. For example, `CpusPerProjectPerRegion`
    * </pre>
    *
    * <code>string quota_id = 8 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -444,9 +449,9 @@ public interface QuotaPreferenceOrBuilder
    *
    *
    * <pre>
-   * Input only. An email address that can be used to contact the the user, in
-   * case Google Cloud needs more information to make a decision before
-   * additional quota can be granted.
+   * Input only. An email address that can be used to contact the user, in case
+   * Google Cloud needs more information to make a decision before additional
+   * quota can be granted.
    *
    * When requesting a quota increase, the email address is required.
    * When requesting a quota decrease, the email address is optional.
@@ -465,9 +470,9 @@ public interface QuotaPreferenceOrBuilder
    *
    *
    * <pre>
-   * Input only. An email address that can be used to contact the the user, in
-   * case Google Cloud needs more information to make a decision before
-   * additional quota can be granted.
+   * Input only. An email address that can be used to contact the user, in case
+   * Google Cloud needs more information to make a decision before additional
+   * quota can be granted.
    *
    * When requesting a quota increase, the email address is required.
    * When requesting a quota decrease, the email address is optional.

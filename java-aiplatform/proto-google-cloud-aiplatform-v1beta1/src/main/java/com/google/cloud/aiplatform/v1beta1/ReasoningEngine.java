@@ -79,6 +79,8 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Identifier. The resource name of the ReasoningEngine.
+   * Format:
+   * `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -103,6 +105,8 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Identifier. The resource name of the ReasoningEngine.
+   * Format:
+   * `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}`
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -446,6 +450,128 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
     }
   }
 
+  public static final int CONTEXT_SPEC_FIELD_NUMBER = 9;
+  private com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec contextSpec_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for how Agent Engine sub-resources should manage
+   * context.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec context_spec = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the contextSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasContextSpec() {
+    return ((bitField0_ & 0x00000008) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for how Agent Engine sub-resources should manage
+   * context.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec context_spec = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The contextSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec getContextSpec() {
+    return contextSpec_ == null
+        ? com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.getDefaultInstance()
+        : contextSpec_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Configuration for how Agent Engine sub-resources should manage
+   * context.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec context_spec = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpecOrBuilder
+      getContextSpecOrBuilder() {
+    return contextSpec_ == null
+        ? com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.getDefaultInstance()
+        : contextSpec_;
+  }
+
+  public static final int ENCRYPTION_SPEC_FIELD_NUMBER = 11;
+  private com.google.cloud.aiplatform.v1beta1.EncryptionSpec encryptionSpec_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Customer-managed encryption key spec for a ReasoningEngine. If set, this
+   * ReasoningEngine and all sub-resources of this ReasoningEngine will be
+   * secured by this key.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 11;</code>
+   *
+   * @return Whether the encryptionSpec field is set.
+   */
+  @java.lang.Override
+  public boolean hasEncryptionSpec() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Customer-managed encryption key spec for a ReasoningEngine. If set, this
+   * ReasoningEngine and all sub-resources of this ReasoningEngine will be
+   * secured by this key.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 11;</code>
+   *
+   * @return The encryptionSpec.
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.EncryptionSpec getEncryptionSpec() {
+    return encryptionSpec_ == null
+        ? com.google.cloud.aiplatform.v1beta1.EncryptionSpec.getDefaultInstance()
+        : encryptionSpec_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Customer-managed encryption key spec for a ReasoningEngine. If set, this
+   * ReasoningEngine and all sub-resources of this ReasoningEngine will be
+   * secured by this key.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 11;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder getEncryptionSpecOrBuilder() {
+    return encryptionSpec_ == null
+        ? com.google.cloud.aiplatform.v1beta1.EncryptionSpec.getDefaultInstance()
+        : encryptionSpec_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -481,6 +607,12 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 7, description_);
     }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      output.writeMessage(9, getContextSpec());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(11, getEncryptionSpec());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -510,6 +642,12 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, description_);
+    }
+    if (((bitField0_ & 0x00000008) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getContextSpec());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getEncryptionSpec());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -543,6 +681,14 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
     if (!getEtag().equals(other.getEtag())) return false;
+    if (hasContextSpec() != other.hasContextSpec()) return false;
+    if (hasContextSpec()) {
+      if (!getContextSpec().equals(other.getContextSpec())) return false;
+    }
+    if (hasEncryptionSpec() != other.hasEncryptionSpec()) return false;
+    if (hasEncryptionSpec()) {
+      if (!getEncryptionSpec().equals(other.getEncryptionSpec())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -574,6 +720,14 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
     }
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
     hash = (53 * hash) + getEtag().hashCode();
+    if (hasContextSpec()) {
+      hash = (37 * hash) + CONTEXT_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getContextSpec().hashCode();
+    }
+    if (hasEncryptionSpec()) {
+      hash = (37 * hash) + ENCRYPTION_SPEC_FIELD_NUMBER;
+      hash = (53 * hash) + getEncryptionSpec().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -719,6 +873,8 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
         getSpecFieldBuilder();
         getCreateTimeFieldBuilder();
         getUpdateTimeFieldBuilder();
+        getContextSpecFieldBuilder();
+        getEncryptionSpecFieldBuilder();
       }
     }
 
@@ -745,6 +901,16 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
         updateTimeBuilder_ = null;
       }
       etag_ = "";
+      contextSpec_ = null;
+      if (contextSpecBuilder_ != null) {
+        contextSpecBuilder_.dispose();
+        contextSpecBuilder_ = null;
+      }
+      encryptionSpec_ = null;
+      if (encryptionSpecBuilder_ != null) {
+        encryptionSpecBuilder_.dispose();
+        encryptionSpecBuilder_ = null;
+      }
       return this;
     }
 
@@ -805,6 +971,16 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
       }
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.etag_ = etag_;
+      }
+      if (((from_bitField0_ & 0x00000080) != 0)) {
+        result.contextSpec_ =
+            contextSpecBuilder_ == null ? contextSpec_ : contextSpecBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.encryptionSpec_ =
+            encryptionSpecBuilder_ == null ? encryptionSpec_ : encryptionSpecBuilder_.build();
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -884,6 +1060,12 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
         bitField0_ |= 0x00000040;
         onChanged();
       }
+      if (other.hasContextSpec()) {
+        mergeContextSpec(other.getContextSpec());
+      }
+      if (other.hasEncryptionSpec()) {
+        mergeEncryptionSpec(other.getEncryptionSpec());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -952,6 +1134,18 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
                 bitField0_ |= 0x00000004;
                 break;
               } // case 58
+            case 74:
+              {
+                input.readMessage(getContextSpecFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000080;
+                break;
+              } // case 74
+            case 90:
+              {
+                input.readMessage(getEncryptionSpecFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 90
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -978,6 +1172,8 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Identifier. The resource name of the ReasoningEngine.
+     * Format:
+     * `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1001,6 +1197,8 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Identifier. The resource name of the ReasoningEngine.
+     * Format:
+     * `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1024,6 +1222,8 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Identifier. The resource name of the ReasoningEngine.
+     * Format:
+     * `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1046,6 +1246,8 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Identifier. The resource name of the ReasoningEngine.
+     * Format:
+     * `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -1064,6 +1266,8 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Identifier. The resource name of the ReasoningEngine.
+     * Format:
+     * `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}`
      * </pre>
      *
      * <code>string name = 1 [(.google.api.field_behavior) = IDENTIFIER];</code>
@@ -2056,6 +2260,449 @@ public final class ReasoningEngine extends com.google.protobuf.GeneratedMessageV
       bitField0_ |= 0x00000040;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec contextSpec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec,
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpecOrBuilder>
+        contextSpecBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for how Agent Engine sub-resources should manage
+     * context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec context_spec = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the contextSpec field is set.
+     */
+    public boolean hasContextSpec() {
+      return ((bitField0_ & 0x00000080) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for how Agent Engine sub-resources should manage
+     * context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec context_spec = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The contextSpec.
+     */
+    public com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec getContextSpec() {
+      if (contextSpecBuilder_ == null) {
+        return contextSpec_ == null
+            ? com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.getDefaultInstance()
+            : contextSpec_;
+      } else {
+        return contextSpecBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for how Agent Engine sub-resources should manage
+     * context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec context_spec = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setContextSpec(
+        com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec value) {
+      if (contextSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        contextSpec_ = value;
+      } else {
+        contextSpecBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for how Agent Engine sub-resources should manage
+     * context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec context_spec = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setContextSpec(
+        com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.Builder builderForValue) {
+      if (contextSpecBuilder_ == null) {
+        contextSpec_ = builderForValue.build();
+      } else {
+        contextSpecBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for how Agent Engine sub-resources should manage
+     * context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec context_spec = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeContextSpec(
+        com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec value) {
+      if (contextSpecBuilder_ == null) {
+        if (((bitField0_ & 0x00000080) != 0)
+            && contextSpec_ != null
+            && contextSpec_
+                != com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec
+                    .getDefaultInstance()) {
+          getContextSpecBuilder().mergeFrom(value);
+        } else {
+          contextSpec_ = value;
+        }
+      } else {
+        contextSpecBuilder_.mergeFrom(value);
+      }
+      if (contextSpec_ != null) {
+        bitField0_ |= 0x00000080;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for how Agent Engine sub-resources should manage
+     * context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec context_spec = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearContextSpec() {
+      bitField0_ = (bitField0_ & ~0x00000080);
+      contextSpec_ = null;
+      if (contextSpecBuilder_ != null) {
+        contextSpecBuilder_.dispose();
+        contextSpecBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for how Agent Engine sub-resources should manage
+     * context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec context_spec = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.Builder
+        getContextSpecBuilder() {
+      bitField0_ |= 0x00000080;
+      onChanged();
+      return getContextSpecFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for how Agent Engine sub-resources should manage
+     * context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec context_spec = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpecOrBuilder
+        getContextSpecOrBuilder() {
+      if (contextSpecBuilder_ != null) {
+        return contextSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return contextSpec_ == null
+            ? com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.getDefaultInstance()
+            : contextSpec_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Configuration for how Agent Engine sub-resources should manage
+     * context.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec context_spec = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec,
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpecOrBuilder>
+        getContextSpecFieldBuilder() {
+      if (contextSpecBuilder_ == null) {
+        contextSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec,
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpec.Builder,
+                com.google.cloud.aiplatform.v1beta1.ReasoningEngineContextSpecOrBuilder>(
+                getContextSpec(), getParentForChildren(), isClean());
+        contextSpec_ = null;
+      }
+      return contextSpecBuilder_;
+    }
+
+    private com.google.cloud.aiplatform.v1beta1.EncryptionSpec encryptionSpec_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpec,
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder>
+        encryptionSpecBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key spec for a ReasoningEngine. If set, this
+     * ReasoningEngine and all sub-resources of this ReasoningEngine will be
+     * secured by this key.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 11;</code>
+     *
+     * @return Whether the encryptionSpec field is set.
+     */
+    public boolean hasEncryptionSpec() {
+      return ((bitField0_ & 0x00000100) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key spec for a ReasoningEngine. If set, this
+     * ReasoningEngine and all sub-resources of this ReasoningEngine will be
+     * secured by this key.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 11;</code>
+     *
+     * @return The encryptionSpec.
+     */
+    public com.google.cloud.aiplatform.v1beta1.EncryptionSpec getEncryptionSpec() {
+      if (encryptionSpecBuilder_ == null) {
+        return encryptionSpec_ == null
+            ? com.google.cloud.aiplatform.v1beta1.EncryptionSpec.getDefaultInstance()
+            : encryptionSpec_;
+      } else {
+        return encryptionSpecBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key spec for a ReasoningEngine. If set, this
+     * ReasoningEngine and all sub-resources of this ReasoningEngine will be
+     * secured by this key.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 11;</code>
+     */
+    public Builder setEncryptionSpec(com.google.cloud.aiplatform.v1beta1.EncryptionSpec value) {
+      if (encryptionSpecBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        encryptionSpec_ = value;
+      } else {
+        encryptionSpecBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key spec for a ReasoningEngine. If set, this
+     * ReasoningEngine and all sub-resources of this ReasoningEngine will be
+     * secured by this key.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 11;</code>
+     */
+    public Builder setEncryptionSpec(
+        com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder builderForValue) {
+      if (encryptionSpecBuilder_ == null) {
+        encryptionSpec_ = builderForValue.build();
+      } else {
+        encryptionSpecBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key spec for a ReasoningEngine. If set, this
+     * ReasoningEngine and all sub-resources of this ReasoningEngine will be
+     * secured by this key.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 11;</code>
+     */
+    public Builder mergeEncryptionSpec(com.google.cloud.aiplatform.v1beta1.EncryptionSpec value) {
+      if (encryptionSpecBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) != 0)
+            && encryptionSpec_ != null
+            && encryptionSpec_
+                != com.google.cloud.aiplatform.v1beta1.EncryptionSpec.getDefaultInstance()) {
+          getEncryptionSpecBuilder().mergeFrom(value);
+        } else {
+          encryptionSpec_ = value;
+        }
+      } else {
+        encryptionSpecBuilder_.mergeFrom(value);
+      }
+      if (encryptionSpec_ != null) {
+        bitField0_ |= 0x00000100;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key spec for a ReasoningEngine. If set, this
+     * ReasoningEngine and all sub-resources of this ReasoningEngine will be
+     * secured by this key.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 11;</code>
+     */
+    public Builder clearEncryptionSpec() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      encryptionSpec_ = null;
+      if (encryptionSpecBuilder_ != null) {
+        encryptionSpecBuilder_.dispose();
+        encryptionSpecBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key spec for a ReasoningEngine. If set, this
+     * ReasoningEngine and all sub-resources of this ReasoningEngine will be
+     * secured by this key.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 11;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder getEncryptionSpecBuilder() {
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return getEncryptionSpecFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key spec for a ReasoningEngine. If set, this
+     * ReasoningEngine and all sub-resources of this ReasoningEngine will be
+     * secured by this key.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 11;</code>
+     */
+    public com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder
+        getEncryptionSpecOrBuilder() {
+      if (encryptionSpecBuilder_ != null) {
+        return encryptionSpecBuilder_.getMessageOrBuilder();
+      } else {
+        return encryptionSpec_ == null
+            ? com.google.cloud.aiplatform.v1beta1.EncryptionSpec.getDefaultInstance()
+            : encryptionSpec_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Customer-managed encryption key spec for a ReasoningEngine. If set, this
+     * ReasoningEngine and all sub-resources of this ReasoningEngine will be
+     * secured by this key.
+     * </pre>
+     *
+     * <code>.google.cloud.aiplatform.v1beta1.EncryptionSpec encryption_spec = 11;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpec,
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder,
+            com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder>
+        getEncryptionSpecFieldBuilder() {
+      if (encryptionSpecBuilder_ == null) {
+        encryptionSpecBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.aiplatform.v1beta1.EncryptionSpec,
+                com.google.cloud.aiplatform.v1beta1.EncryptionSpec.Builder,
+                com.google.cloud.aiplatform.v1beta1.EncryptionSpecOrBuilder>(
+                getEncryptionSpec(), getParentForChildren(), isClean());
+        encryptionSpec_ = null;
+      }
+      return encryptionSpecBuilder_;
     }
 
     @java.lang.Override
