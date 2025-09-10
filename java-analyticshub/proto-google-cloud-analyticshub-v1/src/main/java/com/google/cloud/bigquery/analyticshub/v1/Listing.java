@@ -267,6 +267,8 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     CATEGORY_TRANSPORTATION_AND_LOGISTICS(18),
     /** <code>CATEGORY_TRAVEL_AND_TOURISM = 19;</code> */
     CATEGORY_TRAVEL_AND_TOURISM(19),
+    /** <code>CATEGORY_GOOGLE_EARTH_ENGINE = 20;</code> */
+    CATEGORY_GOOGLE_EARTH_ENGINE(20),
     UNRECOGNIZED(-1),
     ;
 
@@ -329,6 +331,9 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
 
     /** <code>CATEGORY_TRAVEL_AND_TOURISM = 19;</code> */
     public static final int CATEGORY_TRAVEL_AND_TOURISM_VALUE = 19;
+
+    /** <code>CATEGORY_GOOGLE_EARTH_ENGINE = 20;</code> */
+    public static final int CATEGORY_GOOGLE_EARTH_ENGINE_VALUE = 20;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -394,6 +399,8 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           return CATEGORY_TRANSPORTATION_AND_LOGISTICS;
         case 19:
           return CATEGORY_TRAVEL_AND_TOURISM;
+        case 20:
+          return CATEGORY_GOOGLE_EARTH_ENGINE;
         default:
           return null;
       }
@@ -614,6 +621,151 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
             .RestrictedExportPolicyOrBuilder
         getRestrictedExportPolicyOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of regions where the publisher has created shared
+     * dataset replicas.
+     * </pre>
+     *
+     * <code>repeated string replica_locations = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the replicaLocations.
+     */
+    java.util.List<java.lang.String> getReplicaLocationsList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of regions where the publisher has created shared
+     * dataset replicas.
+     * </pre>
+     *
+     * <code>repeated string replica_locations = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of replicaLocations.
+     */
+    int getReplicaLocationsCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of regions where the publisher has created shared
+     * dataset replicas.
+     * </pre>
+     *
+     * <code>repeated string replica_locations = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The replicaLocations at the given index.
+     */
+    java.lang.String getReplicaLocations(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of regions where the publisher has created shared
+     * dataset replicas.
+     * </pre>
+     *
+     * <code>repeated string replica_locations = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the replicaLocations at the given index.
+     */
+    com.google.protobuf.ByteString getReplicaLocationsBytes(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Server-owned effective state of replicas.
+     * Contains both primary and secondary replicas.
+     * Each replica includes a system-computed (output-only) state and primary
+     * designation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica effective_replicas = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    java.util.List<com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica>
+        getEffectiveReplicasList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Server-owned effective state of replicas.
+     * Contains both primary and secondary replicas.
+     * Each replica includes a system-computed (output-only) state and primary
+     * designation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica effective_replicas = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+        getEffectiveReplicas(int index);
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Server-owned effective state of replicas.
+     * Contains both primary and secondary replicas.
+     * Each replica includes a system-computed (output-only) state and primary
+     * designation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica effective_replicas = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    int getEffectiveReplicasCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Server-owned effective state of replicas.
+     * Contains both primary and secondary replicas.
+     * Each replica includes a system-computed (output-only) state and primary
+     * designation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica effective_replicas = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    java.util.List<
+            ? extends
+                com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                    .ReplicaOrBuilder>
+        getEffectiveReplicasOrBuilderList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Server-owned effective state of replicas.
+     * Contains both primary and secondary replicas.
+     * Each replica includes a system-computed (output-only) state and primary
+     * designation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica effective_replicas = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.ReplicaOrBuilder
+        getEffectiveReplicasOrBuilder(int index);
   }
 
   /**
@@ -645,6 +797,8 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
     private BigQueryDatasetSource() {
       dataset_ = "";
       selectedResources_ = java.util.Collections.emptyList();
+      replicaLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      effectiveReplicas_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -3522,6 +3676,1542 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public interface ReplicaOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The geographic location where the replica resides. See
+       * [BigQuery locations](https://cloud.google.com/bigquery/docs/locations)
+       * for supported locations. Eg. "us-central1".
+       * </pre>
+       *
+       * <code>string location = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The location.
+       */
+      java.lang.String getLocation();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The geographic location where the replica resides. See
+       * [BigQuery locations](https://cloud.google.com/bigquery/docs/locations)
+       * for supported locations. Eg. "us-central1".
+       * </pre>
+       *
+       * <code>string location = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for location.
+       */
+      com.google.protobuf.ByteString getLocationBytes();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Assigned by Analytics Hub based on real BigQuery
+       * replication state.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica.ReplicaState replica_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for replicaState.
+       */
+      int getReplicaStateValue();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Assigned by Analytics Hub based on real BigQuery
+       * replication state.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica.ReplicaState replica_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The replicaState.
+       */
+      com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica.ReplicaState
+          getReplicaState();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Indicates that this replica is the primary replica.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica.PrimaryState primary_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the primaryState field is set.
+       */
+      boolean hasPrimaryState();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Indicates that this replica is the primary replica.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica.PrimaryState primary_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for primaryState.
+       */
+      int getPrimaryStateValue();
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Indicates that this replica is the primary replica.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica.PrimaryState primary_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The primaryState.
+       */
+      com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica.PrimaryState
+          getPrimaryState();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Represents the state of a replica of a shared dataset.
+     * It includes the geographic location of the replica and
+     * system-computed, output-only fields indicating its replication state and
+     * whether it is the primary replica.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica}
+     */
+    public static final class Replica extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica)
+        ReplicaOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      // Use Replica.newBuilder() to construct.
+      private Replica(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private Replica() {
+        location_ = "";
+        replicaState_ = 0;
+        primaryState_ = 0;
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new Replica();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubProto
+            .internal_static_google_cloud_bigquery_analyticshub_v1_Listing_BigQueryDatasetSource_Replica_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubProto
+            .internal_static_google_cloud_bigquery_analyticshub_v1_Listing_BigQueryDatasetSource_Replica_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+                    .class,
+                com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+                    .Builder.class);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Replica state of the shared dataset.
+       * </pre>
+       *
+       * Protobuf enum {@code
+       * google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica.ReplicaState}
+       */
+      public enum ReplicaState implements com.google.protobuf.ProtocolMessageEnum {
+        /**
+         *
+         *
+         * <pre>
+         * Default value. This value is unused.
+         * </pre>
+         *
+         * <code>REPLICA_STATE_UNSPECIFIED = 0;</code>
+         */
+        REPLICA_STATE_UNSPECIFIED(0),
+        /**
+         *
+         *
+         * <pre>
+         * The replica is backfilled and ready to use.
+         * </pre>
+         *
+         * <code>READY_TO_USE = 1;</code>
+         */
+        READY_TO_USE(1),
+        /**
+         *
+         *
+         * <pre>
+         * The replica is unavailable, does not exist, or has not been
+         * backfilled yet.
+         * </pre>
+         *
+         * <code>UNAVAILABLE = 2;</code>
+         */
+        UNAVAILABLE(2),
+        UNRECOGNIZED(-1),
+        ;
+
+        /**
+         *
+         *
+         * <pre>
+         * Default value. This value is unused.
+         * </pre>
+         *
+         * <code>REPLICA_STATE_UNSPECIFIED = 0;</code>
+         */
+        public static final int REPLICA_STATE_UNSPECIFIED_VALUE = 0;
+
+        /**
+         *
+         *
+         * <pre>
+         * The replica is backfilled and ready to use.
+         * </pre>
+         *
+         * <code>READY_TO_USE = 1;</code>
+         */
+        public static final int READY_TO_USE_VALUE = 1;
+
+        /**
+         *
+         *
+         * <pre>
+         * The replica is unavailable, does not exist, or has not been
+         * backfilled yet.
+         * </pre>
+         *
+         * <code>UNAVAILABLE = 2;</code>
+         */
+        public static final int UNAVAILABLE_VALUE = 2;
+
+        public final int getNumber() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalArgumentException(
+                "Can't get the number of an unknown enum value.");
+          }
+          return value;
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static ReplicaState valueOf(int value) {
+          return forNumber(value);
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         */
+        public static ReplicaState forNumber(int value) {
+          switch (value) {
+            case 0:
+              return REPLICA_STATE_UNSPECIFIED;
+            case 1:
+              return READY_TO_USE;
+            case 2:
+              return UNAVAILABLE;
+            default:
+              return null;
+          }
+        }
+
+        public static com.google.protobuf.Internal.EnumLiteMap<ReplicaState> internalGetValueMap() {
+          return internalValueMap;
+        }
+
+        private static final com.google.protobuf.Internal.EnumLiteMap<ReplicaState>
+            internalValueMap =
+                new com.google.protobuf.Internal.EnumLiteMap<ReplicaState>() {
+                  public ReplicaState findValueByNumber(int number) {
+                    return ReplicaState.forNumber(number);
+                  }
+                };
+
+        public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalStateException(
+                "Can't get the descriptor of an unrecognized enum value.");
+          }
+          return getDescriptor().getValues().get(ordinal());
+        }
+
+        public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+          return getDescriptor();
+        }
+
+        public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+          return com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+              .getDescriptor()
+              .getEnumTypes()
+              .get(0);
+        }
+
+        private static final ReplicaState[] VALUES = values();
+
+        public static ReplicaState valueOf(
+            com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+          if (desc.getType() != getDescriptor()) {
+            throw new java.lang.IllegalArgumentException(
+                "EnumValueDescriptor is not for this type.");
+          }
+          if (desc.getIndex() == -1) {
+            return UNRECOGNIZED;
+          }
+          return VALUES[desc.getIndex()];
+        }
+
+        private final int value;
+
+        private ReplicaState(int value) {
+          this.value = value;
+        }
+
+        // @@protoc_insertion_point(enum_scope:google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica.ReplicaState)
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Primary state of the replica. Set only for the primary replica.
+       * </pre>
+       *
+       * Protobuf enum {@code
+       * google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica.PrimaryState}
+       */
+      public enum PrimaryState implements com.google.protobuf.ProtocolMessageEnum {
+        /**
+         *
+         *
+         * <pre>
+         * Default value. This value is unused.
+         * </pre>
+         *
+         * <code>PRIMARY_STATE_UNSPECIFIED = 0;</code>
+         */
+        PRIMARY_STATE_UNSPECIFIED(0),
+        /**
+         *
+         *
+         * <pre>
+         * The replica is the primary replica.
+         * </pre>
+         *
+         * <code>PRIMARY_REPLICA = 1;</code>
+         */
+        PRIMARY_REPLICA(1),
+        UNRECOGNIZED(-1),
+        ;
+
+        /**
+         *
+         *
+         * <pre>
+         * Default value. This value is unused.
+         * </pre>
+         *
+         * <code>PRIMARY_STATE_UNSPECIFIED = 0;</code>
+         */
+        public static final int PRIMARY_STATE_UNSPECIFIED_VALUE = 0;
+
+        /**
+         *
+         *
+         * <pre>
+         * The replica is the primary replica.
+         * </pre>
+         *
+         * <code>PRIMARY_REPLICA = 1;</code>
+         */
+        public static final int PRIMARY_REPLICA_VALUE = 1;
+
+        public final int getNumber() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalArgumentException(
+                "Can't get the number of an unknown enum value.");
+          }
+          return value;
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         * @deprecated Use {@link #forNumber(int)} instead.
+         */
+        @java.lang.Deprecated
+        public static PrimaryState valueOf(int value) {
+          return forNumber(value);
+        }
+
+        /**
+         * @param value The numeric wire value of the corresponding enum entry.
+         * @return The enum associated with the given numeric wire value.
+         */
+        public static PrimaryState forNumber(int value) {
+          switch (value) {
+            case 0:
+              return PRIMARY_STATE_UNSPECIFIED;
+            case 1:
+              return PRIMARY_REPLICA;
+            default:
+              return null;
+          }
+        }
+
+        public static com.google.protobuf.Internal.EnumLiteMap<PrimaryState> internalGetValueMap() {
+          return internalValueMap;
+        }
+
+        private static final com.google.protobuf.Internal.EnumLiteMap<PrimaryState>
+            internalValueMap =
+                new com.google.protobuf.Internal.EnumLiteMap<PrimaryState>() {
+                  public PrimaryState findValueByNumber(int number) {
+                    return PrimaryState.forNumber(number);
+                  }
+                };
+
+        public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+          if (this == UNRECOGNIZED) {
+            throw new java.lang.IllegalStateException(
+                "Can't get the descriptor of an unrecognized enum value.");
+          }
+          return getDescriptor().getValues().get(ordinal());
+        }
+
+        public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+          return getDescriptor();
+        }
+
+        public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+          return com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+              .getDescriptor()
+              .getEnumTypes()
+              .get(1);
+        }
+
+        private static final PrimaryState[] VALUES = values();
+
+        public static PrimaryState valueOf(
+            com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+          if (desc.getType() != getDescriptor()) {
+            throw new java.lang.IllegalArgumentException(
+                "EnumValueDescriptor is not for this type.");
+          }
+          if (desc.getIndex() == -1) {
+            return UNRECOGNIZED;
+          }
+          return VALUES[desc.getIndex()];
+        }
+
+        private final int value;
+
+        private PrimaryState(int value) {
+          this.value = value;
+        }
+
+        // @@protoc_insertion_point(enum_scope:google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica.PrimaryState)
+      }
+
+      private int bitField0_;
+      public static final int LOCATION_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private volatile java.lang.Object location_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The geographic location where the replica resides. See
+       * [BigQuery locations](https://cloud.google.com/bigquery/docs/locations)
+       * for supported locations. Eg. "us-central1".
+       * </pre>
+       *
+       * <code>string location = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The location.
+       */
+      @java.lang.Override
+      public java.lang.String getLocation() {
+        java.lang.Object ref = location_;
+        if (ref instanceof java.lang.String) {
+          return (java.lang.String) ref;
+        } else {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          location_ = s;
+          return s;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The geographic location where the replica resides. See
+       * [BigQuery locations](https://cloud.google.com/bigquery/docs/locations)
+       * for supported locations. Eg. "us-central1".
+       * </pre>
+       *
+       * <code>string location = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for location.
+       */
+      @java.lang.Override
+      public com.google.protobuf.ByteString getLocationBytes() {
+        java.lang.Object ref = location_;
+        if (ref instanceof java.lang.String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          location_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      public static final int REPLICA_STATE_FIELD_NUMBER = 2;
+      private int replicaState_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Assigned by Analytics Hub based on real BigQuery
+       * replication state.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica.ReplicaState replica_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for replicaState.
+       */
+      @java.lang.Override
+      public int getReplicaStateValue() {
+        return replicaState_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Assigned by Analytics Hub based on real BigQuery
+       * replication state.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica.ReplicaState replica_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The replicaState.
+       */
+      @java.lang.Override
+      public com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+              .ReplicaState
+          getReplicaState() {
+        com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica.ReplicaState
+            result =
+                com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+                    .ReplicaState.forNumber(replicaState_);
+        return result == null
+            ? com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+                .ReplicaState.UNRECOGNIZED
+            : result;
+      }
+
+      public static final int PRIMARY_STATE_FIELD_NUMBER = 3;
+      private int primaryState_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Indicates that this replica is the primary replica.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica.PrimaryState primary_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the primaryState field is set.
+       */
+      @java.lang.Override
+      public boolean hasPrimaryState() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Indicates that this replica is the primary replica.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica.PrimaryState primary_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for primaryState.
+       */
+      @java.lang.Override
+      public int getPrimaryStateValue() {
+        return primaryState_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Indicates that this replica is the primary replica.
+       * </pre>
+       *
+       * <code>
+       * optional .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica.PrimaryState primary_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The primaryState.
+       */
+      @java.lang.Override
+      public com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+              .PrimaryState
+          getPrimaryState() {
+        com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica.PrimaryState
+            result =
+                com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+                    .PrimaryState.forNumber(primaryState_);
+        return result == null
+            ? com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+                .PrimaryState.UNRECOGNIZED
+            : result;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
+          com.google.protobuf.GeneratedMessageV3.writeString(output, 1, location_);
+        }
+        if (replicaState_
+            != com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+                .ReplicaState.REPLICA_STATE_UNSPECIFIED
+                .getNumber()) {
+          output.writeEnum(2, replicaState_);
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          output.writeEnum(3, primaryState_);
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(location_)) {
+          size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, location_);
+        }
+        if (replicaState_
+            != com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+                .ReplicaState.REPLICA_STATE_UNSPECIFIED
+                .getNumber()) {
+          size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, replicaState_);
+        }
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, primaryState_);
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica other =
+            (com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica) obj;
+
+        if (!getLocation().equals(other.getLocation())) return false;
+        if (replicaState_ != other.replicaState_) return false;
+        if (hasPrimaryState() != other.hasPrimaryState()) return false;
+        if (hasPrimaryState()) {
+          if (primaryState_ != other.primaryState_) return false;
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (37 * hash) + LOCATION_FIELD_NUMBER;
+        hash = (53 * hash) + getLocation().hashCode();
+        hash = (37 * hash) + REPLICA_STATE_FIELD_NUMBER;
+        hash = (53 * hash) + replicaState_;
+        if (hasPrimaryState()) {
+          hash = (37 * hash) + PRIMARY_STATE_FIELD_NUMBER;
+          hash = (53 * hash) + primaryState_;
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Represents the state of a replica of a shared dataset.
+       * It includes the geographic location of the replica and
+       * system-computed, output-only fields indicating its replication state and
+       * whether it is the primary replica.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica)
+          com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.ReplicaOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubProto
+              .internal_static_google_cloud_bigquery_analyticshub_v1_Listing_BigQueryDatasetSource_Replica_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubProto
+              .internal_static_google_cloud_bigquery_analyticshub_v1_Listing_BigQueryDatasetSource_Replica_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+                      .class,
+                  com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          location_ = "";
+          replicaState_ = 0;
+          primaryState_ = 0;
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubProto
+              .internal_static_google_cloud_bigquery_analyticshub_v1_Listing_BigQueryDatasetSource_Replica_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+            getDefaultInstanceForType() {
+          return com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+            build() {
+          com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+            buildPartial() {
+          com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica result =
+              new com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica(
+                  this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+                result) {
+          int from_bitField0_ = bitField0_;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.location_ = location_;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.replicaState_ = replicaState_;
+          }
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.primaryState_ = primaryState_;
+            to_bitField0_ |= 0x00000001;
+          }
+          result.bitField0_ |= to_bitField0_;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica) {
+            return mergeFrom(
+                (com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica other) {
+          if (other
+              == com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+                  .getDefaultInstance()) return this;
+          if (!other.getLocation().isEmpty()) {
+            location_ = other.location_;
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          if (other.replicaState_ != 0) {
+            setReplicaStateValue(other.getReplicaStateValue());
+          }
+          if (other.hasPrimaryState()) {
+            setPrimaryState(other.getPrimaryState());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    location_ = input.readStringRequireUtf8();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 16:
+                  {
+                    replicaState_ = input.readEnum();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 16
+                case 24:
+                  {
+                    primaryState_ = input.readEnum();
+                    bitField0_ |= 0x00000004;
+                    break;
+                  } // case 24
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.lang.Object location_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The geographic location where the replica resides. See
+         * [BigQuery locations](https://cloud.google.com/bigquery/docs/locations)
+         * for supported locations. Eg. "us-central1".
+         * </pre>
+         *
+         * <code>string location = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The location.
+         */
+        public java.lang.String getLocation() {
+          java.lang.Object ref = location_;
+          if (!(ref instanceof java.lang.String)) {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            location_ = s;
+            return s;
+          } else {
+            return (java.lang.String) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The geographic location where the replica resides. See
+         * [BigQuery locations](https://cloud.google.com/bigquery/docs/locations)
+         * for supported locations. Eg. "us-central1".
+         * </pre>
+         *
+         * <code>string location = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return The bytes for location.
+         */
+        public com.google.protobuf.ByteString getLocationBytes() {
+          java.lang.Object ref = location_;
+          if (ref instanceof String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            location_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The geographic location where the replica resides. See
+         * [BigQuery locations](https://cloud.google.com/bigquery/docs/locations)
+         * for supported locations. Eg. "us-central1".
+         * </pre>
+         *
+         * <code>string location = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @param value The location to set.
+         * @return This builder for chaining.
+         */
+        public Builder setLocation(java.lang.String value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          location_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The geographic location where the replica resides. See
+         * [BigQuery locations](https://cloud.google.com/bigquery/docs/locations)
+         * for supported locations. Eg. "us-central1".
+         * </pre>
+         *
+         * <code>string location = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearLocation() {
+          location_ = getDefaultInstance().getLocation();
+          bitField0_ = (bitField0_ & ~0x00000001);
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. The geographic location where the replica resides. See
+         * [BigQuery locations](https://cloud.google.com/bigquery/docs/locations)
+         * for supported locations. Eg. "us-central1".
+         * </pre>
+         *
+         * <code>string location = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+         *
+         * @param value The bytes for location to set.
+         * @return This builder for chaining.
+         */
+        public Builder setLocationBytes(com.google.protobuf.ByteString value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+          location_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        private int replicaState_ = 0;
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Assigned by Analytics Hub based on real BigQuery
+         * replication state.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica.ReplicaState replica_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @return The enum numeric value on the wire for replicaState.
+         */
+        @java.lang.Override
+        public int getReplicaStateValue() {
+          return replicaState_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Assigned by Analytics Hub based on real BigQuery
+         * replication state.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica.ReplicaState replica_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @param value The enum numeric value on the wire for replicaState to set.
+         * @return This builder for chaining.
+         */
+        public Builder setReplicaStateValue(int value) {
+          replicaState_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Assigned by Analytics Hub based on real BigQuery
+         * replication state.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica.ReplicaState replica_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @return The replicaState.
+         */
+        @java.lang.Override
+        public com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+                .ReplicaState
+            getReplicaState() {
+          com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+                  .ReplicaState
+              result =
+                  com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+                      .ReplicaState.forNumber(replicaState_);
+          return result == null
+              ? com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+                  .ReplicaState.UNRECOGNIZED
+              : result;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Assigned by Analytics Hub based on real BigQuery
+         * replication state.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica.ReplicaState replica_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @param value The replicaState to set.
+         * @return This builder for chaining.
+         */
+        public Builder setReplicaState(
+            com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+                    .ReplicaState
+                value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bitField0_ |= 0x00000002;
+          replicaState_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Assigned by Analytics Hub based on real BigQuery
+         * replication state.
+         * </pre>
+         *
+         * <code>
+         * .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica.ReplicaState replica_state = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearReplicaState() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          replicaState_ = 0;
+          onChanged();
+          return this;
+        }
+
+        private int primaryState_ = 0;
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Indicates that this replica is the primary replica.
+         * </pre>
+         *
+         * <code>
+         * optional .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica.PrimaryState primary_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @return Whether the primaryState field is set.
+         */
+        @java.lang.Override
+        public boolean hasPrimaryState() {
+          return ((bitField0_ & 0x00000004) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Indicates that this replica is the primary replica.
+         * </pre>
+         *
+         * <code>
+         * optional .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica.PrimaryState primary_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @return The enum numeric value on the wire for primaryState.
+         */
+        @java.lang.Override
+        public int getPrimaryStateValue() {
+          return primaryState_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Indicates that this replica is the primary replica.
+         * </pre>
+         *
+         * <code>
+         * optional .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica.PrimaryState primary_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @param value The enum numeric value on the wire for primaryState to set.
+         * @return This builder for chaining.
+         */
+        public Builder setPrimaryStateValue(int value) {
+          primaryState_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Indicates that this replica is the primary replica.
+         * </pre>
+         *
+         * <code>
+         * optional .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica.PrimaryState primary_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @return The primaryState.
+         */
+        @java.lang.Override
+        public com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+                .PrimaryState
+            getPrimaryState() {
+          com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+                  .PrimaryState
+              result =
+                  com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+                      .PrimaryState.forNumber(primaryState_);
+          return result == null
+              ? com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+                  .PrimaryState.UNRECOGNIZED
+              : result;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Indicates that this replica is the primary replica.
+         * </pre>
+         *
+         * <code>
+         * optional .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica.PrimaryState primary_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @param value The primaryState to set.
+         * @return This builder for chaining.
+         */
+        public Builder setPrimaryState(
+            com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+                    .PrimaryState
+                value) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          bitField0_ |= 0x00000004;
+          primaryState_ = value.getNumber();
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Output only. Indicates that this replica is the primary replica.
+         * </pre>
+         *
+         * <code>
+         * optional .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica.PrimaryState primary_state = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearPrimaryState() {
+          bitField0_ = (bitField0_ & ~0x00000004);
+          primaryState_ = 0;
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica)
+      private static final com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+              .Replica
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica();
+      }
+
+      public static com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<Replica> PARSER =
+          new com.google.protobuf.AbstractParser<Replica>() {
+            @java.lang.Override
+            public Replica parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<Replica> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<Replica> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
     private int bitField0_;
     public static final int DATASET_FIELD_NUMBER = 1;
 
@@ -3755,6 +5445,188 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           : restrictedExportPolicy_;
     }
 
+    public static final int REPLICA_LOCATIONS_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.LazyStringArrayList replicaLocations_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of regions where the publisher has created shared
+     * dataset replicas.
+     * </pre>
+     *
+     * <code>repeated string replica_locations = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return A list containing the replicaLocations.
+     */
+    public com.google.protobuf.ProtocolStringList getReplicaLocationsList() {
+      return replicaLocations_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of regions where the publisher has created shared
+     * dataset replicas.
+     * </pre>
+     *
+     * <code>repeated string replica_locations = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The count of replicaLocations.
+     */
+    public int getReplicaLocationsCount() {
+      return replicaLocations_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of regions where the publisher has created shared
+     * dataset replicas.
+     * </pre>
+     *
+     * <code>repeated string replica_locations = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the element to return.
+     * @return The replicaLocations at the given index.
+     */
+    public java.lang.String getReplicaLocations(int index) {
+      return replicaLocations_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. A list of regions where the publisher has created shared
+     * dataset replicas.
+     * </pre>
+     *
+     * <code>repeated string replica_locations = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the replicaLocations at the given index.
+     */
+    public com.google.protobuf.ByteString getReplicaLocationsBytes(int index) {
+      return replicaLocations_.getByteString(index);
+    }
+
+    public static final int EFFECTIVE_REPLICAS_FIELD_NUMBER = 6;
+
+    @SuppressWarnings("serial")
+    private java.util.List<
+            com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica>
+        effectiveReplicas_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Server-owned effective state of replicas.
+     * Contains both primary and secondary replicas.
+     * Each replica includes a system-computed (output-only) state and primary
+     * designation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica effective_replicas = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica>
+        getEffectiveReplicasList() {
+      return effectiveReplicas_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Server-owned effective state of replicas.
+     * Contains both primary and secondary replicas.
+     * Each replica includes a system-computed (output-only) state and primary
+     * designation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica effective_replicas = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public java.util.List<
+            ? extends
+                com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                    .ReplicaOrBuilder>
+        getEffectiveReplicasOrBuilderList() {
+      return effectiveReplicas_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Server-owned effective state of replicas.
+     * Contains both primary and secondary replicas.
+     * Each replica includes a system-computed (output-only) state and primary
+     * designation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica effective_replicas = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public int getEffectiveReplicasCount() {
+      return effectiveReplicas_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Server-owned effective state of replicas.
+     * Contains both primary and secondary replicas.
+     * Each replica includes a system-computed (output-only) state and primary
+     * designation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica effective_replicas = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+        getEffectiveReplicas(int index) {
+      return effectiveReplicas_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Server-owned effective state of replicas.
+     * Contains both primary and secondary replicas.
+     * Each replica includes a system-computed (output-only) state and primary
+     * designation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica effective_replicas = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.ReplicaOrBuilder
+        getEffectiveReplicasOrBuilder(int index) {
+      return effectiveReplicas_.get(index);
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -3778,6 +5650,12 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       if (((bitField0_ & 0x00000001) != 0)) {
         output.writeMessage(3, getRestrictedExportPolicy());
       }
+      for (int i = 0; i < replicaLocations_.size(); i++) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, replicaLocations_.getRaw(i));
+      }
+      for (int i = 0; i < effectiveReplicas_.size(); i++) {
+        output.writeMessage(6, effectiveReplicas_.get(i));
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -3798,6 +5676,18 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(
                 3, getRestrictedExportPolicy());
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < replicaLocations_.size(); i++) {
+          dataSize += computeStringSizeNoTag(replicaLocations_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getReplicaLocationsList().size();
+      }
+      for (int i = 0; i < effectiveReplicas_.size(); i++) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(6, effectiveReplicas_.get(i));
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -3822,6 +5712,8 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       if (hasRestrictedExportPolicy()) {
         if (!getRestrictedExportPolicy().equals(other.getRestrictedExportPolicy())) return false;
       }
+      if (!getReplicaLocationsList().equals(other.getReplicaLocationsList())) return false;
+      if (!getEffectiveReplicasList().equals(other.getEffectiveReplicasList())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -3842,6 +5734,14 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
       if (hasRestrictedExportPolicy()) {
         hash = (37 * hash) + RESTRICTED_EXPORT_POLICY_FIELD_NUMBER;
         hash = (53 * hash) + getRestrictedExportPolicy().hashCode();
+      }
+      if (getReplicaLocationsCount() > 0) {
+        hash = (37 * hash) + REPLICA_LOCATIONS_FIELD_NUMBER;
+        hash = (53 * hash) + getReplicaLocationsList().hashCode();
+      }
+      if (getEffectiveReplicasCount() > 0) {
+        hash = (37 * hash) + EFFECTIVE_REPLICAS_FIELD_NUMBER;
+        hash = (53 * hash) + getEffectiveReplicasList().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -3998,6 +5898,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
           getSelectedResourcesFieldBuilder();
           getRestrictedExportPolicyFieldBuilder();
+          getEffectiveReplicasFieldBuilder();
         }
       }
 
@@ -4018,6 +5919,14 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           restrictedExportPolicyBuilder_.dispose();
           restrictedExportPolicyBuilder_ = null;
         }
+        replicaLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        if (effectiveReplicasBuilder_ == null) {
+          effectiveReplicas_ = java.util.Collections.emptyList();
+        } else {
+          effectiveReplicas_ = null;
+          effectiveReplicasBuilder_.clear();
+        }
+        bitField0_ = (bitField0_ & ~0x00000010);
         return this;
       }
 
@@ -4068,6 +5977,15 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         } else {
           result.selectedResources_ = selectedResourcesBuilder_.build();
         }
+        if (effectiveReplicasBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) != 0)) {
+            effectiveReplicas_ = java.util.Collections.unmodifiableList(effectiveReplicas_);
+            bitField0_ = (bitField0_ & ~0x00000010);
+          }
+          result.effectiveReplicas_ = effectiveReplicas_;
+        } else {
+          result.effectiveReplicas_ = effectiveReplicasBuilder_.build();
+        }
       }
 
       private void buildPartial0(
@@ -4083,6 +6001,10 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
                   ? restrictedExportPolicy_
                   : restrictedExportPolicyBuilder_.build();
           to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          replicaLocations_.makeImmutable();
+          result.replicaLocations_ = replicaLocations_;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -4174,6 +6096,43 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
         if (other.hasRestrictedExportPolicy()) {
           mergeRestrictedExportPolicy(other.getRestrictedExportPolicy());
         }
+        if (!other.replicaLocations_.isEmpty()) {
+          if (replicaLocations_.isEmpty()) {
+            replicaLocations_ = other.replicaLocations_;
+            bitField0_ |= 0x00000008;
+          } else {
+            ensureReplicaLocationsIsMutable();
+            replicaLocations_.addAll(other.replicaLocations_);
+          }
+          onChanged();
+        }
+        if (effectiveReplicasBuilder_ == null) {
+          if (!other.effectiveReplicas_.isEmpty()) {
+            if (effectiveReplicas_.isEmpty()) {
+              effectiveReplicas_ = other.effectiveReplicas_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+            } else {
+              ensureEffectiveReplicasIsMutable();
+              effectiveReplicas_.addAll(other.effectiveReplicas_);
+            }
+            onChanged();
+          }
+        } else {
+          if (!other.effectiveReplicas_.isEmpty()) {
+            if (effectiveReplicasBuilder_.isEmpty()) {
+              effectiveReplicasBuilder_.dispose();
+              effectiveReplicasBuilder_ = null;
+              effectiveReplicas_ = other.effectiveReplicas_;
+              bitField0_ = (bitField0_ & ~0x00000010);
+              effectiveReplicasBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getEffectiveReplicasFieldBuilder()
+                      : null;
+            } else {
+              effectiveReplicasBuilder_.addAllMessages(other.effectiveReplicas_);
+            }
+          }
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -4230,6 +6189,29 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000004;
                   break;
                 } // case 26
+              case 42:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+                  ensureReplicaLocationsIsMutable();
+                  replicaLocations_.add(s);
+                  break;
+                } // case 42
+              case 50:
+                {
+                  com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+                      m =
+                          input.readMessage(
+                              com.google.cloud.bigquery.analyticshub.v1.Listing
+                                  .BigQueryDatasetSource.Replica.parser(),
+                              extensionRegistry);
+                  if (effectiveReplicasBuilder_ == null) {
+                    ensureEffectiveReplicasIsMutable();
+                    effectiveReplicas_.add(m);
+                  } else {
+                    effectiveReplicasBuilder_.addMessage(m);
+                  }
+                  break;
+                } // case 50
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5105,6 +7087,709 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
           restrictedExportPolicy_ = null;
         }
         return restrictedExportPolicyBuilder_;
+      }
+
+      private com.google.protobuf.LazyStringArrayList replicaLocations_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+
+      private void ensureReplicaLocationsIsMutable() {
+        if (!replicaLocations_.isModifiable()) {
+          replicaLocations_ = new com.google.protobuf.LazyStringArrayList(replicaLocations_);
+        }
+        bitField0_ |= 0x00000008;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of regions where the publisher has created shared
+       * dataset replicas.
+       * </pre>
+       *
+       * <code>repeated string replica_locations = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return A list containing the replicaLocations.
+       */
+      public com.google.protobuf.ProtocolStringList getReplicaLocationsList() {
+        replicaLocations_.makeImmutable();
+        return replicaLocations_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of regions where the publisher has created shared
+       * dataset replicas.
+       * </pre>
+       *
+       * <code>repeated string replica_locations = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The count of replicaLocations.
+       */
+      public int getReplicaLocationsCount() {
+        return replicaLocations_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of regions where the publisher has created shared
+       * dataset replicas.
+       * </pre>
+       *
+       * <code>repeated string replica_locations = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the element to return.
+       * @return The replicaLocations at the given index.
+       */
+      public java.lang.String getReplicaLocations(int index) {
+        return replicaLocations_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of regions where the publisher has created shared
+       * dataset replicas.
+       * </pre>
+       *
+       * <code>repeated string replica_locations = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index of the value to return.
+       * @return The bytes of the replicaLocations at the given index.
+       */
+      public com.google.protobuf.ByteString getReplicaLocationsBytes(int index) {
+        return replicaLocations_.getByteString(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of regions where the publisher has created shared
+       * dataset replicas.
+       * </pre>
+       *
+       * <code>repeated string replica_locations = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param index The index to set the value at.
+       * @param value The replicaLocations to set.
+       * @return This builder for chaining.
+       */
+      public Builder setReplicaLocations(int index, java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureReplicaLocationsIsMutable();
+        replicaLocations_.set(index, value);
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of regions where the publisher has created shared
+       * dataset replicas.
+       * </pre>
+       *
+       * <code>repeated string replica_locations = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The replicaLocations to add.
+       * @return This builder for chaining.
+       */
+      public Builder addReplicaLocations(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureReplicaLocationsIsMutable();
+        replicaLocations_.add(value);
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of regions where the publisher has created shared
+       * dataset replicas.
+       * </pre>
+       *
+       * <code>repeated string replica_locations = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param values The replicaLocations to add.
+       * @return This builder for chaining.
+       */
+      public Builder addAllReplicaLocations(java.lang.Iterable<java.lang.String> values) {
+        ensureReplicaLocationsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, replicaLocations_);
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of regions where the publisher has created shared
+       * dataset replicas.
+       * </pre>
+       *
+       * <code>repeated string replica_locations = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearReplicaLocations() {
+        replicaLocations_ = com.google.protobuf.LazyStringArrayList.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        ;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. A list of regions where the publisher has created shared
+       * dataset replicas.
+       * </pre>
+       *
+       * <code>repeated string replica_locations = 5 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The bytes of the replicaLocations to add.
+       * @return This builder for chaining.
+       */
+      public Builder addReplicaLocationsBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        ensureReplicaLocationsIsMutable();
+        replicaLocations_.add(value);
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<
+              com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica>
+          effectiveReplicas_ = java.util.Collections.emptyList();
+
+      private void ensureEffectiveReplicasIsMutable() {
+        if (!((bitField0_ & 0x00000010) != 0)) {
+          effectiveReplicas_ =
+              new java.util.ArrayList<
+                  com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica>(
+                  effectiveReplicas_);
+          bitField0_ |= 0x00000010;
+        }
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica,
+              com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+                  .Builder,
+              com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                  .ReplicaOrBuilder>
+          effectiveReplicasBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Server-owned effective state of replicas.
+       * Contains both primary and secondary replicas.
+       * Each replica includes a system-computed (output-only) state and primary
+       * designation.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica effective_replicas = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica>
+          getEffectiveReplicasList() {
+        if (effectiveReplicasBuilder_ == null) {
+          return java.util.Collections.unmodifiableList(effectiveReplicas_);
+        } else {
+          return effectiveReplicasBuilder_.getMessageList();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Server-owned effective state of replicas.
+       * Contains both primary and secondary replicas.
+       * Each replica includes a system-computed (output-only) state and primary
+       * designation.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica effective_replicas = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public int getEffectiveReplicasCount() {
+        if (effectiveReplicasBuilder_ == null) {
+          return effectiveReplicas_.size();
+        } else {
+          return effectiveReplicasBuilder_.getCount();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Server-owned effective state of replicas.
+       * Contains both primary and secondary replicas.
+       * Each replica includes a system-computed (output-only) state and primary
+       * designation.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica effective_replicas = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+          getEffectiveReplicas(int index) {
+        if (effectiveReplicasBuilder_ == null) {
+          return effectiveReplicas_.get(index);
+        } else {
+          return effectiveReplicasBuilder_.getMessage(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Server-owned effective state of replicas.
+       * Contains both primary and secondary replicas.
+       * Each replica includes a system-computed (output-only) state and primary
+       * designation.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica effective_replicas = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setEffectiveReplicas(
+          int index,
+          com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica value) {
+        if (effectiveReplicasBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEffectiveReplicasIsMutable();
+          effectiveReplicas_.set(index, value);
+          onChanged();
+        } else {
+          effectiveReplicasBuilder_.setMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Server-owned effective state of replicas.
+       * Contains both primary and secondary replicas.
+       * Each replica includes a system-computed (output-only) state and primary
+       * designation.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica effective_replicas = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setEffectiveReplicas(
+          int index,
+          com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica.Builder
+              builderForValue) {
+        if (effectiveReplicasBuilder_ == null) {
+          ensureEffectiveReplicasIsMutable();
+          effectiveReplicas_.set(index, builderForValue.build());
+          onChanged();
+        } else {
+          effectiveReplicasBuilder_.setMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Server-owned effective state of replicas.
+       * Contains both primary and secondary replicas.
+       * Each replica includes a system-computed (output-only) state and primary
+       * designation.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica effective_replicas = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addEffectiveReplicas(
+          com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica value) {
+        if (effectiveReplicasBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEffectiveReplicasIsMutable();
+          effectiveReplicas_.add(value);
+          onChanged();
+        } else {
+          effectiveReplicasBuilder_.addMessage(value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Server-owned effective state of replicas.
+       * Contains both primary and secondary replicas.
+       * Each replica includes a system-computed (output-only) state and primary
+       * designation.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica effective_replicas = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addEffectiveReplicas(
+          int index,
+          com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica value) {
+        if (effectiveReplicasBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          ensureEffectiveReplicasIsMutable();
+          effectiveReplicas_.add(index, value);
+          onChanged();
+        } else {
+          effectiveReplicasBuilder_.addMessage(index, value);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Server-owned effective state of replicas.
+       * Contains both primary and secondary replicas.
+       * Each replica includes a system-computed (output-only) state and primary
+       * designation.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica effective_replicas = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addEffectiveReplicas(
+          com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica.Builder
+              builderForValue) {
+        if (effectiveReplicasBuilder_ == null) {
+          ensureEffectiveReplicasIsMutable();
+          effectiveReplicas_.add(builderForValue.build());
+          onChanged();
+        } else {
+          effectiveReplicasBuilder_.addMessage(builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Server-owned effective state of replicas.
+       * Contains both primary and secondary replicas.
+       * Each replica includes a system-computed (output-only) state and primary
+       * designation.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica effective_replicas = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addEffectiveReplicas(
+          int index,
+          com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica.Builder
+              builderForValue) {
+        if (effectiveReplicasBuilder_ == null) {
+          ensureEffectiveReplicasIsMutable();
+          effectiveReplicas_.add(index, builderForValue.build());
+          onChanged();
+        } else {
+          effectiveReplicasBuilder_.addMessage(index, builderForValue.build());
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Server-owned effective state of replicas.
+       * Contains both primary and secondary replicas.
+       * Each replica includes a system-computed (output-only) state and primary
+       * designation.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica effective_replicas = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder addAllEffectiveReplicas(
+          java.lang.Iterable<
+                  ? extends
+                      com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                          .Replica>
+              values) {
+        if (effectiveReplicasBuilder_ == null) {
+          ensureEffectiveReplicasIsMutable();
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, effectiveReplicas_);
+          onChanged();
+        } else {
+          effectiveReplicasBuilder_.addAllMessages(values);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Server-owned effective state of replicas.
+       * Contains both primary and secondary replicas.
+       * Each replica includes a system-computed (output-only) state and primary
+       * designation.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica effective_replicas = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearEffectiveReplicas() {
+        if (effectiveReplicasBuilder_ == null) {
+          effectiveReplicas_ = java.util.Collections.emptyList();
+          bitField0_ = (bitField0_ & ~0x00000010);
+          onChanged();
+        } else {
+          effectiveReplicasBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Server-owned effective state of replicas.
+       * Contains both primary and secondary replicas.
+       * Each replica includes a system-computed (output-only) state and primary
+       * designation.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica effective_replicas = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder removeEffectiveReplicas(int index) {
+        if (effectiveReplicasBuilder_ == null) {
+          ensureEffectiveReplicasIsMutable();
+          effectiveReplicas_.remove(index);
+          onChanged();
+        } else {
+          effectiveReplicasBuilder_.remove(index);
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Server-owned effective state of replicas.
+       * Contains both primary and secondary replicas.
+       * Each replica includes a system-computed (output-only) state and primary
+       * designation.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica effective_replicas = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica.Builder
+          getEffectiveReplicasBuilder(int index) {
+        return getEffectiveReplicasFieldBuilder().getBuilder(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Server-owned effective state of replicas.
+       * Contains both primary and secondary replicas.
+       * Each replica includes a system-computed (output-only) state and primary
+       * designation.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica effective_replicas = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+              .ReplicaOrBuilder
+          getEffectiveReplicasOrBuilder(int index) {
+        if (effectiveReplicasBuilder_ == null) {
+          return effectiveReplicas_.get(index);
+        } else {
+          return effectiveReplicasBuilder_.getMessageOrBuilder(index);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Server-owned effective state of replicas.
+       * Contains both primary and secondary replicas.
+       * Each replica includes a system-computed (output-only) state and primary
+       * designation.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica effective_replicas = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<
+              ? extends
+                  com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                      .ReplicaOrBuilder>
+          getEffectiveReplicasOrBuilderList() {
+        if (effectiveReplicasBuilder_ != null) {
+          return effectiveReplicasBuilder_.getMessageOrBuilderList();
+        } else {
+          return java.util.Collections.unmodifiableList(effectiveReplicas_);
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Server-owned effective state of replicas.
+       * Contains both primary and secondary replicas.
+       * Each replica includes a system-computed (output-only) state and primary
+       * designation.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica effective_replicas = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica.Builder
+          addEffectiveReplicasBuilder() {
+        return getEffectiveReplicasFieldBuilder()
+            .addBuilder(
+                com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+                    .getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Server-owned effective state of replicas.
+       * Contains both primary and secondary replicas.
+       * Each replica includes a system-computed (output-only) state and primary
+       * designation.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica effective_replicas = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica.Builder
+          addEffectiveReplicasBuilder(int index) {
+        return getEffectiveReplicasFieldBuilder()
+            .addBuilder(
+                index,
+                com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+                    .getDefaultInstance());
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Server-owned effective state of replicas.
+       * Contains both primary and secondary replicas.
+       * Each replica includes a system-computed (output-only) state and primary
+       * designation.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica effective_replicas = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public java.util.List<
+              com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+                  .Builder>
+          getEffectiveReplicasBuilderList() {
+        return getEffectiveReplicasFieldBuilder().getBuilderList();
+      }
+
+      private com.google.protobuf.RepeatedFieldBuilderV3<
+              com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica,
+              com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+                  .Builder,
+              com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                  .ReplicaOrBuilder>
+          getEffectiveReplicasFieldBuilder() {
+        if (effectiveReplicasBuilder_ == null) {
+          effectiveReplicasBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica,
+                  com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource.Replica
+                      .Builder,
+                  com.google.cloud.bigquery.analyticshub.v1.Listing.BigQueryDatasetSource
+                      .ReplicaOrBuilder>(
+                  effectiveReplicas_,
+                  ((bitField0_ & 0x00000010) != 0),
+                  getParentForChildren(),
+                  isClean());
+          effectiveReplicas_ = null;
+        }
+        return effectiveReplicasBuilder_;
       }
 
       @java.lang.Override
@@ -9801,7 +12486,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Categories of the listing. Up to two categories are allowed.
+   * Optional. Categories of the listing. Up to five categories are allowed.
    * </pre>
    *
    * <code>
@@ -9822,7 +12507,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Categories of the listing. Up to two categories are allowed.
+   * Optional. Categories of the listing. Up to five categories are allowed.
    * </pre>
    *
    * <code>
@@ -9840,7 +12525,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Categories of the listing. Up to two categories are allowed.
+   * Optional. Categories of the listing. Up to five categories are allowed.
    * </pre>
    *
    * <code>
@@ -9859,7 +12544,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Categories of the listing. Up to two categories are allowed.
+   * Optional. Categories of the listing. Up to five categories are allowed.
    * </pre>
    *
    * <code>
@@ -9877,7 +12562,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Categories of the listing. Up to two categories are allowed.
+   * Optional. Categories of the listing. Up to five categories are allowed.
    * </pre>
    *
    * <code>
@@ -12764,7 +15449,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Categories of the listing. Up to two categories are allowed.
+     * Optional. Categories of the listing. Up to five categories are allowed.
      * </pre>
      *
      * <code>
@@ -12784,7 +15469,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Categories of the listing. Up to two categories are allowed.
+     * Optional. Categories of the listing. Up to five categories are allowed.
      * </pre>
      *
      * <code>
@@ -12801,7 +15486,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Categories of the listing. Up to two categories are allowed.
+     * Optional. Categories of the listing. Up to five categories are allowed.
      * </pre>
      *
      * <code>
@@ -12819,7 +15504,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Categories of the listing. Up to two categories are allowed.
+     * Optional. Categories of the listing. Up to five categories are allowed.
      * </pre>
      *
      * <code>
@@ -12845,7 +15530,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Categories of the listing. Up to two categories are allowed.
+     * Optional. Categories of the listing. Up to five categories are allowed.
      * </pre>
      *
      * <code>
@@ -12869,7 +15554,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Categories of the listing. Up to two categories are allowed.
+     * Optional. Categories of the listing. Up to five categories are allowed.
      * </pre>
      *
      * <code>
@@ -12894,7 +15579,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Categories of the listing. Up to two categories are allowed.
+     * Optional. Categories of the listing. Up to five categories are allowed.
      * </pre>
      *
      * <code>
@@ -12914,7 +15599,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Categories of the listing. Up to two categories are allowed.
+     * Optional. Categories of the listing. Up to five categories are allowed.
      * </pre>
      *
      * <code>
@@ -12931,7 +15616,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Categories of the listing. Up to two categories are allowed.
+     * Optional. Categories of the listing. Up to five categories are allowed.
      * </pre>
      *
      * <code>
@@ -12949,7 +15634,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Categories of the listing. Up to two categories are allowed.
+     * Optional. Categories of the listing. Up to five categories are allowed.
      * </pre>
      *
      * <code>
@@ -12971,7 +15656,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Categories of the listing. Up to two categories are allowed.
+     * Optional. Categories of the listing. Up to five categories are allowed.
      * </pre>
      *
      * <code>
@@ -12992,7 +15677,7 @@ public final class Listing extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Categories of the listing. Up to two categories are allowed.
+     * Optional. Categories of the listing. Up to five categories are allowed.
      * </pre>
      *
      * <code>

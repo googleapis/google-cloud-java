@@ -25,7 +25,7 @@ package com.google.privacy.dlp.v2;
  * <pre>
  * Collection of findings saved to a Cloud Storage bucket. This is used as the
  * proto schema for textproto files created when specifying a cloud storage
- * path to save inspection findings.
+ * path to save Inspect findings.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.SaveToGcsFindingsOutput}
@@ -310,7 +310,7 @@ public final class SaveToGcsFindingsOutput extends com.google.protobuf.Generated
    * <pre>
    * Collection of findings saved to a Cloud Storage bucket. This is used as the
    * proto schema for textproto files created when specifying a cloud storage
-   * path to save inspection findings.
+   * path to save Inspect findings.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.SaveToGcsFindingsOutput}

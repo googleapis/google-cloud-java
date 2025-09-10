@@ -28,6 +28,51 @@ public interface ResourceStatusOrBuilder
    *
    *
    * <pre>
+   * [Output Only] Effective metadata is a field that consolidates project, zonal instance settings, and instance-level predefined metadata keys to provide the overridden value for those metadata keys at the instance level.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ResourceStatusEffectiveInstanceMetadata effective_instance_metadata = 55052033;
+   * </code>
+   *
+   * @return Whether the effectiveInstanceMetadata field is set.
+   */
+  boolean hasEffectiveInstanceMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Effective metadata is a field that consolidates project, zonal instance settings, and instance-level predefined metadata keys to provide the overridden value for those metadata keys at the instance level.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ResourceStatusEffectiveInstanceMetadata effective_instance_metadata = 55052033;
+   * </code>
+   *
+   * @return The effectiveInstanceMetadata.
+   */
+  com.google.cloud.compute.v1.ResourceStatusEffectiveInstanceMetadata
+      getEffectiveInstanceMetadata();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Effective metadata is a field that consolidates project, zonal instance settings, and instance-level predefined metadata keys to provide the overridden value for those metadata keys at the instance level.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ResourceStatusEffectiveInstanceMetadata effective_instance_metadata = 55052033;
+   * </code>
+   */
+  com.google.cloud.compute.v1.ResourceStatusEffectiveInstanceMetadataOrBuilder
+      getEffectiveInstanceMetadataOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] The precise location of your instance within the zone's data center, including the block, sub-block, and host. The field is formatted as follows: blockId/subBlockId/hostId.
    * </pre>
    *

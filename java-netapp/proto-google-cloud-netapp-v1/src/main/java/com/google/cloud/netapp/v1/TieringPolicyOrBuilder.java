@@ -101,4 +101,34 @@ public interface TieringPolicyOrBuilder
    * @return The coolingThresholdDays.
    */
   int getCoolingThresholdDays();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Flag indicating that the hot tier bypass mode is enabled. Default
+   * is false. This is only applicable to Flex service level.
+   * </pre>
+   *
+   * <code>optional bool hot_tier_bypass_mode_enabled = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the hotTierBypassModeEnabled field is set.
+   */
+  boolean hasHotTierBypassModeEnabled();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Flag indicating that the hot tier bypass mode is enabled. Default
+   * is false. This is only applicable to Flex service level.
+   * </pre>
+   *
+   * <code>optional bool hot_tier_bypass_mode_enabled = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The hotTierBypassModeEnabled.
+   */
+  boolean getHotTierBypassModeEnabled();
 }

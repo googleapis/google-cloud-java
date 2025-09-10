@@ -120,6 +120,16 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
      * <code>FACTORY_TURNUP_CHECKS_FAILED = 2;</code>
      */
     FACTORY_TURNUP_CHECKS_FAILED(4, 2),
+    /**
+     *
+     *
+     * <pre>
+     * Verify that a valid cluster intent is present.
+     * </pre>
+     *
+     * <code>VERIFY_CLUSTER_INTENT_PRESENCE = 4;</code>
+     */
+    VERIFY_CLUSTER_INTENT_PRESENCE(5, 4),
     UNRECOGNIZED(-1, -1),
     ;
 
@@ -189,6 +199,17 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
      */
     public static final int FACTORY_TURNUP_CHECKS_FAILED_VALUE = 2;
 
+    /**
+     *
+     *
+     * <pre>
+     * Verify that a valid cluster intent is present.
+     * </pre>
+     *
+     * <code>VERIFY_CLUSTER_INTENT_PRESENCE = 4;</code>
+     */
+    public static final int VERIFY_CLUSTER_INTENT_PRESENCE_VALUE = 4;
+
     public final int getNumber() {
       if (index == -1) {
         throw new java.lang.IllegalArgumentException(
@@ -221,6 +242,8 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
           return FACTORY_TURNUP_CHECKS_PASSED;
         case 2:
           return FACTORY_TURNUP_CHECKS_FAILED;
+        case 4:
+          return VERIFY_CLUSTER_INTENT_PRESENCE;
         default:
           return null;
       }
@@ -264,6 +287,7 @@ public final class SignalZoneStateRequest extends com.google.protobuf.GeneratedM
         FACTORY_TURNUP_CHECKS_PASSED,
         READY_FOR_SITE_TURNUP,
         FACTORY_TURNUP_CHECKS_FAILED,
+        VERIFY_CLUSTER_INTENT_PRESENCE,
       };
     }
 

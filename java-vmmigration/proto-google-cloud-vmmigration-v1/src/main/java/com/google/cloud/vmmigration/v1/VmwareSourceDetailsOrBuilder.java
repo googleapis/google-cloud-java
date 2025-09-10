@@ -129,4 +129,30 @@ public interface VmwareSourceDetailsOrBuilder
    * @return The bytes for thumbprint.
    */
   com.google.protobuf.ByteString getThumbprintBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The hostname of the vcenter.
+   * </pre>
+   *
+   * <code>string resolved_vcenter_host = 5;</code>
+   *
+   * @return The resolvedVcenterHost.
+   */
+  java.lang.String getResolvedVcenterHost();
+
+  /**
+   *
+   *
+   * <pre>
+   * The hostname of the vcenter.
+   * </pre>
+   *
+   * <code>string resolved_vcenter_host = 5;</code>
+   *
+   * @return The bytes for resolvedVcenterHost.
+   */
+  com.google.protobuf.ByteString getResolvedVcenterHostBytes();
 }

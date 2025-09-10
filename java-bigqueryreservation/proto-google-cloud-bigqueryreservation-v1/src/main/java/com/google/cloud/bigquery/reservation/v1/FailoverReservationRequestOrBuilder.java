@@ -55,4 +55,38 @@ public interface FailoverReservationRequestOrBuilder
    * @return The bytes for name.
    */
   com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A parameter that determines how writes that are pending
+   * replication are handled after a failover is initiated. If not specified,
+   * HARD failover mode is used by default.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.FailoverMode failover_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for failoverMode.
+   */
+  int getFailoverModeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. A parameter that determines how writes that are pending
+   * replication are handled after a failover is initiated. If not specified,
+   * HARD failover mode is used by default.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.bigquery.reservation.v1.FailoverMode failover_mode = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The failoverMode.
+   */
+  com.google.cloud.bigquery.reservation.v1.FailoverMode getFailoverMode();
 }

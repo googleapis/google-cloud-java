@@ -1329,7 +1329,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * All result fields mentioned below are updated while the job is processing.
+   * All Result fields are updated while the job is processing.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.InspectDataSourceDetails.Result}
@@ -1772,7 +1772,7 @@ public final class InspectDataSourceDetails extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * All result fields mentioned below are updated while the job is processing.
+     * All Result fields are updated while the job is processing.
      * </pre>
      *
      * Protobuf type {@code google.privacy.dlp.v2.InspectDataSourceDetails.Result}

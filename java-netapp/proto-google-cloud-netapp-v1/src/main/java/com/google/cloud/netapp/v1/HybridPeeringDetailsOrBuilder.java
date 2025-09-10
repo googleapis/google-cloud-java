@@ -28,10 +28,10 @@ public interface HybridPeeringDetailsOrBuilder
    *
    *
    * <pre>
-   * Optional. IP address of the subnet.
+   * Output only. IP address of the subnet.
    * </pre>
    *
-   * <code>string subnet_ip = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string subnet_ip = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The subnetIp.
    */
@@ -41,10 +41,10 @@ public interface HybridPeeringDetailsOrBuilder
    *
    *
    * <pre>
-   * Optional. IP address of the subnet.
+   * Output only. IP address of the subnet.
    * </pre>
    *
-   * <code>string subnet_ip = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string subnet_ip = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for subnetIp.
    */
@@ -54,11 +54,11 @@ public interface HybridPeeringDetailsOrBuilder
    *
    *
    * <pre>
-   * Optional. Copy-paste-able commands to be used on user's ONTAP to accept
+   * Output only. Copy-paste-able commands to be used on user's ONTAP to accept
    * peering requests.
    * </pre>
    *
-   * <code>string command = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string command = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The command.
    */
@@ -68,11 +68,11 @@ public interface HybridPeeringDetailsOrBuilder
    *
    *
    * <pre>
-   * Optional. Copy-paste-able commands to be used on user's ONTAP to accept
+   * Output only. Copy-paste-able commands to be used on user's ONTAP to accept
    * peering requests.
    * </pre>
    *
-   * <code>string command = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string command = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for command.
    */
@@ -82,12 +82,12 @@ public interface HybridPeeringDetailsOrBuilder
    *
    *
    * <pre>
-   * Optional. Expiration time for the peering command to be executed on user's
-   * ONTAP.
+   * Output only. Expiration time for the peering command to be executed on
+   * user's ONTAP.
    * </pre>
    *
    * <code>
-   * .google.protobuf.Timestamp command_expiry_time = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.protobuf.Timestamp command_expiry_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the commandExpiryTime field is set.
@@ -98,12 +98,12 @@ public interface HybridPeeringDetailsOrBuilder
    *
    *
    * <pre>
-   * Optional. Expiration time for the peering command to be executed on user's
-   * ONTAP.
+   * Output only. Expiration time for the peering command to be executed on
+   * user's ONTAP.
    * </pre>
    *
    * <code>
-   * .google.protobuf.Timestamp command_expiry_time = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.protobuf.Timestamp command_expiry_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The commandExpiryTime.
@@ -114,12 +114,12 @@ public interface HybridPeeringDetailsOrBuilder
    *
    *
    * <pre>
-   * Optional. Expiration time for the peering command to be executed on user's
-   * ONTAP.
+   * Output only. Expiration time for the peering command to be executed on
+   * user's ONTAP.
    * </pre>
    *
    * <code>
-   * .google.protobuf.Timestamp command_expiry_time = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.protobuf.Timestamp command_expiry_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getCommandExpiryTimeOrBuilder();
@@ -128,10 +128,11 @@ public interface HybridPeeringDetailsOrBuilder
    *
    *
    * <pre>
-   * Optional. Temporary passphrase generated to accept cluster peering command.
+   * Output only. Temporary passphrase generated to accept cluster peering
+   * command.
    * </pre>
    *
-   * <code>string passphrase = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string passphrase = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The passphrase.
    */
@@ -141,10 +142,11 @@ public interface HybridPeeringDetailsOrBuilder
    *
    *
    * <pre>
-   * Optional. Temporary passphrase generated to accept cluster peering command.
+   * Output only. Temporary passphrase generated to accept cluster peering
+   * command.
    * </pre>
    *
-   * <code>string passphrase = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string passphrase = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for passphrase.
    */
@@ -154,11 +156,11 @@ public interface HybridPeeringDetailsOrBuilder
    *
    *
    * <pre>
-   * Optional. Name of the user's local source volume to be peered with the
+   * Output only. Name of the user's local source volume to be peered with the
    * destination volume.
    * </pre>
    *
-   * <code>string peer_volume_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string peer_volume_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The peerVolumeName.
    */
@@ -168,11 +170,11 @@ public interface HybridPeeringDetailsOrBuilder
    *
    *
    * <pre>
-   * Optional. Name of the user's local source volume to be peered with the
+   * Output only. Name of the user's local source volume to be peered with the
    * destination volume.
    * </pre>
    *
-   * <code>string peer_volume_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string peer_volume_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for peerVolumeName.
    */
@@ -182,11 +184,11 @@ public interface HybridPeeringDetailsOrBuilder
    *
    *
    * <pre>
-   * Optional. Name of the user's local source cluster to be peered with the
+   * Output only. Name of the user's local source cluster to be peered with the
    * destination cluster.
    * </pre>
    *
-   * <code>string peer_cluster_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string peer_cluster_name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The peerClusterName.
    */
@@ -196,11 +198,11 @@ public interface HybridPeeringDetailsOrBuilder
    *
    *
    * <pre>
-   * Optional. Name of the user's local source cluster to be peered with the
+   * Output only. Name of the user's local source cluster to be peered with the
    * destination cluster.
    * </pre>
    *
-   * <code>string peer_cluster_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string peer_cluster_name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for peerClusterName.
    */
@@ -210,11 +212,11 @@ public interface HybridPeeringDetailsOrBuilder
    *
    *
    * <pre>
-   * Optional. Name of the user's local source vserver svm to be peered with the
-   * destination vserver svm.
+   * Output only. Name of the user's local source vserver svm to be peered with
+   * the destination vserver svm.
    * </pre>
    *
-   * <code>string peer_svm_name = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string peer_svm_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The peerSvmName.
    */
@@ -224,11 +226,11 @@ public interface HybridPeeringDetailsOrBuilder
    *
    *
    * <pre>
-   * Optional. Name of the user's local source vserver svm to be peered with the
-   * destination vserver svm.
+   * Output only. Name of the user's local source vserver svm to be peered with
+   * the destination vserver svm.
    * </pre>
    *
-   * <code>string peer_svm_name = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string peer_svm_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for peerSvmName.
    */

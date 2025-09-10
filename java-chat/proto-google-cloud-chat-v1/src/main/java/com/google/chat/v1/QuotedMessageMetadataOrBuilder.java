@@ -28,13 +28,13 @@ public interface QuotedMessageMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. Resource name of the quoted message.
+   * Required. Resource name of the message that is quoted.
    *
    * Format: `spaces/{space}/messages/{message}`
    * </pre>
    *
    * <code>
-   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The name.
@@ -45,13 +45,13 @@ public interface QuotedMessageMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. Resource name of the quoted message.
+   * Required. Resource name of the message that is quoted.
    *
    * Format: `spaces/{space}/messages/{message}`
    * </pre>
    *
    * <code>
-   * string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+   * string name = 1 [(.google.api.field_behavior) = REQUIRED, (.google.api.resource_reference) = { ... }
    * </code>
    *
    * @return The bytes for name.
@@ -62,12 +62,18 @@ public interface QuotedMessageMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. The timestamp when the quoted message was created or when the
+   * Required. The timestamp when the quoted message was created or when the
    * quoted message was last updated.
+   *
+   * If the message was edited, use this field, `last_update_time`.
+   * If the message was never edited, use `create_time`.
+   *
+   * If `last_update_time` doesn't match the latest version of the quoted
+   * message, the request fails.
    * </pre>
    *
    * <code>
-   * .google.protobuf.Timestamp last_update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * .google.protobuf.Timestamp last_update_time = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return Whether the lastUpdateTime field is set.
@@ -78,12 +84,18 @@ public interface QuotedMessageMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. The timestamp when the quoted message was created or when the
+   * Required. The timestamp when the quoted message was created or when the
    * quoted message was last updated.
+   *
+   * If the message was edited, use this field, `last_update_time`.
+   * If the message was never edited, use `create_time`.
+   *
+   * If `last_update_time` doesn't match the latest version of the quoted
+   * message, the request fails.
    * </pre>
    *
    * <code>
-   * .google.protobuf.Timestamp last_update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * .google.protobuf.Timestamp last_update_time = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    *
    * @return The lastUpdateTime.
@@ -94,12 +106,18 @@ public interface QuotedMessageMetadataOrBuilder
    *
    *
    * <pre>
-   * Output only. The timestamp when the quoted message was created or when the
+   * Required. The timestamp when the quoted message was created or when the
    * quoted message was last updated.
+   *
+   * If the message was edited, use this field, `last_update_time`.
+   * If the message was never edited, use `create_time`.
+   *
+   * If `last_update_time` doesn't match the latest version of the quoted
+   * message, the request fails.
    * </pre>
    *
    * <code>
-   * .google.protobuf.Timestamp last_update_time = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * .google.protobuf.Timestamp last_update_time = 2 [(.google.api.field_behavior) = REQUIRED];
    * </code>
    */
   com.google.protobuf.TimestampOrBuilder getLastUpdateTimeOrBuilder();

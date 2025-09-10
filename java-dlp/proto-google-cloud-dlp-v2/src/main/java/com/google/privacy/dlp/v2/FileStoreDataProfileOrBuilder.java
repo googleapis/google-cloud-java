@@ -1104,4 +1104,59 @@ public interface FileStoreDataProfileOrBuilder
    * <code>repeated .google.privacy.dlp.v2.RelatedResource related_resources = 26;</code>
    */
   com.google.privacy.dlp.v2.RelatedResourceOrBuilder getRelatedResourcesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Domains associated with the profile.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.Domain domains = 27;</code>
+   */
+  java.util.List<com.google.privacy.dlp.v2.Domain> getDomainsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Domains associated with the profile.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.Domain domains = 27;</code>
+   */
+  com.google.privacy.dlp.v2.Domain getDomains(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Domains associated with the profile.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.Domain domains = 27;</code>
+   */
+  int getDomainsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Domains associated with the profile.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.Domain domains = 27;</code>
+   */
+  java.util.List<? extends com.google.privacy.dlp.v2.DomainOrBuilder> getDomainsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Domains associated with the profile.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.Domain domains = 27;</code>
+   */
+  com.google.privacy.dlp.v2.DomainOrBuilder getDomainsOrBuilder(int index);
 }

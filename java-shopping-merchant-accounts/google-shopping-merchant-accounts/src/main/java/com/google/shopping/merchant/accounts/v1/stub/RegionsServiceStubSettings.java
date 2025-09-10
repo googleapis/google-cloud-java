@@ -49,6 +49,11 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.protobuf.Empty;
+import com.google.shopping.merchant.accounts.v1.BatchCreateRegionsRequest;
+import com.google.shopping.merchant.accounts.v1.BatchCreateRegionsResponse;
+import com.google.shopping.merchant.accounts.v1.BatchDeleteRegionsRequest;
+import com.google.shopping.merchant.accounts.v1.BatchUpdateRegionsRequest;
+import com.google.shopping.merchant.accounts.v1.BatchUpdateRegionsResponse;
 import com.google.shopping.merchant.accounts.v1.CreateRegionRequest;
 import com.google.shopping.merchant.accounts.v1.DeleteRegionRequest;
 import com.google.shopping.merchant.accounts.v1.GetRegionRequest;
@@ -119,8 +124,13 @@ public class RegionsServiceStubSettings extends StubSettings<RegionsServiceStubS
 
   private final UnaryCallSettings<GetRegionRequest, Region> getRegionSettings;
   private final UnaryCallSettings<CreateRegionRequest, Region> createRegionSettings;
+  private final UnaryCallSettings<BatchCreateRegionsRequest, BatchCreateRegionsResponse>
+      batchCreateRegionsSettings;
   private final UnaryCallSettings<UpdateRegionRequest, Region> updateRegionSettings;
+  private final UnaryCallSettings<BatchUpdateRegionsRequest, BatchUpdateRegionsResponse>
+      batchUpdateRegionsSettings;
   private final UnaryCallSettings<DeleteRegionRequest, Empty> deleteRegionSettings;
+  private final UnaryCallSettings<BatchDeleteRegionsRequest, Empty> batchDeleteRegionsSettings;
   private final PagedCallSettings<ListRegionsRequest, ListRegionsResponse, ListRegionsPagedResponse>
       listRegionsSettings;
 
@@ -185,14 +195,31 @@ public class RegionsServiceStubSettings extends StubSettings<RegionsServiceStubS
     return createRegionSettings;
   }
 
+  /** Returns the object with the settings used for calls to batchCreateRegions. */
+  public UnaryCallSettings<BatchCreateRegionsRequest, BatchCreateRegionsResponse>
+      batchCreateRegionsSettings() {
+    return batchCreateRegionsSettings;
+  }
+
   /** Returns the object with the settings used for calls to updateRegion. */
   public UnaryCallSettings<UpdateRegionRequest, Region> updateRegionSettings() {
     return updateRegionSettings;
   }
 
+  /** Returns the object with the settings used for calls to batchUpdateRegions. */
+  public UnaryCallSettings<BatchUpdateRegionsRequest, BatchUpdateRegionsResponse>
+      batchUpdateRegionsSettings() {
+    return batchUpdateRegionsSettings;
+  }
+
   /** Returns the object with the settings used for calls to deleteRegion. */
   public UnaryCallSettings<DeleteRegionRequest, Empty> deleteRegionSettings() {
     return deleteRegionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to batchDeleteRegions. */
+  public UnaryCallSettings<BatchDeleteRegionsRequest, Empty> batchDeleteRegionsSettings() {
+    return batchDeleteRegionsSettings;
   }
 
   /** Returns the object with the settings used for calls to listRegions. */
@@ -314,8 +341,11 @@ public class RegionsServiceStubSettings extends StubSettings<RegionsServiceStubS
 
     getRegionSettings = settingsBuilder.getRegionSettings().build();
     createRegionSettings = settingsBuilder.createRegionSettings().build();
+    batchCreateRegionsSettings = settingsBuilder.batchCreateRegionsSettings().build();
     updateRegionSettings = settingsBuilder.updateRegionSettings().build();
+    batchUpdateRegionsSettings = settingsBuilder.batchUpdateRegionsSettings().build();
     deleteRegionSettings = settingsBuilder.deleteRegionSettings().build();
+    batchDeleteRegionsSettings = settingsBuilder.batchDeleteRegionsSettings().build();
     listRegionsSettings = settingsBuilder.listRegionsSettings().build();
   }
 
@@ -324,8 +354,14 @@ public class RegionsServiceStubSettings extends StubSettings<RegionsServiceStubS
     private final ImmutableList<UnaryCallSettings.Builder<?, ?>> unaryMethodSettingsBuilders;
     private final UnaryCallSettings.Builder<GetRegionRequest, Region> getRegionSettings;
     private final UnaryCallSettings.Builder<CreateRegionRequest, Region> createRegionSettings;
+    private final UnaryCallSettings.Builder<BatchCreateRegionsRequest, BatchCreateRegionsResponse>
+        batchCreateRegionsSettings;
     private final UnaryCallSettings.Builder<UpdateRegionRequest, Region> updateRegionSettings;
+    private final UnaryCallSettings.Builder<BatchUpdateRegionsRequest, BatchUpdateRegionsResponse>
+        batchUpdateRegionsSettings;
     private final UnaryCallSettings.Builder<DeleteRegionRequest, Empty> deleteRegionSettings;
+    private final UnaryCallSettings.Builder<BatchDeleteRegionsRequest, Empty>
+        batchDeleteRegionsSettings;
     private final PagedCallSettings.Builder<
             ListRegionsRequest, ListRegionsResponse, ListRegionsPagedResponse>
         listRegionsSettings;
@@ -369,16 +405,22 @@ public class RegionsServiceStubSettings extends StubSettings<RegionsServiceStubS
 
       getRegionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createRegionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchCreateRegionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       updateRegionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchUpdateRegionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteRegionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      batchDeleteRegionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listRegionsSettings = PagedCallSettings.newBuilder(LIST_REGIONS_PAGE_STR_FACT);
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               getRegionSettings,
               createRegionSettings,
+              batchCreateRegionsSettings,
               updateRegionSettings,
+              batchUpdateRegionsSettings,
               deleteRegionSettings,
+              batchDeleteRegionsSettings,
               listRegionsSettings);
       initDefaults(this);
     }
@@ -388,16 +430,22 @@ public class RegionsServiceStubSettings extends StubSettings<RegionsServiceStubS
 
       getRegionSettings = settings.getRegionSettings.toBuilder();
       createRegionSettings = settings.createRegionSettings.toBuilder();
+      batchCreateRegionsSettings = settings.batchCreateRegionsSettings.toBuilder();
       updateRegionSettings = settings.updateRegionSettings.toBuilder();
+      batchUpdateRegionsSettings = settings.batchUpdateRegionsSettings.toBuilder();
       deleteRegionSettings = settings.deleteRegionSettings.toBuilder();
+      batchDeleteRegionsSettings = settings.batchDeleteRegionsSettings.toBuilder();
       listRegionsSettings = settings.listRegionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
               getRegionSettings,
               createRegionSettings,
+              batchCreateRegionsSettings,
               updateRegionSettings,
+              batchUpdateRegionsSettings,
               deleteRegionSettings,
+              batchDeleteRegionsSettings,
               listRegionsSettings);
     }
 
@@ -437,12 +485,27 @@ public class RegionsServiceStubSettings extends StubSettings<RegionsServiceStubS
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .batchCreateRegionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .updateRegionSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
       builder
+          .batchUpdateRegionsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
           .deleteRegionSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
+
+      builder
+          .batchDeleteRegionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_0_params"));
 
@@ -479,14 +542,32 @@ public class RegionsServiceStubSettings extends StubSettings<RegionsServiceStubS
       return createRegionSettings;
     }
 
+    /** Returns the builder for the settings used for calls to batchCreateRegions. */
+    public UnaryCallSettings.Builder<BatchCreateRegionsRequest, BatchCreateRegionsResponse>
+        batchCreateRegionsSettings() {
+      return batchCreateRegionsSettings;
+    }
+
     /** Returns the builder for the settings used for calls to updateRegion. */
     public UnaryCallSettings.Builder<UpdateRegionRequest, Region> updateRegionSettings() {
       return updateRegionSettings;
     }
 
+    /** Returns the builder for the settings used for calls to batchUpdateRegions. */
+    public UnaryCallSettings.Builder<BatchUpdateRegionsRequest, BatchUpdateRegionsResponse>
+        batchUpdateRegionsSettings() {
+      return batchUpdateRegionsSettings;
+    }
+
     /** Returns the builder for the settings used for calls to deleteRegion. */
     public UnaryCallSettings.Builder<DeleteRegionRequest, Empty> deleteRegionSettings() {
       return deleteRegionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeleteRegions. */
+    public UnaryCallSettings.Builder<BatchDeleteRegionsRequest, Empty>
+        batchDeleteRegionsSettings() {
+      return batchDeleteRegionsSettings;
     }
 
     /** Returns the builder for the settings used for calls to listRegions. */

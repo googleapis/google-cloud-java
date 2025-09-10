@@ -708,5 +708,48 @@ public interface RevisionOrBuilder
    */
   com.google.cloud.config.v1.QuotaValidation getQuotaValidation();
 
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This field specifies the provider configurations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.config.v1.ProviderConfig provider_config = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the providerConfig field is set.
+   */
+  boolean hasProviderConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This field specifies the provider configurations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.config.v1.ProviderConfig provider_config = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The providerConfig.
+   */
+  com.google.cloud.config.v1.ProviderConfig getProviderConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. This field specifies the provider configurations.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.config.v1.ProviderConfig provider_config = 21 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.config.v1.ProviderConfigOrBuilder getProviderConfigOrBuilder();
+
   com.google.cloud.config.v1.Revision.BlueprintCase getBlueprintCase();
 }

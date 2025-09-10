@@ -57,6 +57,7 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
     fileStoreInfoTypeSummaries_ = java.util.Collections.emptyList();
     tags_ = java.util.Collections.emptyList();
     relatedResources_ = java.util.Collections.emptyList();
+    domains_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -1892,6 +1893,82 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
     return relatedResources_.get(index);
   }
 
+  public static final int DOMAINS_FIELD_NUMBER = 27;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.privacy.dlp.v2.Domain> domains_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Domains associated with the profile.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.Domain domains = 27;</code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.privacy.dlp.v2.Domain> getDomainsList() {
+    return domains_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Domains associated with the profile.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.Domain domains = 27;</code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.privacy.dlp.v2.DomainOrBuilder>
+      getDomainsOrBuilderList() {
+    return domains_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Domains associated with the profile.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.Domain domains = 27;</code>
+   */
+  @java.lang.Override
+  public int getDomainsCount() {
+    return domains_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Domains associated with the profile.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.Domain domains = 27;</code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.Domain getDomains(int index) {
+    return domains_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Domains associated with the profile.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.Domain domains = 27;</code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.DomainOrBuilder getDomainsOrBuilder(int index) {
+    return domains_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1988,6 +2065,9 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
     }
     for (int i = 0; i < relatedResources_.size(); i++) {
       output.writeMessage(26, relatedResources_.get(i));
+    }
+    for (int i = 0; i < domains_.size(); i++) {
+      output.writeMessage(27, domains_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -2106,6 +2186,9 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(26, relatedResources_.get(i));
     }
+    for (int i = 0; i < domains_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(27, domains_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2177,6 +2260,7 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
     if (getFileStoreIsEmpty() != other.getFileStoreIsEmpty()) return false;
     if (!getTagsList().equals(other.getTagsList())) return false;
     if (!getRelatedResourcesList().equals(other.getRelatedResourcesList())) return false;
+    if (!getDomainsList().equals(other.getDomainsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2271,6 +2355,10 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
     if (getRelatedResourcesCount() > 0) {
       hash = (37 * hash) + RELATED_RESOURCES_FIELD_NUMBER;
       hash = (53 * hash) + getRelatedResourcesList().hashCode();
+    }
+    if (getDomainsCount() > 0) {
+      hash = (37 * hash) + DOMAINS_FIELD_NUMBER;
+      hash = (53 * hash) + getDomainsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2455,6 +2543,7 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
         getSampleFindingsTableFieldBuilder();
         getTagsFieldBuilder();
         getRelatedResourcesFieldBuilder();
+        getDomainsFieldBuilder();
       }
     }
 
@@ -2548,6 +2637,13 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
         relatedResourcesBuilder_.clear();
       }
       bitField0_ = (bitField0_ & ~0x02000000);
+      if (domainsBuilder_ == null) {
+        domains_ = java.util.Collections.emptyList();
+      } else {
+        domains_ = null;
+        domainsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x04000000);
       return this;
     }
 
@@ -2620,6 +2716,15 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
         result.relatedResources_ = relatedResources_;
       } else {
         result.relatedResources_ = relatedResourcesBuilder_.build();
+      }
+      if (domainsBuilder_ == null) {
+        if (((bitField0_ & 0x04000000) != 0)) {
+          domains_ = java.util.Collections.unmodifiableList(domains_);
+          bitField0_ = (bitField0_ & ~0x04000000);
+        }
+        result.domains_ = domains_;
+      } else {
+        result.domains_ = domainsBuilder_.build();
       }
     }
 
@@ -2958,6 +3063,33 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
           }
         }
       }
+      if (domainsBuilder_ == null) {
+        if (!other.domains_.isEmpty()) {
+          if (domains_.isEmpty()) {
+            domains_ = other.domains_;
+            bitField0_ = (bitField0_ & ~0x04000000);
+          } else {
+            ensureDomainsIsMutable();
+            domains_.addAll(other.domains_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.domains_.isEmpty()) {
+          if (domainsBuilder_.isEmpty()) {
+            domainsBuilder_.dispose();
+            domainsBuilder_ = null;
+            domains_ = other.domains_;
+            bitField0_ = (bitField0_ & ~0x04000000);
+            domainsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getDomainsFieldBuilder()
+                    : null;
+          } else {
+            domainsBuilder_.addAllMessages(other.domains_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -3186,6 +3318,18 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
                 }
                 break;
               } // case 210
+            case 218:
+              {
+                com.google.privacy.dlp.v2.Domain m =
+                    input.readMessage(com.google.privacy.dlp.v2.Domain.parser(), extensionRegistry);
+                if (domainsBuilder_ == null) {
+                  ensureDomainsIsMutable();
+                  domains_.add(m);
+                } else {
+                  domainsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 218
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -8310,6 +8454,369 @@ public final class FileStoreDataProfile extends com.google.protobuf.GeneratedMes
         relatedResources_ = null;
       }
       return relatedResourcesBuilder_;
+    }
+
+    private java.util.List<com.google.privacy.dlp.v2.Domain> domains_ =
+        java.util.Collections.emptyList();
+
+    private void ensureDomainsIsMutable() {
+      if (!((bitField0_ & 0x04000000) != 0)) {
+        domains_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Domain>(domains_);
+        bitField0_ |= 0x04000000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.privacy.dlp.v2.Domain,
+            com.google.privacy.dlp.v2.Domain.Builder,
+            com.google.privacy.dlp.v2.DomainOrBuilder>
+        domainsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Domains associated with the profile.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Domain domains = 27;</code>
+     */
+    public java.util.List<com.google.privacy.dlp.v2.Domain> getDomainsList() {
+      if (domainsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(domains_);
+      } else {
+        return domainsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Domains associated with the profile.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Domain domains = 27;</code>
+     */
+    public int getDomainsCount() {
+      if (domainsBuilder_ == null) {
+        return domains_.size();
+      } else {
+        return domainsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Domains associated with the profile.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Domain domains = 27;</code>
+     */
+    public com.google.privacy.dlp.v2.Domain getDomains(int index) {
+      if (domainsBuilder_ == null) {
+        return domains_.get(index);
+      } else {
+        return domainsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Domains associated with the profile.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Domain domains = 27;</code>
+     */
+    public Builder setDomains(int index, com.google.privacy.dlp.v2.Domain value) {
+      if (domainsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDomainsIsMutable();
+        domains_.set(index, value);
+        onChanged();
+      } else {
+        domainsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Domains associated with the profile.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Domain domains = 27;</code>
+     */
+    public Builder setDomains(int index, com.google.privacy.dlp.v2.Domain.Builder builderForValue) {
+      if (domainsBuilder_ == null) {
+        ensureDomainsIsMutable();
+        domains_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        domainsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Domains associated with the profile.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Domain domains = 27;</code>
+     */
+    public Builder addDomains(com.google.privacy.dlp.v2.Domain value) {
+      if (domainsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDomainsIsMutable();
+        domains_.add(value);
+        onChanged();
+      } else {
+        domainsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Domains associated with the profile.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Domain domains = 27;</code>
+     */
+    public Builder addDomains(int index, com.google.privacy.dlp.v2.Domain value) {
+      if (domainsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDomainsIsMutable();
+        domains_.add(index, value);
+        onChanged();
+      } else {
+        domainsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Domains associated with the profile.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Domain domains = 27;</code>
+     */
+    public Builder addDomains(com.google.privacy.dlp.v2.Domain.Builder builderForValue) {
+      if (domainsBuilder_ == null) {
+        ensureDomainsIsMutable();
+        domains_.add(builderForValue.build());
+        onChanged();
+      } else {
+        domainsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Domains associated with the profile.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Domain domains = 27;</code>
+     */
+    public Builder addDomains(int index, com.google.privacy.dlp.v2.Domain.Builder builderForValue) {
+      if (domainsBuilder_ == null) {
+        ensureDomainsIsMutable();
+        domains_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        domainsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Domains associated with the profile.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Domain domains = 27;</code>
+     */
+    public Builder addAllDomains(
+        java.lang.Iterable<? extends com.google.privacy.dlp.v2.Domain> values) {
+      if (domainsBuilder_ == null) {
+        ensureDomainsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, domains_);
+        onChanged();
+      } else {
+        domainsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Domains associated with the profile.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Domain domains = 27;</code>
+     */
+    public Builder clearDomains() {
+      if (domainsBuilder_ == null) {
+        domains_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x04000000);
+        onChanged();
+      } else {
+        domainsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Domains associated with the profile.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Domain domains = 27;</code>
+     */
+    public Builder removeDomains(int index) {
+      if (domainsBuilder_ == null) {
+        ensureDomainsIsMutable();
+        domains_.remove(index);
+        onChanged();
+      } else {
+        domainsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Domains associated with the profile.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Domain domains = 27;</code>
+     */
+    public com.google.privacy.dlp.v2.Domain.Builder getDomainsBuilder(int index) {
+      return getDomainsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Domains associated with the profile.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Domain domains = 27;</code>
+     */
+    public com.google.privacy.dlp.v2.DomainOrBuilder getDomainsOrBuilder(int index) {
+      if (domainsBuilder_ == null) {
+        return domains_.get(index);
+      } else {
+        return domainsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Domains associated with the profile.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Domain domains = 27;</code>
+     */
+    public java.util.List<? extends com.google.privacy.dlp.v2.DomainOrBuilder>
+        getDomainsOrBuilderList() {
+      if (domainsBuilder_ != null) {
+        return domainsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(domains_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Domains associated with the profile.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Domain domains = 27;</code>
+     */
+    public com.google.privacy.dlp.v2.Domain.Builder addDomainsBuilder() {
+      return getDomainsFieldBuilder()
+          .addBuilder(com.google.privacy.dlp.v2.Domain.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Domains associated with the profile.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Domain domains = 27;</code>
+     */
+    public com.google.privacy.dlp.v2.Domain.Builder addDomainsBuilder(int index) {
+      return getDomainsFieldBuilder()
+          .addBuilder(index, com.google.privacy.dlp.v2.Domain.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Domains associated with the profile.
+     * </pre>
+     *
+     * <code>repeated .google.privacy.dlp.v2.Domain domains = 27;</code>
+     */
+    public java.util.List<com.google.privacy.dlp.v2.Domain.Builder> getDomainsBuilderList() {
+      return getDomainsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.privacy.dlp.v2.Domain,
+            com.google.privacy.dlp.v2.Domain.Builder,
+            com.google.privacy.dlp.v2.DomainOrBuilder>
+        getDomainsFieldBuilder() {
+      if (domainsBuilder_ == null) {
+        domainsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.privacy.dlp.v2.Domain,
+                com.google.privacy.dlp.v2.Domain.Builder,
+                com.google.privacy.dlp.v2.DomainOrBuilder>(
+                domains_, ((bitField0_ & 0x04000000) != 0), getParentForChildren(), isClean());
+        domains_ = null;
+      }
+      return domainsBuilder_;
     }
 
     @java.lang.Override

@@ -73,7 +73,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Processing will happen in a multi-region that contains the current region
+   * Processing occurs in a multi-region that contains the current region
    * if available.
    * </pre>
    *
@@ -271,7 +271,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Processing will happen in a multi-region that contains the current region
+     * Processing occurs in a multi-region that contains the current region
      * if available.
      * </pre>
      *
@@ -511,7 +511,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Processing will happen in the global region.
+   * Processing occurs in the global region.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing}
@@ -707,7 +707,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Processing will happen in the global region.
+     * Processing occurs in the global region.
      * </pre>
      *
      * Protobuf type {@code google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing}
@@ -943,7 +943,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Processing will happen in a multi-region that contains the current region
+     * Processing occurs in a multi-region that contains the current region
      * if available.
      * </pre>
      *
@@ -959,7 +959,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Processing will happen in a multi-region that contains the current region
+     * Processing occurs in a multi-region that contains the current region
      * if available.
      * </pre>
      *
@@ -975,7 +975,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Processing will happen in a multi-region that contains the current region
+     * Processing occurs in a multi-region that contains the current region
      * if available.
      * </pre>
      *
@@ -990,7 +990,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Processing will happen in the global region.
+     * Processing occurs in the global region.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing global_processing = 200;
@@ -1004,7 +1004,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Processing will happen in the global region.
+     * Processing occurs in the global region.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing global_processing = 200;
@@ -1018,7 +1018,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Processing will happen in the global region.
+     * Processing occurs in the global region.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing global_processing = 200;
@@ -1032,8 +1032,9 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Configure image processing to fall back to the configured processing option
-   * below if unavailable in the request location.
+   * Configure image processing to fall back to any of the following processing
+   * options if image processing is unavailable in the original request
+   * location.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.ProcessingLocation.ImageFallbackLocation}
@@ -1081,7 +1082,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Processing will happen in a multi-region that contains the current region
+     * Processing occurs in a multi-region that contains the current region
      * if available.
      * </pre>
      *
@@ -1100,7 +1101,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Processing will happen in a multi-region that contains the current region
+     * Processing occurs in a multi-region that contains the current region
      * if available.
      * </pre>
      *
@@ -1122,7 +1123,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Processing will happen in a multi-region that contains the current region
+     * Processing occurs in a multi-region that contains the current region
      * if available.
      * </pre>
      *
@@ -1145,7 +1146,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Processing will happen in the global region.
+     * Processing occurs in the global region.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing global_processing = 200;
@@ -1162,7 +1163,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Processing will happen in the global region.
+     * Processing occurs in the global region.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing global_processing = 200;
@@ -1181,7 +1182,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Processing will happen in the global region.
+     * Processing occurs in the global region.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing global_processing = 200;
@@ -1384,8 +1385,9 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Configure image processing to fall back to the configured processing option
-     * below if unavailable in the request location.
+     * Configure image processing to fall back to any of the following processing
+     * options if image processing is unavailable in the original request
+     * location.
      * </pre>
      *
      * Protobuf type {@code google.privacy.dlp.v2.ProcessingLocation.ImageFallbackLocation}
@@ -1627,7 +1629,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Processing will happen in a multi-region that contains the current region
+       * Processing occurs in a multi-region that contains the current region
        * if available.
        * </pre>
        *
@@ -1645,7 +1647,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Processing will happen in a multi-region that contains the current region
+       * Processing occurs in a multi-region that contains the current region
        * if available.
        * </pre>
        *
@@ -1671,7 +1673,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Processing will happen in a multi-region that contains the current region
+       * Processing occurs in a multi-region that contains the current region
        * if available.
        * </pre>
        *
@@ -1698,7 +1700,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Processing will happen in a multi-region that contains the current region
+       * Processing occurs in a multi-region that contains the current region
        * if available.
        * </pre>
        *
@@ -1723,7 +1725,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Processing will happen in a multi-region that contains the current region
+       * Processing occurs in a multi-region that contains the current region
        * if available.
        * </pre>
        *
@@ -1757,7 +1759,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Processing will happen in a multi-region that contains the current region
+       * Processing occurs in a multi-region that contains the current region
        * if available.
        * </pre>
        *
@@ -1780,7 +1782,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Processing will happen in a multi-region that contains the current region
+       * Processing occurs in a multi-region that contains the current region
        * if available.
        * </pre>
        *
@@ -1799,7 +1801,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Processing will happen in a multi-region that contains the current region
+       * Processing occurs in a multi-region that contains the current region
        * if available.
        * </pre>
        *
@@ -1823,7 +1825,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Processing will happen in a multi-region that contains the current region
+       * Processing occurs in a multi-region that contains the current region
        * if available.
        * </pre>
        *
@@ -1859,7 +1861,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Processing will happen in the global region.
+       * Processing occurs in the global region.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing global_processing = 200;
@@ -1875,7 +1877,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Processing will happen in the global region.
+       * Processing occurs in the global region.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing global_processing = 200;
@@ -1897,7 +1899,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Processing will happen in the global region.
+       * Processing occurs in the global region.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing global_processing = 200;
@@ -1922,7 +1924,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Processing will happen in the global region.
+       * Processing occurs in the global region.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing global_processing = 200;
@@ -1944,7 +1946,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Processing will happen in the global region.
+       * Processing occurs in the global region.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing global_processing = 200;
@@ -1976,7 +1978,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Processing will happen in the global region.
+       * Processing occurs in the global region.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing global_processing = 200;
@@ -1997,7 +1999,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Processing will happen in the global region.
+       * Processing occurs in the global region.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing global_processing = 200;
@@ -2014,7 +2016,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Processing will happen in the global region.
+       * Processing occurs in the global region.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing global_processing = 200;
@@ -2035,7 +2037,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
        *
        *
        * <pre>
-       * Processing will happen in the global region.
+       * Processing occurs in the global region.
        * </pre>
        *
        * <code>.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing global_processing = 200;
@@ -2125,6 +2127,1203 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
     }
   }
 
+  public interface DocumentFallbackLocationOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Processing occurs in a multi-region that contains the current region
+     * if available.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessing multi_region_processing = 100;
+     * </code>
+     *
+     * @return Whether the multiRegionProcessing field is set.
+     */
+    boolean hasMultiRegionProcessing();
+
+    /**
+     *
+     *
+     * <pre>
+     * Processing occurs in a multi-region that contains the current region
+     * if available.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessing multi_region_processing = 100;
+     * </code>
+     *
+     * @return The multiRegionProcessing.
+     */
+    com.google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessing getMultiRegionProcessing();
+
+    /**
+     *
+     *
+     * <pre>
+     * Processing occurs in a multi-region that contains the current region
+     * if available.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessing multi_region_processing = 100;
+     * </code>
+     */
+    com.google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessingOrBuilder
+        getMultiRegionProcessingOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Processing occurs in the global region.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing global_processing = 200;
+     * </code>
+     *
+     * @return Whether the globalProcessing field is set.
+     */
+    boolean hasGlobalProcessing();
+
+    /**
+     *
+     *
+     * <pre>
+     * Processing occurs in the global region.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing global_processing = 200;
+     * </code>
+     *
+     * @return The globalProcessing.
+     */
+    com.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing getGlobalProcessing();
+
+    /**
+     *
+     *
+     * <pre>
+     * Processing occurs in the global region.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing global_processing = 200;
+     * </code>
+     */
+    com.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessingOrBuilder
+        getGlobalProcessingOrBuilder();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configure document processing to fall back to any of the following
+   * processing options if document processing is unavailable in the original
+   * request location.
+   * </pre>
+   *
+   * Protobuf type {@code google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation}
+   */
+  public static final class DocumentFallbackLocation extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation)
+      DocumentFallbackLocationOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use DocumentFallbackLocation.newBuilder() to construct.
+    private DocumentFallbackLocation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private DocumentFallbackLocation() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new DocumentFallbackLocation();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_ProcessingLocation_DocumentFallbackLocation_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_ProcessingLocation_DocumentFallbackLocation_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation.class,
+              com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation.Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int MULTI_REGION_PROCESSING_FIELD_NUMBER = 100;
+    private com.google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessing
+        multiRegionProcessing_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Processing occurs in a multi-region that contains the current region
+     * if available.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessing multi_region_processing = 100;
+     * </code>
+     *
+     * @return Whether the multiRegionProcessing field is set.
+     */
+    @java.lang.Override
+    public boolean hasMultiRegionProcessing() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Processing occurs in a multi-region that contains the current region
+     * if available.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessing multi_region_processing = 100;
+     * </code>
+     *
+     * @return The multiRegionProcessing.
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessing
+        getMultiRegionProcessing() {
+      return multiRegionProcessing_ == null
+          ? com.google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessing.getDefaultInstance()
+          : multiRegionProcessing_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Processing occurs in a multi-region that contains the current region
+     * if available.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessing multi_region_processing = 100;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessingOrBuilder
+        getMultiRegionProcessingOrBuilder() {
+      return multiRegionProcessing_ == null
+          ? com.google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessing.getDefaultInstance()
+          : multiRegionProcessing_;
+    }
+
+    public static final int GLOBAL_PROCESSING_FIELD_NUMBER = 200;
+    private com.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing globalProcessing_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Processing occurs in the global region.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing global_processing = 200;
+     * </code>
+     *
+     * @return Whether the globalProcessing field is set.
+     */
+    @java.lang.Override
+    public boolean hasGlobalProcessing() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Processing occurs in the global region.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing global_processing = 200;
+     * </code>
+     *
+     * @return The globalProcessing.
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing getGlobalProcessing() {
+      return globalProcessing_ == null
+          ? com.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing.getDefaultInstance()
+          : globalProcessing_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Processing occurs in the global region.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing global_processing = 200;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessingOrBuilder
+        getGlobalProcessingOrBuilder() {
+      return globalProcessing_ == null
+          ? com.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing.getDefaultInstance()
+          : globalProcessing_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(100, getMultiRegionProcessing());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        output.writeMessage(200, getGlobalProcessing());
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                100, getMultiRegionProcessing());
+      }
+      if (((bitField0_ & 0x00000002) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(200, getGlobalProcessing());
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation)) {
+        return super.equals(obj);
+      }
+      com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation other =
+          (com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation) obj;
+
+      if (hasMultiRegionProcessing() != other.hasMultiRegionProcessing()) return false;
+      if (hasMultiRegionProcessing()) {
+        if (!getMultiRegionProcessing().equals(other.getMultiRegionProcessing())) return false;
+      }
+      if (hasGlobalProcessing() != other.hasGlobalProcessing()) return false;
+      if (hasGlobalProcessing()) {
+        if (!getGlobalProcessing().equals(other.getGlobalProcessing())) return false;
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      if (hasMultiRegionProcessing()) {
+        hash = (37 * hash) + MULTI_REGION_PROCESSING_FIELD_NUMBER;
+        hash = (53 * hash) + getMultiRegionProcessing().hashCode();
+      }
+      if (hasGlobalProcessing()) {
+        hash = (37 * hash) + GLOBAL_PROCESSING_FIELD_NUMBER;
+        hash = (53 * hash) + getGlobalProcessing().hashCode();
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configure document processing to fall back to any of the following
+     * processing options if document processing is unavailable in the original
+     * request location.
+     * </pre>
+     *
+     * Protobuf type {@code google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation)
+        com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocationOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_ProcessingLocation_DocumentFallbackLocation_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_ProcessingLocation_DocumentFallbackLocation_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation.class,
+                com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation.Builder
+                    .class);
+      }
+
+      // Construct using
+      // com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getMultiRegionProcessingFieldBuilder();
+          getGlobalProcessingFieldBuilder();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        multiRegionProcessing_ = null;
+        if (multiRegionProcessingBuilder_ != null) {
+          multiRegionProcessingBuilder_.dispose();
+          multiRegionProcessingBuilder_ = null;
+        }
+        globalProcessing_ = null;
+        if (globalProcessingBuilder_ != null) {
+          globalProcessingBuilder_.dispose();
+          globalProcessingBuilder_ = null;
+        }
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.privacy.dlp.v2.DlpProto
+            .internal_static_google_privacy_dlp_v2_ProcessingLocation_DocumentFallbackLocation_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation
+          getDefaultInstanceForType() {
+        return com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation build() {
+        com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation result =
+            buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation buildPartial() {
+        com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation result =
+            new com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation result) {
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.multiRegionProcessing_ =
+              multiRegionProcessingBuilder_ == null
+                  ? multiRegionProcessing_
+                  : multiRegionProcessingBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.globalProcessing_ =
+              globalProcessingBuilder_ == null
+                  ? globalProcessing_
+                  : globalProcessingBuilder_.build();
+          to_bitField0_ |= 0x00000002;
+        }
+        result.bitField0_ |= to_bitField0_;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other
+            instanceof com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation) {
+          return mergeFrom(
+              (com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation other) {
+        if (other
+            == com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation
+                .getDefaultInstance()) return this;
+        if (other.hasMultiRegionProcessing()) {
+          mergeMultiRegionProcessing(other.getMultiRegionProcessing());
+        }
+        if (other.hasGlobalProcessing()) {
+          mergeGlobalProcessing(other.getGlobalProcessing());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 802:
+                {
+                  input.readMessage(
+                      getMultiRegionProcessingFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 802
+              case 1602:
+                {
+                  input.readMessage(
+                      getGlobalProcessingFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 1602
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private com.google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessing
+          multiRegionProcessing_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessing,
+              com.google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessing.Builder,
+              com.google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessingOrBuilder>
+          multiRegionProcessingBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Processing occurs in a multi-region that contains the current region
+       * if available.
+       * </pre>
+       *
+       * <code>
+       * .google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessing multi_region_processing = 100;
+       * </code>
+       *
+       * @return Whether the multiRegionProcessing field is set.
+       */
+      public boolean hasMultiRegionProcessing() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Processing occurs in a multi-region that contains the current region
+       * if available.
+       * </pre>
+       *
+       * <code>
+       * .google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessing multi_region_processing = 100;
+       * </code>
+       *
+       * @return The multiRegionProcessing.
+       */
+      public com.google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessing
+          getMultiRegionProcessing() {
+        if (multiRegionProcessingBuilder_ == null) {
+          return multiRegionProcessing_ == null
+              ? com.google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessing
+                  .getDefaultInstance()
+              : multiRegionProcessing_;
+        } else {
+          return multiRegionProcessingBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Processing occurs in a multi-region that contains the current region
+       * if available.
+       * </pre>
+       *
+       * <code>
+       * .google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessing multi_region_processing = 100;
+       * </code>
+       */
+      public Builder setMultiRegionProcessing(
+          com.google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessing value) {
+        if (multiRegionProcessingBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          multiRegionProcessing_ = value;
+        } else {
+          multiRegionProcessingBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Processing occurs in a multi-region that contains the current region
+       * if available.
+       * </pre>
+       *
+       * <code>
+       * .google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessing multi_region_processing = 100;
+       * </code>
+       */
+      public Builder setMultiRegionProcessing(
+          com.google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessing.Builder
+              builderForValue) {
+        if (multiRegionProcessingBuilder_ == null) {
+          multiRegionProcessing_ = builderForValue.build();
+        } else {
+          multiRegionProcessingBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Processing occurs in a multi-region that contains the current region
+       * if available.
+       * </pre>
+       *
+       * <code>
+       * .google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessing multi_region_processing = 100;
+       * </code>
+       */
+      public Builder mergeMultiRegionProcessing(
+          com.google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessing value) {
+        if (multiRegionProcessingBuilder_ == null) {
+          if (((bitField0_ & 0x00000001) != 0)
+              && multiRegionProcessing_ != null
+              && multiRegionProcessing_
+                  != com.google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessing
+                      .getDefaultInstance()) {
+            getMultiRegionProcessingBuilder().mergeFrom(value);
+          } else {
+            multiRegionProcessing_ = value;
+          }
+        } else {
+          multiRegionProcessingBuilder_.mergeFrom(value);
+        }
+        if (multiRegionProcessing_ != null) {
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Processing occurs in a multi-region that contains the current region
+       * if available.
+       * </pre>
+       *
+       * <code>
+       * .google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessing multi_region_processing = 100;
+       * </code>
+       */
+      public Builder clearMultiRegionProcessing() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        multiRegionProcessing_ = null;
+        if (multiRegionProcessingBuilder_ != null) {
+          multiRegionProcessingBuilder_.dispose();
+          multiRegionProcessingBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Processing occurs in a multi-region that contains the current region
+       * if available.
+       * </pre>
+       *
+       * <code>
+       * .google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessing multi_region_processing = 100;
+       * </code>
+       */
+      public com.google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessing.Builder
+          getMultiRegionProcessingBuilder() {
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return getMultiRegionProcessingFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Processing occurs in a multi-region that contains the current region
+       * if available.
+       * </pre>
+       *
+       * <code>
+       * .google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessing multi_region_processing = 100;
+       * </code>
+       */
+      public com.google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessingOrBuilder
+          getMultiRegionProcessingOrBuilder() {
+        if (multiRegionProcessingBuilder_ != null) {
+          return multiRegionProcessingBuilder_.getMessageOrBuilder();
+        } else {
+          return multiRegionProcessing_ == null
+              ? com.google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessing
+                  .getDefaultInstance()
+              : multiRegionProcessing_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Processing occurs in a multi-region that contains the current region
+       * if available.
+       * </pre>
+       *
+       * <code>
+       * .google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessing multi_region_processing = 100;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessing,
+              com.google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessing.Builder,
+              com.google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessingOrBuilder>
+          getMultiRegionProcessingFieldBuilder() {
+        if (multiRegionProcessingBuilder_ == null) {
+          multiRegionProcessingBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessing,
+                  com.google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessing.Builder,
+                  com.google.privacy.dlp.v2.ProcessingLocation.MultiRegionProcessingOrBuilder>(
+                  getMultiRegionProcessing(), getParentForChildren(), isClean());
+          multiRegionProcessing_ = null;
+        }
+        return multiRegionProcessingBuilder_;
+      }
+
+      private com.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing globalProcessing_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing,
+              com.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing.Builder,
+              com.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessingOrBuilder>
+          globalProcessingBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Processing occurs in the global region.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing global_processing = 200;
+       * </code>
+       *
+       * @return Whether the globalProcessing field is set.
+       */
+      public boolean hasGlobalProcessing() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Processing occurs in the global region.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing global_processing = 200;
+       * </code>
+       *
+       * @return The globalProcessing.
+       */
+      public com.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing getGlobalProcessing() {
+        if (globalProcessingBuilder_ == null) {
+          return globalProcessing_ == null
+              ? com.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing.getDefaultInstance()
+              : globalProcessing_;
+        } else {
+          return globalProcessingBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Processing occurs in the global region.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing global_processing = 200;
+       * </code>
+       */
+      public Builder setGlobalProcessing(
+          com.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing value) {
+        if (globalProcessingBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          globalProcessing_ = value;
+        } else {
+          globalProcessingBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Processing occurs in the global region.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing global_processing = 200;
+       * </code>
+       */
+      public Builder setGlobalProcessing(
+          com.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing.Builder builderForValue) {
+        if (globalProcessingBuilder_ == null) {
+          globalProcessing_ = builderForValue.build();
+        } else {
+          globalProcessingBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Processing occurs in the global region.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing global_processing = 200;
+       * </code>
+       */
+      public Builder mergeGlobalProcessing(
+          com.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing value) {
+        if (globalProcessingBuilder_ == null) {
+          if (((bitField0_ & 0x00000002) != 0)
+              && globalProcessing_ != null
+              && globalProcessing_
+                  != com.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing
+                      .getDefaultInstance()) {
+            getGlobalProcessingBuilder().mergeFrom(value);
+          } else {
+            globalProcessing_ = value;
+          }
+        } else {
+          globalProcessingBuilder_.mergeFrom(value);
+        }
+        if (globalProcessing_ != null) {
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Processing occurs in the global region.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing global_processing = 200;
+       * </code>
+       */
+      public Builder clearGlobalProcessing() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        globalProcessing_ = null;
+        if (globalProcessingBuilder_ != null) {
+          globalProcessingBuilder_.dispose();
+          globalProcessingBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Processing occurs in the global region.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing global_processing = 200;
+       * </code>
+       */
+      public com.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing.Builder
+          getGlobalProcessingBuilder() {
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return getGlobalProcessingFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Processing occurs in the global region.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing global_processing = 200;
+       * </code>
+       */
+      public com.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessingOrBuilder
+          getGlobalProcessingOrBuilder() {
+        if (globalProcessingBuilder_ != null) {
+          return globalProcessingBuilder_.getMessageOrBuilder();
+        } else {
+          return globalProcessing_ == null
+              ? com.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing.getDefaultInstance()
+              : globalProcessing_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Processing occurs in the global region.
+       * </pre>
+       *
+       * <code>.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing global_processing = 200;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing,
+              com.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing.Builder,
+              com.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessingOrBuilder>
+          getGlobalProcessingFieldBuilder() {
+        if (globalProcessingBuilder_ == null) {
+          globalProcessingBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing,
+                  com.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessing.Builder,
+                  com.google.privacy.dlp.v2.ProcessingLocation.GlobalProcessingOrBuilder>(
+                  getGlobalProcessing(), getParentForChildren(), isClean());
+          globalProcessing_ = null;
+        }
+        return globalProcessingBuilder_;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation)
+    private static final com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE =
+          new com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation();
+    }
+
+    public static com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<DocumentFallbackLocation> PARSER =
+        new com.google.protobuf.AbstractParser<DocumentFallbackLocation>() {
+          @java.lang.Override
+          public DocumentFallbackLocation parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<DocumentFallbackLocation> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<DocumentFallbackLocation> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int IMAGE_FALLBACK_LOCATION_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.ProcessingLocation.ImageFallbackLocation imageFallbackLocation_;
@@ -2133,7 +3332,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Image processing will fall back using this configuration.
+   * Image processing falls back using this configuration.
    * </pre>
    *
    * <code>
@@ -2151,7 +3350,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Image processing will fall back using this configuration.
+   * Image processing falls back using this configuration.
    * </pre>
    *
    * <code>
@@ -2172,7 +3371,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Image processing will fall back using this configuration.
+   * Image processing falls back using this configuration.
    * </pre>
    *
    * <code>
@@ -2185,6 +3384,68 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
     return imageFallbackLocation_ == null
         ? com.google.privacy.dlp.v2.ProcessingLocation.ImageFallbackLocation.getDefaultInstance()
         : imageFallbackLocation_;
+  }
+
+  public static final int DOCUMENT_FALLBACK_LOCATION_FIELD_NUMBER = 2;
+  private com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation
+      documentFallbackLocation_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Document processing falls back using this configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation document_fallback_location = 2;
+   * </code>
+   *
+   * @return Whether the documentFallbackLocation field is set.
+   */
+  @java.lang.Override
+  public boolean hasDocumentFallbackLocation() {
+    return ((bitField0_ & 0x00000002) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Document processing falls back using this configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation document_fallback_location = 2;
+   * </code>
+   *
+   * @return The documentFallbackLocation.
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation
+      getDocumentFallbackLocation() {
+    return documentFallbackLocation_ == null
+        ? com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation.getDefaultInstance()
+        : documentFallbackLocation_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Document processing falls back using this configuration.
+   * </pre>
+   *
+   * <code>
+   * .google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation document_fallback_location = 2;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocationOrBuilder
+      getDocumentFallbackLocationOrBuilder() {
+    return documentFallbackLocation_ == null
+        ? com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation.getDefaultInstance()
+        : documentFallbackLocation_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -2204,6 +3465,9 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(1, getImageFallbackLocation());
     }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      output.writeMessage(2, getDocumentFallbackLocation());
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2216,6 +3480,11 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
     if (((bitField0_ & 0x00000001) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(1, getImageFallbackLocation());
+    }
+    if (((bitField0_ & 0x00000002) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              2, getDocumentFallbackLocation());
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -2237,6 +3506,10 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
     if (hasImageFallbackLocation()) {
       if (!getImageFallbackLocation().equals(other.getImageFallbackLocation())) return false;
     }
+    if (hasDocumentFallbackLocation() != other.hasDocumentFallbackLocation()) return false;
+    if (hasDocumentFallbackLocation()) {
+      if (!getDocumentFallbackLocation().equals(other.getDocumentFallbackLocation())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2251,6 +3524,10 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
     if (hasImageFallbackLocation()) {
       hash = (37 * hash) + IMAGE_FALLBACK_LOCATION_FIELD_NUMBER;
       hash = (53 * hash) + getImageFallbackLocation().hashCode();
+    }
+    if (hasDocumentFallbackLocation()) {
+      hash = (37 * hash) + DOCUMENT_FALLBACK_LOCATION_FIELD_NUMBER;
+      hash = (53 * hash) + getDocumentFallbackLocation().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2396,6 +3673,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getImageFallbackLocationFieldBuilder();
+        getDocumentFallbackLocationFieldBuilder();
       }
     }
 
@@ -2407,6 +3685,11 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
       if (imageFallbackLocationBuilder_ != null) {
         imageFallbackLocationBuilder_.dispose();
         imageFallbackLocationBuilder_ = null;
+      }
+      documentFallbackLocation_ = null;
+      if (documentFallbackLocationBuilder_ != null) {
+        documentFallbackLocationBuilder_.dispose();
+        documentFallbackLocationBuilder_ = null;
       }
       return this;
     }
@@ -2451,6 +3734,13 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
                 ? imageFallbackLocation_
                 : imageFallbackLocationBuilder_.build();
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.documentFallbackLocation_ =
+            documentFallbackLocationBuilder_ == null
+                ? documentFallbackLocation_
+                : documentFallbackLocationBuilder_.build();
+        to_bitField0_ |= 0x00000002;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2503,6 +3793,9 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
       if (other.hasImageFallbackLocation()) {
         mergeImageFallbackLocation(other.getImageFallbackLocation());
       }
+      if (other.hasDocumentFallbackLocation()) {
+        mergeDocumentFallbackLocation(other.getDocumentFallbackLocation());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2536,6 +3829,13 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 18:
+              {
+                input.readMessage(
+                    getDocumentFallbackLocationFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2567,7 +3867,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Image processing will fall back using this configuration.
+     * Image processing falls back using this configuration.
      * </pre>
      *
      * <code>
@@ -2584,7 +3884,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Image processing will fall back using this configuration.
+     * Image processing falls back using this configuration.
      * </pre>
      *
      * <code>
@@ -2609,7 +3909,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Image processing will fall back using this configuration.
+     * Image processing falls back using this configuration.
      * </pre>
      *
      * <code>
@@ -2635,7 +3935,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Image processing will fall back using this configuration.
+     * Image processing falls back using this configuration.
      * </pre>
      *
      * <code>
@@ -2659,7 +3959,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Image processing will fall back using this configuration.
+     * Image processing falls back using this configuration.
      * </pre>
      *
      * <code>
@@ -2692,7 +3992,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Image processing will fall back using this configuration.
+     * Image processing falls back using this configuration.
      * </pre>
      *
      * <code>
@@ -2714,7 +4014,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Image processing will fall back using this configuration.
+     * Image processing falls back using this configuration.
      * </pre>
      *
      * <code>
@@ -2732,7 +4032,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Image processing will fall back using this configuration.
+     * Image processing falls back using this configuration.
      * </pre>
      *
      * <code>
@@ -2755,7 +4055,7 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * Image processing will fall back using this configuration.
+     * Image processing falls back using this configuration.
      * </pre>
      *
      * <code>
@@ -2777,6 +4077,230 @@ public final class ProcessingLocation extends com.google.protobuf.GeneratedMessa
         imageFallbackLocation_ = null;
       }
       return imageFallbackLocationBuilder_;
+    }
+
+    private com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation
+        documentFallbackLocation_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation,
+            com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation.Builder,
+            com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocationOrBuilder>
+        documentFallbackLocationBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Document processing falls back using this configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation document_fallback_location = 2;
+     * </code>
+     *
+     * @return Whether the documentFallbackLocation field is set.
+     */
+    public boolean hasDocumentFallbackLocation() {
+      return ((bitField0_ & 0x00000002) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Document processing falls back using this configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation document_fallback_location = 2;
+     * </code>
+     *
+     * @return The documentFallbackLocation.
+     */
+    public com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation
+        getDocumentFallbackLocation() {
+      if (documentFallbackLocationBuilder_ == null) {
+        return documentFallbackLocation_ == null
+            ? com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation
+                .getDefaultInstance()
+            : documentFallbackLocation_;
+      } else {
+        return documentFallbackLocationBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Document processing falls back using this configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation document_fallback_location = 2;
+     * </code>
+     */
+    public Builder setDocumentFallbackLocation(
+        com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation value) {
+      if (documentFallbackLocationBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        documentFallbackLocation_ = value;
+      } else {
+        documentFallbackLocationBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Document processing falls back using this configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation document_fallback_location = 2;
+     * </code>
+     */
+    public Builder setDocumentFallbackLocation(
+        com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation.Builder
+            builderForValue) {
+      if (documentFallbackLocationBuilder_ == null) {
+        documentFallbackLocation_ = builderForValue.build();
+      } else {
+        documentFallbackLocationBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Document processing falls back using this configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation document_fallback_location = 2;
+     * </code>
+     */
+    public Builder mergeDocumentFallbackLocation(
+        com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation value) {
+      if (documentFallbackLocationBuilder_ == null) {
+        if (((bitField0_ & 0x00000002) != 0)
+            && documentFallbackLocation_ != null
+            && documentFallbackLocation_
+                != com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation
+                    .getDefaultInstance()) {
+          getDocumentFallbackLocationBuilder().mergeFrom(value);
+        } else {
+          documentFallbackLocation_ = value;
+        }
+      } else {
+        documentFallbackLocationBuilder_.mergeFrom(value);
+      }
+      if (documentFallbackLocation_ != null) {
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Document processing falls back using this configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation document_fallback_location = 2;
+     * </code>
+     */
+    public Builder clearDocumentFallbackLocation() {
+      bitField0_ = (bitField0_ & ~0x00000002);
+      documentFallbackLocation_ = null;
+      if (documentFallbackLocationBuilder_ != null) {
+        documentFallbackLocationBuilder_.dispose();
+        documentFallbackLocationBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Document processing falls back using this configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation document_fallback_location = 2;
+     * </code>
+     */
+    public com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation.Builder
+        getDocumentFallbackLocationBuilder() {
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return getDocumentFallbackLocationFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Document processing falls back using this configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation document_fallback_location = 2;
+     * </code>
+     */
+    public com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocationOrBuilder
+        getDocumentFallbackLocationOrBuilder() {
+      if (documentFallbackLocationBuilder_ != null) {
+        return documentFallbackLocationBuilder_.getMessageOrBuilder();
+      } else {
+        return documentFallbackLocation_ == null
+            ? com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation
+                .getDefaultInstance()
+            : documentFallbackLocation_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Document processing falls back using this configuration.
+     * </pre>
+     *
+     * <code>
+     * .google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation document_fallback_location = 2;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation,
+            com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation.Builder,
+            com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocationOrBuilder>
+        getDocumentFallbackLocationFieldBuilder() {
+      if (documentFallbackLocationBuilder_ == null) {
+        documentFallbackLocationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation,
+                com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocation.Builder,
+                com.google.privacy.dlp.v2.ProcessingLocation.DocumentFallbackLocationOrBuilder>(
+                getDocumentFallbackLocation(), getParentForChildren(), isClean());
+        documentFallbackLocation_ = null;
+      }
+      return documentFallbackLocationBuilder_;
     }
 
     @java.lang.Override

@@ -293,4 +293,34 @@ public interface VmwareVmDetailsOrBuilder
    * @return The bootOption.
    */
   com.google.cloud.vmmigration.v1.VmwareVmDetails.BootOption getBootOption();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The CPU architecture.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.VmwareVmDetails.VmArchitecture architecture = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for architecture.
+   */
+  int getArchitectureValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The CPU architecture.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.VmwareVmDetails.VmArchitecture architecture = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The architecture.
+   */
+  com.google.cloud.vmmigration.v1.VmwareVmDetails.VmArchitecture getArchitecture();
 }

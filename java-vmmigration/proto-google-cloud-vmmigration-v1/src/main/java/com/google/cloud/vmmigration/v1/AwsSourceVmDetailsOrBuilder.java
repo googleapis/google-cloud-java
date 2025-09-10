@@ -28,10 +28,12 @@ public interface AwsSourceVmDetailsOrBuilder
    *
    *
    * <pre>
-   * The firmware type of the source VM.
+   * Output only. The firmware type of the source VM.
    * </pre>
    *
-   * <code>.google.cloud.vmmigration.v1.AwsSourceVmDetails.Firmware firmware = 1;</code>
+   * <code>
+   * .google.cloud.vmmigration.v1.AwsSourceVmDetails.Firmware firmware = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The enum numeric value on the wire for firmware.
    */
@@ -41,10 +43,12 @@ public interface AwsSourceVmDetailsOrBuilder
    *
    *
    * <pre>
-   * The firmware type of the source VM.
+   * Output only. The firmware type of the source VM.
    * </pre>
    *
-   * <code>.google.cloud.vmmigration.v1.AwsSourceVmDetails.Firmware firmware = 1;</code>
+   * <code>
+   * .google.cloud.vmmigration.v1.AwsSourceVmDetails.Firmware firmware = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The firmware.
    */
@@ -54,12 +58,156 @@ public interface AwsSourceVmDetailsOrBuilder
    *
    *
    * <pre>
-   * The total size of the disks being migrated in bytes.
+   * Output only. The total size of the disks being migrated in bytes.
    * </pre>
    *
-   * <code>int64 committed_storage_bytes = 2;</code>
+   * <code>int64 committed_storage_bytes = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The committedStorageBytes.
    */
   long getCommittedStorageBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The disks attached to the source VM.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails disks = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails> getDisksList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The disks attached to the source VM.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails disks = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails getDisks(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The disks attached to the source VM.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails disks = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getDisksCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The disks attached to the source VM.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails disks = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<
+          ? extends com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetailsOrBuilder>
+      getDisksOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The disks attached to the source VM.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails disks = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetailsOrBuilder getDisksOrBuilder(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information about VM capabilities needed for some Compute
+   * Engine features.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.VmCapabilities vm_capabilities_info = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the vmCapabilitiesInfo field is set.
+   */
+  boolean hasVmCapabilitiesInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information about VM capabilities needed for some Compute
+   * Engine features.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.VmCapabilities vm_capabilities_info = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The vmCapabilitiesInfo.
+   */
+  com.google.cloud.vmmigration.v1.VmCapabilities getVmCapabilitiesInfo();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information about VM capabilities needed for some Compute
+   * Engine features.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.VmCapabilities vm_capabilities_info = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.vmmigration.v1.VmCapabilitiesOrBuilder getVmCapabilitiesInfoOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The VM architecture.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.VmArchitecture architecture = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for architecture.
+   */
+  int getArchitectureValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The VM architecture.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.VmArchitecture architecture = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The architecture.
+   */
+  com.google.cloud.vmmigration.v1.VmArchitecture getArchitecture();
 }

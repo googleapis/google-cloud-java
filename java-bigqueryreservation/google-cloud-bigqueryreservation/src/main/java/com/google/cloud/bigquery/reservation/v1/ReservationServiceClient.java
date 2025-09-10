@@ -1294,6 +1294,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *   FailoverReservationRequest request =
    *       FailoverReservationRequest.newBuilder()
    *           .setName(ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
+   *           .setFailoverMode(FailoverMode.forNumber(0))
    *           .build();
    *   Reservation response = reservationServiceClient.failoverReservation(request);
    * }
@@ -1325,6 +1326,7 @@ public class ReservationServiceClient implements BackgroundResource {
    *   FailoverReservationRequest request =
    *       FailoverReservationRequest.newBuilder()
    *           .setName(ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
+   *           .setFailoverMode(FailoverMode.forNumber(0))
    *           .build();
    *   ApiFuture<Reservation> future =
    *       reservationServiceClient.failoverReservationCallable().futureCall(request);

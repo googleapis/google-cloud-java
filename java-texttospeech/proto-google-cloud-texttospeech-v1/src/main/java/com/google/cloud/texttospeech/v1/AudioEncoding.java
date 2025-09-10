@@ -34,7 +34,8 @@ public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Not specified. Will return result
+   * Not specified. Only used by GenerateVoiceCloningKey. Otherwise, will return
+   * result
    * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
    * </pre>
    *
@@ -109,6 +110,16 @@ public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
    * <code>PCM = 7;</code>
    */
   PCM(7),
+  /**
+   *
+   *
+   * <pre>
+   * M4A audio.
+   * </pre>
+   *
+   * <code>M4A = 8;</code>
+   */
+  M4A(8),
   UNRECOGNIZED(-1),
   ;
 
@@ -116,7 +127,8 @@ public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
-   * Not specified. Will return result
+   * Not specified. Only used by GenerateVoiceCloningKey. Otherwise, will return
+   * result
    * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT].
    * </pre>
    *
@@ -198,6 +210,17 @@ public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
    */
   public static final int PCM_VALUE = 7;
 
+  /**
+   *
+   *
+   * <pre>
+   * M4A audio.
+   * </pre>
+   *
+   * <code>M4A = 8;</code>
+   */
+  public static final int M4A_VALUE = 8;
+
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
       throw new java.lang.IllegalArgumentException(
@@ -236,6 +259,8 @@ public enum AudioEncoding implements com.google.protobuf.ProtocolMessageEnum {
         return ALAW;
       case 7:
         return PCM;
+      case 8:
+        return M4A;
       default:
         return null;
     }

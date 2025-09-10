@@ -112,12 +112,54 @@ public final class HardwarePhysicalInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Standard european receptacle.
+     * Deprecated: Please use TYPE_G_BS1363, CEE_7_3, CEE_7_5 or TYPE_F
+     * instead.
      * </pre>
      *
-     * <code>STANDARD_EU = 3;</code>
+     * <code>STANDARD_EU = 3 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     STANDARD_EU(3),
+    /**
+     *
+     *
+     * <pre>
+     * Type G / BS1363.
+     * </pre>
+     *
+     * <code>TYPE_G_BS1363 = 4;</code>
+     */
+    TYPE_G_BS1363(4),
+    /**
+     *
+     *
+     * <pre>
+     * C 7/3.
+     * </pre>
+     *
+     * <code>CEE_7_3 = 5;</code>
+     */
+    CEE_7_3(5),
+    /**
+     *
+     *
+     * <pre>
+     * C 7/5.
+     * </pre>
+     *
+     * <code>CEE_7_5 = 6;</code>
+     */
+    CEE_7_5(6),
+    /**
+     *
+     *
+     * <pre>
+     * Type F.
+     * </pre>
+     *
+     * <code>TYPE_F = 7;</code>
+     */
+    TYPE_F(7),
     UNRECOGNIZED(-1),
     ;
 
@@ -158,12 +200,57 @@ public final class HardwarePhysicalInfo extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Standard european receptacle.
+     * Deprecated: Please use TYPE_G_BS1363, CEE_7_3, CEE_7_5 or TYPE_F
+     * instead.
      * </pre>
      *
-     * <code>STANDARD_EU = 3;</code>
+     * <code>STANDARD_EU = 3 [deprecated = true];</code>
      */
-    public static final int STANDARD_EU_VALUE = 3;
+    @java.lang.Deprecated public static final int STANDARD_EU_VALUE = 3;
+
+    /**
+     *
+     *
+     * <pre>
+     * Type G / BS1363.
+     * </pre>
+     *
+     * <code>TYPE_G_BS1363 = 4;</code>
+     */
+    public static final int TYPE_G_BS1363_VALUE = 4;
+
+    /**
+     *
+     *
+     * <pre>
+     * C 7/3.
+     * </pre>
+     *
+     * <code>CEE_7_3 = 5;</code>
+     */
+    public static final int CEE_7_3_VALUE = 5;
+
+    /**
+     *
+     *
+     * <pre>
+     * C 7/5.
+     * </pre>
+     *
+     * <code>CEE_7_5 = 6;</code>
+     */
+    public static final int CEE_7_5_VALUE = 6;
+
+    /**
+     *
+     *
+     * <pre>
+     * Type F.
+     * </pre>
+     *
+     * <code>TYPE_F = 7;</code>
+     */
+    public static final int TYPE_F_VALUE = 7;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -197,6 +284,14 @@ public final class HardwarePhysicalInfo extends com.google.protobuf.GeneratedMes
           return C_13;
         case 3:
           return STANDARD_EU;
+        case 4:
+          return TYPE_G_BS1363;
+        case 5:
+          return CEE_7_3;
+        case 6:
+          return CEE_7_5;
+        case 7:
+          return TYPE_F;
         default:
           return null;
       }

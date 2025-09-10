@@ -18,6 +18,7 @@ package com.google.cloud.bigquery.reservation.v1.samples;
 
 // [START bigqueryreservation_v1_generated_ReservationService_FailoverReservation_async]
 import com.google.api.core.ApiFuture;
+import com.google.cloud.bigquery.reservation.v1.FailoverMode;
 import com.google.cloud.bigquery.reservation.v1.FailoverReservationRequest;
 import com.google.cloud.bigquery.reservation.v1.Reservation;
 import com.google.cloud.bigquery.reservation.v1.ReservationName;
@@ -39,6 +40,7 @@ public class AsyncFailoverReservation {
       FailoverReservationRequest request =
           FailoverReservationRequest.newBuilder()
               .setName(ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
+              .setFailoverMode(FailoverMode.forNumber(0))
               .build();
       ApiFuture<Reservation> future =
           reservationServiceClient.failoverReservationCallable().futureCall(request);

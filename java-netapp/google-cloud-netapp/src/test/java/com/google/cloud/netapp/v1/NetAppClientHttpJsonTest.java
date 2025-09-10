@@ -225,6 +225,12 @@ public class NetAppClientHttpJsonTest {
             .setCustomPerformanceEnabled(true)
             .setTotalThroughputMibps(-2085075953)
             .setTotalIops(-705711676)
+            .setHotTierSizeGib(369881037)
+            .setEnableHotTierAutoResize(true)
+            .setQosType(QosType.forNumber(0))
+            .setAvailableThroughputMibps(1487662890)
+            .setColdTierSizeUsedGib(-1242809254)
+            .setHotTierSizeUsedGib(-151116719)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -303,6 +309,12 @@ public class NetAppClientHttpJsonTest {
             .setCustomPerformanceEnabled(true)
             .setTotalThroughputMibps(-2085075953)
             .setTotalIops(-705711676)
+            .setHotTierSizeGib(369881037)
+            .setEnableHotTierAutoResize(true)
+            .setQosType(QosType.forNumber(0))
+            .setAvailableThroughputMibps(1487662890)
+            .setColdTierSizeUsedGib(-1242809254)
+            .setHotTierSizeUsedGib(-151116719)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -381,6 +393,12 @@ public class NetAppClientHttpJsonTest {
             .setCustomPerformanceEnabled(true)
             .setTotalThroughputMibps(-2085075953)
             .setTotalIops(-705711676)
+            .setHotTierSizeGib(369881037)
+            .setEnableHotTierAutoResize(true)
+            .setQosType(QosType.forNumber(0))
+            .setAvailableThroughputMibps(1487662890)
+            .setColdTierSizeUsedGib(-1242809254)
+            .setHotTierSizeUsedGib(-151116719)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -449,6 +467,12 @@ public class NetAppClientHttpJsonTest {
             .setCustomPerformanceEnabled(true)
             .setTotalThroughputMibps(-2085075953)
             .setTotalIops(-705711676)
+            .setHotTierSizeGib(369881037)
+            .setEnableHotTierAutoResize(true)
+            .setQosType(QosType.forNumber(0))
+            .setAvailableThroughputMibps(1487662890)
+            .setColdTierSizeUsedGib(-1242809254)
+            .setHotTierSizeUsedGib(-151116719)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -517,6 +541,12 @@ public class NetAppClientHttpJsonTest {
             .setCustomPerformanceEnabled(true)
             .setTotalThroughputMibps(-2085075953)
             .setTotalIops(-705711676)
+            .setHotTierSizeGib(369881037)
+            .setEnableHotTierAutoResize(true)
+            .setQosType(QosType.forNumber(0))
+            .setAvailableThroughputMibps(1487662890)
+            .setColdTierSizeUsedGib(-1242809254)
+            .setHotTierSizeUsedGib(-151116719)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -553,6 +583,12 @@ public class NetAppClientHttpJsonTest {
             .setCustomPerformanceEnabled(true)
             .setTotalThroughputMibps(-2085075953)
             .setTotalIops(-705711676)
+            .setHotTierSizeGib(369881037)
+            .setEnableHotTierAutoResize(true)
+            .setQosType(QosType.forNumber(0))
+            .setAvailableThroughputMibps(1487662890)
+            .setColdTierSizeUsedGib(-1242809254)
+            .setHotTierSizeUsedGib(-151116719)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -610,6 +646,12 @@ public class NetAppClientHttpJsonTest {
               .setCustomPerformanceEnabled(true)
               .setTotalThroughputMibps(-2085075953)
               .setTotalIops(-705711676)
+              .setHotTierSizeGib(369881037)
+              .setEnableHotTierAutoResize(true)
+              .setQosType(QosType.forNumber(0))
+              .setAvailableThroughputMibps(1487662890)
+              .setColdTierSizeUsedGib(-1242809254)
+              .setHotTierSizeUsedGib(-151116719)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateStoragePoolAsync(storagePool, updateMask).get();
@@ -790,6 +832,12 @@ public class NetAppClientHttpJsonTest {
             .setCustomPerformanceEnabled(true)
             .setTotalThroughputMibps(-2085075953)
             .setTotalIops(-705711676)
+            .setHotTierSizeGib(369881037)
+            .setEnableHotTierAutoResize(true)
+            .setQosType(QosType.forNumber(0))
+            .setAvailableThroughputMibps(1487662890)
+            .setColdTierSizeUsedGib(-1242809254)
+            .setHotTierSizeUsedGib(-151116719)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -983,6 +1031,8 @@ public class NetAppClientHttpJsonTest {
             .setZone("zone3744684")
             .setColdTierSizeGib(212809252)
             .setHybridReplicationParameters(HybridReplicationParameters.newBuilder().build())
+            .setThroughputMibps(1498696820)
+            .setHotTierSizeUsedGib(-151116719)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1065,6 +1115,8 @@ public class NetAppClientHttpJsonTest {
             .setZone("zone3744684")
             .setColdTierSizeGib(212809252)
             .setHybridReplicationParameters(HybridReplicationParameters.newBuilder().build())
+            .setThroughputMibps(1498696820)
+            .setHotTierSizeUsedGib(-151116719)
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1147,6 +1199,8 @@ public class NetAppClientHttpJsonTest {
             .setZone("zone3744684")
             .setColdTierSizeGib(212809252)
             .setHybridReplicationParameters(HybridReplicationParameters.newBuilder().build())
+            .setThroughputMibps(1498696820)
+            .setHotTierSizeUsedGib(-151116719)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1238,6 +1292,8 @@ public class NetAppClientHttpJsonTest {
             .setZone("zone3744684")
             .setColdTierSizeGib(212809252)
             .setHybridReplicationParameters(HybridReplicationParameters.newBuilder().build())
+            .setThroughputMibps(1498696820)
+            .setHotTierSizeUsedGib(-151116719)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1329,6 +1385,8 @@ public class NetAppClientHttpJsonTest {
             .setZone("zone3744684")
             .setColdTierSizeGib(212809252)
             .setHybridReplicationParameters(HybridReplicationParameters.newBuilder().build())
+            .setThroughputMibps(1498696820)
+            .setHotTierSizeUsedGib(-151116719)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1379,6 +1437,8 @@ public class NetAppClientHttpJsonTest {
             .setZone("zone3744684")
             .setColdTierSizeGib(212809252)
             .setHybridReplicationParameters(HybridReplicationParameters.newBuilder().build())
+            .setThroughputMibps(1498696820)
+            .setHotTierSizeUsedGib(-151116719)
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1450,6 +1510,8 @@ public class NetAppClientHttpJsonTest {
               .setZone("zone3744684")
               .setColdTierSizeGib(212809252)
               .setHybridReplicationParameters(HybridReplicationParameters.newBuilder().build())
+              .setThroughputMibps(1498696820)
+              .setHotTierSizeUsedGib(-151116719)
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateVolumeAsync(volume, updateMask).get();
@@ -1591,6 +1653,8 @@ public class NetAppClientHttpJsonTest {
             .setZone("zone3744684")
             .setColdTierSizeGib(212809252)
             .setHybridReplicationParameters(HybridReplicationParameters.newBuilder().build())
+            .setThroughputMibps(1498696820)
+            .setHotTierSizeUsedGib(-151116719)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3452,6 +3516,7 @@ public class NetAppClientHttpJsonTest {
             .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
             .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
             .setClusterLocation("clusterLocation-732398641")
+            .setHybridReplicationUserCommands(UserCommands.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3511,6 +3576,7 @@ public class NetAppClientHttpJsonTest {
             .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
             .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
             .setClusterLocation("clusterLocation-732398641")
+            .setHybridReplicationUserCommands(UserCommands.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -3570,6 +3636,7 @@ public class NetAppClientHttpJsonTest {
             .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
             .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
             .setClusterLocation("clusterLocation-732398641")
+            .setHybridReplicationUserCommands(UserCommands.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3637,6 +3704,7 @@ public class NetAppClientHttpJsonTest {
             .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
             .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
             .setClusterLocation("clusterLocation-732398641")
+            .setHybridReplicationUserCommands(UserCommands.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3798,6 +3866,7 @@ public class NetAppClientHttpJsonTest {
             .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
             .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
             .setClusterLocation("clusterLocation-732398641")
+            .setHybridReplicationUserCommands(UserCommands.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3823,6 +3892,7 @@ public class NetAppClientHttpJsonTest {
             .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
             .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
             .setClusterLocation("clusterLocation-732398641")
+            .setHybridReplicationUserCommands(UserCommands.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -3868,6 +3938,7 @@ public class NetAppClientHttpJsonTest {
               .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
               .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
               .setClusterLocation("clusterLocation-732398641")
+              .setHybridReplicationUserCommands(UserCommands.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateReplicationAsync(replication, updateMask).get();
@@ -3894,6 +3965,7 @@ public class NetAppClientHttpJsonTest {
             .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
             .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
             .setClusterLocation("clusterLocation-732398641")
+            .setHybridReplicationUserCommands(UserCommands.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3968,6 +4040,7 @@ public class NetAppClientHttpJsonTest {
             .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
             .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
             .setClusterLocation("clusterLocation-732398641")
+            .setHybridReplicationUserCommands(UserCommands.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -4040,6 +4113,7 @@ public class NetAppClientHttpJsonTest {
             .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
             .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
             .setClusterLocation("clusterLocation-732398641")
+            .setHybridReplicationUserCommands(UserCommands.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -4112,6 +4186,7 @@ public class NetAppClientHttpJsonTest {
             .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
             .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
             .setClusterLocation("clusterLocation-732398641")
+            .setHybridReplicationUserCommands(UserCommands.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -4192,6 +4267,7 @@ public class NetAppClientHttpJsonTest {
             .setSourceVolume(VolumeName.of("[PROJECT]", "[LOCATION]", "[VOLUME]").toString())
             .setHybridPeeringDetails(HybridPeeringDetails.newBuilder().build())
             .setClusterLocation("clusterLocation-732398641")
+            .setHybridReplicationUserCommands(UserCommands.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

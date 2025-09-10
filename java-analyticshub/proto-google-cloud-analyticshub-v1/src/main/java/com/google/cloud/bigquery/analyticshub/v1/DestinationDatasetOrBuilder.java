@@ -260,4 +260,66 @@ public interface DestinationDatasetOrBuilder
    * @return The bytes for location.
    */
   com.google.protobuf.ByteString getLocationBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The geographic locations where the dataset should be replicated.
+   * See [BigQuery locations](https://cloud.google.com/bigquery/docs/locations)
+   * for supported locations.
+   * </pre>
+   *
+   * <code>repeated string replica_locations = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the replicaLocations.
+   */
+  java.util.List<java.lang.String> getReplicaLocationsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The geographic locations where the dataset should be replicated.
+   * See [BigQuery locations](https://cloud.google.com/bigquery/docs/locations)
+   * for supported locations.
+   * </pre>
+   *
+   * <code>repeated string replica_locations = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of replicaLocations.
+   */
+  int getReplicaLocationsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The geographic locations where the dataset should be replicated.
+   * See [BigQuery locations](https://cloud.google.com/bigquery/docs/locations)
+   * for supported locations.
+   * </pre>
+   *
+   * <code>repeated string replica_locations = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The replicaLocations at the given index.
+   */
+  java.lang.String getReplicaLocations(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The geographic locations where the dataset should be replicated.
+   * See [BigQuery locations](https://cloud.google.com/bigquery/docs/locations)
+   * for supported locations.
+   * </pre>
+   *
+   * <code>repeated string replica_locations = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the replicaLocations at the given index.
+   */
+  com.google.protobuf.ByteString getReplicaLocationsBytes(int index);
 }

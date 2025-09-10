@@ -24,7 +24,7 @@ package com.google.cloud.confidentialcomputing.v1;
  *
  * <pre>
  * A response once an attestation has been successfully verified, containing a
- * signed OIDC token.
+ * signed attestation token.
  * </pre>
  *
  * Protobuf type {@code google.cloud.confidentialcomputing.v1.VerifyAttestationResponse}
@@ -387,7 +387,7 @@ public final class VerifyAttestationResponse extends com.google.protobuf.Generat
    *
    * <pre>
    * A response once an attestation has been successfully verified, containing a
-   * signed OIDC token.
+   * signed attestation token.
    * </pre>
    *
    * Protobuf type {@code google.cloud.confidentialcomputing.v1.VerifyAttestationResponse}

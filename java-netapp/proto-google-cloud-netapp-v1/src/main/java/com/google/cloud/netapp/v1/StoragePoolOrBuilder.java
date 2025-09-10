@@ -614,7 +614,7 @@ public interface StoragePoolOrBuilder
    *
    *
    * <pre>
-   * Optional. Custom Performance Total Throughput of the pool (in MiB/s)
+   * Optional. Custom Performance Total Throughput of the pool (in MiBps)
    * </pre>
    *
    * <code>int64 total_throughput_mibps = 26 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -628,7 +628,7 @@ public interface StoragePoolOrBuilder
    *
    * <pre>
    * Optional. Custom Performance Total IOPS of the pool
-   * If not provided, it will be calculated based on the total_throughput_mibps
+   * if not provided, it will be calculated based on the total_throughput_mibps
    * </pre>
    *
    * <code>int64 total_iops = 27 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -636,4 +636,124 @@ public interface StoragePoolOrBuilder
    * @return The totalIops.
    */
   long getTotalIops();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Total hot tier capacity for the Storage Pool. It is applicable
+   * only to Flex service level. It should be less than the minimum storage pool
+   * size and cannot be more than the current storage pool size. It cannot be
+   * decreased once set.
+   * </pre>
+   *
+   * <code>int64 hot_tier_size_gib = 28 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The hotTierSizeGib.
+   */
+  long getHotTierSizeGib();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Flag indicating that the hot-tier threshold will be
+   * auto-increased by 10% of the hot-tier when it hits 100%. Default is true.
+   * The increment will kick in only if the new size after increment is
+   * still less than or equal to storage pool size.
+   * </pre>
+   *
+   * <code>optional bool enable_hot_tier_auto_resize = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the enableHotTierAutoResize field is set.
+   */
+  boolean hasEnableHotTierAutoResize();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Flag indicating that the hot-tier threshold will be
+   * auto-increased by 10% of the hot-tier when it hits 100%. Default is true.
+   * The increment will kick in only if the new size after increment is
+   * still less than or equal to storage pool size.
+   * </pre>
+   *
+   * <code>optional bool enable_hot_tier_auto_resize = 29 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enableHotTierAutoResize.
+   */
+  boolean getEnableHotTierAutoResize();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. QoS (Quality of Service) Type of the storage pool
+   * </pre>
+   *
+   * <code>.google.cloud.netapp.v1.QosType qos_type = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for qosType.
+   */
+  int getQosTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. QoS (Quality of Service) Type of the storage pool
+   * </pre>
+   *
+   * <code>.google.cloud.netapp.v1.QosType qos_type = 30 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The qosType.
+   */
+  com.google.cloud.netapp.v1.QosType getQosType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Available throughput of the storage pool (in MiB/s).
+   * </pre>
+   *
+   * <code>double available_throughput_mibps = 31 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The availableThroughputMibps.
+   */
+  double getAvailableThroughputMibps();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Total cold tier data rounded down to the nearest GiB used by
+   * the storage pool.
+   * </pre>
+   *
+   * <code>int64 cold_tier_size_used_gib = 33 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The coldTierSizeUsedGib.
+   */
+  long getColdTierSizeUsedGib();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Total hot tier data rounded down to the nearest GiB used by
+   * the storage pool.
+   * </pre>
+   *
+   * <code>int64 hot_tier_size_used_gib = 34 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The hotTierSizeUsedGib.
+   */
+  long getHotTierSizeUsedGib();
 }
