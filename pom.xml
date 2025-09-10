@@ -62,6 +62,7 @@
     <module>java-cloudcommerceconsumerprocurement</module>
     <module>java-cloudcontrolspartner</module>
     <module>java-cloudquotas</module>
+    <module>java-cloudsecuritycompliance</module>
     <module>java-cloudsupport</module>
     <module>java-compute</module>
     <module>java-confidentialcomputing</module>
