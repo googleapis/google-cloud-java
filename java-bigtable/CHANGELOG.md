@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.66.0](https://github.com/googleapis/java-bigtable/compare/v2.65.1...v2.66.0) (2025-09-10)
+
+
+### Features
+
+* Add support for Proto and Enum types ([#2662](https://github.com/googleapis/java-bigtable/issues/2662)) ([da3065d](https://github.com/googleapis/java-bigtable/commit/da3065db331be191fdf9e06be71e45c7832574ea))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.52.1 ([#2668](https://github.com/googleapis/java-bigtable/issues/2668)) ([06ac93e](https://github.com/googleapis/java-bigtable/commit/06ac93e810830f9c04920b488d9a10af8995a6f3))
+
 ## [2.65.1](https://github.com/googleapis/java-bigtable/compare/v2.65.0...v2.65.1) (2025-08-27)
 
 

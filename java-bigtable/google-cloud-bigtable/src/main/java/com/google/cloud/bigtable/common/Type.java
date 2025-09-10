@@ -397,7 +397,8 @@ public interface Type {
     public static <T extends AbstractMessage> SqlType.Proto<T> create(T message) {
       Preconditions.checkNotNull(
           message,
-          "Proto message may not be null. Use 'MyProtoMessage::getDefaultInstance()' as a parameter value.");
+          "Proto message may not be null. Use 'MyProtoMessage::getDefaultInstance()' as a parameter"
+              + " value.");
       return new AutoValue_Type_Proto<>(message);
     }
 
@@ -517,7 +518,8 @@ public interface Type {
     @Override
     public Parser<AbstractMessage> getParserForType() {
       throw new UnsupportedOperationException(
-          "Cannot get parser for unresolved proto type. Please use the getProtoMessage overload that takes a message instance.");
+          "Cannot get parser for unresolved proto type. Please use the getProtoMessage overload"
+              + " that takes a message instance.");
     }
 
     @Override
@@ -554,7 +556,8 @@ public interface Type {
     @Override
     public Function<Integer, ProtocolMessageEnum> getForNumber() {
       throw new UnsupportedOperationException(
-          "Cannot get forNumber for unresolved enum type. Please use the getProtoEnum overload that takes a forNumber function.");
+          "Cannot get forNumber for unresolved enum type. Please use the getProtoEnum overload that"
+              + " takes a forNumber function.");
     }
 
     @Override
