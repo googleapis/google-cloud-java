@@ -44,6 +44,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     description_ = "";
     displayName_ = "";
+    migrationTargetType_ = 0;
   }
 
   @java.lang.Override
@@ -65,6 +66,168 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
         .ensureFieldAccessorsInitialized(
             com.google.cloud.vmmigration.v1.Group.class,
             com.google.cloud.vmmigration.v1.Group.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The possible types of the group.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.vmmigration.v1.Group.MigrationTargetType}
+   */
+  public enum MigrationTargetType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Group type is not specified. This defaults to Compute Engine targets.
+     * </pre>
+     *
+     * <code>MIGRATION_TARGET_TYPE_UNSPECIFIED = 0;</code>
+     */
+    MIGRATION_TARGET_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * All MigratingVMs in the group must have Compute Engine targets.
+     * </pre>
+     *
+     * <code>MIGRATION_TARGET_TYPE_GCE = 1;</code>
+     */
+    MIGRATION_TARGET_TYPE_GCE(1),
+    /**
+     *
+     *
+     * <pre>
+     * All MigratingVMs in the group must have Compute Engine Disks targets.
+     * </pre>
+     *
+     * <code>MIGRATION_TARGET_TYPE_DISKS = 2;</code>
+     */
+    MIGRATION_TARGET_TYPE_DISKS(2),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Group type is not specified. This defaults to Compute Engine targets.
+     * </pre>
+     *
+     * <code>MIGRATION_TARGET_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int MIGRATION_TARGET_TYPE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * All MigratingVMs in the group must have Compute Engine targets.
+     * </pre>
+     *
+     * <code>MIGRATION_TARGET_TYPE_GCE = 1;</code>
+     */
+    public static final int MIGRATION_TARGET_TYPE_GCE_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * All MigratingVMs in the group must have Compute Engine Disks targets.
+     * </pre>
+     *
+     * <code>MIGRATION_TARGET_TYPE_DISKS = 2;</code>
+     */
+    public static final int MIGRATION_TARGET_TYPE_DISKS_VALUE = 2;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static MigrationTargetType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static MigrationTargetType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return MIGRATION_TARGET_TYPE_UNSPECIFIED;
+        case 1:
+          return MIGRATION_TARGET_TYPE_GCE;
+        case 2:
+          return MIGRATION_TARGET_TYPE_DISKS;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<MigrationTargetType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<MigrationTargetType>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<MigrationTargetType>() {
+              public MigrationTargetType findValueByNumber(int number) {
+                return MigrationTargetType.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.vmmigration.v1.Group.getDescriptor().getEnumTypes().get(0);
+    }
+
+    private static final MigrationTargetType[] VALUES = values();
+
+    public static MigrationTargetType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private MigrationTargetType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.vmmigration.v1.Group.MigrationTargetType)
   }
 
   private int bitField0_;
@@ -331,6 +494,49 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int MIGRATION_TARGET_TYPE_FIELD_NUMBER = 6;
+  private int migrationTargetType_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The target type of this group.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.Group.MigrationTargetType migration_target_type = 6 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for migrationTargetType.
+   */
+  @java.lang.Override
+  public int getMigrationTargetTypeValue() {
+    return migrationTargetType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Immutable. The target type of this group.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.Group.MigrationTargetType migration_target_type = 6 [(.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The migrationTargetType.
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.Group.MigrationTargetType getMigrationTargetType() {
+    com.google.cloud.vmmigration.v1.Group.MigrationTargetType result =
+        com.google.cloud.vmmigration.v1.Group.MigrationTargetType.forNumber(migrationTargetType_);
+    return result == null
+        ? com.google.cloud.vmmigration.v1.Group.MigrationTargetType.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -360,6 +566,12 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, displayName_);
     }
+    if (migrationTargetType_
+        != com.google.cloud.vmmigration.v1.Group.MigrationTargetType
+            .MIGRATION_TARGET_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(6, migrationTargetType_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -383,6 +595,12 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, displayName_);
+    }
+    if (migrationTargetType_
+        != com.google.cloud.vmmigration.v1.Group.MigrationTargetType
+            .MIGRATION_TARGET_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, migrationTargetType_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -410,6 +628,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getDescription().equals(other.getDescription())) return false;
     if (!getDisplayName().equals(other.getDisplayName())) return false;
+    if (migrationTargetType_ != other.migrationTargetType_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -435,6 +654,8 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getDescription().hashCode();
     hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getDisplayName().hashCode();
+    hash = (37 * hash) + MIGRATION_TARGET_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + migrationTargetType_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -598,6 +819,7 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
       }
       description_ = "";
       displayName_ = "";
+      migrationTargetType_ = 0;
       return this;
     }
 
@@ -651,6 +873,9 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000010) != 0)) {
         result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.migrationTargetType_ = migrationTargetType_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -721,6 +946,9 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000010;
         onChanged();
       }
+      if (other.migrationTargetType_ != 0) {
+        setMigrationTargetTypeValue(other.getMigrationTargetTypeValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -777,6 +1005,12 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000010;
                 break;
               } // case 42
+            case 48:
+              {
+                migrationTargetType_ = input.readEnum();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 48
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1549,6 +1783,114 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       displayName_ = value;
       bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private int migrationTargetType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The target type of this group.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.Group.MigrationTargetType migration_target_type = 6 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for migrationTargetType.
+     */
+    @java.lang.Override
+    public int getMigrationTargetTypeValue() {
+      return migrationTargetType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The target type of this group.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.Group.MigrationTargetType migration_target_type = 6 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for migrationTargetType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMigrationTargetTypeValue(int value) {
+      migrationTargetType_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The target type of this group.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.Group.MigrationTargetType migration_target_type = 6 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The migrationTargetType.
+     */
+    @java.lang.Override
+    public com.google.cloud.vmmigration.v1.Group.MigrationTargetType getMigrationTargetType() {
+      com.google.cloud.vmmigration.v1.Group.MigrationTargetType result =
+          com.google.cloud.vmmigration.v1.Group.MigrationTargetType.forNumber(migrationTargetType_);
+      return result == null
+          ? com.google.cloud.vmmigration.v1.Group.MigrationTargetType.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The target type of this group.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.Group.MigrationTargetType migration_target_type = 6 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The migrationTargetType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMigrationTargetType(
+        com.google.cloud.vmmigration.v1.Group.MigrationTargetType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000020;
+      migrationTargetType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Immutable. The target type of this group.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.Group.MigrationTargetType migration_target_type = 6 [(.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMigrationTargetType() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      migrationTargetType_ = 0;
       onChanged();
       return this;
     }

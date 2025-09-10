@@ -115,6 +115,47 @@
  * }
  * }</pre>
  *
+ * <p>======================= ConversationalSearchServiceClient =======================
+ *
+ * <p>Service Description: Service for retail conversational search.
+ *
+ * <p>This feature is only available for users who have Retail Conversational Search enabled. Enable
+ * Retail Conversational Search on Cloud Console before using this feature.
+ *
+ * <p>Sample for ConversationalSearchServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (ConversationalSearchServiceClient conversationalSearchServiceClient =
+ *     ConversationalSearchServiceClient.create()) {
+ *   ConversationalSearchRequest request =
+ *       ConversationalSearchRequest.newBuilder()
+ *           .setPlacement("placement1792938725")
+ *           .setBranch(
+ *               BranchName.of("[PROJECT]", "[LOCATION]", "[CATALOG]", "[BRANCH]").toString())
+ *           .setQuery("query107944136")
+ *           .addAllPageCategories(new ArrayList<String>())
+ *           .setConversationId("conversationId-1676095234")
+ *           .setSearchParams(ConversationalSearchRequest.SearchParams.newBuilder().build())
+ *           .setVisitorId("visitorId1880545833")
+ *           .setUserInfo(UserInfo.newBuilder().build())
+ *           .setConversationalFilteringSpec(
+ *               ConversationalSearchRequest.ConversationalFilteringSpec.newBuilder().build())
+ *           .putAllUserLabels(new HashMap<String, String>())
+ *           .addAllSafetySettings(new ArrayList<SafetySetting>())
+ *           .build();
+ *   ServerStream<ConversationalSearchResponse> stream =
+ *       conversationalSearchServiceClient.conversationalSearchCallable().call(request);
+ *   for (ConversationalSearchResponse response : stream) {
+ *     // Do something when a response is received.
+ *   }
+ * }
+ * }</pre>
+ *
  * <p>======================= GenerativeQuestionServiceClient =======================
  *
  * <p>Service Description: Service for managing LLM generated questions in search serving.

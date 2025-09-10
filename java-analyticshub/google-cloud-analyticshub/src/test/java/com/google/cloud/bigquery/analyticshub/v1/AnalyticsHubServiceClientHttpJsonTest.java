@@ -19,6 +19,7 @@ package com.google.cloud.bigquery.analyticshub.v1;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListDataExchangesPagedResponse;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListListingsPagedResponse;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListOrgDataExchangesPagedResponse;
+import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListQueryTemplatesPagedResponse;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListSharedResourceSubscriptionsPagedResponse;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListSubscriptionsPagedResponse;
 
@@ -2095,6 +2096,739 @@ public class AnalyticsHubServiceClientHttpJsonTest {
               .addAllPermissions(new ArrayList<String>())
               .build();
       client.testIamPermissions(request);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createQueryTemplateTest() throws Exception {
+    QueryTemplate expectedResponse =
+        QueryTemplate.newBuilder()
+            .setName(
+                QueryTemplateName.of(
+                        "[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]", "[QUERY_TEMPLATE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setProposer("proposer-992842892")
+            .setPrimaryContact("primaryContact-532068418")
+            .setDocumentation("documentation1587405498")
+            .setRoutine(Routine.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    DataExchangeName parent = DataExchangeName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]");
+    QueryTemplate queryTemplate = QueryTemplate.newBuilder().build();
+    String queryTemplateId = "queryTemplateId-1884800483";
+
+    QueryTemplate actualResponse =
+        client.createQueryTemplate(parent, queryTemplate, queryTemplateId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createQueryTemplateExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DataExchangeName parent = DataExchangeName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]");
+      QueryTemplate queryTemplate = QueryTemplate.newBuilder().build();
+      String queryTemplateId = "queryTemplateId-1884800483";
+      client.createQueryTemplate(parent, queryTemplate, queryTemplateId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createQueryTemplateTest2() throws Exception {
+    QueryTemplate expectedResponse =
+        QueryTemplate.newBuilder()
+            .setName(
+                QueryTemplateName.of(
+                        "[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]", "[QUERY_TEMPLATE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setProposer("proposer-992842892")
+            .setPrimaryContact("primaryContact-532068418")
+            .setDocumentation("documentation1587405498")
+            .setRoutine(Routine.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-4709/locations/location-4709/dataExchanges/dataExchange-4709";
+    QueryTemplate queryTemplate = QueryTemplate.newBuilder().build();
+    String queryTemplateId = "queryTemplateId-1884800483";
+
+    QueryTemplate actualResponse =
+        client.createQueryTemplate(parent, queryTemplate, queryTemplateId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createQueryTemplateExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-4709/locations/location-4709/dataExchanges/dataExchange-4709";
+      QueryTemplate queryTemplate = QueryTemplate.newBuilder().build();
+      String queryTemplateId = "queryTemplateId-1884800483";
+      client.createQueryTemplate(parent, queryTemplate, queryTemplateId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getQueryTemplateTest() throws Exception {
+    QueryTemplate expectedResponse =
+        QueryTemplate.newBuilder()
+            .setName(
+                QueryTemplateName.of(
+                        "[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]", "[QUERY_TEMPLATE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setProposer("proposer-992842892")
+            .setPrimaryContact("primaryContact-532068418")
+            .setDocumentation("documentation1587405498")
+            .setRoutine(Routine.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    QueryTemplateName name =
+        QueryTemplateName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]", "[QUERY_TEMPLATE]");
+
+    QueryTemplate actualResponse = client.getQueryTemplate(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getQueryTemplateExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      QueryTemplateName name =
+          QueryTemplateName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]", "[QUERY_TEMPLATE]");
+      client.getQueryTemplate(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getQueryTemplateTest2() throws Exception {
+    QueryTemplate expectedResponse =
+        QueryTemplate.newBuilder()
+            .setName(
+                QueryTemplateName.of(
+                        "[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]", "[QUERY_TEMPLATE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setProposer("proposer-992842892")
+            .setPrimaryContact("primaryContact-532068418")
+            .setDocumentation("documentation1587405498")
+            .setRoutine(Routine.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-2753/locations/location-2753/dataExchanges/dataExchange-2753/queryTemplates/queryTemplate-2753";
+
+    QueryTemplate actualResponse = client.getQueryTemplate(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void getQueryTemplateExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-2753/locations/location-2753/dataExchanges/dataExchange-2753/queryTemplates/queryTemplate-2753";
+      client.getQueryTemplate(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listQueryTemplatesTest() throws Exception {
+    QueryTemplate responsesElement = QueryTemplate.newBuilder().build();
+    ListQueryTemplatesResponse expectedResponse =
+        ListQueryTemplatesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllQueryTemplates(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    DataExchangeName parent = DataExchangeName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]");
+
+    ListQueryTemplatesPagedResponse pagedListResponse = client.listQueryTemplates(parent);
+
+    List<QueryTemplate> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getQueryTemplatesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listQueryTemplatesExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      DataExchangeName parent = DataExchangeName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]");
+      client.listQueryTemplates(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listQueryTemplatesTest2() throws Exception {
+    QueryTemplate responsesElement = QueryTemplate.newBuilder().build();
+    ListQueryTemplatesResponse expectedResponse =
+        ListQueryTemplatesResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllQueryTemplates(Arrays.asList(responsesElement))
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent = "projects/project-4709/locations/location-4709/dataExchanges/dataExchange-4709";
+
+    ListQueryTemplatesPagedResponse pagedListResponse = client.listQueryTemplates(parent);
+
+    List<QueryTemplate> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getQueryTemplatesList().get(0), resources.get(0));
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void listQueryTemplatesExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-4709/locations/location-4709/dataExchanges/dataExchange-4709";
+      client.listQueryTemplates(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateQueryTemplateTest() throws Exception {
+    QueryTemplate expectedResponse =
+        QueryTemplate.newBuilder()
+            .setName(
+                QueryTemplateName.of(
+                        "[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]", "[QUERY_TEMPLATE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setProposer("proposer-992842892")
+            .setPrimaryContact("primaryContact-532068418")
+            .setDocumentation("documentation1587405498")
+            .setRoutine(Routine.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    QueryTemplate queryTemplate =
+        QueryTemplate.newBuilder()
+            .setName(
+                QueryTemplateName.of(
+                        "[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]", "[QUERY_TEMPLATE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setProposer("proposer-992842892")
+            .setPrimaryContact("primaryContact-532068418")
+            .setDocumentation("documentation1587405498")
+            .setRoutine(Routine.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    QueryTemplate actualResponse = client.updateQueryTemplate(queryTemplate, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateQueryTemplateExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      QueryTemplate queryTemplate =
+          QueryTemplate.newBuilder()
+              .setName(
+                  QueryTemplateName.of(
+                          "[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]", "[QUERY_TEMPLATE]")
+                      .toString())
+              .setDisplayName("displayName1714148973")
+              .setDescription("description-1724546052")
+              .setProposer("proposer-992842892")
+              .setPrimaryContact("primaryContact-532068418")
+              .setDocumentation("documentation1587405498")
+              .setRoutine(Routine.newBuilder().build())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateQueryTemplate(queryTemplate, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteQueryTemplateTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    QueryTemplateName name =
+        QueryTemplateName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]", "[QUERY_TEMPLATE]");
+
+    client.deleteQueryTemplate(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteQueryTemplateExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      QueryTemplateName name =
+          QueryTemplateName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]", "[QUERY_TEMPLATE]");
+      client.deleteQueryTemplate(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteQueryTemplateTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-2753/locations/location-2753/dataExchanges/dataExchange-2753/queryTemplates/queryTemplate-2753";
+
+    client.deleteQueryTemplate(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteQueryTemplateExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-2753/locations/location-2753/dataExchanges/dataExchange-2753/queryTemplates/queryTemplate-2753";
+      client.deleteQueryTemplate(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void submitQueryTemplateTest() throws Exception {
+    QueryTemplate expectedResponse =
+        QueryTemplate.newBuilder()
+            .setName(
+                QueryTemplateName.of(
+                        "[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]", "[QUERY_TEMPLATE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setProposer("proposer-992842892")
+            .setPrimaryContact("primaryContact-532068418")
+            .setDocumentation("documentation1587405498")
+            .setRoutine(Routine.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    QueryTemplateName name =
+        QueryTemplateName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]", "[QUERY_TEMPLATE]");
+
+    QueryTemplate actualResponse = client.submitQueryTemplate(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void submitQueryTemplateExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      QueryTemplateName name =
+          QueryTemplateName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]", "[QUERY_TEMPLATE]");
+      client.submitQueryTemplate(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void submitQueryTemplateTest2() throws Exception {
+    QueryTemplate expectedResponse =
+        QueryTemplate.newBuilder()
+            .setName(
+                QueryTemplateName.of(
+                        "[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]", "[QUERY_TEMPLATE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setProposer("proposer-992842892")
+            .setPrimaryContact("primaryContact-532068418")
+            .setDocumentation("documentation1587405498")
+            .setRoutine(Routine.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-2753/locations/location-2753/dataExchanges/dataExchange-2753/queryTemplates/queryTemplate-2753";
+
+    QueryTemplate actualResponse = client.submitQueryTemplate(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void submitQueryTemplateExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-2753/locations/location-2753/dataExchanges/dataExchange-2753/queryTemplates/queryTemplate-2753";
+      client.submitQueryTemplate(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void approveQueryTemplateTest() throws Exception {
+    QueryTemplate expectedResponse =
+        QueryTemplate.newBuilder()
+            .setName(
+                QueryTemplateName.of(
+                        "[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]", "[QUERY_TEMPLATE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setProposer("proposer-992842892")
+            .setPrimaryContact("primaryContact-532068418")
+            .setDocumentation("documentation1587405498")
+            .setRoutine(Routine.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    QueryTemplateName name =
+        QueryTemplateName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]", "[QUERY_TEMPLATE]");
+
+    QueryTemplate actualResponse = client.approveQueryTemplate(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void approveQueryTemplateExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      QueryTemplateName name =
+          QueryTemplateName.of("[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]", "[QUERY_TEMPLATE]");
+      client.approveQueryTemplate(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void approveQueryTemplateTest2() throws Exception {
+    QueryTemplate expectedResponse =
+        QueryTemplate.newBuilder()
+            .setName(
+                QueryTemplateName.of(
+                        "[PROJECT]", "[LOCATION]", "[DATA_EXCHANGE]", "[QUERY_TEMPLATE]")
+                    .toString())
+            .setDisplayName("displayName1714148973")
+            .setDescription("description-1724546052")
+            .setProposer("proposer-992842892")
+            .setPrimaryContact("primaryContact-532068418")
+            .setDocumentation("documentation1587405498")
+            .setRoutine(Routine.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-2753/locations/location-2753/dataExchanges/dataExchange-2753/queryTemplates/queryTemplate-2753";
+
+    QueryTemplate actualResponse = client.approveQueryTemplate(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void approveQueryTemplateExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-2753/locations/location-2753/dataExchanges/dataExchange-2753/queryTemplates/queryTemplate-2753";
+      client.approveQueryTemplate(name);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.

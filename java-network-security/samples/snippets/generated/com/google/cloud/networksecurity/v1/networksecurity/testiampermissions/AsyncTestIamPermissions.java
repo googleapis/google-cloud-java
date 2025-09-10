@@ -18,7 +18,7 @@ package com.google.cloud.networksecurity.v1.samples;
 
 // [START networksecurity_v1_generated_NetworkSecurity_TestIamPermissions_async]
 import com.google.api.core.ApiFuture;
-import com.google.cloud.networksecurity.v1.AuthorizationPolicyName;
+import com.google.cloud.networksecurity.v1.AddressGroupName;
 import com.google.cloud.networksecurity.v1.NetworkSecurityClient;
 import com.google.iam.v1.TestIamPermissionsRequest;
 import com.google.iam.v1.TestIamPermissionsResponse;
@@ -40,7 +40,8 @@ public class AsyncTestIamPermissions {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
               .setResource(
-                  AuthorizationPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTHORIZATION_POLICY]")
+                  AddressGroupName.ofProjectLocationAddressGroupName(
+                          "[PROJECT]", "[LOCATION]", "[ADDRESS_GROUP]")
                       .toString())
               .addAllPermissions(new ArrayList<String>())
               .build();

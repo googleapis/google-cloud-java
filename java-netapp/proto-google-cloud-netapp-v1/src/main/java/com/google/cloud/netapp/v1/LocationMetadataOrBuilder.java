@@ -177,4 +177,17 @@ public interface LocationMetadataOrBuilder
    * @return The enum numeric value on the wire of supportedFlexPerformance at the given index.
    */
   int getSupportedFlexPerformanceValue(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates if the location has VCP support.
+   * </pre>
+   *
+   * <code>bool has_vcp = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The hasVcp.
+   */
+  boolean getHasVcp();
 }

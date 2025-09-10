@@ -158,7 +158,7 @@ public interface ComputeEngineTargetDetailsOrBuilder
    *
    *
    * <pre>
-   * A map of network tags to associate with the VM.
+   * A list of network tags to associate with the VM.
    * </pre>
    *
    * <code>repeated string network_tags = 6;</code>
@@ -171,7 +171,7 @@ public interface ComputeEngineTargetDetailsOrBuilder
    *
    *
    * <pre>
-   * A map of network tags to associate with the VM.
+   * A list of network tags to associate with the VM.
    * </pre>
    *
    * <code>repeated string network_tags = 6;</code>
@@ -184,7 +184,7 @@ public interface ComputeEngineTargetDetailsOrBuilder
    *
    *
    * <pre>
-   * A map of network tags to associate with the VM.
+   * A list of network tags to associate with the VM.
    * </pre>
    *
    * <code>repeated string network_tags = 6;</code>
@@ -198,7 +198,7 @@ public interface ComputeEngineTargetDetailsOrBuilder
    *
    *
    * <pre>
-   * A map of network tags to associate with the VM.
+   * A list of network tags to associate with the VM.
    * </pre>
    *
    * <code>repeated string network_tags = 6;</code>
@@ -485,7 +485,7 @@ public interface ComputeEngineTargetDetailsOrBuilder
    *
    * <pre>
    * Defines whether the instance has Secure Boot enabled.
-   * This can be set to true only if the vm boot option is EFI.
+   * This can be set to true only if the VM boot option is EFI.
    * </pre>
    *
    * <code>bool secure_boot = 14;</code>
@@ -498,7 +498,33 @@ public interface ComputeEngineTargetDetailsOrBuilder
    *
    *
    * <pre>
-   * The VM Boot Option, as set in the source vm.
+   * Optional. Defines whether the instance has vTPM enabled.
+   * </pre>
+   *
+   * <code>bool enable_vtpm = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableVtpm.
+   */
+  boolean getEnableVtpm();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defines whether the instance has integrity monitoring enabled.
+   * </pre>
+   *
+   * <code>bool enable_integrity_monitoring = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableIntegrityMonitoring.
+   */
+  boolean getEnableIntegrityMonitoring();
+
+  /**
+   *
+   *
+   * <pre>
+   * The VM Boot Option, as set in the source VM.
    * </pre>
    *
    * <code>.google.cloud.vmmigration.v1.ComputeEngineBootOption boot_option = 15;</code>
@@ -511,7 +537,7 @@ public interface ComputeEngineTargetDetailsOrBuilder
    *
    *
    * <pre>
-   * The VM Boot Option, as set in the source vm.
+   * The VM Boot Option, as set in the source VM.
    * </pre>
    *
    * <code>.google.cloud.vmmigration.v1.ComputeEngineBootOption boot_option = 15;</code>
@@ -662,4 +688,167 @@ public interface ComputeEngineTargetDetailsOrBuilder
    * @return The bytes for hostname.
    */
   com.google.protobuf.ByteString getHostnameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The encryption to apply to the VM disks.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.Encryption encryption = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the encryption field is set.
+   */
+  boolean hasEncryption();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The encryption to apply to the VM disks.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.Encryption encryption = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The encryption.
+   */
+  com.google.cloud.vmmigration.v1.Encryption getEncryption();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The encryption to apply to the VM disks.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.Encryption encryption = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.vmmigration.v1.EncryptionOrBuilder getEncryptionOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. By default the virtual machine will keep its existing boot
+   * option. Setting this property will trigger an internal process which will
+   * convert the virtual machine from using the existing boot option to another.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.BootConversion boot_conversion = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for bootConversion.
+   */
+  int getBootConversionValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. By default the virtual machine will keep its existing boot
+   * option. Setting this property will trigger an internal process which will
+   * convert the virtual machine from using the existing boot option to another.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.BootConversion boot_conversion = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bootConversion.
+   */
+  com.google.cloud.vmmigration.v1.BootConversion getBootConversion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional replica zones of the target regional disks.
+   * If this list is not empty a regional disk will be created. The first
+   * supported zone would be the one stated in the
+   * [zone][google.cloud.vmmigration.v1.ComputeEngineTargetDetails.zone] field.
+   * The rest are taken from this list. Please refer to the [regional disk
+   * creation
+   * API](https://cloud.google.com/compute/docs/regions-zones/global-regional-zonal-resources)
+   * for further details about regional vs zonal disks. If not specified, a
+   * zonal disk will be created in the same zone the VM is created.
+   * </pre>
+   *
+   * <code>repeated string disk_replica_zones = 24 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the diskReplicaZones.
+   */
+  java.util.List<java.lang.String> getDiskReplicaZonesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional replica zones of the target regional disks.
+   * If this list is not empty a regional disk will be created. The first
+   * supported zone would be the one stated in the
+   * [zone][google.cloud.vmmigration.v1.ComputeEngineTargetDetails.zone] field.
+   * The rest are taken from this list. Please refer to the [regional disk
+   * creation
+   * API](https://cloud.google.com/compute/docs/regions-zones/global-regional-zonal-resources)
+   * for further details about regional vs zonal disks. If not specified, a
+   * zonal disk will be created in the same zone the VM is created.
+   * </pre>
+   *
+   * <code>repeated string disk_replica_zones = 24 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of diskReplicaZones.
+   */
+  int getDiskReplicaZonesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional replica zones of the target regional disks.
+   * If this list is not empty a regional disk will be created. The first
+   * supported zone would be the one stated in the
+   * [zone][google.cloud.vmmigration.v1.ComputeEngineTargetDetails.zone] field.
+   * The rest are taken from this list. Please refer to the [regional disk
+   * creation
+   * API](https://cloud.google.com/compute/docs/regions-zones/global-regional-zonal-resources)
+   * for further details about regional vs zonal disks. If not specified, a
+   * zonal disk will be created in the same zone the VM is created.
+   * </pre>
+   *
+   * <code>repeated string disk_replica_zones = 24 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The diskReplicaZones at the given index.
+   */
+  java.lang.String getDiskReplicaZones(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional replica zones of the target regional disks.
+   * If this list is not empty a regional disk will be created. The first
+   * supported zone would be the one stated in the
+   * [zone][google.cloud.vmmigration.v1.ComputeEngineTargetDetails.zone] field.
+   * The rest are taken from this list. Please refer to the [regional disk
+   * creation
+   * API](https://cloud.google.com/compute/docs/regions-zones/global-regional-zonal-resources)
+   * for further details about regional vs zonal disks. If not specified, a
+   * zonal disk will be created in the same zone the VM is created.
+   * </pre>
+   *
+   * <code>repeated string disk_replica_zones = 24 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the diskReplicaZones at the given index.
+   */
+  com.google.protobuf.ByteString getDiskReplicaZonesBytes(int index);
 }

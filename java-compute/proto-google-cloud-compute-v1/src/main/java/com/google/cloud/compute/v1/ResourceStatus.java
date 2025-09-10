@@ -65,6 +65,68 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
   }
 
   private int bitField0_;
+  public static final int EFFECTIVE_INSTANCE_METADATA_FIELD_NUMBER = 55052033;
+  private com.google.cloud.compute.v1.ResourceStatusEffectiveInstanceMetadata
+      effectiveInstanceMetadata_;
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Effective metadata is a field that consolidates project, zonal instance settings, and instance-level predefined metadata keys to provide the overridden value for those metadata keys at the instance level.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ResourceStatusEffectiveInstanceMetadata effective_instance_metadata = 55052033;
+   * </code>
+   *
+   * @return Whether the effectiveInstanceMetadata field is set.
+   */
+  @java.lang.Override
+  public boolean hasEffectiveInstanceMetadata() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Effective metadata is a field that consolidates project, zonal instance settings, and instance-level predefined metadata keys to provide the overridden value for those metadata keys at the instance level.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ResourceStatusEffectiveInstanceMetadata effective_instance_metadata = 55052033;
+   * </code>
+   *
+   * @return The effectiveInstanceMetadata.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.ResourceStatusEffectiveInstanceMetadata
+      getEffectiveInstanceMetadata() {
+    return effectiveInstanceMetadata_ == null
+        ? com.google.cloud.compute.v1.ResourceStatusEffectiveInstanceMetadata.getDefaultInstance()
+        : effectiveInstanceMetadata_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Effective metadata is a field that consolidates project, zonal instance settings, and instance-level predefined metadata keys to provide the overridden value for those metadata keys at the instance level.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.ResourceStatusEffectiveInstanceMetadata effective_instance_metadata = 55052033;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.ResourceStatusEffectiveInstanceMetadataOrBuilder
+      getEffectiveInstanceMetadataOrBuilder() {
+    return effectiveInstanceMetadata_ == null
+        ? com.google.cloud.compute.v1.ResourceStatusEffectiveInstanceMetadata.getDefaultInstance()
+        : effectiveInstanceMetadata_;
+  }
+
   public static final int PHYSICAL_HOST_FIELD_NUMBER = 464370704;
 
   @SuppressWarnings("serial")
@@ -83,7 +145,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasPhysicalHost() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
 
   /**
@@ -152,7 +214,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasPhysicalHostTopology() {
-    return ((bitField0_ & 0x00000002) != 0);
+    return ((bitField0_ & 0x00000004) != 0);
   }
 
   /**
@@ -204,7 +266,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasScheduling() {
-    return ((bitField0_ & 0x00000004) != 0);
+    return ((bitField0_ & 0x00000008) != 0);
   }
 
   /**
@@ -240,7 +302,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
    */
   @java.lang.Override
   public boolean hasUpcomingMaintenance() {
-    return ((bitField0_ & 0x00000008) != 0);
+    return ((bitField0_ & 0x00000010) != 0);
   }
 
   /**
@@ -282,16 +344,19 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(55052033, getEffectiveInstanceMetadata());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
       output.writeMessage(227348592, getUpcomingMaintenance());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       output.writeMessage(386688404, getScheduling());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(390842814, getPhysicalHostTopology());
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 464370704, physicalHost_);
     }
     getUnknownFields().writeTo(output);
@@ -303,20 +368,25 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
-    if (((bitField0_ & 0x00000008) != 0)) {
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              55052033, getEffectiveInstanceMetadata());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               227348592, getUpcomingMaintenance());
     }
-    if (((bitField0_ & 0x00000004) != 0)) {
+    if (((bitField0_ & 0x00000008) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(386688404, getScheduling());
     }
-    if (((bitField0_ & 0x00000002) != 0)) {
+    if (((bitField0_ & 0x00000004) != 0)) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               390842814, getPhysicalHostTopology());
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(464370704, physicalHost_);
     }
     size += getUnknownFields().getSerializedSize();
@@ -335,6 +405,11 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.compute.v1.ResourceStatus other =
         (com.google.cloud.compute.v1.ResourceStatus) obj;
 
+    if (hasEffectiveInstanceMetadata() != other.hasEffectiveInstanceMetadata()) return false;
+    if (hasEffectiveInstanceMetadata()) {
+      if (!getEffectiveInstanceMetadata().equals(other.getEffectiveInstanceMetadata()))
+        return false;
+    }
     if (hasPhysicalHost() != other.hasPhysicalHost()) return false;
     if (hasPhysicalHost()) {
       if (!getPhysicalHost().equals(other.getPhysicalHost())) return false;
@@ -362,6 +437,10 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (hasEffectiveInstanceMetadata()) {
+      hash = (37 * hash) + EFFECTIVE_INSTANCE_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getEffectiveInstanceMetadata().hashCode();
+    }
     if (hasPhysicalHost()) {
       hash = (37 * hash) + PHYSICAL_HOST_FIELD_NUMBER;
       hash = (53 * hash) + getPhysicalHost().hashCode();
@@ -519,6 +598,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getEffectiveInstanceMetadataFieldBuilder();
         getPhysicalHostTopologyFieldBuilder();
         getSchedulingFieldBuilder();
         getUpcomingMaintenanceFieldBuilder();
@@ -529,6 +609,11 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
     public Builder clear() {
       super.clear();
       bitField0_ = 0;
+      effectiveInstanceMetadata_ = null;
+      if (effectiveInstanceMetadataBuilder_ != null) {
+        effectiveInstanceMetadataBuilder_.dispose();
+        effectiveInstanceMetadataBuilder_ = null;
+      }
       physicalHost_ = "";
       physicalHostTopology_ = null;
       if (physicalHostTopologyBuilder_ != null) {
@@ -583,26 +668,33 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (((from_bitField0_ & 0x00000001) != 0)) {
-        result.physicalHost_ = physicalHost_;
+        result.effectiveInstanceMetadata_ =
+            effectiveInstanceMetadataBuilder_ == null
+                ? effectiveInstanceMetadata_
+                : effectiveInstanceMetadataBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
       if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.physicalHost_ = physicalHost_;
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
         result.physicalHostTopology_ =
             physicalHostTopologyBuilder_ == null
                 ? physicalHostTopology_
                 : physicalHostTopologyBuilder_.build();
-        to_bitField0_ |= 0x00000002;
-      }
-      if (((from_bitField0_ & 0x00000004) != 0)) {
-        result.scheduling_ = schedulingBuilder_ == null ? scheduling_ : schedulingBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.scheduling_ = schedulingBuilder_ == null ? scheduling_ : schedulingBuilder_.build();
+        to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.upcomingMaintenance_ =
             upcomingMaintenanceBuilder_ == null
                 ? upcomingMaintenance_
                 : upcomingMaintenanceBuilder_.build();
-        to_bitField0_ |= 0x00000008;
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -652,9 +744,12 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.compute.v1.ResourceStatus other) {
       if (other == com.google.cloud.compute.v1.ResourceStatus.getDefaultInstance()) return this;
+      if (other.hasEffectiveInstanceMetadata()) {
+        mergeEffectiveInstanceMetadata(other.getEffectiveInstanceMetadata());
+      }
       if (other.hasPhysicalHost()) {
         physicalHost_ = other.physicalHost_;
-        bitField0_ |= 0x00000001;
+        bitField0_ |= 0x00000002;
         onChanged();
       }
       if (other.hasPhysicalHostTopology()) {
@@ -692,30 +787,37 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
             case 0:
               done = true;
               break;
+            case 440416266:
+              {
+                input.readMessage(
+                    getEffectiveInstanceMetadataFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 440416266
             case 1818788738:
               {
                 input.readMessage(
                     getUpcomingMaintenanceFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 1818788738
             case -1201460062:
               {
                 input.readMessage(getSchedulingFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000004;
+                bitField0_ |= 0x00000008;
                 break;
               } // case -1201460062
             case -1168224782:
               {
                 input.readMessage(
                     getPhysicalHostTopologyFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000002;
+                bitField0_ |= 0x00000004;
                 break;
               } // case -1168224782
             case -580001662:
               {
                 physicalHost_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000001;
+                bitField0_ |= 0x00000002;
                 break;
               } // case -580001662
             default:
@@ -737,6 +839,230 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
 
     private int bitField0_;
 
+    private com.google.cloud.compute.v1.ResourceStatusEffectiveInstanceMetadata
+        effectiveInstanceMetadata_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.ResourceStatusEffectiveInstanceMetadata,
+            com.google.cloud.compute.v1.ResourceStatusEffectiveInstanceMetadata.Builder,
+            com.google.cloud.compute.v1.ResourceStatusEffectiveInstanceMetadataOrBuilder>
+        effectiveInstanceMetadataBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Effective metadata is a field that consolidates project, zonal instance settings, and instance-level predefined metadata keys to provide the overridden value for those metadata keys at the instance level.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ResourceStatusEffectiveInstanceMetadata effective_instance_metadata = 55052033;
+     * </code>
+     *
+     * @return Whether the effectiveInstanceMetadata field is set.
+     */
+    public boolean hasEffectiveInstanceMetadata() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Effective metadata is a field that consolidates project, zonal instance settings, and instance-level predefined metadata keys to provide the overridden value for those metadata keys at the instance level.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ResourceStatusEffectiveInstanceMetadata effective_instance_metadata = 55052033;
+     * </code>
+     *
+     * @return The effectiveInstanceMetadata.
+     */
+    public com.google.cloud.compute.v1.ResourceStatusEffectiveInstanceMetadata
+        getEffectiveInstanceMetadata() {
+      if (effectiveInstanceMetadataBuilder_ == null) {
+        return effectiveInstanceMetadata_ == null
+            ? com.google.cloud.compute.v1.ResourceStatusEffectiveInstanceMetadata
+                .getDefaultInstance()
+            : effectiveInstanceMetadata_;
+      } else {
+        return effectiveInstanceMetadataBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Effective metadata is a field that consolidates project, zonal instance settings, and instance-level predefined metadata keys to provide the overridden value for those metadata keys at the instance level.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ResourceStatusEffectiveInstanceMetadata effective_instance_metadata = 55052033;
+     * </code>
+     */
+    public Builder setEffectiveInstanceMetadata(
+        com.google.cloud.compute.v1.ResourceStatusEffectiveInstanceMetadata value) {
+      if (effectiveInstanceMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        effectiveInstanceMetadata_ = value;
+      } else {
+        effectiveInstanceMetadataBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Effective metadata is a field that consolidates project, zonal instance settings, and instance-level predefined metadata keys to provide the overridden value for those metadata keys at the instance level.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ResourceStatusEffectiveInstanceMetadata effective_instance_metadata = 55052033;
+     * </code>
+     */
+    public Builder setEffectiveInstanceMetadata(
+        com.google.cloud.compute.v1.ResourceStatusEffectiveInstanceMetadata.Builder
+            builderForValue) {
+      if (effectiveInstanceMetadataBuilder_ == null) {
+        effectiveInstanceMetadata_ = builderForValue.build();
+      } else {
+        effectiveInstanceMetadataBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Effective metadata is a field that consolidates project, zonal instance settings, and instance-level predefined metadata keys to provide the overridden value for those metadata keys at the instance level.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ResourceStatusEffectiveInstanceMetadata effective_instance_metadata = 55052033;
+     * </code>
+     */
+    public Builder mergeEffectiveInstanceMetadata(
+        com.google.cloud.compute.v1.ResourceStatusEffectiveInstanceMetadata value) {
+      if (effectiveInstanceMetadataBuilder_ == null) {
+        if (((bitField0_ & 0x00000001) != 0)
+            && effectiveInstanceMetadata_ != null
+            && effectiveInstanceMetadata_
+                != com.google.cloud.compute.v1.ResourceStatusEffectiveInstanceMetadata
+                    .getDefaultInstance()) {
+          getEffectiveInstanceMetadataBuilder().mergeFrom(value);
+        } else {
+          effectiveInstanceMetadata_ = value;
+        }
+      } else {
+        effectiveInstanceMetadataBuilder_.mergeFrom(value);
+      }
+      if (effectiveInstanceMetadata_ != null) {
+        bitField0_ |= 0x00000001;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Effective metadata is a field that consolidates project, zonal instance settings, and instance-level predefined metadata keys to provide the overridden value for those metadata keys at the instance level.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ResourceStatusEffectiveInstanceMetadata effective_instance_metadata = 55052033;
+     * </code>
+     */
+    public Builder clearEffectiveInstanceMetadata() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      effectiveInstanceMetadata_ = null;
+      if (effectiveInstanceMetadataBuilder_ != null) {
+        effectiveInstanceMetadataBuilder_.dispose();
+        effectiveInstanceMetadataBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Effective metadata is a field that consolidates project, zonal instance settings, and instance-level predefined metadata keys to provide the overridden value for those metadata keys at the instance level.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ResourceStatusEffectiveInstanceMetadata effective_instance_metadata = 55052033;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.ResourceStatusEffectiveInstanceMetadata.Builder
+        getEffectiveInstanceMetadataBuilder() {
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return getEffectiveInstanceMetadataFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Effective metadata is a field that consolidates project, zonal instance settings, and instance-level predefined metadata keys to provide the overridden value for those metadata keys at the instance level.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ResourceStatusEffectiveInstanceMetadata effective_instance_metadata = 55052033;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.ResourceStatusEffectiveInstanceMetadataOrBuilder
+        getEffectiveInstanceMetadataOrBuilder() {
+      if (effectiveInstanceMetadataBuilder_ != null) {
+        return effectiveInstanceMetadataBuilder_.getMessageOrBuilder();
+      } else {
+        return effectiveInstanceMetadata_ == null
+            ? com.google.cloud.compute.v1.ResourceStatusEffectiveInstanceMetadata
+                .getDefaultInstance()
+            : effectiveInstanceMetadata_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] Effective metadata is a field that consolidates project, zonal instance settings, and instance-level predefined metadata keys to provide the overridden value for those metadata keys at the instance level.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.ResourceStatusEffectiveInstanceMetadata effective_instance_metadata = 55052033;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.ResourceStatusEffectiveInstanceMetadata,
+            com.google.cloud.compute.v1.ResourceStatusEffectiveInstanceMetadata.Builder,
+            com.google.cloud.compute.v1.ResourceStatusEffectiveInstanceMetadataOrBuilder>
+        getEffectiveInstanceMetadataFieldBuilder() {
+      if (effectiveInstanceMetadataBuilder_ == null) {
+        effectiveInstanceMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.ResourceStatusEffectiveInstanceMetadata,
+                com.google.cloud.compute.v1.ResourceStatusEffectiveInstanceMetadata.Builder,
+                com.google.cloud.compute.v1.ResourceStatusEffectiveInstanceMetadataOrBuilder>(
+                getEffectiveInstanceMetadata(), getParentForChildren(), isClean());
+        effectiveInstanceMetadata_ = null;
+      }
+      return effectiveInstanceMetadataBuilder_;
+    }
+
     private java.lang.Object physicalHost_ = "";
 
     /**
@@ -751,7 +1077,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the physicalHost field is set.
      */
     public boolean hasPhysicalHost() {
-      return ((bitField0_ & 0x00000001) != 0);
+      return ((bitField0_ & 0x00000002) != 0);
     }
 
     /**
@@ -817,7 +1143,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
         throw new NullPointerException();
       }
       physicalHost_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -835,7 +1161,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearPhysicalHost() {
       physicalHost_ = getDefaultInstance().getPhysicalHost();
-      bitField0_ = (bitField0_ & ~0x00000001);
+      bitField0_ = (bitField0_ & ~0x00000002);
       onChanged();
       return this;
     }
@@ -858,7 +1184,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       }
       checkByteStringIsUtf8(value);
       physicalHost_ = value;
-      bitField0_ |= 0x00000001;
+      bitField0_ |= 0x00000002;
       onChanged();
       return this;
     }
@@ -884,7 +1210,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the physicalHostTopology field is set.
      */
     public boolean hasPhysicalHostTopology() {
-      return ((bitField0_ & 0x00000002) != 0);
+      return ((bitField0_ & 0x00000004) != 0);
     }
 
     /**
@@ -932,7 +1258,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       } else {
         physicalHostTopologyBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -955,7 +1281,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       } else {
         physicalHostTopologyBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return this;
     }
@@ -974,7 +1300,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
     public Builder mergePhysicalHostTopology(
         com.google.cloud.compute.v1.ResourceStatusPhysicalHostTopology value) {
       if (physicalHostTopologyBuilder_ == null) {
-        if (((bitField0_ & 0x00000002) != 0)
+        if (((bitField0_ & 0x00000004) != 0)
             && physicalHostTopology_ != null
             && physicalHostTopology_
                 != com.google.cloud.compute.v1.ResourceStatusPhysicalHostTopology
@@ -987,7 +1313,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
         physicalHostTopologyBuilder_.mergeFrom(value);
       }
       if (physicalHostTopology_ != null) {
-        bitField0_ |= 0x00000002;
+        bitField0_ |= 0x00000004;
         onChanged();
       }
       return this;
@@ -1005,7 +1331,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearPhysicalHostTopology() {
-      bitField0_ = (bitField0_ & ~0x00000002);
+      bitField0_ = (bitField0_ & ~0x00000004);
       physicalHostTopology_ = null;
       if (physicalHostTopologyBuilder_ != null) {
         physicalHostTopologyBuilder_.dispose();
@@ -1028,7 +1354,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      */
     public com.google.cloud.compute.v1.ResourceStatusPhysicalHostTopology.Builder
         getPhysicalHostTopologyBuilder() {
-      bitField0_ |= 0x00000002;
+      bitField0_ |= 0x00000004;
       onChanged();
       return getPhysicalHostTopologyFieldBuilder().getBuilder();
     }
@@ -1097,7 +1423,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the scheduling field is set.
      */
     public boolean hasScheduling() {
-      return ((bitField0_ & 0x00000004) != 0);
+      return ((bitField0_ & 0x00000008) != 0);
     }
 
     /**
@@ -1129,7 +1455,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       } else {
         schedulingBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1145,7 +1471,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       } else {
         schedulingBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return this;
     }
@@ -1156,7 +1482,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeScheduling(com.google.cloud.compute.v1.ResourceStatusScheduling value) {
       if (schedulingBuilder_ == null) {
-        if (((bitField0_ & 0x00000004) != 0)
+        if (((bitField0_ & 0x00000008) != 0)
             && scheduling_ != null
             && scheduling_
                 != com.google.cloud.compute.v1.ResourceStatusScheduling.getDefaultInstance()) {
@@ -1168,7 +1494,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
         schedulingBuilder_.mergeFrom(value);
       }
       if (scheduling_ != null) {
-        bitField0_ |= 0x00000004;
+        bitField0_ |= 0x00000008;
         onChanged();
       }
       return this;
@@ -1179,7 +1505,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearScheduling() {
-      bitField0_ = (bitField0_ & ~0x00000004);
+      bitField0_ = (bitField0_ & ~0x00000008);
       scheduling_ = null;
       if (schedulingBuilder_ != null) {
         schedulingBuilder_.dispose();
@@ -1194,7 +1520,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.compute.v1.ResourceStatusScheduling.Builder getSchedulingBuilder() {
-      bitField0_ |= 0x00000004;
+      bitField0_ |= 0x00000008;
       onChanged();
       return getSchedulingFieldBuilder().getBuilder();
     }
@@ -1248,7 +1574,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      * @return Whether the upcomingMaintenance field is set.
      */
     public boolean hasUpcomingMaintenance() {
-      return ((bitField0_ & 0x00000008) != 0);
+      return ((bitField0_ & 0x00000010) != 0);
     }
 
     /**
@@ -1280,7 +1606,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       } else {
         upcomingMaintenanceBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1296,7 +1622,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
       } else {
         upcomingMaintenanceBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -1307,7 +1633,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder mergeUpcomingMaintenance(com.google.cloud.compute.v1.UpcomingMaintenance value) {
       if (upcomingMaintenanceBuilder_ == null) {
-        if (((bitField0_ & 0x00000008) != 0)
+        if (((bitField0_ & 0x00000010) != 0)
             && upcomingMaintenance_ != null
             && upcomingMaintenance_
                 != com.google.cloud.compute.v1.UpcomingMaintenance.getDefaultInstance()) {
@@ -1319,7 +1645,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
         upcomingMaintenanceBuilder_.mergeFrom(value);
       }
       if (upcomingMaintenance_ != null) {
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       return this;
@@ -1330,7 +1656,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public Builder clearUpcomingMaintenance() {
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       upcomingMaintenance_ = null;
       if (upcomingMaintenanceBuilder_ != null) {
         upcomingMaintenanceBuilder_.dispose();
@@ -1345,7 +1671,7 @@ public final class ResourceStatus extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     public com.google.cloud.compute.v1.UpcomingMaintenance.Builder getUpcomingMaintenanceBuilder() {
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return getUpcomingMaintenanceFieldBuilder().getBuilder();
     }

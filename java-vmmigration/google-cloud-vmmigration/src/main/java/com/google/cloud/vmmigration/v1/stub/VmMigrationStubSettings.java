@@ -16,10 +16,14 @@
 
 package com.google.cloud.vmmigration.v1.stub;
 
+import static com.google.cloud.vmmigration.v1.VmMigrationClient.FetchStorageInventoryPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListCloneJobsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListCutoverJobsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListDatacenterConnectorsPagedResponse;
+import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListDiskMigrationJobsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListGroupsPagedResponse;
+import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListImageImportJobsPagedResponse;
+import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListImageImportsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListLocationsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListMigratingVmsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListReplicationCyclesPagedResponse;
@@ -67,11 +71,17 @@ import com.google.cloud.vmmigration.v1.CancelCloneJobRequest;
 import com.google.cloud.vmmigration.v1.CancelCloneJobResponse;
 import com.google.cloud.vmmigration.v1.CancelCutoverJobRequest;
 import com.google.cloud.vmmigration.v1.CancelCutoverJobResponse;
+import com.google.cloud.vmmigration.v1.CancelDiskMigrationJobRequest;
+import com.google.cloud.vmmigration.v1.CancelDiskMigrationJobResponse;
+import com.google.cloud.vmmigration.v1.CancelImageImportJobRequest;
+import com.google.cloud.vmmigration.v1.CancelImageImportJobResponse;
 import com.google.cloud.vmmigration.v1.CloneJob;
 import com.google.cloud.vmmigration.v1.CreateCloneJobRequest;
 import com.google.cloud.vmmigration.v1.CreateCutoverJobRequest;
 import com.google.cloud.vmmigration.v1.CreateDatacenterConnectorRequest;
+import com.google.cloud.vmmigration.v1.CreateDiskMigrationJobRequest;
 import com.google.cloud.vmmigration.v1.CreateGroupRequest;
+import com.google.cloud.vmmigration.v1.CreateImageImportRequest;
 import com.google.cloud.vmmigration.v1.CreateMigratingVmRequest;
 import com.google.cloud.vmmigration.v1.CreateSourceRequest;
 import com.google.cloud.vmmigration.v1.CreateTargetProjectRequest;
@@ -79,33 +89,51 @@ import com.google.cloud.vmmigration.v1.CreateUtilizationReportRequest;
 import com.google.cloud.vmmigration.v1.CutoverJob;
 import com.google.cloud.vmmigration.v1.DatacenterConnector;
 import com.google.cloud.vmmigration.v1.DeleteDatacenterConnectorRequest;
+import com.google.cloud.vmmigration.v1.DeleteDiskMigrationJobRequest;
 import com.google.cloud.vmmigration.v1.DeleteGroupRequest;
+import com.google.cloud.vmmigration.v1.DeleteImageImportRequest;
 import com.google.cloud.vmmigration.v1.DeleteMigratingVmRequest;
 import com.google.cloud.vmmigration.v1.DeleteSourceRequest;
 import com.google.cloud.vmmigration.v1.DeleteTargetProjectRequest;
 import com.google.cloud.vmmigration.v1.DeleteUtilizationReportRequest;
+import com.google.cloud.vmmigration.v1.DiskMigrationJob;
+import com.google.cloud.vmmigration.v1.ExtendMigrationRequest;
+import com.google.cloud.vmmigration.v1.ExtendMigrationResponse;
 import com.google.cloud.vmmigration.v1.FetchInventoryRequest;
 import com.google.cloud.vmmigration.v1.FetchInventoryResponse;
+import com.google.cloud.vmmigration.v1.FetchStorageInventoryRequest;
+import com.google.cloud.vmmigration.v1.FetchStorageInventoryResponse;
 import com.google.cloud.vmmigration.v1.FinalizeMigrationRequest;
 import com.google.cloud.vmmigration.v1.FinalizeMigrationResponse;
 import com.google.cloud.vmmigration.v1.GetCloneJobRequest;
 import com.google.cloud.vmmigration.v1.GetCutoverJobRequest;
 import com.google.cloud.vmmigration.v1.GetDatacenterConnectorRequest;
+import com.google.cloud.vmmigration.v1.GetDiskMigrationJobRequest;
 import com.google.cloud.vmmigration.v1.GetGroupRequest;
+import com.google.cloud.vmmigration.v1.GetImageImportJobRequest;
+import com.google.cloud.vmmigration.v1.GetImageImportRequest;
 import com.google.cloud.vmmigration.v1.GetMigratingVmRequest;
 import com.google.cloud.vmmigration.v1.GetReplicationCycleRequest;
 import com.google.cloud.vmmigration.v1.GetSourceRequest;
 import com.google.cloud.vmmigration.v1.GetTargetProjectRequest;
 import com.google.cloud.vmmigration.v1.GetUtilizationReportRequest;
 import com.google.cloud.vmmigration.v1.Group;
+import com.google.cloud.vmmigration.v1.ImageImport;
+import com.google.cloud.vmmigration.v1.ImageImportJob;
 import com.google.cloud.vmmigration.v1.ListCloneJobsRequest;
 import com.google.cloud.vmmigration.v1.ListCloneJobsResponse;
 import com.google.cloud.vmmigration.v1.ListCutoverJobsRequest;
 import com.google.cloud.vmmigration.v1.ListCutoverJobsResponse;
 import com.google.cloud.vmmigration.v1.ListDatacenterConnectorsRequest;
 import com.google.cloud.vmmigration.v1.ListDatacenterConnectorsResponse;
+import com.google.cloud.vmmigration.v1.ListDiskMigrationJobsRequest;
+import com.google.cloud.vmmigration.v1.ListDiskMigrationJobsResponse;
 import com.google.cloud.vmmigration.v1.ListGroupsRequest;
 import com.google.cloud.vmmigration.v1.ListGroupsResponse;
+import com.google.cloud.vmmigration.v1.ListImageImportJobsRequest;
+import com.google.cloud.vmmigration.v1.ListImageImportJobsResponse;
+import com.google.cloud.vmmigration.v1.ListImageImportsRequest;
+import com.google.cloud.vmmigration.v1.ListImageImportsResponse;
 import com.google.cloud.vmmigration.v1.ListMigratingVmsRequest;
 import com.google.cloud.vmmigration.v1.ListMigratingVmsResponse;
 import com.google.cloud.vmmigration.v1.ListReplicationCyclesRequest;
@@ -125,10 +153,14 @@ import com.google.cloud.vmmigration.v1.RemoveGroupMigrationResponse;
 import com.google.cloud.vmmigration.v1.ReplicationCycle;
 import com.google.cloud.vmmigration.v1.ResumeMigrationRequest;
 import com.google.cloud.vmmigration.v1.ResumeMigrationResponse;
+import com.google.cloud.vmmigration.v1.RunDiskMigrationJobRequest;
+import com.google.cloud.vmmigration.v1.RunDiskMigrationJobResponse;
 import com.google.cloud.vmmigration.v1.Source;
+import com.google.cloud.vmmigration.v1.SourceStorageResource;
 import com.google.cloud.vmmigration.v1.StartMigrationRequest;
 import com.google.cloud.vmmigration.v1.StartMigrationResponse;
 import com.google.cloud.vmmigration.v1.TargetProject;
+import com.google.cloud.vmmigration.v1.UpdateDiskMigrationJobRequest;
 import com.google.cloud.vmmigration.v1.UpdateGroupRequest;
 import com.google.cloud.vmmigration.v1.UpdateMigratingVmRequest;
 import com.google.cloud.vmmigration.v1.UpdateSourceRequest;
@@ -244,6 +276,11 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
   private final UnaryCallSettings<FetchInventoryRequest, FetchInventoryResponse>
       fetchInventorySettings;
   private final PagedCallSettings<
+          FetchStorageInventoryRequest,
+          FetchStorageInventoryResponse,
+          FetchStorageInventoryPagedResponse>
+      fetchStorageInventorySettings;
+  private final PagedCallSettings<
           ListUtilizationReportsRequest,
           ListUtilizationReportsResponse,
           ListUtilizationReportsPagedResponse>
@@ -308,6 +345,10 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
   private final OperationCallSettings<
           FinalizeMigrationRequest, FinalizeMigrationResponse, OperationMetadata>
       finalizeMigrationOperationSettings;
+  private final UnaryCallSettings<ExtendMigrationRequest, Operation> extendMigrationSettings;
+  private final OperationCallSettings<
+          ExtendMigrationRequest, ExtendMigrationResponse, OperationMetadata>
+      extendMigrationOperationSettings;
   private final UnaryCallSettings<CreateCloneJobRequest, Operation> createCloneJobSettings;
   private final OperationCallSettings<CreateCloneJobRequest, CloneJob, OperationMetadata>
       createCloneJobOperationSettings;
@@ -375,6 +416,57 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
   private final UnaryCallSettings<GetReplicationCycleRequest, ReplicationCycle>
       getReplicationCycleSettings;
   private final PagedCallSettings<
+          ListImageImportsRequest, ListImageImportsResponse, ListImageImportsPagedResponse>
+      listImageImportsSettings;
+  private final UnaryCallSettings<GetImageImportRequest, ImageImport> getImageImportSettings;
+  private final UnaryCallSettings<CreateImageImportRequest, Operation> createImageImportSettings;
+  private final OperationCallSettings<CreateImageImportRequest, ImageImport, OperationMetadata>
+      createImageImportOperationSettings;
+  private final UnaryCallSettings<DeleteImageImportRequest, Operation> deleteImageImportSettings;
+  private final OperationCallSettings<DeleteImageImportRequest, Empty, OperationMetadata>
+      deleteImageImportOperationSettings;
+  private final PagedCallSettings<
+          ListImageImportJobsRequest, ListImageImportJobsResponse, ListImageImportJobsPagedResponse>
+      listImageImportJobsSettings;
+  private final UnaryCallSettings<GetImageImportJobRequest, ImageImportJob>
+      getImageImportJobSettings;
+  private final UnaryCallSettings<CancelImageImportJobRequest, Operation>
+      cancelImageImportJobSettings;
+  private final OperationCallSettings<
+          CancelImageImportJobRequest, CancelImageImportJobResponse, OperationMetadata>
+      cancelImageImportJobOperationSettings;
+  private final UnaryCallSettings<CreateDiskMigrationJobRequest, Operation>
+      createDiskMigrationJobSettings;
+  private final OperationCallSettings<
+          CreateDiskMigrationJobRequest, DiskMigrationJob, OperationMetadata>
+      createDiskMigrationJobOperationSettings;
+  private final PagedCallSettings<
+          ListDiskMigrationJobsRequest,
+          ListDiskMigrationJobsResponse,
+          ListDiskMigrationJobsPagedResponse>
+      listDiskMigrationJobsSettings;
+  private final UnaryCallSettings<GetDiskMigrationJobRequest, DiskMigrationJob>
+      getDiskMigrationJobSettings;
+  private final UnaryCallSettings<UpdateDiskMigrationJobRequest, Operation>
+      updateDiskMigrationJobSettings;
+  private final OperationCallSettings<
+          UpdateDiskMigrationJobRequest, DiskMigrationJob, OperationMetadata>
+      updateDiskMigrationJobOperationSettings;
+  private final UnaryCallSettings<DeleteDiskMigrationJobRequest, Operation>
+      deleteDiskMigrationJobSettings;
+  private final OperationCallSettings<DeleteDiskMigrationJobRequest, Empty, OperationMetadata>
+      deleteDiskMigrationJobOperationSettings;
+  private final UnaryCallSettings<RunDiskMigrationJobRequest, Operation>
+      runDiskMigrationJobSettings;
+  private final OperationCallSettings<
+          RunDiskMigrationJobRequest, RunDiskMigrationJobResponse, OperationMetadata>
+      runDiskMigrationJobOperationSettings;
+  private final UnaryCallSettings<CancelDiskMigrationJobRequest, Operation>
+      cancelDiskMigrationJobSettings;
+  private final OperationCallSettings<
+          CancelDiskMigrationJobRequest, CancelDiskMigrationJobResponse, OperationMetadata>
+      cancelDiskMigrationJobOperationSettings;
+  private final PagedCallSettings<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings;
   private final UnaryCallSettings<GetLocationRequest, Location> getLocationSettings;
@@ -410,6 +502,47 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
             @Override
             public Iterable<Source> extractResources(ListSourcesResponse payload) {
               return payload.getSourcesList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          FetchStorageInventoryRequest, FetchStorageInventoryResponse, SourceStorageResource>
+      FETCH_STORAGE_INVENTORY_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              FetchStorageInventoryRequest,
+              FetchStorageInventoryResponse,
+              SourceStorageResource>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public FetchStorageInventoryRequest injectToken(
+                FetchStorageInventoryRequest payload, String token) {
+              return FetchStorageInventoryRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public FetchStorageInventoryRequest injectPageSize(
+                FetchStorageInventoryRequest payload, int pageSize) {
+              return FetchStorageInventoryRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(FetchStorageInventoryRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(FetchStorageInventoryResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<SourceStorageResource> extractResources(
+                FetchStorageInventoryResponse payload) {
+              return payload.getResourcesList();
             }
           };
 
@@ -719,6 +852,121 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
             }
           };
 
+  private static final PagedListDescriptor<
+          ListImageImportsRequest, ListImageImportsResponse, ImageImport>
+      LIST_IMAGE_IMPORTS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListImageImportsRequest, ListImageImportsResponse, ImageImport>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListImageImportsRequest injectToken(
+                ListImageImportsRequest payload, String token) {
+              return ListImageImportsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListImageImportsRequest injectPageSize(
+                ListImageImportsRequest payload, int pageSize) {
+              return ListImageImportsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListImageImportsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListImageImportsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ImageImport> extractResources(ListImageImportsResponse payload) {
+              return payload.getImageImportsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListImageImportJobsRequest, ListImageImportJobsResponse, ImageImportJob>
+      LIST_IMAGE_IMPORT_JOBS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListImageImportJobsRequest, ListImageImportJobsResponse, ImageImportJob>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListImageImportJobsRequest injectToken(
+                ListImageImportJobsRequest payload, String token) {
+              return ListImageImportJobsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListImageImportJobsRequest injectPageSize(
+                ListImageImportJobsRequest payload, int pageSize) {
+              return ListImageImportJobsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListImageImportJobsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListImageImportJobsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<ImageImportJob> extractResources(ListImageImportJobsResponse payload) {
+              return payload.getImageImportJobsList();
+            }
+          };
+
+  private static final PagedListDescriptor<
+          ListDiskMigrationJobsRequest, ListDiskMigrationJobsResponse, DiskMigrationJob>
+      LIST_DISK_MIGRATION_JOBS_PAGE_STR_DESC =
+          new PagedListDescriptor<
+              ListDiskMigrationJobsRequest, ListDiskMigrationJobsResponse, DiskMigrationJob>() {
+            @Override
+            public String emptyToken() {
+              return "";
+            }
+
+            @Override
+            public ListDiskMigrationJobsRequest injectToken(
+                ListDiskMigrationJobsRequest payload, String token) {
+              return ListDiskMigrationJobsRequest.newBuilder(payload).setPageToken(token).build();
+            }
+
+            @Override
+            public ListDiskMigrationJobsRequest injectPageSize(
+                ListDiskMigrationJobsRequest payload, int pageSize) {
+              return ListDiskMigrationJobsRequest.newBuilder(payload).setPageSize(pageSize).build();
+            }
+
+            @Override
+            public Integer extractPageSize(ListDiskMigrationJobsRequest payload) {
+              return payload.getPageSize();
+            }
+
+            @Override
+            public String extractNextToken(ListDiskMigrationJobsResponse payload) {
+              return payload.getNextPageToken();
+            }
+
+            @Override
+            public Iterable<DiskMigrationJob> extractResources(
+                ListDiskMigrationJobsResponse payload) {
+              return payload.getDiskMigrationJobsList();
+            }
+          };
+
   private static final PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>
       LIST_LOCATIONS_PAGE_STR_DESC =
           new PagedListDescriptor<ListLocationsRequest, ListLocationsResponse, Location>() {
@@ -767,6 +1015,32 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
               PageContext<ListSourcesRequest, ListSourcesResponse, Source> pageContext =
                   PageContext.create(callable, LIST_SOURCES_PAGE_STR_DESC, request, context);
               return ListSourcesPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          FetchStorageInventoryRequest,
+          FetchStorageInventoryResponse,
+          FetchStorageInventoryPagedResponse>
+      FETCH_STORAGE_INVENTORY_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              FetchStorageInventoryRequest,
+              FetchStorageInventoryResponse,
+              FetchStorageInventoryPagedResponse>() {
+            @Override
+            public ApiFuture<FetchStorageInventoryPagedResponse> getFuturePagedResponse(
+                UnaryCallable<FetchStorageInventoryRequest, FetchStorageInventoryResponse> callable,
+                FetchStorageInventoryRequest request,
+                ApiCallContext context,
+                ApiFuture<FetchStorageInventoryResponse> futureResponse) {
+              PageContext<
+                      FetchStorageInventoryRequest,
+                      FetchStorageInventoryResponse,
+                      SourceStorageResource>
+                  pageContext =
+                      PageContext.create(
+                          callable, FETCH_STORAGE_INVENTORY_PAGE_STR_DESC, request, context);
+              return FetchStorageInventoryPagedResponse.createAsync(pageContext, futureResponse);
             }
           };
 
@@ -940,6 +1214,70 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
           };
 
   private static final PagedListResponseFactory<
+          ListImageImportsRequest, ListImageImportsResponse, ListImageImportsPagedResponse>
+      LIST_IMAGE_IMPORTS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListImageImportsRequest, ListImageImportsResponse, ListImageImportsPagedResponse>() {
+            @Override
+            public ApiFuture<ListImageImportsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListImageImportsRequest, ListImageImportsResponse> callable,
+                ListImageImportsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListImageImportsResponse> futureResponse) {
+              PageContext<ListImageImportsRequest, ListImageImportsResponse, ImageImport>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_IMAGE_IMPORTS_PAGE_STR_DESC, request, context);
+              return ListImageImportsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListImageImportJobsRequest, ListImageImportJobsResponse, ListImageImportJobsPagedResponse>
+      LIST_IMAGE_IMPORT_JOBS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListImageImportJobsRequest,
+              ListImageImportJobsResponse,
+              ListImageImportJobsPagedResponse>() {
+            @Override
+            public ApiFuture<ListImageImportJobsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListImageImportJobsRequest, ListImageImportJobsResponse> callable,
+                ListImageImportJobsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListImageImportJobsResponse> futureResponse) {
+              PageContext<ListImageImportJobsRequest, ListImageImportJobsResponse, ImageImportJob>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_IMAGE_IMPORT_JOBS_PAGE_STR_DESC, request, context);
+              return ListImageImportJobsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
+          ListDiskMigrationJobsRequest,
+          ListDiskMigrationJobsResponse,
+          ListDiskMigrationJobsPagedResponse>
+      LIST_DISK_MIGRATION_JOBS_PAGE_STR_FACT =
+          new PagedListResponseFactory<
+              ListDiskMigrationJobsRequest,
+              ListDiskMigrationJobsResponse,
+              ListDiskMigrationJobsPagedResponse>() {
+            @Override
+            public ApiFuture<ListDiskMigrationJobsPagedResponse> getFuturePagedResponse(
+                UnaryCallable<ListDiskMigrationJobsRequest, ListDiskMigrationJobsResponse> callable,
+                ListDiskMigrationJobsRequest request,
+                ApiCallContext context,
+                ApiFuture<ListDiskMigrationJobsResponse> futureResponse) {
+              PageContext<
+                      ListDiskMigrationJobsRequest, ListDiskMigrationJobsResponse, DiskMigrationJob>
+                  pageContext =
+                      PageContext.create(
+                          callable, LIST_DISK_MIGRATION_JOBS_PAGE_STR_DESC, request, context);
+              return ListDiskMigrationJobsPagedResponse.createAsync(pageContext, futureResponse);
+            }
+          };
+
+  private static final PagedListResponseFactory<
           ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       LIST_LOCATIONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
@@ -1003,6 +1341,15 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
   /** Returns the object with the settings used for calls to fetchInventory. */
   public UnaryCallSettings<FetchInventoryRequest, FetchInventoryResponse> fetchInventorySettings() {
     return fetchInventorySettings;
+  }
+
+  /** Returns the object with the settings used for calls to fetchStorageInventory. */
+  public PagedCallSettings<
+          FetchStorageInventoryRequest,
+          FetchStorageInventoryResponse,
+          FetchStorageInventoryPagedResponse>
+      fetchStorageInventorySettings() {
+    return fetchStorageInventorySettings;
   }
 
   /** Returns the object with the settings used for calls to listUtilizationReports. */
@@ -1183,6 +1530,17 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
           FinalizeMigrationRequest, FinalizeMigrationResponse, OperationMetadata>
       finalizeMigrationOperationSettings() {
     return finalizeMigrationOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to extendMigration. */
+  public UnaryCallSettings<ExtendMigrationRequest, Operation> extendMigrationSettings() {
+    return extendMigrationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to extendMigration. */
+  public OperationCallSettings<ExtendMigrationRequest, ExtendMigrationResponse, OperationMetadata>
+      extendMigrationOperationSettings() {
+    return extendMigrationOperationSettings;
   }
 
   /** Returns the object with the settings used for calls to createCloneJob. */
@@ -1380,6 +1738,140 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     return getReplicationCycleSettings;
   }
 
+  /** Returns the object with the settings used for calls to listImageImports. */
+  public PagedCallSettings<
+          ListImageImportsRequest, ListImageImportsResponse, ListImageImportsPagedResponse>
+      listImageImportsSettings() {
+    return listImageImportsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getImageImport. */
+  public UnaryCallSettings<GetImageImportRequest, ImageImport> getImageImportSettings() {
+    return getImageImportSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createImageImport. */
+  public UnaryCallSettings<CreateImageImportRequest, Operation> createImageImportSettings() {
+    return createImageImportSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createImageImport. */
+  public OperationCallSettings<CreateImageImportRequest, ImageImport, OperationMetadata>
+      createImageImportOperationSettings() {
+    return createImageImportOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteImageImport. */
+  public UnaryCallSettings<DeleteImageImportRequest, Operation> deleteImageImportSettings() {
+    return deleteImageImportSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteImageImport. */
+  public OperationCallSettings<DeleteImageImportRequest, Empty, OperationMetadata>
+      deleteImageImportOperationSettings() {
+    return deleteImageImportOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listImageImportJobs. */
+  public PagedCallSettings<
+          ListImageImportJobsRequest, ListImageImportJobsResponse, ListImageImportJobsPagedResponse>
+      listImageImportJobsSettings() {
+    return listImageImportJobsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getImageImportJob. */
+  public UnaryCallSettings<GetImageImportJobRequest, ImageImportJob> getImageImportJobSettings() {
+    return getImageImportJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to cancelImageImportJob. */
+  public UnaryCallSettings<CancelImageImportJobRequest, Operation> cancelImageImportJobSettings() {
+    return cancelImageImportJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to cancelImageImportJob. */
+  public OperationCallSettings<
+          CancelImageImportJobRequest, CancelImageImportJobResponse, OperationMetadata>
+      cancelImageImportJobOperationSettings() {
+    return cancelImageImportJobOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createDiskMigrationJob. */
+  public UnaryCallSettings<CreateDiskMigrationJobRequest, Operation>
+      createDiskMigrationJobSettings() {
+    return createDiskMigrationJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to createDiskMigrationJob. */
+  public OperationCallSettings<CreateDiskMigrationJobRequest, DiskMigrationJob, OperationMetadata>
+      createDiskMigrationJobOperationSettings() {
+    return createDiskMigrationJobOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to listDiskMigrationJobs. */
+  public PagedCallSettings<
+          ListDiskMigrationJobsRequest,
+          ListDiskMigrationJobsResponse,
+          ListDiskMigrationJobsPagedResponse>
+      listDiskMigrationJobsSettings() {
+    return listDiskMigrationJobsSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getDiskMigrationJob. */
+  public UnaryCallSettings<GetDiskMigrationJobRequest, DiskMigrationJob>
+      getDiskMigrationJobSettings() {
+    return getDiskMigrationJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateDiskMigrationJob. */
+  public UnaryCallSettings<UpdateDiskMigrationJobRequest, Operation>
+      updateDiskMigrationJobSettings() {
+    return updateDiskMigrationJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to updateDiskMigrationJob. */
+  public OperationCallSettings<UpdateDiskMigrationJobRequest, DiskMigrationJob, OperationMetadata>
+      updateDiskMigrationJobOperationSettings() {
+    return updateDiskMigrationJobOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteDiskMigrationJob. */
+  public UnaryCallSettings<DeleteDiskMigrationJobRequest, Operation>
+      deleteDiskMigrationJobSettings() {
+    return deleteDiskMigrationJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to deleteDiskMigrationJob. */
+  public OperationCallSettings<DeleteDiskMigrationJobRequest, Empty, OperationMetadata>
+      deleteDiskMigrationJobOperationSettings() {
+    return deleteDiskMigrationJobOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to runDiskMigrationJob. */
+  public UnaryCallSettings<RunDiskMigrationJobRequest, Operation> runDiskMigrationJobSettings() {
+    return runDiskMigrationJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to runDiskMigrationJob. */
+  public OperationCallSettings<
+          RunDiskMigrationJobRequest, RunDiskMigrationJobResponse, OperationMetadata>
+      runDiskMigrationJobOperationSettings() {
+    return runDiskMigrationJobOperationSettings;
+  }
+
+  /** Returns the object with the settings used for calls to cancelDiskMigrationJob. */
+  public UnaryCallSettings<CancelDiskMigrationJobRequest, Operation>
+      cancelDiskMigrationJobSettings() {
+    return cancelDiskMigrationJobSettings;
+  }
+
+  /** Returns the object with the settings used for calls to cancelDiskMigrationJob. */
+  public OperationCallSettings<
+          CancelDiskMigrationJobRequest, CancelDiskMigrationJobResponse, OperationMetadata>
+      cancelDiskMigrationJobOperationSettings() {
+    return cancelDiskMigrationJobOperationSettings;
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -1511,6 +2003,7 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     deleteSourceSettings = settingsBuilder.deleteSourceSettings().build();
     deleteSourceOperationSettings = settingsBuilder.deleteSourceOperationSettings().build();
     fetchInventorySettings = settingsBuilder.fetchInventorySettings().build();
+    fetchStorageInventorySettings = settingsBuilder.fetchStorageInventorySettings().build();
     listUtilizationReportsSettings = settingsBuilder.listUtilizationReportsSettings().build();
     getUtilizationReportSettings = settingsBuilder.getUtilizationReportSettings().build();
     createUtilizationReportSettings = settingsBuilder.createUtilizationReportSettings().build();
@@ -1549,6 +2042,8 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     finalizeMigrationSettings = settingsBuilder.finalizeMigrationSettings().build();
     finalizeMigrationOperationSettings =
         settingsBuilder.finalizeMigrationOperationSettings().build();
+    extendMigrationSettings = settingsBuilder.extendMigrationSettings().build();
+    extendMigrationOperationSettings = settingsBuilder.extendMigrationOperationSettings().build();
     createCloneJobSettings = settingsBuilder.createCloneJobSettings().build();
     createCloneJobOperationSettings = settingsBuilder.createCloneJobOperationSettings().build();
     cancelCloneJobSettings = settingsBuilder.cancelCloneJobSettings().build();
@@ -1588,6 +2083,36 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
         settingsBuilder.deleteTargetProjectOperationSettings().build();
     listReplicationCyclesSettings = settingsBuilder.listReplicationCyclesSettings().build();
     getReplicationCycleSettings = settingsBuilder.getReplicationCycleSettings().build();
+    listImageImportsSettings = settingsBuilder.listImageImportsSettings().build();
+    getImageImportSettings = settingsBuilder.getImageImportSettings().build();
+    createImageImportSettings = settingsBuilder.createImageImportSettings().build();
+    createImageImportOperationSettings =
+        settingsBuilder.createImageImportOperationSettings().build();
+    deleteImageImportSettings = settingsBuilder.deleteImageImportSettings().build();
+    deleteImageImportOperationSettings =
+        settingsBuilder.deleteImageImportOperationSettings().build();
+    listImageImportJobsSettings = settingsBuilder.listImageImportJobsSettings().build();
+    getImageImportJobSettings = settingsBuilder.getImageImportJobSettings().build();
+    cancelImageImportJobSettings = settingsBuilder.cancelImageImportJobSettings().build();
+    cancelImageImportJobOperationSettings =
+        settingsBuilder.cancelImageImportJobOperationSettings().build();
+    createDiskMigrationJobSettings = settingsBuilder.createDiskMigrationJobSettings().build();
+    createDiskMigrationJobOperationSettings =
+        settingsBuilder.createDiskMigrationJobOperationSettings().build();
+    listDiskMigrationJobsSettings = settingsBuilder.listDiskMigrationJobsSettings().build();
+    getDiskMigrationJobSettings = settingsBuilder.getDiskMigrationJobSettings().build();
+    updateDiskMigrationJobSettings = settingsBuilder.updateDiskMigrationJobSettings().build();
+    updateDiskMigrationJobOperationSettings =
+        settingsBuilder.updateDiskMigrationJobOperationSettings().build();
+    deleteDiskMigrationJobSettings = settingsBuilder.deleteDiskMigrationJobSettings().build();
+    deleteDiskMigrationJobOperationSettings =
+        settingsBuilder.deleteDiskMigrationJobOperationSettings().build();
+    runDiskMigrationJobSettings = settingsBuilder.runDiskMigrationJobSettings().build();
+    runDiskMigrationJobOperationSettings =
+        settingsBuilder.runDiskMigrationJobOperationSettings().build();
+    cancelDiskMigrationJobSettings = settingsBuilder.cancelDiskMigrationJobSettings().build();
+    cancelDiskMigrationJobOperationSettings =
+        settingsBuilder.cancelDiskMigrationJobOperationSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
   }
@@ -1610,6 +2135,11 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
         deleteSourceOperationSettings;
     private final UnaryCallSettings.Builder<FetchInventoryRequest, FetchInventoryResponse>
         fetchInventorySettings;
+    private final PagedCallSettings.Builder<
+            FetchStorageInventoryRequest,
+            FetchStorageInventoryResponse,
+            FetchStorageInventoryPagedResponse>
+        fetchStorageInventorySettings;
     private final PagedCallSettings.Builder<
             ListUtilizationReportsRequest,
             ListUtilizationReportsResponse,
@@ -1688,6 +2218,11 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     private final OperationCallSettings.Builder<
             FinalizeMigrationRequest, FinalizeMigrationResponse, OperationMetadata>
         finalizeMigrationOperationSettings;
+    private final UnaryCallSettings.Builder<ExtendMigrationRequest, Operation>
+        extendMigrationSettings;
+    private final OperationCallSettings.Builder<
+            ExtendMigrationRequest, ExtendMigrationResponse, OperationMetadata>
+        extendMigrationOperationSettings;
     private final UnaryCallSettings.Builder<CreateCloneJobRequest, Operation>
         createCloneJobSettings;
     private final OperationCallSettings.Builder<CreateCloneJobRequest, CloneJob, OperationMetadata>
@@ -1766,6 +2301,64 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     private final UnaryCallSettings.Builder<GetReplicationCycleRequest, ReplicationCycle>
         getReplicationCycleSettings;
     private final PagedCallSettings.Builder<
+            ListImageImportsRequest, ListImageImportsResponse, ListImageImportsPagedResponse>
+        listImageImportsSettings;
+    private final UnaryCallSettings.Builder<GetImageImportRequest, ImageImport>
+        getImageImportSettings;
+    private final UnaryCallSettings.Builder<CreateImageImportRequest, Operation>
+        createImageImportSettings;
+    private final OperationCallSettings.Builder<
+            CreateImageImportRequest, ImageImport, OperationMetadata>
+        createImageImportOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteImageImportRequest, Operation>
+        deleteImageImportSettings;
+    private final OperationCallSettings.Builder<DeleteImageImportRequest, Empty, OperationMetadata>
+        deleteImageImportOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListImageImportJobsRequest,
+            ListImageImportJobsResponse,
+            ListImageImportJobsPagedResponse>
+        listImageImportJobsSettings;
+    private final UnaryCallSettings.Builder<GetImageImportJobRequest, ImageImportJob>
+        getImageImportJobSettings;
+    private final UnaryCallSettings.Builder<CancelImageImportJobRequest, Operation>
+        cancelImageImportJobSettings;
+    private final OperationCallSettings.Builder<
+            CancelImageImportJobRequest, CancelImageImportJobResponse, OperationMetadata>
+        cancelImageImportJobOperationSettings;
+    private final UnaryCallSettings.Builder<CreateDiskMigrationJobRequest, Operation>
+        createDiskMigrationJobSettings;
+    private final OperationCallSettings.Builder<
+            CreateDiskMigrationJobRequest, DiskMigrationJob, OperationMetadata>
+        createDiskMigrationJobOperationSettings;
+    private final PagedCallSettings.Builder<
+            ListDiskMigrationJobsRequest,
+            ListDiskMigrationJobsResponse,
+            ListDiskMigrationJobsPagedResponse>
+        listDiskMigrationJobsSettings;
+    private final UnaryCallSettings.Builder<GetDiskMigrationJobRequest, DiskMigrationJob>
+        getDiskMigrationJobSettings;
+    private final UnaryCallSettings.Builder<UpdateDiskMigrationJobRequest, Operation>
+        updateDiskMigrationJobSettings;
+    private final OperationCallSettings.Builder<
+            UpdateDiskMigrationJobRequest, DiskMigrationJob, OperationMetadata>
+        updateDiskMigrationJobOperationSettings;
+    private final UnaryCallSettings.Builder<DeleteDiskMigrationJobRequest, Operation>
+        deleteDiskMigrationJobSettings;
+    private final OperationCallSettings.Builder<
+            DeleteDiskMigrationJobRequest, Empty, OperationMetadata>
+        deleteDiskMigrationJobOperationSettings;
+    private final UnaryCallSettings.Builder<RunDiskMigrationJobRequest, Operation>
+        runDiskMigrationJobSettings;
+    private final OperationCallSettings.Builder<
+            RunDiskMigrationJobRequest, RunDiskMigrationJobResponse, OperationMetadata>
+        runDiskMigrationJobOperationSettings;
+    private final UnaryCallSettings.Builder<CancelDiskMigrationJobRequest, Operation>
+        cancelDiskMigrationJobSettings;
+    private final OperationCallSettings.Builder<
+            CancelDiskMigrationJobRequest, CancelDiskMigrationJobResponse, OperationMetadata>
+        cancelDiskMigrationJobOperationSettings;
+    private final PagedCallSettings.Builder<
             ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
         listLocationsSettings;
     private final UnaryCallSettings.Builder<GetLocationRequest, Location> getLocationSettings;
@@ -1832,6 +2425,8 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
       deleteSourceSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       deleteSourceOperationSettings = OperationCallSettings.newBuilder();
       fetchInventorySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      fetchStorageInventorySettings =
+          PagedCallSettings.newBuilder(FETCH_STORAGE_INVENTORY_PAGE_STR_FACT);
       listUtilizationReportsSettings =
           PagedCallSettings.newBuilder(LIST_UTILIZATION_REPORTS_PAGE_STR_FACT);
       getUtilizationReportSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1864,6 +2459,8 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
       pauseMigrationOperationSettings = OperationCallSettings.newBuilder();
       finalizeMigrationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       finalizeMigrationOperationSettings = OperationCallSettings.newBuilder();
+      extendMigrationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      extendMigrationOperationSettings = OperationCallSettings.newBuilder();
       createCloneJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       createCloneJobOperationSettings = OperationCallSettings.newBuilder();
       cancelCloneJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1899,6 +2496,30 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
       listReplicationCyclesSettings =
           PagedCallSettings.newBuilder(LIST_REPLICATION_CYCLES_PAGE_STR_FACT);
       getReplicationCycleSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      listImageImportsSettings = PagedCallSettings.newBuilder(LIST_IMAGE_IMPORTS_PAGE_STR_FACT);
+      getImageImportSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createImageImportSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createImageImportOperationSettings = OperationCallSettings.newBuilder();
+      deleteImageImportSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteImageImportOperationSettings = OperationCallSettings.newBuilder();
+      listImageImportJobsSettings =
+          PagedCallSettings.newBuilder(LIST_IMAGE_IMPORT_JOBS_PAGE_STR_FACT);
+      getImageImportJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      cancelImageImportJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      cancelImageImportJobOperationSettings = OperationCallSettings.newBuilder();
+      createDiskMigrationJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      createDiskMigrationJobOperationSettings = OperationCallSettings.newBuilder();
+      listDiskMigrationJobsSettings =
+          PagedCallSettings.newBuilder(LIST_DISK_MIGRATION_JOBS_PAGE_STR_FACT);
+      getDiskMigrationJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateDiskMigrationJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      updateDiskMigrationJobOperationSettings = OperationCallSettings.newBuilder();
+      deleteDiskMigrationJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      deleteDiskMigrationJobOperationSettings = OperationCallSettings.newBuilder();
+      runDiskMigrationJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      runDiskMigrationJobOperationSettings = OperationCallSettings.newBuilder();
+      cancelDiskMigrationJobSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      cancelDiskMigrationJobOperationSettings = OperationCallSettings.newBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
@@ -1910,6 +2531,7 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
               updateSourceSettings,
               deleteSourceSettings,
               fetchInventorySettings,
+              fetchStorageInventorySettings,
               listUtilizationReportsSettings,
               getUtilizationReportSettings,
               createUtilizationReportSettings,
@@ -1928,6 +2550,7 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
               resumeMigrationSettings,
               pauseMigrationSettings,
               finalizeMigrationSettings,
+              extendMigrationSettings,
               createCloneJobSettings,
               cancelCloneJobSettings,
               listCloneJobsSettings,
@@ -1950,6 +2573,20 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
               deleteTargetProjectSettings,
               listReplicationCyclesSettings,
               getReplicationCycleSettings,
+              listImageImportsSettings,
+              getImageImportSettings,
+              createImageImportSettings,
+              deleteImageImportSettings,
+              listImageImportJobsSettings,
+              getImageImportJobSettings,
+              cancelImageImportJobSettings,
+              createDiskMigrationJobSettings,
+              listDiskMigrationJobsSettings,
+              getDiskMigrationJobSettings,
+              updateDiskMigrationJobSettings,
+              deleteDiskMigrationJobSettings,
+              runDiskMigrationJobSettings,
+              cancelDiskMigrationJobSettings,
               listLocationsSettings,
               getLocationSettings);
       initDefaults(this);
@@ -1967,6 +2604,7 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
       deleteSourceSettings = settings.deleteSourceSettings.toBuilder();
       deleteSourceOperationSettings = settings.deleteSourceOperationSettings.toBuilder();
       fetchInventorySettings = settings.fetchInventorySettings.toBuilder();
+      fetchStorageInventorySettings = settings.fetchStorageInventorySettings.toBuilder();
       listUtilizationReportsSettings = settings.listUtilizationReportsSettings.toBuilder();
       getUtilizationReportSettings = settings.getUtilizationReportSettings.toBuilder();
       createUtilizationReportSettings = settings.createUtilizationReportSettings.toBuilder();
@@ -2001,6 +2639,8 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
       pauseMigrationOperationSettings = settings.pauseMigrationOperationSettings.toBuilder();
       finalizeMigrationSettings = settings.finalizeMigrationSettings.toBuilder();
       finalizeMigrationOperationSettings = settings.finalizeMigrationOperationSettings.toBuilder();
+      extendMigrationSettings = settings.extendMigrationSettings.toBuilder();
+      extendMigrationOperationSettings = settings.extendMigrationOperationSettings.toBuilder();
       createCloneJobSettings = settings.createCloneJobSettings.toBuilder();
       createCloneJobOperationSettings = settings.createCloneJobOperationSettings.toBuilder();
       cancelCloneJobSettings = settings.cancelCloneJobSettings.toBuilder();
@@ -2039,6 +2679,34 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
           settings.deleteTargetProjectOperationSettings.toBuilder();
       listReplicationCyclesSettings = settings.listReplicationCyclesSettings.toBuilder();
       getReplicationCycleSettings = settings.getReplicationCycleSettings.toBuilder();
+      listImageImportsSettings = settings.listImageImportsSettings.toBuilder();
+      getImageImportSettings = settings.getImageImportSettings.toBuilder();
+      createImageImportSettings = settings.createImageImportSettings.toBuilder();
+      createImageImportOperationSettings = settings.createImageImportOperationSettings.toBuilder();
+      deleteImageImportSettings = settings.deleteImageImportSettings.toBuilder();
+      deleteImageImportOperationSettings = settings.deleteImageImportOperationSettings.toBuilder();
+      listImageImportJobsSettings = settings.listImageImportJobsSettings.toBuilder();
+      getImageImportJobSettings = settings.getImageImportJobSettings.toBuilder();
+      cancelImageImportJobSettings = settings.cancelImageImportJobSettings.toBuilder();
+      cancelImageImportJobOperationSettings =
+          settings.cancelImageImportJobOperationSettings.toBuilder();
+      createDiskMigrationJobSettings = settings.createDiskMigrationJobSettings.toBuilder();
+      createDiskMigrationJobOperationSettings =
+          settings.createDiskMigrationJobOperationSettings.toBuilder();
+      listDiskMigrationJobsSettings = settings.listDiskMigrationJobsSettings.toBuilder();
+      getDiskMigrationJobSettings = settings.getDiskMigrationJobSettings.toBuilder();
+      updateDiskMigrationJobSettings = settings.updateDiskMigrationJobSettings.toBuilder();
+      updateDiskMigrationJobOperationSettings =
+          settings.updateDiskMigrationJobOperationSettings.toBuilder();
+      deleteDiskMigrationJobSettings = settings.deleteDiskMigrationJobSettings.toBuilder();
+      deleteDiskMigrationJobOperationSettings =
+          settings.deleteDiskMigrationJobOperationSettings.toBuilder();
+      runDiskMigrationJobSettings = settings.runDiskMigrationJobSettings.toBuilder();
+      runDiskMigrationJobOperationSettings =
+          settings.runDiskMigrationJobOperationSettings.toBuilder();
+      cancelDiskMigrationJobSettings = settings.cancelDiskMigrationJobSettings.toBuilder();
+      cancelDiskMigrationJobOperationSettings =
+          settings.cancelDiskMigrationJobOperationSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
 
@@ -2050,6 +2718,7 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
               updateSourceSettings,
               deleteSourceSettings,
               fetchInventorySettings,
+              fetchStorageInventorySettings,
               listUtilizationReportsSettings,
               getUtilizationReportSettings,
               createUtilizationReportSettings,
@@ -2068,6 +2737,7 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
               resumeMigrationSettings,
               pauseMigrationSettings,
               finalizeMigrationSettings,
+              extendMigrationSettings,
               createCloneJobSettings,
               cancelCloneJobSettings,
               listCloneJobsSettings,
@@ -2090,6 +2760,20 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
               deleteTargetProjectSettings,
               listReplicationCyclesSettings,
               getReplicationCycleSettings,
+              listImageImportsSettings,
+              getImageImportSettings,
+              createImageImportSettings,
+              deleteImageImportSettings,
+              listImageImportJobsSettings,
+              getImageImportJobSettings,
+              cancelImageImportJobSettings,
+              createDiskMigrationJobSettings,
+              listDiskMigrationJobsSettings,
+              getDiskMigrationJobSettings,
+              updateDiskMigrationJobSettings,
+              deleteDiskMigrationJobSettings,
+              runDiskMigrationJobSettings,
+              cancelDiskMigrationJobSettings,
               listLocationsSettings,
               getLocationSettings);
     }
@@ -2148,6 +2832,11 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
           .fetchInventorySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .fetchStorageInventorySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
       builder
           .listUtilizationReportsSettings()
@@ -2236,6 +2925,11 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
 
       builder
           .finalizeMigrationSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .extendMigrationSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
@@ -2346,6 +3040,76 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
 
       builder
           .getReplicationCycleSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .listImageImportsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getImageImportSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .createImageImportSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .deleteImageImportSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .listImageImportJobsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getImageImportJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .cancelImageImportJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .createDiskMigrationJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .listDiskMigrationJobsSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .getDiskMigrationJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .updateDiskMigrationJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .deleteDiskMigrationJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .runDiskMigrationJobSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
+
+      builder
+          .cancelDiskMigrationJobSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"));
 
@@ -2723,6 +3487,30 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
                       .build()));
 
       builder
+          .extendMigrationOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<ExtendMigrationRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(ExtendMigrationResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
           .createCloneJobOperationSettings()
           .setInitialCallSettings(
               UnaryCallSettings
@@ -3009,6 +3797,201 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
                       .setTotalTimeoutDuration(Duration.ofMillis(300000L))
                       .build()));
 
+      builder
+          .createImageImportOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateImageImportRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(ImageImport.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteImageImportOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteImageImportRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .cancelImageImportJobOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CancelImageImportJobRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  CancelImageImportJobResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .createDiskMigrationJobOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CreateDiskMigrationJobRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(DiskMigrationJob.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .updateDiskMigrationJobOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<UpdateDiskMigrationJobRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(DiskMigrationJob.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .deleteDiskMigrationJobOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<DeleteDiskMigrationJobRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(Empty.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .runDiskMigrationJobOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<RunDiskMigrationJobRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  RunDiskMigrationJobResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
+      builder
+          .cancelDiskMigrationJobOperationSettings()
+          .setInitialCallSettings(
+              UnaryCallSettings
+                  .<CancelDiskMigrationJobRequest, OperationSnapshot>newUnaryCallSettingsBuilder()
+                  .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_0_codes"))
+                  .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_0_params"))
+                  .build())
+          .setResponseTransformer(
+              ProtoOperationTransformers.ResponseTransformer.create(
+                  CancelDiskMigrationJobResponse.class))
+          .setMetadataTransformer(
+              ProtoOperationTransformers.MetadataTransformer.create(OperationMetadata.class))
+          .setPollingAlgorithm(
+              OperationTimedPollAlgorithm.create(
+                  RetrySettings.newBuilder()
+                      .setInitialRetryDelayDuration(Duration.ofMillis(5000L))
+                      .setRetryDelayMultiplier(1.5)
+                      .setMaxRetryDelayDuration(Duration.ofMillis(45000L))
+                      .setInitialRpcTimeoutDuration(Duration.ZERO)
+                      .setRpcTimeoutMultiplier(1.0)
+                      .setMaxRpcTimeoutDuration(Duration.ZERO)
+                      .setTotalTimeoutDuration(Duration.ofMillis(300000L))
+                      .build()));
+
       return builder;
     }
 
@@ -3076,6 +4059,15 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     public UnaryCallSettings.Builder<FetchInventoryRequest, FetchInventoryResponse>
         fetchInventorySettings() {
       return fetchInventorySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to fetchStorageInventory. */
+    public PagedCallSettings.Builder<
+            FetchStorageInventoryRequest,
+            FetchStorageInventoryResponse,
+            FetchStorageInventoryPagedResponse>
+        fetchStorageInventorySettings() {
+      return fetchStorageInventorySettings;
     }
 
     /** Returns the builder for the settings used for calls to listUtilizationReports. */
@@ -3266,6 +4258,18 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
             FinalizeMigrationRequest, FinalizeMigrationResponse, OperationMetadata>
         finalizeMigrationOperationSettings() {
       return finalizeMigrationOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to extendMigration. */
+    public UnaryCallSettings.Builder<ExtendMigrationRequest, Operation> extendMigrationSettings() {
+      return extendMigrationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to extendMigration. */
+    public OperationCallSettings.Builder<
+            ExtendMigrationRequest, ExtendMigrationResponse, OperationMetadata>
+        extendMigrationOperationSettings() {
+      return extendMigrationOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to createCloneJob. */
@@ -3474,6 +4478,149 @@ public class VmMigrationStubSettings extends StubSettings<VmMigrationStubSetting
     public UnaryCallSettings.Builder<GetReplicationCycleRequest, ReplicationCycle>
         getReplicationCycleSettings() {
       return getReplicationCycleSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listImageImports. */
+    public PagedCallSettings.Builder<
+            ListImageImportsRequest, ListImageImportsResponse, ListImageImportsPagedResponse>
+        listImageImportsSettings() {
+      return listImageImportsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getImageImport. */
+    public UnaryCallSettings.Builder<GetImageImportRequest, ImageImport> getImageImportSettings() {
+      return getImageImportSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createImageImport. */
+    public UnaryCallSettings.Builder<CreateImageImportRequest, Operation>
+        createImageImportSettings() {
+      return createImageImportSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createImageImport. */
+    public OperationCallSettings.Builder<CreateImageImportRequest, ImageImport, OperationMetadata>
+        createImageImportOperationSettings() {
+      return createImageImportOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteImageImport. */
+    public UnaryCallSettings.Builder<DeleteImageImportRequest, Operation>
+        deleteImageImportSettings() {
+      return deleteImageImportSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteImageImport. */
+    public OperationCallSettings.Builder<DeleteImageImportRequest, Empty, OperationMetadata>
+        deleteImageImportOperationSettings() {
+      return deleteImageImportOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listImageImportJobs. */
+    public PagedCallSettings.Builder<
+            ListImageImportJobsRequest,
+            ListImageImportJobsResponse,
+            ListImageImportJobsPagedResponse>
+        listImageImportJobsSettings() {
+      return listImageImportJobsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getImageImportJob. */
+    public UnaryCallSettings.Builder<GetImageImportJobRequest, ImageImportJob>
+        getImageImportJobSettings() {
+      return getImageImportJobSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to cancelImageImportJob. */
+    public UnaryCallSettings.Builder<CancelImageImportJobRequest, Operation>
+        cancelImageImportJobSettings() {
+      return cancelImageImportJobSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to cancelImageImportJob. */
+    public OperationCallSettings.Builder<
+            CancelImageImportJobRequest, CancelImageImportJobResponse, OperationMetadata>
+        cancelImageImportJobOperationSettings() {
+      return cancelImageImportJobOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createDiskMigrationJob. */
+    public UnaryCallSettings.Builder<CreateDiskMigrationJobRequest, Operation>
+        createDiskMigrationJobSettings() {
+      return createDiskMigrationJobSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to createDiskMigrationJob. */
+    public OperationCallSettings.Builder<
+            CreateDiskMigrationJobRequest, DiskMigrationJob, OperationMetadata>
+        createDiskMigrationJobOperationSettings() {
+      return createDiskMigrationJobOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to listDiskMigrationJobs. */
+    public PagedCallSettings.Builder<
+            ListDiskMigrationJobsRequest,
+            ListDiskMigrationJobsResponse,
+            ListDiskMigrationJobsPagedResponse>
+        listDiskMigrationJobsSettings() {
+      return listDiskMigrationJobsSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getDiskMigrationJob. */
+    public UnaryCallSettings.Builder<GetDiskMigrationJobRequest, DiskMigrationJob>
+        getDiskMigrationJobSettings() {
+      return getDiskMigrationJobSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateDiskMigrationJob. */
+    public UnaryCallSettings.Builder<UpdateDiskMigrationJobRequest, Operation>
+        updateDiskMigrationJobSettings() {
+      return updateDiskMigrationJobSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to updateDiskMigrationJob. */
+    public OperationCallSettings.Builder<
+            UpdateDiskMigrationJobRequest, DiskMigrationJob, OperationMetadata>
+        updateDiskMigrationJobOperationSettings() {
+      return updateDiskMigrationJobOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDiskMigrationJob. */
+    public UnaryCallSettings.Builder<DeleteDiskMigrationJobRequest, Operation>
+        deleteDiskMigrationJobSettings() {
+      return deleteDiskMigrationJobSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to deleteDiskMigrationJob. */
+    public OperationCallSettings.Builder<DeleteDiskMigrationJobRequest, Empty, OperationMetadata>
+        deleteDiskMigrationJobOperationSettings() {
+      return deleteDiskMigrationJobOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to runDiskMigrationJob. */
+    public UnaryCallSettings.Builder<RunDiskMigrationJobRequest, Operation>
+        runDiskMigrationJobSettings() {
+      return runDiskMigrationJobSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to runDiskMigrationJob. */
+    public OperationCallSettings.Builder<
+            RunDiskMigrationJobRequest, RunDiskMigrationJobResponse, OperationMetadata>
+        runDiskMigrationJobOperationSettings() {
+      return runDiskMigrationJobOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to cancelDiskMigrationJob. */
+    public UnaryCallSettings.Builder<CancelDiskMigrationJobRequest, Operation>
+        cancelDiskMigrationJobSettings() {
+      return cancelDiskMigrationJobSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to cancelDiskMigrationJob. */
+    public OperationCallSettings.Builder<
+            CancelDiskMigrationJobRequest, CancelDiskMigrationJobResponse, OperationMetadata>
+        cancelDiskMigrationJobOperationSettings() {
+      return cancelDiskMigrationJobOperationSettings;
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

@@ -79,10 +79,10 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. IP address of the subnet.
+   * Output only. IP address of the subnet.
    * </pre>
    *
-   * <code>string subnet_ip = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string subnet_ip = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The subnetIp.
    */
@@ -103,10 +103,10 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. IP address of the subnet.
+   * Output only. IP address of the subnet.
    * </pre>
    *
-   * <code>string subnet_ip = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string subnet_ip = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for subnetIp.
    */
@@ -132,11 +132,11 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Copy-paste-able commands to be used on user's ONTAP to accept
+   * Output only. Copy-paste-able commands to be used on user's ONTAP to accept
    * peering requests.
    * </pre>
    *
-   * <code>string command = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string command = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The command.
    */
@@ -157,11 +157,11 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Copy-paste-able commands to be used on user's ONTAP to accept
+   * Output only. Copy-paste-able commands to be used on user's ONTAP to accept
    * peering requests.
    * </pre>
    *
-   * <code>string command = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string command = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for command.
    */
@@ -185,12 +185,12 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Expiration time for the peering command to be executed on user's
-   * ONTAP.
+   * Output only. Expiration time for the peering command to be executed on
+   * user's ONTAP.
    * </pre>
    *
    * <code>
-   * .google.protobuf.Timestamp command_expiry_time = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.protobuf.Timestamp command_expiry_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return Whether the commandExpiryTime field is set.
@@ -204,12 +204,12 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Expiration time for the peering command to be executed on user's
-   * ONTAP.
+   * Output only. Expiration time for the peering command to be executed on
+   * user's ONTAP.
    * </pre>
    *
    * <code>
-   * .google.protobuf.Timestamp command_expiry_time = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.protobuf.Timestamp command_expiry_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    *
    * @return The commandExpiryTime.
@@ -225,12 +225,12 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Expiration time for the peering command to be executed on user's
-   * ONTAP.
+   * Output only. Expiration time for the peering command to be executed on
+   * user's ONTAP.
    * </pre>
    *
    * <code>
-   * .google.protobuf.Timestamp command_expiry_time = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.protobuf.Timestamp command_expiry_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
    * </code>
    */
   @java.lang.Override
@@ -249,10 +249,11 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Temporary passphrase generated to accept cluster peering command.
+   * Output only. Temporary passphrase generated to accept cluster peering
+   * command.
    * </pre>
    *
-   * <code>string passphrase = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string passphrase = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The passphrase.
    */
@@ -273,10 +274,11 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Temporary passphrase generated to accept cluster peering command.
+   * Output only. Temporary passphrase generated to accept cluster peering
+   * command.
    * </pre>
    *
-   * <code>string passphrase = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string passphrase = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for passphrase.
    */
@@ -302,11 +304,11 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Name of the user's local source volume to be peered with the
+   * Output only. Name of the user's local source volume to be peered with the
    * destination volume.
    * </pre>
    *
-   * <code>string peer_volume_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string peer_volume_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The peerVolumeName.
    */
@@ -327,11 +329,11 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Name of the user's local source volume to be peered with the
+   * Output only. Name of the user's local source volume to be peered with the
    * destination volume.
    * </pre>
    *
-   * <code>string peer_volume_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string peer_volume_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for peerVolumeName.
    */
@@ -357,11 +359,11 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Name of the user's local source cluster to be peered with the
+   * Output only. Name of the user's local source cluster to be peered with the
    * destination cluster.
    * </pre>
    *
-   * <code>string peer_cluster_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string peer_cluster_name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The peerClusterName.
    */
@@ -382,11 +384,11 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Name of the user's local source cluster to be peered with the
+   * Output only. Name of the user's local source cluster to be peered with the
    * destination cluster.
    * </pre>
    *
-   * <code>string peer_cluster_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string peer_cluster_name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for peerClusterName.
    */
@@ -412,11 +414,11 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Name of the user's local source vserver svm to be peered with the
-   * destination vserver svm.
+   * Output only. Name of the user's local source vserver svm to be peered with
+   * the destination vserver svm.
    * </pre>
    *
-   * <code>string peer_svm_name = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string peer_svm_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The peerSvmName.
    */
@@ -437,11 +439,11 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Optional. Name of the user's local source vserver svm to be peered with the
-   * destination vserver svm.
+   * Output only. Name of the user's local source vserver svm to be peered with
+   * the destination vserver svm.
    * </pre>
    *
-   * <code>string peer_svm_name = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>string peer_svm_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for peerSvmName.
    */
@@ -974,10 +976,10 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. IP address of the subnet.
+     * Output only. IP address of the subnet.
      * </pre>
      *
-     * <code>string subnet_ip = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string subnet_ip = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The subnetIp.
      */
@@ -997,10 +999,10 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. IP address of the subnet.
+     * Output only. IP address of the subnet.
      * </pre>
      *
-     * <code>string subnet_ip = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string subnet_ip = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for subnetIp.
      */
@@ -1020,10 +1022,10 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. IP address of the subnet.
+     * Output only. IP address of the subnet.
      * </pre>
      *
-     * <code>string subnet_ip = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string subnet_ip = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The subnetIp to set.
      * @return This builder for chaining.
@@ -1042,10 +1044,10 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. IP address of the subnet.
+     * Output only. IP address of the subnet.
      * </pre>
      *
-     * <code>string subnet_ip = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string subnet_ip = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -1060,10 +1062,10 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. IP address of the subnet.
+     * Output only. IP address of the subnet.
      * </pre>
      *
-     * <code>string subnet_ip = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string subnet_ip = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for subnetIp to set.
      * @return This builder for chaining.
@@ -1085,11 +1087,11 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Copy-paste-able commands to be used on user's ONTAP to accept
+     * Output only. Copy-paste-able commands to be used on user's ONTAP to accept
      * peering requests.
      * </pre>
      *
-     * <code>string command = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string command = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The command.
      */
@@ -1109,11 +1111,11 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Copy-paste-able commands to be used on user's ONTAP to accept
+     * Output only. Copy-paste-able commands to be used on user's ONTAP to accept
      * peering requests.
      * </pre>
      *
-     * <code>string command = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string command = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for command.
      */
@@ -1133,11 +1135,11 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Copy-paste-able commands to be used on user's ONTAP to accept
+     * Output only. Copy-paste-able commands to be used on user's ONTAP to accept
      * peering requests.
      * </pre>
      *
-     * <code>string command = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string command = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The command to set.
      * @return This builder for chaining.
@@ -1156,11 +1158,11 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Copy-paste-able commands to be used on user's ONTAP to accept
+     * Output only. Copy-paste-able commands to be used on user's ONTAP to accept
      * peering requests.
      * </pre>
      *
-     * <code>string command = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string command = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -1175,11 +1177,11 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Copy-paste-able commands to be used on user's ONTAP to accept
+     * Output only. Copy-paste-able commands to be used on user's ONTAP to accept
      * peering requests.
      * </pre>
      *
-     * <code>string command = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string command = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for command to set.
      * @return This builder for chaining.
@@ -1206,12 +1208,12 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Expiration time for the peering command to be executed on user's
-     * ONTAP.
+     * Output only. Expiration time for the peering command to be executed on
+     * user's ONTAP.
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp command_expiry_time = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.protobuf.Timestamp command_expiry_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return Whether the commandExpiryTime field is set.
@@ -1224,12 +1226,12 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Expiration time for the peering command to be executed on user's
-     * ONTAP.
+     * Output only. Expiration time for the peering command to be executed on
+     * user's ONTAP.
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp command_expiry_time = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.protobuf.Timestamp command_expiry_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      *
      * @return The commandExpiryTime.
@@ -1248,12 +1250,12 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Expiration time for the peering command to be executed on user's
-     * ONTAP.
+     * Output only. Expiration time for the peering command to be executed on
+     * user's ONTAP.
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp command_expiry_time = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.protobuf.Timestamp command_expiry_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setCommandExpiryTime(com.google.protobuf.Timestamp value) {
@@ -1274,12 +1276,12 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Expiration time for the peering command to be executed on user's
-     * ONTAP.
+     * Output only. Expiration time for the peering command to be executed on
+     * user's ONTAP.
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp command_expiry_time = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.protobuf.Timestamp command_expiry_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder setCommandExpiryTime(com.google.protobuf.Timestamp.Builder builderForValue) {
@@ -1297,12 +1299,12 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Expiration time for the peering command to be executed on user's
-     * ONTAP.
+     * Output only. Expiration time for the peering command to be executed on
+     * user's ONTAP.
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp command_expiry_time = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.protobuf.Timestamp command_expiry_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder mergeCommandExpiryTime(com.google.protobuf.Timestamp value) {
@@ -1328,12 +1330,12 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Expiration time for the peering command to be executed on user's
-     * ONTAP.
+     * Output only. Expiration time for the peering command to be executed on
+     * user's ONTAP.
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp command_expiry_time = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.protobuf.Timestamp command_expiry_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public Builder clearCommandExpiryTime() {
@@ -1351,12 +1353,12 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Expiration time for the peering command to be executed on user's
-     * ONTAP.
+     * Output only. Expiration time for the peering command to be executed on
+     * user's ONTAP.
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp command_expiry_time = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.protobuf.Timestamp command_expiry_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCommandExpiryTimeBuilder() {
@@ -1369,12 +1371,12 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Expiration time for the peering command to be executed on user's
-     * ONTAP.
+     * Output only. Expiration time for the peering command to be executed on
+     * user's ONTAP.
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp command_expiry_time = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.protobuf.Timestamp command_expiry_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     public com.google.protobuf.TimestampOrBuilder getCommandExpiryTimeOrBuilder() {
@@ -1391,12 +1393,12 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Expiration time for the peering command to be executed on user's
-     * ONTAP.
+     * Output only. Expiration time for the peering command to be executed on
+     * user's ONTAP.
      * </pre>
      *
      * <code>
-     * .google.protobuf.Timestamp command_expiry_time = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.protobuf.Timestamp command_expiry_time = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -1422,10 +1424,11 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Temporary passphrase generated to accept cluster peering command.
+     * Output only. Temporary passphrase generated to accept cluster peering
+     * command.
      * </pre>
      *
-     * <code>string passphrase = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string passphrase = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The passphrase.
      */
@@ -1445,10 +1448,11 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Temporary passphrase generated to accept cluster peering command.
+     * Output only. Temporary passphrase generated to accept cluster peering
+     * command.
      * </pre>
      *
-     * <code>string passphrase = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string passphrase = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for passphrase.
      */
@@ -1468,10 +1472,11 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Temporary passphrase generated to accept cluster peering command.
+     * Output only. Temporary passphrase generated to accept cluster peering
+     * command.
      * </pre>
      *
-     * <code>string passphrase = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string passphrase = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The passphrase to set.
      * @return This builder for chaining.
@@ -1490,10 +1495,11 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Temporary passphrase generated to accept cluster peering command.
+     * Output only. Temporary passphrase generated to accept cluster peering
+     * command.
      * </pre>
      *
-     * <code>string passphrase = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string passphrase = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -1508,10 +1514,11 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Temporary passphrase generated to accept cluster peering command.
+     * Output only. Temporary passphrase generated to accept cluster peering
+     * command.
      * </pre>
      *
-     * <code>string passphrase = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string passphrase = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for passphrase to set.
      * @return This builder for chaining.
@@ -1533,11 +1540,11 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Name of the user's local source volume to be peered with the
+     * Output only. Name of the user's local source volume to be peered with the
      * destination volume.
      * </pre>
      *
-     * <code>string peer_volume_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string peer_volume_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The peerVolumeName.
      */
@@ -1557,11 +1564,11 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Name of the user's local source volume to be peered with the
+     * Output only. Name of the user's local source volume to be peered with the
      * destination volume.
      * </pre>
      *
-     * <code>string peer_volume_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string peer_volume_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for peerVolumeName.
      */
@@ -1581,11 +1588,11 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Name of the user's local source volume to be peered with the
+     * Output only. Name of the user's local source volume to be peered with the
      * destination volume.
      * </pre>
      *
-     * <code>string peer_volume_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string peer_volume_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The peerVolumeName to set.
      * @return This builder for chaining.
@@ -1604,11 +1611,11 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Name of the user's local source volume to be peered with the
+     * Output only. Name of the user's local source volume to be peered with the
      * destination volume.
      * </pre>
      *
-     * <code>string peer_volume_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string peer_volume_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -1623,11 +1630,11 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Name of the user's local source volume to be peered with the
+     * Output only. Name of the user's local source volume to be peered with the
      * destination volume.
      * </pre>
      *
-     * <code>string peer_volume_name = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string peer_volume_name = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for peerVolumeName to set.
      * @return This builder for chaining.
@@ -1649,11 +1656,11 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Name of the user's local source cluster to be peered with the
+     * Output only. Name of the user's local source cluster to be peered with the
      * destination cluster.
      * </pre>
      *
-     * <code>string peer_cluster_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string peer_cluster_name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The peerClusterName.
      */
@@ -1673,11 +1680,11 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Name of the user's local source cluster to be peered with the
+     * Output only. Name of the user's local source cluster to be peered with the
      * destination cluster.
      * </pre>
      *
-     * <code>string peer_cluster_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string peer_cluster_name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for peerClusterName.
      */
@@ -1697,11 +1704,11 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Name of the user's local source cluster to be peered with the
+     * Output only. Name of the user's local source cluster to be peered with the
      * destination cluster.
      * </pre>
      *
-     * <code>string peer_cluster_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string peer_cluster_name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The peerClusterName to set.
      * @return This builder for chaining.
@@ -1720,11 +1727,11 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Name of the user's local source cluster to be peered with the
+     * Output only. Name of the user's local source cluster to be peered with the
      * destination cluster.
      * </pre>
      *
-     * <code>string peer_cluster_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string peer_cluster_name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -1739,11 +1746,11 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Name of the user's local source cluster to be peered with the
+     * Output only. Name of the user's local source cluster to be peered with the
      * destination cluster.
      * </pre>
      *
-     * <code>string peer_cluster_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string peer_cluster_name = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for peerClusterName to set.
      * @return This builder for chaining.
@@ -1765,11 +1772,11 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Name of the user's local source vserver svm to be peered with the
-     * destination vserver svm.
+     * Output only. Name of the user's local source vserver svm to be peered with
+     * the destination vserver svm.
      * </pre>
      *
-     * <code>string peer_svm_name = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string peer_svm_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The peerSvmName.
      */
@@ -1789,11 +1796,11 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Name of the user's local source vserver svm to be peered with the
-     * destination vserver svm.
+     * Output only. Name of the user's local source vserver svm to be peered with
+     * the destination vserver svm.
      * </pre>
      *
-     * <code>string peer_svm_name = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string peer_svm_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The bytes for peerSvmName.
      */
@@ -1813,11 +1820,11 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Name of the user's local source vserver svm to be peered with the
-     * destination vserver svm.
+     * Output only. Name of the user's local source vserver svm to be peered with
+     * the destination vserver svm.
      * </pre>
      *
-     * <code>string peer_svm_name = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string peer_svm_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The peerSvmName to set.
      * @return This builder for chaining.
@@ -1836,11 +1843,11 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Name of the user's local source vserver svm to be peered with the
-     * destination vserver svm.
+     * Output only. Name of the user's local source vserver svm to be peered with
+     * the destination vserver svm.
      * </pre>
      *
-     * <code>string peer_svm_name = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string peer_svm_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -1855,11 +1862,11 @@ public final class HybridPeeringDetails extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Optional. Name of the user's local source vserver svm to be peered with the
-     * destination vserver svm.
+     * Output only. Name of the user's local source vserver svm to be peered with
+     * the destination vserver svm.
      * </pre>
      *
-     * <code>string peer_svm_name = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>string peer_svm_name = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The bytes for peerSvmName to set.
      * @return This builder for chaining.

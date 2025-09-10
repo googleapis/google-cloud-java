@@ -19,6 +19,7 @@ package com.google.cloud.bigquery.analyticshub.v1;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListDataExchangesPagedResponse;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListListingsPagedResponse;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListOrgDataExchangesPagedResponse;
+import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListQueryTemplatesPagedResponse;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListSharedResourceSubscriptionsPagedResponse;
 import static com.google.cloud.bigquery.analyticshub.v1.AnalyticsHubServiceClient.ListSubscriptionsPagedResponse;
 
@@ -276,6 +277,47 @@ public class AnalyticsHubServiceSettings extends ClientSettings<AnalyticsHubServ
   public UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
       testIamPermissionsSettings() {
     return ((AnalyticsHubServiceStubSettings) getStubSettings()).testIamPermissionsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createQueryTemplate. */
+  public UnaryCallSettings<CreateQueryTemplateRequest, QueryTemplate>
+      createQueryTemplateSettings() {
+    return ((AnalyticsHubServiceStubSettings) getStubSettings()).createQueryTemplateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getQueryTemplate. */
+  public UnaryCallSettings<GetQueryTemplateRequest, QueryTemplate> getQueryTemplateSettings() {
+    return ((AnalyticsHubServiceStubSettings) getStubSettings()).getQueryTemplateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listQueryTemplates. */
+  public PagedCallSettings<
+          ListQueryTemplatesRequest, ListQueryTemplatesResponse, ListQueryTemplatesPagedResponse>
+      listQueryTemplatesSettings() {
+    return ((AnalyticsHubServiceStubSettings) getStubSettings()).listQueryTemplatesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateQueryTemplate. */
+  public UnaryCallSettings<UpdateQueryTemplateRequest, QueryTemplate>
+      updateQueryTemplateSettings() {
+    return ((AnalyticsHubServiceStubSettings) getStubSettings()).updateQueryTemplateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteQueryTemplate. */
+  public UnaryCallSettings<DeleteQueryTemplateRequest, Empty> deleteQueryTemplateSettings() {
+    return ((AnalyticsHubServiceStubSettings) getStubSettings()).deleteQueryTemplateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to submitQueryTemplate. */
+  public UnaryCallSettings<SubmitQueryTemplateRequest, QueryTemplate>
+      submitQueryTemplateSettings() {
+    return ((AnalyticsHubServiceStubSettings) getStubSettings()).submitQueryTemplateSettings();
+  }
+
+  /** Returns the object with the settings used for calls to approveQueryTemplate. */
+  public UnaryCallSettings<ApproveQueryTemplateRequest, QueryTemplate>
+      approveQueryTemplateSettings() {
+    return ((AnalyticsHubServiceStubSettings) getStubSettings()).approveQueryTemplateSettings();
   }
 
   public static final AnalyticsHubServiceSettings create(AnalyticsHubServiceStubSettings stub)
@@ -543,6 +585,49 @@ public class AnalyticsHubServiceSettings extends ClientSettings<AnalyticsHubServ
     public UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
         testIamPermissionsSettings() {
       return getStubSettingsBuilder().testIamPermissionsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createQueryTemplate. */
+    public UnaryCallSettings.Builder<CreateQueryTemplateRequest, QueryTemplate>
+        createQueryTemplateSettings() {
+      return getStubSettingsBuilder().createQueryTemplateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getQueryTemplate. */
+    public UnaryCallSettings.Builder<GetQueryTemplateRequest, QueryTemplate>
+        getQueryTemplateSettings() {
+      return getStubSettingsBuilder().getQueryTemplateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listQueryTemplates. */
+    public PagedCallSettings.Builder<
+            ListQueryTemplatesRequest, ListQueryTemplatesResponse, ListQueryTemplatesPagedResponse>
+        listQueryTemplatesSettings() {
+      return getStubSettingsBuilder().listQueryTemplatesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateQueryTemplate. */
+    public UnaryCallSettings.Builder<UpdateQueryTemplateRequest, QueryTemplate>
+        updateQueryTemplateSettings() {
+      return getStubSettingsBuilder().updateQueryTemplateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteQueryTemplate. */
+    public UnaryCallSettings.Builder<DeleteQueryTemplateRequest, Empty>
+        deleteQueryTemplateSettings() {
+      return getStubSettingsBuilder().deleteQueryTemplateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to submitQueryTemplate. */
+    public UnaryCallSettings.Builder<SubmitQueryTemplateRequest, QueryTemplate>
+        submitQueryTemplateSettings() {
+      return getStubSettingsBuilder().submitQueryTemplateSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to approveQueryTemplate. */
+    public UnaryCallSettings.Builder<ApproveQueryTemplateRequest, QueryTemplate>
+        approveQueryTemplateSettings() {
+      return getStubSettingsBuilder().approveQueryTemplateSettings();
     }
 
     @Override

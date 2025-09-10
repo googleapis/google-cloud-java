@@ -295,7 +295,8 @@ public interface TableDataProfileOrBuilder
    *
    *
    * <pre>
-   * State of a profile.
+   * State of a profile. This will always be set to DONE when the table data
+   * profile is written to another service like BigQuery or Pub/Sub.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.TableDataProfile.State state = 22;</code>
@@ -308,7 +309,8 @@ public interface TableDataProfileOrBuilder
    *
    *
    * <pre>
-   * State of a profile.
+   * State of a profile. This will always be set to DONE when the table data
+   * profile is written to another service like BigQuery or Pub/Sub.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.TableDataProfile.State state = 22;</code>
@@ -1013,4 +1015,59 @@ public interface TableDataProfileOrBuilder
    * <code>repeated .google.privacy.dlp.v2.RelatedResource related_resources = 41;</code>
    */
   com.google.privacy.dlp.v2.RelatedResourceOrBuilder getRelatedResourcesOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Domains associated with the profile.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.Domain domains = 47;</code>
+   */
+  java.util.List<com.google.privacy.dlp.v2.Domain> getDomainsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Domains associated with the profile.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.Domain domains = 47;</code>
+   */
+  com.google.privacy.dlp.v2.Domain getDomains(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Domains associated with the profile.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.Domain domains = 47;</code>
+   */
+  int getDomainsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Domains associated with the profile.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.Domain domains = 47;</code>
+   */
+  java.util.List<? extends com.google.privacy.dlp.v2.DomainOrBuilder> getDomainsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Domains associated with the profile.
+   * </pre>
+   *
+   * <code>repeated .google.privacy.dlp.v2.Domain domains = 47;</code>
+   */
+  com.google.privacy.dlp.v2.DomainOrBuilder getDomainsOrBuilder(int index);
 }

@@ -1595,7 +1595,8 @@ public class NetworkSecurityClientTest {
     SetIamPolicyRequest request =
         SetIamPolicyRequest.newBuilder()
             .setResource(
-                AuthorizationPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTHORIZATION_POLICY]")
+                AddressGroupName.ofProjectLocationAddressGroupName(
+                        "[PROJECT]", "[LOCATION]", "[ADDRESS_GROUP]")
                     .toString())
             .setPolicy(Policy.newBuilder().build())
             .setUpdateMask(FieldMask.newBuilder().build())
@@ -1626,7 +1627,8 @@ public class NetworkSecurityClientTest {
       SetIamPolicyRequest request =
           SetIamPolicyRequest.newBuilder()
               .setResource(
-                  AuthorizationPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTHORIZATION_POLICY]")
+                  AddressGroupName.ofProjectLocationAddressGroupName(
+                          "[PROJECT]", "[LOCATION]", "[ADDRESS_GROUP]")
                       .toString())
               .setPolicy(Policy.newBuilder().build())
               .setUpdateMask(FieldMask.newBuilder().build())
@@ -1652,7 +1654,8 @@ public class NetworkSecurityClientTest {
     GetIamPolicyRequest request =
         GetIamPolicyRequest.newBuilder()
             .setResource(
-                AuthorizationPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTHORIZATION_POLICY]")
+                AddressGroupName.ofProjectLocationAddressGroupName(
+                        "[PROJECT]", "[LOCATION]", "[ADDRESS_GROUP]")
                     .toString())
             .setOptions(GetPolicyOptions.newBuilder().build())
             .build();
@@ -1681,7 +1684,8 @@ public class NetworkSecurityClientTest {
       GetIamPolicyRequest request =
           GetIamPolicyRequest.newBuilder()
               .setResource(
-                  AuthorizationPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTHORIZATION_POLICY]")
+                  AddressGroupName.ofProjectLocationAddressGroupName(
+                          "[PROJECT]", "[LOCATION]", "[ADDRESS_GROUP]")
                       .toString())
               .setOptions(GetPolicyOptions.newBuilder().build())
               .build();
@@ -1701,7 +1705,8 @@ public class NetworkSecurityClientTest {
     TestIamPermissionsRequest request =
         TestIamPermissionsRequest.newBuilder()
             .setResource(
-                AuthorizationPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTHORIZATION_POLICY]")
+                AddressGroupName.ofProjectLocationAddressGroupName(
+                        "[PROJECT]", "[LOCATION]", "[ADDRESS_GROUP]")
                     .toString())
             .addAllPermissions(new ArrayList<String>())
             .build();
@@ -1730,7 +1735,8 @@ public class NetworkSecurityClientTest {
       TestIamPermissionsRequest request =
           TestIamPermissionsRequest.newBuilder()
               .setResource(
-                  AuthorizationPolicyName.of("[PROJECT]", "[LOCATION]", "[AUTHORIZATION_POLICY]")
+                  AddressGroupName.ofProjectLocationAddressGroupName(
+                          "[PROJECT]", "[LOCATION]", "[ADDRESS_GROUP]")
                       .toString())
               .addAllPermissions(new ArrayList<String>())
               .build();

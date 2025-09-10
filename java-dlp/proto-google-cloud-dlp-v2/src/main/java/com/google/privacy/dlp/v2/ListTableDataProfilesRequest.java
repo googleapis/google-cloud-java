@@ -322,6 +322,7 @@ public final class ListTableDataProfilesRequest extends com.google.protobuf.Gene
    *     - `resource_visibility`: PUBLIC|RESTRICTED
    *     - `status_code` - an RPC status code as defined in
    *     https://github.com/googleapis/googleapis/blob/master/google/rpc/code.proto
+   *
    * * The operator must be `=` or `!=`.
    *
    * Examples:
@@ -371,6 +372,7 @@ public final class ListTableDataProfilesRequest extends com.google.protobuf.Gene
    *     - `resource_visibility`: PUBLIC|RESTRICTED
    *     - `status_code` - an RPC status code as defined in
    *     https://github.com/googleapis/googleapis/blob/master/google/rpc/code.proto
+   *
    * * The operator must be `=` or `!=`.
    *
    * Examples:
@@ -1377,6 +1379,7 @@ public final class ListTableDataProfilesRequest extends com.google.protobuf.Gene
      *     - `resource_visibility`: PUBLIC|RESTRICTED
      *     - `status_code` - an RPC status code as defined in
      *     https://github.com/googleapis/googleapis/blob/master/google/rpc/code.proto
+     *
      * * The operator must be `=` or `!=`.
      *
      * Examples:
@@ -1425,6 +1428,7 @@ public final class ListTableDataProfilesRequest extends com.google.protobuf.Gene
      *     - `resource_visibility`: PUBLIC|RESTRICTED
      *     - `status_code` - an RPC status code as defined in
      *     https://github.com/googleapis/googleapis/blob/master/google/rpc/code.proto
+     *
      * * The operator must be `=` or `!=`.
      *
      * Examples:
@@ -1473,6 +1477,7 @@ public final class ListTableDataProfilesRequest extends com.google.protobuf.Gene
      *     - `resource_visibility`: PUBLIC|RESTRICTED
      *     - `status_code` - an RPC status code as defined in
      *     https://github.com/googleapis/googleapis/blob/master/google/rpc/code.proto
+     *
      * * The operator must be `=` or `!=`.
      *
      * Examples:
@@ -1520,6 +1525,7 @@ public final class ListTableDataProfilesRequest extends com.google.protobuf.Gene
      *     - `resource_visibility`: PUBLIC|RESTRICTED
      *     - `status_code` - an RPC status code as defined in
      *     https://github.com/googleapis/googleapis/blob/master/google/rpc/code.proto
+     *
      * * The operator must be `=` or `!=`.
      *
      * Examples:
@@ -1563,6 +1569,7 @@ public final class ListTableDataProfilesRequest extends com.google.protobuf.Gene
      *     - `resource_visibility`: PUBLIC|RESTRICTED
      *     - `status_code` - an RPC status code as defined in
      *     https://github.com/googleapis/googleapis/blob/master/google/rpc/code.proto
+     *
      * * The operator must be `=` or `!=`.
      *
      * Examples:

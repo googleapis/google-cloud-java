@@ -19,6 +19,51 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
+ * <p>======================= AddressGroupServiceClient =======================
+ *
+ * <p>Service Description: AddressGroup is a resource that manages a collection of IP or Domain
+ * Names, it can be used in Firewall Policy to represent allow or deny traffic from all the IP or
+ * Domain Names from the Address Group.
+ *
+ * <p>Sample for AddressGroupServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (AddressGroupServiceClient addressGroupServiceClient = AddressGroupServiceClient.create()) {
+ *   AddressGroupName name =
+ *       AddressGroupName.ofProjectLocationAddressGroupName(
+ *           "[PROJECT]", "[LOCATION]", "[ADDRESS_GROUP]");
+ *   AddressGroup response = addressGroupServiceClient.getAddressGroup(name);
+ * }
+ * }</pre>
+ *
+ * <p>======================= OrganizationAddressGroupServiceClient =======================
+ *
+ * <p>Service Description: Organization AddressGroup is created under organization. Requests against
+ * Organization AddressGroup will use project from request credential for
+ * activation/quota/visibility check.
+ *
+ * <p>Sample for OrganizationAddressGroupServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (OrganizationAddressGroupServiceClient organizationAddressGroupServiceClient =
+ *     OrganizationAddressGroupServiceClient.create()) {
+ *   AddressGroupName name =
+ *       AddressGroupName.ofOrganizationLocationAddressGroupName(
+ *           "[ORGANIZATION]", "[LOCATION]", "[ADDRESS_GROUP]");
+ *   AddressGroup response = organizationAddressGroupServiceClient.getAddressGroup(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= NetworkSecurityClient =======================
  *
  * <p>Service Description: Network Security API provides resources to configure authentication and

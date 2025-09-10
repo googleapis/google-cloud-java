@@ -25,6 +25,8 @@ package com.google.cloud.vmmigration.v1;
  * <pre>
  * Scheduling information for VM on maintenance/restart behaviour and
  * node allocation in sole tenant nodes.
+ * Options for instance behavior when the host machine undergoes
+ * maintenance that may temporarily impact instance performance.
  * </pre>
  *
  * Protobuf type {@code google.cloud.vmmigration.v1.ComputeScheduling}
@@ -792,6 +794,8 @@ public final class ComputeScheduling extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Scheduling information for VM on maintenance/restart behaviour and
    * node allocation in sole tenant nodes.
+   * Options for instance behavior when the host machine undergoes
+   * maintenance that may temporarily impact instance performance.
    * </pre>
    *
    * Protobuf type {@code google.cloud.vmmigration.v1.ComputeScheduling}

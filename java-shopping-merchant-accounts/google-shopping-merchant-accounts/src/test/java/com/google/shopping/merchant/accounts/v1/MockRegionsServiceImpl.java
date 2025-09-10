@@ -100,6 +100,28 @@ public class MockRegionsServiceImpl extends RegionsServiceImplBase {
   }
 
   @Override
+  public void batchCreateRegions(
+      BatchCreateRegionsRequest request,
+      StreamObserver<BatchCreateRegionsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof BatchCreateRegionsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((BatchCreateRegionsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method BatchCreateRegions, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  BatchCreateRegionsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void updateRegion(UpdateRegionRequest request, StreamObserver<Region> responseObserver) {
     Object response = responses.poll();
     if (response instanceof Region) {
@@ -120,6 +142,28 @@ public class MockRegionsServiceImpl extends RegionsServiceImplBase {
   }
 
   @Override
+  public void batchUpdateRegions(
+      BatchUpdateRegionsRequest request,
+      StreamObserver<BatchUpdateRegionsResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof BatchUpdateRegionsResponse) {
+      requests.add(request);
+      responseObserver.onNext(((BatchUpdateRegionsResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method BatchUpdateRegions, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  BatchUpdateRegionsResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void deleteRegion(DeleteRegionRequest request, StreamObserver<Empty> responseObserver) {
     Object response = responses.poll();
     if (response instanceof Empty) {
@@ -133,6 +177,27 @@ public class MockRegionsServiceImpl extends RegionsServiceImplBase {
           new IllegalArgumentException(
               String.format(
                   "Unrecognized response type %s for method DeleteRegion, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void batchDeleteRegions(
+      BatchDeleteRegionsRequest request, StreamObserver<Empty> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Empty) {
+      requests.add(request);
+      responseObserver.onNext(((Empty) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method BatchDeleteRegions, expected %s or %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
                   Exception.class.getName())));

@@ -4979,7 +4979,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * A column can be tagged with a custom tag. In this case, the user must
        * indicate an auxiliary table that contains statistical information on
-       * the possible values of this column (below).
+       * the possible values of this column.
        * </pre>
        *
        * <code>string custom_tag = 3;</code>
@@ -4994,7 +4994,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * A column can be tagged with a custom tag. In this case, the user must
        * indicate an auxiliary table that contains statistical information on
-       * the possible values of this column (below).
+       * the possible values of this column.
        * </pre>
        *
        * <code>string custom_tag = 3;</code>
@@ -5009,7 +5009,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * A column can be tagged with a custom tag. In this case, the user must
        * indicate an auxiliary table that contains statistical information on
-       * the possible values of this column (below).
+       * the possible values of this column.
        * </pre>
        *
        * <code>string custom_tag = 3;</code>
@@ -5285,7 +5285,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * A column can be tagged with a custom tag. In this case, the user must
        * indicate an auxiliary table that contains statistical information on
-       * the possible values of this column (below).
+       * the possible values of this column.
        * </pre>
        *
        * <code>string custom_tag = 3;</code>
@@ -5302,7 +5302,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * A column can be tagged with a custom tag. In this case, the user must
        * indicate an auxiliary table that contains statistical information on
-       * the possible values of this column (below).
+       * the possible values of this column.
        * </pre>
        *
        * <code>string custom_tag = 3;</code>
@@ -5332,7 +5332,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * A column can be tagged with a custom tag. In this case, the user must
        * indicate an auxiliary table that contains statistical information on
-       * the possible values of this column (below).
+       * the possible values of this column.
        * </pre>
        *
        * <code>string custom_tag = 3;</code>
@@ -6384,7 +6384,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * A column can be tagged with a custom tag. In this case, the user must
          * indicate an auxiliary table that contains statistical information on
-         * the possible values of this column (below).
+         * the possible values of this column.
          * </pre>
          *
          * <code>string custom_tag = 3;</code>
@@ -6402,7 +6402,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * A column can be tagged with a custom tag. In this case, the user must
          * indicate an auxiliary table that contains statistical information on
-         * the possible values of this column (below).
+         * the possible values of this column.
          * </pre>
          *
          * <code>string custom_tag = 3;</code>
@@ -6433,7 +6433,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * A column can be tagged with a custom tag. In this case, the user must
          * indicate an auxiliary table that contains statistical information on
-         * the possible values of this column (below).
+         * the possible values of this column.
          * </pre>
          *
          * <code>string custom_tag = 3;</code>
@@ -6464,7 +6464,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * A column can be tagged with a custom tag. In this case, the user must
          * indicate an auxiliary table that contains statistical information on
-         * the possible values of this column (below).
+         * the possible values of this column.
          * </pre>
          *
          * <code>string custom_tag = 3;</code>
@@ -6488,7 +6488,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * A column can be tagged with a custom tag. In this case, the user must
          * indicate an auxiliary table that contains statistical information on
-         * the possible values of this column (below).
+         * the possible values of this column.
          * </pre>
          *
          * <code>string custom_tag = 3;</code>
@@ -6510,7 +6510,7 @@ public final class PrivacyMetric extends com.google.protobuf.GeneratedMessageV3
          * <pre>
          * A column can be tagged with a custom tag. In this case, the user must
          * indicate an auxiliary table that contains statistical information on
-         * the possible values of this column (below).
+         * the possible values of this column.
          * </pre>
          *
          * <code>string custom_tag = 3;</code>

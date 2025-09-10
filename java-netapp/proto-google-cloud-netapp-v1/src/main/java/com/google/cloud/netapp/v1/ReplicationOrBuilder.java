@@ -625,4 +625,50 @@ public interface ReplicationOrBuilder
    * @return The hybridReplicationType.
    */
   com.google.cloud.netapp.v1.Replication.HybridReplicationType getHybridReplicationType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Copy pastable snapmirror commands to be executed on onprem
+   * cluster by the customer.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.UserCommands hybrid_replication_user_commands = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the hybridReplicationUserCommands field is set.
+   */
+  boolean hasHybridReplicationUserCommands();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Copy pastable snapmirror commands to be executed on onprem
+   * cluster by the customer.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.UserCommands hybrid_replication_user_commands = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The hybridReplicationUserCommands.
+   */
+  com.google.cloud.netapp.v1.UserCommands getHybridReplicationUserCommands();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Copy pastable snapmirror commands to be executed on onprem
+   * cluster by the customer.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.UserCommands hybrid_replication_user_commands = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.netapp.v1.UserCommandsOrBuilder getHybridReplicationUserCommandsOrBuilder();
 }

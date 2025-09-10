@@ -5428,9 +5428,6 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
    *
    * Supported values are:
    *
-   * - "ADVERSARIAL"
-   * - "CHITCHAT"
-   * - "JAILBREAK"
    * - "ORDER_SUPPORT"
    * - "SIMPLE_PRODUCT_SEARCH"
    * - "INTENT_REFINEMENT"
@@ -5462,9 +5459,6 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
    *
    * Supported values are:
    *
-   * - "ADVERSARIAL"
-   * - "CHITCHAT"
-   * - "JAILBREAK"
    * - "ORDER_SUPPORT"
    * - "SIMPLE_PRODUCT_SEARCH"
    * - "INTENT_REFINEMENT"
@@ -5496,9 +5490,6 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
    *
    * Supported values are:
    *
-   * - "ADVERSARIAL"
-   * - "CHITCHAT"
-   * - "JAILBREAK"
    * - "ORDER_SUPPORT"
    * - "SIMPLE_PRODUCT_SEARCH"
    * - "INTENT_REFINEMENT"
@@ -5531,9 +5522,6 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
    *
    * Supported values are:
    *
-   * - "ADVERSARIAL"
-   * - "CHITCHAT"
-   * - "JAILBREAK"
    * - "ORDER_SUPPORT"
    * - "SIMPLE_PRODUCT_SEARCH"
    * - "INTENT_REFINEMENT"
@@ -6567,9 +6555,6 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
      *
      * Supported values are:
      *
-     * - "ADVERSARIAL"
-     * - "CHITCHAT"
-     * - "JAILBREAK"
      * - "ORDER_SUPPORT"
      * - "SIMPLE_PRODUCT_SEARCH"
      * - "INTENT_REFINEMENT"
@@ -6602,9 +6587,6 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
      *
      * Supported values are:
      *
-     * - "ADVERSARIAL"
-     * - "CHITCHAT"
-     * - "JAILBREAK"
      * - "ORDER_SUPPORT"
      * - "SIMPLE_PRODUCT_SEARCH"
      * - "INTENT_REFINEMENT"
@@ -6636,9 +6618,6 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
      *
      * Supported values are:
      *
-     * - "ADVERSARIAL"
-     * - "CHITCHAT"
-     * - "JAILBREAK"
      * - "ORDER_SUPPORT"
      * - "SIMPLE_PRODUCT_SEARCH"
      * - "INTENT_REFINEMENT"
@@ -6671,9 +6650,6 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
      *
      * Supported values are:
      *
-     * - "ADVERSARIAL"
-     * - "CHITCHAT"
-     * - "JAILBREAK"
      * - "ORDER_SUPPORT"
      * - "SIMPLE_PRODUCT_SEARCH"
      * - "INTENT_REFINEMENT"
@@ -6706,9 +6682,6 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
      *
      * Supported values are:
      *
-     * - "ADVERSARIAL"
-     * - "CHITCHAT"
-     * - "JAILBREAK"
      * - "ORDER_SUPPORT"
      * - "SIMPLE_PRODUCT_SEARCH"
      * - "INTENT_REFINEMENT"
@@ -6749,9 +6722,6 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
      *
      * Supported values are:
      *
-     * - "ADVERSARIAL"
-     * - "CHITCHAT"
-     * - "JAILBREAK"
      * - "ORDER_SUPPORT"
      * - "SIMPLE_PRODUCT_SEARCH"
      * - "INTENT_REFINEMENT"
@@ -6791,9 +6761,6 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
      *
      * Supported values are:
      *
-     * - "ADVERSARIAL"
-     * - "CHITCHAT"
-     * - "JAILBREAK"
      * - "ORDER_SUPPORT"
      * - "SIMPLE_PRODUCT_SEARCH"
      * - "INTENT_REFINEMENT"
@@ -6830,9 +6797,6 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
      *
      * Supported values are:
      *
-     * - "ADVERSARIAL"
-     * - "CHITCHAT"
-     * - "JAILBREAK"
      * - "ORDER_SUPPORT"
      * - "SIMPLE_PRODUCT_SEARCH"
      * - "INTENT_REFINEMENT"
@@ -6868,9 +6832,6 @@ public final class ConversationalSearchResponse extends com.google.protobuf.Gene
      *
      * Supported values are:
      *
-     * - "ADVERSARIAL"
-     * - "CHITCHAT"
-     * - "JAILBREAK"
      * - "ORDER_SUPPORT"
      * - "SIMPLE_PRODUCT_SEARCH"
      * - "INTENT_REFINEMENT"
