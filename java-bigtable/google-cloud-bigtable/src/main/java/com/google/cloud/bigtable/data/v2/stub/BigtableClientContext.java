@@ -20,7 +20,6 @@ import com.google.api.core.InternalApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.FixedCredentialsProvider;
-import com.google.api.gax.grpc.ChannelPrimer;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.auth.Credentials;
@@ -34,6 +33,7 @@ import com.google.cloud.bigtable.data.v2.stub.metrics.ErrorCountPerConnectionMet
 import com.google.cloud.bigtable.data.v2.stub.metrics.MetricsProvider;
 import com.google.cloud.bigtable.data.v2.stub.metrics.NoopMetricsProvider;
 import com.google.cloud.bigtable.gaxx.grpc.BigtableTransportChannelProvider;
+import com.google.cloud.bigtable.gaxx.grpc.ChannelPrimer;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.opentelemetry.GrpcOpenTelemetry;
 import io.opentelemetry.api.OpenTelemetry;

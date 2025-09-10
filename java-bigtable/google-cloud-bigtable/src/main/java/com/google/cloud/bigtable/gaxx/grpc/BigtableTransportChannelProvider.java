@@ -18,7 +18,6 @@ package com.google.cloud.bigtable.gaxx.grpc;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.grpc.ChannelFactory;
 import com.google.api.gax.grpc.ChannelPoolSettings;
-import com.google.api.gax.grpc.ChannelPrimer;
 import com.google.api.gax.grpc.GrpcTransportChannel;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.TransportChannel;

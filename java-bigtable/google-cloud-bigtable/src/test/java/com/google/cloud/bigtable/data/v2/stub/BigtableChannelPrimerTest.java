@@ -19,7 +19,7 @@ import static com.google.common.truth.Truth.assertThat;
 import static org.junit.Assert.assertThrows;
 
 import com.google.api.core.ApiFunction;
-import com.google.api.core.SettableApiFuture;
+import com.google.api.core.ApiFuture;
 import com.google.auth.oauth2.AccessToken;
 import com.google.auth.oauth2.OAuth2Credentials;
 import com.google.bigtable.v2.BigtableGrpc.BigtableImplBase;
@@ -173,7 +173,7 @@ public class BigtableChannelPrimerTest {
   // New test for the async success path
   @Test
   public void testAsyncSuccess() throws Exception {
-    SettableApiFuture<PingAndWarmResponse> future = primer.sendPrimeRequestsAsync(channel);
+    ApiFuture<PingAndWarmResponse> future = primer.sendPrimeRequestsAsync(channel);
 
     PingAndWarmResponse response = future.get(1, TimeUnit.SECONDS);
     assertThat(response).isNotNull();
@@ -192,7 +192,7 @@ public class BigtableChannelPrimerTest {
           }
         };
 
-    SettableApiFuture<PingAndWarmResponse> future = primer.sendPrimeRequestsAsync(channel);
+    ApiFuture<PingAndWarmResponse> future = primer.sendPrimeRequestsAsync(channel);
 
     ExecutionException e =
         assertThrows(ExecutionException.class, () -> future.get(5, TimeUnit.SECONDS));

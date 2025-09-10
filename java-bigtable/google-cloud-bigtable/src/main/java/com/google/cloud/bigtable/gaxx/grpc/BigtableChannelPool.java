@@ -17,7 +17,7 @@ package com.google.cloud.bigtable.gaxx.grpc;
 
 import com.google.api.core.InternalApi;
 import com.google.api.gax.grpc.ChannelFactory;
-import com.google.api.gax.grpc.ChannelPrimer;
+import com.google.cloud.bigtable.gaxx.grpc.ChannelPoolHealthChecker.ProbeResult;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
@@ -31,9 +31,11 @@ import io.grpc.Metadata;
 import io.grpc.MethodDescriptor;
 import io.grpc.Status;
 import java.io.IOException;
+import java.time.Clock;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.CancellationException;
+import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -64,9 +66,9 @@ public class BigtableChannelPool extends ManagedChannel {
 
   private final ChannelPrimer channelPrimer;
   private final ScheduledExecutorService executor;
-
   private final Object entryWriteLock = new Object();
   @VisibleForTesting final AtomicReference<ImmutableList<Entry>> entries = new AtomicReference<>();
+  private final ChannelPoolHealthChecker channelPoolHealthChecker;
   private final AtomicInteger indexTicker = new AtomicInteger();
   private final String authority;
 
@@ -96,6 +98,10 @@ public class BigtableChannelPool extends ManagedChannel {
     this.settings = settings;
     this.channelFactory = channelFactory;
     this.channelPrimer = channelPrimer;
+    Clock systemClock = Clock.systemUTC();
+    this.channelPoolHealthChecker =
+        new ChannelPoolHealthChecker(entries::get, channelPrimer, executor, systemClock);
+    this.channelPoolHealthChecker.start();
 
     ImmutableList.Builder<Entry> initialListBuilder = ImmutableList.builder();
 
@@ -445,13 +451,30 @@ public class BigtableChannelPool extends ManagedChannel {
 
     private final AtomicInteger maxOutstanding = new AtomicInteger();
 
-    // Flag that the channel should be closed once all of the outstanding RPC complete.
+    /** Queue storing the last 5 minutes of probe results */
+    @VisibleForTesting
+    final ConcurrentLinkedQueue<ProbeResult> probeHistory = new ConcurrentLinkedQueue<>();
+
+    /**
+     * Keep both # of failed and # of successful probes so that we don't have to check size() on the
+     * ConcurrentLinkedQueue all the time
+     */
+    final AtomicInteger failedProbesInWindow = new AtomicInteger();
+
+    final AtomicInteger successfulProbesInWindow = new AtomicInteger();
+
+    // Flag that the channel should be closed once all the outstanding RPCs complete.
     private final AtomicBoolean shutdownRequested = new AtomicBoolean();
     // Flag that the channel has been closed.
     private final AtomicBoolean shutdownInitiated = new AtomicBoolean();
 
-    private Entry(ManagedChannel channel) {
+    @VisibleForTesting
+    Entry(ManagedChannel channel) {
       this.channel = channel;
+    }
+
+    ManagedChannel getManagedChannel() {
+      return this.channel;
     }
 
     int getAndResetMaxOutstanding() {
@@ -468,7 +491,7 @@ public class BigtableChannelPool extends ManagedChannel {
       // register desire to start RPC
       int currentOutstanding = outstandingRpcs.incrementAndGet();
 
-      // Rough book keeping
+      // Rough bookkeeping
       int prevMax = maxOutstanding.get();
       if (currentOutstanding > prevMax) {
         maxOutstanding.incrementAndGet();

@@ -15,14 +15,15 @@
  */
 package com.google.cloud.bigtable.data.v2.stub;
 
+import com.google.api.core.ApiFuture;
 import com.google.api.core.InternalApi;
 import com.google.api.core.SettableApiFuture;
-import com.google.api.gax.grpc.ChannelPrimer;
 import com.google.auth.Credentials;
 import com.google.bigtable.v2.BigtableGrpc;
 import com.google.bigtable.v2.InstanceName;
 import com.google.bigtable.v2.PingAndWarmRequest;
 import com.google.bigtable.v2.PingAndWarmResponse;
+import com.google.cloud.bigtable.gaxx.grpc.ChannelPrimer;
 import io.grpc.CallCredentials;
 import io.grpc.CallOptions;
 import io.grpc.ClientCall;
@@ -110,8 +111,7 @@ public class BigtableChannelPrimer implements ChannelPrimer {
     }
   }
 
-  public SettableApiFuture<PingAndWarmResponse> sendPrimeRequestsAsync(
-      ManagedChannel managedChannel) {
+  public ApiFuture<PingAndWarmResponse> sendPrimeRequestsAsync(ManagedChannel managedChannel) {
     ClientCall<PingAndWarmRequest, PingAndWarmResponse> clientCall =
         managedChannel.newCall(
             BigtableGrpc.getPingAndWarmMethod(),

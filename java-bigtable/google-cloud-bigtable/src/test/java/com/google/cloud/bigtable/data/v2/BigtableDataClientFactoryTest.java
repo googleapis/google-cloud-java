@@ -27,7 +27,6 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.WatchdogProvider;
 import com.google.bigtable.v2.BigtableGrpc;
 import com.google.bigtable.v2.FeatureFlags;
-import com.google.bigtable.v2.InstanceName;
 import com.google.bigtable.v2.MutateRowRequest;
 import com.google.bigtable.v2.MutateRowResponse;
 import com.google.bigtable.v2.PingAndWarmRequest;
@@ -40,6 +39,7 @@ import com.google.cloud.bigtable.data.v2.stub.metrics.NoopMetricsProvider;
 import com.google.common.base.Preconditions;
 import com.google.common.io.BaseEncoding;
 import io.grpc.Attributes;
+import io.grpc.Grpc;
 import io.grpc.Metadata;
 import io.grpc.Server;
 import io.grpc.ServerCall;
@@ -50,9 +50,10 @@ import io.grpc.ServerTransportFilter;
 import io.grpc.stub.StreamObserver;
 import java.io.IOException;
 import java.lang.reflect.Method;
-import java.util.LinkedList;
-import java.util.List;
+import java.net.SocketAddress;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.LinkedBlockingDeque;
 import org.junit.After;
 import org.junit.Before;
@@ -87,6 +88,7 @@ public class BigtableDataClientFactoryTest {
   private final BlockingQueue<Attributes> setUpAttributes = new LinkedBlockingDeque<>();
   private final BlockingQueue<Attributes> terminateAttributes = new LinkedBlockingDeque<>();
   private final BlockingQueue<Metadata> requestMetadata = new LinkedBlockingDeque<>();
+  private final ConcurrentMap<SocketAddress, Boolean> warmedChannels = new ConcurrentHashMap<>();
 
   @Before
   public void setUp() throws IOException {
@@ -101,6 +103,15 @@ public class BigtableDataClientFactoryTest {
                       Metadata headers,
                       ServerCallHandler<ReqT, RespT> next) {
                     requestMetadata.add(headers);
+
+                    // Check if the call is PingAndWarm and mark the channel address as warmed up.
+                    if (BigtableGrpc.getPingAndWarmMethod().equals(call.getMethodDescriptor())) {
+                      SocketAddress remoteAddr =
+                          call.getAttributes().get(Grpc.TRANSPORT_ATTR_REMOTE_ADDR);
+                      if (remoteAddr != null) {
+                        warmedChannels.put(remoteAddr, true);
+                      }
+                    }
                     return next.startCall(call, headers);
                   }
                 })
@@ -278,21 +289,8 @@ public class BigtableDataClientFactoryTest {
     Mockito.verify(executorProvider, Mockito.times(1)).getExecutor();
     Mockito.verify(watchdogProvider, Mockito.times(1)).getWatchdog();
 
-    // Make sure that the clients are sharing the same ChannelPool
-    assertThat(setUpAttributes).hasSize(poolSize);
-
-    // Make sure that prime requests were sent only once per table per connection
-    assertThat(service.pingAndWarmRequests).hasSize(poolSize);
-    List<PingAndWarmRequest> expectedRequests = new LinkedList<>();
-    for (int i = 0; i < poolSize; i++) {
-      expectedRequests.add(
-          PingAndWarmRequest.newBuilder()
-              .setName(InstanceName.format(DEFAULT_PROJECT_ID, DEFAULT_INSTANCE_ID))
-              .setAppProfileId(DEFAULT_APP_PROFILE_ID)
-              .build());
-    }
-
-    assertThat(service.pingAndWarmRequests).containsExactly(expectedRequests.toArray());
+    assertThat(warmedChannels).hasSize(poolSize);
+    assertThat(warmedChannels.values()).doesNotContain(false);
 
     // Wait for all the connections to close asynchronously
     factory.close();

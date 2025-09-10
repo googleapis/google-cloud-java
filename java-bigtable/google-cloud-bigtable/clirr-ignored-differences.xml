@@ -426,4 +426,34 @@
         <method>*create*</method>
         <to>*</to>
     </difference>
+    <difference>
+        <differenceType>4001</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/BigtableChannelPrimer</className>
+        <to>com/google/api/gax/grpc/ChannelPrimer</to>
+    </difference>
+    <difference>
+        <differenceType>4001</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/NoOpChannelPrimer</className>
+        <to>com/google/api/gax/grpc/ChannelPrimer</to>
+    </difference>
+    <difference>
+        <differenceType>7005</differenceType>
+        <className>com/google/cloud/bigtable/gaxx/grpc/BigtableChannelPool</className>
+        <method>*create*</method>
+        <to>*</to>
+    </difference>
+    <difference>
+        <!-- InternalApi was updated -->
+        <differenceType>7005</differenceType>
+        <className>com/google/cloud/bigtable/gaxx/grpc/BigtableTransportChannelProvider</className>
+        <method>*create*</method>
+        <to>*</to>
+    </difference>
+    <!-- change method return type is ok because BigtableChannelPrimer is InternalApi -->
+    <difference>
+        <differenceType>7006</differenceType>
+        <className>com/google/cloud/bigtable/data/v2/stub/BigtableChannelPrimer</className>
+        <method>*sendPrimeRequestsAsync*</method>
+        <to>com.google.api.core.ApiFuture</to>
+    </difference>
 </differences>
