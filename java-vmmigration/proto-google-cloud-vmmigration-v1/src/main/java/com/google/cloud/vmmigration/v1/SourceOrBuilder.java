@@ -102,6 +102,43 @@ public interface SourceOrBuilder
    *
    *
    * <pre>
+   * Azure type source details.
+   * </pre>
+   *
+   * <code>.google.cloud.vmmigration.v1.AzureSourceDetails azure = 13;</code>
+   *
+   * @return Whether the azure field is set.
+   */
+  boolean hasAzure();
+
+  /**
+   *
+   *
+   * <pre>
+   * Azure type source details.
+   * </pre>
+   *
+   * <code>.google.cloud.vmmigration.v1.AzureSourceDetails azure = 13;</code>
+   *
+   * @return The azure.
+   */
+  com.google.cloud.vmmigration.v1.AzureSourceDetails getAzure();
+
+  /**
+   *
+   *
+   * <pre>
+   * Azure type source details.
+   * </pre>
+   *
+   * <code>.google.cloud.vmmigration.v1.AzureSourceDetails azure = 13;</code>
+   */
+  com.google.cloud.vmmigration.v1.AzureSourceDetailsOrBuilder getAzureOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The Source name.
    * </pre>
    *
@@ -292,6 +329,52 @@ public interface SourceOrBuilder
    * @return The bytes for description.
    */
   com.google.protobuf.ByteString getDescriptionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The encryption details of the source data stored by
+   * the service.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.Encryption encryption = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return Whether the encryption field is set.
+   */
+  boolean hasEncryption();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The encryption details of the source data stored by
+   * the service.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.Encryption encryption = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The encryption.
+   */
+  com.google.cloud.vmmigration.v1.Encryption getEncryption();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. The encryption details of the source data stored by
+   * the service.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.Encryption encryption = 14 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   */
+  com.google.cloud.vmmigration.v1.EncryptionOrBuilder getEncryptionOrBuilder();
 
   com.google.cloud.vmmigration.v1.Source.SourceDetailsCase getSourceDetailsCase();
 }

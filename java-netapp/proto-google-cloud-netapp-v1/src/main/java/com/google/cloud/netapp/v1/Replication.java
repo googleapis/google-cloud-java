@@ -179,6 +179,27 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * <code>PENDING_SVM_PEERING = 9;</code>
      */
     PENDING_SVM_PEERING(9),
+    /**
+     *
+     *
+     * <pre>
+     * Replication is waiting for Commands to be executed on Onprem ONTAP.
+     * </pre>
+     *
+     * <code>PENDING_REMOTE_RESYNC = 10;</code>
+     */
+    PENDING_REMOTE_RESYNC(10),
+    /**
+     *
+     *
+     * <pre>
+     * Onprem ONTAP is destination and Replication can only be managed from
+     * Onprem.
+     * </pre>
+     *
+     * <code>EXTERNALLY_MANAGED_REPLICATION = 11;</code>
+     */
+    EXTERNALLY_MANAGED_REPLICATION(11),
     UNRECOGNIZED(-1),
     ;
 
@@ -270,6 +291,29 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      */
     public static final int PENDING_SVM_PEERING_VALUE = 9;
 
+    /**
+     *
+     *
+     * <pre>
+     * Replication is waiting for Commands to be executed on Onprem ONTAP.
+     * </pre>
+     *
+     * <code>PENDING_REMOTE_RESYNC = 10;</code>
+     */
+    public static final int PENDING_REMOTE_RESYNC_VALUE = 10;
+
+    /**
+     *
+     *
+     * <pre>
+     * Onprem ONTAP is destination and Replication can only be managed from
+     * Onprem.
+     * </pre>
+     *
+     * <code>EXTERNALLY_MANAGED_REPLICATION = 11;</code>
+     */
+    public static final int EXTERNALLY_MANAGED_REPLICATION_VALUE = 11;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -310,6 +354,10 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
           return PENDING_CLUSTER_PEERING;
         case 9:
           return PENDING_SVM_PEERING;
+        case 10:
+          return PENDING_REMOTE_RESYNC;
+        case 11:
+          return EXTERNALLY_MANAGED_REPLICATION;
         default:
           return null;
       }
@@ -794,6 +842,26 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * <code>ABORTED = 6;</code>
      */
     ABORTED(6),
+    /**
+     *
+     *
+     * <pre>
+     * Replication is being managed from Onprem ONTAP.
+     * </pre>
+     *
+     * <code>EXTERNALLY_MANAGED = 7;</code>
+     */
+    EXTERNALLY_MANAGED(7),
+    /**
+     *
+     *
+     * <pre>
+     * Peering is yet to be established.
+     * </pre>
+     *
+     * <code>PENDING_PEERING = 8;</code>
+     */
+    PENDING_PEERING(8),
     UNRECOGNIZED(-1),
     ;
 
@@ -875,6 +943,28 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      */
     public static final int ABORTED_VALUE = 6;
 
+    /**
+     *
+     *
+     * <pre>
+     * Replication is being managed from Onprem ONTAP.
+     * </pre>
+     *
+     * <code>EXTERNALLY_MANAGED = 7;</code>
+     */
+    public static final int EXTERNALLY_MANAGED_VALUE = 7;
+
+    /**
+     *
+     *
+     * <pre>
+     * Peering is yet to be established.
+     * </pre>
+     *
+     * <code>PENDING_PEERING = 8;</code>
+     */
+    public static final int PENDING_PEERING_VALUE = 8;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -913,6 +1003,10 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
           return BASELINE_TRANSFERRING;
         case 6:
           return ABORTED;
+        case 7:
+          return EXTERNALLY_MANAGED;
+        case 8:
+          return PENDING_PEERING;
         default:
           return null;
       }
@@ -1006,6 +1100,28 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      * <code>CONTINUOUS_REPLICATION = 2;</code>
      */
     CONTINUOUS_REPLICATION(2),
+    /**
+     *
+     *
+     * <pre>
+     * New field for reversible OnPrem replication, to be used for data
+     * protection.
+     * </pre>
+     *
+     * <code>ONPREM_REPLICATION = 3;</code>
+     */
+    ONPREM_REPLICATION(3),
+    /**
+     *
+     *
+     * <pre>
+     * Hybrid replication type for incremental Transfer in the reverse direction
+     * (GCNV is source and Onprem is destination)
+     * </pre>
+     *
+     * <code>REVERSE_ONPREM_REPLICATION = 4;</code>
+     */
+    REVERSE_ONPREM_REPLICATION(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -1042,6 +1158,30 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
      */
     public static final int CONTINUOUS_REPLICATION_VALUE = 2;
 
+    /**
+     *
+     *
+     * <pre>
+     * New field for reversible OnPrem replication, to be used for data
+     * protection.
+     * </pre>
+     *
+     * <code>ONPREM_REPLICATION = 3;</code>
+     */
+    public static final int ONPREM_REPLICATION_VALUE = 3;
+
+    /**
+     *
+     *
+     * <pre>
+     * Hybrid replication type for incremental Transfer in the reverse direction
+     * (GCNV is source and Onprem is destination)
+     * </pre>
+     *
+     * <code>REVERSE_ONPREM_REPLICATION = 4;</code>
+     */
+    public static final int REVERSE_ONPREM_REPLICATION_VALUE = 4;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -1072,6 +1212,10 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
           return MIGRATION;
         case 2:
           return CONTINUOUS_REPLICATION;
+        case 3:
+          return ONPREM_REPLICATION;
+        case 4:
+          return REVERSE_ONPREM_REPLICATION;
         default:
           return null;
       }
@@ -2074,6 +2218,69 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
+  public static final int HYBRID_REPLICATION_USER_COMMANDS_FIELD_NUMBER = 20;
+  private com.google.cloud.netapp.v1.UserCommands hybridReplicationUserCommands_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Copy pastable snapmirror commands to be executed on onprem
+   * cluster by the customer.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.UserCommands hybrid_replication_user_commands = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the hybridReplicationUserCommands field is set.
+   */
+  @java.lang.Override
+  public boolean hasHybridReplicationUserCommands() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Copy pastable snapmirror commands to be executed on onprem
+   * cluster by the customer.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.UserCommands hybrid_replication_user_commands = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The hybridReplicationUserCommands.
+   */
+  @java.lang.Override
+  public com.google.cloud.netapp.v1.UserCommands getHybridReplicationUserCommands() {
+    return hybridReplicationUserCommands_ == null
+        ? com.google.cloud.netapp.v1.UserCommands.getDefaultInstance()
+        : hybridReplicationUserCommands_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Copy pastable snapmirror commands to be executed on onprem
+   * cluster by the customer.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.UserCommands hybrid_replication_user_commands = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.netapp.v1.UserCommandsOrBuilder
+      getHybridReplicationUserCommandsOrBuilder() {
+    return hybridReplicationUserCommands_ == null
+        ? com.google.cloud.netapp.v1.UserCommands.getDefaultInstance()
+        : hybridReplicationUserCommands_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -2147,6 +2354,9 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
             .HYBRID_REPLICATION_TYPE_UNSPECIFIED
             .getNumber()) {
       output.writeEnum(19, hybridReplicationType_);
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(20, getHybridReplicationUserCommands());
     }
     getUnknownFields().writeTo(output);
   }
@@ -2228,6 +2438,11 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(19, hybridReplicationType_);
     }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              20, getHybridReplicationUserCommands());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2279,6 +2494,12 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     }
     if (!getClusterLocation().equals(other.getClusterLocation())) return false;
     if (hybridReplicationType_ != other.hybridReplicationType_) return false;
+    if (hasHybridReplicationUserCommands() != other.hasHybridReplicationUserCommands())
+      return false;
+    if (hasHybridReplicationUserCommands()) {
+      if (!getHybridReplicationUserCommands().equals(other.getHybridReplicationUserCommands()))
+        return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2338,6 +2559,10 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getClusterLocation().hashCode();
     hash = (37 * hash) + HYBRID_REPLICATION_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + hybridReplicationType_;
+    if (hasHybridReplicationUserCommands()) {
+      hash = (37 * hash) + HYBRID_REPLICATION_USER_COMMANDS_FIELD_NUMBER;
+      hash = (53 * hash) + getHybridReplicationUserCommands().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -2507,6 +2732,7 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
         getTransferStatsFieldBuilder();
         getDestinationVolumeParametersFieldBuilder();
         getHybridPeeringDetailsFieldBuilder();
+        getHybridReplicationUserCommandsFieldBuilder();
       }
     }
 
@@ -2547,6 +2773,11 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       }
       clusterLocation_ = "";
       hybridReplicationType_ = 0;
+      hybridReplicationUserCommands_ = null;
+      if (hybridReplicationUserCommandsBuilder_ != null) {
+        hybridReplicationUserCommandsBuilder_.dispose();
+        hybridReplicationUserCommandsBuilder_ = null;
+      }
       return this;
     }
 
@@ -2648,6 +2879,13 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
         result.hybridReplicationType_ = hybridReplicationType_;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.hybridReplicationUserCommands_ =
+            hybridReplicationUserCommandsBuilder_ == null
+                ? hybridReplicationUserCommands_
+                : hybridReplicationUserCommandsBuilder_.build();
+        to_bitField0_ |= 0x00000040;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2758,6 +2996,9 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hybridReplicationType_ != 0) {
         setHybridReplicationTypeValue(other.getHybridReplicationTypeValue());
+      }
+      if (other.hasHybridReplicationUserCommands()) {
+        mergeHybridReplicationUserCommands(other.getHybridReplicationUserCommands());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -2895,6 +3136,13 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00010000;
                 break;
               } // case 152
+            case 162:
+              {
+                input.readMessage(
+                    getHybridReplicationUserCommandsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 162
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5290,6 +5538,232 @@ public final class Replication extends com.google.protobuf.GeneratedMessageV3
       hybridReplicationType_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.netapp.v1.UserCommands hybridReplicationUserCommands_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.netapp.v1.UserCommands,
+            com.google.cloud.netapp.v1.UserCommands.Builder,
+            com.google.cloud.netapp.v1.UserCommandsOrBuilder>
+        hybridReplicationUserCommandsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Copy pastable snapmirror commands to be executed on onprem
+     * cluster by the customer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.UserCommands hybrid_replication_user_commands = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the hybridReplicationUserCommands field is set.
+     */
+    public boolean hasHybridReplicationUserCommands() {
+      return ((bitField0_ & 0x00020000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Copy pastable snapmirror commands to be executed on onprem
+     * cluster by the customer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.UserCommands hybrid_replication_user_commands = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The hybridReplicationUserCommands.
+     */
+    public com.google.cloud.netapp.v1.UserCommands getHybridReplicationUserCommands() {
+      if (hybridReplicationUserCommandsBuilder_ == null) {
+        return hybridReplicationUserCommands_ == null
+            ? com.google.cloud.netapp.v1.UserCommands.getDefaultInstance()
+            : hybridReplicationUserCommands_;
+      } else {
+        return hybridReplicationUserCommandsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Copy pastable snapmirror commands to be executed on onprem
+     * cluster by the customer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.UserCommands hybrid_replication_user_commands = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setHybridReplicationUserCommands(com.google.cloud.netapp.v1.UserCommands value) {
+      if (hybridReplicationUserCommandsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        hybridReplicationUserCommands_ = value;
+      } else {
+        hybridReplicationUserCommandsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Copy pastable snapmirror commands to be executed on onprem
+     * cluster by the customer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.UserCommands hybrid_replication_user_commands = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setHybridReplicationUserCommands(
+        com.google.cloud.netapp.v1.UserCommands.Builder builderForValue) {
+      if (hybridReplicationUserCommandsBuilder_ == null) {
+        hybridReplicationUserCommands_ = builderForValue.build();
+      } else {
+        hybridReplicationUserCommandsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Copy pastable snapmirror commands to be executed on onprem
+     * cluster by the customer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.UserCommands hybrid_replication_user_commands = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeHybridReplicationUserCommands(
+        com.google.cloud.netapp.v1.UserCommands value) {
+      if (hybridReplicationUserCommandsBuilder_ == null) {
+        if (((bitField0_ & 0x00020000) != 0)
+            && hybridReplicationUserCommands_ != null
+            && hybridReplicationUserCommands_
+                != com.google.cloud.netapp.v1.UserCommands.getDefaultInstance()) {
+          getHybridReplicationUserCommandsBuilder().mergeFrom(value);
+        } else {
+          hybridReplicationUserCommands_ = value;
+        }
+      } else {
+        hybridReplicationUserCommandsBuilder_.mergeFrom(value);
+      }
+      if (hybridReplicationUserCommands_ != null) {
+        bitField0_ |= 0x00020000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Copy pastable snapmirror commands to be executed on onprem
+     * cluster by the customer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.UserCommands hybrid_replication_user_commands = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearHybridReplicationUserCommands() {
+      bitField0_ = (bitField0_ & ~0x00020000);
+      hybridReplicationUserCommands_ = null;
+      if (hybridReplicationUserCommandsBuilder_ != null) {
+        hybridReplicationUserCommandsBuilder_.dispose();
+        hybridReplicationUserCommandsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Copy pastable snapmirror commands to be executed on onprem
+     * cluster by the customer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.UserCommands hybrid_replication_user_commands = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.netapp.v1.UserCommands.Builder
+        getHybridReplicationUserCommandsBuilder() {
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return getHybridReplicationUserCommandsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Copy pastable snapmirror commands to be executed on onprem
+     * cluster by the customer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.UserCommands hybrid_replication_user_commands = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.netapp.v1.UserCommandsOrBuilder
+        getHybridReplicationUserCommandsOrBuilder() {
+      if (hybridReplicationUserCommandsBuilder_ != null) {
+        return hybridReplicationUserCommandsBuilder_.getMessageOrBuilder();
+      } else {
+        return hybridReplicationUserCommands_ == null
+            ? com.google.cloud.netapp.v1.UserCommands.getDefaultInstance()
+            : hybridReplicationUserCommands_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Copy pastable snapmirror commands to be executed on onprem
+     * cluster by the customer.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.UserCommands hybrid_replication_user_commands = 20 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.netapp.v1.UserCommands,
+            com.google.cloud.netapp.v1.UserCommands.Builder,
+            com.google.cloud.netapp.v1.UserCommandsOrBuilder>
+        getHybridReplicationUserCommandsFieldBuilder() {
+      if (hybridReplicationUserCommandsBuilder_ == null) {
+        hybridReplicationUserCommandsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.netapp.v1.UserCommands,
+                com.google.cloud.netapp.v1.UserCommands.Builder,
+                com.google.cloud.netapp.v1.UserCommandsOrBuilder>(
+                getHybridReplicationUserCommands(), getParentForChildren(), isClean());
+        hybridReplicationUserCommands_ = null;
+      }
+      return hybridReplicationUserCommandsBuilder_;
     }
 
     @java.lang.Override

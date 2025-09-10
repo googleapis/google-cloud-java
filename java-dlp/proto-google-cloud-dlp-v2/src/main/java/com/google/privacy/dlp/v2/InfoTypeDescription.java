@@ -338,6 +338,59 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     }
   }
 
+  public static final int LOCATION_SUPPORT_FIELD_NUMBER = 6;
+  private com.google.privacy.dlp.v2.LocationSupport locationSupport_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Locations at which this feature can be used. May change over time.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.LocationSupport location_support = 6;</code>
+   *
+   * @return Whether the locationSupport field is set.
+   */
+  @java.lang.Override
+  public boolean hasLocationSupport() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Locations at which this feature can be used. May change over time.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.LocationSupport location_support = 6;</code>
+   *
+   * @return The locationSupport.
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.LocationSupport getLocationSupport() {
+    return locationSupport_ == null
+        ? com.google.privacy.dlp.v2.LocationSupport.getDefaultInstance()
+        : locationSupport_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Locations at which this feature can be used. May change over time.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.LocationSupport location_support = 6;</code>
+   */
+  @java.lang.Override
+  public com.google.privacy.dlp.v2.LocationSupportOrBuilder getLocationSupportOrBuilder() {
+    return locationSupport_ == null
+        ? com.google.privacy.dlp.v2.LocationSupport.getDefaultInstance()
+        : locationSupport_;
+  }
+
   public static final int EXAMPLE_FIELD_NUMBER = 8;
 
   @SuppressWarnings("serial")
@@ -559,7 +612,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
    */
   @java.lang.Override
   public boolean hasSensitivityScore() {
-    return ((bitField0_ & 0x00000001) != 0);
+    return ((bitField0_ & 0x00000002) != 0);
   }
 
   /**
@@ -711,6 +764,9 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, description_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(6, getLocationSupport());
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(example_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, example_);
     }
@@ -720,7 +776,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     for (int i = 0; i < categories_.size(); i++) {
       output.writeMessage(10, categories_.get(i));
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(11, getSensitivityScore());
     }
     for (int i = 0; i < specificInfoTypes_.size(); i++) {
@@ -756,6 +812,9 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(description_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, description_);
     }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getLocationSupport());
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(example_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, example_);
     }
@@ -765,7 +824,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     for (int i = 0; i < categories_.size(); i++) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, categories_.get(i));
     }
-    if (((bitField0_ & 0x00000001) != 0)) {
+    if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getSensitivityScore());
     }
     {
@@ -796,6 +855,10 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (!supportedBy_.equals(other.supportedBy_)) return false;
     if (!getDescription().equals(other.getDescription())) return false;
+    if (hasLocationSupport() != other.hasLocationSupport()) return false;
+    if (hasLocationSupport()) {
+      if (!getLocationSupport().equals(other.getLocationSupport())) return false;
+    }
     if (!getExample().equals(other.getExample())) return false;
     if (!getVersionsList().equals(other.getVersionsList())) return false;
     if (!getCategoriesList().equals(other.getCategoriesList())) return false;
@@ -825,6 +888,10 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     }
     hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
     hash = (53 * hash) + getDescription().hashCode();
+    if (hasLocationSupport()) {
+      hash = (37 * hash) + LOCATION_SUPPORT_FIELD_NUMBER;
+      hash = (53 * hash) + getLocationSupport().hashCode();
+    }
     hash = (37 * hash) + EXAMPLE_FIELD_NUMBER;
     hash = (53 * hash) + getExample().hashCode();
     if (getVersionsCount() > 0) {
@@ -984,6 +1051,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
 
     private void maybeForceBuilderInitialization() {
       if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getLocationSupportFieldBuilder();
         getVersionsFieldBuilder();
         getCategoriesFieldBuilder();
         getSensitivityScoreFieldBuilder();
@@ -999,6 +1067,11 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       supportedBy_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
       description_ = "";
+      locationSupport_ = null;
+      if (locationSupportBuilder_ != null) {
+        locationSupportBuilder_.dispose();
+        locationSupportBuilder_ = null;
+      }
       example_ = "";
       if (versionsBuilder_ == null) {
         versions_ = java.util.Collections.emptyList();
@@ -1006,14 +1079,14 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         versions_ = null;
         versionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000020);
+      bitField0_ = (bitField0_ & ~0x00000040);
       if (categoriesBuilder_ == null) {
         categories_ = java.util.Collections.emptyList();
       } else {
         categories_ = null;
         categoriesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000080);
       sensitivityScore_ = null;
       if (sensitivityScoreBuilder_ != null) {
         sensitivityScoreBuilder_.dispose();
@@ -1062,18 +1135,18 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       }
       result.supportedBy_ = supportedBy_;
       if (versionsBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)) {
+        if (((bitField0_ & 0x00000040) != 0)) {
           versions_ = java.util.Collections.unmodifiableList(versions_);
-          bitField0_ = (bitField0_ & ~0x00000020);
+          bitField0_ = (bitField0_ & ~0x00000040);
         }
         result.versions_ = versions_;
       } else {
         result.versions_ = versionsBuilder_.build();
       }
       if (categoriesBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)) {
+        if (((bitField0_ & 0x00000080) != 0)) {
           categories_ = java.util.Collections.unmodifiableList(categories_);
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000080);
         }
         result.categories_ = categories_;
       } else {
@@ -1092,16 +1165,21 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.description_ = description_;
       }
-      if (((from_bitField0_ & 0x00000010) != 0)) {
-        result.example_ = example_;
-      }
       int to_bitField0_ = 0;
-      if (((from_bitField0_ & 0x00000080) != 0)) {
-        result.sensitivityScore_ =
-            sensitivityScoreBuilder_ == null ? sensitivityScore_ : sensitivityScoreBuilder_.build();
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.locationSupport_ =
+            locationSupportBuilder_ == null ? locationSupport_ : locationSupportBuilder_.build();
         to_bitField0_ |= 0x00000001;
       }
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.example_ = example_;
+      }
       if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.sensitivityScore_ =
+            sensitivityScoreBuilder_ == null ? sensitivityScore_ : sensitivityScoreBuilder_.build();
+        to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         specificInfoTypes_.makeImmutable();
         result.specificInfoTypes_ = specificInfoTypes_;
       }
@@ -1178,16 +1256,19 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         bitField0_ |= 0x00000008;
         onChanged();
       }
+      if (other.hasLocationSupport()) {
+        mergeLocationSupport(other.getLocationSupport());
+      }
       if (!other.getExample().isEmpty()) {
         example_ = other.example_;
-        bitField0_ |= 0x00000010;
+        bitField0_ |= 0x00000020;
         onChanged();
       }
       if (versionsBuilder_ == null) {
         if (!other.versions_.isEmpty()) {
           if (versions_.isEmpty()) {
             versions_ = other.versions_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000040);
           } else {
             ensureVersionsIsMutable();
             versions_.addAll(other.versions_);
@@ -1200,7 +1281,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
             versionsBuilder_.dispose();
             versionsBuilder_ = null;
             versions_ = other.versions_;
-            bitField0_ = (bitField0_ & ~0x00000020);
+            bitField0_ = (bitField0_ & ~0x00000040);
             versionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getVersionsFieldBuilder()
@@ -1214,7 +1295,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         if (!other.categories_.isEmpty()) {
           if (categories_.isEmpty()) {
             categories_ = other.categories_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000080);
           } else {
             ensureCategoriesIsMutable();
             categories_.addAll(other.categories_);
@@ -1227,7 +1308,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
             categoriesBuilder_.dispose();
             categoriesBuilder_ = null;
             categories_ = other.categories_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000080);
             categoriesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getCategoriesFieldBuilder()
@@ -1243,7 +1324,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       if (!other.specificInfoTypes_.isEmpty()) {
         if (specificInfoTypes_.isEmpty()) {
           specificInfoTypes_ = other.specificInfoTypes_;
-          bitField0_ |= 0x00000100;
+          bitField0_ |= 0x00000200;
         } else {
           ensureSpecificInfoTypesIsMutable();
           specificInfoTypes_.addAll(other.specificInfoTypes_);
@@ -1313,10 +1394,16 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 50:
+              {
+                input.readMessage(getLocationSupportFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 50
             case 66:
               {
                 example_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000010;
+                bitField0_ |= 0x00000020;
                 break;
               } // case 66
             case 74:
@@ -1349,7 +1436,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
               {
                 input.readMessage(
                     getSensitivityScoreFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000080;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 90
             case 98:
@@ -1949,6 +2036,201 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       return this;
     }
 
+    private com.google.privacy.dlp.v2.LocationSupport locationSupport_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.LocationSupport,
+            com.google.privacy.dlp.v2.LocationSupport.Builder,
+            com.google.privacy.dlp.v2.LocationSupportOrBuilder>
+        locationSupportBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Locations at which this feature can be used. May change over time.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.LocationSupport location_support = 6;</code>
+     *
+     * @return Whether the locationSupport field is set.
+     */
+    public boolean hasLocationSupport() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Locations at which this feature can be used. May change over time.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.LocationSupport location_support = 6;</code>
+     *
+     * @return The locationSupport.
+     */
+    public com.google.privacy.dlp.v2.LocationSupport getLocationSupport() {
+      if (locationSupportBuilder_ == null) {
+        return locationSupport_ == null
+            ? com.google.privacy.dlp.v2.LocationSupport.getDefaultInstance()
+            : locationSupport_;
+      } else {
+        return locationSupportBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Locations at which this feature can be used. May change over time.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.LocationSupport location_support = 6;</code>
+     */
+    public Builder setLocationSupport(com.google.privacy.dlp.v2.LocationSupport value) {
+      if (locationSupportBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        locationSupport_ = value;
+      } else {
+        locationSupportBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Locations at which this feature can be used. May change over time.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.LocationSupport location_support = 6;</code>
+     */
+    public Builder setLocationSupport(
+        com.google.privacy.dlp.v2.LocationSupport.Builder builderForValue) {
+      if (locationSupportBuilder_ == null) {
+        locationSupport_ = builderForValue.build();
+      } else {
+        locationSupportBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Locations at which this feature can be used. May change over time.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.LocationSupport location_support = 6;</code>
+     */
+    public Builder mergeLocationSupport(com.google.privacy.dlp.v2.LocationSupport value) {
+      if (locationSupportBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)
+            && locationSupport_ != null
+            && locationSupport_ != com.google.privacy.dlp.v2.LocationSupport.getDefaultInstance()) {
+          getLocationSupportBuilder().mergeFrom(value);
+        } else {
+          locationSupport_ = value;
+        }
+      } else {
+        locationSupportBuilder_.mergeFrom(value);
+      }
+      if (locationSupport_ != null) {
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Locations at which this feature can be used. May change over time.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.LocationSupport location_support = 6;</code>
+     */
+    public Builder clearLocationSupport() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      locationSupport_ = null;
+      if (locationSupportBuilder_ != null) {
+        locationSupportBuilder_.dispose();
+        locationSupportBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Locations at which this feature can be used. May change over time.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.LocationSupport location_support = 6;</code>
+     */
+    public com.google.privacy.dlp.v2.LocationSupport.Builder getLocationSupportBuilder() {
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return getLocationSupportFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Locations at which this feature can be used. May change over time.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.LocationSupport location_support = 6;</code>
+     */
+    public com.google.privacy.dlp.v2.LocationSupportOrBuilder getLocationSupportOrBuilder() {
+      if (locationSupportBuilder_ != null) {
+        return locationSupportBuilder_.getMessageOrBuilder();
+      } else {
+        return locationSupport_ == null
+            ? com.google.privacy.dlp.v2.LocationSupport.getDefaultInstance()
+            : locationSupport_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Locations at which this feature can be used. May change over time.
+     * </pre>
+     *
+     * <code>.google.privacy.dlp.v2.LocationSupport location_support = 6;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.privacy.dlp.v2.LocationSupport,
+            com.google.privacy.dlp.v2.LocationSupport.Builder,
+            com.google.privacy.dlp.v2.LocationSupportOrBuilder>
+        getLocationSupportFieldBuilder() {
+      if (locationSupportBuilder_ == null) {
+        locationSupportBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.LocationSupport,
+                com.google.privacy.dlp.v2.LocationSupport.Builder,
+                com.google.privacy.dlp.v2.LocationSupportOrBuilder>(
+                getLocationSupport(), getParentForChildren(), isClean());
+        locationSupport_ = null;
+      }
+      return locationSupportBuilder_;
+    }
+
     private java.lang.Object example_ = "";
 
     /**
@@ -2014,7 +2296,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       example_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2032,7 +2314,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
      */
     public Builder clearExample() {
       example_ = getDefaultInstance().getExample();
-      bitField0_ = (bitField0_ & ~0x00000010);
+      bitField0_ = (bitField0_ & ~0x00000020);
       onChanged();
       return this;
     }
@@ -2055,7 +2337,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       }
       checkByteStringIsUtf8(value);
       example_ = value;
-      bitField0_ |= 0x00000010;
+      bitField0_ |= 0x00000020;
       onChanged();
       return this;
     }
@@ -2064,10 +2346,10 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         java.util.Collections.emptyList();
 
     private void ensureVersionsIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         versions_ =
             new java.util.ArrayList<com.google.privacy.dlp.v2.VersionDescription>(versions_);
-        bitField0_ |= 0x00000020;
+        bitField0_ |= 0x00000040;
       }
     }
 
@@ -2293,7 +2575,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     public Builder clearVersions() {
       if (versionsBuilder_ == null) {
         versions_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
+        bitField0_ = (bitField0_ & ~0x00000040);
         onChanged();
       } else {
         versionsBuilder_.clear();
@@ -2422,7 +2704,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
                 com.google.privacy.dlp.v2.VersionDescription,
                 com.google.privacy.dlp.v2.VersionDescription.Builder,
                 com.google.privacy.dlp.v2.VersionDescriptionOrBuilder>(
-                versions_, ((bitField0_ & 0x00000020) != 0), getParentForChildren(), isClean());
+                versions_, ((bitField0_ & 0x00000040) != 0), getParentForChildren(), isClean());
         versions_ = null;
       }
       return versionsBuilder_;
@@ -2432,10 +2714,10 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         java.util.Collections.emptyList();
 
     private void ensureCategoriesIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         categories_ =
             new java.util.ArrayList<com.google.privacy.dlp.v2.InfoTypeCategory>(categories_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000080;
       }
     }
 
@@ -2661,7 +2943,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     public Builder clearCategories() {
       if (categoriesBuilder_ == null) {
         categories_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000080);
         onChanged();
       } else {
         categoriesBuilder_.clear();
@@ -2790,7 +3072,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
                 com.google.privacy.dlp.v2.InfoTypeCategory,
                 com.google.privacy.dlp.v2.InfoTypeCategory.Builder,
                 com.google.privacy.dlp.v2.InfoTypeCategoryOrBuilder>(
-                categories_, ((bitField0_ & 0x00000040) != 0), getParentForChildren(), isClean());
+                categories_, ((bitField0_ & 0x00000080) != 0), getParentForChildren(), isClean());
         categories_ = null;
       }
       return categoriesBuilder_;
@@ -2815,7 +3097,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
      * @return Whether the sensitivityScore field is set.
      */
     public boolean hasSensitivityScore() {
-      return ((bitField0_ & 0x00000080) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -2857,7 +3139,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       } else {
         sensitivityScoreBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2878,7 +3160,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       } else {
         sensitivityScoreBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -2894,7 +3176,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeSensitivityScore(com.google.privacy.dlp.v2.SensitivityScore value) {
       if (sensitivityScoreBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && sensitivityScore_ != null
             && sensitivityScore_
                 != com.google.privacy.dlp.v2.SensitivityScore.getDefaultInstance()) {
@@ -2906,7 +3188,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         sensitivityScoreBuilder_.mergeFrom(value);
       }
       if (sensitivityScore_ != null) {
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -2922,7 +3204,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
      * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 11;</code>
      */
     public Builder clearSensitivityScore() {
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000100);
       sensitivityScore_ = null;
       if (sensitivityScoreBuilder_ != null) {
         sensitivityScoreBuilder_.dispose();
@@ -2942,7 +3224,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
      * <code>.google.privacy.dlp.v2.SensitivityScore sensitivity_score = 11;</code>
      */
     public com.google.privacy.dlp.v2.SensitivityScore.Builder getSensitivityScoreBuilder() {
-      bitField0_ |= 0x00000080;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getSensitivityScoreFieldBuilder().getBuilder();
     }
@@ -2999,7 +3281,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       if (!specificInfoTypes_.isModifiable()) {
         specificInfoTypes_ = new com.google.protobuf.LazyStringArrayList(specificInfoTypes_);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
     }
 
     /**
@@ -3104,7 +3386,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       }
       ensureSpecificInfoTypesIsMutable();
       specificInfoTypes_.set(index, value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3131,7 +3413,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       }
       ensureSpecificInfoTypesIsMutable();
       specificInfoTypes_.add(value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3155,7 +3437,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     public Builder addAllSpecificInfoTypes(java.lang.Iterable<java.lang.String> values) {
       ensureSpecificInfoTypesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, specificInfoTypes_);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -3177,7 +3459,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
      */
     public Builder clearSpecificInfoTypes() {
       specificInfoTypes_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000200);
       ;
       onChanged();
       return this;
@@ -3206,7 +3488,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       checkByteStringIsUtf8(value);
       ensureSpecificInfoTypesIsMutable();
       specificInfoTypes_.add(value);
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }

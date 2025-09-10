@@ -615,6 +615,7 @@ public class ReservationServiceClientHttpJsonTest {
     FailoverReservationRequest request =
         FailoverReservationRequest.newBuilder()
             .setName(ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
+            .setFailoverMode(FailoverMode.forNumber(0))
             .build();
 
     Reservation actualResponse = client.failoverReservation(request);
@@ -646,6 +647,7 @@ public class ReservationServiceClientHttpJsonTest {
       FailoverReservationRequest request =
           FailoverReservationRequest.newBuilder()
               .setName(ReservationName.of("[PROJECT]", "[LOCATION]", "[RESERVATION]").toString())
+              .setFailoverMode(FailoverMode.forNumber(0))
               .build();
       client.failoverReservation(request);
       Assert.fail("No exception raised");

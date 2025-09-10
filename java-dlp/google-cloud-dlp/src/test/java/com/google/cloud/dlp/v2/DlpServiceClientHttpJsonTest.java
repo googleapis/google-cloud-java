@@ -66,6 +66,7 @@ import com.google.privacy.dlp.v2.DiscoveryTarget;
 import com.google.privacy.dlp.v2.DlpJob;
 import com.google.privacy.dlp.v2.DlpJobName;
 import com.google.privacy.dlp.v2.DlpJobType;
+import com.google.privacy.dlp.v2.Domain;
 import com.google.privacy.dlp.v2.EncryptionStatus;
 import com.google.privacy.dlp.v2.Error;
 import com.google.privacy.dlp.v2.FileClusterSummary;
@@ -5678,6 +5679,7 @@ public class DlpServiceClientHttpJsonTest {
             .setFileStoreIsEmpty(true)
             .addAllTags(new ArrayList<Tag>())
             .addAllRelatedResources(new ArrayList<RelatedResource>())
+            .addAllDomains(new ArrayList<Domain>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -5753,6 +5755,7 @@ public class DlpServiceClientHttpJsonTest {
             .setFileStoreIsEmpty(true)
             .addAllTags(new ArrayList<Tag>())
             .addAllRelatedResources(new ArrayList<RelatedResource>())
+            .addAllDomains(new ArrayList<Domain>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -5915,6 +5918,7 @@ public class DlpServiceClientHttpJsonTest {
             .setSampleFindingsTable(BigQueryTable.newBuilder().build())
             .addAllTags(new ArrayList<Tag>())
             .addAllRelatedResources(new ArrayList<RelatedResource>())
+            .addAllDomains(new ArrayList<Domain>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -5993,6 +5997,7 @@ public class DlpServiceClientHttpJsonTest {
             .setSampleFindingsTable(BigQueryTable.newBuilder().build())
             .addAllTags(new ArrayList<Tag>())
             .addAllRelatedResources(new ArrayList<RelatedResource>())
+            .addAllDomains(new ArrayList<Domain>())
             .build();
     mockService.addResponse(expectedResponse);
 

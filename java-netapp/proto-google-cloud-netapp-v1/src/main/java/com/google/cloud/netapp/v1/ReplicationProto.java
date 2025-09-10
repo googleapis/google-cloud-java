@@ -105,7 +105,8 @@ public final class ReplicationProto {
           + "(google/cloud/netapp/v1/replication.pro"
           + "to\022\026google.cloud.netapp.v1\032\037google/api/f"
           + "ield_behavior.proto\032\031google/api/resource"
-          + ".proto\032#google/cloud/netapp/v1/volume.proto\032\036google/protobuf/duration.proto\032"
+          + ".proto\032#google/cloud/netapp/v1/common.pr"
+          + "oto\032#google/cloud/netapp/v1/volume.proto\032\036google/protobuf/duration.proto\032"
           + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\324\004\n\r"
           + "TransferStats\022\033\n"
           + "\016transfer_bytes\030\001 \001(\003H\000\210\001\001\022?\n"
@@ -128,14 +129,14 @@ public final class ReplicationProto {
           + "_lag_durationB\016\n"
           + "\014_update_timeB\031\n"
           + "\027_last_transfer_end_timeB\026\n"
-          + "\024_last_transfer_error\"\310\016\n"
+          + "\024_last_transfer_error\"\302\020\n"
           + "\013Replication\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022=\n"
-          + "\005state\030\002 \001(\0162).google"
-          + ".cloud.netapp.v1.Replication.StateB\003\340A\003\022\032\n\r"
+          + "\005state\030\002"
+          + " \001(\0162).google.cloud.netapp.v1.Replication.StateB\003\340A\003\022\032\n\r"
           + "state_details\030\003 \001(\tB\003\340A\003\022F\n"
-          + "\004role\030\004 \001("
-          + "\01623.google.cloud.netapp.v1.Replication.ReplicationRoleB\003\340A\003\022Z\n"
+          + "\004role\030\004 \001(\01623"
+          + ".google.cloud.netapp.v1.Replication.ReplicationRoleB\003\340A\003\022Z\n"
           + "\024replication_schedule\030\005"
           + " \001(\01627.google.cloud.netapp.v1.Replication.ReplicationScheduleB\003\340A\002\022J\n"
           + "\014mirror_state\030\006"
@@ -145,8 +146,8 @@ public final class ReplicationProto {
           + "\022destination_volume\030\n"
           + " \001(\tB$\340A\003\372A\036\n"
           + "\034netapp.googleapis.com/Volume\022B\n"
-          + "\016transfer_stats\030\013 \001(\0132%"
-          + ".google.cloud.netapp.v1.TransferStatsB\003\340A\003\022?\n"
+          + "\016transfer_stats\030\013 \001(\0132%.go"
+          + "ogle.cloud.netapp.v1.TransferStatsB\003\340A\003\022?\n"
           + "\006labels\030\014"
           + " \003(\0132/.google.cloud.netapp.v1.Replication.LabelsEntry\022\030\n"
           + "\013description\030\r"
@@ -155,14 +156,16 @@ public final class ReplicationProto {
           + " \001(\01323.google.cloud.netapp.v1.DestinationVolumeParametersB\006\340A\004\340A\002\022;\n\r"
           + "source_volume\030\017 \001(\tB$\340A\003\372A\036\n"
           + "\034netapp.googleapis.com/Volume\022Q\n"
-          + "\026hybrid_peering_details\030\020"
-          + " \001(\0132,.google.cloud.netapp.v1.HybridPeeringDetailsB\003\340A\003\022\035\n"
+          + "\026hybrid_peering_details\030\020 "
+          + "\001(\0132,.google.cloud.netapp.v1.HybridPeeringDetailsB\003\340A\003\022\035\n"
           + "\020cluster_location\030\022 \001(\tB\003\340A\001\022_\n"
-          + "\027hybrid_replication_type\030\023 \001("
-          + "\01629.google.cloud.netapp.v1.Replication.HybridReplicationTypeB\003\340A\003\032-\n"
+          + "\027hybrid_replication_type\030\023 \001(\01629"
+          + ".google.cloud.netapp.v1.Replication.HybridReplicationTypeB\003\340A\003\022S\n"
+          + " hybrid_replication_user_commands\030\024"
+          + " \001(\0132$.google.cloud.netapp.v1.UserCommandsB\003\340A\003\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
-          + "\005value\030\002 \001(\t:\0028\001\"\224\001\n"
+          + "\005value\030\002 \001(\t:\0028\001\"\323\001\n"
           + "\005State\022\025\n"
           + "\021STATE_UNSPECIFIED\020\000\022\014\n"
           + "\010CREATING\020\001\022\t\n"
@@ -171,7 +174,10 @@ public final class ReplicationProto {
           + "\010DELETING\020\005\022\t\n"
           + "\005ERROR\020\006\022\033\n"
           + "\027PENDING_CLUSTER_PEERING\020\010\022\027\n"
-          + "\023PENDING_SVM_PEERING\020\t\"P\n"
+          + "\023PENDING_SVM_PEERING\020\t\022\031\n"
+          + "\025PENDING_REMOTE_RESYNC\020\n"
+          + "\022\"\n"
+          + "\036EXTERNALLY_MANAGED_REPLICATION\020\013\"P\n"
           + "\017ReplicationRole\022 \n"
           + "\034REPLICATION_ROLE_UNSPECIFIED\020\000\022\n\n"
           + "\006SOURCE\020\001\022\017\n"
@@ -180,7 +186,7 @@ public final class ReplicationProto {
           + " REPLICATION_SCHEDULE_UNSPECIFIED\020\000\022\024\n"
           + "\020EVERY_10_MINUTES\020\001\022\n\n"
           + "\006HOURLY\020\002\022\t\n"
-          + "\005DAILY\020\003\"\217\001\n"
+          + "\005DAILY\020\003\"\274\001\n"
           + "\013MirrorState\022\034\n"
           + "\030MIRROR_STATE_UNSPECIFIED\020\000\022\r\n"
           + "\tPREPARING\020\001\022\014\n"
@@ -188,25 +194,28 @@ public final class ReplicationProto {
           + "\007STOPPED\020\003\022\020\n"
           + "\014TRANSFERRING\020\004\022\031\n"
           + "\025BASELINE_TRANSFERRING\020\005\022\013\n"
-          + "\007ABORTED\020\006\"k\n"
+          + "\007ABORTED\020\006\022\026\n"
+          + "\022EXTERNALLY_MANAGED\020\007\022\023\n"
+          + "\017PENDING_PEERING\020\010\"\243\001\n"
           + "\025HybridReplicationType\022\'\n"
           + "#HYBRID_REPLICATION_TYPE_UNSPECIFIED\020\000\022\r\n"
           + "\tMIGRATION\020\001\022\032\n"
-          + "\026CONTINUOUS_REPLICATION\020\002:\227\001\352A\223\001\n"
-          + "!netapp.googleapis.com/Replication\022Sprojects/{"
-          + "project}/locations/{location}/volumes/{v"
-          + "olume}/replications/{replication}*\014replications2\013replicationB\n\n"
+          + "\026CONTINUOUS_REPLICATION\020\002\022\026\n"
+          + "\022ONPREM_REPLICATION\020\003\022\036\n"
+          + "\032REVERSE_ONPREM_REPLICATION\020\004:\227\001\352A\223\001\n"
+          + "!netapp.googleapis.com/Replication\022Sprojects/{project}/locations/{location}/vol"
+          + "umes/{volume}/replications/{replication}*\014replications2\013replicationB\n\n"
           + "\010_healthyB\016\n"
           + "\014_description\"\366\001\n"
           + "\024HybridPeeringDetails\022\026\n"
-          + "\tsubnet_ip\030\001 \001(\tB\003\340A\001\022\024\n"
-          + "\007command\030\002 \001(\tB\003\340A\001\022<\n"
+          + "\tsubnet_ip\030\001 \001(\tB\003\340A\003\022\024\n"
+          + "\007command\030\002 \001(\tB\003\340A\003\022<\n"
           + "\023command_expiry_time\030\003"
-          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\001\022\027\n\n"
-          + "passphrase\030\004 \001(\tB\003\340A\001\022\035\n"
-          + "\020peer_volume_name\030\005 \001(\tB\003\340A\001\022\036\n"
-          + "\021peer_cluster_name\030\006 \001(\tB\003\340A\001\022\032\n\r"
-          + "peer_svm_name\030\007 \001(\tB\003\340A\001\"\235\001\n"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\027\n\n"
+          + "passphrase\030\004 \001(\tB\003\340A\003\022\035\n"
+          + "\020peer_volume_name\030\005 \001(\tB\003\340A\003\022\036\n"
+          + "\021peer_cluster_name\030\006 \001(\tB\003\340A\003\022\032\n\r"
+          + "peer_svm_name\030\007 \001(\tB\003\340A\003\"\235\001\n"
           + "\027ListReplicationsRequest\0229\n"
           + "\006parent\030\001 \001("
           + "\tB)\340A\002\372A#\022!netapp.googleapis.com/Replication\022\021\n"
@@ -232,8 +241,8 @@ public final class ReplicationProto {
           + "\014_descriptionB\021\n"
           + "\017_tiering_policy\"\261\001\n"
           + "\030CreateReplicationRequest\0229\n"
-          + "\006parent\030\001 \001("
-          + "\tB)\340A\002\372A#\022!netapp.googleapis.com/Replication\022=\n"
+          + "\006parent\030\001 \001(\tB)\340A\002"
+          + "\372A#\022!netapp.googleapis.com/Replication\022=\n"
           + "\013replication\030\002"
           + " \001(\0132#.google.cloud.netapp.v1.ReplicationB\003\340A\002\022\033\n"
           + "\016replication_id\030\003 \001(\tB\003\340A\002\"S\n"
@@ -242,8 +251,8 @@ public final class ReplicationProto {
           + "!netapp.googleapis.com/Replication\"\217\001\n"
           + "\030UpdateReplicationRequest\0224\n"
           + "\013update_mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\022=\n"
-          + "\013replication\030\002"
-          + " \001(\0132#.google.cloud.netapp.v1.ReplicationB\003\340A\002\"`\n"
+          + "\013replication\030\002 \001(\0132"
+          + "#.google.cloud.netapp.v1.ReplicationB\003\340A\002\"`\n"
           + "\026StopReplicationRequest\0227\n"
           + "\004name\030\001 \001(\tB)\340A\002\372A#\n"
           + "!netapp.googleapis.com/Replication\022\r\n"
@@ -264,10 +273,10 @@ public final class ReplicationProto {
           + "\026SyncReplicationRequest\0227\n"
           + "\004name\030\001 \001(\tB)\340A\002\372A#\n"
           + "!netapp.googleapis.com/ReplicationB\262\001\n"
-          + "\032com.google.cloud.netapp.v1B\020ReplicationProtoP\001Z2cloud.google.com/go/neta"
-          + "pp/apiv1/netapppb;netapppb\252\002\026Google.Clou"
-          + "d.NetApp.V1\312\002\026Google\\Cloud\\NetApp\\V1\352\002\031G"
-          + "oogle::Cloud::NetApp::V1b\006proto3"
+          + "\032com.google.cloud.netapp.v1B\020ReplicationProtoP\001Z2cloud.google.com/"
+          + "go/netapp/apiv1/netapppb;netapppb\252\002\026Goog"
+          + "le.Cloud.NetApp.V1\312\002\026Google\\Cloud\\NetApp"
+          + "\\V1\352\002\031Google::Cloud::NetApp::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -275,6 +284,7 @@ public final class ReplicationProto {
             new com.google.protobuf.Descriptors.FileDescriptor[] {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
+              com.google.cloud.netapp.v1.CommonProto.getDescriptor(),
               com.google.cloud.netapp.v1.VolumeProto.getDescriptor(),
               com.google.protobuf.DurationProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
@@ -318,6 +328,7 @@ public final class ReplicationProto {
               "HybridPeeringDetails",
               "ClusterLocation",
               "HybridReplicationType",
+              "HybridReplicationUserCommands",
             });
     internal_static_google_cloud_netapp_v1_Replication_LabelsEntry_descriptor =
         internal_static_google_cloud_netapp_v1_Replication_descriptor.getNestedTypes().get(0);
@@ -446,6 +457,7 @@ public final class ReplicationProto {
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
+    com.google.cloud.netapp.v1.CommonProto.getDescriptor();
     com.google.cloud.netapp.v1.VolumeProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();

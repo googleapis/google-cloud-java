@@ -80,10 +80,11 @@ public interface UpgradeStatusOrBuilder
    *
    *
    * <pre>
-   * Provides details on the state of the upgrade operation in case of an error.
+   * Output only. Provides details on the state of the upgrade operation in case
+   * of an error.
    * </pre>
    *
-   * <code>.google.rpc.Status error = 3;</code>
+   * <code>.google.rpc.Status error = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return Whether the error field is set.
    */
@@ -93,10 +94,11 @@ public interface UpgradeStatusOrBuilder
    *
    *
    * <pre>
-   * Provides details on the state of the upgrade operation in case of an error.
+   * Output only. Provides details on the state of the upgrade operation in case
+   * of an error.
    * </pre>
    *
-   * <code>.google.rpc.Status error = 3;</code>
+   * <code>.google.rpc.Status error = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The error.
    */
@@ -106,10 +108,11 @@ public interface UpgradeStatusOrBuilder
    *
    *
    * <pre>
-   * Provides details on the state of the upgrade operation in case of an error.
+   * Output only. Provides details on the state of the upgrade operation in case
+   * of an error.
    * </pre>
    *
-   * <code>.google.rpc.Status error = 3;</code>
+   * <code>.google.rpc.Status error = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.rpc.StatusOrBuilder getErrorOrBuilder();
 

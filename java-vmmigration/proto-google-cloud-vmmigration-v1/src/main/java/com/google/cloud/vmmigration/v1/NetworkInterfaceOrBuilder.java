@@ -28,10 +28,10 @@ public interface NetworkInterfaceOrBuilder
    *
    *
    * <pre>
-   * The network to connect the NIC to.
+   * Optional. The network to connect the NIC to.
    * </pre>
    *
-   * <code>string network = 1;</code>
+   * <code>string network = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The network.
    */
@@ -41,10 +41,10 @@ public interface NetworkInterfaceOrBuilder
    *
    *
    * <pre>
-   * The network to connect the NIC to.
+   * Optional. The network to connect the NIC to.
    * </pre>
    *
-   * <code>string network = 1;</code>
+   * <code>string network = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for network.
    */
@@ -54,10 +54,10 @@ public interface NetworkInterfaceOrBuilder
    *
    *
    * <pre>
-   * The subnetwork to connect the NIC to.
+   * Optional. The subnetwork to connect the NIC to.
    * </pre>
    *
-   * <code>string subnetwork = 2;</code>
+   * <code>string subnetwork = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The subnetwork.
    */
@@ -67,10 +67,10 @@ public interface NetworkInterfaceOrBuilder
    *
    *
    * <pre>
-   * The subnetwork to connect the NIC to.
+   * Optional. The subnetwork to connect the NIC to.
    * </pre>
    *
-   * <code>string subnetwork = 2;</code>
+   * <code>string subnetwork = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for subnetwork.
    */
@@ -80,12 +80,12 @@ public interface NetworkInterfaceOrBuilder
    *
    *
    * <pre>
-   * The internal IP to define in the NIC.
+   * Optional. The internal IP to define in the NIC.
    * The formats accepted are: `ephemeral` &#92; ipv4 address &#92; a named address
    * resource full path.
    * </pre>
    *
-   * <code>string internal_ip = 3;</code>
+   * <code>string internal_ip = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The internalIp.
    */
@@ -95,12 +95,12 @@ public interface NetworkInterfaceOrBuilder
    *
    *
    * <pre>
-   * The internal IP to define in the NIC.
+   * Optional. The internal IP to define in the NIC.
    * The formats accepted are: `ephemeral` &#92; ipv4 address &#92; a named address
    * resource full path.
    * </pre>
    *
-   * <code>string internal_ip = 3;</code>
+   * <code>string internal_ip = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for internalIp.
    */
@@ -110,10 +110,10 @@ public interface NetworkInterfaceOrBuilder
    *
    *
    * <pre>
-   * The external IP to define in the NIC.
+   * Optional. The external IP to define in the NIC.
    * </pre>
    *
-   * <code>string external_ip = 4;</code>
+   * <code>string external_ip = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The externalIp.
    */
@@ -123,12 +123,46 @@ public interface NetworkInterfaceOrBuilder
    *
    *
    * <pre>
-   * The external IP to define in the NIC.
+   * Optional. The external IP to define in the NIC.
    * </pre>
    *
-   * <code>string external_ip = 4;</code>
+   * <code>string external_ip = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for externalIp.
    */
   com.google.protobuf.ByteString getExternalIpBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The networking tier used for optimizing connectivity between
+   * instances and systems on the internet. Applies only for external ephemeral
+   * IP addresses. If left empty, will default to PREMIUM.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.ComputeEngineNetworkTier network_tier = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for networkTier.
+   */
+  int getNetworkTierValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The networking tier used for optimizing connectivity between
+   * instances and systems on the internet. Applies only for external ephemeral
+   * IP addresses. If left empty, will default to PREMIUM.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.ComputeEngineNetworkTier network_tier = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The networkTier.
+   */
+  com.google.cloud.vmmigration.v1.ComputeEngineNetworkTier getNetworkTier();
 }

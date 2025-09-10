@@ -23,7 +23,9 @@ package com.google.cloud.security.publicca.v1beta1;
  *
  *
  * <pre>
- * Creates a new [ExternalAccountKey][google.cloud.security.publicca.v1beta1.ExternalAccountKey] in a given project.
+ * Creates a new
+ * [ExternalAccountKey][google.cloud.security.publicca.v1beta1.ExternalAccountKey]
+ * in a given project.
  * </pre>
  *
  * Protobuf type {@code google.cloud.security.publicca.v1beta1.CreateExternalAccountKeyRequest}
@@ -76,9 +78,9 @@ public final class CreateExternalAccountKeyRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. The parent resource where this external_account_key will be created.
-   * Format: projects/[project_id]/locations/[location].
-   * At present only the "global" location is supported.
+   * Required. The parent resource where this external_account_key will be
+   * created. Format: projects/[project_id]/locations/[location]. At present
+   * only the "global" location is supported.
    * </pre>
    *
    * <code>
@@ -104,9 +106,9 @@ public final class CreateExternalAccountKeyRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. The parent resource where this external_account_key will be created.
-   * Format: projects/[project_id]/locations/[location].
-   * At present only the "global" location is supported.
+   * Required. The parent resource where this external_account_key will be
+   * created. Format: projects/[project_id]/locations/[location]. At present
+   * only the "global" location is supported.
    * </pre>
    *
    * <code>
@@ -135,9 +137,9 @@ public final class CreateExternalAccountKeyRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. The external account key to create. This field only exists to future-proof
-   * the API. At present, all fields in ExternalAccountKey are output only and
-   * all values are ignored. For the purpose of the
+   * Required. The external account key to create. This field only exists to
+   * future-proof the API. At present, all fields in ExternalAccountKey are
+   * output only and all values are ignored. For the purpose of the
    * CreateExternalAccountKeyRequest, set it to a default/empty value.
    * </pre>
    *
@@ -156,9 +158,9 @@ public final class CreateExternalAccountKeyRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. The external account key to create. This field only exists to future-proof
-   * the API. At present, all fields in ExternalAccountKey are output only and
-   * all values are ignored. For the purpose of the
+   * Required. The external account key to create. This field only exists to
+   * future-proof the API. At present, all fields in ExternalAccountKey are
+   * output only and all values are ignored. For the purpose of the
    * CreateExternalAccountKeyRequest, set it to a default/empty value.
    * </pre>
    *
@@ -179,9 +181,9 @@ public final class CreateExternalAccountKeyRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Required. The external account key to create. This field only exists to future-proof
-   * the API. At present, all fields in ExternalAccountKey are output only and
-   * all values are ignored. For the purpose of the
+   * Required. The external account key to create. This field only exists to
+   * future-proof the API. At present, all fields in ExternalAccountKey are
+   * output only and all values are ignored. For the purpose of the
    * CreateExternalAccountKeyRequest, set it to a default/empty value.
    * </pre>
    *
@@ -383,7 +385,9 @@ public final class CreateExternalAccountKeyRequest extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Creates a new [ExternalAccountKey][google.cloud.security.publicca.v1beta1.ExternalAccountKey] in a given project.
+   * Creates a new
+   * [ExternalAccountKey][google.cloud.security.publicca.v1beta1.ExternalAccountKey]
+   * in a given project.
    * </pre>
    *
    * Protobuf type {@code google.cloud.security.publicca.v1beta1.CreateExternalAccountKeyRequest}
@@ -612,9 +616,9 @@ public final class CreateExternalAccountKeyRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The parent resource where this external_account_key will be created.
-     * Format: projects/[project_id]/locations/[location].
-     * At present only the "global" location is supported.
+     * Required. The parent resource where this external_account_key will be
+     * created. Format: projects/[project_id]/locations/[location]. At present
+     * only the "global" location is supported.
      * </pre>
      *
      * <code>
@@ -639,9 +643,9 @@ public final class CreateExternalAccountKeyRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The parent resource where this external_account_key will be created.
-     * Format: projects/[project_id]/locations/[location].
-     * At present only the "global" location is supported.
+     * Required. The parent resource where this external_account_key will be
+     * created. Format: projects/[project_id]/locations/[location]. At present
+     * only the "global" location is supported.
      * </pre>
      *
      * <code>
@@ -666,9 +670,9 @@ public final class CreateExternalAccountKeyRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The parent resource where this external_account_key will be created.
-     * Format: projects/[project_id]/locations/[location].
-     * At present only the "global" location is supported.
+     * Required. The parent resource where this external_account_key will be
+     * created. Format: projects/[project_id]/locations/[location]. At present
+     * only the "global" location is supported.
      * </pre>
      *
      * <code>
@@ -692,9 +696,9 @@ public final class CreateExternalAccountKeyRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The parent resource where this external_account_key will be created.
-     * Format: projects/[project_id]/locations/[location].
-     * At present only the "global" location is supported.
+     * Required. The parent resource where this external_account_key will be
+     * created. Format: projects/[project_id]/locations/[location]. At present
+     * only the "global" location is supported.
      * </pre>
      *
      * <code>
@@ -714,9 +718,9 @@ public final class CreateExternalAccountKeyRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The parent resource where this external_account_key will be created.
-     * Format: projects/[project_id]/locations/[location].
-     * At present only the "global" location is supported.
+     * Required. The parent resource where this external_account_key will be
+     * created. Format: projects/[project_id]/locations/[location]. At present
+     * only the "global" location is supported.
      * </pre>
      *
      * <code>
@@ -748,9 +752,9 @@ public final class CreateExternalAccountKeyRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The external account key to create. This field only exists to future-proof
-     * the API. At present, all fields in ExternalAccountKey are output only and
-     * all values are ignored. For the purpose of the
+     * Required. The external account key to create. This field only exists to
+     * future-proof the API. At present, all fields in ExternalAccountKey are
+     * output only and all values are ignored. For the purpose of the
      * CreateExternalAccountKeyRequest, set it to a default/empty value.
      * </pre>
      *
@@ -768,9 +772,9 @@ public final class CreateExternalAccountKeyRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The external account key to create. This field only exists to future-proof
-     * the API. At present, all fields in ExternalAccountKey are output only and
-     * all values are ignored. For the purpose of the
+     * Required. The external account key to create. This field only exists to
+     * future-proof the API. At present, all fields in ExternalAccountKey are
+     * output only and all values are ignored. For the purpose of the
      * CreateExternalAccountKeyRequest, set it to a default/empty value.
      * </pre>
      *
@@ -794,9 +798,9 @@ public final class CreateExternalAccountKeyRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The external account key to create. This field only exists to future-proof
-     * the API. At present, all fields in ExternalAccountKey are output only and
-     * all values are ignored. For the purpose of the
+     * Required. The external account key to create. This field only exists to
+     * future-proof the API. At present, all fields in ExternalAccountKey are
+     * output only and all values are ignored. For the purpose of the
      * CreateExternalAccountKeyRequest, set it to a default/empty value.
      * </pre>
      *
@@ -823,9 +827,9 @@ public final class CreateExternalAccountKeyRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The external account key to create. This field only exists to future-proof
-     * the API. At present, all fields in ExternalAccountKey are output only and
-     * all values are ignored. For the purpose of the
+     * Required. The external account key to create. This field only exists to
+     * future-proof the API. At present, all fields in ExternalAccountKey are
+     * output only and all values are ignored. For the purpose of the
      * CreateExternalAccountKeyRequest, set it to a default/empty value.
      * </pre>
      *
@@ -849,9 +853,9 @@ public final class CreateExternalAccountKeyRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The external account key to create. This field only exists to future-proof
-     * the API. At present, all fields in ExternalAccountKey are output only and
-     * all values are ignored. For the purpose of the
+     * Required. The external account key to create. This field only exists to
+     * future-proof the API. At present, all fields in ExternalAccountKey are
+     * output only and all values are ignored. For the purpose of the
      * CreateExternalAccountKeyRequest, set it to a default/empty value.
      * </pre>
      *
@@ -885,9 +889,9 @@ public final class CreateExternalAccountKeyRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The external account key to create. This field only exists to future-proof
-     * the API. At present, all fields in ExternalAccountKey are output only and
-     * all values are ignored. For the purpose of the
+     * Required. The external account key to create. This field only exists to
+     * future-proof the API. At present, all fields in ExternalAccountKey are
+     * output only and all values are ignored. For the purpose of the
      * CreateExternalAccountKeyRequest, set it to a default/empty value.
      * </pre>
      *
@@ -910,9 +914,9 @@ public final class CreateExternalAccountKeyRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The external account key to create. This field only exists to future-proof
-     * the API. At present, all fields in ExternalAccountKey are output only and
-     * all values are ignored. For the purpose of the
+     * Required. The external account key to create. This field only exists to
+     * future-proof the API. At present, all fields in ExternalAccountKey are
+     * output only and all values are ignored. For the purpose of the
      * CreateExternalAccountKeyRequest, set it to a default/empty value.
      * </pre>
      *
@@ -931,9 +935,9 @@ public final class CreateExternalAccountKeyRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The external account key to create. This field only exists to future-proof
-     * the API. At present, all fields in ExternalAccountKey are output only and
-     * all values are ignored. For the purpose of the
+     * Required. The external account key to create. This field only exists to
+     * future-proof the API. At present, all fields in ExternalAccountKey are
+     * output only and all values are ignored. For the purpose of the
      * CreateExternalAccountKeyRequest, set it to a default/empty value.
      * </pre>
      *
@@ -956,9 +960,9 @@ public final class CreateExternalAccountKeyRequest extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Required. The external account key to create. This field only exists to future-proof
-     * the API. At present, all fields in ExternalAccountKey are output only and
-     * all values are ignored. For the purpose of the
+     * Required. The external account key to create. This field only exists to
+     * future-proof the API. At present, all fields in ExternalAccountKey are
+     * output only and all values are ignored. For the purpose of the
      * CreateExternalAccountKeyRequest, set it to a default/empty value.
      * </pre>
      *

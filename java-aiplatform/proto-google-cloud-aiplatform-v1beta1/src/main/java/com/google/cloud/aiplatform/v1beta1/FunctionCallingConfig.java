@@ -101,9 +101,10 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Model is constrained to always predicting function calls only.
-     * If "allowed_function_names" are set, the predicted function calls will be
-     * limited to any one of "allowed_function_names", else the predicted
-     * function calls will be any one of the provided "function_declarations".
+     * If [allowed_function_names][FunctionCallingConfig.allowed_function_names]
+     * are set, the predicted function calls will be limited to any one of
+     * `allowed_function_names`, else the predicted function calls will be any
+     * one of the provided [FunctionDeclaration].
      * </pre>
      *
      * <code>ANY = 2;</code>
@@ -120,6 +121,21 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
      * <code>NONE = 3;</code>
      */
     NONE(3),
+    /**
+     *
+     *
+     * <pre>
+     * Model is constrained to predict either function calls or natural language
+     * response.
+     * If [allowed_function_names][FunctionCallingConfig.allowed_function_names]
+     * are set, the predicted function calls will be limited to any one of
+     * `allowed_function_names`, else the predicted function calls will be any
+     * one of the provided [FunctionDeclaration].
+     * </pre>
+     *
+     * <code>VALIDATED = 5;</code>
+     */
+    VALIDATED(5),
     UNRECOGNIZED(-1),
     ;
 
@@ -151,9 +167,10 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Model is constrained to always predicting function calls only.
-     * If "allowed_function_names" are set, the predicted function calls will be
-     * limited to any one of "allowed_function_names", else the predicted
-     * function calls will be any one of the provided "function_declarations".
+     * If [allowed_function_names][FunctionCallingConfig.allowed_function_names]
+     * are set, the predicted function calls will be limited to any one of
+     * `allowed_function_names`, else the predicted function calls will be any
+     * one of the provided [FunctionDeclaration].
      * </pre>
      *
      * <code>ANY = 2;</code>
@@ -171,6 +188,22 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
      * <code>NONE = 3;</code>
      */
     public static final int NONE_VALUE = 3;
+
+    /**
+     *
+     *
+     * <pre>
+     * Model is constrained to predict either function calls or natural language
+     * response.
+     * If [allowed_function_names][FunctionCallingConfig.allowed_function_names]
+     * are set, the predicted function calls will be limited to any one of
+     * `allowed_function_names`, else the predicted function calls will be any
+     * one of the provided [FunctionDeclaration].
+     * </pre>
+     *
+     * <code>VALIDATED = 5;</code>
+     */
+    public static final int VALIDATED_VALUE = 5;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -204,6 +237,8 @@ public final class FunctionCallingConfig extends com.google.protobuf.GeneratedMe
           return ANY;
         case 3:
           return NONE;
+        case 5:
+          return VALIDATED;
         default:
           return null;
       }

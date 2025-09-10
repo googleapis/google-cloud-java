@@ -882,17 +882,21 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Requested installation date for the hardware in this
-   * HardwareGroup. Filled in by the customer.
+   * Deprecated: This value is not used. Use the requested_installation_date
+   * field in the Order resource instead.
    * </pre>
    *
    * <code>
-   * .google.type.Date requested_installation_date = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.type.Date requested_installation_date = 10 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated
+   *     google.cloud.gdchardwaremanagement.v1alpha.HardwareGroup.requested_installation_date is
+   *     deprecated. See google/cloud/gdchardwaremanagement/v1alpha/resources.proto;l=408
    * @return Whether the requestedInstallationDate field is set.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public boolean hasRequestedInstallationDate() {
     return ((bitField0_ & 0x00000008) != 0);
   }
@@ -901,17 +905,21 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Requested installation date for the hardware in this
-   * HardwareGroup. Filled in by the customer.
+   * Deprecated: This value is not used. Use the requested_installation_date
+   * field in the Order resource instead.
    * </pre>
    *
    * <code>
-   * .google.type.Date requested_installation_date = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.type.Date requested_installation_date = 10 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated
+   *     google.cloud.gdchardwaremanagement.v1alpha.HardwareGroup.requested_installation_date is
+   *     deprecated. See google/cloud/gdchardwaremanagement/v1alpha/resources.proto;l=408
    * @return The requestedInstallationDate.
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.type.Date getRequestedInstallationDate() {
     return requestedInstallationDate_ == null
         ? com.google.type.Date.getDefaultInstance()
@@ -922,15 +930,16 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Requested installation date for the hardware in this
-   * HardwareGroup. Filled in by the customer.
+   * Deprecated: This value is not used. Use the requested_installation_date
+   * field in the Order resource instead.
    * </pre>
    *
    * <code>
-   * .google.type.Date requested_installation_date = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * .google.type.Date requested_installation_date = 10 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
+  @java.lang.Deprecated
   public com.google.type.DateOrBuilder getRequestedInstallationDateOrBuilder() {
     return requestedInstallationDate_ == null
         ? com.google.type.Date.getDefaultInstance()
@@ -2967,16 +2976,20 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Requested installation date for the hardware in this
-     * HardwareGroup. Filled in by the customer.
+     * Deprecated: This value is not used. Use the requested_installation_date
+     * field in the Order resource instead.
      * </pre>
      *
      * <code>
-     * .google.type.Date requested_installation_date = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.type.Date requested_installation_date = 10 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated
+     *     google.cloud.gdchardwaremanagement.v1alpha.HardwareGroup.requested_installation_date is
+     *     deprecated. See google/cloud/gdchardwaremanagement/v1alpha/resources.proto;l=408
      * @return Whether the requestedInstallationDate field is set.
      */
+    @java.lang.Deprecated
     public boolean hasRequestedInstallationDate() {
       return ((bitField0_ & 0x00000200) != 0);
     }
@@ -2985,16 +2998,20 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Requested installation date for the hardware in this
-     * HardwareGroup. Filled in by the customer.
+     * Deprecated: This value is not used. Use the requested_installation_date
+     * field in the Order resource instead.
      * </pre>
      *
      * <code>
-     * .google.type.Date requested_installation_date = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.type.Date requested_installation_date = 10 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
+     * @deprecated
+     *     google.cloud.gdchardwaremanagement.v1alpha.HardwareGroup.requested_installation_date is
+     *     deprecated. See google/cloud/gdchardwaremanagement/v1alpha/resources.proto;l=408
      * @return The requestedInstallationDate.
      */
+    @java.lang.Deprecated
     public com.google.type.Date getRequestedInstallationDate() {
       if (requestedInstallationDateBuilder_ == null) {
         return requestedInstallationDate_ == null
@@ -3009,14 +3026,15 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Requested installation date for the hardware in this
-     * HardwareGroup. Filled in by the customer.
+     * Deprecated: This value is not used. Use the requested_installation_date
+     * field in the Order resource instead.
      * </pre>
      *
      * <code>
-     * .google.type.Date requested_installation_date = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.type.Date requested_installation_date = 10 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setRequestedInstallationDate(com.google.type.Date value) {
       if (requestedInstallationDateBuilder_ == null) {
         if (value == null) {
@@ -3035,14 +3053,15 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Requested installation date for the hardware in this
-     * HardwareGroup. Filled in by the customer.
+     * Deprecated: This value is not used. Use the requested_installation_date
+     * field in the Order resource instead.
      * </pre>
      *
      * <code>
-     * .google.type.Date requested_installation_date = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.type.Date requested_installation_date = 10 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder setRequestedInstallationDate(com.google.type.Date.Builder builderForValue) {
       if (requestedInstallationDateBuilder_ == null) {
         requestedInstallationDate_ = builderForValue.build();
@@ -3058,14 +3077,15 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Requested installation date for the hardware in this
-     * HardwareGroup. Filled in by the customer.
+     * Deprecated: This value is not used. Use the requested_installation_date
+     * field in the Order resource instead.
      * </pre>
      *
      * <code>
-     * .google.type.Date requested_installation_date = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.type.Date requested_installation_date = 10 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder mergeRequestedInstallationDate(com.google.type.Date value) {
       if (requestedInstallationDateBuilder_ == null) {
         if (((bitField0_ & 0x00000200) != 0)
@@ -3089,14 +3109,15 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Requested installation date for the hardware in this
-     * HardwareGroup. Filled in by the customer.
+     * Deprecated: This value is not used. Use the requested_installation_date
+     * field in the Order resource instead.
      * </pre>
      *
      * <code>
-     * .google.type.Date requested_installation_date = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.type.Date requested_installation_date = 10 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public Builder clearRequestedInstallationDate() {
       bitField0_ = (bitField0_ & ~0x00000200);
       requestedInstallationDate_ = null;
@@ -3112,14 +3133,15 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Requested installation date for the hardware in this
-     * HardwareGroup. Filled in by the customer.
+     * Deprecated: This value is not used. Use the requested_installation_date
+     * field in the Order resource instead.
      * </pre>
      *
      * <code>
-     * .google.type.Date requested_installation_date = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.type.Date requested_installation_date = 10 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.type.Date.Builder getRequestedInstallationDateBuilder() {
       bitField0_ |= 0x00000200;
       onChanged();
@@ -3130,14 +3152,15 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Requested installation date for the hardware in this
-     * HardwareGroup. Filled in by the customer.
+     * Deprecated: This value is not used. Use the requested_installation_date
+     * field in the Order resource instead.
      * </pre>
      *
      * <code>
-     * .google.type.Date requested_installation_date = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.type.Date requested_installation_date = 10 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
+    @java.lang.Deprecated
     public com.google.type.DateOrBuilder getRequestedInstallationDateOrBuilder() {
       if (requestedInstallationDateBuilder_ != null) {
         return requestedInstallationDateBuilder_.getMessageOrBuilder();
@@ -3152,12 +3175,12 @@ public final class HardwareGroup extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Requested installation date for the hardware in this
-     * HardwareGroup. Filled in by the customer.
+     * Deprecated: This value is not used. Use the requested_installation_date
+     * field in the Order resource instead.
      * </pre>
      *
      * <code>
-     * .google.type.Date requested_installation_date = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * .google.type.Date requested_installation_date = 10 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<

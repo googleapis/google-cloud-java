@@ -308,4 +308,79 @@ public interface HybridReplicationParametersOrBuilder
    * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
    */
   java.lang.String getLabelsOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Replication Schedule for the replication created.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.HybridReplicationSchedule replication_schedule = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for replicationSchedule.
+   */
+  int getReplicationScheduleValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Replication Schedule for the replication created.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.HybridReplicationSchedule replication_schedule = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The replicationSchedule.
+   */
+  com.google.cloud.netapp.v1.HybridReplicationSchedule getReplicationSchedule();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of the hybrid replication.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.HybridReplicationParameters.VolumeHybridReplicationType hybrid_replication_type = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for hybridReplicationType.
+   */
+  int getHybridReplicationTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of the hybrid replication.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.HybridReplicationParameters.VolumeHybridReplicationType hybrid_replication_type = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The hybridReplicationType.
+   */
+  com.google.cloud.netapp.v1.HybridReplicationParameters.VolumeHybridReplicationType
+      getHybridReplicationType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Constituent volume count for large volume.
+   * </pre>
+   *
+   * <code>int32 large_volume_constituent_count = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The largeVolumeConstituentCount.
+   */
+  int getLargeVolumeConstituentCount();
 }

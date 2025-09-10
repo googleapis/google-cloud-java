@@ -1331,6 +1331,70 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
+  public static final int SKIP_CLUSTER_PROVISIONING_FIELD_NUMBER = 16;
+  private boolean skipClusterProvisioning_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether to skip the cluster provisioning step during factory
+   * turnup. If true, indicates that the Kubernetes cluster will be created
+   * after the zone's hardware is installed at the customer site.
+   * </pre>
+   *
+   * <code>bool skip_cluster_provisioning = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The skipClusterProvisioning.
+   */
+  @java.lang.Override
+  public boolean getSkipClusterProvisioning() {
+    return skipClusterProvisioning_;
+  }
+
+  public static final int CLUSTER_INTENT_REQUIRED_FIELD_NUMBER = 17;
+  private boolean clusterIntentRequired_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates whether a valid cluster intent must be provided by
+   * the customer before accepting the order. If true, the order cannot be
+   * accepted until cluster intent is present. This is used to enforce early
+   * validation and prevent delays caused by missing configuration.
+   * </pre>
+   *
+   * <code>bool cluster_intent_required = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The clusterIntentRequired.
+   */
+  @java.lang.Override
+  public boolean getClusterIntentRequired() {
+    return clusterIntentRequired_;
+  }
+
+  public static final int CLUSTER_INTENT_VERIFIED_FIELD_NUMBER = 18;
+  private boolean clusterIntentVerified_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Indicates whether the provided cluster intent has been
+   * successfully verified. This flag ensures cluster intent exists before order
+   * can be accepted.
+   * </pre>
+   *
+   * <code>bool cluster_intent_verified = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The clusterIntentVerified.
+   */
+  @java.lang.Override
+  public boolean getClusterIntentVerified() {
+    return clusterIntentVerified_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1384,6 +1448,15 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
             .PROVISIONING_STATE_UNSPECIFIED
             .getNumber()) {
       output.writeEnum(14, provisioningState_);
+    }
+    if (skipClusterProvisioning_ != false) {
+      output.writeBool(16, skipClusterProvisioning_);
+    }
+    if (clusterIntentRequired_ != false) {
+      output.writeBool(17, clusterIntentRequired_);
+    }
+    if (clusterIntentVerified_ != false) {
+      output.writeBool(18, clusterIntentVerified_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -1443,6 +1516,15 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(14, provisioningState_);
     }
+    if (skipClusterProvisioning_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(16, skipClusterProvisioning_);
+    }
+    if (clusterIntentRequired_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(17, clusterIntentRequired_);
+    }
+    if (clusterIntentVerified_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(18, clusterIntentVerified_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1480,6 +1562,9 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     if (!getGloballyUniqueId().equals(other.getGloballyUniqueId())) return false;
     if (!getSubscriptionConfigsList().equals(other.getSubscriptionConfigsList())) return false;
     if (provisioningState_ != other.provisioningState_) return false;
+    if (getSkipClusterProvisioning() != other.getSkipClusterProvisioning()) return false;
+    if (getClusterIntentRequired() != other.getClusterIntentRequired()) return false;
+    if (getClusterIntentVerified() != other.getClusterIntentVerified()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1527,6 +1612,12 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + PROVISIONING_STATE_FIELD_NUMBER;
     hash = (53 * hash) + provisioningState_;
+    hash = (37 * hash) + SKIP_CLUSTER_PROVISIONING_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSkipClusterProvisioning());
+    hash = (37 * hash) + CLUSTER_INTENT_REQUIRED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getClusterIntentRequired());
+    hash = (37 * hash) + CLUSTER_INTENT_VERIFIED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getClusterIntentVerified());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1738,6 +1829,9 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       }
       bitField0_ = (bitField0_ & ~0x00000400);
       provisioningState_ = 0;
+      skipClusterProvisioning_ = false;
+      clusterIntentRequired_ = false;
+      clusterIntentVerified_ = false;
       return this;
     }
 
@@ -1832,6 +1926,15 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00000800) != 0)) {
         result.provisioningState_ = provisioningState_;
+      }
+      if (((from_bitField0_ & 0x00001000) != 0)) {
+        result.skipClusterProvisioning_ = skipClusterProvisioning_;
+      }
+      if (((from_bitField0_ & 0x00002000) != 0)) {
+        result.clusterIntentRequired_ = clusterIntentRequired_;
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.clusterIntentVerified_ = clusterIntentVerified_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1973,6 +2076,15 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
       if (other.provisioningState_ != 0) {
         setProvisioningStateValue(other.getProvisioningStateValue());
       }
+      if (other.getSkipClusterProvisioning() != false) {
+        setSkipClusterProvisioning(other.getSkipClusterProvisioning());
+      }
+      if (other.getClusterIntentRequired() != false) {
+        setClusterIntentRequired(other.getClusterIntentRequired());
+      }
+      if (other.getClusterIntentVerified() != false) {
+        setClusterIntentVerified(other.getClusterIntentVerified());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2093,6 +2205,24 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000800;
                 break;
               } // case 112
+            case 128:
+              {
+                skipClusterProvisioning_ = input.readBool();
+                bitField0_ |= 0x00001000;
+                break;
+              } // case 128
+            case 136:
+              {
+                clusterIntentRequired_ = input.readBool();
+                bitField0_ |= 0x00002000;
+                break;
+              } // case 136
+            case 144:
+              {
+                clusterIntentVerified_ = input.readBool();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 144
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4449,6 +4579,195 @@ public final class Zone extends com.google.protobuf.GeneratedMessageV3
     public Builder clearProvisioningState() {
       bitField0_ = (bitField0_ & ~0x00000800);
       provisioningState_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean skipClusterProvisioning_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to skip the cluster provisioning step during factory
+     * turnup. If true, indicates that the Kubernetes cluster will be created
+     * after the zone's hardware is installed at the customer site.
+     * </pre>
+     *
+     * <code>bool skip_cluster_provisioning = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The skipClusterProvisioning.
+     */
+    @java.lang.Override
+    public boolean getSkipClusterProvisioning() {
+      return skipClusterProvisioning_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to skip the cluster provisioning step during factory
+     * turnup. If true, indicates that the Kubernetes cluster will be created
+     * after the zone's hardware is installed at the customer site.
+     * </pre>
+     *
+     * <code>bool skip_cluster_provisioning = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The skipClusterProvisioning to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSkipClusterProvisioning(boolean value) {
+
+      skipClusterProvisioning_ = value;
+      bitField0_ |= 0x00001000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to skip the cluster provisioning step during factory
+     * turnup. If true, indicates that the Kubernetes cluster will be created
+     * after the zone's hardware is installed at the customer site.
+     * </pre>
+     *
+     * <code>bool skip_cluster_provisioning = 16 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSkipClusterProvisioning() {
+      bitField0_ = (bitField0_ & ~0x00001000);
+      skipClusterProvisioning_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean clusterIntentRequired_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether a valid cluster intent must be provided by
+     * the customer before accepting the order. If true, the order cannot be
+     * accepted until cluster intent is present. This is used to enforce early
+     * validation and prevent delays caused by missing configuration.
+     * </pre>
+     *
+     * <code>bool cluster_intent_required = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The clusterIntentRequired.
+     */
+    @java.lang.Override
+    public boolean getClusterIntentRequired() {
+      return clusterIntentRequired_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether a valid cluster intent must be provided by
+     * the customer before accepting the order. If true, the order cannot be
+     * accepted until cluster intent is present. This is used to enforce early
+     * validation and prevent delays caused by missing configuration.
+     * </pre>
+     *
+     * <code>bool cluster_intent_required = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The clusterIntentRequired to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClusterIntentRequired(boolean value) {
+
+      clusterIntentRequired_ = value;
+      bitField0_ |= 0x00002000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether a valid cluster intent must be provided by
+     * the customer before accepting the order. If true, the order cannot be
+     * accepted until cluster intent is present. This is used to enforce early
+     * validation and prevent delays caused by missing configuration.
+     * </pre>
+     *
+     * <code>bool cluster_intent_required = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearClusterIntentRequired() {
+      bitField0_ = (bitField0_ & ~0x00002000);
+      clusterIntentRequired_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean clusterIntentVerified_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether the provided cluster intent has been
+     * successfully verified. This flag ensures cluster intent exists before order
+     * can be accepted.
+     * </pre>
+     *
+     * <code>bool cluster_intent_verified = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The clusterIntentVerified.
+     */
+    @java.lang.Override
+    public boolean getClusterIntentVerified() {
+      return clusterIntentVerified_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether the provided cluster intent has been
+     * successfully verified. This flag ensures cluster intent exists before order
+     * can be accepted.
+     * </pre>
+     *
+     * <code>bool cluster_intent_verified = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The clusterIntentVerified to set.
+     * @return This builder for chaining.
+     */
+    public Builder setClusterIntentVerified(boolean value) {
+
+      clusterIntentVerified_ = value;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Indicates whether the provided cluster intent has been
+     * successfully verified. This flag ensures cluster intent exists before order
+     * can be accepted.
+     * </pre>
+     *
+     * <code>bool cluster_intent_verified = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearClusterIntentVerified() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      clusterIntentVerified_ = false;
       onChanged();
       return this;
     }

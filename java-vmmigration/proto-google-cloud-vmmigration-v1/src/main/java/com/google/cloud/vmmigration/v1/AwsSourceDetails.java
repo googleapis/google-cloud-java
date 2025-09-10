@@ -325,6 +325,36 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
      * @return The bytes for secretAccessKey.
      */
     com.google.protobuf.ByteString getSecretAccessKeyBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. AWS session token.
+     * Used only when AWS security token service (STS) is responsible for
+     * creating the temporary credentials.
+     * </pre>
+     *
+     * <code>string session_token = 3 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     *
+     * @return The sessionToken.
+     */
+    java.lang.String getSessionToken();
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. AWS session token.
+     * Used only when AWS security token service (STS) is responsible for
+     * creating the temporary credentials.
+     * </pre>
+     *
+     * <code>string session_token = 3 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     *
+     * @return The bytes for sessionToken.
+     */
+    com.google.protobuf.ByteString getSessionTokenBytes();
   }
 
   /**
@@ -350,6 +380,7 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
     private AccessKeyCredentials() {
       accessKeyId_ = "";
       secretAccessKey_ = "";
+      sessionToken_ = "";
     }
 
     @java.lang.Override
@@ -479,6 +510,63 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
       }
     }
 
+    public static final int SESSION_TOKEN_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object sessionToken_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. AWS session token.
+     * Used only when AWS security token service (STS) is responsible for
+     * creating the temporary credentials.
+     * </pre>
+     *
+     * <code>string session_token = 3 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     *
+     * @return The sessionToken.
+     */
+    @java.lang.Override
+    public java.lang.String getSessionToken() {
+      java.lang.Object ref = sessionToken_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sessionToken_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. AWS session token.
+     * Used only when AWS security token service (STS) is responsible for
+     * creating the temporary credentials.
+     * </pre>
+     *
+     * <code>string session_token = 3 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+     *
+     * @return The bytes for sessionToken.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getSessionTokenBytes() {
+      java.lang.Object ref = sessionToken_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        sessionToken_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -499,6 +587,9 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secretAccessKey_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 2, secretAccessKey_);
       }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sessionToken_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, sessionToken_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -513,6 +604,9 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
       }
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(secretAccessKey_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, secretAccessKey_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sessionToken_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, sessionToken_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -532,6 +626,7 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
 
       if (!getAccessKeyId().equals(other.getAccessKeyId())) return false;
       if (!getSecretAccessKey().equals(other.getSecretAccessKey())) return false;
+      if (!getSessionToken().equals(other.getSessionToken())) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -547,6 +642,8 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
       hash = (53 * hash) + getAccessKeyId().hashCode();
       hash = (37 * hash) + SECRET_ACCESS_KEY_FIELD_NUMBER;
       hash = (53 * hash) + getSecretAccessKey().hashCode();
+      hash = (37 * hash) + SESSION_TOKEN_FIELD_NUMBER;
+      hash = (53 * hash) + getSessionToken().hashCode();
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -695,6 +792,7 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
         bitField0_ = 0;
         accessKeyId_ = "";
         secretAccessKey_ = "";
+        sessionToken_ = "";
         return this;
       }
 
@@ -740,6 +838,9 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
         }
         if (((from_bitField0_ & 0x00000002) != 0)) {
           result.secretAccessKey_ = secretAccessKey_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.sessionToken_ = sessionToken_;
         }
       }
 
@@ -805,6 +906,11 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
           bitField0_ |= 0x00000002;
           onChanged();
         }
+        if (!other.getSessionToken().isEmpty()) {
+          sessionToken_ = other.sessionToken_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -843,6 +949,12 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
                   bitField0_ |= 0x00000002;
                   break;
                 } // case 18
+              case 26:
+                {
+                  sessionToken_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1084,6 +1196,127 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
         return this;
       }
 
+      private java.lang.Object sessionToken_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Input only. AWS session token.
+       * Used only when AWS security token service (STS) is responsible for
+       * creating the temporary credentials.
+       * </pre>
+       *
+       * <code>string session_token = 3 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+       *
+       * @return The sessionToken.
+       */
+      public java.lang.String getSessionToken() {
+        java.lang.Object ref = sessionToken_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          sessionToken_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Input only. AWS session token.
+       * Used only when AWS security token service (STS) is responsible for
+       * creating the temporary credentials.
+       * </pre>
+       *
+       * <code>string session_token = 3 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+       *
+       * @return The bytes for sessionToken.
+       */
+      public com.google.protobuf.ByteString getSessionTokenBytes() {
+        java.lang.Object ref = sessionToken_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          sessionToken_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Input only. AWS session token.
+       * Used only when AWS security token service (STS) is responsible for
+       * creating the temporary credentials.
+       * </pre>
+       *
+       * <code>string session_token = 3 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+       *
+       * @param value The sessionToken to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSessionToken(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sessionToken_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Input only. AWS session token.
+       * Used only when AWS security token service (STS) is responsible for
+       * creating the temporary credentials.
+       * </pre>
+       *
+       * <code>string session_token = 3 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSessionToken() {
+        sessionToken_ = getDefaultInstance().getSessionToken();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Input only. AWS session token.
+       * Used only when AWS security token service (STS) is responsible for
+       * creating the temporary credentials.
+       * </pre>
+       *
+       * <code>string session_token = 3 [(.google.api.field_behavior) = INPUT_ONLY];</code>
+       *
+       * @param value The bytes for sessionToken to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSessionTokenBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        sessionToken_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
       @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
@@ -1161,10 +1394,10 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Key of tag.
+     * Required. Key of tag.
      * </pre>
      *
-     * <code>string key = 1;</code>
+     * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The key.
      */
@@ -1174,10 +1407,10 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Key of tag.
+     * Required. Key of tag.
      * </pre>
      *
-     * <code>string key = 1;</code>
+     * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for key.
      */
@@ -1187,10 +1420,10 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Value of tag.
+     * Required. Value of tag.
      * </pre>
      *
-     * <code>string value = 2;</code>
+     * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The value.
      */
@@ -1200,10 +1433,10 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Value of tag.
+     * Required. Value of tag.
      * </pre>
      *
-     * <code>string value = 2;</code>
+     * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for value.
      */
@@ -1265,10 +1498,10 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Key of tag.
+     * Required. Key of tag.
      * </pre>
      *
-     * <code>string key = 1;</code>
+     * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The key.
      */
@@ -1289,10 +1522,10 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Key of tag.
+     * Required. Key of tag.
      * </pre>
      *
-     * <code>string key = 1;</code>
+     * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for key.
      */
@@ -1318,10 +1551,10 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Value of tag.
+     * Required. Value of tag.
      * </pre>
      *
-     * <code>string value = 2;</code>
+     * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The value.
      */
@@ -1342,10 +1575,10 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Value of tag.
+     * Required. Value of tag.
      * </pre>
      *
-     * <code>string value = 2;</code>
+     * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for value.
      */
@@ -1740,10 +1973,10 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Key of tag.
+       * Required. Key of tag.
        * </pre>
        *
-       * <code>string key = 1;</code>
+       * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @return The key.
        */
@@ -1763,10 +1996,10 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Key of tag.
+       * Required. Key of tag.
        * </pre>
        *
-       * <code>string key = 1;</code>
+       * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @return The bytes for key.
        */
@@ -1786,10 +2019,10 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Key of tag.
+       * Required. Key of tag.
        * </pre>
        *
-       * <code>string key = 1;</code>
+       * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @param value The key to set.
        * @return This builder for chaining.
@@ -1808,10 +2041,10 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Key of tag.
+       * Required. Key of tag.
        * </pre>
        *
-       * <code>string key = 1;</code>
+       * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @return This builder for chaining.
        */
@@ -1826,10 +2059,10 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Key of tag.
+       * Required. Key of tag.
        * </pre>
        *
-       * <code>string key = 1;</code>
+       * <code>string key = 1 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @param value The bytes for key to set.
        * @return This builder for chaining.
@@ -1851,10 +2084,10 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Value of tag.
+       * Required. Value of tag.
        * </pre>
        *
-       * <code>string value = 2;</code>
+       * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @return The value.
        */
@@ -1874,10 +2107,10 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Value of tag.
+       * Required. Value of tag.
        * </pre>
        *
-       * <code>string value = 2;</code>
+       * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @return The bytes for value.
        */
@@ -1897,10 +2130,10 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Value of tag.
+       * Required. Value of tag.
        * </pre>
        *
-       * <code>string value = 2;</code>
+       * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @param value The value to set.
        * @return This builder for chaining.
@@ -1919,10 +2152,10 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Value of tag.
+       * Required. Value of tag.
        * </pre>
        *
-       * <code>string value = 2;</code>
+       * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @return This builder for chaining.
        */
@@ -1937,10 +2170,10 @@ public final class AwsSourceDetails extends com.google.protobuf.GeneratedMessage
        *
        *
        * <pre>
-       * Value of tag.
+       * Required. Value of tag.
        * </pre>
        *
-       * <code>string value = 2;</code>
+       * <code>string value = 2 [(.google.api.field_behavior) = REQUIRED];</code>
        *
        * @param value The bytes for value to set.
        * @return This builder for chaining.

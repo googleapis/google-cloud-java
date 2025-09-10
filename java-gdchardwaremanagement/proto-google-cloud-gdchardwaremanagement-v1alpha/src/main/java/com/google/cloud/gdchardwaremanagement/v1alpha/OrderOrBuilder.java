@@ -401,47 +401,94 @@ public interface OrderOrBuilder
    *
    *
    * <pre>
-   * Required. Customer specified deadline by when this order should be
-   * fulfilled.
+   * Deprecated: Please use customer_requested_installation_date instead.
    * </pre>
    *
    * <code>
-   * .google.protobuf.Timestamp fulfillment_time = 9 [(.google.api.field_behavior) = REQUIRED];
+   * .google.protobuf.Timestamp fulfillment_time = 9 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.gdchardwaremanagement.v1alpha.Order.fulfillment_time is deprecated.
+   *     See google/cloud/gdchardwaremanagement/v1alpha/resources.proto;l=190
    * @return Whether the fulfillmentTime field is set.
    */
+  @java.lang.Deprecated
   boolean hasFulfillmentTime();
 
   /**
    *
    *
    * <pre>
-   * Required. Customer specified deadline by when this order should be
-   * fulfilled.
+   * Deprecated: Please use customer_requested_installation_date instead.
    * </pre>
    *
    * <code>
-   * .google.protobuf.Timestamp fulfillment_time = 9 [(.google.api.field_behavior) = REQUIRED];
+   * .google.protobuf.Timestamp fulfillment_time = 9 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
+   * @deprecated google.cloud.gdchardwaremanagement.v1alpha.Order.fulfillment_time is deprecated.
+   *     See google/cloud/gdchardwaremanagement/v1alpha/resources.proto;l=190
    * @return The fulfillmentTime.
    */
+  @java.lang.Deprecated
   com.google.protobuf.Timestamp getFulfillmentTime();
 
   /**
    *
    *
    * <pre>
-   * Required. Customer specified deadline by when this order should be
-   * fulfilled.
+   * Deprecated: Please use customer_requested_installation_date instead.
    * </pre>
    *
    * <code>
-   * .google.protobuf.Timestamp fulfillment_time = 9 [(.google.api.field_behavior) = REQUIRED];
+   * .google.protobuf.Timestamp fulfillment_time = 9 [deprecated = true, (.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
+  @java.lang.Deprecated
   com.google.protobuf.TimestampOrBuilder getFulfillmentTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer requested installation date for this order.
+   * </pre>
+   *
+   * <code>
+   * .google.type.Date customer_requested_installation_date = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the customerRequestedInstallationDate field is set.
+   */
+  boolean hasCustomerRequestedInstallationDate();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer requested installation date for this order.
+   * </pre>
+   *
+   * <code>
+   * .google.type.Date customer_requested_installation_date = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The customerRequestedInstallationDate.
+   */
+  com.google.type.Date getCustomerRequestedInstallationDate();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Customer requested installation date for this order.
+   * </pre>
+   *
+   * <code>
+   * .google.type.Date customer_requested_installation_date = 21 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.type.DateOrBuilder getCustomerRequestedInstallationDateOrBuilder();
 
   /**
    *
@@ -788,4 +835,220 @@ public interface OrderOrBuilder
    * </code>
    */
   com.google.type.DateOrBuilder getEstimatedInstallationDateOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Estimated delivery date for this order.
+   * </pre>
+   *
+   * <code>
+   * .google.type.Date estimated_delivery_date = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the estimatedDeliveryDate field is set.
+   */
+  boolean hasEstimatedDeliveryDate();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Estimated delivery date for this order.
+   * </pre>
+   *
+   * <code>
+   * .google.type.Date estimated_delivery_date = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The estimatedDeliveryDate.
+   */
+  com.google.type.Date getEstimatedDeliveryDate();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Estimated delivery date for this order.
+   * </pre>
+   *
+   * <code>
+   * .google.type.Date estimated_delivery_date = 22 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.type.DateOrBuilder getEstimatedDeliveryDateOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether this order is a migration from customer's existing
+   * infrastructure.
+   * </pre>
+   *
+   * <code>bool migration = 23 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The migration.
+   */
+  boolean getMigration();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when the order was moved to ACCEPTED state.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp accepted_time = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the acceptedTime field is set.
+   */
+  boolean hasAcceptedTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when the order was moved to ACCEPTED state.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp accepted_time = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The acceptedTime.
+   */
+  com.google.protobuf.Timestamp getAcceptedTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The time when the order was moved to ACCEPTED state.
+   * </pre>
+   *
+   * <code>
+   * .google.protobuf.Timestamp accepted_time = 24 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getAcceptedTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The date to which the customer or Google wants to set the
+   * scheduled installation date.
+   * </pre>
+   *
+   * <code>
+   * .google.type.Date requested_date_change = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the requestedDateChange field is set.
+   */
+  boolean hasRequestedDateChange();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The date to which the customer or Google wants to set the
+   * scheduled installation date.
+   * </pre>
+   *
+   * <code>
+   * .google.type.Date requested_date_change = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The requestedDateChange.
+   */
+  com.google.type.Date getRequestedDateChange();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The date to which the customer or Google wants to set the
+   * scheduled installation date.
+   * </pre>
+   *
+   * <code>
+   * .google.type.Date requested_date_change = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.type.DateOrBuilder getRequestedDateChangeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Notes for this order, provided by the vendor.
+   * </pre>
+   *
+   * <code>string vendor_notes = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The vendorNotes.
+   */
+  java.lang.String getVendorNotes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Notes for this order, provided by the vendor.
+   * </pre>
+   *
+   * <code>string vendor_notes = 26 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The bytes for vendorNotes.
+   */
+  com.google.protobuf.ByteString getVendorNotesBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contact information of the SI assigned to this order.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gdchardwaremanagement.v1alpha.OrganizationContact vendor_contact = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the vendorContact field is set.
+   */
+  boolean hasVendorContact();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contact information of the SI assigned to this order.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gdchardwaremanagement.v1alpha.OrganizationContact vendor_contact = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The vendorContact.
+   */
+  com.google.cloud.gdchardwaremanagement.v1alpha.OrganizationContact getVendorContact();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Contact information of the SI assigned to this order.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.gdchardwaremanagement.v1alpha.OrganizationContact vendor_contact = 27 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.gdchardwaremanagement.v1alpha.OrganizationContactOrBuilder
+      getVendorContactOrBuilder();
 }

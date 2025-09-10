@@ -226,6 +226,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -288,6 +289,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -350,6 +352,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -422,6 +425,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -494,6 +498,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -524,6 +529,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -574,6 +580,7 @@ public class ConfigClientHttpJsonTest {
               .setTfVersion("tfVersion182968838")
               .setQuotaValidation(QuotaValidation.forNumber(0))
               .putAllAnnotations(new HashMap<String, String>())
+              .setProviderConfig(ProviderConfig.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateDeploymentAsync(deployment, updateMask).get();
@@ -605,6 +612,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -672,6 +680,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -837,6 +846,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersion("tfVersion182968838")
             .setQuotaValidationResults("quotaValidationResults-1396407899")
             .setQuotaValidation(QuotaValidation.forNumber(0))
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -897,6 +907,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersion("tfVersion182968838")
             .setQuotaValidationResults("quotaValidationResults-1396407899")
             .setQuotaValidation(QuotaValidation.forNumber(0))
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1431,6 +1442,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1498,6 +1510,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1565,6 +1578,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1634,6 +1648,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1798,6 +1813,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersion("tfVersion182968838")
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1864,6 +1880,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersion("tfVersion182968838")
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1930,6 +1947,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersion("tfVersion182968838")
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1989,6 +2007,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersion("tfVersion182968838")
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2148,6 +2167,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersion("tfVersion182968838")
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2212,6 +2232,7 @@ public class ConfigClientHttpJsonTest {
             .setTfVersion("tfVersion182968838")
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

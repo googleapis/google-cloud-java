@@ -54,6 +54,8 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     bootOption_ = 0;
     additionalLicenses_ = com.google.protobuf.LazyStringArrayList.emptyList();
     hostname_ = "";
+    bootConversion_ = 0;
+    diskReplicaZones_ = com.google.protobuf.LazyStringArrayList.emptyList();
   }
 
   @java.lang.Override
@@ -367,7 +369,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * A map of network tags to associate with the VM.
+   * A list of network tags to associate with the VM.
    * </pre>
    *
    * <code>repeated string network_tags = 6;</code>
@@ -382,7 +384,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * A map of network tags to associate with the VM.
+   * A list of network tags to associate with the VM.
    * </pre>
    *
    * <code>repeated string network_tags = 6;</code>
@@ -397,7 +399,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * A map of network tags to associate with the VM.
+   * A list of network tags to associate with the VM.
    * </pre>
    *
    * <code>repeated string network_tags = 6;</code>
@@ -413,7 +415,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * A map of network tags to associate with the VM.
+   * A list of network tags to associate with the VM.
    * </pre>
    *
    * <code>repeated string network_tags = 6;</code>
@@ -856,7 +858,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
    *
    * <pre>
    * Defines whether the instance has Secure Boot enabled.
-   * This can be set to true only if the vm boot option is EFI.
+   * This can be set to true only if the VM boot option is EFI.
    * </pre>
    *
    * <code>bool secure_boot = 14;</code>
@@ -868,6 +870,44 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     return secureBoot_;
   }
 
+  public static final int ENABLE_VTPM_FIELD_NUMBER = 21;
+  private boolean enableVtpm_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defines whether the instance has vTPM enabled.
+   * </pre>
+   *
+   * <code>bool enable_vtpm = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableVtpm.
+   */
+  @java.lang.Override
+  public boolean getEnableVtpm() {
+    return enableVtpm_;
+  }
+
+  public static final int ENABLE_INTEGRITY_MONITORING_FIELD_NUMBER = 22;
+  private boolean enableIntegrityMonitoring_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Defines whether the instance has integrity monitoring enabled.
+   * </pre>
+   *
+   * <code>bool enable_integrity_monitoring = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableIntegrityMonitoring.
+   */
+  @java.lang.Override
+  public boolean getEnableIntegrityMonitoring() {
+    return enableIntegrityMonitoring_;
+  }
+
   public static final int BOOT_OPTION_FIELD_NUMBER = 15;
   private int bootOption_ = 0;
 
@@ -875,7 +915,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The VM Boot Option, as set in the source vm.
+   * The VM Boot Option, as set in the source VM.
    * </pre>
    *
    * <code>.google.cloud.vmmigration.v1.ComputeEngineBootOption boot_option = 15;</code>
@@ -891,7 +931,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The VM Boot Option, as set in the source vm.
+   * The VM Boot Option, as set in the source VM.
    * </pre>
    *
    * <code>.google.cloud.vmmigration.v1.ComputeEngineBootOption boot_option = 15;</code>
@@ -1135,6 +1175,210 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     }
   }
 
+  public static final int ENCRYPTION_FIELD_NUMBER = 19;
+  private com.google.cloud.vmmigration.v1.Encryption encryption_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The encryption to apply to the VM disks.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.Encryption encryption = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the encryption field is set.
+   */
+  @java.lang.Override
+  public boolean hasEncryption() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The encryption to apply to the VM disks.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.Encryption encryption = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The encryption.
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.Encryption getEncryption() {
+    return encryption_ == null
+        ? com.google.cloud.vmmigration.v1.Encryption.getDefaultInstance()
+        : encryption_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The encryption to apply to the VM disks.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.Encryption encryption = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.EncryptionOrBuilder getEncryptionOrBuilder() {
+    return encryption_ == null
+        ? com.google.cloud.vmmigration.v1.Encryption.getDefaultInstance()
+        : encryption_;
+  }
+
+  public static final int BOOT_CONVERSION_FIELD_NUMBER = 20;
+  private int bootConversion_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. By default the virtual machine will keep its existing boot
+   * option. Setting this property will trigger an internal process which will
+   * convert the virtual machine from using the existing boot option to another.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.BootConversion boot_conversion = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for bootConversion.
+   */
+  @java.lang.Override
+  public int getBootConversionValue() {
+    return bootConversion_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. By default the virtual machine will keep its existing boot
+   * option. Setting this property will trigger an internal process which will
+   * convert the virtual machine from using the existing boot option to another.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.BootConversion boot_conversion = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The bootConversion.
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.BootConversion getBootConversion() {
+    com.google.cloud.vmmigration.v1.BootConversion result =
+        com.google.cloud.vmmigration.v1.BootConversion.forNumber(bootConversion_);
+    return result == null ? com.google.cloud.vmmigration.v1.BootConversion.UNRECOGNIZED : result;
+  }
+
+  public static final int DISK_REPLICA_ZONES_FIELD_NUMBER = 24;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList diskReplicaZones_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional replica zones of the target regional disks.
+   * If this list is not empty a regional disk will be created. The first
+   * supported zone would be the one stated in the
+   * [zone][google.cloud.vmmigration.v1.ComputeEngineTargetDetails.zone] field.
+   * The rest are taken from this list. Please refer to the [regional disk
+   * creation
+   * API](https://cloud.google.com/compute/docs/regions-zones/global-regional-zonal-resources)
+   * for further details about regional vs zonal disks. If not specified, a
+   * zonal disk will be created in the same zone the VM is created.
+   * </pre>
+   *
+   * <code>repeated string disk_replica_zones = 24 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return A list containing the diskReplicaZones.
+   */
+  public com.google.protobuf.ProtocolStringList getDiskReplicaZonesList() {
+    return diskReplicaZones_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional replica zones of the target regional disks.
+   * If this list is not empty a regional disk will be created. The first
+   * supported zone would be the one stated in the
+   * [zone][google.cloud.vmmigration.v1.ComputeEngineTargetDetails.zone] field.
+   * The rest are taken from this list. Please refer to the [regional disk
+   * creation
+   * API](https://cloud.google.com/compute/docs/regions-zones/global-regional-zonal-resources)
+   * for further details about regional vs zonal disks. If not specified, a
+   * zonal disk will be created in the same zone the VM is created.
+   * </pre>
+   *
+   * <code>repeated string disk_replica_zones = 24 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The count of diskReplicaZones.
+   */
+  public int getDiskReplicaZonesCount() {
+    return diskReplicaZones_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional replica zones of the target regional disks.
+   * If this list is not empty a regional disk will be created. The first
+   * supported zone would be the one stated in the
+   * [zone][google.cloud.vmmigration.v1.ComputeEngineTargetDetails.zone] field.
+   * The rest are taken from this list. Please refer to the [regional disk
+   * creation
+   * API](https://cloud.google.com/compute/docs/regions-zones/global-regional-zonal-resources)
+   * for further details about regional vs zonal disks. If not specified, a
+   * zonal disk will be created in the same zone the VM is created.
+   * </pre>
+   *
+   * <code>repeated string disk_replica_zones = 24 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the element to return.
+   * @return The diskReplicaZones at the given index.
+   */
+  public java.lang.String getDiskReplicaZones(int index) {
+    return diskReplicaZones_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Additional replica zones of the target regional disks.
+   * If this list is not empty a regional disk will be created. The first
+   * supported zone would be the one stated in the
+   * [zone][google.cloud.vmmigration.v1.ComputeEngineTargetDetails.zone] field.
+   * The rest are taken from this list. Please refer to the [regional disk
+   * creation
+   * API](https://cloud.google.com/compute/docs/regions-zones/global-regional-zonal-resources)
+   * for further details about regional vs zonal disks. If not specified, a
+   * zonal disk will be created in the same zone the VM is created.
+   * </pre>
+   *
+   * <code>repeated string disk_replica_zones = 24 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the diskReplicaZones at the given index.
+   */
+  public com.google.protobuf.ByteString getDiskReplicaZonesBytes(int index) {
+    return diskReplicaZones_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1209,6 +1453,22 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hostname_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 18, hostname_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeMessage(19, getEncryption());
+    }
+    if (bootConversion_
+        != com.google.cloud.vmmigration.v1.BootConversion.BOOT_CONVERSION_UNSPECIFIED.getNumber()) {
+      output.writeEnum(20, bootConversion_);
+    }
+    if (enableVtpm_ != false) {
+      output.writeBool(21, enableVtpm_);
+    }
+    if (enableIntegrityMonitoring_ != false) {
+      output.writeBool(22, enableIntegrityMonitoring_);
+    }
+    for (int i = 0; i < diskReplicaZones_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 24, diskReplicaZones_.getRaw(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -1307,6 +1567,27 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(hostname_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, hostname_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(19, getEncryption());
+    }
+    if (bootConversion_
+        != com.google.cloud.vmmigration.v1.BootConversion.BOOT_CONVERSION_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(20, bootConversion_);
+    }
+    if (enableVtpm_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(21, enableVtpm_);
+    }
+    if (enableIntegrityMonitoring_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(22, enableIntegrityMonitoring_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < diskReplicaZones_.size(); i++) {
+        dataSize += computeStringSizeNoTag(diskReplicaZones_.getRaw(i));
+      }
+      size += dataSize;
+      size += 2 * getDiskReplicaZonesList().size();
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1343,10 +1624,18 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       if (!getComputeScheduling().equals(other.getComputeScheduling())) return false;
     }
     if (getSecureBoot() != other.getSecureBoot()) return false;
+    if (getEnableVtpm() != other.getEnableVtpm()) return false;
+    if (getEnableIntegrityMonitoring() != other.getEnableIntegrityMonitoring()) return false;
     if (bootOption_ != other.bootOption_) return false;
     if (!internalGetMetadata().equals(other.internalGetMetadata())) return false;
     if (!getAdditionalLicensesList().equals(other.getAdditionalLicensesList())) return false;
     if (!getHostname().equals(other.getHostname())) return false;
+    if (hasEncryption() != other.hasEncryption()) return false;
+    if (hasEncryption()) {
+      if (!getEncryption().equals(other.getEncryption())) return false;
+    }
+    if (bootConversion_ != other.bootConversion_) return false;
+    if (!getDiskReplicaZonesList().equals(other.getDiskReplicaZonesList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1396,6 +1685,10 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     }
     hash = (37 * hash) + SECURE_BOOT_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSecureBoot());
+    hash = (37 * hash) + ENABLE_VTPM_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableVtpm());
+    hash = (37 * hash) + ENABLE_INTEGRITY_MONITORING_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableIntegrityMonitoring());
     hash = (37 * hash) + BOOT_OPTION_FIELD_NUMBER;
     hash = (53 * hash) + bootOption_;
     if (!internalGetMetadata().getMap().isEmpty()) {
@@ -1408,6 +1701,16 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     }
     hash = (37 * hash) + HOSTNAME_FIELD_NUMBER;
     hash = (53 * hash) + getHostname().hashCode();
+    if (hasEncryption()) {
+      hash = (37 * hash) + ENCRYPTION_FIELD_NUMBER;
+      hash = (53 * hash) + getEncryption().hashCode();
+    }
+    hash = (37 * hash) + BOOT_CONVERSION_FIELD_NUMBER;
+    hash = (53 * hash) + bootConversion_;
+    if (getDiskReplicaZonesCount() > 0) {
+      hash = (37 * hash) + DISK_REPLICA_ZONES_FIELD_NUMBER;
+      hash = (53 * hash) + getDiskReplicaZonesList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1580,6 +1883,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
         getNetworkInterfacesFieldBuilder();
         getAppliedLicenseFieldBuilder();
         getComputeSchedulingFieldBuilder();
+        getEncryptionFieldBuilder();
       }
     }
 
@@ -1615,10 +1919,19 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
         computeSchedulingBuilder_ = null;
       }
       secureBoot_ = false;
+      enableVtpm_ = false;
+      enableIntegrityMonitoring_ = false;
       bootOption_ = 0;
       internalGetMutableMetadata().clear();
       additionalLicenses_ = com.google.protobuf.LazyStringArrayList.emptyList();
       hostname_ = "";
+      encryption_ = null;
+      if (encryptionBuilder_ != null) {
+        encryptionBuilder_.dispose();
+        encryptionBuilder_ = null;
+      }
+      bootConversion_ = 0;
+      diskReplicaZones_ = com.google.protobuf.LazyStringArrayList.emptyList();
       return this;
     }
 
@@ -1718,18 +2031,35 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
         result.secureBoot_ = secureBoot_;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
-        result.bootOption_ = bootOption_;
+        result.enableVtpm_ = enableVtpm_;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.enableIntegrityMonitoring_ = enableIntegrityMonitoring_;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.bootOption_ = bootOption_;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.metadata_ = internalGetMetadata();
         result.metadata_.makeImmutable();
       }
-      if (((from_bitField0_ & 0x00010000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         additionalLicenses_.makeImmutable();
         result.additionalLicenses_ = additionalLicenses_;
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00080000) != 0)) {
         result.hostname_ = hostname_;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.encryption_ = encryptionBuilder_ == null ? encryption_ : encryptionBuilder_.build();
+        to_bitField0_ |= 0x00000004;
+      }
+      if (((from_bitField0_ & 0x00200000) != 0)) {
+        result.bootConversion_ = bootConversion_;
+      }
+      if (((from_bitField0_ & 0x00400000) != 0)) {
+        diskReplicaZones_.makeImmutable();
+        result.diskReplicaZones_ = diskReplicaZones_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1864,15 +2194,21 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       if (other.getSecureBoot() != false) {
         setSecureBoot(other.getSecureBoot());
       }
+      if (other.getEnableVtpm() != false) {
+        setEnableVtpm(other.getEnableVtpm());
+      }
+      if (other.getEnableIntegrityMonitoring() != false) {
+        setEnableIntegrityMonitoring(other.getEnableIntegrityMonitoring());
+      }
       if (other.bootOption_ != 0) {
         setBootOptionValue(other.getBootOptionValue());
       }
       internalGetMutableMetadata().mergeFrom(other.internalGetMetadata());
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       if (!other.additionalLicenses_.isEmpty()) {
         if (additionalLicenses_.isEmpty()) {
           additionalLicenses_ = other.additionalLicenses_;
-          bitField0_ |= 0x00010000;
+          bitField0_ |= 0x00040000;
         } else {
           ensureAdditionalLicensesIsMutable();
           additionalLicenses_.addAll(other.additionalLicenses_);
@@ -1881,7 +2217,23 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       }
       if (!other.getHostname().isEmpty()) {
         hostname_ = other.hostname_;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00080000;
+        onChanged();
+      }
+      if (other.hasEncryption()) {
+        mergeEncryption(other.getEncryption());
+      }
+      if (other.bootConversion_ != 0) {
+        setBootConversionValue(other.getBootConversionValue());
+      }
+      if (!other.diskReplicaZones_.isEmpty()) {
+        if (diskReplicaZones_.isEmpty()) {
+          diskReplicaZones_ = other.diskReplicaZones_;
+          bitField0_ |= 0x00400000;
+        } else {
+          ensureDiskReplicaZonesIsMutable();
+          diskReplicaZones_.addAll(other.diskReplicaZones_);
+        }
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2013,7 +2365,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
             case 120:
               {
                 bootOption_ = input.readEnum();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case 120
             case 130:
@@ -2025,7 +2377,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
                 internalGetMutableMetadata()
                     .getMutableMap()
                     .put(metadata__.getKey(), metadata__.getValue());
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 130
             case 138:
@@ -2038,9 +2390,40 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
             case 146:
               {
                 hostname_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case 146
+            case 154:
+              {
+                input.readMessage(getEncryptionFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00100000;
+                break;
+              } // case 154
+            case 160:
+              {
+                bootConversion_ = input.readEnum();
+                bitField0_ |= 0x00200000;
+                break;
+              } // case 160
+            case 168:
+              {
+                enableVtpm_ = input.readBool();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 168
+            case 176:
+              {
+                enableIntegrityMonitoring_ = input.readBool();
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 176
+            case 194:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureDiskReplicaZonesIsMutable();
+                diskReplicaZones_.add(s);
+                break;
+              } // case 194
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2629,7 +3012,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * A map of network tags to associate with the VM.
+     * A list of network tags to associate with the VM.
      * </pre>
      *
      * <code>repeated string network_tags = 6;</code>
@@ -2645,7 +3028,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * A map of network tags to associate with the VM.
+     * A list of network tags to associate with the VM.
      * </pre>
      *
      * <code>repeated string network_tags = 6;</code>
@@ -2660,7 +3043,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * A map of network tags to associate with the VM.
+     * A list of network tags to associate with the VM.
      * </pre>
      *
      * <code>repeated string network_tags = 6;</code>
@@ -2676,7 +3059,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * A map of network tags to associate with the VM.
+     * A list of network tags to associate with the VM.
      * </pre>
      *
      * <code>repeated string network_tags = 6;</code>
@@ -2692,7 +3075,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * A map of network tags to associate with the VM.
+     * A list of network tags to associate with the VM.
      * </pre>
      *
      * <code>repeated string network_tags = 6;</code>
@@ -2716,7 +3099,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * A map of network tags to associate with the VM.
+     * A list of network tags to associate with the VM.
      * </pre>
      *
      * <code>repeated string network_tags = 6;</code>
@@ -2739,7 +3122,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * A map of network tags to associate with the VM.
+     * A list of network tags to associate with the VM.
      * </pre>
      *
      * <code>repeated string network_tags = 6;</code>
@@ -2759,7 +3142,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * A map of network tags to associate with the VM.
+     * A list of network tags to associate with the VM.
      * </pre>
      *
      * <code>repeated string network_tags = 6;</code>
@@ -2778,7 +3161,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * A map of network tags to associate with the VM.
+     * A list of network tags to associate with the VM.
      * </pre>
      *
      * <code>repeated string network_tags = 6;</code>
@@ -4053,7 +4436,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
      *
      * <pre>
      * Defines whether the instance has Secure Boot enabled.
-     * This can be set to true only if the vm boot option is EFI.
+     * This can be set to true only if the VM boot option is EFI.
      * </pre>
      *
      * <code>bool secure_boot = 14;</code>
@@ -4070,7 +4453,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
      *
      * <pre>
      * Defines whether the instance has Secure Boot enabled.
-     * This can be set to true only if the vm boot option is EFI.
+     * This can be set to true only if the VM boot option is EFI.
      * </pre>
      *
      * <code>bool secure_boot = 14;</code>
@@ -4091,7 +4474,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
      *
      * <pre>
      * Defines whether the instance has Secure Boot enabled.
-     * This can be set to true only if the vm boot option is EFI.
+     * This can be set to true only if the VM boot option is EFI.
      * </pre>
      *
      * <code>bool secure_boot = 14;</code>
@@ -4105,13 +4488,125 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       return this;
     }
 
+    private boolean enableVtpm_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines whether the instance has vTPM enabled.
+     * </pre>
+     *
+     * <code>bool enable_vtpm = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableVtpm.
+     */
+    @java.lang.Override
+    public boolean getEnableVtpm() {
+      return enableVtpm_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines whether the instance has vTPM enabled.
+     * </pre>
+     *
+     * <code>bool enable_vtpm = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The enableVtpm to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableVtpm(boolean value) {
+
+      enableVtpm_ = value;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines whether the instance has vTPM enabled.
+     * </pre>
+     *
+     * <code>bool enable_vtpm = 21 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableVtpm() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      enableVtpm_ = false;
+      onChanged();
+      return this;
+    }
+
+    private boolean enableIntegrityMonitoring_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines whether the instance has integrity monitoring enabled.
+     * </pre>
+     *
+     * <code>bool enable_integrity_monitoring = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableIntegrityMonitoring.
+     */
+    @java.lang.Override
+    public boolean getEnableIntegrityMonitoring() {
+      return enableIntegrityMonitoring_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines whether the instance has integrity monitoring enabled.
+     * </pre>
+     *
+     * <code>bool enable_integrity_monitoring = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The enableIntegrityMonitoring to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableIntegrityMonitoring(boolean value) {
+
+      enableIntegrityMonitoring_ = value;
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Defines whether the instance has integrity monitoring enabled.
+     * </pre>
+     *
+     * <code>bool enable_integrity_monitoring = 22 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableIntegrityMonitoring() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      enableIntegrityMonitoring_ = false;
+      onChanged();
+      return this;
+    }
+
     private int bootOption_ = 0;
 
     /**
      *
      *
      * <pre>
-     * The VM Boot Option, as set in the source vm.
+     * The VM Boot Option, as set in the source VM.
      * </pre>
      *
      * <code>.google.cloud.vmmigration.v1.ComputeEngineBootOption boot_option = 15;</code>
@@ -4127,7 +4622,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The VM Boot Option, as set in the source vm.
+     * The VM Boot Option, as set in the source VM.
      * </pre>
      *
      * <code>.google.cloud.vmmigration.v1.ComputeEngineBootOption boot_option = 15;</code>
@@ -4137,7 +4632,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
      */
     public Builder setBootOptionValue(int value) {
       bootOption_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4146,7 +4641,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The VM Boot Option, as set in the source vm.
+     * The VM Boot Option, as set in the source VM.
      * </pre>
      *
      * <code>.google.cloud.vmmigration.v1.ComputeEngineBootOption boot_option = 15;</code>
@@ -4166,7 +4661,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The VM Boot Option, as set in the source vm.
+     * The VM Boot Option, as set in the source VM.
      * </pre>
      *
      * <code>.google.cloud.vmmigration.v1.ComputeEngineBootOption boot_option = 15;</code>
@@ -4178,7 +4673,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       if (value == null) {
         throw new NullPointerException();
       }
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00010000;
       bootOption_ = value.getNumber();
       onChanged();
       return this;
@@ -4188,7 +4683,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The VM Boot Option, as set in the source vm.
+     * The VM Boot Option, as set in the source VM.
      * </pre>
      *
      * <code>.google.cloud.vmmigration.v1.ComputeEngineBootOption boot_option = 15;</code>
@@ -4196,7 +4691,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
      * @return This builder for chaining.
      */
     public Builder clearBootOption() {
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       bootOption_ = 0;
       onChanged();
       return this;
@@ -4220,7 +4715,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       if (!metadata_.isMutable()) {
         metadata_ = metadata_.copy();
       }
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return metadata_;
     }
@@ -4310,7 +4805,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     }
 
     public Builder clearMetadata() {
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       internalGetMutableMetadata().getMutableMap().clear();
       return this;
     }
@@ -4335,7 +4830,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMutableMetadata() {
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       return internalGetMutableMetadata().getMutableMap();
     }
 
@@ -4356,7 +4851,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
         throw new NullPointerException("map value");
       }
       internalGetMutableMetadata().getMutableMap().put(key, value);
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       return this;
     }
 
@@ -4371,7 +4866,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
      */
     public Builder putAllMetadata(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableMetadata().getMutableMap().putAll(values);
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00020000;
       return this;
     }
 
@@ -4382,7 +4877,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       if (!additionalLicenses_.isModifiable()) {
         additionalLicenses_ = new com.google.protobuf.LazyStringArrayList(additionalLicenses_);
       }
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00040000;
     }
 
     /**
@@ -4467,7 +4962,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       }
       ensureAdditionalLicensesIsMutable();
       additionalLicenses_.set(index, value);
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -4490,7 +4985,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       }
       ensureAdditionalLicensesIsMutable();
       additionalLicenses_.add(value);
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -4510,7 +5005,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
     public Builder addAllAdditionalLicenses(java.lang.Iterable<java.lang.String> values) {
       ensureAdditionalLicensesIsMutable();
       com.google.protobuf.AbstractMessageLite.Builder.addAll(values, additionalLicenses_);
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -4528,7 +5023,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
      */
     public Builder clearAdditionalLicenses() {
       additionalLicenses_ = com.google.protobuf.LazyStringArrayList.emptyList();
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       ;
       onChanged();
       return this;
@@ -4553,7 +5048,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       checkByteStringIsUtf8(value);
       ensureAdditionalLicensesIsMutable();
       additionalLicenses_.add(value);
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -4623,7 +5118,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       hostname_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -4641,7 +5136,7 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
      */
     public Builder clearHostname() {
       hostname_ = getDefaultInstance().getHostname();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       onChanged();
       return this;
     }
@@ -4664,7 +5159,599 @@ public final class ComputeEngineTargetDetails extends com.google.protobuf.Genera
       }
       checkByteStringIsUtf8(value);
       hostname_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    private com.google.cloud.vmmigration.v1.Encryption encryption_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vmmigration.v1.Encryption,
+            com.google.cloud.vmmigration.v1.Encryption.Builder,
+            com.google.cloud.vmmigration.v1.EncryptionOrBuilder>
+        encryptionBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The encryption to apply to the VM disks.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.Encryption encryption = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the encryption field is set.
+     */
+    public boolean hasEncryption() {
+      return ((bitField0_ & 0x00100000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The encryption to apply to the VM disks.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.Encryption encryption = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The encryption.
+     */
+    public com.google.cloud.vmmigration.v1.Encryption getEncryption() {
+      if (encryptionBuilder_ == null) {
+        return encryption_ == null
+            ? com.google.cloud.vmmigration.v1.Encryption.getDefaultInstance()
+            : encryption_;
+      } else {
+        return encryptionBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The encryption to apply to the VM disks.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.Encryption encryption = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEncryption(com.google.cloud.vmmigration.v1.Encryption value) {
+      if (encryptionBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        encryption_ = value;
+      } else {
+        encryptionBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The encryption to apply to the VM disks.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.Encryption encryption = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setEncryption(
+        com.google.cloud.vmmigration.v1.Encryption.Builder builderForValue) {
+      if (encryptionBuilder_ == null) {
+        encryption_ = builderForValue.build();
+      } else {
+        encryptionBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The encryption to apply to the VM disks.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.Encryption encryption = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeEncryption(com.google.cloud.vmmigration.v1.Encryption value) {
+      if (encryptionBuilder_ == null) {
+        if (((bitField0_ & 0x00100000) != 0)
+            && encryption_ != null
+            && encryption_ != com.google.cloud.vmmigration.v1.Encryption.getDefaultInstance()) {
+          getEncryptionBuilder().mergeFrom(value);
+        } else {
+          encryption_ = value;
+        }
+      } else {
+        encryptionBuilder_.mergeFrom(value);
+      }
+      if (encryption_ != null) {
+        bitField0_ |= 0x00100000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The encryption to apply to the VM disks.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.Encryption encryption = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearEncryption() {
+      bitField0_ = (bitField0_ & ~0x00100000);
+      encryption_ = null;
+      if (encryptionBuilder_ != null) {
+        encryptionBuilder_.dispose();
+        encryptionBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The encryption to apply to the VM disks.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.Encryption encryption = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.Encryption.Builder getEncryptionBuilder() {
+      bitField0_ |= 0x00100000;
+      onChanged();
+      return getEncryptionFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The encryption to apply to the VM disks.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.Encryption encryption = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.EncryptionOrBuilder getEncryptionOrBuilder() {
+      if (encryptionBuilder_ != null) {
+        return encryptionBuilder_.getMessageOrBuilder();
+      } else {
+        return encryption_ == null
+            ? com.google.cloud.vmmigration.v1.Encryption.getDefaultInstance()
+            : encryption_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The encryption to apply to the VM disks.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.Encryption encryption = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vmmigration.v1.Encryption,
+            com.google.cloud.vmmigration.v1.Encryption.Builder,
+            com.google.cloud.vmmigration.v1.EncryptionOrBuilder>
+        getEncryptionFieldBuilder() {
+      if (encryptionBuilder_ == null) {
+        encryptionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vmmigration.v1.Encryption,
+                com.google.cloud.vmmigration.v1.Encryption.Builder,
+                com.google.cloud.vmmigration.v1.EncryptionOrBuilder>(
+                getEncryption(), getParentForChildren(), isClean());
+        encryption_ = null;
+      }
+      return encryptionBuilder_;
+    }
+
+    private int bootConversion_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. By default the virtual machine will keep its existing boot
+     * option. Setting this property will trigger an internal process which will
+     * convert the virtual machine from using the existing boot option to another.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.BootConversion boot_conversion = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for bootConversion.
+     */
+    @java.lang.Override
+    public int getBootConversionValue() {
+      return bootConversion_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. By default the virtual machine will keep its existing boot
+     * option. Setting this property will trigger an internal process which will
+     * convert the virtual machine from using the existing boot option to another.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.BootConversion boot_conversion = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for bootConversion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBootConversionValue(int value) {
+      bootConversion_ = value;
+      bitField0_ |= 0x00200000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. By default the virtual machine will keep its existing boot
+     * option. Setting this property will trigger an internal process which will
+     * convert the virtual machine from using the existing boot option to another.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.BootConversion boot_conversion = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The bootConversion.
+     */
+    @java.lang.Override
+    public com.google.cloud.vmmigration.v1.BootConversion getBootConversion() {
+      com.google.cloud.vmmigration.v1.BootConversion result =
+          com.google.cloud.vmmigration.v1.BootConversion.forNumber(bootConversion_);
+      return result == null ? com.google.cloud.vmmigration.v1.BootConversion.UNRECOGNIZED : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. By default the virtual machine will keep its existing boot
+     * option. Setting this property will trigger an internal process which will
+     * convert the virtual machine from using the existing boot option to another.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.BootConversion boot_conversion = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bootConversion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setBootConversion(com.google.cloud.vmmigration.v1.BootConversion value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00200000;
+      bootConversion_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. By default the virtual machine will keep its existing boot
+     * option. Setting this property will trigger an internal process which will
+     * convert the virtual machine from using the existing boot option to another.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.BootConversion boot_conversion = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearBootConversion() {
+      bitField0_ = (bitField0_ & ~0x00200000);
+      bootConversion_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.LazyStringArrayList diskReplicaZones_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureDiskReplicaZonesIsMutable() {
+      if (!diskReplicaZones_.isModifiable()) {
+        diskReplicaZones_ = new com.google.protobuf.LazyStringArrayList(diskReplicaZones_);
+      }
+      bitField0_ |= 0x00400000;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional replica zones of the target regional disks.
+     * If this list is not empty a regional disk will be created. The first
+     * supported zone would be the one stated in the
+     * [zone][google.cloud.vmmigration.v1.ComputeEngineTargetDetails.zone] field.
+     * The rest are taken from this list. Please refer to the [regional disk
+     * creation
+     * API](https://cloud.google.com/compute/docs/regions-zones/global-regional-zonal-resources)
+     * for further details about regional vs zonal disks. If not specified, a
+     * zonal disk will be created in the same zone the VM is created.
+     * </pre>
+     *
+     * <code>repeated string disk_replica_zones = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return A list containing the diskReplicaZones.
+     */
+    public com.google.protobuf.ProtocolStringList getDiskReplicaZonesList() {
+      diskReplicaZones_.makeImmutable();
+      return diskReplicaZones_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional replica zones of the target regional disks.
+     * If this list is not empty a regional disk will be created. The first
+     * supported zone would be the one stated in the
+     * [zone][google.cloud.vmmigration.v1.ComputeEngineTargetDetails.zone] field.
+     * The rest are taken from this list. Please refer to the [regional disk
+     * creation
+     * API](https://cloud.google.com/compute/docs/regions-zones/global-regional-zonal-resources)
+     * for further details about regional vs zonal disks. If not specified, a
+     * zonal disk will be created in the same zone the VM is created.
+     * </pre>
+     *
+     * <code>repeated string disk_replica_zones = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The count of diskReplicaZones.
+     */
+    public int getDiskReplicaZonesCount() {
+      return diskReplicaZones_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional replica zones of the target regional disks.
+     * If this list is not empty a regional disk will be created. The first
+     * supported zone would be the one stated in the
+     * [zone][google.cloud.vmmigration.v1.ComputeEngineTargetDetails.zone] field.
+     * The rest are taken from this list. Please refer to the [regional disk
+     * creation
+     * API](https://cloud.google.com/compute/docs/regions-zones/global-regional-zonal-resources)
+     * for further details about regional vs zonal disks. If not specified, a
+     * zonal disk will be created in the same zone the VM is created.
+     * </pre>
+     *
+     * <code>repeated string disk_replica_zones = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The diskReplicaZones at the given index.
+     */
+    public java.lang.String getDiskReplicaZones(int index) {
+      return diskReplicaZones_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional replica zones of the target regional disks.
+     * If this list is not empty a regional disk will be created. The first
+     * supported zone would be the one stated in the
+     * [zone][google.cloud.vmmigration.v1.ComputeEngineTargetDetails.zone] field.
+     * The rest are taken from this list. Please refer to the [regional disk
+     * creation
+     * API](https://cloud.google.com/compute/docs/regions-zones/global-regional-zonal-resources)
+     * for further details about regional vs zonal disks. If not specified, a
+     * zonal disk will be created in the same zone the VM is created.
+     * </pre>
+     *
+     * <code>repeated string disk_replica_zones = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the diskReplicaZones at the given index.
+     */
+    public com.google.protobuf.ByteString getDiskReplicaZonesBytes(int index) {
+      return diskReplicaZones_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional replica zones of the target regional disks.
+     * If this list is not empty a regional disk will be created. The first
+     * supported zone would be the one stated in the
+     * [zone][google.cloud.vmmigration.v1.ComputeEngineTargetDetails.zone] field.
+     * The rest are taken from this list. Please refer to the [regional disk
+     * creation
+     * API](https://cloud.google.com/compute/docs/regions-zones/global-regional-zonal-resources)
+     * for further details about regional vs zonal disks. If not specified, a
+     * zonal disk will be created in the same zone the VM is created.
+     * </pre>
+     *
+     * <code>repeated string disk_replica_zones = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The diskReplicaZones to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDiskReplicaZones(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureDiskReplicaZonesIsMutable();
+      diskReplicaZones_.set(index, value);
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional replica zones of the target regional disks.
+     * If this list is not empty a regional disk will be created. The first
+     * supported zone would be the one stated in the
+     * [zone][google.cloud.vmmigration.v1.ComputeEngineTargetDetails.zone] field.
+     * The rest are taken from this list. Please refer to the [regional disk
+     * creation
+     * API](https://cloud.google.com/compute/docs/regions-zones/global-regional-zonal-resources)
+     * for further details about regional vs zonal disks. If not specified, a
+     * zonal disk will be created in the same zone the VM is created.
+     * </pre>
+     *
+     * <code>repeated string disk_replica_zones = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The diskReplicaZones to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDiskReplicaZones(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureDiskReplicaZonesIsMutable();
+      diskReplicaZones_.add(value);
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional replica zones of the target regional disks.
+     * If this list is not empty a regional disk will be created. The first
+     * supported zone would be the one stated in the
+     * [zone][google.cloud.vmmigration.v1.ComputeEngineTargetDetails.zone] field.
+     * The rest are taken from this list. Please refer to the [regional disk
+     * creation
+     * API](https://cloud.google.com/compute/docs/regions-zones/global-regional-zonal-resources)
+     * for further details about regional vs zonal disks. If not specified, a
+     * zonal disk will be created in the same zone the VM is created.
+     * </pre>
+     *
+     * <code>repeated string disk_replica_zones = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param values The diskReplicaZones to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllDiskReplicaZones(java.lang.Iterable<java.lang.String> values) {
+      ensureDiskReplicaZonesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, diskReplicaZones_);
+      bitField0_ |= 0x00400000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional replica zones of the target regional disks.
+     * If this list is not empty a regional disk will be created. The first
+     * supported zone would be the one stated in the
+     * [zone][google.cloud.vmmigration.v1.ComputeEngineTargetDetails.zone] field.
+     * The rest are taken from this list. Please refer to the [regional disk
+     * creation
+     * API](https://cloud.google.com/compute/docs/regions-zones/global-regional-zonal-resources)
+     * for further details about regional vs zonal disks. If not specified, a
+     * zonal disk will be created in the same zone the VM is created.
+     * </pre>
+     *
+     * <code>repeated string disk_replica_zones = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDiskReplicaZones() {
+      diskReplicaZones_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00400000);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Additional replica zones of the target regional disks.
+     * If this list is not empty a regional disk will be created. The first
+     * supported zone would be the one stated in the
+     * [zone][google.cloud.vmmigration.v1.ComputeEngineTargetDetails.zone] field.
+     * The rest are taken from this list. Please refer to the [regional disk
+     * creation
+     * API](https://cloud.google.com/compute/docs/regions-zones/global-regional-zonal-resources)
+     * for further details about regional vs zonal disks. If not specified, a
+     * zonal disk will be created in the same zone the VM is created.
+     * </pre>
+     *
+     * <code>repeated string disk_replica_zones = 24 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The bytes of the diskReplicaZones to add.
+     * @return This builder for chaining.
+     */
+    public Builder addDiskReplicaZonesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureDiskReplicaZonesIsMutable();
+      diskReplicaZones_.add(value);
+      bitField0_ |= 0x00400000;
       onChanged();
       return this;
     }

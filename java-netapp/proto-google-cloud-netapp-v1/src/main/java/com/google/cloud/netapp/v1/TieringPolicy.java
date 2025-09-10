@@ -329,6 +329,45 @@ public final class TieringPolicy extends com.google.protobuf.GeneratedMessageV3
     return coolingThresholdDays_;
   }
 
+  public static final int HOT_TIER_BYPASS_MODE_ENABLED_FIELD_NUMBER = 3;
+  private boolean hotTierBypassModeEnabled_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Flag indicating that the hot tier bypass mode is enabled. Default
+   * is false. This is only applicable to Flex service level.
+   * </pre>
+   *
+   * <code>optional bool hot_tier_bypass_mode_enabled = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the hotTierBypassModeEnabled field is set.
+   */
+  @java.lang.Override
+  public boolean hasHotTierBypassModeEnabled() {
+    return ((bitField0_ & 0x00000004) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Flag indicating that the hot tier bypass mode is enabled. Default
+   * is false. This is only applicable to Flex service level.
+   * </pre>
+   *
+   * <code>optional bool hot_tier_bypass_mode_enabled = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The hotTierBypassModeEnabled.
+   */
+  @java.lang.Override
+  public boolean getHotTierBypassModeEnabled() {
+    return hotTierBypassModeEnabled_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -349,6 +388,9 @@ public final class TieringPolicy extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeInt32(2, coolingThresholdDays_);
     }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      output.writeBool(3, hotTierBypassModeEnabled_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -363,6 +405,9 @@ public final class TieringPolicy extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000002) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, coolingThresholdDays_);
+    }
+    if (((bitField0_ & 0x00000004) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, hotTierBypassModeEnabled_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -387,6 +432,10 @@ public final class TieringPolicy extends com.google.protobuf.GeneratedMessageV3
     if (hasCoolingThresholdDays()) {
       if (getCoolingThresholdDays() != other.getCoolingThresholdDays()) return false;
     }
+    if (hasHotTierBypassModeEnabled() != other.hasHotTierBypassModeEnabled()) return false;
+    if (hasHotTierBypassModeEnabled()) {
+      if (getHotTierBypassModeEnabled() != other.getHotTierBypassModeEnabled()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -405,6 +454,10 @@ public final class TieringPolicy extends com.google.protobuf.GeneratedMessageV3
     if (hasCoolingThresholdDays()) {
       hash = (37 * hash) + COOLING_THRESHOLD_DAYS_FIELD_NUMBER;
       hash = (53 * hash) + getCoolingThresholdDays();
+    }
+    if (hasHotTierBypassModeEnabled()) {
+      hash = (37 * hash) + HOT_TIER_BYPASS_MODE_ENABLED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getHotTierBypassModeEnabled());
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -548,6 +601,7 @@ public final class TieringPolicy extends com.google.protobuf.GeneratedMessageV3
       bitField0_ = 0;
       tierAction_ = 0;
       coolingThresholdDays_ = 0;
+      hotTierBypassModeEnabled_ = false;
       return this;
     }
 
@@ -592,6 +646,10 @@ public final class TieringPolicy extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.coolingThresholdDays_ = coolingThresholdDays_;
         to_bitField0_ |= 0x00000002;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.hotTierBypassModeEnabled_ = hotTierBypassModeEnabled_;
+        to_bitField0_ |= 0x00000004;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -647,6 +705,9 @@ public final class TieringPolicy extends com.google.protobuf.GeneratedMessageV3
       if (other.hasCoolingThresholdDays()) {
         setCoolingThresholdDays(other.getCoolingThresholdDays());
       }
+      if (other.hasHotTierBypassModeEnabled()) {
+        setHotTierBypassModeEnabled(other.getHotTierBypassModeEnabled());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -685,6 +746,12 @@ public final class TieringPolicy extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
+            case 24:
+              {
+                hotTierBypassModeEnabled_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -911,6 +978,90 @@ public final class TieringPolicy extends com.google.protobuf.GeneratedMessageV3
     public Builder clearCoolingThresholdDays() {
       bitField0_ = (bitField0_ & ~0x00000002);
       coolingThresholdDays_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private boolean hotTierBypassModeEnabled_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Flag indicating that the hot tier bypass mode is enabled. Default
+     * is false. This is only applicable to Flex service level.
+     * </pre>
+     *
+     * <code>
+     * optional bool hot_tier_bypass_mode_enabled = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the hotTierBypassModeEnabled field is set.
+     */
+    @java.lang.Override
+    public boolean hasHotTierBypassModeEnabled() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Flag indicating that the hot tier bypass mode is enabled. Default
+     * is false. This is only applicable to Flex service level.
+     * </pre>
+     *
+     * <code>
+     * optional bool hot_tier_bypass_mode_enabled = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The hotTierBypassModeEnabled.
+     */
+    @java.lang.Override
+    public boolean getHotTierBypassModeEnabled() {
+      return hotTierBypassModeEnabled_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Flag indicating that the hot tier bypass mode is enabled. Default
+     * is false. This is only applicable to Flex service level.
+     * </pre>
+     *
+     * <code>
+     * optional bool hot_tier_bypass_mode_enabled = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The hotTierBypassModeEnabled to set.
+     * @return This builder for chaining.
+     */
+    public Builder setHotTierBypassModeEnabled(boolean value) {
+
+      hotTierBypassModeEnabled_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Flag indicating that the hot tier bypass mode is enabled. Default
+     * is false. This is only applicable to Flex service level.
+     * </pre>
+     *
+     * <code>
+     * optional bool hot_tier_bypass_mode_enabled = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearHotTierBypassModeEnabled() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      hotTierBypassModeEnabled_ = false;
       onChanged();
       return this;
     }

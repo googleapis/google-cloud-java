@@ -45,6 +45,7 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
     password_ = "";
     vcenterIp_ = "";
     thumbprint_ = "";
+    resolvedVcenterHost_ = "";
   }
 
   @java.lang.Override
@@ -282,6 +283,59 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
     }
   }
 
+  public static final int RESOLVED_VCENTER_HOST_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object resolvedVcenterHost_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * The hostname of the vcenter.
+   * </pre>
+   *
+   * <code>string resolved_vcenter_host = 5;</code>
+   *
+   * @return The resolvedVcenterHost.
+   */
+  @java.lang.Override
+  public java.lang.String getResolvedVcenterHost() {
+    java.lang.Object ref = resolvedVcenterHost_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      resolvedVcenterHost_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The hostname of the vcenter.
+   * </pre>
+   *
+   * <code>string resolved_vcenter_host = 5;</code>
+   *
+   * @return The bytes for resolvedVcenterHost.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getResolvedVcenterHostBytes() {
+    java.lang.Object ref = resolvedVcenterHost_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      resolvedVcenterHost_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -308,6 +362,9 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(thumbprint_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, thumbprint_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resolvedVcenterHost_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, resolvedVcenterHost_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -329,6 +386,9 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(thumbprint_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, thumbprint_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(resolvedVcenterHost_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, resolvedVcenterHost_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -349,6 +409,7 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
     if (!getPassword().equals(other.getPassword())) return false;
     if (!getVcenterIp().equals(other.getVcenterIp())) return false;
     if (!getThumbprint().equals(other.getThumbprint())) return false;
+    if (!getResolvedVcenterHost().equals(other.getResolvedVcenterHost())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -368,6 +429,8 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
     hash = (53 * hash) + getVcenterIp().hashCode();
     hash = (37 * hash) + THUMBPRINT_FIELD_NUMBER;
     hash = (53 * hash) + getThumbprint().hashCode();
+    hash = (37 * hash) + RESOLVED_VCENTER_HOST_FIELD_NUMBER;
+    hash = (53 * hash) + getResolvedVcenterHost().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -513,6 +576,7 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
       password_ = "";
       vcenterIp_ = "";
       thumbprint_ = "";
+      resolvedVcenterHost_ = "";
       return this;
     }
 
@@ -560,6 +624,9 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.thumbprint_ = thumbprint_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.resolvedVcenterHost_ = resolvedVcenterHost_;
       }
     }
 
@@ -629,6 +696,11 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
         bitField0_ |= 0x00000008;
         onChanged();
       }
+      if (!other.getResolvedVcenterHost().isEmpty()) {
+        resolvedVcenterHost_ = other.resolvedVcenterHost_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -679,6 +751,12 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 42:
+              {
+                resolvedVcenterHost_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1143,6 +1221,117 @@ public final class VmwareSourceDetails extends com.google.protobuf.GeneratedMess
       checkByteStringIsUtf8(value);
       thumbprint_ = value;
       bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object resolvedVcenterHost_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The hostname of the vcenter.
+     * </pre>
+     *
+     * <code>string resolved_vcenter_host = 5;</code>
+     *
+     * @return The resolvedVcenterHost.
+     */
+    public java.lang.String getResolvedVcenterHost() {
+      java.lang.Object ref = resolvedVcenterHost_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        resolvedVcenterHost_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The hostname of the vcenter.
+     * </pre>
+     *
+     * <code>string resolved_vcenter_host = 5;</code>
+     *
+     * @return The bytes for resolvedVcenterHost.
+     */
+    public com.google.protobuf.ByteString getResolvedVcenterHostBytes() {
+      java.lang.Object ref = resolvedVcenterHost_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        resolvedVcenterHost_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The hostname of the vcenter.
+     * </pre>
+     *
+     * <code>string resolved_vcenter_host = 5;</code>
+     *
+     * @param value The resolvedVcenterHost to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResolvedVcenterHost(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      resolvedVcenterHost_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The hostname of the vcenter.
+     * </pre>
+     *
+     * <code>string resolved_vcenter_host = 5;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearResolvedVcenterHost() {
+      resolvedVcenterHost_ = getDefaultInstance().getResolvedVcenterHost();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The hostname of the vcenter.
+     * </pre>
+     *
+     * <code>string resolved_vcenter_host = 5;</code>
+     *
+     * @param value The bytes for resolvedVcenterHost to set.
+     * @return This builder for chaining.
+     */
+    public Builder setResolvedVcenterHostBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      resolvedVcenterHost_ = value;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

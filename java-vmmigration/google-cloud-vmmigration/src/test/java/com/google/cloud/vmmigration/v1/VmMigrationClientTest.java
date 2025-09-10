@@ -16,10 +16,14 @@
 
 package com.google.cloud.vmmigration.v1;
 
+import static com.google.cloud.vmmigration.v1.VmMigrationClient.FetchStorageInventoryPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListCloneJobsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListCutoverJobsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListDatacenterConnectorsPagedResponse;
+import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListDiskMigrationJobsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListGroupsPagedResponse;
+import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListImageImportJobsPagedResponse;
+import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListImageImportsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListLocationsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListMigratingVmsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListReplicationCyclesPagedResponse;
@@ -66,7 +70,6 @@ import org.junit.Test;
 
 @Generated("by gapic-generator-java")
 public class VmMigrationClientTest {
-  private static MockIAMPolicy mockIAMPolicy;
   private static MockLocations mockLocations;
   private static MockServiceHelper mockServiceHelper;
   private static MockVmMigration mockVmMigration;
@@ -77,11 +80,10 @@ public class VmMigrationClientTest {
   public static void startStaticServer() {
     mockVmMigration = new MockVmMigration();
     mockLocations = new MockLocations();
-    mockIAMPolicy = new MockIAMPolicy();
     mockServiceHelper =
         new MockServiceHelper(
             UUID.randomUUID().toString(),
-            Arrays.<MockGrpcService>asList(mockVmMigration, mockLocations, mockIAMPolicy));
+            Arrays.<MockGrpcService>asList(mockVmMigration, mockLocations));
     mockServiceHelper.start();
   }
 
@@ -204,6 +206,7 @@ public class VmMigrationClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
+            .setEncryption(Encryption.newBuilder().build())
             .build();
     mockVmMigration.addResponse(expectedResponse);
 
@@ -246,6 +249,7 @@ public class VmMigrationClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
+            .setEncryption(Encryption.newBuilder().build())
             .build();
     mockVmMigration.addResponse(expectedResponse);
 
@@ -288,6 +292,7 @@ public class VmMigrationClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
+            .setEncryption(Encryption.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -344,6 +349,7 @@ public class VmMigrationClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
+            .setEncryption(Encryption.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -400,6 +406,7 @@ public class VmMigrationClientTest {
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllLabels(new HashMap<String, String>())
             .setDescription("description-1724546052")
+            .setEncryption(Encryption.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -594,6 +601,108 @@ public class VmMigrationClientTest {
     try {
       String source = "source-896505829";
       client.fetchInventory(source);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchStorageInventoryTest() throws Exception {
+    SourceStorageResource responsesElement = SourceStorageResource.newBuilder().build();
+    FetchStorageInventoryResponse expectedResponse =
+        FetchStorageInventoryResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllResources(Arrays.asList(responsesElement))
+            .build();
+    mockVmMigration.addResponse(expectedResponse);
+
+    SourceName source = SourceName.of("[PROJECT]", "[LOCATION]", "[SOURCE]");
+    FetchStorageInventoryRequest.StorageType type =
+        FetchStorageInventoryRequest.StorageType.forNumber(0);
+
+    FetchStorageInventoryPagedResponse pagedListResponse =
+        client.fetchStorageInventory(source, type);
+
+    List<SourceStorageResource> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getResourcesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockVmMigration.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FetchStorageInventoryRequest actualRequest =
+        ((FetchStorageInventoryRequest) actualRequests.get(0));
+
+    Assert.assertEquals(source.toString(), actualRequest.getSource());
+    Assert.assertEquals(type, actualRequest.getType());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void fetchStorageInventoryExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVmMigration.addException(exception);
+
+    try {
+      SourceName source = SourceName.of("[PROJECT]", "[LOCATION]", "[SOURCE]");
+      FetchStorageInventoryRequest.StorageType type =
+          FetchStorageInventoryRequest.StorageType.forNumber(0);
+      client.fetchStorageInventory(source, type);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void fetchStorageInventoryTest2() throws Exception {
+    SourceStorageResource responsesElement = SourceStorageResource.newBuilder().build();
+    FetchStorageInventoryResponse expectedResponse =
+        FetchStorageInventoryResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllResources(Arrays.asList(responsesElement))
+            .build();
+    mockVmMigration.addResponse(expectedResponse);
+
+    String source = "source-896505829";
+    FetchStorageInventoryRequest.StorageType type =
+        FetchStorageInventoryRequest.StorageType.forNumber(0);
+
+    FetchStorageInventoryPagedResponse pagedListResponse =
+        client.fetchStorageInventory(source, type);
+
+    List<SourceStorageResource> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getResourcesList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockVmMigration.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    FetchStorageInventoryRequest actualRequest =
+        ((FetchStorageInventoryRequest) actualRequests.get(0));
+
+    Assert.assertEquals(source, actualRequest.getSource());
+    Assert.assertEquals(type, actualRequest.getType());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void fetchStorageInventoryExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVmMigration.addException(exception);
+
+    try {
+      String source = "source-896505829";
+      FetchStorageInventoryRequest.StorageType type =
+          FetchStorageInventoryRequest.StorageType.forNumber(0);
+      client.fetchStorageInventory(source, type);
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
@@ -1518,11 +1627,14 @@ public class VmMigrationClientTest {
             .setLastSync(ReplicationSync.newBuilder().build())
             .setStateTime(Timestamp.newBuilder().build())
             .setCurrentSyncInfo(ReplicationCycle.newBuilder().build())
+            .setLastReplicationCycle(ReplicationCycle.newBuilder().build())
             .setGroup(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .putAllLabels(new HashMap<String, String>())
             .addAllRecentCloneJobs(new ArrayList<CloneJob>())
             .setError(Status.newBuilder().build())
             .addAllRecentCutoverJobs(new ArrayList<CutoverJob>())
+            .setCutoverForecast(CutoverForecast.newBuilder().build())
+            .setExpiration(MigratingVm.Expiration.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1587,11 +1699,14 @@ public class VmMigrationClientTest {
             .setLastSync(ReplicationSync.newBuilder().build())
             .setStateTime(Timestamp.newBuilder().build())
             .setCurrentSyncInfo(ReplicationCycle.newBuilder().build())
+            .setLastReplicationCycle(ReplicationCycle.newBuilder().build())
             .setGroup(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .putAllLabels(new HashMap<String, String>())
             .addAllRecentCloneJobs(new ArrayList<CloneJob>())
             .setError(Status.newBuilder().build())
             .addAllRecentCutoverJobs(new ArrayList<CutoverJob>())
+            .setCutoverForecast(CutoverForecast.newBuilder().build())
+            .setExpiration(MigratingVm.Expiration.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1744,11 +1859,14 @@ public class VmMigrationClientTest {
             .setLastSync(ReplicationSync.newBuilder().build())
             .setStateTime(Timestamp.newBuilder().build())
             .setCurrentSyncInfo(ReplicationCycle.newBuilder().build())
+            .setLastReplicationCycle(ReplicationCycle.newBuilder().build())
             .setGroup(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .putAllLabels(new HashMap<String, String>())
             .addAllRecentCloneJobs(new ArrayList<CloneJob>())
             .setError(Status.newBuilder().build())
             .addAllRecentCutoverJobs(new ArrayList<CutoverJob>())
+            .setCutoverForecast(CutoverForecast.newBuilder().build())
+            .setExpiration(MigratingVm.Expiration.newBuilder().build())
             .build();
     mockVmMigration.addResponse(expectedResponse);
 
@@ -1800,11 +1918,14 @@ public class VmMigrationClientTest {
             .setLastSync(ReplicationSync.newBuilder().build())
             .setStateTime(Timestamp.newBuilder().build())
             .setCurrentSyncInfo(ReplicationCycle.newBuilder().build())
+            .setLastReplicationCycle(ReplicationCycle.newBuilder().build())
             .setGroup(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .putAllLabels(new HashMap<String, String>())
             .addAllRecentCloneJobs(new ArrayList<CloneJob>())
             .setError(Status.newBuilder().build())
             .addAllRecentCutoverJobs(new ArrayList<CutoverJob>())
+            .setCutoverForecast(CutoverForecast.newBuilder().build())
+            .setExpiration(MigratingVm.Expiration.newBuilder().build())
             .build();
     mockVmMigration.addResponse(expectedResponse);
 
@@ -1854,11 +1975,14 @@ public class VmMigrationClientTest {
             .setLastSync(ReplicationSync.newBuilder().build())
             .setStateTime(Timestamp.newBuilder().build())
             .setCurrentSyncInfo(ReplicationCycle.newBuilder().build())
+            .setLastReplicationCycle(ReplicationCycle.newBuilder().build())
             .setGroup(LocationName.of("[PROJECT]", "[LOCATION]").toString())
             .putAllLabels(new HashMap<String, String>())
             .addAllRecentCloneJobs(new ArrayList<CloneJob>())
             .setError(Status.newBuilder().build())
             .addAllRecentCutoverJobs(new ArrayList<CutoverJob>())
+            .setCutoverForecast(CutoverForecast.newBuilder().build())
+            .setExpiration(MigratingVm.Expiration.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2263,6 +2387,59 @@ public class VmMigrationClientTest {
     try {
       String migratingVm = "migratingVm1484256383";
       client.finalizeMigrationAsync(migratingVm).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void extendMigrationTest() throws Exception {
+    ExtendMigrationResponse expectedResponse = ExtendMigrationResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("extendMigrationTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockVmMigration.addResponse(resultOperation);
+
+    ExtendMigrationRequest request =
+        ExtendMigrationRequest.newBuilder()
+            .setMigratingVm(
+                MigratingVmName.of("[PROJECT]", "[LOCATION]", "[SOURCE]", "[MIGRATING_VM]")
+                    .toString())
+            .build();
+
+    ExtendMigrationResponse actualResponse = client.extendMigrationAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVmMigration.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ExtendMigrationRequest actualRequest = ((ExtendMigrationRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getMigratingVm(), actualRequest.getMigratingVm());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void extendMigrationExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVmMigration.addException(exception);
+
+    try {
+      ExtendMigrationRequest request =
+          ExtendMigrationRequest.newBuilder()
+              .setMigratingVm(
+                  MigratingVmName.of("[PROJECT]", "[LOCATION]", "[SOURCE]", "[MIGRATING_VM]")
+                      .toString())
+              .build();
+      client.extendMigrationAsync(request).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
@@ -4202,6 +4379,7 @@ public class VmMigrationClientTest {
             .setProgressPercent(-2137894861)
             .addAllSteps(new ArrayList<CycleStep>())
             .setError(Status.newBuilder().build())
+            .addAllWarnings(new ArrayList<MigrationWarning>())
             .build();
     mockVmMigration.addResponse(expectedResponse);
 
@@ -4258,6 +4436,7 @@ public class VmMigrationClientTest {
             .setProgressPercent(-2137894861)
             .addAllSteps(new ArrayList<CycleStep>())
             .setError(Status.newBuilder().build())
+            .addAllWarnings(new ArrayList<MigrationWarning>())
             .build();
     mockVmMigration.addResponse(expectedResponse);
 
@@ -4288,6 +4467,1243 @@ public class VmMigrationClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void listImageImportsTest() throws Exception {
+    ImageImport responsesElement = ImageImport.newBuilder().build();
+    ListImageImportsResponse expectedResponse =
+        ListImageImportsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllImageImports(Arrays.asList(responsesElement))
+            .build();
+    mockVmMigration.addResponse(expectedResponse);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+
+    ListImageImportsPagedResponse pagedListResponse = client.listImageImports(parent);
+
+    List<ImageImport> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getImageImportsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockVmMigration.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListImageImportsRequest actualRequest = ((ListImageImportsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listImageImportsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVmMigration.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      client.listImageImports(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listImageImportsTest2() throws Exception {
+    ImageImport responsesElement = ImageImport.newBuilder().build();
+    ListImageImportsResponse expectedResponse =
+        ListImageImportsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllImageImports(Arrays.asList(responsesElement))
+            .build();
+    mockVmMigration.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListImageImportsPagedResponse pagedListResponse = client.listImageImports(parent);
+
+    List<ImageImport> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getImageImportsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockVmMigration.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListImageImportsRequest actualRequest = ((ListImageImportsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listImageImportsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVmMigration.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listImageImports(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getImageImportTest() throws Exception {
+    ImageImport expectedResponse =
+        ImageImport.newBuilder()
+            .setName(ImageImportName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllRecentImageImportJobs(new ArrayList<ImageImportJob>())
+            .setEncryption(Encryption.newBuilder().build())
+            .build();
+    mockVmMigration.addResponse(expectedResponse);
+
+    ImageImportName name = ImageImportName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+
+    ImageImport actualResponse = client.getImageImport(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVmMigration.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetImageImportRequest actualRequest = ((GetImageImportRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getImageImportExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVmMigration.addException(exception);
+
+    try {
+      ImageImportName name = ImageImportName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+      client.getImageImport(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getImageImportTest2() throws Exception {
+    ImageImport expectedResponse =
+        ImageImport.newBuilder()
+            .setName(ImageImportName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllRecentImageImportJobs(new ArrayList<ImageImportJob>())
+            .setEncryption(Encryption.newBuilder().build())
+            .build();
+    mockVmMigration.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    ImageImport actualResponse = client.getImageImport(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVmMigration.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetImageImportRequest actualRequest = ((GetImageImportRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getImageImportExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVmMigration.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getImageImport(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createImageImportTest() throws Exception {
+    ImageImport expectedResponse =
+        ImageImport.newBuilder()
+            .setName(ImageImportName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllRecentImageImportJobs(new ArrayList<ImageImportJob>())
+            .setEncryption(Encryption.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createImageImportTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockVmMigration.addResponse(resultOperation);
+
+    LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+    ImageImport imageImport = ImageImport.newBuilder().build();
+    String imageImportId = "imageImportId943893019";
+
+    ImageImport actualResponse =
+        client.createImageImportAsync(parent, imageImport, imageImportId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVmMigration.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateImageImportRequest actualRequest = ((CreateImageImportRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(imageImport, actualRequest.getImageImport());
+    Assert.assertEquals(imageImportId, actualRequest.getImageImportId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createImageImportExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVmMigration.addException(exception);
+
+    try {
+      LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
+      ImageImport imageImport = ImageImport.newBuilder().build();
+      String imageImportId = "imageImportId943893019";
+      client.createImageImportAsync(parent, imageImport, imageImportId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createImageImportTest2() throws Exception {
+    ImageImport expectedResponse =
+        ImageImport.newBuilder()
+            .setName(ImageImportName.of("[PROJECT]", "[LOCATION]", "[JOB]").toString())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .addAllRecentImageImportJobs(new ArrayList<ImageImportJob>())
+            .setEncryption(Encryption.newBuilder().build())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createImageImportTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockVmMigration.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    ImageImport imageImport = ImageImport.newBuilder().build();
+    String imageImportId = "imageImportId943893019";
+
+    ImageImport actualResponse =
+        client.createImageImportAsync(parent, imageImport, imageImportId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVmMigration.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateImageImportRequest actualRequest = ((CreateImageImportRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(imageImport, actualRequest.getImageImport());
+    Assert.assertEquals(imageImportId, actualRequest.getImageImportId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createImageImportExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVmMigration.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      ImageImport imageImport = ImageImport.newBuilder().build();
+      String imageImportId = "imageImportId943893019";
+      client.createImageImportAsync(parent, imageImport, imageImportId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteImageImportTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteImageImportTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockVmMigration.addResponse(resultOperation);
+
+    ImageImportName name = ImageImportName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+
+    client.deleteImageImportAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockVmMigration.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteImageImportRequest actualRequest = ((DeleteImageImportRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteImageImportExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVmMigration.addException(exception);
+
+    try {
+      ImageImportName name = ImageImportName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+      client.deleteImageImportAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteImageImportTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteImageImportTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockVmMigration.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteImageImportAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockVmMigration.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteImageImportRequest actualRequest = ((DeleteImageImportRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteImageImportExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVmMigration.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteImageImportAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void listImageImportJobsTest() throws Exception {
+    ImageImportJob responsesElement = ImageImportJob.newBuilder().build();
+    ListImageImportJobsResponse expectedResponse =
+        ListImageImportJobsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllImageImportJobs(Arrays.asList(responsesElement))
+            .build();
+    mockVmMigration.addResponse(expectedResponse);
+
+    ImageImportName parent = ImageImportName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+
+    ListImageImportJobsPagedResponse pagedListResponse = client.listImageImportJobs(parent);
+
+    List<ImageImportJob> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getImageImportJobsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockVmMigration.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListImageImportJobsRequest actualRequest = ((ListImageImportJobsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listImageImportJobsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVmMigration.addException(exception);
+
+    try {
+      ImageImportName parent = ImageImportName.of("[PROJECT]", "[LOCATION]", "[JOB]");
+      client.listImageImportJobs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listImageImportJobsTest2() throws Exception {
+    ImageImportJob responsesElement = ImageImportJob.newBuilder().build();
+    ListImageImportJobsResponse expectedResponse =
+        ListImageImportJobsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllImageImportJobs(Arrays.asList(responsesElement))
+            .build();
+    mockVmMigration.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListImageImportJobsPagedResponse pagedListResponse = client.listImageImportJobs(parent);
+
+    List<ImageImportJob> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getImageImportJobsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockVmMigration.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListImageImportJobsRequest actualRequest = ((ListImageImportJobsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listImageImportJobsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVmMigration.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listImageImportJobs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getImageImportJobTest() throws Exception {
+    ImageImportJob expectedResponse =
+        ImageImportJob.newBuilder()
+            .setName(
+                ImageImportJobName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[RESULT]").toString())
+            .addAllCreatedResources(new ArrayList<String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .addAllErrors(new ArrayList<Status>())
+            .addAllWarnings(new ArrayList<MigrationWarning>())
+            .addAllSteps(new ArrayList<ImageImportStep>())
+            .build();
+    mockVmMigration.addResponse(expectedResponse);
+
+    ImageImportJobName name = ImageImportJobName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[RESULT]");
+
+    ImageImportJob actualResponse = client.getImageImportJob(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVmMigration.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetImageImportJobRequest actualRequest = ((GetImageImportJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getImageImportJobExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVmMigration.addException(exception);
+
+    try {
+      ImageImportJobName name =
+          ImageImportJobName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[RESULT]");
+      client.getImageImportJob(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getImageImportJobTest2() throws Exception {
+    ImageImportJob expectedResponse =
+        ImageImportJob.newBuilder()
+            .setName(
+                ImageImportJobName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[RESULT]").toString())
+            .addAllCreatedResources(new ArrayList<String>())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setEndTime(Timestamp.newBuilder().build())
+            .addAllErrors(new ArrayList<Status>())
+            .addAllWarnings(new ArrayList<MigrationWarning>())
+            .addAllSteps(new ArrayList<ImageImportStep>())
+            .build();
+    mockVmMigration.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    ImageImportJob actualResponse = client.getImageImportJob(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVmMigration.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetImageImportJobRequest actualRequest = ((GetImageImportJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getImageImportJobExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVmMigration.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getImageImportJob(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void cancelImageImportJobTest() throws Exception {
+    CancelImageImportJobResponse expectedResponse =
+        CancelImageImportJobResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("cancelImageImportJobTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockVmMigration.addResponse(resultOperation);
+
+    ImageImportJobName name = ImageImportJobName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[RESULT]");
+
+    CancelImageImportJobResponse actualResponse = client.cancelImageImportJobAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVmMigration.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CancelImageImportJobRequest actualRequest =
+        ((CancelImageImportJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void cancelImageImportJobExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVmMigration.addException(exception);
+
+    try {
+      ImageImportJobName name =
+          ImageImportJobName.of("[PROJECT]", "[LOCATION]", "[JOB]", "[RESULT]");
+      client.cancelImageImportJobAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void cancelImageImportJobTest2() throws Exception {
+    CancelImageImportJobResponse expectedResponse =
+        CancelImageImportJobResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("cancelImageImportJobTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockVmMigration.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    CancelImageImportJobResponse actualResponse = client.cancelImageImportJobAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVmMigration.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CancelImageImportJobRequest actualRequest =
+        ((CancelImageImportJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void cancelImageImportJobExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVmMigration.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.cancelImageImportJobAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createDiskMigrationJobTest() throws Exception {
+    DiskMigrationJob expectedResponse =
+        DiskMigrationJob.newBuilder()
+            .setName(
+                DiskMigrationJobName.of(
+                        "[PROJECT]", "[LOCATION]", "[SOURCE]", "[DISK_MIGRATION_JOB]")
+                    .toString())
+            .setTargetDetails(DiskMigrationJobTargetDetails.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllErrors(new ArrayList<Status>())
+            .addAllSteps(new ArrayList<DiskMigrationStep>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createDiskMigrationJobTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockVmMigration.addResponse(resultOperation);
+
+    SourceName parent = SourceName.of("[PROJECT]", "[LOCATION]", "[SOURCE]");
+    DiskMigrationJob diskMigrationJob = DiskMigrationJob.newBuilder().build();
+    String diskMigrationJobId = "diskMigrationJobId-173409913";
+
+    DiskMigrationJob actualResponse =
+        client.createDiskMigrationJobAsync(parent, diskMigrationJob, diskMigrationJobId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVmMigration.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateDiskMigrationJobRequest actualRequest =
+        ((CreateDiskMigrationJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(diskMigrationJob, actualRequest.getDiskMigrationJob());
+    Assert.assertEquals(diskMigrationJobId, actualRequest.getDiskMigrationJobId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createDiskMigrationJobExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVmMigration.addException(exception);
+
+    try {
+      SourceName parent = SourceName.of("[PROJECT]", "[LOCATION]", "[SOURCE]");
+      DiskMigrationJob diskMigrationJob = DiskMigrationJob.newBuilder().build();
+      String diskMigrationJobId = "diskMigrationJobId-173409913";
+      client.createDiskMigrationJobAsync(parent, diskMigrationJob, diskMigrationJobId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void createDiskMigrationJobTest2() throws Exception {
+    DiskMigrationJob expectedResponse =
+        DiskMigrationJob.newBuilder()
+            .setName(
+                DiskMigrationJobName.of(
+                        "[PROJECT]", "[LOCATION]", "[SOURCE]", "[DISK_MIGRATION_JOB]")
+                    .toString())
+            .setTargetDetails(DiskMigrationJobTargetDetails.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllErrors(new ArrayList<Status>())
+            .addAllSteps(new ArrayList<DiskMigrationStep>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("createDiskMigrationJobTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockVmMigration.addResponse(resultOperation);
+
+    String parent = "parent-995424086";
+    DiskMigrationJob diskMigrationJob = DiskMigrationJob.newBuilder().build();
+    String diskMigrationJobId = "diskMigrationJobId-173409913";
+
+    DiskMigrationJob actualResponse =
+        client.createDiskMigrationJobAsync(parent, diskMigrationJob, diskMigrationJobId).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVmMigration.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateDiskMigrationJobRequest actualRequest =
+        ((CreateDiskMigrationJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(diskMigrationJob, actualRequest.getDiskMigrationJob());
+    Assert.assertEquals(diskMigrationJobId, actualRequest.getDiskMigrationJobId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createDiskMigrationJobExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVmMigration.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      DiskMigrationJob diskMigrationJob = DiskMigrationJob.newBuilder().build();
+      String diskMigrationJobId = "diskMigrationJobId-173409913";
+      client.createDiskMigrationJobAsync(parent, diskMigrationJob, diskMigrationJobId).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void listDiskMigrationJobsTest() throws Exception {
+    DiskMigrationJob responsesElement = DiskMigrationJob.newBuilder().build();
+    ListDiskMigrationJobsResponse expectedResponse =
+        ListDiskMigrationJobsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDiskMigrationJobs(Arrays.asList(responsesElement))
+            .build();
+    mockVmMigration.addResponse(expectedResponse);
+
+    SourceName parent = SourceName.of("[PROJECT]", "[LOCATION]", "[SOURCE]");
+
+    ListDiskMigrationJobsPagedResponse pagedListResponse = client.listDiskMigrationJobs(parent);
+
+    List<DiskMigrationJob> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDiskMigrationJobsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockVmMigration.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListDiskMigrationJobsRequest actualRequest =
+        ((ListDiskMigrationJobsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listDiskMigrationJobsExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVmMigration.addException(exception);
+
+    try {
+      SourceName parent = SourceName.of("[PROJECT]", "[LOCATION]", "[SOURCE]");
+      client.listDiskMigrationJobs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void listDiskMigrationJobsTest2() throws Exception {
+    DiskMigrationJob responsesElement = DiskMigrationJob.newBuilder().build();
+    ListDiskMigrationJobsResponse expectedResponse =
+        ListDiskMigrationJobsResponse.newBuilder()
+            .setNextPageToken("")
+            .addAllDiskMigrationJobs(Arrays.asList(responsesElement))
+            .build();
+    mockVmMigration.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+
+    ListDiskMigrationJobsPagedResponse pagedListResponse = client.listDiskMigrationJobs(parent);
+
+    List<DiskMigrationJob> resources = Lists.newArrayList(pagedListResponse.iterateAll());
+
+    Assert.assertEquals(1, resources.size());
+    Assert.assertEquals(expectedResponse.getDiskMigrationJobsList().get(0), resources.get(0));
+
+    List<AbstractMessage> actualRequests = mockVmMigration.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    ListDiskMigrationJobsRequest actualRequest =
+        ((ListDiskMigrationJobsRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void listDiskMigrationJobsExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVmMigration.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      client.listDiskMigrationJobs(parent);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDiskMigrationJobTest() throws Exception {
+    DiskMigrationJob expectedResponse =
+        DiskMigrationJob.newBuilder()
+            .setName(
+                DiskMigrationJobName.of(
+                        "[PROJECT]", "[LOCATION]", "[SOURCE]", "[DISK_MIGRATION_JOB]")
+                    .toString())
+            .setTargetDetails(DiskMigrationJobTargetDetails.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllErrors(new ArrayList<Status>())
+            .addAllSteps(new ArrayList<DiskMigrationStep>())
+            .build();
+    mockVmMigration.addResponse(expectedResponse);
+
+    DiskMigrationJobName name =
+        DiskMigrationJobName.of("[PROJECT]", "[LOCATION]", "[SOURCE]", "[DISK_MIGRATION_JOB]");
+
+    DiskMigrationJob actualResponse = client.getDiskMigrationJob(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVmMigration.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetDiskMigrationJobRequest actualRequest = ((GetDiskMigrationJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getDiskMigrationJobExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVmMigration.addException(exception);
+
+    try {
+      DiskMigrationJobName name =
+          DiskMigrationJobName.of("[PROJECT]", "[LOCATION]", "[SOURCE]", "[DISK_MIGRATION_JOB]");
+      client.getDiskMigrationJob(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getDiskMigrationJobTest2() throws Exception {
+    DiskMigrationJob expectedResponse =
+        DiskMigrationJob.newBuilder()
+            .setName(
+                DiskMigrationJobName.of(
+                        "[PROJECT]", "[LOCATION]", "[SOURCE]", "[DISK_MIGRATION_JOB]")
+                    .toString())
+            .setTargetDetails(DiskMigrationJobTargetDetails.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllErrors(new ArrayList<Status>())
+            .addAllSteps(new ArrayList<DiskMigrationStep>())
+            .build();
+    mockVmMigration.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    DiskMigrationJob actualResponse = client.getDiskMigrationJob(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVmMigration.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetDiskMigrationJobRequest actualRequest = ((GetDiskMigrationJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getDiskMigrationJobExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVmMigration.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getDiskMigrationJob(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void updateDiskMigrationJobTest() throws Exception {
+    DiskMigrationJob expectedResponse =
+        DiskMigrationJob.newBuilder()
+            .setName(
+                DiskMigrationJobName.of(
+                        "[PROJECT]", "[LOCATION]", "[SOURCE]", "[DISK_MIGRATION_JOB]")
+                    .toString())
+            .setTargetDetails(DiskMigrationJobTargetDetails.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllErrors(new ArrayList<Status>())
+            .addAllSteps(new ArrayList<DiskMigrationStep>())
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("updateDiskMigrationJobTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockVmMigration.addResponse(resultOperation);
+
+    DiskMigrationJob diskMigrationJob = DiskMigrationJob.newBuilder().build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    DiskMigrationJob actualResponse =
+        client.updateDiskMigrationJobAsync(diskMigrationJob, updateMask).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVmMigration.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    UpdateDiskMigrationJobRequest actualRequest =
+        ((UpdateDiskMigrationJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(diskMigrationJob, actualRequest.getDiskMigrationJob());
+    Assert.assertEquals(updateMask, actualRequest.getUpdateMask());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void updateDiskMigrationJobExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVmMigration.addException(exception);
+
+    try {
+      DiskMigrationJob diskMigrationJob = DiskMigrationJob.newBuilder().build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateDiskMigrationJobAsync(diskMigrationJob, updateMask).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteDiskMigrationJobTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteDiskMigrationJobTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockVmMigration.addResponse(resultOperation);
+
+    DiskMigrationJobName name =
+        DiskMigrationJobName.of("[PROJECT]", "[LOCATION]", "[SOURCE]", "[DISK_MIGRATION_JOB]");
+
+    client.deleteDiskMigrationJobAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockVmMigration.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteDiskMigrationJobRequest actualRequest =
+        ((DeleteDiskMigrationJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteDiskMigrationJobExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVmMigration.addException(exception);
+
+    try {
+      DiskMigrationJobName name =
+          DiskMigrationJobName.of("[PROJECT]", "[LOCATION]", "[SOURCE]", "[DISK_MIGRATION_JOB]");
+      client.deleteDiskMigrationJobAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void deleteDiskMigrationJobTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("deleteDiskMigrationJobTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockVmMigration.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    client.deleteDiskMigrationJobAsync(name).get();
+
+    List<AbstractMessage> actualRequests = mockVmMigration.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteDiskMigrationJobRequest actualRequest =
+        ((DeleteDiskMigrationJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteDiskMigrationJobExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVmMigration.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteDiskMigrationJobAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void runDiskMigrationJobTest() throws Exception {
+    RunDiskMigrationJobResponse expectedResponse = RunDiskMigrationJobResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("runDiskMigrationJobTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockVmMigration.addResponse(resultOperation);
+
+    DiskMigrationJobName name =
+        DiskMigrationJobName.of("[PROJECT]", "[LOCATION]", "[SOURCE]", "[DISK_MIGRATION_JOB]");
+
+    RunDiskMigrationJobResponse actualResponse = client.runDiskMigrationJobAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVmMigration.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RunDiskMigrationJobRequest actualRequest = ((RunDiskMigrationJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void runDiskMigrationJobExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVmMigration.addException(exception);
+
+    try {
+      DiskMigrationJobName name =
+          DiskMigrationJobName.of("[PROJECT]", "[LOCATION]", "[SOURCE]", "[DISK_MIGRATION_JOB]");
+      client.runDiskMigrationJobAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void runDiskMigrationJobTest2() throws Exception {
+    RunDiskMigrationJobResponse expectedResponse = RunDiskMigrationJobResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("runDiskMigrationJobTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockVmMigration.addResponse(resultOperation);
+
+    String name = "name3373707";
+
+    RunDiskMigrationJobResponse actualResponse = client.runDiskMigrationJobAsync(name).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVmMigration.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    RunDiskMigrationJobRequest actualRequest = ((RunDiskMigrationJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void runDiskMigrationJobExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVmMigration.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.runDiskMigrationJobAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void cancelDiskMigrationJobTest() throws Exception {
+    CancelDiskMigrationJobResponse expectedResponse =
+        CancelDiskMigrationJobResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("cancelDiskMigrationJobTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockVmMigration.addResponse(resultOperation);
+
+    CancelDiskMigrationJobRequest request =
+        CancelDiskMigrationJobRequest.newBuilder()
+            .setName(
+                DiskMigrationJobName.of(
+                        "[PROJECT]", "[LOCATION]", "[SOURCE]", "[DISK_MIGRATION_JOB]")
+                    .toString())
+            .build();
+
+    CancelDiskMigrationJobResponse actualResponse =
+        client.cancelDiskMigrationJobAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockVmMigration.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CancelDiskMigrationJobRequest actualRequest =
+        ((CancelDiskMigrationJobRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getName(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void cancelDiskMigrationJobExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockVmMigration.addException(exception);
+
+    try {
+      CancelDiskMigrationJobRequest request =
+          CancelDiskMigrationJobRequest.newBuilder()
+              .setName(
+                  DiskMigrationJobName.of(
+                          "[PROJECT]", "[LOCATION]", "[SOURCE]", "[DISK_MIGRATION_JOB]")
+                      .toString())
+              .build();
+      client.cancelDiskMigrationJobAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 

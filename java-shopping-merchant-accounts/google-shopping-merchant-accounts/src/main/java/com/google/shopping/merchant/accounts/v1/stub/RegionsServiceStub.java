@@ -21,6 +21,11 @@ import static com.google.shopping.merchant.accounts.v1.RegionsServiceClient.List
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.protobuf.Empty;
+import com.google.shopping.merchant.accounts.v1.BatchCreateRegionsRequest;
+import com.google.shopping.merchant.accounts.v1.BatchCreateRegionsResponse;
+import com.google.shopping.merchant.accounts.v1.BatchDeleteRegionsRequest;
+import com.google.shopping.merchant.accounts.v1.BatchUpdateRegionsRequest;
+import com.google.shopping.merchant.accounts.v1.BatchUpdateRegionsResponse;
 import com.google.shopping.merchant.accounts.v1.CreateRegionRequest;
 import com.google.shopping.merchant.accounts.v1.DeleteRegionRequest;
 import com.google.shopping.merchant.accounts.v1.GetRegionRequest;
@@ -47,12 +52,26 @@ public abstract class RegionsServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: createRegionCallable()");
   }
 
+  public UnaryCallable<BatchCreateRegionsRequest, BatchCreateRegionsResponse>
+      batchCreateRegionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchCreateRegionsCallable()");
+  }
+
   public UnaryCallable<UpdateRegionRequest, Region> updateRegionCallable() {
     throw new UnsupportedOperationException("Not implemented: updateRegionCallable()");
   }
 
+  public UnaryCallable<BatchUpdateRegionsRequest, BatchUpdateRegionsResponse>
+      batchUpdateRegionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchUpdateRegionsCallable()");
+  }
+
   public UnaryCallable<DeleteRegionRequest, Empty> deleteRegionCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteRegionCallable()");
+  }
+
+  public UnaryCallable<BatchDeleteRegionsRequest, Empty> batchDeleteRegionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: batchDeleteRegionsCallable()");
   }
 
   public UnaryCallable<ListRegionsRequest, ListRegionsPagedResponse> listRegionsPagedCallable() {

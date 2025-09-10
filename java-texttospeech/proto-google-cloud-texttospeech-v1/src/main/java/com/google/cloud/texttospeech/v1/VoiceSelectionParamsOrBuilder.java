@@ -225,4 +225,32 @@ public interface VoiceSelectionParamsOrBuilder
    * </code>
    */
   com.google.cloud.texttospeech.v1.VoiceCloneParamsOrBuilder getVoiceCloneOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the model. If set, the service will choose the model
+   * matching the specified configuration.
+   * </pre>
+   *
+   * <code>string model_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The modelName.
+   */
+  java.lang.String getModelName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name of the model. If set, the service will choose the model
+   * matching the specified configuration.
+   * </pre>
+   *
+   * <code>string model_name = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for modelName.
+   */
+  com.google.protobuf.ByteString getModelNameBytes();
 }

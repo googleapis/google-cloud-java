@@ -118,7 +118,7 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      * <pre>
      * A column can be tagged with a custom tag. In this case, the user must
      * indicate an auxiliary table that contains statistical information on
-     * the possible values of this column (below).
+     * the possible values of this column.
      * </pre>
      *
      * <code>string custom_tag = 2;</code>
@@ -133,7 +133,7 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      * <pre>
      * A column can be tagged with a custom tag. In this case, the user must
      * indicate an auxiliary table that contains statistical information on
-     * the possible values of this column (below).
+     * the possible values of this column.
      * </pre>
      *
      * <code>string custom_tag = 2;</code>
@@ -250,7 +250,7 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      * <pre>
      * A column can be tagged with a custom tag. In this case, the user must
      * indicate an auxiliary table that contains statistical information on
-     * the possible values of this column (below).
+     * the possible values of this column.
      * </pre>
      *
      * <code>string custom_tag = 2;</code>
@@ -276,7 +276,7 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
      * <pre>
      * A column can be tagged with a custom tag. In this case, the user must
      * indicate an auxiliary table that contains statistical information on
-     * the possible values of this column (below).
+     * the possible values of this column.
      * </pre>
      *
      * <code>string custom_tag = 2;</code>
@@ -892,7 +892,7 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
        * <pre>
        * A column can be tagged with a custom tag. In this case, the user must
        * indicate an auxiliary table that contains statistical information on
-       * the possible values of this column (below).
+       * the possible values of this column.
        * </pre>
        *
        * <code>string custom_tag = 2;</code>
@@ -917,7 +917,7 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
        * <pre>
        * A column can be tagged with a custom tag. In this case, the user must
        * indicate an auxiliary table that contains statistical information on
-       * the possible values of this column (below).
+       * the possible values of this column.
        * </pre>
        *
        * <code>string custom_tag = 2;</code>
@@ -942,7 +942,7 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
        * <pre>
        * A column can be tagged with a custom tag. In this case, the user must
        * indicate an auxiliary table that contains statistical information on
-       * the possible values of this column (below).
+       * the possible values of this column.
        * </pre>
        *
        * <code>string custom_tag = 2;</code>
@@ -966,7 +966,7 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
        * <pre>
        * A column can be tagged with a custom tag. In this case, the user must
        * indicate an auxiliary table that contains statistical information on
-       * the possible values of this column (below).
+       * the possible values of this column.
        * </pre>
        *
        * <code>string custom_tag = 2;</code>
@@ -986,7 +986,7 @@ public final class StatisticalTable extends com.google.protobuf.GeneratedMessage
        * <pre>
        * A column can be tagged with a custom tag. In this case, the user must
        * indicate an auxiliary table that contains statistical information on
-       * the possible values of this column (below).
+       * the possible values of this column.
        * </pre>
        *
        * <code>string custom_tag = 2;</code>

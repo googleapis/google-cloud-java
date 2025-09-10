@@ -32,9 +32,6 @@ public interface ConversationalSearchResponseOrBuilder
    *
    * Supported values are:
    *
-   * - "ADVERSARIAL"
-   * - "CHITCHAT"
-   * - "JAILBREAK"
    * - "ORDER_SUPPORT"
    * - "SIMPLE_PRODUCT_SEARCH"
    * - "INTENT_REFINEMENT"
@@ -64,9 +61,6 @@ public interface ConversationalSearchResponseOrBuilder
    *
    * Supported values are:
    *
-   * - "ADVERSARIAL"
-   * - "CHITCHAT"
-   * - "JAILBREAK"
    * - "ORDER_SUPPORT"
    * - "SIMPLE_PRODUCT_SEARCH"
    * - "INTENT_REFINEMENT"
@@ -96,9 +90,6 @@ public interface ConversationalSearchResponseOrBuilder
    *
    * Supported values are:
    *
-   * - "ADVERSARIAL"
-   * - "CHITCHAT"
-   * - "JAILBREAK"
    * - "ORDER_SUPPORT"
    * - "SIMPLE_PRODUCT_SEARCH"
    * - "INTENT_REFINEMENT"
@@ -129,9 +120,6 @@ public interface ConversationalSearchResponseOrBuilder
    *
    * Supported values are:
    *
-   * - "ADVERSARIAL"
-   * - "CHITCHAT"
-   * - "JAILBREAK"
    * - "ORDER_SUPPORT"
    * - "SIMPLE_PRODUCT_SEARCH"
    * - "INTENT_REFINEMENT"

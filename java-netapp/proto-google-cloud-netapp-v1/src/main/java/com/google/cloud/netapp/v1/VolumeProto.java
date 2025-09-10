@@ -161,7 +161,7 @@ public final class VolumeProto {
           + "\023RevertVolumeRequest\0222\n"
           + "\004name\030\001 \001(\tB$\340A\002\372A\036\n"
           + "\034netapp.googleapis.com/Volume\022\030\n"
-          + "\013snapshot_id\030\002 \001(\tB\003\340A\002\"\221\021\n"
+          + "\013snapshot_id\030\002 \001(\tB\003\340A\002\"\325\021\n"
           + "\006Volume\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\0228\n"
           + "\005state\030\002 \001(\0162$.g"
@@ -220,7 +220,9 @@ public final class VolumeProto {
           + "\004zone\030% \001(\tB\003\340A\003\022\037\n"
           + "\022cold_tier_size_gib\030\' \001(\003B\003\340A\003\022_\n"
           + "\035hybrid_replication_parameters\030("
-          + " \001(\01323.google.cloud.netapp.v1.HybridReplicationParametersB\003\340A\001\032-\n"
+          + " \001(\01323.google.cloud.netapp.v1.HybridReplicationParametersB\003\340A\001\022\035\n"
+          + "\020throughput_mibps\030) \001(\001B\003\340A\001\022#\n"
+          + "\026hot_tier_size_used_gib\030, \001(\003B\003\340A\003\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
           + "\005value\030\002 \001(\t:\0028\001\"\231\001\n"
@@ -229,14 +231,16 @@ public final class VolumeProto {
           + "\005READY\020\001\022\014\n"
           + "\010CREATING\020\002\022\014\n"
           + "\010DELETING\020\003\022\014\n"
-          + "\010UPDATING\020\004\022\r\n"
+          + "\010UPDATING\020\004\022\r"
+          + "\n"
           + "\tRESTORING\020\005\022\014\n"
           + "\010DISABLED\020\006\022\t\n"
-          + "\005ERROR\020\007\022\r\n"
+          + "\005ERROR\020\007\022\r"
+          + "\n"
           + "\tPREPARING\020\010\022\r\n"
           + "\tREAD_ONLY\020\t:l\352Ai\n"
-          + "\034netapp.googleapis.com/Volume\0228pro"
-          + "jects/{project}/locations/{location}/volumes/{volume}*\007volumes2\006volumeB\020\n"
+          + "\034netapp.googleapis.com/Volume\0228projects/{proje"
+          + "ct}/locations/{location}/volumes/{volume}*\007volumes2\006volumeB\020\n"
           + "\016_backup_configB\021\n"
           + "\017_tiering_policy\"R\n"
           + "\014ExportPolicy\022B\n"
@@ -274,8 +278,8 @@ public final class VolumeProto {
           + " \001(\0132&.google.cloud.netapp.v1.HourlyScheduleH\001\210\001\001\022B\n"
           + "\016daily_schedule\030\003"
           + " \001(\0132%.google.cloud.netapp.v1.DailyScheduleH\002\210\001\001\022D\n"
-          + "\017weekly_schedule\030\004 \001(\0132&.goo"
-          + "gle.cloud.netapp.v1.WeeklyScheduleH\003\210\001\001\022F\n"
+          + "\017weekly_schedule\030\004"
+          + " \001(\0132&.google.cloud.netapp.v1.WeeklyScheduleH\003\210\001\001\022F\n"
           + "\020monthly_schedule\030\005"
           + " \001(\0132\'.google.cloud.netapp.v1.MonthlyScheduleH\004\210\001\001B\n\n"
           + "\010_enabledB\022\n"
@@ -331,17 +335,20 @@ public final class VolumeProto {
           + "\030scheduled_backup_enabled\030\003 \001(\010B\003\340A\001H\000\210\001\001\022$\n"
           + "\022backup_chain_bytes\030\004 \001(\003B\003\340A\003H\001\210\001\001B\033\n"
           + "\031_scheduled_backup_enabledB\025\n"
-          + "\023_backup_chain_bytes\"\371\001\n\r"
+          + "\023_backup_chain_bytes\"\312\002\n\r"
           + "TieringPolicy\022O\n"
-          + "\013tier_action\030\001 \001(\01620.google.clou"
-          + "d.netapp.v1.TieringPolicy.TierActionB\003\340A\001H\000\210\001\001\022(\n"
-          + "\026cooling_threshold_days\030\002 \001(\005B\003\340A\001H\001\210\001\001\"B\n\n"
+          + "\013tier_action\030\001"
+          + " \001(\01620.google.cloud.netapp.v1.TieringPolicy.TierActionB\003\340A\001H\000\210\001\001\022(\n"
+          + "\026cooling_threshold_days\030\002 \001(\005B\003\340A\001H\001\210\001\001\022.\n"
+          + "\034hot_tier_bypass_mode_enabled\030\003"
+          + " \001(\010B\003\340A\001H\002\210\001\001\"B\n\n"
           + "TierAction\022\033\n"
           + "\027TIER_ACTION_UNSPECIFIED\020\000\022\013\n"
           + "\007ENABLED\020\001\022\n\n"
           + "\006PAUSED\020\002B\016\n"
           + "\014_tier_actionB\031\n"
-          + "\027_cooling_threshold_days\"\226\003\n"
+          + "\027_cooling_threshold_daysB\037\n"
+          + "\035_hot_tier_bypass_mode_enabled\"\303\006\n"
           + "\033HybridReplicationParameters\022>\n"
           + "\013replication\030\001 \001(\tB)\340A\002\372A#\n"
           + "!netapp.googleapis.com/Replication\022\035\n"
@@ -351,11 +358,23 @@ public final class VolumeProto {
           + "\021peer_ip_addresses\030\005 \003(\tB\003\340A\002\022\035\n"
           + "\020cluster_location\030\006 \001(\tB\003\340A\001\022\030\n"
           + "\013description\030\007 \001(\tB\003\340A\001\022T\n"
-          + "\006labels\030\010 \003(\0132?.google.cloud.netapp.v1.Hyb"
-          + "ridReplicationParameters.LabelsEntryB\003\340A\001\032-\n"
+          + "\006labels\030\010 \003(\013"
+          + "2?.google.cloud.netapp.v1.HybridReplicationParameters.LabelsEntryB\003\340A\001\022T\n"
+          + "\024replication_schedule\030\t"
+          + " \001(\01621.google.cloud.netapp.v1.HybridReplicationScheduleB\003\340A\001\022u\n"
+          + "\027hybrid_replication_type\030\n"
+          + " \001(\0162O.google.c"
+          + "loud.netapp.v1.HybridReplicationParameters.VolumeHybridReplicationTypeB\003\340A\001\022+\n"
+          + "\036large_volume_constituent_count\030\013 \001(\005B\003\340A\001\032-\n"
           + "\013LabelsEntry\022\013\n"
           + "\003key\030\001 \001(\t\022\r\n"
-          + "\005value\030\002 \001(\t:\0028\001*E\n"
+          + "\005value\030\002 \001(\t:\0028\001\"\260\001\n"
+          + "\033VolumeHybridReplicationType\022.\n"
+          + "*VOLUME_HYBRID_REPLICATION_TYPE_UNSPECIFIED\020\000\022\r\n"
+          + "\tMIGRATION\020\001\022\032\n"
+          + "\026CONTINUOUS_REPLICATION\020\002\022\026\n"
+          + "\022ONPREM_REPLICATION\020\003\022\036\n"
+          + "\032REVERSE_ONPREM_REPLICATION\020\004*E\n"
           + "\tProtocols\022\031\n"
           + "\025PROTOCOLS_UNSPECIFIED\020\000\022\t\n"
           + "\005NFSV3\020\001\022\t\n"
@@ -384,10 +403,10 @@ public final class VolumeProto {
           + "\020RestrictedAction\022!\n"
           + "\035RESTRICTED_ACTION_UNSPECIFIED\020\000\022\n\n"
           + "\006DELETE\020\001B\255\001\n"
-          + "\032com.google.cloud.netapp.v1B\013VolumeProtoP\001Z2cloud.google."
-          + "com/go/netapp/apiv1/netapppb;netapppb\252\002\026"
-          + "Google.Cloud.NetApp.V1\312\002\026Google\\Cloud\\Ne"
-          + "tApp\\V1\352\002\031Google::Cloud::NetApp::V1b\006proto3"
+          + "\032com.google.cloud.netapp.v1B\013VolumeProt"
+          + "oP\001Z2cloud.google.com/go/netapp/apiv1/ne"
+          + "tapppb;netapppb\252\002\026Google.Cloud.NetApp.V1"
+          + "\312\002\026Google\\Cloud\\NetApp\\V1\352\002\031Google::Cloud::NetApp::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -500,6 +519,8 @@ public final class VolumeProto {
               "Zone",
               "ColdTierSizeGib",
               "HybridReplicationParameters",
+              "ThroughputMibps",
+              "HotTierSizeUsedGib",
             });
     internal_static_google_cloud_netapp_v1_Volume_LabelsEntry_descriptor =
         internal_static_google_cloud_netapp_v1_Volume_descriptor.getNestedTypes().get(0);
@@ -605,7 +626,7 @@ public final class VolumeProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_netapp_v1_TieringPolicy_descriptor,
             new java.lang.String[] {
-              "TierAction", "CoolingThresholdDays",
+              "TierAction", "CoolingThresholdDays", "HotTierBypassModeEnabled",
             });
     internal_static_google_cloud_netapp_v1_HybridReplicationParameters_descriptor =
         getDescriptor().getMessageTypes().get(19);
@@ -621,6 +642,9 @@ public final class VolumeProto {
               "ClusterLocation",
               "Description",
               "Labels",
+              "ReplicationSchedule",
+              "HybridReplicationType",
+              "LargeVolumeConstituentCount",
             });
     internal_static_google_cloud_netapp_v1_HybridReplicationParameters_LabelsEntry_descriptor =
         internal_static_google_cloud_netapp_v1_HybridReplicationParameters_descriptor

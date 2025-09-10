@@ -3874,7 +3874,7 @@ public final class ConversationalSearchRequest extends com.google.protobuf.Gener
      *
      * @deprecated
      *     google.cloud.retail.v2alpha.ConversationalSearchRequest.ConversationalFilteringSpec.enable_conversational_filtering
-     *     is deprecated. See google/cloud/retail/v2alpha/conversational_search_service.proto;l=142
+     *     is deprecated. See google/cloud/retail/v2alpha/conversational_search_service.proto;l=145
      * @return The enableConversationalFiltering.
      */
     @java.lang.Deprecated
@@ -4023,6 +4023,9 @@ public final class ConversationalSearchRequest extends com.google.protobuf.Gener
      *
      * <pre>
      * Enum to control Conversational Filtering mode.
+     * A single conversation session including multiple turns supports modes for
+     * Conversational Search OR Conversational Filtering without
+     * Conversational Search, but not both.
      * </pre>
      *
      * Protobuf enum {@code
@@ -4043,7 +4046,7 @@ public final class ConversationalSearchRequest extends com.google.protobuf.Gener
        *
        *
        * <pre>
-       * Disable Conversational Filtering.
+       * Disables Conversational Filtering when using Conversational Search.
        * </pre>
        *
        * <code>DISABLED = 1;</code>
@@ -4053,7 +4056,7 @@ public final class ConversationalSearchRequest extends com.google.protobuf.Gener
        *
        *
        * <pre>
-       * Enabled Conversational Filtering with default Conversational Search.
+       * Enables Conversational Filtering when using Conversational Search.
        * </pre>
        *
        * <code>ENABLED = 2;</code>
@@ -4063,7 +4066,7 @@ public final class ConversationalSearchRequest extends com.google.protobuf.Gener
        *
        *
        * <pre>
-       * Enabled Conversational Filtering without default Conversational Search.
+       * Enables Conversational Filtering without Conversational Search.
        * </pre>
        *
        * <code>CONVERSATIONAL_FILTER_ONLY = 3;</code>
@@ -4087,7 +4090,7 @@ public final class ConversationalSearchRequest extends com.google.protobuf.Gener
        *
        *
        * <pre>
-       * Disable Conversational Filtering.
+       * Disables Conversational Filtering when using Conversational Search.
        * </pre>
        *
        * <code>DISABLED = 1;</code>
@@ -4098,7 +4101,7 @@ public final class ConversationalSearchRequest extends com.google.protobuf.Gener
        *
        *
        * <pre>
-       * Enabled Conversational Filtering with default Conversational Search.
+       * Enables Conversational Filtering when using Conversational Search.
        * </pre>
        *
        * <code>ENABLED = 2;</code>
@@ -4109,7 +4112,7 @@ public final class ConversationalSearchRequest extends com.google.protobuf.Gener
        *
        *
        * <pre>
-       * Enabled Conversational Filtering without default Conversational Search.
+       * Enables Conversational Filtering without Conversational Search.
        * </pre>
        *
        * <code>CONVERSATIONAL_FILTER_ONLY = 3;</code>
@@ -4223,7 +4226,7 @@ public final class ConversationalSearchRequest extends com.google.protobuf.Gener
      *
      * @deprecated
      *     google.cloud.retail.v2alpha.ConversationalSearchRequest.ConversationalFilteringSpec.enable_conversational_filtering
-     *     is deprecated. See google/cloud/retail/v2alpha/conversational_search_service.proto;l=142
+     *     is deprecated. See google/cloud/retail/v2alpha/conversational_search_service.proto;l=145
      * @return The enableConversationalFiltering.
      */
     @java.lang.Override
@@ -4845,7 +4848,7 @@ public final class ConversationalSearchRequest extends com.google.protobuf.Gener
        * @deprecated
        *     google.cloud.retail.v2alpha.ConversationalSearchRequest.ConversationalFilteringSpec.enable_conversational_filtering
        *     is deprecated. See
-       *     google/cloud/retail/v2alpha/conversational_search_service.proto;l=142
+       *     google/cloud/retail/v2alpha/conversational_search_service.proto;l=145
        * @return The enableConversationalFiltering.
        */
       @java.lang.Override
@@ -4870,7 +4873,7 @@ public final class ConversationalSearchRequest extends com.google.protobuf.Gener
        * @deprecated
        *     google.cloud.retail.v2alpha.ConversationalSearchRequest.ConversationalFilteringSpec.enable_conversational_filtering
        *     is deprecated. See
-       *     google/cloud/retail/v2alpha/conversational_search_service.proto;l=142
+       *     google/cloud/retail/v2alpha/conversational_search_service.proto;l=145
        * @param value The enableConversationalFiltering to set.
        * @return This builder for chaining.
        */
@@ -4899,7 +4902,7 @@ public final class ConversationalSearchRequest extends com.google.protobuf.Gener
        * @deprecated
        *     google.cloud.retail.v2alpha.ConversationalSearchRequest.ConversationalFilteringSpec.enable_conversational_filtering
        *     is deprecated. See
-       *     google/cloud/retail/v2alpha/conversational_search_service.proto;l=142
+       *     google/cloud/retail/v2alpha/conversational_search_service.proto;l=145
        * @return This builder for chaining.
        */
       @java.lang.Deprecated

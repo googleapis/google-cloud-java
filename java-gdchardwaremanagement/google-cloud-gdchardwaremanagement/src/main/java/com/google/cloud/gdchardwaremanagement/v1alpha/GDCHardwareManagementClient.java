@@ -38,6 +38,7 @@ import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
 import com.google.protobuf.Empty;
 import com.google.protobuf.FieldMask;
+import com.google.type.Date;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -189,6 +190,26 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> submitOrderOperationCallable()
  *           <li><p> submitOrderCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CancelOrder</td>
+ *      <td><p> Cancels an order.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> cancelOrderAsync(CancelOrderRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> cancelOrderAsync(OrderName name)
+ *           <li><p> cancelOrderAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> cancelOrderOperationCallable()
+ *           <li><p> cancelOrderCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -757,6 +778,20 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> signalZoneStateOperationCallable()
  *           <li><p> signalZoneStateCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> RequestOrderDateChange</td>
+ *      <td><p> Updates the requested date change of a single Order.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> requestOrderDateChangeAsync(OrderName name, Date requestedDate)
+ *           <li><p> requestOrderDateChangeAsync(String name, Date requestedDate)
+ *           <li><p> requestOrderDateChangeAsync(RequestOrderDateChangeRequest request)
+ *           <li><p> requestOrderDateChangeOperationCallable()
+ *           <li><p> requestOrderDateChangeCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -1822,6 +1857,155 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    */
   public final UnaryCallable<SubmitOrderRequest, Operation> submitOrderCallable() {
     return stub.submitOrderCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels an order.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (GDCHardwareManagementClient gDCHardwareManagementClient =
+   *     GDCHardwareManagementClient.create()) {
+   *   OrderName name = OrderName.of("[PROJECT]", "[LOCATION]", "[ORDER]");
+   *   Order response = gDCHardwareManagementClient.cancelOrderAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the order. Format:
+   *     `projects/{project}/locations/{location}/orders/{order}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Order, OperationMetadata> cancelOrderAsync(OrderName name) {
+    CancelOrderRequest request =
+        CancelOrderRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return cancelOrderAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels an order.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (GDCHardwareManagementClient gDCHardwareManagementClient =
+   *     GDCHardwareManagementClient.create()) {
+   *   String name = OrderName.of("[PROJECT]", "[LOCATION]", "[ORDER]").toString();
+   *   Order response = gDCHardwareManagementClient.cancelOrderAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the order. Format:
+   *     `projects/{project}/locations/{location}/orders/{order}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Order, OperationMetadata> cancelOrderAsync(String name) {
+    CancelOrderRequest request = CancelOrderRequest.newBuilder().setName(name).build();
+    return cancelOrderAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels an order.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (GDCHardwareManagementClient gDCHardwareManagementClient =
+   *     GDCHardwareManagementClient.create()) {
+   *   CancelOrderRequest request =
+   *       CancelOrderRequest.newBuilder()
+   *           .setName(OrderName.of("[PROJECT]", "[LOCATION]", "[ORDER]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   Order response = gDCHardwareManagementClient.cancelOrderAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Order, OperationMetadata> cancelOrderAsync(
+      CancelOrderRequest request) {
+    return cancelOrderOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels an order.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (GDCHardwareManagementClient gDCHardwareManagementClient =
+   *     GDCHardwareManagementClient.create()) {
+   *   CancelOrderRequest request =
+   *       CancelOrderRequest.newBuilder()
+   *           .setName(OrderName.of("[PROJECT]", "[LOCATION]", "[ORDER]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   OperationFuture<Order, OperationMetadata> future =
+   *       gDCHardwareManagementClient.cancelOrderOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Order response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CancelOrderRequest, Order, OperationMetadata>
+      cancelOrderOperationCallable() {
+    return stub.cancelOrderOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Cancels an order.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (GDCHardwareManagementClient gDCHardwareManagementClient =
+   *     GDCHardwareManagementClient.create()) {
+   *   CancelOrderRequest request =
+   *       CancelOrderRequest.newBuilder()
+   *           .setName(OrderName.of("[PROJECT]", "[LOCATION]", "[ORDER]").toString())
+   *           .setRequestId("requestId693933066")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       gDCHardwareManagementClient.cancelOrderCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CancelOrderRequest, Operation> cancelOrderCallable() {
+    return stub.cancelOrderCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -6232,6 +6416,173 @@ public class GDCHardwareManagementClient implements BackgroundResource {
    */
   public final UnaryCallable<SignalZoneStateRequest, Operation> signalZoneStateCallable() {
     return stub.signalZoneStateCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the requested date change of a single Order.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (GDCHardwareManagementClient gDCHardwareManagementClient =
+   *     GDCHardwareManagementClient.create()) {
+   *   OrderName name = OrderName.of("[PROJECT]", "[LOCATION]", "[ORDER]");
+   *   Date requestedDate = Date.newBuilder().build();
+   *   Order response =
+   *       gDCHardwareManagementClient.requestOrderDateChangeAsync(name, requestedDate).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the order to update. Format:
+   *     projects/{project}/locations/{location}/orders/{order}
+   * @param requestedDate Required. The date to which the customer or Google wants to set the
+   *     scheduled installation date.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Order, OperationMetadata> requestOrderDateChangeAsync(
+      OrderName name, Date requestedDate) {
+    RequestOrderDateChangeRequest request =
+        RequestOrderDateChangeRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .setRequestedDate(requestedDate)
+            .build();
+    return requestOrderDateChangeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the requested date change of a single Order.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (GDCHardwareManagementClient gDCHardwareManagementClient =
+   *     GDCHardwareManagementClient.create()) {
+   *   String name = OrderName.of("[PROJECT]", "[LOCATION]", "[ORDER]").toString();
+   *   Date requestedDate = Date.newBuilder().build();
+   *   Order response =
+   *       gDCHardwareManagementClient.requestOrderDateChangeAsync(name, requestedDate).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the order to update. Format:
+   *     projects/{project}/locations/{location}/orders/{order}
+   * @param requestedDate Required. The date to which the customer or Google wants to set the
+   *     scheduled installation date.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Order, OperationMetadata> requestOrderDateChangeAsync(
+      String name, Date requestedDate) {
+    RequestOrderDateChangeRequest request =
+        RequestOrderDateChangeRequest.newBuilder()
+            .setName(name)
+            .setRequestedDate(requestedDate)
+            .build();
+    return requestOrderDateChangeAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the requested date change of a single Order.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (GDCHardwareManagementClient gDCHardwareManagementClient =
+   *     GDCHardwareManagementClient.create()) {
+   *   RequestOrderDateChangeRequest request =
+   *       RequestOrderDateChangeRequest.newBuilder()
+   *           .setName(OrderName.of("[PROJECT]", "[LOCATION]", "[ORDER]").toString())
+   *           .setRequestedDate(Date.newBuilder().build())
+   *           .build();
+   *   Order response = gDCHardwareManagementClient.requestOrderDateChangeAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Order, OperationMetadata> requestOrderDateChangeAsync(
+      RequestOrderDateChangeRequest request) {
+    return requestOrderDateChangeOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the requested date change of a single Order.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (GDCHardwareManagementClient gDCHardwareManagementClient =
+   *     GDCHardwareManagementClient.create()) {
+   *   RequestOrderDateChangeRequest request =
+   *       RequestOrderDateChangeRequest.newBuilder()
+   *           .setName(OrderName.of("[PROJECT]", "[LOCATION]", "[ORDER]").toString())
+   *           .setRequestedDate(Date.newBuilder().build())
+   *           .build();
+   *   OperationFuture<Order, OperationMetadata> future =
+   *       gDCHardwareManagementClient.requestOrderDateChangeOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Order response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<RequestOrderDateChangeRequest, Order, OperationMetadata>
+      requestOrderDateChangeOperationCallable() {
+    return stub.requestOrderDateChangeOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Updates the requested date change of a single Order.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (GDCHardwareManagementClient gDCHardwareManagementClient =
+   *     GDCHardwareManagementClient.create()) {
+   *   RequestOrderDateChangeRequest request =
+   *       RequestOrderDateChangeRequest.newBuilder()
+   *           .setName(OrderName.of("[PROJECT]", "[LOCATION]", "[ORDER]").toString())
+   *           .setRequestedDate(Date.newBuilder().build())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       gDCHardwareManagementClient.requestOrderDateChangeCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<RequestOrderDateChangeRequest, Operation>
+      requestOrderDateChangeCallable() {
+    return stub.requestOrderDateChangeCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

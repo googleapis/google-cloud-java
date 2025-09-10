@@ -70,6 +70,43 @@ public interface TuningJobOrBuilder
    *
    *
    * <pre>
+   * The pre-tuned model for continuous tuning.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.PreTunedModel pre_tuned_model = 31;</code>
+   *
+   * @return Whether the preTunedModel field is set.
+   */
+  boolean hasPreTunedModel();
+
+  /**
+   *
+   *
+   * <pre>
+   * The pre-tuned model for continuous tuning.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.PreTunedModel pre_tuned_model = 31;</code>
+   *
+   * @return The preTunedModel.
+   */
+  com.google.cloud.aiplatform.v1beta1.PreTunedModel getPreTunedModel();
+
+  /**
+   *
+   *
+   * <pre>
+   * The pre-tuned model for continuous tuning.
+   * </pre>
+   *
+   * <code>.google.cloud.aiplatform.v1beta1.PreTunedModel pre_tuned_model = 31;</code>
+   */
+  com.google.cloud.aiplatform.v1beta1.PreTunedModelOrBuilder getPreTunedModelOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Tuning Spec for Supervised Fine Tuning.
    * </pre>
    *

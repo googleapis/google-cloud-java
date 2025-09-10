@@ -89,7 +89,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> VerifyAttestation</td>
- *      <td><p> Verifies the provided attestation info, returning a signed OIDC token.</td>
+ *      <td><p> Verifies the provided attestation info, returning a signed attestation token.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -98,6 +98,34 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> verifyAttestationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> VerifyConfidentialSpace</td>
+ *      <td><p> Verifies whether the provided attestation info is valid, returning a signed attestation token if so.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> verifyConfidentialSpace(VerifyConfidentialSpaceRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> verifyConfidentialSpaceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> VerifyConfidentialGke</td>
+ *      <td><p> Verifies the provided Confidential GKE attestation info, returning a signed OIDC token.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> verifyConfidentialGke(VerifyConfidentialGkeRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> verifyConfidentialGkeCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -367,7 +395,7 @@ public class ConfidentialComputingClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Verifies the provided attestation info, returning a signed OIDC token.
+   * Verifies the provided attestation info, returning a signed attestation token.
    *
    * <p>Sample code:
    *
@@ -401,7 +429,7 @@ public class ConfidentialComputingClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Verifies the provided attestation info, returning a signed OIDC token.
+   * Verifies the provided attestation info, returning a signed attestation token.
    *
    * <p>Sample code:
    *
@@ -432,6 +460,140 @@ public class ConfidentialComputingClient implements BackgroundResource {
   public final UnaryCallable<VerifyAttestationRequest, VerifyAttestationResponse>
       verifyAttestationCallable() {
     return stub.verifyAttestationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Verifies whether the provided attestation info is valid, returning a signed attestation token
+   * if so.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfidentialComputingClient confidentialComputingClient =
+   *     ConfidentialComputingClient.create()) {
+   *   VerifyConfidentialSpaceRequest request =
+   *       VerifyConfidentialSpaceRequest.newBuilder()
+   *           .setChallenge(ChallengeName.of("[PROJECT]", "[LOCATION]", "[UUID]").toString())
+   *           .setGcpCredentials(GcpCredentials.newBuilder().build())
+   *           .addAllSignedEntities(new ArrayList<SignedEntity>())
+   *           .setGceShieldedIdentity(GceShieldedIdentity.newBuilder().build())
+   *           .setOptions(
+   *               VerifyConfidentialSpaceRequest.ConfidentialSpaceOptions.newBuilder().build())
+   *           .build();
+   *   VerifyConfidentialSpaceResponse response =
+   *       confidentialComputingClient.verifyConfidentialSpace(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final VerifyConfidentialSpaceResponse verifyConfidentialSpace(
+      VerifyConfidentialSpaceRequest request) {
+    return verifyConfidentialSpaceCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Verifies whether the provided attestation info is valid, returning a signed attestation token
+   * if so.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfidentialComputingClient confidentialComputingClient =
+   *     ConfidentialComputingClient.create()) {
+   *   VerifyConfidentialSpaceRequest request =
+   *       VerifyConfidentialSpaceRequest.newBuilder()
+   *           .setChallenge(ChallengeName.of("[PROJECT]", "[LOCATION]", "[UUID]").toString())
+   *           .setGcpCredentials(GcpCredentials.newBuilder().build())
+   *           .addAllSignedEntities(new ArrayList<SignedEntity>())
+   *           .setGceShieldedIdentity(GceShieldedIdentity.newBuilder().build())
+   *           .setOptions(
+   *               VerifyConfidentialSpaceRequest.ConfidentialSpaceOptions.newBuilder().build())
+   *           .build();
+   *   ApiFuture<VerifyConfidentialSpaceResponse> future =
+   *       confidentialComputingClient.verifyConfidentialSpaceCallable().futureCall(request);
+   *   // Do something.
+   *   VerifyConfidentialSpaceResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<VerifyConfidentialSpaceRequest, VerifyConfidentialSpaceResponse>
+      verifyConfidentialSpaceCallable() {
+    return stub.verifyConfidentialSpaceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Verifies the provided Confidential GKE attestation info, returning a signed OIDC token.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfidentialComputingClient confidentialComputingClient =
+   *     ConfidentialComputingClient.create()) {
+   *   VerifyConfidentialGkeRequest request =
+   *       VerifyConfidentialGkeRequest.newBuilder()
+   *           .setChallenge(ChallengeName.of("[PROJECT]", "[LOCATION]", "[UUID]").toString())
+   *           .build();
+   *   VerifyConfidentialGkeResponse response =
+   *       confidentialComputingClient.verifyConfidentialGke(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final VerifyConfidentialGkeResponse verifyConfidentialGke(
+      VerifyConfidentialGkeRequest request) {
+    return verifyConfidentialGkeCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Verifies the provided Confidential GKE attestation info, returning a signed OIDC token.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ConfidentialComputingClient confidentialComputingClient =
+   *     ConfidentialComputingClient.create()) {
+   *   VerifyConfidentialGkeRequest request =
+   *       VerifyConfidentialGkeRequest.newBuilder()
+   *           .setChallenge(ChallengeName.of("[PROJECT]", "[LOCATION]", "[UUID]").toString())
+   *           .build();
+   *   ApiFuture<VerifyConfidentialGkeResponse> future =
+   *       confidentialComputingClient.verifyConfidentialGkeCallable().futureCall(request);
+   *   // Do something.
+   *   VerifyConfidentialGkeResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<VerifyConfidentialGkeRequest, VerifyConfidentialGkeResponse>
+      verifyConfidentialGkeCallable() {
+    return stub.verifyConfidentialGkeCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

@@ -32,6 +32,11 @@ import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
+import com.google.shopping.merchant.accounts.v1.BatchCreateRegionsRequest;
+import com.google.shopping.merchant.accounts.v1.BatchCreateRegionsResponse;
+import com.google.shopping.merchant.accounts.v1.BatchDeleteRegionsRequest;
+import com.google.shopping.merchant.accounts.v1.BatchUpdateRegionsRequest;
+import com.google.shopping.merchant.accounts.v1.BatchUpdateRegionsResponse;
 import com.google.shopping.merchant.accounts.v1.CreateRegionRequest;
 import com.google.shopping.merchant.accounts.v1.DeleteRegionRequest;
 import com.google.shopping.merchant.accounts.v1.GetRegionRequest;
@@ -128,6 +133,44 @@ public class HttpJsonRegionsServiceStub extends RegionsServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<BatchCreateRegionsRequest, BatchCreateRegionsResponse>
+      batchCreateRegionsMethodDescriptor =
+          ApiMethodDescriptor.<BatchCreateRegionsRequest, BatchCreateRegionsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.shopping.merchant.accounts.v1.RegionsService/BatchCreateRegions")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchCreateRegionsRequest>newBuilder()
+                      .setPath(
+                          "/accounts/v1/{parent=accounts/*}/regions:batchCreate",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchCreateRegionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchCreateRegionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BatchCreateRegionsResponse>newBuilder()
+                      .setDefaultInstance(BatchCreateRegionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<UpdateRegionRequest, Region>
       updateRegionMethodDescriptor =
           ApiMethodDescriptor.<UpdateRegionRequest, Region>newBuilder()
@@ -167,6 +210,44 @@ public class HttpJsonRegionsServiceStub extends RegionsServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<BatchUpdateRegionsRequest, BatchUpdateRegionsResponse>
+      batchUpdateRegionsMethodDescriptor =
+          ApiMethodDescriptor.<BatchUpdateRegionsRequest, BatchUpdateRegionsResponse>newBuilder()
+              .setFullMethodName(
+                  "google.shopping.merchant.accounts.v1.RegionsService/BatchUpdateRegions")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchUpdateRegionsRequest>newBuilder()
+                      .setPath(
+                          "/accounts/v1/{parent=accounts/*}/regions:batchUpdate",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchUpdateRegionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchUpdateRegionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<BatchUpdateRegionsResponse>newBuilder()
+                      .setDefaultInstance(BatchUpdateRegionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<DeleteRegionRequest, Empty>
       deleteRegionMethodDescriptor =
           ApiMethodDescriptor.<DeleteRegionRequest, Empty>newBuilder()
@@ -193,6 +274,44 @@ public class HttpJsonRegionsServiceStub extends RegionsServiceStub {
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<BatchDeleteRegionsRequest, Empty>
+      batchDeleteRegionsMethodDescriptor =
+          ApiMethodDescriptor.<BatchDeleteRegionsRequest, Empty>newBuilder()
+              .setFullMethodName(
+                  "google.shopping.merchant.accounts.v1.RegionsService/BatchDeleteRegions")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<BatchDeleteRegionsRequest>newBuilder()
+                      .setPath(
+                          "/accounts/v1/{parent=accounts/*}/regions:batchDelete",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchDeleteRegionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<BatchDeleteRegionsRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
                       .build())
               .setResponseParser(
                   ProtoMessageResponseParser.<Empty>newBuilder()
@@ -239,8 +358,13 @@ public class HttpJsonRegionsServiceStub extends RegionsServiceStub {
 
   private final UnaryCallable<GetRegionRequest, Region> getRegionCallable;
   private final UnaryCallable<CreateRegionRequest, Region> createRegionCallable;
+  private final UnaryCallable<BatchCreateRegionsRequest, BatchCreateRegionsResponse>
+      batchCreateRegionsCallable;
   private final UnaryCallable<UpdateRegionRequest, Region> updateRegionCallable;
+  private final UnaryCallable<BatchUpdateRegionsRequest, BatchUpdateRegionsResponse>
+      batchUpdateRegionsCallable;
   private final UnaryCallable<DeleteRegionRequest, Empty> deleteRegionCallable;
+  private final UnaryCallable<BatchDeleteRegionsRequest, Empty> batchDeleteRegionsCallable;
   private final UnaryCallable<ListRegionsRequest, ListRegionsResponse> listRegionsCallable;
   private final UnaryCallable<ListRegionsRequest, ListRegionsPagedResponse>
       listRegionsPagedCallable;
@@ -309,6 +433,18 @@ public class HttpJsonRegionsServiceStub extends RegionsServiceStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<BatchCreateRegionsRequest, BatchCreateRegionsResponse>
+        batchCreateRegionsTransportSettings =
+            HttpJsonCallSettings.<BatchCreateRegionsRequest, BatchCreateRegionsResponse>newBuilder()
+                .setMethodDescriptor(batchCreateRegionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<UpdateRegionRequest, Region> updateRegionTransportSettings =
         HttpJsonCallSettings.<UpdateRegionRequest, Region>newBuilder()
             .setMethodDescriptor(updateRegionMethodDescriptor)
@@ -320,6 +456,18 @@ public class HttpJsonRegionsServiceStub extends RegionsServiceStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<BatchUpdateRegionsRequest, BatchUpdateRegionsResponse>
+        batchUpdateRegionsTransportSettings =
+            HttpJsonCallSettings.<BatchUpdateRegionsRequest, BatchUpdateRegionsResponse>newBuilder()
+                .setMethodDescriptor(batchUpdateRegionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<DeleteRegionRequest, Empty> deleteRegionTransportSettings =
         HttpJsonCallSettings.<DeleteRegionRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteRegionMethodDescriptor)
@@ -328,6 +476,17 @@ public class HttpJsonRegionsServiceStub extends RegionsServiceStub {
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<BatchDeleteRegionsRequest, Empty> batchDeleteRegionsTransportSettings =
+        HttpJsonCallSettings.<BatchDeleteRegionsRequest, Empty>newBuilder()
+            .setMethodDescriptor(batchDeleteRegionsMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
             .build();
@@ -349,12 +508,27 @@ public class HttpJsonRegionsServiceStub extends RegionsServiceStub {
     this.createRegionCallable =
         callableFactory.createUnaryCallable(
             createRegionTransportSettings, settings.createRegionSettings(), clientContext);
+    this.batchCreateRegionsCallable =
+        callableFactory.createUnaryCallable(
+            batchCreateRegionsTransportSettings,
+            settings.batchCreateRegionsSettings(),
+            clientContext);
     this.updateRegionCallable =
         callableFactory.createUnaryCallable(
             updateRegionTransportSettings, settings.updateRegionSettings(), clientContext);
+    this.batchUpdateRegionsCallable =
+        callableFactory.createUnaryCallable(
+            batchUpdateRegionsTransportSettings,
+            settings.batchUpdateRegionsSettings(),
+            clientContext);
     this.deleteRegionCallable =
         callableFactory.createUnaryCallable(
             deleteRegionTransportSettings, settings.deleteRegionSettings(), clientContext);
+    this.batchDeleteRegionsCallable =
+        callableFactory.createUnaryCallable(
+            batchDeleteRegionsTransportSettings,
+            settings.batchDeleteRegionsSettings(),
+            clientContext);
     this.listRegionsCallable =
         callableFactory.createUnaryCallable(
             listRegionsTransportSettings, settings.listRegionsSettings(), clientContext);
@@ -371,8 +545,11 @@ public class HttpJsonRegionsServiceStub extends RegionsServiceStub {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(getRegionMethodDescriptor);
     methodDescriptors.add(createRegionMethodDescriptor);
+    methodDescriptors.add(batchCreateRegionsMethodDescriptor);
     methodDescriptors.add(updateRegionMethodDescriptor);
+    methodDescriptors.add(batchUpdateRegionsMethodDescriptor);
     methodDescriptors.add(deleteRegionMethodDescriptor);
+    methodDescriptors.add(batchDeleteRegionsMethodDescriptor);
     methodDescriptors.add(listRegionsMethodDescriptor);
     return methodDescriptors;
   }
@@ -388,13 +565,30 @@ public class HttpJsonRegionsServiceStub extends RegionsServiceStub {
   }
 
   @Override
+  public UnaryCallable<BatchCreateRegionsRequest, BatchCreateRegionsResponse>
+      batchCreateRegionsCallable() {
+    return batchCreateRegionsCallable;
+  }
+
+  @Override
   public UnaryCallable<UpdateRegionRequest, Region> updateRegionCallable() {
     return updateRegionCallable;
   }
 
   @Override
+  public UnaryCallable<BatchUpdateRegionsRequest, BatchUpdateRegionsResponse>
+      batchUpdateRegionsCallable() {
+    return batchUpdateRegionsCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteRegionRequest, Empty> deleteRegionCallable() {
     return deleteRegionCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchDeleteRegionsRequest, Empty> batchDeleteRegionsCallable() {
+    return batchDeleteRegionsCallable;
   }
 
   @Override

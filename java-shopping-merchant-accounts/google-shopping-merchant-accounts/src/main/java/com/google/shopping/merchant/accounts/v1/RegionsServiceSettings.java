@@ -99,14 +99,31 @@ public class RegionsServiceSettings extends ClientSettings<RegionsServiceSetting
     return ((RegionsServiceStubSettings) getStubSettings()).createRegionSettings();
   }
 
+  /** Returns the object with the settings used for calls to batchCreateRegions. */
+  public UnaryCallSettings<BatchCreateRegionsRequest, BatchCreateRegionsResponse>
+      batchCreateRegionsSettings() {
+    return ((RegionsServiceStubSettings) getStubSettings()).batchCreateRegionsSettings();
+  }
+
   /** Returns the object with the settings used for calls to updateRegion. */
   public UnaryCallSettings<UpdateRegionRequest, Region> updateRegionSettings() {
     return ((RegionsServiceStubSettings) getStubSettings()).updateRegionSettings();
   }
 
+  /** Returns the object with the settings used for calls to batchUpdateRegions. */
+  public UnaryCallSettings<BatchUpdateRegionsRequest, BatchUpdateRegionsResponse>
+      batchUpdateRegionsSettings() {
+    return ((RegionsServiceStubSettings) getStubSettings()).batchUpdateRegionsSettings();
+  }
+
   /** Returns the object with the settings used for calls to deleteRegion. */
   public UnaryCallSettings<DeleteRegionRequest, Empty> deleteRegionSettings() {
     return ((RegionsServiceStubSettings) getStubSettings()).deleteRegionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to batchDeleteRegions. */
+  public UnaryCallSettings<BatchDeleteRegionsRequest, Empty> batchDeleteRegionsSettings() {
+    return ((RegionsServiceStubSettings) getStubSettings()).batchDeleteRegionsSettings();
   }
 
   /** Returns the object with the settings used for calls to listRegions. */
@@ -237,14 +254,32 @@ public class RegionsServiceSettings extends ClientSettings<RegionsServiceSetting
       return getStubSettingsBuilder().createRegionSettings();
     }
 
+    /** Returns the builder for the settings used for calls to batchCreateRegions. */
+    public UnaryCallSettings.Builder<BatchCreateRegionsRequest, BatchCreateRegionsResponse>
+        batchCreateRegionsSettings() {
+      return getStubSettingsBuilder().batchCreateRegionsSettings();
+    }
+
     /** Returns the builder for the settings used for calls to updateRegion. */
     public UnaryCallSettings.Builder<UpdateRegionRequest, Region> updateRegionSettings() {
       return getStubSettingsBuilder().updateRegionSettings();
     }
 
+    /** Returns the builder for the settings used for calls to batchUpdateRegions. */
+    public UnaryCallSettings.Builder<BatchUpdateRegionsRequest, BatchUpdateRegionsResponse>
+        batchUpdateRegionsSettings() {
+      return getStubSettingsBuilder().batchUpdateRegionsSettings();
+    }
+
     /** Returns the builder for the settings used for calls to deleteRegion. */
     public UnaryCallSettings.Builder<DeleteRegionRequest, Empty> deleteRegionSettings() {
       return getStubSettingsBuilder().deleteRegionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to batchDeleteRegions. */
+    public UnaryCallSettings.Builder<BatchDeleteRegionsRequest, Empty>
+        batchDeleteRegionsSettings() {
+      return getStubSettingsBuilder().batchDeleteRegionsSettings();
     }
 
     /** Returns the builder for the settings used for calls to listRegions. */

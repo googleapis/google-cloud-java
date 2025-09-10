@@ -30,6 +30,7 @@ import com.google.api.core.BetaApi;
 import com.google.api.gax.core.BackgroundResource;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.gdchardwaremanagement.v1alpha.CancelOrderRequest;
 import com.google.cloud.gdchardwaremanagement.v1alpha.ChangeLogEntry;
 import com.google.cloud.gdchardwaremanagement.v1alpha.Comment;
 import com.google.cloud.gdchardwaremanagement.v1alpha.CreateCommentRequest;
@@ -72,6 +73,7 @@ import com.google.cloud.gdchardwaremanagement.v1alpha.ListZonesResponse;
 import com.google.cloud.gdchardwaremanagement.v1alpha.OperationMetadata;
 import com.google.cloud.gdchardwaremanagement.v1alpha.Order;
 import com.google.cloud.gdchardwaremanagement.v1alpha.RecordActionOnCommentRequest;
+import com.google.cloud.gdchardwaremanagement.v1alpha.RequestOrderDateChangeRequest;
 import com.google.cloud.gdchardwaremanagement.v1alpha.SignalZoneStateRequest;
 import com.google.cloud.gdchardwaremanagement.v1alpha.Site;
 import com.google.cloud.gdchardwaremanagement.v1alpha.Sku;
@@ -155,6 +157,15 @@ public abstract class GDCHardwareManagementStub implements BackgroundResource {
 
   public UnaryCallable<SubmitOrderRequest, Operation> submitOrderCallable() {
     throw new UnsupportedOperationException("Not implemented: submitOrderCallable()");
+  }
+
+  public OperationCallable<CancelOrderRequest, Order, OperationMetadata>
+      cancelOrderOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: cancelOrderOperationCallable()");
+  }
+
+  public UnaryCallable<CancelOrderRequest, Operation> cancelOrderCallable() {
+    throw new UnsupportedOperationException("Not implemented: cancelOrderCallable()");
   }
 
   public UnaryCallable<ListSitesRequest, ListSitesPagedResponse> listSitesPagedCallable() {
@@ -376,6 +387,16 @@ public abstract class GDCHardwareManagementStub implements BackgroundResource {
 
   public UnaryCallable<SignalZoneStateRequest, Operation> signalZoneStateCallable() {
     throw new UnsupportedOperationException("Not implemented: signalZoneStateCallable()");
+  }
+
+  public OperationCallable<RequestOrderDateChangeRequest, Order, OperationMetadata>
+      requestOrderDateChangeOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: requestOrderDateChangeOperationCallable()");
+  }
+
+  public UnaryCallable<RequestOrderDateChangeRequest, Operation> requestOrderDateChangeCallable() {
+    throw new UnsupportedOperationException("Not implemented: requestOrderDateChangeCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

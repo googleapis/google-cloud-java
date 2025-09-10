@@ -44,6 +44,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     subnetwork_ = "";
     internalIp_ = "";
     externalIp_ = "";
+    networkTier_ = 0;
   }
 
   @java.lang.Override
@@ -76,10 +77,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The network to connect the NIC to.
+   * Optional. The network to connect the NIC to.
    * </pre>
    *
-   * <code>string network = 1;</code>
+   * <code>string network = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The network.
    */
@@ -100,10 +101,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The network to connect the NIC to.
+   * Optional. The network to connect the NIC to.
    * </pre>
    *
-   * <code>string network = 1;</code>
+   * <code>string network = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for network.
    */
@@ -129,10 +130,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The subnetwork to connect the NIC to.
+   * Optional. The subnetwork to connect the NIC to.
    * </pre>
    *
-   * <code>string subnetwork = 2;</code>
+   * <code>string subnetwork = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The subnetwork.
    */
@@ -153,10 +154,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The subnetwork to connect the NIC to.
+   * Optional. The subnetwork to connect the NIC to.
    * </pre>
    *
-   * <code>string subnetwork = 2;</code>
+   * <code>string subnetwork = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for subnetwork.
    */
@@ -182,12 +183,12 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The internal IP to define in the NIC.
+   * Optional. The internal IP to define in the NIC.
    * The formats accepted are: `ephemeral` &#92; ipv4 address &#92; a named address
    * resource full path.
    * </pre>
    *
-   * <code>string internal_ip = 3;</code>
+   * <code>string internal_ip = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The internalIp.
    */
@@ -208,12 +209,12 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The internal IP to define in the NIC.
+   * Optional. The internal IP to define in the NIC.
    * The formats accepted are: `ephemeral` &#92; ipv4 address &#92; a named address
    * resource full path.
    * </pre>
    *
-   * <code>string internal_ip = 3;</code>
+   * <code>string internal_ip = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for internalIp.
    */
@@ -239,10 +240,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The external IP to define in the NIC.
+   * Optional. The external IP to define in the NIC.
    * </pre>
    *
-   * <code>string external_ip = 4;</code>
+   * <code>string external_ip = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The externalIp.
    */
@@ -263,10 +264,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The external IP to define in the NIC.
+   * Optional. The external IP to define in the NIC.
    * </pre>
    *
-   * <code>string external_ip = 4;</code>
+   * <code>string external_ip = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for externalIp.
    */
@@ -281,6 +282,53 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int NETWORK_TIER_FIELD_NUMBER = 5;
+  private int networkTier_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The networking tier used for optimizing connectivity between
+   * instances and systems on the internet. Applies only for external ephemeral
+   * IP addresses. If left empty, will default to PREMIUM.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.ComputeEngineNetworkTier network_tier = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for networkTier.
+   */
+  @java.lang.Override
+  public int getNetworkTierValue() {
+    return networkTier_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The networking tier used for optimizing connectivity between
+   * instances and systems on the internet. Applies only for external ephemeral
+   * IP addresses. If left empty, will default to PREMIUM.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.ComputeEngineNetworkTier network_tier = 5 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The networkTier.
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.ComputeEngineNetworkTier getNetworkTier() {
+    com.google.cloud.vmmigration.v1.ComputeEngineNetworkTier result =
+        com.google.cloud.vmmigration.v1.ComputeEngineNetworkTier.forNumber(networkTier_);
+    return result == null
+        ? com.google.cloud.vmmigration.v1.ComputeEngineNetworkTier.UNRECOGNIZED
+        : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -309,6 +357,12 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(externalIp_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, externalIp_);
     }
+    if (networkTier_
+        != com.google.cloud.vmmigration.v1.ComputeEngineNetworkTier
+            .COMPUTE_ENGINE_NETWORK_TIER_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(5, networkTier_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -330,6 +384,12 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(externalIp_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, externalIp_);
     }
+    if (networkTier_
+        != com.google.cloud.vmmigration.v1.ComputeEngineNetworkTier
+            .COMPUTE_ENGINE_NETWORK_TIER_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(5, networkTier_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -350,6 +410,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     if (!getSubnetwork().equals(other.getSubnetwork())) return false;
     if (!getInternalIp().equals(other.getInternalIp())) return false;
     if (!getExternalIp().equals(other.getExternalIp())) return false;
+    if (networkTier_ != other.networkTier_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -369,6 +430,8 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
     hash = (53 * hash) + getInternalIp().hashCode();
     hash = (37 * hash) + EXTERNAL_IP_FIELD_NUMBER;
     hash = (53 * hash) + getExternalIp().hashCode();
+    hash = (37 * hash) + NETWORK_TIER_FIELD_NUMBER;
+    hash = (53 * hash) + networkTier_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -513,6 +576,7 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       subnetwork_ = "";
       internalIp_ = "";
       externalIp_ = "";
+      networkTier_ = 0;
       return this;
     }
 
@@ -560,6 +624,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       }
       if (((from_bitField0_ & 0x00000008) != 0)) {
         result.externalIp_ = externalIp_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.networkTier_ = networkTier_;
       }
     }
 
@@ -629,6 +696,9 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
         bitField0_ |= 0x00000008;
         onChanged();
       }
+      if (other.networkTier_ != 0) {
+        setNetworkTierValue(other.getNetworkTierValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -679,6 +749,12 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000008;
                 break;
               } // case 34
+            case 40:
+              {
+                networkTier_ = input.readEnum();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 40
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -704,10 +780,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The network to connect the NIC to.
+     * Optional. The network to connect the NIC to.
      * </pre>
      *
-     * <code>string network = 1;</code>
+     * <code>string network = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The network.
      */
@@ -727,10 +803,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The network to connect the NIC to.
+     * Optional. The network to connect the NIC to.
      * </pre>
      *
-     * <code>string network = 1;</code>
+     * <code>string network = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for network.
      */
@@ -750,10 +826,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The network to connect the NIC to.
+     * Optional. The network to connect the NIC to.
      * </pre>
      *
-     * <code>string network = 1;</code>
+     * <code>string network = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The network to set.
      * @return This builder for chaining.
@@ -772,10 +848,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The network to connect the NIC to.
+     * Optional. The network to connect the NIC to.
      * </pre>
      *
-     * <code>string network = 1;</code>
+     * <code>string network = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -790,10 +866,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The network to connect the NIC to.
+     * Optional. The network to connect the NIC to.
      * </pre>
      *
-     * <code>string network = 1;</code>
+     * <code>string network = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for network to set.
      * @return This builder for chaining.
@@ -815,10 +891,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The subnetwork to connect the NIC to.
+     * Optional. The subnetwork to connect the NIC to.
      * </pre>
      *
-     * <code>string subnetwork = 2;</code>
+     * <code>string subnetwork = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The subnetwork.
      */
@@ -838,10 +914,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The subnetwork to connect the NIC to.
+     * Optional. The subnetwork to connect the NIC to.
      * </pre>
      *
-     * <code>string subnetwork = 2;</code>
+     * <code>string subnetwork = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for subnetwork.
      */
@@ -861,10 +937,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The subnetwork to connect the NIC to.
+     * Optional. The subnetwork to connect the NIC to.
      * </pre>
      *
-     * <code>string subnetwork = 2;</code>
+     * <code>string subnetwork = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The subnetwork to set.
      * @return This builder for chaining.
@@ -883,10 +959,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The subnetwork to connect the NIC to.
+     * Optional. The subnetwork to connect the NIC to.
      * </pre>
      *
-     * <code>string subnetwork = 2;</code>
+     * <code>string subnetwork = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -901,10 +977,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The subnetwork to connect the NIC to.
+     * Optional. The subnetwork to connect the NIC to.
      * </pre>
      *
-     * <code>string subnetwork = 2;</code>
+     * <code>string subnetwork = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for subnetwork to set.
      * @return This builder for chaining.
@@ -926,12 +1002,12 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The internal IP to define in the NIC.
+     * Optional. The internal IP to define in the NIC.
      * The formats accepted are: `ephemeral` &#92; ipv4 address &#92; a named address
      * resource full path.
      * </pre>
      *
-     * <code>string internal_ip = 3;</code>
+     * <code>string internal_ip = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The internalIp.
      */
@@ -951,12 +1027,12 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The internal IP to define in the NIC.
+     * Optional. The internal IP to define in the NIC.
      * The formats accepted are: `ephemeral` &#92; ipv4 address &#92; a named address
      * resource full path.
      * </pre>
      *
-     * <code>string internal_ip = 3;</code>
+     * <code>string internal_ip = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for internalIp.
      */
@@ -976,12 +1052,12 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The internal IP to define in the NIC.
+     * Optional. The internal IP to define in the NIC.
      * The formats accepted are: `ephemeral` &#92; ipv4 address &#92; a named address
      * resource full path.
      * </pre>
      *
-     * <code>string internal_ip = 3;</code>
+     * <code>string internal_ip = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The internalIp to set.
      * @return This builder for chaining.
@@ -1000,12 +1076,12 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The internal IP to define in the NIC.
+     * Optional. The internal IP to define in the NIC.
      * The formats accepted are: `ephemeral` &#92; ipv4 address &#92; a named address
      * resource full path.
      * </pre>
      *
-     * <code>string internal_ip = 3;</code>
+     * <code>string internal_ip = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1020,12 +1096,12 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The internal IP to define in the NIC.
+     * Optional. The internal IP to define in the NIC.
      * The formats accepted are: `ephemeral` &#92; ipv4 address &#92; a named address
      * resource full path.
      * </pre>
      *
-     * <code>string internal_ip = 3;</code>
+     * <code>string internal_ip = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for internalIp to set.
      * @return This builder for chaining.
@@ -1047,10 +1123,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The external IP to define in the NIC.
+     * Optional. The external IP to define in the NIC.
      * </pre>
      *
-     * <code>string external_ip = 4;</code>
+     * <code>string external_ip = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The externalIp.
      */
@@ -1070,10 +1146,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The external IP to define in the NIC.
+     * Optional. The external IP to define in the NIC.
      * </pre>
      *
-     * <code>string external_ip = 4;</code>
+     * <code>string external_ip = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for externalIp.
      */
@@ -1093,10 +1169,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The external IP to define in the NIC.
+     * Optional. The external IP to define in the NIC.
      * </pre>
      *
-     * <code>string external_ip = 4;</code>
+     * <code>string external_ip = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The externalIp to set.
      * @return This builder for chaining.
@@ -1115,10 +1191,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The external IP to define in the NIC.
+     * Optional. The external IP to define in the NIC.
      * </pre>
      *
-     * <code>string external_ip = 4;</code>
+     * <code>string external_ip = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -1133,10 +1209,10 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * The external IP to define in the NIC.
+     * Optional. The external IP to define in the NIC.
      * </pre>
      *
-     * <code>string external_ip = 4;</code>
+     * <code>string external_ip = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for externalIp to set.
      * @return This builder for chaining.
@@ -1148,6 +1224,123 @@ public final class NetworkInterface extends com.google.protobuf.GeneratedMessage
       checkByteStringIsUtf8(value);
       externalIp_ = value;
       bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private int networkTier_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The networking tier used for optimizing connectivity between
+     * instances and systems on the internet. Applies only for external ephemeral
+     * IP addresses. If left empty, will default to PREMIUM.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.ComputeEngineNetworkTier network_tier = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for networkTier.
+     */
+    @java.lang.Override
+    public int getNetworkTierValue() {
+      return networkTier_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The networking tier used for optimizing connectivity between
+     * instances and systems on the internet. Applies only for external ephemeral
+     * IP addresses. If left empty, will default to PREMIUM.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.ComputeEngineNetworkTier network_tier = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for networkTier to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNetworkTierValue(int value) {
+      networkTier_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The networking tier used for optimizing connectivity between
+     * instances and systems on the internet. Applies only for external ephemeral
+     * IP addresses. If left empty, will default to PREMIUM.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.ComputeEngineNetworkTier network_tier = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The networkTier.
+     */
+    @java.lang.Override
+    public com.google.cloud.vmmigration.v1.ComputeEngineNetworkTier getNetworkTier() {
+      com.google.cloud.vmmigration.v1.ComputeEngineNetworkTier result =
+          com.google.cloud.vmmigration.v1.ComputeEngineNetworkTier.forNumber(networkTier_);
+      return result == null
+          ? com.google.cloud.vmmigration.v1.ComputeEngineNetworkTier.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The networking tier used for optimizing connectivity between
+     * instances and systems on the internet. Applies only for external ephemeral
+     * IP addresses. If left empty, will default to PREMIUM.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.ComputeEngineNetworkTier network_tier = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The networkTier to set.
+     * @return This builder for chaining.
+     */
+    public Builder setNetworkTier(com.google.cloud.vmmigration.v1.ComputeEngineNetworkTier value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000010;
+      networkTier_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The networking tier used for optimizing connectivity between
+     * instances and systems on the internet. Applies only for external ephemeral
+     * IP addresses. If left empty, will default to PREMIUM.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.ComputeEngineNetworkTier network_tier = 5 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearNetworkTier() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      networkTier_ = 0;
       onChanged();
       return this;
     }

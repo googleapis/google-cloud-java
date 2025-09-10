@@ -41,6 +41,8 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
 
   private AwsSourceVmDetails() {
     firmware_ = 0;
+    disks_ = java.util.Collections.emptyList();
+    architecture_ = 0;
   }
 
   @java.lang.Override
@@ -225,6 +227,891 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
     // @@protoc_insertion_point(enum_scope:google.cloud.vmmigration.v1.AwsSourceVmDetails.Firmware)
   }
 
+  public interface AwsDiskDetailsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The ordinal number of the disk.
+     * </pre>
+     *
+     * <code>int32 disk_number = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The diskNumber.
+     */
+    int getDiskNumber();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. AWS volume ID.
+     * </pre>
+     *
+     * <code>string volume_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The volumeId.
+     */
+    java.lang.String getVolumeId();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. AWS volume ID.
+     * </pre>
+     *
+     * <code>string volume_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for volumeId.
+     */
+    com.google.protobuf.ByteString getVolumeIdBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Size in GB.
+     * </pre>
+     *
+     * <code>int64 size_gb = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The sizeGb.
+     */
+    long getSizeGb();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The details of an AWS instance disk.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails}
+   */
+  public static final class AwsDiskDetails extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails)
+      AwsDiskDetailsOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use AwsDiskDetails.newBuilder() to construct.
+    private AwsDiskDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private AwsDiskDetails() {
+      volumeId_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new AwsDiskDetails();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.vmmigration.v1.VmMigrationProto
+          .internal_static_google_cloud_vmmigration_v1_AwsSourceVmDetails_AwsDiskDetails_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.vmmigration.v1.VmMigrationProto
+          .internal_static_google_cloud_vmmigration_v1_AwsSourceVmDetails_AwsDiskDetails_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails.class,
+              com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails.Builder.class);
+    }
+
+    public static final int DISK_NUMBER_FIELD_NUMBER = 1;
+    private int diskNumber_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The ordinal number of the disk.
+     * </pre>
+     *
+     * <code>int32 disk_number = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The diskNumber.
+     */
+    @java.lang.Override
+    public int getDiskNumber() {
+      return diskNumber_;
+    }
+
+    public static final int VOLUME_ID_FIELD_NUMBER = 2;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object volumeId_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. AWS volume ID.
+     * </pre>
+     *
+     * <code>string volume_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The volumeId.
+     */
+    @java.lang.Override
+    public java.lang.String getVolumeId() {
+      java.lang.Object ref = volumeId_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        volumeId_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. AWS volume ID.
+     * </pre>
+     *
+     * <code>string volume_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The bytes for volumeId.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getVolumeIdBytes() {
+      java.lang.Object ref = volumeId_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        volumeId_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SIZE_GB_FIELD_NUMBER = 3;
+    private long sizeGb_ = 0L;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Size in GB.
+     * </pre>
+     *
+     * <code>int64 size_gb = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The sizeGb.
+     */
+    @java.lang.Override
+    public long getSizeGb() {
+      return sizeGb_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (diskNumber_ != 0) {
+        output.writeInt32(1, diskNumber_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(volumeId_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, volumeId_);
+      }
+      if (sizeGb_ != 0L) {
+        output.writeInt64(3, sizeGb_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (diskNumber_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, diskNumber_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(volumeId_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, volumeId_);
+      }
+      if (sizeGb_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, sizeGb_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails other =
+          (com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails) obj;
+
+      if (getDiskNumber() != other.getDiskNumber()) return false;
+      if (!getVolumeId().equals(other.getVolumeId())) return false;
+      if (getSizeGb() != other.getSizeGb()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + DISK_NUMBER_FIELD_NUMBER;
+      hash = (53 * hash) + getDiskNumber();
+      hash = (37 * hash) + VOLUME_ID_FIELD_NUMBER;
+      hash = (53 * hash) + getVolumeId().hashCode();
+      hash = (37 * hash) + SIZE_GB_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getSizeGb());
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The details of an AWS instance disk.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails)
+        com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetailsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.vmmigration.v1.VmMigrationProto
+            .internal_static_google_cloud_vmmigration_v1_AwsSourceVmDetails_AwsDiskDetails_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.vmmigration.v1.VmMigrationProto
+            .internal_static_google_cloud_vmmigration_v1_AwsSourceVmDetails_AwsDiskDetails_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails.class,
+                com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        diskNumber_ = 0;
+        volumeId_ = "";
+        sizeGb_ = 0L;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.vmmigration.v1.VmMigrationProto
+            .internal_static_google_cloud_vmmigration_v1_AwsSourceVmDetails_AwsDiskDetails_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails
+          getDefaultInstanceForType() {
+        return com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails build() {
+        com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails buildPartial() {
+        com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails result =
+            new com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.diskNumber_ = diskNumber_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.volumeId_ = volumeId_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.sizeGb_ = sizeGb_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails) {
+          return mergeFrom(
+              (com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails other) {
+        if (other
+            == com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails
+                .getDefaultInstance()) return this;
+        if (other.getDiskNumber() != 0) {
+          setDiskNumber(other.getDiskNumber());
+        }
+        if (!other.getVolumeId().isEmpty()) {
+          volumeId_ = other.volumeId_;
+          bitField0_ |= 0x00000002;
+          onChanged();
+        }
+        if (other.getSizeGb() != 0L) {
+          setSizeGb(other.getSizeGb());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  diskNumber_ = input.readInt32();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 18:
+                {
+                  volumeId_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 18
+              case 24:
+                {
+                  sizeGb_ = input.readInt64();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 24
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int diskNumber_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The ordinal number of the disk.
+       * </pre>
+       *
+       * <code>int32 disk_number = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The diskNumber.
+       */
+      @java.lang.Override
+      public int getDiskNumber() {
+        return diskNumber_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The ordinal number of the disk.
+       * </pre>
+       *
+       * <code>int32 disk_number = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The diskNumber to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDiskNumber(int value) {
+
+        diskNumber_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The ordinal number of the disk.
+       * </pre>
+       *
+       * <code>int32 disk_number = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDiskNumber() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        diskNumber_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object volumeId_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. AWS volume ID.
+       * </pre>
+       *
+       * <code>string volume_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The volumeId.
+       */
+      public java.lang.String getVolumeId() {
+        java.lang.Object ref = volumeId_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          volumeId_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. AWS volume ID.
+       * </pre>
+       *
+       * <code>string volume_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The bytes for volumeId.
+       */
+      public com.google.protobuf.ByteString getVolumeIdBytes() {
+        java.lang.Object ref = volumeId_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          volumeId_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. AWS volume ID.
+       * </pre>
+       *
+       * <code>string volume_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The volumeId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVolumeId(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        volumeId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. AWS volume ID.
+       * </pre>
+       *
+       * <code>string volume_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearVolumeId() {
+        volumeId_ = getDefaultInstance().getVolumeId();
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. AWS volume ID.
+       * </pre>
+       *
+       * <code>string volume_id = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The bytes for volumeId to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVolumeIdBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        volumeId_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      private long sizeGb_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Size in GB.
+       * </pre>
+       *
+       * <code>int64 size_gb = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The sizeGb.
+       */
+      @java.lang.Override
+      public long getSizeGb() {
+        return sizeGb_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Size in GB.
+       * </pre>
+       *
+       * <code>int64 size_gb = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The sizeGb to set.
+       * @return This builder for chaining.
+       */
+      public Builder setSizeGb(long value) {
+
+        sizeGb_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Size in GB.
+       * </pre>
+       *
+       * <code>int64 size_gb = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearSizeGb() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        sizeGb_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails)
+    private static final com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails();
+    }
+
+    public static com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AwsDiskDetails> PARSER =
+        new com.google.protobuf.AbstractParser<AwsDiskDetails>() {
+          @java.lang.Override
+          public AwsDiskDetails parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<AwsDiskDetails> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AwsDiskDetails> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
+  private int bitField0_;
   public static final int FIRMWARE_FIELD_NUMBER = 1;
   private int firmware_ = 0;
 
@@ -232,10 +1119,12 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The firmware type of the source VM.
+   * Output only. The firmware type of the source VM.
    * </pre>
    *
-   * <code>.google.cloud.vmmigration.v1.AwsSourceVmDetails.Firmware firmware = 1;</code>
+   * <code>
+   * .google.cloud.vmmigration.v1.AwsSourceVmDetails.Firmware firmware = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The enum numeric value on the wire for firmware.
    */
@@ -248,10 +1137,12 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The firmware type of the source VM.
+   * Output only. The firmware type of the source VM.
    * </pre>
    *
-   * <code>.google.cloud.vmmigration.v1.AwsSourceVmDetails.Firmware firmware = 1;</code>
+   * <code>
+   * .google.cloud.vmmigration.v1.AwsSourceVmDetails.Firmware firmware = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The firmware.
    */
@@ -271,16 +1162,208 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The total size of the disks being migrated in bytes.
+   * Output only. The total size of the disks being migrated in bytes.
    * </pre>
    *
-   * <code>int64 committed_storage_bytes = 2;</code>
+   * <code>int64 committed_storage_bytes = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The committedStorageBytes.
    */
   @java.lang.Override
   public long getCommittedStorageBytes() {
     return committedStorageBytes_;
+  }
+
+  public static final int DISKS_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails> disks_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The disks attached to the source VM.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails disks = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails>
+      getDisksList() {
+    return disks_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The disks attached to the source VM.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails disks = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetailsOrBuilder>
+      getDisksOrBuilderList() {
+    return disks_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The disks attached to the source VM.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails disks = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getDisksCount() {
+    return disks_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The disks attached to the source VM.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails disks = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails getDisks(int index) {
+    return disks_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The disks attached to the source VM.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails disks = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetailsOrBuilder
+      getDisksOrBuilder(int index) {
+    return disks_.get(index);
+  }
+
+  public static final int VM_CAPABILITIES_INFO_FIELD_NUMBER = 5;
+  private com.google.cloud.vmmigration.v1.VmCapabilities vmCapabilitiesInfo_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information about VM capabilities needed for some Compute
+   * Engine features.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.VmCapabilities vm_capabilities_info = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the vmCapabilitiesInfo field is set.
+   */
+  @java.lang.Override
+  public boolean hasVmCapabilitiesInfo() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information about VM capabilities needed for some Compute
+   * Engine features.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.VmCapabilities vm_capabilities_info = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The vmCapabilitiesInfo.
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.VmCapabilities getVmCapabilitiesInfo() {
+    return vmCapabilitiesInfo_ == null
+        ? com.google.cloud.vmmigration.v1.VmCapabilities.getDefaultInstance()
+        : vmCapabilitiesInfo_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Information about VM capabilities needed for some Compute
+   * Engine features.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.VmCapabilities vm_capabilities_info = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.VmCapabilitiesOrBuilder getVmCapabilitiesInfoOrBuilder() {
+    return vmCapabilitiesInfo_ == null
+        ? com.google.cloud.vmmigration.v1.VmCapabilities.getDefaultInstance()
+        : vmCapabilitiesInfo_;
+  }
+
+  public static final int ARCHITECTURE_FIELD_NUMBER = 6;
+  private int architecture_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The VM architecture.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.VmArchitecture architecture = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for architecture.
+   */
+  @java.lang.Override
+  public int getArchitectureValue() {
+    return architecture_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The VM architecture.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.VmArchitecture architecture = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The architecture.
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.VmArchitecture getArchitecture() {
+    com.google.cloud.vmmigration.v1.VmArchitecture result =
+        com.google.cloud.vmmigration.v1.VmArchitecture.forNumber(architecture_);
+    return result == null ? com.google.cloud.vmmigration.v1.VmArchitecture.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -305,6 +1388,16 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
     if (committedStorageBytes_ != 0L) {
       output.writeInt64(2, committedStorageBytes_);
     }
+    for (int i = 0; i < disks_.size(); i++) {
+      output.writeMessage(3, disks_.get(i));
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeMessage(5, getVmCapabilitiesInfo());
+    }
+    if (architecture_
+        != com.google.cloud.vmmigration.v1.VmArchitecture.VM_ARCHITECTURE_UNSPECIFIED.getNumber()) {
+      output.writeEnum(6, architecture_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -321,6 +1414,16 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
     }
     if (committedStorageBytes_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, committedStorageBytes_);
+    }
+    for (int i = 0; i < disks_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, disks_.get(i));
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getVmCapabilitiesInfo());
+    }
+    if (architecture_
+        != com.google.cloud.vmmigration.v1.VmArchitecture.VM_ARCHITECTURE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, architecture_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -340,6 +1443,12 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
 
     if (firmware_ != other.firmware_) return false;
     if (getCommittedStorageBytes() != other.getCommittedStorageBytes()) return false;
+    if (!getDisksList().equals(other.getDisksList())) return false;
+    if (hasVmCapabilitiesInfo() != other.hasVmCapabilitiesInfo()) return false;
+    if (hasVmCapabilitiesInfo()) {
+      if (!getVmCapabilitiesInfo().equals(other.getVmCapabilitiesInfo())) return false;
+    }
+    if (architecture_ != other.architecture_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -355,6 +1464,16 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
     hash = (53 * hash) + firmware_;
     hash = (37 * hash) + COMMITTED_STORAGE_BYTES_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getCommittedStorageBytes());
+    if (getDisksCount() > 0) {
+      hash = (37 * hash) + DISKS_FIELD_NUMBER;
+      hash = (53 * hash) + getDisksList().hashCode();
+    }
+    if (hasVmCapabilitiesInfo()) {
+      hash = (37 * hash) + VM_CAPABILITIES_INFO_FIELD_NUMBER;
+      hash = (53 * hash) + getVmCapabilitiesInfo().hashCode();
+    }
+    hash = (37 * hash) + ARCHITECTURE_FIELD_NUMBER;
+    hash = (53 * hash) + architecture_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -485,10 +1604,20 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
     }
 
     // Construct using com.google.cloud.vmmigration.v1.AwsSourceVmDetails.newBuilder()
-    private Builder() {}
+    private Builder() {
+      maybeForceBuilderInitialization();
+    }
 
     private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
+      maybeForceBuilderInitialization();
+    }
+
+    private void maybeForceBuilderInitialization() {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+        getDisksFieldBuilder();
+        getVmCapabilitiesInfoFieldBuilder();
+      }
     }
 
     @java.lang.Override
@@ -497,6 +1626,19 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
       bitField0_ = 0;
       firmware_ = 0;
       committedStorageBytes_ = 0L;
+      if (disksBuilder_ == null) {
+        disks_ = java.util.Collections.emptyList();
+      } else {
+        disks_ = null;
+        disksBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000004);
+      vmCapabilitiesInfo_ = null;
+      if (vmCapabilitiesInfoBuilder_ != null) {
+        vmCapabilitiesInfoBuilder_.dispose();
+        vmCapabilitiesInfoBuilder_ = null;
+      }
+      architecture_ = 0;
       return this;
     }
 
@@ -524,11 +1666,25 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
     public com.google.cloud.vmmigration.v1.AwsSourceVmDetails buildPartial() {
       com.google.cloud.vmmigration.v1.AwsSourceVmDetails result =
           new com.google.cloud.vmmigration.v1.AwsSourceVmDetails(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.vmmigration.v1.AwsSourceVmDetails result) {
+      if (disksBuilder_ == null) {
+        if (((bitField0_ & 0x00000004) != 0)) {
+          disks_ = java.util.Collections.unmodifiableList(disks_);
+          bitField0_ = (bitField0_ & ~0x00000004);
+        }
+        result.disks_ = disks_;
+      } else {
+        result.disks_ = disksBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.vmmigration.v1.AwsSourceVmDetails result) {
@@ -539,6 +1695,18 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.committedStorageBytes_ = committedStorageBytes_;
       }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.vmCapabilitiesInfo_ =
+            vmCapabilitiesInfoBuilder_ == null
+                ? vmCapabilitiesInfo_
+                : vmCapabilitiesInfoBuilder_.build();
+        to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.architecture_ = architecture_;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -593,6 +1761,39 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
       if (other.getCommittedStorageBytes() != 0L) {
         setCommittedStorageBytes(other.getCommittedStorageBytes());
       }
+      if (disksBuilder_ == null) {
+        if (!other.disks_.isEmpty()) {
+          if (disks_.isEmpty()) {
+            disks_ = other.disks_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+          } else {
+            ensureDisksIsMutable();
+            disks_.addAll(other.disks_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.disks_.isEmpty()) {
+          if (disksBuilder_.isEmpty()) {
+            disksBuilder_.dispose();
+            disksBuilder_ = null;
+            disks_ = other.disks_;
+            bitField0_ = (bitField0_ & ~0x00000004);
+            disksBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getDisksFieldBuilder()
+                    : null;
+          } else {
+            disksBuilder_.addAllMessages(other.disks_);
+          }
+        }
+      }
+      if (other.hasVmCapabilitiesInfo()) {
+        mergeVmCapabilitiesInfo(other.getVmCapabilitiesInfo());
+      }
+      if (other.architecture_ != 0) {
+        setArchitectureValue(other.getArchitectureValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -631,6 +1832,33 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
                 bitField0_ |= 0x00000002;
                 break;
               } // case 16
+            case 26:
+              {
+                com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails m =
+                    input.readMessage(
+                        com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails.parser(),
+                        extensionRegistry);
+                if (disksBuilder_ == null) {
+                  ensureDisksIsMutable();
+                  disks_.add(m);
+                } else {
+                  disksBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+            case 42:
+              {
+                input.readMessage(
+                    getVmCapabilitiesInfoFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 42
+            case 48:
+              {
+                architecture_ = input.readEnum();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 48
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -656,10 +1884,12 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The firmware type of the source VM.
+     * Output only. The firmware type of the source VM.
      * </pre>
      *
-     * <code>.google.cloud.vmmigration.v1.AwsSourceVmDetails.Firmware firmware = 1;</code>
+     * <code>
+     * .google.cloud.vmmigration.v1.AwsSourceVmDetails.Firmware firmware = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The enum numeric value on the wire for firmware.
      */
@@ -672,10 +1902,12 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The firmware type of the source VM.
+     * Output only. The firmware type of the source VM.
      * </pre>
      *
-     * <code>.google.cloud.vmmigration.v1.AwsSourceVmDetails.Firmware firmware = 1;</code>
+     * <code>
+     * .google.cloud.vmmigration.v1.AwsSourceVmDetails.Firmware firmware = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The enum numeric value on the wire for firmware to set.
      * @return This builder for chaining.
@@ -691,10 +1923,12 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The firmware type of the source VM.
+     * Output only. The firmware type of the source VM.
      * </pre>
      *
-     * <code>.google.cloud.vmmigration.v1.AwsSourceVmDetails.Firmware firmware = 1;</code>
+     * <code>
+     * .google.cloud.vmmigration.v1.AwsSourceVmDetails.Firmware firmware = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The firmware.
      */
@@ -711,10 +1945,12 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The firmware type of the source VM.
+     * Output only. The firmware type of the source VM.
      * </pre>
      *
-     * <code>.google.cloud.vmmigration.v1.AwsSourceVmDetails.Firmware firmware = 1;</code>
+     * <code>
+     * .google.cloud.vmmigration.v1.AwsSourceVmDetails.Firmware firmware = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @param value The firmware to set.
      * @return This builder for chaining.
@@ -733,10 +1969,12 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The firmware type of the source VM.
+     * Output only. The firmware type of the source VM.
      * </pre>
      *
-     * <code>.google.cloud.vmmigration.v1.AwsSourceVmDetails.Firmware firmware = 1;</code>
+     * <code>
+     * .google.cloud.vmmigration.v1.AwsSourceVmDetails.Firmware firmware = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -753,10 +1991,10 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The total size of the disks being migrated in bytes.
+     * Output only. The total size of the disks being migrated in bytes.
      * </pre>
      *
-     * <code>int64 committed_storage_bytes = 2;</code>
+     * <code>int64 committed_storage_bytes = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The committedStorageBytes.
      */
@@ -769,10 +2007,10 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The total size of the disks being migrated in bytes.
+     * Output only. The total size of the disks being migrated in bytes.
      * </pre>
      *
-     * <code>int64 committed_storage_bytes = 2;</code>
+     * <code>int64 committed_storage_bytes = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The committedStorageBytes to set.
      * @return This builder for chaining.
@@ -789,16 +2027,768 @@ public final class AwsSourceVmDetails extends com.google.protobuf.GeneratedMessa
      *
      *
      * <pre>
-     * The total size of the disks being migrated in bytes.
+     * Output only. The total size of the disks being migrated in bytes.
      * </pre>
      *
-     * <code>int64 committed_storage_bytes = 2;</code>
+     * <code>int64 committed_storage_bytes = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
     public Builder clearCommittedStorageBytes() {
       bitField0_ = (bitField0_ & ~0x00000002);
       committedStorageBytes_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails>
+        disks_ = java.util.Collections.emptyList();
+
+    private void ensureDisksIsMutable() {
+      if (!((bitField0_ & 0x00000004) != 0)) {
+        disks_ =
+            new java.util.ArrayList<
+                com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails>(disks_);
+        bitField0_ |= 0x00000004;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails,
+            com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails.Builder,
+            com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetailsOrBuilder>
+        disksBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The disks attached to the source VM.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails disks = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails>
+        getDisksList() {
+      if (disksBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(disks_);
+      } else {
+        return disksBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The disks attached to the source VM.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails disks = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getDisksCount() {
+      if (disksBuilder_ == null) {
+        return disks_.size();
+      } else {
+        return disksBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The disks attached to the source VM.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails disks = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails getDisks(int index) {
+      if (disksBuilder_ == null) {
+        return disks_.get(index);
+      } else {
+        return disksBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The disks attached to the source VM.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails disks = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDisks(
+        int index, com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails value) {
+      if (disksBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDisksIsMutable();
+        disks_.set(index, value);
+        onChanged();
+      } else {
+        disksBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The disks attached to the source VM.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails disks = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDisks(
+        int index,
+        com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails.Builder builderForValue) {
+      if (disksBuilder_ == null) {
+        ensureDisksIsMutable();
+        disks_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        disksBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The disks attached to the source VM.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails disks = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addDisks(
+        com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails value) {
+      if (disksBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDisksIsMutable();
+        disks_.add(value);
+        onChanged();
+      } else {
+        disksBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The disks attached to the source VM.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails disks = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addDisks(
+        int index, com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails value) {
+      if (disksBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDisksIsMutable();
+        disks_.add(index, value);
+        onChanged();
+      } else {
+        disksBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The disks attached to the source VM.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails disks = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addDisks(
+        com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails.Builder builderForValue) {
+      if (disksBuilder_ == null) {
+        ensureDisksIsMutable();
+        disks_.add(builderForValue.build());
+        onChanged();
+      } else {
+        disksBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The disks attached to the source VM.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails disks = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addDisks(
+        int index,
+        com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails.Builder builderForValue) {
+      if (disksBuilder_ == null) {
+        ensureDisksIsMutable();
+        disks_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        disksBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The disks attached to the source VM.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails disks = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllDisks(
+        java.lang.Iterable<
+                ? extends com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails>
+            values) {
+      if (disksBuilder_ == null) {
+        ensureDisksIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, disks_);
+        onChanged();
+      } else {
+        disksBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The disks attached to the source VM.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails disks = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearDisks() {
+      if (disksBuilder_ == null) {
+        disks_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+      } else {
+        disksBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The disks attached to the source VM.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails disks = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeDisks(int index) {
+      if (disksBuilder_ == null) {
+        ensureDisksIsMutable();
+        disks_.remove(index);
+        onChanged();
+      } else {
+        disksBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The disks attached to the source VM.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails disks = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails.Builder
+        getDisksBuilder(int index) {
+      return getDisksFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The disks attached to the source VM.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails disks = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetailsOrBuilder
+        getDisksOrBuilder(int index) {
+      if (disksBuilder_ == null) {
+        return disks_.get(index);
+      } else {
+        return disksBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The disks attached to the source VM.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails disks = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetailsOrBuilder>
+        getDisksOrBuilderList() {
+      if (disksBuilder_ != null) {
+        return disksBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(disks_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The disks attached to the source VM.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails disks = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails.Builder
+        addDisksBuilder() {
+      return getDisksFieldBuilder()
+          .addBuilder(
+              com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The disks attached to the source VM.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails disks = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails.Builder
+        addDisksBuilder(int index) {
+      return getDisksFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails
+                  .getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The disks attached to the source VM.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails disks = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails.Builder>
+        getDisksBuilderList() {
+      return getDisksFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails,
+            com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails.Builder,
+            com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetailsOrBuilder>
+        getDisksFieldBuilder() {
+      if (disksBuilder_ == null) {
+        disksBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails,
+                com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetails.Builder,
+                com.google.cloud.vmmigration.v1.AwsSourceVmDetails.AwsDiskDetailsOrBuilder>(
+                disks_, ((bitField0_ & 0x00000004) != 0), getParentForChildren(), isClean());
+        disks_ = null;
+      }
+      return disksBuilder_;
+    }
+
+    private com.google.cloud.vmmigration.v1.VmCapabilities vmCapabilitiesInfo_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vmmigration.v1.VmCapabilities,
+            com.google.cloud.vmmigration.v1.VmCapabilities.Builder,
+            com.google.cloud.vmmigration.v1.VmCapabilitiesOrBuilder>
+        vmCapabilitiesInfoBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about VM capabilities needed for some Compute
+     * Engine features.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.VmCapabilities vm_capabilities_info = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the vmCapabilitiesInfo field is set.
+     */
+    public boolean hasVmCapabilitiesInfo() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about VM capabilities needed for some Compute
+     * Engine features.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.VmCapabilities vm_capabilities_info = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The vmCapabilitiesInfo.
+     */
+    public com.google.cloud.vmmigration.v1.VmCapabilities getVmCapabilitiesInfo() {
+      if (vmCapabilitiesInfoBuilder_ == null) {
+        return vmCapabilitiesInfo_ == null
+            ? com.google.cloud.vmmigration.v1.VmCapabilities.getDefaultInstance()
+            : vmCapabilitiesInfo_;
+      } else {
+        return vmCapabilitiesInfoBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about VM capabilities needed for some Compute
+     * Engine features.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.VmCapabilities vm_capabilities_info = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setVmCapabilitiesInfo(com.google.cloud.vmmigration.v1.VmCapabilities value) {
+      if (vmCapabilitiesInfoBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        vmCapabilitiesInfo_ = value;
+      } else {
+        vmCapabilitiesInfoBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about VM capabilities needed for some Compute
+     * Engine features.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.VmCapabilities vm_capabilities_info = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setVmCapabilitiesInfo(
+        com.google.cloud.vmmigration.v1.VmCapabilities.Builder builderForValue) {
+      if (vmCapabilitiesInfoBuilder_ == null) {
+        vmCapabilitiesInfo_ = builderForValue.build();
+      } else {
+        vmCapabilitiesInfoBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about VM capabilities needed for some Compute
+     * Engine features.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.VmCapabilities vm_capabilities_info = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder mergeVmCapabilitiesInfo(com.google.cloud.vmmigration.v1.VmCapabilities value) {
+      if (vmCapabilitiesInfoBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)
+            && vmCapabilitiesInfo_ != null
+            && vmCapabilitiesInfo_
+                != com.google.cloud.vmmigration.v1.VmCapabilities.getDefaultInstance()) {
+          getVmCapabilitiesInfoBuilder().mergeFrom(value);
+        } else {
+          vmCapabilitiesInfo_ = value;
+        }
+      } else {
+        vmCapabilitiesInfoBuilder_.mergeFrom(value);
+      }
+      if (vmCapabilitiesInfo_ != null) {
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about VM capabilities needed for some Compute
+     * Engine features.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.VmCapabilities vm_capabilities_info = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearVmCapabilitiesInfo() {
+      bitField0_ = (bitField0_ & ~0x00000008);
+      vmCapabilitiesInfo_ = null;
+      if (vmCapabilitiesInfoBuilder_ != null) {
+        vmCapabilitiesInfoBuilder_.dispose();
+        vmCapabilitiesInfoBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about VM capabilities needed for some Compute
+     * Engine features.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.VmCapabilities vm_capabilities_info = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.VmCapabilities.Builder getVmCapabilitiesInfoBuilder() {
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return getVmCapabilitiesInfoFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about VM capabilities needed for some Compute
+     * Engine features.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.VmCapabilities vm_capabilities_info = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.VmCapabilitiesOrBuilder
+        getVmCapabilitiesInfoOrBuilder() {
+      if (vmCapabilitiesInfoBuilder_ != null) {
+        return vmCapabilitiesInfoBuilder_.getMessageOrBuilder();
+      } else {
+        return vmCapabilitiesInfo_ == null
+            ? com.google.cloud.vmmigration.v1.VmCapabilities.getDefaultInstance()
+            : vmCapabilitiesInfo_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Information about VM capabilities needed for some Compute
+     * Engine features.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.VmCapabilities vm_capabilities_info = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.vmmigration.v1.VmCapabilities,
+            com.google.cloud.vmmigration.v1.VmCapabilities.Builder,
+            com.google.cloud.vmmigration.v1.VmCapabilitiesOrBuilder>
+        getVmCapabilitiesInfoFieldBuilder() {
+      if (vmCapabilitiesInfoBuilder_ == null) {
+        vmCapabilitiesInfoBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vmmigration.v1.VmCapabilities,
+                com.google.cloud.vmmigration.v1.VmCapabilities.Builder,
+                com.google.cloud.vmmigration.v1.VmCapabilitiesOrBuilder>(
+                getVmCapabilitiesInfo(), getParentForChildren(), isClean());
+        vmCapabilitiesInfo_ = null;
+      }
+      return vmCapabilitiesInfoBuilder_;
+    }
+
+    private int architecture_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The VM architecture.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.VmArchitecture architecture = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for architecture.
+     */
+    @java.lang.Override
+    public int getArchitectureValue() {
+      return architecture_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The VM architecture.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.VmArchitecture architecture = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for architecture to set.
+     * @return This builder for chaining.
+     */
+    public Builder setArchitectureValue(int value) {
+      architecture_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The VM architecture.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.VmArchitecture architecture = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The architecture.
+     */
+    @java.lang.Override
+    public com.google.cloud.vmmigration.v1.VmArchitecture getArchitecture() {
+      com.google.cloud.vmmigration.v1.VmArchitecture result =
+          com.google.cloud.vmmigration.v1.VmArchitecture.forNumber(architecture_);
+      return result == null ? com.google.cloud.vmmigration.v1.VmArchitecture.UNRECOGNIZED : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The VM architecture.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.VmArchitecture architecture = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The architecture to set.
+     * @return This builder for chaining.
+     */
+    public Builder setArchitecture(com.google.cloud.vmmigration.v1.VmArchitecture value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000010;
+      architecture_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The VM architecture.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.vmmigration.v1.VmArchitecture architecture = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearArchitecture() {
+      bitField0_ = (bitField0_ & ~0x00000010);
+      architecture_ = 0;
       onChanged();
       return this;
     }

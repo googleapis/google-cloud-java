@@ -186,7 +186,7 @@ public interface ReplicationCycleOrBuilder
    * <code>int32 progress_percent = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.vmmigration.v1.ReplicationCycle.progress_percent is deprecated. See
-   *     google/cloud/vmmigration/v1/vmmigration.proto;l=715
+   *     google/cloud/vmmigration/v1/vmmigration.proto;l=977
    * @return The progressPercent.
    */
   @java.lang.Deprecated
@@ -278,10 +278,11 @@ public interface ReplicationCycleOrBuilder
    *
    *
    * <pre>
-   * Provides details on the state of the cycle in case of an error.
+   * Output only. Provides details on the state of the cycle in case of an
+   * error.
    * </pre>
    *
-   * <code>.google.rpc.Status error = 12;</code>
+   * <code>.google.rpc.Status error = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return Whether the error field is set.
    */
@@ -291,10 +292,11 @@ public interface ReplicationCycleOrBuilder
    *
    *
    * <pre>
-   * Provides details on the state of the cycle in case of an error.
+   * Output only. Provides details on the state of the cycle in case of an
+   * error.
    * </pre>
    *
-   * <code>.google.rpc.Status error = 12;</code>
+   * <code>.google.rpc.Status error = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The error.
    */
@@ -304,10 +306,77 @@ public interface ReplicationCycleOrBuilder
    *
    *
    * <pre>
-   * Provides details on the state of the cycle in case of an error.
+   * Output only. Provides details on the state of the cycle in case of an
+   * error.
    * </pre>
    *
-   * <code>.google.rpc.Status error = 12;</code>
+   * <code>.google.rpc.Status error = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   com.google.rpc.StatusOrBuilder getErrorOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Warnings that occurred during the cycle.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.MigrationWarning warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.vmmigration.v1.MigrationWarning> getWarningsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Warnings that occurred during the cycle.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.MigrationWarning warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.vmmigration.v1.MigrationWarning getWarnings(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Warnings that occurred during the cycle.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.MigrationWarning warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getWarningsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Warnings that occurred during the cycle.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.MigrationWarning warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.vmmigration.v1.MigrationWarningOrBuilder>
+      getWarningsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Warnings that occurred during the cycle.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.MigrationWarning warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.vmmigration.v1.MigrationWarningOrBuilder getWarningsOrBuilder(int index);
 }

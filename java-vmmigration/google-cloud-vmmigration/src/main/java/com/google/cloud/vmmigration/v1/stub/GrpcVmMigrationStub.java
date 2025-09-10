@@ -16,10 +16,14 @@
 
 package com.google.cloud.vmmigration.v1.stub;
 
+import static com.google.cloud.vmmigration.v1.VmMigrationClient.FetchStorageInventoryPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListCloneJobsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListCutoverJobsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListDatacenterConnectorsPagedResponse;
+import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListDiskMigrationJobsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListGroupsPagedResponse;
+import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListImageImportJobsPagedResponse;
+import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListImageImportsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListLocationsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListMigratingVmsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListReplicationCyclesPagedResponse;
@@ -45,11 +49,17 @@ import com.google.cloud.vmmigration.v1.CancelCloneJobRequest;
 import com.google.cloud.vmmigration.v1.CancelCloneJobResponse;
 import com.google.cloud.vmmigration.v1.CancelCutoverJobRequest;
 import com.google.cloud.vmmigration.v1.CancelCutoverJobResponse;
+import com.google.cloud.vmmigration.v1.CancelDiskMigrationJobRequest;
+import com.google.cloud.vmmigration.v1.CancelDiskMigrationJobResponse;
+import com.google.cloud.vmmigration.v1.CancelImageImportJobRequest;
+import com.google.cloud.vmmigration.v1.CancelImageImportJobResponse;
 import com.google.cloud.vmmigration.v1.CloneJob;
 import com.google.cloud.vmmigration.v1.CreateCloneJobRequest;
 import com.google.cloud.vmmigration.v1.CreateCutoverJobRequest;
 import com.google.cloud.vmmigration.v1.CreateDatacenterConnectorRequest;
+import com.google.cloud.vmmigration.v1.CreateDiskMigrationJobRequest;
 import com.google.cloud.vmmigration.v1.CreateGroupRequest;
+import com.google.cloud.vmmigration.v1.CreateImageImportRequest;
 import com.google.cloud.vmmigration.v1.CreateMigratingVmRequest;
 import com.google.cloud.vmmigration.v1.CreateSourceRequest;
 import com.google.cloud.vmmigration.v1.CreateTargetProjectRequest;
@@ -57,33 +67,51 @@ import com.google.cloud.vmmigration.v1.CreateUtilizationReportRequest;
 import com.google.cloud.vmmigration.v1.CutoverJob;
 import com.google.cloud.vmmigration.v1.DatacenterConnector;
 import com.google.cloud.vmmigration.v1.DeleteDatacenterConnectorRequest;
+import com.google.cloud.vmmigration.v1.DeleteDiskMigrationJobRequest;
 import com.google.cloud.vmmigration.v1.DeleteGroupRequest;
+import com.google.cloud.vmmigration.v1.DeleteImageImportRequest;
 import com.google.cloud.vmmigration.v1.DeleteMigratingVmRequest;
 import com.google.cloud.vmmigration.v1.DeleteSourceRequest;
 import com.google.cloud.vmmigration.v1.DeleteTargetProjectRequest;
 import com.google.cloud.vmmigration.v1.DeleteUtilizationReportRequest;
+import com.google.cloud.vmmigration.v1.DiskMigrationJob;
+import com.google.cloud.vmmigration.v1.ExtendMigrationRequest;
+import com.google.cloud.vmmigration.v1.ExtendMigrationResponse;
 import com.google.cloud.vmmigration.v1.FetchInventoryRequest;
 import com.google.cloud.vmmigration.v1.FetchInventoryResponse;
+import com.google.cloud.vmmigration.v1.FetchStorageInventoryRequest;
+import com.google.cloud.vmmigration.v1.FetchStorageInventoryResponse;
 import com.google.cloud.vmmigration.v1.FinalizeMigrationRequest;
 import com.google.cloud.vmmigration.v1.FinalizeMigrationResponse;
 import com.google.cloud.vmmigration.v1.GetCloneJobRequest;
 import com.google.cloud.vmmigration.v1.GetCutoverJobRequest;
 import com.google.cloud.vmmigration.v1.GetDatacenterConnectorRequest;
+import com.google.cloud.vmmigration.v1.GetDiskMigrationJobRequest;
 import com.google.cloud.vmmigration.v1.GetGroupRequest;
+import com.google.cloud.vmmigration.v1.GetImageImportJobRequest;
+import com.google.cloud.vmmigration.v1.GetImageImportRequest;
 import com.google.cloud.vmmigration.v1.GetMigratingVmRequest;
 import com.google.cloud.vmmigration.v1.GetReplicationCycleRequest;
 import com.google.cloud.vmmigration.v1.GetSourceRequest;
 import com.google.cloud.vmmigration.v1.GetTargetProjectRequest;
 import com.google.cloud.vmmigration.v1.GetUtilizationReportRequest;
 import com.google.cloud.vmmigration.v1.Group;
+import com.google.cloud.vmmigration.v1.ImageImport;
+import com.google.cloud.vmmigration.v1.ImageImportJob;
 import com.google.cloud.vmmigration.v1.ListCloneJobsRequest;
 import com.google.cloud.vmmigration.v1.ListCloneJobsResponse;
 import com.google.cloud.vmmigration.v1.ListCutoverJobsRequest;
 import com.google.cloud.vmmigration.v1.ListCutoverJobsResponse;
 import com.google.cloud.vmmigration.v1.ListDatacenterConnectorsRequest;
 import com.google.cloud.vmmigration.v1.ListDatacenterConnectorsResponse;
+import com.google.cloud.vmmigration.v1.ListDiskMigrationJobsRequest;
+import com.google.cloud.vmmigration.v1.ListDiskMigrationJobsResponse;
 import com.google.cloud.vmmigration.v1.ListGroupsRequest;
 import com.google.cloud.vmmigration.v1.ListGroupsResponse;
+import com.google.cloud.vmmigration.v1.ListImageImportJobsRequest;
+import com.google.cloud.vmmigration.v1.ListImageImportJobsResponse;
+import com.google.cloud.vmmigration.v1.ListImageImportsRequest;
+import com.google.cloud.vmmigration.v1.ListImageImportsResponse;
 import com.google.cloud.vmmigration.v1.ListMigratingVmsRequest;
 import com.google.cloud.vmmigration.v1.ListMigratingVmsResponse;
 import com.google.cloud.vmmigration.v1.ListReplicationCyclesRequest;
@@ -103,10 +131,13 @@ import com.google.cloud.vmmigration.v1.RemoveGroupMigrationResponse;
 import com.google.cloud.vmmigration.v1.ReplicationCycle;
 import com.google.cloud.vmmigration.v1.ResumeMigrationRequest;
 import com.google.cloud.vmmigration.v1.ResumeMigrationResponse;
+import com.google.cloud.vmmigration.v1.RunDiskMigrationJobRequest;
+import com.google.cloud.vmmigration.v1.RunDiskMigrationJobResponse;
 import com.google.cloud.vmmigration.v1.Source;
 import com.google.cloud.vmmigration.v1.StartMigrationRequest;
 import com.google.cloud.vmmigration.v1.StartMigrationResponse;
 import com.google.cloud.vmmigration.v1.TargetProject;
+import com.google.cloud.vmmigration.v1.UpdateDiskMigrationJobRequest;
 import com.google.cloud.vmmigration.v1.UpdateGroupRequest;
 import com.google.cloud.vmmigration.v1.UpdateMigratingVmRequest;
 import com.google.cloud.vmmigration.v1.UpdateSourceRequest;
@@ -190,6 +221,18 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                   ProtoUtils.marshaller(FetchInventoryRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FetchInventoryResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<FetchStorageInventoryRequest, FetchStorageInventoryResponse>
+      fetchStorageInventoryMethodDescriptor =
+          MethodDescriptor.<FetchStorageInventoryRequest, FetchStorageInventoryResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/FetchStorageInventory")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(FetchStorageInventoryRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(FetchStorageInventoryResponse.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
 
@@ -397,6 +440,17 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
               .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/FinalizeMigration")
               .setRequestMarshaller(
                   ProtoUtils.marshaller(FinalizeMigrationRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ExtendMigrationRequest, Operation>
+      extendMigrationMethodDescriptor =
+          MethodDescriptor.<ExtendMigrationRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/ExtendMigration")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ExtendMigrationRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
               .setSampledToLocalTracing(true)
               .build();
@@ -636,6 +690,163 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<ListImageImportsRequest, ListImageImportsResponse>
+      listImageImportsMethodDescriptor =
+          MethodDescriptor.<ListImageImportsRequest, ListImageImportsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/ListImageImports")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListImageImportsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListImageImportsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetImageImportRequest, ImageImport>
+      getImageImportMethodDescriptor =
+          MethodDescriptor.<GetImageImportRequest, ImageImport>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/GetImageImport")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetImageImportRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ImageImport.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateImageImportRequest, Operation>
+      createImageImportMethodDescriptor =
+          MethodDescriptor.<CreateImageImportRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/CreateImageImport")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateImageImportRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteImageImportRequest, Operation>
+      deleteImageImportMethodDescriptor =
+          MethodDescriptor.<DeleteImageImportRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/DeleteImageImport")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteImageImportRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListImageImportJobsRequest, ListImageImportJobsResponse>
+      listImageImportJobsMethodDescriptor =
+          MethodDescriptor.<ListImageImportJobsRequest, ListImageImportJobsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/ListImageImportJobs")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListImageImportJobsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListImageImportJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetImageImportJobRequest, ImageImportJob>
+      getImageImportJobMethodDescriptor =
+          MethodDescriptor.<GetImageImportJobRequest, ImageImportJob>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/GetImageImportJob")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetImageImportJobRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(ImageImportJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CancelImageImportJobRequest, Operation>
+      cancelImageImportJobMethodDescriptor =
+          MethodDescriptor.<CancelImageImportJobRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/CancelImageImportJob")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CancelImageImportJobRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CreateDiskMigrationJobRequest, Operation>
+      createDiskMigrationJobMethodDescriptor =
+          MethodDescriptor.<CreateDiskMigrationJobRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/CreateDiskMigrationJob")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateDiskMigrationJobRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<ListDiskMigrationJobsRequest, ListDiskMigrationJobsResponse>
+      listDiskMigrationJobsMethodDescriptor =
+          MethodDescriptor.<ListDiskMigrationJobsRequest, ListDiskMigrationJobsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/ListDiskMigrationJobs")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(ListDiskMigrationJobsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(ListDiskMigrationJobsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetDiskMigrationJobRequest, DiskMigrationJob>
+      getDiskMigrationJobMethodDescriptor =
+          MethodDescriptor.<GetDiskMigrationJobRequest, DiskMigrationJob>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/GetDiskMigrationJob")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(GetDiskMigrationJobRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(DiskMigrationJob.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<UpdateDiskMigrationJobRequest, Operation>
+      updateDiskMigrationJobMethodDescriptor =
+          MethodDescriptor.<UpdateDiskMigrationJobRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/UpdateDiskMigrationJob")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(UpdateDiskMigrationJobRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteDiskMigrationJobRequest, Operation>
+      deleteDiskMigrationJobMethodDescriptor =
+          MethodDescriptor.<DeleteDiskMigrationJobRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/DeleteDiskMigrationJob")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteDiskMigrationJobRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<RunDiskMigrationJobRequest, Operation>
+      runDiskMigrationJobMethodDescriptor =
+          MethodDescriptor.<RunDiskMigrationJobRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/RunDiskMigrationJob")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(RunDiskMigrationJobRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CancelDiskMigrationJobRequest, Operation>
+      cancelDiskMigrationJobMethodDescriptor =
+          MethodDescriptor.<CancelDiskMigrationJobRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.vmmigration.v1.VmMigration/CancelDiskMigrationJob")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CancelDiskMigrationJobRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -671,6 +882,10 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
   private final OperationCallable<DeleteSourceRequest, Empty, OperationMetadata>
       deleteSourceOperationCallable;
   private final UnaryCallable<FetchInventoryRequest, FetchInventoryResponse> fetchInventoryCallable;
+  private final UnaryCallable<FetchStorageInventoryRequest, FetchStorageInventoryResponse>
+      fetchStorageInventoryCallable;
+  private final UnaryCallable<FetchStorageInventoryRequest, FetchStorageInventoryPagedResponse>
+      fetchStorageInventoryPagedCallable;
   private final UnaryCallable<ListUtilizationReportsRequest, ListUtilizationReportsResponse>
       listUtilizationReportsCallable;
   private final UnaryCallable<ListUtilizationReportsRequest, ListUtilizationReportsPagedResponse>
@@ -734,6 +949,10 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
   private final OperationCallable<
           FinalizeMigrationRequest, FinalizeMigrationResponse, OperationMetadata>
       finalizeMigrationOperationCallable;
+  private final UnaryCallable<ExtendMigrationRequest, Operation> extendMigrationCallable;
+  private final OperationCallable<
+          ExtendMigrationRequest, ExtendMigrationResponse, OperationMetadata>
+      extendMigrationOperationCallable;
   private final UnaryCallable<CreateCloneJobRequest, Operation> createCloneJobCallable;
   private final OperationCallable<CreateCloneJobRequest, CloneJob, OperationMetadata>
       createCloneJobOperationCallable;
@@ -796,6 +1015,55 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
       listReplicationCyclesPagedCallable;
   private final UnaryCallable<GetReplicationCycleRequest, ReplicationCycle>
       getReplicationCycleCallable;
+  private final UnaryCallable<ListImageImportsRequest, ListImageImportsResponse>
+      listImageImportsCallable;
+  private final UnaryCallable<ListImageImportsRequest, ListImageImportsPagedResponse>
+      listImageImportsPagedCallable;
+  private final UnaryCallable<GetImageImportRequest, ImageImport> getImageImportCallable;
+  private final UnaryCallable<CreateImageImportRequest, Operation> createImageImportCallable;
+  private final OperationCallable<CreateImageImportRequest, ImageImport, OperationMetadata>
+      createImageImportOperationCallable;
+  private final UnaryCallable<DeleteImageImportRequest, Operation> deleteImageImportCallable;
+  private final OperationCallable<DeleteImageImportRequest, Empty, OperationMetadata>
+      deleteImageImportOperationCallable;
+  private final UnaryCallable<ListImageImportJobsRequest, ListImageImportJobsResponse>
+      listImageImportJobsCallable;
+  private final UnaryCallable<ListImageImportJobsRequest, ListImageImportJobsPagedResponse>
+      listImageImportJobsPagedCallable;
+  private final UnaryCallable<GetImageImportJobRequest, ImageImportJob> getImageImportJobCallable;
+  private final UnaryCallable<CancelImageImportJobRequest, Operation> cancelImageImportJobCallable;
+  private final OperationCallable<
+          CancelImageImportJobRequest, CancelImageImportJobResponse, OperationMetadata>
+      cancelImageImportJobOperationCallable;
+  private final UnaryCallable<CreateDiskMigrationJobRequest, Operation>
+      createDiskMigrationJobCallable;
+  private final OperationCallable<
+          CreateDiskMigrationJobRequest, DiskMigrationJob, OperationMetadata>
+      createDiskMigrationJobOperationCallable;
+  private final UnaryCallable<ListDiskMigrationJobsRequest, ListDiskMigrationJobsResponse>
+      listDiskMigrationJobsCallable;
+  private final UnaryCallable<ListDiskMigrationJobsRequest, ListDiskMigrationJobsPagedResponse>
+      listDiskMigrationJobsPagedCallable;
+  private final UnaryCallable<GetDiskMigrationJobRequest, DiskMigrationJob>
+      getDiskMigrationJobCallable;
+  private final UnaryCallable<UpdateDiskMigrationJobRequest, Operation>
+      updateDiskMigrationJobCallable;
+  private final OperationCallable<
+          UpdateDiskMigrationJobRequest, DiskMigrationJob, OperationMetadata>
+      updateDiskMigrationJobOperationCallable;
+  private final UnaryCallable<DeleteDiskMigrationJobRequest, Operation>
+      deleteDiskMigrationJobCallable;
+  private final OperationCallable<DeleteDiskMigrationJobRequest, Empty, OperationMetadata>
+      deleteDiskMigrationJobOperationCallable;
+  private final UnaryCallable<RunDiskMigrationJobRequest, Operation> runDiskMigrationJobCallable;
+  private final OperationCallable<
+          RunDiskMigrationJobRequest, RunDiskMigrationJobResponse, OperationMetadata>
+      runDiskMigrationJobOperationCallable;
+  private final UnaryCallable<CancelDiskMigrationJobRequest, Operation>
+      cancelDiskMigrationJobCallable;
+  private final OperationCallable<
+          CancelDiskMigrationJobRequest, CancelDiskMigrationJobResponse, OperationMetadata>
+      cancelDiskMigrationJobOperationCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -897,6 +1165,18 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
         fetchInventoryTransportSettings =
             GrpcCallSettings.<FetchInventoryRequest, FetchInventoryResponse>newBuilder()
                 .setMethodDescriptor(fetchInventoryMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("source", String.valueOf(request.getSource()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<FetchStorageInventoryRequest, FetchStorageInventoryResponse>
+        fetchStorageInventoryTransportSettings =
+            GrpcCallSettings
+                .<FetchStorageInventoryRequest, FetchStorageInventoryResponse>newBuilder()
+                .setMethodDescriptor(fetchStorageInventoryMethodDescriptor)
                 .setParamsExtractor(
                     request -> {
                       RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -1090,6 +1370,16 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
     GrpcCallSettings<FinalizeMigrationRequest, Operation> finalizeMigrationTransportSettings =
         GrpcCallSettings.<FinalizeMigrationRequest, Operation>newBuilder()
             .setMethodDescriptor(finalizeMigrationMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("migrating_vm", String.valueOf(request.getMigratingVm()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ExtendMigrationRequest, Operation> extendMigrationTransportSettings =
+        GrpcCallSettings.<ExtendMigrationRequest, Operation>newBuilder()
+            .setMethodDescriptor(extendMigrationMethodDescriptor)
             .setParamsExtractor(
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
@@ -1323,6 +1613,157 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
                       return builder.build();
                     })
                 .build();
+    GrpcCallSettings<ListImageImportsRequest, ListImageImportsResponse>
+        listImageImportsTransportSettings =
+            GrpcCallSettings.<ListImageImportsRequest, ListImageImportsResponse>newBuilder()
+                .setMethodDescriptor(listImageImportsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetImageImportRequest, ImageImport> getImageImportTransportSettings =
+        GrpcCallSettings.<GetImageImportRequest, ImageImport>newBuilder()
+            .setMethodDescriptor(getImageImportMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<CreateImageImportRequest, Operation> createImageImportTransportSettings =
+        GrpcCallSettings.<CreateImageImportRequest, Operation>newBuilder()
+            .setMethodDescriptor(createImageImportMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteImageImportRequest, Operation> deleteImageImportTransportSettings =
+        GrpcCallSettings.<DeleteImageImportRequest, Operation>newBuilder()
+            .setMethodDescriptor(deleteImageImportMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<ListImageImportJobsRequest, ListImageImportJobsResponse>
+        listImageImportJobsTransportSettings =
+            GrpcCallSettings.<ListImageImportJobsRequest, ListImageImportJobsResponse>newBuilder()
+                .setMethodDescriptor(listImageImportJobsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetImageImportJobRequest, ImageImportJob> getImageImportJobTransportSettings =
+        GrpcCallSettings.<GetImageImportJobRequest, ImageImportJob>newBuilder()
+            .setMethodDescriptor(getImageImportJobMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<CancelImageImportJobRequest, Operation> cancelImageImportJobTransportSettings =
+        GrpcCallSettings.<CancelImageImportJobRequest, Operation>newBuilder()
+            .setMethodDescriptor(cancelImageImportJobMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<CreateDiskMigrationJobRequest, Operation>
+        createDiskMigrationJobTransportSettings =
+            GrpcCallSettings.<CreateDiskMigrationJobRequest, Operation>newBuilder()
+                .setMethodDescriptor(createDiskMigrationJobMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<ListDiskMigrationJobsRequest, ListDiskMigrationJobsResponse>
+        listDiskMigrationJobsTransportSettings =
+            GrpcCallSettings
+                .<ListDiskMigrationJobsRequest, ListDiskMigrationJobsResponse>newBuilder()
+                .setMethodDescriptor(listDiskMigrationJobsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<GetDiskMigrationJobRequest, DiskMigrationJob>
+        getDiskMigrationJobTransportSettings =
+            GrpcCallSettings.<GetDiskMigrationJobRequest, DiskMigrationJob>newBuilder()
+                .setMethodDescriptor(getDiskMigrationJobMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<UpdateDiskMigrationJobRequest, Operation>
+        updateDiskMigrationJobTransportSettings =
+            GrpcCallSettings.<UpdateDiskMigrationJobRequest, Operation>newBuilder()
+                .setMethodDescriptor(updateDiskMigrationJobMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "disk_migration_job.name",
+                          String.valueOf(request.getDiskMigrationJob().getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<DeleteDiskMigrationJobRequest, Operation>
+        deleteDiskMigrationJobTransportSettings =
+            GrpcCallSettings.<DeleteDiskMigrationJobRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteDiskMigrationJobMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
+    GrpcCallSettings<RunDiskMigrationJobRequest, Operation> runDiskMigrationJobTransportSettings =
+        GrpcCallSettings.<RunDiskMigrationJobRequest, Operation>newBuilder()
+            .setMethodDescriptor(runDiskMigrationJobMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<CancelDiskMigrationJobRequest, Operation>
+        cancelDiskMigrationJobTransportSettings =
+            GrpcCallSettings.<CancelDiskMigrationJobRequest, Operation>newBuilder()
+                .setMethodDescriptor(cancelDiskMigrationJobMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -1383,6 +1824,16 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
     this.fetchInventoryCallable =
         callableFactory.createUnaryCallable(
             fetchInventoryTransportSettings, settings.fetchInventorySettings(), clientContext);
+    this.fetchStorageInventoryCallable =
+        callableFactory.createUnaryCallable(
+            fetchStorageInventoryTransportSettings,
+            settings.fetchStorageInventorySettings(),
+            clientContext);
+    this.fetchStorageInventoryPagedCallable =
+        callableFactory.createPagedCallable(
+            fetchStorageInventoryTransportSettings,
+            settings.fetchStorageInventorySettings(),
+            clientContext);
     this.listUtilizationReportsCallable =
         callableFactory.createUnaryCallable(
             listUtilizationReportsTransportSettings,
@@ -1544,6 +1995,15 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
         callableFactory.createOperationCallable(
             finalizeMigrationTransportSettings,
             settings.finalizeMigrationOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.extendMigrationCallable =
+        callableFactory.createUnaryCallable(
+            extendMigrationTransportSettings, settings.extendMigrationSettings(), clientContext);
+    this.extendMigrationOperationCallable =
+        callableFactory.createOperationCallable(
+            extendMigrationTransportSettings,
+            settings.extendMigrationOperationSettings(),
             clientContext,
             operationsStub);
     this.createCloneJobCallable =
@@ -1719,6 +2179,133 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
             getReplicationCycleTransportSettings,
             settings.getReplicationCycleSettings(),
             clientContext);
+    this.listImageImportsCallable =
+        callableFactory.createUnaryCallable(
+            listImageImportsTransportSettings, settings.listImageImportsSettings(), clientContext);
+    this.listImageImportsPagedCallable =
+        callableFactory.createPagedCallable(
+            listImageImportsTransportSettings, settings.listImageImportsSettings(), clientContext);
+    this.getImageImportCallable =
+        callableFactory.createUnaryCallable(
+            getImageImportTransportSettings, settings.getImageImportSettings(), clientContext);
+    this.createImageImportCallable =
+        callableFactory.createUnaryCallable(
+            createImageImportTransportSettings,
+            settings.createImageImportSettings(),
+            clientContext);
+    this.createImageImportOperationCallable =
+        callableFactory.createOperationCallable(
+            createImageImportTransportSettings,
+            settings.createImageImportOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteImageImportCallable =
+        callableFactory.createUnaryCallable(
+            deleteImageImportTransportSettings,
+            settings.deleteImageImportSettings(),
+            clientContext);
+    this.deleteImageImportOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteImageImportTransportSettings,
+            settings.deleteImageImportOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.listImageImportJobsCallable =
+        callableFactory.createUnaryCallable(
+            listImageImportJobsTransportSettings,
+            settings.listImageImportJobsSettings(),
+            clientContext);
+    this.listImageImportJobsPagedCallable =
+        callableFactory.createPagedCallable(
+            listImageImportJobsTransportSettings,
+            settings.listImageImportJobsSettings(),
+            clientContext);
+    this.getImageImportJobCallable =
+        callableFactory.createUnaryCallable(
+            getImageImportJobTransportSettings,
+            settings.getImageImportJobSettings(),
+            clientContext);
+    this.cancelImageImportJobCallable =
+        callableFactory.createUnaryCallable(
+            cancelImageImportJobTransportSettings,
+            settings.cancelImageImportJobSettings(),
+            clientContext);
+    this.cancelImageImportJobOperationCallable =
+        callableFactory.createOperationCallable(
+            cancelImageImportJobTransportSettings,
+            settings.cancelImageImportJobOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.createDiskMigrationJobCallable =
+        callableFactory.createUnaryCallable(
+            createDiskMigrationJobTransportSettings,
+            settings.createDiskMigrationJobSettings(),
+            clientContext);
+    this.createDiskMigrationJobOperationCallable =
+        callableFactory.createOperationCallable(
+            createDiskMigrationJobTransportSettings,
+            settings.createDiskMigrationJobOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.listDiskMigrationJobsCallable =
+        callableFactory.createUnaryCallable(
+            listDiskMigrationJobsTransportSettings,
+            settings.listDiskMigrationJobsSettings(),
+            clientContext);
+    this.listDiskMigrationJobsPagedCallable =
+        callableFactory.createPagedCallable(
+            listDiskMigrationJobsTransportSettings,
+            settings.listDiskMigrationJobsSettings(),
+            clientContext);
+    this.getDiskMigrationJobCallable =
+        callableFactory.createUnaryCallable(
+            getDiskMigrationJobTransportSettings,
+            settings.getDiskMigrationJobSettings(),
+            clientContext);
+    this.updateDiskMigrationJobCallable =
+        callableFactory.createUnaryCallable(
+            updateDiskMigrationJobTransportSettings,
+            settings.updateDiskMigrationJobSettings(),
+            clientContext);
+    this.updateDiskMigrationJobOperationCallable =
+        callableFactory.createOperationCallable(
+            updateDiskMigrationJobTransportSettings,
+            settings.updateDiskMigrationJobOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.deleteDiskMigrationJobCallable =
+        callableFactory.createUnaryCallable(
+            deleteDiskMigrationJobTransportSettings,
+            settings.deleteDiskMigrationJobSettings(),
+            clientContext);
+    this.deleteDiskMigrationJobOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteDiskMigrationJobTransportSettings,
+            settings.deleteDiskMigrationJobOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.runDiskMigrationJobCallable =
+        callableFactory.createUnaryCallable(
+            runDiskMigrationJobTransportSettings,
+            settings.runDiskMigrationJobSettings(),
+            clientContext);
+    this.runDiskMigrationJobOperationCallable =
+        callableFactory.createOperationCallable(
+            runDiskMigrationJobTransportSettings,
+            settings.runDiskMigrationJobOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.cancelDiskMigrationJobCallable =
+        callableFactory.createUnaryCallable(
+            cancelDiskMigrationJobTransportSettings,
+            settings.cancelDiskMigrationJobSettings(),
+            clientContext);
+    this.cancelDiskMigrationJobOperationCallable =
+        callableFactory.createOperationCallable(
+            cancelDiskMigrationJobTransportSettings,
+            settings.cancelDiskMigrationJobOperationSettings(),
+            clientContext,
+            operationsStub);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1788,6 +2375,18 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
   @Override
   public UnaryCallable<FetchInventoryRequest, FetchInventoryResponse> fetchInventoryCallable() {
     return fetchInventoryCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchStorageInventoryRequest, FetchStorageInventoryResponse>
+      fetchStorageInventoryCallable() {
+    return fetchStorageInventoryCallable;
+  }
+
+  @Override
+  public UnaryCallable<FetchStorageInventoryRequest, FetchStorageInventoryPagedResponse>
+      fetchStorageInventoryPagedCallable() {
+    return fetchStorageInventoryPagedCallable;
   }
 
   @Override
@@ -1977,6 +2576,17 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
   public OperationCallable<FinalizeMigrationRequest, FinalizeMigrationResponse, OperationMetadata>
       finalizeMigrationOperationCallable() {
     return finalizeMigrationOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ExtendMigrationRequest, Operation> extendMigrationCallable() {
+    return extendMigrationCallable;
+  }
+
+  @Override
+  public OperationCallable<ExtendMigrationRequest, ExtendMigrationResponse, OperationMetadata>
+      extendMigrationOperationCallable() {
+    return extendMigrationOperationCallable;
   }
 
   @Override
@@ -2191,6 +2801,148 @@ public class GrpcVmMigrationStub extends VmMigrationStub {
   @Override
   public UnaryCallable<GetReplicationCycleRequest, ReplicationCycle> getReplicationCycleCallable() {
     return getReplicationCycleCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListImageImportsRequest, ListImageImportsResponse>
+      listImageImportsCallable() {
+    return listImageImportsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListImageImportsRequest, ListImageImportsPagedResponse>
+      listImageImportsPagedCallable() {
+    return listImageImportsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetImageImportRequest, ImageImport> getImageImportCallable() {
+    return getImageImportCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateImageImportRequest, Operation> createImageImportCallable() {
+    return createImageImportCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateImageImportRequest, ImageImport, OperationMetadata>
+      createImageImportOperationCallable() {
+    return createImageImportOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteImageImportRequest, Operation> deleteImageImportCallable() {
+    return deleteImageImportCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteImageImportRequest, Empty, OperationMetadata>
+      deleteImageImportOperationCallable() {
+    return deleteImageImportOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListImageImportJobsRequest, ListImageImportJobsResponse>
+      listImageImportJobsCallable() {
+    return listImageImportJobsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListImageImportJobsRequest, ListImageImportJobsPagedResponse>
+      listImageImportJobsPagedCallable() {
+    return listImageImportJobsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetImageImportJobRequest, ImageImportJob> getImageImportJobCallable() {
+    return getImageImportJobCallable;
+  }
+
+  @Override
+  public UnaryCallable<CancelImageImportJobRequest, Operation> cancelImageImportJobCallable() {
+    return cancelImageImportJobCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          CancelImageImportJobRequest, CancelImageImportJobResponse, OperationMetadata>
+      cancelImageImportJobOperationCallable() {
+    return cancelImageImportJobOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateDiskMigrationJobRequest, Operation> createDiskMigrationJobCallable() {
+    return createDiskMigrationJobCallable;
+  }
+
+  @Override
+  public OperationCallable<CreateDiskMigrationJobRequest, DiskMigrationJob, OperationMetadata>
+      createDiskMigrationJobOperationCallable() {
+    return createDiskMigrationJobOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDiskMigrationJobsRequest, ListDiskMigrationJobsResponse>
+      listDiskMigrationJobsCallable() {
+    return listDiskMigrationJobsCallable;
+  }
+
+  @Override
+  public UnaryCallable<ListDiskMigrationJobsRequest, ListDiskMigrationJobsPagedResponse>
+      listDiskMigrationJobsPagedCallable() {
+    return listDiskMigrationJobsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetDiskMigrationJobRequest, DiskMigrationJob> getDiskMigrationJobCallable() {
+    return getDiskMigrationJobCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateDiskMigrationJobRequest, Operation> updateDiskMigrationJobCallable() {
+    return updateDiskMigrationJobCallable;
+  }
+
+  @Override
+  public OperationCallable<UpdateDiskMigrationJobRequest, DiskMigrationJob, OperationMetadata>
+      updateDiskMigrationJobOperationCallable() {
+    return updateDiskMigrationJobOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteDiskMigrationJobRequest, Operation> deleteDiskMigrationJobCallable() {
+    return deleteDiskMigrationJobCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteDiskMigrationJobRequest, Empty, OperationMetadata>
+      deleteDiskMigrationJobOperationCallable() {
+    return deleteDiskMigrationJobOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<RunDiskMigrationJobRequest, Operation> runDiskMigrationJobCallable() {
+    return runDiskMigrationJobCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          RunDiskMigrationJobRequest, RunDiskMigrationJobResponse, OperationMetadata>
+      runDiskMigrationJobOperationCallable() {
+    return runDiskMigrationJobOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<CancelDiskMigrationJobRequest, Operation> cancelDiskMigrationJobCallable() {
+    return cancelDiskMigrationJobCallable;
+  }
+
+  @Override
+  public OperationCallable<
+          CancelDiskMigrationJobRequest, CancelDiskMigrationJobResponse, OperationMetadata>
+      cancelDiskMigrationJobOperationCallable() {
+    return cancelDiskMigrationJobOperationCallable;
   }
 
   @Override

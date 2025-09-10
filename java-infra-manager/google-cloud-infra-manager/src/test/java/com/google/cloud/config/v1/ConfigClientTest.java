@@ -224,6 +224,7 @@ public class ConfigClientTest {
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     mockConfig.addResponse(expectedResponse);
 
@@ -280,6 +281,7 @@ public class ConfigClientTest {
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     mockConfig.addResponse(expectedResponse);
 
@@ -336,6 +338,7 @@ public class ConfigClientTest {
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -407,6 +410,7 @@ public class ConfigClientTest {
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -478,6 +482,7 @@ public class ConfigClientTest {
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -545,6 +550,7 @@ public class ConfigClientTest {
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -609,6 +615,7 @@ public class ConfigClientTest {
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -759,6 +766,7 @@ public class ConfigClientTest {
             .setTfVersion("tfVersion182968838")
             .setQuotaValidationResults("quotaValidationResults-1396407899")
             .setQuotaValidation(QuotaValidation.forNumber(0))
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     mockConfig.addResponse(expectedResponse);
 
@@ -813,6 +821,7 @@ public class ConfigClientTest {
             .setTfVersion("tfVersion182968838")
             .setQuotaValidationResults("quotaValidationResults-1396407899")
             .setQuotaValidation(QuotaValidation.forNumber(0))
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     mockConfig.addResponse(expectedResponse);
 
@@ -1280,6 +1289,7 @@ public class ConfigClientTest {
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1344,6 +1354,7 @@ public class ConfigClientTest {
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1408,6 +1419,7 @@ public class ConfigClientTest {
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1475,6 +1487,7 @@ public class ConfigClientTest {
             .setTfVersion("tfVersion182968838")
             .setQuotaValidation(QuotaValidation.forNumber(0))
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1625,6 +1638,7 @@ public class ConfigClientTest {
             .setTfVersion("tfVersion182968838")
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1689,6 +1703,7 @@ public class ConfigClientTest {
             .setTfVersion("tfVersion182968838")
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1753,6 +1768,7 @@ public class ConfigClientTest {
             .setTfVersion("tfVersion182968838")
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     mockConfig.addResponse(expectedResponse);
 
@@ -1806,6 +1822,7 @@ public class ConfigClientTest {
             .setTfVersion("tfVersion182968838")
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     mockConfig.addResponse(expectedResponse);
 
@@ -1947,6 +1964,7 @@ public class ConfigClientTest {
             .setTfVersion("tfVersion182968838")
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -2008,6 +2026,7 @@ public class ConfigClientTest {
             .setTfVersion("tfVersion182968838")
             .setTfVersionConstraint("tfVersionConstraint-1530231677")
             .putAllAnnotations(new HashMap<String, String>())
+            .setProviderConfig(ProviderConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()

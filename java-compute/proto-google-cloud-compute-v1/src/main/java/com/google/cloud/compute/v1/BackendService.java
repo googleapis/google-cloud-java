@@ -932,6 +932,16 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Per-instance weighted Load Balancing via health check reported weights. In internal passthrough network load balancing, it is weighted rendezvous hashing. This option is only supported in internal passthrough network load balancing.
+     * </pre>
+     *
+     * <code>WEIGHTED_GCP_RENDEZVOUS = 82501640;</code>
+     */
+    WEIGHTED_GCP_RENDEZVOUS(82501640),
+    /**
+     *
+     *
+     * <pre>
      * Per-instance weighted Load Balancing via health check reported weights. If set, the Backend Service must configure a non legacy HTTP-based Health Check, and health check replies are expected to contain non-standard HTTP response header field X-Load-Balancing-Endpoint-Weight to specify the per-instance weights. If set, Load Balancing is weighted based on the per-instance weights reported in the last processed health check replies, as long as every instance either reported a valid weight or had UNAVAILABLE_WEIGHT. Otherwise, Load Balancing remains equal-weight. This option is only supported in Network Load Balancing.
      * </pre>
      *
@@ -1035,6 +1045,17 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * Per-instance weighted Load Balancing via health check reported weights. In internal passthrough network load balancing, it is weighted rendezvous hashing. This option is only supported in internal passthrough network load balancing.
+     * </pre>
+     *
+     * <code>WEIGHTED_GCP_RENDEZVOUS = 82501640;</code>
+     */
+    public static final int WEIGHTED_GCP_RENDEZVOUS_VALUE = 82501640;
+
+    /**
+     *
+     *
+     * <pre>
      * Per-instance weighted Load Balancing via health check reported weights. If set, the Backend Service must configure a non legacy HTTP-based Health Check, and health check replies are expected to contain non-standard HTTP response header field X-Load-Balancing-Endpoint-Weight to specify the per-instance weights. If set, Load Balancing is weighted based on the per-instance weights reported in the last processed health check replies, as long as every instance either reported a valid weight or had UNAVAILABLE_WEIGHT. Otherwise, Load Balancing remains equal-weight. This option is only supported in Network Load Balancing.
      * </pre>
      *
@@ -1093,6 +1114,8 @@ public final class BackendService extends com.google.protobuf.GeneratedMessageV3
           return RING_HASH;
         case 153895801:
           return ROUND_ROBIN;
+        case 82501640:
+          return WEIGHTED_GCP_RENDEZVOUS;
         case 254930962:
           return WEIGHTED_MAGLEV;
         case 5584977:

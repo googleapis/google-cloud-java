@@ -16,10 +16,14 @@
 
 package com.google.cloud.vmmigration.v1.stub;
 
+import static com.google.cloud.vmmigration.v1.VmMigrationClient.FetchStorageInventoryPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListCloneJobsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListCutoverJobsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListDatacenterConnectorsPagedResponse;
+import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListDiskMigrationJobsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListGroupsPagedResponse;
+import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListImageImportJobsPagedResponse;
+import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListImageImportsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListLocationsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListMigratingVmsPagedResponse;
 import static com.google.cloud.vmmigration.v1.VmMigrationClient.ListReplicationCyclesPagedResponse;
@@ -40,11 +44,17 @@ import com.google.cloud.vmmigration.v1.CancelCloneJobRequest;
 import com.google.cloud.vmmigration.v1.CancelCloneJobResponse;
 import com.google.cloud.vmmigration.v1.CancelCutoverJobRequest;
 import com.google.cloud.vmmigration.v1.CancelCutoverJobResponse;
+import com.google.cloud.vmmigration.v1.CancelDiskMigrationJobRequest;
+import com.google.cloud.vmmigration.v1.CancelDiskMigrationJobResponse;
+import com.google.cloud.vmmigration.v1.CancelImageImportJobRequest;
+import com.google.cloud.vmmigration.v1.CancelImageImportJobResponse;
 import com.google.cloud.vmmigration.v1.CloneJob;
 import com.google.cloud.vmmigration.v1.CreateCloneJobRequest;
 import com.google.cloud.vmmigration.v1.CreateCutoverJobRequest;
 import com.google.cloud.vmmigration.v1.CreateDatacenterConnectorRequest;
+import com.google.cloud.vmmigration.v1.CreateDiskMigrationJobRequest;
 import com.google.cloud.vmmigration.v1.CreateGroupRequest;
+import com.google.cloud.vmmigration.v1.CreateImageImportRequest;
 import com.google.cloud.vmmigration.v1.CreateMigratingVmRequest;
 import com.google.cloud.vmmigration.v1.CreateSourceRequest;
 import com.google.cloud.vmmigration.v1.CreateTargetProjectRequest;
@@ -52,33 +62,51 @@ import com.google.cloud.vmmigration.v1.CreateUtilizationReportRequest;
 import com.google.cloud.vmmigration.v1.CutoverJob;
 import com.google.cloud.vmmigration.v1.DatacenterConnector;
 import com.google.cloud.vmmigration.v1.DeleteDatacenterConnectorRequest;
+import com.google.cloud.vmmigration.v1.DeleteDiskMigrationJobRequest;
 import com.google.cloud.vmmigration.v1.DeleteGroupRequest;
+import com.google.cloud.vmmigration.v1.DeleteImageImportRequest;
 import com.google.cloud.vmmigration.v1.DeleteMigratingVmRequest;
 import com.google.cloud.vmmigration.v1.DeleteSourceRequest;
 import com.google.cloud.vmmigration.v1.DeleteTargetProjectRequest;
 import com.google.cloud.vmmigration.v1.DeleteUtilizationReportRequest;
+import com.google.cloud.vmmigration.v1.DiskMigrationJob;
+import com.google.cloud.vmmigration.v1.ExtendMigrationRequest;
+import com.google.cloud.vmmigration.v1.ExtendMigrationResponse;
 import com.google.cloud.vmmigration.v1.FetchInventoryRequest;
 import com.google.cloud.vmmigration.v1.FetchInventoryResponse;
+import com.google.cloud.vmmigration.v1.FetchStorageInventoryRequest;
+import com.google.cloud.vmmigration.v1.FetchStorageInventoryResponse;
 import com.google.cloud.vmmigration.v1.FinalizeMigrationRequest;
 import com.google.cloud.vmmigration.v1.FinalizeMigrationResponse;
 import com.google.cloud.vmmigration.v1.GetCloneJobRequest;
 import com.google.cloud.vmmigration.v1.GetCutoverJobRequest;
 import com.google.cloud.vmmigration.v1.GetDatacenterConnectorRequest;
+import com.google.cloud.vmmigration.v1.GetDiskMigrationJobRequest;
 import com.google.cloud.vmmigration.v1.GetGroupRequest;
+import com.google.cloud.vmmigration.v1.GetImageImportJobRequest;
+import com.google.cloud.vmmigration.v1.GetImageImportRequest;
 import com.google.cloud.vmmigration.v1.GetMigratingVmRequest;
 import com.google.cloud.vmmigration.v1.GetReplicationCycleRequest;
 import com.google.cloud.vmmigration.v1.GetSourceRequest;
 import com.google.cloud.vmmigration.v1.GetTargetProjectRequest;
 import com.google.cloud.vmmigration.v1.GetUtilizationReportRequest;
 import com.google.cloud.vmmigration.v1.Group;
+import com.google.cloud.vmmigration.v1.ImageImport;
+import com.google.cloud.vmmigration.v1.ImageImportJob;
 import com.google.cloud.vmmigration.v1.ListCloneJobsRequest;
 import com.google.cloud.vmmigration.v1.ListCloneJobsResponse;
 import com.google.cloud.vmmigration.v1.ListCutoverJobsRequest;
 import com.google.cloud.vmmigration.v1.ListCutoverJobsResponse;
 import com.google.cloud.vmmigration.v1.ListDatacenterConnectorsRequest;
 import com.google.cloud.vmmigration.v1.ListDatacenterConnectorsResponse;
+import com.google.cloud.vmmigration.v1.ListDiskMigrationJobsRequest;
+import com.google.cloud.vmmigration.v1.ListDiskMigrationJobsResponse;
 import com.google.cloud.vmmigration.v1.ListGroupsRequest;
 import com.google.cloud.vmmigration.v1.ListGroupsResponse;
+import com.google.cloud.vmmigration.v1.ListImageImportJobsRequest;
+import com.google.cloud.vmmigration.v1.ListImageImportJobsResponse;
+import com.google.cloud.vmmigration.v1.ListImageImportsRequest;
+import com.google.cloud.vmmigration.v1.ListImageImportsResponse;
 import com.google.cloud.vmmigration.v1.ListMigratingVmsRequest;
 import com.google.cloud.vmmigration.v1.ListMigratingVmsResponse;
 import com.google.cloud.vmmigration.v1.ListReplicationCyclesRequest;
@@ -98,10 +126,13 @@ import com.google.cloud.vmmigration.v1.RemoveGroupMigrationResponse;
 import com.google.cloud.vmmigration.v1.ReplicationCycle;
 import com.google.cloud.vmmigration.v1.ResumeMigrationRequest;
 import com.google.cloud.vmmigration.v1.ResumeMigrationResponse;
+import com.google.cloud.vmmigration.v1.RunDiskMigrationJobRequest;
+import com.google.cloud.vmmigration.v1.RunDiskMigrationJobResponse;
 import com.google.cloud.vmmigration.v1.Source;
 import com.google.cloud.vmmigration.v1.StartMigrationRequest;
 import com.google.cloud.vmmigration.v1.StartMigrationResponse;
 import com.google.cloud.vmmigration.v1.TargetProject;
+import com.google.cloud.vmmigration.v1.UpdateDiskMigrationJobRequest;
 import com.google.cloud.vmmigration.v1.UpdateGroupRequest;
 import com.google.cloud.vmmigration.v1.UpdateMigratingVmRequest;
 import com.google.cloud.vmmigration.v1.UpdateSourceRequest;
@@ -172,6 +203,17 @@ public abstract class VmMigrationStub implements BackgroundResource {
 
   public UnaryCallable<FetchInventoryRequest, FetchInventoryResponse> fetchInventoryCallable() {
     throw new UnsupportedOperationException("Not implemented: fetchInventoryCallable()");
+  }
+
+  public UnaryCallable<FetchStorageInventoryRequest, FetchStorageInventoryPagedResponse>
+      fetchStorageInventoryPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: fetchStorageInventoryPagedCallable()");
+  }
+
+  public UnaryCallable<FetchStorageInventoryRequest, FetchStorageInventoryResponse>
+      fetchStorageInventoryCallable() {
+    throw new UnsupportedOperationException("Not implemented: fetchStorageInventoryCallable()");
   }
 
   public UnaryCallable<ListUtilizationReportsRequest, ListUtilizationReportsPagedResponse>
@@ -338,6 +380,15 @@ public abstract class VmMigrationStub implements BackgroundResource {
 
   public UnaryCallable<FinalizeMigrationRequest, Operation> finalizeMigrationCallable() {
     throw new UnsupportedOperationException("Not implemented: finalizeMigrationCallable()");
+  }
+
+  public OperationCallable<ExtendMigrationRequest, ExtendMigrationResponse, OperationMetadata>
+      extendMigrationOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: extendMigrationOperationCallable()");
+  }
+
+  public UnaryCallable<ExtendMigrationRequest, Operation> extendMigrationCallable() {
+    throw new UnsupportedOperationException("Not implemented: extendMigrationCallable()");
   }
 
   public OperationCallable<CreateCloneJobRequest, CloneJob, OperationMetadata>
@@ -519,6 +570,132 @@ public abstract class VmMigrationStub implements BackgroundResource {
 
   public UnaryCallable<GetReplicationCycleRequest, ReplicationCycle> getReplicationCycleCallable() {
     throw new UnsupportedOperationException("Not implemented: getReplicationCycleCallable()");
+  }
+
+  public UnaryCallable<ListImageImportsRequest, ListImageImportsPagedResponse>
+      listImageImportsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listImageImportsPagedCallable()");
+  }
+
+  public UnaryCallable<ListImageImportsRequest, ListImageImportsResponse>
+      listImageImportsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listImageImportsCallable()");
+  }
+
+  public UnaryCallable<GetImageImportRequest, ImageImport> getImageImportCallable() {
+    throw new UnsupportedOperationException("Not implemented: getImageImportCallable()");
+  }
+
+  public OperationCallable<CreateImageImportRequest, ImageImport, OperationMetadata>
+      createImageImportOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createImageImportOperationCallable()");
+  }
+
+  public UnaryCallable<CreateImageImportRequest, Operation> createImageImportCallable() {
+    throw new UnsupportedOperationException("Not implemented: createImageImportCallable()");
+  }
+
+  public OperationCallable<DeleteImageImportRequest, Empty, OperationMetadata>
+      deleteImageImportOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteImageImportOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteImageImportRequest, Operation> deleteImageImportCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteImageImportCallable()");
+  }
+
+  public UnaryCallable<ListImageImportJobsRequest, ListImageImportJobsPagedResponse>
+      listImageImportJobsPagedCallable() {
+    throw new UnsupportedOperationException("Not implemented: listImageImportJobsPagedCallable()");
+  }
+
+  public UnaryCallable<ListImageImportJobsRequest, ListImageImportJobsResponse>
+      listImageImportJobsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listImageImportJobsCallable()");
+  }
+
+  public UnaryCallable<GetImageImportJobRequest, ImageImportJob> getImageImportJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: getImageImportJobCallable()");
+  }
+
+  public OperationCallable<
+          CancelImageImportJobRequest, CancelImageImportJobResponse, OperationMetadata>
+      cancelImageImportJobOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: cancelImageImportJobOperationCallable()");
+  }
+
+  public UnaryCallable<CancelImageImportJobRequest, Operation> cancelImageImportJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: cancelImageImportJobCallable()");
+  }
+
+  public OperationCallable<CreateDiskMigrationJobRequest, DiskMigrationJob, OperationMetadata>
+      createDiskMigrationJobOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: createDiskMigrationJobOperationCallable()");
+  }
+
+  public UnaryCallable<CreateDiskMigrationJobRequest, Operation> createDiskMigrationJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: createDiskMigrationJobCallable()");
+  }
+
+  public UnaryCallable<ListDiskMigrationJobsRequest, ListDiskMigrationJobsPagedResponse>
+      listDiskMigrationJobsPagedCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: listDiskMigrationJobsPagedCallable()");
+  }
+
+  public UnaryCallable<ListDiskMigrationJobsRequest, ListDiskMigrationJobsResponse>
+      listDiskMigrationJobsCallable() {
+    throw new UnsupportedOperationException("Not implemented: listDiskMigrationJobsCallable()");
+  }
+
+  public UnaryCallable<GetDiskMigrationJobRequest, DiskMigrationJob> getDiskMigrationJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: getDiskMigrationJobCallable()");
+  }
+
+  public OperationCallable<UpdateDiskMigrationJobRequest, DiskMigrationJob, OperationMetadata>
+      updateDiskMigrationJobOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: updateDiskMigrationJobOperationCallable()");
+  }
+
+  public UnaryCallable<UpdateDiskMigrationJobRequest, Operation> updateDiskMigrationJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateDiskMigrationJobCallable()");
+  }
+
+  public OperationCallable<DeleteDiskMigrationJobRequest, Empty, OperationMetadata>
+      deleteDiskMigrationJobOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: deleteDiskMigrationJobOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteDiskMigrationJobRequest, Operation> deleteDiskMigrationJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteDiskMigrationJobCallable()");
+  }
+
+  public OperationCallable<
+          RunDiskMigrationJobRequest, RunDiskMigrationJobResponse, OperationMetadata>
+      runDiskMigrationJobOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: runDiskMigrationJobOperationCallable()");
+  }
+
+  public UnaryCallable<RunDiskMigrationJobRequest, Operation> runDiskMigrationJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: runDiskMigrationJobCallable()");
+  }
+
+  public OperationCallable<
+          CancelDiskMigrationJobRequest, CancelDiskMigrationJobResponse, OperationMetadata>
+      cancelDiskMigrationJobOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: cancelDiskMigrationJobOperationCallable()");
+  }
+
+  public UnaryCallable<CancelDiskMigrationJobRequest, Operation> cancelDiskMigrationJobCallable() {
+    throw new UnsupportedOperationException("Not implemented: cancelDiskMigrationJobCallable()");
   }
 
   public UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>

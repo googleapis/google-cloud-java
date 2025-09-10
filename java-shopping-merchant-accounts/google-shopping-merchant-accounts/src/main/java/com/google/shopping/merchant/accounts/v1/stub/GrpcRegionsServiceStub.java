@@ -27,6 +27,11 @@ import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.longrunning.stub.GrpcOperationsStub;
 import com.google.protobuf.Empty;
+import com.google.shopping.merchant.accounts.v1.BatchCreateRegionsRequest;
+import com.google.shopping.merchant.accounts.v1.BatchCreateRegionsResponse;
+import com.google.shopping.merchant.accounts.v1.BatchDeleteRegionsRequest;
+import com.google.shopping.merchant.accounts.v1.BatchUpdateRegionsRequest;
+import com.google.shopping.merchant.accounts.v1.BatchUpdateRegionsResponse;
 import com.google.shopping.merchant.accounts.v1.CreateRegionRequest;
 import com.google.shopping.merchant.accounts.v1.DeleteRegionRequest;
 import com.google.shopping.merchant.accounts.v1.GetRegionRequest;
@@ -66,6 +71,19 @@ public class GrpcRegionsServiceStub extends RegionsServiceStub {
           .setSampledToLocalTracing(true)
           .build();
 
+  private static final MethodDescriptor<BatchCreateRegionsRequest, BatchCreateRegionsResponse>
+      batchCreateRegionsMethodDescriptor =
+          MethodDescriptor.<BatchCreateRegionsRequest, BatchCreateRegionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.shopping.merchant.accounts.v1.RegionsService/BatchCreateRegions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BatchCreateRegionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(BatchCreateRegionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<UpdateRegionRequest, Region> updateRegionMethodDescriptor =
       MethodDescriptor.<UpdateRegionRequest, Region>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -75,6 +93,19 @@ public class GrpcRegionsServiceStub extends RegionsServiceStub {
           .setSampledToLocalTracing(true)
           .build();
 
+  private static final MethodDescriptor<BatchUpdateRegionsRequest, BatchUpdateRegionsResponse>
+      batchUpdateRegionsMethodDescriptor =
+          MethodDescriptor.<BatchUpdateRegionsRequest, BatchUpdateRegionsResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.shopping.merchant.accounts.v1.RegionsService/BatchUpdateRegions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BatchUpdateRegionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(BatchUpdateRegionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<DeleteRegionRequest, Empty> deleteRegionMethodDescriptor =
       MethodDescriptor.<DeleteRegionRequest, Empty>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -83,6 +114,18 @@ public class GrpcRegionsServiceStub extends RegionsServiceStub {
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
           .setSampledToLocalTracing(true)
           .build();
+
+  private static final MethodDescriptor<BatchDeleteRegionsRequest, Empty>
+      batchDeleteRegionsMethodDescriptor =
+          MethodDescriptor.<BatchDeleteRegionsRequest, Empty>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.shopping.merchant.accounts.v1.RegionsService/BatchDeleteRegions")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(BatchDeleteRegionsRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
 
   private static final MethodDescriptor<ListRegionsRequest, ListRegionsResponse>
       listRegionsMethodDescriptor =
@@ -97,8 +140,13 @@ public class GrpcRegionsServiceStub extends RegionsServiceStub {
 
   private final UnaryCallable<GetRegionRequest, Region> getRegionCallable;
   private final UnaryCallable<CreateRegionRequest, Region> createRegionCallable;
+  private final UnaryCallable<BatchCreateRegionsRequest, BatchCreateRegionsResponse>
+      batchCreateRegionsCallable;
   private final UnaryCallable<UpdateRegionRequest, Region> updateRegionCallable;
+  private final UnaryCallable<BatchUpdateRegionsRequest, BatchUpdateRegionsResponse>
+      batchUpdateRegionsCallable;
   private final UnaryCallable<DeleteRegionRequest, Empty> deleteRegionCallable;
+  private final UnaryCallable<BatchDeleteRegionsRequest, Empty> batchDeleteRegionsCallable;
   private final UnaryCallable<ListRegionsRequest, ListRegionsResponse> listRegionsCallable;
   private final UnaryCallable<ListRegionsRequest, ListRegionsPagedResponse>
       listRegionsPagedCallable;
@@ -167,6 +215,17 @@ public class GrpcRegionsServiceStub extends RegionsServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<BatchCreateRegionsRequest, BatchCreateRegionsResponse>
+        batchCreateRegionsTransportSettings =
+            GrpcCallSettings.<BatchCreateRegionsRequest, BatchCreateRegionsResponse>newBuilder()
+                .setMethodDescriptor(batchCreateRegionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<UpdateRegionRequest, Region> updateRegionTransportSettings =
         GrpcCallSettings.<UpdateRegionRequest, Region>newBuilder()
             .setMethodDescriptor(updateRegionMethodDescriptor)
@@ -177,6 +236,17 @@ public class GrpcRegionsServiceStub extends RegionsServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<BatchUpdateRegionsRequest, BatchUpdateRegionsResponse>
+        batchUpdateRegionsTransportSettings =
+            GrpcCallSettings.<BatchUpdateRegionsRequest, BatchUpdateRegionsResponse>newBuilder()
+                .setMethodDescriptor(batchUpdateRegionsMethodDescriptor)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     GrpcCallSettings<DeleteRegionRequest, Empty> deleteRegionTransportSettings =
         GrpcCallSettings.<DeleteRegionRequest, Empty>newBuilder()
             .setMethodDescriptor(deleteRegionMethodDescriptor)
@@ -184,6 +254,16 @@ public class GrpcRegionsServiceStub extends RegionsServiceStub {
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<BatchDeleteRegionsRequest, Empty> batchDeleteRegionsTransportSettings =
+        GrpcCallSettings.<BatchDeleteRegionsRequest, Empty>newBuilder()
+            .setMethodDescriptor(batchDeleteRegionsMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
                   return builder.build();
                 })
             .build();
@@ -204,12 +284,27 @@ public class GrpcRegionsServiceStub extends RegionsServiceStub {
     this.createRegionCallable =
         callableFactory.createUnaryCallable(
             createRegionTransportSettings, settings.createRegionSettings(), clientContext);
+    this.batchCreateRegionsCallable =
+        callableFactory.createUnaryCallable(
+            batchCreateRegionsTransportSettings,
+            settings.batchCreateRegionsSettings(),
+            clientContext);
     this.updateRegionCallable =
         callableFactory.createUnaryCallable(
             updateRegionTransportSettings, settings.updateRegionSettings(), clientContext);
+    this.batchUpdateRegionsCallable =
+        callableFactory.createUnaryCallable(
+            batchUpdateRegionsTransportSettings,
+            settings.batchUpdateRegionsSettings(),
+            clientContext);
     this.deleteRegionCallable =
         callableFactory.createUnaryCallable(
             deleteRegionTransportSettings, settings.deleteRegionSettings(), clientContext);
+    this.batchDeleteRegionsCallable =
+        callableFactory.createUnaryCallable(
+            batchDeleteRegionsTransportSettings,
+            settings.batchDeleteRegionsSettings(),
+            clientContext);
     this.listRegionsCallable =
         callableFactory.createUnaryCallable(
             listRegionsTransportSettings, settings.listRegionsSettings(), clientContext);
@@ -236,13 +331,30 @@ public class GrpcRegionsServiceStub extends RegionsServiceStub {
   }
 
   @Override
+  public UnaryCallable<BatchCreateRegionsRequest, BatchCreateRegionsResponse>
+      batchCreateRegionsCallable() {
+    return batchCreateRegionsCallable;
+  }
+
+  @Override
   public UnaryCallable<UpdateRegionRequest, Region> updateRegionCallable() {
     return updateRegionCallable;
   }
 
   @Override
+  public UnaryCallable<BatchUpdateRegionsRequest, BatchUpdateRegionsResponse>
+      batchUpdateRegionsCallable() {
+    return batchUpdateRegionsCallable;
+  }
+
+  @Override
   public UnaryCallable<DeleteRegionRequest, Empty> deleteRegionCallable() {
     return deleteRegionCallable;
+  }
+
+  @Override
+  public UnaryCallable<BatchDeleteRegionsRequest, Empty> batchDeleteRegionsCallable() {
+    return batchDeleteRegionsCallable;
   }
 
   @Override

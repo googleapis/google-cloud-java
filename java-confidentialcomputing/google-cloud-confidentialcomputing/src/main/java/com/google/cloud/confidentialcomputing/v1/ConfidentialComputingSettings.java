@@ -105,6 +105,19 @@ public class ConfidentialComputingSettings extends ClientSettings<ConfidentialCo
     return ((ConfidentialComputingStubSettings) getStubSettings()).verifyAttestationSettings();
   }
 
+  /** Returns the object with the settings used for calls to verifyConfidentialSpace. */
+  public UnaryCallSettings<VerifyConfidentialSpaceRequest, VerifyConfidentialSpaceResponse>
+      verifyConfidentialSpaceSettings() {
+    return ((ConfidentialComputingStubSettings) getStubSettings())
+        .verifyConfidentialSpaceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to verifyConfidentialGke. */
+  public UnaryCallSettings<VerifyConfidentialGkeRequest, VerifyConfidentialGkeResponse>
+      verifyConfidentialGkeSettings() {
+    return ((ConfidentialComputingStubSettings) getStubSettings()).verifyConfidentialGkeSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -238,6 +251,19 @@ public class ConfidentialComputingSettings extends ClientSettings<ConfidentialCo
     public UnaryCallSettings.Builder<VerifyAttestationRequest, VerifyAttestationResponse>
         verifyAttestationSettings() {
       return getStubSettingsBuilder().verifyAttestationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to verifyConfidentialSpace. */
+    public UnaryCallSettings.Builder<
+            VerifyConfidentialSpaceRequest, VerifyConfidentialSpaceResponse>
+        verifyConfidentialSpaceSettings() {
+      return getStubSettingsBuilder().verifyConfidentialSpaceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to verifyConfidentialGke. */
+    public UnaryCallSettings.Builder<VerifyConfidentialGkeRequest, VerifyConfidentialGkeResponse>
+        verifyConfidentialGkeSettings() {
+      return getStubSettingsBuilder().verifyConfidentialGkeSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

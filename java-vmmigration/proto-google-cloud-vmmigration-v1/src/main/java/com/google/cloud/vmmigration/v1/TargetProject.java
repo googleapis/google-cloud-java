@@ -130,10 +130,10 @@ public final class TargetProject extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The target project ID (number) or project name.
+   * Required. The target project ID (number) or project name.
    * </pre>
    *
-   * <code>string project = 2;</code>
+   * <code>string project = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The project.
    */
@@ -154,10 +154,10 @@ public final class TargetProject extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The target project ID (number) or project name.
+   * Required. The target project ID (number) or project name.
    * </pre>
    *
-   * <code>string project = 2;</code>
+   * <code>string project = 2 [(.google.api.field_behavior) = REQUIRED];</code>
    *
    * @return The bytes for project.
    */
@@ -918,10 +918,10 @@ public final class TargetProject extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The target project ID (number) or project name.
+     * Required. The target project ID (number) or project name.
      * </pre>
      *
-     * <code>string project = 2;</code>
+     * <code>string project = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The project.
      */
@@ -941,10 +941,10 @@ public final class TargetProject extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The target project ID (number) or project name.
+     * Required. The target project ID (number) or project name.
      * </pre>
      *
-     * <code>string project = 2;</code>
+     * <code>string project = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return The bytes for project.
      */
@@ -964,10 +964,10 @@ public final class TargetProject extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The target project ID (number) or project name.
+     * Required. The target project ID (number) or project name.
      * </pre>
      *
-     * <code>string project = 2;</code>
+     * <code>string project = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The project to set.
      * @return This builder for chaining.
@@ -986,10 +986,10 @@ public final class TargetProject extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The target project ID (number) or project name.
+     * Required. The target project ID (number) or project name.
      * </pre>
      *
-     * <code>string project = 2;</code>
+     * <code>string project = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @return This builder for chaining.
      */
@@ -1004,10 +1004,10 @@ public final class TargetProject extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The target project ID (number) or project name.
+     * Required. The target project ID (number) or project name.
      * </pre>
      *
-     * <code>string project = 2;</code>
+     * <code>string project = 2 [(.google.api.field_behavior) = REQUIRED];</code>
      *
      * @param value The bytes for project to set.
      * @return This builder for chaining.

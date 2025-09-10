@@ -47,6 +47,8 @@ public final class HybridReplicationParameters extends com.google.protobuf.Gener
     peerIpAddresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
     clusterLocation_ = "";
     description_ = "";
+    replicationSchedule_ = 0;
+    hybridReplicationType_ = 0;
   }
 
   @java.lang.Override
@@ -80,6 +82,221 @@ public final class HybridReplicationParameters extends com.google.protobuf.Gener
         .ensureFieldAccessorsInitialized(
             com.google.cloud.netapp.v1.HybridReplicationParameters.class,
             com.google.cloud.netapp.v1.HybridReplicationParameters.Builder.class);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Type of the volume's hybrid replication.
+   * </pre>
+   *
+   * Protobuf enum {@code
+   * google.cloud.netapp.v1.HybridReplicationParameters.VolumeHybridReplicationType}
+   */
+  public enum VolumeHybridReplicationType implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified hybrid replication type.
+     * </pre>
+     *
+     * <code>VOLUME_HYBRID_REPLICATION_TYPE_UNSPECIFIED = 0;</code>
+     */
+    VOLUME_HYBRID_REPLICATION_TYPE_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Hybrid replication type for migration.
+     * </pre>
+     *
+     * <code>MIGRATION = 1;</code>
+     */
+    MIGRATION(1),
+    /**
+     *
+     *
+     * <pre>
+     * Hybrid replication type for continuous replication.
+     * </pre>
+     *
+     * <code>CONTINUOUS_REPLICATION = 2;</code>
+     */
+    CONTINUOUS_REPLICATION(2),
+    /**
+     *
+     *
+     * <pre>
+     * New field for reversible OnPrem replication, to be used for data
+     * protection.
+     * </pre>
+     *
+     * <code>ONPREM_REPLICATION = 3;</code>
+     */
+    ONPREM_REPLICATION(3),
+    /**
+     *
+     *
+     * <pre>
+     * New field for reversible OnPrem replication, to be used for data
+     * protection.
+     * </pre>
+     *
+     * <code>REVERSE_ONPREM_REPLICATION = 4;</code>
+     */
+    REVERSE_ONPREM_REPLICATION(4),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Unspecified hybrid replication type.
+     * </pre>
+     *
+     * <code>VOLUME_HYBRID_REPLICATION_TYPE_UNSPECIFIED = 0;</code>
+     */
+    public static final int VOLUME_HYBRID_REPLICATION_TYPE_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Hybrid replication type for migration.
+     * </pre>
+     *
+     * <code>MIGRATION = 1;</code>
+     */
+    public static final int MIGRATION_VALUE = 1;
+
+    /**
+     *
+     *
+     * <pre>
+     * Hybrid replication type for continuous replication.
+     * </pre>
+     *
+     * <code>CONTINUOUS_REPLICATION = 2;</code>
+     */
+    public static final int CONTINUOUS_REPLICATION_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
+     * New field for reversible OnPrem replication, to be used for data
+     * protection.
+     * </pre>
+     *
+     * <code>ONPREM_REPLICATION = 3;</code>
+     */
+    public static final int ONPREM_REPLICATION_VALUE = 3;
+
+    /**
+     *
+     *
+     * <pre>
+     * New field for reversible OnPrem replication, to be used for data
+     * protection.
+     * </pre>
+     *
+     * <code>REVERSE_ONPREM_REPLICATION = 4;</code>
+     */
+    public static final int REVERSE_ONPREM_REPLICATION_VALUE = 4;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static VolumeHybridReplicationType valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static VolumeHybridReplicationType forNumber(int value) {
+      switch (value) {
+        case 0:
+          return VOLUME_HYBRID_REPLICATION_TYPE_UNSPECIFIED;
+        case 1:
+          return MIGRATION;
+        case 2:
+          return CONTINUOUS_REPLICATION;
+        case 3:
+          return ONPREM_REPLICATION;
+        case 4:
+          return REVERSE_ONPREM_REPLICATION;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<VolumeHybridReplicationType>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<VolumeHybridReplicationType>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<VolumeHybridReplicationType>() {
+              public VolumeHybridReplicationType findValueByNumber(int number) {
+                return VolumeHybridReplicationType.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.netapp.v1.HybridReplicationParameters.getDescriptor()
+          .getEnumTypes()
+          .get(0);
+    }
+
+    private static final VolumeHybridReplicationType[] VALUES = values();
+
+    public static VolumeHybridReplicationType valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private VolumeHybridReplicationType(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.netapp.v1.HybridReplicationParameters.VolumeHybridReplicationType)
   }
 
   public static final int REPLICATION_FIELD_NUMBER = 1;
@@ -587,6 +804,115 @@ public final class HybridReplicationParameters extends com.google.protobuf.Gener
     return map.get(key);
   }
 
+  public static final int REPLICATION_SCHEDULE_FIELD_NUMBER = 9;
+  private int replicationSchedule_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Replication Schedule for the replication created.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.HybridReplicationSchedule replication_schedule = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for replicationSchedule.
+   */
+  @java.lang.Override
+  public int getReplicationScheduleValue() {
+    return replicationSchedule_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Replication Schedule for the replication created.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.HybridReplicationSchedule replication_schedule = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The replicationSchedule.
+   */
+  @java.lang.Override
+  public com.google.cloud.netapp.v1.HybridReplicationSchedule getReplicationSchedule() {
+    com.google.cloud.netapp.v1.HybridReplicationSchedule result =
+        com.google.cloud.netapp.v1.HybridReplicationSchedule.forNumber(replicationSchedule_);
+    return result == null
+        ? com.google.cloud.netapp.v1.HybridReplicationSchedule.UNRECOGNIZED
+        : result;
+  }
+
+  public static final int HYBRID_REPLICATION_TYPE_FIELD_NUMBER = 10;
+  private int hybridReplicationType_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of the hybrid replication.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.HybridReplicationParameters.VolumeHybridReplicationType hybrid_replication_type = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for hybridReplicationType.
+   */
+  @java.lang.Override
+  public int getHybridReplicationTypeValue() {
+    return hybridReplicationType_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Type of the hybrid replication.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.netapp.v1.HybridReplicationParameters.VolumeHybridReplicationType hybrid_replication_type = 10 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The hybridReplicationType.
+   */
+  @java.lang.Override
+  public com.google.cloud.netapp.v1.HybridReplicationParameters.VolumeHybridReplicationType
+      getHybridReplicationType() {
+    com.google.cloud.netapp.v1.HybridReplicationParameters.VolumeHybridReplicationType result =
+        com.google.cloud.netapp.v1.HybridReplicationParameters.VolumeHybridReplicationType
+            .forNumber(hybridReplicationType_);
+    return result == null
+        ? com.google.cloud.netapp.v1.HybridReplicationParameters.VolumeHybridReplicationType
+            .UNRECOGNIZED
+        : result;
+  }
+
+  public static final int LARGE_VOLUME_CONSTITUENT_COUNT_FIELD_NUMBER = 11;
+  private int largeVolumeConstituentCount_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Constituent volume count for large volume.
+   * </pre>
+   *
+   * <code>int32 large_volume_constituent_count = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The largeVolumeConstituentCount.
+   */
+  @java.lang.Override
+  public int getLargeVolumeConstituentCount() {
+    return largeVolumeConstituentCount_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -624,6 +950,21 @@ public final class HybridReplicationParameters extends com.google.protobuf.Gener
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 8);
+    if (replicationSchedule_
+        != com.google.cloud.netapp.v1.HybridReplicationSchedule
+            .HYBRID_REPLICATION_SCHEDULE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(9, replicationSchedule_);
+    }
+    if (hybridReplicationType_
+        != com.google.cloud.netapp.v1.HybridReplicationParameters.VolumeHybridReplicationType
+            .VOLUME_HYBRID_REPLICATION_TYPE_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(10, hybridReplicationType_);
+    }
+    if (largeVolumeConstituentCount_ != 0) {
+      output.writeInt32(11, largeVolumeConstituentCount_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -669,6 +1010,22 @@ public final class HybridReplicationParameters extends com.google.protobuf.Gener
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, labels__);
     }
+    if (replicationSchedule_
+        != com.google.cloud.netapp.v1.HybridReplicationSchedule
+            .HYBRID_REPLICATION_SCHEDULE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(9, replicationSchedule_);
+    }
+    if (hybridReplicationType_
+        != com.google.cloud.netapp.v1.HybridReplicationParameters.VolumeHybridReplicationType
+            .VOLUME_HYBRID_REPLICATION_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(10, hybridReplicationType_);
+    }
+    if (largeVolumeConstituentCount_ != 0) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(11, largeVolumeConstituentCount_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -693,6 +1050,9 @@ public final class HybridReplicationParameters extends com.google.protobuf.Gener
     if (!getClusterLocation().equals(other.getClusterLocation())) return false;
     if (!getDescription().equals(other.getDescription())) return false;
     if (!internalGetLabels().equals(other.internalGetLabels())) return false;
+    if (replicationSchedule_ != other.replicationSchedule_) return false;
+    if (hybridReplicationType_ != other.hybridReplicationType_) return false;
+    if (getLargeVolumeConstituentCount() != other.getLargeVolumeConstituentCount()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -724,6 +1084,12 @@ public final class HybridReplicationParameters extends com.google.protobuf.Gener
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
     }
+    hash = (37 * hash) + REPLICATION_SCHEDULE_FIELD_NUMBER;
+    hash = (53 * hash) + replicationSchedule_;
+    hash = (37 * hash) + HYBRID_REPLICATION_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + hybridReplicationType_;
+    hash = (37 * hash) + LARGE_VOLUME_CONSTITUENT_COUNT_FIELD_NUMBER;
+    hash = (53 * hash) + getLargeVolumeConstituentCount();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -895,6 +1261,9 @@ public final class HybridReplicationParameters extends com.google.protobuf.Gener
       clusterLocation_ = "";
       description_ = "";
       internalGetMutableLabels().clear();
+      replicationSchedule_ = 0;
+      hybridReplicationType_ = 0;
+      largeVolumeConstituentCount_ = 0;
       return this;
     }
 
@@ -956,6 +1325,15 @@ public final class HybridReplicationParameters extends com.google.protobuf.Gener
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.labels_ = internalGetLabels();
         result.labels_.makeImmutable();
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.replicationSchedule_ = replicationSchedule_;
+      }
+      if (((from_bitField0_ & 0x00000200) != 0)) {
+        result.hybridReplicationType_ = hybridReplicationType_;
+      }
+      if (((from_bitField0_ & 0x00000400) != 0)) {
+        result.largeVolumeConstituentCount_ = largeVolumeConstituentCount_;
       }
     }
 
@@ -1047,6 +1425,15 @@ public final class HybridReplicationParameters extends com.google.protobuf.Gener
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
       bitField0_ |= 0x00000080;
+      if (other.replicationSchedule_ != 0) {
+        setReplicationScheduleValue(other.getReplicationScheduleValue());
+      }
+      if (other.hybridReplicationType_ != 0) {
+        setHybridReplicationTypeValue(other.getHybridReplicationTypeValue());
+      }
+      if (other.getLargeVolumeConstituentCount() != 0) {
+        setLargeVolumeConstituentCount(other.getLargeVolumeConstituentCount());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1128,6 +1515,24 @@ public final class HybridReplicationParameters extends com.google.protobuf.Gener
                 bitField0_ |= 0x00000080;
                 break;
               } // case 66
+            case 72:
+              {
+                replicationSchedule_ = input.readEnum();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 72
+            case 80:
+              {
+                hybridReplicationType_ = input.readEnum();
+                bitField0_ |= 0x00000200;
+                break;
+              } // case 80
+            case 88:
+              {
+                largeVolumeConstituentCount_ = input.readInt32();
+                bitField0_ |= 0x00000400;
+                break;
+              } // case 88
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2195,6 +2600,284 @@ public final class HybridReplicationParameters extends com.google.protobuf.Gener
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
       bitField0_ |= 0x00000080;
+      return this;
+    }
+
+    private int replicationSchedule_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Replication Schedule for the replication created.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.HybridReplicationSchedule replication_schedule = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for replicationSchedule.
+     */
+    @java.lang.Override
+    public int getReplicationScheduleValue() {
+      return replicationSchedule_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Replication Schedule for the replication created.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.HybridReplicationSchedule replication_schedule = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for replicationSchedule to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReplicationScheduleValue(int value) {
+      replicationSchedule_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Replication Schedule for the replication created.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.HybridReplicationSchedule replication_schedule = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The replicationSchedule.
+     */
+    @java.lang.Override
+    public com.google.cloud.netapp.v1.HybridReplicationSchedule getReplicationSchedule() {
+      com.google.cloud.netapp.v1.HybridReplicationSchedule result =
+          com.google.cloud.netapp.v1.HybridReplicationSchedule.forNumber(replicationSchedule_);
+      return result == null
+          ? com.google.cloud.netapp.v1.HybridReplicationSchedule.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Replication Schedule for the replication created.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.HybridReplicationSchedule replication_schedule = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The replicationSchedule to set.
+     * @return This builder for chaining.
+     */
+    public Builder setReplicationSchedule(
+        com.google.cloud.netapp.v1.HybridReplicationSchedule value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000100;
+      replicationSchedule_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Replication Schedule for the replication created.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.HybridReplicationSchedule replication_schedule = 9 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearReplicationSchedule() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      replicationSchedule_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int hybridReplicationType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of the hybrid replication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.HybridReplicationParameters.VolumeHybridReplicationType hybrid_replication_type = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for hybridReplicationType.
+     */
+    @java.lang.Override
+    public int getHybridReplicationTypeValue() {
+      return hybridReplicationType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of the hybrid replication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.HybridReplicationParameters.VolumeHybridReplicationType hybrid_replication_type = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for hybridReplicationType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setHybridReplicationTypeValue(int value) {
+      hybridReplicationType_ = value;
+      bitField0_ |= 0x00000200;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of the hybrid replication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.HybridReplicationParameters.VolumeHybridReplicationType hybrid_replication_type = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The hybridReplicationType.
+     */
+    @java.lang.Override
+    public com.google.cloud.netapp.v1.HybridReplicationParameters.VolumeHybridReplicationType
+        getHybridReplicationType() {
+      com.google.cloud.netapp.v1.HybridReplicationParameters.VolumeHybridReplicationType result =
+          com.google.cloud.netapp.v1.HybridReplicationParameters.VolumeHybridReplicationType
+              .forNumber(hybridReplicationType_);
+      return result == null
+          ? com.google.cloud.netapp.v1.HybridReplicationParameters.VolumeHybridReplicationType
+              .UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of the hybrid replication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.HybridReplicationParameters.VolumeHybridReplicationType hybrid_replication_type = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The hybridReplicationType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setHybridReplicationType(
+        com.google.cloud.netapp.v1.HybridReplicationParameters.VolumeHybridReplicationType value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x00000200;
+      hybridReplicationType_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Type of the hybrid replication.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.netapp.v1.HybridReplicationParameters.VolumeHybridReplicationType hybrid_replication_type = 10 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearHybridReplicationType() {
+      bitField0_ = (bitField0_ & ~0x00000200);
+      hybridReplicationType_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private int largeVolumeConstituentCount_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Constituent volume count for large volume.
+     * </pre>
+     *
+     * <code>int32 large_volume_constituent_count = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The largeVolumeConstituentCount.
+     */
+    @java.lang.Override
+    public int getLargeVolumeConstituentCount() {
+      return largeVolumeConstituentCount_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Constituent volume count for large volume.
+     * </pre>
+     *
+     * <code>int32 large_volume_constituent_count = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The largeVolumeConstituentCount to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLargeVolumeConstituentCount(int value) {
+
+      largeVolumeConstituentCount_ = value;
+      bitField0_ |= 0x00000400;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Constituent volume count for large volume.
+     * </pre>
+     *
+     * <code>int32 large_volume_constituent_count = 11 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLargeVolumeConstituentCount() {
+      bitField0_ = (bitField0_ & ~0x00000400);
+      largeVolumeConstituentCount_ = 0;
+      onChanged();
       return this;
     }
 

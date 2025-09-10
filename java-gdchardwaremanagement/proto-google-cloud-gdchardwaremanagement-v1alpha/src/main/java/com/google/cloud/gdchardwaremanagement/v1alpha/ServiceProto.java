@@ -57,6 +57,10 @@ public final class ServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_gdchardwaremanagement_v1alpha_SubmitOrderRequest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gdchardwaremanagement_v1alpha_CancelOrderRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gdchardwaremanagement_v1alpha_CancelOrderRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_gdchardwaremanagement_v1alpha_ListSitesRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_gdchardwaremanagement_v1alpha_ListSitesRequest_fieldAccessorTable;
@@ -204,6 +208,10 @@ public final class ServiceProto {
       internal_static_google_cloud_gdchardwaremanagement_v1alpha_OperationMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_gdchardwaremanagement_v1alpha_OperationMetadata_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_gdchardwaremanagement_v1alpha_RequestOrderDateChangeRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_gdchardwaremanagement_v1alpha_RequestOrderDateChangeRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -221,10 +229,11 @@ public final class ServiceProto {
           + "pi/field_info.proto\032\031google/api/resource"
           + ".proto\032:google/cloud/gdchardwaremanagement/v1alpha/resources.proto\032#google/longr"
           + "unning/operations.proto\032\033google/protobuf/empty.proto\032"
-          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\264\001\n"
+          + " google/protobuf/field_mask"
+          + ".proto\032\037google/protobuf/timestamp.proto\032\026google/type/date.proto\"\264\001\n"
           + "\021ListOrdersRequest\022B\n"
-          + "\006parent\030\001 \001(\tB2\340"
-          + "A\002\372A,\022*gdchardwaremanagement.googleapis.com/Order\022\026\n"
+          + "\006parent\030\001 \001("
+          + "\tB2\340A\002\372A,\022*gdchardwaremanagement.googleapis.com/Order\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
@@ -238,16 +247,16 @@ public final class ServiceProto {
           + "\004name\030\001 \001(\tB2\340A\002\372A,\n"
           + "*gdchardwaremanagement.googleapis.com/Order\"\317\001\n"
           + "\022CreateOrderRequest\022B\n"
-          + "\006parent\030\001 \001("
-          + "\tB2\340A\002\372A,\022*gdchardwaremanagement.googleapis.com/Order\022\025\n"
+          + "\006parent\030\001 \001(\tB2\340A\002\372A,\022*gdch"
+          + "ardwaremanagement.googleapis.com/Order\022\025\n"
           + "\010order_id\030\002 \001(\tB\003\340A\001\022E\n"
-          + "\005order\030\003"
-          + " \001(\01321.google.cloud.gdchardwaremanagement.v1alpha.OrderB\003\340A\002\022\027\n\n"
+          + "\005order\030\003 \001(\01321.g"
+          + "oogle.cloud.gdchardwaremanagement.v1alpha.OrderB\003\340A\002\022\027\n\n"
           + "request_id\030\004 \001(\tB\003\340A\001\"\252\001\n"
           + "\022UpdateOrderRequest\0224\n"
           + "\013update_mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\022E\n"
-          + "\005order\030\002 \001(\01321.google.cloud"
-          + ".gdchardwaremanagement.v1alpha.OrderB\003\340A\002\022\027\n\n"
+          + "\005order\030\002"
+          + " \001(\01321.google.cloud.gdchardwaremanagement.v1alpha.OrderB\003\340A\002\022\027\n\n"
           + "request_id\030\003 \001(\tB\003\340A\001\"\203\001\n"
           + "\022DeleteOrderRequest\022@\n"
           + "\004name\030\001 \001(\tB2\340A\002\372A,\n"
@@ -258,12 +267,16 @@ public final class ServiceProto {
           + "\004name\030\001 \001(\tB2\340A\002\372A,\n"
           + "*gdchardwaremanagement.googleapis.com/Order\022\027\n\n"
           + "request_id\030\002 \001(\tB\003\340A\001\022V\n"
-          + "\004type\030\003 \001(\0162C.google.cloud.gdchardwaremanag"
-          + "ement.v1alpha.SubmitOrderRequest.TypeB\003\340A\001\"A\n"
+          + "\004type\030\003 \001(\0162C.googl"
+          + "e.cloud.gdchardwaremanagement.v1alpha.SubmitOrderRequest.TypeB\003\340A\001\"A\n"
           + "\004Type\022\024\n"
           + "\020TYPE_UNSPECIFIED\020\000\022\020\n"
           + "\014INFO_PENDING\020\001\022\021\n\r"
-          + "INFO_COMPLETE\020\002\"\262\001\n"
+          + "INFO_COMPLETE\020\002\"w\n"
+          + "\022CancelOrderRequest\022@\n"
+          + "\004name\030\001 \001(\tB2\340A\002\372A,\n"
+          + "*gdchardwaremanagement.googleapis.com/Order\022\037\n\n"
+          + "request_id\030\002 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\262\001\n"
           + "\020ListSitesRequest\022A\n"
           + "\006parent\030\001 \001("
           + "\tB1\340A\002\372A+\022)gdchardwaremanagement.googleapis.com/Site\022\026\n"
@@ -272,8 +285,8 @@ public final class ServiceProto {
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
           + "\010order_by\030\005 \001(\tB\003\340A\001\"\202\001\n"
           + "\021ListSitesResponse\022?\n"
-          + "\005sites\030\001"
-          + " \003(\01320.google.cloud.gdchardwaremanagement.v1alpha.Site\022\027\n"
+          + "\005sites\030\001 \003(\01320.googl"
+          + "e.cloud.gdchardwaremanagement.v1alpha.Site\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\023\n"
           + "\013unreachable\030\003 \003(\t\"Q\n"
           + "\016GetSiteRequest\022?\n"
@@ -283,128 +296,128 @@ public final class ServiceProto {
           + "\006parent\030\001 \001("
           + "\tB1\340A\002\372A+\022)gdchardwaremanagement.googleapis.com/Site\022\024\n"
           + "\007site_id\030\002 \001(\tB\003\340A\001\022C\n"
-          + "\004site\030\003 \001(\01320.google"
-          + ".cloud.gdchardwaremanagement.v1alpha.SiteB\003\340A\002\022\027\n\n"
+          + "\004site\030\003"
+          + " \001(\01320.google.cloud.gdchardwaremanagement.v1alpha.SiteB\003\340A\002\022\027\n\n"
           + "request_id\030\004 \001(\tB\003\340A\001\"\247\001\n"
           + "\021UpdateSiteRequest\0224\n"
           + "\013update_mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\022C\n"
-          + "\004site\030\002 \001("
-          + "\01320.google.cloud.gdchardwaremanagement.v1alpha.SiteB\003\340A\002\022\027\n\n"
+          + "\004site\030\002 \001(\01320.google.clou"
+          + "d.gdchardwaremanagement.v1alpha.SiteB\003\340A\002\022\027\n\n"
           + "request_id\030\003 \001(\tB\003\340A\001\"u\n"
           + "\021DeleteSiteRequest\022?\n"
           + "\004name\030\001 \001(\tB1\340A\002\372A+\n"
           + ")gdchardwaremanagement.googleapis.com/Site\022\037\n\n"
           + "request_id\030\002 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\304\001\n"
           + "\031ListHardwareGroupsRequest\022J\n"
-          + "\006parent\030\001 \001("
-          + "\tB:\340A\002\372A4\0222gdchardwaremanagement.googleapis.com/HardwareGroup\022\026\n"
+          + "\006parent\030\001 \001(\tB:\340A\002\372A4\022"
+          + "2gdchardwaremanagement.googleapis.com/HardwareGroup\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
           + "\010order_by\030\005 \001(\tB\003\340A\001\"\236\001\n"
           + "\032ListHardwareGroupsResponse\022R\n"
-          + "\017hardware_groups\030\001"
-          + " \003(\01329.google.cloud.gdchardwaremanagement.v1alpha.HardwareGroup\022\027\n"
+          + "\017hardware_groups\030\001 \003(\013"
+          + "29.google.cloud.gdchardwaremanagement.v1alpha.HardwareGroup\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\023\n"
           + "\013unreachable\030\003 \003(\t\"c\n"
           + "\027GetHardwareGroupRequest\022H\n"
           + "\004name\030\001 \001(\tB:\340A\002\372A4\n"
           + "2gdchardwaremanagement.googleapis.com/HardwareGroup\"\371\001\n"
           + "\032CreateHardwareGroupRequest\022J\n"
-          + "\006parent\030\001 \001(\tB:\340A\002\372A4\0222gd"
-          + "chardwaremanagement.googleapis.com/HardwareGroup\022\036\n"
+          + "\006parent\030\001 \001("
+          + "\tB:\340A\002\372A4\0222gdchardwaremanagement.googleapis.com/HardwareGroup\022\036\n"
           + "\021hardware_group_id\030\002 \001(\tB\003\340A\001\022V\n"
-          + "\016hardware_group\030\003 \001(\01329.google.cloud."
-          + "gdchardwaremanagement.v1alpha.HardwareGroupB\003\340A\002\022\027\n\n"
+          + "\016hardware_group\030\003"
+          + " \001(\01329.google.cloud.gdchardwaremanagement.v1alpha.HardwareGroupB\003\340A\002\022\027\n\n"
           + "request_id\030\004 \001(\tB\003\340A\001\"\303\001\n"
           + "\032UpdateHardwareGroupRequest\0224\n"
           + "\013update_mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\022V\n"
-          + "\016hardware_group\030\002 \001(\01329.google.cloud.gd"
-          + "chardwaremanagement.v1alpha.HardwareGroupB\003\340A\002\022\027\n\n"
+          + "\016hardware_group\030\002"
+          + " \001(\01329.google.cloud.gdchardwaremanagement.v1alpha.HardwareGroupB\003\340A\002\022\027\n\n"
           + "request_id\030\003 \001(\tB\003\340A\001\"\177\n"
           + "\032DeleteHardwareGroupRequest\022H\n"
           + "\004name\030\001 \001(\tB:\340A\002\372A4\n"
           + "2gdchardwaremanagement.googleapis.com/HardwareGroup\022\027\n\n"
           + "request_id\030\002 \001(\tB\003\340A\001\"\271\001\n"
           + "\023ListHardwareRequest\022E\n"
-          + "\006parent\030\001 \001(\t"
-          + "B5\340A\002\372A/\022-gdchardwaremanagement.googleapis.com/Hardware\022\026\n"
+          + "\006parent\030\001 \001(\tB5\340A\002\372A/\022-gdcha"
+          + "rdwaremanagement.googleapis.com/Hardware\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
           + "\010order_by\030\005 \001(\tB\003\340A\001\"\214\001\n"
           + "\024ListHardwareResponse\022F\n"
-          + "\010hardware\030\001 \003(\01324.google"
-          + ".cloud.gdchardwaremanagement.v1alpha.Hardware\022\027\n"
+          + "\010hardware\030\001"
+          + " \003(\01324.google.cloud.gdchardwaremanagement.v1alpha.Hardware\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\023\n"
           + "\013unreachable\030\003 \003(\t\"Y\n"
           + "\022GetHardwareRequest\022C\n"
           + "\004name\030\001 \001(\tB5\340A\002\372A/\n"
           + "-gdchardwaremanagement.googleapis.com/Hardware\"\305\001\n"
           + "\025CreateHardwareRequest\022E\n"
-          + "\006parent\030\001 \001(\tB5\340A\002\372A/\022-gdchar"
-          + "dwaremanagement.googleapis.com/Hardware\022\030\n"
+          + "\006parent\030\001 \001("
+          + "\tB5\340A\002\372A/\022-gdchardwaremanagement.googleapis.com/Hardware\022\030\n"
           + "\013hardware_id\030\002 \001(\tB\003\340A\001\022K\n"
-          + "\010hardware\030\003 "
-          + "\001(\01324.google.cloud.gdchardwaremanagement.v1alpha.HardwareB\003\340A\002\"\263\001\n"
+          + "\010hardware\030\003 \001(\01324.google.cl"
+          + "oud.gdchardwaremanagement.v1alpha.HardwareB\003\340A\002\"\263\001\n"
           + "\025UpdateHardwareRequest\0224\n"
           + "\013update_mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\022K\n"
-          + "\010hardware\030\002 \001(\013"
-          + "24.google.cloud.gdchardwaremanagement.v1alpha.HardwareB\003\340A\002\022\027\n\n"
+          + "\010hardware\030\002 \001(\01324.google.cloud"
+          + ".gdchardwaremanagement.v1alpha.HardwareB\003\340A\002\022\027\n\n"
           + "request_id\030\003 \001(\tB\003\340A\001\"}\n"
           + "\025DeleteHardwareRequest\022C\n"
           + "\004name\030\001 \001(\tB5\340A\002\372A/\n"
           + "-gdchardwaremanagement.googleapis.com/Hardware\022\037\n\n"
           + "request_id\030\002 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\270\001\n"
           + "\023ListCommentsRequest\022D\n"
-          + "\006parent\030\001 \001("
-          + "\tB4\340A\002\372A.\022,gdchardwaremanagement.googleapis.com/Comment\022\026\n"
+          + "\006parent\030\001 \001(\tB4\340A"
+          + "\002\372A.\022,gdchardwaremanagement.googleapis.com/Comment\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
           + "\010order_by\030\005 \001(\tB\003\340A\001\"\213\001\n"
           + "\024ListCommentsResponse\022E\n"
-          + "\010comments\030\001 \003("
-          + "\01323.google.cloud.gdchardwaremanagement.v1alpha.Comment\022\027\n"
+          + "\010comments\030\001 \003(\01323.google.clou"
+          + "d.gdchardwaremanagement.v1alpha.Comment\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\023\n"
           + "\013unreachable\030\003 \003(\t\"W\n"
           + "\021GetCommentRequest\022B\n"
           + "\004name\030\001 \001(\tB4\340A\002\372A.\n"
           + ",gdchardwaremanagement.googleapis.com/Comment\"\331\001\n"
           + "\024CreateCommentRequest\022D\n"
-          + "\006parent\030\001 \001(\tB4\340A\002\372A.\022,"
-          + "gdchardwaremanagement.googleapis.com/Comment\022\027\n\n"
+          + "\006parent\030\001 \001("
+          + "\tB4\340A\002\372A.\022,gdchardwaremanagement.googleapis.com/Comment\022\027\n\n"
           + "comment_id\030\002 \001(\tB\003\340A\001\022I\n"
-          + "\007comment\030\003"
-          + " \001(\01323.google.cloud.gdchardwaremanagement.v1alpha.CommentB\003\340A\002\022\027\n\n"
+          + "\007comment\030\003 \001(\01323.google"
+          + ".cloud.gdchardwaremanagement.v1alpha.CommentB\003\340A\002\022\027\n\n"
           + "request_id\030\004 \001(\tB\003\340A\001\"\222\002\n"
           + "\034RecordActionOnCommentRequest\022B\n"
           + "\004name\030\001 \001(\tB4\340A\002\372A.\n"
           + ",gdchardwaremanagement.googleapis.com/Comment\022m\n"
-          + "\013action_type\030\002 \001(\0162S.google.cloud.gdchardwarema"
-          + "nagement.v1alpha.RecordActionOnCommentRequest.ActionTypeB\003\340A\002\"?\n\n"
+          + "\013action_type\030\002 \001(\0162S.google.cloud.gdchardwaremanagement.v1alph"
+          + "a.RecordActionOnCommentRequest.ActionTypeB\003\340A\002\"?\n\n"
           + "ActionType\022\033\n"
           + "\027ACTION_TYPE_UNSPECIFIED\020\000\022\010\n"
           + "\004READ\020\001\022\n\n"
           + "\006UNREAD\020\002\"\307\001\n"
           + "\033ListChangeLogEntriesRequest\022K\n"
-          + "\006parent\030\001 \001("
-          + "\tB;\340A\002\372A5\0223gdchardwaremanagement.googleapis.com/ChangeLogEntry\022\026\n"
+          + "\006parent\030\001 \001(\tB"
+          + ";\340A\002\372A5\0223gdchardwaremanagement.googleapis.com/ChangeLogEntry\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
           + "\010order_by\030\005 \001(\tB\003\340A\001\"\244\001\n"
           + "\034ListChangeLogEntriesResponse\022V\n"
-          + "\022change_log_entries\030\001 \003(\0132:.google.c"
-          + "loud.gdchardwaremanagement.v1alpha.ChangeLogEntry\022\027\n"
+          + "\022change_log_entries\030\001"
+          + " \003(\0132:.google.cloud.gdchardwaremanagement.v1alpha.ChangeLogEntry\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\023\n"
           + "\013unreachable\030\003 \003(\t\"e\n"
           + "\030GetChangeLogEntryRequest\022I\n"
           + "\004name\030\001 \001(\tB;\340A\002\372A5\n"
           + "3gdchardwaremanagement.googleapis.com/ChangeLogEntry\"\260\001\n"
           + "\017ListSkusRequest\022@\n"
-          + "\006parent\030\001 \001(\tB0\340A\002\372"
-          + "A*\022(gdchardwaremanagement.googleapis.com/Sku\022\026\n"
+          + "\006parent\030\001 \001("
+          + "\tB0\340A\002\372A*\022(gdchardwaremanagement.googleapis.com/Sku\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
@@ -424,8 +437,8 @@ public final class ServiceProto {
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
           + "\010order_by\030\005 \001(\tB\003\340A\001\"\202\001\n"
           + "\021ListZonesResponse\022?\n"
-          + "\005zones\030\001"
-          + " \003(\01320.google.cloud.gdchardwaremanagement.v1alpha.Zone\022\027\n"
+          + "\005zones\030\001 \003(\01320.google."
+          + "cloud.gdchardwaremanagement.v1alpha.Zone\022\027\n"
           + "\017next_page_token\030\002 \001(\t\022\023\n"
           + "\013unreachable\030\003 \003(\t\"Q\n"
           + "\016GetZoneRequest\022?\n"
@@ -435,34 +448,36 @@ public final class ServiceProto {
           + "\006parent\030\001 \001("
           + "\tB1\340A\002\372A+\022)gdchardwaremanagement.googleapis.com/Zone\022\024\n"
           + "\007zone_id\030\002 \001(\tB\003\340A\001\022C\n"
-          + "\004zone\030\003 \001(\01320.google.c"
-          + "loud.gdchardwaremanagement.v1alpha.ZoneB\003\340A\002\022\037\n\n"
+          + "\004zone\030\003"
+          + " \001(\01320.google.cloud.gdchardwaremanagement.v1alpha.ZoneB\003\340A\002\022\037\n\n"
           + "request_id\030\004 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\257\001\n"
           + "\021UpdateZoneRequest\0224\n"
           + "\013update_mask\030\001 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\002\022C\n"
-          + "\004zone\030\002"
-          + " \001(\01320.google.cloud.gdchardwaremanagement.v1alpha.ZoneB\003\340A\002\022\037\n\n"
+          + "\004zone\030\002 \001(\01320.googl"
+          + "e.cloud.gdchardwaremanagement.v1alpha.ZoneB\003\340A\002\022\037\n\n"
           + "request_id\030\003 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"u\n"
           + "\021DeleteZoneRequest\022?\n"
           + "\004name\030\001 \001(\tB1\340A\002\372A+\n"
           + ")gdchardwaremanagement.googleapis.com/Zone\022\037\n\n"
-          + "request_id\030\002 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\312\005\n"
+          + "request_id\030\002 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\"\356\005\n"
           + "\026SignalZoneStateRequest\022?\n"
           + "\004name\030\001 \001(\tB1\340A\002\372A+\n"
           + ")gdchardwaremanagement.googleapis.com/Zone\022\037\n\n"
           + "request_id\030\002 \001(\tB\013\340A\001\342\214\317\327\010\002\010\001\022i\n"
-          + "\014state_signal\030\003 \001(\0162N.google.cloud.gdchardwaremanagement.v"
-          + "1alpha.SignalZoneStateRequest.StateSignalB\003\340A\001\022\202\001\n"
-          + "\031provisioning_state_signal\030\004 \001(\0162Z.google.cloud.gdchardwaremanagement."
-          + "v1alpha.SignalZoneStateRequest.ProvisioningStateSignalB\003\340A\001\022\021\n"
+          + "\014state_signal\030\003 \001(\0162N.google.clou"
+          + "d.gdchardwaremanagement.v1alpha.SignalZoneStateRequest.StateSignalB\003\340A\001\022\202\001\n"
+          + "\031provisioning_state_signal\030\004 \001(\0162Z.google.clo"
+          + "ud.gdchardwaremanagement.v1alpha.SignalZ"
+          + "oneStateRequest.ProvisioningStateSignalB\003\340A\001\022\021\n"
           + "\004step\030\005 \001(\tB\003\340A\001\022\024\n"
-          + "\007details\030\006 \001(\tB\003\340A\001\"\265\001\n"
+          + "\007details\030\006 \001(\tB\003\340A\001\"\331\001\n"
           + "\013StateSignal\022\034\n"
           + "\030STATE_SIGNAL_UNSPECIFIED\020\000\022!\n"
           + "\035FACTORY_TURNUP_CHECKS_STARTED\020\003\022 \n"
           + "\034FACTORY_TURNUP_CHECKS_PASSED\020\001\022\035\n"
           + "\025READY_FOR_SITE_TURNUP\020\001\032\002\010\001\022 \n"
-          + "\034FACTORY_TURNUP_CHECKS_FAILED\020\002\032\002\020\001\"}\n"
+          + "\034FACTORY_TURNUP_CHECKS_FAILED\020\002\022\"\n"
+          + "\036VERIFY_CLUSTER_INTENT_PRESENCE\020\004\032\002\020\001\"}\n"
           + "\027ProvisioningStateSignal\022)\n"
           + "%PROVISIONING_STATE_SIGNAL_UNSPECIFIED\020\000\022\034\n"
           + "\030PROVISIONING_IN_PROGRESS\020\001\022\031\n"
@@ -474,168 +489,184 @@ public final class ServiceProto {
           + "\004verb\030\004 \001(\tB\003\340A\003\022\033\n"
           + "\016status_message\030\005 \001(\tB\003\340A\003\022#\n"
           + "\026requested_cancellation\030\006 \001(\010B\003\340A\003\022\030\n"
-          + "\013api_version\030\007 \001(\tB\003\340A\0032\323>\n"
+          + "\013api_version\030\007 \001(\tB\003\340A\003\"\221\001\n"
+          + "\035RequestOrderDateChangeRequest\022@\n"
+          + "\004name\030\001 \001(\tB2\340A\002\372A,\n"
+          + "*gdchardwaremanagement.googleapis.com/Order\022.\n"
+          + "\016requested_date\030\002 \001(\0132\021.google.type.DateB\003\340A\0022\257B\n"
           + "\025GDCHardwareManagement\022\315\001\n\n"
-          + "ListOrders\022=.google.cloud.gdchardwaremanagement.v1alpha.Lis"
-          + "tOrdersRequest\032>.google.cloud.gdchardwaremanagement.v1alpha.ListOrdersResponse\"@"
-          + "\332A\006parent\202\323\344\223\0021\022//v1alpha/{parent=projects/*/locations/*}/orders\022\272\001\n"
-          + "\010GetOrder\022;.google.cloud.gdchardwaremanagement.v1alp"
-          + "ha.GetOrderRequest\0321.google.cloud.gdchar"
-          + "dwaremanagement.v1alpha.Order\">\332A\004name\202\323"
-          + "\344\223\0021\022//v1alpha/{name=projects/*/locations/*/orders/*}\022\341\001\n"
-          + "\013CreateOrder\022>.google.cloud.gdchardwaremanagement.v1alpha.Creat"
-          + "eOrderRequest\032\035.google.longrunning.Operation\"s\312A\032\n"
-          + "\005Order\022\021OperationMetadata\332A\025pa"
-          + "rent,order,order_id\202\323\344\223\0028\"//v1alpha/{par"
-          + "ent=projects/*/locations/*}/orders:\005order\022\343\001\n"
-          + "\013UpdateOrder\022>.google.cloud.gdchard"
-          + "waremanagement.v1alpha.UpdateOrderRequest\032\035.google.longrunning.Operation\"u\312A\032\n"
-          + "\005Order\022\021OperationMetadata\332A\021order,update_m"
-          + "ask\202\323\344\223\002>25/v1alpha/{order.name=projects/*/locations/*/orders/*}:\005order\022\331\001\n"
-          + "\013DeleteOrder\022>.google.cloud.gdchardwaremanage"
-          + "ment.v1alpha.DeleteOrderRequest\032\035.google.longrunning.Operation\"k\312A*\n"
-          + "\025google.protobuf.Empty\022\021OperationMetadata\332A\004name\202\323\344\223"
-          + "\0021*//v1alpha/{name=projects/*/locations/*/orders/*}\022\323\001\n"
-          + "\013SubmitOrder\022>.google.cloud.gdchardwaremanagement.v1alpha.SubmitO"
-          + "rderRequest\032\035.google.longrunning.Operation\"e\312A\032\n"
-          + "\005Order\022\021OperationMetadata\332A\004name"
-          + "\202\323\344\223\002;\"6/v1alpha/{name=projects/*/locations/*/orders/*}:submit:\001*\022\311\001\n"
-          + "\tListSites\022<.google.cloud.gdchardwaremanagement.v1a"
-          + "lpha.ListSitesRequest\032=.google.cloud.gdchardwaremanagement.v1alpha.ListSitesResp"
-          + "onse\"?\332A\006parent\202\323\344\223\0020\022./v1alpha/{parent=projects/*/locations/*}/sites\022\266\001\n"
-          + "\007GetSite\022:.google.cloud.gdchardwaremanagement.v"
-          + "1alpha.GetSiteRequest\0320.google.cloud.gdc"
-          + "hardwaremanagement.v1alpha.Site\"=\332A\004name"
-          + "\202\323\344\223\0020\022./v1alpha/{name=projects/*/locations/*/sites/*}\022\332\001\n\n"
-          + "CreateSite\022=.google.cloud.gdchardwaremanagement.v1alpha.Creat"
-          + "eSiteRequest\032\035.google.longrunning.Operation\"n\312A\031\n"
-          + "\004Site\022\021OperationMetadata\332A\023pare"
-          + "nt,site,site_id\202\323\344\223\0026\"./v1alpha/{parent=projects/*/locations/*}/sites:\004site\022\334\001\n\n"
-          + "UpdateSite\022=.google.cloud.gdchardwareman"
-          + "agement.v1alpha.UpdateSiteRequest\032\035.google.longrunning.Operation\"p\312A\031\n"
-          + "\004Site\022\021OperationMetadata\332A\020site,update_mask\202\323\344\223\002;2"
-          + "3/v1alpha/{site.name=projects/*/locations/*/sites/*}:\004site\022\326\001\n\n"
-          + "DeleteSite\022=.google.cloud.gdchardwaremanagement.v1alpha.D"
-          + "eleteSiteRequest\032\035.google.longrunning.Operation\"j\312A*\n"
-          + "\025google.protobuf.Empty\022\021Ope"
-          + "rationMetadata\332A\004name\202\323\344\223\0020*./v1alpha/{name=projects/*/locations/*/sites/*}\022\366\001\n"
-          + "\022ListHardwareGroups\022E.google.cloud.gdchar"
-          + "dwaremanagement.v1alpha.ListHardwareGroupsRequest\032F.google.cloud.gdchardwaremana"
-          + "gement.v1alpha.ListHardwareGroupsRespons"
-          + "e\"Q\332A\006parent\202\323\344\223\002B\022@/v1alpha/{parent=pro"
-          + "jects/*/locations/*/orders/*}/hardwareGroups\022\343\001\n"
-          + "\020GetHardwareGroup\022C.google.cloud.gdchardwaremanagement.v1alpha.GetHardwa"
-          + "reGroupRequest\0329.google.cloud.gdchardwar"
-          + "emanagement.v1alpha.HardwareGroup\"O\332A\004na"
-          + "me\202\323\344\223\002B\022@/v1alpha/{name=projects/*/locations/*/orders/*/hardwareGroups/*}\022\246\002\n"
-          + "\023CreateHardwareGroup\022F.google.cloud.gdchar"
-          + "dwaremanagement.v1alpha.CreateHardwareGr"
-          + "oupRequest\032\035.google.longrunning.Operation\"\247\001\312A\"\n\r"
-          + "HardwareGroup\022\021OperationMetadata\332A\'parent,hardware_group,hardware_group"
-          + "_id\202\323\344\223\002R\"@/v1alpha/{parent=projects/*/l"
-          + "ocations/*/orders/*}/hardwareGroups:\016hardware_group\022\250\002\n"
-          + "\023UpdateHardwareGroup\022F.google.cloud.gdchardwaremanagement.v1alpha"
-          + ".UpdateHardwareGroupRequest\032\035.google.longrunning.Operation\"\251\001\312A\"\n\r"
-          + "HardwareGroup\022\021OperationMetadata\332A\032hardware_group,upda"
-          + "te_mask\202\323\344\223\002a2O/v1alpha/{hardware_group."
-          + "name=projects/*/locations/*/orders/*/hardwareGroups/*}:\016hardware_group\022\372\001\n"
-          + "\023DeleteHardwareGroup\022F.google.cloud.gdchardwar"
-          + "emanagement.v1alpha.DeleteHardwareGroupR"
-          + "equest\032\035.google.longrunning.Operation\"|\312A*\n"
-          + "\025google.protobuf.Empty\022\021OperationMeta"
-          + "data\332A\004name\202\323\344\223\002B*@/v1alpha/{name=projec"
-          + "ts/*/locations/*/orders/*/hardwareGroups/*}\022\325\001\n"
-          + "\014ListHardware\022?.google.cloud.gdchardwaremanagement.v1alpha.ListHardwareRe"
-          + "quest\032@.google.cloud.gdchardwaremanageme"
-          + "nt.v1alpha.ListHardwareResponse\"B\332A\006pare"
-          + "nt\202\323\344\223\0023\0221/v1alpha/{parent=projects/*/locations/*}/hardware\022\305\001\n"
-          + "\013GetHardware\022>.google.cloud.gdchardwaremanagement.v1alpha"
-          + ".GetHardwareRequest\0324.google.cloud.gdcha"
-          + "rdwaremanagement.v1alpha.Hardware\"@\332A\004na"
-          + "me\202\323\344\223\0023\0221/v1alpha/{name=projects/*/locations/*/hardware/*}\022\366\001\n"
-          + "\016CreateHardware\022A.google.cloud.gdchardwaremanagement.v1al"
-          + "pha.CreateHardwareRequest\032\035.google.longrunning.Operation\"\201\001\312A\035\n"
-          + "\010Hardware\022\021OperationMetadata\332A\033parent,hardware,hardware_i"
-          + "d\202\323\344\223\002=\"1/v1alpha/{parent=projects/*/locations/*}/hardware:\010hardware\022\370\001\n"
-          + "\016UpdateHardware\022A.google.cloud.gdchardwaremanage"
-          + "ment.v1alpha.UpdateHardwareRequest\032\035.google.longrunning.Operation\"\203\001\312A\035\n"
-          + "\010Hardware\022\021OperationMetadata\332A\024hardware,update_m"
-          + "ask\202\323\344\223\002F2:/v1alpha/{hardware.name=proje"
-          + "cts/*/locations/*/hardware/*}:\010hardware\022\341\001\n"
-          + "\016DeleteHardware\022A.google.cloud.gdchardwaremanagement.v1alpha.DeleteHardwareRe"
-          + "quest\032\035.google.longrunning.Operation\"m\312A*\n"
-          + "\025google.protobuf.Empty\022\021OperationMetad"
-          + "ata\332A\004name\202\323\344\223\0023*1/v1alpha/{name=projects/*/locations/*/hardware/*}\022\336\001\n"
-          + "\014ListComments\022?.google.cloud.gdchardwaremanagemen"
-          + "t.v1alpha.ListCommentsRequest\032@.google.cloud.gdchardwaremanagement.v1alpha.ListC"
-          + "ommentsResponse\"K\332A\006parent\202\323\344\223\002<\022:/v1alp"
-          + "ha/{parent=projects/*/locations/*/orders/*}/comments\022\313\001\n\n"
-          + "GetComment\022=.google.cloud.gdchardwaremanagement.v1alpha.GetComm"
-          + "entRequest\0323.google.cloud.gdchardwareman"
-          + "agement.v1alpha.Comment\"I\332A\004name\202\323\344\223\002<\022:"
-          + "/v1alpha/{name=projects/*/locations/*/orders/*/comments/*}\022\371\001\n\r"
-          + "CreateComment\022@.google.cloud.gdchardwaremanagement.v1alph"
-          + "a.CreateCommentRequest\032\035.google.longrunning.Operation\"\206\001\312A\034\n"
-          + "\007Comment\022\021OperationM"
-          + "etadata\332A\031parent,comment,comment_id\202\323\344\223\002"
-          + "E\":/v1alpha/{parent=projects/*/locations/*/orders/*}/comments:\007comment\022\375\001\n"
-          + "\025RecordActionOnComment\022H.google.cloud.gdchardw"
-          + "aremanagement.v1alpha.RecordActionOnCommentRequest\0323.google.cloud.gdchardwareman"
-          + "agement.v1alpha.Comment\"e\332A\020name,action_"
-          + "type\202\323\344\223\002L\"G/v1alpha/{name=projects/*/lo"
-          + "cations/*/orders/*/comments/*}:recordAction:\001*\022\376\001\n"
-          + "\024ListChangeLogEntries\022G.google.cloud.gdchardwaremanagement.v1alpha.Lis"
-          + "tChangeLogEntriesRequest\032H.google.cloud.gdchardwaremanagement.v1alpha.ListChange"
-          + "LogEntriesResponse\"S\332A\006parent\202\323\344\223\002D\022B/v1"
-          + "alpha/{parent=projects/*/locations/*/orders/*}/changeLogEntries\022\350\001\n"
-          + "\021GetChangeLogEntry\022D.google.cloud.gdchardwaremanageme"
-          + "nt.v1alpha.GetChangeLogEntryRequest\032:.google.cloud.gdchardwaremanagement.v1alpha"
-          + ".ChangeLogEntry\"Q\332A\004name\202\323\344\223\002D\022B/v1alpha"
-          + "/{name=projects/*/locations/*/orders/*/changeLogEntries/*}\022\305\001\n"
-          + "\010ListSkus\022;.google.cloud.gdchardwaremanagement.v1alpha.Lis"
-          + "tSkusRequest\032<.google.cloud.gdchardwarem"
-          + "anagement.v1alpha.ListSkusResponse\">\332A\006p"
-          + "arent\202\323\344\223\002/\022-/v1alpha/{parent=projects/*/locations/*}/skus\022\262\001\n"
-          + "\006GetSku\0229.google.cloud.gdchardwaremanagement.v1alpha.GetSk"
-          + "uRequest\032/.google.cloud.gdchardwaremanag"
-          + "ement.v1alpha.Sku\"<\332A\004name\202\323\344\223\002/\022-/v1alp"
-          + "ha/{name=projects/*/locations/*/skus/*}\022\311\001\n"
-          + "\tListZones\022<.google.cloud.gdchardwaremanagement.v1alpha.ListZonesRequest\032=.go"
+          + "ListOrders\022=.google.cloud.gdchardwaremanagement.v1"
+          + "alpha.ListOrdersRequest\032>.google.cloud.gdchardwaremanagement.v1alpha.ListOrdersR"
+          + "esponse\"@\332A\006parent\202\323\344\223\0021\022//v1alpha/{parent=projects/*/locations/*}/orders\022\272\001\n"
+          + "\010GetOrder\022;.google.cloud.gdchardwaremanagem"
+          + "ent.v1alpha.GetOrderRequest\0321.google.cloud.gdchardwaremanagement.v1alpha.Order\">"
+          + "\332A\004name\202\323\344\223\0021\022//v1alpha/{name=projects/*/locations/*/orders/*}\022\341\001\n"
+          + "\013CreateOrder\022>.google.cloud.gdchardwaremanagement.v1al"
+          + "pha.CreateOrderRequest\032\035.google.longrunning.Operation\"s\312A\032\n"
+          + "\005Order\022\021OperationMeta"
+          + "data\332A\025parent,order,order_id\202\323\344\223\0028\"//v1a"
+          + "lpha/{parent=projects/*/locations/*}/orders:\005order\022\343\001\n"
+          + "\013UpdateOrder\022>.google.cloud.gdchardwaremanagement.v1alpha.UpdateOr"
+          + "derRequest\032\035.google.longrunning.Operation\"u\312A\032\n"
+          + "\005Order\022\021OperationMetadata\332A\021order"
+          + ",update_mask\202\323\344\223\002>25/v1alpha/{order.name"
+          + "=projects/*/locations/*/orders/*}:\005order\022\331\001\n"
+          + "\013DeleteOrder\022>.google.cloud.gdchardw"
+          + "aremanagement.v1alpha.DeleteOrderRequest\032\035.google.longrunning.Operation\"k\312A*\n"
+          + "\025google.protobuf.Empty\022\021OperationMetadata\332A"
+          + "\004name\202\323\344\223\0021*//v1alpha/{name=projects/*/locations/*/orders/*}\022\323\001\n"
+          + "\013SubmitOrder\022>.google.cloud.gdchardwaremanagement.v1alph"
+          + "a.SubmitOrderRequest\032\035.google.longrunning.Operation\"e\312A\032\n"
+          + "\005Order\022\021OperationMetada"
+          + "ta\332A\004name\202\323\344\223\002;\"6/v1alpha/{name=projects/*/locations/*/orders/*}:submit:\001*\022\323\001\n"
+          + "\013CancelOrder\022>.google.cloud.gdchardwareman"
+          + "agement.v1alpha.CancelOrderRequest\032\035.google.longrunning.Operation\"e\312A\032\n"
+          + "\005Order\022\021OperationMetadata\332A\004name\202\323\344\223\002;\"6/v1alpha/"
+          + "{name=projects/*/locations/*/orders/*}:cancel:\001*\022\311\001\n"
+          + "\tListSites\022<.google.cloud.gdchardwaremanagement.v1alpha.ListSitesReq"
+          + "uest\032=.google.cloud.gdchardwaremanagemen"
+          + "t.v1alpha.ListSitesResponse\"?\332A\006parent\202\323"
+          + "\344\223\0020\022./v1alpha/{parent=projects/*/locations/*}/sites\022\266\001\n"
+          + "\007GetSite\022:.google.cloud.gdchardwaremanagement.v1alpha.GetSiteReq"
+          + "uest\0320.google.cloud.gdchardwaremanagemen"
+          + "t.v1alpha.Site\"=\332A\004name\202\323\344\223\0020\022./v1alpha/"
+          + "{name=projects/*/locations/*/sites/*}\022\332\001\n\n"
+          + "CreateSite\022=.google.cloud.gdchardwarem"
+          + "anagement.v1alpha.CreateSiteRequest\032\035.google.longrunning.Operation\"n\312A\031\n"
+          + "\004Site\022\021OperationMetadata\332A\023parent,site,site_id\202\323"
+          + "\344\223\0026\"./v1alpha/{parent=projects/*/locations/*}/sites:\004site\022\334\001\n\n"
+          + "UpdateSite\022=.google.cloud.gdchardwaremanagement.v1alpha.U"
+          + "pdateSiteRequest\032\035.google.longrunning.Operation\"p\312A\031\n"
+          + "\004Site\022\021OperationMetadata\332A\020"
+          + "site,update_mask\202\323\344\223\002;23/v1alpha/{site.n"
+          + "ame=projects/*/locations/*/sites/*}:\004site\022\326\001\n\n"
+          + "DeleteSite\022=.google.cloud.gdchardw"
+          + "aremanagement.v1alpha.DeleteSiteRequest\032\035.google.longrunning.Operation\"j\312A*\n"
+          + "\025google.protobuf.Empty\022\021OperationMetadata\332A\004"
+          + "name\202\323\344\223\0020*./v1alpha/{name=projects/*/locations/*/sites/*}\022\366\001\n"
+          + "\022ListHardwareGroups\022E.google.cloud.gdchardwaremanagement.v"
+          + "1alpha.ListHardwareGroupsRequest\032F.google.cloud.gdchardwaremanagement.v1alpha.Li"
+          + "stHardwareGroupsResponse\"Q\332A\006parent\202\323\344\223\002"
+          + "B\022@/v1alpha/{parent=projects/*/locations/*/orders/*}/hardwareGroups\022\343\001\n"
+          + "\020GetHardwareGroup\022C.google.cloud.gdchardwaremanag"
+          + "ement.v1alpha.GetHardwareGroupRequest\0329.google.cloud.gdchardwaremanagement.v1alp"
+          + "ha.HardwareGroup\"O\332A\004name\202\323\344\223\002B\022@/v1alph"
+          + "a/{name=projects/*/locations/*/orders/*/hardwareGroups/*}\022\246\002\n"
+          + "\023CreateHardwareGroup\022F.google.cloud.gdchardwaremanagement.v"
+          + "1alpha.CreateHardwareGroupRequest\032\035.google.longrunning.Operation\"\247\001\312A\"\n\r"
+          + "HardwareGroup\022\021OperationMetadata\332A\'parent,hardwa"
+          + "re_group,hardware_group_id\202\323\344\223\002R\"@/v1alp"
+          + "ha/{parent=projects/*/locations/*/orders/*}/hardwareGroups:\016hardware_group\022\250\002\n"
+          + "\023UpdateHardwareGroup\022F.google.cloud.gdchar"
+          + "dwaremanagement.v1alpha.UpdateHardwareGr"
+          + "oupRequest\032\035.google.longrunning.Operation\"\251\001\312A\"\n\r"
+          + "HardwareGroup\022\021OperationMetadat"
+          + "a\332A\032hardware_group,update_mask\202\323\344\223\002a2O/v"
+          + "1alpha/{hardware_group.name=projects/*/l"
+          + "ocations/*/orders/*/hardwareGroups/*}:\016hardware_group\022\372\001\n"
+          + "\023DeleteHardwareGroup\022F.google.cloud.gdchardwaremanagement.v1alp"
+          + "ha.DeleteHardwareGroupRequest\032\035.google.longrunning.Operation\"|\312A*\n"
+          + "\025google.protobuf.Empty\022\021OperationMetadata\332A\004name\202\323\344\223\002B"
+          + "*@/v1alpha/{name=projects/*/locations/*/orders/*/hardwareGroups/*}\022\325\001\n"
+          + "\014ListHardware\022?.google.cloud.gdchardwaremanagement"
+          + ".v1alpha.ListHardwareRequest\032@.google.cloud.gdchardwaremanagement.v1alpha.ListHa"
+          + "rdwareResponse\"B\332A\006parent\202\323\344\223\0023\0221/v1alph"
+          + "a/{parent=projects/*/locations/*}/hardware\022\305\001\n"
+          + "\013GetHardware\022>.google.cloud.gdchardwaremanagement.v1alpha.GetHardwareReque"
+          + "st\0324.google.cloud.gdchardwaremanagement."
+          + "v1alpha.Hardware\"@\332A\004name\202\323\344\223\0023\0221/v1alph"
+          + "a/{name=projects/*/locations/*/hardware/*}\022\366\001\n"
+          + "\016CreateHardware\022A.google.cloud.gdchardwaremanagement.v1alpha.CreateHardwar"
+          + "eRequest\032\035.google.longrunning.Operation\"\201\001\312A\035\n"
+          + "\010Hardware\022\021OperationMetadata\332A\033par"
+          + "ent,hardware,hardware_id\202\323\344\223\002=\"1/v1alpha"
+          + "/{parent=projects/*/locations/*}/hardware:\010hardware\022\370\001\n"
+          + "\016UpdateHardware\022A.google.cloud.gdchardwaremanagement.v1alpha.Upda"
+          + "teHardwareRequest\032\035.google.longrunning.Operation\"\203\001\312A\035\n"
+          + "\010Hardware\022\021OperationMetad"
+          + "ata\332A\024hardware,update_mask\202\323\344\223\002F2:/v1alp"
+          + "ha/{hardware.name=projects/*/locations/*/hardware/*}:\010hardware\022\341\001\n"
+          + "\016DeleteHardware\022A.google.cloud.gdchardwaremanagement.v"
+          + "1alpha.DeleteHardwareRequest\032\035.google.longrunning.Operation\"m\312A*\n"
+          + "\025google.protobuf.Empty\022\021OperationMetadata\332A\004name\202\323\344\223\0023*"
+          + "1/v1alpha/{name=projects/*/locations/*/hardware/*}\022\336\001\n"
+          + "\014ListComments\022?.google.cloud.gdchardwaremanagement.v1alpha.ListCom"
+          + "mentsRequest\032@.google.cloud.gdchardwaremanagement.v1alpha.ListCommentsResponse\"K"
+          + "\332A\006parent\202\323\344\223\002<\022:/v1alpha/{parent=projects/*/locations/*/orders/*}/comments\022\313\001\n\n"
+          + "GetComment\022=.google.cloud.gdchardwaremanagement.v1alpha.GetCommentRequest\0323.goog"
+          + "le.cloud.gdchardwaremanagement.v1alpha.C"
+          + "omment\"I\332A\004name\202\323\344\223\002<\022:/v1alpha/{name=pr"
+          + "ojects/*/locations/*/orders/*/comments/*}\022\371\001\n\r"
+          + "CreateComment\022@.google.cloud.gdchardwaremanagement.v1alpha.CreateCommentRe"
+          + "quest\032\035.google.longrunning.Operation\"\206\001\312A\034\n"
+          + "\007Comment\022\021OperationMetadata\332A\031parent,"
+          + "comment,comment_id\202\323\344\223\002E\":/v1alpha/{pare"
+          + "nt=projects/*/locations/*/orders/*}/comments:\007comment\022\375\001\n"
+          + "\025RecordActionOnComment\022H.google.cloud.gdchardwaremanagement.v1a"
+          + "lpha.RecordActionOnCommentRequest\0323.google.cloud.gdchardwaremanagement.v1alpha.C"
+          + "omment\"e\332A\020name,action_type\202\323\344\223\002L\"G/v1al"
+          + "pha/{name=projects/*/locations/*/orders/*/comments/*}:recordAction:\001*\022\376\001\n"
+          + "\024ListChangeLogEntries\022G.google.cloud.gdchardwar"
+          + "emanagement.v1alpha.ListChangeLogEntriesRequest\032H.google.cloud.gdchardwaremanage"
+          + "ment.v1alpha.ListChangeLogEntriesRespons"
+          + "e\"S\332A\006parent\202\323\344\223\002D\022B/v1alpha/{parent=pro"
+          + "jects/*/locations/*/orders/*}/changeLogEntries\022\350\001\n"
+          + "\021GetChangeLogEntry\022D.google.cloud.gdchardwaremanagement.v1alpha.GetCha"
+          + "ngeLogEntryRequest\032:.google.cloud.gdchardwaremanagement.v1alpha.ChangeLogEntry\"Q"
+          + "\332A\004name\202\323\344\223\002D\022B/v1alpha/{name=projects/*"
+          + "/locations/*/orders/*/changeLogEntries/*}\022\305\001\n"
+          + "\010ListSkus\022;.google.cloud.gdchardwaremanagement.v1alpha.ListSkusRequest\032<.go"
           + "ogle.cloud.gdchardwaremanagement.v1alpha"
-          + ".ListZonesResponse\"?\332A\006parent\202\323\344\223\0020\022./v1"
-          + "alpha/{parent=projects/*/locations/*}/zones\022\266\001\n"
-          + "\007GetZone\022:.google.cloud.gdchardwaremanagement.v1alpha.GetZoneRequest\0320.go"
-          + "ogle.cloud.gdchardwaremanagement.v1alpha"
-          + ".Zone\"=\332A\004name\202\323\344\223\0020\022./v1alpha/{name=projects/*/locations/*/zones/*}\022\332\001\n\n"
-          + "CreateZone\022=.google.cloud.gdchardwaremanagement"
-          + ".v1alpha.CreateZoneRequest\032\035.google.longrunning.Operation\"n\312A\031\n"
-          + "\004Zone\022\021OperationM"
-          + "etadata\332A\023parent,zone,zone_id\202\323\344\223\0026\"./v1"
-          + "alpha/{parent=projects/*/locations/*}/zones:\004zone\022\334\001\n\n"
-          + "UpdateZone\022=.google.cloud.gdchardwaremanagement.v1alpha.UpdateZone"
-          + "Request\032\035.google.longrunning.Operation\"p\312A\031\n"
-          + "\004Zone\022\021OperationMetadata\332A\020zone,upda"
-          + "te_mask\202\323\344\223\002;23/v1alpha/{zone.name=projects/*/locations/*/zones/*}:\004zone\022\326\001\n\n"
-          + "DeleteZone\022=.google.cloud.gdchardwaremanage"
-          + "ment.v1alpha.DeleteZoneRequest\032\035.google.longrunning.Operation\"j\312A*\n"
-          + "\025google.protobuf.Empty\022\021OperationMetadata\332A\004name\202\323\344\223\002"
-          + "0*./v1alpha/{name=projects/*/locations/*/zones/*}\022\346\001\n"
-          + "\017SignalZoneState\022B.google.cloud.gdchardwaremanagement.v1alpha.Signa"
-          + "lZoneStateRequest\032\035.google.longrunning.Operation\"p\312A\031\n"
-          + "\004Zone\022\021OperationMetadata\332A",
-      "\021name,state_signal\202\323\344\223\002:\"5/v1alpha/{name"
-          + "=projects/*/locations/*/zones/*}:signal:"
-          + "\001*\032X\312A$gdchardwaremanagement.googleapis."
-          + "com\322A.https://www.googleapis.com/auth/cl"
-          + "oud-platformB\260\002\n.com.google.cloud.gdchar"
-          + "dwaremanagement.v1alphaB\014ServiceProtoP\001Z"
-          + "dcloud.google.com/go/gdchardwaremanageme"
-          + "nt/apiv1alpha/gdchardwaremanagementpb;gd"
-          + "chardwaremanagementpb\252\002*Google.Cloud.Gdc"
-          + "HardwareManagement.V1Alpha\312\002*Google\\Clou"
-          + "d\\GdcHardwareManagement\\V1alpha\352\002-Google"
-          + "::Cloud::GDCHardwareManagement::V1alphab"
-          + "\006proto3"
+          + ".ListSkusResponse\">\332A\006parent\202\323\344\223\002/\022-/v1a"
+          + "lpha/{parent=projects/*/locations/*}/skus\022\262\001\n"
+          + "\006GetSku\0229.google.cloud.gdchardwaremanagement.v1alpha.GetSkuRequest\032/.google"
+          + ".cloud.gdchardwaremanagement.v1alpha.Sku"
+          + "\"<\332A\004name\202\323\344\223\002/\022-/v1alpha/{name=projects/*/locations/*/skus/*}\022\311\001\n"
+          + "\tListZones\022<.google.cloud.gdchardwaremanagement.v1alph"
+          + "a.ListZonesRequest\032=.google.cloud.gdchardwaremanagement.v1alpha.ListZonesRespons"
+          + "e\"?\332A\006parent\202\323\344\223\0020\022./v1alpha/{parent=projects/*/locations/*}/zones\022\266\001\n"
+          + "\007GetZone\022:.google.cloud.gdchardwaremanagement.v1al"
+          + "pha.GetZoneRequest\0320.google.cloud.gdchar"
+          + "dwaremanagement.v1alpha.Zone\"=\332A\004name\202\323\344"
+          + "\223\0020\022./v1alpha/{name=projects/*/locations/*/zones/*}\022\332\001\n\n"
+          + "CreateZone\022=.google.cloud.gdchardwaremanagement.v1alpha.CreateZo"
+          + "neRequest\032\035.google.longrunning.Operation\"n\312A\031\n"
+          + "\004Zone\022\021OperationMetadata\332A\023parent,"
+          + "zone,zone_id\202\323\344\223\0026\"./v1alpha/{parent=projects/*/locations/*}/zones:\004zone\022\334\001\n\n"
+          + "UpdateZone\022=.google.cloud.gdchardwaremanage",
+      "ment.v1alpha.UpdateZoneRequest\032\035.google."
+          + "longrunning.Operation\"p\312A\031\n\004Zone\022\021Operat"
+          + "ionMetadata\332A\020zone,update_mask\202\323\344\223\002;23/v"
+          + "1alpha/{zone.name=projects/*/locations/*"
+          + "/zones/*}:\004zone\022\326\001\n\nDeleteZone\022=.google."
+          + "cloud.gdchardwaremanagement.v1alpha.Dele"
+          + "teZoneRequest\032\035.google.longrunning.Opera"
+          + "tion\"j\312A*\n\025google.protobuf.Empty\022\021Operat"
+          + "ionMetadata\332A\004name\202\323\344\223\0020*./v1alpha/{name"
+          + "=projects/*/locations/*/zones/*}\022\346\001\n\017Sig"
+          + "nalZoneState\022B.google.cloud.gdchardwarem"
+          + "anagement.v1alpha.SignalZoneStateRequest"
+          + "\032\035.google.longrunning.Operation\"p\312A\031\n\004Zo"
+          + "ne\022\021OperationMetadata\332A\021name,state_signa"
+          + "l\202\323\344\223\002:\"5/v1alpha/{name=projects/*/locat"
+          + "ions/*/zones/*}:signal:\001*\022\203\002\n\026RequestOrd"
+          + "erDateChange\022I.google.cloud.gdchardwarem"
+          + "anagement.v1alpha.RequestOrderDateChange"
+          + "Request\032\035.google.longrunning.Operation\"\177"
+          + "\312A\032\n\005Order\022\021OperationMetadata\332A\023name,req"
+          + "uested_date\202\323\344\223\002F\"A/v1alpha/{name=projec"
+          + "ts/*/locations/*/orders/*}:requestDateCh"
+          + "ange:\001*\032X\312A$gdchardwaremanagement.google"
+          + "apis.com\322A.https://www.googleapis.com/au"
+          + "th/cloud-platformB\260\002\n.com.google.cloud.g"
+          + "dchardwaremanagement.v1alphaB\014ServicePro"
+          + "toP\001Zdcloud.google.com/go/gdchardwareman"
+          + "agement/apiv1alpha/gdchardwaremanagement"
+          + "pb;gdchardwaremanagementpb\252\002*Google.Clou"
+          + "d.GdcHardwareManagement.V1Alpha\312\002*Google"
+          + "\\Cloud\\GdcHardwareManagement\\V1alpha\352\002-G"
+          + "oogle::Cloud::GDCHardwareManagement::V1a"
+          + "lphab\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -651,6 +682,7 @@ public final class ServiceProto {
               com.google.protobuf.EmptyProto.getDescriptor(),
               com.google.protobuf.FieldMaskProto.getDescriptor(),
               com.google.protobuf.TimestampProto.getDescriptor(),
+              com.google.type.DateProto.getDescriptor(),
             });
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_ListOrdersRequest_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -708,8 +740,16 @@ public final class ServiceProto {
             new java.lang.String[] {
               "Name", "RequestId", "Type",
             });
-    internal_static_google_cloud_gdchardwaremanagement_v1alpha_ListSitesRequest_descriptor =
+    internal_static_google_cloud_gdchardwaremanagement_v1alpha_CancelOrderRequest_descriptor =
         getDescriptor().getMessageTypes().get(7);
+    internal_static_google_cloud_gdchardwaremanagement_v1alpha_CancelOrderRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gdchardwaremanagement_v1alpha_CancelOrderRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "RequestId",
+            });
+    internal_static_google_cloud_gdchardwaremanagement_v1alpha_ListSitesRequest_descriptor =
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_ListSitesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gdchardwaremanagement_v1alpha_ListSitesRequest_descriptor,
@@ -717,7 +757,7 @@ public final class ServiceProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_ListSitesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_ListSitesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gdchardwaremanagement_v1alpha_ListSitesResponse_descriptor,
@@ -725,7 +765,7 @@ public final class ServiceProto {
               "Sites", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_GetSiteRequest_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_GetSiteRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gdchardwaremanagement_v1alpha_GetSiteRequest_descriptor,
@@ -733,7 +773,7 @@ public final class ServiceProto {
               "Name",
             });
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_CreateSiteRequest_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_CreateSiteRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gdchardwaremanagement_v1alpha_CreateSiteRequest_descriptor,
@@ -741,7 +781,7 @@ public final class ServiceProto {
               "Parent", "SiteId", "Site", "RequestId",
             });
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_UpdateSiteRequest_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_UpdateSiteRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gdchardwaremanagement_v1alpha_UpdateSiteRequest_descriptor,
@@ -749,7 +789,7 @@ public final class ServiceProto {
               "UpdateMask", "Site", "RequestId",
             });
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_DeleteSiteRequest_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_DeleteSiteRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gdchardwaremanagement_v1alpha_DeleteSiteRequest_descriptor,
@@ -757,7 +797,7 @@ public final class ServiceProto {
               "Name", "RequestId",
             });
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_ListHardwareGroupsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_ListHardwareGroupsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gdchardwaremanagement_v1alpha_ListHardwareGroupsRequest_descriptor,
@@ -765,7 +805,7 @@ public final class ServiceProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_ListHardwareGroupsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_ListHardwareGroupsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gdchardwaremanagement_v1alpha_ListHardwareGroupsResponse_descriptor,
@@ -773,7 +813,7 @@ public final class ServiceProto {
               "HardwareGroups", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_GetHardwareGroupRequest_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_GetHardwareGroupRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gdchardwaremanagement_v1alpha_GetHardwareGroupRequest_descriptor,
@@ -781,7 +821,7 @@ public final class ServiceProto {
               "Name",
             });
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_CreateHardwareGroupRequest_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_CreateHardwareGroupRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gdchardwaremanagement_v1alpha_CreateHardwareGroupRequest_descriptor,
@@ -789,7 +829,7 @@ public final class ServiceProto {
               "Parent", "HardwareGroupId", "HardwareGroup", "RequestId",
             });
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_UpdateHardwareGroupRequest_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(18);
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_UpdateHardwareGroupRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gdchardwaremanagement_v1alpha_UpdateHardwareGroupRequest_descriptor,
@@ -797,7 +837,7 @@ public final class ServiceProto {
               "UpdateMask", "HardwareGroup", "RequestId",
             });
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_DeleteHardwareGroupRequest_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(19);
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_DeleteHardwareGroupRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gdchardwaremanagement_v1alpha_DeleteHardwareGroupRequest_descriptor,
@@ -805,7 +845,7 @@ public final class ServiceProto {
               "Name", "RequestId",
             });
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_ListHardwareRequest_descriptor =
-        getDescriptor().getMessageTypes().get(19);
+        getDescriptor().getMessageTypes().get(20);
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_ListHardwareRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gdchardwaremanagement_v1alpha_ListHardwareRequest_descriptor,
@@ -813,7 +853,7 @@ public final class ServiceProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_ListHardwareResponse_descriptor =
-        getDescriptor().getMessageTypes().get(20);
+        getDescriptor().getMessageTypes().get(21);
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_ListHardwareResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gdchardwaremanagement_v1alpha_ListHardwareResponse_descriptor,
@@ -821,7 +861,7 @@ public final class ServiceProto {
               "Hardware", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_GetHardwareRequest_descriptor =
-        getDescriptor().getMessageTypes().get(21);
+        getDescriptor().getMessageTypes().get(22);
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_GetHardwareRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gdchardwaremanagement_v1alpha_GetHardwareRequest_descriptor,
@@ -829,7 +869,7 @@ public final class ServiceProto {
               "Name",
             });
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_CreateHardwareRequest_descriptor =
-        getDescriptor().getMessageTypes().get(22);
+        getDescriptor().getMessageTypes().get(23);
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_CreateHardwareRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gdchardwaremanagement_v1alpha_CreateHardwareRequest_descriptor,
@@ -837,7 +877,7 @@ public final class ServiceProto {
               "Parent", "HardwareId", "Hardware",
             });
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_UpdateHardwareRequest_descriptor =
-        getDescriptor().getMessageTypes().get(23);
+        getDescriptor().getMessageTypes().get(24);
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_UpdateHardwareRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gdchardwaremanagement_v1alpha_UpdateHardwareRequest_descriptor,
@@ -845,7 +885,7 @@ public final class ServiceProto {
               "UpdateMask", "Hardware", "RequestId",
             });
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_DeleteHardwareRequest_descriptor =
-        getDescriptor().getMessageTypes().get(24);
+        getDescriptor().getMessageTypes().get(25);
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_DeleteHardwareRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gdchardwaremanagement_v1alpha_DeleteHardwareRequest_descriptor,
@@ -853,7 +893,7 @@ public final class ServiceProto {
               "Name", "RequestId",
             });
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_ListCommentsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(25);
+        getDescriptor().getMessageTypes().get(26);
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_ListCommentsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gdchardwaremanagement_v1alpha_ListCommentsRequest_descriptor,
@@ -861,7 +901,7 @@ public final class ServiceProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_ListCommentsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(26);
+        getDescriptor().getMessageTypes().get(27);
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_ListCommentsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gdchardwaremanagement_v1alpha_ListCommentsResponse_descriptor,
@@ -869,7 +909,7 @@ public final class ServiceProto {
               "Comments", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_GetCommentRequest_descriptor =
-        getDescriptor().getMessageTypes().get(27);
+        getDescriptor().getMessageTypes().get(28);
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_GetCommentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gdchardwaremanagement_v1alpha_GetCommentRequest_descriptor,
@@ -877,7 +917,7 @@ public final class ServiceProto {
               "Name",
             });
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_CreateCommentRequest_descriptor =
-        getDescriptor().getMessageTypes().get(28);
+        getDescriptor().getMessageTypes().get(29);
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_CreateCommentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gdchardwaremanagement_v1alpha_CreateCommentRequest_descriptor,
@@ -885,7 +925,7 @@ public final class ServiceProto {
               "Parent", "CommentId", "Comment", "RequestId",
             });
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_RecordActionOnCommentRequest_descriptor =
-        getDescriptor().getMessageTypes().get(29);
+        getDescriptor().getMessageTypes().get(30);
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_RecordActionOnCommentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gdchardwaremanagement_v1alpha_RecordActionOnCommentRequest_descriptor,
@@ -893,7 +933,7 @@ public final class ServiceProto {
               "Name", "ActionType",
             });
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_ListChangeLogEntriesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(30);
+        getDescriptor().getMessageTypes().get(31);
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_ListChangeLogEntriesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gdchardwaremanagement_v1alpha_ListChangeLogEntriesRequest_descriptor,
@@ -901,7 +941,7 @@ public final class ServiceProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_ListChangeLogEntriesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(31);
+        getDescriptor().getMessageTypes().get(32);
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_ListChangeLogEntriesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gdchardwaremanagement_v1alpha_ListChangeLogEntriesResponse_descriptor,
@@ -909,7 +949,7 @@ public final class ServiceProto {
               "ChangeLogEntries", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_GetChangeLogEntryRequest_descriptor =
-        getDescriptor().getMessageTypes().get(32);
+        getDescriptor().getMessageTypes().get(33);
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_GetChangeLogEntryRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gdchardwaremanagement_v1alpha_GetChangeLogEntryRequest_descriptor,
@@ -917,7 +957,7 @@ public final class ServiceProto {
               "Name",
             });
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_ListSkusRequest_descriptor =
-        getDescriptor().getMessageTypes().get(33);
+        getDescriptor().getMessageTypes().get(34);
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_ListSkusRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gdchardwaremanagement_v1alpha_ListSkusRequest_descriptor,
@@ -925,7 +965,7 @@ public final class ServiceProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_ListSkusResponse_descriptor =
-        getDescriptor().getMessageTypes().get(34);
+        getDescriptor().getMessageTypes().get(35);
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_ListSkusResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gdchardwaremanagement_v1alpha_ListSkusResponse_descriptor,
@@ -933,7 +973,7 @@ public final class ServiceProto {
               "Skus", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_GetSkuRequest_descriptor =
-        getDescriptor().getMessageTypes().get(35);
+        getDescriptor().getMessageTypes().get(36);
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_GetSkuRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gdchardwaremanagement_v1alpha_GetSkuRequest_descriptor,
@@ -941,7 +981,7 @@ public final class ServiceProto {
               "Name",
             });
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_ListZonesRequest_descriptor =
-        getDescriptor().getMessageTypes().get(36);
+        getDescriptor().getMessageTypes().get(37);
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_ListZonesRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gdchardwaremanagement_v1alpha_ListZonesRequest_descriptor,
@@ -949,7 +989,7 @@ public final class ServiceProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_ListZonesResponse_descriptor =
-        getDescriptor().getMessageTypes().get(37);
+        getDescriptor().getMessageTypes().get(38);
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_ListZonesResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gdchardwaremanagement_v1alpha_ListZonesResponse_descriptor,
@@ -957,7 +997,7 @@ public final class ServiceProto {
               "Zones", "NextPageToken", "Unreachable",
             });
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_GetZoneRequest_descriptor =
-        getDescriptor().getMessageTypes().get(38);
+        getDescriptor().getMessageTypes().get(39);
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_GetZoneRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gdchardwaremanagement_v1alpha_GetZoneRequest_descriptor,
@@ -965,7 +1005,7 @@ public final class ServiceProto {
               "Name",
             });
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_CreateZoneRequest_descriptor =
-        getDescriptor().getMessageTypes().get(39);
+        getDescriptor().getMessageTypes().get(40);
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_CreateZoneRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gdchardwaremanagement_v1alpha_CreateZoneRequest_descriptor,
@@ -973,7 +1013,7 @@ public final class ServiceProto {
               "Parent", "ZoneId", "Zone", "RequestId",
             });
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_UpdateZoneRequest_descriptor =
-        getDescriptor().getMessageTypes().get(40);
+        getDescriptor().getMessageTypes().get(41);
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_UpdateZoneRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gdchardwaremanagement_v1alpha_UpdateZoneRequest_descriptor,
@@ -981,7 +1021,7 @@ public final class ServiceProto {
               "UpdateMask", "Zone", "RequestId",
             });
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_DeleteZoneRequest_descriptor =
-        getDescriptor().getMessageTypes().get(41);
+        getDescriptor().getMessageTypes().get(42);
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_DeleteZoneRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gdchardwaremanagement_v1alpha_DeleteZoneRequest_descriptor,
@@ -989,7 +1029,7 @@ public final class ServiceProto {
               "Name", "RequestId",
             });
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_SignalZoneStateRequest_descriptor =
-        getDescriptor().getMessageTypes().get(42);
+        getDescriptor().getMessageTypes().get(43);
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_SignalZoneStateRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gdchardwaremanagement_v1alpha_SignalZoneStateRequest_descriptor,
@@ -997,7 +1037,7 @@ public final class ServiceProto {
               "Name", "RequestId", "StateSignal", "ProvisioningStateSignal", "Step", "Details",
             });
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_OperationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(43);
+        getDescriptor().getMessageTypes().get(44);
     internal_static_google_cloud_gdchardwaremanagement_v1alpha_OperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gdchardwaremanagement_v1alpha_OperationMetadata_descriptor,
@@ -1009,6 +1049,14 @@ public final class ServiceProto {
               "StatusMessage",
               "RequestedCancellation",
               "ApiVersion",
+            });
+    internal_static_google_cloud_gdchardwaremanagement_v1alpha_RequestOrderDateChangeRequest_descriptor =
+        getDescriptor().getMessageTypes().get(45);
+    internal_static_google_cloud_gdchardwaremanagement_v1alpha_RequestOrderDateChangeRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_gdchardwaremanagement_v1alpha_RequestOrderDateChangeRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "RequestedDate",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
@@ -1032,6 +1080,7 @@ public final class ServiceProto {
     com.google.protobuf.EmptyProto.getDescriptor();
     com.google.protobuf.FieldMaskProto.getDescriptor();
     com.google.protobuf.TimestampProto.getDescriptor();
+    com.google.type.DateProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

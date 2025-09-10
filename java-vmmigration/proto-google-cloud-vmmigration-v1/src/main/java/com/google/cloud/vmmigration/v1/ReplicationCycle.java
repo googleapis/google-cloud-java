@@ -44,6 +44,7 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
     name_ = "";
     steps_ = java.util.Collections.emptyList();
     state_ = 0;
+    warnings_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -513,7 +514,7 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
    * <code>int32 progress_percent = 5 [deprecated = true];</code>
    *
    * @deprecated google.cloud.vmmigration.v1.ReplicationCycle.progress_percent is deprecated. See
-   *     google/cloud/vmmigration/v1/vmmigration.proto;l=715
+   *     google/cloud/vmmigration/v1/vmmigration.proto;l=977
    * @return The progressPercent.
    */
   @java.lang.Override
@@ -644,10 +645,11 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Provides details on the state of the cycle in case of an error.
+   * Output only. Provides details on the state of the cycle in case of an
+   * error.
    * </pre>
    *
-   * <code>.google.rpc.Status error = 12;</code>
+   * <code>.google.rpc.Status error = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return Whether the error field is set.
    */
@@ -660,10 +662,11 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Provides details on the state of the cycle in case of an error.
+   * Output only. Provides details on the state of the cycle in case of an
+   * error.
    * </pre>
    *
-   * <code>.google.rpc.Status error = 12;</code>
+   * <code>.google.rpc.Status error = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The error.
    */
@@ -676,14 +679,101 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Provides details on the state of the cycle in case of an error.
+   * Output only. Provides details on the state of the cycle in case of an
+   * error.
    * </pre>
    *
-   * <code>.google.rpc.Status error = 12;</code>
+   * <code>.google.rpc.Status error = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    */
   @java.lang.Override
   public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
     return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
+  }
+
+  public static final int WARNINGS_FIELD_NUMBER = 14;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.vmmigration.v1.MigrationWarning> warnings_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Warnings that occurred during the cycle.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.MigrationWarning warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.vmmigration.v1.MigrationWarning> getWarningsList() {
+    return warnings_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Warnings that occurred during the cycle.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.MigrationWarning warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.vmmigration.v1.MigrationWarningOrBuilder>
+      getWarningsOrBuilderList() {
+    return warnings_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Warnings that occurred during the cycle.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.MigrationWarning warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getWarningsCount() {
+    return warnings_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Warnings that occurred during the cycle.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.MigrationWarning warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.MigrationWarning getWarnings(int index) {
+    return warnings_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Warnings that occurred during the cycle.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.vmmigration.v1.MigrationWarning warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.vmmigration.v1.MigrationWarningOrBuilder getWarningsOrBuilder(int index) {
+    return warnings_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
@@ -728,6 +818,9 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, name_);
     }
+    for (int i = 0; i < warnings_.size(); i++) {
+      output.writeMessage(14, warnings_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -764,6 +857,9 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, name_);
+    }
+    for (int i = 0; i < warnings_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, warnings_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -802,6 +898,7 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
     if (hasError()) {
       if (!getError().equals(other.getError())) return false;
     }
+    if (!getWarningsList().equals(other.getWarningsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -840,6 +937,10 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
     if (hasError()) {
       hash = (37 * hash) + ERROR_FIELD_NUMBER;
       hash = (53 * hash) + getError().hashCode();
+    }
+    if (getWarningsCount() > 0) {
+      hash = (37 * hash) + WARNINGS_FIELD_NUMBER;
+      hash = (53 * hash) + getWarningsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -988,6 +1089,7 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
         getTotalPauseDurationFieldBuilder();
         getStepsFieldBuilder();
         getErrorFieldBuilder();
+        getWarningsFieldBuilder();
       }
     }
 
@@ -1026,6 +1128,13 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
         errorBuilder_.dispose();
         errorBuilder_ = null;
       }
+      if (warningsBuilder_ == null) {
+        warnings_ = java.util.Collections.emptyList();
+      } else {
+        warnings_ = null;
+        warningsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000200);
       return this;
     }
 
@@ -1071,6 +1180,15 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
         result.steps_ = steps_;
       } else {
         result.steps_ = stepsBuilder_.build();
+      }
+      if (warningsBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) != 0)) {
+          warnings_ = java.util.Collections.unmodifiableList(warnings_);
+          bitField0_ = (bitField0_ & ~0x00000200);
+        }
+        result.warnings_ = warnings_;
+      } else {
+        result.warnings_ = warningsBuilder_.build();
       }
     }
 
@@ -1210,6 +1328,33 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
       if (other.hasError()) {
         mergeError(other.getError());
       }
+      if (warningsBuilder_ == null) {
+        if (!other.warnings_.isEmpty()) {
+          if (warnings_.isEmpty()) {
+            warnings_ = other.warnings_;
+            bitField0_ = (bitField0_ & ~0x00000200);
+          } else {
+            ensureWarningsIsMutable();
+            warnings_.addAll(other.warnings_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.warnings_.isEmpty()) {
+          if (warningsBuilder_.isEmpty()) {
+            warningsBuilder_.dispose();
+            warningsBuilder_ = null;
+            warnings_ = other.warnings_;
+            bitField0_ = (bitField0_ & ~0x00000200);
+            warningsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getWarningsFieldBuilder()
+                    : null;
+          } else {
+            warningsBuilder_.addAllMessages(other.warnings_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1298,6 +1443,20 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
                 bitField0_ |= 0x00000001;
                 break;
               } // case 106
+            case 114:
+              {
+                com.google.cloud.vmmigration.v1.MigrationWarning m =
+                    input.readMessage(
+                        com.google.cloud.vmmigration.v1.MigrationWarning.parser(),
+                        extensionRegistry);
+                if (warningsBuilder_ == null) {
+                  ensureWarningsIsMutable();
+                  warnings_.add(m);
+                } else {
+                  warningsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 114
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2072,7 +2231,7 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
      * <code>int32 progress_percent = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.vmmigration.v1.ReplicationCycle.progress_percent is deprecated. See
-     *     google/cloud/vmmigration/v1/vmmigration.proto;l=715
+     *     google/cloud/vmmigration/v1/vmmigration.proto;l=977
      * @return The progressPercent.
      */
     @java.lang.Override
@@ -2093,7 +2252,7 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
      * <code>int32 progress_percent = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.vmmigration.v1.ReplicationCycle.progress_percent is deprecated. See
-     *     google/cloud/vmmigration/v1/vmmigration.proto;l=715
+     *     google/cloud/vmmigration/v1/vmmigration.proto;l=977
      * @param value The progressPercent to set.
      * @return This builder for chaining.
      */
@@ -2118,7 +2277,7 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
      * <code>int32 progress_percent = 5 [deprecated = true];</code>
      *
      * @deprecated google.cloud.vmmigration.v1.ReplicationCycle.progress_percent is deprecated. See
-     *     google/cloud/vmmigration/v1/vmmigration.proto;l=715
+     *     google/cloud/vmmigration/v1/vmmigration.proto;l=977
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -2600,10 +2759,11 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Provides details on the state of the cycle in case of an error.
+     * Output only. Provides details on the state of the cycle in case of an
+     * error.
      * </pre>
      *
-     * <code>.google.rpc.Status error = 12;</code>
+     * <code>.google.rpc.Status error = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return Whether the error field is set.
      */
@@ -2615,10 +2775,11 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Provides details on the state of the cycle in case of an error.
+     * Output only. Provides details on the state of the cycle in case of an
+     * error.
      * </pre>
      *
-     * <code>.google.rpc.Status error = 12;</code>
+     * <code>.google.rpc.Status error = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The error.
      */
@@ -2634,10 +2795,11 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Provides details on the state of the cycle in case of an error.
+     * Output only. Provides details on the state of the cycle in case of an
+     * error.
      * </pre>
      *
-     * <code>.google.rpc.Status error = 12;</code>
+     * <code>.google.rpc.Status error = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setError(com.google.rpc.Status value) {
       if (errorBuilder_ == null) {
@@ -2657,10 +2819,11 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Provides details on the state of the cycle in case of an error.
+     * Output only. Provides details on the state of the cycle in case of an
+     * error.
      * </pre>
      *
-     * <code>.google.rpc.Status error = 12;</code>
+     * <code>.google.rpc.Status error = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder setError(com.google.rpc.Status.Builder builderForValue) {
       if (errorBuilder_ == null) {
@@ -2677,10 +2840,11 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Provides details on the state of the cycle in case of an error.
+     * Output only. Provides details on the state of the cycle in case of an
+     * error.
      * </pre>
      *
-     * <code>.google.rpc.Status error = 12;</code>
+     * <code>.google.rpc.Status error = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder mergeError(com.google.rpc.Status value) {
       if (errorBuilder_ == null) {
@@ -2705,10 +2869,11 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Provides details on the state of the cycle in case of an error.
+     * Output only. Provides details on the state of the cycle in case of an
+     * error.
      * </pre>
      *
-     * <code>.google.rpc.Status error = 12;</code>
+     * <code>.google.rpc.Status error = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public Builder clearError() {
       bitField0_ = (bitField0_ & ~0x00000100);
@@ -2725,10 +2890,11 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Provides details on the state of the cycle in case of an error.
+     * Output only. Provides details on the state of the cycle in case of an
+     * error.
      * </pre>
      *
-     * <code>.google.rpc.Status error = 12;</code>
+     * <code>.google.rpc.Status error = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.rpc.Status.Builder getErrorBuilder() {
       bitField0_ |= 0x00000100;
@@ -2740,10 +2906,11 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Provides details on the state of the cycle in case of an error.
+     * Output only. Provides details on the state of the cycle in case of an
+     * error.
      * </pre>
      *
-     * <code>.google.rpc.Status error = 12;</code>
+     * <code>.google.rpc.Status error = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     public com.google.rpc.StatusOrBuilder getErrorOrBuilder() {
       if (errorBuilder_ != null) {
@@ -2757,10 +2924,11 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
      *
      *
      * <pre>
-     * Provides details on the state of the cycle in case of an error.
+     * Output only. Provides details on the state of the cycle in case of an
+     * error.
      * </pre>
      *
-     * <code>.google.rpc.Status error = 12;</code>
+     * <code>.google.rpc.Status error = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
@@ -2774,6 +2942,411 @@ public final class ReplicationCycle extends com.google.protobuf.GeneratedMessage
         error_ = null;
       }
       return errorBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.vmmigration.v1.MigrationWarning> warnings_ =
+        java.util.Collections.emptyList();
+
+    private void ensureWarningsIsMutable() {
+      if (!((bitField0_ & 0x00000200) != 0)) {
+        warnings_ =
+            new java.util.ArrayList<com.google.cloud.vmmigration.v1.MigrationWarning>(warnings_);
+        bitField0_ |= 0x00000200;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.vmmigration.v1.MigrationWarning,
+            com.google.cloud.vmmigration.v1.MigrationWarning.Builder,
+            com.google.cloud.vmmigration.v1.MigrationWarningOrBuilder>
+        warningsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Warnings that occurred during the cycle.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.MigrationWarning warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.vmmigration.v1.MigrationWarning> getWarningsList() {
+      if (warningsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(warnings_);
+      } else {
+        return warningsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Warnings that occurred during the cycle.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.MigrationWarning warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getWarningsCount() {
+      if (warningsBuilder_ == null) {
+        return warnings_.size();
+      } else {
+        return warningsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Warnings that occurred during the cycle.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.MigrationWarning warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.MigrationWarning getWarnings(int index) {
+      if (warningsBuilder_ == null) {
+        return warnings_.get(index);
+      } else {
+        return warningsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Warnings that occurred during the cycle.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.MigrationWarning warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setWarnings(int index, com.google.cloud.vmmigration.v1.MigrationWarning value) {
+      if (warningsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureWarningsIsMutable();
+        warnings_.set(index, value);
+        onChanged();
+      } else {
+        warningsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Warnings that occurred during the cycle.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.MigrationWarning warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setWarnings(
+        int index, com.google.cloud.vmmigration.v1.MigrationWarning.Builder builderForValue) {
+      if (warningsBuilder_ == null) {
+        ensureWarningsIsMutable();
+        warnings_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        warningsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Warnings that occurred during the cycle.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.MigrationWarning warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addWarnings(com.google.cloud.vmmigration.v1.MigrationWarning value) {
+      if (warningsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureWarningsIsMutable();
+        warnings_.add(value);
+        onChanged();
+      } else {
+        warningsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Warnings that occurred during the cycle.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.MigrationWarning warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addWarnings(int index, com.google.cloud.vmmigration.v1.MigrationWarning value) {
+      if (warningsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureWarningsIsMutable();
+        warnings_.add(index, value);
+        onChanged();
+      } else {
+        warningsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Warnings that occurred during the cycle.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.MigrationWarning warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addWarnings(
+        com.google.cloud.vmmigration.v1.MigrationWarning.Builder builderForValue) {
+      if (warningsBuilder_ == null) {
+        ensureWarningsIsMutable();
+        warnings_.add(builderForValue.build());
+        onChanged();
+      } else {
+        warningsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Warnings that occurred during the cycle.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.MigrationWarning warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addWarnings(
+        int index, com.google.cloud.vmmigration.v1.MigrationWarning.Builder builderForValue) {
+      if (warningsBuilder_ == null) {
+        ensureWarningsIsMutable();
+        warnings_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        warningsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Warnings that occurred during the cycle.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.MigrationWarning warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllWarnings(
+        java.lang.Iterable<? extends com.google.cloud.vmmigration.v1.MigrationWarning> values) {
+      if (warningsBuilder_ == null) {
+        ensureWarningsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, warnings_);
+        onChanged();
+      } else {
+        warningsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Warnings that occurred during the cycle.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.MigrationWarning warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearWarnings() {
+      if (warningsBuilder_ == null) {
+        warnings_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000200);
+        onChanged();
+      } else {
+        warningsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Warnings that occurred during the cycle.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.MigrationWarning warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeWarnings(int index) {
+      if (warningsBuilder_ == null) {
+        ensureWarningsIsMutable();
+        warnings_.remove(index);
+        onChanged();
+      } else {
+        warningsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Warnings that occurred during the cycle.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.MigrationWarning warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.MigrationWarning.Builder getWarningsBuilder(int index) {
+      return getWarningsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Warnings that occurred during the cycle.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.MigrationWarning warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.MigrationWarningOrBuilder getWarningsOrBuilder(
+        int index) {
+      if (warningsBuilder_ == null) {
+        return warnings_.get(index);
+      } else {
+        return warningsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Warnings that occurred during the cycle.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.MigrationWarning warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.vmmigration.v1.MigrationWarningOrBuilder>
+        getWarningsOrBuilderList() {
+      if (warningsBuilder_ != null) {
+        return warningsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(warnings_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Warnings that occurred during the cycle.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.MigrationWarning warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.MigrationWarning.Builder addWarningsBuilder() {
+      return getWarningsFieldBuilder()
+          .addBuilder(com.google.cloud.vmmigration.v1.MigrationWarning.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Warnings that occurred during the cycle.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.MigrationWarning warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.vmmigration.v1.MigrationWarning.Builder addWarningsBuilder(int index) {
+      return getWarningsFieldBuilder()
+          .addBuilder(index, com.google.cloud.vmmigration.v1.MigrationWarning.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Warnings that occurred during the cycle.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.vmmigration.v1.MigrationWarning warnings = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.vmmigration.v1.MigrationWarning.Builder>
+        getWarningsBuilderList() {
+      return getWarningsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.vmmigration.v1.MigrationWarning,
+            com.google.cloud.vmmigration.v1.MigrationWarning.Builder,
+            com.google.cloud.vmmigration.v1.MigrationWarningOrBuilder>
+        getWarningsFieldBuilder() {
+      if (warningsBuilder_ == null) {
+        warningsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.vmmigration.v1.MigrationWarning,
+                com.google.cloud.vmmigration.v1.MigrationWarning.Builder,
+                com.google.cloud.vmmigration.v1.MigrationWarningOrBuilder>(
+                warnings_, ((bitField0_ & 0x00000200) != 0), getParentForChildren(), isClean());
+        warnings_ = null;
+      }
+      return warningsBuilder_;
     }
 
     @java.lang.Override

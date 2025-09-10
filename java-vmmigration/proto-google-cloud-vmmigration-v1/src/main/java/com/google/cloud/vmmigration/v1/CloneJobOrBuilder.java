@@ -72,6 +72,51 @@ public interface CloneJobOrBuilder
    *
    *
    * <pre>
+   * Output only. Details of the target Persistent Disks in Compute Engine.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.ComputeEngineDisksTargetDetails compute_engine_disks_target_details = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the computeEngineDisksTargetDetails field is set.
+   */
+  boolean hasComputeEngineDisksTargetDetails();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Details of the target Persistent Disks in Compute Engine.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.ComputeEngineDisksTargetDetails compute_engine_disks_target_details = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The computeEngineDisksTargetDetails.
+   */
+  com.google.cloud.vmmigration.v1.ComputeEngineDisksTargetDetails
+      getComputeEngineDisksTargetDetails();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Details of the target Persistent Disks in Compute Engine.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.vmmigration.v1.ComputeEngineDisksTargetDetails compute_engine_disks_target_details = 25 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.vmmigration.v1.ComputeEngineDisksTargetDetailsOrBuilder
+      getComputeEngineDisksTargetDetailsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The time the clone job was created (as an API call, not when
    * it was actually created in the target).
    * </pre>

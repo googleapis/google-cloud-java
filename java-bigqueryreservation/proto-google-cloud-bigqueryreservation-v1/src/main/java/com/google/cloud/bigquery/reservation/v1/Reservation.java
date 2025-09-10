@@ -1160,6 +1160,61 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     com.google.protobuf.TimestampOrBuilder getLastReplicationTimeOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which a soft failover for the reservation and
+     * its associated datasets was initiated. After this field is set, all
+     * subsequent changes to the reservation will be rejected unless a hard
+     * failover overrides this operation. This field will be cleared once the
+     * failover is complete.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp soft_failover_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the softFailoverStartTime field is set.
+     */
+    boolean hasSoftFailoverStartTime();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which a soft failover for the reservation and
+     * its associated datasets was initiated. After this field is set, all
+     * subsequent changes to the reservation will be rejected unless a hard
+     * failover overrides this operation. This field will be cleared once the
+     * failover is complete.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp soft_failover_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The softFailoverStartTime.
+     */
+    com.google.protobuf.Timestamp getSoftFailoverStartTime();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which a soft failover for the reservation and
+     * its associated datasets was initiated. After this field is set, all
+     * subsequent changes to the reservation will be rejected unless a hard
+     * failover overrides this operation. This field will be cleared once the
+     * failover is complete.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp soft_failover_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.protobuf.TimestampOrBuilder getSoftFailoverStartTimeOrBuilder();
   }
 
   /**
@@ -1388,6 +1443,77 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
           : lastReplicationTime_;
     }
 
+    public static final int SOFT_FAILOVER_START_TIME_FIELD_NUMBER = 4;
+    private com.google.protobuf.Timestamp softFailoverStartTime_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which a soft failover for the reservation and
+     * its associated datasets was initiated. After this field is set, all
+     * subsequent changes to the reservation will be rejected unless a hard
+     * failover overrides this operation. This field will be cleared once the
+     * failover is complete.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp soft_failover_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the softFailoverStartTime field is set.
+     */
+    @java.lang.Override
+    public boolean hasSoftFailoverStartTime() {
+      return ((bitField0_ & 0x00000008) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which a soft failover for the reservation and
+     * its associated datasets was initiated. After this field is set, all
+     * subsequent changes to the reservation will be rejected unless a hard
+     * failover overrides this operation. This field will be cleared once the
+     * failover is complete.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp soft_failover_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The softFailoverStartTime.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Timestamp getSoftFailoverStartTime() {
+      return softFailoverStartTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : softFailoverStartTime_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The time at which a soft failover for the reservation and
+     * its associated datasets was initiated. After this field is set, all
+     * subsequent changes to the reservation will be rejected unless a hard
+     * failover overrides this operation. This field will be cleared once the
+     * failover is complete.
+     * </pre>
+     *
+     * <code>
+     * .google.protobuf.Timestamp soft_failover_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.TimestampOrBuilder getSoftFailoverStartTimeOrBuilder() {
+      return softFailoverStartTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : softFailoverStartTime_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -1411,6 +1537,9 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       if (((bitField0_ & 0x00000004) != 0)) {
         output.writeMessage(3, getLastReplicationTime());
       }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        output.writeMessage(4, getSoftFailoverStartTime());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -1429,6 +1558,10 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       if (((bitField0_ & 0x00000004) != 0)) {
         size +=
             com.google.protobuf.CodedOutputStream.computeMessageSize(3, getLastReplicationTime());
+      }
+      if (((bitField0_ & 0x00000008) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(4, getSoftFailoverStartTime());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -1459,6 +1592,10 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       if (hasLastReplicationTime()) {
         if (!getLastReplicationTime().equals(other.getLastReplicationTime())) return false;
       }
+      if (hasSoftFailoverStartTime() != other.hasSoftFailoverStartTime()) return false;
+      if (hasSoftFailoverStartTime()) {
+        if (!getSoftFailoverStartTime().equals(other.getSoftFailoverStartTime())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -1481,6 +1618,10 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
       if (hasLastReplicationTime()) {
         hash = (37 * hash) + LAST_REPLICATION_TIME_FIELD_NUMBER;
         hash = (53 * hash) + getLastReplicationTime().hashCode();
+      }
+      if (hasSoftFailoverStartTime()) {
+        hash = (37 * hash) + SOFT_FAILOVER_START_TIME_FIELD_NUMBER;
+        hash = (53 * hash) + getSoftFailoverStartTime().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -1632,6 +1773,7 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
           getErrorFieldBuilder();
           getLastErrorTimeFieldBuilder();
           getLastReplicationTimeFieldBuilder();
+          getSoftFailoverStartTimeFieldBuilder();
         }
       }
 
@@ -1653,6 +1795,11 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         if (lastReplicationTimeBuilder_ != null) {
           lastReplicationTimeBuilder_.dispose();
           lastReplicationTimeBuilder_ = null;
+        }
+        softFailoverStartTime_ = null;
+        if (softFailoverStartTimeBuilder_ != null) {
+          softFailoverStartTimeBuilder_.dispose();
+          softFailoverStartTimeBuilder_ = null;
         }
         return this;
       }
@@ -1710,6 +1857,13 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
                   ? lastReplicationTime_
                   : lastReplicationTimeBuilder_.build();
           to_bitField0_ |= 0x00000004;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.softFailoverStartTime_ =
+              softFailoverStartTimeBuilder_ == null
+                  ? softFailoverStartTime_
+                  : softFailoverStartTimeBuilder_.build();
+          to_bitField0_ |= 0x00000008;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -1775,6 +1929,9 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
         if (other.hasLastReplicationTime()) {
           mergeLastReplicationTime(other.getLastReplicationTime());
         }
+        if (other.hasSoftFailoverStartTime()) {
+          mergeSoftFailoverStartTime(other.getSoftFailoverStartTime());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1820,6 +1977,13 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000004;
                   break;
                 } // case 26
+              case 34:
+                {
+                  input.readMessage(
+                      getSoftFailoverStartTimeFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 34
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2491,6 +2655,255 @@ public final class Reservation extends com.google.protobuf.GeneratedMessageV3
           lastReplicationTime_ = null;
         }
         return lastReplicationTimeBuilder_;
+      }
+
+      private com.google.protobuf.Timestamp softFailoverStartTime_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          softFailoverStartTimeBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time at which a soft failover for the reservation and
+       * its associated datasets was initiated. After this field is set, all
+       * subsequent changes to the reservation will be rejected unless a hard
+       * failover overrides this operation. This field will be cleared once the
+       * failover is complete.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp soft_failover_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the softFailoverStartTime field is set.
+       */
+      public boolean hasSoftFailoverStartTime() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time at which a soft failover for the reservation and
+       * its associated datasets was initiated. After this field is set, all
+       * subsequent changes to the reservation will be rejected unless a hard
+       * failover overrides this operation. This field will be cleared once the
+       * failover is complete.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp soft_failover_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The softFailoverStartTime.
+       */
+      public com.google.protobuf.Timestamp getSoftFailoverStartTime() {
+        if (softFailoverStartTimeBuilder_ == null) {
+          return softFailoverStartTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : softFailoverStartTime_;
+        } else {
+          return softFailoverStartTimeBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time at which a soft failover for the reservation and
+       * its associated datasets was initiated. After this field is set, all
+       * subsequent changes to the reservation will be rejected unless a hard
+       * failover overrides this operation. This field will be cleared once the
+       * failover is complete.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp soft_failover_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setSoftFailoverStartTime(com.google.protobuf.Timestamp value) {
+        if (softFailoverStartTimeBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          softFailoverStartTime_ = value;
+        } else {
+          softFailoverStartTimeBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time at which a soft failover for the reservation and
+       * its associated datasets was initiated. After this field is set, all
+       * subsequent changes to the reservation will be rejected unless a hard
+       * failover overrides this operation. This field will be cleared once the
+       * failover is complete.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp soft_failover_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setSoftFailoverStartTime(
+          com.google.protobuf.Timestamp.Builder builderForValue) {
+        if (softFailoverStartTimeBuilder_ == null) {
+          softFailoverStartTime_ = builderForValue.build();
+        } else {
+          softFailoverStartTimeBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time at which a soft failover for the reservation and
+       * its associated datasets was initiated. After this field is set, all
+       * subsequent changes to the reservation will be rejected unless a hard
+       * failover overrides this operation. This field will be cleared once the
+       * failover is complete.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp soft_failover_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder mergeSoftFailoverStartTime(com.google.protobuf.Timestamp value) {
+        if (softFailoverStartTimeBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0)
+              && softFailoverStartTime_ != null
+              && softFailoverStartTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+            getSoftFailoverStartTimeBuilder().mergeFrom(value);
+          } else {
+            softFailoverStartTime_ = value;
+          }
+        } else {
+          softFailoverStartTimeBuilder_.mergeFrom(value);
+        }
+        if (softFailoverStartTime_ != null) {
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time at which a soft failover for the reservation and
+       * its associated datasets was initiated. After this field is set, all
+       * subsequent changes to the reservation will be rejected unless a hard
+       * failover overrides this operation. This field will be cleared once the
+       * failover is complete.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp soft_failover_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearSoftFailoverStartTime() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        softFailoverStartTime_ = null;
+        if (softFailoverStartTimeBuilder_ != null) {
+          softFailoverStartTimeBuilder_.dispose();
+          softFailoverStartTimeBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time at which a soft failover for the reservation and
+       * its associated datasets was initiated. After this field is set, all
+       * subsequent changes to the reservation will be rejected unless a hard
+       * failover overrides this operation. This field will be cleared once the
+       * failover is complete.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp soft_failover_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.protobuf.Timestamp.Builder getSoftFailoverStartTimeBuilder() {
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return getSoftFailoverStartTimeFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time at which a soft failover for the reservation and
+       * its associated datasets was initiated. After this field is set, all
+       * subsequent changes to the reservation will be rejected unless a hard
+       * failover overrides this operation. This field will be cleared once the
+       * failover is complete.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp soft_failover_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.protobuf.TimestampOrBuilder getSoftFailoverStartTimeOrBuilder() {
+        if (softFailoverStartTimeBuilder_ != null) {
+          return softFailoverStartTimeBuilder_.getMessageOrBuilder();
+        } else {
+          return softFailoverStartTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : softFailoverStartTime_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The time at which a soft failover for the reservation and
+       * its associated datasets was initiated. After this field is set, all
+       * subsequent changes to the reservation will be rejected unless a hard
+       * failover overrides this operation. This field will be cleared once the
+       * failover is complete.
+       * </pre>
+       *
+       * <code>
+       * .google.protobuf.Timestamp soft_failover_start_time = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          getSoftFailoverStartTimeFieldBuilder() {
+        if (softFailoverStartTimeBuilder_ == null) {
+          softFailoverStartTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getSoftFailoverStartTime(), getParentForChildren(), isClean());
+          softFailoverStartTime_ = null;
+        }
+        return softFailoverStartTimeBuilder_;
       }
 
       @java.lang.Override

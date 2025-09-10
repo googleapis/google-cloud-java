@@ -162,7 +162,7 @@ public enum UtilizationReportView implements com.google.protobuf.ProtocolMessage
   }
 
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
-    return com.google.cloud.vmmigration.v1.VmMigrationProto.getDescriptor().getEnumTypes().get(0);
+    return com.google.cloud.vmmigration.v1.VmMigrationProto.getDescriptor().getEnumTypes().get(5);
   }
 
   private static final UtilizationReportView[] VALUES = values();
