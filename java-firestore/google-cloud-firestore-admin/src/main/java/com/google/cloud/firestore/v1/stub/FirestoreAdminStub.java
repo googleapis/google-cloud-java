@@ -27,6 +27,8 @@ import com.google.firestore.admin.v1.BackupSchedule;
 import com.google.firestore.admin.v1.BulkDeleteDocumentsMetadata;
 import com.google.firestore.admin.v1.BulkDeleteDocumentsRequest;
 import com.google.firestore.admin.v1.BulkDeleteDocumentsResponse;
+import com.google.firestore.admin.v1.CloneDatabaseMetadata;
+import com.google.firestore.admin.v1.CloneDatabaseRequest;
 import com.google.firestore.admin.v1.CreateBackupScheduleRequest;
 import com.google.firestore.admin.v1.CreateDatabaseMetadata;
 import com.google.firestore.admin.v1.CreateDatabaseRequest;
@@ -276,6 +278,15 @@ public abstract class FirestoreAdminStub implements BackgroundResource {
 
   public UnaryCallable<DeleteBackupScheduleRequest, Empty> deleteBackupScheduleCallable() {
     throw new UnsupportedOperationException("Not implemented: deleteBackupScheduleCallable()");
+  }
+
+  public OperationCallable<CloneDatabaseRequest, Database, CloneDatabaseMetadata>
+      cloneDatabaseOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: cloneDatabaseOperationCallable()");
+  }
+
+  public UnaryCallable<CloneDatabaseRequest, Operation> cloneDatabaseCallable() {
+    throw new UnsupportedOperationException("Not implemented: cloneDatabaseCallable()");
   }
 
   @Override

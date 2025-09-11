@@ -20,6 +20,7 @@ import com.google.api.core.BetaApi;
 import com.google.firestore.admin.v1.Backup;
 import com.google.firestore.admin.v1.BackupSchedule;
 import com.google.firestore.admin.v1.BulkDeleteDocumentsRequest;
+import com.google.firestore.admin.v1.CloneDatabaseRequest;
 import com.google.firestore.admin.v1.CreateBackupScheduleRequest;
 import com.google.firestore.admin.v1.CreateDatabaseRequest;
 import com.google.firestore.admin.v1.CreateIndexRequest;
@@ -746,6 +747,27 @@ public class MockFirestoreAdminImpl extends FirestoreAdminImplBase {
                       + " %s",
                   response == null ? "null" : response.getClass().getName(),
                   Empty.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
+  public void cloneDatabase(
+      CloneDatabaseRequest request, StreamObserver<Operation> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof Operation) {
+      requests.add(request);
+      responseObserver.onNext(((Operation) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method CloneDatabase, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  Operation.class.getName(),
                   Exception.class.getName())));
     }
   }

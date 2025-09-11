@@ -38,6 +38,8 @@ import com.google.firestore.admin.v1.BackupSchedule;
 import com.google.firestore.admin.v1.BulkDeleteDocumentsMetadata;
 import com.google.firestore.admin.v1.BulkDeleteDocumentsRequest;
 import com.google.firestore.admin.v1.BulkDeleteDocumentsResponse;
+import com.google.firestore.admin.v1.CloneDatabaseMetadata;
+import com.google.firestore.admin.v1.CloneDatabaseRequest;
 import com.google.firestore.admin.v1.CreateBackupScheduleRequest;
 import com.google.firestore.admin.v1.CreateDatabaseMetadata;
 import com.google.firestore.admin.v1.CreateDatabaseRequest;
@@ -388,6 +390,17 @@ public class FirestoreAdminSettings extends ClientSettings<FirestoreAdminSetting
     return ((FirestoreAdminStubSettings) getStubSettings()).deleteBackupScheduleSettings();
   }
 
+  /** Returns the object with the settings used for calls to cloneDatabase. */
+  public UnaryCallSettings<CloneDatabaseRequest, Operation> cloneDatabaseSettings() {
+    return ((FirestoreAdminStubSettings) getStubSettings()).cloneDatabaseSettings();
+  }
+
+  /** Returns the object with the settings used for calls to cloneDatabase. */
+  public OperationCallSettings<CloneDatabaseRequest, Database, CloneDatabaseMetadata>
+      cloneDatabaseOperationSettings() {
+    return ((FirestoreAdminStubSettings) getStubSettings()).cloneDatabaseOperationSettings();
+  }
+
   public static final FirestoreAdminSettings create(FirestoreAdminStubSettings stub)
       throws IOException {
     return new FirestoreAdminSettings.Builder(stub.toBuilder()).build();
@@ -723,6 +736,17 @@ public class FirestoreAdminSettings extends ClientSettings<FirestoreAdminSetting
     public UnaryCallSettings.Builder<DeleteBackupScheduleRequest, Empty>
         deleteBackupScheduleSettings() {
       return getStubSettingsBuilder().deleteBackupScheduleSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to cloneDatabase. */
+    public UnaryCallSettings.Builder<CloneDatabaseRequest, Operation> cloneDatabaseSettings() {
+      return getStubSettingsBuilder().cloneDatabaseSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to cloneDatabase. */
+    public OperationCallSettings.Builder<CloneDatabaseRequest, Database, CloneDatabaseMetadata>
+        cloneDatabaseOperationSettings() {
+      return getStubSettingsBuilder().cloneDatabaseOperationSettings();
     }
 
     @Override

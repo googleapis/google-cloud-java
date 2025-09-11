@@ -13,6 +13,9 @@
             "BulkDeleteDocuments": {
               "methods": ["bulkDeleteDocumentsAsync", "bulkDeleteDocumentsAsync", "bulkDeleteDocumentsAsync", "bulkDeleteDocumentsOperationCallable", "bulkDeleteDocumentsCallable"]
             },
+            "CloneDatabase": {
+              "methods": ["cloneDatabaseAsync", "cloneDatabaseOperationCallable", "cloneDatabaseCallable"]
+            },
             "CreateBackupSchedule": {
               "methods": ["createBackupSchedule", "createBackupSchedule", "createBackupSchedule", "createBackupScheduleCallable"]
             },

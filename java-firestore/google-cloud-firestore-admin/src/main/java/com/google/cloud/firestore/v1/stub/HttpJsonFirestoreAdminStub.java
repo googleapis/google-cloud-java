@@ -35,12 +35,15 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.common.collect.ImmutableMap;
 import com.google.firestore.admin.v1.Backup;
 import com.google.firestore.admin.v1.BackupSchedule;
 import com.google.firestore.admin.v1.BulkDeleteDocumentsMetadata;
 import com.google.firestore.admin.v1.BulkDeleteDocumentsRequest;
 import com.google.firestore.admin.v1.BulkDeleteDocumentsResponse;
+import com.google.firestore.admin.v1.CloneDatabaseMetadata;
+import com.google.firestore.admin.v1.CloneDatabaseRequest;
 import com.google.firestore.admin.v1.CreateBackupScheduleRequest;
 import com.google.firestore.admin.v1.CreateDatabaseMetadata;
 import com.google.firestore.admin.v1.CreateDatabaseRequest;
@@ -125,6 +128,7 @@ public class HttpJsonFirestoreAdminStub extends FirestoreAdminStub {
           .add(Index.getDescriptor())
           .add(CreateDatabaseMetadata.getDescriptor())
           .add(ExportDocumentsMetadata.getDescriptor())
+          .add(CloneDatabaseMetadata.getDescriptor())
           .add(IndexOperationMetadata.getDescriptor())
           .build();
 
@@ -1268,6 +1272,46 @@ public class HttpJsonFirestoreAdminStub extends FirestoreAdminStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<CloneDatabaseRequest, Operation>
+      cloneDatabaseMethodDescriptor =
+          ApiMethodDescriptor.<CloneDatabaseRequest, Operation>newBuilder()
+              .setFullMethodName("google.firestore.admin.v1.FirestoreAdmin/CloneDatabase")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CloneDatabaseRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*}/databases:clone",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CloneDatabaseRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CloneDatabaseRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearParent().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (CloneDatabaseRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
   private final UnaryCallable<CreateIndexRequest, Operation> createIndexCallable;
   private final OperationCallable<CreateIndexRequest, Index, IndexOperationMetadata>
       createIndexOperationCallable;
@@ -1325,10 +1369,18 @@ public class HttpJsonFirestoreAdminStub extends FirestoreAdminStub {
   private final UnaryCallable<UpdateBackupScheduleRequest, BackupSchedule>
       updateBackupScheduleCallable;
   private final UnaryCallable<DeleteBackupScheduleRequest, Empty> deleteBackupScheduleCallable;
+  private final UnaryCallable<CloneDatabaseRequest, Operation> cloneDatabaseCallable;
+  private final OperationCallable<CloneDatabaseRequest, Database, CloneDatabaseMetadata>
+      cloneDatabaseOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonOperationsStub httpJsonOperationsStub;
   private final HttpJsonStubCallableFactory callableFactory;
+
+  private static final PathTemplate CLONE_DATABASE_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/{project_id=*}/**");
+  private static final PathTemplate CLONE_DATABASE_1_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/databases/{database_id=*}/**");
 
   public static final HttpJsonFirestoreAdminStub create(FirestoreAdminStubSettings settings)
       throws IOException {
@@ -1747,6 +1799,28 @@ public class HttpJsonFirestoreAdminStub extends FirestoreAdminStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<CloneDatabaseRequest, Operation> cloneDatabaseTransportSettings =
+        HttpJsonCallSettings.<CloneDatabaseRequest, Operation>newBuilder()
+            .setMethodDescriptor(cloneDatabaseMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  if (request.getPitrSnapshot() != null) {
+                    builder.add(
+                        request.getPitrSnapshot().getDatabase(),
+                        "project_id",
+                        CLONE_DATABASE_0_PATH_TEMPLATE);
+                  }
+                  if (request.getPitrSnapshot() != null) {
+                    builder.add(
+                        request.getPitrSnapshot().getDatabase(),
+                        "database_id",
+                        CLONE_DATABASE_1_PATH_TEMPLATE);
+                  }
+                  return builder.build();
+                })
+            .build();
 
     this.createIndexCallable =
         callableFactory.createUnaryCallable(
@@ -1915,6 +1989,15 @@ public class HttpJsonFirestoreAdminStub extends FirestoreAdminStub {
             deleteBackupScheduleTransportSettings,
             settings.deleteBackupScheduleSettings(),
             clientContext);
+    this.cloneDatabaseCallable =
+        callableFactory.createUnaryCallable(
+            cloneDatabaseTransportSettings, settings.cloneDatabaseSettings(), clientContext);
+    this.cloneDatabaseOperationCallable =
+        callableFactory.createOperationCallable(
+            cloneDatabaseTransportSettings,
+            settings.cloneDatabaseOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -1954,6 +2037,7 @@ public class HttpJsonFirestoreAdminStub extends FirestoreAdminStub {
     methodDescriptors.add(listBackupSchedulesMethodDescriptor);
     methodDescriptors.add(updateBackupScheduleMethodDescriptor);
     methodDescriptors.add(deleteBackupScheduleMethodDescriptor);
+    methodDescriptors.add(cloneDatabaseMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -2180,6 +2264,17 @@ public class HttpJsonFirestoreAdminStub extends FirestoreAdminStub {
   @Override
   public UnaryCallable<DeleteBackupScheduleRequest, Empty> deleteBackupScheduleCallable() {
     return deleteBackupScheduleCallable;
+  }
+
+  @Override
+  public UnaryCallable<CloneDatabaseRequest, Operation> cloneDatabaseCallable() {
+    return cloneDatabaseCallable;
+  }
+
+  @Override
+  public OperationCallable<CloneDatabaseRequest, Database, CloneDatabaseMetadata>
+      cloneDatabaseOperationCallable() {
+    return cloneDatabaseOperationCallable;
   }
 
   @Override

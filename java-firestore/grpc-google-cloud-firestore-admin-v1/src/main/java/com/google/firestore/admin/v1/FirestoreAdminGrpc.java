@@ -1443,6 +1443,49 @@ public final class FirestoreAdminGrpc {
     return getDeleteBackupScheduleMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.firestore.admin.v1.CloneDatabaseRequest, com.google.longrunning.Operation>
+      getCloneDatabaseMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CloneDatabase",
+      requestType = com.google.firestore.admin.v1.CloneDatabaseRequest.class,
+      responseType = com.google.longrunning.Operation.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.firestore.admin.v1.CloneDatabaseRequest, com.google.longrunning.Operation>
+      getCloneDatabaseMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.firestore.admin.v1.CloneDatabaseRequest, com.google.longrunning.Operation>
+        getCloneDatabaseMethod;
+    if ((getCloneDatabaseMethod = FirestoreAdminGrpc.getCloneDatabaseMethod) == null) {
+      synchronized (FirestoreAdminGrpc.class) {
+        if ((getCloneDatabaseMethod = FirestoreAdminGrpc.getCloneDatabaseMethod) == null) {
+          FirestoreAdminGrpc.getCloneDatabaseMethod =
+              getCloneDatabaseMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.firestore.admin.v1.CloneDatabaseRequest,
+                          com.google.longrunning.Operation>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CloneDatabase"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.firestore.admin.v1.CloneDatabaseRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.longrunning.Operation.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new FirestoreAdminMethodDescriptorSupplier("CloneDatabase"))
+                      .build();
+        }
+      }
+    }
+    return getCloneDatabaseMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static FirestoreAdminStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<FirestoreAdminStub> factory =
@@ -2023,6 +2066,34 @@ public final class FirestoreAdminGrpc {
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getDeleteBackupScheduleMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new database by cloning an existing one.
+     * The new database must be in the same cloud region or multi-region location
+     * as the existing database. This behaves similar to
+     * [FirestoreAdmin.CreateDatabase][google.firestore.admin.v1.FirestoreAdmin.CreateDatabase]
+     * except instead of creating a new empty database, a new database is created
+     * with the database type, index configuration, and documents from an existing
+     * database.
+     * The [long-running operation][google.longrunning.Operation] can be used to
+     * track the progress of the clone, with the Operation's
+     * [metadata][google.longrunning.Operation.metadata] field type being the
+     * [CloneDatabaseMetadata][google.firestore.admin.v1.CloneDatabaseMetadata].
+     * The [response][google.longrunning.Operation.response] type is the
+     * [Database][google.firestore.admin.v1.Database] if the clone was
+     * successful. The new database is not readable or writeable until the LRO has
+     * completed.
+     * </pre>
+     */
+    default void cloneDatabase(
+        com.google.firestore.admin.v1.CloneDatabaseRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCloneDatabaseMethod(), responseObserver);
     }
   }
 
@@ -2655,6 +2726,36 @@ public final class FirestoreAdminGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new database by cloning an existing one.
+     * The new database must be in the same cloud region or multi-region location
+     * as the existing database. This behaves similar to
+     * [FirestoreAdmin.CreateDatabase][google.firestore.admin.v1.FirestoreAdmin.CreateDatabase]
+     * except instead of creating a new empty database, a new database is created
+     * with the database type, index configuration, and documents from an existing
+     * database.
+     * The [long-running operation][google.longrunning.Operation] can be used to
+     * track the progress of the clone, with the Operation's
+     * [metadata][google.longrunning.Operation.metadata] field type being the
+     * [CloneDatabaseMetadata][google.firestore.admin.v1.CloneDatabaseMetadata].
+     * The [response][google.longrunning.Operation.response] type is the
+     * [Database][google.firestore.admin.v1.Database] if the clone was
+     * successful. The new database is not readable or writeable until the LRO has
+     * completed.
+     * </pre>
+     */
+    public void cloneDatabase(
+        com.google.firestore.admin.v1.CloneDatabaseRequest request,
+        io.grpc.stub.StreamObserver<com.google.longrunning.Operation> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCloneDatabaseMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -3158,6 +3259,33 @@ public final class FirestoreAdminGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteBackupScheduleMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new database by cloning an existing one.
+     * The new database must be in the same cloud region or multi-region location
+     * as the existing database. This behaves similar to
+     * [FirestoreAdmin.CreateDatabase][google.firestore.admin.v1.FirestoreAdmin.CreateDatabase]
+     * except instead of creating a new empty database, a new database is created
+     * with the database type, index configuration, and documents from an existing
+     * database.
+     * The [long-running operation][google.longrunning.Operation] can be used to
+     * track the progress of the clone, with the Operation's
+     * [metadata][google.longrunning.Operation.metadata] field type being the
+     * [CloneDatabaseMetadata][google.firestore.admin.v1.CloneDatabaseMetadata].
+     * The [response][google.longrunning.Operation.response] type is the
+     * [Database][google.firestore.admin.v1.Database] if the clone was
+     * successful. The new database is not readable or writeable until the LRO has
+     * completed.
+     * </pre>
+     */
+    public com.google.longrunning.Operation cloneDatabase(
+        com.google.firestore.admin.v1.CloneDatabaseRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCloneDatabaseMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -3660,6 +3788,33 @@ public final class FirestoreAdminGrpc {
         com.google.firestore.admin.v1.DeleteBackupScheduleRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getDeleteBackupScheduleMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new database by cloning an existing one.
+     * The new database must be in the same cloud region or multi-region location
+     * as the existing database. This behaves similar to
+     * [FirestoreAdmin.CreateDatabase][google.firestore.admin.v1.FirestoreAdmin.CreateDatabase]
+     * except instead of creating a new empty database, a new database is created
+     * with the database type, index configuration, and documents from an existing
+     * database.
+     * The [long-running operation][google.longrunning.Operation] can be used to
+     * track the progress of the clone, with the Operation's
+     * [metadata][google.longrunning.Operation.metadata] field type being the
+     * [CloneDatabaseMetadata][google.firestore.admin.v1.CloneDatabaseMetadata].
+     * The [response][google.longrunning.Operation.response] type is the
+     * [Database][google.firestore.admin.v1.Database] if the clone was
+     * successful. The new database is not readable or writeable until the LRO has
+     * completed.
+     * </pre>
+     */
+    public com.google.longrunning.Operation cloneDatabase(
+        com.google.firestore.admin.v1.CloneDatabaseRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCloneDatabaseMethod(), getCallOptions(), request);
     }
   }
 
@@ -4179,6 +4334,33 @@ public final class FirestoreAdminGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getDeleteBackupScheduleMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new database by cloning an existing one.
+     * The new database must be in the same cloud region or multi-region location
+     * as the existing database. This behaves similar to
+     * [FirestoreAdmin.CreateDatabase][google.firestore.admin.v1.FirestoreAdmin.CreateDatabase]
+     * except instead of creating a new empty database, a new database is created
+     * with the database type, index configuration, and documents from an existing
+     * database.
+     * The [long-running operation][google.longrunning.Operation] can be used to
+     * track the progress of the clone, with the Operation's
+     * [metadata][google.longrunning.Operation.metadata] field type being the
+     * [CloneDatabaseMetadata][google.firestore.admin.v1.CloneDatabaseMetadata].
+     * The [response][google.longrunning.Operation.response] type is the
+     * [Database][google.firestore.admin.v1.Database] if the clone was
+     * successful. The new database is not readable or writeable until the LRO has
+     * completed.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
+        cloneDatabase(com.google.firestore.admin.v1.CloneDatabaseRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCloneDatabaseMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_CREATE_INDEX = 0;
@@ -4212,6 +4394,7 @@ public final class FirestoreAdminGrpc {
   private static final int METHODID_LIST_BACKUP_SCHEDULES = 28;
   private static final int METHODID_UPDATE_BACKUP_SCHEDULE = 29;
   private static final int METHODID_DELETE_BACKUP_SCHEDULE = 30;
+  private static final int METHODID_CLONE_DATABASE = 31;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -4400,6 +4583,11 @@ public final class FirestoreAdminGrpc {
           serviceImpl.deleteBackupSchedule(
               (com.google.firestore.admin.v1.DeleteBackupScheduleRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_CLONE_DATABASE:
+          serviceImpl.cloneDatabase(
+              (com.google.firestore.admin.v1.CloneDatabaseRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.longrunning.Operation>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -4615,6 +4803,12 @@ public final class FirestoreAdminGrpc {
                 new MethodHandlers<
                     com.google.firestore.admin.v1.DeleteBackupScheduleRequest,
                     com.google.protobuf.Empty>(service, METHODID_DELETE_BACKUP_SCHEDULE)))
+        .addMethod(
+            getCloneDatabaseMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.firestore.admin.v1.CloneDatabaseRequest,
+                    com.google.longrunning.Operation>(service, METHODID_CLONE_DATABASE)))
         .build();
   }
 
@@ -4697,6 +4891,7 @@ public final class FirestoreAdminGrpc {
                       .addMethod(getListBackupSchedulesMethod())
                       .addMethod(getUpdateBackupScheduleMethod())
                       .addMethod(getDeleteBackupScheduleMethod())
+                      .addMethod(getCloneDatabaseMethod())
                       .build();
         }
       }

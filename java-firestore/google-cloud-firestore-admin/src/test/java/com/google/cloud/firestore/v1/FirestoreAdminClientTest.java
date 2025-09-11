@@ -34,6 +34,7 @@ import com.google.firestore.admin.v1.BackupSchedule;
 import com.google.firestore.admin.v1.BackupScheduleName;
 import com.google.firestore.admin.v1.BulkDeleteDocumentsRequest;
 import com.google.firestore.admin.v1.BulkDeleteDocumentsResponse;
+import com.google.firestore.admin.v1.CloneDatabaseRequest;
 import com.google.firestore.admin.v1.CollectionGroupName;
 import com.google.firestore.admin.v1.CreateBackupScheduleRequest;
 import com.google.firestore.admin.v1.CreateDatabaseRequest;
@@ -74,6 +75,7 @@ import com.google.firestore.admin.v1.ListIndexesResponse;
 import com.google.firestore.admin.v1.ListUserCredsRequest;
 import com.google.firestore.admin.v1.ListUserCredsResponse;
 import com.google.firestore.admin.v1.LocationName;
+import com.google.firestore.admin.v1.PitrSnapshot;
 import com.google.firestore.admin.v1.ProjectName;
 import com.google.firestore.admin.v1.ResetUserPasswordRequest;
 import com.google.firestore.admin.v1.RestoreDatabaseRequest;
@@ -2701,6 +2703,84 @@ public class FirestoreAdminClientTest {
       Assert.fail("No exception raised");
     } catch (InvalidArgumentException e) {
       // Expected exception.
+    }
+  }
+
+  @Test
+  public void cloneDatabaseTest() throws Exception {
+    Database expectedResponse =
+        Database.newBuilder()
+            .setName(DatabaseName.of("[PROJECT]", "[DATABASE]").toString())
+            .setUid("uid115792")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .setDeleteTime(Timestamp.newBuilder().build())
+            .setLocationId("locationId1541836720")
+            .setVersionRetentionPeriod(Duration.newBuilder().build())
+            .setEarliestVersionTime(Timestamp.newBuilder().build())
+            .setKeyPrefix("keyPrefix-2076395055")
+            .setCmekConfig(Database.CmekConfig.newBuilder().build())
+            .setPreviousId("previousId-32447886")
+            .setSourceInfo(Database.SourceInfo.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
+            .setFreeTier(true)
+            .setEtag("etag3123477")
+            .build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("cloneDatabaseTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockFirestoreAdmin.addResponse(resultOperation);
+
+    CloneDatabaseRequest request =
+        CloneDatabaseRequest.newBuilder()
+            .setParent(ProjectName.of("[PROJECT]").toString())
+            .setDatabaseId("databaseId1688905718")
+            .setPitrSnapshot(PitrSnapshot.newBuilder().build())
+            .setEncryptionConfig(Database.EncryptionConfig.newBuilder().build())
+            .putAllTags(new HashMap<String, String>())
+            .build();
+
+    Database actualResponse = client.cloneDatabaseAsync(request).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockFirestoreAdmin.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CloneDatabaseRequest actualRequest = ((CloneDatabaseRequest) actualRequests.get(0));
+
+    Assert.assertEquals(request.getParent(), actualRequest.getParent());
+    Assert.assertEquals(request.getDatabaseId(), actualRequest.getDatabaseId());
+    Assert.assertEquals(request.getPitrSnapshot(), actualRequest.getPitrSnapshot());
+    Assert.assertEquals(request.getEncryptionConfig(), actualRequest.getEncryptionConfig());
+    Assert.assertEquals(request.getTagsMap(), actualRequest.getTagsMap());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void cloneDatabaseExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockFirestoreAdmin.addException(exception);
+
+    try {
+      CloneDatabaseRequest request =
+          CloneDatabaseRequest.newBuilder()
+              .setParent(ProjectName.of("[PROJECT]").toString())
+              .setDatabaseId("databaseId1688905718")
+              .setPitrSnapshot(PitrSnapshot.newBuilder().build())
+              .setEncryptionConfig(Database.EncryptionConfig.newBuilder().build())
+              .putAllTags(new HashMap<String, String>())
+              .build();
+      client.cloneDatabaseAsync(request).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
     }
   }
 }

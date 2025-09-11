@@ -86,4 +86,9 @@
     <className>com/google/firestore/admin/v1/FirestoreAdminGrpc*</className>
     <method>void resetUserPassword(com.google.firestore.admin.v1.ResetUserPasswordRequest, io.grpc.stub.StreamObserver)</method>
   </difference>
+    <difference>
+    <differenceType>7012</differenceType>
+    <className>com/google/firestore/admin/v1/FirestoreAdminGrpc*</className>
+    <method>*</method>
+  </difference>
 </differences>

@@ -38,6 +38,8 @@ import com.google.firestore.admin.v1.BackupScheduleName;
 import com.google.firestore.admin.v1.BulkDeleteDocumentsMetadata;
 import com.google.firestore.admin.v1.BulkDeleteDocumentsRequest;
 import com.google.firestore.admin.v1.BulkDeleteDocumentsResponse;
+import com.google.firestore.admin.v1.CloneDatabaseMetadata;
+import com.google.firestore.admin.v1.CloneDatabaseRequest;
 import com.google.firestore.admin.v1.CollectionGroupName;
 import com.google.firestore.admin.v1.CreateBackupScheduleRequest;
 import com.google.firestore.admin.v1.CreateDatabaseMetadata;
@@ -752,6 +754,23 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> deleteBackupScheduleCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CloneDatabase</td>
+ *      <td><p> Creates a new database by cloning an existing one.
+ * <p>  The new database must be in the same cloud region or multi-region location as the existing database. This behaves similar to [FirestoreAdmin.CreateDatabase][google.firestore.admin.v1.FirestoreAdmin.CreateDatabase] except instead of creating a new empty database, a new database is created with the database type, index configuration, and documents from an existing database.
+ * <p>  The [long-running operation][google.longrunning.Operation] can be used to track the progress of the clone, with the Operation's [metadata][google.longrunning.Operation.metadata] field type being the [CloneDatabaseMetadata][google.firestore.admin.v1.CloneDatabaseMetadata]. The [response][google.longrunning.Operation.response] type is the [Database][google.firestore.admin.v1.Database] if the clone was successful. The new database is not readable or writeable until the LRO has completed.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> cloneDatabaseAsync(CloneDatabaseRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> cloneDatabaseOperationCallable()
+ *           <li><p> cloneDatabaseCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -4988,6 +5007,143 @@ public class FirestoreAdminClient implements BackgroundResource {
    */
   public final UnaryCallable<DeleteBackupScheduleRequest, Empty> deleteBackupScheduleCallable() {
     return stub.deleteBackupScheduleCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new database by cloning an existing one.
+   *
+   * <p>The new database must be in the same cloud region or multi-region location as the existing
+   * database. This behaves similar to
+   * [FirestoreAdmin.CreateDatabase][google.firestore.admin.v1.FirestoreAdmin.CreateDatabase] except
+   * instead of creating a new empty database, a new database is created with the database type,
+   * index configuration, and documents from an existing database.
+   *
+   * <p>The [long-running operation][google.longrunning.Operation] can be used to track the progress
+   * of the clone, with the Operation's [metadata][google.longrunning.Operation.metadata] field type
+   * being the [CloneDatabaseMetadata][google.firestore.admin.v1.CloneDatabaseMetadata]. The
+   * [response][google.longrunning.Operation.response] type is the
+   * [Database][google.firestore.admin.v1.Database] if the clone was successful. The new database is
+   * not readable or writeable until the LRO has completed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
+   *   CloneDatabaseRequest request =
+   *       CloneDatabaseRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setDatabaseId("databaseId1688905718")
+   *           .setPitrSnapshot(PitrSnapshot.newBuilder().build())
+   *           .setEncryptionConfig(Database.EncryptionConfig.newBuilder().build())
+   *           .putAllTags(new HashMap<String, String>())
+   *           .build();
+   *   Database response = firestoreAdminClient.cloneDatabaseAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Database, CloneDatabaseMetadata> cloneDatabaseAsync(
+      CloneDatabaseRequest request) {
+    return cloneDatabaseOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new database by cloning an existing one.
+   *
+   * <p>The new database must be in the same cloud region or multi-region location as the existing
+   * database. This behaves similar to
+   * [FirestoreAdmin.CreateDatabase][google.firestore.admin.v1.FirestoreAdmin.CreateDatabase] except
+   * instead of creating a new empty database, a new database is created with the database type,
+   * index configuration, and documents from an existing database.
+   *
+   * <p>The [long-running operation][google.longrunning.Operation] can be used to track the progress
+   * of the clone, with the Operation's [metadata][google.longrunning.Operation.metadata] field type
+   * being the [CloneDatabaseMetadata][google.firestore.admin.v1.CloneDatabaseMetadata]. The
+   * [response][google.longrunning.Operation.response] type is the
+   * [Database][google.firestore.admin.v1.Database] if the clone was successful. The new database is
+   * not readable or writeable until the LRO has completed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
+   *   CloneDatabaseRequest request =
+   *       CloneDatabaseRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setDatabaseId("databaseId1688905718")
+   *           .setPitrSnapshot(PitrSnapshot.newBuilder().build())
+   *           .setEncryptionConfig(Database.EncryptionConfig.newBuilder().build())
+   *           .putAllTags(new HashMap<String, String>())
+   *           .build();
+   *   OperationFuture<Database, CloneDatabaseMetadata> future =
+   *       firestoreAdminClient.cloneDatabaseOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Database response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<CloneDatabaseRequest, Database, CloneDatabaseMetadata>
+      cloneDatabaseOperationCallable() {
+    return stub.cloneDatabaseOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates a new database by cloning an existing one.
+   *
+   * <p>The new database must be in the same cloud region or multi-region location as the existing
+   * database. This behaves similar to
+   * [FirestoreAdmin.CreateDatabase][google.firestore.admin.v1.FirestoreAdmin.CreateDatabase] except
+   * instead of creating a new empty database, a new database is created with the database type,
+   * index configuration, and documents from an existing database.
+   *
+   * <p>The [long-running operation][google.longrunning.Operation] can be used to track the progress
+   * of the clone, with the Operation's [metadata][google.longrunning.Operation.metadata] field type
+   * being the [CloneDatabaseMetadata][google.firestore.admin.v1.CloneDatabaseMetadata]. The
+   * [response][google.longrunning.Operation.response] type is the
+   * [Database][google.firestore.admin.v1.Database] if the clone was successful. The new database is
+   * not readable or writeable until the LRO has completed.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (FirestoreAdminClient firestoreAdminClient = FirestoreAdminClient.create()) {
+   *   CloneDatabaseRequest request =
+   *       CloneDatabaseRequest.newBuilder()
+   *           .setParent(ProjectName.of("[PROJECT]").toString())
+   *           .setDatabaseId("databaseId1688905718")
+   *           .setPitrSnapshot(PitrSnapshot.newBuilder().build())
+   *           .setEncryptionConfig(Database.EncryptionConfig.newBuilder().build())
+   *           .putAllTags(new HashMap<String, String>())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       firestoreAdminClient.cloneDatabaseCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CloneDatabaseRequest, Operation> cloneDatabaseCallable() {
+    return stub.cloneDatabaseCallable();
   }
 
   @Override

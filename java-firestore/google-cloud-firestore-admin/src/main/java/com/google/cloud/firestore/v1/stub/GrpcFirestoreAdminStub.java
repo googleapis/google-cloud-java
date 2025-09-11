@@ -27,11 +27,14 @@ import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.OperationCallable;
 import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.firestore.admin.v1.Backup;
 import com.google.firestore.admin.v1.BackupSchedule;
 import com.google.firestore.admin.v1.BulkDeleteDocumentsMetadata;
 import com.google.firestore.admin.v1.BulkDeleteDocumentsRequest;
 import com.google.firestore.admin.v1.BulkDeleteDocumentsResponse;
+import com.google.firestore.admin.v1.CloneDatabaseMetadata;
+import com.google.firestore.admin.v1.CloneDatabaseRequest;
 import com.google.firestore.admin.v1.CreateBackupScheduleRequest;
 import com.google.firestore.admin.v1.CreateDatabaseMetadata;
 import com.google.firestore.admin.v1.CreateDatabaseRequest;
@@ -104,6 +107,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
           .setFullMethodName("google.firestore.admin.v1.FirestoreAdmin/CreateIndex")
           .setRequestMarshaller(ProtoUtils.marshaller(CreateIndexRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListIndexesRequest, ListIndexesResponse>
@@ -114,6 +118,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListIndexesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListIndexesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetIndexRequest, Index> getIndexMethodDescriptor =
@@ -122,6 +127,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
           .setFullMethodName("google.firestore.admin.v1.FirestoreAdmin/GetIndex")
           .setRequestMarshaller(ProtoUtils.marshaller(GetIndexRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Index.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<DeleteIndexRequest, Empty> deleteIndexMethodDescriptor =
@@ -130,6 +136,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
           .setFullMethodName("google.firestore.admin.v1.FirestoreAdmin/DeleteIndex")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteIndexRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<GetFieldRequest, Field> getFieldMethodDescriptor =
@@ -138,6 +145,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
           .setFullMethodName("google.firestore.admin.v1.FirestoreAdmin/GetField")
           .setRequestMarshaller(ProtoUtils.marshaller(GetFieldRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Field.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<UpdateFieldRequest, Operation> updateFieldMethodDescriptor =
@@ -146,6 +154,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
           .setFullMethodName("google.firestore.admin.v1.FirestoreAdmin/UpdateField")
           .setRequestMarshaller(ProtoUtils.marshaller(UpdateFieldRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListFieldsRequest, ListFieldsResponse>
@@ -155,6 +164,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
               .setFullMethodName("google.firestore.admin.v1.FirestoreAdmin/ListFields")
               .setRequestMarshaller(ProtoUtils.marshaller(ListFieldsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ListFieldsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ExportDocumentsRequest, Operation>
@@ -165,6 +175,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ExportDocumentsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ImportDocumentsRequest, Operation>
@@ -175,6 +186,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ImportDocumentsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BulkDeleteDocumentsRequest, Operation>
@@ -185,6 +197,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BulkDeleteDocumentsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateDatabaseRequest, Operation>
@@ -195,6 +208,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDatabaseRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetDatabaseRequest, Database> getDatabaseMethodDescriptor =
@@ -203,6 +217,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
           .setFullMethodName("google.firestore.admin.v1.FirestoreAdmin/GetDatabase")
           .setRequestMarshaller(ProtoUtils.marshaller(GetDatabaseRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Database.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListDatabasesRequest, ListDatabasesResponse>
@@ -214,6 +229,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
                   ProtoUtils.marshaller(ListDatabasesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDatabasesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDatabaseRequest, Operation>
@@ -224,6 +240,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDatabaseRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDatabaseRequest, Operation>
@@ -234,6 +251,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDatabaseRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateUserCredsRequest, UserCreds>
@@ -244,6 +262,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateUserCredsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(UserCreds.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetUserCredsRequest, UserCreds>
@@ -253,6 +272,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
               .setFullMethodName("google.firestore.admin.v1.FirestoreAdmin/GetUserCreds")
               .setRequestMarshaller(ProtoUtils.marshaller(GetUserCredsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(UserCreds.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListUserCredsRequest, ListUserCredsResponse>
@@ -264,6 +284,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
                   ProtoUtils.marshaller(ListUserCredsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListUserCredsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<EnableUserCredsRequest, UserCreds>
@@ -274,6 +295,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(EnableUserCredsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(UserCreds.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DisableUserCredsRequest, UserCreds>
@@ -284,6 +306,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DisableUserCredsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(UserCreds.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ResetUserPasswordRequest, UserCreds>
@@ -294,6 +317,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(ResetUserPasswordRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(UserCreds.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteUserCredsRequest, Empty>
@@ -304,6 +328,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteUserCredsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetBackupRequest, Backup> getBackupMethodDescriptor =
@@ -312,6 +337,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
           .setFullMethodName("google.firestore.admin.v1.FirestoreAdmin/GetBackup")
           .setRequestMarshaller(ProtoUtils.marshaller(GetBackupRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Backup.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListBackupsRequest, ListBackupsResponse>
@@ -322,6 +348,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ListBackupsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBackupsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteBackupRequest, Empty> deleteBackupMethodDescriptor =
@@ -330,6 +357,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
           .setFullMethodName("google.firestore.admin.v1.FirestoreAdmin/DeleteBackup")
           .setRequestMarshaller(ProtoUtils.marshaller(DeleteBackupRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<RestoreDatabaseRequest, Operation>
@@ -340,6 +368,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(RestoreDatabaseRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateBackupScheduleRequest, BackupSchedule>
@@ -350,6 +379,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateBackupScheduleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BackupSchedule.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetBackupScheduleRequest, BackupSchedule>
@@ -360,6 +390,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetBackupScheduleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BackupSchedule.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ListBackupSchedulesRequest, ListBackupSchedulesResponse>
@@ -371,6 +402,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
                   ProtoUtils.marshaller(ListBackupSchedulesRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListBackupSchedulesResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateBackupScheduleRequest, BackupSchedule>
@@ -381,6 +413,7 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateBackupScheduleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BackupSchedule.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteBackupScheduleRequest, Empty>
@@ -391,6 +424,18 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteBackupScheduleRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<CloneDatabaseRequest, Operation>
+      cloneDatabaseMethodDescriptor =
+          MethodDescriptor.<CloneDatabaseRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.firestore.admin.v1.FirestoreAdmin/CloneDatabase")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CloneDatabaseRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateIndexRequest, Operation> createIndexCallable;
@@ -450,10 +495,18 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
   private final UnaryCallable<UpdateBackupScheduleRequest, BackupSchedule>
       updateBackupScheduleCallable;
   private final UnaryCallable<DeleteBackupScheduleRequest, Empty> deleteBackupScheduleCallable;
+  private final UnaryCallable<CloneDatabaseRequest, Operation> cloneDatabaseCallable;
+  private final OperationCallable<CloneDatabaseRequest, Database, CloneDatabaseMetadata>
+      cloneDatabaseOperationCallable;
 
   private final BackgroundResource backgroundResources;
   private final GrpcOperationsStub operationsStub;
   private final GrpcStubCallableFactory callableFactory;
+
+  private static final PathTemplate CLONE_DATABASE_0_PATH_TEMPLATE =
+      PathTemplate.create("projects/{project_id=*}/**");
+  private static final PathTemplate CLONE_DATABASE_1_PATH_TEMPLATE =
+      PathTemplate.create("projects/*/databases/{database_id=*}/**");
 
   public static final GrpcFirestoreAdminStub create(FirestoreAdminStubSettings settings)
       throws IOException {
@@ -810,6 +863,27 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<CloneDatabaseRequest, Operation> cloneDatabaseTransportSettings =
+        GrpcCallSettings.<CloneDatabaseRequest, Operation>newBuilder()
+            .setMethodDescriptor(cloneDatabaseMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  if (request.getPitrSnapshot() != null) {
+                    builder.add(
+                        request.getPitrSnapshot().getDatabase(),
+                        "project_id",
+                        CLONE_DATABASE_0_PATH_TEMPLATE);
+                  }
+                  if (request.getPitrSnapshot() != null) {
+                    builder.add(
+                        request.getPitrSnapshot().getDatabase(),
+                        "database_id",
+                        CLONE_DATABASE_1_PATH_TEMPLATE);
+                  }
+                  return builder.build();
+                })
+            .build();
 
     this.createIndexCallable =
         callableFactory.createUnaryCallable(
@@ -978,6 +1052,15 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
             deleteBackupScheduleTransportSettings,
             settings.deleteBackupScheduleSettings(),
             clientContext);
+    this.cloneDatabaseCallable =
+        callableFactory.createUnaryCallable(
+            cloneDatabaseTransportSettings, settings.cloneDatabaseSettings(), clientContext);
+    this.cloneDatabaseOperationCallable =
+        callableFactory.createOperationCallable(
+            cloneDatabaseTransportSettings,
+            settings.cloneDatabaseOperationSettings(),
+            clientContext,
+            operationsStub);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -1206,6 +1289,17 @@ public class GrpcFirestoreAdminStub extends FirestoreAdminStub {
   @Override
   public UnaryCallable<DeleteBackupScheduleRequest, Empty> deleteBackupScheduleCallable() {
     return deleteBackupScheduleCallable;
+  }
+
+  @Override
+  public UnaryCallable<CloneDatabaseRequest, Operation> cloneDatabaseCallable() {
+    return cloneDatabaseCallable;
+  }
+
+  @Override
+  public OperationCallable<CloneDatabaseRequest, Database, CloneDatabaseMetadata>
+      cloneDatabaseOperationCallable() {
+    return cloneDatabaseOperationCallable;
   }
 
   @Override

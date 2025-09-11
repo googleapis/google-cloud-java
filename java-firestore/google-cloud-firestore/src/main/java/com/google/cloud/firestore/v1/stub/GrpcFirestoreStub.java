@@ -79,6 +79,7 @@ public class GrpcFirestoreStub extends FirestoreStub {
           .setFullMethodName("google.firestore.v1.Firestore/GetDocument")
           .setRequestMarshaller(ProtoUtils.marshaller(GetDocumentRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Document.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListDocumentsRequest, ListDocumentsResponse>
@@ -90,6 +91,7 @@ public class GrpcFirestoreStub extends FirestoreStub {
                   ProtoUtils.marshaller(ListDocumentsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListDocumentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<UpdateDocumentRequest, Document>
@@ -100,6 +102,7 @@ public class GrpcFirestoreStub extends FirestoreStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(UpdateDocumentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Document.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<DeleteDocumentRequest, Empty>
@@ -110,6 +113,7 @@ public class GrpcFirestoreStub extends FirestoreStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(DeleteDocumentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchGetDocumentsRequest, BatchGetDocumentsResponse>
@@ -121,6 +125,7 @@ public class GrpcFirestoreStub extends FirestoreStub {
                   ProtoUtils.marshaller(BatchGetDocumentsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(BatchGetDocumentsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BeginTransactionRequest, BeginTransactionResponse>
@@ -132,6 +137,7 @@ public class GrpcFirestoreStub extends FirestoreStub {
                   ProtoUtils.marshaller(BeginTransactionRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(BeginTransactionResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CommitRequest, CommitResponse> commitMethodDescriptor =
@@ -140,6 +146,7 @@ public class GrpcFirestoreStub extends FirestoreStub {
           .setFullMethodName("google.firestore.v1.Firestore/Commit")
           .setRequestMarshaller(ProtoUtils.marshaller(CommitRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(CommitResponse.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<RollbackRequest, Empty> rollbackMethodDescriptor =
@@ -148,6 +155,7 @@ public class GrpcFirestoreStub extends FirestoreStub {
           .setFullMethodName("google.firestore.v1.Firestore/Rollback")
           .setRequestMarshaller(ProtoUtils.marshaller(RollbackRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<RunQueryRequest, RunQueryResponse>
@@ -157,6 +165,7 @@ public class GrpcFirestoreStub extends FirestoreStub {
               .setFullMethodName("google.firestore.v1.Firestore/RunQuery")
               .setRequestMarshaller(ProtoUtils.marshaller(RunQueryRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(RunQueryResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<RunAggregationQueryRequest, RunAggregationQueryResponse>
@@ -168,6 +177,7 @@ public class GrpcFirestoreStub extends FirestoreStub {
                   ProtoUtils.marshaller(RunAggregationQueryRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(RunAggregationQueryResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<PartitionQueryRequest, PartitionQueryResponse>
@@ -179,6 +189,7 @@ public class GrpcFirestoreStub extends FirestoreStub {
                   ProtoUtils.marshaller(PartitionQueryRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(PartitionQueryResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<WriteRequest, WriteResponse> writeMethodDescriptor =
@@ -187,6 +198,7 @@ public class GrpcFirestoreStub extends FirestoreStub {
           .setFullMethodName("google.firestore.v1.Firestore/Write")
           .setRequestMarshaller(ProtoUtils.marshaller(WriteRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(WriteResponse.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListenRequest, ListenResponse> listenMethodDescriptor =
@@ -195,6 +207,7 @@ public class GrpcFirestoreStub extends FirestoreStub {
           .setFullMethodName("google.firestore.v1.Firestore/Listen")
           .setRequestMarshaller(ProtoUtils.marshaller(ListenRequest.getDefaultInstance()))
           .setResponseMarshaller(ProtoUtils.marshaller(ListenResponse.getDefaultInstance()))
+          .setSampledToLocalTracing(true)
           .build();
 
   private static final MethodDescriptor<ListCollectionIdsRequest, ListCollectionIdsResponse>
@@ -206,6 +219,7 @@ public class GrpcFirestoreStub extends FirestoreStub {
                   ProtoUtils.marshaller(ListCollectionIdsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListCollectionIdsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchWriteRequest, BatchWriteResponse>
@@ -215,6 +229,7 @@ public class GrpcFirestoreStub extends FirestoreStub {
               .setFullMethodName("google.firestore.v1.Firestore/BatchWrite")
               .setRequestMarshaller(ProtoUtils.marshaller(BatchWriteRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(BatchWriteResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<CreateDocumentRequest, Document>
@@ -225,6 +240,7 @@ public class GrpcFirestoreStub extends FirestoreStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateDocumentRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Document.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<GetDocumentRequest, Document> getDocumentCallable;
