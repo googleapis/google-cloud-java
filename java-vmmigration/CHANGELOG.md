@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.74.0 (2025-09-11)
+
+### Features
+
+* Azure as a source ([1214050](https://github.com/googleapis/google-cloud-java/commit/12140505efaab4448497c15479dd36cc15629b17))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.52.1 ([#11738](https://github.com/googleapis/google-cloud-java/issues/11738)) ([b17cf6d](https://github.com/googleapis/google-cloud-java/commit/b17cf6de63b9cabcd44b6fc21b57c187b321ae8f))
+
+
 ## 1.73.0 (2025-08-25)
 
 ### Dependencies
