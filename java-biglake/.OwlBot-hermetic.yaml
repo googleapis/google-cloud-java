@@ -31,6 +31,14 @@ deep-copy-regex:
   dest: "/owl-bot-staging/java-biglake/$1/google-cloud-biglake/src"
 - source: "/google/cloud/bigquery/biglake/(v.*)/.*-java/samples/snippets/generated"
   dest: "/owl-bot-staging/java-biglake/$1/samples/snippets/generated"
+- source: "/google/cloud/biglake/(v.*)/.*-java/proto-google-.*/src"
+  dest: "/owl-bot-staging/java-biglake/$1/proto-google-cloud-biglake-$1/src"
+- source: "/google/cloud/biglake/(v.*)/.*-java/grpc-google-.*/src"
+  dest: "/owl-bot-staging/java-biglake/$1/grpc-google-cloud-biglake-$1/src"
+- source: "/google/cloud/biglake/(v.*)/.*-java/gapic-google-.*/src"
+  dest: "/owl-bot-staging/java-biglake/$1/google-cloud-biglake/src"
+- source: "/google/cloud/biglake/(v.*)/.*-java/samples/snippets/generated"
+  dest: "/owl-bot-staging/java-biglake/$1/samples/snippets/generated"
 
 
 api-name: biglake

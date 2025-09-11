@@ -366,6 +366,7 @@ libraries:
     used for querying Apache Iceberg tables in BigQuery.
   GAPICs:
   - proto_path: google/cloud/bigquery/biglake/v1
+  - proto_path: google/cloud/biglake/v1
   - proto_path: google/cloud/bigquery/biglake/v1alpha1
 
 - api_shortname: analyticshub

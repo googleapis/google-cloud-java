@@ -1,0 +1,33 @@
+{
+  "schema": "1.0",
+  "comment": "This file maps proto services/RPCs to the corresponding library clients/methods",
+  "language": "java",
+  "protoPackage": "google.cloud.biglake.v1",
+  "libraryPackage": "com.google.cloud.biglake.v1",
+  "services": {
+    "IcebergCatalogService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "IcebergCatalogServiceClient",
+          "rpcs": {
+            "CreateIcebergCatalog": {
+              "methods": ["createIcebergCatalog", "createIcebergCatalog", "createIcebergCatalog", "createIcebergCatalogCallable"]
+            },
+            "FailoverIcebergCatalog": {
+              "methods": ["failoverIcebergCatalog", "failoverIcebergCatalog", "failoverIcebergCatalogCallable"]
+            },
+            "GetIcebergCatalog": {
+              "methods": ["getIcebergCatalog", "getIcebergCatalog", "getIcebergCatalog", "getIcebergCatalogCallable"]
+            },
+            "ListIcebergCatalogs": {
+              "methods": ["listIcebergCatalogs", "listIcebergCatalogs", "listIcebergCatalogs", "listIcebergCatalogsPagedCallable", "listIcebergCatalogsCallable"]
+            },
+            "UpdateIcebergCatalog": {
+              "methods": ["updateIcebergCatalog", "updateIcebergCatalog", "updateIcebergCatalogCallable"]
+            }
+          }
+        }
+      }
+    }
+  }
+}
