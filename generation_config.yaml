@@ -563,6 +563,24 @@ libraries:
   - proto_path: google/api/cloudquotas/v1
   - proto_path: google/api/cloudquotas/v1beta
 
+- api_shortname: cloudsecuritycompliance
+  name_pretty: Cloud Security Compliance API
+  product_documentation: 
+    https://cloud.google.com/security-command-center/docs/compliance-manager-overview
+  api_description: Compliance Manager uses software-defined controls that let you
+    assess support for multiple compliance programs and security requirements within
+    a Google Cloud organization
+  client_documentation: 
+    https://cloud.google.com/java/docs/reference/google-cloud-cloudsecuritycompliance/latest/overview
+  release_level: preview
+  distribution_name: com.google.cloud:google-cloud-cloudsecuritycompliance
+  api_id: cloudsecuritycompliance.googleapis.com
+  library_type: GAPIC_AUTO
+  group_id: com.google.cloud
+  cloud_api: true
+  GAPICs:
+  - proto_path: google/cloud/cloudsecuritycompliance/v1
+  requires_billing: true
 - api_shortname: cloudsupport
   name_pretty: Google Cloud Support API
   product_documentation: https://cloud.google.com/support/docs/reference/support-api/
