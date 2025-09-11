@@ -1,6 +1,6 @@
-gapic_generator_version: 2.61.0
-googleapis_commitish: 8c74a4f9ad52cfd7a7d1f6427fa0a0511377a395
-libraries_bom_version: 26.65.0
+gapic_generator_version: 2.62.1
+googleapis_commitish: 9978d435df71bb16ecadd1e4421640748d0bf533
+libraries_bom_version: 26.67.0
 libraries:
   - api_shortname: logging
     name_pretty: Cloud Logging
