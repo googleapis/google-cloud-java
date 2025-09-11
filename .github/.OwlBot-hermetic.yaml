@@ -20,6 +20,7 @@ deep-preserve-regex:
 - "/google-.*/src/test/java/com/google/cloud/.*/v.*/it/IT.*Test.java"
 - "/google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1/SchemaAwareStreamWriter.java"
 - "/google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1/ToProtoConverter.java"
+- "/google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1/AppendFormats.java"
 - "/google-cloud-bigquerystorage/src/main/java/com/google/cloud/bigquery/storage/v1/BigQuerySchemaUtil.java"
 - "/google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v1/BigQuerySchemaUtilTest.java"
 - "/google-cloud-bigquerystorage/src/test/java/com/google/cloud/bigquery/storage/v1/ConnectionWorkerPoolTest.java"
