@@ -44,6 +44,8 @@ import com.google.cloud.kms.v1.CreateImportJobRequest;
 import com.google.cloud.kms.v1.CreateKeyRingRequest;
 import com.google.cloud.kms.v1.CryptoKey;
 import com.google.cloud.kms.v1.CryptoKeyVersion;
+import com.google.cloud.kms.v1.DecapsulateRequest;
+import com.google.cloud.kms.v1.DecapsulateResponse;
 import com.google.cloud.kms.v1.DecryptRequest;
 import com.google.cloud.kms.v1.DecryptResponse;
 import com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest;
@@ -1118,6 +1120,43 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<DecapsulateRequest, DecapsulateResponse>
+      decapsulateMethodDescriptor =
+          ApiMethodDescriptor.<DecapsulateRequest, DecapsulateResponse>newBuilder()
+              .setFullMethodName("google.cloud.kms.v1.KeyManagementService/Decapsulate")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DecapsulateRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/keyRings/*/cryptoKeys/*/cryptoKeyVersions/*}:decapsulate",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DecapsulateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DecapsulateRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("*", request.toBuilder().clearName().build(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<DecapsulateResponse>newBuilder()
+                      .setDefaultInstance(DecapsulateResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<GenerateRandomBytesRequest, GenerateRandomBytesResponse>
       generateRandomBytesMethodDescriptor =
           ApiMethodDescriptor.<GenerateRandomBytesRequest, GenerateRandomBytesResponse>newBuilder()
@@ -1390,6 +1429,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
       asymmetricDecryptCallable;
   private final UnaryCallable<MacSignRequest, MacSignResponse> macSignCallable;
   private final UnaryCallable<MacVerifyRequest, MacVerifyResponse> macVerifyCallable;
+  private final UnaryCallable<DecapsulateRequest, DecapsulateResponse> decapsulateCallable;
   private final UnaryCallable<GenerateRandomBytesRequest, GenerateRandomBytesResponse>
       generateRandomBytesCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
@@ -1757,6 +1797,17 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<DecapsulateRequest, DecapsulateResponse> decapsulateTransportSettings =
+        HttpJsonCallSettings.<DecapsulateRequest, DecapsulateResponse>newBuilder()
+            .setMethodDescriptor(decapsulateMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<GenerateRandomBytesRequest, GenerateRandomBytesResponse>
         generateRandomBytesTransportSettings =
             HttpJsonCallSettings
@@ -1941,6 +1992,9 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
     this.macVerifyCallable =
         callableFactory.createUnaryCallable(
             macVerifyTransportSettings, settings.macVerifySettings(), clientContext);
+    this.decapsulateCallable =
+        callableFactory.createUnaryCallable(
+            decapsulateTransportSettings, settings.decapsulateSettings(), clientContext);
     this.generateRandomBytesCallable =
         callableFactory.createUnaryCallable(
             generateRandomBytesTransportSettings,
@@ -2001,6 +2055,7 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
     methodDescriptors.add(asymmetricDecryptMethodDescriptor);
     methodDescriptors.add(macSignMethodDescriptor);
     methodDescriptors.add(macVerifyMethodDescriptor);
+    methodDescriptors.add(decapsulateMethodDescriptor);
     methodDescriptors.add(generateRandomBytesMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
@@ -2174,6 +2229,11 @@ public class HttpJsonKeyManagementServiceStub extends KeyManagementServiceStub {
   @Override
   public UnaryCallable<MacVerifyRequest, MacVerifyResponse> macVerifyCallable() {
     return macVerifyCallable;
+  }
+
+  @Override
+  public UnaryCallable<DecapsulateRequest, DecapsulateResponse> decapsulateCallable() {
+    return decapsulateCallable;
   }
 
   @Override

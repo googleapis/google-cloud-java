@@ -21,7 +21,8 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * ContentService manages Notebook and SQL Scripts for Dataplex.
+ * ContentService manages Notebook and SQL Scripts for Dataplex Universal
+ * Catalog.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -431,7 +432,8 @@ public final class ContentServiceGrpc {
    *
    *
    * <pre>
-   * ContentService manages Notebook and SQL Scripts for Dataplex.
+   * ContentService manages Notebook and SQL Scripts for Dataplex Universal
+   * Catalog.
    * </pre>
    */
   public interface AsyncService {
@@ -568,7 +570,8 @@ public final class ContentServiceGrpc {
    * Base class for the server implementation of the service ContentService.
    *
    * <pre>
-   * ContentService manages Notebook and SQL Scripts for Dataplex.
+   * ContentService manages Notebook and SQL Scripts for Dataplex Universal
+   * Catalog.
    * </pre>
    */
   public abstract static class ContentServiceImplBase
@@ -584,7 +587,8 @@ public final class ContentServiceGrpc {
    * A stub to allow clients to do asynchronous rpc calls to service ContentService.
    *
    * <pre>
-   * ContentService manages Notebook and SQL Scripts for Dataplex.
+   * ContentService manages Notebook and SQL Scripts for Dataplex Universal
+   * Catalog.
    * </pre>
    */
   public static final class ContentServiceStub
@@ -745,7 +749,8 @@ public final class ContentServiceGrpc {
    * A stub to allow clients to do synchronous rpc calls to service ContentService.
    *
    * <pre>
-   * ContentService manages Notebook and SQL Scripts for Dataplex.
+   * ContentService manages Notebook and SQL Scripts for Dataplex Universal
+   * Catalog.
    * </pre>
    */
   public static final class ContentServiceBlockingV2Stub
@@ -881,7 +886,8 @@ public final class ContentServiceGrpc {
    * A stub to allow clients to do limited synchronous rpc calls to service ContentService.
    *
    * <pre>
-   * ContentService manages Notebook and SQL Scripts for Dataplex.
+   * ContentService manages Notebook and SQL Scripts for Dataplex Universal
+   * Catalog.
    * </pre>
    */
   public static final class ContentServiceBlockingStub
@@ -1017,7 +1023,8 @@ public final class ContentServiceGrpc {
    * A stub to allow clients to do ListenableFuture-style rpc calls to service ContentService.
    *
    * <pre>
-   * ContentService manages Notebook and SQL Scripts for Dataplex.
+   * ContentService manages Notebook and SQL Scripts for Dataplex Universal
+   * Catalog.
    * </pre>
    */
   public static final class ContentServiceFutureStub

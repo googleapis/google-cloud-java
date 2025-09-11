@@ -23,7 +23,7 @@ package com.google.cloud.dataplex.v1;
  *
  *
  * <pre>
- * Delele AspectType Request.
+ * Delete AspectType Request.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataplex.v1.DeleteAspectTypeRequest}
@@ -354,7 +354,7 @@ public final class DeleteAspectTypeRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Delele AspectType Request.
+   * Delete AspectType Request.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataplex.v1.DeleteAspectTypeRequest}

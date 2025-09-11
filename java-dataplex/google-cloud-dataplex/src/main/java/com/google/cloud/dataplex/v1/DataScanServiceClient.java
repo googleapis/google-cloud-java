@@ -435,7 +435,8 @@ public class DataScanServiceClient implements BackgroundResource {
    *
    * @param parent Required. The resource name of the parent location:
    *     `projects/{project}/locations/{location_id}` where `project` refers to a
-   *     &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a GCP region.
+   *     &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a Google Cloud
+   *     region.
    * @param dataScan Required. DataScan resource.
    * @param dataScanId Required. DataScan identifier.
    *     <ul>
@@ -482,7 +483,8 @@ public class DataScanServiceClient implements BackgroundResource {
    *
    * @param parent Required. The resource name of the parent location:
    *     `projects/{project}/locations/{location_id}` where `project` refers to a
-   *     &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a GCP region.
+   *     &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a Google Cloud
+   *     region.
    * @param dataScan Required. DataScan resource.
    * @param dataScanId Required. DataScan identifier.
    *     <ul>
@@ -745,7 +747,7 @@ public class DataScanServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the dataScan:
    *     `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}` where `project`
    *     refers to a &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a
-   *     GCP region.
+   *     Google Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteDataScanAsync(DataScanName name) {
@@ -775,7 +777,7 @@ public class DataScanServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the dataScan:
    *     `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}` where `project`
    *     refers to a &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a
-   *     GCP region.
+   *     Google Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Empty, OperationMetadata> deleteDataScanAsync(String name) {
@@ -893,7 +895,7 @@ public class DataScanServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the dataScan:
    *     `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}` where `project`
    *     refers to a &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a
-   *     GCP region.
+   *     Google Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DataScan getDataScan(DataScanName name) {
@@ -923,7 +925,7 @@ public class DataScanServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the dataScan:
    *     `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}` where `project`
    *     refers to a &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a
-   *     GCP region.
+   *     Google Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DataScan getDataScan(String name) {
@@ -1008,7 +1010,8 @@ public class DataScanServiceClient implements BackgroundResource {
    *
    * @param parent Required. The resource name of the parent location:
    *     `projects/{project}/locations/{location_id}` where `project` refers to a
-   *     &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a GCP region.
+   *     &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a Google Cloud
+   *     region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDataScansPagedResponse listDataScans(LocationName parent) {
@@ -1041,7 +1044,8 @@ public class DataScanServiceClient implements BackgroundResource {
    *
    * @param parent Required. The resource name of the parent location:
    *     `projects/{project}/locations/{location_id}` where `project` refers to a
-   *     &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a GCP region.
+   *     &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a Google Cloud
+   *     region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDataScansPagedResponse listDataScans(String parent) {
@@ -1180,7 +1184,7 @@ public class DataScanServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the DataScan:
    *     `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}`. where `project`
    *     refers to a &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a
-   *     GCP region.
+   *     Google Cloud region.
    *     <p>Only &#42;&#42;OnDemand&#42;&#42; data scans are allowed.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1211,7 +1215,7 @@ public class DataScanServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the DataScan:
    *     `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}`. where `project`
    *     refers to a &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a
-   *     GCP region.
+   *     Google Cloud region.
    *     <p>Only &#42;&#42;OnDemand&#42;&#42; data scans are allowed.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1297,7 +1301,7 @@ public class DataScanServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the DataScanJob:
    *     `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}/jobs/{data_scan_job_id}`
    *     where `project` refers to a &#42;project_id&#42; or &#42;project_number&#42; and
-   *     `location_id` refers to a GCP region.
+   *     `location_id` refers to a Google Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DataScanJob getDataScanJob(DataScanJobName name) {
@@ -1327,7 +1331,7 @@ public class DataScanServiceClient implements BackgroundResource {
    * @param name Required. The resource name of the DataScanJob:
    *     `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}/jobs/{data_scan_job_id}`
    *     where `project` refers to a &#42;project_id&#42; or &#42;project_number&#42; and
-   *     `location_id` refers to a GCP region.
+   *     `location_id` refers to a Google Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final DataScanJob getDataScanJob(String name) {
@@ -1416,7 +1420,7 @@ public class DataScanServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the parent environment:
    *     `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}` where `project`
    *     refers to a &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a
-   *     GCP region.
+   *     Google Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDataScanJobsPagedResponse listDataScanJobs(DataScanName parent) {
@@ -1450,7 +1454,7 @@ public class DataScanServiceClient implements BackgroundResource {
    * @param parent Required. The resource name of the parent environment:
    *     `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}` where `project`
    *     refers to a &#42;project_id&#42; or &#42;project_number&#42; and `location_id` refers to a
-   *     GCP region.
+   *     Google Cloud region.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListDataScanJobsPagedResponse listDataScanJobs(String parent) {

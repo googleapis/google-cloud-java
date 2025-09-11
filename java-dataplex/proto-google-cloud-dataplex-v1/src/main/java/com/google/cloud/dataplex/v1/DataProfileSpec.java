@@ -172,8 +172,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
        * Optional. The BigQuery table to export DataProfileScan results to.
        * Format:
        * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
-       * or
-       * projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
        * </pre>
        *
        * <code>string results_table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -189,8 +187,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
        * Optional. The BigQuery table to export DataProfileScan results to.
        * Format:
        * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
-       * or
-       * projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
        * </pre>
        *
        * <code>string results_table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -258,8 +254,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
        * Optional. The BigQuery table to export DataProfileScan results to.
        * Format:
        * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
-       * or
-       * projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
        * </pre>
        *
        * <code>string results_table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -286,8 +280,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
        * Optional. The BigQuery table to export DataProfileScan results to.
        * Format:
        * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
-       * or
-       * projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
        * </pre>
        *
        * <code>string results_table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -688,8 +680,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
          * Optional. The BigQuery table to export DataProfileScan results to.
          * Format:
          * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
-         * or
-         * projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
          * </pre>
          *
          * <code>string results_table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -715,8 +705,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
          * Optional. The BigQuery table to export DataProfileScan results to.
          * Format:
          * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
-         * or
-         * projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
          * </pre>
          *
          * <code>string results_table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -742,8 +730,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
          * Optional. The BigQuery table to export DataProfileScan results to.
          * Format:
          * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
-         * or
-         * projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
          * </pre>
          *
          * <code>string results_table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -768,8 +754,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
          * Optional. The BigQuery table to export DataProfileScan results to.
          * Format:
          * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
-         * or
-         * projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
          * </pre>
          *
          * <code>string results_table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -790,8 +774,6 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
          * Optional. The BigQuery table to export DataProfileScan results to.
          * Format:
          * //bigquery.googleapis.com/projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
-         * or
-         * projects/PROJECT_ID/datasets/DATASET_ID/tables/TABLE_ID
          * </pre>
          *
          * <code>string results_table = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2545,10 +2527,8 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Optional. A filter applied to all rows in a single DataScan job.
-   * The filter needs to be a valid SQL expression for a [WHERE clause in
-   * GoogleSQL
-   * syntax](https://cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax#where_clause).
-   *
+   * The filter needs to be a valid SQL expression for a WHERE clause in
+   * BigQuery standard SQL syntax.
    * Example: col1 &gt;= 0 AND col2 &lt; 10
    * </pre>
    *
@@ -2574,10 +2554,8 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Optional. A filter applied to all rows in a single DataScan job.
-   * The filter needs to be a valid SQL expression for a [WHERE clause in
-   * GoogleSQL
-   * syntax](https://cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax#where_clause).
-   *
+   * The filter needs to be a valid SQL expression for a WHERE clause in
+   * BigQuery standard SQL syntax.
    * Example: col1 &gt;= 0 AND col2 &lt; 10
    * </pre>
    *
@@ -3354,10 +3332,8 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Optional. A filter applied to all rows in a single DataScan job.
-     * The filter needs to be a valid SQL expression for a [WHERE clause in
-     * GoogleSQL
-     * syntax](https://cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax#where_clause).
-     *
+     * The filter needs to be a valid SQL expression for a WHERE clause in
+     * BigQuery standard SQL syntax.
      * Example: col1 &gt;= 0 AND col2 &lt; 10
      * </pre>
      *
@@ -3382,10 +3358,8 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Optional. A filter applied to all rows in a single DataScan job.
-     * The filter needs to be a valid SQL expression for a [WHERE clause in
-     * GoogleSQL
-     * syntax](https://cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax#where_clause).
-     *
+     * The filter needs to be a valid SQL expression for a WHERE clause in
+     * BigQuery standard SQL syntax.
      * Example: col1 &gt;= 0 AND col2 &lt; 10
      * </pre>
      *
@@ -3410,10 +3384,8 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Optional. A filter applied to all rows in a single DataScan job.
-     * The filter needs to be a valid SQL expression for a [WHERE clause in
-     * GoogleSQL
-     * syntax](https://cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax#where_clause).
-     *
+     * The filter needs to be a valid SQL expression for a WHERE clause in
+     * BigQuery standard SQL syntax.
      * Example: col1 &gt;= 0 AND col2 &lt; 10
      * </pre>
      *
@@ -3437,10 +3409,8 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Optional. A filter applied to all rows in a single DataScan job.
-     * The filter needs to be a valid SQL expression for a [WHERE clause in
-     * GoogleSQL
-     * syntax](https://cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax#where_clause).
-     *
+     * The filter needs to be a valid SQL expression for a WHERE clause in
+     * BigQuery standard SQL syntax.
      * Example: col1 &gt;= 0 AND col2 &lt; 10
      * </pre>
      *
@@ -3460,10 +3430,8 @@ public final class DataProfileSpec extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Optional. A filter applied to all rows in a single DataScan job.
-     * The filter needs to be a valid SQL expression for a [WHERE clause in
-     * GoogleSQL
-     * syntax](https://cloud.google.com/bigquery/docs/reference/standard-sql/query-syntax#where_clause).
-     *
+     * The filter needs to be a valid SQL expression for a WHERE clause in
+     * BigQuery standard SQL syntax.
      * Example: col1 &gt;= 0 AND col2 &lt; 10
      * </pre>
      *

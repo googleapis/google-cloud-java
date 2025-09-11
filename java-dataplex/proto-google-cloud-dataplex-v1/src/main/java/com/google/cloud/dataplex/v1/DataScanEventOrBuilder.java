@@ -549,6 +549,50 @@ public interface DataScanEventOrBuilder
   com.google.cloud.dataplex.v1.DataScanEvent.PostScanActionsResultOrBuilder
       getPostScanActionsResultOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * The status of publishing the data scan as Dataplex Universal Catalog
+   * metadata.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.DataScanCatalogPublishingStatus catalog_publishing_status = 13;
+   * </code>
+   *
+   * @return Whether the catalogPublishingStatus field is set.
+   */
+  boolean hasCatalogPublishingStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * The status of publishing the data scan as Dataplex Universal Catalog
+   * metadata.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.DataScanCatalogPublishingStatus catalog_publishing_status = 13;
+   * </code>
+   *
+   * @return The catalogPublishingStatus.
+   */
+  com.google.cloud.dataplex.v1.DataScanCatalogPublishingStatus getCatalogPublishingStatus();
+
+  /**
+   *
+   *
+   * <pre>
+   * The status of publishing the data scan as Dataplex Universal Catalog
+   * metadata.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.DataScanCatalogPublishingStatus catalog_publishing_status = 13;
+   * </code>
+   */
+  com.google.cloud.dataplex.v1.DataScanCatalogPublishingStatusOrBuilder
+      getCatalogPublishingStatusOrBuilder();
+
   com.google.cloud.dataplex.v1.DataScanEvent.ResultCase getResultCase();
 
   com.google.cloud.dataplex.v1.DataScanEvent.AppliedConfigsCase getAppliedConfigsCase();

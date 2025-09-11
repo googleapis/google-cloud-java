@@ -128,6 +128,7 @@ public class SearchServiceClientHttpJsonTest {
                     .toString())
             .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
             .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
+            .setRankingExpression("rankingExpression2110320494")
             .build();
 
     SearchPagedResponse pagedListResponse = client.search(request);
@@ -200,6 +201,7 @@ public class SearchServiceClientHttpJsonTest {
                       .toString())
               .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
               .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
+              .setRankingExpression("rankingExpression2110320494")
               .build();
       client.search(request);
       Assert.fail("No exception raised");
@@ -257,6 +259,7 @@ public class SearchServiceClientHttpJsonTest {
                     .toString())
             .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
             .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
+            .setRankingExpression("rankingExpression2110320494")
             .build();
 
     SearchLitePagedResponse pagedListResponse = client.searchLite(request);
@@ -329,6 +332,7 @@ public class SearchServiceClientHttpJsonTest {
                       .toString())
               .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
               .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
+              .setRankingExpression("rankingExpression2110320494")
               .build();
       client.searchLite(request);
       Assert.fail("No exception raised");

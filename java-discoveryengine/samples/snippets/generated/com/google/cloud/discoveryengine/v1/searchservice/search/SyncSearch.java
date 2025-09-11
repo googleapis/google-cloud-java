@@ -80,6 +80,7 @@ public class SyncSearch {
                       .toString())
               .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
               .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
+              .setRankingExpression("rankingExpression2110320494")
               .build();
       for (SearchResponse.SearchResult element : searchServiceClient.search(request).iterateAll()) {
         // doThingsWith(element);

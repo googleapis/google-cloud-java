@@ -730,8 +730,8 @@ public final class EntryType extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The IAM permission grantable on the Entry Group to allow
-     * access to instantiate Entries of Dataplex owned Entry Types, only
-     * settable for Dataplex owned Types.
+     * access to instantiate Entries of Dataplex Universal Catalog owned Entry
+     * Types, only settable for Dataplex Universal Catalog owned Types.
      * </pre>
      *
      * <code>string alternate_use_permission = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -745,8 +745,8 @@ public final class EntryType extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The IAM permission grantable on the Entry Group to allow
-     * access to instantiate Entries of Dataplex owned Entry Types, only
-     * settable for Dataplex owned Types.
+     * access to instantiate Entries of Dataplex Universal Catalog owned Entry
+     * Types, only settable for Dataplex Universal Catalog owned Types.
      * </pre>
      *
      * <code>string alternate_use_permission = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -811,8 +811,8 @@ public final class EntryType extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The IAM permission grantable on the Entry Group to allow
-     * access to instantiate Entries of Dataplex owned Entry Types, only
-     * settable for Dataplex owned Types.
+     * access to instantiate Entries of Dataplex Universal Catalog owned Entry
+     * Types, only settable for Dataplex Universal Catalog owned Types.
      * </pre>
      *
      * <code>string alternate_use_permission = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -837,8 +837,8 @@ public final class EntryType extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The IAM permission grantable on the Entry Group to allow
-     * access to instantiate Entries of Dataplex owned Entry Types, only
-     * settable for Dataplex owned Types.
+     * access to instantiate Entries of Dataplex Universal Catalog owned Entry
+     * Types, only settable for Dataplex Universal Catalog owned Types.
      * </pre>
      *
      * <code>string alternate_use_permission = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -1214,8 +1214,8 @@ public final class EntryType extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Immutable. The IAM permission grantable on the Entry Group to allow
-       * access to instantiate Entries of Dataplex owned Entry Types, only
-       * settable for Dataplex owned Types.
+       * access to instantiate Entries of Dataplex Universal Catalog owned Entry
+       * Types, only settable for Dataplex Universal Catalog owned Types.
        * </pre>
        *
        * <code>string alternate_use_permission = 1 [(.google.api.field_behavior) = IMMUTABLE];
@@ -1240,8 +1240,8 @@ public final class EntryType extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Immutable. The IAM permission grantable on the Entry Group to allow
-       * access to instantiate Entries of Dataplex owned Entry Types, only
-       * settable for Dataplex owned Types.
+       * access to instantiate Entries of Dataplex Universal Catalog owned Entry
+       * Types, only settable for Dataplex Universal Catalog owned Types.
        * </pre>
        *
        * <code>string alternate_use_permission = 1 [(.google.api.field_behavior) = IMMUTABLE];
@@ -1266,8 +1266,8 @@ public final class EntryType extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Immutable. The IAM permission grantable on the Entry Group to allow
-       * access to instantiate Entries of Dataplex owned Entry Types, only
-       * settable for Dataplex owned Types.
+       * access to instantiate Entries of Dataplex Universal Catalog owned Entry
+       * Types, only settable for Dataplex Universal Catalog owned Types.
        * </pre>
        *
        * <code>string alternate_use_permission = 1 [(.google.api.field_behavior) = IMMUTABLE];
@@ -1291,8 +1291,8 @@ public final class EntryType extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Immutable. The IAM permission grantable on the Entry Group to allow
-       * access to instantiate Entries of Dataplex owned Entry Types, only
-       * settable for Dataplex owned Types.
+       * access to instantiate Entries of Dataplex Universal Catalog owned Entry
+       * Types, only settable for Dataplex Universal Catalog owned Types.
        * </pre>
        *
        * <code>string alternate_use_permission = 1 [(.google.api.field_behavior) = IMMUTABLE];
@@ -1312,8 +1312,8 @@ public final class EntryType extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Immutable. The IAM permission grantable on the Entry Group to allow
-       * access to instantiate Entries of Dataplex owned Entry Types, only
-       * settable for Dataplex owned Types.
+       * access to instantiate Entries of Dataplex Universal Catalog owned Entry
+       * Types, only settable for Dataplex Universal Catalog owned Types.
        * </pre>
        *
        * <code>string alternate_use_permission = 1 [(.google.api.field_behavior) = IMMUTABLE];

@@ -83,4 +83,84 @@ public interface DataQualityColumnResultOrBuilder
    * @return The score.
    */
   float getScore();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether the column passed or failed.
+   * </pre>
+   *
+   * <code>bool passed = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The passed.
+   */
+  boolean getPassed();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The dimension-level results for this column.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.dataplex.v1.DataQualityDimensionResult> getDimensionsList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The dimension-level results for this column.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dataplex.v1.DataQualityDimensionResult getDimensions(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The dimension-level results for this column.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getDimensionsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The dimension-level results for this column.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.dataplex.v1.DataQualityDimensionResultOrBuilder>
+      getDimensionsOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The dimension-level results for this column.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.dataplex.v1.DataQualityDimensionResultOrBuilder getDimensionsOrBuilder(
+      int index);
 }

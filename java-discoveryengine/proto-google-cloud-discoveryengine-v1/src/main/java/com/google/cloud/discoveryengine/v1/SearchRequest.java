@@ -55,6 +55,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     userPseudoId_ = "";
     session_ = "";
     relevanceThreshold_ = 0;
+    rankingExpression_ = "";
+    rankingExpressionBackend_ = 0;
   }
 
   @java.lang.Override
@@ -304,6 +306,172 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.discoveryengine.v1.SearchRequest.RelevanceThreshold)
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The backend to use for the ranking expression evaluation.
+   * </pre>
+   *
+   * Protobuf enum {@code google.cloud.discoveryengine.v1.SearchRequest.RankingExpressionBackend}
+   */
+  public enum RankingExpressionBackend implements com.google.protobuf.ProtocolMessageEnum {
+    /**
+     *
+     *
+     * <pre>
+     * Default option for unspecified/unknown values.
+     * </pre>
+     *
+     * <code>RANKING_EXPRESSION_BACKEND_UNSPECIFIED = 0;</code>
+     */
+    RANKING_EXPRESSION_BACKEND_UNSPECIFIED(0),
+    /**
+     *
+     *
+     * <pre>
+     * Ranking by custom embedding model, the default way to evaluate the
+     * ranking expression.
+     * </pre>
+     *
+     * <code>RANK_BY_EMBEDDING = 3;</code>
+     */
+    RANK_BY_EMBEDDING(3),
+    /**
+     *
+     *
+     * <pre>
+     * Ranking by custom formula.
+     * </pre>
+     *
+     * <code>RANK_BY_FORMULA = 4;</code>
+     */
+    RANK_BY_FORMULA(4),
+    UNRECOGNIZED(-1),
+    ;
+
+    /**
+     *
+     *
+     * <pre>
+     * Default option for unspecified/unknown values.
+     * </pre>
+     *
+     * <code>RANKING_EXPRESSION_BACKEND_UNSPECIFIED = 0;</code>
+     */
+    public static final int RANKING_EXPRESSION_BACKEND_UNSPECIFIED_VALUE = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Ranking by custom embedding model, the default way to evaluate the
+     * ranking expression.
+     * </pre>
+     *
+     * <code>RANK_BY_EMBEDDING = 3;</code>
+     */
+    public static final int RANK_BY_EMBEDDING_VALUE = 3;
+
+    /**
+     *
+     *
+     * <pre>
+     * Ranking by custom formula.
+     * </pre>
+     *
+     * <code>RANK_BY_FORMULA = 4;</code>
+     */
+    public static final int RANK_BY_FORMULA_VALUE = 4;
+
+    public final int getNumber() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalArgumentException(
+            "Can't get the number of an unknown enum value.");
+      }
+      return value;
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     * @deprecated Use {@link #forNumber(int)} instead.
+     */
+    @java.lang.Deprecated
+    public static RankingExpressionBackend valueOf(int value) {
+      return forNumber(value);
+    }
+
+    /**
+     * @param value The numeric wire value of the corresponding enum entry.
+     * @return The enum associated with the given numeric wire value.
+     */
+    public static RankingExpressionBackend forNumber(int value) {
+      switch (value) {
+        case 0:
+          return RANKING_EXPRESSION_BACKEND_UNSPECIFIED;
+        case 3:
+          return RANK_BY_EMBEDDING;
+        case 4:
+          return RANK_BY_FORMULA;
+        default:
+          return null;
+      }
+    }
+
+    public static com.google.protobuf.Internal.EnumLiteMap<RankingExpressionBackend>
+        internalGetValueMap() {
+      return internalValueMap;
+    }
+
+    private static final com.google.protobuf.Internal.EnumLiteMap<RankingExpressionBackend>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<RankingExpressionBackend>() {
+              public RankingExpressionBackend findValueByNumber(int number) {
+                return RankingExpressionBackend.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      if (this == UNRECOGNIZED) {
+        throw new java.lang.IllegalStateException(
+            "Can't get the descriptor of an unrecognized enum value.");
+      }
+      return getDescriptor().getValues().get(ordinal());
+    }
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return getDescriptor();
+    }
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.discoveryengine.v1.SearchRequest.getDescriptor()
+          .getEnumTypes()
+          .get(1);
+    }
+
+    private static final RankingExpressionBackend[] VALUES = values();
+
+    public static RankingExpressionBackend valueOf(
+        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+      if (desc.getType() != getDescriptor()) {
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+      }
+      if (desc.getIndex() == -1) {
+        return UNRECOGNIZED;
+      }
+      return VALUES[desc.getIndex()];
+    }
+
+    private final int value;
+
+    private RankingExpressionBackend(int value) {
+      this.value = value;
+    }
+
+    // @@protoc_insertion_point(enum_scope:google.cloud.discoveryengine.v1.SearchRequest.RankingExpressionBackend)
   }
 
   public interface ImageQueryOrBuilder
@@ -30300,6 +30468,282 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         : relevanceScoreSpec_;
   }
 
+  public static final int RANKING_EXPRESSION_FIELD_NUMBER = 26;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object rankingExpression_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * The ranking expression controls the customized ranking on retrieval
+   * documents. This overrides
+   * [ServingConfig.ranking_expression][google.cloud.discoveryengine.v1.ServingConfig.ranking_expression].
+   * The syntax and supported features depend on the
+   * `ranking_expression_backend` value. If `ranking_expression_backend` is not
+   * provided, it defaults to `RANK_BY_EMBEDDING`.
+   *
+   * If
+   * [ranking_expression_backend][google.cloud.discoveryengine.v1.SearchRequest.ranking_expression_backend]
+   * is not provided or set to `RANK_BY_EMBEDDING`, it should be a single
+   * function or multiple functions that are joined by "+".
+   *
+   *   * ranking_expression = function, { " + ", function };
+   *
+   * Supported functions:
+   *
+   *   * double * relevance_score
+   *   * double * dotProduct(embedding_field_path)
+   *
+   * Function variables:
+   *
+   *   * `relevance_score`: pre-defined keywords, used for measure relevance
+   *   between query and document.
+   *   * `embedding_field_path`: the document embedding field
+   *   used with query embedding vector.
+   *   * `dotProduct`: embedding function between `embedding_field_path` and
+   *   query embedding vector.
+   *
+   *  Example ranking expression:
+   *
+   *    If document has an embedding field doc_embedding, the ranking expression
+   *    could be `0.5 * relevance_score + 0.3 * dotProduct(doc_embedding)`.
+   *
+   * If
+   * [ranking_expression_backend][google.cloud.discoveryengine.v1.SearchRequest.ranking_expression_backend]
+   * is set to `RANK_BY_FORMULA`, the following expression types (and
+   * combinations of those chained using + or
+   * * operators) are supported:
+   *
+   *   * `double`
+   *   * `signal`
+   *   * `log(signal)`
+   *   * `exp(signal)`
+   *   * `rr(signal, double &gt; 0)`  -- reciprocal rank transformation with second
+   *   argument being a denominator constant.
+   *   * `is_nan(signal)` -- returns 0 if signal is NaN, 1 otherwise.
+   *   * `fill_nan(signal1, signal2 | double)` -- if signal1 is NaN, returns
+   *   signal2 | double, else returns signal1.
+   *
+   *   Here are a few examples of ranking formulas that use the supported
+   *   ranking expression types:
+   *
+   *   - `0.2 * semantic_similarity_score + 0.8 * log(keyword_similarity_score)`
+   *   -- mostly rank by the logarithm of `keyword_similarity_score` with slight
+   *   `semantic_smilarity_score` adjustment.
+   *   - `0.2 * exp(fill_nan(semantic_similarity_score, 0)) + 0.3 *
+   *   is_nan(keyword_similarity_score)` -- rank by the exponent of
+   *   `semantic_similarity_score` filling the value with 0 if it's NaN, also
+   *   add constant 0.3 adjustment to the final score if
+   *   `semantic_similarity_score` is NaN.
+   *   - `0.2 * rr(semantic_similarity_score, 16) + 0.8 *
+   *   rr(keyword_similarity_score, 16)` -- mostly rank by the reciprocal rank
+   *   of `keyword_similarity_score` with slight adjustment of reciprocal rank
+   *   of `semantic_smilarity_score`.
+   *
+   * The following signals are supported:
+   *
+   *   * `semantic_similarity_score`: semantic similarity adjustment that is
+   *   calculated using the embeddings generated by a proprietary Google model.
+   *   This score determines how semantically similar a search query is to a
+   *   document.
+   *   * `keyword_similarity_score`: keyword match adjustment uses the Best
+   *   Match 25 (BM25) ranking function. This score is calculated using a
+   *   probabilistic model to estimate the probability that a document is
+   *   relevant to a given query.
+   *   * `relevance_score`: semantic relevance adjustment that uses a
+   *   proprietary Google model to determine the meaning and intent behind a
+   *   user's query in context with the content in the documents.
+   *   * `pctr_rank`: predicted conversion rate adjustment as a rank use
+   *   predicted Click-through rate (pCTR) to gauge the relevance and
+   *   attractiveness of a search result from a user's perspective. A higher
+   *   pCTR suggests that the result is more likely to satisfy the user's query
+   *   and intent, making it a valuable signal for ranking.
+   *   * `freshness_rank`: freshness adjustment as a rank
+   *   * `document_age`: The time in hours elapsed since the document was last
+   *   updated, a floating-point number (e.g., 0.25 means 15 minutes).
+   *   * `topicality_rank`: topicality adjustment as a rank. Uses proprietary
+   *   Google model to determine the keyword-based overlap between the query and
+   *   the document.
+   *   * `base_rank`: the default rank of the result
+   * </pre>
+   *
+   * <code>string ranking_expression = 26;</code>
+   *
+   * @return The rankingExpression.
+   */
+  @java.lang.Override
+  public java.lang.String getRankingExpression() {
+    java.lang.Object ref = rankingExpression_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      rankingExpression_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The ranking expression controls the customized ranking on retrieval
+   * documents. This overrides
+   * [ServingConfig.ranking_expression][google.cloud.discoveryengine.v1.ServingConfig.ranking_expression].
+   * The syntax and supported features depend on the
+   * `ranking_expression_backend` value. If `ranking_expression_backend` is not
+   * provided, it defaults to `RANK_BY_EMBEDDING`.
+   *
+   * If
+   * [ranking_expression_backend][google.cloud.discoveryengine.v1.SearchRequest.ranking_expression_backend]
+   * is not provided or set to `RANK_BY_EMBEDDING`, it should be a single
+   * function or multiple functions that are joined by "+".
+   *
+   *   * ranking_expression = function, { " + ", function };
+   *
+   * Supported functions:
+   *
+   *   * double * relevance_score
+   *   * double * dotProduct(embedding_field_path)
+   *
+   * Function variables:
+   *
+   *   * `relevance_score`: pre-defined keywords, used for measure relevance
+   *   between query and document.
+   *   * `embedding_field_path`: the document embedding field
+   *   used with query embedding vector.
+   *   * `dotProduct`: embedding function between `embedding_field_path` and
+   *   query embedding vector.
+   *
+   *  Example ranking expression:
+   *
+   *    If document has an embedding field doc_embedding, the ranking expression
+   *    could be `0.5 * relevance_score + 0.3 * dotProduct(doc_embedding)`.
+   *
+   * If
+   * [ranking_expression_backend][google.cloud.discoveryengine.v1.SearchRequest.ranking_expression_backend]
+   * is set to `RANK_BY_FORMULA`, the following expression types (and
+   * combinations of those chained using + or
+   * * operators) are supported:
+   *
+   *   * `double`
+   *   * `signal`
+   *   * `log(signal)`
+   *   * `exp(signal)`
+   *   * `rr(signal, double &gt; 0)`  -- reciprocal rank transformation with second
+   *   argument being a denominator constant.
+   *   * `is_nan(signal)` -- returns 0 if signal is NaN, 1 otherwise.
+   *   * `fill_nan(signal1, signal2 | double)` -- if signal1 is NaN, returns
+   *   signal2 | double, else returns signal1.
+   *
+   *   Here are a few examples of ranking formulas that use the supported
+   *   ranking expression types:
+   *
+   *   - `0.2 * semantic_similarity_score + 0.8 * log(keyword_similarity_score)`
+   *   -- mostly rank by the logarithm of `keyword_similarity_score` with slight
+   *   `semantic_smilarity_score` adjustment.
+   *   - `0.2 * exp(fill_nan(semantic_similarity_score, 0)) + 0.3 *
+   *   is_nan(keyword_similarity_score)` -- rank by the exponent of
+   *   `semantic_similarity_score` filling the value with 0 if it's NaN, also
+   *   add constant 0.3 adjustment to the final score if
+   *   `semantic_similarity_score` is NaN.
+   *   - `0.2 * rr(semantic_similarity_score, 16) + 0.8 *
+   *   rr(keyword_similarity_score, 16)` -- mostly rank by the reciprocal rank
+   *   of `keyword_similarity_score` with slight adjustment of reciprocal rank
+   *   of `semantic_smilarity_score`.
+   *
+   * The following signals are supported:
+   *
+   *   * `semantic_similarity_score`: semantic similarity adjustment that is
+   *   calculated using the embeddings generated by a proprietary Google model.
+   *   This score determines how semantically similar a search query is to a
+   *   document.
+   *   * `keyword_similarity_score`: keyword match adjustment uses the Best
+   *   Match 25 (BM25) ranking function. This score is calculated using a
+   *   probabilistic model to estimate the probability that a document is
+   *   relevant to a given query.
+   *   * `relevance_score`: semantic relevance adjustment that uses a
+   *   proprietary Google model to determine the meaning and intent behind a
+   *   user's query in context with the content in the documents.
+   *   * `pctr_rank`: predicted conversion rate adjustment as a rank use
+   *   predicted Click-through rate (pCTR) to gauge the relevance and
+   *   attractiveness of a search result from a user's perspective. A higher
+   *   pCTR suggests that the result is more likely to satisfy the user's query
+   *   and intent, making it a valuable signal for ranking.
+   *   * `freshness_rank`: freshness adjustment as a rank
+   *   * `document_age`: The time in hours elapsed since the document was last
+   *   updated, a floating-point number (e.g., 0.25 means 15 minutes).
+   *   * `topicality_rank`: topicality adjustment as a rank. Uses proprietary
+   *   Google model to determine the keyword-based overlap between the query and
+   *   the document.
+   *   * `base_rank`: the default rank of the result
+   * </pre>
+   *
+   * <code>string ranking_expression = 26;</code>
+   *
+   * @return The bytes for rankingExpression.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getRankingExpressionBytes() {
+    java.lang.Object ref = rankingExpression_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      rankingExpression_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int RANKING_EXPRESSION_BACKEND_FIELD_NUMBER = 53;
+  private int rankingExpressionBackend_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * The backend to use for the ranking expression evaluation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.SearchRequest.RankingExpressionBackend ranking_expression_backend = 53 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for rankingExpressionBackend.
+   */
+  @java.lang.Override
+  public int getRankingExpressionBackendValue() {
+    return rankingExpressionBackend_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The backend to use for the ranking expression evaluation.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.discoveryengine.v1.SearchRequest.RankingExpressionBackend ranking_expression_backend = 53 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The rankingExpressionBackend.
+   */
+  @java.lang.Override
+  public com.google.cloud.discoveryengine.v1.SearchRequest.RankingExpressionBackend
+      getRankingExpressionBackend() {
+    com.google.cloud.discoveryengine.v1.SearchRequest.RankingExpressionBackend result =
+        com.google.cloud.discoveryengine.v1.SearchRequest.RankingExpressionBackend.forNumber(
+            rankingExpressionBackend_);
+    return result == null
+        ? com.google.cloud.discoveryengine.v1.SearchRequest.RankingExpressionBackend.UNRECOGNIZED
+        : result;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -30369,6 +30813,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000020) != 0)) {
       output.writeMessage(24, getContentSearchSpec());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rankingExpression_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 26, rankingExpression_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(canonicalFilter_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 29, canonicalFilter_);
     }
@@ -30401,6 +30848,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000200) != 0)) {
       output.writeMessage(52, getRelevanceScoreSpec());
+    }
+    if (rankingExpressionBackend_
+        != com.google.cloud.discoveryengine.v1.SearchRequest.RankingExpressionBackend
+            .RANKING_EXPRESSION_BACKEND_UNSPECIFIED
+            .getNumber()) {
+      output.writeEnum(53, rankingExpressionBackend_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -30483,6 +30936,9 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(24, getContentSearchSpec());
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(rankingExpression_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(26, rankingExpression_);
+    }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(canonicalFilter_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(29, canonicalFilter_);
     }
@@ -30516,6 +30972,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000200) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(52, getRelevanceScoreSpec());
+    }
+    if (rankingExpressionBackend_
+        != com.google.cloud.discoveryengine.v1.SearchRequest.RankingExpressionBackend
+            .RANKING_EXPRESSION_BACKEND_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(53, rankingExpressionBackend_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -30592,6 +31054,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
     if (hasRelevanceScoreSpec()) {
       if (!getRelevanceScoreSpec().equals(other.getRelevanceScoreSpec())) return false;
     }
+    if (!getRankingExpression().equals(other.getRankingExpression())) return false;
+    if (rankingExpressionBackend_ != other.rankingExpressionBackend_) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -30689,6 +31153,10 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + RELEVANCE_SCORE_SPEC_FIELD_NUMBER;
       hash = (53 * hash) + getRelevanceScoreSpec().hashCode();
     }
+    hash = (37 * hash) + RANKING_EXPRESSION_FIELD_NUMBER;
+    hash = (53 * hash) + getRankingExpression().hashCode();
+    hash = (37 * hash) + RANKING_EXPRESSION_BACKEND_FIELD_NUMBER;
+    hash = (53 * hash) + rankingExpressionBackend_;
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -30958,6 +31426,8 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         relevanceScoreSpecBuilder_.dispose();
         relevanceScoreSpecBuilder_ = null;
       }
+      rankingExpression_ = "";
+      rankingExpressionBackend_ = 0;
       return this;
     }
 
@@ -31126,6 +31596,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                 ? relevanceScoreSpec_
                 : relevanceScoreSpecBuilder_.build();
         to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x20000000) != 0)) {
+        result.rankingExpression_ = rankingExpression_;
+      }
+      if (((from_bitField0_ & 0x40000000) != 0)) {
+        result.rankingExpressionBackend_ = rankingExpressionBackend_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -31329,6 +31805,14 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
       if (other.hasRelevanceScoreSpec()) {
         mergeRelevanceScoreSpec(other.getRelevanceScoreSpec());
       }
+      if (!other.getRankingExpression().isEmpty()) {
+        rankingExpression_ = other.rankingExpression_;
+        bitField0_ |= 0x20000000;
+        onChanged();
+      }
+      if (other.rankingExpressionBackend_ != 0) {
+        setRankingExpressionBackendValue(other.getRankingExpressionBackendValue());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -31492,6 +31976,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00100000;
                 break;
               } // case 194
+            case 210:
+              {
+                rankingExpression_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x20000000;
+                break;
+              } // case 210
             case 234:
               {
                 canonicalFilter_ = input.readStringRequireUtf8();
@@ -31562,6 +32052,12 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x10000000;
                 break;
               } // case 418
+            case 424:
+              {
+                rankingExpressionBackend_ = input.readEnum();
+                bitField0_ |= 0x40000000;
+                break;
+              } // case 424
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -37423,6 +37919,672 @@ public final class SearchRequest extends com.google.protobuf.GeneratedMessageV3
         relevanceScoreSpec_ = null;
       }
       return relevanceScoreSpecBuilder_;
+    }
+
+    private java.lang.Object rankingExpression_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * The ranking expression controls the customized ranking on retrieval
+     * documents. This overrides
+     * [ServingConfig.ranking_expression][google.cloud.discoveryengine.v1.ServingConfig.ranking_expression].
+     * The syntax and supported features depend on the
+     * `ranking_expression_backend` value. If `ranking_expression_backend` is not
+     * provided, it defaults to `RANK_BY_EMBEDDING`.
+     *
+     * If
+     * [ranking_expression_backend][google.cloud.discoveryengine.v1.SearchRequest.ranking_expression_backend]
+     * is not provided or set to `RANK_BY_EMBEDDING`, it should be a single
+     * function or multiple functions that are joined by "+".
+     *
+     *   * ranking_expression = function, { " + ", function };
+     *
+     * Supported functions:
+     *
+     *   * double * relevance_score
+     *   * double * dotProduct(embedding_field_path)
+     *
+     * Function variables:
+     *
+     *   * `relevance_score`: pre-defined keywords, used for measure relevance
+     *   between query and document.
+     *   * `embedding_field_path`: the document embedding field
+     *   used with query embedding vector.
+     *   * `dotProduct`: embedding function between `embedding_field_path` and
+     *   query embedding vector.
+     *
+     *  Example ranking expression:
+     *
+     *    If document has an embedding field doc_embedding, the ranking expression
+     *    could be `0.5 * relevance_score + 0.3 * dotProduct(doc_embedding)`.
+     *
+     * If
+     * [ranking_expression_backend][google.cloud.discoveryengine.v1.SearchRequest.ranking_expression_backend]
+     * is set to `RANK_BY_FORMULA`, the following expression types (and
+     * combinations of those chained using + or
+     * * operators) are supported:
+     *
+     *   * `double`
+     *   * `signal`
+     *   * `log(signal)`
+     *   * `exp(signal)`
+     *   * `rr(signal, double &gt; 0)`  -- reciprocal rank transformation with second
+     *   argument being a denominator constant.
+     *   * `is_nan(signal)` -- returns 0 if signal is NaN, 1 otherwise.
+     *   * `fill_nan(signal1, signal2 | double)` -- if signal1 is NaN, returns
+     *   signal2 | double, else returns signal1.
+     *
+     *   Here are a few examples of ranking formulas that use the supported
+     *   ranking expression types:
+     *
+     *   - `0.2 * semantic_similarity_score + 0.8 * log(keyword_similarity_score)`
+     *   -- mostly rank by the logarithm of `keyword_similarity_score` with slight
+     *   `semantic_smilarity_score` adjustment.
+     *   - `0.2 * exp(fill_nan(semantic_similarity_score, 0)) + 0.3 *
+     *   is_nan(keyword_similarity_score)` -- rank by the exponent of
+     *   `semantic_similarity_score` filling the value with 0 if it's NaN, also
+     *   add constant 0.3 adjustment to the final score if
+     *   `semantic_similarity_score` is NaN.
+     *   - `0.2 * rr(semantic_similarity_score, 16) + 0.8 *
+     *   rr(keyword_similarity_score, 16)` -- mostly rank by the reciprocal rank
+     *   of `keyword_similarity_score` with slight adjustment of reciprocal rank
+     *   of `semantic_smilarity_score`.
+     *
+     * The following signals are supported:
+     *
+     *   * `semantic_similarity_score`: semantic similarity adjustment that is
+     *   calculated using the embeddings generated by a proprietary Google model.
+     *   This score determines how semantically similar a search query is to a
+     *   document.
+     *   * `keyword_similarity_score`: keyword match adjustment uses the Best
+     *   Match 25 (BM25) ranking function. This score is calculated using a
+     *   probabilistic model to estimate the probability that a document is
+     *   relevant to a given query.
+     *   * `relevance_score`: semantic relevance adjustment that uses a
+     *   proprietary Google model to determine the meaning and intent behind a
+     *   user's query in context with the content in the documents.
+     *   * `pctr_rank`: predicted conversion rate adjustment as a rank use
+     *   predicted Click-through rate (pCTR) to gauge the relevance and
+     *   attractiveness of a search result from a user's perspective. A higher
+     *   pCTR suggests that the result is more likely to satisfy the user's query
+     *   and intent, making it a valuable signal for ranking.
+     *   * `freshness_rank`: freshness adjustment as a rank
+     *   * `document_age`: The time in hours elapsed since the document was last
+     *   updated, a floating-point number (e.g., 0.25 means 15 minutes).
+     *   * `topicality_rank`: topicality adjustment as a rank. Uses proprietary
+     *   Google model to determine the keyword-based overlap between the query and
+     *   the document.
+     *   * `base_rank`: the default rank of the result
+     * </pre>
+     *
+     * <code>string ranking_expression = 26;</code>
+     *
+     * @return The rankingExpression.
+     */
+    public java.lang.String getRankingExpression() {
+      java.lang.Object ref = rankingExpression_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        rankingExpression_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The ranking expression controls the customized ranking on retrieval
+     * documents. This overrides
+     * [ServingConfig.ranking_expression][google.cloud.discoveryengine.v1.ServingConfig.ranking_expression].
+     * The syntax and supported features depend on the
+     * `ranking_expression_backend` value. If `ranking_expression_backend` is not
+     * provided, it defaults to `RANK_BY_EMBEDDING`.
+     *
+     * If
+     * [ranking_expression_backend][google.cloud.discoveryengine.v1.SearchRequest.ranking_expression_backend]
+     * is not provided or set to `RANK_BY_EMBEDDING`, it should be a single
+     * function or multiple functions that are joined by "+".
+     *
+     *   * ranking_expression = function, { " + ", function };
+     *
+     * Supported functions:
+     *
+     *   * double * relevance_score
+     *   * double * dotProduct(embedding_field_path)
+     *
+     * Function variables:
+     *
+     *   * `relevance_score`: pre-defined keywords, used for measure relevance
+     *   between query and document.
+     *   * `embedding_field_path`: the document embedding field
+     *   used with query embedding vector.
+     *   * `dotProduct`: embedding function between `embedding_field_path` and
+     *   query embedding vector.
+     *
+     *  Example ranking expression:
+     *
+     *    If document has an embedding field doc_embedding, the ranking expression
+     *    could be `0.5 * relevance_score + 0.3 * dotProduct(doc_embedding)`.
+     *
+     * If
+     * [ranking_expression_backend][google.cloud.discoveryengine.v1.SearchRequest.ranking_expression_backend]
+     * is set to `RANK_BY_FORMULA`, the following expression types (and
+     * combinations of those chained using + or
+     * * operators) are supported:
+     *
+     *   * `double`
+     *   * `signal`
+     *   * `log(signal)`
+     *   * `exp(signal)`
+     *   * `rr(signal, double &gt; 0)`  -- reciprocal rank transformation with second
+     *   argument being a denominator constant.
+     *   * `is_nan(signal)` -- returns 0 if signal is NaN, 1 otherwise.
+     *   * `fill_nan(signal1, signal2 | double)` -- if signal1 is NaN, returns
+     *   signal2 | double, else returns signal1.
+     *
+     *   Here are a few examples of ranking formulas that use the supported
+     *   ranking expression types:
+     *
+     *   - `0.2 * semantic_similarity_score + 0.8 * log(keyword_similarity_score)`
+     *   -- mostly rank by the logarithm of `keyword_similarity_score` with slight
+     *   `semantic_smilarity_score` adjustment.
+     *   - `0.2 * exp(fill_nan(semantic_similarity_score, 0)) + 0.3 *
+     *   is_nan(keyword_similarity_score)` -- rank by the exponent of
+     *   `semantic_similarity_score` filling the value with 0 if it's NaN, also
+     *   add constant 0.3 adjustment to the final score if
+     *   `semantic_similarity_score` is NaN.
+     *   - `0.2 * rr(semantic_similarity_score, 16) + 0.8 *
+     *   rr(keyword_similarity_score, 16)` -- mostly rank by the reciprocal rank
+     *   of `keyword_similarity_score` with slight adjustment of reciprocal rank
+     *   of `semantic_smilarity_score`.
+     *
+     * The following signals are supported:
+     *
+     *   * `semantic_similarity_score`: semantic similarity adjustment that is
+     *   calculated using the embeddings generated by a proprietary Google model.
+     *   This score determines how semantically similar a search query is to a
+     *   document.
+     *   * `keyword_similarity_score`: keyword match adjustment uses the Best
+     *   Match 25 (BM25) ranking function. This score is calculated using a
+     *   probabilistic model to estimate the probability that a document is
+     *   relevant to a given query.
+     *   * `relevance_score`: semantic relevance adjustment that uses a
+     *   proprietary Google model to determine the meaning and intent behind a
+     *   user's query in context with the content in the documents.
+     *   * `pctr_rank`: predicted conversion rate adjustment as a rank use
+     *   predicted Click-through rate (pCTR) to gauge the relevance and
+     *   attractiveness of a search result from a user's perspective. A higher
+     *   pCTR suggests that the result is more likely to satisfy the user's query
+     *   and intent, making it a valuable signal for ranking.
+     *   * `freshness_rank`: freshness adjustment as a rank
+     *   * `document_age`: The time in hours elapsed since the document was last
+     *   updated, a floating-point number (e.g., 0.25 means 15 minutes).
+     *   * `topicality_rank`: topicality adjustment as a rank. Uses proprietary
+     *   Google model to determine the keyword-based overlap between the query and
+     *   the document.
+     *   * `base_rank`: the default rank of the result
+     * </pre>
+     *
+     * <code>string ranking_expression = 26;</code>
+     *
+     * @return The bytes for rankingExpression.
+     */
+    public com.google.protobuf.ByteString getRankingExpressionBytes() {
+      java.lang.Object ref = rankingExpression_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        rankingExpression_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The ranking expression controls the customized ranking on retrieval
+     * documents. This overrides
+     * [ServingConfig.ranking_expression][google.cloud.discoveryengine.v1.ServingConfig.ranking_expression].
+     * The syntax and supported features depend on the
+     * `ranking_expression_backend` value. If `ranking_expression_backend` is not
+     * provided, it defaults to `RANK_BY_EMBEDDING`.
+     *
+     * If
+     * [ranking_expression_backend][google.cloud.discoveryengine.v1.SearchRequest.ranking_expression_backend]
+     * is not provided or set to `RANK_BY_EMBEDDING`, it should be a single
+     * function or multiple functions that are joined by "+".
+     *
+     *   * ranking_expression = function, { " + ", function };
+     *
+     * Supported functions:
+     *
+     *   * double * relevance_score
+     *   * double * dotProduct(embedding_field_path)
+     *
+     * Function variables:
+     *
+     *   * `relevance_score`: pre-defined keywords, used for measure relevance
+     *   between query and document.
+     *   * `embedding_field_path`: the document embedding field
+     *   used with query embedding vector.
+     *   * `dotProduct`: embedding function between `embedding_field_path` and
+     *   query embedding vector.
+     *
+     *  Example ranking expression:
+     *
+     *    If document has an embedding field doc_embedding, the ranking expression
+     *    could be `0.5 * relevance_score + 0.3 * dotProduct(doc_embedding)`.
+     *
+     * If
+     * [ranking_expression_backend][google.cloud.discoveryengine.v1.SearchRequest.ranking_expression_backend]
+     * is set to `RANK_BY_FORMULA`, the following expression types (and
+     * combinations of those chained using + or
+     * * operators) are supported:
+     *
+     *   * `double`
+     *   * `signal`
+     *   * `log(signal)`
+     *   * `exp(signal)`
+     *   * `rr(signal, double &gt; 0)`  -- reciprocal rank transformation with second
+     *   argument being a denominator constant.
+     *   * `is_nan(signal)` -- returns 0 if signal is NaN, 1 otherwise.
+     *   * `fill_nan(signal1, signal2 | double)` -- if signal1 is NaN, returns
+     *   signal2 | double, else returns signal1.
+     *
+     *   Here are a few examples of ranking formulas that use the supported
+     *   ranking expression types:
+     *
+     *   - `0.2 * semantic_similarity_score + 0.8 * log(keyword_similarity_score)`
+     *   -- mostly rank by the logarithm of `keyword_similarity_score` with slight
+     *   `semantic_smilarity_score` adjustment.
+     *   - `0.2 * exp(fill_nan(semantic_similarity_score, 0)) + 0.3 *
+     *   is_nan(keyword_similarity_score)` -- rank by the exponent of
+     *   `semantic_similarity_score` filling the value with 0 if it's NaN, also
+     *   add constant 0.3 adjustment to the final score if
+     *   `semantic_similarity_score` is NaN.
+     *   - `0.2 * rr(semantic_similarity_score, 16) + 0.8 *
+     *   rr(keyword_similarity_score, 16)` -- mostly rank by the reciprocal rank
+     *   of `keyword_similarity_score` with slight adjustment of reciprocal rank
+     *   of `semantic_smilarity_score`.
+     *
+     * The following signals are supported:
+     *
+     *   * `semantic_similarity_score`: semantic similarity adjustment that is
+     *   calculated using the embeddings generated by a proprietary Google model.
+     *   This score determines how semantically similar a search query is to a
+     *   document.
+     *   * `keyword_similarity_score`: keyword match adjustment uses the Best
+     *   Match 25 (BM25) ranking function. This score is calculated using a
+     *   probabilistic model to estimate the probability that a document is
+     *   relevant to a given query.
+     *   * `relevance_score`: semantic relevance adjustment that uses a
+     *   proprietary Google model to determine the meaning and intent behind a
+     *   user's query in context with the content in the documents.
+     *   * `pctr_rank`: predicted conversion rate adjustment as a rank use
+     *   predicted Click-through rate (pCTR) to gauge the relevance and
+     *   attractiveness of a search result from a user's perspective. A higher
+     *   pCTR suggests that the result is more likely to satisfy the user's query
+     *   and intent, making it a valuable signal for ranking.
+     *   * `freshness_rank`: freshness adjustment as a rank
+     *   * `document_age`: The time in hours elapsed since the document was last
+     *   updated, a floating-point number (e.g., 0.25 means 15 minutes).
+     *   * `topicality_rank`: topicality adjustment as a rank. Uses proprietary
+     *   Google model to determine the keyword-based overlap between the query and
+     *   the document.
+     *   * `base_rank`: the default rank of the result
+     * </pre>
+     *
+     * <code>string ranking_expression = 26;</code>
+     *
+     * @param value The rankingExpression to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRankingExpression(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      rankingExpression_ = value;
+      bitField0_ |= 0x20000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The ranking expression controls the customized ranking on retrieval
+     * documents. This overrides
+     * [ServingConfig.ranking_expression][google.cloud.discoveryengine.v1.ServingConfig.ranking_expression].
+     * The syntax and supported features depend on the
+     * `ranking_expression_backend` value. If `ranking_expression_backend` is not
+     * provided, it defaults to `RANK_BY_EMBEDDING`.
+     *
+     * If
+     * [ranking_expression_backend][google.cloud.discoveryengine.v1.SearchRequest.ranking_expression_backend]
+     * is not provided or set to `RANK_BY_EMBEDDING`, it should be a single
+     * function or multiple functions that are joined by "+".
+     *
+     *   * ranking_expression = function, { " + ", function };
+     *
+     * Supported functions:
+     *
+     *   * double * relevance_score
+     *   * double * dotProduct(embedding_field_path)
+     *
+     * Function variables:
+     *
+     *   * `relevance_score`: pre-defined keywords, used for measure relevance
+     *   between query and document.
+     *   * `embedding_field_path`: the document embedding field
+     *   used with query embedding vector.
+     *   * `dotProduct`: embedding function between `embedding_field_path` and
+     *   query embedding vector.
+     *
+     *  Example ranking expression:
+     *
+     *    If document has an embedding field doc_embedding, the ranking expression
+     *    could be `0.5 * relevance_score + 0.3 * dotProduct(doc_embedding)`.
+     *
+     * If
+     * [ranking_expression_backend][google.cloud.discoveryengine.v1.SearchRequest.ranking_expression_backend]
+     * is set to `RANK_BY_FORMULA`, the following expression types (and
+     * combinations of those chained using + or
+     * * operators) are supported:
+     *
+     *   * `double`
+     *   * `signal`
+     *   * `log(signal)`
+     *   * `exp(signal)`
+     *   * `rr(signal, double &gt; 0)`  -- reciprocal rank transformation with second
+     *   argument being a denominator constant.
+     *   * `is_nan(signal)` -- returns 0 if signal is NaN, 1 otherwise.
+     *   * `fill_nan(signal1, signal2 | double)` -- if signal1 is NaN, returns
+     *   signal2 | double, else returns signal1.
+     *
+     *   Here are a few examples of ranking formulas that use the supported
+     *   ranking expression types:
+     *
+     *   - `0.2 * semantic_similarity_score + 0.8 * log(keyword_similarity_score)`
+     *   -- mostly rank by the logarithm of `keyword_similarity_score` with slight
+     *   `semantic_smilarity_score` adjustment.
+     *   - `0.2 * exp(fill_nan(semantic_similarity_score, 0)) + 0.3 *
+     *   is_nan(keyword_similarity_score)` -- rank by the exponent of
+     *   `semantic_similarity_score` filling the value with 0 if it's NaN, also
+     *   add constant 0.3 adjustment to the final score if
+     *   `semantic_similarity_score` is NaN.
+     *   - `0.2 * rr(semantic_similarity_score, 16) + 0.8 *
+     *   rr(keyword_similarity_score, 16)` -- mostly rank by the reciprocal rank
+     *   of `keyword_similarity_score` with slight adjustment of reciprocal rank
+     *   of `semantic_smilarity_score`.
+     *
+     * The following signals are supported:
+     *
+     *   * `semantic_similarity_score`: semantic similarity adjustment that is
+     *   calculated using the embeddings generated by a proprietary Google model.
+     *   This score determines how semantically similar a search query is to a
+     *   document.
+     *   * `keyword_similarity_score`: keyword match adjustment uses the Best
+     *   Match 25 (BM25) ranking function. This score is calculated using a
+     *   probabilistic model to estimate the probability that a document is
+     *   relevant to a given query.
+     *   * `relevance_score`: semantic relevance adjustment that uses a
+     *   proprietary Google model to determine the meaning and intent behind a
+     *   user's query in context with the content in the documents.
+     *   * `pctr_rank`: predicted conversion rate adjustment as a rank use
+     *   predicted Click-through rate (pCTR) to gauge the relevance and
+     *   attractiveness of a search result from a user's perspective. A higher
+     *   pCTR suggests that the result is more likely to satisfy the user's query
+     *   and intent, making it a valuable signal for ranking.
+     *   * `freshness_rank`: freshness adjustment as a rank
+     *   * `document_age`: The time in hours elapsed since the document was last
+     *   updated, a floating-point number (e.g., 0.25 means 15 minutes).
+     *   * `topicality_rank`: topicality adjustment as a rank. Uses proprietary
+     *   Google model to determine the keyword-based overlap between the query and
+     *   the document.
+     *   * `base_rank`: the default rank of the result
+     * </pre>
+     *
+     * <code>string ranking_expression = 26;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRankingExpression() {
+      rankingExpression_ = getDefaultInstance().getRankingExpression();
+      bitField0_ = (bitField0_ & ~0x20000000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The ranking expression controls the customized ranking on retrieval
+     * documents. This overrides
+     * [ServingConfig.ranking_expression][google.cloud.discoveryengine.v1.ServingConfig.ranking_expression].
+     * The syntax and supported features depend on the
+     * `ranking_expression_backend` value. If `ranking_expression_backend` is not
+     * provided, it defaults to `RANK_BY_EMBEDDING`.
+     *
+     * If
+     * [ranking_expression_backend][google.cloud.discoveryengine.v1.SearchRequest.ranking_expression_backend]
+     * is not provided or set to `RANK_BY_EMBEDDING`, it should be a single
+     * function or multiple functions that are joined by "+".
+     *
+     *   * ranking_expression = function, { " + ", function };
+     *
+     * Supported functions:
+     *
+     *   * double * relevance_score
+     *   * double * dotProduct(embedding_field_path)
+     *
+     * Function variables:
+     *
+     *   * `relevance_score`: pre-defined keywords, used for measure relevance
+     *   between query and document.
+     *   * `embedding_field_path`: the document embedding field
+     *   used with query embedding vector.
+     *   * `dotProduct`: embedding function between `embedding_field_path` and
+     *   query embedding vector.
+     *
+     *  Example ranking expression:
+     *
+     *    If document has an embedding field doc_embedding, the ranking expression
+     *    could be `0.5 * relevance_score + 0.3 * dotProduct(doc_embedding)`.
+     *
+     * If
+     * [ranking_expression_backend][google.cloud.discoveryengine.v1.SearchRequest.ranking_expression_backend]
+     * is set to `RANK_BY_FORMULA`, the following expression types (and
+     * combinations of those chained using + or
+     * * operators) are supported:
+     *
+     *   * `double`
+     *   * `signal`
+     *   * `log(signal)`
+     *   * `exp(signal)`
+     *   * `rr(signal, double &gt; 0)`  -- reciprocal rank transformation with second
+     *   argument being a denominator constant.
+     *   * `is_nan(signal)` -- returns 0 if signal is NaN, 1 otherwise.
+     *   * `fill_nan(signal1, signal2 | double)` -- if signal1 is NaN, returns
+     *   signal2 | double, else returns signal1.
+     *
+     *   Here are a few examples of ranking formulas that use the supported
+     *   ranking expression types:
+     *
+     *   - `0.2 * semantic_similarity_score + 0.8 * log(keyword_similarity_score)`
+     *   -- mostly rank by the logarithm of `keyword_similarity_score` with slight
+     *   `semantic_smilarity_score` adjustment.
+     *   - `0.2 * exp(fill_nan(semantic_similarity_score, 0)) + 0.3 *
+     *   is_nan(keyword_similarity_score)` -- rank by the exponent of
+     *   `semantic_similarity_score` filling the value with 0 if it's NaN, also
+     *   add constant 0.3 adjustment to the final score if
+     *   `semantic_similarity_score` is NaN.
+     *   - `0.2 * rr(semantic_similarity_score, 16) + 0.8 *
+     *   rr(keyword_similarity_score, 16)` -- mostly rank by the reciprocal rank
+     *   of `keyword_similarity_score` with slight adjustment of reciprocal rank
+     *   of `semantic_smilarity_score`.
+     *
+     * The following signals are supported:
+     *
+     *   * `semantic_similarity_score`: semantic similarity adjustment that is
+     *   calculated using the embeddings generated by a proprietary Google model.
+     *   This score determines how semantically similar a search query is to a
+     *   document.
+     *   * `keyword_similarity_score`: keyword match adjustment uses the Best
+     *   Match 25 (BM25) ranking function. This score is calculated using a
+     *   probabilistic model to estimate the probability that a document is
+     *   relevant to a given query.
+     *   * `relevance_score`: semantic relevance adjustment that uses a
+     *   proprietary Google model to determine the meaning and intent behind a
+     *   user's query in context with the content in the documents.
+     *   * `pctr_rank`: predicted conversion rate adjustment as a rank use
+     *   predicted Click-through rate (pCTR) to gauge the relevance and
+     *   attractiveness of a search result from a user's perspective. A higher
+     *   pCTR suggests that the result is more likely to satisfy the user's query
+     *   and intent, making it a valuable signal for ranking.
+     *   * `freshness_rank`: freshness adjustment as a rank
+     *   * `document_age`: The time in hours elapsed since the document was last
+     *   updated, a floating-point number (e.g., 0.25 means 15 minutes).
+     *   * `topicality_rank`: topicality adjustment as a rank. Uses proprietary
+     *   Google model to determine the keyword-based overlap between the query and
+     *   the document.
+     *   * `base_rank`: the default rank of the result
+     * </pre>
+     *
+     * <code>string ranking_expression = 26;</code>
+     *
+     * @param value The bytes for rankingExpression to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRankingExpressionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      rankingExpression_ = value;
+      bitField0_ |= 0x20000000;
+      onChanged();
+      return this;
+    }
+
+    private int rankingExpressionBackend_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * The backend to use for the ranking expression evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.RankingExpressionBackend ranking_expression_backend = 53 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for rankingExpressionBackend.
+     */
+    @java.lang.Override
+    public int getRankingExpressionBackendValue() {
+      return rankingExpressionBackend_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The backend to use for the ranking expression evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.RankingExpressionBackend ranking_expression_backend = 53 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for rankingExpressionBackend to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRankingExpressionBackendValue(int value) {
+      rankingExpressionBackend_ = value;
+      bitField0_ |= 0x40000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The backend to use for the ranking expression evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.RankingExpressionBackend ranking_expression_backend = 53 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The rankingExpressionBackend.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1.SearchRequest.RankingExpressionBackend
+        getRankingExpressionBackend() {
+      com.google.cloud.discoveryengine.v1.SearchRequest.RankingExpressionBackend result =
+          com.google.cloud.discoveryengine.v1.SearchRequest.RankingExpressionBackend.forNumber(
+              rankingExpressionBackend_);
+      return result == null
+          ? com.google.cloud.discoveryengine.v1.SearchRequest.RankingExpressionBackend.UNRECOGNIZED
+          : result;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The backend to use for the ranking expression evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.RankingExpressionBackend ranking_expression_backend = 53 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The rankingExpressionBackend to set.
+     * @return This builder for chaining.
+     */
+    public Builder setRankingExpressionBackend(
+        com.google.cloud.discoveryengine.v1.SearchRequest.RankingExpressionBackend value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      bitField0_ |= 0x40000000;
+      rankingExpressionBackend_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The backend to use for the ranking expression evaluation.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1.SearchRequest.RankingExpressionBackend ranking_expression_backend = 53 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearRankingExpressionBackend() {
+      bitField0_ = (bitField0_ & ~0x40000000);
+      rankingExpressionBackend_ = 0;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

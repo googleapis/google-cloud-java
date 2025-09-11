@@ -72,10 +72,13 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * List of fields with structural and profile information for each field.
+     * Output only. List of fields with structural and profile information for
+     * each field.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2;</code>
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     java.util.List<com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field> getFieldsList();
 
@@ -83,10 +86,13 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * List of fields with structural and profile information for each field.
+     * Output only. List of fields with structural and profile information for
+     * each field.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2;</code>
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field getFields(int index);
 
@@ -94,10 +100,13 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * List of fields with structural and profile information for each field.
+     * Output only. List of fields with structural and profile information for
+     * each field.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2;</code>
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     int getFieldsCount();
 
@@ -105,10 +114,13 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * List of fields with structural and profile information for each field.
+     * Output only. List of fields with structural and profile information for
+     * each field.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2;</code>
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     java.util.List<? extends com.google.cloud.dataplex.v1.DataProfileResult.Profile.FieldOrBuilder>
         getFieldsOrBuilderList();
@@ -117,10 +129,13 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * List of fields with structural and profile information for each field.
+     * Output only. List of fields with structural and profile information for
+     * each field.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2;</code>
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     com.google.cloud.dataplex.v1.DataProfileResult.Profile.FieldOrBuilder getFieldsOrBuilder(
         int index);
@@ -180,10 +195,10 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * The name of the field.
+       * Output only. The name of the field.
        * </pre>
        *
-       * <code>string name = 1;</code>
+       * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The name.
        */
@@ -193,10 +208,10 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * The name of the field.
+       * Output only. The name of the field.
        * </pre>
        *
-       * <code>string name = 1;</code>
+       * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The bytes for name.
        */
@@ -206,14 +221,15 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * The data type retrieved from the schema of the data source. For
-       * instance, for a BigQuery native table, it is the [BigQuery Table
+       * Output only. The data type retrieved from the schema of the data
+       * source. For instance, for a BigQuery native table, it is the [BigQuery
+       * Table
        * Schema](https://cloud.google.com/bigquery/docs/reference/rest/v2/tables#tablefieldschema).
-       * For a Dataplex Entity, it is the [Entity
+       * For a Dataplex Universal Catalog Entity, it is the [Entity
        * Schema](https://cloud.google.com/dataplex/docs/reference/rpc/google.cloud.dataplex.v1#type_3).
        * </pre>
        *
-       * <code>string type = 2;</code>
+       * <code>string type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The type.
        */
@@ -223,14 +239,15 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * The data type retrieved from the schema of the data source. For
-       * instance, for a BigQuery native table, it is the [BigQuery Table
+       * Output only. The data type retrieved from the schema of the data
+       * source. For instance, for a BigQuery native table, it is the [BigQuery
+       * Table
        * Schema](https://cloud.google.com/bigquery/docs/reference/rest/v2/tables#tablefieldschema).
-       * For a Dataplex Entity, it is the [Entity
+       * For a Dataplex Universal Catalog Entity, it is the [Entity
        * Schema](https://cloud.google.com/dataplex/docs/reference/rpc/google.cloud.dataplex.v1#type_3).
        * </pre>
        *
-       * <code>string type = 2;</code>
+       * <code>string type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The bytes for type.
        */
@@ -240,14 +257,14 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * The mode of the field. Possible values include:
+       * Output only. The mode of the field. Possible values include:
        *
        * * REQUIRED, if it is a required field.
        * * NULLABLE, if it is an optional field.
        * * REPEATED, if it is a repeated field.
        * </pre>
        *
-       * <code>string mode = 3;</code>
+       * <code>string mode = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The mode.
        */
@@ -257,14 +274,14 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * The mode of the field. Possible values include:
+       * Output only. The mode of the field. Possible values include:
        *
        * * REQUIRED, if it is a required field.
        * * NULLABLE, if it is an optional field.
        * * REPEATED, if it is a repeated field.
        * </pre>
        *
-       * <code>string mode = 3;</code>
+       * <code>string mode = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The bytes for mode.
        */
@@ -274,10 +291,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Profile information for the corresponding field.
+       * Output only. Profile information for the corresponding field.
        * </pre>
        *
-       * <code>.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo profile = 4;
+       * <code>
+       * .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo profile = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        *
        * @return Whether the profile field is set.
@@ -288,10 +306,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Profile information for the corresponding field.
+       * Output only. Profile information for the corresponding field.
        * </pre>
        *
-       * <code>.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo profile = 4;
+       * <code>
+       * .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo profile = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        *
        * @return The profile.
@@ -302,10 +321,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Profile information for the corresponding field.
+       * Output only. Profile information for the corresponding field.
        * </pre>
        *
-       * <code>.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo profile = 4;
+       * <code>
+       * .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo profile = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfoOrBuilder
@@ -368,10 +388,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Ratio of rows with null value against total scanned rows.
+         * Output only. Ratio of rows with null value against total scanned
+         * rows.
          * </pre>
          *
-         * <code>double null_ratio = 2;</code>
+         * <code>double null_ratio = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @return The nullRatio.
          */
@@ -381,12 +402,13 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Ratio of rows with distinct values against total scanned rows.
-         * Not available for complex non-groupable field type, including RECORD,
-         * ARRAY, GEOGRAPHY, and JSON, as well as fields with REPEATABLE mode.
+         * Output only. Ratio of rows with distinct values against total scanned
+         * rows. Not available for complex non-groupable field type, including
+         * RECORD, ARRAY, GEOGRAPHY, and JSON, as well as fields with REPEATABLE
+         * mode.
          * </pre>
          *
-         * <code>double distinct_ratio = 3;</code>
+         * <code>double distinct_ratio = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @return The distinctRatio.
          */
@@ -396,15 +418,15 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * The list of top N non-null values, frequency and ratio with which
-         * they occur in the scanned data. N is 10 or equal to the number of
-         * distinct values in the field, whichever is smaller. Not available for
-         * complex non-groupable field type, including RECORD, ARRAY, GEOGRAPHY,
-         * and JSON, as well as fields with REPEATABLE mode.
+         * Output only. The list of top N non-null values, frequency and ratio
+         * with which they occur in the scanned data. N is 10 or equal to the
+         * number of distinct values in the field, whichever is smaller. Not
+         * available for complex non-groupable field type, including RECORD,
+         * ARRAY, GEOGRAPHY, and JSON, as well as fields with REPEATABLE mode.
          * </pre>
          *
          * <code>
-         * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4;
+         * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
          * </code>
          */
         java.util.List<
@@ -415,15 +437,15 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * The list of top N non-null values, frequency and ratio with which
-         * they occur in the scanned data. N is 10 or equal to the number of
-         * distinct values in the field, whichever is smaller. Not available for
-         * complex non-groupable field type, including RECORD, ARRAY, GEOGRAPHY,
-         * and JSON, as well as fields with REPEATABLE mode.
+         * Output only. The list of top N non-null values, frequency and ratio
+         * with which they occur in the scanned data. N is 10 or equal to the
+         * number of distinct values in the field, whichever is smaller. Not
+         * available for complex non-groupable field type, including RECORD,
+         * ARRAY, GEOGRAPHY, and JSON, as well as fields with REPEATABLE mode.
          * </pre>
          *
          * <code>
-         * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4;
+         * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
          * </code>
          */
         com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue
@@ -433,15 +455,15 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * The list of top N non-null values, frequency and ratio with which
-         * they occur in the scanned data. N is 10 or equal to the number of
-         * distinct values in the field, whichever is smaller. Not available for
-         * complex non-groupable field type, including RECORD, ARRAY, GEOGRAPHY,
-         * and JSON, as well as fields with REPEATABLE mode.
+         * Output only. The list of top N non-null values, frequency and ratio
+         * with which they occur in the scanned data. N is 10 or equal to the
+         * number of distinct values in the field, whichever is smaller. Not
+         * available for complex non-groupable field type, including RECORD,
+         * ARRAY, GEOGRAPHY, and JSON, as well as fields with REPEATABLE mode.
          * </pre>
          *
          * <code>
-         * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4;
+         * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
          * </code>
          */
         int getTopNValuesCount();
@@ -450,15 +472,15 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * The list of top N non-null values, frequency and ratio with which
-         * they occur in the scanned data. N is 10 or equal to the number of
-         * distinct values in the field, whichever is smaller. Not available for
-         * complex non-groupable field type, including RECORD, ARRAY, GEOGRAPHY,
-         * and JSON, as well as fields with REPEATABLE mode.
+         * Output only. The list of top N non-null values, frequency and ratio
+         * with which they occur in the scanned data. N is 10 or equal to the
+         * number of distinct values in the field, whichever is smaller. Not
+         * available for complex non-groupable field type, including RECORD,
+         * ARRAY, GEOGRAPHY, and JSON, as well as fields with REPEATABLE mode.
          * </pre>
          *
          * <code>
-         * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4;
+         * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
          * </code>
          */
         java.util.List<
@@ -471,15 +493,15 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * The list of top N non-null values, frequency and ratio with which
-         * they occur in the scanned data. N is 10 or equal to the number of
-         * distinct values in the field, whichever is smaller. Not available for
-         * complex non-groupable field type, including RECORD, ARRAY, GEOGRAPHY,
-         * and JSON, as well as fields with REPEATABLE mode.
+         * Output only. The list of top N non-null values, frequency and ratio
+         * with which they occur in the scanned data. N is 10 or equal to the
+         * number of distinct values in the field, whichever is smaller. Not
+         * available for complex non-groupable field type, including RECORD,
+         * ARRAY, GEOGRAPHY, and JSON, as well as fields with REPEATABLE mode.
          * </pre>
          *
          * <code>
-         * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4;
+         * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
          * </code>
          */
         com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValueOrBuilder
@@ -682,10 +704,10 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * Minimum length of non-null values in the scanned data.
+           * Output only. Minimum length of non-null values in the scanned data.
            * </pre>
            *
-           * <code>int64 min_length = 1;</code>
+           * <code>int64 min_length = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
            *
            * @return The minLength.
            */
@@ -695,10 +717,10 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * Maximum length of non-null values in the scanned data.
+           * Output only. Maximum length of non-null values in the scanned data.
            * </pre>
            *
-           * <code>int64 max_length = 2;</code>
+           * <code>int64 max_length = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
            *
            * @return The maxLength.
            */
@@ -708,10 +730,10 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * Average length of non-null values in the scanned data.
+           * Output only. Average length of non-null values in the scanned data.
            * </pre>
            *
-           * <code>double average_length = 3;</code>
+           * <code>double average_length = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
            *
            * @return The averageLength.
            */
@@ -771,10 +793,10 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * Minimum length of non-null values in the scanned data.
+           * Output only. Minimum length of non-null values in the scanned data.
            * </pre>
            *
-           * <code>int64 min_length = 1;</code>
+           * <code>int64 min_length = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
            *
            * @return The minLength.
            */
@@ -790,10 +812,10 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * Maximum length of non-null values in the scanned data.
+           * Output only. Maximum length of non-null values in the scanned data.
            * </pre>
            *
-           * <code>int64 max_length = 2;</code>
+           * <code>int64 max_length = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
            *
            * @return The maxLength.
            */
@@ -809,10 +831,10 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * Average length of non-null values in the scanned data.
+           * Output only. Average length of non-null values in the scanned data.
            * </pre>
            *
-           * <code>double average_length = 3;</code>
+           * <code>double average_length = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
            *
            * @return The averageLength.
            */
@@ -1282,10 +1304,10 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * Minimum length of non-null values in the scanned data.
+             * Output only. Minimum length of non-null values in the scanned data.
              * </pre>
              *
-             * <code>int64 min_length = 1;</code>
+             * <code>int64 min_length = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
              *
              * @return The minLength.
              */
@@ -1298,10 +1320,10 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * Minimum length of non-null values in the scanned data.
+             * Output only. Minimum length of non-null values in the scanned data.
              * </pre>
              *
-             * <code>int64 min_length = 1;</code>
+             * <code>int64 min_length = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
              *
              * @param value The minLength to set.
              * @return This builder for chaining.
@@ -1318,10 +1340,10 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * Minimum length of non-null values in the scanned data.
+             * Output only. Minimum length of non-null values in the scanned data.
              * </pre>
              *
-             * <code>int64 min_length = 1;</code>
+             * <code>int64 min_length = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
              *
              * @return This builder for chaining.
              */
@@ -1338,10 +1360,10 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * Maximum length of non-null values in the scanned data.
+             * Output only. Maximum length of non-null values in the scanned data.
              * </pre>
              *
-             * <code>int64 max_length = 2;</code>
+             * <code>int64 max_length = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
              *
              * @return The maxLength.
              */
@@ -1354,10 +1376,10 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * Maximum length of non-null values in the scanned data.
+             * Output only. Maximum length of non-null values in the scanned data.
              * </pre>
              *
-             * <code>int64 max_length = 2;</code>
+             * <code>int64 max_length = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
              *
              * @param value The maxLength to set.
              * @return This builder for chaining.
@@ -1374,10 +1396,10 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * Maximum length of non-null values in the scanned data.
+             * Output only. Maximum length of non-null values in the scanned data.
              * </pre>
              *
-             * <code>int64 max_length = 2;</code>
+             * <code>int64 max_length = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
              *
              * @return This builder for chaining.
              */
@@ -1394,10 +1416,10 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * Average length of non-null values in the scanned data.
+             * Output only. Average length of non-null values in the scanned data.
              * </pre>
              *
-             * <code>double average_length = 3;</code>
+             * <code>double average_length = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
              *
              * @return The averageLength.
              */
@@ -1410,10 +1432,10 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * Average length of non-null values in the scanned data.
+             * Output only. Average length of non-null values in the scanned data.
              * </pre>
              *
-             * <code>double average_length = 3;</code>
+             * <code>double average_length = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
              *
              * @param value The averageLength to set.
              * @return This builder for chaining.
@@ -1430,10 +1452,10 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * Average length of non-null values in the scanned data.
+             * Output only. Average length of non-null values in the scanned data.
              * </pre>
              *
-             * <code>double average_length = 3;</code>
+             * <code>double average_length = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
              *
              * @return This builder for chaining.
              */
@@ -1525,11 +1547,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * Average of non-null values in the scanned data. NaN, if the field
-           * has a NaN.
+           * Output only. Average of non-null values in the scanned data. NaN,
+           * if the field has a NaN.
            * </pre>
            *
-           * <code>double average = 1;</code>
+           * <code>double average = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
            *
            * @return The average.
            */
@@ -1539,11 +1561,12 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * Standard deviation of non-null values in the scanned data. NaN, if
-           * the field has a NaN.
+           * Output only. Standard deviation of non-null values in the scanned
+           * data. NaN, if the field has a NaN.
            * </pre>
            *
-           * <code>double standard_deviation = 3;</code>
+           * <code>double standard_deviation = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+           * </code>
            *
            * @return The standardDeviation.
            */
@@ -1553,11 +1576,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * Minimum of non-null values in the scanned data. NaN, if the field
-           * has a NaN.
+           * Output only. Minimum of non-null values in the scanned data. NaN,
+           * if the field has a NaN.
            * </pre>
            *
-           * <code>int64 min = 4;</code>
+           * <code>int64 min = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
            *
            * @return The min.
            */
@@ -1567,21 +1590,21 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * A quartile divides the number of data points into four parts, or
-           * quarters, of more-or-less equal size. Three main quartiles used
-           * are: The first quartile (Q1) splits off the lowest 25% of data from
-           * the highest 75%. It is also known as the lower or 25th empirical
-           * quartile, as 25% of the data is below this point. The second
-           * quartile (Q2) is the median of a data set. So, 50% of the data lies
-           * below this point. The third quartile (Q3) splits off the highest
-           * 25% of data from the lowest 75%. It is known as the upper or 75th
-           * empirical quartile, as 75% of the data lies below this point.
-           * Here, the quartiles is provided as an ordered list of approximate
-           * quartile values for the scanned data, occurring in order Q1,
-           * median, Q3.
+           * Output only. A quartile divides the number of data points into four
+           * parts, or quarters, of more-or-less equal size. Three main
+           * quartiles used are: The first quartile (Q1) splits off the lowest
+           * 25% of data from the highest 75%. It is also known as the lower or
+           * 25th empirical quartile, as 25% of the data is below this point.
+           * The second quartile (Q2) is the median of a data set. So, 50% of
+           * the data lies below this point. The third quartile (Q3) splits off
+           * the highest 25% of data from the lowest 75%. It is known as the
+           * upper or 75th empirical quartile, as 75% of the data lies below
+           * this point. Here, the quartiles is provided as an ordered list of
+           * approximate quartile values for the scanned data, occurring in
+           * order Q1, median, Q3.
            * </pre>
            *
-           * <code>repeated int64 quartiles = 6;</code>
+           * <code>repeated int64 quartiles = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
            *
            * @return A list containing the quartiles.
            */
@@ -1591,21 +1614,21 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * A quartile divides the number of data points into four parts, or
-           * quarters, of more-or-less equal size. Three main quartiles used
-           * are: The first quartile (Q1) splits off the lowest 25% of data from
-           * the highest 75%. It is also known as the lower or 25th empirical
-           * quartile, as 25% of the data is below this point. The second
-           * quartile (Q2) is the median of a data set. So, 50% of the data lies
-           * below this point. The third quartile (Q3) splits off the highest
-           * 25% of data from the lowest 75%. It is known as the upper or 75th
-           * empirical quartile, as 75% of the data lies below this point.
-           * Here, the quartiles is provided as an ordered list of approximate
-           * quartile values for the scanned data, occurring in order Q1,
-           * median, Q3.
+           * Output only. A quartile divides the number of data points into four
+           * parts, or quarters, of more-or-less equal size. Three main
+           * quartiles used are: The first quartile (Q1) splits off the lowest
+           * 25% of data from the highest 75%. It is also known as the lower or
+           * 25th empirical quartile, as 25% of the data is below this point.
+           * The second quartile (Q2) is the median of a data set. So, 50% of
+           * the data lies below this point. The third quartile (Q3) splits off
+           * the highest 25% of data from the lowest 75%. It is known as the
+           * upper or 75th empirical quartile, as 75% of the data lies below
+           * this point. Here, the quartiles is provided as an ordered list of
+           * approximate quartile values for the scanned data, occurring in
+           * order Q1, median, Q3.
            * </pre>
            *
-           * <code>repeated int64 quartiles = 6;</code>
+           * <code>repeated int64 quartiles = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
            *
            * @return The count of quartiles.
            */
@@ -1615,21 +1638,21 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * A quartile divides the number of data points into four parts, or
-           * quarters, of more-or-less equal size. Three main quartiles used
-           * are: The first quartile (Q1) splits off the lowest 25% of data from
-           * the highest 75%. It is also known as the lower or 25th empirical
-           * quartile, as 25% of the data is below this point. The second
-           * quartile (Q2) is the median of a data set. So, 50% of the data lies
-           * below this point. The third quartile (Q3) splits off the highest
-           * 25% of data from the lowest 75%. It is known as the upper or 75th
-           * empirical quartile, as 75% of the data lies below this point.
-           * Here, the quartiles is provided as an ordered list of approximate
-           * quartile values for the scanned data, occurring in order Q1,
-           * median, Q3.
+           * Output only. A quartile divides the number of data points into four
+           * parts, or quarters, of more-or-less equal size. Three main
+           * quartiles used are: The first quartile (Q1) splits off the lowest
+           * 25% of data from the highest 75%. It is also known as the lower or
+           * 25th empirical quartile, as 25% of the data is below this point.
+           * The second quartile (Q2) is the median of a data set. So, 50% of
+           * the data lies below this point. The third quartile (Q3) splits off
+           * the highest 25% of data from the lowest 75%. It is known as the
+           * upper or 75th empirical quartile, as 75% of the data lies below
+           * this point. Here, the quartiles is provided as an ordered list of
+           * approximate quartile values for the scanned data, occurring in
+           * order Q1, median, Q3.
            * </pre>
            *
-           * <code>repeated int64 quartiles = 6;</code>
+           * <code>repeated int64 quartiles = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
            *
            * @param index The index of the element to return.
            * @return The quartiles at the given index.
@@ -1640,11 +1663,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * Maximum of non-null values in the scanned data. NaN, if the field
-           * has a NaN.
+           * Output only. Maximum of non-null values in the scanned data. NaN,
+           * if the field has a NaN.
            * </pre>
            *
-           * <code>int64 max = 5;</code>
+           * <code>int64 max = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
            *
            * @return The max.
            */
@@ -1706,11 +1729,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * Average of non-null values in the scanned data. NaN, if the field
-           * has a NaN.
+           * Output only. Average of non-null values in the scanned data. NaN,
+           * if the field has a NaN.
            * </pre>
            *
-           * <code>double average = 1;</code>
+           * <code>double average = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
            *
            * @return The average.
            */
@@ -1726,11 +1749,12 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * Standard deviation of non-null values in the scanned data. NaN, if
-           * the field has a NaN.
+           * Output only. Standard deviation of non-null values in the scanned
+           * data. NaN, if the field has a NaN.
            * </pre>
            *
-           * <code>double standard_deviation = 3;</code>
+           * <code>double standard_deviation = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+           * </code>
            *
            * @return The standardDeviation.
            */
@@ -1746,11 +1770,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * Minimum of non-null values in the scanned data. NaN, if the field
-           * has a NaN.
+           * Output only. Minimum of non-null values in the scanned data. NaN,
+           * if the field has a NaN.
            * </pre>
            *
-           * <code>int64 min = 4;</code>
+           * <code>int64 min = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
            *
            * @return The min.
            */
@@ -1768,21 +1792,21 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * A quartile divides the number of data points into four parts, or
-           * quarters, of more-or-less equal size. Three main quartiles used
-           * are: The first quartile (Q1) splits off the lowest 25% of data from
-           * the highest 75%. It is also known as the lower or 25th empirical
-           * quartile, as 25% of the data is below this point. The second
-           * quartile (Q2) is the median of a data set. So, 50% of the data lies
-           * below this point. The third quartile (Q3) splits off the highest
-           * 25% of data from the lowest 75%. It is known as the upper or 75th
-           * empirical quartile, as 75% of the data lies below this point.
-           * Here, the quartiles is provided as an ordered list of approximate
-           * quartile values for the scanned data, occurring in order Q1,
-           * median, Q3.
+           * Output only. A quartile divides the number of data points into four
+           * parts, or quarters, of more-or-less equal size. Three main
+           * quartiles used are: The first quartile (Q1) splits off the lowest
+           * 25% of data from the highest 75%. It is also known as the lower or
+           * 25th empirical quartile, as 25% of the data is below this point.
+           * The second quartile (Q2) is the median of a data set. So, 50% of
+           * the data lies below this point. The third quartile (Q3) splits off
+           * the highest 25% of data from the lowest 75%. It is known as the
+           * upper or 75th empirical quartile, as 75% of the data lies below
+           * this point. Here, the quartiles is provided as an ordered list of
+           * approximate quartile values for the scanned data, occurring in
+           * order Q1, median, Q3.
            * </pre>
            *
-           * <code>repeated int64 quartiles = 6;</code>
+           * <code>repeated int64 quartiles = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
            *
            * @return A list containing the quartiles.
            */
@@ -1795,21 +1819,21 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * A quartile divides the number of data points into four parts, or
-           * quarters, of more-or-less equal size. Three main quartiles used
-           * are: The first quartile (Q1) splits off the lowest 25% of data from
-           * the highest 75%. It is also known as the lower or 25th empirical
-           * quartile, as 25% of the data is below this point. The second
-           * quartile (Q2) is the median of a data set. So, 50% of the data lies
-           * below this point. The third quartile (Q3) splits off the highest
-           * 25% of data from the lowest 75%. It is known as the upper or 75th
-           * empirical quartile, as 75% of the data lies below this point.
-           * Here, the quartiles is provided as an ordered list of approximate
-           * quartile values for the scanned data, occurring in order Q1,
-           * median, Q3.
+           * Output only. A quartile divides the number of data points into four
+           * parts, or quarters, of more-or-less equal size. Three main
+           * quartiles used are: The first quartile (Q1) splits off the lowest
+           * 25% of data from the highest 75%. It is also known as the lower or
+           * 25th empirical quartile, as 25% of the data is below this point.
+           * The second quartile (Q2) is the median of a data set. So, 50% of
+           * the data lies below this point. The third quartile (Q3) splits off
+           * the highest 25% of data from the lowest 75%. It is known as the
+           * upper or 75th empirical quartile, as 75% of the data lies below
+           * this point. Here, the quartiles is provided as an ordered list of
+           * approximate quartile values for the scanned data, occurring in
+           * order Q1, median, Q3.
            * </pre>
            *
-           * <code>repeated int64 quartiles = 6;</code>
+           * <code>repeated int64 quartiles = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
            *
            * @return The count of quartiles.
            */
@@ -1821,21 +1845,21 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * A quartile divides the number of data points into four parts, or
-           * quarters, of more-or-less equal size. Three main quartiles used
-           * are: The first quartile (Q1) splits off the lowest 25% of data from
-           * the highest 75%. It is also known as the lower or 25th empirical
-           * quartile, as 25% of the data is below this point. The second
-           * quartile (Q2) is the median of a data set. So, 50% of the data lies
-           * below this point. The third quartile (Q3) splits off the highest
-           * 25% of data from the lowest 75%. It is known as the upper or 75th
-           * empirical quartile, as 75% of the data lies below this point.
-           * Here, the quartiles is provided as an ordered list of approximate
-           * quartile values for the scanned data, occurring in order Q1,
-           * median, Q3.
+           * Output only. A quartile divides the number of data points into four
+           * parts, or quarters, of more-or-less equal size. Three main
+           * quartiles used are: The first quartile (Q1) splits off the lowest
+           * 25% of data from the highest 75%. It is also known as the lower or
+           * 25th empirical quartile, as 25% of the data is below this point.
+           * The second quartile (Q2) is the median of a data set. So, 50% of
+           * the data lies below this point. The third quartile (Q3) splits off
+           * the highest 25% of data from the lowest 75%. It is known as the
+           * upper or 75th empirical quartile, as 75% of the data lies below
+           * this point. Here, the quartiles is provided as an ordered list of
+           * approximate quartile values for the scanned data, occurring in
+           * order Q1, median, Q3.
            * </pre>
            *
-           * <code>repeated int64 quartiles = 6;</code>
+           * <code>repeated int64 quartiles = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
            *
            * @param index The index of the element to return.
            * @return The quartiles at the given index.
@@ -1853,11 +1877,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * Maximum of non-null values in the scanned data. NaN, if the field
-           * has a NaN.
+           * Output only. Maximum of non-null values in the scanned data. NaN,
+           * if the field has a NaN.
            * </pre>
            *
-           * <code>int64 max = 5;</code>
+           * <code>int64 max = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
            *
            * @return The max.
            */
@@ -2416,11 +2440,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * Average of non-null values in the scanned data. NaN, if the field
-             * has a NaN.
+             * Output only. Average of non-null values in the scanned data. NaN,
+             * if the field has a NaN.
              * </pre>
              *
-             * <code>double average = 1;</code>
+             * <code>double average = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
              *
              * @return The average.
              */
@@ -2433,11 +2457,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * Average of non-null values in the scanned data. NaN, if the field
-             * has a NaN.
+             * Output only. Average of non-null values in the scanned data. NaN,
+             * if the field has a NaN.
              * </pre>
              *
-             * <code>double average = 1;</code>
+             * <code>double average = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
              *
              * @param value The average to set.
              * @return This builder for chaining.
@@ -2454,11 +2478,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * Average of non-null values in the scanned data. NaN, if the field
-             * has a NaN.
+             * Output only. Average of non-null values in the scanned data. NaN,
+             * if the field has a NaN.
              * </pre>
              *
-             * <code>double average = 1;</code>
+             * <code>double average = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
              *
              * @return This builder for chaining.
              */
@@ -2475,11 +2499,12 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * Standard deviation of non-null values in the scanned data. NaN, if
-             * the field has a NaN.
+             * Output only. Standard deviation of non-null values in the scanned
+             * data. NaN, if the field has a NaN.
              * </pre>
              *
-             * <code>double standard_deviation = 3;</code>
+             * <code>double standard_deviation = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+             * </code>
              *
              * @return The standardDeviation.
              */
@@ -2492,11 +2517,12 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * Standard deviation of non-null values in the scanned data. NaN, if
-             * the field has a NaN.
+             * Output only. Standard deviation of non-null values in the scanned
+             * data. NaN, if the field has a NaN.
              * </pre>
              *
-             * <code>double standard_deviation = 3;</code>
+             * <code>double standard_deviation = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+             * </code>
              *
              * @param value The standardDeviation to set.
              * @return This builder for chaining.
@@ -2513,11 +2539,12 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * Standard deviation of non-null values in the scanned data. NaN, if
-             * the field has a NaN.
+             * Output only. Standard deviation of non-null values in the scanned
+             * data. NaN, if the field has a NaN.
              * </pre>
              *
-             * <code>double standard_deviation = 3;</code>
+             * <code>double standard_deviation = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+             * </code>
              *
              * @return This builder for chaining.
              */
@@ -2534,11 +2561,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * Minimum of non-null values in the scanned data. NaN, if the field
-             * has a NaN.
+             * Output only. Minimum of non-null values in the scanned data. NaN,
+             * if the field has a NaN.
              * </pre>
              *
-             * <code>int64 min = 4;</code>
+             * <code>int64 min = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
              *
              * @return The min.
              */
@@ -2551,11 +2578,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * Minimum of non-null values in the scanned data. NaN, if the field
-             * has a NaN.
+             * Output only. Minimum of non-null values in the scanned data. NaN,
+             * if the field has a NaN.
              * </pre>
              *
-             * <code>int64 min = 4;</code>
+             * <code>int64 min = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
              *
              * @param value The min to set.
              * @return This builder for chaining.
@@ -2572,11 +2599,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * Minimum of non-null values in the scanned data. NaN, if the field
-             * has a NaN.
+             * Output only. Minimum of non-null values in the scanned data. NaN,
+             * if the field has a NaN.
              * </pre>
              *
-             * <code>int64 min = 4;</code>
+             * <code>int64 min = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
              *
              * @return This builder for chaining.
              */
@@ -2600,21 +2627,22 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * A quartile divides the number of data points into four parts, or
-             * quarters, of more-or-less equal size. Three main quartiles used
-             * are: The first quartile (Q1) splits off the lowest 25% of data from
-             * the highest 75%. It is also known as the lower or 25th empirical
-             * quartile, as 25% of the data is below this point. The second
-             * quartile (Q2) is the median of a data set. So, 50% of the data lies
-             * below this point. The third quartile (Q3) splits off the highest
-             * 25% of data from the lowest 75%. It is known as the upper or 75th
-             * empirical quartile, as 75% of the data lies below this point.
-             * Here, the quartiles is provided as an ordered list of approximate
-             * quartile values for the scanned data, occurring in order Q1,
-             * median, Q3.
+             * Output only. A quartile divides the number of data points into four
+             * parts, or quarters, of more-or-less equal size. Three main
+             * quartiles used are: The first quartile (Q1) splits off the lowest
+             * 25% of data from the highest 75%. It is also known as the lower or
+             * 25th empirical quartile, as 25% of the data is below this point.
+             * The second quartile (Q2) is the median of a data set. So, 50% of
+             * the data lies below this point. The third quartile (Q3) splits off
+             * the highest 25% of data from the lowest 75%. It is known as the
+             * upper or 75th empirical quartile, as 75% of the data lies below
+             * this point. Here, the quartiles is provided as an ordered list of
+             * approximate quartile values for the scanned data, occurring in
+             * order Q1, median, Q3.
              * </pre>
              *
-             * <code>repeated int64 quartiles = 6;</code>
+             * <code>repeated int64 quartiles = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+             * </code>
              *
              * @return A list containing the quartiles.
              */
@@ -2627,21 +2655,22 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * A quartile divides the number of data points into four parts, or
-             * quarters, of more-or-less equal size. Three main quartiles used
-             * are: The first quartile (Q1) splits off the lowest 25% of data from
-             * the highest 75%. It is also known as the lower or 25th empirical
-             * quartile, as 25% of the data is below this point. The second
-             * quartile (Q2) is the median of a data set. So, 50% of the data lies
-             * below this point. The third quartile (Q3) splits off the highest
-             * 25% of data from the lowest 75%. It is known as the upper or 75th
-             * empirical quartile, as 75% of the data lies below this point.
-             * Here, the quartiles is provided as an ordered list of approximate
-             * quartile values for the scanned data, occurring in order Q1,
-             * median, Q3.
+             * Output only. A quartile divides the number of data points into four
+             * parts, or quarters, of more-or-less equal size. Three main
+             * quartiles used are: The first quartile (Q1) splits off the lowest
+             * 25% of data from the highest 75%. It is also known as the lower or
+             * 25th empirical quartile, as 25% of the data is below this point.
+             * The second quartile (Q2) is the median of a data set. So, 50% of
+             * the data lies below this point. The third quartile (Q3) splits off
+             * the highest 25% of data from the lowest 75%. It is known as the
+             * upper or 75th empirical quartile, as 75% of the data lies below
+             * this point. Here, the quartiles is provided as an ordered list of
+             * approximate quartile values for the scanned data, occurring in
+             * order Q1, median, Q3.
              * </pre>
              *
-             * <code>repeated int64 quartiles = 6;</code>
+             * <code>repeated int64 quartiles = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+             * </code>
              *
              * @return The count of quartiles.
              */
@@ -2653,21 +2682,22 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * A quartile divides the number of data points into four parts, or
-             * quarters, of more-or-less equal size. Three main quartiles used
-             * are: The first quartile (Q1) splits off the lowest 25% of data from
-             * the highest 75%. It is also known as the lower or 25th empirical
-             * quartile, as 25% of the data is below this point. The second
-             * quartile (Q2) is the median of a data set. So, 50% of the data lies
-             * below this point. The third quartile (Q3) splits off the highest
-             * 25% of data from the lowest 75%. It is known as the upper or 75th
-             * empirical quartile, as 75% of the data lies below this point.
-             * Here, the quartiles is provided as an ordered list of approximate
-             * quartile values for the scanned data, occurring in order Q1,
-             * median, Q3.
+             * Output only. A quartile divides the number of data points into four
+             * parts, or quarters, of more-or-less equal size. Three main
+             * quartiles used are: The first quartile (Q1) splits off the lowest
+             * 25% of data from the highest 75%. It is also known as the lower or
+             * 25th empirical quartile, as 25% of the data is below this point.
+             * The second quartile (Q2) is the median of a data set. So, 50% of
+             * the data lies below this point. The third quartile (Q3) splits off
+             * the highest 25% of data from the lowest 75%. It is known as the
+             * upper or 75th empirical quartile, as 75% of the data lies below
+             * this point. Here, the quartiles is provided as an ordered list of
+             * approximate quartile values for the scanned data, occurring in
+             * order Q1, median, Q3.
              * </pre>
              *
-             * <code>repeated int64 quartiles = 6;</code>
+             * <code>repeated int64 quartiles = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+             * </code>
              *
              * @param index The index of the element to return.
              * @return The quartiles at the given index.
@@ -2680,21 +2710,22 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * A quartile divides the number of data points into four parts, or
-             * quarters, of more-or-less equal size. Three main quartiles used
-             * are: The first quartile (Q1) splits off the lowest 25% of data from
-             * the highest 75%. It is also known as the lower or 25th empirical
-             * quartile, as 25% of the data is below this point. The second
-             * quartile (Q2) is the median of a data set. So, 50% of the data lies
-             * below this point. The third quartile (Q3) splits off the highest
-             * 25% of data from the lowest 75%. It is known as the upper or 75th
-             * empirical quartile, as 75% of the data lies below this point.
-             * Here, the quartiles is provided as an ordered list of approximate
-             * quartile values for the scanned data, occurring in order Q1,
-             * median, Q3.
+             * Output only. A quartile divides the number of data points into four
+             * parts, or quarters, of more-or-less equal size. Three main
+             * quartiles used are: The first quartile (Q1) splits off the lowest
+             * 25% of data from the highest 75%. It is also known as the lower or
+             * 25th empirical quartile, as 25% of the data is below this point.
+             * The second quartile (Q2) is the median of a data set. So, 50% of
+             * the data lies below this point. The third quartile (Q3) splits off
+             * the highest 25% of data from the lowest 75%. It is known as the
+             * upper or 75th empirical quartile, as 75% of the data lies below
+             * this point. Here, the quartiles is provided as an ordered list of
+             * approximate quartile values for the scanned data, occurring in
+             * order Q1, median, Q3.
              * </pre>
              *
-             * <code>repeated int64 quartiles = 6;</code>
+             * <code>repeated int64 quartiles = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+             * </code>
              *
              * @param index The index to set the value at.
              * @param value The quartiles to set.
@@ -2713,21 +2744,22 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * A quartile divides the number of data points into four parts, or
-             * quarters, of more-or-less equal size. Three main quartiles used
-             * are: The first quartile (Q1) splits off the lowest 25% of data from
-             * the highest 75%. It is also known as the lower or 25th empirical
-             * quartile, as 25% of the data is below this point. The second
-             * quartile (Q2) is the median of a data set. So, 50% of the data lies
-             * below this point. The third quartile (Q3) splits off the highest
-             * 25% of data from the lowest 75%. It is known as the upper or 75th
-             * empirical quartile, as 75% of the data lies below this point.
-             * Here, the quartiles is provided as an ordered list of approximate
-             * quartile values for the scanned data, occurring in order Q1,
-             * median, Q3.
+             * Output only. A quartile divides the number of data points into four
+             * parts, or quarters, of more-or-less equal size. Three main
+             * quartiles used are: The first quartile (Q1) splits off the lowest
+             * 25% of data from the highest 75%. It is also known as the lower or
+             * 25th empirical quartile, as 25% of the data is below this point.
+             * The second quartile (Q2) is the median of a data set. So, 50% of
+             * the data lies below this point. The third quartile (Q3) splits off
+             * the highest 25% of data from the lowest 75%. It is known as the
+             * upper or 75th empirical quartile, as 75% of the data lies below
+             * this point. Here, the quartiles is provided as an ordered list of
+             * approximate quartile values for the scanned data, occurring in
+             * order Q1, median, Q3.
              * </pre>
              *
-             * <code>repeated int64 quartiles = 6;</code>
+             * <code>repeated int64 quartiles = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+             * </code>
              *
              * @param value The quartiles to add.
              * @return This builder for chaining.
@@ -2745,21 +2777,22 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * A quartile divides the number of data points into four parts, or
-             * quarters, of more-or-less equal size. Three main quartiles used
-             * are: The first quartile (Q1) splits off the lowest 25% of data from
-             * the highest 75%. It is also known as the lower or 25th empirical
-             * quartile, as 25% of the data is below this point. The second
-             * quartile (Q2) is the median of a data set. So, 50% of the data lies
-             * below this point. The third quartile (Q3) splits off the highest
-             * 25% of data from the lowest 75%. It is known as the upper or 75th
-             * empirical quartile, as 75% of the data lies below this point.
-             * Here, the quartiles is provided as an ordered list of approximate
-             * quartile values for the scanned data, occurring in order Q1,
-             * median, Q3.
+             * Output only. A quartile divides the number of data points into four
+             * parts, or quarters, of more-or-less equal size. Three main
+             * quartiles used are: The first quartile (Q1) splits off the lowest
+             * 25% of data from the highest 75%. It is also known as the lower or
+             * 25th empirical quartile, as 25% of the data is below this point.
+             * The second quartile (Q2) is the median of a data set. So, 50% of
+             * the data lies below this point. The third quartile (Q3) splits off
+             * the highest 25% of data from the lowest 75%. It is known as the
+             * upper or 75th empirical quartile, as 75% of the data lies below
+             * this point. Here, the quartiles is provided as an ordered list of
+             * approximate quartile values for the scanned data, occurring in
+             * order Q1, median, Q3.
              * </pre>
              *
-             * <code>repeated int64 quartiles = 6;</code>
+             * <code>repeated int64 quartiles = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+             * </code>
              *
              * @param values The quartiles to add.
              * @return This builder for chaining.
@@ -2776,21 +2809,22 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * A quartile divides the number of data points into four parts, or
-             * quarters, of more-or-less equal size. Three main quartiles used
-             * are: The first quartile (Q1) splits off the lowest 25% of data from
-             * the highest 75%. It is also known as the lower or 25th empirical
-             * quartile, as 25% of the data is below this point. The second
-             * quartile (Q2) is the median of a data set. So, 50% of the data lies
-             * below this point. The third quartile (Q3) splits off the highest
-             * 25% of data from the lowest 75%. It is known as the upper or 75th
-             * empirical quartile, as 75% of the data lies below this point.
-             * Here, the quartiles is provided as an ordered list of approximate
-             * quartile values for the scanned data, occurring in order Q1,
-             * median, Q3.
+             * Output only. A quartile divides the number of data points into four
+             * parts, or quarters, of more-or-less equal size. Three main
+             * quartiles used are: The first quartile (Q1) splits off the lowest
+             * 25% of data from the highest 75%. It is also known as the lower or
+             * 25th empirical quartile, as 25% of the data is below this point.
+             * The second quartile (Q2) is the median of a data set. So, 50% of
+             * the data lies below this point. The third quartile (Q3) splits off
+             * the highest 25% of data from the lowest 75%. It is known as the
+             * upper or 75th empirical quartile, as 75% of the data lies below
+             * this point. Here, the quartiles is provided as an ordered list of
+             * approximate quartile values for the scanned data, occurring in
+             * order Q1, median, Q3.
              * </pre>
              *
-             * <code>repeated int64 quartiles = 6;</code>
+             * <code>repeated int64 quartiles = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+             * </code>
              *
              * @return This builder for chaining.
              */
@@ -2807,11 +2841,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * Maximum of non-null values in the scanned data. NaN, if the field
-             * has a NaN.
+             * Output only. Maximum of non-null values in the scanned data. NaN,
+             * if the field has a NaN.
              * </pre>
              *
-             * <code>int64 max = 5;</code>
+             * <code>int64 max = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
              *
              * @return The max.
              */
@@ -2824,11 +2858,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * Maximum of non-null values in the scanned data. NaN, if the field
-             * has a NaN.
+             * Output only. Maximum of non-null values in the scanned data. NaN,
+             * if the field has a NaN.
              * </pre>
              *
-             * <code>int64 max = 5;</code>
+             * <code>int64 max = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
              *
              * @param value The max to set.
              * @return This builder for chaining.
@@ -2845,11 +2879,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * Maximum of non-null values in the scanned data. NaN, if the field
-             * has a NaN.
+             * Output only. Maximum of non-null values in the scanned data. NaN,
+             * if the field has a NaN.
              * </pre>
              *
-             * <code>int64 max = 5;</code>
+             * <code>int64 max = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
              *
              * @return This builder for chaining.
              */
@@ -2941,11 +2975,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * Average of non-null values in the scanned data. NaN, if the field
-           * has a NaN.
+           * Output only. Average of non-null values in the scanned data. NaN,
+           * if the field has a NaN.
            * </pre>
            *
-           * <code>double average = 1;</code>
+           * <code>double average = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
            *
            * @return The average.
            */
@@ -2955,11 +2989,12 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * Standard deviation of non-null values in the scanned data. NaN, if
-           * the field has a NaN.
+           * Output only. Standard deviation of non-null values in the scanned
+           * data. NaN, if the field has a NaN.
            * </pre>
            *
-           * <code>double standard_deviation = 3;</code>
+           * <code>double standard_deviation = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+           * </code>
            *
            * @return The standardDeviation.
            */
@@ -2969,11 +3004,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * Minimum of non-null values in the scanned data. NaN, if the field
-           * has a NaN.
+           * Output only. Minimum of non-null values in the scanned data. NaN,
+           * if the field has a NaN.
            * </pre>
            *
-           * <code>double min = 4;</code>
+           * <code>double min = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
            *
            * @return The min.
            */
@@ -2983,20 +3018,22 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * A quartile divides the number of data points into four parts, or
-           * quarters, of more-or-less equal size. Three main quartiles used
-           * are: The first quartile (Q1) splits off the lowest 25% of data from
-           * the highest 75%. It is also known as the lower or 25th empirical
-           * quartile, as 25% of the data is below this point. The second
-           * quartile (Q2) is the median of a data set. So, 50% of the data lies
-           * below this point. The third quartile (Q3) splits off the highest
-           * 25% of data from the lowest 75%. It is known as the upper or 75th
-           * empirical quartile, as 75% of the data lies below this point.
-           * Here, the quartiles is provided as an ordered list of quartile
-           * values for the scanned data, occurring in order Q1, median, Q3.
+           * Output only. A quartile divides the number of data points into four
+           * parts, or quarters, of more-or-less equal size. Three main
+           * quartiles used are: The first quartile (Q1) splits off the lowest
+           * 25% of data from the highest 75%. It is also known as the lower or
+           * 25th empirical quartile, as 25% of the data is below this point.
+           * The second quartile (Q2) is the median of a data set. So, 50% of
+           * the data lies below this point. The third quartile (Q3) splits off
+           * the highest 25% of data from the lowest 75%. It is known as the
+           * upper or 75th empirical quartile, as 75% of the data lies below
+           * this point. Here, the quartiles is provided as an ordered list of
+           * quartile values for the scanned data, occurring in order Q1,
+           * median, Q3.
            * </pre>
            *
-           * <code>repeated double quartiles = 6;</code>
+           * <code>repeated double quartiles = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+           * </code>
            *
            * @return A list containing the quartiles.
            */
@@ -3006,20 +3043,22 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * A quartile divides the number of data points into four parts, or
-           * quarters, of more-or-less equal size. Three main quartiles used
-           * are: The first quartile (Q1) splits off the lowest 25% of data from
-           * the highest 75%. It is also known as the lower or 25th empirical
-           * quartile, as 25% of the data is below this point. The second
-           * quartile (Q2) is the median of a data set. So, 50% of the data lies
-           * below this point. The third quartile (Q3) splits off the highest
-           * 25% of data from the lowest 75%. It is known as the upper or 75th
-           * empirical quartile, as 75% of the data lies below this point.
-           * Here, the quartiles is provided as an ordered list of quartile
-           * values for the scanned data, occurring in order Q1, median, Q3.
+           * Output only. A quartile divides the number of data points into four
+           * parts, or quarters, of more-or-less equal size. Three main
+           * quartiles used are: The first quartile (Q1) splits off the lowest
+           * 25% of data from the highest 75%. It is also known as the lower or
+           * 25th empirical quartile, as 25% of the data is below this point.
+           * The second quartile (Q2) is the median of a data set. So, 50% of
+           * the data lies below this point. The third quartile (Q3) splits off
+           * the highest 25% of data from the lowest 75%. It is known as the
+           * upper or 75th empirical quartile, as 75% of the data lies below
+           * this point. Here, the quartiles is provided as an ordered list of
+           * quartile values for the scanned data, occurring in order Q1,
+           * median, Q3.
            * </pre>
            *
-           * <code>repeated double quartiles = 6;</code>
+           * <code>repeated double quartiles = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+           * </code>
            *
            * @return The count of quartiles.
            */
@@ -3029,20 +3068,22 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * A quartile divides the number of data points into four parts, or
-           * quarters, of more-or-less equal size. Three main quartiles used
-           * are: The first quartile (Q1) splits off the lowest 25% of data from
-           * the highest 75%. It is also known as the lower or 25th empirical
-           * quartile, as 25% of the data is below this point. The second
-           * quartile (Q2) is the median of a data set. So, 50% of the data lies
-           * below this point. The third quartile (Q3) splits off the highest
-           * 25% of data from the lowest 75%. It is known as the upper or 75th
-           * empirical quartile, as 75% of the data lies below this point.
-           * Here, the quartiles is provided as an ordered list of quartile
-           * values for the scanned data, occurring in order Q1, median, Q3.
+           * Output only. A quartile divides the number of data points into four
+           * parts, or quarters, of more-or-less equal size. Three main
+           * quartiles used are: The first quartile (Q1) splits off the lowest
+           * 25% of data from the highest 75%. It is also known as the lower or
+           * 25th empirical quartile, as 25% of the data is below this point.
+           * The second quartile (Q2) is the median of a data set. So, 50% of
+           * the data lies below this point. The third quartile (Q3) splits off
+           * the highest 25% of data from the lowest 75%. It is known as the
+           * upper or 75th empirical quartile, as 75% of the data lies below
+           * this point. Here, the quartiles is provided as an ordered list of
+           * quartile values for the scanned data, occurring in order Q1,
+           * median, Q3.
            * </pre>
            *
-           * <code>repeated double quartiles = 6;</code>
+           * <code>repeated double quartiles = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+           * </code>
            *
            * @param index The index of the element to return.
            * @return The quartiles at the given index.
@@ -3053,11 +3094,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * Maximum of non-null values in the scanned data. NaN, if the field
-           * has a NaN.
+           * Output only. Maximum of non-null values in the scanned data. NaN,
+           * if the field has a NaN.
            * </pre>
            *
-           * <code>double max = 5;</code>
+           * <code>double max = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
            *
            * @return The max.
            */
@@ -3119,11 +3160,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * Average of non-null values in the scanned data. NaN, if the field
-           * has a NaN.
+           * Output only. Average of non-null values in the scanned data. NaN,
+           * if the field has a NaN.
            * </pre>
            *
-           * <code>double average = 1;</code>
+           * <code>double average = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
            *
            * @return The average.
            */
@@ -3139,11 +3180,12 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * Standard deviation of non-null values in the scanned data. NaN, if
-           * the field has a NaN.
+           * Output only. Standard deviation of non-null values in the scanned
+           * data. NaN, if the field has a NaN.
            * </pre>
            *
-           * <code>double standard_deviation = 3;</code>
+           * <code>double standard_deviation = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+           * </code>
            *
            * @return The standardDeviation.
            */
@@ -3159,11 +3201,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * Minimum of non-null values in the scanned data. NaN, if the field
-           * has a NaN.
+           * Output only. Minimum of non-null values in the scanned data. NaN,
+           * if the field has a NaN.
            * </pre>
            *
-           * <code>double min = 4;</code>
+           * <code>double min = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
            *
            * @return The min.
            */
@@ -3181,20 +3223,22 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * A quartile divides the number of data points into four parts, or
-           * quarters, of more-or-less equal size. Three main quartiles used
-           * are: The first quartile (Q1) splits off the lowest 25% of data from
-           * the highest 75%. It is also known as the lower or 25th empirical
-           * quartile, as 25% of the data is below this point. The second
-           * quartile (Q2) is the median of a data set. So, 50% of the data lies
-           * below this point. The third quartile (Q3) splits off the highest
-           * 25% of data from the lowest 75%. It is known as the upper or 75th
-           * empirical quartile, as 75% of the data lies below this point.
-           * Here, the quartiles is provided as an ordered list of quartile
-           * values for the scanned data, occurring in order Q1, median, Q3.
+           * Output only. A quartile divides the number of data points into four
+           * parts, or quarters, of more-or-less equal size. Three main
+           * quartiles used are: The first quartile (Q1) splits off the lowest
+           * 25% of data from the highest 75%. It is also known as the lower or
+           * 25th empirical quartile, as 25% of the data is below this point.
+           * The second quartile (Q2) is the median of a data set. So, 50% of
+           * the data lies below this point. The third quartile (Q3) splits off
+           * the highest 25% of data from the lowest 75%. It is known as the
+           * upper or 75th empirical quartile, as 75% of the data lies below
+           * this point. Here, the quartiles is provided as an ordered list of
+           * quartile values for the scanned data, occurring in order Q1,
+           * median, Q3.
            * </pre>
            *
-           * <code>repeated double quartiles = 6;</code>
+           * <code>repeated double quartiles = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+           * </code>
            *
            * @return A list containing the quartiles.
            */
@@ -3207,20 +3251,22 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * A quartile divides the number of data points into four parts, or
-           * quarters, of more-or-less equal size. Three main quartiles used
-           * are: The first quartile (Q1) splits off the lowest 25% of data from
-           * the highest 75%. It is also known as the lower or 25th empirical
-           * quartile, as 25% of the data is below this point. The second
-           * quartile (Q2) is the median of a data set. So, 50% of the data lies
-           * below this point. The third quartile (Q3) splits off the highest
-           * 25% of data from the lowest 75%. It is known as the upper or 75th
-           * empirical quartile, as 75% of the data lies below this point.
-           * Here, the quartiles is provided as an ordered list of quartile
-           * values for the scanned data, occurring in order Q1, median, Q3.
+           * Output only. A quartile divides the number of data points into four
+           * parts, or quarters, of more-or-less equal size. Three main
+           * quartiles used are: The first quartile (Q1) splits off the lowest
+           * 25% of data from the highest 75%. It is also known as the lower or
+           * 25th empirical quartile, as 25% of the data is below this point.
+           * The second quartile (Q2) is the median of a data set. So, 50% of
+           * the data lies below this point. The third quartile (Q3) splits off
+           * the highest 25% of data from the lowest 75%. It is known as the
+           * upper or 75th empirical quartile, as 75% of the data lies below
+           * this point. Here, the quartiles is provided as an ordered list of
+           * quartile values for the scanned data, occurring in order Q1,
+           * median, Q3.
            * </pre>
            *
-           * <code>repeated double quartiles = 6;</code>
+           * <code>repeated double quartiles = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+           * </code>
            *
            * @return The count of quartiles.
            */
@@ -3232,20 +3278,22 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * A quartile divides the number of data points into four parts, or
-           * quarters, of more-or-less equal size. Three main quartiles used
-           * are: The first quartile (Q1) splits off the lowest 25% of data from
-           * the highest 75%. It is also known as the lower or 25th empirical
-           * quartile, as 25% of the data is below this point. The second
-           * quartile (Q2) is the median of a data set. So, 50% of the data lies
-           * below this point. The third quartile (Q3) splits off the highest
-           * 25% of data from the lowest 75%. It is known as the upper or 75th
-           * empirical quartile, as 75% of the data lies below this point.
-           * Here, the quartiles is provided as an ordered list of quartile
-           * values for the scanned data, occurring in order Q1, median, Q3.
+           * Output only. A quartile divides the number of data points into four
+           * parts, or quarters, of more-or-less equal size. Three main
+           * quartiles used are: The first quartile (Q1) splits off the lowest
+           * 25% of data from the highest 75%. It is also known as the lower or
+           * 25th empirical quartile, as 25% of the data is below this point.
+           * The second quartile (Q2) is the median of a data set. So, 50% of
+           * the data lies below this point. The third quartile (Q3) splits off
+           * the highest 25% of data from the lowest 75%. It is known as the
+           * upper or 75th empirical quartile, as 75% of the data lies below
+           * this point. Here, the quartiles is provided as an ordered list of
+           * quartile values for the scanned data, occurring in order Q1,
+           * median, Q3.
            * </pre>
            *
-           * <code>repeated double quartiles = 6;</code>
+           * <code>repeated double quartiles = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+           * </code>
            *
            * @param index The index of the element to return.
            * @return The quartiles at the given index.
@@ -3263,11 +3311,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * Maximum of non-null values in the scanned data. NaN, if the field
-           * has a NaN.
+           * Output only. Maximum of non-null values in the scanned data. NaN,
+           * if the field has a NaN.
            * </pre>
            *
-           * <code>double max = 5;</code>
+           * <code>double max = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
            *
            * @return The max.
            */
@@ -3830,11 +3878,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * Average of non-null values in the scanned data. NaN, if the field
-             * has a NaN.
+             * Output only. Average of non-null values in the scanned data. NaN,
+             * if the field has a NaN.
              * </pre>
              *
-             * <code>double average = 1;</code>
+             * <code>double average = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
              *
              * @return The average.
              */
@@ -3847,11 +3895,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * Average of non-null values in the scanned data. NaN, if the field
-             * has a NaN.
+             * Output only. Average of non-null values in the scanned data. NaN,
+             * if the field has a NaN.
              * </pre>
              *
-             * <code>double average = 1;</code>
+             * <code>double average = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
              *
              * @param value The average to set.
              * @return This builder for chaining.
@@ -3868,11 +3916,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * Average of non-null values in the scanned data. NaN, if the field
-             * has a NaN.
+             * Output only. Average of non-null values in the scanned data. NaN,
+             * if the field has a NaN.
              * </pre>
              *
-             * <code>double average = 1;</code>
+             * <code>double average = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
              *
              * @return This builder for chaining.
              */
@@ -3889,11 +3937,12 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * Standard deviation of non-null values in the scanned data. NaN, if
-             * the field has a NaN.
+             * Output only. Standard deviation of non-null values in the scanned
+             * data. NaN, if the field has a NaN.
              * </pre>
              *
-             * <code>double standard_deviation = 3;</code>
+             * <code>double standard_deviation = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+             * </code>
              *
              * @return The standardDeviation.
              */
@@ -3906,11 +3955,12 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * Standard deviation of non-null values in the scanned data. NaN, if
-             * the field has a NaN.
+             * Output only. Standard deviation of non-null values in the scanned
+             * data. NaN, if the field has a NaN.
              * </pre>
              *
-             * <code>double standard_deviation = 3;</code>
+             * <code>double standard_deviation = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+             * </code>
              *
              * @param value The standardDeviation to set.
              * @return This builder for chaining.
@@ -3927,11 +3977,12 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * Standard deviation of non-null values in the scanned data. NaN, if
-             * the field has a NaN.
+             * Output only. Standard deviation of non-null values in the scanned
+             * data. NaN, if the field has a NaN.
              * </pre>
              *
-             * <code>double standard_deviation = 3;</code>
+             * <code>double standard_deviation = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+             * </code>
              *
              * @return This builder for chaining.
              */
@@ -3948,11 +3999,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * Minimum of non-null values in the scanned data. NaN, if the field
-             * has a NaN.
+             * Output only. Minimum of non-null values in the scanned data. NaN,
+             * if the field has a NaN.
              * </pre>
              *
-             * <code>double min = 4;</code>
+             * <code>double min = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
              *
              * @return The min.
              */
@@ -3965,11 +4016,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * Minimum of non-null values in the scanned data. NaN, if the field
-             * has a NaN.
+             * Output only. Minimum of non-null values in the scanned data. NaN,
+             * if the field has a NaN.
              * </pre>
              *
-             * <code>double min = 4;</code>
+             * <code>double min = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
              *
              * @param value The min to set.
              * @return This builder for chaining.
@@ -3986,11 +4037,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * Minimum of non-null values in the scanned data. NaN, if the field
-             * has a NaN.
+             * Output only. Minimum of non-null values in the scanned data. NaN,
+             * if the field has a NaN.
              * </pre>
              *
-             * <code>double min = 4;</code>
+             * <code>double min = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
              *
              * @return This builder for chaining.
              */
@@ -4021,20 +4072,22 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * A quartile divides the number of data points into four parts, or
-             * quarters, of more-or-less equal size. Three main quartiles used
-             * are: The first quartile (Q1) splits off the lowest 25% of data from
-             * the highest 75%. It is also known as the lower or 25th empirical
-             * quartile, as 25% of the data is below this point. The second
-             * quartile (Q2) is the median of a data set. So, 50% of the data lies
-             * below this point. The third quartile (Q3) splits off the highest
-             * 25% of data from the lowest 75%. It is known as the upper or 75th
-             * empirical quartile, as 75% of the data lies below this point.
-             * Here, the quartiles is provided as an ordered list of quartile
-             * values for the scanned data, occurring in order Q1, median, Q3.
+             * Output only. A quartile divides the number of data points into four
+             * parts, or quarters, of more-or-less equal size. Three main
+             * quartiles used are: The first quartile (Q1) splits off the lowest
+             * 25% of data from the highest 75%. It is also known as the lower or
+             * 25th empirical quartile, as 25% of the data is below this point.
+             * The second quartile (Q2) is the median of a data set. So, 50% of
+             * the data lies below this point. The third quartile (Q3) splits off
+             * the highest 25% of data from the lowest 75%. It is known as the
+             * upper or 75th empirical quartile, as 75% of the data lies below
+             * this point. Here, the quartiles is provided as an ordered list of
+             * quartile values for the scanned data, occurring in order Q1,
+             * median, Q3.
              * </pre>
              *
-             * <code>repeated double quartiles = 6;</code>
+             * <code>repeated double quartiles = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+             * </code>
              *
              * @return A list containing the quartiles.
              */
@@ -4047,20 +4100,22 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * A quartile divides the number of data points into four parts, or
-             * quarters, of more-or-less equal size. Three main quartiles used
-             * are: The first quartile (Q1) splits off the lowest 25% of data from
-             * the highest 75%. It is also known as the lower or 25th empirical
-             * quartile, as 25% of the data is below this point. The second
-             * quartile (Q2) is the median of a data set. So, 50% of the data lies
-             * below this point. The third quartile (Q3) splits off the highest
-             * 25% of data from the lowest 75%. It is known as the upper or 75th
-             * empirical quartile, as 75% of the data lies below this point.
-             * Here, the quartiles is provided as an ordered list of quartile
-             * values for the scanned data, occurring in order Q1, median, Q3.
+             * Output only. A quartile divides the number of data points into four
+             * parts, or quarters, of more-or-less equal size. Three main
+             * quartiles used are: The first quartile (Q1) splits off the lowest
+             * 25% of data from the highest 75%. It is also known as the lower or
+             * 25th empirical quartile, as 25% of the data is below this point.
+             * The second quartile (Q2) is the median of a data set. So, 50% of
+             * the data lies below this point. The third quartile (Q3) splits off
+             * the highest 25% of data from the lowest 75%. It is known as the
+             * upper or 75th empirical quartile, as 75% of the data lies below
+             * this point. Here, the quartiles is provided as an ordered list of
+             * quartile values for the scanned data, occurring in order Q1,
+             * median, Q3.
              * </pre>
              *
-             * <code>repeated double quartiles = 6;</code>
+             * <code>repeated double quartiles = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+             * </code>
              *
              * @return The count of quartiles.
              */
@@ -4072,20 +4127,22 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * A quartile divides the number of data points into four parts, or
-             * quarters, of more-or-less equal size. Three main quartiles used
-             * are: The first quartile (Q1) splits off the lowest 25% of data from
-             * the highest 75%. It is also known as the lower or 25th empirical
-             * quartile, as 25% of the data is below this point. The second
-             * quartile (Q2) is the median of a data set. So, 50% of the data lies
-             * below this point. The third quartile (Q3) splits off the highest
-             * 25% of data from the lowest 75%. It is known as the upper or 75th
-             * empirical quartile, as 75% of the data lies below this point.
-             * Here, the quartiles is provided as an ordered list of quartile
-             * values for the scanned data, occurring in order Q1, median, Q3.
+             * Output only. A quartile divides the number of data points into four
+             * parts, or quarters, of more-or-less equal size. Three main
+             * quartiles used are: The first quartile (Q1) splits off the lowest
+             * 25% of data from the highest 75%. It is also known as the lower or
+             * 25th empirical quartile, as 25% of the data is below this point.
+             * The second quartile (Q2) is the median of a data set. So, 50% of
+             * the data lies below this point. The third quartile (Q3) splits off
+             * the highest 25% of data from the lowest 75%. It is known as the
+             * upper or 75th empirical quartile, as 75% of the data lies below
+             * this point. Here, the quartiles is provided as an ordered list of
+             * quartile values for the scanned data, occurring in order Q1,
+             * median, Q3.
              * </pre>
              *
-             * <code>repeated double quartiles = 6;</code>
+             * <code>repeated double quartiles = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+             * </code>
              *
              * @param index The index of the element to return.
              * @return The quartiles at the given index.
@@ -4098,20 +4155,22 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * A quartile divides the number of data points into four parts, or
-             * quarters, of more-or-less equal size. Three main quartiles used
-             * are: The first quartile (Q1) splits off the lowest 25% of data from
-             * the highest 75%. It is also known as the lower or 25th empirical
-             * quartile, as 25% of the data is below this point. The second
-             * quartile (Q2) is the median of a data set. So, 50% of the data lies
-             * below this point. The third quartile (Q3) splits off the highest
-             * 25% of data from the lowest 75%. It is known as the upper or 75th
-             * empirical quartile, as 75% of the data lies below this point.
-             * Here, the quartiles is provided as an ordered list of quartile
-             * values for the scanned data, occurring in order Q1, median, Q3.
+             * Output only. A quartile divides the number of data points into four
+             * parts, or quarters, of more-or-less equal size. Three main
+             * quartiles used are: The first quartile (Q1) splits off the lowest
+             * 25% of data from the highest 75%. It is also known as the lower or
+             * 25th empirical quartile, as 25% of the data is below this point.
+             * The second quartile (Q2) is the median of a data set. So, 50% of
+             * the data lies below this point. The third quartile (Q3) splits off
+             * the highest 25% of data from the lowest 75%. It is known as the
+             * upper or 75th empirical quartile, as 75% of the data lies below
+             * this point. Here, the quartiles is provided as an ordered list of
+             * quartile values for the scanned data, occurring in order Q1,
+             * median, Q3.
              * </pre>
              *
-             * <code>repeated double quartiles = 6;</code>
+             * <code>repeated double quartiles = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+             * </code>
              *
              * @param index The index to set the value at.
              * @param value The quartiles to set.
@@ -4130,20 +4189,22 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * A quartile divides the number of data points into four parts, or
-             * quarters, of more-or-less equal size. Three main quartiles used
-             * are: The first quartile (Q1) splits off the lowest 25% of data from
-             * the highest 75%. It is also known as the lower or 25th empirical
-             * quartile, as 25% of the data is below this point. The second
-             * quartile (Q2) is the median of a data set. So, 50% of the data lies
-             * below this point. The third quartile (Q3) splits off the highest
-             * 25% of data from the lowest 75%. It is known as the upper or 75th
-             * empirical quartile, as 75% of the data lies below this point.
-             * Here, the quartiles is provided as an ordered list of quartile
-             * values for the scanned data, occurring in order Q1, median, Q3.
+             * Output only. A quartile divides the number of data points into four
+             * parts, or quarters, of more-or-less equal size. Three main
+             * quartiles used are: The first quartile (Q1) splits off the lowest
+             * 25% of data from the highest 75%. It is also known as the lower or
+             * 25th empirical quartile, as 25% of the data is below this point.
+             * The second quartile (Q2) is the median of a data set. So, 50% of
+             * the data lies below this point. The third quartile (Q3) splits off
+             * the highest 25% of data from the lowest 75%. It is known as the
+             * upper or 75th empirical quartile, as 75% of the data lies below
+             * this point. Here, the quartiles is provided as an ordered list of
+             * quartile values for the scanned data, occurring in order Q1,
+             * median, Q3.
              * </pre>
              *
-             * <code>repeated double quartiles = 6;</code>
+             * <code>repeated double quartiles = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+             * </code>
              *
              * @param value The quartiles to add.
              * @return This builder for chaining.
@@ -4161,20 +4222,22 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * A quartile divides the number of data points into four parts, or
-             * quarters, of more-or-less equal size. Three main quartiles used
-             * are: The first quartile (Q1) splits off the lowest 25% of data from
-             * the highest 75%. It is also known as the lower or 25th empirical
-             * quartile, as 25% of the data is below this point. The second
-             * quartile (Q2) is the median of a data set. So, 50% of the data lies
-             * below this point. The third quartile (Q3) splits off the highest
-             * 25% of data from the lowest 75%. It is known as the upper or 75th
-             * empirical quartile, as 75% of the data lies below this point.
-             * Here, the quartiles is provided as an ordered list of quartile
-             * values for the scanned data, occurring in order Q1, median, Q3.
+             * Output only. A quartile divides the number of data points into four
+             * parts, or quarters, of more-or-less equal size. Three main
+             * quartiles used are: The first quartile (Q1) splits off the lowest
+             * 25% of data from the highest 75%. It is also known as the lower or
+             * 25th empirical quartile, as 25% of the data is below this point.
+             * The second quartile (Q2) is the median of a data set. So, 50% of
+             * the data lies below this point. The third quartile (Q3) splits off
+             * the highest 25% of data from the lowest 75%. It is known as the
+             * upper or 75th empirical quartile, as 75% of the data lies below
+             * this point. Here, the quartiles is provided as an ordered list of
+             * quartile values for the scanned data, occurring in order Q1,
+             * median, Q3.
              * </pre>
              *
-             * <code>repeated double quartiles = 6;</code>
+             * <code>repeated double quartiles = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+             * </code>
              *
              * @param values The quartiles to add.
              * @return This builder for chaining.
@@ -4191,20 +4254,22 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * A quartile divides the number of data points into four parts, or
-             * quarters, of more-or-less equal size. Three main quartiles used
-             * are: The first quartile (Q1) splits off the lowest 25% of data from
-             * the highest 75%. It is also known as the lower or 25th empirical
-             * quartile, as 25% of the data is below this point. The second
-             * quartile (Q2) is the median of a data set. So, 50% of the data lies
-             * below this point. The third quartile (Q3) splits off the highest
-             * 25% of data from the lowest 75%. It is known as the upper or 75th
-             * empirical quartile, as 75% of the data lies below this point.
-             * Here, the quartiles is provided as an ordered list of quartile
-             * values for the scanned data, occurring in order Q1, median, Q3.
+             * Output only. A quartile divides the number of data points into four
+             * parts, or quarters, of more-or-less equal size. Three main
+             * quartiles used are: The first quartile (Q1) splits off the lowest
+             * 25% of data from the highest 75%. It is also known as the lower or
+             * 25th empirical quartile, as 25% of the data is below this point.
+             * The second quartile (Q2) is the median of a data set. So, 50% of
+             * the data lies below this point. The third quartile (Q3) splits off
+             * the highest 25% of data from the lowest 75%. It is known as the
+             * upper or 75th empirical quartile, as 75% of the data lies below
+             * this point. Here, the quartiles is provided as an ordered list of
+             * quartile values for the scanned data, occurring in order Q1,
+             * median, Q3.
              * </pre>
              *
-             * <code>repeated double quartiles = 6;</code>
+             * <code>repeated double quartiles = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+             * </code>
              *
              * @return This builder for chaining.
              */
@@ -4221,11 +4286,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * Maximum of non-null values in the scanned data. NaN, if the field
-             * has a NaN.
+             * Output only. Maximum of non-null values in the scanned data. NaN,
+             * if the field has a NaN.
              * </pre>
              *
-             * <code>double max = 5;</code>
+             * <code>double max = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
              *
              * @return The max.
              */
@@ -4238,11 +4303,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * Maximum of non-null values in the scanned data. NaN, if the field
-             * has a NaN.
+             * Output only. Maximum of non-null values in the scanned data. NaN,
+             * if the field has a NaN.
              * </pre>
              *
-             * <code>double max = 5;</code>
+             * <code>double max = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
              *
              * @param value The max to set.
              * @return This builder for chaining.
@@ -4259,11 +4324,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * Maximum of non-null values in the scanned data. NaN, if the field
-             * has a NaN.
+             * Output only. Maximum of non-null values in the scanned data. NaN,
+             * if the field has a NaN.
              * </pre>
              *
-             * <code>double max = 5;</code>
+             * <code>double max = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
              *
              * @return This builder for chaining.
              */
@@ -4355,10 +4420,10 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * String value of a top N non-null value.
+           * Output only. String value of a top N non-null value.
            * </pre>
            *
-           * <code>string value = 1;</code>
+           * <code>string value = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
            *
            * @return The value.
            */
@@ -4368,10 +4433,10 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * String value of a top N non-null value.
+           * Output only. String value of a top N non-null value.
            * </pre>
            *
-           * <code>string value = 1;</code>
+           * <code>string value = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
            *
            * @return The bytes for value.
            */
@@ -4381,10 +4446,10 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * Count of the corresponding value in the scanned data.
+           * Output only. Count of the corresponding value in the scanned data.
            * </pre>
            *
-           * <code>int64 count = 2;</code>
+           * <code>int64 count = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
            *
            * @return The count.
            */
@@ -4394,11 +4459,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * Ratio of the corresponding value in the field against the total
-           * number of rows in the scanned data.
+           * Output only. Ratio of the corresponding value in the field against
+           * the total number of rows in the scanned data.
            * </pre>
            *
-           * <code>double ratio = 3;</code>
+           * <code>double ratio = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
            *
            * @return The ratio.
            */
@@ -4462,10 +4527,10 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * String value of a top N non-null value.
+           * Output only. String value of a top N non-null value.
            * </pre>
            *
-           * <code>string value = 1;</code>
+           * <code>string value = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
            *
            * @return The value.
            */
@@ -4486,10 +4551,10 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * String value of a top N non-null value.
+           * Output only. String value of a top N non-null value.
            * </pre>
            *
-           * <code>string value = 1;</code>
+           * <code>string value = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
            *
            * @return The bytes for value.
            */
@@ -4513,10 +4578,10 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * Count of the corresponding value in the scanned data.
+           * Output only. Count of the corresponding value in the scanned data.
            * </pre>
            *
-           * <code>int64 count = 2;</code>
+           * <code>int64 count = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
            *
            * @return The count.
            */
@@ -4532,11 +4597,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * Ratio of the corresponding value in the field against the total
-           * number of rows in the scanned data.
+           * Output only. Ratio of the corresponding value in the field against
+           * the total number of rows in the scanned data.
            * </pre>
            *
-           * <code>double ratio = 3;</code>
+           * <code>double ratio = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
            *
            * @return The ratio.
            */
@@ -5003,10 +5068,10 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * String value of a top N non-null value.
+             * Output only. String value of a top N non-null value.
              * </pre>
              *
-             * <code>string value = 1;</code>
+             * <code>string value = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
              *
              * @return The value.
              */
@@ -5026,10 +5091,10 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * String value of a top N non-null value.
+             * Output only. String value of a top N non-null value.
              * </pre>
              *
-             * <code>string value = 1;</code>
+             * <code>string value = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
              *
              * @return The bytes for value.
              */
@@ -5049,10 +5114,10 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * String value of a top N non-null value.
+             * Output only. String value of a top N non-null value.
              * </pre>
              *
-             * <code>string value = 1;</code>
+             * <code>string value = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
              *
              * @param value The value to set.
              * @return This builder for chaining.
@@ -5071,10 +5136,10 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * String value of a top N non-null value.
+             * Output only. String value of a top N non-null value.
              * </pre>
              *
-             * <code>string value = 1;</code>
+             * <code>string value = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
              *
              * @return This builder for chaining.
              */
@@ -5089,10 +5154,10 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * String value of a top N non-null value.
+             * Output only. String value of a top N non-null value.
              * </pre>
              *
-             * <code>string value = 1;</code>
+             * <code>string value = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
              *
              * @param value The bytes for value to set.
              * @return This builder for chaining.
@@ -5114,10 +5179,10 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * Count of the corresponding value in the scanned data.
+             * Output only. Count of the corresponding value in the scanned data.
              * </pre>
              *
-             * <code>int64 count = 2;</code>
+             * <code>int64 count = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
              *
              * @return The count.
              */
@@ -5130,10 +5195,10 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * Count of the corresponding value in the scanned data.
+             * Output only. Count of the corresponding value in the scanned data.
              * </pre>
              *
-             * <code>int64 count = 2;</code>
+             * <code>int64 count = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
              *
              * @param value The count to set.
              * @return This builder for chaining.
@@ -5150,10 +5215,10 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * Count of the corresponding value in the scanned data.
+             * Output only. Count of the corresponding value in the scanned data.
              * </pre>
              *
-             * <code>int64 count = 2;</code>
+             * <code>int64 count = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
              *
              * @return This builder for chaining.
              */
@@ -5170,11 +5235,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * Ratio of the corresponding value in the field against the total
-             * number of rows in the scanned data.
+             * Output only. Ratio of the corresponding value in the field against
+             * the total number of rows in the scanned data.
              * </pre>
              *
-             * <code>double ratio = 3;</code>
+             * <code>double ratio = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
              *
              * @return The ratio.
              */
@@ -5187,11 +5252,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * Ratio of the corresponding value in the field against the total
-             * number of rows in the scanned data.
+             * Output only. Ratio of the corresponding value in the field against
+             * the total number of rows in the scanned data.
              * </pre>
              *
-             * <code>double ratio = 3;</code>
+             * <code>double ratio = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
              *
              * @param value The ratio to set.
              * @return This builder for chaining.
@@ -5208,11 +5273,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
              *
              *
              * <pre>
-             * Ratio of the corresponding value in the field against the total
-             * number of rows in the scanned data.
+             * Output only. Ratio of the corresponding value in the field against
+             * the total number of rows in the scanned data.
              * </pre>
              *
-             * <code>double ratio = 3;</code>
+             * <code>double ratio = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
              *
              * @return This builder for chaining.
              */
@@ -5354,10 +5419,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Ratio of rows with null value against total scanned rows.
+         * Output only. Ratio of rows with null value against total scanned
+         * rows.
          * </pre>
          *
-         * <code>double null_ratio = 2;</code>
+         * <code>double null_ratio = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @return The nullRatio.
          */
@@ -5373,12 +5439,13 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Ratio of rows with distinct values against total scanned rows.
-         * Not available for complex non-groupable field type, including RECORD,
-         * ARRAY, GEOGRAPHY, and JSON, as well as fields with REPEATABLE mode.
+         * Output only. Ratio of rows with distinct values against total scanned
+         * rows. Not available for complex non-groupable field type, including
+         * RECORD, ARRAY, GEOGRAPHY, and JSON, as well as fields with REPEATABLE
+         * mode.
          * </pre>
          *
-         * <code>double distinct_ratio = 3;</code>
+         * <code>double distinct_ratio = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @return The distinctRatio.
          */
@@ -5398,15 +5465,15 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * The list of top N non-null values, frequency and ratio with which
-         * they occur in the scanned data. N is 10 or equal to the number of
-         * distinct values in the field, whichever is smaller. Not available for
-         * complex non-groupable field type, including RECORD, ARRAY, GEOGRAPHY,
-         * and JSON, as well as fields with REPEATABLE mode.
+         * Output only. The list of top N non-null values, frequency and ratio
+         * with which they occur in the scanned data. N is 10 or equal to the
+         * number of distinct values in the field, whichever is smaller. Not
+         * available for complex non-groupable field type, including RECORD,
+         * ARRAY, GEOGRAPHY, and JSON, as well as fields with REPEATABLE mode.
          * </pre>
          *
          * <code>
-         * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4;
+         * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
          * </code>
          */
         @java.lang.Override
@@ -5420,15 +5487,15 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * The list of top N non-null values, frequency and ratio with which
-         * they occur in the scanned data. N is 10 or equal to the number of
-         * distinct values in the field, whichever is smaller. Not available for
-         * complex non-groupable field type, including RECORD, ARRAY, GEOGRAPHY,
-         * and JSON, as well as fields with REPEATABLE mode.
+         * Output only. The list of top N non-null values, frequency and ratio
+         * with which they occur in the scanned data. N is 10 or equal to the
+         * number of distinct values in the field, whichever is smaller. Not
+         * available for complex non-groupable field type, including RECORD,
+         * ARRAY, GEOGRAPHY, and JSON, as well as fields with REPEATABLE mode.
          * </pre>
          *
          * <code>
-         * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4;
+         * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
          * </code>
          */
         @java.lang.Override
@@ -5444,15 +5511,15 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * The list of top N non-null values, frequency and ratio with which
-         * they occur in the scanned data. N is 10 or equal to the number of
-         * distinct values in the field, whichever is smaller. Not available for
-         * complex non-groupable field type, including RECORD, ARRAY, GEOGRAPHY,
-         * and JSON, as well as fields with REPEATABLE mode.
+         * Output only. The list of top N non-null values, frequency and ratio
+         * with which they occur in the scanned data. N is 10 or equal to the
+         * number of distinct values in the field, whichever is smaller. Not
+         * available for complex non-groupable field type, including RECORD,
+         * ARRAY, GEOGRAPHY, and JSON, as well as fields with REPEATABLE mode.
          * </pre>
          *
          * <code>
-         * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4;
+         * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
          * </code>
          */
         @java.lang.Override
@@ -5464,15 +5531,15 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * The list of top N non-null values, frequency and ratio with which
-         * they occur in the scanned data. N is 10 or equal to the number of
-         * distinct values in the field, whichever is smaller. Not available for
-         * complex non-groupable field type, including RECORD, ARRAY, GEOGRAPHY,
-         * and JSON, as well as fields with REPEATABLE mode.
+         * Output only. The list of top N non-null values, frequency and ratio
+         * with which they occur in the scanned data. N is 10 or equal to the
+         * number of distinct values in the field, whichever is smaller. Not
+         * available for complex non-groupable field type, including RECORD,
+         * ARRAY, GEOGRAPHY, and JSON, as well as fields with REPEATABLE mode.
          * </pre>
          *
          * <code>
-         * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4;
+         * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
          * </code>
          */
         @java.lang.Override
@@ -5485,15 +5552,15 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * The list of top N non-null values, frequency and ratio with which
-         * they occur in the scanned data. N is 10 or equal to the number of
-         * distinct values in the field, whichever is smaller. Not available for
-         * complex non-groupable field type, including RECORD, ARRAY, GEOGRAPHY,
-         * and JSON, as well as fields with REPEATABLE mode.
+         * Output only. The list of top N non-null values, frequency and ratio
+         * with which they occur in the scanned data. N is 10 or equal to the
+         * number of distinct values in the field, whichever is smaller. Not
+         * available for complex non-groupable field type, including RECORD,
+         * ARRAY, GEOGRAPHY, and JSON, as well as fields with REPEATABLE mode.
          * </pre>
          *
          * <code>
-         * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4;
+         * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
          * </code>
          */
         @java.lang.Override
@@ -6355,10 +6422,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * Ratio of rows with null value against total scanned rows.
+           * Output only. Ratio of rows with null value against total scanned
+           * rows.
            * </pre>
            *
-           * <code>double null_ratio = 2;</code>
+           * <code>double null_ratio = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
            *
            * @return The nullRatio.
            */
@@ -6371,10 +6439,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * Ratio of rows with null value against total scanned rows.
+           * Output only. Ratio of rows with null value against total scanned
+           * rows.
            * </pre>
            *
-           * <code>double null_ratio = 2;</code>
+           * <code>double null_ratio = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
            *
            * @param value The nullRatio to set.
            * @return This builder for chaining.
@@ -6391,10 +6460,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * Ratio of rows with null value against total scanned rows.
+           * Output only. Ratio of rows with null value against total scanned
+           * rows.
            * </pre>
            *
-           * <code>double null_ratio = 2;</code>
+           * <code>double null_ratio = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
            *
            * @return This builder for chaining.
            */
@@ -6411,12 +6481,13 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * Ratio of rows with distinct values against total scanned rows.
-           * Not available for complex non-groupable field type, including RECORD,
-           * ARRAY, GEOGRAPHY, and JSON, as well as fields with REPEATABLE mode.
+           * Output only. Ratio of rows with distinct values against total scanned
+           * rows. Not available for complex non-groupable field type, including
+           * RECORD, ARRAY, GEOGRAPHY, and JSON, as well as fields with REPEATABLE
+           * mode.
            * </pre>
            *
-           * <code>double distinct_ratio = 3;</code>
+           * <code>double distinct_ratio = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
            *
            * @return The distinctRatio.
            */
@@ -6429,12 +6500,13 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * Ratio of rows with distinct values against total scanned rows.
-           * Not available for complex non-groupable field type, including RECORD,
-           * ARRAY, GEOGRAPHY, and JSON, as well as fields with REPEATABLE mode.
+           * Output only. Ratio of rows with distinct values against total scanned
+           * rows. Not available for complex non-groupable field type, including
+           * RECORD, ARRAY, GEOGRAPHY, and JSON, as well as fields with REPEATABLE
+           * mode.
            * </pre>
            *
-           * <code>double distinct_ratio = 3;</code>
+           * <code>double distinct_ratio = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
            *
            * @param value The distinctRatio to set.
            * @return This builder for chaining.
@@ -6451,12 +6523,13 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * Ratio of rows with distinct values against total scanned rows.
-           * Not available for complex non-groupable field type, including RECORD,
-           * ARRAY, GEOGRAPHY, and JSON, as well as fields with REPEATABLE mode.
+           * Output only. Ratio of rows with distinct values against total scanned
+           * rows. Not available for complex non-groupable field type, including
+           * RECORD, ARRAY, GEOGRAPHY, and JSON, as well as fields with REPEATABLE
+           * mode.
            * </pre>
            *
-           * <code>double distinct_ratio = 3;</code>
+           * <code>double distinct_ratio = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
            *
            * @return This builder for chaining.
            */
@@ -6495,15 +6568,15 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * The list of top N non-null values, frequency and ratio with which
-           * they occur in the scanned data. N is 10 or equal to the number of
-           * distinct values in the field, whichever is smaller. Not available for
-           * complex non-groupable field type, including RECORD, ARRAY, GEOGRAPHY,
-           * and JSON, as well as fields with REPEATABLE mode.
+           * Output only. The list of top N non-null values, frequency and ratio
+           * with which they occur in the scanned data. N is 10 or equal to the
+           * number of distinct values in the field, whichever is smaller. Not
+           * available for complex non-groupable field type, including RECORD,
+           * ARRAY, GEOGRAPHY, and JSON, as well as fields with REPEATABLE mode.
            * </pre>
            *
            * <code>
-           * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4;
+           * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
            * </code>
            */
           public java.util.List<
@@ -6521,15 +6594,15 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * The list of top N non-null values, frequency and ratio with which
-           * they occur in the scanned data. N is 10 or equal to the number of
-           * distinct values in the field, whichever is smaller. Not available for
-           * complex non-groupable field type, including RECORD, ARRAY, GEOGRAPHY,
-           * and JSON, as well as fields with REPEATABLE mode.
+           * Output only. The list of top N non-null values, frequency and ratio
+           * with which they occur in the scanned data. N is 10 or equal to the
+           * number of distinct values in the field, whichever is smaller. Not
+           * available for complex non-groupable field type, including RECORD,
+           * ARRAY, GEOGRAPHY, and JSON, as well as fields with REPEATABLE mode.
            * </pre>
            *
            * <code>
-           * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4;
+           * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
            * </code>
            */
           public int getTopNValuesCount() {
@@ -6544,15 +6617,15 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * The list of top N non-null values, frequency and ratio with which
-           * they occur in the scanned data. N is 10 or equal to the number of
-           * distinct values in the field, whichever is smaller. Not available for
-           * complex non-groupable field type, including RECORD, ARRAY, GEOGRAPHY,
-           * and JSON, as well as fields with REPEATABLE mode.
+           * Output only. The list of top N non-null values, frequency and ratio
+           * with which they occur in the scanned data. N is 10 or equal to the
+           * number of distinct values in the field, whichever is smaller. Not
+           * available for complex non-groupable field type, including RECORD,
+           * ARRAY, GEOGRAPHY, and JSON, as well as fields with REPEATABLE mode.
            * </pre>
            *
            * <code>
-           * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4;
+           * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
            * </code>
            */
           public com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue
@@ -6568,15 +6641,15 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * The list of top N non-null values, frequency and ratio with which
-           * they occur in the scanned data. N is 10 or equal to the number of
-           * distinct values in the field, whichever is smaller. Not available for
-           * complex non-groupable field type, including RECORD, ARRAY, GEOGRAPHY,
-           * and JSON, as well as fields with REPEATABLE mode.
+           * Output only. The list of top N non-null values, frequency and ratio
+           * with which they occur in the scanned data. N is 10 or equal to the
+           * number of distinct values in the field, whichever is smaller. Not
+           * available for complex non-groupable field type, including RECORD,
+           * ARRAY, GEOGRAPHY, and JSON, as well as fields with REPEATABLE mode.
            * </pre>
            *
            * <code>
-           * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4;
+           * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
            * </code>
            */
           public Builder setTopNValues(
@@ -6600,15 +6673,15 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * The list of top N non-null values, frequency and ratio with which
-           * they occur in the scanned data. N is 10 or equal to the number of
-           * distinct values in the field, whichever is smaller. Not available for
-           * complex non-groupable field type, including RECORD, ARRAY, GEOGRAPHY,
-           * and JSON, as well as fields with REPEATABLE mode.
+           * Output only. The list of top N non-null values, frequency and ratio
+           * with which they occur in the scanned data. N is 10 or equal to the
+           * number of distinct values in the field, whichever is smaller. Not
+           * available for complex non-groupable field type, including RECORD,
+           * ARRAY, GEOGRAPHY, and JSON, as well as fields with REPEATABLE mode.
            * </pre>
            *
            * <code>
-           * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4;
+           * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
            * </code>
            */
           public Builder setTopNValues(
@@ -6630,15 +6703,15 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * The list of top N non-null values, frequency and ratio with which
-           * they occur in the scanned data. N is 10 or equal to the number of
-           * distinct values in the field, whichever is smaller. Not available for
-           * complex non-groupable field type, including RECORD, ARRAY, GEOGRAPHY,
-           * and JSON, as well as fields with REPEATABLE mode.
+           * Output only. The list of top N non-null values, frequency and ratio
+           * with which they occur in the scanned data. N is 10 or equal to the
+           * number of distinct values in the field, whichever is smaller. Not
+           * available for complex non-groupable field type, including RECORD,
+           * ARRAY, GEOGRAPHY, and JSON, as well as fields with REPEATABLE mode.
            * </pre>
            *
            * <code>
-           * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4;
+           * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
            * </code>
            */
           public Builder addTopNValues(
@@ -6661,15 +6734,15 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * The list of top N non-null values, frequency and ratio with which
-           * they occur in the scanned data. N is 10 or equal to the number of
-           * distinct values in the field, whichever is smaller. Not available for
-           * complex non-groupable field type, including RECORD, ARRAY, GEOGRAPHY,
-           * and JSON, as well as fields with REPEATABLE mode.
+           * Output only. The list of top N non-null values, frequency and ratio
+           * with which they occur in the scanned data. N is 10 or equal to the
+           * number of distinct values in the field, whichever is smaller. Not
+           * available for complex non-groupable field type, including RECORD,
+           * ARRAY, GEOGRAPHY, and JSON, as well as fields with REPEATABLE mode.
            * </pre>
            *
            * <code>
-           * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4;
+           * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
            * </code>
            */
           public Builder addTopNValues(
@@ -6693,15 +6766,15 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * The list of top N non-null values, frequency and ratio with which
-           * they occur in the scanned data. N is 10 or equal to the number of
-           * distinct values in the field, whichever is smaller. Not available for
-           * complex non-groupable field type, including RECORD, ARRAY, GEOGRAPHY,
-           * and JSON, as well as fields with REPEATABLE mode.
+           * Output only. The list of top N non-null values, frequency and ratio
+           * with which they occur in the scanned data. N is 10 or equal to the
+           * number of distinct values in the field, whichever is smaller. Not
+           * available for complex non-groupable field type, including RECORD,
+           * ARRAY, GEOGRAPHY, and JSON, as well as fields with REPEATABLE mode.
            * </pre>
            *
            * <code>
-           * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4;
+           * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
            * </code>
            */
           public Builder addTopNValues(
@@ -6722,15 +6795,15 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * The list of top N non-null values, frequency and ratio with which
-           * they occur in the scanned data. N is 10 or equal to the number of
-           * distinct values in the field, whichever is smaller. Not available for
-           * complex non-groupable field type, including RECORD, ARRAY, GEOGRAPHY,
-           * and JSON, as well as fields with REPEATABLE mode.
+           * Output only. The list of top N non-null values, frequency and ratio
+           * with which they occur in the scanned data. N is 10 or equal to the
+           * number of distinct values in the field, whichever is smaller. Not
+           * available for complex non-groupable field type, including RECORD,
+           * ARRAY, GEOGRAPHY, and JSON, as well as fields with REPEATABLE mode.
            * </pre>
            *
            * <code>
-           * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4;
+           * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
            * </code>
            */
           public Builder addTopNValues(
@@ -6752,15 +6825,15 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * The list of top N non-null values, frequency and ratio with which
-           * they occur in the scanned data. N is 10 or equal to the number of
-           * distinct values in the field, whichever is smaller. Not available for
-           * complex non-groupable field type, including RECORD, ARRAY, GEOGRAPHY,
-           * and JSON, as well as fields with REPEATABLE mode.
+           * Output only. The list of top N non-null values, frequency and ratio
+           * with which they occur in the scanned data. N is 10 or equal to the
+           * number of distinct values in the field, whichever is smaller. Not
+           * available for complex non-groupable field type, including RECORD,
+           * ARRAY, GEOGRAPHY, and JSON, as well as fields with REPEATABLE mode.
            * </pre>
            *
            * <code>
-           * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4;
+           * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
            * </code>
            */
           public Builder addAllTopNValues(
@@ -6783,15 +6856,15 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * The list of top N non-null values, frequency and ratio with which
-           * they occur in the scanned data. N is 10 or equal to the number of
-           * distinct values in the field, whichever is smaller. Not available for
-           * complex non-groupable field type, including RECORD, ARRAY, GEOGRAPHY,
-           * and JSON, as well as fields with REPEATABLE mode.
+           * Output only. The list of top N non-null values, frequency and ratio
+           * with which they occur in the scanned data. N is 10 or equal to the
+           * number of distinct values in the field, whichever is smaller. Not
+           * available for complex non-groupable field type, including RECORD,
+           * ARRAY, GEOGRAPHY, and JSON, as well as fields with REPEATABLE mode.
            * </pre>
            *
            * <code>
-           * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4;
+           * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
            * </code>
            */
           public Builder clearTopNValues() {
@@ -6809,15 +6882,15 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * The list of top N non-null values, frequency and ratio with which
-           * they occur in the scanned data. N is 10 or equal to the number of
-           * distinct values in the field, whichever is smaller. Not available for
-           * complex non-groupable field type, including RECORD, ARRAY, GEOGRAPHY,
-           * and JSON, as well as fields with REPEATABLE mode.
+           * Output only. The list of top N non-null values, frequency and ratio
+           * with which they occur in the scanned data. N is 10 or equal to the
+           * number of distinct values in the field, whichever is smaller. Not
+           * available for complex non-groupable field type, including RECORD,
+           * ARRAY, GEOGRAPHY, and JSON, as well as fields with REPEATABLE mode.
            * </pre>
            *
            * <code>
-           * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4;
+           * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
            * </code>
            */
           public Builder removeTopNValues(int index) {
@@ -6835,15 +6908,15 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * The list of top N non-null values, frequency and ratio with which
-           * they occur in the scanned data. N is 10 or equal to the number of
-           * distinct values in the field, whichever is smaller. Not available for
-           * complex non-groupable field type, including RECORD, ARRAY, GEOGRAPHY,
-           * and JSON, as well as fields with REPEATABLE mode.
+           * Output only. The list of top N non-null values, frequency and ratio
+           * with which they occur in the scanned data. N is 10 or equal to the
+           * number of distinct values in the field, whichever is smaller. Not
+           * available for complex non-groupable field type, including RECORD,
+           * ARRAY, GEOGRAPHY, and JSON, as well as fields with REPEATABLE mode.
            * </pre>
            *
            * <code>
-           * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4;
+           * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
            * </code>
            */
           public com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue
@@ -6856,15 +6929,15 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * The list of top N non-null values, frequency and ratio with which
-           * they occur in the scanned data. N is 10 or equal to the number of
-           * distinct values in the field, whichever is smaller. Not available for
-           * complex non-groupable field type, including RECORD, ARRAY, GEOGRAPHY,
-           * and JSON, as well as fields with REPEATABLE mode.
+           * Output only. The list of top N non-null values, frequency and ratio
+           * with which they occur in the scanned data. N is 10 or equal to the
+           * number of distinct values in the field, whichever is smaller. Not
+           * available for complex non-groupable field type, including RECORD,
+           * ARRAY, GEOGRAPHY, and JSON, as well as fields with REPEATABLE mode.
            * </pre>
            *
            * <code>
-           * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4;
+           * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
            * </code>
            */
           public com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo
@@ -6881,15 +6954,15 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * The list of top N non-null values, frequency and ratio with which
-           * they occur in the scanned data. N is 10 or equal to the number of
-           * distinct values in the field, whichever is smaller. Not available for
-           * complex non-groupable field type, including RECORD, ARRAY, GEOGRAPHY,
-           * and JSON, as well as fields with REPEATABLE mode.
+           * Output only. The list of top N non-null values, frequency and ratio
+           * with which they occur in the scanned data. N is 10 or equal to the
+           * number of distinct values in the field, whichever is smaller. Not
+           * available for complex non-groupable field type, including RECORD,
+           * ARRAY, GEOGRAPHY, and JSON, as well as fields with REPEATABLE mode.
            * </pre>
            *
            * <code>
-           * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4;
+           * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
            * </code>
            */
           public java.util.List<
@@ -6908,15 +6981,15 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * The list of top N non-null values, frequency and ratio with which
-           * they occur in the scanned data. N is 10 or equal to the number of
-           * distinct values in the field, whichever is smaller. Not available for
-           * complex non-groupable field type, including RECORD, ARRAY, GEOGRAPHY,
-           * and JSON, as well as fields with REPEATABLE mode.
+           * Output only. The list of top N non-null values, frequency and ratio
+           * with which they occur in the scanned data. N is 10 or equal to the
+           * number of distinct values in the field, whichever is smaller. Not
+           * available for complex non-groupable field type, including RECORD,
+           * ARRAY, GEOGRAPHY, and JSON, as well as fields with REPEATABLE mode.
            * </pre>
            *
            * <code>
-           * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4;
+           * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
            * </code>
            */
           public com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue
@@ -6932,15 +7005,15 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * The list of top N non-null values, frequency and ratio with which
-           * they occur in the scanned data. N is 10 or equal to the number of
-           * distinct values in the field, whichever is smaller. Not available for
-           * complex non-groupable field type, including RECORD, ARRAY, GEOGRAPHY,
-           * and JSON, as well as fields with REPEATABLE mode.
+           * Output only. The list of top N non-null values, frequency and ratio
+           * with which they occur in the scanned data. N is 10 or equal to the
+           * number of distinct values in the field, whichever is smaller. Not
+           * available for complex non-groupable field type, including RECORD,
+           * ARRAY, GEOGRAPHY, and JSON, as well as fields with REPEATABLE mode.
            * </pre>
            *
            * <code>
-           * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4;
+           * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
            * </code>
            */
           public com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue
@@ -6957,15 +7030,15 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
            *
            *
            * <pre>
-           * The list of top N non-null values, frequency and ratio with which
-           * they occur in the scanned data. N is 10 or equal to the number of
-           * distinct values in the field, whichever is smaller. Not available for
-           * complex non-groupable field type, including RECORD, ARRAY, GEOGRAPHY,
-           * and JSON, as well as fields with REPEATABLE mode.
+           * Output only. The list of top N non-null values, frequency and ratio
+           * with which they occur in the scanned data. N is 10 or equal to the
+           * number of distinct values in the field, whichever is smaller. Not
+           * available for complex non-groupable field type, including RECORD,
+           * ARRAY, GEOGRAPHY, and JSON, as well as fields with REPEATABLE mode.
            * </pre>
            *
            * <code>
-           * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4;
+           * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.TopNValue top_n_values = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
            * </code>
            */
           public java.util.List<
@@ -7905,10 +7978,10 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * The name of the field.
+       * Output only. The name of the field.
        * </pre>
        *
-       * <code>string name = 1;</code>
+       * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The name.
        */
@@ -7929,10 +8002,10 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * The name of the field.
+       * Output only. The name of the field.
        * </pre>
        *
-       * <code>string name = 1;</code>
+       * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The bytes for name.
        */
@@ -7958,14 +8031,15 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * The data type retrieved from the schema of the data source. For
-       * instance, for a BigQuery native table, it is the [BigQuery Table
+       * Output only. The data type retrieved from the schema of the data
+       * source. For instance, for a BigQuery native table, it is the [BigQuery
+       * Table
        * Schema](https://cloud.google.com/bigquery/docs/reference/rest/v2/tables#tablefieldschema).
-       * For a Dataplex Entity, it is the [Entity
+       * For a Dataplex Universal Catalog Entity, it is the [Entity
        * Schema](https://cloud.google.com/dataplex/docs/reference/rpc/google.cloud.dataplex.v1#type_3).
        * </pre>
        *
-       * <code>string type = 2;</code>
+       * <code>string type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The type.
        */
@@ -7986,14 +8060,15 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * The data type retrieved from the schema of the data source. For
-       * instance, for a BigQuery native table, it is the [BigQuery Table
+       * Output only. The data type retrieved from the schema of the data
+       * source. For instance, for a BigQuery native table, it is the [BigQuery
+       * Table
        * Schema](https://cloud.google.com/bigquery/docs/reference/rest/v2/tables#tablefieldschema).
-       * For a Dataplex Entity, it is the [Entity
+       * For a Dataplex Universal Catalog Entity, it is the [Entity
        * Schema](https://cloud.google.com/dataplex/docs/reference/rpc/google.cloud.dataplex.v1#type_3).
        * </pre>
        *
-       * <code>string type = 2;</code>
+       * <code>string type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The bytes for type.
        */
@@ -8019,14 +8094,14 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * The mode of the field. Possible values include:
+       * Output only. The mode of the field. Possible values include:
        *
        * * REQUIRED, if it is a required field.
        * * NULLABLE, if it is an optional field.
        * * REPEATED, if it is a repeated field.
        * </pre>
        *
-       * <code>string mode = 3;</code>
+       * <code>string mode = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The mode.
        */
@@ -8047,14 +8122,14 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * The mode of the field. Possible values include:
+       * Output only. The mode of the field. Possible values include:
        *
        * * REQUIRED, if it is a required field.
        * * NULLABLE, if it is an optional field.
        * * REPEATED, if it is a repeated field.
        * </pre>
        *
-       * <code>string mode = 3;</code>
+       * <code>string mode = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
        *
        * @return The bytes for mode.
        */
@@ -8078,10 +8153,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Profile information for the corresponding field.
+       * Output only. Profile information for the corresponding field.
        * </pre>
        *
-       * <code>.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo profile = 4;
+       * <code>
+       * .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo profile = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        *
        * @return Whether the profile field is set.
@@ -8095,10 +8171,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Profile information for the corresponding field.
+       * Output only. Profile information for the corresponding field.
        * </pre>
        *
-       * <code>.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo profile = 4;
+       * <code>
+       * .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo profile = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        *
        * @return The profile.
@@ -8115,10 +8192,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * Profile information for the corresponding field.
+       * Output only. Profile information for the corresponding field.
        * </pre>
        *
-       * <code>.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo profile = 4;
+       * <code>
+       * .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo profile = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
        * </code>
        */
       @java.lang.Override
@@ -8579,10 +8657,10 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * The name of the field.
+         * Output only. The name of the field.
          * </pre>
          *
-         * <code>string name = 1;</code>
+         * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @return The name.
          */
@@ -8602,10 +8680,10 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * The name of the field.
+         * Output only. The name of the field.
          * </pre>
          *
-         * <code>string name = 1;</code>
+         * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @return The bytes for name.
          */
@@ -8625,10 +8703,10 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * The name of the field.
+         * Output only. The name of the field.
          * </pre>
          *
-         * <code>string name = 1;</code>
+         * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @param value The name to set.
          * @return This builder for chaining.
@@ -8647,10 +8725,10 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * The name of the field.
+         * Output only. The name of the field.
          * </pre>
          *
-         * <code>string name = 1;</code>
+         * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @return This builder for chaining.
          */
@@ -8665,10 +8743,10 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * The name of the field.
+         * Output only. The name of the field.
          * </pre>
          *
-         * <code>string name = 1;</code>
+         * <code>string name = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @param value The bytes for name to set.
          * @return This builder for chaining.
@@ -8690,14 +8768,15 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * The data type retrieved from the schema of the data source. For
-         * instance, for a BigQuery native table, it is the [BigQuery Table
+         * Output only. The data type retrieved from the schema of the data
+         * source. For instance, for a BigQuery native table, it is the [BigQuery
+         * Table
          * Schema](https://cloud.google.com/bigquery/docs/reference/rest/v2/tables#tablefieldschema).
-         * For a Dataplex Entity, it is the [Entity
+         * For a Dataplex Universal Catalog Entity, it is the [Entity
          * Schema](https://cloud.google.com/dataplex/docs/reference/rpc/google.cloud.dataplex.v1#type_3).
          * </pre>
          *
-         * <code>string type = 2;</code>
+         * <code>string type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @return The type.
          */
@@ -8717,14 +8796,15 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * The data type retrieved from the schema of the data source. For
-         * instance, for a BigQuery native table, it is the [BigQuery Table
+         * Output only. The data type retrieved from the schema of the data
+         * source. For instance, for a BigQuery native table, it is the [BigQuery
+         * Table
          * Schema](https://cloud.google.com/bigquery/docs/reference/rest/v2/tables#tablefieldschema).
-         * For a Dataplex Entity, it is the [Entity
+         * For a Dataplex Universal Catalog Entity, it is the [Entity
          * Schema](https://cloud.google.com/dataplex/docs/reference/rpc/google.cloud.dataplex.v1#type_3).
          * </pre>
          *
-         * <code>string type = 2;</code>
+         * <code>string type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @return The bytes for type.
          */
@@ -8744,14 +8824,15 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * The data type retrieved from the schema of the data source. For
-         * instance, for a BigQuery native table, it is the [BigQuery Table
+         * Output only. The data type retrieved from the schema of the data
+         * source. For instance, for a BigQuery native table, it is the [BigQuery
+         * Table
          * Schema](https://cloud.google.com/bigquery/docs/reference/rest/v2/tables#tablefieldschema).
-         * For a Dataplex Entity, it is the [Entity
+         * For a Dataplex Universal Catalog Entity, it is the [Entity
          * Schema](https://cloud.google.com/dataplex/docs/reference/rpc/google.cloud.dataplex.v1#type_3).
          * </pre>
          *
-         * <code>string type = 2;</code>
+         * <code>string type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @param value The type to set.
          * @return This builder for chaining.
@@ -8770,14 +8851,15 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * The data type retrieved from the schema of the data source. For
-         * instance, for a BigQuery native table, it is the [BigQuery Table
+         * Output only. The data type retrieved from the schema of the data
+         * source. For instance, for a BigQuery native table, it is the [BigQuery
+         * Table
          * Schema](https://cloud.google.com/bigquery/docs/reference/rest/v2/tables#tablefieldschema).
-         * For a Dataplex Entity, it is the [Entity
+         * For a Dataplex Universal Catalog Entity, it is the [Entity
          * Schema](https://cloud.google.com/dataplex/docs/reference/rpc/google.cloud.dataplex.v1#type_3).
          * </pre>
          *
-         * <code>string type = 2;</code>
+         * <code>string type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @return This builder for chaining.
          */
@@ -8792,14 +8874,15 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * The data type retrieved from the schema of the data source. For
-         * instance, for a BigQuery native table, it is the [BigQuery Table
+         * Output only. The data type retrieved from the schema of the data
+         * source. For instance, for a BigQuery native table, it is the [BigQuery
+         * Table
          * Schema](https://cloud.google.com/bigquery/docs/reference/rest/v2/tables#tablefieldschema).
-         * For a Dataplex Entity, it is the [Entity
+         * For a Dataplex Universal Catalog Entity, it is the [Entity
          * Schema](https://cloud.google.com/dataplex/docs/reference/rpc/google.cloud.dataplex.v1#type_3).
          * </pre>
          *
-         * <code>string type = 2;</code>
+         * <code>string type = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @param value The bytes for type to set.
          * @return This builder for chaining.
@@ -8821,14 +8904,14 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * The mode of the field. Possible values include:
+         * Output only. The mode of the field. Possible values include:
          *
          * * REQUIRED, if it is a required field.
          * * NULLABLE, if it is an optional field.
          * * REPEATED, if it is a repeated field.
          * </pre>
          *
-         * <code>string mode = 3;</code>
+         * <code>string mode = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @return The mode.
          */
@@ -8848,14 +8931,14 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * The mode of the field. Possible values include:
+         * Output only. The mode of the field. Possible values include:
          *
          * * REQUIRED, if it is a required field.
          * * NULLABLE, if it is an optional field.
          * * REPEATED, if it is a repeated field.
          * </pre>
          *
-         * <code>string mode = 3;</code>
+         * <code>string mode = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @return The bytes for mode.
          */
@@ -8875,14 +8958,14 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * The mode of the field. Possible values include:
+         * Output only. The mode of the field. Possible values include:
          *
          * * REQUIRED, if it is a required field.
          * * NULLABLE, if it is an optional field.
          * * REPEATED, if it is a repeated field.
          * </pre>
          *
-         * <code>string mode = 3;</code>
+         * <code>string mode = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @param value The mode to set.
          * @return This builder for chaining.
@@ -8901,14 +8984,14 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * The mode of the field. Possible values include:
+         * Output only. The mode of the field. Possible values include:
          *
          * * REQUIRED, if it is a required field.
          * * NULLABLE, if it is an optional field.
          * * REPEATED, if it is a repeated field.
          * </pre>
          *
-         * <code>string mode = 3;</code>
+         * <code>string mode = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @return This builder for chaining.
          */
@@ -8923,14 +9006,14 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * The mode of the field. Possible values include:
+         * Output only. The mode of the field. Possible values include:
          *
          * * REQUIRED, if it is a required field.
          * * NULLABLE, if it is an optional field.
          * * REPEATED, if it is a repeated field.
          * </pre>
          *
-         * <code>string mode = 3;</code>
+         * <code>string mode = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
          *
          * @param value The bytes for mode to set.
          * @return This builder for chaining.
@@ -8957,10 +9040,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Profile information for the corresponding field.
+         * Output only. Profile information for the corresponding field.
          * </pre>
          *
-         * <code>.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo profile = 4;
+         * <code>
+         * .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo profile = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
          * </code>
          *
          * @return Whether the profile field is set.
@@ -8973,10 +9057,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Profile information for the corresponding field.
+         * Output only. Profile information for the corresponding field.
          * </pre>
          *
-         * <code>.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo profile = 4;
+         * <code>
+         * .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo profile = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
          * </code>
          *
          * @return The profile.
@@ -8997,10 +9082,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Profile information for the corresponding field.
+         * Output only. Profile information for the corresponding field.
          * </pre>
          *
-         * <code>.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo profile = 4;
+         * <code>
+         * .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo profile = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
          * </code>
          */
         public Builder setProfile(
@@ -9022,10 +9108,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Profile information for the corresponding field.
+         * Output only. Profile information for the corresponding field.
          * </pre>
          *
-         * <code>.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo profile = 4;
+         * <code>
+         * .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo profile = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
          * </code>
          */
         public Builder setProfile(
@@ -9045,10 +9132,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Profile information for the corresponding field.
+         * Output only. Profile information for the corresponding field.
          * </pre>
          *
-         * <code>.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo profile = 4;
+         * <code>
+         * .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo profile = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
          * </code>
          */
         public Builder mergeProfile(
@@ -9077,10 +9165,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Profile information for the corresponding field.
+         * Output only. Profile information for the corresponding field.
          * </pre>
          *
-         * <code>.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo profile = 4;
+         * <code>
+         * .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo profile = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
          * </code>
          */
         public Builder clearProfile() {
@@ -9098,10 +9187,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Profile information for the corresponding field.
+         * Output only. Profile information for the corresponding field.
          * </pre>
          *
-         * <code>.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo profile = 4;
+         * <code>
+         * .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo profile = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
          * </code>
          */
         public com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo.Builder
@@ -9115,10 +9205,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Profile information for the corresponding field.
+         * Output only. Profile information for the corresponding field.
          * </pre>
          *
-         * <code>.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo profile = 4;
+         * <code>
+         * .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo profile = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
          * </code>
          */
         public com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfoOrBuilder
@@ -9137,10 +9228,11 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
          *
          *
          * <pre>
-         * Profile information for the corresponding field.
+         * Output only. Profile information for the corresponding field.
          * </pre>
          *
-         * <code>.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo profile = 4;
+         * <code>
+         * .google.cloud.dataplex.v1.DataProfileResult.Profile.Field.ProfileInfo profile = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
          * </code>
          */
         private com.google.protobuf.SingleFieldBuilderV3<
@@ -9237,10 +9329,13 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * List of fields with structural and profile information for each field.
+     * Output only. List of fields with structural and profile information for
+     * each field.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2;</code>
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     @java.lang.Override
     public java.util.List<com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field>
@@ -9252,10 +9347,13 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * List of fields with structural and profile information for each field.
+     * Output only. List of fields with structural and profile information for
+     * each field.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2;</code>
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     @java.lang.Override
     public java.util.List<
@@ -9268,10 +9366,13 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * List of fields with structural and profile information for each field.
+     * Output only. List of fields with structural and profile information for
+     * each field.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2;</code>
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     @java.lang.Override
     public int getFieldsCount() {
@@ -9282,10 +9383,13 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * List of fields with structural and profile information for each field.
+     * Output only. List of fields with structural and profile information for
+     * each field.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2;</code>
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     @java.lang.Override
     public com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field getFields(int index) {
@@ -9296,10 +9400,13 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * List of fields with structural and profile information for each field.
+     * Output only. List of fields with structural and profile information for
+     * each field.
      * </pre>
      *
-     * <code>repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2;</code>
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     @java.lang.Override
     public com.google.cloud.dataplex.v1.DataProfileResult.Profile.FieldOrBuilder getFieldsOrBuilder(
@@ -9726,10 +9833,13 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * List of fields with structural and profile information for each field.
+       * Output only. List of fields with structural and profile information for
+       * each field.
        * </pre>
        *
-       * <code>repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2;</code>
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        */
       public java.util.List<com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field>
           getFieldsList() {
@@ -9744,10 +9854,13 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * List of fields with structural and profile information for each field.
+       * Output only. List of fields with structural and profile information for
+       * each field.
        * </pre>
        *
-       * <code>repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2;</code>
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        */
       public int getFieldsCount() {
         if (fieldsBuilder_ == null) {
@@ -9761,10 +9874,13 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * List of fields with structural and profile information for each field.
+       * Output only. List of fields with structural and profile information for
+       * each field.
        * </pre>
        *
-       * <code>repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2;</code>
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        */
       public com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field getFields(int index) {
         if (fieldsBuilder_ == null) {
@@ -9778,10 +9894,13 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * List of fields with structural and profile information for each field.
+       * Output only. List of fields with structural and profile information for
+       * each field.
        * </pre>
        *
-       * <code>repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2;</code>
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        */
       public Builder setFields(
           int index, com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field value) {
@@ -9802,10 +9921,13 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * List of fields with structural and profile information for each field.
+       * Output only. List of fields with structural and profile information for
+       * each field.
        * </pre>
        *
-       * <code>repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2;</code>
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        */
       public Builder setFields(
           int index,
@@ -9824,10 +9946,13 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * List of fields with structural and profile information for each field.
+       * Output only. List of fields with structural and profile information for
+       * each field.
        * </pre>
        *
-       * <code>repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2;</code>
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        */
       public Builder addFields(com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field value) {
         if (fieldsBuilder_ == null) {
@@ -9847,10 +9972,13 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * List of fields with structural and profile information for each field.
+       * Output only. List of fields with structural and profile information for
+       * each field.
        * </pre>
        *
-       * <code>repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2;</code>
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        */
       public Builder addFields(
           int index, com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field value) {
@@ -9871,10 +9999,13 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * List of fields with structural and profile information for each field.
+       * Output only. List of fields with structural and profile information for
+       * each field.
        * </pre>
        *
-       * <code>repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2;</code>
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        */
       public Builder addFields(
           com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.Builder builderForValue) {
@@ -9892,10 +10023,13 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * List of fields with structural and profile information for each field.
+       * Output only. List of fields with structural and profile information for
+       * each field.
        * </pre>
        *
-       * <code>repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2;</code>
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        */
       public Builder addFields(
           int index,
@@ -9914,10 +10048,13 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * List of fields with structural and profile information for each field.
+       * Output only. List of fields with structural and profile information for
+       * each field.
        * </pre>
        *
-       * <code>repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2;</code>
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        */
       public Builder addAllFields(
           java.lang.Iterable<? extends com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field>
@@ -9936,10 +10073,13 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * List of fields with structural and profile information for each field.
+       * Output only. List of fields with structural and profile information for
+       * each field.
        * </pre>
        *
-       * <code>repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2;</code>
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        */
       public Builder clearFields() {
         if (fieldsBuilder_ == null) {
@@ -9956,10 +10096,13 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * List of fields with structural and profile information for each field.
+       * Output only. List of fields with structural and profile information for
+       * each field.
        * </pre>
        *
-       * <code>repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2;</code>
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        */
       public Builder removeFields(int index) {
         if (fieldsBuilder_ == null) {
@@ -9976,10 +10119,13 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * List of fields with structural and profile information for each field.
+       * Output only. List of fields with structural and profile information for
+       * each field.
        * </pre>
        *
-       * <code>repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2;</code>
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        */
       public com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.Builder getFieldsBuilder(
           int index) {
@@ -9990,10 +10136,13 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * List of fields with structural and profile information for each field.
+       * Output only. List of fields with structural and profile information for
+       * each field.
        * </pre>
        *
-       * <code>repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2;</code>
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        */
       public com.google.cloud.dataplex.v1.DataProfileResult.Profile.FieldOrBuilder
           getFieldsOrBuilder(int index) {
@@ -10008,10 +10157,13 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * List of fields with structural and profile information for each field.
+       * Output only. List of fields with structural and profile information for
+       * each field.
        * </pre>
        *
-       * <code>repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2;</code>
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        */
       public java.util.List<
               ? extends com.google.cloud.dataplex.v1.DataProfileResult.Profile.FieldOrBuilder>
@@ -10027,10 +10179,13 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * List of fields with structural and profile information for each field.
+       * Output only. List of fields with structural and profile information for
+       * each field.
        * </pre>
        *
-       * <code>repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2;</code>
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        */
       public com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.Builder
           addFieldsBuilder() {
@@ -10043,10 +10198,13 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * List of fields with structural and profile information for each field.
+       * Output only. List of fields with structural and profile information for
+       * each field.
        * </pre>
        *
-       * <code>repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2;</code>
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        */
       public com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.Builder addFieldsBuilder(
           int index) {
@@ -10060,10 +10218,13 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
        *
        *
        * <pre>
-       * List of fields with structural and profile information for each field.
+       * Output only. List of fields with structural and profile information for
+       * each field.
        * </pre>
        *
-       * <code>repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2;</code>
+       * <code>
+       * repeated .google.cloud.dataplex.v1.DataProfileResult.Profile.Field fields = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
        */
       public java.util.List<com.google.cloud.dataplex.v1.DataProfileResult.Profile.Field.Builder>
           getFieldsBuilderList() {
@@ -12143,10 +12304,10 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The count of rows scanned.
+   * Output only. The count of rows scanned.
    * </pre>
    *
-   * <code>int64 row_count = 3;</code>
+   * <code>int64 row_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The rowCount.
    */
@@ -12162,10 +12323,12 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The profile information per field.
+   * Output only. The profile information per field.
    * </pre>
    *
-   * <code>.google.cloud.dataplex.v1.DataProfileResult.Profile profile = 4;</code>
+   * <code>
+   * .google.cloud.dataplex.v1.DataProfileResult.Profile profile = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the profile field is set.
    */
@@ -12178,10 +12341,12 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The profile information per field.
+   * Output only. The profile information per field.
    * </pre>
    *
-   * <code>.google.cloud.dataplex.v1.DataProfileResult.Profile profile = 4;</code>
+   * <code>
+   * .google.cloud.dataplex.v1.DataProfileResult.Profile profile = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The profile.
    */
@@ -12196,10 +12361,12 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The profile information per field.
+   * Output only. The profile information per field.
    * </pre>
    *
-   * <code>.google.cloud.dataplex.v1.DataProfileResult.Profile profile = 4;</code>
+   * <code>
+   * .google.cloud.dataplex.v1.DataProfileResult.Profile profile = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.dataplex.v1.DataProfileResult.ProfileOrBuilder getProfileOrBuilder() {
@@ -12215,10 +12382,12 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The data scanned for this result.
+   * Output only. The data scanned for this result.
    * </pre>
    *
-   * <code>.google.cloud.dataplex.v1.ScannedData scanned_data = 5;</code>
+   * <code>
+   * .google.cloud.dataplex.v1.ScannedData scanned_data = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return Whether the scannedData field is set.
    */
@@ -12231,10 +12400,12 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The data scanned for this result.
+   * Output only. The data scanned for this result.
    * </pre>
    *
-   * <code>.google.cloud.dataplex.v1.ScannedData scanned_data = 5;</code>
+   * <code>
+   * .google.cloud.dataplex.v1.ScannedData scanned_data = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    *
    * @return The scannedData.
    */
@@ -12249,10 +12420,12 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The data scanned for this result.
+   * Output only. The data scanned for this result.
    * </pre>
    *
-   * <code>.google.cloud.dataplex.v1.ScannedData scanned_data = 5;</code>
+   * <code>
+   * .google.cloud.dataplex.v1.ScannedData scanned_data = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
    */
   @java.lang.Override
   public com.google.cloud.dataplex.v1.ScannedDataOrBuilder getScannedDataOrBuilder() {
@@ -12785,10 +12958,10 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The count of rows scanned.
+     * Output only. The count of rows scanned.
      * </pre>
      *
-     * <code>int64 row_count = 3;</code>
+     * <code>int64 row_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return The rowCount.
      */
@@ -12801,10 +12974,10 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The count of rows scanned.
+     * Output only. The count of rows scanned.
      * </pre>
      *
-     * <code>int64 row_count = 3;</code>
+     * <code>int64 row_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @param value The rowCount to set.
      * @return This builder for chaining.
@@ -12821,10 +12994,10 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The count of rows scanned.
+     * Output only. The count of rows scanned.
      * </pre>
      *
-     * <code>int64 row_count = 3;</code>
+     * <code>int64 row_count = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
      *
      * @return This builder for chaining.
      */
@@ -12846,10 +13019,12 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The profile information per field.
+     * Output only. The profile information per field.
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.DataProfileResult.Profile profile = 4;</code>
+     * <code>
+     * .google.cloud.dataplex.v1.DataProfileResult.Profile profile = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the profile field is set.
      */
@@ -12861,10 +13036,12 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The profile information per field.
+     * Output only. The profile information per field.
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.DataProfileResult.Profile profile = 4;</code>
+     * <code>
+     * .google.cloud.dataplex.v1.DataProfileResult.Profile profile = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The profile.
      */
@@ -12882,10 +13059,12 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The profile information per field.
+     * Output only. The profile information per field.
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.DataProfileResult.Profile profile = 4;</code>
+     * <code>
+     * .google.cloud.dataplex.v1.DataProfileResult.Profile profile = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setProfile(com.google.cloud.dataplex.v1.DataProfileResult.Profile value) {
       if (profileBuilder_ == null) {
@@ -12905,10 +13084,12 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The profile information per field.
+     * Output only. The profile information per field.
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.DataProfileResult.Profile profile = 4;</code>
+     * <code>
+     * .google.cloud.dataplex.v1.DataProfileResult.Profile profile = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setProfile(
         com.google.cloud.dataplex.v1.DataProfileResult.Profile.Builder builderForValue) {
@@ -12926,10 +13107,12 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The profile information per field.
+     * Output only. The profile information per field.
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.DataProfileResult.Profile profile = 4;</code>
+     * <code>
+     * .google.cloud.dataplex.v1.DataProfileResult.Profile profile = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeProfile(com.google.cloud.dataplex.v1.DataProfileResult.Profile value) {
       if (profileBuilder_ == null) {
@@ -12955,10 +13138,12 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The profile information per field.
+     * Output only. The profile information per field.
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.DataProfileResult.Profile profile = 4;</code>
+     * <code>
+     * .google.cloud.dataplex.v1.DataProfileResult.Profile profile = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearProfile() {
       bitField0_ = (bitField0_ & ~0x00000002);
@@ -12975,10 +13160,12 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The profile information per field.
+     * Output only. The profile information per field.
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.DataProfileResult.Profile profile = 4;</code>
+     * <code>
+     * .google.cloud.dataplex.v1.DataProfileResult.Profile profile = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataplex.v1.DataProfileResult.Profile.Builder getProfileBuilder() {
       bitField0_ |= 0x00000002;
@@ -12990,10 +13177,12 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The profile information per field.
+     * Output only. The profile information per field.
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.DataProfileResult.Profile profile = 4;</code>
+     * <code>
+     * .google.cloud.dataplex.v1.DataProfileResult.Profile profile = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataplex.v1.DataProfileResult.ProfileOrBuilder getProfileOrBuilder() {
       if (profileBuilder_ != null) {
@@ -13009,10 +13198,12 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The profile information per field.
+     * Output only. The profile information per field.
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.DataProfileResult.Profile profile = 4;</code>
+     * <code>
+     * .google.cloud.dataplex.v1.DataProfileResult.Profile profile = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataplex.v1.DataProfileResult.Profile,
@@ -13042,10 +13233,12 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The data scanned for this result.
+     * Output only. The data scanned for this result.
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.ScannedData scanned_data = 5;</code>
+     * <code>
+     * .google.cloud.dataplex.v1.ScannedData scanned_data = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return Whether the scannedData field is set.
      */
@@ -13057,10 +13250,12 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The data scanned for this result.
+     * Output only. The data scanned for this result.
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.ScannedData scanned_data = 5;</code>
+     * <code>
+     * .google.cloud.dataplex.v1.ScannedData scanned_data = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      *
      * @return The scannedData.
      */
@@ -13078,10 +13273,12 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The data scanned for this result.
+     * Output only. The data scanned for this result.
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.ScannedData scanned_data = 5;</code>
+     * <code>
+     * .google.cloud.dataplex.v1.ScannedData scanned_data = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setScannedData(com.google.cloud.dataplex.v1.ScannedData value) {
       if (scannedDataBuilder_ == null) {
@@ -13101,10 +13298,12 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The data scanned for this result.
+     * Output only. The data scanned for this result.
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.ScannedData scanned_data = 5;</code>
+     * <code>
+     * .google.cloud.dataplex.v1.ScannedData scanned_data = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder setScannedData(
         com.google.cloud.dataplex.v1.ScannedData.Builder builderForValue) {
@@ -13122,10 +13321,12 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The data scanned for this result.
+     * Output only. The data scanned for this result.
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.ScannedData scanned_data = 5;</code>
+     * <code>
+     * .google.cloud.dataplex.v1.ScannedData scanned_data = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder mergeScannedData(com.google.cloud.dataplex.v1.ScannedData value) {
       if (scannedDataBuilder_ == null) {
@@ -13150,10 +13351,12 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The data scanned for this result.
+     * Output only. The data scanned for this result.
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.ScannedData scanned_data = 5;</code>
+     * <code>
+     * .google.cloud.dataplex.v1.ScannedData scanned_data = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public Builder clearScannedData() {
       bitField0_ = (bitField0_ & ~0x00000004);
@@ -13170,10 +13373,12 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The data scanned for this result.
+     * Output only. The data scanned for this result.
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.ScannedData scanned_data = 5;</code>
+     * <code>
+     * .google.cloud.dataplex.v1.ScannedData scanned_data = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataplex.v1.ScannedData.Builder getScannedDataBuilder() {
       bitField0_ |= 0x00000004;
@@ -13185,10 +13390,12 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The data scanned for this result.
+     * Output only. The data scanned for this result.
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.ScannedData scanned_data = 5;</code>
+     * <code>
+     * .google.cloud.dataplex.v1.ScannedData scanned_data = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     public com.google.cloud.dataplex.v1.ScannedDataOrBuilder getScannedDataOrBuilder() {
       if (scannedDataBuilder_ != null) {
@@ -13204,10 +13411,12 @@ public final class DataProfileResult extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The data scanned for this result.
+     * Output only. The data scanned for this result.
      * </pre>
      *
-     * <code>.google.cloud.dataplex.v1.ScannedData scanned_data = 5;</code>
+     * <code>
+     * .google.cloud.dataplex.v1.ScannedData scanned_data = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.cloud.dataplex.v1.ScannedData,

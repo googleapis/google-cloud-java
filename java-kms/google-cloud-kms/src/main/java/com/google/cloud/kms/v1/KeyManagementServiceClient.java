@@ -598,6 +598,20 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> Decapsulate</td>
+ *      <td><p> Decapsulates data that was encapsulated with a public key retrieved from [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey] corresponding to a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] KEY_ENCAPSULATION.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> decapsulate(DecapsulateRequest request)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> decapsulateCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> GenerateRandomBytes</td>
  *      <td><p> Generate random bytes using the Cloud KMS randomness source in the provided location.</td>
  *      <td>
@@ -4779,6 +4793,88 @@ public class KeyManagementServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<MacVerifyRequest, MacVerifyResponse> macVerifyCallable() {
     return stub.macVerifyCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Decapsulates data that was encapsulated with a public key retrieved from
+   * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey] corresponding to a
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
+   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] KEY_ENCAPSULATION.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (KeyManagementServiceClient keyManagementServiceClient =
+   *     KeyManagementServiceClient.create()) {
+   *   DecapsulateRequest request =
+   *       DecapsulateRequest.newBuilder()
+   *           .setName(
+   *               CryptoKeyVersionName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[KEY_RING]",
+   *                       "[CRYPTO_KEY]",
+   *                       "[CRYPTO_KEY_VERSION]")
+   *                   .toString())
+   *           .setCiphertext(ByteString.EMPTY)
+   *           .setCiphertextCrc32C(Int64Value.newBuilder().build())
+   *           .build();
+   *   DecapsulateResponse response = keyManagementServiceClient.decapsulate(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final DecapsulateResponse decapsulate(DecapsulateRequest request) {
+    return decapsulateCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Decapsulates data that was encapsulated with a public key retrieved from
+   * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey] corresponding to a
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] with
+   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] KEY_ENCAPSULATION.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (KeyManagementServiceClient keyManagementServiceClient =
+   *     KeyManagementServiceClient.create()) {
+   *   DecapsulateRequest request =
+   *       DecapsulateRequest.newBuilder()
+   *           .setName(
+   *               CryptoKeyVersionName.of(
+   *                       "[PROJECT]",
+   *                       "[LOCATION]",
+   *                       "[KEY_RING]",
+   *                       "[CRYPTO_KEY]",
+   *                       "[CRYPTO_KEY_VERSION]")
+   *                   .toString())
+   *           .setCiphertext(ByteString.EMPTY)
+   *           .setCiphertextCrc32C(Int64Value.newBuilder().build())
+   *           .build();
+   *   ApiFuture<DecapsulateResponse> future =
+   *       keyManagementServiceClient.decapsulateCallable().futureCall(request);
+   *   // Do something.
+   *   DecapsulateResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DecapsulateRequest, DecapsulateResponse> decapsulateCallable() {
+    return stub.decapsulateCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

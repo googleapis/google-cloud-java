@@ -46,9 +46,9 @@ import javax.annotation.Generated;
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
  * Service Description: The primary resources offered by this service are EntryGroups, EntryTypes,
- * AspectTypes, and Entries. They collectively let data administrators organize, manage, secure, and
- * catalog data located across cloud projects in their organization in a variety of storage systems,
- * including Cloud Storage and BigQuery.
+ * AspectTypes, Entries and EntryLinks. They collectively let data administrators organize, manage,
+ * secure, and catalog data located across cloud projects in their organization in a variety of
+ * storage systems, including Cloud Storage and BigQuery.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -500,7 +500,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateMetadataJob</td>
- *      <td><p> Creates a metadata job. For example, use a metadata job to import Dataplex Catalog entries and aspects from a third-party system into Dataplex.</td>
+ *      <td><p> Creates a metadata job. For example, use a metadata job to import metadata from a third-party system into Dataplex Universal Catalog.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -574,6 +574,63 @@ import javax.annotation.Generated;
  *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
  *      <ul>
  *           <li><p> cancelMetadataJobCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> CreateEntryLink</td>
+ *      <td><p> Creates an Entry Link.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createEntryLink(CreateEntryLinkRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createEntryLink(EntryGroupName parent, EntryLink entryLink, String entryLinkId)
+ *           <li><p> createEntryLink(String parent, EntryLink entryLink, String entryLinkId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createEntryLinkCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteEntryLink</td>
+ *      <td><p> Deletes an Entry Link.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteEntryLink(DeleteEntryLinkRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteEntryLink(EntryLinkName name)
+ *           <li><p> deleteEntryLink(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteEntryLinkCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> GetEntryLink</td>
+ *      <td><p> Gets an Entry Link.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> getEntryLink(GetEntryLinkRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> getEntryLink(EntryLinkName name)
+ *           <li><p> getEntryLink(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> getEntryLinkCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -2213,8 +2270,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the entryGroup, of the form:
-   *     projects/{project_number}/locations/{location_id} where `location_id` refers to a GCP
-   *     region.
+   *     projects/{project_number}/locations/{location_id} where `location_id` refers to a Google
+   *     Cloud region.
    * @param entryGroup Required. EntryGroup Resource.
    * @param entryGroupId Required. EntryGroup identifier.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -2252,8 +2309,8 @@ public class CatalogServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The resource name of the entryGroup, of the form:
-   *     projects/{project_number}/locations/{location_id} where `location_id` refers to a GCP
-   *     region.
+   *     projects/{project_number}/locations/{location_id} where `location_id` refers to a Google
+   *     Cloud region.
    * @param entryGroup Required. EntryGroup Resource.
    * @param entryGroupId Required. EntryGroup identifier.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
@@ -3652,9 +3709,9 @@ public class CatalogServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The project to which the request should be attributed in the following
-   *     form: `projects/{project}/locations/{location}`.
+   *     form: `projects/{project}/locations/global`.
    * @param query Required. The query against which entries in scope should be matched. The query
-   *     syntax is defined in [Search syntax for Dataplex
+   *     syntax is defined in [Search syntax for Dataplex Universal
    *     Catalog](https://cloud.google.com/dataplex/docs/search-syntax).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -3690,9 +3747,9 @@ public class CatalogServiceClient implements BackgroundResource {
    * }</pre>
    *
    * @param name Required. The project to which the request should be attributed in the following
-   *     form: `projects/{project}/locations/{location}`.
+   *     form: `projects/{project}/locations/global`.
    * @param query Required. The query against which entries in scope should be matched. The query
-   *     syntax is defined in [Search syntax for Dataplex
+   *     syntax is defined in [Search syntax for Dataplex Universal
    *     Catalog](https://cloud.google.com/dataplex/docs/search-syntax).
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -3819,8 +3876,8 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a metadata job. For example, use a metadata job to import Dataplex Catalog entries and
-   * aspects from a third-party system into Dataplex.
+   * Creates a metadata job. For example, use a metadata job to import metadata from a third-party
+   * system into Dataplex Universal Catalog.
    *
    * <p>Sample code:
    *
@@ -3859,8 +3916,8 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a metadata job. For example, use a metadata job to import Dataplex Catalog entries and
-   * aspects from a third-party system into Dataplex.
+   * Creates a metadata job. For example, use a metadata job to import metadata from a third-party
+   * system into Dataplex Universal Catalog.
    *
    * <p>Sample code:
    *
@@ -3899,8 +3956,8 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a metadata job. For example, use a metadata job to import Dataplex Catalog entries and
-   * aspects from a third-party system into Dataplex.
+   * Creates a metadata job. For example, use a metadata job to import metadata from a third-party
+   * system into Dataplex Universal Catalog.
    *
    * <p>Sample code:
    *
@@ -3932,8 +3989,8 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a metadata job. For example, use a metadata job to import Dataplex Catalog entries and
-   * aspects from a third-party system into Dataplex.
+   * Creates a metadata job. For example, use a metadata job to import metadata from a third-party
+   * system into Dataplex Universal Catalog.
    *
    * <p>Sample code:
    *
@@ -3965,8 +4022,8 @@ public class CatalogServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a metadata job. For example, use a metadata job to import Dataplex Catalog entries and
-   * aspects from a third-party system into Dataplex.
+   * Creates a metadata job. For example, use a metadata job to import metadata from a third-party
+   * system into Dataplex Universal Catalog.
    *
    * <p>Sample code:
    *
@@ -4406,6 +4463,388 @@ public class CatalogServiceClient implements BackgroundResource {
    */
   public final UnaryCallable<CancelMetadataJobRequest, Empty> cancelMetadataJobCallable() {
     return stub.cancelMetadataJobCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an Entry Link.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   EntryGroupName parent = EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]");
+   *   EntryLink entryLink = EntryLink.newBuilder().build();
+   *   String entryLinkId = "entryLinkId-1349584441";
+   *   EntryLink response = catalogServiceClient.createEntryLink(parent, entryLink, entryLinkId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the parent Entry Group:
+   *     `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}`.
+   * @param entryLink Required. Entry Link resource.
+   * @param entryLinkId Required. Entry Link identifier
+   *     <ul>
+   *       <li>Must contain only lowercase letters, numbers and hyphens.
+   *       <li>Must start with a letter.
+   *       <li>Must be between 1-63 characters.
+   *       <li>Must end with a number or a letter.
+   *       <li>Must be unique within the EntryGroup.
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EntryLink createEntryLink(
+      EntryGroupName parent, EntryLink entryLink, String entryLinkId) {
+    CreateEntryLinkRequest request =
+        CreateEntryLinkRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setEntryLink(entryLink)
+            .setEntryLinkId(entryLinkId)
+            .build();
+    return createEntryLink(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an Entry Link.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   String parent = EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]").toString();
+   *   EntryLink entryLink = EntryLink.newBuilder().build();
+   *   String entryLinkId = "entryLinkId-1349584441";
+   *   EntryLink response = catalogServiceClient.createEntryLink(parent, entryLink, entryLinkId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The resource name of the parent Entry Group:
+   *     `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}`.
+   * @param entryLink Required. Entry Link resource.
+   * @param entryLinkId Required. Entry Link identifier
+   *     <ul>
+   *       <li>Must contain only lowercase letters, numbers and hyphens.
+   *       <li>Must start with a letter.
+   *       <li>Must be between 1-63 characters.
+   *       <li>Must end with a number or a letter.
+   *       <li>Must be unique within the EntryGroup.
+   *     </ul>
+   *
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EntryLink createEntryLink(String parent, EntryLink entryLink, String entryLinkId) {
+    CreateEntryLinkRequest request =
+        CreateEntryLinkRequest.newBuilder()
+            .setParent(parent)
+            .setEntryLink(entryLink)
+            .setEntryLinkId(entryLinkId)
+            .build();
+    return createEntryLink(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an Entry Link.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   CreateEntryLinkRequest request =
+   *       CreateEntryLinkRequest.newBuilder()
+   *           .setParent(EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]").toString())
+   *           .setEntryLinkId("entryLinkId-1349584441")
+   *           .setEntryLink(EntryLink.newBuilder().build())
+   *           .build();
+   *   EntryLink response = catalogServiceClient.createEntryLink(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EntryLink createEntryLink(CreateEntryLinkRequest request) {
+    return createEntryLinkCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Creates an Entry Link.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   CreateEntryLinkRequest request =
+   *       CreateEntryLinkRequest.newBuilder()
+   *           .setParent(EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]").toString())
+   *           .setEntryLinkId("entryLinkId-1349584441")
+   *           .setEntryLink(EntryLink.newBuilder().build())
+   *           .build();
+   *   ApiFuture<EntryLink> future =
+   *       catalogServiceClient.createEntryLinkCallable().futureCall(request);
+   *   // Do something.
+   *   EntryLink response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateEntryLinkRequest, EntryLink> createEntryLinkCallable() {
+    return stub.createEntryLinkCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an Entry Link.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   EntryLinkName name =
+   *       EntryLinkName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY_LINK]");
+   *   EntryLink response = catalogServiceClient.deleteEntryLink(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the Entry Link:
+   *     `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entryLinks/{entry_link_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EntryLink deleteEntryLink(EntryLinkName name) {
+    DeleteEntryLinkRequest request =
+        DeleteEntryLinkRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return deleteEntryLink(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an Entry Link.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   String name =
+   *       EntryLinkName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY_LINK]").toString();
+   *   EntryLink response = catalogServiceClient.deleteEntryLink(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the Entry Link:
+   *     `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entryLinks/{entry_link_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EntryLink deleteEntryLink(String name) {
+    DeleteEntryLinkRequest request = DeleteEntryLinkRequest.newBuilder().setName(name).build();
+    return deleteEntryLink(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an Entry Link.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   DeleteEntryLinkRequest request =
+   *       DeleteEntryLinkRequest.newBuilder()
+   *           .setName(
+   *               EntryLinkName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY_LINK]")
+   *                   .toString())
+   *           .build();
+   *   EntryLink response = catalogServiceClient.deleteEntryLink(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EntryLink deleteEntryLink(DeleteEntryLinkRequest request) {
+    return deleteEntryLinkCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes an Entry Link.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   DeleteEntryLinkRequest request =
+   *       DeleteEntryLinkRequest.newBuilder()
+   *           .setName(
+   *               EntryLinkName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY_LINK]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<EntryLink> future =
+   *       catalogServiceClient.deleteEntryLinkCallable().futureCall(request);
+   *   // Do something.
+   *   EntryLink response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteEntryLinkRequest, EntryLink> deleteEntryLinkCallable() {
+    return stub.deleteEntryLinkCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets an Entry Link.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   EntryLinkName name =
+   *       EntryLinkName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY_LINK]");
+   *   EntryLink response = catalogServiceClient.getEntryLink(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the Entry Link:
+   *     `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entryLinks/{entry_link_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EntryLink getEntryLink(EntryLinkName name) {
+    GetEntryLinkRequest request =
+        GetEntryLinkRequest.newBuilder().setName(name == null ? null : name.toString()).build();
+    return getEntryLink(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets an Entry Link.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   String name =
+   *       EntryLinkName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY_LINK]").toString();
+   *   EntryLink response = catalogServiceClient.getEntryLink(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The resource name of the Entry Link:
+   *     `projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entryLinks/{entry_link_id}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EntryLink getEntryLink(String name) {
+    GetEntryLinkRequest request = GetEntryLinkRequest.newBuilder().setName(name).build();
+    return getEntryLink(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets an Entry Link.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   GetEntryLinkRequest request =
+   *       GetEntryLinkRequest.newBuilder()
+   *           .setName(
+   *               EntryLinkName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY_LINK]")
+   *                   .toString())
+   *           .build();
+   *   EntryLink response = catalogServiceClient.getEntryLink(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final EntryLink getEntryLink(GetEntryLinkRequest request) {
+    return getEntryLinkCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Gets an Entry Link.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (CatalogServiceClient catalogServiceClient = CatalogServiceClient.create()) {
+   *   GetEntryLinkRequest request =
+   *       GetEntryLinkRequest.newBuilder()
+   *           .setName(
+   *               EntryLinkName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY_LINK]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<EntryLink> future = catalogServiceClient.getEntryLinkCallable().futureCall(request);
+   *   // Do something.
+   *   EntryLink response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<GetEntryLinkRequest, EntryLink> getEntryLinkCallable() {
+    return stub.getEntryLinkCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

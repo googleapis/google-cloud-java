@@ -39,6 +39,8 @@ import com.google.cloud.kms.v1.CreateImportJobRequest;
 import com.google.cloud.kms.v1.CreateKeyRingRequest;
 import com.google.cloud.kms.v1.CryptoKey;
 import com.google.cloud.kms.v1.CryptoKeyVersion;
+import com.google.cloud.kms.v1.DecapsulateRequest;
+import com.google.cloud.kms.v1.DecapsulateResponse;
 import com.google.cloud.kms.v1.DecryptRequest;
 import com.google.cloud.kms.v1.DecryptResponse;
 import com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest;
@@ -388,6 +390,17 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<DecapsulateRequest, DecapsulateResponse>
+      decapsulateMethodDescriptor =
+          MethodDescriptor.<DecapsulateRequest, DecapsulateResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.kms.v1.KeyManagementService/Decapsulate")
+              .setRequestMarshaller(ProtoUtils.marshaller(DecapsulateRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(DecapsulateResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<GenerateRandomBytesRequest, GenerateRandomBytesResponse>
       generateRandomBytesMethodDescriptor =
           MethodDescriptor.<GenerateRandomBytesRequest, GenerateRandomBytesResponse>newBuilder()
@@ -495,6 +508,7 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
       asymmetricDecryptCallable;
   private final UnaryCallable<MacSignRequest, MacSignResponse> macSignCallable;
   private final UnaryCallable<MacVerifyRequest, MacVerifyResponse> macVerifyCallable;
+  private final UnaryCallable<DecapsulateRequest, DecapsulateResponse> decapsulateCallable;
   private final UnaryCallable<GenerateRandomBytesRequest, GenerateRandomBytesResponse>
       generateRandomBytesCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
@@ -835,6 +849,16 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<DecapsulateRequest, DecapsulateResponse> decapsulateTransportSettings =
+        GrpcCallSettings.<DecapsulateRequest, DecapsulateResponse>newBuilder()
+            .setMethodDescriptor(decapsulateMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<GenerateRandomBytesRequest, GenerateRandomBytesResponse>
         generateRandomBytesTransportSettings =
             GrpcCallSettings.<GenerateRandomBytesRequest, GenerateRandomBytesResponse>newBuilder()
@@ -1011,6 +1035,9 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
     this.macVerifyCallable =
         callableFactory.createUnaryCallable(
             macVerifyTransportSettings, settings.macVerifySettings(), clientContext);
+    this.decapsulateCallable =
+        callableFactory.createUnaryCallable(
+            decapsulateTransportSettings, settings.decapsulateSettings(), clientContext);
     this.generateRandomBytesCallable =
         callableFactory.createUnaryCallable(
             generateRandomBytesTransportSettings,
@@ -1209,6 +1236,11 @@ public class GrpcKeyManagementServiceStub extends KeyManagementServiceStub {
   @Override
   public UnaryCallable<MacVerifyRequest, MacVerifyResponse> macVerifyCallable() {
     return macVerifyCallable;
+  }
+
+  @Override
+  public UnaryCallable<DecapsulateRequest, DecapsulateResponse> decapsulateCallable() {
+    return decapsulateCallable;
   }
 
   @Override

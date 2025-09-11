@@ -81,6 +81,7 @@ public class AsyncSearchPaged {
                       .toString())
               .setSessionSpec(SearchRequest.SessionSpec.newBuilder().build())
               .setRelevanceScoreSpec(SearchRequest.RelevanceScoreSpec.newBuilder().build())
+              .setRankingExpression("rankingExpression2110320494")
               .build();
       while (true) {
         SearchResponse response = searchServiceClient.searchCallable().call(request);

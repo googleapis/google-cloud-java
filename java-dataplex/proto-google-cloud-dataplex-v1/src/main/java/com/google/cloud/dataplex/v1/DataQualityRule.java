@@ -7895,9 +7895,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Required. The dimension a rule belongs to. Results are also aggregated at
-   * the dimension level. Supported dimensions are **["COMPLETENESS",
-   * "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS", "FRESHNESS",
-   * "VOLUME"]**
+   * the dimension level. Custom dimension name is supported with all uppercase
+   * letters and maximum length of 30 characters.
    * </pre>
    *
    * <code>string dimension = 502 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -7922,9 +7921,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * Required. The dimension a rule belongs to. Results are also aggregated at
-   * the dimension level. Supported dimensions are **["COMPLETENESS",
-   * "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS", "FRESHNESS",
-   * "VOLUME"]**
+   * the dimension level. Custom dimension name is supported with all uppercase
+   * letters and maximum length of 30 characters.
    * </pre>
    *
    * <code>string dimension = 502 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -11355,9 +11353,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. The dimension a rule belongs to. Results are also aggregated at
-     * the dimension level. Supported dimensions are **["COMPLETENESS",
-     * "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS", "FRESHNESS",
-     * "VOLUME"]**
+     * the dimension level. Custom dimension name is supported with all uppercase
+     * letters and maximum length of 30 characters.
      * </pre>
      *
      * <code>string dimension = 502 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -11381,9 +11378,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. The dimension a rule belongs to. Results are also aggregated at
-     * the dimension level. Supported dimensions are **["COMPLETENESS",
-     * "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS", "FRESHNESS",
-     * "VOLUME"]**
+     * the dimension level. Custom dimension name is supported with all uppercase
+     * letters and maximum length of 30 characters.
      * </pre>
      *
      * <code>string dimension = 502 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -11407,9 +11403,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. The dimension a rule belongs to. Results are also aggregated at
-     * the dimension level. Supported dimensions are **["COMPLETENESS",
-     * "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS", "FRESHNESS",
-     * "VOLUME"]**
+     * the dimension level. Custom dimension name is supported with all uppercase
+     * letters and maximum length of 30 characters.
      * </pre>
      *
      * <code>string dimension = 502 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -11432,9 +11427,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. The dimension a rule belongs to. Results are also aggregated at
-     * the dimension level. Supported dimensions are **["COMPLETENESS",
-     * "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS", "FRESHNESS",
-     * "VOLUME"]**
+     * the dimension level. Custom dimension name is supported with all uppercase
+     * letters and maximum length of 30 characters.
      * </pre>
      *
      * <code>string dimension = 502 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -11453,9 +11447,8 @@ public final class DataQualityRule extends com.google.protobuf.GeneratedMessageV
      *
      * <pre>
      * Required. The dimension a rule belongs to. Results are also aggregated at
-     * the dimension level. Supported dimensions are **["COMPLETENESS",
-     * "ACCURACY", "CONSISTENCY", "VALIDITY", "UNIQUENESS", "FRESHNESS",
-     * "VOLUME"]**
+     * the dimension level. Custom dimension name is supported with all uppercase
+     * letters and maximum length of 30 characters.
      * </pre>
      *
      * <code>string dimension = 502 [(.google.api.field_behavior) = REQUIRED];</code>

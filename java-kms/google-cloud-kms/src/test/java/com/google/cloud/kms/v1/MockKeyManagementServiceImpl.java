@@ -631,6 +631,27 @@ public class MockKeyManagementServiceImpl extends KeyManagementServiceImplBase {
   }
 
   @Override
+  public void decapsulate(
+      DecapsulateRequest request, StreamObserver<DecapsulateResponse> responseObserver) {
+    Object response = responses.poll();
+    if (response instanceof DecapsulateResponse) {
+      requests.add(request);
+      responseObserver.onNext(((DecapsulateResponse) response));
+      responseObserver.onCompleted();
+    } else if (response instanceof Exception) {
+      responseObserver.onError(((Exception) response));
+    } else {
+      responseObserver.onError(
+          new IllegalArgumentException(
+              String.format(
+                  "Unrecognized response type %s for method Decapsulate, expected %s or %s",
+                  response == null ? "null" : response.getClass().getName(),
+                  DecapsulateResponse.class.getName(),
+                  Exception.class.getName())));
+    }
+  }
+
+  @Override
   public void generateRandomBytes(
       GenerateRandomBytesRequest request,
       StreamObserver<GenerateRandomBytesResponse> responseObserver) {
