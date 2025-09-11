@@ -139,6 +139,9 @@
             "CreateKeyRing": {
               "methods": ["createKeyRing", "createKeyRing", "createKeyRing", "createKeyRingCallable"]
             },
+            "Decapsulate": {
+              "methods": ["decapsulate", "decapsulateCallable"]
+            },
             "Decrypt": {
               "methods": ["decrypt", "decrypt", "decrypt", "decryptCallable"]
             },

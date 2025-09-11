@@ -595,8 +595,8 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The job was triggered by Dataplex based on trigger spec from task
-     * definition.
+     * The job was triggered by Dataplex Universal Catalog based on trigger spec
+     * from task definition.
      * </pre>
      *
      * <code>TASK_CONFIG = 1;</code>
@@ -630,8 +630,8 @@ public final class JobEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The job was triggered by Dataplex based on trigger spec from task
-     * definition.
+     * The job was triggered by Dataplex Universal Catalog based on trigger spec
+     * from task definition.
      * </pre>
      *
      * <code>TASK_CONFIG = 1;</code>

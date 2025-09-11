@@ -21,7 +21,7 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * Dataplex Cmek Service
+ * Dataplex Universal Catalog Customer Managed Encryption Keys (CMEK) Service
  * </pre>
  */
 @javax.annotation.Generated(
@@ -335,7 +335,7 @@ public final class CmekServiceGrpc {
    *
    *
    * <pre>
-   * Dataplex Cmek Service
+   * Dataplex Universal Catalog Customer Managed Encryption Keys (CMEK) Service
    * </pre>
    */
   public interface AsyncService {
@@ -417,7 +417,7 @@ public final class CmekServiceGrpc {
    * Base class for the server implementation of the service CmekService.
    *
    * <pre>
-   * Dataplex Cmek Service
+   * Dataplex Universal Catalog Customer Managed Encryption Keys (CMEK) Service
    * </pre>
    */
   public abstract static class CmekServiceImplBase
@@ -433,7 +433,7 @@ public final class CmekServiceGrpc {
    * A stub to allow clients to do asynchronous rpc calls to service CmekService.
    *
    * <pre>
-   * Dataplex Cmek Service
+   * Dataplex Universal Catalog Customer Managed Encryption Keys (CMEK) Service
    * </pre>
    */
   public static final class CmekServiceStub
@@ -534,7 +534,7 @@ public final class CmekServiceGrpc {
    * A stub to allow clients to do synchronous rpc calls to service CmekService.
    *
    * <pre>
-   * Dataplex Cmek Service
+   * Dataplex Universal Catalog Customer Managed Encryption Keys (CMEK) Service
    * </pre>
    */
   public static final class CmekServiceBlockingV2Stub
@@ -619,7 +619,7 @@ public final class CmekServiceGrpc {
    * A stub to allow clients to do limited synchronous rpc calls to service CmekService.
    *
    * <pre>
-   * Dataplex Cmek Service
+   * Dataplex Universal Catalog Customer Managed Encryption Keys (CMEK) Service
    * </pre>
    */
   public static final class CmekServiceBlockingStub
@@ -704,7 +704,7 @@ public final class CmekServiceGrpc {
    * A stub to allow clients to do ListenableFuture-style rpc calls to service CmekService.
    *
    * <pre>
-   * Dataplex Cmek Service
+   * Dataplex Universal Catalog Customer Managed Encryption Keys (CMEK) Service
    * </pre>
    */
   public static final class CmekServiceFutureStub

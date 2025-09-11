@@ -5,6 +5,66 @@
   "protoPackage": "google.cloud.dataplex.v1",
   "libraryPackage": "com.google.cloud.dataplex.v1",
   "services": {
+    "BusinessGlossaryService": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "BusinessGlossaryServiceClient",
+          "rpcs": {
+            "CreateGlossary": {
+              "methods": ["createGlossaryAsync", "createGlossaryAsync", "createGlossaryAsync", "createGlossaryOperationCallable", "createGlossaryCallable"]
+            },
+            "CreateGlossaryCategory": {
+              "methods": ["createGlossaryCategory", "createGlossaryCategory", "createGlossaryCategory", "createGlossaryCategoryCallable"]
+            },
+            "CreateGlossaryTerm": {
+              "methods": ["createGlossaryTerm", "createGlossaryTerm", "createGlossaryTerm", "createGlossaryTermCallable"]
+            },
+            "DeleteGlossary": {
+              "methods": ["deleteGlossaryAsync", "deleteGlossaryAsync", "deleteGlossaryAsync", "deleteGlossaryOperationCallable", "deleteGlossaryCallable"]
+            },
+            "DeleteGlossaryCategory": {
+              "methods": ["deleteGlossaryCategory", "deleteGlossaryCategory", "deleteGlossaryCategory", "deleteGlossaryCategoryCallable"]
+            },
+            "DeleteGlossaryTerm": {
+              "methods": ["deleteGlossaryTerm", "deleteGlossaryTerm", "deleteGlossaryTerm", "deleteGlossaryTermCallable"]
+            },
+            "GetGlossary": {
+              "methods": ["getGlossary", "getGlossary", "getGlossary", "getGlossaryCallable"]
+            },
+            "GetGlossaryCategory": {
+              "methods": ["getGlossaryCategory", "getGlossaryCategory", "getGlossaryCategory", "getGlossaryCategoryCallable"]
+            },
+            "GetGlossaryTerm": {
+              "methods": ["getGlossaryTerm", "getGlossaryTerm", "getGlossaryTerm", "getGlossaryTermCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListGlossaries": {
+              "methods": ["listGlossaries", "listGlossaries", "listGlossaries", "listGlossariesPagedCallable", "listGlossariesCallable"]
+            },
+            "ListGlossaryCategories": {
+              "methods": ["listGlossaryCategories", "listGlossaryCategories", "listGlossaryCategories", "listGlossaryCategoriesPagedCallable", "listGlossaryCategoriesCallable"]
+            },
+            "ListGlossaryTerms": {
+              "methods": ["listGlossaryTerms", "listGlossaryTerms", "listGlossaryTerms", "listGlossaryTermsPagedCallable", "listGlossaryTermsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "UpdateGlossary": {
+              "methods": ["updateGlossaryAsync", "updateGlossaryAsync", "updateGlossaryOperationCallable", "updateGlossaryCallable"]
+            },
+            "UpdateGlossaryCategory": {
+              "methods": ["updateGlossaryCategory", "updateGlossaryCategory", "updateGlossaryCategoryCallable"]
+            },
+            "UpdateGlossaryTerm": {
+              "methods": ["updateGlossaryTerm", "updateGlossaryTerm", "updateGlossaryTermCallable"]
+            }
+          }
+        }
+      }
+    },
     "CatalogService": {
       "clients": {
         "grpc": {
@@ -22,6 +82,9 @@
             "CreateEntryGroup": {
               "methods": ["createEntryGroupAsync", "createEntryGroupAsync", "createEntryGroupAsync", "createEntryGroupOperationCallable", "createEntryGroupCallable"]
             },
+            "CreateEntryLink": {
+              "methods": ["createEntryLink", "createEntryLink", "createEntryLink", "createEntryLinkCallable"]
+            },
             "CreateEntryType": {
               "methods": ["createEntryTypeAsync", "createEntryTypeAsync", "createEntryTypeAsync", "createEntryTypeOperationCallable", "createEntryTypeCallable"]
             },
@@ -37,6 +100,9 @@
             "DeleteEntryGroup": {
               "methods": ["deleteEntryGroupAsync", "deleteEntryGroupAsync", "deleteEntryGroupAsync", "deleteEntryGroupOperationCallable", "deleteEntryGroupCallable"]
             },
+            "DeleteEntryLink": {
+              "methods": ["deleteEntryLink", "deleteEntryLink", "deleteEntryLink", "deleteEntryLinkCallable"]
+            },
             "DeleteEntryType": {
               "methods": ["deleteEntryTypeAsync", "deleteEntryTypeAsync", "deleteEntryTypeAsync", "deleteEntryTypeOperationCallable", "deleteEntryTypeCallable"]
             },
@@ -48,6 +114,9 @@
             },
             "GetEntryGroup": {
               "methods": ["getEntryGroup", "getEntryGroup", "getEntryGroup", "getEntryGroupCallable"]
+            },
+            "GetEntryLink": {
+              "methods": ["getEntryLink", "getEntryLink", "getEntryLink", "getEntryLinkCallable"]
             },
             "GetEntryType": {
               "methods": ["getEntryType", "getEntryType", "getEntryType", "getEntryTypeCallable"]

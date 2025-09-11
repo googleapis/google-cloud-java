@@ -90,7 +90,8 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Output only. The time when the entry was created in Dataplex.
+   * Output only. The time when the entry was created in Dataplex Universal
+   * Catalog.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -104,7 +105,8 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Output only. The time when the entry was created in Dataplex.
+   * Output only. The time when the entry was created in Dataplex Universal
+   * Catalog.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -118,7 +120,8 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Output only. The time when the entry was created in Dataplex.
+   * Output only. The time when the entry was created in Dataplex Universal
+   * Catalog.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 5 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -130,7 +133,8 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Output only. The time when the entry was last updated in Dataplex.
+   * Output only. The time when the entry was last updated in Dataplex Universal
+   * Catalog.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -144,7 +148,8 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Output only. The time when the entry was last updated in Dataplex.
+   * Output only. The time when the entry was last updated in Dataplex Universal
+   * Catalog.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -158,7 +163,8 @@ public interface EntryOrBuilder
    *
    *
    * <pre>
-   * Output only. The time when the entry was last updated in Dataplex.
+   * Output only. The time when the entry was last updated in Dataplex Universal
+   * Catalog.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp update_time = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];

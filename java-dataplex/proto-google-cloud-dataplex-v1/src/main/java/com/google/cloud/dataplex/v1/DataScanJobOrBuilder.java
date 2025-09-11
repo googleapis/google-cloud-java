@@ -32,7 +32,7 @@ public interface DataScanJobOrBuilder
    * the form:
    * `projects/{project}/locations/{location_id}/dataScans/{datascan_id}/jobs/{job_id}`,
    * where `project` refers to a *project_id* or *project_number* and
-   * `location_id` refers to a GCP region.
+   * `location_id` refers to a Google Cloud region.
    * </pre>
    *
    * <code>
@@ -51,7 +51,7 @@ public interface DataScanJobOrBuilder
    * the form:
    * `projects/{project}/locations/{location_id}/dataScans/{datascan_id}/jobs/{job_id}`,
    * where `project` refers to a *project_id* or *project_number* and
-   * `location_id` refers to a GCP region.
+   * `location_id` refers to a Google Cloud region.
    * </pre>
    *
    * <code>

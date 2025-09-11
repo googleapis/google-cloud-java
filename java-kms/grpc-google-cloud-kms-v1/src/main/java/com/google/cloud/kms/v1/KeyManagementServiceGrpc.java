@@ -1270,6 +1270,48 @@ public final class KeyManagementServiceGrpc {
   }
 
   private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.kms.v1.DecapsulateRequest, com.google.cloud.kms.v1.DecapsulateResponse>
+      getDecapsulateMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "Decapsulate",
+      requestType = com.google.cloud.kms.v1.DecapsulateRequest.class,
+      responseType = com.google.cloud.kms.v1.DecapsulateResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.kms.v1.DecapsulateRequest, com.google.cloud.kms.v1.DecapsulateResponse>
+      getDecapsulateMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.kms.v1.DecapsulateRequest, com.google.cloud.kms.v1.DecapsulateResponse>
+        getDecapsulateMethod;
+    if ((getDecapsulateMethod = KeyManagementServiceGrpc.getDecapsulateMethod) == null) {
+      synchronized (KeyManagementServiceGrpc.class) {
+        if ((getDecapsulateMethod = KeyManagementServiceGrpc.getDecapsulateMethod) == null) {
+          KeyManagementServiceGrpc.getDecapsulateMethod =
+              getDecapsulateMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.kms.v1.DecapsulateRequest,
+                          com.google.cloud.kms.v1.DecapsulateResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "Decapsulate"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.kms.v1.DecapsulateRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.kms.v1.DecapsulateResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new KeyManagementServiceMethodDescriptorSupplier("Decapsulate"))
+                      .build();
+        }
+      }
+    }
+    return getDecapsulateMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<
           com.google.cloud.kms.v1.GenerateRandomBytesRequest,
           com.google.cloud.kms.v1.GenerateRandomBytesResponse>
       getGenerateRandomBytesMethod;
@@ -1863,6 +1905,24 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
+     * Decapsulates data that was encapsulated with a public key retrieved from
+     * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey]
+     * corresponding to a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
+     * with [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * KEY_ENCAPSULATION.
+     * </pre>
+     */
+    default void decapsulate(
+        com.google.cloud.kms.v1.DecapsulateRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.DecapsulateResponse> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getDecapsulateMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Generate random bytes using the Cloud KMS randomness source in the provided
      * location.
      * </pre>
@@ -2447,6 +2507,26 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
+     * Decapsulates data that was encapsulated with a public key retrieved from
+     * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey]
+     * corresponding to a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
+     * with [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * KEY_ENCAPSULATION.
+     * </pre>
+     */
+    public void decapsulate(
+        com.google.cloud.kms.v1.DecapsulateRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.DecapsulateResponse> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getDecapsulateMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Generate random bytes using the Cloud KMS randomness source in the provided
      * location.
      * </pre>
@@ -2937,6 +3017,23 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
+     * Decapsulates data that was encapsulated with a public key retrieved from
+     * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey]
+     * corresponding to a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
+     * with [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * KEY_ENCAPSULATION.
+     * </pre>
+     */
+    public com.google.cloud.kms.v1.DecapsulateResponse decapsulate(
+        com.google.cloud.kms.v1.DecapsulateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDecapsulateMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Generate random bytes using the Cloud KMS randomness source in the provided
      * location.
      * </pre>
@@ -3417,6 +3514,23 @@ public final class KeyManagementServiceGrpc {
         com.google.cloud.kms.v1.MacVerifyRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getMacVerifyMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Decapsulates data that was encapsulated with a public key retrieved from
+     * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey]
+     * corresponding to a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
+     * with [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * KEY_ENCAPSULATION.
+     * </pre>
+     */
+    public com.google.cloud.kms.v1.DecapsulateResponse decapsulate(
+        com.google.cloud.kms.v1.DecapsulateRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getDecapsulateMethod(), getCallOptions(), request);
     }
 
     /**
@@ -3929,6 +4043,24 @@ public final class KeyManagementServiceGrpc {
      *
      *
      * <pre>
+     * Decapsulates data that was encapsulated with a public key retrieved from
+     * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey]
+     * corresponding to a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
+     * with [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose]
+     * KEY_ENCAPSULATION.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.kms.v1.DecapsulateResponse>
+        decapsulate(com.google.cloud.kms.v1.DecapsulateRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getDecapsulateMethod(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Generate random bytes using the Cloud KMS randomness source in the provided
      * location.
      * </pre>
@@ -3968,7 +4100,8 @@ public final class KeyManagementServiceGrpc {
   private static final int METHODID_ASYMMETRIC_DECRYPT = 24;
   private static final int METHODID_MAC_SIGN = 25;
   private static final int METHODID_MAC_VERIFY = 26;
-  private static final int METHODID_GENERATE_RANDOM_BYTES = 27;
+  private static final int METHODID_DECAPSULATE = 27;
+  private static final int METHODID_GENERATE_RANDOM_BYTES = 28;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -4138,6 +4271,12 @@ public final class KeyManagementServiceGrpc {
           serviceImpl.macVerify(
               (com.google.cloud.kms.v1.MacVerifyRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.MacVerifyResponse>)
+                  responseObserver);
+          break;
+        case METHODID_DECAPSULATE:
+          serviceImpl.decapsulate(
+              (com.google.cloud.kms.v1.DecapsulateRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.kms.v1.DecapsulateResponse>)
                   responseObserver);
           break;
         case METHODID_GENERATE_RANDOM_BYTES:
@@ -4340,6 +4479,12 @@ public final class KeyManagementServiceGrpc {
                     com.google.cloud.kms.v1.MacVerifyRequest,
                     com.google.cloud.kms.v1.MacVerifyResponse>(service, METHODID_MAC_VERIFY)))
         .addMethod(
+            getDecapsulateMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.kms.v1.DecapsulateRequest,
+                    com.google.cloud.kms.v1.DecapsulateResponse>(service, METHODID_DECAPSULATE)))
+        .addMethod(
             getGenerateRandomBytesMethod(),
             io.grpc.stub.ServerCalls.asyncUnaryCall(
                 new MethodHandlers<
@@ -4424,6 +4569,7 @@ public final class KeyManagementServiceGrpc {
                       .addMethod(getAsymmetricDecryptMethod())
                       .addMethod(getMacSignMethod())
                       .addMethod(getMacVerifyMethod())
+                      .addMethod(getDecapsulateMethod())
                       .addMethod(getGenerateRandomBytesMethod())
                       .build();
         }

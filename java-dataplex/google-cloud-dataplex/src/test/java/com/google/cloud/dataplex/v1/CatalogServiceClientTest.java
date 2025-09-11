@@ -2395,6 +2395,286 @@ public class CatalogServiceClientTest {
   }
 
   @Test
+  public void createEntryLinkTest() throws Exception {
+    EntryLink expectedResponse =
+        EntryLink.newBuilder()
+            .setName(
+                EntryLinkName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY_LINK]")
+                    .toString())
+            .setEntryLinkType("entryLinkType129827046")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllEntryReferences(new ArrayList<EntryLink.EntryReference>())
+            .build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    EntryGroupName parent = EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]");
+    EntryLink entryLink = EntryLink.newBuilder().build();
+    String entryLinkId = "entryLinkId-1349584441";
+
+    EntryLink actualResponse = client.createEntryLink(parent, entryLink, entryLinkId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateEntryLinkRequest actualRequest = ((CreateEntryLinkRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent.toString(), actualRequest.getParent());
+    Assert.assertEquals(entryLink, actualRequest.getEntryLink());
+    Assert.assertEquals(entryLinkId, actualRequest.getEntryLinkId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createEntryLinkExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      EntryGroupName parent = EntryGroupName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]");
+      EntryLink entryLink = EntryLink.newBuilder().build();
+      String entryLinkId = "entryLinkId-1349584441";
+      client.createEntryLink(parent, entryLink, entryLinkId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createEntryLinkTest2() throws Exception {
+    EntryLink expectedResponse =
+        EntryLink.newBuilder()
+            .setName(
+                EntryLinkName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY_LINK]")
+                    .toString())
+            .setEntryLinkType("entryLinkType129827046")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllEntryReferences(new ArrayList<EntryLink.EntryReference>())
+            .build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    String parent = "parent-995424086";
+    EntryLink entryLink = EntryLink.newBuilder().build();
+    String entryLinkId = "entryLinkId-1349584441";
+
+    EntryLink actualResponse = client.createEntryLink(parent, entryLink, entryLinkId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    CreateEntryLinkRequest actualRequest = ((CreateEntryLinkRequest) actualRequests.get(0));
+
+    Assert.assertEquals(parent, actualRequest.getParent());
+    Assert.assertEquals(entryLink, actualRequest.getEntryLink());
+    Assert.assertEquals(entryLinkId, actualRequest.getEntryLinkId());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void createEntryLinkExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      String parent = "parent-995424086";
+      EntryLink entryLink = EntryLink.newBuilder().build();
+      String entryLinkId = "entryLinkId-1349584441";
+      client.createEntryLink(parent, entryLink, entryLinkId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteEntryLinkTest() throws Exception {
+    EntryLink expectedResponse =
+        EntryLink.newBuilder()
+            .setName(
+                EntryLinkName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY_LINK]")
+                    .toString())
+            .setEntryLinkType("entryLinkType129827046")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllEntryReferences(new ArrayList<EntryLink.EntryReference>())
+            .build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    EntryLinkName name =
+        EntryLinkName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY_LINK]");
+
+    EntryLink actualResponse = client.deleteEntryLink(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteEntryLinkRequest actualRequest = ((DeleteEntryLinkRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteEntryLinkExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      EntryLinkName name =
+          EntryLinkName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY_LINK]");
+      client.deleteEntryLink(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteEntryLinkTest2() throws Exception {
+    EntryLink expectedResponse =
+        EntryLink.newBuilder()
+            .setName(
+                EntryLinkName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY_LINK]")
+                    .toString())
+            .setEntryLinkType("entryLinkType129827046")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllEntryReferences(new ArrayList<EntryLink.EntryReference>())
+            .build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    EntryLink actualResponse = client.deleteEntryLink(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    DeleteEntryLinkRequest actualRequest = ((DeleteEntryLinkRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void deleteEntryLinkExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.deleteEntryLink(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getEntryLinkTest() throws Exception {
+    EntryLink expectedResponse =
+        EntryLink.newBuilder()
+            .setName(
+                EntryLinkName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY_LINK]")
+                    .toString())
+            .setEntryLinkType("entryLinkType129827046")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllEntryReferences(new ArrayList<EntryLink.EntryReference>())
+            .build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    EntryLinkName name =
+        EntryLinkName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY_LINK]");
+
+    EntryLink actualResponse = client.getEntryLink(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetEntryLinkRequest actualRequest = ((GetEntryLinkRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getEntryLinkExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      EntryLinkName name =
+          EntryLinkName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY_LINK]");
+      client.getEntryLink(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void getEntryLinkTest2() throws Exception {
+    EntryLink expectedResponse =
+        EntryLink.newBuilder()
+            .setName(
+                EntryLinkName.of("[PROJECT]", "[LOCATION]", "[ENTRY_GROUP]", "[ENTRY_LINK]")
+                    .toString())
+            .setEntryLinkType("entryLinkType129827046")
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .addAllEntryReferences(new ArrayList<EntryLink.EntryReference>())
+            .build();
+    mockCatalogService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    EntryLink actualResponse = client.getEntryLink(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockCatalogService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    GetEntryLinkRequest actualRequest = ((GetEntryLinkRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void getEntryLinkExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockCatalogService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.getEntryLink(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void listLocationsTest() throws Exception {
     Location responsesElement = Location.newBuilder().build();
     ListLocationsResponse expectedResponse =

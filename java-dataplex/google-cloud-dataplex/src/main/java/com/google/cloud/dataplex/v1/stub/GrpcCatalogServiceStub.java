@@ -36,18 +36,22 @@ import com.google.cloud.dataplex.v1.AspectType;
 import com.google.cloud.dataplex.v1.CancelMetadataJobRequest;
 import com.google.cloud.dataplex.v1.CreateAspectTypeRequest;
 import com.google.cloud.dataplex.v1.CreateEntryGroupRequest;
+import com.google.cloud.dataplex.v1.CreateEntryLinkRequest;
 import com.google.cloud.dataplex.v1.CreateEntryRequest;
 import com.google.cloud.dataplex.v1.CreateEntryTypeRequest;
 import com.google.cloud.dataplex.v1.CreateMetadataJobRequest;
 import com.google.cloud.dataplex.v1.DeleteAspectTypeRequest;
 import com.google.cloud.dataplex.v1.DeleteEntryGroupRequest;
+import com.google.cloud.dataplex.v1.DeleteEntryLinkRequest;
 import com.google.cloud.dataplex.v1.DeleteEntryRequest;
 import com.google.cloud.dataplex.v1.DeleteEntryTypeRequest;
 import com.google.cloud.dataplex.v1.Entry;
 import com.google.cloud.dataplex.v1.EntryGroup;
+import com.google.cloud.dataplex.v1.EntryLink;
 import com.google.cloud.dataplex.v1.EntryType;
 import com.google.cloud.dataplex.v1.GetAspectTypeRequest;
 import com.google.cloud.dataplex.v1.GetEntryGroupRequest;
+import com.google.cloud.dataplex.v1.GetEntryLinkRequest;
 import com.google.cloud.dataplex.v1.GetEntryRequest;
 import com.google.cloud.dataplex.v1.GetEntryTypeRequest;
 import com.google.cloud.dataplex.v1.GetMetadataJobRequest;
@@ -371,6 +375,38 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<CreateEntryLinkRequest, EntryLink>
+      createEntryLinkMethodDescriptor =
+          MethodDescriptor.<CreateEntryLinkRequest, EntryLink>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dataplex.v1.CatalogService/CreateEntryLink")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateEntryLinkRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(EntryLink.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<DeleteEntryLinkRequest, EntryLink>
+      deleteEntryLinkMethodDescriptor =
+          MethodDescriptor.<DeleteEntryLinkRequest, EntryLink>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dataplex.v1.CatalogService/DeleteEntryLink")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(DeleteEntryLinkRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(EntryLink.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<GetEntryLinkRequest, EntryLink>
+      getEntryLinkMethodDescriptor =
+          MethodDescriptor.<GetEntryLinkRequest, EntryLink>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.dataplex.v1.CatalogService/GetEntryLink")
+              .setRequestMarshaller(ProtoUtils.marshaller(GetEntryLinkRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(EntryLink.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -453,6 +489,9 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
   private final UnaryCallable<ListMetadataJobsRequest, ListMetadataJobsPagedResponse>
       listMetadataJobsPagedCallable;
   private final UnaryCallable<CancelMetadataJobRequest, Empty> cancelMetadataJobCallable;
+  private final UnaryCallable<CreateEntryLinkRequest, EntryLink> createEntryLinkCallable;
+  private final UnaryCallable<DeleteEntryLinkRequest, EntryLink> deleteEntryLinkCallable;
+  private final UnaryCallable<GetEntryLinkRequest, EntryLink> getEntryLinkCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -768,6 +807,36 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<CreateEntryLinkRequest, EntryLink> createEntryLinkTransportSettings =
+        GrpcCallSettings.<CreateEntryLinkRequest, EntryLink>newBuilder()
+            .setMethodDescriptor(createEntryLinkMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<DeleteEntryLinkRequest, EntryLink> deleteEntryLinkTransportSettings =
+        GrpcCallSettings.<DeleteEntryLinkRequest, EntryLink>newBuilder()
+            .setMethodDescriptor(deleteEntryLinkMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<GetEntryLinkRequest, EntryLink> getEntryLinkTransportSettings =
+        GrpcCallSettings.<GetEntryLinkRequest, EntryLink>newBuilder()
+            .setMethodDescriptor(getEntryLinkMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -949,6 +1018,15 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
             cancelMetadataJobTransportSettings,
             settings.cancelMetadataJobSettings(),
             clientContext);
+    this.createEntryLinkCallable =
+        callableFactory.createUnaryCallable(
+            createEntryLinkTransportSettings, settings.createEntryLinkSettings(), clientContext);
+    this.deleteEntryLinkCallable =
+        callableFactory.createUnaryCallable(
+            deleteEntryLinkTransportSettings, settings.deleteEntryLinkSettings(), clientContext);
+    this.getEntryLinkCallable =
+        callableFactory.createUnaryCallable(
+            getEntryLinkTransportSettings, settings.getEntryLinkSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1191,6 +1269,21 @@ public class GrpcCatalogServiceStub extends CatalogServiceStub {
   @Override
   public UnaryCallable<CancelMetadataJobRequest, Empty> cancelMetadataJobCallable() {
     return cancelMetadataJobCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateEntryLinkRequest, EntryLink> createEntryLinkCallable() {
+    return createEntryLinkCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteEntryLinkRequest, EntryLink> deleteEntryLinkCallable() {
+    return deleteEntryLinkCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetEntryLinkRequest, EntryLink> getEntryLinkCallable() {
+    return getEntryLinkCallable;
   }
 
   @Override

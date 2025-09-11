@@ -92,8 +92,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The IAM permission grantable on the EntryGroup to allow access
-     * to instantiate Aspects of Dataplex owned AspectTypes, only settable for
-     * Dataplex owned Types.
+     * to instantiate Aspects of Dataplex Universal Catalog owned AspectTypes,
+     * only settable for Dataplex Universal Catalog owned Types.
      * </pre>
      *
      * <code>string alternate_use_permission = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -107,8 +107,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The IAM permission grantable on the EntryGroup to allow access
-     * to instantiate Aspects of Dataplex owned AspectTypes, only settable for
-     * Dataplex owned Types.
+     * to instantiate Aspects of Dataplex Universal Catalog owned AspectTypes,
+     * only settable for Dataplex Universal Catalog owned Types.
      * </pre>
      *
      * <code>string alternate_use_permission = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -122,7 +122,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Autorization for an AspectType.
+   * Authorization for an AspectType.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataplex.v1.AspectType.Authorization}
@@ -173,8 +173,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The IAM permission grantable on the EntryGroup to allow access
-     * to instantiate Aspects of Dataplex owned AspectTypes, only settable for
-     * Dataplex owned Types.
+     * to instantiate Aspects of Dataplex Universal Catalog owned AspectTypes,
+     * only settable for Dataplex Universal Catalog owned Types.
      * </pre>
      *
      * <code>string alternate_use_permission = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -199,8 +199,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Immutable. The IAM permission grantable on the EntryGroup to allow access
-     * to instantiate Aspects of Dataplex owned AspectTypes, only settable for
-     * Dataplex owned Types.
+     * to instantiate Aspects of Dataplex Universal Catalog owned AspectTypes,
+     * only settable for Dataplex Universal Catalog owned Types.
      * </pre>
      *
      * <code>string alternate_use_permission = 1 [(.google.api.field_behavior) = IMMUTABLE];</code>
@@ -387,7 +387,7 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Autorization for an AspectType.
+     * Authorization for an AspectType.
      * </pre>
      *
      * Protobuf type {@code google.cloud.dataplex.v1.AspectType.Authorization}
@@ -576,8 +576,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Immutable. The IAM permission grantable on the EntryGroup to allow access
-       * to instantiate Aspects of Dataplex owned AspectTypes, only settable for
-       * Dataplex owned Types.
+       * to instantiate Aspects of Dataplex Universal Catalog owned AspectTypes,
+       * only settable for Dataplex Universal Catalog owned Types.
        * </pre>
        *
        * <code>string alternate_use_permission = 1 [(.google.api.field_behavior) = IMMUTABLE];
@@ -602,8 +602,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Immutable. The IAM permission grantable on the EntryGroup to allow access
-       * to instantiate Aspects of Dataplex owned AspectTypes, only settable for
-       * Dataplex owned Types.
+       * to instantiate Aspects of Dataplex Universal Catalog owned AspectTypes,
+       * only settable for Dataplex Universal Catalog owned Types.
        * </pre>
        *
        * <code>string alternate_use_permission = 1 [(.google.api.field_behavior) = IMMUTABLE];
@@ -628,8 +628,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Immutable. The IAM permission grantable on the EntryGroup to allow access
-       * to instantiate Aspects of Dataplex owned AspectTypes, only settable for
-       * Dataplex owned Types.
+       * to instantiate Aspects of Dataplex Universal Catalog owned AspectTypes,
+       * only settable for Dataplex Universal Catalog owned Types.
        * </pre>
        *
        * <code>string alternate_use_permission = 1 [(.google.api.field_behavior) = IMMUTABLE];
@@ -653,8 +653,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Immutable. The IAM permission grantable on the EntryGroup to allow access
-       * to instantiate Aspects of Dataplex owned AspectTypes, only settable for
-       * Dataplex owned Types.
+       * to instantiate Aspects of Dataplex Universal Catalog owned AspectTypes,
+       * only settable for Dataplex Universal Catalog owned Types.
        * </pre>
        *
        * <code>string alternate_use_permission = 1 [(.google.api.field_behavior) = IMMUTABLE];
@@ -674,8 +674,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Immutable. The IAM permission grantable on the EntryGroup to allow access
-       * to instantiate Aspects of Dataplex owned AspectTypes, only settable for
-       * Dataplex owned Types.
+       * to instantiate Aspects of Dataplex Universal Catalog owned AspectTypes,
+       * only settable for Dataplex Universal Catalog owned Types.
        * </pre>
        *
        * <code>string alternate_use_permission = 1 [(.google.api.field_behavior) = IMMUTABLE];
@@ -817,8 +817,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      * Primitive types:
      *
      * * string
-     * * integer
-     * * boolean
+     * * int
+     * * bool
      * * double
      * * datetime. Must be of the format RFC3339 UTC "Zulu" (Examples:
      * "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z").
@@ -846,8 +846,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      * Primitive types:
      *
      * * string
-     * * integer
-     * * boolean
+     * * int
+     * * bool
      * * double
      * * datetime. Must be of the format RFC3339 UTC "Zulu" (Examples:
      * "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z").
@@ -4833,8 +4833,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      * Primitive types:
      *
      * * string
-     * * integer
-     * * boolean
+     * * int
+     * * bool
      * * double
      * * datetime. Must be of the format RFC3339 UTC "Zulu" (Examples:
      * "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z").
@@ -4873,8 +4873,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
      * Primitive types:
      *
      * * string
-     * * integer
-     * * boolean
+     * * int
+     * * bool
      * * double
      * * datetime. Must be of the format RFC3339 UTC "Zulu" (Examples:
      * "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z").
@@ -6402,8 +6402,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        * Primitive types:
        *
        * * string
-       * * integer
-       * * boolean
+       * * int
+       * * bool
        * * double
        * * datetime. Must be of the format RFC3339 UTC "Zulu" (Examples:
        * "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z").
@@ -6441,8 +6441,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        * Primitive types:
        *
        * * string
-       * * integer
-       * * boolean
+       * * int
+       * * bool
        * * double
        * * datetime. Must be of the format RFC3339 UTC "Zulu" (Examples:
        * "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z").
@@ -6480,8 +6480,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        * Primitive types:
        *
        * * string
-       * * integer
-       * * boolean
+       * * int
+       * * bool
        * * double
        * * datetime. Must be of the format RFC3339 UTC "Zulu" (Examples:
        * "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z").
@@ -6518,8 +6518,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        * Primitive types:
        *
        * * string
-       * * integer
-       * * boolean
+       * * int
+       * * bool
        * * double
        * * datetime. Must be of the format RFC3339 UTC "Zulu" (Examples:
        * "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z").
@@ -6552,8 +6552,8 @@ public final class AspectType extends com.google.protobuf.GeneratedMessageV3
        * Primitive types:
        *
        * * string
-       * * integer
-       * * boolean
+       * * int
+       * * bool
        * * double
        * * datetime. Must be of the format RFC3339 UTC "Zulu" (Examples:
        * "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z").

@@ -255,6 +255,11 @@ public class KeyManagementServiceSettings extends ClientSettings<KeyManagementSe
     return ((KeyManagementServiceStubSettings) getStubSettings()).macVerifySettings();
   }
 
+  /** Returns the object with the settings used for calls to decapsulate. */
+  public UnaryCallSettings<DecapsulateRequest, DecapsulateResponse> decapsulateSettings() {
+    return ((KeyManagementServiceStubSettings) getStubSettings()).decapsulateSettings();
+  }
+
   /** Returns the object with the settings used for calls to generateRandomBytes. */
   public UnaryCallSettings<GenerateRandomBytesRequest, GenerateRandomBytesResponse>
       generateRandomBytesSettings() {
@@ -553,6 +558,12 @@ public class KeyManagementServiceSettings extends ClientSettings<KeyManagementSe
     /** Returns the builder for the settings used for calls to macVerify. */
     public UnaryCallSettings.Builder<MacVerifyRequest, MacVerifyResponse> macVerifySettings() {
       return getStubSettingsBuilder().macVerifySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to decapsulate. */
+    public UnaryCallSettings.Builder<DecapsulateRequest, DecapsulateResponse>
+        decapsulateSettings() {
+      return getStubSettingsBuilder().decapsulateSettings();
     }
 
     /** Returns the builder for the settings used for calls to generateRandomBytes. */

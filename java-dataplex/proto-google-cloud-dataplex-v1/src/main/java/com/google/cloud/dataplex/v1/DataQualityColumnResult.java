@@ -42,6 +42,7 @@ public final class DataQualityColumnResult extends com.google.protobuf.Generated
 
   private DataQualityColumnResult() {
     column_ = "";
+    dimensions_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -162,6 +163,113 @@ public final class DataQualityColumnResult extends com.google.protobuf.Generated
     return score_;
   }
 
+  public static final int PASSED_FIELD_NUMBER = 3;
+  private boolean passed_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether the column passed or failed.
+   * </pre>
+   *
+   * <code>bool passed = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The passed.
+   */
+  @java.lang.Override
+  public boolean getPassed() {
+    return passed_;
+  }
+
+  public static final int DIMENSIONS_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.dataplex.v1.DataQualityDimensionResult> dimensions_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The dimension-level results for this column.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.dataplex.v1.DataQualityDimensionResult>
+      getDimensionsList() {
+    return dimensions_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The dimension-level results for this column.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.dataplex.v1.DataQualityDimensionResultOrBuilder>
+      getDimensionsOrBuilderList() {
+    return dimensions_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The dimension-level results for this column.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getDimensionsCount() {
+    return dimensions_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The dimension-level results for this column.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataQualityDimensionResult getDimensions(int index) {
+    return dimensions_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The dimension-level results for this column.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataQualityDimensionResultOrBuilder getDimensionsOrBuilder(
+      int index) {
+    return dimensions_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -182,6 +290,12 @@ public final class DataQualityColumnResult extends com.google.protobuf.Generated
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeFloat(2, score_);
     }
+    if (passed_ != false) {
+      output.writeBool(3, passed_);
+    }
+    for (int i = 0; i < dimensions_.size(); i++) {
+      output.writeMessage(4, dimensions_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -196,6 +310,12 @@ public final class DataQualityColumnResult extends com.google.protobuf.Generated
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, score_);
+    }
+    if (passed_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, passed_);
+    }
+    for (int i = 0; i < dimensions_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, dimensions_.get(i));
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -219,6 +339,8 @@ public final class DataQualityColumnResult extends com.google.protobuf.Generated
       if (java.lang.Float.floatToIntBits(getScore())
           != java.lang.Float.floatToIntBits(other.getScore())) return false;
     }
+    if (getPassed() != other.getPassed()) return false;
+    if (!getDimensionsList().equals(other.getDimensionsList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -235,6 +357,12 @@ public final class DataQualityColumnResult extends com.google.protobuf.Generated
     if (hasScore()) {
       hash = (37 * hash) + SCORE_FIELD_NUMBER;
       hash = (53 * hash) + java.lang.Float.floatToIntBits(getScore());
+    }
+    hash = (37 * hash) + PASSED_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPassed());
+    if (getDimensionsCount() > 0) {
+      hash = (37 * hash) + DIMENSIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getDimensionsList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -379,6 +507,14 @@ public final class DataQualityColumnResult extends com.google.protobuf.Generated
       bitField0_ = 0;
       column_ = "";
       score_ = 0F;
+      passed_ = false;
+      if (dimensionsBuilder_ == null) {
+        dimensions_ = java.util.Collections.emptyList();
+      } else {
+        dimensions_ = null;
+        dimensionsBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000008);
       return this;
     }
 
@@ -406,11 +542,25 @@ public final class DataQualityColumnResult extends com.google.protobuf.Generated
     public com.google.cloud.dataplex.v1.DataQualityColumnResult buildPartial() {
       com.google.cloud.dataplex.v1.DataQualityColumnResult result =
           new com.google.cloud.dataplex.v1.DataQualityColumnResult(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(
+        com.google.cloud.dataplex.v1.DataQualityColumnResult result) {
+      if (dimensionsBuilder_ == null) {
+        if (((bitField0_ & 0x00000008) != 0)) {
+          dimensions_ = java.util.Collections.unmodifiableList(dimensions_);
+          bitField0_ = (bitField0_ & ~0x00000008);
+        }
+        result.dimensions_ = dimensions_;
+      } else {
+        result.dimensions_ = dimensionsBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.dataplex.v1.DataQualityColumnResult result) {
@@ -422,6 +572,9 @@ public final class DataQualityColumnResult extends com.google.protobuf.Generated
       if (((from_bitField0_ & 0x00000002) != 0)) {
         result.score_ = score_;
         to_bitField0_ |= 0x00000001;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.passed_ = passed_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -480,6 +633,36 @@ public final class DataQualityColumnResult extends com.google.protobuf.Generated
       if (other.hasScore()) {
         setScore(other.getScore());
       }
+      if (other.getPassed() != false) {
+        setPassed(other.getPassed());
+      }
+      if (dimensionsBuilder_ == null) {
+        if (!other.dimensions_.isEmpty()) {
+          if (dimensions_.isEmpty()) {
+            dimensions_ = other.dimensions_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+          } else {
+            ensureDimensionsIsMutable();
+            dimensions_.addAll(other.dimensions_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.dimensions_.isEmpty()) {
+          if (dimensionsBuilder_.isEmpty()) {
+            dimensionsBuilder_.dispose();
+            dimensionsBuilder_ = null;
+            dimensions_ = other.dimensions_;
+            bitField0_ = (bitField0_ & ~0x00000008);
+            dimensionsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getDimensionsFieldBuilder()
+                    : null;
+          } else {
+            dimensionsBuilder_.addAllMessages(other.dimensions_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -518,6 +701,26 @@ public final class DataQualityColumnResult extends com.google.protobuf.Generated
                 bitField0_ |= 0x00000002;
                 break;
               } // case 21
+            case 24:
+              {
+                passed_ = input.readBool();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 24
+            case 34:
+              {
+                com.google.cloud.dataplex.v1.DataQualityDimensionResult m =
+                    input.readMessage(
+                        com.google.cloud.dataplex.v1.DataQualityDimensionResult.parser(),
+                        extensionRegistry);
+                if (dimensionsBuilder_ == null) {
+                  ensureDimensionsIsMutable();
+                  dimensions_.add(m);
+                } else {
+                  dimensionsBuilder_.addMessage(m);
+                }
+                break;
+              } // case 34
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -734,6 +937,478 @@ public final class DataQualityColumnResult extends com.google.protobuf.Generated
       score_ = 0F;
       onChanged();
       return this;
+    }
+
+    private boolean passed_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether the column passed or failed.
+     * </pre>
+     *
+     * <code>bool passed = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The passed.
+     */
+    @java.lang.Override
+    public boolean getPassed() {
+      return passed_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether the column passed or failed.
+     * </pre>
+     *
+     * <code>bool passed = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @param value The passed to set.
+     * @return This builder for chaining.
+     */
+    public Builder setPassed(boolean value) {
+
+      passed_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Whether the column passed or failed.
+     * </pre>
+     *
+     * <code>bool passed = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearPassed() {
+      bitField0_ = (bitField0_ & ~0x00000004);
+      passed_ = false;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.google.cloud.dataplex.v1.DataQualityDimensionResult> dimensions_ =
+        java.util.Collections.emptyList();
+
+    private void ensureDimensionsIsMutable() {
+      if (!((bitField0_ & 0x00000008) != 0)) {
+        dimensions_ =
+            new java.util.ArrayList<com.google.cloud.dataplex.v1.DataQualityDimensionResult>(
+                dimensions_);
+        bitField0_ |= 0x00000008;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.dataplex.v1.DataQualityDimensionResult,
+            com.google.cloud.dataplex.v1.DataQualityDimensionResult.Builder,
+            com.google.cloud.dataplex.v1.DataQualityDimensionResultOrBuilder>
+        dimensionsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The dimension-level results for this column.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.dataplex.v1.DataQualityDimensionResult>
+        getDimensionsList() {
+      if (dimensionsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(dimensions_);
+      } else {
+        return dimensionsBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The dimension-level results for this column.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getDimensionsCount() {
+      if (dimensionsBuilder_ == null) {
+        return dimensions_.size();
+      } else {
+        return dimensionsBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The dimension-level results for this column.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.DataQualityDimensionResult getDimensions(int index) {
+      if (dimensionsBuilder_ == null) {
+        return dimensions_.get(index);
+      } else {
+        return dimensionsBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The dimension-level results for this column.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDimensions(
+        int index, com.google.cloud.dataplex.v1.DataQualityDimensionResult value) {
+      if (dimensionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDimensionsIsMutable();
+        dimensions_.set(index, value);
+        onChanged();
+      } else {
+        dimensionsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The dimension-level results for this column.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setDimensions(
+        int index,
+        com.google.cloud.dataplex.v1.DataQualityDimensionResult.Builder builderForValue) {
+      if (dimensionsBuilder_ == null) {
+        ensureDimensionsIsMutable();
+        dimensions_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        dimensionsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The dimension-level results for this column.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addDimensions(com.google.cloud.dataplex.v1.DataQualityDimensionResult value) {
+      if (dimensionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDimensionsIsMutable();
+        dimensions_.add(value);
+        onChanged();
+      } else {
+        dimensionsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The dimension-level results for this column.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addDimensions(
+        int index, com.google.cloud.dataplex.v1.DataQualityDimensionResult value) {
+      if (dimensionsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureDimensionsIsMutable();
+        dimensions_.add(index, value);
+        onChanged();
+      } else {
+        dimensionsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The dimension-level results for this column.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addDimensions(
+        com.google.cloud.dataplex.v1.DataQualityDimensionResult.Builder builderForValue) {
+      if (dimensionsBuilder_ == null) {
+        ensureDimensionsIsMutable();
+        dimensions_.add(builderForValue.build());
+        onChanged();
+      } else {
+        dimensionsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The dimension-level results for this column.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addDimensions(
+        int index,
+        com.google.cloud.dataplex.v1.DataQualityDimensionResult.Builder builderForValue) {
+      if (dimensionsBuilder_ == null) {
+        ensureDimensionsIsMutable();
+        dimensions_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        dimensionsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The dimension-level results for this column.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllDimensions(
+        java.lang.Iterable<? extends com.google.cloud.dataplex.v1.DataQualityDimensionResult>
+            values) {
+      if (dimensionsBuilder_ == null) {
+        ensureDimensionsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, dimensions_);
+        onChanged();
+      } else {
+        dimensionsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The dimension-level results for this column.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearDimensions() {
+      if (dimensionsBuilder_ == null) {
+        dimensions_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+      } else {
+        dimensionsBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The dimension-level results for this column.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeDimensions(int index) {
+      if (dimensionsBuilder_ == null) {
+        ensureDimensionsIsMutable();
+        dimensions_.remove(index);
+        onChanged();
+      } else {
+        dimensionsBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The dimension-level results for this column.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.DataQualityDimensionResult.Builder getDimensionsBuilder(
+        int index) {
+      return getDimensionsFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The dimension-level results for this column.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.DataQualityDimensionResultOrBuilder getDimensionsOrBuilder(
+        int index) {
+      if (dimensionsBuilder_ == null) {
+        return dimensions_.get(index);
+      } else {
+        return dimensionsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The dimension-level results for this column.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.dataplex.v1.DataQualityDimensionResultOrBuilder>
+        getDimensionsOrBuilderList() {
+      if (dimensionsBuilder_ != null) {
+        return dimensionsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(dimensions_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The dimension-level results for this column.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.DataQualityDimensionResult.Builder addDimensionsBuilder() {
+      return getDimensionsFieldBuilder()
+          .addBuilder(com.google.cloud.dataplex.v1.DataQualityDimensionResult.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The dimension-level results for this column.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.DataQualityDimensionResult.Builder addDimensionsBuilder(
+        int index) {
+      return getDimensionsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.dataplex.v1.DataQualityDimensionResult.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The dimension-level results for this column.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.dataplex.v1.DataQualityDimensionResult dimensions = 4 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.dataplex.v1.DataQualityDimensionResult.Builder>
+        getDimensionsBuilderList() {
+      return getDimensionsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.dataplex.v1.DataQualityDimensionResult,
+            com.google.cloud.dataplex.v1.DataQualityDimensionResult.Builder,
+            com.google.cloud.dataplex.v1.DataQualityDimensionResultOrBuilder>
+        getDimensionsFieldBuilder() {
+      if (dimensionsBuilder_ == null) {
+        dimensionsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.dataplex.v1.DataQualityDimensionResult,
+                com.google.cloud.dataplex.v1.DataQualityDimensionResult.Builder,
+                com.google.cloud.dataplex.v1.DataQualityDimensionResultOrBuilder>(
+                dimensions_, ((bitField0_ & 0x00000008) != 0), getParentForChildren(), isClean());
+        dimensions_ = null;
+      }
+      return dimensionsBuilder_;
     }
 
     @java.lang.Override

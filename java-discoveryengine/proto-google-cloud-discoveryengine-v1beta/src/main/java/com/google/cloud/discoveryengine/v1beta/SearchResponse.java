@@ -262,6 +262,51 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
      * </code>
      */
     com.google.cloud.discoveryengine.v1beta.DoubleList getModelScoresOrThrow(java.lang.String key);
+
+    /**
+     *
+     *
+     * <pre>
+     * A set of ranking signals associated with the result.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals rank_signals = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the rankSignals field is set.
+     */
+    boolean hasRankSignals();
+
+    /**
+     *
+     *
+     * <pre>
+     * A set of ranking signals associated with the result.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals rank_signals = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The rankSignals.
+     */
+    com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+        getRankSignals();
+
+    /**
+     *
+     *
+     * <pre>
+     * A set of ranking signals associated with the result.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals rank_signals = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignalsOrBuilder
+        getRankSignalsOrBuilder();
   }
 
   /**
@@ -319,6 +364,3331 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           .ensureFieldAccessorsInitialized(
               com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.class,
               com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.Builder.class);
+    }
+
+    public interface RankSignalsOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Keyword matching adjustment.
+       * </pre>
+       *
+       * <code>
+       * optional float keyword_similarity_score = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the keywordSimilarityScore field is set.
+       */
+      boolean hasKeywordSimilarityScore();
+
+      /**
+       *
+       *
+       * <pre>
+       * Keyword matching adjustment.
+       * </pre>
+       *
+       * <code>
+       * optional float keyword_similarity_score = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The keywordSimilarityScore.
+       */
+      float getKeywordSimilarityScore();
+
+      /**
+       *
+       *
+       * <pre>
+       * Semantic relevance adjustment.
+       * </pre>
+       *
+       * <code>optional float relevance_score = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the relevanceScore field is set.
+       */
+      boolean hasRelevanceScore();
+
+      /**
+       *
+       *
+       * <pre>
+       * Semantic relevance adjustment.
+       * </pre>
+       *
+       * <code>optional float relevance_score = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The relevanceScore.
+       */
+      float getRelevanceScore();
+
+      /**
+       *
+       *
+       * <pre>
+       * Semantic similarity adjustment.
+       * </pre>
+       *
+       * <code>
+       * optional float semantic_similarity_score = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the semanticSimilarityScore field is set.
+       */
+      boolean hasSemanticSimilarityScore();
+
+      /**
+       *
+       *
+       * <pre>
+       * Semantic similarity adjustment.
+       * </pre>
+       *
+       * <code>
+       * optional float semantic_similarity_score = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The semanticSimilarityScore.
+       */
+      float getSemanticSimilarityScore();
+
+      /**
+       *
+       *
+       * <pre>
+       * Predicted conversion rate adjustment as a rank.
+       * </pre>
+       *
+       * <code>optional float pctr_rank = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the pctrRank field is set.
+       */
+      boolean hasPctrRank();
+
+      /**
+       *
+       *
+       * <pre>
+       * Predicted conversion rate adjustment as a rank.
+       * </pre>
+       *
+       * <code>optional float pctr_rank = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The pctrRank.
+       */
+      float getPctrRank();
+
+      /**
+       *
+       *
+       * <pre>
+       * Topicality adjustment as a rank.
+       * </pre>
+       *
+       * <code>optional float topicality_rank = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the topicalityRank field is set.
+       */
+      boolean hasTopicalityRank();
+
+      /**
+       *
+       *
+       * <pre>
+       * Topicality adjustment as a rank.
+       * </pre>
+       *
+       * <code>optional float topicality_rank = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The topicalityRank.
+       */
+      float getTopicalityRank();
+
+      /**
+       *
+       *
+       * <pre>
+       * Age of the document in hours.
+       * </pre>
+       *
+       * <code>optional float document_age = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the documentAge field is set.
+       */
+      boolean hasDocumentAge();
+
+      /**
+       *
+       *
+       * <pre>
+       * Age of the document in hours.
+       * </pre>
+       *
+       * <code>optional float document_age = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The documentAge.
+       */
+      float getDocumentAge();
+
+      /**
+       *
+       *
+       * <pre>
+       * Combined custom boosts for a doc.
+       * </pre>
+       *
+       * <code>optional float boosting_factor = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the boostingFactor field is set.
+       */
+      boolean hasBoostingFactor();
+
+      /**
+       *
+       *
+       * <pre>
+       * Combined custom boosts for a doc.
+       * </pre>
+       *
+       * <code>optional float boosting_factor = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The boostingFactor.
+       */
+      float getBoostingFactor();
+
+      /**
+       *
+       *
+       * <pre>
+       * The default rank of the result.
+       * </pre>
+       *
+       * <code>float default_rank = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The defaultRank.
+       */
+      float getDefaultRank();
+
+      /**
+       *
+       *
+       * <pre>
+       * A list of custom clearbox signals.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals.CustomSignal custom_signals = 33 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      java.util.List<
+              com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                  .CustomSignal>
+          getCustomSignalsList();
+
+      /**
+       *
+       *
+       * <pre>
+       * A list of custom clearbox signals.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals.CustomSignal custom_signals = 33 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals.CustomSignal
+          getCustomSignals(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * A list of custom clearbox signals.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals.CustomSignal custom_signals = 33 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      int getCustomSignalsCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * A list of custom clearbox signals.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals.CustomSignal custom_signals = 33 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      java.util.List<
+              ? extends
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                      .CustomSignalOrBuilder>
+          getCustomSignalsOrBuilderList();
+
+      /**
+       *
+       *
+       * <pre>
+       * A list of custom clearbox signals.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals.CustomSignal custom_signals = 33 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+              .CustomSignalOrBuilder
+          getCustomSignalsOrBuilder(int index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A set of ranking signals.
+     * </pre>
+     *
+     * Protobuf type {@code
+     * google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals}
+     */
+    public static final class RankSignals extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals)
+        RankSignalsOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      // Use RankSignals.newBuilder() to construct.
+      private RankSignals(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private RankSignals() {
+        customSignals_ = java.util.Collections.emptyList();
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new RankSignals();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_SearchResult_RankSignals_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+            .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_SearchResult_RankSignals_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                    .class,
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                    .Builder.class);
+      }
+
+      public interface CustomSignalOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals.CustomSignal)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * Name of the signal.
+         * </pre>
+         *
+         * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The name.
+         */
+        java.lang.String getName();
+
+        /**
+         *
+         *
+         * <pre>
+         * Name of the signal.
+         * </pre>
+         *
+         * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for name.
+         */
+        com.google.protobuf.ByteString getNameBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * Float value representing the ranking signal (e.g. 1.25 for BM25).
+         * </pre>
+         *
+         * <code>float value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The value.
+         */
+        float getValue();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Custom clearbox signal represented by name and value pair.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals.CustomSignal}
+       */
+      public static final class CustomSignal extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals.CustomSignal)
+          CustomSignalOrBuilder {
+        private static final long serialVersionUID = 0L;
+
+        // Use CustomSignal.newBuilder() to construct.
+        private CustomSignal(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private CustomSignal() {
+          name_ = "";
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new CustomSignal();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_SearchResult_RankSignals_CustomSignal_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_SearchResult_RankSignals_CustomSignal_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                      .CustomSignal.class,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                      .CustomSignal.Builder.class);
+        }
+
+        public static final int NAME_FIELD_NUMBER = 1;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object name_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Name of the signal.
+         * </pre>
+         *
+         * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The name.
+         */
+        @java.lang.Override
+        public java.lang.String getName() {
+          java.lang.Object ref = name_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            name_ = s;
+            return s;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Name of the signal.
+         * </pre>
+         *
+         * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The bytes for name.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getNameBytes() {
+          java.lang.Object ref = name_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            name_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        public static final int VALUE_FIELD_NUMBER = 2;
+        private float value_ = 0F;
+
+        /**
+         *
+         *
+         * <pre>
+         * Float value representing the ranking signal (e.g. 1.25 for BM25).
+         * </pre>
+         *
+         * <code>float value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The value.
+         */
+        @java.lang.Override
+        public float getValue() {
+          return value_;
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
+          }
+          if (java.lang.Float.floatToRawIntBits(value_) != 0) {
+            output.writeFloat(2, value_);
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(name_)) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
+          }
+          if (java.lang.Float.floatToRawIntBits(value_) != 0) {
+            size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, value_);
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                  .CustomSignal)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                  .CustomSignal
+              other =
+                  (com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                          .CustomSignal)
+                      obj;
+
+          if (!getName().equals(other.getName())) return false;
+          if (java.lang.Float.floatToIntBits(getValue())
+              != java.lang.Float.floatToIntBits(other.getValue())) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + NAME_FIELD_NUMBER;
+          hash = (53 * hash) + getName().hashCode();
+          hash = (37 * hash) + VALUE_FIELD_NUMBER;
+          hash = (53 * hash) + java.lang.Float.floatToIntBits(getValue());
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult
+                .RankSignals.CustomSignal
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult
+                .RankSignals.CustomSignal
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult
+                .RankSignals.CustomSignal
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult
+                .RankSignals.CustomSignal
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult
+                .RankSignals.CustomSignal
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult
+                .RankSignals.CustomSignal
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult
+                .RankSignals.CustomSignal
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult
+                .RankSignals.CustomSignal
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult
+                .RankSignals.CustomSignal
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult
+                .RankSignals.CustomSignal
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult
+                .RankSignals.CustomSignal
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult
+                .RankSignals.CustomSignal
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                    .CustomSignal
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Custom clearbox signal represented by name and value pair.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals.CustomSignal}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals.CustomSignal)
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                .CustomSignalOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+                .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_SearchResult_RankSignals_CustomSignal_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+                .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_SearchResult_RankSignals_CustomSignal_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                        .CustomSignal.class,
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                        .CustomSignal.Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals.CustomSignal.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            name_ = "";
+            value_ = 0F;
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+                .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_SearchResult_RankSignals_CustomSignal_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                  .CustomSignal
+              getDefaultInstanceForType() {
+            return com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                .CustomSignal.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                  .CustomSignal
+              build() {
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                    .CustomSignal
+                result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                  .CustomSignal
+              buildPartial() {
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                    .CustomSignal
+                result =
+                    new com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult
+                        .RankSignals.CustomSignal(this);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                      .CustomSignal
+                  result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.name_ = name_;
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.value_ = value_;
+            }
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                    .CustomSignal) {
+              return mergeFrom(
+                  (com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                          .CustomSignal)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                      .CustomSignal
+                  other) {
+            if (other
+                == com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                    .CustomSignal.getDefaultInstance()) return this;
+            if (!other.getName().isEmpty()) {
+              name_ = other.name_;
+              bitField0_ |= 0x00000001;
+              onChanged();
+            }
+            if (other.getValue() != 0F) {
+              setValue(other.getValue());
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      name_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000001;
+                      break;
+                    } // case 10
+                  case 21:
+                    {
+                      value_ = input.readFloat();
+                      bitField0_ |= 0x00000002;
+                      break;
+                    } // case 21
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private java.lang.Object name_ = "";
+
+          /**
+           *
+           *
+           * <pre>
+           * Name of the signal.
+           * </pre>
+           *
+           * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return The name.
+           */
+          public java.lang.String getName() {
+            java.lang.Object ref = name_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              name_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Name of the signal.
+           * </pre>
+           *
+           * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return The bytes for name.
+           */
+          public com.google.protobuf.ByteString getNameBytes() {
+            java.lang.Object ref = name_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              name_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Name of the signal.
+           * </pre>
+           *
+           * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @param value The name to set.
+           * @return This builder for chaining.
+           */
+          public Builder setName(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            name_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Name of the signal.
+           * </pre>
+           *
+           * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearName() {
+            name_ = getDefaultInstance().getName();
+            bitField0_ = (bitField0_ & ~0x00000001);
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Name of the signal.
+           * </pre>
+           *
+           * <code>string name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @param value The bytes for name to set.
+           * @return This builder for chaining.
+           */
+          public Builder setNameBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            name_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          private float value_;
+
+          /**
+           *
+           *
+           * <pre>
+           * Float value representing the ranking signal (e.g. 1.25 for BM25).
+           * </pre>
+           *
+           * <code>float value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return The value.
+           */
+          @java.lang.Override
+          public float getValue() {
+            return value_;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Float value representing the ranking signal (e.g. 1.25 for BM25).
+           * </pre>
+           *
+           * <code>float value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @param value The value to set.
+           * @return This builder for chaining.
+           */
+          public Builder setValue(float value) {
+
+            value_ = value;
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Float value representing the ranking signal (e.g. 1.25 for BM25).
+           * </pre>
+           *
+           * <code>float value = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearValue() {
+            bitField0_ = (bitField0_ & ~0x00000002);
+            value_ = 0F;
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals.CustomSignal)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals.CustomSignal)
+        private static final com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult
+                .RankSignals.CustomSignal
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                  .CustomSignal();
+        }
+
+        public static com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult
+                .RankSignals.CustomSignal
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<CustomSignal> PARSER =
+            new com.google.protobuf.AbstractParser<CustomSignal>() {
+              @java.lang.Override
+              public CustomSignal parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<CustomSignal> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<CustomSignal> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                .CustomSignal
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      private int bitField0_;
+      public static final int KEYWORD_SIMILARITY_SCORE_FIELD_NUMBER = 1;
+      private float keywordSimilarityScore_ = 0F;
+
+      /**
+       *
+       *
+       * <pre>
+       * Keyword matching adjustment.
+       * </pre>
+       *
+       * <code>
+       * optional float keyword_similarity_score = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the keywordSimilarityScore field is set.
+       */
+      @java.lang.Override
+      public boolean hasKeywordSimilarityScore() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Keyword matching adjustment.
+       * </pre>
+       *
+       * <code>
+       * optional float keyword_similarity_score = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The keywordSimilarityScore.
+       */
+      @java.lang.Override
+      public float getKeywordSimilarityScore() {
+        return keywordSimilarityScore_;
+      }
+
+      public static final int RELEVANCE_SCORE_FIELD_NUMBER = 2;
+      private float relevanceScore_ = 0F;
+
+      /**
+       *
+       *
+       * <pre>
+       * Semantic relevance adjustment.
+       * </pre>
+       *
+       * <code>optional float relevance_score = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the relevanceScore field is set.
+       */
+      @java.lang.Override
+      public boolean hasRelevanceScore() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Semantic relevance adjustment.
+       * </pre>
+       *
+       * <code>optional float relevance_score = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The relevanceScore.
+       */
+      @java.lang.Override
+      public float getRelevanceScore() {
+        return relevanceScore_;
+      }
+
+      public static final int SEMANTIC_SIMILARITY_SCORE_FIELD_NUMBER = 3;
+      private float semanticSimilarityScore_ = 0F;
+
+      /**
+       *
+       *
+       * <pre>
+       * Semantic similarity adjustment.
+       * </pre>
+       *
+       * <code>
+       * optional float semantic_similarity_score = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the semanticSimilarityScore field is set.
+       */
+      @java.lang.Override
+      public boolean hasSemanticSimilarityScore() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Semantic similarity adjustment.
+       * </pre>
+       *
+       * <code>
+       * optional float semantic_similarity_score = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The semanticSimilarityScore.
+       */
+      @java.lang.Override
+      public float getSemanticSimilarityScore() {
+        return semanticSimilarityScore_;
+      }
+
+      public static final int PCTR_RANK_FIELD_NUMBER = 4;
+      private float pctrRank_ = 0F;
+
+      /**
+       *
+       *
+       * <pre>
+       * Predicted conversion rate adjustment as a rank.
+       * </pre>
+       *
+       * <code>optional float pctr_rank = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the pctrRank field is set.
+       */
+      @java.lang.Override
+      public boolean hasPctrRank() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Predicted conversion rate adjustment as a rank.
+       * </pre>
+       *
+       * <code>optional float pctr_rank = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The pctrRank.
+       */
+      @java.lang.Override
+      public float getPctrRank() {
+        return pctrRank_;
+      }
+
+      public static final int TOPICALITY_RANK_FIELD_NUMBER = 6;
+      private float topicalityRank_ = 0F;
+
+      /**
+       *
+       *
+       * <pre>
+       * Topicality adjustment as a rank.
+       * </pre>
+       *
+       * <code>optional float topicality_rank = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the topicalityRank field is set.
+       */
+      @java.lang.Override
+      public boolean hasTopicalityRank() {
+        return ((bitField0_ & 0x00000010) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Topicality adjustment as a rank.
+       * </pre>
+       *
+       * <code>optional float topicality_rank = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The topicalityRank.
+       */
+      @java.lang.Override
+      public float getTopicalityRank() {
+        return topicalityRank_;
+      }
+
+      public static final int DOCUMENT_AGE_FIELD_NUMBER = 7;
+      private float documentAge_ = 0F;
+
+      /**
+       *
+       *
+       * <pre>
+       * Age of the document in hours.
+       * </pre>
+       *
+       * <code>optional float document_age = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the documentAge field is set.
+       */
+      @java.lang.Override
+      public boolean hasDocumentAge() {
+        return ((bitField0_ & 0x00000020) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Age of the document in hours.
+       * </pre>
+       *
+       * <code>optional float document_age = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The documentAge.
+       */
+      @java.lang.Override
+      public float getDocumentAge() {
+        return documentAge_;
+      }
+
+      public static final int BOOSTING_FACTOR_FIELD_NUMBER = 8;
+      private float boostingFactor_ = 0F;
+
+      /**
+       *
+       *
+       * <pre>
+       * Combined custom boosts for a doc.
+       * </pre>
+       *
+       * <code>optional float boosting_factor = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the boostingFactor field is set.
+       */
+      @java.lang.Override
+      public boolean hasBoostingFactor() {
+        return ((bitField0_ & 0x00000040) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Combined custom boosts for a doc.
+       * </pre>
+       *
+       * <code>optional float boosting_factor = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The boostingFactor.
+       */
+      @java.lang.Override
+      public float getBoostingFactor() {
+        return boostingFactor_;
+      }
+
+      public static final int DEFAULT_RANK_FIELD_NUMBER = 32;
+      private float defaultRank_ = 0F;
+
+      /**
+       *
+       *
+       * <pre>
+       * The default rank of the result.
+       * </pre>
+       *
+       * <code>float default_rank = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The defaultRank.
+       */
+      @java.lang.Override
+      public float getDefaultRank() {
+        return defaultRank_;
+      }
+
+      public static final int CUSTOM_SIGNALS_FIELD_NUMBER = 33;
+
+      @SuppressWarnings("serial")
+      private java.util.List<
+              com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                  .CustomSignal>
+          customSignals_;
+
+      /**
+       *
+       *
+       * <pre>
+       * A list of custom clearbox signals.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals.CustomSignal custom_signals = 33 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.List<
+              com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                  .CustomSignal>
+          getCustomSignalsList() {
+        return customSignals_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A list of custom clearbox signals.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals.CustomSignal custom_signals = 33 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.List<
+              ? extends
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                      .CustomSignalOrBuilder>
+          getCustomSignalsOrBuilderList() {
+        return customSignals_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A list of custom clearbox signals.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals.CustomSignal custom_signals = 33 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public int getCustomSignalsCount() {
+        return customSignals_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A list of custom clearbox signals.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals.CustomSignal custom_signals = 33 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+              .CustomSignal
+          getCustomSignals(int index) {
+        return customSignals_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A list of custom clearbox signals.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals.CustomSignal custom_signals = 33 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+              .CustomSignalOrBuilder
+          getCustomSignalsOrBuilder(int index) {
+        return customSignals_.get(index);
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          output.writeFloat(1, keywordSimilarityScore_);
+        }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          output.writeFloat(2, relevanceScore_);
+        }
+        if (((bitField0_ & 0x00000004) != 0)) {
+          output.writeFloat(3, semanticSimilarityScore_);
+        }
+        if (((bitField0_ & 0x00000008) != 0)) {
+          output.writeFloat(4, pctrRank_);
+        }
+        if (((bitField0_ & 0x00000010) != 0)) {
+          output.writeFloat(6, topicalityRank_);
+        }
+        if (((bitField0_ & 0x00000020) != 0)) {
+          output.writeFloat(7, documentAge_);
+        }
+        if (((bitField0_ & 0x00000040) != 0)) {
+          output.writeFloat(8, boostingFactor_);
+        }
+        if (java.lang.Float.floatToRawIntBits(defaultRank_) != 0) {
+          output.writeFloat(32, defaultRank_);
+        }
+        for (int i = 0; i < customSignals_.size(); i++) {
+          output.writeMessage(33, customSignals_.get(i));
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeFloatSize(1, keywordSimilarityScore_);
+        }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, relevanceScore_);
+        }
+        if (((bitField0_ & 0x00000004) != 0)) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeFloatSize(3, semanticSimilarityScore_);
+        }
+        if (((bitField0_ & 0x00000008) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, pctrRank_);
+        }
+        if (((bitField0_ & 0x00000010) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeFloatSize(6, topicalityRank_);
+        }
+        if (((bitField0_ & 0x00000020) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeFloatSize(7, documentAge_);
+        }
+        if (((bitField0_ & 0x00000040) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeFloatSize(8, boostingFactor_);
+        }
+        if (java.lang.Float.floatToRawIntBits(defaultRank_) != 0) {
+          size += com.google.protobuf.CodedOutputStream.computeFloatSize(32, defaultRank_);
+        }
+        for (int i = 0; i < customSignals_.size(); i++) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(33, customSignals_.get(i));
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals other =
+            (com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals) obj;
+
+        if (hasKeywordSimilarityScore() != other.hasKeywordSimilarityScore()) return false;
+        if (hasKeywordSimilarityScore()) {
+          if (java.lang.Float.floatToIntBits(getKeywordSimilarityScore())
+              != java.lang.Float.floatToIntBits(other.getKeywordSimilarityScore())) return false;
+        }
+        if (hasRelevanceScore() != other.hasRelevanceScore()) return false;
+        if (hasRelevanceScore()) {
+          if (java.lang.Float.floatToIntBits(getRelevanceScore())
+              != java.lang.Float.floatToIntBits(other.getRelevanceScore())) return false;
+        }
+        if (hasSemanticSimilarityScore() != other.hasSemanticSimilarityScore()) return false;
+        if (hasSemanticSimilarityScore()) {
+          if (java.lang.Float.floatToIntBits(getSemanticSimilarityScore())
+              != java.lang.Float.floatToIntBits(other.getSemanticSimilarityScore())) return false;
+        }
+        if (hasPctrRank() != other.hasPctrRank()) return false;
+        if (hasPctrRank()) {
+          if (java.lang.Float.floatToIntBits(getPctrRank())
+              != java.lang.Float.floatToIntBits(other.getPctrRank())) return false;
+        }
+        if (hasTopicalityRank() != other.hasTopicalityRank()) return false;
+        if (hasTopicalityRank()) {
+          if (java.lang.Float.floatToIntBits(getTopicalityRank())
+              != java.lang.Float.floatToIntBits(other.getTopicalityRank())) return false;
+        }
+        if (hasDocumentAge() != other.hasDocumentAge()) return false;
+        if (hasDocumentAge()) {
+          if (java.lang.Float.floatToIntBits(getDocumentAge())
+              != java.lang.Float.floatToIntBits(other.getDocumentAge())) return false;
+        }
+        if (hasBoostingFactor() != other.hasBoostingFactor()) return false;
+        if (hasBoostingFactor()) {
+          if (java.lang.Float.floatToIntBits(getBoostingFactor())
+              != java.lang.Float.floatToIntBits(other.getBoostingFactor())) return false;
+        }
+        if (java.lang.Float.floatToIntBits(getDefaultRank())
+            != java.lang.Float.floatToIntBits(other.getDefaultRank())) return false;
+        if (!getCustomSignalsList().equals(other.getCustomSignalsList())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (hasKeywordSimilarityScore()) {
+          hash = (37 * hash) + KEYWORD_SIMILARITY_SCORE_FIELD_NUMBER;
+          hash = (53 * hash) + java.lang.Float.floatToIntBits(getKeywordSimilarityScore());
+        }
+        if (hasRelevanceScore()) {
+          hash = (37 * hash) + RELEVANCE_SCORE_FIELD_NUMBER;
+          hash = (53 * hash) + java.lang.Float.floatToIntBits(getRelevanceScore());
+        }
+        if (hasSemanticSimilarityScore()) {
+          hash = (37 * hash) + SEMANTIC_SIMILARITY_SCORE_FIELD_NUMBER;
+          hash = (53 * hash) + java.lang.Float.floatToIntBits(getSemanticSimilarityScore());
+        }
+        if (hasPctrRank()) {
+          hash = (37 * hash) + PCTR_RANK_FIELD_NUMBER;
+          hash = (53 * hash) + java.lang.Float.floatToIntBits(getPctrRank());
+        }
+        if (hasTopicalityRank()) {
+          hash = (37 * hash) + TOPICALITY_RANK_FIELD_NUMBER;
+          hash = (53 * hash) + java.lang.Float.floatToIntBits(getTopicalityRank());
+        }
+        if (hasDocumentAge()) {
+          hash = (37 * hash) + DOCUMENT_AGE_FIELD_NUMBER;
+          hash = (53 * hash) + java.lang.Float.floatToIntBits(getDocumentAge());
+        }
+        if (hasBoostingFactor()) {
+          hash = (37 * hash) + BOOSTING_FACTOR_FIELD_NUMBER;
+          hash = (53 * hash) + java.lang.Float.floatToIntBits(getBoostingFactor());
+        }
+        hash = (37 * hash) + DEFAULT_RANK_FIELD_NUMBER;
+        hash = (53 * hash) + java.lang.Float.floatToIntBits(getDefaultRank());
+        if (getCustomSignalsCount() > 0) {
+          hash = (37 * hash) + CUSTOM_SIGNALS_FIELD_NUMBER;
+          hash = (53 * hash) + getCustomSignalsList().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+              prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A set of ranking signals.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals)
+          com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignalsOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_SearchResult_RankSignals_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_SearchResult_RankSignals_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                      .class,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                      .Builder.class);
+        }
+
+        // Construct using
+        // com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          keywordSimilarityScore_ = 0F;
+          relevanceScore_ = 0F;
+          semanticSimilarityScore_ = 0F;
+          pctrRank_ = 0F;
+          topicalityRank_ = 0F;
+          documentAge_ = 0F;
+          boostingFactor_ = 0F;
+          defaultRank_ = 0F;
+          if (customSignalsBuilder_ == null) {
+            customSignals_ = java.util.Collections.emptyList();
+          } else {
+            customSignals_ = null;
+            customSignalsBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00000100);
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.discoveryengine.v1beta.SearchServiceProto
+              .internal_static_google_cloud_discoveryengine_v1beta_SearchResponse_SearchResult_RankSignals_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+            getDefaultInstanceForType() {
+          return com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+            build() {
+          com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+            buildPartial() {
+          com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals result =
+              new com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals(
+                  this);
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                result) {
+          if (customSignalsBuilder_ == null) {
+            if (((bitField0_ & 0x00000100) != 0)) {
+              customSignals_ = java.util.Collections.unmodifiableList(customSignals_);
+              bitField0_ = (bitField0_ & ~0x00000100);
+            }
+            result.customSignals_ = customSignals_;
+          } else {
+            result.customSignals_ = customSignalsBuilder_.build();
+          }
+        }
+
+        private void buildPartial0(
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                result) {
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.keywordSimilarityScore_ = keywordSimilarityScore_;
+            to_bitField0_ |= 0x00000001;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.relevanceScore_ = relevanceScore_;
+            to_bitField0_ |= 0x00000002;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.semanticSimilarityScore_ = semanticSimilarityScore_;
+            to_bitField0_ |= 0x00000004;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            result.pctrRank_ = pctrRank_;
+            to_bitField0_ |= 0x00000008;
+          }
+          if (((from_bitField0_ & 0x00000010) != 0)) {
+            result.topicalityRank_ = topicalityRank_;
+            to_bitField0_ |= 0x00000010;
+          }
+          if (((from_bitField0_ & 0x00000020) != 0)) {
+            result.documentAge_ = documentAge_;
+            to_bitField0_ |= 0x00000020;
+          }
+          if (((from_bitField0_ & 0x00000040) != 0)) {
+            result.boostingFactor_ = boostingFactor_;
+            to_bitField0_ |= 0x00000040;
+          }
+          if (((from_bitField0_ & 0x00000080) != 0)) {
+            result.defaultRank_ = defaultRank_;
+          }
+          result.bitField0_ |= to_bitField0_;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals) {
+            return mergeFrom(
+                (com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals)
+                    other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals other) {
+          if (other
+              == com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                  .getDefaultInstance()) return this;
+          if (other.hasKeywordSimilarityScore()) {
+            setKeywordSimilarityScore(other.getKeywordSimilarityScore());
+          }
+          if (other.hasRelevanceScore()) {
+            setRelevanceScore(other.getRelevanceScore());
+          }
+          if (other.hasSemanticSimilarityScore()) {
+            setSemanticSimilarityScore(other.getSemanticSimilarityScore());
+          }
+          if (other.hasPctrRank()) {
+            setPctrRank(other.getPctrRank());
+          }
+          if (other.hasTopicalityRank()) {
+            setTopicalityRank(other.getTopicalityRank());
+          }
+          if (other.hasDocumentAge()) {
+            setDocumentAge(other.getDocumentAge());
+          }
+          if (other.hasBoostingFactor()) {
+            setBoostingFactor(other.getBoostingFactor());
+          }
+          if (other.getDefaultRank() != 0F) {
+            setDefaultRank(other.getDefaultRank());
+          }
+          if (customSignalsBuilder_ == null) {
+            if (!other.customSignals_.isEmpty()) {
+              if (customSignals_.isEmpty()) {
+                customSignals_ = other.customSignals_;
+                bitField0_ = (bitField0_ & ~0x00000100);
+              } else {
+                ensureCustomSignalsIsMutable();
+                customSignals_.addAll(other.customSignals_);
+              }
+              onChanged();
+            }
+          } else {
+            if (!other.customSignals_.isEmpty()) {
+              if (customSignalsBuilder_.isEmpty()) {
+                customSignalsBuilder_.dispose();
+                customSignalsBuilder_ = null;
+                customSignals_ = other.customSignals_;
+                bitField0_ = (bitField0_ & ~0x00000100);
+                customSignalsBuilder_ =
+                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                        ? getCustomSignalsFieldBuilder()
+                        : null;
+              } else {
+                customSignalsBuilder_.addAllMessages(other.customSignals_);
+              }
+            }
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 13:
+                  {
+                    keywordSimilarityScore_ = input.readFloat();
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 13
+                case 21:
+                  {
+                    relevanceScore_ = input.readFloat();
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 21
+                case 29:
+                  {
+                    semanticSimilarityScore_ = input.readFloat();
+                    bitField0_ |= 0x00000004;
+                    break;
+                  } // case 29
+                case 37:
+                  {
+                    pctrRank_ = input.readFloat();
+                    bitField0_ |= 0x00000008;
+                    break;
+                  } // case 37
+                case 53:
+                  {
+                    topicalityRank_ = input.readFloat();
+                    bitField0_ |= 0x00000010;
+                    break;
+                  } // case 53
+                case 61:
+                  {
+                    documentAge_ = input.readFloat();
+                    bitField0_ |= 0x00000020;
+                    break;
+                  } // case 61
+                case 69:
+                  {
+                    boostingFactor_ = input.readFloat();
+                    bitField0_ |= 0x00000040;
+                    break;
+                  } // case 69
+                case 261:
+                  {
+                    defaultRank_ = input.readFloat();
+                    bitField0_ |= 0x00000080;
+                    break;
+                  } // case 261
+                case 266:
+                  {
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                            .CustomSignal
+                        m =
+                            input.readMessage(
+                                com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult
+                                    .RankSignals.CustomSignal.parser(),
+                                extensionRegistry);
+                    if (customSignalsBuilder_ == null) {
+                      ensureCustomSignalsIsMutable();
+                      customSignals_.add(m);
+                    } else {
+                      customSignalsBuilder_.addMessage(m);
+                    }
+                    break;
+                  } // case 266
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private float keywordSimilarityScore_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Keyword matching adjustment.
+         * </pre>
+         *
+         * <code>
+         * optional float keyword_similarity_score = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return Whether the keywordSimilarityScore field is set.
+         */
+        @java.lang.Override
+        public boolean hasKeywordSimilarityScore() {
+          return ((bitField0_ & 0x00000001) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Keyword matching adjustment.
+         * </pre>
+         *
+         * <code>
+         * optional float keyword_similarity_score = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The keywordSimilarityScore.
+         */
+        @java.lang.Override
+        public float getKeywordSimilarityScore() {
+          return keywordSimilarityScore_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Keyword matching adjustment.
+         * </pre>
+         *
+         * <code>
+         * optional float keyword_similarity_score = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The keywordSimilarityScore to set.
+         * @return This builder for chaining.
+         */
+        public Builder setKeywordSimilarityScore(float value) {
+
+          keywordSimilarityScore_ = value;
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Keyword matching adjustment.
+         * </pre>
+         *
+         * <code>
+         * optional float keyword_similarity_score = 1 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearKeywordSimilarityScore() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          keywordSimilarityScore_ = 0F;
+          onChanged();
+          return this;
+        }
+
+        private float relevanceScore_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Semantic relevance adjustment.
+         * </pre>
+         *
+         * <code>optional float relevance_score = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return Whether the relevanceScore field is set.
+         */
+        @java.lang.Override
+        public boolean hasRelevanceScore() {
+          return ((bitField0_ & 0x00000002) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Semantic relevance adjustment.
+         * </pre>
+         *
+         * <code>optional float relevance_score = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The relevanceScore.
+         */
+        @java.lang.Override
+        public float getRelevanceScore() {
+          return relevanceScore_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Semantic relevance adjustment.
+         * </pre>
+         *
+         * <code>optional float relevance_score = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The relevanceScore to set.
+         * @return This builder for chaining.
+         */
+        public Builder setRelevanceScore(float value) {
+
+          relevanceScore_ = value;
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Semantic relevance adjustment.
+         * </pre>
+         *
+         * <code>optional float relevance_score = 2 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearRelevanceScore() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          relevanceScore_ = 0F;
+          onChanged();
+          return this;
+        }
+
+        private float semanticSimilarityScore_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Semantic similarity adjustment.
+         * </pre>
+         *
+         * <code>
+         * optional float semantic_similarity_score = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return Whether the semanticSimilarityScore field is set.
+         */
+        @java.lang.Override
+        public boolean hasSemanticSimilarityScore() {
+          return ((bitField0_ & 0x00000004) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Semantic similarity adjustment.
+         * </pre>
+         *
+         * <code>
+         * optional float semantic_similarity_score = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The semanticSimilarityScore.
+         */
+        @java.lang.Override
+        public float getSemanticSimilarityScore() {
+          return semanticSimilarityScore_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Semantic similarity adjustment.
+         * </pre>
+         *
+         * <code>
+         * optional float semantic_similarity_score = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The semanticSimilarityScore to set.
+         * @return This builder for chaining.
+         */
+        public Builder setSemanticSimilarityScore(float value) {
+
+          semanticSimilarityScore_ = value;
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Semantic similarity adjustment.
+         * </pre>
+         *
+         * <code>
+         * optional float semantic_similarity_score = 3 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearSemanticSimilarityScore() {
+          bitField0_ = (bitField0_ & ~0x00000004);
+          semanticSimilarityScore_ = 0F;
+          onChanged();
+          return this;
+        }
+
+        private float pctrRank_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Predicted conversion rate adjustment as a rank.
+         * </pre>
+         *
+         * <code>optional float pctr_rank = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return Whether the pctrRank field is set.
+         */
+        @java.lang.Override
+        public boolean hasPctrRank() {
+          return ((bitField0_ & 0x00000008) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Predicted conversion rate adjustment as a rank.
+         * </pre>
+         *
+         * <code>optional float pctr_rank = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The pctrRank.
+         */
+        @java.lang.Override
+        public float getPctrRank() {
+          return pctrRank_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Predicted conversion rate adjustment as a rank.
+         * </pre>
+         *
+         * <code>optional float pctr_rank = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The pctrRank to set.
+         * @return This builder for chaining.
+         */
+        public Builder setPctrRank(float value) {
+
+          pctrRank_ = value;
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Predicted conversion rate adjustment as a rank.
+         * </pre>
+         *
+         * <code>optional float pctr_rank = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearPctrRank() {
+          bitField0_ = (bitField0_ & ~0x00000008);
+          pctrRank_ = 0F;
+          onChanged();
+          return this;
+        }
+
+        private float topicalityRank_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Topicality adjustment as a rank.
+         * </pre>
+         *
+         * <code>optional float topicality_rank = 6 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return Whether the topicalityRank field is set.
+         */
+        @java.lang.Override
+        public boolean hasTopicalityRank() {
+          return ((bitField0_ & 0x00000010) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Topicality adjustment as a rank.
+         * </pre>
+         *
+         * <code>optional float topicality_rank = 6 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The topicalityRank.
+         */
+        @java.lang.Override
+        public float getTopicalityRank() {
+          return topicalityRank_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Topicality adjustment as a rank.
+         * </pre>
+         *
+         * <code>optional float topicality_rank = 6 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The topicalityRank to set.
+         * @return This builder for chaining.
+         */
+        public Builder setTopicalityRank(float value) {
+
+          topicalityRank_ = value;
+          bitField0_ |= 0x00000010;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Topicality adjustment as a rank.
+         * </pre>
+         *
+         * <code>optional float topicality_rank = 6 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearTopicalityRank() {
+          bitField0_ = (bitField0_ & ~0x00000010);
+          topicalityRank_ = 0F;
+          onChanged();
+          return this;
+        }
+
+        private float documentAge_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Age of the document in hours.
+         * </pre>
+         *
+         * <code>optional float document_age = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return Whether the documentAge field is set.
+         */
+        @java.lang.Override
+        public boolean hasDocumentAge() {
+          return ((bitField0_ & 0x00000020) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Age of the document in hours.
+         * </pre>
+         *
+         * <code>optional float document_age = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The documentAge.
+         */
+        @java.lang.Override
+        public float getDocumentAge() {
+          return documentAge_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Age of the document in hours.
+         * </pre>
+         *
+         * <code>optional float document_age = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The documentAge to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDocumentAge(float value) {
+
+          documentAge_ = value;
+          bitField0_ |= 0x00000020;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Age of the document in hours.
+         * </pre>
+         *
+         * <code>optional float document_age = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearDocumentAge() {
+          bitField0_ = (bitField0_ & ~0x00000020);
+          documentAge_ = 0F;
+          onChanged();
+          return this;
+        }
+
+        private float boostingFactor_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Combined custom boosts for a doc.
+         * </pre>
+         *
+         * <code>optional float boosting_factor = 8 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return Whether the boostingFactor field is set.
+         */
+        @java.lang.Override
+        public boolean hasBoostingFactor() {
+          return ((bitField0_ & 0x00000040) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Combined custom boosts for a doc.
+         * </pre>
+         *
+         * <code>optional float boosting_factor = 8 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return The boostingFactor.
+         */
+        @java.lang.Override
+        public float getBoostingFactor() {
+          return boostingFactor_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Combined custom boosts for a doc.
+         * </pre>
+         *
+         * <code>optional float boosting_factor = 8 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @param value The boostingFactor to set.
+         * @return This builder for chaining.
+         */
+        public Builder setBoostingFactor(float value) {
+
+          boostingFactor_ = value;
+          bitField0_ |= 0x00000040;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Combined custom boosts for a doc.
+         * </pre>
+         *
+         * <code>optional float boosting_factor = 8 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearBoostingFactor() {
+          bitField0_ = (bitField0_ & ~0x00000040);
+          boostingFactor_ = 0F;
+          onChanged();
+          return this;
+        }
+
+        private float defaultRank_;
+
+        /**
+         *
+         *
+         * <pre>
+         * The default rank of the result.
+         * </pre>
+         *
+         * <code>float default_rank = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return The defaultRank.
+         */
+        @java.lang.Override
+        public float getDefaultRank() {
+          return defaultRank_;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The default rank of the result.
+         * </pre>
+         *
+         * <code>float default_rank = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @param value The defaultRank to set.
+         * @return This builder for chaining.
+         */
+        public Builder setDefaultRank(float value) {
+
+          defaultRank_ = value;
+          bitField0_ |= 0x00000080;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * The default rank of the result.
+         * </pre>
+         *
+         * <code>float default_rank = 32 [(.google.api.field_behavior) = OPTIONAL];</code>
+         *
+         * @return This builder for chaining.
+         */
+        public Builder clearDefaultRank() {
+          bitField0_ = (bitField0_ & ~0x00000080);
+          defaultRank_ = 0F;
+          onChanged();
+          return this;
+        }
+
+        private java.util.List<
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                    .CustomSignal>
+            customSignals_ = java.util.Collections.emptyList();
+
+        private void ensureCustomSignalsIsMutable() {
+          if (!((bitField0_ & 0x00000100) != 0)) {
+            customSignals_ =
+                new java.util.ArrayList<
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                        .CustomSignal>(customSignals_);
+            bitField0_ |= 0x00000100;
+          }
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                    .CustomSignal,
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                    .CustomSignal.Builder,
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                    .CustomSignalOrBuilder>
+            customSignalsBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * A list of custom clearbox signals.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals.CustomSignal custom_signals = 33 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public java.util.List<
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                    .CustomSignal>
+            getCustomSignalsList() {
+          if (customSignalsBuilder_ == null) {
+            return java.util.Collections.unmodifiableList(customSignals_);
+          } else {
+            return customSignalsBuilder_.getMessageList();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * A list of custom clearbox signals.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals.CustomSignal custom_signals = 33 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public int getCustomSignalsCount() {
+          if (customSignalsBuilder_ == null) {
+            return customSignals_.size();
+          } else {
+            return customSignalsBuilder_.getCount();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * A list of custom clearbox signals.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals.CustomSignal custom_signals = 33 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                .CustomSignal
+            getCustomSignals(int index) {
+          if (customSignalsBuilder_ == null) {
+            return customSignals_.get(index);
+          } else {
+            return customSignalsBuilder_.getMessage(index);
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * A list of custom clearbox signals.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals.CustomSignal custom_signals = 33 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder setCustomSignals(
+            int index,
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                    .CustomSignal
+                value) {
+          if (customSignalsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureCustomSignalsIsMutable();
+            customSignals_.set(index, value);
+            onChanged();
+          } else {
+            customSignalsBuilder_.setMessage(index, value);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * A list of custom clearbox signals.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals.CustomSignal custom_signals = 33 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder setCustomSignals(
+            int index,
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                    .CustomSignal.Builder
+                builderForValue) {
+          if (customSignalsBuilder_ == null) {
+            ensureCustomSignalsIsMutable();
+            customSignals_.set(index, builderForValue.build());
+            onChanged();
+          } else {
+            customSignalsBuilder_.setMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * A list of custom clearbox signals.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals.CustomSignal custom_signals = 33 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder addCustomSignals(
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                    .CustomSignal
+                value) {
+          if (customSignalsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureCustomSignalsIsMutable();
+            customSignals_.add(value);
+            onChanged();
+          } else {
+            customSignalsBuilder_.addMessage(value);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * A list of custom clearbox signals.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals.CustomSignal custom_signals = 33 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder addCustomSignals(
+            int index,
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                    .CustomSignal
+                value) {
+          if (customSignalsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureCustomSignalsIsMutable();
+            customSignals_.add(index, value);
+            onChanged();
+          } else {
+            customSignalsBuilder_.addMessage(index, value);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * A list of custom clearbox signals.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals.CustomSignal custom_signals = 33 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder addCustomSignals(
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                    .CustomSignal.Builder
+                builderForValue) {
+          if (customSignalsBuilder_ == null) {
+            ensureCustomSignalsIsMutable();
+            customSignals_.add(builderForValue.build());
+            onChanged();
+          } else {
+            customSignalsBuilder_.addMessage(builderForValue.build());
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * A list of custom clearbox signals.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals.CustomSignal custom_signals = 33 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder addCustomSignals(
+            int index,
+            com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                    .CustomSignal.Builder
+                builderForValue) {
+          if (customSignalsBuilder_ == null) {
+            ensureCustomSignalsIsMutable();
+            customSignals_.add(index, builderForValue.build());
+            onChanged();
+          } else {
+            customSignalsBuilder_.addMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * A list of custom clearbox signals.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals.CustomSignal custom_signals = 33 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder addAllCustomSignals(
+            java.lang.Iterable<
+                    ? extends
+                        com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult
+                            .RankSignals.CustomSignal>
+                values) {
+          if (customSignalsBuilder_ == null) {
+            ensureCustomSignalsIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(values, customSignals_);
+            onChanged();
+          } else {
+            customSignalsBuilder_.addAllMessages(values);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * A list of custom clearbox signals.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals.CustomSignal custom_signals = 33 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder clearCustomSignals() {
+          if (customSignalsBuilder_ == null) {
+            customSignals_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000100);
+            onChanged();
+          } else {
+            customSignalsBuilder_.clear();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * A list of custom clearbox signals.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals.CustomSignal custom_signals = 33 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public Builder removeCustomSignals(int index) {
+          if (customSignalsBuilder_ == null) {
+            ensureCustomSignalsIsMutable();
+            customSignals_.remove(index);
+            onChanged();
+          } else {
+            customSignalsBuilder_.remove(index);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * A list of custom clearbox signals.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals.CustomSignal custom_signals = 33 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                .CustomSignal.Builder
+            getCustomSignalsBuilder(int index) {
+          return getCustomSignalsFieldBuilder().getBuilder(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * A list of custom clearbox signals.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals.CustomSignal custom_signals = 33 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                .CustomSignalOrBuilder
+            getCustomSignalsOrBuilder(int index) {
+          if (customSignalsBuilder_ == null) {
+            return customSignals_.get(index);
+          } else {
+            return customSignalsBuilder_.getMessageOrBuilder(index);
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * A list of custom clearbox signals.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals.CustomSignal custom_signals = 33 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public java.util.List<
+                ? extends
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                        .CustomSignalOrBuilder>
+            getCustomSignalsOrBuilderList() {
+          if (customSignalsBuilder_ != null) {
+            return customSignalsBuilder_.getMessageOrBuilderList();
+          } else {
+            return java.util.Collections.unmodifiableList(customSignals_);
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * A list of custom clearbox signals.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals.CustomSignal custom_signals = 33 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                .CustomSignal.Builder
+            addCustomSignalsBuilder() {
+          return getCustomSignalsFieldBuilder()
+              .addBuilder(
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                      .CustomSignal.getDefaultInstance());
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * A list of custom clearbox signals.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals.CustomSignal custom_signals = 33 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                .CustomSignal.Builder
+            addCustomSignalsBuilder(int index) {
+          return getCustomSignalsFieldBuilder()
+              .addBuilder(
+                  index,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                      .CustomSignal.getDefaultInstance());
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * A list of custom clearbox signals.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals.CustomSignal custom_signals = 33 [(.google.api.field_behavior) = OPTIONAL];
+         * </code>
+         */
+        public java.util.List<
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                    .CustomSignal.Builder>
+            getCustomSignalsBuilderList() {
+          return getCustomSignalsFieldBuilder().getBuilderList();
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                    .CustomSignal,
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                    .CustomSignal.Builder,
+                com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                    .CustomSignalOrBuilder>
+            getCustomSignalsFieldBuilder() {
+          if (customSignalsBuilder_ == null) {
+            customSignalsBuilder_ =
+                new com.google.protobuf.RepeatedFieldBuilderV3<
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                        .CustomSignal,
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                        .CustomSignal.Builder,
+                    com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                        .CustomSignalOrBuilder>(
+                    customSignals_,
+                    ((bitField0_ & 0x00000100) != 0),
+                    getParentForChildren(),
+                    isClean());
+            customSignals_ = null;
+          }
+          return customSignalsBuilder_;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals)
+      private static final com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult
+              .RankSignals
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals();
+      }
+
+      public static com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<RankSignals> PARSER =
+          new com.google.protobuf.AbstractParser<RankSignals>() {
+            @java.lang.Override
+            public RankSignals parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<RankSignals> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<RankSignals> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
     }
 
     private int bitField0_;
@@ -621,6 +3991,70 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       return map.get(key);
     }
 
+    public static final int RANK_SIGNALS_FIELD_NUMBER = 7;
+    private com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+        rankSignals_;
+
+    /**
+     *
+     *
+     * <pre>
+     * A set of ranking signals associated with the result.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals rank_signals = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the rankSignals field is set.
+     */
+    @java.lang.Override
+    public boolean hasRankSignals() {
+      return ((bitField0_ & 0x00000004) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A set of ranking signals associated with the result.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals rank_signals = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The rankSignals.
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+        getRankSignals() {
+      return rankSignals_ == null
+          ? com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+              .getDefaultInstance()
+          : rankSignals_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * A set of ranking signals associated with the result.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals rank_signals = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignalsOrBuilder
+        getRankSignalsOrBuilder() {
+      return rankSignals_ == null
+          ? com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+              .getDefaultInstance()
+          : rankSignals_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -643,6 +4077,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       }
       com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
           output, internalGetModelScores(), ModelScoresDefaultEntryHolder.defaultEntry, 4);
+      if (((bitField0_ & 0x00000004) != 0)) {
+        output.writeMessage(7, getRankSignals());
+      }
       if (((bitField0_ & 0x00000002) != 0)) {
         output.writeMessage(18, getChunk());
       }
@@ -673,6 +4110,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
                     .build();
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, modelScores__);
       }
+      if (((bitField0_ & 0x00000004) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getRankSignals());
+      }
       if (((bitField0_ & 0x00000002) != 0)) {
         size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getChunk());
       }
@@ -702,6 +4142,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         if (!getChunk().equals(other.getChunk())) return false;
       }
       if (!internalGetModelScores().equals(other.internalGetModelScores())) return false;
+      if (hasRankSignals() != other.hasRankSignals()) return false;
+      if (hasRankSignals()) {
+        if (!getRankSignals().equals(other.getRankSignals())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -726,6 +4170,10 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
       if (!internalGetModelScores().getMap().isEmpty()) {
         hash = (37 * hash) + MODEL_SCORES_FIELD_NUMBER;
         hash = (53 * hash) + internalGetModelScores().hashCode();
+      }
+      if (hasRankSignals()) {
+        hash = (37 * hash) + RANK_SIGNALS_FIELD_NUMBER;
+        hash = (53 * hash) + getRankSignals().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -897,6 +4345,7 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
           getDocumentFieldBuilder();
           getChunkFieldBuilder();
+          getRankSignalsFieldBuilder();
         }
       }
 
@@ -916,6 +4365,11 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           chunkBuilder_ = null;
         }
         internalGetMutableModelScores().clear();
+        rankSignals_ = null;
+        if (rankSignalsBuilder_ != null) {
+          rankSignalsBuilder_.dispose();
+          rankSignalsBuilder_ = null;
+        }
         return this;
       }
 
@@ -970,6 +4424,11 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         if (((from_bitField0_ & 0x00000008) != 0)) {
           result.modelScores_ =
               internalGetModelScores().build(ModelScoresDefaultEntryHolder.defaultEntry);
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.rankSignals_ =
+              rankSignalsBuilder_ == null ? rankSignals_ : rankSignalsBuilder_.build();
+          to_bitField0_ |= 0x00000004;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -1038,6 +4497,9 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
         }
         internalGetMutableModelScores().mergeFrom(other.internalGetModelScores());
         bitField0_ |= 0x00000008;
+        if (other.hasRankSignals()) {
+          mergeRankSignals(other.getRankSignals());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -1090,6 +4552,12 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000008;
                   break;
                 } // case 34
+              case 58:
+                {
+                  input.readMessage(getRankSignalsFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 58
               case 146:
                 {
                   input.readMessage(getChunkFieldBuilder().getBuilder(), extensionRegistry);
@@ -1914,6 +5382,236 @@ public final class SearchResponse extends com.google.protobuf.GeneratedMessageV3
           builderMap.put(key, entry);
         }
         return (com.google.cloud.discoveryengine.v1beta.DoubleList.Builder) entry;
+      }
+
+      private com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+          rankSignals_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals,
+              com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                  .Builder,
+              com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult
+                  .RankSignalsOrBuilder>
+          rankSignalsBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * A set of ranking signals associated with the result.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals rank_signals = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the rankSignals field is set.
+       */
+      public boolean hasRankSignals() {
+        return ((bitField0_ & 0x00000010) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A set of ranking signals associated with the result.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals rank_signals = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The rankSignals.
+       */
+      public com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+          getRankSignals() {
+        if (rankSignalsBuilder_ == null) {
+          return rankSignals_ == null
+              ? com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                  .getDefaultInstance()
+              : rankSignals_;
+        } else {
+          return rankSignalsBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A set of ranking signals associated with the result.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals rank_signals = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setRankSignals(
+          com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals value) {
+        if (rankSignalsBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          rankSignals_ = value;
+        } else {
+          rankSignalsBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A set of ranking signals associated with the result.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals rank_signals = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setRankSignals(
+          com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals.Builder
+              builderForValue) {
+        if (rankSignalsBuilder_ == null) {
+          rankSignals_ = builderForValue.build();
+        } else {
+          rankSignalsBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A set of ranking signals associated with the result.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals rank_signals = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeRankSignals(
+          com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals value) {
+        if (rankSignalsBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) != 0)
+              && rankSignals_ != null
+              && rankSignals_
+                  != com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                      .getDefaultInstance()) {
+            getRankSignalsBuilder().mergeFrom(value);
+          } else {
+            rankSignals_ = value;
+          }
+        } else {
+          rankSignalsBuilder_.mergeFrom(value);
+        }
+        if (rankSignals_ != null) {
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A set of ranking signals associated with the result.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals rank_signals = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearRankSignals() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        rankSignals_ = null;
+        if (rankSignalsBuilder_ != null) {
+          rankSignalsBuilder_.dispose();
+          rankSignalsBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A set of ranking signals associated with the result.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals rank_signals = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals.Builder
+          getRankSignalsBuilder() {
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return getRankSignalsFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A set of ranking signals associated with the result.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals rank_signals = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult
+              .RankSignalsOrBuilder
+          getRankSignalsOrBuilder() {
+        if (rankSignalsBuilder_ != null) {
+          return rankSignalsBuilder_.getMessageOrBuilder();
+        } else {
+          return rankSignals_ == null
+              ? com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                  .getDefaultInstance()
+              : rankSignals_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * A set of ranking signals associated with the result.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals rank_signals = 7 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals,
+              com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                  .Builder,
+              com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult
+                  .RankSignalsOrBuilder>
+          getRankSignalsFieldBuilder() {
+        if (rankSignalsBuilder_ == null) {
+          rankSignalsBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult.RankSignals
+                      .Builder,
+                  com.google.cloud.discoveryengine.v1beta.SearchResponse.SearchResult
+                      .RankSignalsOrBuilder>(getRankSignals(), getParentForChildren(), isClean());
+          rankSignals_ = null;
+        }
+        return rankSignalsBuilder_;
       }
 
       @java.lang.Override

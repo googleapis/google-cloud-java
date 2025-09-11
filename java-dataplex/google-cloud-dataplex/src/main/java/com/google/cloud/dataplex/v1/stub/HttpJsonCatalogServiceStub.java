@@ -44,18 +44,22 @@ import com.google.cloud.dataplex.v1.AspectType;
 import com.google.cloud.dataplex.v1.CancelMetadataJobRequest;
 import com.google.cloud.dataplex.v1.CreateAspectTypeRequest;
 import com.google.cloud.dataplex.v1.CreateEntryGroupRequest;
+import com.google.cloud.dataplex.v1.CreateEntryLinkRequest;
 import com.google.cloud.dataplex.v1.CreateEntryRequest;
 import com.google.cloud.dataplex.v1.CreateEntryTypeRequest;
 import com.google.cloud.dataplex.v1.CreateMetadataJobRequest;
 import com.google.cloud.dataplex.v1.DeleteAspectTypeRequest;
 import com.google.cloud.dataplex.v1.DeleteEntryGroupRequest;
+import com.google.cloud.dataplex.v1.DeleteEntryLinkRequest;
 import com.google.cloud.dataplex.v1.DeleteEntryRequest;
 import com.google.cloud.dataplex.v1.DeleteEntryTypeRequest;
 import com.google.cloud.dataplex.v1.Entry;
 import com.google.cloud.dataplex.v1.EntryGroup;
+import com.google.cloud.dataplex.v1.EntryLink;
 import com.google.cloud.dataplex.v1.EntryType;
 import com.google.cloud.dataplex.v1.GetAspectTypeRequest;
 import com.google.cloud.dataplex.v1.GetEntryGroupRequest;
+import com.google.cloud.dataplex.v1.GetEntryLinkRequest;
 import com.google.cloud.dataplex.v1.GetEntryRequest;
 import com.google.cloud.dataplex.v1.GetEntryTypeRequest;
 import com.google.cloud.dataplex.v1.GetMetadataJobRequest;
@@ -1121,6 +1125,113 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                       .build())
               .build();
 
+  private static final ApiMethodDescriptor<CreateEntryLinkRequest, EntryLink>
+      createEntryLinkMethodDescriptor =
+          ApiMethodDescriptor.<CreateEntryLinkRequest, EntryLink>newBuilder()
+              .setFullMethodName("google.cloud.dataplex.v1.CatalogService/CreateEntryLink")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateEntryLinkRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/entryGroups/*}/entryLinks",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateEntryLinkRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateEntryLinkRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "entryLinkId", request.getEntryLinkId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("entryLink", request.getEntryLink(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<EntryLink>newBuilder()
+                      .setDefaultInstance(EntryLink.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteEntryLinkRequest, EntryLink>
+      deleteEntryLinkMethodDescriptor =
+          ApiMethodDescriptor.<DeleteEntryLinkRequest, EntryLink>newBuilder()
+              .setFullMethodName("google.cloud.dataplex.v1.CatalogService/DeleteEntryLink")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteEntryLinkRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/entryGroups/*/entryLinks/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteEntryLinkRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteEntryLinkRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<EntryLink>newBuilder()
+                      .setDefaultInstance(EntryLink.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<GetEntryLinkRequest, EntryLink>
+      getEntryLinkMethodDescriptor =
+          ApiMethodDescriptor.<GetEntryLinkRequest, EntryLink>newBuilder()
+              .setFullMethodName("google.cloud.dataplex.v1.CatalogService/GetEntryLink")
+              .setHttpMethod("GET")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<GetEntryLinkRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/entryGroups/*/entryLinks/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<GetEntryLinkRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<GetEntryLinkRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<EntryLink>newBuilder()
+                      .setDefaultInstance(EntryLink.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           ApiMethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1250,6 +1361,9 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
   private final UnaryCallable<ListMetadataJobsRequest, ListMetadataJobsPagedResponse>
       listMetadataJobsPagedCallable;
   private final UnaryCallable<CancelMetadataJobRequest, Empty> cancelMetadataJobCallable;
+  private final UnaryCallable<CreateEntryLinkRequest, EntryLink> createEntryLinkCallable;
+  private final UnaryCallable<DeleteEntryLinkRequest, EntryLink> deleteEntryLinkCallable;
+  private final UnaryCallable<GetEntryLinkRequest, EntryLink> getEntryLinkCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -1337,7 +1451,7 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                         .setGet("/v1/{name=projects/*/locations/*}/operations")
                         .addAdditionalBindings(
                             HttpRule.newBuilder()
-                                .setGet("/v1/{name=organizations/*/locations/*/operations/*}")
+                                .setGet("/v1/{name=organizations/*/locations/*}/operations")
                                 .build())
                         .build())
                 .build());
@@ -1635,6 +1749,39 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<CreateEntryLinkRequest, EntryLink> createEntryLinkTransportSettings =
+        HttpJsonCallSettings.<CreateEntryLinkRequest, EntryLink>newBuilder()
+            .setMethodDescriptor(createEntryLinkMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<DeleteEntryLinkRequest, EntryLink> deleteEntryLinkTransportSettings =
+        HttpJsonCallSettings.<DeleteEntryLinkRequest, EntryLink>newBuilder()
+            .setMethodDescriptor(deleteEntryLinkMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    HttpJsonCallSettings<GetEntryLinkRequest, EntryLink> getEntryLinkTransportSettings =
+        HttpJsonCallSettings.<GetEntryLinkRequest, EntryLink>newBuilder()
+            .setMethodDescriptor(getEntryLinkMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<ListLocationsRequest, ListLocationsResponse>
         listLocationsTransportSettings =
             HttpJsonCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -1819,6 +1966,15 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
             cancelMetadataJobTransportSettings,
             settings.cancelMetadataJobSettings(),
             clientContext);
+    this.createEntryLinkCallable =
+        callableFactory.createUnaryCallable(
+            createEntryLinkTransportSettings, settings.createEntryLinkSettings(), clientContext);
+    this.deleteEntryLinkCallable =
+        callableFactory.createUnaryCallable(
+            deleteEntryLinkTransportSettings, settings.deleteEntryLinkSettings(), clientContext);
+    this.getEntryLinkCallable =
+        callableFactory.createUnaryCallable(
+            getEntryLinkTransportSettings, settings.getEntryLinkSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1862,6 +2018,9 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
     methodDescriptors.add(getMetadataJobMethodDescriptor);
     methodDescriptors.add(listMetadataJobsMethodDescriptor);
     methodDescriptors.add(cancelMetadataJobMethodDescriptor);
+    methodDescriptors.add(createEntryLinkMethodDescriptor);
+    methodDescriptors.add(deleteEntryLinkMethodDescriptor);
+    methodDescriptors.add(getEntryLinkMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
     methodDescriptors.add(getLocationMethodDescriptor);
     return methodDescriptors;
@@ -2095,6 +2254,21 @@ public class HttpJsonCatalogServiceStub extends CatalogServiceStub {
   @Override
   public UnaryCallable<CancelMetadataJobRequest, Empty> cancelMetadataJobCallable() {
     return cancelMetadataJobCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateEntryLinkRequest, EntryLink> createEntryLinkCallable() {
+    return createEntryLinkCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteEntryLinkRequest, EntryLink> deleteEntryLinkCallable() {
+    return deleteEntryLinkCallable;
+  }
+
+  @Override
+  public UnaryCallable<GetEntryLinkRequest, EntryLink> getEntryLinkCallable() {
+    return getEntryLinkCallable;
   }
 
   @Override

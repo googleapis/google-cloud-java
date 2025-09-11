@@ -31,7 +31,7 @@ public interface GetDataScanJobRequestOrBuilder
    * Required. The resource name of the DataScanJob:
    * `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}/jobs/{data_scan_job_id}`
    * where `project` refers to a *project_id* or *project_number* and
-   * `location_id` refers to a GCP region.
+   * `location_id` refers to a Google Cloud region.
    * </pre>
    *
    * <code>
@@ -49,7 +49,7 @@ public interface GetDataScanJobRequestOrBuilder
    * Required. The resource name of the DataScanJob:
    * `projects/{project}/locations/{location_id}/dataScans/{data_scan_id}/jobs/{data_scan_job_id}`
    * where `project` refers to a *project_id* or *project_number* and
-   * `location_id` refers to a GCP region.
+   * `location_id` refers to a Google Cloud region.
    * </pre>
    *
    * <code>

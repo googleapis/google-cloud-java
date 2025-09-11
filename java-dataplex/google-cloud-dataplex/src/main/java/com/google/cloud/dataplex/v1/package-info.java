@@ -19,12 +19,33 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
+ * <p>======================= BusinessGlossaryServiceClient =======================
+ *
+ * <p>Service Description: BusinessGlossaryService provides APIs for managing business glossary
+ * resources for enterprise customers. The resources currently supported in Business Glossary are:
+ * 1. Glossary 2. GlossaryCategory 3. GlossaryTerm
+ *
+ * <p>Sample for BusinessGlossaryServiceClient:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * try (BusinessGlossaryServiceClient businessGlossaryServiceClient =
+ *     BusinessGlossaryServiceClient.create()) {
+ *   GlossaryName name = GlossaryName.of("[PROJECT]", "[LOCATION]", "[GLOSSARY]");
+ *   Glossary response = businessGlossaryServiceClient.getGlossary(name);
+ * }
+ * }</pre>
+ *
  * <p>======================= CatalogServiceClient =======================
  *
  * <p>Service Description: The primary resources offered by this service are EntryGroups,
- * EntryTypes, AspectTypes, and Entries. They collectively let data administrators organize, manage,
- * secure, and catalog data located across cloud projects in their organization in a variety of
- * storage systems, including Cloud Storage and BigQuery.
+ * EntryTypes, AspectTypes, Entries and EntryLinks. They collectively let data administrators
+ * organize, manage, secure, and catalog data located across cloud projects in their organization in
+ * a variety of storage systems, including Cloud Storage and BigQuery.
  *
  * <p>Sample for CatalogServiceClient:
  *
@@ -42,7 +63,8 @@
  *
  * <p>======================= CmekServiceClient =======================
  *
- * <p>Service Description: Dataplex Cmek Service
+ * <p>Service Description: Dataplex Universal Catalog Customer Managed Encryption Keys (CMEK)
+ * Service
  *
  * <p>Sample for CmekServiceClient:
  *
@@ -61,7 +83,8 @@
  *
  * <p>======================= ContentServiceClient =======================
  *
- * <p>Service Description: ContentService manages Notebook and SQL Scripts for Dataplex.
+ * <p>Service Description: ContentService manages Notebook and SQL Scripts for Dataplex Universal
+ * Catalog.
  *
  * <p>Sample for ContentServiceClient:
  *

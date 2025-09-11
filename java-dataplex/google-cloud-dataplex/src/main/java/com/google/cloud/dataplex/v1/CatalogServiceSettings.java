@@ -327,6 +327,21 @@ public class CatalogServiceSettings extends ClientSettings<CatalogServiceSetting
     return ((CatalogServiceStubSettings) getStubSettings()).cancelMetadataJobSettings();
   }
 
+  /** Returns the object with the settings used for calls to createEntryLink. */
+  public UnaryCallSettings<CreateEntryLinkRequest, EntryLink> createEntryLinkSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).createEntryLinkSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteEntryLink. */
+  public UnaryCallSettings<DeleteEntryLinkRequest, EntryLink> deleteEntryLinkSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).deleteEntryLinkSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getEntryLink. */
+  public UnaryCallSettings<GetEntryLinkRequest, EntryLink> getEntryLinkSettings() {
+    return ((CatalogServiceStubSettings) getStubSettings()).getEntryLinkSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -657,6 +672,21 @@ public class CatalogServiceSettings extends ClientSettings<CatalogServiceSetting
     /** Returns the builder for the settings used for calls to cancelMetadataJob. */
     public UnaryCallSettings.Builder<CancelMetadataJobRequest, Empty> cancelMetadataJobSettings() {
       return getStubSettingsBuilder().cancelMetadataJobSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createEntryLink. */
+    public UnaryCallSettings.Builder<CreateEntryLinkRequest, EntryLink> createEntryLinkSettings() {
+      return getStubSettingsBuilder().createEntryLinkSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteEntryLink. */
+    public UnaryCallSettings.Builder<DeleteEntryLinkRequest, EntryLink> deleteEntryLinkSettings() {
+      return getStubSettingsBuilder().deleteEntryLinkSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getEntryLink. */
+    public UnaryCallSettings.Builder<GetEntryLinkRequest, EntryLink> getEntryLinkSettings() {
+      return getStubSettingsBuilder().getEntryLinkSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

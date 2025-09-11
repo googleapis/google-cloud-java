@@ -58,6 +58,8 @@ import com.google.cloud.kms.v1.CreateImportJobRequest;
 import com.google.cloud.kms.v1.CreateKeyRingRequest;
 import com.google.cloud.kms.v1.CryptoKey;
 import com.google.cloud.kms.v1.CryptoKeyVersion;
+import com.google.cloud.kms.v1.DecapsulateRequest;
+import com.google.cloud.kms.v1.DecapsulateResponse;
 import com.google.cloud.kms.v1.DecryptRequest;
 import com.google.cloud.kms.v1.DecryptResponse;
 import com.google.cloud.kms.v1.DestroyCryptoKeyVersionRequest;
@@ -219,6 +221,7 @@ public class KeyManagementServiceStubSettings
       asymmetricDecryptSettings;
   private final UnaryCallSettings<MacSignRequest, MacSignResponse> macSignSettings;
   private final UnaryCallSettings<MacVerifyRequest, MacVerifyResponse> macVerifySettings;
+  private final UnaryCallSettings<DecapsulateRequest, DecapsulateResponse> decapsulateSettings;
   private final UnaryCallSettings<GenerateRandomBytesRequest, GenerateRandomBytesResponse>
       generateRandomBytesSettings;
   private final PagedCallSettings<
@@ -651,6 +654,11 @@ public class KeyManagementServiceStubSettings
     return macVerifySettings;
   }
 
+  /** Returns the object with the settings used for calls to decapsulate. */
+  public UnaryCallSettings<DecapsulateRequest, DecapsulateResponse> decapsulateSettings() {
+    return decapsulateSettings;
+  }
+
   /** Returns the object with the settings used for calls to generateRandomBytes. */
   public UnaryCallSettings<GenerateRandomBytesRequest, GenerateRandomBytesResponse>
       generateRandomBytesSettings() {
@@ -823,6 +831,7 @@ public class KeyManagementServiceStubSettings
     asymmetricDecryptSettings = settingsBuilder.asymmetricDecryptSettings().build();
     macSignSettings = settingsBuilder.macSignSettings().build();
     macVerifySettings = settingsBuilder.macVerifySettings().build();
+    decapsulateSettings = settingsBuilder.decapsulateSettings().build();
     generateRandomBytesSettings = settingsBuilder.generateRandomBytesSettings().build();
     listLocationsSettings = settingsBuilder.listLocationsSettings().build();
     getLocationSettings = settingsBuilder.getLocationSettings().build();
@@ -886,6 +895,8 @@ public class KeyManagementServiceStubSettings
         asymmetricDecryptSettings;
     private final UnaryCallSettings.Builder<MacSignRequest, MacSignResponse> macSignSettings;
     private final UnaryCallSettings.Builder<MacVerifyRequest, MacVerifyResponse> macVerifySettings;
+    private final UnaryCallSettings.Builder<DecapsulateRequest, DecapsulateResponse>
+        decapsulateSettings;
     private final UnaryCallSettings.Builder<GenerateRandomBytesRequest, GenerateRandomBytesResponse>
         generateRandomBytesSettings;
     private final PagedCallSettings.Builder<
@@ -977,6 +988,7 @@ public class KeyManagementServiceStubSettings
       asymmetricDecryptSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       macSignSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       macVerifySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+      decapsulateSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       generateRandomBytesSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       listLocationsSettings = PagedCallSettings.newBuilder(LIST_LOCATIONS_PAGE_STR_FACT);
       getLocationSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -1013,6 +1025,7 @@ public class KeyManagementServiceStubSettings
               asymmetricDecryptSettings,
               macSignSettings,
               macVerifySettings,
+              decapsulateSettings,
               generateRandomBytesSettings,
               listLocationsSettings,
               getLocationSettings,
@@ -1053,6 +1066,7 @@ public class KeyManagementServiceStubSettings
       asymmetricDecryptSettings = settings.asymmetricDecryptSettings.toBuilder();
       macSignSettings = settings.macSignSettings.toBuilder();
       macVerifySettings = settings.macVerifySettings.toBuilder();
+      decapsulateSettings = settings.decapsulateSettings.toBuilder();
       generateRandomBytesSettings = settings.generateRandomBytesSettings.toBuilder();
       listLocationsSettings = settings.listLocationsSettings.toBuilder();
       getLocationSettings = settings.getLocationSettings.toBuilder();
@@ -1089,6 +1103,7 @@ public class KeyManagementServiceStubSettings
               asymmetricDecryptSettings,
               macSignSettings,
               macVerifySettings,
+              decapsulateSettings,
               generateRandomBytesSettings,
               listLocationsSettings,
               getLocationSettings,
@@ -1256,6 +1271,11 @@ public class KeyManagementServiceStubSettings
           .macVerifySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("retry_policy_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("retry_policy_1_params"));
+
+      builder
+          .decapsulateSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_params"));
 
       builder
           .generateRandomBytesSettings()
@@ -1457,6 +1477,12 @@ public class KeyManagementServiceStubSettings
     /** Returns the builder for the settings used for calls to macVerify. */
     public UnaryCallSettings.Builder<MacVerifyRequest, MacVerifyResponse> macVerifySettings() {
       return macVerifySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to decapsulate. */
+    public UnaryCallSettings.Builder<DecapsulateRequest, DecapsulateResponse>
+        decapsulateSettings() {
+      return decapsulateSettings;
     }
 
     /** Returns the builder for the settings used for calls to generateRandomBytes. */

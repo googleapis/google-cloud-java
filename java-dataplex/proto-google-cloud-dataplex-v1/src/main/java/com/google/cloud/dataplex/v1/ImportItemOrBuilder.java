@@ -65,15 +65,58 @@ public interface ImportItemOrBuilder
    *
    *
    * <pre>
+   * Information about the entry link. User should provide either one of the
+   * entry or entry_link. While providing entry_link, user should not
+   * provide update_mask and aspect_keys.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.EntryLink entry_link = 4;</code>
+   *
+   * @return Whether the entryLink field is set.
+   */
+  boolean hasEntryLink();
+
+  /**
+   *
+   *
+   * <pre>
+   * Information about the entry link. User should provide either one of the
+   * entry or entry_link. While providing entry_link, user should not
+   * provide update_mask and aspect_keys.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.EntryLink entry_link = 4;</code>
+   *
+   * @return The entryLink.
+   */
+  com.google.cloud.dataplex.v1.EntryLink getEntryLink();
+
+  /**
+   *
+   *
+   * <pre>
+   * Information about the entry link. User should provide either one of the
+   * entry or entry_link. While providing entry_link, user should not
+   * provide update_mask and aspect_keys.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.EntryLink entry_link = 4;</code>
+   */
+  com.google.cloud.dataplex.v1.EntryLinkOrBuilder getEntryLinkOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * The fields to update, in paths that are relative to the `Entry` resource.
    * Separate each field with a comma.
    *
-   * In `FULL` entry sync mode, Dataplex includes the paths of all of the fields
-   * for an entry that can be modified, including aspects. This means that
-   * Dataplex replaces the existing entry with the entry in the metadata import
-   * file. All modifiable fields are updated, regardless of the fields that are
-   * listed in the update mask, and regardless of whether a field is present
-   * in the `entry` object.
+   * In `FULL` entry sync mode, Dataplex Universal Catalog includes the paths of
+   * all of the fields for an entry that can be modified, including aspects.
+   * This means that Dataplex Universal Catalog replaces the existing entry with
+   * the entry in the metadata import file. All modifiable fields are updated,
+   * regardless of the fields that are listed in the update mask, and regardless
+   * of whether a field is present in the `entry` object.
    *
    * The `update_mask` field is ignored when an entry is created or re-created.
    *
@@ -81,10 +124,10 @@ public interface ImportItemOrBuilder
    * value to `aspects`.
    *
    *
-   * Dataplex also determines which entries and aspects to modify by comparing
-   * the values and timestamps that you provide in the metadata import file with
-   * the values and timestamps that exist in your project. For more information,
-   * see [Comparison
+   * Dataplex Universal Catalog also determines which entries and aspects to
+   * modify by comparing the values and timestamps that you provide in the
+   * metadata import file with the values and timestamps that exist in your
+   * project. For more information, see [Comparison
    * logic](https://cloud.google.com/dataplex/docs/import-metadata#data-modification-logic).
    * </pre>
    *
@@ -101,12 +144,12 @@ public interface ImportItemOrBuilder
    * The fields to update, in paths that are relative to the `Entry` resource.
    * Separate each field with a comma.
    *
-   * In `FULL` entry sync mode, Dataplex includes the paths of all of the fields
-   * for an entry that can be modified, including aspects. This means that
-   * Dataplex replaces the existing entry with the entry in the metadata import
-   * file. All modifiable fields are updated, regardless of the fields that are
-   * listed in the update mask, and regardless of whether a field is present
-   * in the `entry` object.
+   * In `FULL` entry sync mode, Dataplex Universal Catalog includes the paths of
+   * all of the fields for an entry that can be modified, including aspects.
+   * This means that Dataplex Universal Catalog replaces the existing entry with
+   * the entry in the metadata import file. All modifiable fields are updated,
+   * regardless of the fields that are listed in the update mask, and regardless
+   * of whether a field is present in the `entry` object.
    *
    * The `update_mask` field is ignored when an entry is created or re-created.
    *
@@ -114,10 +157,10 @@ public interface ImportItemOrBuilder
    * value to `aspects`.
    *
    *
-   * Dataplex also determines which entries and aspects to modify by comparing
-   * the values and timestamps that you provide in the metadata import file with
-   * the values and timestamps that exist in your project. For more information,
-   * see [Comparison
+   * Dataplex Universal Catalog also determines which entries and aspects to
+   * modify by comparing the values and timestamps that you provide in the
+   * metadata import file with the values and timestamps that exist in your
+   * project. For more information, see [Comparison
    * logic](https://cloud.google.com/dataplex/docs/import-metadata#data-modification-logic).
    * </pre>
    *
@@ -134,12 +177,12 @@ public interface ImportItemOrBuilder
    * The fields to update, in paths that are relative to the `Entry` resource.
    * Separate each field with a comma.
    *
-   * In `FULL` entry sync mode, Dataplex includes the paths of all of the fields
-   * for an entry that can be modified, including aspects. This means that
-   * Dataplex replaces the existing entry with the entry in the metadata import
-   * file. All modifiable fields are updated, regardless of the fields that are
-   * listed in the update mask, and regardless of whether a field is present
-   * in the `entry` object.
+   * In `FULL` entry sync mode, Dataplex Universal Catalog includes the paths of
+   * all of the fields for an entry that can be modified, including aspects.
+   * This means that Dataplex Universal Catalog replaces the existing entry with
+   * the entry in the metadata import file. All modifiable fields are updated,
+   * regardless of the fields that are listed in the update mask, and regardless
+   * of whether a field is present in the `entry` object.
    *
    * The `update_mask` field is ignored when an entry is created or re-created.
    *
@@ -147,10 +190,10 @@ public interface ImportItemOrBuilder
    * value to `aspects`.
    *
    *
-   * Dataplex also determines which entries and aspects to modify by comparing
-   * the values and timestamps that you provide in the metadata import file with
-   * the values and timestamps that exist in your project. For more information,
-   * see [Comparison
+   * Dataplex Universal Catalog also determines which entries and aspects to
+   * modify by comparing the values and timestamps that you provide in the
+   * metadata import file with the values and timestamps that exist in your
+   * project. For more information, see [Comparison
    * logic](https://cloud.google.com/dataplex/docs/import-metadata#data-modification-logic).
    * </pre>
    *
@@ -178,8 +221,8 @@ public interface ImportItemOrBuilder
    *
    * In `FULL` entry sync mode, if you leave this field empty, it is treated as
    * specifying exactly those aspects that are present within the specified
-   * entry. Dataplex implicitly adds the keys for all of the required aspects of
-   * an entry.
+   * entry. Dataplex Universal Catalog implicitly adds the keys for all of the
+   * required aspects of an entry.
    * </pre>
    *
    * <code>repeated string aspect_keys = 3;</code>
@@ -208,8 +251,8 @@ public interface ImportItemOrBuilder
    *
    * In `FULL` entry sync mode, if you leave this field empty, it is treated as
    * specifying exactly those aspects that are present within the specified
-   * entry. Dataplex implicitly adds the keys for all of the required aspects of
-   * an entry.
+   * entry. Dataplex Universal Catalog implicitly adds the keys for all of the
+   * required aspects of an entry.
    * </pre>
    *
    * <code>repeated string aspect_keys = 3;</code>
@@ -238,8 +281,8 @@ public interface ImportItemOrBuilder
    *
    * In `FULL` entry sync mode, if you leave this field empty, it is treated as
    * specifying exactly those aspects that are present within the specified
-   * entry. Dataplex implicitly adds the keys for all of the required aspects of
-   * an entry.
+   * entry. Dataplex Universal Catalog implicitly adds the keys for all of the
+   * required aspects of an entry.
    * </pre>
    *
    * <code>repeated string aspect_keys = 3;</code>
@@ -269,8 +312,8 @@ public interface ImportItemOrBuilder
    *
    * In `FULL` entry sync mode, if you leave this field empty, it is treated as
    * specifying exactly those aspects that are present within the specified
-   * entry. Dataplex implicitly adds the keys for all of the required aspects of
-   * an entry.
+   * entry. Dataplex Universal Catalog implicitly adds the keys for all of the
+   * required aspects of an entry.
    * </pre>
    *
    * <code>repeated string aspect_keys = 3;</code>

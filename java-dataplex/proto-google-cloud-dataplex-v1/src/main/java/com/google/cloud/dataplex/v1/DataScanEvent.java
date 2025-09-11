@@ -318,7 +318,7 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Data scan job was createed.
+     * Data scan job was created.
      * </pre>
      *
      * <code>CREATED = 5;</code>
@@ -386,7 +386,7 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Data scan job was createed.
+     * Data scan job was created.
      * </pre>
      *
      * <code>CREATED = 5;</code>
@@ -7882,6 +7882,66 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
         : postScanActionsResult_;
   }
 
+  public static final int CATALOG_PUBLISHING_STATUS_FIELD_NUMBER = 13;
+  private com.google.cloud.dataplex.v1.DataScanCatalogPublishingStatus catalogPublishingStatus_;
+
+  /**
+   *
+   *
+   * <pre>
+   * The status of publishing the data scan as Dataplex Universal Catalog
+   * metadata.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.DataScanCatalogPublishingStatus catalog_publishing_status = 13;
+   * </code>
+   *
+   * @return Whether the catalogPublishingStatus field is set.
+   */
+  @java.lang.Override
+  public boolean hasCatalogPublishingStatus() {
+    return ((bitField0_ & 0x00000010) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The status of publishing the data scan as Dataplex Universal Catalog
+   * metadata.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.DataScanCatalogPublishingStatus catalog_publishing_status = 13;
+   * </code>
+   *
+   * @return The catalogPublishingStatus.
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataScanCatalogPublishingStatus getCatalogPublishingStatus() {
+    return catalogPublishingStatus_ == null
+        ? com.google.cloud.dataplex.v1.DataScanCatalogPublishingStatus.getDefaultInstance()
+        : catalogPublishingStatus_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The status of publishing the data scan as Dataplex Universal Catalog
+   * metadata.
+   * </pre>
+   *
+   * <code>.google.cloud.dataplex.v1.DataScanCatalogPublishingStatus catalog_publishing_status = 13;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.dataplex.v1.DataScanCatalogPublishingStatusOrBuilder
+      getCatalogPublishingStatusOrBuilder() {
+    return catalogPublishingStatus_ == null
+        ? com.google.cloud.dataplex.v1.DataScanCatalogPublishingStatus.getDefaultInstance()
+        : catalogPublishingStatus_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -7933,6 +7993,9 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x00000001) != 0)) {
       output.writeMessage(12, getCreateTime());
+    }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      output.writeMessage(13, getCatalogPublishingStatus());
     }
     if (resultCase_ == 101) {
       output.writeMessage(
@@ -8000,6 +8063,11 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
     if (((bitField0_ & 0x00000001) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getCreateTime());
     }
+    if (((bitField0_ & 0x00000010) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              13, getCatalogPublishingStatus());
+    }
     if (resultCase_ == 101) {
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
@@ -8063,6 +8131,10 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
     if (hasPostScanActionsResult() != other.hasPostScanActionsResult()) return false;
     if (hasPostScanActionsResult()) {
       if (!getPostScanActionsResult().equals(other.getPostScanActionsResult())) return false;
+    }
+    if (hasCatalogPublishingStatus() != other.hasCatalogPublishingStatus()) return false;
+    if (hasCatalogPublishingStatus()) {
+      if (!getCatalogPublishingStatus().equals(other.getCatalogPublishingStatus())) return false;
     }
     if (!getResultCase().equals(other.getResultCase())) return false;
     switch (resultCase_) {
@@ -8128,6 +8200,10 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
     if (hasPostScanActionsResult()) {
       hash = (37 * hash) + POST_SCAN_ACTIONS_RESULT_FIELD_NUMBER;
       hash = (53 * hash) + getPostScanActionsResult().hashCode();
+    }
+    if (hasCatalogPublishingStatus()) {
+      hash = (37 * hash) + CATALOG_PUBLISHING_STATUS_FIELD_NUMBER;
+      hash = (53 * hash) + getCatalogPublishingStatus().hashCode();
     }
     switch (resultCase_) {
       case 101:
@@ -8299,6 +8375,7 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
         getStartTimeFieldBuilder();
         getEndTimeFieldBuilder();
         getPostScanActionsResultFieldBuilder();
+        getCatalogPublishingStatusFieldBuilder();
       }
     }
 
@@ -8345,6 +8422,11 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
       if (postScanActionsResultBuilder_ != null) {
         postScanActionsResultBuilder_.dispose();
         postScanActionsResultBuilder_ = null;
+      }
+      catalogPublishingStatus_ = null;
+      if (catalogPublishingStatusBuilder_ != null) {
+        catalogPublishingStatusBuilder_.dispose();
+        catalogPublishingStatusBuilder_ = null;
       }
       resultCase_ = 0;
       result_ = null;
@@ -8430,6 +8512,13 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
                 ? postScanActionsResult_
                 : postScanActionsResultBuilder_.build();
         to_bitField0_ |= 0x00000008;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.catalogPublishingStatus_ =
+            catalogPublishingStatusBuilder_ == null
+                ? catalogPublishingStatus_
+                : catalogPublishingStatusBuilder_.build();
+        to_bitField0_ |= 0x00000010;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -8541,6 +8630,9 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasPostScanActionsResult()) {
         mergePostScanActionsResult(other.getPostScanActionsResult());
+      }
+      if (other.hasCatalogPublishingStatus()) {
+        mergeCatalogPublishingStatus(other.getCatalogPublishingStatus());
       }
       switch (other.getResultCase()) {
         case DATA_PROFILE:
@@ -8673,6 +8765,13 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 98
+            case 106:
+              {
+                input.readMessage(
+                    getCatalogPublishingStatusFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 106
             case 810:
               {
                 input.readMessage(getDataProfileFieldBuilder().getBuilder(), extensionRegistry);
@@ -11326,6 +11425,235 @@ public final class DataScanEvent extends com.google.protobuf.GeneratedMessageV3
         postScanActionsResult_ = null;
       }
       return postScanActionsResultBuilder_;
+    }
+
+    private com.google.cloud.dataplex.v1.DataScanCatalogPublishingStatus catalogPublishingStatus_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.DataScanCatalogPublishingStatus,
+            com.google.cloud.dataplex.v1.DataScanCatalogPublishingStatus.Builder,
+            com.google.cloud.dataplex.v1.DataScanCatalogPublishingStatusOrBuilder>
+        catalogPublishingStatusBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of publishing the data scan as Dataplex Universal Catalog
+     * metadata.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataScanCatalogPublishingStatus catalog_publishing_status = 13;
+     * </code>
+     *
+     * @return Whether the catalogPublishingStatus field is set.
+     */
+    public boolean hasCatalogPublishingStatus() {
+      return ((bitField0_ & 0x00010000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of publishing the data scan as Dataplex Universal Catalog
+     * metadata.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataScanCatalogPublishingStatus catalog_publishing_status = 13;
+     * </code>
+     *
+     * @return The catalogPublishingStatus.
+     */
+    public com.google.cloud.dataplex.v1.DataScanCatalogPublishingStatus
+        getCatalogPublishingStatus() {
+      if (catalogPublishingStatusBuilder_ == null) {
+        return catalogPublishingStatus_ == null
+            ? com.google.cloud.dataplex.v1.DataScanCatalogPublishingStatus.getDefaultInstance()
+            : catalogPublishingStatus_;
+      } else {
+        return catalogPublishingStatusBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of publishing the data scan as Dataplex Universal Catalog
+     * metadata.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataScanCatalogPublishingStatus catalog_publishing_status = 13;
+     * </code>
+     */
+    public Builder setCatalogPublishingStatus(
+        com.google.cloud.dataplex.v1.DataScanCatalogPublishingStatus value) {
+      if (catalogPublishingStatusBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        catalogPublishingStatus_ = value;
+      } else {
+        catalogPublishingStatusBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of publishing the data scan as Dataplex Universal Catalog
+     * metadata.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataScanCatalogPublishingStatus catalog_publishing_status = 13;
+     * </code>
+     */
+    public Builder setCatalogPublishingStatus(
+        com.google.cloud.dataplex.v1.DataScanCatalogPublishingStatus.Builder builderForValue) {
+      if (catalogPublishingStatusBuilder_ == null) {
+        catalogPublishingStatus_ = builderForValue.build();
+      } else {
+        catalogPublishingStatusBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of publishing the data scan as Dataplex Universal Catalog
+     * metadata.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataScanCatalogPublishingStatus catalog_publishing_status = 13;
+     * </code>
+     */
+    public Builder mergeCatalogPublishingStatus(
+        com.google.cloud.dataplex.v1.DataScanCatalogPublishingStatus value) {
+      if (catalogPublishingStatusBuilder_ == null) {
+        if (((bitField0_ & 0x00010000) != 0)
+            && catalogPublishingStatus_ != null
+            && catalogPublishingStatus_
+                != com.google.cloud.dataplex.v1.DataScanCatalogPublishingStatus
+                    .getDefaultInstance()) {
+          getCatalogPublishingStatusBuilder().mergeFrom(value);
+        } else {
+          catalogPublishingStatus_ = value;
+        }
+      } else {
+        catalogPublishingStatusBuilder_.mergeFrom(value);
+      }
+      if (catalogPublishingStatus_ != null) {
+        bitField0_ |= 0x00010000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of publishing the data scan as Dataplex Universal Catalog
+     * metadata.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataScanCatalogPublishingStatus catalog_publishing_status = 13;
+     * </code>
+     */
+    public Builder clearCatalogPublishingStatus() {
+      bitField0_ = (bitField0_ & ~0x00010000);
+      catalogPublishingStatus_ = null;
+      if (catalogPublishingStatusBuilder_ != null) {
+        catalogPublishingStatusBuilder_.dispose();
+        catalogPublishingStatusBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of publishing the data scan as Dataplex Universal Catalog
+     * metadata.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataScanCatalogPublishingStatus catalog_publishing_status = 13;
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.DataScanCatalogPublishingStatus.Builder
+        getCatalogPublishingStatusBuilder() {
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return getCatalogPublishingStatusFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of publishing the data scan as Dataplex Universal Catalog
+     * metadata.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataScanCatalogPublishingStatus catalog_publishing_status = 13;
+     * </code>
+     */
+    public com.google.cloud.dataplex.v1.DataScanCatalogPublishingStatusOrBuilder
+        getCatalogPublishingStatusOrBuilder() {
+      if (catalogPublishingStatusBuilder_ != null) {
+        return catalogPublishingStatusBuilder_.getMessageOrBuilder();
+      } else {
+        return catalogPublishingStatus_ == null
+            ? com.google.cloud.dataplex.v1.DataScanCatalogPublishingStatus.getDefaultInstance()
+            : catalogPublishingStatus_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The status of publishing the data scan as Dataplex Universal Catalog
+     * metadata.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.dataplex.v1.DataScanCatalogPublishingStatus catalog_publishing_status = 13;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.dataplex.v1.DataScanCatalogPublishingStatus,
+            com.google.cloud.dataplex.v1.DataScanCatalogPublishingStatus.Builder,
+            com.google.cloud.dataplex.v1.DataScanCatalogPublishingStatusOrBuilder>
+        getCatalogPublishingStatusFieldBuilder() {
+      if (catalogPublishingStatusBuilder_ == null) {
+        catalogPublishingStatusBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataplex.v1.DataScanCatalogPublishingStatus,
+                com.google.cloud.dataplex.v1.DataScanCatalogPublishingStatus.Builder,
+                com.google.cloud.dataplex.v1.DataScanCatalogPublishingStatusOrBuilder>(
+                getCatalogPublishingStatus(), getParentForChildren(), isClean());
+        catalogPublishingStatus_ = null;
+      }
+      return catalogPublishingStatusBuilder_;
     }
 
     @java.lang.Override

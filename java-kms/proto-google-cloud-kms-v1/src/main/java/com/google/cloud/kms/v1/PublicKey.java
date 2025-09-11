@@ -117,6 +117,17 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * The returned public key will be encoded in DER format (the
+     * PrivateKeyInfo structure from RFC 5208).
+     * </pre>
+     *
+     * <code>DER = 2;</code>
+     */
+    DER(2),
+    /**
+     *
+     *
+     * <pre>
      * This is supported only for PQC algorithms.
      * The key material is returned in the format defined by NIST PQC
      * standards (FIPS 203, FIPS 204, and FIPS 205).
@@ -125,6 +136,17 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      * <code>NIST_PQC = 3;</code>
      */
     NIST_PQC(3),
+    /**
+     *
+     *
+     * <pre>
+     * The returned public key is in raw bytes format defined in its standard
+     * https://datatracker.ietf.org/doc/draft-connolly-cfrg-xwing-kem.
+     * </pre>
+     *
+     * <code>XWING_RAW_BYTES = 4;</code>
+     */
+    XWING_RAW_BYTES(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -167,6 +189,18 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
+     * The returned public key will be encoded in DER format (the
+     * PrivateKeyInfo structure from RFC 5208).
+     * </pre>
+     *
+     * <code>DER = 2;</code>
+     */
+    public static final int DER_VALUE = 2;
+
+    /**
+     *
+     *
+     * <pre>
      * This is supported only for PQC algorithms.
      * The key material is returned in the format defined by NIST PQC
      * standards (FIPS 203, FIPS 204, and FIPS 205).
@@ -175,6 +209,18 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      * <code>NIST_PQC = 3;</code>
      */
     public static final int NIST_PQC_VALUE = 3;
+
+    /**
+     *
+     *
+     * <pre>
+     * The returned public key is in raw bytes format defined in its standard
+     * https://datatracker.ietf.org/doc/draft-connolly-cfrg-xwing-kem.
+     * </pre>
+     *
+     * <code>XWING_RAW_BYTES = 4;</code>
+     */
+    public static final int XWING_RAW_BYTES_VALUE = 4;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -204,8 +250,12 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
           return PUBLIC_KEY_FORMAT_UNSPECIFIED;
         case 1:
           return PEM;
+        case 2:
+          return DER;
         case 3:
           return NIST_PQC;
+        case 4:
+          return XWING_RAW_BYTES;
         default:
           return null;
       }
