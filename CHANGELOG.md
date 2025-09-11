@@ -1,5 +1,18 @@
 # Changelog
 
+## [3.17.0](https://github.com/googleapis/java-bigquerystorage/compare/v3.16.3...v3.17.0) (2025-09-11)
+
+
+### Features
+
+* **write:** Support Arrow format for Write API ([#3086](https://github.com/googleapis/java-bigquerystorage/issues/3086)) ([6b37a95](https://github.com/googleapis/java-bigquerystorage/commit/6b37a959b2d30dcc70052b29abc4607106f1bf28))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.52.1 ([#3088](https://github.com/googleapis/java-bigquerystorage/issues/3088)) ([4cb9fab](https://github.com/googleapis/java-bigquerystorage/commit/4cb9fab5c9c5ea716aab1813efcab319414d46c9))
+* Update googleapis/sdk-platform-java action to v2.62.1 ([#3089](https://github.com/googleapis/java-bigquerystorage/issues/3089)) ([08a1968](https://github.com/googleapis/java-bigquerystorage/commit/08a19685f519cd0a8ad43572377552e0b3727014))
+
 ## [3.16.3](https://github.com/googleapis/java-bigquerystorage/compare/v3.16.2...v3.16.3) (2025-08-26)
 
 
