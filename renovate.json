@@ -1,4 +1,6 @@
 {
+  "prConcurrentLimit": 0,
+  "prHourlyLimit": 0,
   "extends": [
     ":separateMajorReleases",
     ":combinePatchMinorReleases",
