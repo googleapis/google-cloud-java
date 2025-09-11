@@ -69,18 +69,6 @@
         <type>pom</type>
         <scope>import</scope>
       </dependency>
-      <dependency>
-      	<!-- remove this dependency after google-cloud-java is released after the cycle of Jan 31st 2025 -->
-      	<groupId>io.opentelemetry</groupId>
-      	<artifactId>opentelemetry-context</artifactId>
-      	<version>1.47.0</version>
-      </dependency>
-      <dependency>
-      	<!-- remove this dependency after google-cloud-java is released after the cycle of Jan 31st 2025 -->
-      	<groupId>io.opentelemetry</groupId>
-      	<artifactId>opentelemetry-api</artifactId>
-      	<version>1.47.0</version>
-      </dependency>
     </dependencies>
   </dependencyManagement>
   <dependencies>
