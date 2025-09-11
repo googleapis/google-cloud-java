@@ -1,5 +1,23 @@
 # Changelog
 
+## [3.33.0](https://github.com/googleapis/java-firestore/compare/v3.32.2...v3.33.0) (2025-09-11)
+
+
+### Features
+
+* Add Firestore CloneDatabase support ([1fa6ae8](https://github.com/googleapis/java-firestore/commit/1fa6ae824c81fd816e39651bb1c48b449d31175b))
+
+
+### Bug Fixes
+
+* **deps:** Update the Java code generator (gapic-generator-java) to 2.62.1 ([1fa6ae8](https://github.com/googleapis/java-firestore/commit/1fa6ae824c81fd816e39651bb1c48b449d31175b))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.52.1 ([#2230](https://github.com/googleapis/java-firestore/issues/2230)) ([bc07b64](https://github.com/googleapis/java-firestore/commit/bc07b647b52752db7a556f0a1ca201536bc8a21b))
+* Update googleapis/sdk-platform-java action to v2.62.1 ([#2224](https://github.com/googleapis/java-firestore/issues/2224)) ([d546b5a](https://github.com/googleapis/java-firestore/commit/d546b5a3d30086f86ed3688b725f639fbdf7c11c))
+
 ## [3.32.2](https://github.com/googleapis/java-firestore/compare/v3.32.1...v3.32.2) (2025-08-26)
 
 
