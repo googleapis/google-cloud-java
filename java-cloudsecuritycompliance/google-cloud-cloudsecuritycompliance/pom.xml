@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-cloudsecuritycompliance</artifactId>
-  <version>0.1.0</version><!-- {x-version-update:google-cloud-cloudsecuritycompliance:current} -->
+  <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-cloudsecuritycompliance:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Security Compliance API</name>
   <description>Cloud Security Compliance API Compliance Manager uses software-defined controls that let you assess support for multiple compliance programs and security requirements within a Google Cloud organization</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-cloudsecuritycompliance-parent</artifactId>
-    <version>0.1.0</version><!-- {x-version-update:google-cloud-cloudsecuritycompliance:current} -->
+    <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-cloudsecuritycompliance:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-cloudsecuritycompliance</site.installationModule>
