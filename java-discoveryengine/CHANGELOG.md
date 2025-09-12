@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.70.0 (2025-09-11)
+
+### Features
+
+* Added `ranking_expression_backed` and `rank_signals` fields related to the Custom Ranking feature ([75896ab](https://github.com/googleapis/google-cloud-java/commit/75896ab07163a97a12a067dab9c255b014285a22))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.52.1 ([#11738](https://github.com/googleapis/google-cloud-java/issues/11738)) ([b17cf6d](https://github.com/googleapis/google-cloud-java/commit/b17cf6de63b9cabcd44b6fc21b57c187b321ae8f))
+
+
 ## 0.69.0 (2025-08-25)
 
 ### Dependencies

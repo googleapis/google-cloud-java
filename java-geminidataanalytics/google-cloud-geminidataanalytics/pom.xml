@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-geminidataanalytics</artifactId>
-  <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-geminidataanalytics:current} -->
+  <version>0.2.0</version><!-- {x-version-update:google-cloud-geminidataanalytics:current} -->
   <packaging>jar</packaging>
   <name>Google Data Analytics API with Gemini</name>
   <description>Data Analytics API with Gemini Use Conversational Analytics API to build an artificial intelligence (AI)-powered chat interface, or data agent, that answers questions about structured data using natural language.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-geminidataanalytics-parent</artifactId>
-    <version>0.2.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-geminidataanalytics:current} -->
+    <version>0.2.0</version><!-- {x-version-update:google-cloud-geminidataanalytics:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-geminidataanalytics</site.installationModule>
