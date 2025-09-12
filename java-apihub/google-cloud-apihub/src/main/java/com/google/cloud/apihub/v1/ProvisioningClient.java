@@ -35,6 +35,7 @@ import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.longrunning.Operation;
+import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -88,6 +89,26 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> createApiHubInstanceOperationCallable()
  *           <li><p> createApiHubInstanceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteApiHubInstance</td>
+ *      <td><p> Deletes the API hub instance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteApiHubInstanceAsync(DeleteApiHubInstanceRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteApiHubInstanceAsync(ApiHubInstanceName name)
+ *           <li><p> deleteApiHubInstanceAsync(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteApiHubInstanceOperationCallable()
+ *           <li><p> deleteApiHubInstanceCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -436,6 +457,157 @@ public class ProvisioningClient implements BackgroundResource {
   public final UnaryCallable<CreateApiHubInstanceRequest, Operation>
       createApiHubInstanceCallable() {
     return stub.createApiHubInstanceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the API hub instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ProvisioningClient provisioningClient = ProvisioningClient.create()) {
+   *   ApiHubInstanceName name =
+   *       ApiHubInstanceName.of("[PROJECT]", "[LOCATION]", "[API_HUB_INSTANCE]");
+   *   provisioningClient.deleteApiHubInstanceAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the Api Hub instance to delete. Format:
+   *     `projects/{project}/locations/{location}/apiHubInstances/{apiHubInstance}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteApiHubInstanceAsync(
+      ApiHubInstanceName name) {
+    DeleteApiHubInstanceRequest request =
+        DeleteApiHubInstanceRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    return deleteApiHubInstanceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the API hub instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ProvisioningClient provisioningClient = ProvisioningClient.create()) {
+   *   String name =
+   *       ApiHubInstanceName.of("[PROJECT]", "[LOCATION]", "[API_HUB_INSTANCE]").toString();
+   *   provisioningClient.deleteApiHubInstanceAsync(name).get();
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the Api Hub instance to delete. Format:
+   *     `projects/{project}/locations/{location}/apiHubInstances/{apiHubInstance}`.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteApiHubInstanceAsync(String name) {
+    DeleteApiHubInstanceRequest request =
+        DeleteApiHubInstanceRequest.newBuilder().setName(name).build();
+    return deleteApiHubInstanceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the API hub instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ProvisioningClient provisioningClient = ProvisioningClient.create()) {
+   *   DeleteApiHubInstanceRequest request =
+   *       DeleteApiHubInstanceRequest.newBuilder()
+   *           .setName(
+   *               ApiHubInstanceName.of("[PROJECT]", "[LOCATION]", "[API_HUB_INSTANCE]").toString())
+   *           .build();
+   *   provisioningClient.deleteApiHubInstanceAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Empty, OperationMetadata> deleteApiHubInstanceAsync(
+      DeleteApiHubInstanceRequest request) {
+    return deleteApiHubInstanceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the API hub instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ProvisioningClient provisioningClient = ProvisioningClient.create()) {
+   *   DeleteApiHubInstanceRequest request =
+   *       DeleteApiHubInstanceRequest.newBuilder()
+   *           .setName(
+   *               ApiHubInstanceName.of("[PROJECT]", "[LOCATION]", "[API_HUB_INSTANCE]").toString())
+   *           .build();
+   *   OperationFuture<Empty, OperationMetadata> future =
+   *       provisioningClient.deleteApiHubInstanceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteApiHubInstanceRequest, Empty, OperationMetadata>
+      deleteApiHubInstanceOperationCallable() {
+    return stub.deleteApiHubInstanceOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes the API hub instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ProvisioningClient provisioningClient = ProvisioningClient.create()) {
+   *   DeleteApiHubInstanceRequest request =
+   *       DeleteApiHubInstanceRequest.newBuilder()
+   *           .setName(
+   *               ApiHubInstanceName.of("[PROJECT]", "[LOCATION]", "[API_HUB_INSTANCE]").toString())
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       provisioningClient.deleteApiHubInstanceCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteApiHubInstanceRequest, Operation>
+      deleteApiHubInstanceCallable() {
+    return stub.deleteApiHubInstanceCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

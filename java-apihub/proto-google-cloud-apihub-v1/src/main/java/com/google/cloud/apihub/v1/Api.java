@@ -45,6 +45,8 @@ public final class Api extends com.google.protobuf.GeneratedMessageV3
     description_ = "";
     versions_ = com.google.protobuf.LazyStringArrayList.emptyList();
     selectedVersion_ = "";
+    fingerprint_ = "";
+    sourceMetadata_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -1140,6 +1142,383 @@ public final class Api extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int API_REQUIREMENTS_FIELD_NUMBER = 16;
+  private com.google.cloud.apihub.v1.AttributeValues apiRequirements_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The api requirement doc associated with the API resource.
+   * Carinality is 1 for this attribute. This maps to the following system
+   * defined attribute:
+   * `projects/{project}/locations/{location}/attributes/system-api-requirements`
+   * attribute. The value of the attribute should be a proper URI, and in case
+   * of Cloud Storage URI, it should point to a Cloud Storage object,
+   * not a directory.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.AttributeValues api_requirements = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the apiRequirements field is set.
+   */
+  @java.lang.Override
+  public boolean hasApiRequirements() {
+    return ((bitField0_ & 0x00000200) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The api requirement doc associated with the API resource.
+   * Carinality is 1 for this attribute. This maps to the following system
+   * defined attribute:
+   * `projects/{project}/locations/{location}/attributes/system-api-requirements`
+   * attribute. The value of the attribute should be a proper URI, and in case
+   * of Cloud Storage URI, it should point to a Cloud Storage object,
+   * not a directory.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.AttributeValues api_requirements = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The apiRequirements.
+   */
+  @java.lang.Override
+  public com.google.cloud.apihub.v1.AttributeValues getApiRequirements() {
+    return apiRequirements_ == null
+        ? com.google.cloud.apihub.v1.AttributeValues.getDefaultInstance()
+        : apiRequirements_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The api requirement doc associated with the API resource.
+   * Carinality is 1 for this attribute. This maps to the following system
+   * defined attribute:
+   * `projects/{project}/locations/{location}/attributes/system-api-requirements`
+   * attribute. The value of the attribute should be a proper URI, and in case
+   * of Cloud Storage URI, it should point to a Cloud Storage object,
+   * not a directory.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.AttributeValues api_requirements = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.apihub.v1.AttributeValuesOrBuilder getApiRequirementsOrBuilder() {
+    return apiRequirements_ == null
+        ? com.google.cloud.apihub.v1.AttributeValues.getDefaultInstance()
+        : apiRequirements_;
+  }
+
+  public static final int FINGERPRINT_FIELD_NUMBER = 17;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object fingerprint_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Fingerprint of the API resource.
+   * </pre>
+   *
+   * <code>string fingerprint = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The fingerprint.
+   */
+  @java.lang.Override
+  public java.lang.String getFingerprint() {
+    java.lang.Object ref = fingerprint_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      fingerprint_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Fingerprint of the API resource.
+   * </pre>
+   *
+   * <code>string fingerprint = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for fingerprint.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getFingerprintBytes() {
+    java.lang.Object ref = fingerprint_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      fingerprint_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SOURCE_METADATA_FIELD_NUMBER = 18;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.apihub.v1.SourceMetadata> sourceMetadata_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of sources and metadata from the sources of the API
+   * resource.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.apihub.v1.SourceMetadata> getSourceMetadataList() {
+    return sourceMetadata_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of sources and metadata from the sources of the API
+   * resource.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.apihub.v1.SourceMetadataOrBuilder>
+      getSourceMetadataOrBuilderList() {
+    return sourceMetadata_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of sources and metadata from the sources of the API
+   * resource.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getSourceMetadataCount() {
+    return sourceMetadata_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of sources and metadata from the sources of the API
+   * resource.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.apihub.v1.SourceMetadata getSourceMetadata(int index) {
+    return sourceMetadata_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of sources and metadata from the sources of the API
+   * resource.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.apihub.v1.SourceMetadataOrBuilder getSourceMetadataOrBuilder(int index) {
+    return sourceMetadata_.get(index);
+  }
+
+  public static final int API_FUNCTIONAL_REQUIREMENTS_FIELD_NUMBER = 19;
+  private com.google.cloud.apihub.v1.AttributeValues apiFunctionalRequirements_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The api functional requirements associated with the API resource.
+   * Carinality is 1 for this attribute.
+   * This maps to the following system defined attribute:
+   * `projects/{project}/locations/{location}/attributes/system-api-functional-requirements`
+   * attribute. The value of the attribute should be a proper URI, and in case
+   * of Cloud Storage URI, it should point to a Cloud Storage object,
+   * not a directory.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.AttributeValues api_functional_requirements = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the apiFunctionalRequirements field is set.
+   */
+  @java.lang.Override
+  public boolean hasApiFunctionalRequirements() {
+    return ((bitField0_ & 0x00000400) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The api functional requirements associated with the API resource.
+   * Carinality is 1 for this attribute.
+   * This maps to the following system defined attribute:
+   * `projects/{project}/locations/{location}/attributes/system-api-functional-requirements`
+   * attribute. The value of the attribute should be a proper URI, and in case
+   * of Cloud Storage URI, it should point to a Cloud Storage object,
+   * not a directory.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.AttributeValues api_functional_requirements = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The apiFunctionalRequirements.
+   */
+  @java.lang.Override
+  public com.google.cloud.apihub.v1.AttributeValues getApiFunctionalRequirements() {
+    return apiFunctionalRequirements_ == null
+        ? com.google.cloud.apihub.v1.AttributeValues.getDefaultInstance()
+        : apiFunctionalRequirements_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The api functional requirements associated with the API resource.
+   * Carinality is 1 for this attribute.
+   * This maps to the following system defined attribute:
+   * `projects/{project}/locations/{location}/attributes/system-api-functional-requirements`
+   * attribute. The value of the attribute should be a proper URI, and in case
+   * of Cloud Storage URI, it should point to a Cloud Storage object,
+   * not a directory.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.AttributeValues api_functional_requirements = 19 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.apihub.v1.AttributeValuesOrBuilder
+      getApiFunctionalRequirementsOrBuilder() {
+    return apiFunctionalRequirements_ == null
+        ? com.google.cloud.apihub.v1.AttributeValues.getDefaultInstance()
+        : apiFunctionalRequirements_;
+  }
+
+  public static final int API_TECHNICAL_REQUIREMENTS_FIELD_NUMBER = 20;
+  private com.google.cloud.apihub.v1.AttributeValues apiTechnicalRequirements_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The api technical requirements associated with the API resource.
+   * Carinality is 1 for this attribute. This maps to the following system
+   * defined attribute:
+   * `projects/{project}/locations/{location}/attributes/system-api-technical-requirements`
+   * attribute. The value of the attribute should be a proper URI, and in case
+   * of Cloud Storage URI, it should point to a Cloud Storage object,
+   * not a directory.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.AttributeValues api_technical_requirements = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the apiTechnicalRequirements field is set.
+   */
+  @java.lang.Override
+  public boolean hasApiTechnicalRequirements() {
+    return ((bitField0_ & 0x00000800) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The api technical requirements associated with the API resource.
+   * Carinality is 1 for this attribute. This maps to the following system
+   * defined attribute:
+   * `projects/{project}/locations/{location}/attributes/system-api-technical-requirements`
+   * attribute. The value of the attribute should be a proper URI, and in case
+   * of Cloud Storage URI, it should point to a Cloud Storage object,
+   * not a directory.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.AttributeValues api_technical_requirements = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The apiTechnicalRequirements.
+   */
+  @java.lang.Override
+  public com.google.cloud.apihub.v1.AttributeValues getApiTechnicalRequirements() {
+    return apiTechnicalRequirements_ == null
+        ? com.google.cloud.apihub.v1.AttributeValues.getDefaultInstance()
+        : apiTechnicalRequirements_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The api technical requirements associated with the API resource.
+   * Carinality is 1 for this attribute. This maps to the following system
+   * defined attribute:
+   * `projects/{project}/locations/{location}/attributes/system-api-technical-requirements`
+   * attribute. The value of the attribute should be a proper URI, and in case
+   * of Cloud Storage URI, it should point to a Cloud Storage object,
+   * not a directory.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.AttributeValues api_technical_requirements = 20 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.apihub.v1.AttributeValuesOrBuilder
+      getApiTechnicalRequirementsOrBuilder() {
+    return apiTechnicalRequirements_ == null
+        ? com.google.cloud.apihub.v1.AttributeValues.getDefaultInstance()
+        : apiTechnicalRequirements_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1197,6 +1576,21 @@ public final class Api extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(selectedVersion_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, selectedVersion_);
+    }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      output.writeMessage(16, getApiRequirements());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fingerprint_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 17, fingerprint_);
+    }
+    for (int i = 0; i < sourceMetadata_.size(); i++) {
+      output.writeMessage(18, sourceMetadata_.get(i));
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      output.writeMessage(19, getApiFunctionalRequirements());
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      output.writeMessage(20, getApiTechnicalRequirements());
     }
     getUnknownFields().writeTo(output);
   }
@@ -1265,6 +1659,25 @@ public final class Api extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(selectedVersion_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, selectedVersion_);
     }
+    if (((bitField0_ & 0x00000200) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, getApiRequirements());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fingerprint_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, fingerprint_);
+    }
+    for (int i = 0; i < sourceMetadata_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, sourceMetadata_.get(i));
+    }
+    if (((bitField0_ & 0x00000400) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              19, getApiFunctionalRequirements());
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              20, getApiTechnicalRequirements());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1322,6 +1735,21 @@ public final class Api extends com.google.protobuf.GeneratedMessageV3
       if (!getApiStyle().equals(other.getApiStyle())) return false;
     }
     if (!getSelectedVersion().equals(other.getSelectedVersion())) return false;
+    if (hasApiRequirements() != other.hasApiRequirements()) return false;
+    if (hasApiRequirements()) {
+      if (!getApiRequirements().equals(other.getApiRequirements())) return false;
+    }
+    if (!getFingerprint().equals(other.getFingerprint())) return false;
+    if (!getSourceMetadataList().equals(other.getSourceMetadataList())) return false;
+    if (hasApiFunctionalRequirements() != other.hasApiFunctionalRequirements()) return false;
+    if (hasApiFunctionalRequirements()) {
+      if (!getApiFunctionalRequirements().equals(other.getApiFunctionalRequirements()))
+        return false;
+    }
+    if (hasApiTechnicalRequirements() != other.hasApiTechnicalRequirements()) return false;
+    if (hasApiTechnicalRequirements()) {
+      if (!getApiTechnicalRequirements().equals(other.getApiTechnicalRequirements())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1385,6 +1813,24 @@ public final class Api extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + SELECTED_VERSION_FIELD_NUMBER;
     hash = (53 * hash) + getSelectedVersion().hashCode();
+    if (hasApiRequirements()) {
+      hash = (37 * hash) + API_REQUIREMENTS_FIELD_NUMBER;
+      hash = (53 * hash) + getApiRequirements().hashCode();
+    }
+    hash = (37 * hash) + FINGERPRINT_FIELD_NUMBER;
+    hash = (53 * hash) + getFingerprint().hashCode();
+    if (getSourceMetadataCount() > 0) {
+      hash = (37 * hash) + SOURCE_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getSourceMetadataList().hashCode();
+    }
+    if (hasApiFunctionalRequirements()) {
+      hash = (37 * hash) + API_FUNCTIONAL_REQUIREMENTS_FIELD_NUMBER;
+      hash = (53 * hash) + getApiFunctionalRequirements().hashCode();
+    }
+    if (hasApiTechnicalRequirements()) {
+      hash = (37 * hash) + API_TECHNICAL_REQUIREMENTS_FIELD_NUMBER;
+      hash = (53 * hash) + getApiTechnicalRequirements().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1555,6 +2001,10 @@ public final class Api extends com.google.protobuf.GeneratedMessageV3
         getBusinessUnitFieldBuilder();
         getMaturityLevelFieldBuilder();
         getApiStyleFieldBuilder();
+        getApiRequirementsFieldBuilder();
+        getSourceMetadataFieldBuilder();
+        getApiFunctionalRequirementsFieldBuilder();
+        getApiTechnicalRequirementsFieldBuilder();
       }
     }
 
@@ -1613,6 +2063,29 @@ public final class Api extends com.google.protobuf.GeneratedMessageV3
         apiStyleBuilder_ = null;
       }
       selectedVersion_ = "";
+      apiRequirements_ = null;
+      if (apiRequirementsBuilder_ != null) {
+        apiRequirementsBuilder_.dispose();
+        apiRequirementsBuilder_ = null;
+      }
+      fingerprint_ = "";
+      if (sourceMetadataBuilder_ == null) {
+        sourceMetadata_ = java.util.Collections.emptyList();
+      } else {
+        sourceMetadata_ = null;
+        sourceMetadataBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00020000);
+      apiFunctionalRequirements_ = null;
+      if (apiFunctionalRequirementsBuilder_ != null) {
+        apiFunctionalRequirementsBuilder_.dispose();
+        apiFunctionalRequirementsBuilder_ = null;
+      }
+      apiTechnicalRequirements_ = null;
+      if (apiTechnicalRequirementsBuilder_ != null) {
+        apiTechnicalRequirementsBuilder_.dispose();
+        apiTechnicalRequirementsBuilder_ = null;
+      }
       return this;
     }
 
@@ -1639,11 +2112,24 @@ public final class Api extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.apihub.v1.Api buildPartial() {
       com.google.cloud.apihub.v1.Api result = new com.google.cloud.apihub.v1.Api(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.apihub.v1.Api result) {
+      if (sourceMetadataBuilder_ == null) {
+        if (((bitField0_ & 0x00020000) != 0)) {
+          sourceMetadata_ = java.util.Collections.unmodifiableList(sourceMetadata_);
+          bitField0_ = (bitField0_ & ~0x00020000);
+        }
+        result.sourceMetadata_ = sourceMetadata_;
+      } else {
+        result.sourceMetadata_ = sourceMetadataBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.apihub.v1.Api result) {
@@ -1707,6 +2193,28 @@ public final class Api extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
         result.selectedVersion_ = selectedVersion_;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.apiRequirements_ =
+            apiRequirementsBuilder_ == null ? apiRequirements_ : apiRequirementsBuilder_.build();
+        to_bitField0_ |= 0x00000200;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.fingerprint_ = fingerprint_;
+      }
+      if (((from_bitField0_ & 0x00040000) != 0)) {
+        result.apiFunctionalRequirements_ =
+            apiFunctionalRequirementsBuilder_ == null
+                ? apiFunctionalRequirements_
+                : apiFunctionalRequirementsBuilder_.build();
+        to_bitField0_ |= 0x00000400;
+      }
+      if (((from_bitField0_ & 0x00080000) != 0)) {
+        result.apiTechnicalRequirements_ =
+            apiTechnicalRequirementsBuilder_ == null
+                ? apiTechnicalRequirements_
+                : apiTechnicalRequirementsBuilder_.build();
+        to_bitField0_ |= 0x00000800;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1814,6 +2322,47 @@ public final class Api extends com.google.protobuf.GeneratedMessageV3
         selectedVersion_ = other.selectedVersion_;
         bitField0_ |= 0x00004000;
         onChanged();
+      }
+      if (other.hasApiRequirements()) {
+        mergeApiRequirements(other.getApiRequirements());
+      }
+      if (!other.getFingerprint().isEmpty()) {
+        fingerprint_ = other.fingerprint_;
+        bitField0_ |= 0x00010000;
+        onChanged();
+      }
+      if (sourceMetadataBuilder_ == null) {
+        if (!other.sourceMetadata_.isEmpty()) {
+          if (sourceMetadata_.isEmpty()) {
+            sourceMetadata_ = other.sourceMetadata_;
+            bitField0_ = (bitField0_ & ~0x00020000);
+          } else {
+            ensureSourceMetadataIsMutable();
+            sourceMetadata_.addAll(other.sourceMetadata_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.sourceMetadata_.isEmpty()) {
+          if (sourceMetadataBuilder_.isEmpty()) {
+            sourceMetadataBuilder_.dispose();
+            sourceMetadataBuilder_ = null;
+            sourceMetadata_ = other.sourceMetadata_;
+            bitField0_ = (bitField0_ & ~0x00020000);
+            sourceMetadataBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getSourceMetadataFieldBuilder()
+                    : null;
+          } else {
+            sourceMetadataBuilder_.addAllMessages(other.sourceMetadata_);
+          }
+        }
+      }
+      if (other.hasApiFunctionalRequirements()) {
+        mergeApiFunctionalRequirements(other.getApiFunctionalRequirements());
+      }
+      if (other.hasApiTechnicalRequirements()) {
+        mergeApiTechnicalRequirements(other.getApiTechnicalRequirements());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -1940,6 +2489,45 @@ public final class Api extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00004000;
                 break;
               } // case 122
+            case 130:
+              {
+                input.readMessage(getApiRequirementsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 130
+            case 138:
+              {
+                fingerprint_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 138
+            case 146:
+              {
+                com.google.cloud.apihub.v1.SourceMetadata m =
+                    input.readMessage(
+                        com.google.cloud.apihub.v1.SourceMetadata.parser(), extensionRegistry);
+                if (sourceMetadataBuilder_ == null) {
+                  ensureSourceMetadataIsMutable();
+                  sourceMetadata_.add(m);
+                } else {
+                  sourceMetadataBuilder_.addMessage(m);
+                }
+                break;
+              } // case 146
+            case 154:
+              {
+                input.readMessage(
+                    getApiFunctionalRequirementsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00040000;
+                break;
+              } // case 154
+            case 162:
+              {
+                input.readMessage(
+                    getApiTechnicalRequirementsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00080000;
+                break;
+              } // case 162
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5169,6 +5757,1351 @@ public final class Api extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00004000;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.apihub.v1.AttributeValues apiRequirements_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.apihub.v1.AttributeValues,
+            com.google.cloud.apihub.v1.AttributeValues.Builder,
+            com.google.cloud.apihub.v1.AttributeValuesOrBuilder>
+        apiRequirementsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The api requirement doc associated with the API resource.
+     * Carinality is 1 for this attribute. This maps to the following system
+     * defined attribute:
+     * `projects/{project}/locations/{location}/attributes/system-api-requirements`
+     * attribute. The value of the attribute should be a proper URI, and in case
+     * of Cloud Storage URI, it should point to a Cloud Storage object,
+     * not a directory.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues api_requirements = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the apiRequirements field is set.
+     */
+    public boolean hasApiRequirements() {
+      return ((bitField0_ & 0x00008000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The api requirement doc associated with the API resource.
+     * Carinality is 1 for this attribute. This maps to the following system
+     * defined attribute:
+     * `projects/{project}/locations/{location}/attributes/system-api-requirements`
+     * attribute. The value of the attribute should be a proper URI, and in case
+     * of Cloud Storage URI, it should point to a Cloud Storage object,
+     * not a directory.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues api_requirements = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The apiRequirements.
+     */
+    public com.google.cloud.apihub.v1.AttributeValues getApiRequirements() {
+      if (apiRequirementsBuilder_ == null) {
+        return apiRequirements_ == null
+            ? com.google.cloud.apihub.v1.AttributeValues.getDefaultInstance()
+            : apiRequirements_;
+      } else {
+        return apiRequirementsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The api requirement doc associated with the API resource.
+     * Carinality is 1 for this attribute. This maps to the following system
+     * defined attribute:
+     * `projects/{project}/locations/{location}/attributes/system-api-requirements`
+     * attribute. The value of the attribute should be a proper URI, and in case
+     * of Cloud Storage URI, it should point to a Cloud Storage object,
+     * not a directory.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues api_requirements = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setApiRequirements(com.google.cloud.apihub.v1.AttributeValues value) {
+      if (apiRequirementsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        apiRequirements_ = value;
+      } else {
+        apiRequirementsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The api requirement doc associated with the API resource.
+     * Carinality is 1 for this attribute. This maps to the following system
+     * defined attribute:
+     * `projects/{project}/locations/{location}/attributes/system-api-requirements`
+     * attribute. The value of the attribute should be a proper URI, and in case
+     * of Cloud Storage URI, it should point to a Cloud Storage object,
+     * not a directory.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues api_requirements = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setApiRequirements(
+        com.google.cloud.apihub.v1.AttributeValues.Builder builderForValue) {
+      if (apiRequirementsBuilder_ == null) {
+        apiRequirements_ = builderForValue.build();
+      } else {
+        apiRequirementsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The api requirement doc associated with the API resource.
+     * Carinality is 1 for this attribute. This maps to the following system
+     * defined attribute:
+     * `projects/{project}/locations/{location}/attributes/system-api-requirements`
+     * attribute. The value of the attribute should be a proper URI, and in case
+     * of Cloud Storage URI, it should point to a Cloud Storage object,
+     * not a directory.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues api_requirements = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeApiRequirements(com.google.cloud.apihub.v1.AttributeValues value) {
+      if (apiRequirementsBuilder_ == null) {
+        if (((bitField0_ & 0x00008000) != 0)
+            && apiRequirements_ != null
+            && apiRequirements_
+                != com.google.cloud.apihub.v1.AttributeValues.getDefaultInstance()) {
+          getApiRequirementsBuilder().mergeFrom(value);
+        } else {
+          apiRequirements_ = value;
+        }
+      } else {
+        apiRequirementsBuilder_.mergeFrom(value);
+      }
+      if (apiRequirements_ != null) {
+        bitField0_ |= 0x00008000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The api requirement doc associated with the API resource.
+     * Carinality is 1 for this attribute. This maps to the following system
+     * defined attribute:
+     * `projects/{project}/locations/{location}/attributes/system-api-requirements`
+     * attribute. The value of the attribute should be a proper URI, and in case
+     * of Cloud Storage URI, it should point to a Cloud Storage object,
+     * not a directory.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues api_requirements = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearApiRequirements() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      apiRequirements_ = null;
+      if (apiRequirementsBuilder_ != null) {
+        apiRequirementsBuilder_.dispose();
+        apiRequirementsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The api requirement doc associated with the API resource.
+     * Carinality is 1 for this attribute. This maps to the following system
+     * defined attribute:
+     * `projects/{project}/locations/{location}/attributes/system-api-requirements`
+     * attribute. The value of the attribute should be a proper URI, and in case
+     * of Cloud Storage URI, it should point to a Cloud Storage object,
+     * not a directory.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues api_requirements = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.AttributeValues.Builder getApiRequirementsBuilder() {
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return getApiRequirementsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The api requirement doc associated with the API resource.
+     * Carinality is 1 for this attribute. This maps to the following system
+     * defined attribute:
+     * `projects/{project}/locations/{location}/attributes/system-api-requirements`
+     * attribute. The value of the attribute should be a proper URI, and in case
+     * of Cloud Storage URI, it should point to a Cloud Storage object,
+     * not a directory.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues api_requirements = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.AttributeValuesOrBuilder getApiRequirementsOrBuilder() {
+      if (apiRequirementsBuilder_ != null) {
+        return apiRequirementsBuilder_.getMessageOrBuilder();
+      } else {
+        return apiRequirements_ == null
+            ? com.google.cloud.apihub.v1.AttributeValues.getDefaultInstance()
+            : apiRequirements_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The api requirement doc associated with the API resource.
+     * Carinality is 1 for this attribute. This maps to the following system
+     * defined attribute:
+     * `projects/{project}/locations/{location}/attributes/system-api-requirements`
+     * attribute. The value of the attribute should be a proper URI, and in case
+     * of Cloud Storage URI, it should point to a Cloud Storage object,
+     * not a directory.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues api_requirements = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.apihub.v1.AttributeValues,
+            com.google.cloud.apihub.v1.AttributeValues.Builder,
+            com.google.cloud.apihub.v1.AttributeValuesOrBuilder>
+        getApiRequirementsFieldBuilder() {
+      if (apiRequirementsBuilder_ == null) {
+        apiRequirementsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.apihub.v1.AttributeValues,
+                com.google.cloud.apihub.v1.AttributeValues.Builder,
+                com.google.cloud.apihub.v1.AttributeValuesOrBuilder>(
+                getApiRequirements(), getParentForChildren(), isClean());
+        apiRequirements_ = null;
+      }
+      return apiRequirementsBuilder_;
+    }
+
+    private java.lang.Object fingerprint_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Fingerprint of the API resource.
+     * </pre>
+     *
+     * <code>string fingerprint = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The fingerprint.
+     */
+    public java.lang.String getFingerprint() {
+      java.lang.Object ref = fingerprint_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        fingerprint_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Fingerprint of the API resource.
+     * </pre>
+     *
+     * <code>string fingerprint = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for fingerprint.
+     */
+    public com.google.protobuf.ByteString getFingerprintBytes() {
+      java.lang.Object ref = fingerprint_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        fingerprint_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Fingerprint of the API resource.
+     * </pre>
+     *
+     * <code>string fingerprint = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The fingerprint to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFingerprint(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      fingerprint_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Fingerprint of the API resource.
+     * </pre>
+     *
+     * <code>string fingerprint = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearFingerprint() {
+      fingerprint_ = getDefaultInstance().getFingerprint();
+      bitField0_ = (bitField0_ & ~0x00010000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Fingerprint of the API resource.
+     * </pre>
+     *
+     * <code>string fingerprint = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for fingerprint to set.
+     * @return This builder for chaining.
+     */
+    public Builder setFingerprintBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      fingerprint_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.google.cloud.apihub.v1.SourceMetadata> sourceMetadata_ =
+        java.util.Collections.emptyList();
+
+    private void ensureSourceMetadataIsMutable() {
+      if (!((bitField0_ & 0x00020000) != 0)) {
+        sourceMetadata_ =
+            new java.util.ArrayList<com.google.cloud.apihub.v1.SourceMetadata>(sourceMetadata_);
+        bitField0_ |= 0x00020000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.apihub.v1.SourceMetadata,
+            com.google.cloud.apihub.v1.SourceMetadata.Builder,
+            com.google.cloud.apihub.v1.SourceMetadataOrBuilder>
+        sourceMetadataBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the API
+     * resource.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.apihub.v1.SourceMetadata> getSourceMetadataList() {
+      if (sourceMetadataBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(sourceMetadata_);
+      } else {
+        return sourceMetadataBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the API
+     * resource.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getSourceMetadataCount() {
+      if (sourceMetadataBuilder_ == null) {
+        return sourceMetadata_.size();
+      } else {
+        return sourceMetadataBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the API
+     * resource.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.SourceMetadata getSourceMetadata(int index) {
+      if (sourceMetadataBuilder_ == null) {
+        return sourceMetadata_.get(index);
+      } else {
+        return sourceMetadataBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the API
+     * resource.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setSourceMetadata(int index, com.google.cloud.apihub.v1.SourceMetadata value) {
+      if (sourceMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSourceMetadataIsMutable();
+        sourceMetadata_.set(index, value);
+        onChanged();
+      } else {
+        sourceMetadataBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the API
+     * resource.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setSourceMetadata(
+        int index, com.google.cloud.apihub.v1.SourceMetadata.Builder builderForValue) {
+      if (sourceMetadataBuilder_ == null) {
+        ensureSourceMetadataIsMutable();
+        sourceMetadata_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        sourceMetadataBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the API
+     * resource.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addSourceMetadata(com.google.cloud.apihub.v1.SourceMetadata value) {
+      if (sourceMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSourceMetadataIsMutable();
+        sourceMetadata_.add(value);
+        onChanged();
+      } else {
+        sourceMetadataBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the API
+     * resource.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addSourceMetadata(int index, com.google.cloud.apihub.v1.SourceMetadata value) {
+      if (sourceMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSourceMetadataIsMutable();
+        sourceMetadata_.add(index, value);
+        onChanged();
+      } else {
+        sourceMetadataBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the API
+     * resource.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addSourceMetadata(
+        com.google.cloud.apihub.v1.SourceMetadata.Builder builderForValue) {
+      if (sourceMetadataBuilder_ == null) {
+        ensureSourceMetadataIsMutable();
+        sourceMetadata_.add(builderForValue.build());
+        onChanged();
+      } else {
+        sourceMetadataBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the API
+     * resource.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addSourceMetadata(
+        int index, com.google.cloud.apihub.v1.SourceMetadata.Builder builderForValue) {
+      if (sourceMetadataBuilder_ == null) {
+        ensureSourceMetadataIsMutable();
+        sourceMetadata_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        sourceMetadataBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the API
+     * resource.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllSourceMetadata(
+        java.lang.Iterable<? extends com.google.cloud.apihub.v1.SourceMetadata> values) {
+      if (sourceMetadataBuilder_ == null) {
+        ensureSourceMetadataIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, sourceMetadata_);
+        onChanged();
+      } else {
+        sourceMetadataBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the API
+     * resource.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearSourceMetadata() {
+      if (sourceMetadataBuilder_ == null) {
+        sourceMetadata_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00020000);
+        onChanged();
+      } else {
+        sourceMetadataBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the API
+     * resource.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeSourceMetadata(int index) {
+      if (sourceMetadataBuilder_ == null) {
+        ensureSourceMetadataIsMutable();
+        sourceMetadata_.remove(index);
+        onChanged();
+      } else {
+        sourceMetadataBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the API
+     * resource.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.SourceMetadata.Builder getSourceMetadataBuilder(int index) {
+      return getSourceMetadataFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the API
+     * resource.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.SourceMetadataOrBuilder getSourceMetadataOrBuilder(
+        int index) {
+      if (sourceMetadataBuilder_ == null) {
+        return sourceMetadata_.get(index);
+      } else {
+        return sourceMetadataBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the API
+     * resource.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.apihub.v1.SourceMetadataOrBuilder>
+        getSourceMetadataOrBuilderList() {
+      if (sourceMetadataBuilder_ != null) {
+        return sourceMetadataBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(sourceMetadata_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the API
+     * resource.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.SourceMetadata.Builder addSourceMetadataBuilder() {
+      return getSourceMetadataFieldBuilder()
+          .addBuilder(com.google.cloud.apihub.v1.SourceMetadata.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the API
+     * resource.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.SourceMetadata.Builder addSourceMetadataBuilder(int index) {
+      return getSourceMetadataFieldBuilder()
+          .addBuilder(index, com.google.cloud.apihub.v1.SourceMetadata.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the API
+     * resource.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 18 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.apihub.v1.SourceMetadata.Builder>
+        getSourceMetadataBuilderList() {
+      return getSourceMetadataFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.apihub.v1.SourceMetadata,
+            com.google.cloud.apihub.v1.SourceMetadata.Builder,
+            com.google.cloud.apihub.v1.SourceMetadataOrBuilder>
+        getSourceMetadataFieldBuilder() {
+      if (sourceMetadataBuilder_ == null) {
+        sourceMetadataBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.apihub.v1.SourceMetadata,
+                com.google.cloud.apihub.v1.SourceMetadata.Builder,
+                com.google.cloud.apihub.v1.SourceMetadataOrBuilder>(
+                sourceMetadata_,
+                ((bitField0_ & 0x00020000) != 0),
+                getParentForChildren(),
+                isClean());
+        sourceMetadata_ = null;
+      }
+      return sourceMetadataBuilder_;
+    }
+
+    private com.google.cloud.apihub.v1.AttributeValues apiFunctionalRequirements_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.apihub.v1.AttributeValues,
+            com.google.cloud.apihub.v1.AttributeValues.Builder,
+            com.google.cloud.apihub.v1.AttributeValuesOrBuilder>
+        apiFunctionalRequirementsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The api functional requirements associated with the API resource.
+     * Carinality is 1 for this attribute.
+     * This maps to the following system defined attribute:
+     * `projects/{project}/locations/{location}/attributes/system-api-functional-requirements`
+     * attribute. The value of the attribute should be a proper URI, and in case
+     * of Cloud Storage URI, it should point to a Cloud Storage object,
+     * not a directory.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues api_functional_requirements = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the apiFunctionalRequirements field is set.
+     */
+    public boolean hasApiFunctionalRequirements() {
+      return ((bitField0_ & 0x00040000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The api functional requirements associated with the API resource.
+     * Carinality is 1 for this attribute.
+     * This maps to the following system defined attribute:
+     * `projects/{project}/locations/{location}/attributes/system-api-functional-requirements`
+     * attribute. The value of the attribute should be a proper URI, and in case
+     * of Cloud Storage URI, it should point to a Cloud Storage object,
+     * not a directory.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues api_functional_requirements = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The apiFunctionalRequirements.
+     */
+    public com.google.cloud.apihub.v1.AttributeValues getApiFunctionalRequirements() {
+      if (apiFunctionalRequirementsBuilder_ == null) {
+        return apiFunctionalRequirements_ == null
+            ? com.google.cloud.apihub.v1.AttributeValues.getDefaultInstance()
+            : apiFunctionalRequirements_;
+      } else {
+        return apiFunctionalRequirementsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The api functional requirements associated with the API resource.
+     * Carinality is 1 for this attribute.
+     * This maps to the following system defined attribute:
+     * `projects/{project}/locations/{location}/attributes/system-api-functional-requirements`
+     * attribute. The value of the attribute should be a proper URI, and in case
+     * of Cloud Storage URI, it should point to a Cloud Storage object,
+     * not a directory.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues api_functional_requirements = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setApiFunctionalRequirements(com.google.cloud.apihub.v1.AttributeValues value) {
+      if (apiFunctionalRequirementsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        apiFunctionalRequirements_ = value;
+      } else {
+        apiFunctionalRequirementsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The api functional requirements associated with the API resource.
+     * Carinality is 1 for this attribute.
+     * This maps to the following system defined attribute:
+     * `projects/{project}/locations/{location}/attributes/system-api-functional-requirements`
+     * attribute. The value of the attribute should be a proper URI, and in case
+     * of Cloud Storage URI, it should point to a Cloud Storage object,
+     * not a directory.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues api_functional_requirements = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setApiFunctionalRequirements(
+        com.google.cloud.apihub.v1.AttributeValues.Builder builderForValue) {
+      if (apiFunctionalRequirementsBuilder_ == null) {
+        apiFunctionalRequirements_ = builderForValue.build();
+      } else {
+        apiFunctionalRequirementsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The api functional requirements associated with the API resource.
+     * Carinality is 1 for this attribute.
+     * This maps to the following system defined attribute:
+     * `projects/{project}/locations/{location}/attributes/system-api-functional-requirements`
+     * attribute. The value of the attribute should be a proper URI, and in case
+     * of Cloud Storage URI, it should point to a Cloud Storage object,
+     * not a directory.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues api_functional_requirements = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeApiFunctionalRequirements(
+        com.google.cloud.apihub.v1.AttributeValues value) {
+      if (apiFunctionalRequirementsBuilder_ == null) {
+        if (((bitField0_ & 0x00040000) != 0)
+            && apiFunctionalRequirements_ != null
+            && apiFunctionalRequirements_
+                != com.google.cloud.apihub.v1.AttributeValues.getDefaultInstance()) {
+          getApiFunctionalRequirementsBuilder().mergeFrom(value);
+        } else {
+          apiFunctionalRequirements_ = value;
+        }
+      } else {
+        apiFunctionalRequirementsBuilder_.mergeFrom(value);
+      }
+      if (apiFunctionalRequirements_ != null) {
+        bitField0_ |= 0x00040000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The api functional requirements associated with the API resource.
+     * Carinality is 1 for this attribute.
+     * This maps to the following system defined attribute:
+     * `projects/{project}/locations/{location}/attributes/system-api-functional-requirements`
+     * attribute. The value of the attribute should be a proper URI, and in case
+     * of Cloud Storage URI, it should point to a Cloud Storage object,
+     * not a directory.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues api_functional_requirements = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearApiFunctionalRequirements() {
+      bitField0_ = (bitField0_ & ~0x00040000);
+      apiFunctionalRequirements_ = null;
+      if (apiFunctionalRequirementsBuilder_ != null) {
+        apiFunctionalRequirementsBuilder_.dispose();
+        apiFunctionalRequirementsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The api functional requirements associated with the API resource.
+     * Carinality is 1 for this attribute.
+     * This maps to the following system defined attribute:
+     * `projects/{project}/locations/{location}/attributes/system-api-functional-requirements`
+     * attribute. The value of the attribute should be a proper URI, and in case
+     * of Cloud Storage URI, it should point to a Cloud Storage object,
+     * not a directory.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues api_functional_requirements = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.AttributeValues.Builder
+        getApiFunctionalRequirementsBuilder() {
+      bitField0_ |= 0x00040000;
+      onChanged();
+      return getApiFunctionalRequirementsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The api functional requirements associated with the API resource.
+     * Carinality is 1 for this attribute.
+     * This maps to the following system defined attribute:
+     * `projects/{project}/locations/{location}/attributes/system-api-functional-requirements`
+     * attribute. The value of the attribute should be a proper URI, and in case
+     * of Cloud Storage URI, it should point to a Cloud Storage object,
+     * not a directory.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues api_functional_requirements = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.AttributeValuesOrBuilder
+        getApiFunctionalRequirementsOrBuilder() {
+      if (apiFunctionalRequirementsBuilder_ != null) {
+        return apiFunctionalRequirementsBuilder_.getMessageOrBuilder();
+      } else {
+        return apiFunctionalRequirements_ == null
+            ? com.google.cloud.apihub.v1.AttributeValues.getDefaultInstance()
+            : apiFunctionalRequirements_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The api functional requirements associated with the API resource.
+     * Carinality is 1 for this attribute.
+     * This maps to the following system defined attribute:
+     * `projects/{project}/locations/{location}/attributes/system-api-functional-requirements`
+     * attribute. The value of the attribute should be a proper URI, and in case
+     * of Cloud Storage URI, it should point to a Cloud Storage object,
+     * not a directory.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues api_functional_requirements = 19 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.apihub.v1.AttributeValues,
+            com.google.cloud.apihub.v1.AttributeValues.Builder,
+            com.google.cloud.apihub.v1.AttributeValuesOrBuilder>
+        getApiFunctionalRequirementsFieldBuilder() {
+      if (apiFunctionalRequirementsBuilder_ == null) {
+        apiFunctionalRequirementsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.apihub.v1.AttributeValues,
+                com.google.cloud.apihub.v1.AttributeValues.Builder,
+                com.google.cloud.apihub.v1.AttributeValuesOrBuilder>(
+                getApiFunctionalRequirements(), getParentForChildren(), isClean());
+        apiFunctionalRequirements_ = null;
+      }
+      return apiFunctionalRequirementsBuilder_;
+    }
+
+    private com.google.cloud.apihub.v1.AttributeValues apiTechnicalRequirements_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.apihub.v1.AttributeValues,
+            com.google.cloud.apihub.v1.AttributeValues.Builder,
+            com.google.cloud.apihub.v1.AttributeValuesOrBuilder>
+        apiTechnicalRequirementsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The api technical requirements associated with the API resource.
+     * Carinality is 1 for this attribute. This maps to the following system
+     * defined attribute:
+     * `projects/{project}/locations/{location}/attributes/system-api-technical-requirements`
+     * attribute. The value of the attribute should be a proper URI, and in case
+     * of Cloud Storage URI, it should point to a Cloud Storage object,
+     * not a directory.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues api_technical_requirements = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the apiTechnicalRequirements field is set.
+     */
+    public boolean hasApiTechnicalRequirements() {
+      return ((bitField0_ & 0x00080000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The api technical requirements associated with the API resource.
+     * Carinality is 1 for this attribute. This maps to the following system
+     * defined attribute:
+     * `projects/{project}/locations/{location}/attributes/system-api-technical-requirements`
+     * attribute. The value of the attribute should be a proper URI, and in case
+     * of Cloud Storage URI, it should point to a Cloud Storage object,
+     * not a directory.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues api_technical_requirements = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The apiTechnicalRequirements.
+     */
+    public com.google.cloud.apihub.v1.AttributeValues getApiTechnicalRequirements() {
+      if (apiTechnicalRequirementsBuilder_ == null) {
+        return apiTechnicalRequirements_ == null
+            ? com.google.cloud.apihub.v1.AttributeValues.getDefaultInstance()
+            : apiTechnicalRequirements_;
+      } else {
+        return apiTechnicalRequirementsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The api technical requirements associated with the API resource.
+     * Carinality is 1 for this attribute. This maps to the following system
+     * defined attribute:
+     * `projects/{project}/locations/{location}/attributes/system-api-technical-requirements`
+     * attribute. The value of the attribute should be a proper URI, and in case
+     * of Cloud Storage URI, it should point to a Cloud Storage object,
+     * not a directory.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues api_technical_requirements = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setApiTechnicalRequirements(com.google.cloud.apihub.v1.AttributeValues value) {
+      if (apiTechnicalRequirementsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        apiTechnicalRequirements_ = value;
+      } else {
+        apiTechnicalRequirementsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The api technical requirements associated with the API resource.
+     * Carinality is 1 for this attribute. This maps to the following system
+     * defined attribute:
+     * `projects/{project}/locations/{location}/attributes/system-api-technical-requirements`
+     * attribute. The value of the attribute should be a proper URI, and in case
+     * of Cloud Storage URI, it should point to a Cloud Storage object,
+     * not a directory.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues api_technical_requirements = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setApiTechnicalRequirements(
+        com.google.cloud.apihub.v1.AttributeValues.Builder builderForValue) {
+      if (apiTechnicalRequirementsBuilder_ == null) {
+        apiTechnicalRequirements_ = builderForValue.build();
+      } else {
+        apiTechnicalRequirementsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The api technical requirements associated with the API resource.
+     * Carinality is 1 for this attribute. This maps to the following system
+     * defined attribute:
+     * `projects/{project}/locations/{location}/attributes/system-api-technical-requirements`
+     * attribute. The value of the attribute should be a proper URI, and in case
+     * of Cloud Storage URI, it should point to a Cloud Storage object,
+     * not a directory.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues api_technical_requirements = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeApiTechnicalRequirements(com.google.cloud.apihub.v1.AttributeValues value) {
+      if (apiTechnicalRequirementsBuilder_ == null) {
+        if (((bitField0_ & 0x00080000) != 0)
+            && apiTechnicalRequirements_ != null
+            && apiTechnicalRequirements_
+                != com.google.cloud.apihub.v1.AttributeValues.getDefaultInstance()) {
+          getApiTechnicalRequirementsBuilder().mergeFrom(value);
+        } else {
+          apiTechnicalRequirements_ = value;
+        }
+      } else {
+        apiTechnicalRequirementsBuilder_.mergeFrom(value);
+      }
+      if (apiTechnicalRequirements_ != null) {
+        bitField0_ |= 0x00080000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The api technical requirements associated with the API resource.
+     * Carinality is 1 for this attribute. This maps to the following system
+     * defined attribute:
+     * `projects/{project}/locations/{location}/attributes/system-api-technical-requirements`
+     * attribute. The value of the attribute should be a proper URI, and in case
+     * of Cloud Storage URI, it should point to a Cloud Storage object,
+     * not a directory.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues api_technical_requirements = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearApiTechnicalRequirements() {
+      bitField0_ = (bitField0_ & ~0x00080000);
+      apiTechnicalRequirements_ = null;
+      if (apiTechnicalRequirementsBuilder_ != null) {
+        apiTechnicalRequirementsBuilder_.dispose();
+        apiTechnicalRequirementsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The api technical requirements associated with the API resource.
+     * Carinality is 1 for this attribute. This maps to the following system
+     * defined attribute:
+     * `projects/{project}/locations/{location}/attributes/system-api-technical-requirements`
+     * attribute. The value of the attribute should be a proper URI, and in case
+     * of Cloud Storage URI, it should point to a Cloud Storage object,
+     * not a directory.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues api_technical_requirements = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.AttributeValues.Builder getApiTechnicalRequirementsBuilder() {
+      bitField0_ |= 0x00080000;
+      onChanged();
+      return getApiTechnicalRequirementsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The api technical requirements associated with the API resource.
+     * Carinality is 1 for this attribute. This maps to the following system
+     * defined attribute:
+     * `projects/{project}/locations/{location}/attributes/system-api-technical-requirements`
+     * attribute. The value of the attribute should be a proper URI, and in case
+     * of Cloud Storage URI, it should point to a Cloud Storage object,
+     * not a directory.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues api_technical_requirements = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.AttributeValuesOrBuilder
+        getApiTechnicalRequirementsOrBuilder() {
+      if (apiTechnicalRequirementsBuilder_ != null) {
+        return apiTechnicalRequirementsBuilder_.getMessageOrBuilder();
+      } else {
+        return apiTechnicalRequirements_ == null
+            ? com.google.cloud.apihub.v1.AttributeValues.getDefaultInstance()
+            : apiTechnicalRequirements_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The api technical requirements associated with the API resource.
+     * Carinality is 1 for this attribute. This maps to the following system
+     * defined attribute:
+     * `projects/{project}/locations/{location}/attributes/system-api-technical-requirements`
+     * attribute. The value of the attribute should be a proper URI, and in case
+     * of Cloud Storage URI, it should point to a Cloud Storage object,
+     * not a directory.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues api_technical_requirements = 20 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.apihub.v1.AttributeValues,
+            com.google.cloud.apihub.v1.AttributeValues.Builder,
+            com.google.cloud.apihub.v1.AttributeValuesOrBuilder>
+        getApiTechnicalRequirementsFieldBuilder() {
+      if (apiTechnicalRequirementsBuilder_ == null) {
+        apiTechnicalRequirementsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.apihub.v1.AttributeValues,
+                com.google.cloud.apihub.v1.AttributeValues.Builder,
+                com.google.cloud.apihub.v1.AttributeValuesOrBuilder>(
+                getApiTechnicalRequirements(), getParentForChildren(), isClean());
+        apiTechnicalRequirements_ = null;
+      }
+      return apiTechnicalRequirementsBuilder_;
     }
 
     @java.lang.Override
