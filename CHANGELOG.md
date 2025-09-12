@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.32.0](https://github.com/googleapis/java-datastore/compare/v2.31.4...v2.32.0) (2025-09-12)
+
+
+### Features
+
+* Add sample code for connection pooling ([#1947](https://github.com/googleapis/java-datastore/issues/1947)) ([57981db](https://github.com/googleapis/java-datastore/commit/57981db8fb73f35bf72a9c1c5d53bd06dedf0ebc))
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.52.1 ([#1963](https://github.com/googleapis/java-datastore/issues/1963)) ([833a34a](https://github.com/googleapis/java-datastore/commit/833a34a7e5ab1194d2ac8ebf097d7c300d7e8d37))
+
 ## [2.31.4](https://github.com/googleapis/java-datastore/compare/v2.31.3...v2.31.4) (2025-08-22)
 
 
