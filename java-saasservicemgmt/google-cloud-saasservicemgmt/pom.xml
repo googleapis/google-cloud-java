@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-saasservicemgmt</artifactId>
-  <version>0.4.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-saasservicemgmt:current} -->
+  <version>0.5.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-saasservicemgmt:current} -->
   <packaging>jar</packaging>
   <name>Google SaaS Runtime API</name>
   <description>SaaS Runtime API Model, deploy, and operate your SaaS at scale.	</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-saasservicemgmt-parent</artifactId>
-    <version>0.4.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-saasservicemgmt:current} -->
+    <version>0.5.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-saasservicemgmt:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-saasservicemgmt</site.installationModule>

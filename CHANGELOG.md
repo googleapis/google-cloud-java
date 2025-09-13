@@ -1,5 +1,58 @@
 # Changelog
 
+## [1.68.0](https://github.com/googleapis/google-cloud-java/compare/v1.67.0...v1.68.0) (2025-09-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* [chat] Changed field behavior for an existing field `name` in message `.google.chat.v1.QuotedMessageMetadata`
+
+### Features
+
+* [aiplatform] Add API response for Gen AI Evaluation in Tuning ([1214050](https://github.com/googleapis/google-cloud-java/commit/12140505efaab4448497c15479dd36cc15629b17))
+* [aiplatform] add Validation mode in FunctionCallingConfig ([1214050](https://github.com/googleapis/google-cloud-java/commit/12140505efaab4448497c15479dd36cc15629b17))
+* [aiplatform] PSC support for custom weights deploy ([1214050](https://github.com/googleapis/google-cloud-java/commit/12140505efaab4448497c15479dd36cc15629b17))
+* [aiplatform] Tuning PreTunedModel API field ([1214050](https://github.com/googleapis/google-cloud-java/commit/12140505efaab4448497c15479dd36cc15629b17))
+* [analyticshub] You can now configure listings for multiple regions for shared datasets and linked dataset replicas in BigQuery sharing ([1214050](https://github.com/googleapis/google-cloud-java/commit/12140505efaab4448497c15479dd36cc15629b17))
+* [bigqueryreservation] Add a new field `soft_failover_start_time` in the existing `replication_status` in `.google.cloud.bigquery.reservation.v1.Reservation` to provide visibility into the state of ongoing soft failover operations on the reservation ([1214050](https://github.com/googleapis/google-cloud-java/commit/12140505efaab4448497c15479dd36cc15629b17))
+* [cloudsecuritycompliance] new module for cloudsecuritycompliance ([#11740](https://github.com/googleapis/google-cloud-java/issues/11740)) ([fc17dde](https://github.com/googleapis/google-cloud-java/commit/fc17dded72d8c44c00f17539c065bcd61421977d))
+* [compute] Update Compute Engine v1 API to revision 20250810 ([#1091](https://github.com/googleapis/google-cloud-java/issues/1091)) ([1214050](https://github.com/googleapis/google-cloud-java/commit/12140505efaab4448497c15479dd36cc15629b17))
+* [confidentialcomputing] Add new `VerifyConfidentialSpace` and `VerifyConfidentialGke` rpcs and relevant fields ([1214050](https://github.com/googleapis/google-cloud-java/commit/12140505efaab4448497c15479dd36cc15629b17))
+* [dataplex] A new service `BusinessGlossaryService` is added ([75896ab](https://github.com/googleapis/google-cloud-java/commit/75896ab07163a97a12a067dab9c255b014285a22))
+* [discoveryengine] Added `ranking_expression_backed` and `rank_signals` fields related to the Custom Ranking feature ([75896ab](https://github.com/googleapis/google-cloud-java/commit/75896ab07163a97a12a067dab9c255b014285a22))
+* [dlp] add LocationSupport,Domain,DocumentFallbackLocation ([1214050](https://github.com/googleapis/google-cloud-java/commit/12140505efaab4448497c15479dd36cc15629b17))
+* [gdchardwaremanagement] Added RequestOrderDateChange RPC - allows Customers to request date changes ([1214050](https://github.com/googleapis/google-cloud-java/commit/12140505efaab4448497c15479dd36cc15629b17))
+* [infra-manager] added support for service maintained provider ([1214050](https://github.com/googleapis/google-cloud-java/commit/12140505efaab4448497c15479dd36cc15629b17))
+* [kms] Support KEY_ENCAPSULATION purpose and quantum-safe algorithms ML_KEM_768, ML_KEM_1024 and KEM_XWING ([75896ab](https://github.com/googleapis/google-cloud-java/commit/75896ab07163a97a12a067dab9c255b014285a22))
+* [netapp] add new fields for flex auto tiering ([1214050](https://github.com/googleapis/google-cloud-java/commit/12140505efaab4448497c15479dd36cc15629b17))
+* [network-security] add address groups API ([1214050](https://github.com/googleapis/google-cloud-java/commit/12140505efaab4448497c15479dd36cc15629b17))
+* [networkconnectivity] introduce DataTransfer APIs ([1214050](https://github.com/googleapis/google-cloud-java/commit/12140505efaab4448497c15479dd36cc15629b17))
+* [retail] release the conversational search public SDK ([1214050](https://github.com/googleapis/google-cloud-java/commit/12140505efaab4448497c15479dd36cc15629b17))
+* [retail] release the latest conversational search public SDK ([1214050](https://github.com/googleapis/google-cloud-java/commit/12140505efaab4448497c15479dd36cc15629b17))
+* [securitycenter] add GCE to DeploymentPlatform enum ([75896ab](https://github.com/googleapis/google-cloud-java/commit/75896ab07163a97a12a067dab9c255b014285a22))
+* [texttospeech] Add prompt to SynthesisInput ([1214050](https://github.com/googleapis/google-cloud-java/commit/12140505efaab4448497c15479dd36cc15629b17))
+* [texttospeech] Add string value prompt to SynthesisInput ([1214050](https://github.com/googleapis/google-cloud-java/commit/12140505efaab4448497c15479dd36cc15629b17))
+* [texttospeech] Support promptable voices by specifying a model name and a prompt ([1214050](https://github.com/googleapis/google-cloud-java/commit/12140505efaab4448497c15479dd36cc15629b17))
+* [texttospeech] Support promptable voices by specifying a model name and a prompt ([cea98dc](https://github.com/googleapis/google-cloud-java/commit/cea98dc249c7932bb176d31da2a4b13af0567049))
+* [vmmigration] Azure as a source ([1214050](https://github.com/googleapis/google-cloud-java/commit/12140505efaab4448497c15479dd36cc15629b17))
+* **accounts:** Add batch operations for custom regions ([1214050](https://github.com/googleapis/google-cloud-java/commit/12140505efaab4448497c15479dd36cc15629b17))
+* Add a new version for biglake  ([#11742](https://github.com/googleapis/google-cloud-java/issues/11742)) ([792f8c0](https://github.com/googleapis/google-cloud-java/commit/792f8c07f4daff206b8c015de664dabc4a5b8d83))
+
+
+### Bug Fixes
+
+* [chat] Changed field behavior for an existing field `name` in message `.google.chat.v1.QuotedMessageMetadata` ([1214050](https://github.com/googleapis/google-cloud-java/commit/12140505efaab4448497c15479dd36cc15629b17))
+* **deps:** update dependency com.google.apis:google-api-services-cloudresourcemanager to v1-rev20250606-2.0.0 ([#11472](https://github.com/googleapis/google-cloud-java/issues/11472)) ([0e52ea3](https://github.com/googleapis/google-cloud-java/commit/0e52ea30d8dc497f15f8ebd99da6e61b8257f3af))
+* **deps:** update the Java code generator (gapic-generator-java) to 2.62.1 ([1214050](https://github.com/googleapis/google-cloud-java/commit/12140505efaab4448497c15479dd36cc15629b17))
+* update dependency com.google.cloud:sdk-platform-java-config to v3.52.1 ([#11738](https://github.com/googleapis/google-cloud-java/issues/11738)) ([b17cf6d](https://github.com/googleapis/google-cloud-java/commit/b17cf6de63b9cabcd44b6fc21b57c187b321ae8f))
+
+
+### Documentation
+
+* [errorreporting] automated code change ([1214050](https://github.com/googleapis/google-cloud-java/commit/12140505efaab4448497c15479dd36cc15629b17))
+* [publicca] Add API publishing information for public CA.googleapis.com ([1214050](https://github.com/googleapis/google-cloud-java/commit/12140505efaab4448497c15479dd36cc15629b17))
+* [retail] A comment for enum `Mode` is changed ([1214050](https://github.com/googleapis/google-cloud-java/commit/12140505efaab4448497c15479dd36cc15629b17))
+
 ## [1.67.0](https://github.com/googleapis/google-cloud-java/compare/v1.66.0...v1.67.0) (2025-08-25)
 
 
