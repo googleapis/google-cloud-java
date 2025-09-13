@@ -36,6 +36,7 @@ import com.google.api.gax.rpc.RequestParamsBuilder;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.apihub.v1.ApiHubInstance;
 import com.google.cloud.apihub.v1.CreateApiHubInstanceRequest;
+import com.google.cloud.apihub.v1.DeleteApiHubInstanceRequest;
 import com.google.cloud.apihub.v1.GetApiHubInstanceRequest;
 import com.google.cloud.apihub.v1.LookupApiHubInstanceRequest;
 import com.google.cloud.apihub.v1.LookupApiHubInstanceResponse;
@@ -46,6 +47,7 @@ import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.common.collect.ImmutableMap;
 import com.google.longrunning.Operation;
+import com.google.protobuf.Empty;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -65,6 +67,7 @@ import javax.annotation.Generated;
 public class HttpJsonProvisioningStub extends ProvisioningStub {
   private static final TypeRegistry typeRegistry =
       TypeRegistry.newBuilder()
+          .add(Empty.getDescriptor())
           .add(ApiHubInstance.getDescriptor())
           .add(OperationMetadata.getDescriptor())
           .build();
@@ -108,6 +111,43 @@ public class HttpJsonProvisioningStub extends ProvisioningStub {
                       .build())
               .setOperationSnapshotFactory(
                   (CreateApiHubInstanceRequest request, Operation response) ->
+                      HttpJsonOperationSnapshot.create(response))
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteApiHubInstanceRequest, Operation>
+      deleteApiHubInstanceMethodDescriptor =
+          ApiMethodDescriptor.<DeleteApiHubInstanceRequest, Operation>newBuilder()
+              .setFullMethodName("google.cloud.apihub.v1.Provisioning/DeleteApiHubInstance")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteApiHubInstanceRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/apiHubInstances/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteApiHubInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteApiHubInstanceRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Operation>newBuilder()
+                      .setDefaultInstance(Operation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .setOperationSnapshotFactory(
+                  (DeleteApiHubInstanceRequest request, Operation response) ->
                       HttpJsonOperationSnapshot.create(response))
               .build();
 
@@ -252,6 +292,9 @@ public class HttpJsonProvisioningStub extends ProvisioningStub {
   private final UnaryCallable<CreateApiHubInstanceRequest, Operation> createApiHubInstanceCallable;
   private final OperationCallable<CreateApiHubInstanceRequest, ApiHubInstance, OperationMetadata>
       createApiHubInstanceOperationCallable;
+  private final UnaryCallable<DeleteApiHubInstanceRequest, Operation> deleteApiHubInstanceCallable;
+  private final OperationCallable<DeleteApiHubInstanceRequest, Empty, OperationMetadata>
+      deleteApiHubInstanceOperationCallable;
   private final UnaryCallable<GetApiHubInstanceRequest, ApiHubInstance> getApiHubInstanceCallable;
   private final UnaryCallable<LookupApiHubInstanceRequest, LookupApiHubInstanceResponse>
       lookupApiHubInstanceCallable;
@@ -342,6 +385,18 @@ public class HttpJsonProvisioningStub extends ProvisioningStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<DeleteApiHubInstanceRequest, Operation>
+        deleteApiHubInstanceTransportSettings =
+            HttpJsonCallSettings.<DeleteApiHubInstanceRequest, Operation>newBuilder()
+                .setMethodDescriptor(deleteApiHubInstanceMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("name", String.valueOf(request.getName()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<GetApiHubInstanceRequest, ApiHubInstance>
         getApiHubInstanceTransportSettings =
             HttpJsonCallSettings.<GetApiHubInstanceRequest, ApiHubInstance>newBuilder()
@@ -402,6 +457,17 @@ public class HttpJsonProvisioningStub extends ProvisioningStub {
             settings.createApiHubInstanceOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.deleteApiHubInstanceCallable =
+        callableFactory.createUnaryCallable(
+            deleteApiHubInstanceTransportSettings,
+            settings.deleteApiHubInstanceSettings(),
+            clientContext);
+    this.deleteApiHubInstanceOperationCallable =
+        callableFactory.createOperationCallable(
+            deleteApiHubInstanceTransportSettings,
+            settings.deleteApiHubInstanceOperationSettings(),
+            clientContext,
+            httpJsonOperationsStub);
     this.getApiHubInstanceCallable =
         callableFactory.createUnaryCallable(
             getApiHubInstanceTransportSettings,
@@ -430,6 +496,7 @@ public class HttpJsonProvisioningStub extends ProvisioningStub {
   public static List<ApiMethodDescriptor> getMethodDescriptors() {
     List<ApiMethodDescriptor> methodDescriptors = new ArrayList<>();
     methodDescriptors.add(createApiHubInstanceMethodDescriptor);
+    methodDescriptors.add(deleteApiHubInstanceMethodDescriptor);
     methodDescriptors.add(getApiHubInstanceMethodDescriptor);
     methodDescriptors.add(lookupApiHubInstanceMethodDescriptor);
     methodDescriptors.add(listLocationsMethodDescriptor);
@@ -450,6 +517,17 @@ public class HttpJsonProvisioningStub extends ProvisioningStub {
   public OperationCallable<CreateApiHubInstanceRequest, ApiHubInstance, OperationMetadata>
       createApiHubInstanceOperationCallable() {
     return createApiHubInstanceOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteApiHubInstanceRequest, Operation> deleteApiHubInstanceCallable() {
+    return deleteApiHubInstanceCallable;
+  }
+
+  @Override
+  public OperationCallable<DeleteApiHubInstanceRequest, Empty, OperationMetadata>
+      deleteApiHubInstanceOperationCallable() {
+    return deleteApiHubInstanceOperationCallable;
   }
 
   @Override

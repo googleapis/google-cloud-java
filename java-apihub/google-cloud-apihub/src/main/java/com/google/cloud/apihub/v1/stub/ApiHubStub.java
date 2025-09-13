@@ -31,6 +31,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.apihub.v1.Api;
 import com.google.cloud.apihub.v1.ApiOperation;
 import com.google.cloud.apihub.v1.Attribute;
+import com.google.cloud.apihub.v1.CreateApiOperationRequest;
 import com.google.cloud.apihub.v1.CreateApiRequest;
 import com.google.cloud.apihub.v1.CreateAttributeRequest;
 import com.google.cloud.apihub.v1.CreateDeploymentRequest;
@@ -38,6 +39,7 @@ import com.google.cloud.apihub.v1.CreateExternalApiRequest;
 import com.google.cloud.apihub.v1.CreateSpecRequest;
 import com.google.cloud.apihub.v1.CreateVersionRequest;
 import com.google.cloud.apihub.v1.Definition;
+import com.google.cloud.apihub.v1.DeleteApiOperationRequest;
 import com.google.cloud.apihub.v1.DeleteApiRequest;
 import com.google.cloud.apihub.v1.DeleteAttributeRequest;
 import com.google.cloud.apihub.v1.DeleteDeploymentRequest;
@@ -73,6 +75,7 @@ import com.google.cloud.apihub.v1.SearchResourcesRequest;
 import com.google.cloud.apihub.v1.SearchResourcesResponse;
 import com.google.cloud.apihub.v1.Spec;
 import com.google.cloud.apihub.v1.SpecContents;
+import com.google.cloud.apihub.v1.UpdateApiOperationRequest;
 import com.google.cloud.apihub.v1.UpdateApiRequest;
 import com.google.cloud.apihub.v1.UpdateAttributeRequest;
 import com.google.cloud.apihub.v1.UpdateDeploymentRequest;
@@ -172,6 +175,10 @@ public abstract class ApiHubStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: deleteSpecCallable()");
   }
 
+  public UnaryCallable<CreateApiOperationRequest, ApiOperation> createApiOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: createApiOperationCallable()");
+  }
+
   public UnaryCallable<GetApiOperationRequest, ApiOperation> getApiOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: getApiOperationCallable()");
   }
@@ -184,6 +191,14 @@ public abstract class ApiHubStub implements BackgroundResource {
   public UnaryCallable<ListApiOperationsRequest, ListApiOperationsResponse>
       listApiOperationsCallable() {
     throw new UnsupportedOperationException("Not implemented: listApiOperationsCallable()");
+  }
+
+  public UnaryCallable<UpdateApiOperationRequest, ApiOperation> updateApiOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: updateApiOperationCallable()");
+  }
+
+  public UnaryCallable<DeleteApiOperationRequest, Empty> deleteApiOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: deleteApiOperationCallable()");
   }
 
   public UnaryCallable<GetDefinitionRequest, Definition> getDefinitionCallable() {

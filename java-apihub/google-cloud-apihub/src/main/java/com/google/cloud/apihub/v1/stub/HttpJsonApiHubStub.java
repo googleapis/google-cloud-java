@@ -41,6 +41,7 @@ import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.apihub.v1.Api;
 import com.google.cloud.apihub.v1.ApiOperation;
 import com.google.cloud.apihub.v1.Attribute;
+import com.google.cloud.apihub.v1.CreateApiOperationRequest;
 import com.google.cloud.apihub.v1.CreateApiRequest;
 import com.google.cloud.apihub.v1.CreateAttributeRequest;
 import com.google.cloud.apihub.v1.CreateDeploymentRequest;
@@ -48,6 +49,7 @@ import com.google.cloud.apihub.v1.CreateExternalApiRequest;
 import com.google.cloud.apihub.v1.CreateSpecRequest;
 import com.google.cloud.apihub.v1.CreateVersionRequest;
 import com.google.cloud.apihub.v1.Definition;
+import com.google.cloud.apihub.v1.DeleteApiOperationRequest;
 import com.google.cloud.apihub.v1.DeleteApiRequest;
 import com.google.cloud.apihub.v1.DeleteAttributeRequest;
 import com.google.cloud.apihub.v1.DeleteDeploymentRequest;
@@ -83,6 +85,7 @@ import com.google.cloud.apihub.v1.SearchResourcesRequest;
 import com.google.cloud.apihub.v1.SearchResourcesResponse;
 import com.google.cloud.apihub.v1.Spec;
 import com.google.cloud.apihub.v1.SpecContents;
+import com.google.cloud.apihub.v1.UpdateApiOperationRequest;
 import com.google.cloud.apihub.v1.UpdateApiRequest;
 import com.google.cloud.apihub.v1.UpdateAttributeRequest;
 import com.google.cloud.apihub.v1.UpdateDeploymentRequest;
@@ -679,6 +682,45 @@ public class HttpJsonApiHubStub extends ApiHubStub {
                   .build())
           .build();
 
+  private static final ApiMethodDescriptor<CreateApiOperationRequest, ApiOperation>
+      createApiOperationMethodDescriptor =
+          ApiMethodDescriptor.<CreateApiOperationRequest, ApiOperation>newBuilder()
+              .setFullMethodName("google.cloud.apihub.v1.ApiHub/CreateApiOperation")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<CreateApiOperationRequest>newBuilder()
+                      .setPath(
+                          "/v1/{parent=projects/*/locations/*/apis/*/versions/*}/operations",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateApiOperationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "parent", request.getParent());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<CreateApiOperationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(
+                                fields, "apiOperationId", request.getApiOperationId());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("apiOperation", request.getApiOperation(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ApiOperation>newBuilder()
+                      .setDefaultInstance(ApiOperation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private static final ApiMethodDescriptor<GetApiOperationRequest, ApiOperation>
       getApiOperationMethodDescriptor =
           ApiMethodDescriptor.<GetApiOperationRequest, ApiOperation>newBuilder()
@@ -746,6 +788,79 @@ public class HttpJsonApiHubStub extends ApiHubStub {
               .setResponseParser(
                   ProtoMessageResponseParser.<ListApiOperationsResponse>newBuilder()
                       .setDefaultInstance(ListApiOperationsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<UpdateApiOperationRequest, ApiOperation>
+      updateApiOperationMethodDescriptor =
+          ApiMethodDescriptor.<UpdateApiOperationRequest, ApiOperation>newBuilder()
+              .setFullMethodName("google.cloud.apihub.v1.ApiHub/UpdateApiOperation")
+              .setHttpMethod("PATCH")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<UpdateApiOperationRequest>newBuilder()
+                      .setPath(
+                          "/v1/{apiOperation.name=projects/*/locations/*/apis/*/versions/*/operations/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateApiOperationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(
+                                fields, "apiOperation.name", request.getApiOperation().getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<UpdateApiOperationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "updateMask", request.getUpdateMask());
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody("apiOperation", request.getApiOperation(), true))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<ApiOperation>newBuilder()
+                      .setDefaultInstance(ApiOperation.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
+  private static final ApiMethodDescriptor<DeleteApiOperationRequest, Empty>
+      deleteApiOperationMethodDescriptor =
+          ApiMethodDescriptor.<DeleteApiOperationRequest, Empty>newBuilder()
+              .setFullMethodName("google.cloud.apihub.v1.ApiHub/DeleteApiOperation")
+              .setHttpMethod("DELETE")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<DeleteApiOperationRequest>newBuilder()
+                      .setPath(
+                          "/v1/{name=projects/*/locations/*/apis/*/versions/*/operations/*}",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteApiOperationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "name", request.getName());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<DeleteApiOperationRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putQueryParam(fields, "$alt", "json;enum-encoding=int");
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(request -> null)
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<Empty>newBuilder()
+                      .setDefaultInstance(Empty.getDefaultInstance())
                       .setDefaultTypeRegistry(typeRegistry)
                       .build())
               .build();
@@ -1457,11 +1572,14 @@ public class HttpJsonApiHubStub extends ApiHubStub {
   private final UnaryCallable<ListSpecsRequest, ListSpecsPagedResponse> listSpecsPagedCallable;
   private final UnaryCallable<UpdateSpecRequest, Spec> updateSpecCallable;
   private final UnaryCallable<DeleteSpecRequest, Empty> deleteSpecCallable;
+  private final UnaryCallable<CreateApiOperationRequest, ApiOperation> createApiOperationCallable;
   private final UnaryCallable<GetApiOperationRequest, ApiOperation> getApiOperationCallable;
   private final UnaryCallable<ListApiOperationsRequest, ListApiOperationsResponse>
       listApiOperationsCallable;
   private final UnaryCallable<ListApiOperationsRequest, ListApiOperationsPagedResponse>
       listApiOperationsPagedCallable;
+  private final UnaryCallable<UpdateApiOperationRequest, ApiOperation> updateApiOperationCallable;
+  private final UnaryCallable<DeleteApiOperationRequest, Empty> deleteApiOperationCallable;
   private final UnaryCallable<GetDefinitionRequest, Definition> getDefinitionCallable;
   private final UnaryCallable<CreateDeploymentRequest, Deployment> createDeploymentCallable;
   private final UnaryCallable<GetDeploymentRequest, Deployment> getDeploymentCallable;
@@ -1710,6 +1828,18 @@ public class HttpJsonApiHubStub extends ApiHubStub {
                   return builder.build();
                 })
             .build();
+    HttpJsonCallSettings<CreateApiOperationRequest, ApiOperation>
+        createApiOperationTransportSettings =
+            HttpJsonCallSettings.<CreateApiOperationRequest, ApiOperation>newBuilder()
+                .setMethodDescriptor(createApiOperationMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("parent", String.valueOf(request.getParent()));
+                      return builder.build();
+                    })
+                .build();
     HttpJsonCallSettings<GetApiOperationRequest, ApiOperation> getApiOperationTransportSettings =
         HttpJsonCallSettings.<GetApiOperationRequest, ApiOperation>newBuilder()
             .setMethodDescriptor(getApiOperationMethodDescriptor)
@@ -1733,6 +1863,31 @@ public class HttpJsonApiHubStub extends ApiHubStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<UpdateApiOperationRequest, ApiOperation>
+        updateApiOperationTransportSettings =
+            HttpJsonCallSettings.<UpdateApiOperationRequest, ApiOperation>newBuilder()
+                .setMethodDescriptor(updateApiOperationMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add(
+                          "api_operation.name",
+                          String.valueOf(request.getApiOperation().getName()));
+                      return builder.build();
+                    })
+                .build();
+    HttpJsonCallSettings<DeleteApiOperationRequest, Empty> deleteApiOperationTransportSettings =
+        HttpJsonCallSettings.<DeleteApiOperationRequest, Empty>newBuilder()
+            .setMethodDescriptor(deleteApiOperationMethodDescriptor)
+            .setTypeRegistry(typeRegistry)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     HttpJsonCallSettings<GetDefinitionRequest, Definition> getDefinitionTransportSettings =
         HttpJsonCallSettings.<GetDefinitionRequest, Definition>newBuilder()
             .setMethodDescriptor(getDefinitionMethodDescriptor)
@@ -2006,6 +2161,11 @@ public class HttpJsonApiHubStub extends ApiHubStub {
     this.deleteSpecCallable =
         callableFactory.createUnaryCallable(
             deleteSpecTransportSettings, settings.deleteSpecSettings(), clientContext);
+    this.createApiOperationCallable =
+        callableFactory.createUnaryCallable(
+            createApiOperationTransportSettings,
+            settings.createApiOperationSettings(),
+            clientContext);
     this.getApiOperationCallable =
         callableFactory.createUnaryCallable(
             getApiOperationTransportSettings, settings.getApiOperationSettings(), clientContext);
@@ -2018,6 +2178,16 @@ public class HttpJsonApiHubStub extends ApiHubStub {
         callableFactory.createPagedCallable(
             listApiOperationsTransportSettings,
             settings.listApiOperationsSettings(),
+            clientContext);
+    this.updateApiOperationCallable =
+        callableFactory.createUnaryCallable(
+            updateApiOperationTransportSettings,
+            settings.updateApiOperationSettings(),
+            clientContext);
+    this.deleteApiOperationCallable =
+        callableFactory.createUnaryCallable(
+            deleteApiOperationTransportSettings,
+            settings.deleteApiOperationSettings(),
             clientContext);
     this.getDefinitionCallable =
         callableFactory.createUnaryCallable(
@@ -2121,8 +2291,11 @@ public class HttpJsonApiHubStub extends ApiHubStub {
     methodDescriptors.add(listSpecsMethodDescriptor);
     methodDescriptors.add(updateSpecMethodDescriptor);
     methodDescriptors.add(deleteSpecMethodDescriptor);
+    methodDescriptors.add(createApiOperationMethodDescriptor);
     methodDescriptors.add(getApiOperationMethodDescriptor);
     methodDescriptors.add(listApiOperationsMethodDescriptor);
+    methodDescriptors.add(updateApiOperationMethodDescriptor);
+    methodDescriptors.add(deleteApiOperationMethodDescriptor);
     methodDescriptors.add(getDefinitionMethodDescriptor);
     methodDescriptors.add(createDeploymentMethodDescriptor);
     methodDescriptors.add(getDeploymentMethodDescriptor);
@@ -2241,6 +2414,11 @@ public class HttpJsonApiHubStub extends ApiHubStub {
   }
 
   @Override
+  public UnaryCallable<CreateApiOperationRequest, ApiOperation> createApiOperationCallable() {
+    return createApiOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<GetApiOperationRequest, ApiOperation> getApiOperationCallable() {
     return getApiOperationCallable;
   }
@@ -2255,6 +2433,16 @@ public class HttpJsonApiHubStub extends ApiHubStub {
   public UnaryCallable<ListApiOperationsRequest, ListApiOperationsPagedResponse>
       listApiOperationsPagedCallable() {
     return listApiOperationsPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<UpdateApiOperationRequest, ApiOperation> updateApiOperationCallable() {
+    return updateApiOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<DeleteApiOperationRequest, Empty> deleteApiOperationCallable() {
+    return deleteApiOperationCallable;
   }
 
   @Override

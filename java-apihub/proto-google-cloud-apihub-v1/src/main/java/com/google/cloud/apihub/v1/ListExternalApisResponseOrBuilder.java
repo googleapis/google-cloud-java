@@ -29,8 +29,6 @@ public interface ListExternalApisResponseOrBuilder
    *
    * <pre>
    * The External API resources present in the API hub.
-   * Only following fields will be populated in the response: name,
-   * display_name, documentation.external_uri.
    * </pre>
    *
    * <code>repeated .google.cloud.apihub.v1.ExternalApi external_apis = 1;</code>
@@ -42,8 +40,6 @@ public interface ListExternalApisResponseOrBuilder
    *
    * <pre>
    * The External API resources present in the API hub.
-   * Only following fields will be populated in the response: name,
-   * display_name, documentation.external_uri.
    * </pre>
    *
    * <code>repeated .google.cloud.apihub.v1.ExternalApi external_apis = 1;</code>
@@ -55,8 +51,6 @@ public interface ListExternalApisResponseOrBuilder
    *
    * <pre>
    * The External API resources present in the API hub.
-   * Only following fields will be populated in the response: name,
-   * display_name, documentation.external_uri.
    * </pre>
    *
    * <code>repeated .google.cloud.apihub.v1.ExternalApi external_apis = 1;</code>
@@ -68,8 +62,6 @@ public interface ListExternalApisResponseOrBuilder
    *
    * <pre>
    * The External API resources present in the API hub.
-   * Only following fields will be populated in the response: name,
-   * display_name, documentation.external_uri.
    * </pre>
    *
    * <code>repeated .google.cloud.apihub.v1.ExternalApi external_apis = 1;</code>
@@ -82,8 +74,6 @@ public interface ListExternalApisResponseOrBuilder
    *
    * <pre>
    * The External API resources present in the API hub.
-   * Only following fields will be populated in the response: name,
-   * display_name, documentation.external_uri.
    * </pre>
    *
    * <code>repeated .google.cloud.apihub.v1.ExternalApi external_apis = 1;</code>

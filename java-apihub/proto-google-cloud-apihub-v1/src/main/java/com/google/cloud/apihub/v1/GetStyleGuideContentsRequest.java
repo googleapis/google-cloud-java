@@ -23,7 +23,9 @@ package com.google.cloud.apihub.v1;
  *
  *
  * <pre>
- * The [GetStyleGuideContents][ApiHub.GetStyleGuideContents] method's request.
+ * The
+ * [GetStyleGuideContents][google.cloud.apihub.v1.LintingService.GetStyleGuideContents]
+ * method's request.
  * </pre>
  *
  * Protobuf type {@code google.cloud.apihub.v1.GetStyleGuideContentsRequest}
@@ -292,7 +294,9 @@ public final class GetStyleGuideContentsRequest extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The [GetStyleGuideContents][ApiHub.GetStyleGuideContents] method's request.
+   * The
+   * [GetStyleGuideContents][google.cloud.apihub.v1.LintingService.GetStyleGuideContents]
+   * method's request.
    * </pre>
    *
    * Protobuf type {@code google.cloud.apihub.v1.GetStyleGuideContentsRequest}

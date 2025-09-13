@@ -74,7 +74,7 @@ public final class ListSpecsResponse extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The specs corresponding to an API.
+   * The specs corresponding to an API Version.
    * </pre>
    *
    * <code>repeated .google.cloud.apihub.v1.Spec specs = 1;</code>
@@ -88,7 +88,7 @@ public final class ListSpecsResponse extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The specs corresponding to an API.
+   * The specs corresponding to an API Version.
    * </pre>
    *
    * <code>repeated .google.cloud.apihub.v1.Spec specs = 1;</code>
@@ -103,7 +103,7 @@ public final class ListSpecsResponse extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The specs corresponding to an API.
+   * The specs corresponding to an API Version.
    * </pre>
    *
    * <code>repeated .google.cloud.apihub.v1.Spec specs = 1;</code>
@@ -117,7 +117,7 @@ public final class ListSpecsResponse extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The specs corresponding to an API.
+   * The specs corresponding to an API Version.
    * </pre>
    *
    * <code>repeated .google.cloud.apihub.v1.Spec specs = 1;</code>
@@ -131,7 +131,7 @@ public final class ListSpecsResponse extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The specs corresponding to an API.
+   * The specs corresponding to an API Version.
    * </pre>
    *
    * <code>repeated .google.cloud.apihub.v1.Spec specs = 1;</code>
@@ -628,7 +628,7 @@ public final class ListSpecsResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The specs corresponding to an API.
+     * The specs corresponding to an API Version.
      * </pre>
      *
      * <code>repeated .google.cloud.apihub.v1.Spec specs = 1;</code>
@@ -645,7 +645,7 @@ public final class ListSpecsResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The specs corresponding to an API.
+     * The specs corresponding to an API Version.
      * </pre>
      *
      * <code>repeated .google.cloud.apihub.v1.Spec specs = 1;</code>
@@ -662,7 +662,7 @@ public final class ListSpecsResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The specs corresponding to an API.
+     * The specs corresponding to an API Version.
      * </pre>
      *
      * <code>repeated .google.cloud.apihub.v1.Spec specs = 1;</code>
@@ -679,7 +679,7 @@ public final class ListSpecsResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The specs corresponding to an API.
+     * The specs corresponding to an API Version.
      * </pre>
      *
      * <code>repeated .google.cloud.apihub.v1.Spec specs = 1;</code>
@@ -702,7 +702,7 @@ public final class ListSpecsResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The specs corresponding to an API.
+     * The specs corresponding to an API Version.
      * </pre>
      *
      * <code>repeated .google.cloud.apihub.v1.Spec specs = 1;</code>
@@ -722,7 +722,7 @@ public final class ListSpecsResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The specs corresponding to an API.
+     * The specs corresponding to an API Version.
      * </pre>
      *
      * <code>repeated .google.cloud.apihub.v1.Spec specs = 1;</code>
@@ -745,7 +745,7 @@ public final class ListSpecsResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The specs corresponding to an API.
+     * The specs corresponding to an API Version.
      * </pre>
      *
      * <code>repeated .google.cloud.apihub.v1.Spec specs = 1;</code>
@@ -768,7 +768,7 @@ public final class ListSpecsResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The specs corresponding to an API.
+     * The specs corresponding to an API Version.
      * </pre>
      *
      * <code>repeated .google.cloud.apihub.v1.Spec specs = 1;</code>
@@ -788,7 +788,7 @@ public final class ListSpecsResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The specs corresponding to an API.
+     * The specs corresponding to an API Version.
      * </pre>
      *
      * <code>repeated .google.cloud.apihub.v1.Spec specs = 1;</code>
@@ -808,7 +808,7 @@ public final class ListSpecsResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The specs corresponding to an API.
+     * The specs corresponding to an API Version.
      * </pre>
      *
      * <code>repeated .google.cloud.apihub.v1.Spec specs = 1;</code>
@@ -829,7 +829,7 @@ public final class ListSpecsResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The specs corresponding to an API.
+     * The specs corresponding to an API Version.
      * </pre>
      *
      * <code>repeated .google.cloud.apihub.v1.Spec specs = 1;</code>
@@ -849,7 +849,7 @@ public final class ListSpecsResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The specs corresponding to an API.
+     * The specs corresponding to an API Version.
      * </pre>
      *
      * <code>repeated .google.cloud.apihub.v1.Spec specs = 1;</code>
@@ -869,7 +869,7 @@ public final class ListSpecsResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The specs corresponding to an API.
+     * The specs corresponding to an API Version.
      * </pre>
      *
      * <code>repeated .google.cloud.apihub.v1.Spec specs = 1;</code>
@@ -882,7 +882,7 @@ public final class ListSpecsResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The specs corresponding to an API.
+     * The specs corresponding to an API Version.
      * </pre>
      *
      * <code>repeated .google.cloud.apihub.v1.Spec specs = 1;</code>
@@ -899,7 +899,7 @@ public final class ListSpecsResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The specs corresponding to an API.
+     * The specs corresponding to an API Version.
      * </pre>
      *
      * <code>repeated .google.cloud.apihub.v1.Spec specs = 1;</code>
@@ -917,7 +917,7 @@ public final class ListSpecsResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The specs corresponding to an API.
+     * The specs corresponding to an API Version.
      * </pre>
      *
      * <code>repeated .google.cloud.apihub.v1.Spec specs = 1;</code>
@@ -931,7 +931,7 @@ public final class ListSpecsResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The specs corresponding to an API.
+     * The specs corresponding to an API Version.
      * </pre>
      *
      * <code>repeated .google.cloud.apihub.v1.Spec specs = 1;</code>
@@ -945,7 +945,7 @@ public final class ListSpecsResponse extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * The specs corresponding to an API.
+     * The specs corresponding to an API Version.
      * </pre>
      *
      * <code>repeated .google.cloud.apihub.v1.Spec specs = 1;</code>

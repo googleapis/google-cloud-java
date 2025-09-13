@@ -33,6 +33,22 @@ public final class PluginServiceProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_apihub_v1_Plugin_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apihub_v1_Plugin_HostingService_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_apihub_v1_Plugin_HostingService_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apihub_v1_Plugin_ConfigTemplate_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_apihub_v1_Plugin_ConfigTemplate_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apihub_v1_Plugin_ConfigTemplate_AuthConfigTemplate_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_apihub_v1_Plugin_ConfigTemplate_AuthConfigTemplate_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apihub_v1_PluginActionConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_apihub_v1_PluginActionConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_apihub_v1_GetPluginRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_apihub_v1_GetPluginRequest_fieldAccessorTable;
@@ -44,6 +60,106 @@ public final class PluginServiceProto {
       internal_static_google_cloud_apihub_v1_DisablePluginRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_apihub_v1_DisablePluginRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apihub_v1_PluginInstanceAction_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_apihub_v1_PluginInstanceAction_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apihub_v1_PluginInstanceAction_ResourceConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_apihub_v1_PluginInstanceAction_ResourceConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apihub_v1_PluginInstance_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_apihub_v1_PluginInstance_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apihub_v1_PluginInstance_AdditionalConfigEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_apihub_v1_PluginInstance_AdditionalConfigEntry_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apihub_v1_CurationConfig_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_apihub_v1_CurationConfig_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apihub_v1_CurationConfig_CustomCuration_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_apihub_v1_CurationConfig_CustomCuration_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apihub_v1_ExecutionStatus_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_apihub_v1_ExecutionStatus_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apihub_v1_ExecutionStatus_LastExecution_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_apihub_v1_ExecutionStatus_LastExecution_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apihub_v1_CreatePluginRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_apihub_v1_CreatePluginRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apihub_v1_DeletePluginRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_apihub_v1_DeletePluginRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apihub_v1_ListPluginsRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_apihub_v1_ListPluginsRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apihub_v1_ListPluginsResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_apihub_v1_ListPluginsResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apihub_v1_CreatePluginInstanceRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_apihub_v1_CreatePluginInstanceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apihub_v1_ExecutePluginInstanceActionRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_apihub_v1_ExecutePluginInstanceActionRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apihub_v1_ActionExecutionDetail_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_apihub_v1_ActionExecutionDetail_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apihub_v1_ExecutePluginInstanceActionResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_apihub_v1_ExecutePluginInstanceActionResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apihub_v1_GetPluginInstanceRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_apihub_v1_GetPluginInstanceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apihub_v1_ListPluginInstancesRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_apihub_v1_ListPluginInstancesRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apihub_v1_ListPluginInstancesResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_apihub_v1_ListPluginInstancesResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apihub_v1_EnablePluginInstanceActionRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_apihub_v1_EnablePluginInstanceActionRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apihub_v1_EnablePluginInstanceActionResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_apihub_v1_EnablePluginInstanceActionResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apihub_v1_DisablePluginInstanceActionRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_apihub_v1_DisablePluginInstanceActionRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apihub_v1_DisablePluginInstanceActionResponse_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_apihub_v1_DisablePluginInstanceActionResponse_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apihub_v1_UpdatePluginInstanceRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_apihub_v1_UpdatePluginInstanceRequest_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_apihub_v1_DeletePluginInstanceRequest_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_apihub_v1_DeletePluginInstanceRequest_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -53,46 +169,309 @@ public final class PluginServiceProto {
 
   static {
     java.lang.String[] descriptorData = {
-      "\n+google/cloud/apihub/v1/plugin_service."
+      "\n"
+          + "+google/cloud/apihub/v1/plugin_service."
           + "proto\022\026google.cloud.apihub.v1\032\034google/ap"
           + "i/annotations.proto\032\027google/api/client.p"
           + "roto\032\037google/api/field_behavior.proto\032\031g"
-          + "oogle/api/resource.proto\032*google/cloud/a"
-          + "pihub/v1/common_fields.proto\"\357\002\n\006Plugin\022"
-          + "\021\n\004name\030\001 \001(\tB\003\340A\010\022\031\n\014display_name\030\002 \001(\t"
-          + "B\003\340A\002\022:\n\004type\030\003 \001(\0132\'.google.cloud.apihu"
-          + "b.v1.AttributeValuesB\003\340A\002\022\030\n\013description"
-          + "\030\004 \001(\tB\003\340A\001\0228\n\005state\030\005 \001(\0162$.google.clou"
-          + "d.apihub.v1.Plugin.StateB\003\340A\003\"9\n\005State\022\025"
-          + "\n\021STATE_UNSPECIFIED\020\000\022\013\n\007ENABLED\020\001\022\014\n\010DI"
-          + "SABLED\020\002:l\352Ai\n\034apihub.googleapis.com/Plu"
-          + "gin\0228projects/{project}/locations/{locat"
-          + "ion}/plugins/{plugin}*\007plugins2\006plugin\"F"
-          + "\n\020GetPluginRequest\0222\n\004name\030\001 \001(\tB$\340A\002\372A\036"
-          + "\n\034apihub.googleapis.com/Plugin\"I\n\023Enable"
-          + "PluginRequest\0222\n\004name\030\001 \001(\tB$\340A\002\372A\036\n\034api"
-          + "hub.googleapis.com/Plugin\"J\n\024DisablePlug"
-          + "inRequest\0222\n\004name\030\001 \001(\tB$\340A\002\372A\036\n\034apihub."
-          + "googleapis.com/Plugin2\270\004\n\014ApiHubPlugin\022\221"
-          + "\001\n\tGetPlugin\022(.google.cloud.apihub.v1.Ge"
-          + "tPluginRequest\032\036.google.cloud.apihub.v1."
-          + "Plugin\":\332A\004name\202\323\344\223\002-\022+/v1/{name=project"
-          + "s/*/locations/*/plugins/*}\022\241\001\n\014EnablePlu"
-          + "gin\022+.google.cloud.apihub.v1.EnablePlugi"
-          + "nRequest\032\036.google.cloud.apihub.v1.Plugin"
-          + "\"D\332A\004name\202\323\344\223\0027\"2/v1/{name=projects/*/lo"
-          + "cations/*/plugins/*}:enable:\001*\022\244\001\n\rDisab"
-          + "lePlugin\022,.google.cloud.apihub.v1.Disabl"
-          + "ePluginRequest\032\036.google.cloud.apihub.v1."
-          + "Plugin\"E\332A\004name\202\323\344\223\0028\"3/v1/{name=project"
-          + "s/*/locations/*/plugins/*}:disable:\001*\032I\312"
-          + "A\025apihub.googleapis.com\322A.https://www.go"
-          + "ogleapis.com/auth/cloud-platformB\264\001\n\032com"
-          + ".google.cloud.apihub.v1B\022PluginServicePr"
-          + "otoP\001Z2cloud.google.com/go/apihub/apiv1/"
-          + "apihubpb;apihubpb\252\002\026Google.Cloud.ApiHub."
-          + "V1\312\002\026Google\\Cloud\\ApiHub\\V1\352\002\031Google::Cl"
-          + "oud::ApiHub::V1b\006proto3"
+          + "oogle/api/resource.proto\032*google/cloud/apihub/v1/common_fields.proto\032#google/lon"
+          + "grunning/operations.proto\032\033google/protobuf/empty.proto\032"
+          + " google/protobuf/field_mask.proto\032\037google/protobuf/timestamp.proto\"\320\013\n"
+          + "\006Plugin\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022\031\n"
+          + "\014display_name\030\002 \001(\tB\003\340A\002\022:\n"
+          + "\004type\030\003 \001(\0132\'.googl"
+          + "e.cloud.apihub.v1.AttributeValuesB\003\340A\001\022\030\n"
+          + "\013description\030\004 \001(\tB\003\340A\001\0228\n"
+          + "\005state\030\005 \001(\0162$.google.cloud.apihub.v1.Plugin.StateB\003\340A\003\022I\n"
+          + "\016ownership_type\030\006"
+          + " \001(\0162,.google.cloud.apihub.v1.Plugin.OwnershipTypeB\003\340A\003\022K\n"
+          + "\017hosting_service\030\007"
+          + " \001(\0132-.google.cloud.apihub.v1.Plugin.HostingServiceB\003\340A\001\022G\n"
+          + "\016actions_config\030\010"
+          + " \003(\0132*.google.cloud.apihub.v1.PluginActionConfigB\003\340A\001\022A\n\r"
+          + "documentation\030\t"
+          + " \001(\0132%.google.cloud.apihub.v1.DocumentationB\003\340A\001\022D\n"
+          + "\017plugin_category\030\013 \001(\0162"
+          + "&.google.cloud.apihub.v1.PluginCategoryB\003\340A\001\022K\n"
+          + "\017config_template\030\014 \001(\0132-.google.c"
+          + "loud.apihub.v1.Plugin.ConfigTemplateB\003\340A\001\0224\n"
+          + "\013create_time\030\r"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
+          + "\013update_time\030\016 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022>\n"
+          + "\014gateway_type\030\017"
+          + " \001(\0162#.google.cloud.apihub.v1.GatewayTypeB\003\340A\001\032*\n"
+          + "\016HostingService\022\030\n"
+          + "\013service_uri\030\001 \001(\tB\003\340A\001\032\374\002\n"
+          + "\016ConfigTemplate\022c\n"
+          + "\024auth_config_template\030\001 \001(\0132@.google.clou"
+          + "d.apihub.v1.Plugin.ConfigTemplate.AuthConfigTemplateB\003\340A\001\022W\n"
+          + "\032additional_config_template\030\002"
+          + " \003(\0132..google.cloud.apihub.v1.ConfigVariableTemplateB\003\340A\001\032\253\001\n"
+          + "\022AuthConfigTemplate\022C\n"
+          + "\024supported_auth_types\030\001 \003(\0162"
+          + " .google.cloud.apihub.v1.AuthTypeB\003\340A\002\022P\n"
+          + "\017service_account\030\002 \001(\01322.google.cloud.a"
+          + "pihub.v1.GoogleServiceAccountConfigB\003\340A\001\"9\n"
+          + "\005State\022\025\n"
+          + "\021STATE_UNSPECIFIED\020\000\022\013\n"
+          + "\007ENABLED\020\001\022\014\n"
+          + "\010DISABLED\020\002\"Q\n\r"
+          + "OwnershipType\022\036\n"
+          + "\032OWNERSHIP_TYPE_UNSPECIFIED\020\000\022\020\n"
+          + "\014SYSTEM_OWNED\020\001\022\016\n\n"
+          + "USER_OWNED\020\002:l\352Ai\n"
+          + "\034apihub.googleapis.com/Plugin\0228projects/{project}/lo"
+          + "cations/{location}/plugins/{plugin}*\007plugins2\006plugin\"\261\002\n"
+          + "\022PluginActionConfig\022\017\n"
+          + "\002id\030\001 \001(\tB\003\340A\002\022\031\n"
+          + "\014display_name\030\002 \001(\tB\003\340A\002\022\030\n"
+          + "\013description\030\003 \001(\tB\003\340A\002\022Q\n"
+          + "\014trigger_mode\030\004"
+          + " \001(\01626.google.cloud.apihub.v1.PluginActionConfig.TriggerModeB\003\340A\002\"\201\001\n"
+          + "\013TriggerMode\022\034\n"
+          + "\030TRIGGER_MODE_UNSPECIFIED\020\000\022\035\n"
+          + "\031API_HUB_ON_DEMAND_TRIGGER\020\001\022\034\n"
+          + "\030API_HUB_SCHEDULE_TRIGGER\020\002\022\027\n"
+          + "\023NON_API_HUB_MANAGED\020\003\"F\n"
+          + "\020GetPluginRequest\0222\n"
+          + "\004name\030\001 \001(\tB$\340A\002\372A\036\n"
+          + "\034apihub.googleapis.com/Plugin\"I\n"
+          + "\023EnablePluginRequest\0222\n"
+          + "\004name\030\001 \001(\tB$\340A\002\372A\036\n"
+          + "\034apihub.googleapis.com/Plugin\"J\n"
+          + "\024DisablePluginRequest\0222\n"
+          + "\004name\030\001 \001(\tB$\340A\002\372A\036\n"
+          + "\034apihub.googleapis.com/Plugin\"\251\005\n"
+          + "\024PluginInstanceAction\022K\n"
+          + "\023hub_instance_action\030\006 \001(\0132\'."
+          + "google.cloud.apihub.v1.ExecutionStatusB\003\340A\001H\000\022\026\n"
+          + "\taction_id\030\001 \001(\tB\003\340A\002\022F\n"
+          + "\005state\030\002"
+          + " \001(\01622.google.cloud.apihub.v1.PluginInstanceAction.StateB\003\340A\003\022%\n"
+          + "\030schedule_cron_expression\030\004 \001(\tB\003\340A\001\022D\n"
+          + "\017curation_config\030\005"
+          + " \001(\0132&.google.cloud.apihub.v1.CurationConfigB\003\340A\001\022\037\n"
+          + "\022schedule_time_zone\030\007 \001(\tB\003\340A\001\022\034\n"
+          + "\017service_account\030\010 \001(\tB\003\340A\001\022Y\n"
+          + "\017resource_config\030\t \001(\0132;.google.cloud.apihub"
+          + ".v1.PluginInstanceAction.ResourceConfigB\003\340A\003\032i\n"
+          + "\016ResourceConfig\022<\n"
+          + "\013action_type\030\001 "
+          + "\001(\0162\".google.cloud.apihub.v1.ActionTypeB\003\340A\003\022\031\n"
+          + "\014pubsub_topic\030\002 \001(\tB\003\340A\003\"a\n"
+          + "\005State\022\025\n"
+          + "\021STATE_UNSPECIFIED\020\000\022\013\n"
+          + "\007ENABLED\020\001\022\014\n"
+          + "\010DISABLED\020\002\022\014\n"
+          + "\010ENABLING\020\003\022\r\n"
+          + "\tDISABLING\020\004\022\t\n"
+          + "\005ERROR\020\005B\017\n\r"
+          + "action_status\"\372\006\n"
+          + "\016PluginInstance\022\021\n"
+          + "\004name\030\001 \001(\tB\003\340A\010\022\031\n"
+          + "\014display_name\030\002 \001(\tB\003\340A\002\022<\n"
+          + "\013auth_config\030\003"
+          + " \001(\0132\".google.cloud.apihub.v1.AuthConfigB\003\340A\001\022\\\n"
+          + "\021additional_config\030\004 \003(\0132<.google.cloud.api"
+          + "hub.v1.PluginInstance.AdditionalConfigEntryB\003\340A\001\022@\n"
+          + "\005state\030\005"
+          + " \001(\0162,.google.cloud.apihub.v1.PluginInstance.StateB\003\340A\003\022\032\n\r"
+          + "error_message\030\006 \001(\tB\003\340A\003\022B\n"
+          + "\007actions\030\007 \003(\0132"
+          + ",.google.cloud.apihub.v1.PluginInstanceActionB\003\340A\002\0224\n"
+          + "\013create_time\030\t \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
+          + "\013update_time\030\n"
+          + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\036\n"
+          + "\021source_project_id\030\013 \001(\tB\003\340A\001\032_\n"
+          + "\025AdditionalConfigEntry\022\013\n"
+          + "\003key\030\001 \001(\t\0225\n"
+          + "\005value\030\002 \001(\0132&.google.cloud.apihub.v1.ConfigVariable:\0028\001\"r\n"
+          + "\005State\022\025\n"
+          + "\021STATE_UNSPECIFIED\020\000\022\014\n"
+          + "\010CREATING\020\001\022\n\n"
+          + "\006ACTIVE\020\002\022\023\n"
+          + "\017APPLYING_CONFIG\020\003\022\t\n"
+          + "\005ERROR\020\004\022\n\n"
+          + "\006FAILED\020\005\022\014\n"
+          + "\010DELETING\020\006:\232\001\352A\226\001\n"
+          + "$apihub.googleapis.com/PluginInstance\022Mprojects/{project}/locations/{"
+          + "location}/plugins/{plugin}/instances/{in"
+          + "stance}*\017pluginInstances2\016pluginInstance\"\345\001\n"
+          + "\016CurationConfig\022U\n"
+          + "\017custom_curation\030\002"
+          + " \001(\01325.google.cloud.apihub.v1.CurationConfig.CustomCurationB\003\340A\001H\000\022@\n\r"
+          + "curation_type\030\001"
+          + " \001(\0162$.google.cloud.apihub.v1.CurationTypeB\003\340A\002\032\'\n"
+          + "\016CustomCuration\022\025\n"
+          + "\010curation\030\001 \001(\tB\003\340A\002B\021\n"
+          + "\017curation_config\"\320\004\n"
+          + "\017ExecutionStatus\022c\n"
+          + "\027current_execution_state\030\001"
+          + " \001(\0162=.google.cloud.apihub.v1.ExecutionStatus.CurrentExecutionStateB\003\340A\003\022R\n"
+          + "\016last_execution\030\002 \001(\01325.google.cloud.apihub."
+          + "v1.ExecutionStatus.LastExecutionB\003\340A\003\032\243\002\n\r"
+          + "LastExecution\022Q\n"
+          + "\006result\030\001 \001(\0162<.google"
+          + ".cloud.apihub.v1.ExecutionStatus.LastExecution.ResultB\003\340A\003\022\032\n\r"
+          + "error_message\030\002 \001(\tB\003\340A\003\0223\n\n"
+          + "start_time\030\003 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0221\n"
+          + "\010end_time\030\004 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\";\n"
+          + "\006Result\022\026\n"
+          + "\022RESULT_UNSPECIFIED\020\000\022\r\n"
+          + "\tSUCCEEDED\020\001\022\n\n"
+          + "\006FAILED\020\002\"^\n"
+          + "\025CurrentExecutionState\022\'\n"
+          + "#CURRENT_EXECUTION_STATE_UNSPECIFIED\020\000\022\013\n"
+          + "\007RUNNING\020\001\022\017\n"
+          + "\013NOT_RUNNING\020\002\"\230\001\n"
+          + "\023CreatePluginRequest\0224\n"
+          + "\006parent\030\001 \001("
+          + "\tB$\340A\002\372A\036\022\034apihub.googleapis.com/Plugin\022\026\n"
+          + "\tplugin_id\030\002 \001(\tB\003\340A\001\0223\n"
+          + "\006plugin\030\003 \001(\0132\036.google.cloud.apihub.v1.PluginB\003\340A\002\"I\n"
+          + "\023DeletePluginRequest\0222\n"
+          + "\004name\030\001 \001(\tB$\340A\002\372A\036\n"
+          + "\034apihub.googleapis.com/Plugin\"\220\001\n"
+          + "\022ListPluginsRequest\0224\n"
+          + "\006parent\030\001 \001("
+          + "\tB$\340A\002\372A\036\022\034apihub.googleapis.com/Plugin\022\023\n"
+          + "\006filter\030\002 \001(\tB\003\340A\001\022\026\n"
+          + "\tpage_size\030\003 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\004 \001(\tB\003\340A\001\"_\n"
+          + "\023ListPluginsResponse\022/\n"
+          + "\007plugins\030\001 \003(\0132\036.google.cloud.apihub.v1.Plugin\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"\272\001\n"
+          + "\033CreatePluginInstanceRequest\0224\n"
+          + "\006parent\030\001 \001(\tB$\340A\002\372A\036\n"
+          + "\034apihub.googleapis.com/Plugin\022\037\n"
+          + "\022plugin_instance_id\030\002 \001(\tB\003\340A\001\022D\n"
+          + "\017plugin_instance\030\003"
+          + " \001(\0132&.google.cloud.apihub.v1.PluginInstanceB\003\340A\002\"\265\001\n"
+          + "\"ExecutePluginInstanceActionRequest\022:\n"
+          + "\004name\030\001 \001(\tB,\340A\002\372A&\n"
+          + "$apihub.googleapis.com/PluginInstance\022S\n"
+          + "\027action_execution_detail\030\002"
+          + " \001(\0132-.google.cloud.apihub.v1.ActionExecutionDetailB\003\340A\002\"/\n"
+          + "\025ActionExecutionDetail\022\026\n"
+          + "\taction_id\030\001 \001(\tB\003\340A\002\"%\n"
+          + "#ExecutePluginInstanceActionResponse\"V\n"
+          + "\030GetPluginInstanceRequest\022:\n"
+          + "\004name\030\001 \001(\tB,\340A\002\372A&\n"
+          + "$apihub.googleapis.com/PluginInstance\"\240\001\n"
+          + "\032ListPluginInstancesRequest\022<\n"
+          + "\006parent\030\001 \001("
+          + "\tB,\340A\002\372A&\022$apihub.googleapis.com/PluginInstance\022\023\n"
+          + "\006filter\030\002 \001(\tB\003\340A\001\022\026\n"
+          + "\tpage_size\030\003 \001(\005B\003\340A\001\022\027\n\n"
+          + "page_token\030\004 \001(\tB\003\340A\001\"x\n"
+          + "\033ListPluginInstancesResponse\022@\n"
+          + "\020plugin_instances\030\001"
+          + " \003(\0132&.google.cloud.apihub.v1.PluginInstance\022\027\n"
+          + "\017next_page_token\030\002 \001(\t\"w\n"
+          + "!EnablePluginInstanceActionRequest\022:\n"
+          + "\004name\030\001 \001(\tB,\340A\002\372A&\n"
+          + "$apihub.googleapis.com/PluginInstance\022\026\n"
+          + "\taction_id\030\002 \001(\tB\003\340A\002\"$\n"
+          + "\"EnablePluginInstanceActionResponse\"x\n"
+          + "\"DisablePluginInstanceActionRequest\022:\n"
+          + "\004name\030\001 \001(\tB,\340A\002\372A&\n"
+          + "$apihub.googleapis.com/PluginInstance\022\026\n"
+          + "\taction_id\030\002 \001(\tB\003\340A\002\"%\n"
+          + "#DisablePluginInstanceActionResponse\"\231\001\n"
+          + "\033UpdatePluginInstanceRequest\022D\n"
+          + "\017plugin_instance\030\001"
+          + " \001(\0132&.google.cloud.apihub.v1.PluginInstanceB\003\340A\002\0224\n"
+          + "\013update_mask\030\002 \001(\0132\032.google.protobuf.FieldMaskB\003\340A\001\"Y\n"
+          + "\033DeletePluginInstanceRequest\022:\n"
+          + "\004name\030\001 \001(\tB,\340A\002\372A&\n"
+          + "$apihub.googleapis.com/PluginInstance*S\n\n"
+          + "ActionType\022\033\n"
+          + "\027ACTION_TYPE_UNSPECIFIED\020\000\022\021\n\r"
+          + "SYNC_METADATA\020\001\022\025\n"
+          + "\021SYNC_RUNTIME_DATA\020\002*\314\001\n"
+          + "\013GatewayType\022\034\n"
+          + "\030GATEWAY_TYPE_UNSPECIFIED\020\000\022\027\n"
+          + "\023APIGEE_X_AND_HYBRID\020\001\022\034\n"
+          + "\030APIGEE_EDGE_PUBLIC_CLOUD\020\002\022\035\n"
+          + "\031APIGEE_EDGE_PRIVATE_CLOUD\020\003\022\025\n"
+          + "\021CLOUD_API_GATEWAY\020\004\022\023\n"
+          + "\017CLOUD_ENDPOINTS\020\005\022\021\n\r"
+          + "API_DISCOVERY\020\006\022\n\n"
+          + "\006OTHERS\020\007*z\n"
+          + "\014CurationType\022\035\n"
+          + "\031CURATION_TYPE_UNSPECIFIED\020\000\022%\n"
+          + "!DEFAULT_CURATION_FOR_API_METADATA\020\001\022$\n"
+          + " CUSTOM_CURATION_FOR_API_METADATA\020\0022\237\030\n"
+          + "\014ApiHubPlugin\022\221\001\n"
+          + "\tGetPlugin\022(.google.cloud.apihub.v1.GetPluginRequest\032\036.google"
+          + ".cloud.apihub.v1.Plugin\":\332A\004name\202\323\344\223\002-\022+"
+          + "/v1/{name=projects/*/locations/*/plugins/*}\022\241\001\n"
+          + "\014EnablePlugin\022+.google.cloud.apihub.v1.EnablePluginRequest\032\036.google.cloud"
+          + ".apihub.v1.Plugin\"D\332A\004name\202\323\344\223\0027\"2/v1/{n"
+          + "ame=projects/*/locations/*/plugins/*}:enable:\001*\022\244\001\n\r"
+          + "DisablePlugin\022,.google.cloud.apihub.v1.DisablePluginRequest\032\036.google"
+          + ".cloud.apihub.v1.Plugin\"E\332A\004name\202\323\344\223\0028\"3"
+          + "/v1/{name=projects/*/locations/*/plugins/*}:disable:\001*\022\262\001\n"
+          + "\014CreatePlugin\022+.google.cloud.apihub.v1.CreatePluginRequest\032\036.g"
+          + "oogle.cloud.apihub.v1.Plugin\"U\332A\027parent,"
+          + "plugin,plugin_id\202\323\344\223\0025\"+/v1/{parent=projects/*/locations/*}/plugins:\006plugin\022\244\001\n"
+          + "\013ListPlugins\022*.google.cloud.apihub.v1.Lis"
+          + "tPluginsRequest\032+.google.cloud.apihub.v1"
+          + ".ListPluginsResponse\"<\332A\006parent\202\323\344\223\002-\022+/"
+          + "v1/{parent=projects/*/locations/*}/plugins\022\303\001\n"
+          + "\014DeletePlugin\022+.google.cloud.apihu"
+          + "b.v1.DeletePluginRequest\032\035.google.longrunning.Operation\"g\312A*\n"
+          + "\025google.protobuf.Em"
+          + "pty\022\021OperationMetadata\332A\004name\202\323\344\223\002-*+/v1"
+          + "/{name=projects/*/locations/*/plugins/*}\022\217\002\n"
+          + "\024CreatePluginInstance\0223.google.cloud"
+          + ".apihub.v1.CreatePluginInstanceRequest\032\035.google.longrunning.Operation\"\242\001\312A#\n"
+          + "\016PluginInstance\022\021OperationMetadata\332A)parent,"
+          + "plugin_instance,plugin_instance_id\202\323\344\223\002J"
+          + "\"7/v1/{parent=projects/*/locations/*/plugins/*}/instances:\017plugin_instance\022\245\002\n"
+          + "\033ExecutePluginInstanceAction\022:.google.clou"
+          + "d.apihub.v1.ExecutePluginInstanceActionR"
+          + "equest\032\035.google.longrunning.Operation\"\252\001\312A8\n"
+          + "#ExecutePluginInstanceActionResponse"
+          + "\022\021OperationMetadata\332A\034name,action_execut"
+          + "ion_detail\202\323\344\223\002J\"E/v1/{name=projects/*/l"
+          + "ocations/*/plugins/*/instances/*}:executeAction:\001*\022\265\001\n"
+          + "\021GetPluginInstance\0220.google.cloud.apihub.v1.GetPluginInstanceReque"
+          + "st\032&.google.cloud.apihub.v1.PluginInstan"
+          + "ce\"F\332A\004name\202\323\344\223\0029\0227/v1/{name=projects/*/locations/*/plugins/*/instances/*}\022\310\001\n"
+          + "\023ListPluginInstances\0222.google.cloud.apihub"
+          + ".v1.ListPluginInstancesRequest\0323.google.cloud.apihub.v1.ListPluginInstancesRespo"
+          + "nse\"H\332A\006parent\202\323\344\223\0029\0227/v1/{parent=projec"
+          + "ts/*/locations/*/plugins/*}/instances\022\223\002\n"
+          + "\032EnablePluginInstanceAction\0229.google.cloud.apihub.v1.EnablePluginInstanceAction"
+          + "Request\032\035.google.longrunning.Operation\"\232\001\312A7\n"
+          + "\"EnablePluginInstanceActionResponse"
+          + "\022\021OperationMetadata\332A\016name,action_id\202\323\344\223"
+          + "\002I\"D/v1/{name=projects/*/locations/*/plugins/*/instances/*}:enableAction:\001*\022\227\002\n"
+          + "\033DisablePluginInstanceAction\022:.google.clo"
+          + "ud.apihub.v1.DisablePluginInstanceAction"
+          + "Request\032\035.google.longrunning.Operation\"\234\001\312A8\n"
+          + "#DisablePluginInstanceActionRespons"
+          + "e\022\021OperationMetadata\332A\016name,action_id\202\323\344"
+          + "\223\002J\"E/v1/{name=projects/*/locations/*/pl"
+          + "ugins/*/instances/*}:disableAction:\001*\022\363\001\n"
+          + "\024UpdatePluginInstance\0223.google.cloud.ap"
+          + "ihub.v1.UpdatePluginInstanceRequest\032&.go"
+          + "ogle.cloud.apihub.v1.PluginInstance\"~\332A\033"
+          + "plugin_instance,update_mask\202\323\344\223\002Z2G/v1/{"
+          + "plugin_instance.name=projects/*/location"
+          + "s/*/plugins/*/instances/*}:\017plugin_instance\022\337\001\n"
+          + "\024DeletePluginInstance\0223.google.cl"
+          + "oud.apihub.v1.DeletePluginInstanceRequest\032\035.google.longrunning.Operation\"s\312A*\n"
+          + "\025google.protobuf.Empty\022\021OperationMetadata\332"
+          + "A\004name\202\323\344\223\0029*7/v1/{name=projects/*/locat"
+          + "ions/*/plugins/*/instances/*}\032I\312A\025apihub"
+          + ".googleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\264\001\n"
+          + "\032com.google.cloud.apihub.v1B\022PluginServiceProtoP\001Z2c"
+          + "loud.google.com/go/apihub/apiv1/apihubpb"
+          + ";apihubpb\252\002\026Google.Cloud.ApiHub.V1\312\002\026Goo"
+          + "gle\\Cloud\\ApiHub\\V1\352\002\031Google::Cloud::ApiHub::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -103,6 +482,10 @@ public final class PluginServiceProto {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.cloud.apihub.v1.CommonFieldsProto.getDescriptor(),
+              com.google.longrunning.OperationsProto.getDescriptor(),
+              com.google.protobuf.EmptyProto.getDescriptor(),
+              com.google.protobuf.FieldMaskProto.getDescriptor(),
+              com.google.protobuf.TimestampProto.getDescriptor(),
             });
     internal_static_google_cloud_apihub_v1_Plugin_descriptor =
         getDescriptor().getMessageTypes().get(0);
@@ -110,10 +493,57 @@ public final class PluginServiceProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_Plugin_descriptor,
             new java.lang.String[] {
-              "Name", "DisplayName", "Type", "Description", "State",
+              "Name",
+              "DisplayName",
+              "Type",
+              "Description",
+              "State",
+              "OwnershipType",
+              "HostingService",
+              "ActionsConfig",
+              "Documentation",
+              "PluginCategory",
+              "ConfigTemplate",
+              "CreateTime",
+              "UpdateTime",
+              "GatewayType",
+            });
+    internal_static_google_cloud_apihub_v1_Plugin_HostingService_descriptor =
+        internal_static_google_cloud_apihub_v1_Plugin_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_apihub_v1_Plugin_HostingService_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_apihub_v1_Plugin_HostingService_descriptor,
+            new java.lang.String[] {
+              "ServiceUri",
+            });
+    internal_static_google_cloud_apihub_v1_Plugin_ConfigTemplate_descriptor =
+        internal_static_google_cloud_apihub_v1_Plugin_descriptor.getNestedTypes().get(1);
+    internal_static_google_cloud_apihub_v1_Plugin_ConfigTemplate_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_apihub_v1_Plugin_ConfigTemplate_descriptor,
+            new java.lang.String[] {
+              "AuthConfigTemplate", "AdditionalConfigTemplate",
+            });
+    internal_static_google_cloud_apihub_v1_Plugin_ConfigTemplate_AuthConfigTemplate_descriptor =
+        internal_static_google_cloud_apihub_v1_Plugin_ConfigTemplate_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_apihub_v1_Plugin_ConfigTemplate_AuthConfigTemplate_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_apihub_v1_Plugin_ConfigTemplate_AuthConfigTemplate_descriptor,
+            new java.lang.String[] {
+              "SupportedAuthTypes", "ServiceAccount",
+            });
+    internal_static_google_cloud_apihub_v1_PluginActionConfig_descriptor =
+        getDescriptor().getMessageTypes().get(1);
+    internal_static_google_cloud_apihub_v1_PluginActionConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_apihub_v1_PluginActionConfig_descriptor,
+            new java.lang.String[] {
+              "Id", "DisplayName", "Description", "TriggerMode",
             });
     internal_static_google_cloud_apihub_v1_GetPluginRequest_descriptor =
-        getDescriptor().getMessageTypes().get(1);
+        getDescriptor().getMessageTypes().get(2);
     internal_static_google_cloud_apihub_v1_GetPluginRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_GetPluginRequest_descriptor,
@@ -121,7 +551,7 @@ public final class PluginServiceProto {
               "Name",
             });
     internal_static_google_cloud_apihub_v1_EnablePluginRequest_descriptor =
-        getDescriptor().getMessageTypes().get(2);
+        getDescriptor().getMessageTypes().get(3);
     internal_static_google_cloud_apihub_v1_EnablePluginRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_EnablePluginRequest_descriptor,
@@ -129,10 +559,223 @@ public final class PluginServiceProto {
               "Name",
             });
     internal_static_google_cloud_apihub_v1_DisablePluginRequest_descriptor =
-        getDescriptor().getMessageTypes().get(3);
+        getDescriptor().getMessageTypes().get(4);
     internal_static_google_cloud_apihub_v1_DisablePluginRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_apihub_v1_DisablePluginRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_apihub_v1_PluginInstanceAction_descriptor =
+        getDescriptor().getMessageTypes().get(5);
+    internal_static_google_cloud_apihub_v1_PluginInstanceAction_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_apihub_v1_PluginInstanceAction_descriptor,
+            new java.lang.String[] {
+              "HubInstanceAction",
+              "ActionId",
+              "State",
+              "ScheduleCronExpression",
+              "CurationConfig",
+              "ScheduleTimeZone",
+              "ServiceAccount",
+              "ResourceConfig",
+              "ActionStatus",
+            });
+    internal_static_google_cloud_apihub_v1_PluginInstanceAction_ResourceConfig_descriptor =
+        internal_static_google_cloud_apihub_v1_PluginInstanceAction_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_apihub_v1_PluginInstanceAction_ResourceConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_apihub_v1_PluginInstanceAction_ResourceConfig_descriptor,
+            new java.lang.String[] {
+              "ActionType", "PubsubTopic",
+            });
+    internal_static_google_cloud_apihub_v1_PluginInstance_descriptor =
+        getDescriptor().getMessageTypes().get(6);
+    internal_static_google_cloud_apihub_v1_PluginInstance_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_apihub_v1_PluginInstance_descriptor,
+            new java.lang.String[] {
+              "Name",
+              "DisplayName",
+              "AuthConfig",
+              "AdditionalConfig",
+              "State",
+              "ErrorMessage",
+              "Actions",
+              "CreateTime",
+              "UpdateTime",
+              "SourceProjectId",
+            });
+    internal_static_google_cloud_apihub_v1_PluginInstance_AdditionalConfigEntry_descriptor =
+        internal_static_google_cloud_apihub_v1_PluginInstance_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_apihub_v1_PluginInstance_AdditionalConfigEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_apihub_v1_PluginInstance_AdditionalConfigEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
+            });
+    internal_static_google_cloud_apihub_v1_CurationConfig_descriptor =
+        getDescriptor().getMessageTypes().get(7);
+    internal_static_google_cloud_apihub_v1_CurationConfig_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_apihub_v1_CurationConfig_descriptor,
+            new java.lang.String[] {
+              "CustomCuration", "CurationType", "CurationConfig",
+            });
+    internal_static_google_cloud_apihub_v1_CurationConfig_CustomCuration_descriptor =
+        internal_static_google_cloud_apihub_v1_CurationConfig_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_apihub_v1_CurationConfig_CustomCuration_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_apihub_v1_CurationConfig_CustomCuration_descriptor,
+            new java.lang.String[] {
+              "Curation",
+            });
+    internal_static_google_cloud_apihub_v1_ExecutionStatus_descriptor =
+        getDescriptor().getMessageTypes().get(8);
+    internal_static_google_cloud_apihub_v1_ExecutionStatus_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_apihub_v1_ExecutionStatus_descriptor,
+            new java.lang.String[] {
+              "CurrentExecutionState", "LastExecution",
+            });
+    internal_static_google_cloud_apihub_v1_ExecutionStatus_LastExecution_descriptor =
+        internal_static_google_cloud_apihub_v1_ExecutionStatus_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_apihub_v1_ExecutionStatus_LastExecution_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_apihub_v1_ExecutionStatus_LastExecution_descriptor,
+            new java.lang.String[] {
+              "Result", "ErrorMessage", "StartTime", "EndTime",
+            });
+    internal_static_google_cloud_apihub_v1_CreatePluginRequest_descriptor =
+        getDescriptor().getMessageTypes().get(9);
+    internal_static_google_cloud_apihub_v1_CreatePluginRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_apihub_v1_CreatePluginRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PluginId", "Plugin",
+            });
+    internal_static_google_cloud_apihub_v1_DeletePluginRequest_descriptor =
+        getDescriptor().getMessageTypes().get(10);
+    internal_static_google_cloud_apihub_v1_DeletePluginRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_apihub_v1_DeletePluginRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_apihub_v1_ListPluginsRequest_descriptor =
+        getDescriptor().getMessageTypes().get(11);
+    internal_static_google_cloud_apihub_v1_ListPluginsRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_apihub_v1_ListPluginsRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Filter", "PageSize", "PageToken",
+            });
+    internal_static_google_cloud_apihub_v1_ListPluginsResponse_descriptor =
+        getDescriptor().getMessageTypes().get(12);
+    internal_static_google_cloud_apihub_v1_ListPluginsResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_apihub_v1_ListPluginsResponse_descriptor,
+            new java.lang.String[] {
+              "Plugins", "NextPageToken",
+            });
+    internal_static_google_cloud_apihub_v1_CreatePluginInstanceRequest_descriptor =
+        getDescriptor().getMessageTypes().get(13);
+    internal_static_google_cloud_apihub_v1_CreatePluginInstanceRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_apihub_v1_CreatePluginInstanceRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "PluginInstanceId", "PluginInstance",
+            });
+    internal_static_google_cloud_apihub_v1_ExecutePluginInstanceActionRequest_descriptor =
+        getDescriptor().getMessageTypes().get(14);
+    internal_static_google_cloud_apihub_v1_ExecutePluginInstanceActionRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_apihub_v1_ExecutePluginInstanceActionRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "ActionExecutionDetail",
+            });
+    internal_static_google_cloud_apihub_v1_ActionExecutionDetail_descriptor =
+        getDescriptor().getMessageTypes().get(15);
+    internal_static_google_cloud_apihub_v1_ActionExecutionDetail_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_apihub_v1_ActionExecutionDetail_descriptor,
+            new java.lang.String[] {
+              "ActionId",
+            });
+    internal_static_google_cloud_apihub_v1_ExecutePluginInstanceActionResponse_descriptor =
+        getDescriptor().getMessageTypes().get(16);
+    internal_static_google_cloud_apihub_v1_ExecutePluginInstanceActionResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_apihub_v1_ExecutePluginInstanceActionResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_cloud_apihub_v1_GetPluginInstanceRequest_descriptor =
+        getDescriptor().getMessageTypes().get(17);
+    internal_static_google_cloud_apihub_v1_GetPluginInstanceRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_apihub_v1_GetPluginInstanceRequest_descriptor,
+            new java.lang.String[] {
+              "Name",
+            });
+    internal_static_google_cloud_apihub_v1_ListPluginInstancesRequest_descriptor =
+        getDescriptor().getMessageTypes().get(18);
+    internal_static_google_cloud_apihub_v1_ListPluginInstancesRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_apihub_v1_ListPluginInstancesRequest_descriptor,
+            new java.lang.String[] {
+              "Parent", "Filter", "PageSize", "PageToken",
+            });
+    internal_static_google_cloud_apihub_v1_ListPluginInstancesResponse_descriptor =
+        getDescriptor().getMessageTypes().get(19);
+    internal_static_google_cloud_apihub_v1_ListPluginInstancesResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_apihub_v1_ListPluginInstancesResponse_descriptor,
+            new java.lang.String[] {
+              "PluginInstances", "NextPageToken",
+            });
+    internal_static_google_cloud_apihub_v1_EnablePluginInstanceActionRequest_descriptor =
+        getDescriptor().getMessageTypes().get(20);
+    internal_static_google_cloud_apihub_v1_EnablePluginInstanceActionRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_apihub_v1_EnablePluginInstanceActionRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "ActionId",
+            });
+    internal_static_google_cloud_apihub_v1_EnablePluginInstanceActionResponse_descriptor =
+        getDescriptor().getMessageTypes().get(21);
+    internal_static_google_cloud_apihub_v1_EnablePluginInstanceActionResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_apihub_v1_EnablePluginInstanceActionResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_cloud_apihub_v1_DisablePluginInstanceActionRequest_descriptor =
+        getDescriptor().getMessageTypes().get(22);
+    internal_static_google_cloud_apihub_v1_DisablePluginInstanceActionRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_apihub_v1_DisablePluginInstanceActionRequest_descriptor,
+            new java.lang.String[] {
+              "Name", "ActionId",
+            });
+    internal_static_google_cloud_apihub_v1_DisablePluginInstanceActionResponse_descriptor =
+        getDescriptor().getMessageTypes().get(23);
+    internal_static_google_cloud_apihub_v1_DisablePluginInstanceActionResponse_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_apihub_v1_DisablePluginInstanceActionResponse_descriptor,
+            new java.lang.String[] {});
+    internal_static_google_cloud_apihub_v1_UpdatePluginInstanceRequest_descriptor =
+        getDescriptor().getMessageTypes().get(24);
+    internal_static_google_cloud_apihub_v1_UpdatePluginInstanceRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_apihub_v1_UpdatePluginInstanceRequest_descriptor,
+            new java.lang.String[] {
+              "PluginInstance", "UpdateMask",
+            });
+    internal_static_google_cloud_apihub_v1_DeletePluginInstanceRequest_descriptor =
+        getDescriptor().getMessageTypes().get(25);
+    internal_static_google_cloud_apihub_v1_DeletePluginInstanceRequest_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_apihub_v1_DeletePluginInstanceRequest_descriptor,
             new java.lang.String[] {
               "Name",
             });
@@ -145,6 +788,7 @@ public final class PluginServiceProto {
     registry.add(com.google.api.ClientProto.oauthScopes);
     registry.add(com.google.api.ResourceProto.resource);
     registry.add(com.google.api.ResourceProto.resourceReference);
+    registry.add(com.google.longrunning.OperationsProto.operationInfo);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.AnnotationsProto.getDescriptor();
@@ -152,6 +796,10 @@ public final class PluginServiceProto {
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.cloud.apihub.v1.CommonFieldsProto.getDescriptor();
+    com.google.longrunning.OperationsProto.getDescriptor();
+    com.google.protobuf.EmptyProto.getDescriptor();
+    com.google.protobuf.FieldMaskProto.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

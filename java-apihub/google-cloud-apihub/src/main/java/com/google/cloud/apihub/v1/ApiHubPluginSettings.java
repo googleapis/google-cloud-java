@@ -17,6 +17,8 @@
 package com.google.cloud.apihub.v1;
 
 import static com.google.cloud.apihub.v1.ApiHubPluginClient.ListLocationsPagedResponse;
+import static com.google.cloud.apihub.v1.ApiHubPluginClient.ListPluginInstancesPagedResponse;
+import static com.google.cloud.apihub.v1.ApiHubPluginClient.ListPluginsPagedResponse;
 
 import com.google.api.core.ApiFunction;
 import com.google.api.gax.core.GoogleCredentialsProvider;
@@ -25,6 +27,7 @@ import com.google.api.gax.httpjson.InstantiatingHttpJsonChannelProvider;
 import com.google.api.gax.rpc.ApiClientHeaderProvider;
 import com.google.api.gax.rpc.ClientContext;
 import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.OperationCallSettings;
 import com.google.api.gax.rpc.PagedCallSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
@@ -33,6 +36,8 @@ import com.google.cloud.location.GetLocationRequest;
 import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
+import com.google.longrunning.Operation;
+import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -85,6 +90,31 @@ import javax.annotation.Generated;
  * Please refer to the [Client Side Retry
  * Guide](https://github.com/googleapis/google-cloud-java/blob/main/docs/client_retries.md) for
  * additional support in setting retries.
+ *
+ * <p>To configure the RetrySettings of a Long Running Operation method, create an
+ * OperationTimedPollAlgorithm object and update the RPC's polling algorithm. For example, to
+ * configure the RetrySettings for deletePlugin:
+ *
+ * <pre>{@code
+ * // This snippet has been automatically generated and should be regarded as a code template only.
+ * // It will require modifications to work:
+ * // - It may require correct/in-range values for request initialization.
+ * // - It may require specifying regional endpoints when creating the service client as shown in
+ * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+ * ApiHubPluginSettings.Builder apiHubPluginSettingsBuilder = ApiHubPluginSettings.newBuilder();
+ * TimedRetryAlgorithm timedRetryAlgorithm =
+ *     OperationalTimedPollAlgorithm.create(
+ *         RetrySettings.newBuilder()
+ *             .setInitialRetryDelayDuration(Duration.ofMillis(500))
+ *             .setRetryDelayMultiplier(1.5)
+ *             .setMaxRetryDelayDuration(Duration.ofMillis(5000))
+ *             .setTotalTimeoutDuration(Duration.ofHours(24))
+ *             .build());
+ * apiHubPluginSettingsBuilder
+ *     .createClusterOperationSettings()
+ *     .setPollingAlgorithm(timedRetryAlgorithm)
+ *     .build();
+ * }</pre>
  */
 @Generated("by gapic-generator-java")
 public class ApiHubPluginSettings extends ClientSettings<ApiHubPluginSettings> {
@@ -102,6 +132,114 @@ public class ApiHubPluginSettings extends ClientSettings<ApiHubPluginSettings> {
   /** Returns the object with the settings used for calls to disablePlugin. */
   public UnaryCallSettings<DisablePluginRequest, Plugin> disablePluginSettings() {
     return ((ApiHubPluginStubSettings) getStubSettings()).disablePluginSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createPlugin. */
+  public UnaryCallSettings<CreatePluginRequest, Plugin> createPluginSettings() {
+    return ((ApiHubPluginStubSettings) getStubSettings()).createPluginSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listPlugins. */
+  public PagedCallSettings<ListPluginsRequest, ListPluginsResponse, ListPluginsPagedResponse>
+      listPluginsSettings() {
+    return ((ApiHubPluginStubSettings) getStubSettings()).listPluginsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deletePlugin. */
+  public UnaryCallSettings<DeletePluginRequest, Operation> deletePluginSettings() {
+    return ((ApiHubPluginStubSettings) getStubSettings()).deletePluginSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deletePlugin. */
+  public OperationCallSettings<DeletePluginRequest, Empty, OperationMetadata>
+      deletePluginOperationSettings() {
+    return ((ApiHubPluginStubSettings) getStubSettings()).deletePluginOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createPluginInstance. */
+  public UnaryCallSettings<CreatePluginInstanceRequest, Operation> createPluginInstanceSettings() {
+    return ((ApiHubPluginStubSettings) getStubSettings()).createPluginInstanceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to createPluginInstance. */
+  public OperationCallSettings<CreatePluginInstanceRequest, PluginInstance, OperationMetadata>
+      createPluginInstanceOperationSettings() {
+    return ((ApiHubPluginStubSettings) getStubSettings()).createPluginInstanceOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to executePluginInstanceAction. */
+  public UnaryCallSettings<ExecutePluginInstanceActionRequest, Operation>
+      executePluginInstanceActionSettings() {
+    return ((ApiHubPluginStubSettings) getStubSettings()).executePluginInstanceActionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to executePluginInstanceAction. */
+  public OperationCallSettings<
+          ExecutePluginInstanceActionRequest,
+          ExecutePluginInstanceActionResponse,
+          OperationMetadata>
+      executePluginInstanceActionOperationSettings() {
+    return ((ApiHubPluginStubSettings) getStubSettings())
+        .executePluginInstanceActionOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getPluginInstance. */
+  public UnaryCallSettings<GetPluginInstanceRequest, PluginInstance> getPluginInstanceSettings() {
+    return ((ApiHubPluginStubSettings) getStubSettings()).getPluginInstanceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to listPluginInstances. */
+  public PagedCallSettings<
+          ListPluginInstancesRequest, ListPluginInstancesResponse, ListPluginInstancesPagedResponse>
+      listPluginInstancesSettings() {
+    return ((ApiHubPluginStubSettings) getStubSettings()).listPluginInstancesSettings();
+  }
+
+  /** Returns the object with the settings used for calls to enablePluginInstanceAction. */
+  public UnaryCallSettings<EnablePluginInstanceActionRequest, Operation>
+      enablePluginInstanceActionSettings() {
+    return ((ApiHubPluginStubSettings) getStubSettings()).enablePluginInstanceActionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to enablePluginInstanceAction. */
+  public OperationCallSettings<
+          EnablePluginInstanceActionRequest, EnablePluginInstanceActionResponse, OperationMetadata>
+      enablePluginInstanceActionOperationSettings() {
+    return ((ApiHubPluginStubSettings) getStubSettings())
+        .enablePluginInstanceActionOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to disablePluginInstanceAction. */
+  public UnaryCallSettings<DisablePluginInstanceActionRequest, Operation>
+      disablePluginInstanceActionSettings() {
+    return ((ApiHubPluginStubSettings) getStubSettings()).disablePluginInstanceActionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to disablePluginInstanceAction. */
+  public OperationCallSettings<
+          DisablePluginInstanceActionRequest,
+          DisablePluginInstanceActionResponse,
+          OperationMetadata>
+      disablePluginInstanceActionOperationSettings() {
+    return ((ApiHubPluginStubSettings) getStubSettings())
+        .disablePluginInstanceActionOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updatePluginInstance. */
+  public UnaryCallSettings<UpdatePluginInstanceRequest, PluginInstance>
+      updatePluginInstanceSettings() {
+    return ((ApiHubPluginStubSettings) getStubSettings()).updatePluginInstanceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deletePluginInstance. */
+  public UnaryCallSettings<DeletePluginInstanceRequest, Operation> deletePluginInstanceSettings() {
+    return ((ApiHubPluginStubSettings) getStubSettings()).deletePluginInstanceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deletePluginInstance. */
+  public OperationCallSettings<DeletePluginInstanceRequest, Empty, OperationMetadata>
+      deletePluginInstanceOperationSettings() {
+    return ((ApiHubPluginStubSettings) getStubSettings()).deletePluginInstanceOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to listLocations. */
@@ -225,6 +363,120 @@ public class ApiHubPluginSettings extends ClientSettings<ApiHubPluginSettings> {
     /** Returns the builder for the settings used for calls to disablePlugin. */
     public UnaryCallSettings.Builder<DisablePluginRequest, Plugin> disablePluginSettings() {
       return getStubSettingsBuilder().disablePluginSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createPlugin. */
+    public UnaryCallSettings.Builder<CreatePluginRequest, Plugin> createPluginSettings() {
+      return getStubSettingsBuilder().createPluginSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listPlugins. */
+    public PagedCallSettings.Builder<
+            ListPluginsRequest, ListPluginsResponse, ListPluginsPagedResponse>
+        listPluginsSettings() {
+      return getStubSettingsBuilder().listPluginsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deletePlugin. */
+    public UnaryCallSettings.Builder<DeletePluginRequest, Operation> deletePluginSettings() {
+      return getStubSettingsBuilder().deletePluginSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deletePlugin. */
+    public OperationCallSettings.Builder<DeletePluginRequest, Empty, OperationMetadata>
+        deletePluginOperationSettings() {
+      return getStubSettingsBuilder().deletePluginOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createPluginInstance. */
+    public UnaryCallSettings.Builder<CreatePluginInstanceRequest, Operation>
+        createPluginInstanceSettings() {
+      return getStubSettingsBuilder().createPluginInstanceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createPluginInstance. */
+    public OperationCallSettings.Builder<
+            CreatePluginInstanceRequest, PluginInstance, OperationMetadata>
+        createPluginInstanceOperationSettings() {
+      return getStubSettingsBuilder().createPluginInstanceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to executePluginInstanceAction. */
+    public UnaryCallSettings.Builder<ExecutePluginInstanceActionRequest, Operation>
+        executePluginInstanceActionSettings() {
+      return getStubSettingsBuilder().executePluginInstanceActionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to executePluginInstanceAction. */
+    public OperationCallSettings.Builder<
+            ExecutePluginInstanceActionRequest,
+            ExecutePluginInstanceActionResponse,
+            OperationMetadata>
+        executePluginInstanceActionOperationSettings() {
+      return getStubSettingsBuilder().executePluginInstanceActionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getPluginInstance. */
+    public UnaryCallSettings.Builder<GetPluginInstanceRequest, PluginInstance>
+        getPluginInstanceSettings() {
+      return getStubSettingsBuilder().getPluginInstanceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to listPluginInstances. */
+    public PagedCallSettings.Builder<
+            ListPluginInstancesRequest,
+            ListPluginInstancesResponse,
+            ListPluginInstancesPagedResponse>
+        listPluginInstancesSettings() {
+      return getStubSettingsBuilder().listPluginInstancesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to enablePluginInstanceAction. */
+    public UnaryCallSettings.Builder<EnablePluginInstanceActionRequest, Operation>
+        enablePluginInstanceActionSettings() {
+      return getStubSettingsBuilder().enablePluginInstanceActionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to enablePluginInstanceAction. */
+    public OperationCallSettings.Builder<
+            EnablePluginInstanceActionRequest,
+            EnablePluginInstanceActionResponse,
+            OperationMetadata>
+        enablePluginInstanceActionOperationSettings() {
+      return getStubSettingsBuilder().enablePluginInstanceActionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to disablePluginInstanceAction. */
+    public UnaryCallSettings.Builder<DisablePluginInstanceActionRequest, Operation>
+        disablePluginInstanceActionSettings() {
+      return getStubSettingsBuilder().disablePluginInstanceActionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to disablePluginInstanceAction. */
+    public OperationCallSettings.Builder<
+            DisablePluginInstanceActionRequest,
+            DisablePluginInstanceActionResponse,
+            OperationMetadata>
+        disablePluginInstanceActionOperationSettings() {
+      return getStubSettingsBuilder().disablePluginInstanceActionOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updatePluginInstance. */
+    public UnaryCallSettings.Builder<UpdatePluginInstanceRequest, PluginInstance>
+        updatePluginInstanceSettings() {
+      return getStubSettingsBuilder().updatePluginInstanceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deletePluginInstance. */
+    public UnaryCallSettings.Builder<DeletePluginInstanceRequest, Operation>
+        deletePluginInstanceSettings() {
+      return getStubSettingsBuilder().deletePluginInstanceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deletePluginInstance. */
+    public OperationCallSettings.Builder<DeletePluginInstanceRequest, Empty, OperationMetadata>
+        deletePluginInstanceOperationSettings() {
+      return getStubSettingsBuilder().deletePluginInstanceOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

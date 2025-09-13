@@ -65,12 +65,12 @@ public interface OperationDetailsOrBuilder
    *
    *
    * <pre>
-   * Output only. Description of the operation behavior.
+   * Optional. Description of the operation behavior.
    * For OpenAPI spec, this will map to `operation.description` in the
    * spec, in case description is empty, `operation.summary` will be used.
    * </pre>
    *
-   * <code>string description = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string description = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The description.
    */
@@ -80,12 +80,12 @@ public interface OperationDetailsOrBuilder
    *
    *
    * <pre>
-   * Output only. Description of the operation behavior.
+   * Optional. Description of the operation behavior.
    * For OpenAPI spec, this will map to `operation.description` in the
    * spec, in case description is empty, `operation.summary` will be used.
    * </pre>
    *
-   * <code>string description = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string description = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for description.
    */
@@ -95,12 +95,12 @@ public interface OperationDetailsOrBuilder
    *
    *
    * <pre>
-   * Output only. Additional external documentation for this operation.
+   * Optional. Additional external documentation for this operation.
    * For OpenAPI spec, this will map to `operation.documentation` in the spec.
    * </pre>
    *
    * <code>
-   * .google.cloud.apihub.v1.Documentation documentation = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * .google.cloud.apihub.v1.Documentation documentation = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the documentation field is set.
@@ -111,12 +111,12 @@ public interface OperationDetailsOrBuilder
    *
    *
    * <pre>
-   * Output only. Additional external documentation for this operation.
+   * Optional. Additional external documentation for this operation.
    * For OpenAPI spec, this will map to `operation.documentation` in the spec.
    * </pre>
    *
    * <code>
-   * .google.cloud.apihub.v1.Documentation documentation = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * .google.cloud.apihub.v1.Documentation documentation = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The documentation.
@@ -127,12 +127,12 @@ public interface OperationDetailsOrBuilder
    *
    *
    * <pre>
-   * Output only. Additional external documentation for this operation.
+   * Optional. Additional external documentation for this operation.
    * For OpenAPI spec, this will map to `operation.documentation` in the spec.
    * </pre>
    *
    * <code>
-   * .google.cloud.apihub.v1.Documentation documentation = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * .google.cloud.apihub.v1.Documentation documentation = 2 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.apihub.v1.DocumentationOrBuilder getDocumentationOrBuilder();
@@ -141,11 +141,11 @@ public interface OperationDetailsOrBuilder
    *
    *
    * <pre>
-   * Output only. For OpenAPI spec, this will be set if `operation.deprecated`is
+   * Optional. For OpenAPI spec, this will be set if `operation.deprecated`is
    * marked as `true` in the spec.
    * </pre>
    *
-   * <code>bool deprecated = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>bool deprecated = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The deprecated.
    */

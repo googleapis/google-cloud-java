@@ -219,9 +219,12 @@ public interface DeploymentOrBuilder
    *
    *
    * <pre>
-   * Required. A URI to the runtime resource. This URI can be used to manage the
-   * resource. For example, if the runtime resource is of type APIGEE_PROXY,
-   * then this field will contain the URI to the management UI of the proxy.
+   * Required. The resource URI identifies the deployment within its gateway.
+   * For Apigee gateways, its recommended to use the format:
+   * organizations/{org}/environments/{env}/apis/{api}.
+   * For ex: if a proxy with name `orders` is deployed in `staging`
+   * environment of `cymbal` organization, the resource URI would be:
+   * `organizations/cymbal/environments/staging/apis/orders`.
    * </pre>
    *
    * <code>string resource_uri = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -234,9 +237,12 @@ public interface DeploymentOrBuilder
    *
    *
    * <pre>
-   * Required. A URI to the runtime resource. This URI can be used to manage the
-   * resource. For example, if the runtime resource is of type APIGEE_PROXY,
-   * then this field will contain the URI to the management UI of the proxy.
+   * Required. The resource URI identifies the deployment within its gateway.
+   * For Apigee gateways, its recommended to use the format:
+   * organizations/{org}/environments/{env}/apis/{api}.
+   * For ex: if a proxy with name `orders` is deployed in `staging`
+   * environment of `cymbal` organization, the resource URI would be:
+   * `organizations/cymbal/environments/staging/apis/orders`.
    * </pre>
    *
    * <code>string resource_uri = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -664,4 +670,258 @@ public interface DeploymentOrBuilder
    * </code>
    */
   com.google.cloud.apihub.v1.AttributeValues getAttributesOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of sources and metadata from the sources of the
+   * deployment.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.apihub.v1.SourceMetadata> getSourceMetadataList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of sources and metadata from the sources of the
+   * deployment.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.apihub.v1.SourceMetadata getSourceMetadata(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of sources and metadata from the sources of the
+   * deployment.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getSourceMetadataCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of sources and metadata from the sources of the
+   * deployment.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.apihub.v1.SourceMetadataOrBuilder>
+      getSourceMetadataOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of sources and metadata from the sources of the
+   * deployment.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.apihub.v1.SourceMetadataOrBuilder getSourceMetadataOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The uri where users can navigate to for the management of the
+   * deployment. This maps to the following system defined attribute:
+   * `projects/{project}/locations/{location}/attributes/system-management-url`
+   * The number of values for this attribute will be based on the
+   * cardinality of the attribute. The same can be retrieved via GetAttribute
+   * API. The value of the attribute should be a valid URL.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.AttributeValues management_url = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the managementUrl field is set.
+   */
+  boolean hasManagementUrl();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The uri where users can navigate to for the management of the
+   * deployment. This maps to the following system defined attribute:
+   * `projects/{project}/locations/{location}/attributes/system-management-url`
+   * The number of values for this attribute will be based on the
+   * cardinality of the attribute. The same can be retrieved via GetAttribute
+   * API. The value of the attribute should be a valid URL.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.AttributeValues management_url = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The managementUrl.
+   */
+  com.google.cloud.apihub.v1.AttributeValues getManagementUrl();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The uri where users can navigate to for the management of the
+   * deployment. This maps to the following system defined attribute:
+   * `projects/{project}/locations/{location}/attributes/system-management-url`
+   * The number of values for this attribute will be based on the
+   * cardinality of the attribute. The same can be retrieved via GetAttribute
+   * API. The value of the attribute should be a valid URL.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.AttributeValues management_url = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.apihub.v1.AttributeValuesOrBuilder getManagementUrlOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The uri where additional source specific information for this
+   * deployment can be found. This maps to the following system defined
+   * attribute:
+   * `projects/{project}/locations/{location}/attributes/system-source-uri`
+   * The number of values for this attribute will be based on the
+   * cardinality of the attribute. The same can be retrieved via GetAttribute
+   * API. The value of the attribute should be a valid URI, and in case
+   * of Cloud Storage URI, it should point to a Cloud Storage object,
+   * not a directory.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.AttributeValues source_uri = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the sourceUri field is set.
+   */
+  boolean hasSourceUri();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The uri where additional source specific information for this
+   * deployment can be found. This maps to the following system defined
+   * attribute:
+   * `projects/{project}/locations/{location}/attributes/system-source-uri`
+   * The number of values for this attribute will be based on the
+   * cardinality of the attribute. The same can be retrieved via GetAttribute
+   * API. The value of the attribute should be a valid URI, and in case
+   * of Cloud Storage URI, it should point to a Cloud Storage object,
+   * not a directory.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.AttributeValues source_uri = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The sourceUri.
+   */
+  com.google.cloud.apihub.v1.AttributeValues getSourceUri();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The uri where additional source specific information for this
+   * deployment can be found. This maps to the following system defined
+   * attribute:
+   * `projects/{project}/locations/{location}/attributes/system-source-uri`
+   * The number of values for this attribute will be based on the
+   * cardinality of the attribute. The same can be retrieved via GetAttribute
+   * API. The value of the attribute should be a valid URI, and in case
+   * of Cloud Storage URI, it should point to a Cloud Storage object,
+   * not a directory.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.AttributeValues source_uri = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.apihub.v1.AttributeValuesOrBuilder getSourceUriOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The project to which the deployment belongs.
+   * For GCP gateways, this will refer to the project identifier.
+   * For others like Edge/OPDK, this will refer to the org identifier.
+   * </pre>
+   *
+   * <code>string source_project = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The sourceProject.
+   */
+  java.lang.String getSourceProject();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The project to which the deployment belongs.
+   * For GCP gateways, this will refer to the project identifier.
+   * For others like Edge/OPDK, this will refer to the org identifier.
+   * </pre>
+   *
+   * <code>string source_project = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for sourceProject.
+   */
+  com.google.protobuf.ByteString getSourceProjectBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The environment at source for the deployment.
+   * For example: prod, dev, staging, etc.
+   * </pre>
+   *
+   * <code>string source_environment = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The sourceEnvironment.
+   */
+  java.lang.String getSourceEnvironment();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The environment at source for the deployment.
+   * For example: prod, dev, staging, etc.
+   * </pre>
+   *
+   * <code>string source_environment = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for sourceEnvironment.
+   */
+  com.google.protobuf.ByteString getSourceEnvironmentBytes();
 }

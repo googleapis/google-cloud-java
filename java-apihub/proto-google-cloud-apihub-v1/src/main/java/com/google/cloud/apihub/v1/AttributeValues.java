@@ -1964,6 +1964,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
     ENUM_VALUES(2),
     STRING_VALUES(3),
     JSON_VALUES(4),
+    URI_VALUES(5),
     VALUE_NOT_SET(0);
     private final int value;
 
@@ -1989,6 +1990,8 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
           return STRING_VALUES;
         case 4:
           return JSON_VALUES;
+        case 5:
+          return URI_VALUES;
         case 0:
           return VALUE_NOT_SET;
         default:
@@ -2179,6 +2182,64 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
     return com.google.cloud.apihub.v1.AttributeValues.StringAttributeValues.getDefaultInstance();
   }
 
+  public static final int URI_VALUES_FIELD_NUMBER = 5;
+
+  /**
+   *
+   *
+   * <pre>
+   * The attribute values associated with a resource in case attribute data
+   * type is URL, URI or IP, like gs://bucket-name/object-name.
+   * </pre>
+   *
+   * <code>.google.cloud.apihub.v1.AttributeValues.StringAttributeValues uri_values = 5;</code>
+   *
+   * @return Whether the uriValues field is set.
+   */
+  @java.lang.Override
+  public boolean hasUriValues() {
+    return valueCase_ == 5;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The attribute values associated with a resource in case attribute data
+   * type is URL, URI or IP, like gs://bucket-name/object-name.
+   * </pre>
+   *
+   * <code>.google.cloud.apihub.v1.AttributeValues.StringAttributeValues uri_values = 5;</code>
+   *
+   * @return The uriValues.
+   */
+  @java.lang.Override
+  public com.google.cloud.apihub.v1.AttributeValues.StringAttributeValues getUriValues() {
+    if (valueCase_ == 5) {
+      return (com.google.cloud.apihub.v1.AttributeValues.StringAttributeValues) value_;
+    }
+    return com.google.cloud.apihub.v1.AttributeValues.StringAttributeValues.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The attribute values associated with a resource in case attribute data
+   * type is URL, URI or IP, like gs://bucket-name/object-name.
+   * </pre>
+   *
+   * <code>.google.cloud.apihub.v1.AttributeValues.StringAttributeValues uri_values = 5;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.apihub.v1.AttributeValues.StringAttributeValuesOrBuilder
+      getUriValuesOrBuilder() {
+    if (valueCase_ == 5) {
+      return (com.google.cloud.apihub.v1.AttributeValues.StringAttributeValues) value_;
+    }
+    return com.google.cloud.apihub.v1.AttributeValues.StringAttributeValues.getDefaultInstance();
+  }
+
   public static final int ATTRIBUTE_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -2267,6 +2328,10 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
       output.writeMessage(
           4, (com.google.cloud.apihub.v1.AttributeValues.StringAttributeValues) value_);
     }
+    if (valueCase_ == 5) {
+      output.writeMessage(
+          5, (com.google.cloud.apihub.v1.AttributeValues.StringAttributeValues) value_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -2293,6 +2358,11 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               4, (com.google.cloud.apihub.v1.AttributeValues.StringAttributeValues) value_);
+    }
+    if (valueCase_ == 5) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, (com.google.cloud.apihub.v1.AttributeValues.StringAttributeValues) value_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -2322,6 +2392,9 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
       case 4:
         if (!getJsonValues().equals(other.getJsonValues())) return false;
         break;
+      case 5:
+        if (!getUriValues().equals(other.getUriValues())) return false;
+        break;
       case 0:
       default:
     }
@@ -2350,6 +2423,10 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
       case 4:
         hash = (37 * hash) + JSON_VALUES_FIELD_NUMBER;
         hash = (53 * hash) + getJsonValues().hashCode();
+        break;
+      case 5:
+        hash = (37 * hash) + URI_VALUES_FIELD_NUMBER;
+        hash = (53 * hash) + getUriValues().hashCode();
         break;
       case 0:
       default:
@@ -2503,6 +2580,9 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
       if (jsonValuesBuilder_ != null) {
         jsonValuesBuilder_.clear();
       }
+      if (uriValuesBuilder_ != null) {
+        uriValuesBuilder_.clear();
+      }
       attribute_ = "";
       valueCase_ = 0;
       value_ = null;
@@ -2543,7 +2623,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
 
     private void buildPartial0(com.google.cloud.apihub.v1.AttributeValues result) {
       int from_bitField0_ = bitField0_;
-      if (((from_bitField0_ & 0x00000008) != 0)) {
+      if (((from_bitField0_ & 0x00000010) != 0)) {
         result.attribute_ = attribute_;
       }
     }
@@ -2559,6 +2639,9 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
       }
       if (valueCase_ == 4 && jsonValuesBuilder_ != null) {
         result.value_ = jsonValuesBuilder_.build();
+      }
+      if (valueCase_ == 5 && uriValuesBuilder_ != null) {
+        result.value_ = uriValuesBuilder_.build();
       }
     }
 
@@ -2609,7 +2692,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
       if (other == com.google.cloud.apihub.v1.AttributeValues.getDefaultInstance()) return this;
       if (!other.getAttribute().isEmpty()) {
         attribute_ = other.attribute_;
-        bitField0_ |= 0x00000008;
+        bitField0_ |= 0x00000010;
         onChanged();
       }
       switch (other.getValueCase()) {
@@ -2626,6 +2709,11 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
         case JSON_VALUES:
           {
             mergeJsonValues(other.getJsonValues());
+            break;
+          }
+        case URI_VALUES:
+          {
+            mergeUriValues(other.getUriValues());
             break;
           }
         case VALUE_NOT_SET:
@@ -2662,7 +2750,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
             case 10:
               {
                 attribute_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000008;
+                bitField0_ |= 0x00000010;
                 break;
               } // case 10
             case 18:
@@ -2683,6 +2771,12 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
                 valueCase_ = 4;
                 break;
               } // case 34
+            case 42:
+              {
+                input.readMessage(getUriValuesFieldBuilder().getBuilder(), extensionRegistry);
+                valueCase_ = 5;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3424,6 +3518,243 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
       return jsonValuesBuilder_;
     }
 
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.apihub.v1.AttributeValues.StringAttributeValues,
+            com.google.cloud.apihub.v1.AttributeValues.StringAttributeValues.Builder,
+            com.google.cloud.apihub.v1.AttributeValues.StringAttributeValuesOrBuilder>
+        uriValuesBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * The attribute values associated with a resource in case attribute data
+     * type is URL, URI or IP, like gs://bucket-name/object-name.
+     * </pre>
+     *
+     * <code>.google.cloud.apihub.v1.AttributeValues.StringAttributeValues uri_values = 5;</code>
+     *
+     * @return Whether the uriValues field is set.
+     */
+    @java.lang.Override
+    public boolean hasUriValues() {
+      return valueCase_ == 5;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The attribute values associated with a resource in case attribute data
+     * type is URL, URI or IP, like gs://bucket-name/object-name.
+     * </pre>
+     *
+     * <code>.google.cloud.apihub.v1.AttributeValues.StringAttributeValues uri_values = 5;</code>
+     *
+     * @return The uriValues.
+     */
+    @java.lang.Override
+    public com.google.cloud.apihub.v1.AttributeValues.StringAttributeValues getUriValues() {
+      if (uriValuesBuilder_ == null) {
+        if (valueCase_ == 5) {
+          return (com.google.cloud.apihub.v1.AttributeValues.StringAttributeValues) value_;
+        }
+        return com.google.cloud.apihub.v1.AttributeValues.StringAttributeValues
+            .getDefaultInstance();
+      } else {
+        if (valueCase_ == 5) {
+          return uriValuesBuilder_.getMessage();
+        }
+        return com.google.cloud.apihub.v1.AttributeValues.StringAttributeValues
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The attribute values associated with a resource in case attribute data
+     * type is URL, URI or IP, like gs://bucket-name/object-name.
+     * </pre>
+     *
+     * <code>.google.cloud.apihub.v1.AttributeValues.StringAttributeValues uri_values = 5;</code>
+     */
+    public Builder setUriValues(
+        com.google.cloud.apihub.v1.AttributeValues.StringAttributeValues value) {
+      if (uriValuesBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        value_ = value;
+        onChanged();
+      } else {
+        uriValuesBuilder_.setMessage(value);
+      }
+      valueCase_ = 5;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The attribute values associated with a resource in case attribute data
+     * type is URL, URI or IP, like gs://bucket-name/object-name.
+     * </pre>
+     *
+     * <code>.google.cloud.apihub.v1.AttributeValues.StringAttributeValues uri_values = 5;</code>
+     */
+    public Builder setUriValues(
+        com.google.cloud.apihub.v1.AttributeValues.StringAttributeValues.Builder builderForValue) {
+      if (uriValuesBuilder_ == null) {
+        value_ = builderForValue.build();
+        onChanged();
+      } else {
+        uriValuesBuilder_.setMessage(builderForValue.build());
+      }
+      valueCase_ = 5;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The attribute values associated with a resource in case attribute data
+     * type is URL, URI or IP, like gs://bucket-name/object-name.
+     * </pre>
+     *
+     * <code>.google.cloud.apihub.v1.AttributeValues.StringAttributeValues uri_values = 5;</code>
+     */
+    public Builder mergeUriValues(
+        com.google.cloud.apihub.v1.AttributeValues.StringAttributeValues value) {
+      if (uriValuesBuilder_ == null) {
+        if (valueCase_ == 5
+            && value_
+                != com.google.cloud.apihub.v1.AttributeValues.StringAttributeValues
+                    .getDefaultInstance()) {
+          value_ =
+              com.google.cloud.apihub.v1.AttributeValues.StringAttributeValues.newBuilder(
+                      (com.google.cloud.apihub.v1.AttributeValues.StringAttributeValues) value_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          value_ = value;
+        }
+        onChanged();
+      } else {
+        if (valueCase_ == 5) {
+          uriValuesBuilder_.mergeFrom(value);
+        } else {
+          uriValuesBuilder_.setMessage(value);
+        }
+      }
+      valueCase_ = 5;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The attribute values associated with a resource in case attribute data
+     * type is URL, URI or IP, like gs://bucket-name/object-name.
+     * </pre>
+     *
+     * <code>.google.cloud.apihub.v1.AttributeValues.StringAttributeValues uri_values = 5;</code>
+     */
+    public Builder clearUriValues() {
+      if (uriValuesBuilder_ == null) {
+        if (valueCase_ == 5) {
+          valueCase_ = 0;
+          value_ = null;
+          onChanged();
+        }
+      } else {
+        if (valueCase_ == 5) {
+          valueCase_ = 0;
+          value_ = null;
+        }
+        uriValuesBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The attribute values associated with a resource in case attribute data
+     * type is URL, URI or IP, like gs://bucket-name/object-name.
+     * </pre>
+     *
+     * <code>.google.cloud.apihub.v1.AttributeValues.StringAttributeValues uri_values = 5;</code>
+     */
+    public com.google.cloud.apihub.v1.AttributeValues.StringAttributeValues.Builder
+        getUriValuesBuilder() {
+      return getUriValuesFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The attribute values associated with a resource in case attribute data
+     * type is URL, URI or IP, like gs://bucket-name/object-name.
+     * </pre>
+     *
+     * <code>.google.cloud.apihub.v1.AttributeValues.StringAttributeValues uri_values = 5;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.apihub.v1.AttributeValues.StringAttributeValuesOrBuilder
+        getUriValuesOrBuilder() {
+      if ((valueCase_ == 5) && (uriValuesBuilder_ != null)) {
+        return uriValuesBuilder_.getMessageOrBuilder();
+      } else {
+        if (valueCase_ == 5) {
+          return (com.google.cloud.apihub.v1.AttributeValues.StringAttributeValues) value_;
+        }
+        return com.google.cloud.apihub.v1.AttributeValues.StringAttributeValues
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The attribute values associated with a resource in case attribute data
+     * type is URL, URI or IP, like gs://bucket-name/object-name.
+     * </pre>
+     *
+     * <code>.google.cloud.apihub.v1.AttributeValues.StringAttributeValues uri_values = 5;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.apihub.v1.AttributeValues.StringAttributeValues,
+            com.google.cloud.apihub.v1.AttributeValues.StringAttributeValues.Builder,
+            com.google.cloud.apihub.v1.AttributeValues.StringAttributeValuesOrBuilder>
+        getUriValuesFieldBuilder() {
+      if (uriValuesBuilder_ == null) {
+        if (!(valueCase_ == 5)) {
+          value_ =
+              com.google.cloud.apihub.v1.AttributeValues.StringAttributeValues.getDefaultInstance();
+        }
+        uriValuesBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.apihub.v1.AttributeValues.StringAttributeValues,
+                com.google.cloud.apihub.v1.AttributeValues.StringAttributeValues.Builder,
+                com.google.cloud.apihub.v1.AttributeValues.StringAttributeValuesOrBuilder>(
+                (com.google.cloud.apihub.v1.AttributeValues.StringAttributeValues) value_,
+                getParentForChildren(),
+                isClean());
+        value_ = null;
+      }
+      valueCase_ = 5;
+      onChanged();
+      return uriValuesBuilder_;
+    }
+
     private java.lang.Object attribute_ = "";
 
     /**
@@ -3498,7 +3829,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
         throw new NullPointerException();
       }
       attribute_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }
@@ -3519,7 +3850,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
      */
     public Builder clearAttribute() {
       attribute_ = getDefaultInstance().getAttribute();
-      bitField0_ = (bitField0_ & ~0x00000008);
+      bitField0_ = (bitField0_ & ~0x00000010);
       onChanged();
       return this;
     }
@@ -3545,7 +3876,7 @@ public final class AttributeValues extends com.google.protobuf.GeneratedMessageV
       }
       checkByteStringIsUtf8(value);
       attribute_ = value;
-      bitField0_ |= 0x00000008;
+      bitField0_ |= 0x00000010;
       onChanged();
       return this;
     }

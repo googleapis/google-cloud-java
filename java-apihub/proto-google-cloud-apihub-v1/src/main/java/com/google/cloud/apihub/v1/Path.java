@@ -73,10 +73,13 @@ public final class Path extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Complete path relative to server endpoint.
+   * Optional. Complete path relative to server endpoint.
+   * Note: Even though this field is optional, it is required for
+   * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation]
+   * API and we will fail the request if not provided.
    * </pre>
    *
-   * <code>string path = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The path.
    */
@@ -97,10 +100,13 @@ public final class Path extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Complete path relative to server endpoint.
+   * Optional. Complete path relative to server endpoint.
+   * Note: Even though this field is optional, it is required for
+   * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation]
+   * API and we will fail the request if not provided.
    * </pre>
    *
-   * <code>string path = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for path.
    */
@@ -126,10 +132,10 @@ public final class Path extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A short description for the path applicable to all operations.
+   * Optional. A short description for the path applicable to all operations.
    * </pre>
    *
-   * <code>string description = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The description.
    */
@@ -150,10 +156,10 @@ public final class Path extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. A short description for the path applicable to all operations.
+   * Optional. A short description for the path applicable to all operations.
    * </pre>
    *
-   * <code>string description = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
    *
    * @return The bytes for description.
    */
@@ -538,10 +544,13 @@ public final class Path extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Complete path relative to server endpoint.
+     * Optional. Complete path relative to server endpoint.
+     * Note: Even though this field is optional, it is required for
+     * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation]
+     * API and we will fail the request if not provided.
      * </pre>
      *
-     * <code>string path = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The path.
      */
@@ -561,10 +570,13 @@ public final class Path extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Complete path relative to server endpoint.
+     * Optional. Complete path relative to server endpoint.
+     * Note: Even though this field is optional, it is required for
+     * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation]
+     * API and we will fail the request if not provided.
      * </pre>
      *
-     * <code>string path = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for path.
      */
@@ -584,10 +596,13 @@ public final class Path extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Complete path relative to server endpoint.
+     * Optional. Complete path relative to server endpoint.
+     * Note: Even though this field is optional, it is required for
+     * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation]
+     * API and we will fail the request if not provided.
      * </pre>
      *
-     * <code>string path = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The path to set.
      * @return This builder for chaining.
@@ -606,10 +621,13 @@ public final class Path extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Complete path relative to server endpoint.
+     * Optional. Complete path relative to server endpoint.
+     * Note: Even though this field is optional, it is required for
+     * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation]
+     * API and we will fail the request if not provided.
      * </pre>
      *
-     * <code>string path = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -624,10 +642,13 @@ public final class Path extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Complete path relative to server endpoint.
+     * Optional. Complete path relative to server endpoint.
+     * Note: Even though this field is optional, it is required for
+     * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation]
+     * API and we will fail the request if not provided.
      * </pre>
      *
-     * <code>string path = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string path = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for path to set.
      * @return This builder for chaining.
@@ -649,10 +670,10 @@ public final class Path extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A short description for the path applicable to all operations.
+     * Optional. A short description for the path applicable to all operations.
      * </pre>
      *
-     * <code>string description = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The description.
      */
@@ -672,10 +693,10 @@ public final class Path extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A short description for the path applicable to all operations.
+     * Optional. A short description for the path applicable to all operations.
      * </pre>
      *
-     * <code>string description = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for description.
      */
@@ -695,10 +716,10 @@ public final class Path extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A short description for the path applicable to all operations.
+     * Optional. A short description for the path applicable to all operations.
      * </pre>
      *
-     * <code>string description = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The description to set.
      * @return This builder for chaining.
@@ -717,10 +738,10 @@ public final class Path extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A short description for the path applicable to all operations.
+     * Optional. A short description for the path applicable to all operations.
      * </pre>
      *
-     * <code>string description = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return This builder for chaining.
      */
@@ -735,10 +756,10 @@ public final class Path extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. A short description for the path applicable to all operations.
+     * Optional. A short description for the path applicable to all operations.
      * </pre>
      *
-     * <code>string description = 2 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>string description = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @param value The bytes for description to set.
      * @return This builder for chaining.

@@ -28,6 +28,10 @@ package com.google.cloud.apihub.v1;
  * added or an existing spec is updated/deleted in a version.
  * Currently, an operation will be created only corresponding to OpenAPI spec as
  * parsing is supported for OpenAPI spec.
+ * Alternatively operations can be managed via create,update and delete APIs,
+ * creation of apiOperation can be possible only for version with no parsed
+ * operations and update/delete can be possible only for operations created via
+ * create API.
  * </pre>
  *
  * Protobuf type {@code google.cloud.apihub.v1.ApiOperation}
@@ -46,6 +50,7 @@ public final class ApiOperation extends com.google.protobuf.GeneratedMessageV3
   private ApiOperation() {
     name_ = "";
     spec_ = "";
+    sourceMetadata_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -150,9 +155,10 @@ public final class ApiOperation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The name of the spec from where the operation was parsed.
-   * Format is
+   * Output only. The name of the spec will be of the format:
    * `projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}`
+   * Note:The name of the spec will be empty if the operation is created via
+   * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation] API.
    * </pre>
    *
    * <code>
@@ -178,9 +184,10 @@ public final class ApiOperation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. The name of the spec from where the operation was parsed.
-   * Format is
+   * Output only. The name of the spec will be of the format:
    * `projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}`
+   * Note:The name of the spec will be empty if the operation is created via
+   * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation] API.
    * </pre>
    *
    * <code>
@@ -209,11 +216,14 @@ public final class ApiOperation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Operation details.
+   * Optional. Operation details.
+   * Note: Even though this field is optional, it is required for
+   * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation]
+   * API and we will fail the request if not provided.
    * </pre>
    *
    * <code>
-   * .google.cloud.apihub.v1.OperationDetails details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * .google.cloud.apihub.v1.OperationDetails details = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the details field is set.
@@ -227,11 +237,14 @@ public final class ApiOperation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Operation details.
+   * Optional. Operation details.
+   * Note: Even though this field is optional, it is required for
+   * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation]
+   * API and we will fail the request if not provided.
    * </pre>
    *
    * <code>
-   * .google.cloud.apihub.v1.OperationDetails details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * .google.cloud.apihub.v1.OperationDetails details = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The details.
@@ -247,11 +260,14 @@ public final class ApiOperation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. Operation details.
+   * Optional. Operation details.
+   * Note: Even though this field is optional, it is required for
+   * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation]
+   * API and we will fail the request if not provided.
    * </pre>
    *
    * <code>
-   * .google.cloud.apihub.v1.OperationDetails details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * .google.cloud.apihub.v1.OperationDetails details = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   @java.lang.Override
@@ -501,6 +517,97 @@ public final class ApiOperation extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int SOURCE_METADATA_FIELD_NUMBER = 7;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.apihub.v1.SourceMetadata> sourceMetadata_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of sources and metadata from the sources of the API
+   * operation.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.apihub.v1.SourceMetadata> getSourceMetadataList() {
+    return sourceMetadata_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of sources and metadata from the sources of the API
+   * operation.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.apihub.v1.SourceMetadataOrBuilder>
+      getSourceMetadataOrBuilderList() {
+    return sourceMetadata_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of sources and metadata from the sources of the API
+   * operation.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getSourceMetadataCount() {
+    return sourceMetadata_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of sources and metadata from the sources of the API
+   * operation.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.apihub.v1.SourceMetadata getSourceMetadata(int index) {
+    return sourceMetadata_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of sources and metadata from the sources of the API
+   * operation.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.apihub.v1.SourceMetadataOrBuilder getSourceMetadataOrBuilder(int index) {
+    return sourceMetadata_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -532,6 +639,9 @@ public final class ApiOperation extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetAttributes(), AttributesDefaultEntryHolder.defaultEntry, 6);
+    for (int i = 0; i < sourceMetadata_.size(); i++) {
+      output.writeMessage(7, sourceMetadata_.get(i));
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -567,6 +677,9 @@ public final class ApiOperation extends com.google.protobuf.GeneratedMessageV3
                   .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, attributes__);
     }
+    for (int i = 0; i < sourceMetadata_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, sourceMetadata_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -597,6 +710,7 @@ public final class ApiOperation extends com.google.protobuf.GeneratedMessageV3
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
     if (!internalGetAttributes().equals(other.internalGetAttributes())) return false;
+    if (!getSourceMetadataList().equals(other.getSourceMetadataList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -627,6 +741,10 @@ public final class ApiOperation extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetAttributes().getMap().isEmpty()) {
       hash = (37 * hash) + ATTRIBUTES_FIELD_NUMBER;
       hash = (53 * hash) + internalGetAttributes().hashCode();
+    }
+    if (getSourceMetadataCount() > 0) {
+      hash = (37 * hash) + SOURCE_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getSourceMetadataList().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -738,6 +856,10 @@ public final class ApiOperation extends com.google.protobuf.GeneratedMessageV3
    * added or an existing spec is updated/deleted in a version.
    * Currently, an operation will be created only corresponding to OpenAPI spec as
    * parsing is supported for OpenAPI spec.
+   * Alternatively operations can be managed via create,update and delete APIs,
+   * creation of apiOperation can be possible only for version with no parsed
+   * operations and update/delete can be possible only for operations created via
+   * create API.
    * </pre>
    *
    * Protobuf type {@code google.cloud.apihub.v1.ApiOperation}
@@ -798,6 +920,7 @@ public final class ApiOperation extends com.google.protobuf.GeneratedMessageV3
         getDetailsFieldBuilder();
         getCreateTimeFieldBuilder();
         getUpdateTimeFieldBuilder();
+        getSourceMetadataFieldBuilder();
       }
     }
 
@@ -823,6 +946,13 @@ public final class ApiOperation extends com.google.protobuf.GeneratedMessageV3
         updateTimeBuilder_ = null;
       }
       internalGetMutableAttributes().clear();
+      if (sourceMetadataBuilder_ == null) {
+        sourceMetadata_ = java.util.Collections.emptyList();
+      } else {
+        sourceMetadata_ = null;
+        sourceMetadataBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000040);
       return this;
     }
 
@@ -850,11 +980,24 @@ public final class ApiOperation extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.apihub.v1.ApiOperation buildPartial() {
       com.google.cloud.apihub.v1.ApiOperation result =
           new com.google.cloud.apihub.v1.ApiOperation(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.apihub.v1.ApiOperation result) {
+      if (sourceMetadataBuilder_ == null) {
+        if (((bitField0_ & 0x00000040) != 0)) {
+          sourceMetadata_ = java.util.Collections.unmodifiableList(sourceMetadata_);
+          bitField0_ = (bitField0_ & ~0x00000040);
+        }
+        result.sourceMetadata_ = sourceMetadata_;
+      } else {
+        result.sourceMetadata_ = sourceMetadataBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.apihub.v1.ApiOperation result) {
@@ -951,6 +1094,33 @@ public final class ApiOperation extends com.google.protobuf.GeneratedMessageV3
       }
       internalGetMutableAttributes().mergeFrom(other.internalGetAttributes());
       bitField0_ |= 0x00000020;
+      if (sourceMetadataBuilder_ == null) {
+        if (!other.sourceMetadata_.isEmpty()) {
+          if (sourceMetadata_.isEmpty()) {
+            sourceMetadata_ = other.sourceMetadata_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+          } else {
+            ensureSourceMetadataIsMutable();
+            sourceMetadata_.addAll(other.sourceMetadata_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.sourceMetadata_.isEmpty()) {
+          if (sourceMetadataBuilder_.isEmpty()) {
+            sourceMetadataBuilder_.dispose();
+            sourceMetadataBuilder_ = null;
+            sourceMetadata_ = other.sourceMetadata_;
+            bitField0_ = (bitField0_ & ~0x00000040);
+            sourceMetadataBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getSourceMetadataFieldBuilder()
+                    : null;
+          } else {
+            sourceMetadataBuilder_.addAllMessages(other.sourceMetadata_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1021,6 +1191,19 @@ public final class ApiOperation extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000020;
                 break;
               } // case 50
+            case 58:
+              {
+                com.google.cloud.apihub.v1.SourceMetadata m =
+                    input.readMessage(
+                        com.google.cloud.apihub.v1.SourceMetadata.parser(), extensionRegistry);
+                if (sourceMetadataBuilder_ == null) {
+                  ensureSourceMetadataIsMutable();
+                  sourceMetadata_.add(m);
+                } else {
+                  sourceMetadataBuilder_.addMessage(m);
+                }
+                break;
+              } // case 58
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -1172,9 +1355,10 @@ public final class ApiOperation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The name of the spec from where the operation was parsed.
-     * Format is
+     * Output only. The name of the spec will be of the format:
      * `projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}`
+     * Note:The name of the spec will be empty if the operation is created via
+     * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation] API.
      * </pre>
      *
      * <code>
@@ -1199,9 +1383,10 @@ public final class ApiOperation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The name of the spec from where the operation was parsed.
-     * Format is
+     * Output only. The name of the spec will be of the format:
      * `projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}`
+     * Note:The name of the spec will be empty if the operation is created via
+     * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation] API.
      * </pre>
      *
      * <code>
@@ -1226,9 +1411,10 @@ public final class ApiOperation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The name of the spec from where the operation was parsed.
-     * Format is
+     * Output only. The name of the spec will be of the format:
      * `projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}`
+     * Note:The name of the spec will be empty if the operation is created via
+     * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation] API.
      * </pre>
      *
      * <code>
@@ -1252,9 +1438,10 @@ public final class ApiOperation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The name of the spec from where the operation was parsed.
-     * Format is
+     * Output only. The name of the spec will be of the format:
      * `projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}`
+     * Note:The name of the spec will be empty if the operation is created via
+     * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation] API.
      * </pre>
      *
      * <code>
@@ -1274,9 +1461,10 @@ public final class ApiOperation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. The name of the spec from where the operation was parsed.
-     * Format is
+     * Output only. The name of the spec will be of the format:
      * `projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}`
+     * Note:The name of the spec will be empty if the operation is created via
+     * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation] API.
      * </pre>
      *
      * <code>
@@ -1308,11 +1496,14 @@ public final class ApiOperation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Operation details.
+     * Optional. Operation details.
+     * Note: Even though this field is optional, it is required for
+     * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation]
+     * API and we will fail the request if not provided.
      * </pre>
      *
      * <code>
-     * .google.cloud.apihub.v1.OperationDetails details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.apihub.v1.OperationDetails details = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return Whether the details field is set.
@@ -1325,11 +1516,14 @@ public final class ApiOperation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Operation details.
+     * Optional. Operation details.
+     * Note: Even though this field is optional, it is required for
+     * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation]
+     * API and we will fail the request if not provided.
      * </pre>
      *
      * <code>
-     * .google.cloud.apihub.v1.OperationDetails details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.apihub.v1.OperationDetails details = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      *
      * @return The details.
@@ -1348,11 +1542,14 @@ public final class ApiOperation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Operation details.
+     * Optional. Operation details.
+     * Note: Even though this field is optional, it is required for
+     * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation]
+     * API and we will fail the request if not provided.
      * </pre>
      *
      * <code>
-     * .google.cloud.apihub.v1.OperationDetails details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.apihub.v1.OperationDetails details = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setDetails(com.google.cloud.apihub.v1.OperationDetails value) {
@@ -1373,11 +1570,14 @@ public final class ApiOperation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Operation details.
+     * Optional. Operation details.
+     * Note: Even though this field is optional, it is required for
+     * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation]
+     * API and we will fail the request if not provided.
      * </pre>
      *
      * <code>
-     * .google.cloud.apihub.v1.OperationDetails details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.apihub.v1.OperationDetails details = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder setDetails(com.google.cloud.apihub.v1.OperationDetails.Builder builderForValue) {
@@ -1395,11 +1595,14 @@ public final class ApiOperation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Operation details.
+     * Optional. Operation details.
+     * Note: Even though this field is optional, it is required for
+     * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation]
+     * API and we will fail the request if not provided.
      * </pre>
      *
      * <code>
-     * .google.cloud.apihub.v1.OperationDetails details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.apihub.v1.OperationDetails details = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder mergeDetails(com.google.cloud.apihub.v1.OperationDetails value) {
@@ -1425,11 +1628,14 @@ public final class ApiOperation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Operation details.
+     * Optional. Operation details.
+     * Note: Even though this field is optional, it is required for
+     * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation]
+     * API and we will fail the request if not provided.
      * </pre>
      *
      * <code>
-     * .google.cloud.apihub.v1.OperationDetails details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.apihub.v1.OperationDetails details = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public Builder clearDetails() {
@@ -1447,11 +1653,14 @@ public final class ApiOperation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Operation details.
+     * Optional. Operation details.
+     * Note: Even though this field is optional, it is required for
+     * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation]
+     * API and we will fail the request if not provided.
      * </pre>
      *
      * <code>
-     * .google.cloud.apihub.v1.OperationDetails details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.apihub.v1.OperationDetails details = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.apihub.v1.OperationDetails.Builder getDetailsBuilder() {
@@ -1464,11 +1673,14 @@ public final class ApiOperation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Operation details.
+     * Optional. Operation details.
+     * Note: Even though this field is optional, it is required for
+     * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation]
+     * API and we will fail the request if not provided.
      * </pre>
      *
      * <code>
-     * .google.cloud.apihub.v1.OperationDetails details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.apihub.v1.OperationDetails details = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     public com.google.cloud.apihub.v1.OperationDetailsOrBuilder getDetailsOrBuilder() {
@@ -1485,11 +1697,14 @@ public final class ApiOperation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. Operation details.
+     * Optional. Operation details.
+     * Note: Even though this field is optional, it is required for
+     * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation]
+     * API and we will fail the request if not provided.
      * </pre>
      *
      * <code>
-     * .google.cloud.apihub.v1.OperationDetails details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * .google.cloud.apihub.v1.OperationDetails details = 3 [(.google.api.field_behavior) = OPTIONAL];
      * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
@@ -2217,6 +2432,432 @@ public final class ApiOperation extends com.google.protobuf.GeneratedMessageV3
         builderMap.put(key, entry);
       }
       return (com.google.cloud.apihub.v1.AttributeValues.Builder) entry;
+    }
+
+    private java.util.List<com.google.cloud.apihub.v1.SourceMetadata> sourceMetadata_ =
+        java.util.Collections.emptyList();
+
+    private void ensureSourceMetadataIsMutable() {
+      if (!((bitField0_ & 0x00000040) != 0)) {
+        sourceMetadata_ =
+            new java.util.ArrayList<com.google.cloud.apihub.v1.SourceMetadata>(sourceMetadata_);
+        bitField0_ |= 0x00000040;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.apihub.v1.SourceMetadata,
+            com.google.cloud.apihub.v1.SourceMetadata.Builder,
+            com.google.cloud.apihub.v1.SourceMetadataOrBuilder>
+        sourceMetadataBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the API
+     * operation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.apihub.v1.SourceMetadata> getSourceMetadataList() {
+      if (sourceMetadataBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(sourceMetadata_);
+      } else {
+        return sourceMetadataBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the API
+     * operation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getSourceMetadataCount() {
+      if (sourceMetadataBuilder_ == null) {
+        return sourceMetadata_.size();
+      } else {
+        return sourceMetadataBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the API
+     * operation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.SourceMetadata getSourceMetadata(int index) {
+      if (sourceMetadataBuilder_ == null) {
+        return sourceMetadata_.get(index);
+      } else {
+        return sourceMetadataBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the API
+     * operation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setSourceMetadata(int index, com.google.cloud.apihub.v1.SourceMetadata value) {
+      if (sourceMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSourceMetadataIsMutable();
+        sourceMetadata_.set(index, value);
+        onChanged();
+      } else {
+        sourceMetadataBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the API
+     * operation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setSourceMetadata(
+        int index, com.google.cloud.apihub.v1.SourceMetadata.Builder builderForValue) {
+      if (sourceMetadataBuilder_ == null) {
+        ensureSourceMetadataIsMutable();
+        sourceMetadata_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        sourceMetadataBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the API
+     * operation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addSourceMetadata(com.google.cloud.apihub.v1.SourceMetadata value) {
+      if (sourceMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSourceMetadataIsMutable();
+        sourceMetadata_.add(value);
+        onChanged();
+      } else {
+        sourceMetadataBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the API
+     * operation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addSourceMetadata(int index, com.google.cloud.apihub.v1.SourceMetadata value) {
+      if (sourceMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSourceMetadataIsMutable();
+        sourceMetadata_.add(index, value);
+        onChanged();
+      } else {
+        sourceMetadataBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the API
+     * operation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addSourceMetadata(
+        com.google.cloud.apihub.v1.SourceMetadata.Builder builderForValue) {
+      if (sourceMetadataBuilder_ == null) {
+        ensureSourceMetadataIsMutable();
+        sourceMetadata_.add(builderForValue.build());
+        onChanged();
+      } else {
+        sourceMetadataBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the API
+     * operation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addSourceMetadata(
+        int index, com.google.cloud.apihub.v1.SourceMetadata.Builder builderForValue) {
+      if (sourceMetadataBuilder_ == null) {
+        ensureSourceMetadataIsMutable();
+        sourceMetadata_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        sourceMetadataBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the API
+     * operation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllSourceMetadata(
+        java.lang.Iterable<? extends com.google.cloud.apihub.v1.SourceMetadata> values) {
+      if (sourceMetadataBuilder_ == null) {
+        ensureSourceMetadataIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, sourceMetadata_);
+        onChanged();
+      } else {
+        sourceMetadataBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the API
+     * operation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearSourceMetadata() {
+      if (sourceMetadataBuilder_ == null) {
+        sourceMetadata_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000040);
+        onChanged();
+      } else {
+        sourceMetadataBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the API
+     * operation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeSourceMetadata(int index) {
+      if (sourceMetadataBuilder_ == null) {
+        ensureSourceMetadataIsMutable();
+        sourceMetadata_.remove(index);
+        onChanged();
+      } else {
+        sourceMetadataBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the API
+     * operation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.SourceMetadata.Builder getSourceMetadataBuilder(int index) {
+      return getSourceMetadataFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the API
+     * operation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.SourceMetadataOrBuilder getSourceMetadataOrBuilder(
+        int index) {
+      if (sourceMetadataBuilder_ == null) {
+        return sourceMetadata_.get(index);
+      } else {
+        return sourceMetadataBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the API
+     * operation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.apihub.v1.SourceMetadataOrBuilder>
+        getSourceMetadataOrBuilderList() {
+      if (sourceMetadataBuilder_ != null) {
+        return sourceMetadataBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(sourceMetadata_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the API
+     * operation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.SourceMetadata.Builder addSourceMetadataBuilder() {
+      return getSourceMetadataFieldBuilder()
+          .addBuilder(com.google.cloud.apihub.v1.SourceMetadata.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the API
+     * operation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.SourceMetadata.Builder addSourceMetadataBuilder(int index) {
+      return getSourceMetadataFieldBuilder()
+          .addBuilder(index, com.google.cloud.apihub.v1.SourceMetadata.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the API
+     * operation.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.apihub.v1.SourceMetadata.Builder>
+        getSourceMetadataBuilderList() {
+      return getSourceMetadataFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.apihub.v1.SourceMetadata,
+            com.google.cloud.apihub.v1.SourceMetadata.Builder,
+            com.google.cloud.apihub.v1.SourceMetadataOrBuilder>
+        getSourceMetadataFieldBuilder() {
+      if (sourceMetadataBuilder_ == null) {
+        sourceMetadataBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.apihub.v1.SourceMetadata,
+                com.google.cloud.apihub.v1.SourceMetadata.Builder,
+                com.google.cloud.apihub.v1.SourceMetadataOrBuilder>(
+                sourceMetadata_,
+                ((bitField0_ & 0x00000040) != 0),
+                getParentForChildren(),
+                isClean());
+        sourceMetadata_ = null;
+      }
+      return sourceMetadataBuilder_;
     }
 
     @java.lang.Override

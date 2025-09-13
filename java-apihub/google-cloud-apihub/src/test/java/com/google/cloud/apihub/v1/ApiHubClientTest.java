@@ -113,6 +113,11 @@ public class ApiHubClientTest {
             .setApiStyle(AttributeValues.newBuilder().build())
             .setSelectedVersion(
                 VersionName.of("[PROJECT]", "[LOCATION]", "[API]", "[VERSION]").toString())
+            .setApiRequirements(AttributeValues.newBuilder().build())
+            .setFingerprint("fingerprint-1375934236")
+            .addAllSourceMetadata(new ArrayList<SourceMetadata>())
+            .setApiFunctionalRequirements(AttributeValues.newBuilder().build())
+            .setApiTechnicalRequirements(AttributeValues.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -176,6 +181,11 @@ public class ApiHubClientTest {
             .setApiStyle(AttributeValues.newBuilder().build())
             .setSelectedVersion(
                 VersionName.of("[PROJECT]", "[LOCATION]", "[API]", "[VERSION]").toString())
+            .setApiRequirements(AttributeValues.newBuilder().build())
+            .setFingerprint("fingerprint-1375934236")
+            .addAllSourceMetadata(new ArrayList<SourceMetadata>())
+            .setApiFunctionalRequirements(AttributeValues.newBuilder().build())
+            .setApiTechnicalRequirements(AttributeValues.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -239,6 +249,11 @@ public class ApiHubClientTest {
             .setApiStyle(AttributeValues.newBuilder().build())
             .setSelectedVersion(
                 VersionName.of("[PROJECT]", "[LOCATION]", "[API]", "[VERSION]").toString())
+            .setApiRequirements(AttributeValues.newBuilder().build())
+            .setFingerprint("fingerprint-1375934236")
+            .addAllSourceMetadata(new ArrayList<SourceMetadata>())
+            .setApiFunctionalRequirements(AttributeValues.newBuilder().build())
+            .setApiTechnicalRequirements(AttributeValues.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -298,6 +313,11 @@ public class ApiHubClientTest {
             .setApiStyle(AttributeValues.newBuilder().build())
             .setSelectedVersion(
                 VersionName.of("[PROJECT]", "[LOCATION]", "[API]", "[VERSION]").toString())
+            .setApiRequirements(AttributeValues.newBuilder().build())
+            .setFingerprint("fingerprint-1375934236")
+            .addAllSourceMetadata(new ArrayList<SourceMetadata>())
+            .setApiFunctionalRequirements(AttributeValues.newBuilder().build())
+            .setApiTechnicalRequirements(AttributeValues.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -457,6 +477,11 @@ public class ApiHubClientTest {
             .setApiStyle(AttributeValues.newBuilder().build())
             .setSelectedVersion(
                 VersionName.of("[PROJECT]", "[LOCATION]", "[API]", "[VERSION]").toString())
+            .setApiRequirements(AttributeValues.newBuilder().build())
+            .setFingerprint("fingerprint-1375934236")
+            .addAllSourceMetadata(new ArrayList<SourceMetadata>())
+            .setApiFunctionalRequirements(AttributeValues.newBuilder().build())
+            .setApiTechnicalRequirements(AttributeValues.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -478,6 +503,11 @@ public class ApiHubClientTest {
             .setApiStyle(AttributeValues.newBuilder().build())
             .setSelectedVersion(
                 VersionName.of("[PROJECT]", "[LOCATION]", "[API]", "[VERSION]").toString())
+            .setApiRequirements(AttributeValues.newBuilder().build())
+            .setFingerprint("fingerprint-1375934236")
+            .addAllSourceMetadata(new ArrayList<SourceMetadata>())
+            .setApiFunctionalRequirements(AttributeValues.newBuilder().build())
+            .setApiTechnicalRequirements(AttributeValues.newBuilder().build())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -525,6 +555,11 @@ public class ApiHubClientTest {
               .setApiStyle(AttributeValues.newBuilder().build())
               .setSelectedVersion(
                   VersionName.of("[PROJECT]", "[LOCATION]", "[API]", "[VERSION]").toString())
+              .setApiRequirements(AttributeValues.newBuilder().build())
+              .setFingerprint("fingerprint-1375934236")
+              .addAllSourceMetadata(new ArrayList<SourceMetadata>())
+              .setApiFunctionalRequirements(AttributeValues.newBuilder().build())
+              .setApiTechnicalRequirements(AttributeValues.newBuilder().build())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateApi(api, updateMask);
@@ -634,6 +669,7 @@ public class ApiHubClientTest {
             .putAllAttributes(new HashMap<String, AttributeValues>())
             .setSelectedDeployment(
                 DeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString())
+            .addAllSourceMetadata(new ArrayList<SourceMetadata>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -697,6 +733,7 @@ public class ApiHubClientTest {
             .putAllAttributes(new HashMap<String, AttributeValues>())
             .setSelectedDeployment(
                 DeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString())
+            .addAllSourceMetadata(new ArrayList<SourceMetadata>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -760,6 +797,7 @@ public class ApiHubClientTest {
             .putAllAttributes(new HashMap<String, AttributeValues>())
             .setSelectedDeployment(
                 DeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString())
+            .addAllSourceMetadata(new ArrayList<SourceMetadata>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -819,6 +857,7 @@ public class ApiHubClientTest {
             .putAllAttributes(new HashMap<String, AttributeValues>())
             .setSelectedDeployment(
                 DeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString())
+            .addAllSourceMetadata(new ArrayList<SourceMetadata>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -980,6 +1019,7 @@ public class ApiHubClientTest {
             .putAllAttributes(new HashMap<String, AttributeValues>())
             .setSelectedDeployment(
                 DeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString())
+            .addAllSourceMetadata(new ArrayList<SourceMetadata>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1001,6 +1041,7 @@ public class ApiHubClientTest {
             .putAllAttributes(new HashMap<String, AttributeValues>())
             .setSelectedDeployment(
                 DeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString())
+            .addAllSourceMetadata(new ArrayList<SourceMetadata>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1048,6 +1089,7 @@ public class ApiHubClientTest {
               .putAllAttributes(new HashMap<String, AttributeValues>())
               .setSelectedDeployment(
                   DeploymentName.of("[PROJECT]", "[LOCATION]", "[DEPLOYMENT]").toString())
+              .addAllSourceMetadata(new ArrayList<SourceMetadata>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateVersion(version, updateMask);
@@ -1155,6 +1197,7 @@ public class ApiHubClientTest {
             .setLintResponse(LintResponse.newBuilder().build())
             .putAllAttributes(new HashMap<String, AttributeValues>())
             .setDocumentation(Documentation.newBuilder().build())
+            .addAllSourceMetadata(new ArrayList<SourceMetadata>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1214,6 +1257,7 @@ public class ApiHubClientTest {
             .setLintResponse(LintResponse.newBuilder().build())
             .putAllAttributes(new HashMap<String, AttributeValues>())
             .setDocumentation(Documentation.newBuilder().build())
+            .addAllSourceMetadata(new ArrayList<SourceMetadata>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1275,6 +1319,7 @@ public class ApiHubClientTest {
             .setLintResponse(LintResponse.newBuilder().build())
             .putAllAttributes(new HashMap<String, AttributeValues>())
             .setDocumentation(Documentation.newBuilder().build())
+            .addAllSourceMetadata(new ArrayList<SourceMetadata>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1330,6 +1375,7 @@ public class ApiHubClientTest {
             .setLintResponse(LintResponse.newBuilder().build())
             .putAllAttributes(new HashMap<String, AttributeValues>())
             .setDocumentation(Documentation.newBuilder().build())
+            .addAllSourceMetadata(new ArrayList<SourceMetadata>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1581,6 +1627,7 @@ public class ApiHubClientTest {
             .setLintResponse(LintResponse.newBuilder().build())
             .putAllAttributes(new HashMap<String, AttributeValues>())
             .setDocumentation(Documentation.newBuilder().build())
+            .addAllSourceMetadata(new ArrayList<SourceMetadata>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1598,6 +1645,7 @@ public class ApiHubClientTest {
             .setLintResponse(LintResponse.newBuilder().build())
             .putAllAttributes(new HashMap<String, AttributeValues>())
             .setDocumentation(Documentation.newBuilder().build())
+            .addAllSourceMetadata(new ArrayList<SourceMetadata>())
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -1641,6 +1689,7 @@ public class ApiHubClientTest {
               .setLintResponse(LintResponse.newBuilder().build())
               .putAllAttributes(new HashMap<String, AttributeValues>())
               .setDocumentation(Documentation.newBuilder().build())
+              .addAllSourceMetadata(new ArrayList<SourceMetadata>())
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateSpec(spec, updateMask);
@@ -1733,6 +1782,122 @@ public class ApiHubClientTest {
   }
 
   @Test
+  public void createApiOperationTest() throws Exception {
+    ApiOperation expectedResponse =
+        ApiOperation.newBuilder()
+            .setName(
+                ApiOperationName.of("[PROJECT]", "[LOCATION]", "[API]", "[VERSION]", "[OPERATION]")
+                    .toString())
+            .setSpec(
+                SpecName.of("[PROJECT]", "[LOCATION]", "[API]", "[VERSION]", "[SPEC]").toString())
+            .setDetails(OperationDetails.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAttributes(new HashMap<String, AttributeValues>())
+            .addAllSourceMetadata(new ArrayList<SourceMetadata>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    VersionName parent = VersionName.of("[PROJECT]", "[LOCATION]", "[API]", "[VERSION]");
+    ApiOperation apiOperation = ApiOperation.newBuilder().build();
+    String apiOperationId = "apiOperationId-2124555672";
+
+    ApiOperation actualResponse = client.createApiOperation(parent, apiOperation, apiOperationId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createApiOperationExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      VersionName parent = VersionName.of("[PROJECT]", "[LOCATION]", "[API]", "[VERSION]");
+      ApiOperation apiOperation = ApiOperation.newBuilder().build();
+      String apiOperationId = "apiOperationId-2124555672";
+      client.createApiOperation(parent, apiOperation, apiOperationId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void createApiOperationTest2() throws Exception {
+    ApiOperation expectedResponse =
+        ApiOperation.newBuilder()
+            .setName(
+                ApiOperationName.of("[PROJECT]", "[LOCATION]", "[API]", "[VERSION]", "[OPERATION]")
+                    .toString())
+            .setSpec(
+                SpecName.of("[PROJECT]", "[LOCATION]", "[API]", "[VERSION]", "[SPEC]").toString())
+            .setDetails(OperationDetails.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAttributes(new HashMap<String, AttributeValues>())
+            .addAllSourceMetadata(new ArrayList<SourceMetadata>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    String parent =
+        "projects/project-1179/locations/location-1179/apis/api-1179/versions/version-1179";
+    ApiOperation apiOperation = ApiOperation.newBuilder().build();
+    String apiOperationId = "apiOperationId-2124555672";
+
+    ApiOperation actualResponse = client.createApiOperation(parent, apiOperation, apiOperationId);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void createApiOperationExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String parent =
+          "projects/project-1179/locations/location-1179/apis/api-1179/versions/version-1179";
+      ApiOperation apiOperation = ApiOperation.newBuilder().build();
+      String apiOperationId = "apiOperationId-2124555672";
+      client.createApiOperation(parent, apiOperation, apiOperationId);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void getApiOperationTest() throws Exception {
     ApiOperation expectedResponse =
         ApiOperation.newBuilder()
@@ -1745,6 +1910,7 @@ public class ApiHubClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllAttributes(new HashMap<String, AttributeValues>())
+            .addAllSourceMetadata(new ArrayList<SourceMetadata>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1799,6 +1965,7 @@ public class ApiHubClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .putAllAttributes(new HashMap<String, AttributeValues>())
+            .addAllSourceMetadata(new ArrayList<SourceMetadata>())
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -1943,6 +2110,170 @@ public class ApiHubClientTest {
   }
 
   @Test
+  public void updateApiOperationTest() throws Exception {
+    ApiOperation expectedResponse =
+        ApiOperation.newBuilder()
+            .setName(
+                ApiOperationName.of("[PROJECT]", "[LOCATION]", "[API]", "[VERSION]", "[OPERATION]")
+                    .toString())
+            .setSpec(
+                SpecName.of("[PROJECT]", "[LOCATION]", "[API]", "[VERSION]", "[SPEC]").toString())
+            .setDetails(OperationDetails.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAttributes(new HashMap<String, AttributeValues>())
+            .addAllSourceMetadata(new ArrayList<SourceMetadata>())
+            .build();
+    mockService.addResponse(expectedResponse);
+
+    ApiOperation apiOperation =
+        ApiOperation.newBuilder()
+            .setName(
+                ApiOperationName.of("[PROJECT]", "[LOCATION]", "[API]", "[VERSION]", "[OPERATION]")
+                    .toString())
+            .setSpec(
+                SpecName.of("[PROJECT]", "[LOCATION]", "[API]", "[VERSION]", "[SPEC]").toString())
+            .setDetails(OperationDetails.newBuilder().build())
+            .setCreateTime(Timestamp.newBuilder().build())
+            .setUpdateTime(Timestamp.newBuilder().build())
+            .putAllAttributes(new HashMap<String, AttributeValues>())
+            .addAllSourceMetadata(new ArrayList<SourceMetadata>())
+            .build();
+    FieldMask updateMask = FieldMask.newBuilder().build();
+
+    ApiOperation actualResponse = client.updateApiOperation(apiOperation, updateMask);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void updateApiOperationExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ApiOperation apiOperation =
+          ApiOperation.newBuilder()
+              .setName(
+                  ApiOperationName.of(
+                          "[PROJECT]", "[LOCATION]", "[API]", "[VERSION]", "[OPERATION]")
+                      .toString())
+              .setSpec(
+                  SpecName.of("[PROJECT]", "[LOCATION]", "[API]", "[VERSION]", "[SPEC]").toString())
+              .setDetails(OperationDetails.newBuilder().build())
+              .setCreateTime(Timestamp.newBuilder().build())
+              .setUpdateTime(Timestamp.newBuilder().build())
+              .putAllAttributes(new HashMap<String, AttributeValues>())
+              .addAllSourceMetadata(new ArrayList<SourceMetadata>())
+              .build();
+      FieldMask updateMask = FieldMask.newBuilder().build();
+      client.updateApiOperation(apiOperation, updateMask);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteApiOperationTest() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    ApiOperationName name =
+        ApiOperationName.of("[PROJECT]", "[LOCATION]", "[API]", "[VERSION]", "[OPERATION]");
+
+    client.deleteApiOperation(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteApiOperationExceptionTest() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      ApiOperationName name =
+          ApiOperationName.of("[PROJECT]", "[LOCATION]", "[API]", "[VERSION]", "[OPERATION]");
+      client.deleteApiOperation(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void deleteApiOperationTest2() throws Exception {
+    Empty expectedResponse = Empty.newBuilder().build();
+    mockService.addResponse(expectedResponse);
+
+    String name =
+        "projects/project-2438/locations/location-2438/apis/api-2438/versions/version-2438/operations/operation-2438";
+
+    client.deleteApiOperation(name);
+
+    List<String> actualRequests = mockService.getRequestPaths();
+    Assert.assertEquals(1, actualRequests.size());
+
+    String apiClientHeaderKey =
+        mockService
+            .getRequestHeaders()
+            .get(ApiClientHeaderProvider.getDefaultApiClientHeaderKey())
+            .iterator()
+            .next();
+    Assert.assertTrue(
+        GaxHttpJsonProperties.getDefaultApiClientHeaderPattern()
+            .matcher(apiClientHeaderKey)
+            .matches());
+  }
+
+  @Test
+  public void deleteApiOperationExceptionTest2() throws Exception {
+    ApiException exception =
+        ApiExceptionFactory.createException(
+            new Exception(), FakeStatusCode.of(StatusCode.Code.INVALID_ARGUMENT), false);
+    mockService.addException(exception);
+
+    try {
+      String name =
+          "projects/project-2438/locations/location-2438/apis/api-2438/versions/version-2438/operations/operation-2438";
+      client.deleteApiOperation(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
   public void getDefinitionTest() throws Exception {
     Definition expectedResponse =
         Definition.newBuilder()
@@ -2065,6 +2396,11 @@ public class ApiHubClientTest {
             .setSlo(AttributeValues.newBuilder().build())
             .setEnvironment(AttributeValues.newBuilder().build())
             .putAllAttributes(new HashMap<String, AttributeValues>())
+            .addAllSourceMetadata(new ArrayList<SourceMetadata>())
+            .setManagementUrl(AttributeValues.newBuilder().build())
+            .setSourceUri(AttributeValues.newBuilder().build())
+            .setSourceProject("sourceProject-214747522")
+            .setSourceEnvironment("sourceEnvironment1420157688")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2125,6 +2461,11 @@ public class ApiHubClientTest {
             .setSlo(AttributeValues.newBuilder().build())
             .setEnvironment(AttributeValues.newBuilder().build())
             .putAllAttributes(new HashMap<String, AttributeValues>())
+            .addAllSourceMetadata(new ArrayList<SourceMetadata>())
+            .setManagementUrl(AttributeValues.newBuilder().build())
+            .setSourceUri(AttributeValues.newBuilder().build())
+            .setSourceProject("sourceProject-214747522")
+            .setSourceEnvironment("sourceEnvironment1420157688")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2185,6 +2526,11 @@ public class ApiHubClientTest {
             .setSlo(AttributeValues.newBuilder().build())
             .setEnvironment(AttributeValues.newBuilder().build())
             .putAllAttributes(new HashMap<String, AttributeValues>())
+            .addAllSourceMetadata(new ArrayList<SourceMetadata>())
+            .setManagementUrl(AttributeValues.newBuilder().build())
+            .setSourceUri(AttributeValues.newBuilder().build())
+            .setSourceProject("sourceProject-214747522")
+            .setSourceEnvironment("sourceEnvironment1420157688")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2241,6 +2587,11 @@ public class ApiHubClientTest {
             .setSlo(AttributeValues.newBuilder().build())
             .setEnvironment(AttributeValues.newBuilder().build())
             .putAllAttributes(new HashMap<String, AttributeValues>())
+            .addAllSourceMetadata(new ArrayList<SourceMetadata>())
+            .setManagementUrl(AttributeValues.newBuilder().build())
+            .setSourceUri(AttributeValues.newBuilder().build())
+            .setSourceProject("sourceProject-214747522")
+            .setSourceEnvironment("sourceEnvironment1420157688")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2397,6 +2748,11 @@ public class ApiHubClientTest {
             .setSlo(AttributeValues.newBuilder().build())
             .setEnvironment(AttributeValues.newBuilder().build())
             .putAllAttributes(new HashMap<String, AttributeValues>())
+            .addAllSourceMetadata(new ArrayList<SourceMetadata>())
+            .setManagementUrl(AttributeValues.newBuilder().build())
+            .setSourceUri(AttributeValues.newBuilder().build())
+            .setSourceProject("sourceProject-214747522")
+            .setSourceEnvironment("sourceEnvironment1420157688")
             .build();
     mockService.addResponse(expectedResponse);
 
@@ -2415,6 +2771,11 @@ public class ApiHubClientTest {
             .setSlo(AttributeValues.newBuilder().build())
             .setEnvironment(AttributeValues.newBuilder().build())
             .putAllAttributes(new HashMap<String, AttributeValues>())
+            .addAllSourceMetadata(new ArrayList<SourceMetadata>())
+            .setManagementUrl(AttributeValues.newBuilder().build())
+            .setSourceUri(AttributeValues.newBuilder().build())
+            .setSourceProject("sourceProject-214747522")
+            .setSourceEnvironment("sourceEnvironment1420157688")
             .build();
     FieldMask updateMask = FieldMask.newBuilder().build();
 
@@ -2459,6 +2820,11 @@ public class ApiHubClientTest {
               .setSlo(AttributeValues.newBuilder().build())
               .setEnvironment(AttributeValues.newBuilder().build())
               .putAllAttributes(new HashMap<String, AttributeValues>())
+              .addAllSourceMetadata(new ArrayList<SourceMetadata>())
+              .setManagementUrl(AttributeValues.newBuilder().build())
+              .setSourceUri(AttributeValues.newBuilder().build())
+              .setSourceProject("sourceProject-214747522")
+              .setSourceEnvironment("sourceEnvironment1420157688")
               .build();
       FieldMask updateMask = FieldMask.newBuilder().build();
       client.updateDeployment(deployment, updateMask);

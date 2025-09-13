@@ -23,7 +23,9 @@ package com.google.cloud.apihub.v1;
  *
  *
  * <pre>
- * The [UpdateStyleGuide][ApiHub.UpdateStyleGuide] method's request.
+ * The
+ * [UpdateStyleGuide][google.cloud.apihub.v1.LintingService.UpdateStyleGuide]
+ * method's request.
  * </pre>
  *
  * Protobuf type {@code google.cloud.apihub.v1.UpdateStyleGuideRequest}
@@ -357,7 +359,9 @@ public final class UpdateStyleGuideRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The [UpdateStyleGuide][ApiHub.UpdateStyleGuide] method's request.
+   * The
+   * [UpdateStyleGuide][google.cloud.apihub.v1.LintingService.UpdateStyleGuide]
+   * method's request.
    * </pre>
    *
    * Protobuf type {@code google.cloud.apihub.v1.UpdateStyleGuideRequest}

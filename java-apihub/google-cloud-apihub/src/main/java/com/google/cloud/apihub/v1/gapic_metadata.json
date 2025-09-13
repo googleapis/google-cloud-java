@@ -13,6 +13,9 @@
             "CreateApi": {
               "methods": ["createApi", "createApi", "createApi", "createApiCallable"]
             },
+            "CreateApiOperation": {
+              "methods": ["createApiOperation", "createApiOperation", "createApiOperation", "createApiOperationCallable"]
+            },
             "CreateAttribute": {
               "methods": ["createAttribute", "createAttribute", "createAttribute", "createAttributeCallable"]
             },
@@ -30,6 +33,9 @@
             },
             "DeleteApi": {
               "methods": ["deleteApi", "deleteApi", "deleteApi", "deleteApiCallable"]
+            },
+            "DeleteApiOperation": {
+              "methods": ["deleteApiOperation", "deleteApiOperation", "deleteApiOperation", "deleteApiOperationCallable"]
             },
             "DeleteAttribute": {
               "methods": ["deleteAttribute", "deleteAttribute", "deleteAttribute", "deleteAttributeCallable"]
@@ -106,6 +112,9 @@
             "UpdateApi": {
               "methods": ["updateApi", "updateApi", "updateApiCallable"]
             },
+            "UpdateApiOperation": {
+              "methods": ["updateApiOperation", "updateApiOperation", "updateApiOperationCallable"]
+            },
             "UpdateAttribute": {
               "methods": ["updateAttribute", "updateAttribute", "updateAttributeCallable"]
             },
@@ -150,6 +159,81 @@
             },
             "UpdateDependency": {
               "methods": ["updateDependency", "updateDependency", "updateDependencyCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ApiHubCollect": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ApiHubCollectClient",
+          "rpcs": {
+            "CollectApiData": {
+              "methods": ["collectApiDataAsync", "collectApiDataAsync", "collectApiDataAsync", "collectApiDataOperationCallable", "collectApiDataCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ApiHubCurate": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ApiHubCurateClient",
+          "rpcs": {
+            "CreateCuration": {
+              "methods": ["createCuration", "createCuration", "createCuration", "createCurationCallable"]
+            },
+            "DeleteCuration": {
+              "methods": ["deleteCuration", "deleteCuration", "deleteCuration", "deleteCurationCallable"]
+            },
+            "GetCuration": {
+              "methods": ["getCuration", "getCuration", "getCuration", "getCurationCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListCurations": {
+              "methods": ["listCurations", "listCurations", "listCurations", "listCurationsPagedCallable", "listCurationsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "UpdateCuration": {
+              "methods": ["updateCuration", "updateCuration", "updateCurationCallable"]
+            }
+          }
+        }
+      }
+    },
+    "ApiHubDiscovery": {
+      "clients": {
+        "grpc": {
+          "libraryClient": "ApiHubDiscoveryClient",
+          "rpcs": {
+            "GetDiscoveredApiObservation": {
+              "methods": ["getDiscoveredApiObservation", "getDiscoveredApiObservation", "getDiscoveredApiObservation", "getDiscoveredApiObservationCallable"]
+            },
+            "GetDiscoveredApiOperation": {
+              "methods": ["getDiscoveredApiOperation", "getDiscoveredApiOperation", "getDiscoveredApiOperation", "getDiscoveredApiOperationCallable"]
+            },
+            "GetLocation": {
+              "methods": ["getLocation", "getLocationCallable"]
+            },
+            "ListDiscoveredApiObservations": {
+              "methods": ["listDiscoveredApiObservations", "listDiscoveredApiObservations", "listDiscoveredApiObservations", "listDiscoveredApiObservationsPagedCallable", "listDiscoveredApiObservationsCallable"]
+            },
+            "ListDiscoveredApiOperations": {
+              "methods": ["listDiscoveredApiOperations", "listDiscoveredApiOperations", "listDiscoveredApiOperations", "listDiscoveredApiOperationsPagedCallable", "listDiscoveredApiOperationsCallable"]
+            },
+            "ListLocations": {
+              "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             }
           }
         }
@@ -211,11 +295,32 @@
         "grpc": {
           "libraryClient": "ApiHubPluginClient",
           "rpcs": {
+            "CreatePlugin": {
+              "methods": ["createPlugin", "createPlugin", "createPlugin", "createPluginCallable"]
+            },
+            "CreatePluginInstance": {
+              "methods": ["createPluginInstanceAsync", "createPluginInstanceAsync", "createPluginInstanceAsync", "createPluginInstanceOperationCallable", "createPluginInstanceCallable"]
+            },
+            "DeletePlugin": {
+              "methods": ["deletePluginAsync", "deletePluginAsync", "deletePluginAsync", "deletePluginOperationCallable", "deletePluginCallable"]
+            },
+            "DeletePluginInstance": {
+              "methods": ["deletePluginInstanceAsync", "deletePluginInstanceAsync", "deletePluginInstanceAsync", "deletePluginInstanceOperationCallable", "deletePluginInstanceCallable"]
+            },
             "DisablePlugin": {
               "methods": ["disablePlugin", "disablePlugin", "disablePlugin", "disablePluginCallable"]
             },
+            "DisablePluginInstanceAction": {
+              "methods": ["disablePluginInstanceActionAsync", "disablePluginInstanceActionAsync", "disablePluginInstanceActionAsync", "disablePluginInstanceActionOperationCallable", "disablePluginInstanceActionCallable"]
+            },
             "EnablePlugin": {
               "methods": ["enablePlugin", "enablePlugin", "enablePlugin", "enablePluginCallable"]
+            },
+            "EnablePluginInstanceAction": {
+              "methods": ["enablePluginInstanceActionAsync", "enablePluginInstanceActionAsync", "enablePluginInstanceActionAsync", "enablePluginInstanceActionOperationCallable", "enablePluginInstanceActionCallable"]
+            },
+            "ExecutePluginInstanceAction": {
+              "methods": ["executePluginInstanceActionAsync", "executePluginInstanceActionAsync", "executePluginInstanceActionAsync", "executePluginInstanceActionOperationCallable", "executePluginInstanceActionCallable"]
             },
             "GetLocation": {
               "methods": ["getLocation", "getLocationCallable"]
@@ -223,8 +328,20 @@
             "GetPlugin": {
               "methods": ["getPlugin", "getPlugin", "getPlugin", "getPluginCallable"]
             },
+            "GetPluginInstance": {
+              "methods": ["getPluginInstance", "getPluginInstance", "getPluginInstance", "getPluginInstanceCallable"]
+            },
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
+            },
+            "ListPluginInstances": {
+              "methods": ["listPluginInstances", "listPluginInstances", "listPluginInstances", "listPluginInstancesPagedCallable", "listPluginInstancesCallable"]
+            },
+            "ListPlugins": {
+              "methods": ["listPlugins", "listPlugins", "listPlugins", "listPluginsPagedCallable", "listPluginsCallable"]
+            },
+            "UpdatePluginInstance": {
+              "methods": ["updatePluginInstance", "updatePluginInstance", "updatePluginInstanceCallable"]
             }
           }
         }
@@ -237,6 +354,9 @@
           "rpcs": {
             "CreateApiHubInstance": {
               "methods": ["createApiHubInstanceAsync", "createApiHubInstanceAsync", "createApiHubInstanceAsync", "createApiHubInstanceOperationCallable", "createApiHubInstanceCallable"]
+            },
+            "DeleteApiHubInstance": {
+              "methods": ["deleteApiHubInstanceAsync", "deleteApiHubInstanceAsync", "deleteApiHubInstanceAsync", "deleteApiHubInstanceOperationCallable", "deleteApiHubInstanceCallable"]
             },
             "GetApiHubInstance": {
               "methods": ["getApiHubInstance", "getApiHubInstance", "getApiHubInstance", "getApiHubInstanceCallable"]
