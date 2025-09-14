@@ -148,6 +148,12 @@ public class RegionInstanceGroupsSettings extends ClientSettings<RegionInstanceG
     return ((RegionInstanceGroupsStubSettings) getStubSettings()).setNamedPortsOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsRegionInstanceGroupRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return ((RegionInstanceGroupsStubSettings) getStubSettings()).testIamPermissionsSettings();
+  }
+
   public static final RegionInstanceGroupsSettings create(RegionInstanceGroupsStubSettings stub)
       throws IOException {
     return new RegionInstanceGroupsSettings.Builder(stub.toBuilder()).build();
@@ -278,6 +284,13 @@ public class RegionInstanceGroupsSettings extends ClientSettings<RegionInstanceG
             SetNamedPortsRegionInstanceGroupRequest, Operation, Operation>
         setNamedPortsOperationSettings() {
       return getStubSettingsBuilder().setNamedPortsOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<
+            TestIamPermissionsRegionInstanceGroupRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     @Override

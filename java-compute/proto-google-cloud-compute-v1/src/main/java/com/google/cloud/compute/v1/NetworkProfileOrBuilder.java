@@ -287,6 +287,46 @@ public interface NetworkProfileOrBuilder
    *
    *
    * <pre>
+   * [Output Only] Type of the network profile.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.NetworkProfileProfileType profile_type = 150167568;
+   * </code>
+   *
+   * @return Whether the profileType field is set.
+   */
+  boolean hasProfileType();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of the network profile.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.NetworkProfileProfileType profile_type = 150167568;
+   * </code>
+   *
+   * @return The profileType.
+   */
+  com.google.cloud.compute.v1.NetworkProfileProfileType getProfileType();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] Type of the network profile.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.NetworkProfileProfileType profile_type = 150167568;
+   * </code>
+   */
+  com.google.cloud.compute.v1.NetworkProfileProfileTypeOrBuilder getProfileTypeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] Server-defined URL for the resource.
    * </pre>
    *

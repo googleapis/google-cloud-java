@@ -547,6 +547,43 @@ public interface RouterOrBuilder
    *
    *
    * <pre>
+   * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.RouterParams params = 78313862;</code>
+   *
+   * @return Whether the params field is set.
+   */
+  boolean hasParams();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.RouterParams params = 78313862;</code>
+   *
+   * @return The params.
+   */
+  com.google.cloud.compute.v1.RouterParams getParams();
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. [Input Only] Additional params passed with the request, but not persisted as part of resource payload.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.RouterParams params = 78313862;</code>
+   */
+  com.google.cloud.compute.v1.RouterParamsOrBuilder getParamsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] URI of the region where the router resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
    * </pre>
    *

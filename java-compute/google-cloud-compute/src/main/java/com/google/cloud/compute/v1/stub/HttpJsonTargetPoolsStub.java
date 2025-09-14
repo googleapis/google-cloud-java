@@ -51,6 +51,8 @@ import com.google.cloud.compute.v1.TargetPool;
 import com.google.cloud.compute.v1.TargetPoolAggregatedList;
 import com.google.cloud.compute.v1.TargetPoolInstanceHealth;
 import com.google.cloud.compute.v1.TargetPoolList;
+import com.google.cloud.compute.v1.TestIamPermissionsTargetPoolRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -714,6 +716,49 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                   })
               .build();
 
+  private static final ApiMethodDescriptor<
+          TestIamPermissionsTargetPoolRequest, TestPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          ApiMethodDescriptor
+              .<TestIamPermissionsTargetPoolRequest, TestPermissionsResponse>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.TargetPools/TestIamPermissions")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter.<TestIamPermissionsTargetPoolRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/targetPools/{resource}/testIamPermissions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsTargetPoolRequest> serializer =
+                                ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsTargetPoolRequest> serializer =
+                                ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "testPermissionsRequestResource",
+                                      request.getTestPermissionsRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
+                      .setDefaultInstance(TestPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<AddHealthCheckTargetPoolRequest, Operation> addHealthCheckCallable;
   private final OperationCallable<AddHealthCheckTargetPoolRequest, Operation, Operation>
       addHealthCheckOperationCallable;
@@ -749,6 +794,8 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
       setSecurityPolicyCallable;
   private final OperationCallable<SetSecurityPolicyTargetPoolRequest, Operation, Operation>
       setSecurityPolicyOperationCallable;
+  private final UnaryCallable<TestIamPermissionsTargetPoolRequest, TestPermissionsResponse>
+      testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
@@ -953,6 +1000,21 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<TestIamPermissionsTargetPoolRequest, TestPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            HttpJsonCallSettings
+                .<TestIamPermissionsTargetPoolRequest, TestPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
+                .build();
 
     this.addHealthCheckCallable =
         callableFactory.createUnaryCallable(
@@ -1048,6 +1110,11 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
             settings.setSecurityPolicyOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -1068,6 +1135,7 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
     methodDescriptors.add(removeInstanceMethodDescriptor);
     methodDescriptors.add(setBackupMethodDescriptor);
     methodDescriptors.add(setSecurityPolicyMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -1189,6 +1257,12 @@ public class HttpJsonTargetPoolsStub extends TargetPoolsStub {
   public OperationCallable<SetSecurityPolicyTargetPoolRequest, Operation, Operation>
       setSecurityPolicyOperationCallable() {
     return setSecurityPolicyOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsTargetPoolRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
   }
 
   @Override

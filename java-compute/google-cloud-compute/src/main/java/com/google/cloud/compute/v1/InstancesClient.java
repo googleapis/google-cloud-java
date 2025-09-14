@@ -86,6 +86,25 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> AddNetworkInterface</td>
+ *      <td><p> Adds one dynamic network interface to an active instance.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> addNetworkInterfaceAsync(AddNetworkInterfaceInstanceRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> addNetworkInterfaceAsync(String project, String zone, String instance, NetworkInterface networkInterfaceResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> addNetworkInterfaceOperationCallable()
+ *           <li><p> addNetworkInterfaceCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> AddResourcePolicies</td>
  *      <td><p> Adds existing resource policies to an instance. You can only add one policy right now which will be applied to this instance for scheduling live migrations.</td>
  *      <td>
@@ -196,6 +215,25 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> deleteAccessConfigOperationCallable()
  *           <li><p> deleteAccessConfigCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteNetworkInterface</td>
+ *      <td><p> Deletes one dynamic network interface from an active instance. InstancesDeleteNetworkInterfaceRequest indicates: - instance from which to delete, using project+zone+resource_id fields; - dynamic network interface to be deleted, using network_interface_name field;</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteNetworkInterfaceAsync(DeleteNetworkInterfaceInstanceRequest request)
+ *      </ul>
+ *      <p>Methods that return long-running operations have "Async" method variants that return `OperationFuture`, which is used to track polling of the service.</p>
+ *      <ul>
+ *           <li><p> deleteNetworkInterfaceAsync(String project, String zone, String instance, String networkInterfaceName)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteNetworkInterfaceOperationCallable()
+ *           <li><p> deleteNetworkInterfaceCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -1227,6 +1265,148 @@ public class InstancesClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Adds one dynamic network interface to an active instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instance = "instance555127957";
+   *   NetworkInterface networkInterfaceResource = NetworkInterface.newBuilder().build();
+   *   Operation response =
+   *       instancesClient
+   *           .addNetworkInterfaceAsync(project, zone, instance, networkInterfaceResource)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param zone The name of the zone for this request.
+   * @param instance The instance name for this request stored as resource_id. Name should conform
+   *     to RFC1035 or be an unsigned long integer.
+   * @param networkInterfaceResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> addNetworkInterfaceAsync(
+      String project, String zone, String instance, NetworkInterface networkInterfaceResource) {
+    AddNetworkInterfaceInstanceRequest request =
+        AddNetworkInterfaceInstanceRequest.newBuilder()
+            .setProject(project)
+            .setZone(zone)
+            .setInstance(instance)
+            .setNetworkInterfaceResource(networkInterfaceResource)
+            .build();
+    return addNetworkInterfaceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Adds one dynamic network interface to an active instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   AddNetworkInterfaceInstanceRequest request =
+   *       AddNetworkInterfaceInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setNetworkInterfaceResource(NetworkInterface.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   Operation response = instancesClient.addNetworkInterfaceAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> addNetworkInterfaceAsync(
+      AddNetworkInterfaceInstanceRequest request) {
+    return addNetworkInterfaceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Adds one dynamic network interface to an active instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   AddNetworkInterfaceInstanceRequest request =
+   *       AddNetworkInterfaceInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setNetworkInterfaceResource(NetworkInterface.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instancesClient.addNetworkInterfaceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<AddNetworkInterfaceInstanceRequest, Operation, Operation>
+      addNetworkInterfaceOperationCallable() {
+    return stub.addNetworkInterfaceOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Adds one dynamic network interface to an active instance.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   AddNetworkInterfaceInstanceRequest request =
+   *       AddNetworkInterfaceInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setNetworkInterfaceResource(NetworkInterface.newBuilder().build())
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       instancesClient.addNetworkInterfaceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<AddNetworkInterfaceInstanceRequest, Operation>
+      addNetworkInterfaceCallable() {
+    return stub.addNetworkInterfaceCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Adds existing resource policies to an instance. You can only add one policy right now which
    * will be applied to this instance for scheduling live migrations.
    *
@@ -2102,6 +2282,161 @@ public class InstancesClient implements BackgroundResource {
   public final UnaryCallable<DeleteAccessConfigInstanceRequest, Operation>
       deleteAccessConfigCallable() {
     return stub.deleteAccessConfigCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes one dynamic network interface from an active instance.
+   * InstancesDeleteNetworkInterfaceRequest indicates: - instance from which to delete, using
+   * project+zone+resource_id fields; - dynamic network interface to be deleted, using
+   * network_interface_name field;
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   String project = "project-309310695";
+   *   String zone = "zone3744684";
+   *   String instance = "instance555127957";
+   *   String networkInterfaceName = "networkInterfaceName-992385066";
+   *   Operation response =
+   *       instancesClient
+   *           .deleteNetworkInterfaceAsync(project, zone, instance, networkInterfaceName)
+   *           .get();
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param zone The name of the zone for this request.
+   * @param instance The instance name for this request stored as resource_id. Name should conform
+   *     to RFC1035 or be an unsigned long integer.
+   * @param networkInterfaceName The name of the dynamic network interface to be deleted from the
+   *     instance.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> deleteNetworkInterfaceAsync(
+      String project, String zone, String instance, String networkInterfaceName) {
+    DeleteNetworkInterfaceInstanceRequest request =
+        DeleteNetworkInterfaceInstanceRequest.newBuilder()
+            .setProject(project)
+            .setZone(zone)
+            .setInstance(instance)
+            .setNetworkInterfaceName(networkInterfaceName)
+            .build();
+    return deleteNetworkInterfaceAsync(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes one dynamic network interface from an active instance.
+   * InstancesDeleteNetworkInterfaceRequest indicates: - instance from which to delete, using
+   * project+zone+resource_id fields; - dynamic network interface to be deleted, using
+   * network_interface_name field;
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   DeleteNetworkInterfaceInstanceRequest request =
+   *       DeleteNetworkInterfaceInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setNetworkInterfaceName("networkInterfaceName-992385066")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   Operation response = instancesClient.deleteNetworkInterfaceAsync(request).get();
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final OperationFuture<Operation, Operation> deleteNetworkInterfaceAsync(
+      DeleteNetworkInterfaceInstanceRequest request) {
+    return deleteNetworkInterfaceOperationCallable().futureCall(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes one dynamic network interface from an active instance.
+   * InstancesDeleteNetworkInterfaceRequest indicates: - instance from which to delete, using
+   * project+zone+resource_id fields; - dynamic network interface to be deleted, using
+   * network_interface_name field;
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   DeleteNetworkInterfaceInstanceRequest request =
+   *       DeleteNetworkInterfaceInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setNetworkInterfaceName("networkInterfaceName-992385066")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   OperationFuture<Operation, Operation> future =
+   *       instancesClient.deleteNetworkInterfaceOperationCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final OperationCallable<DeleteNetworkInterfaceInstanceRequest, Operation, Operation>
+      deleteNetworkInterfaceOperationCallable() {
+    return stub.deleteNetworkInterfaceOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Deletes one dynamic network interface from an active instance.
+   * InstancesDeleteNetworkInterfaceRequest indicates: - instance from which to delete, using
+   * project+zone+resource_id fields; - dynamic network interface to be deleted, using
+   * network_interface_name field;
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (InstancesClient instancesClient = InstancesClient.create()) {
+   *   DeleteNetworkInterfaceInstanceRequest request =
+   *       DeleteNetworkInterfaceInstanceRequest.newBuilder()
+   *           .setInstance("instance555127957")
+   *           .setNetworkInterfaceName("networkInterfaceName-992385066")
+   *           .setProject("project-309310695")
+   *           .setRequestId("requestId693933066")
+   *           .setZone("zone3744684")
+   *           .build();
+   *   ApiFuture<Operation> future =
+   *       instancesClient.deleteNetworkInterfaceCallable().futureCall(request);
+   *   // Do something.
+   *   Operation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteNetworkInterfaceInstanceRequest, Operation>
+      deleteNetworkInterfaceCallable() {
+    return stub.deleteNetworkInterfaceCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.

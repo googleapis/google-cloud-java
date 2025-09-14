@@ -112,6 +112,26 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
+     * Maintenance due to customer reported multiple faulty hosts via R&amp;R Subblock API.
+     * </pre>
+     *
+     * <code>FAILURE_GPU_MULTIPLE_FAULTY_HOSTS_CUSTOMER_REPORTED = 223284959;</code>
+     */
+    FAILURE_GPU_MULTIPLE_FAULTY_HOSTS_CUSTOMER_REPORTED(223284959),
+    /**
+     *
+     *
+     * <pre>
+     * Maintenance due to customer reported NVLink switch failure via R&amp;R Subblock API.
+     * </pre>
+     *
+     * <code>FAILURE_GPU_NVLINK_SWITCH_CUSTOMER_REPORTED = 88487838;</code>
+     */
+    FAILURE_GPU_NVLINK_SWITCH_CUSTOMER_REPORTED(88487838),
+    /**
+     *
+     *
+     * <pre>
      * Maintenance due to high GPU temperature.
      * </pre>
      *
@@ -263,6 +283,28 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
      * <code>FAILURE_GPU = 467876919;</code>
      */
     public static final int FAILURE_GPU_VALUE = 467876919;
+
+    /**
+     *
+     *
+     * <pre>
+     * Maintenance due to customer reported multiple faulty hosts via R&amp;R Subblock API.
+     * </pre>
+     *
+     * <code>FAILURE_GPU_MULTIPLE_FAULTY_HOSTS_CUSTOMER_REPORTED = 223284959;</code>
+     */
+    public static final int FAILURE_GPU_MULTIPLE_FAULTY_HOSTS_CUSTOMER_REPORTED_VALUE = 223284959;
+
+    /**
+     *
+     *
+     * <pre>
+     * Maintenance due to customer reported NVLink switch failure via R&amp;R Subblock API.
+     * </pre>
+     *
+     * <code>FAILURE_GPU_NVLINK_SWITCH_CUSTOMER_REPORTED = 88487838;</code>
+     */
+    public static final int FAILURE_GPU_NVLINK_SWITCH_CUSTOMER_REPORTED_VALUE = 88487838;
 
     /**
      *
@@ -426,6 +468,10 @@ public final class UpcomingMaintenance extends com.google.protobuf.GeneratedMess
           return FAILURE_DISK;
         case 467876919:
           return FAILURE_GPU;
+        case 223284959:
+          return FAILURE_GPU_MULTIPLE_FAULTY_HOSTS_CUSTOMER_REPORTED;
+        case 88487838:
+          return FAILURE_GPU_NVLINK_SWITCH_CUSTOMER_REPORTED;
         case 24926540:
           return FAILURE_GPU_TEMPERATURE;
         case 51956587:

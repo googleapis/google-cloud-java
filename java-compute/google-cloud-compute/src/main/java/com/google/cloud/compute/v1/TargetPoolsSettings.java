@@ -226,6 +226,12 @@ public class TargetPoolsSettings extends ClientSettings<TargetPoolsSettings> {
     return ((TargetPoolsStubSettings) getStubSettings()).setSecurityPolicyOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsTargetPoolRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return ((TargetPoolsStubSettings) getStubSettings()).testIamPermissionsSettings();
+  }
+
   public static final TargetPoolsSettings create(TargetPoolsStubSettings stub) throws IOException {
     return new TargetPoolsSettings.Builder(stub.toBuilder()).build();
   }
@@ -437,6 +443,12 @@ public class TargetPoolsSettings extends ClientSettings<TargetPoolsSettings> {
     public OperationCallSettings.Builder<SetSecurityPolicyTargetPoolRequest, Operation, Operation>
         setSecurityPolicyOperationSettings() {
       return getStubSettingsBuilder().setSecurityPolicyOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsTargetPoolRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     @Override

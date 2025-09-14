@@ -33,6 +33,8 @@ import com.google.cloud.compute.v1.ListAddressesRequest;
 import com.google.cloud.compute.v1.MoveAddressRequest;
 import com.google.cloud.compute.v1.Operation;
 import com.google.cloud.compute.v1.SetLabelsAddressRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsAddressRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
@@ -97,6 +99,11 @@ public abstract class AddressesStub implements BackgroundResource {
 
   public UnaryCallable<SetLabelsAddressRequest, Operation> setLabelsCallable() {
     throw new UnsupportedOperationException("Not implemented: setLabelsCallable()");
+  }
+
+  public UnaryCallable<TestIamPermissionsAddressRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    throw new UnsupportedOperationException("Not implemented: testIamPermissionsCallable()");
   }
 
   @Override
