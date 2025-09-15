@@ -111,5 +111,7 @@
   "dependencyDashboard": true,
   "dependencyDashboardLabels": [
     "type: process"
-  ]
+  ],
+  "prConcurrentLimit": 0,
+  "prHourlyLimit": 0
 }
