@@ -30,6 +30,8 @@ public interface GoogleChannelConfigOrBuilder
    * <pre>
    * Required. The resource name of the config. Must be in the format of,
    * `projects/{project}/locations/{location}/googleChannelConfig`.
+   * In API responses, the config name always includes the projectID, regardless
+   * of whether the projectID or projectNumber was provided.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -44,6 +46,8 @@ public interface GoogleChannelConfigOrBuilder
    * <pre>
    * Required. The resource name of the config. Must be in the format of,
    * `projects/{project}/locations/{location}/googleChannelConfig`.
+   * In API responses, the config name always includes the projectID, regardless
+   * of whether the projectID or projectNumber was provided.
    * </pre>
    *
    * <code>string name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -129,4 +133,67 @@ public interface GoogleChannelConfigOrBuilder
    * @return The bytes for cryptoKeyName.
    */
   com.google.protobuf.ByteString getCryptoKeyNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resource labels.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  int getLabelsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resource labels.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  boolean containsLabels(java.lang.String key);
+
+  /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getLabels();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resource labels.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resource labels.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  /* nullable */
+  java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resource labels.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 8 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  java.lang.String getLabelsOrThrow(java.lang.String key);
 }

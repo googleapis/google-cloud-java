@@ -101,7 +101,8 @@ public interface CreatePipelineRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The user-provided ID to be assigned to the Pipeline.
+   * Required. The user-provided ID to be assigned to the Pipeline. It should
+   * match the format `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
    * </pre>
    *
    * <code>string pipeline_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -114,7 +115,8 @@ public interface CreatePipelineRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The user-provided ID to be assigned to the Pipeline.
+   * Required. The user-provided ID to be assigned to the Pipeline. It should
+   * match the format `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
    * </pre>
    *
    * <code>string pipeline_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>

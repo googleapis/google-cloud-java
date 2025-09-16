@@ -634,6 +634,7 @@ public class EventarcClientTest {
             .setActivationToken("activationToken1276937859")
             .setCryptoKeyName("cryptoKeyName1447084425")
             .setSatisfiesPzs(true)
+            .putAllLabels(new HashMap<String, String>())
             .build();
     mockEventarc.addResponse(expectedResponse);
 
@@ -679,6 +680,7 @@ public class EventarcClientTest {
             .setActivationToken("activationToken1276937859")
             .setCryptoKeyName("cryptoKeyName1447084425")
             .setSatisfiesPzs(true)
+            .putAllLabels(new HashMap<String, String>())
             .build();
     mockEventarc.addResponse(expectedResponse);
 
@@ -812,6 +814,7 @@ public class EventarcClientTest {
             .setActivationToken("activationToken1276937859")
             .setCryptoKeyName("cryptoKeyName1447084425")
             .setSatisfiesPzs(true)
+            .putAllLabels(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -871,6 +874,7 @@ public class EventarcClientTest {
             .setActivationToken("activationToken1276937859")
             .setCryptoKeyName("cryptoKeyName1447084425")
             .setSatisfiesPzs(true)
+            .putAllLabels(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -930,6 +934,7 @@ public class EventarcClientTest {
             .setActivationToken("activationToken1276937859")
             .setCryptoKeyName("cryptoKeyName1447084425")
             .setSatisfiesPzs(true)
+            .putAllLabels(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -986,6 +991,7 @@ public class EventarcClientTest {
             .setActivationToken("activationToken1276937859")
             .setCryptoKeyName("cryptoKeyName1447084425")
             .setSatisfiesPzs(true)
+            .putAllLabels(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1039,6 +1045,7 @@ public class EventarcClientTest {
             .setActivationToken("activationToken1276937859")
             .setCryptoKeyName("cryptoKeyName1447084425")
             .setSatisfiesPzs(true)
+            .putAllLabels(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1260,6 +1267,7 @@ public class EventarcClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setActivationToken("activationToken1276937859")
+            .putAllLabels(new HashMap<String, String>())
             .build();
     mockEventarc.addResponse(expectedResponse);
 
@@ -1308,6 +1316,7 @@ public class EventarcClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setActivationToken("activationToken1276937859")
+            .putAllLabels(new HashMap<String, String>())
             .build();
     mockEventarc.addResponse(expectedResponse);
 
@@ -1444,6 +1453,7 @@ public class EventarcClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setActivationToken("activationToken1276937859")
+            .putAllLabels(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1505,6 +1515,7 @@ public class EventarcClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setActivationToken("activationToken1276937859")
+            .putAllLabels(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1566,6 +1577,7 @@ public class EventarcClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setActivationToken("activationToken1276937859")
+            .putAllLabels(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1622,6 +1634,7 @@ public class EventarcClientTest {
             .setCreateTime(Timestamp.newBuilder().build())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setActivationToken("activationToken1276937859")
+            .putAllLabels(new HashMap<String, String>())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -1671,6 +1684,7 @@ public class EventarcClientTest {
             .setName(GoogleChannelConfigName.of("[PROJECT]", "[LOCATION]").toString())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setCryptoKeyName("cryptoKeyName1447084425")
+            .putAllLabels(new HashMap<String, String>())
             .build();
     mockEventarc.addResponse(expectedResponse);
 
@@ -1712,6 +1726,7 @@ public class EventarcClientTest {
             .setName(GoogleChannelConfigName.of("[PROJECT]", "[LOCATION]").toString())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setCryptoKeyName("cryptoKeyName1447084425")
+            .putAllLabels(new HashMap<String, String>())
             .build();
     mockEventarc.addResponse(expectedResponse);
 
@@ -1753,6 +1768,7 @@ public class EventarcClientTest {
             .setName(GoogleChannelConfigName.of("[PROJECT]", "[LOCATION]").toString())
             .setUpdateTime(Timestamp.newBuilder().build())
             .setCryptoKeyName("cryptoKeyName1447084425")
+            .putAllLabels(new HashMap<String, String>())
             .build();
     mockEventarc.addResponse(expectedResponse);
 
@@ -2868,6 +2884,7 @@ public class EventarcClientTest {
             .setLoggingConfig(LoggingConfig.newBuilder().build())
             .setRetryPolicy(Pipeline.RetryPolicy.newBuilder().build())
             .setEtag("etag3123477")
+            .setSatisfiesPzs(true)
             .build();
     mockEventarc.addResponse(expectedResponse);
 
@@ -2919,6 +2936,7 @@ public class EventarcClientTest {
             .setLoggingConfig(LoggingConfig.newBuilder().build())
             .setRetryPolicy(Pipeline.RetryPolicy.newBuilder().build())
             .setEtag("etag3123477")
+            .setSatisfiesPzs(true)
             .build();
     mockEventarc.addResponse(expectedResponse);
 
@@ -3058,6 +3076,7 @@ public class EventarcClientTest {
             .setLoggingConfig(LoggingConfig.newBuilder().build())
             .setRetryPolicy(Pipeline.RetryPolicy.newBuilder().build())
             .setEtag("etag3123477")
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3123,6 +3142,7 @@ public class EventarcClientTest {
             .setLoggingConfig(LoggingConfig.newBuilder().build())
             .setRetryPolicy(Pipeline.RetryPolicy.newBuilder().build())
             .setEtag("etag3123477")
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3188,6 +3208,7 @@ public class EventarcClientTest {
             .setLoggingConfig(LoggingConfig.newBuilder().build())
             .setRetryPolicy(Pipeline.RetryPolicy.newBuilder().build())
             .setEtag("etag3123477")
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3250,6 +3271,7 @@ public class EventarcClientTest {
             .setLoggingConfig(LoggingConfig.newBuilder().build())
             .setRetryPolicy(Pipeline.RetryPolicy.newBuilder().build())
             .setEtag("etag3123477")
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -3312,6 +3334,7 @@ public class EventarcClientTest {
             .setLoggingConfig(LoggingConfig.newBuilder().build())
             .setRetryPolicy(Pipeline.RetryPolicy.newBuilder().build())
             .setEtag("etag3123477")
+            .setSatisfiesPzs(true)
             .build();
     Operation resultOperation =
         Operation.newBuilder()

@@ -155,7 +155,7 @@ public final class TriggerProto {
           + "\005topic\030\001 \001(\tB\003\340A\001\022\031\n"
           + "\014subscription\030\002 \001(\tB\003\340A\003\" \n"
           + "\014HttpEndpoint\022\020\n"
-          + "\003uri\030\001 \001(\tB\003\340A\002B\261\004\n"
+          + "\003uri\030\001 \001(\tB\003\340A\002B\241\005\n"
           + "\034com.google.cloud.eventarc.v1B\014TriggerProtoP\001Z8clou"
           + "d.google.com/go/eventarc/apiv1/eventarcpb;eventarcpb\352Ak\n"
           + "+cloudfunctions.googleapis.com/CloudFunction\022<projects/{project}"
@@ -166,7 +166,9 @@ public final class TriggerProto {
           + "!workflows.googleapis.com/Wo"
           + "rkflow\022<projects/{project}/locations/{location}/workflows/{workflow}\352Av\n"
           + "(compute.googleapis.com/NetworkAttachment\022Jproje"
-          + "cts/{project}/regions/{region}/networkAttachments/{networkattachment}b\006proto3"
+          + "cts/{project}/regions/{region}/networkAttachments/{networkattachment}\352Am\n"
+          + "\'integrations.googleapis.com/Integration\022Bproje"
+          + "cts/{project}/locations/{location}/integrations/{integration}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(

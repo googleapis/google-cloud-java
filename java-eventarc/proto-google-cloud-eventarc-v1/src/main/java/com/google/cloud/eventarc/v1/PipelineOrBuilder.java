@@ -696,7 +696,7 @@ public interface PipelineOrBuilder
    * client has an up-to-date value before proceeding.
    * </pre>
    *
-   * <code>string etag = 99;</code>
+   * <code>string etag = 99 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The etag.
    */
@@ -711,9 +711,23 @@ public interface PipelineOrBuilder
    * client has an up-to-date value before proceeding.
    * </pre>
    *
-   * <code>string etag = 99;</code>
+   * <code>string etag = 99 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
    *
    * @return The bytes for etag.
    */
   com.google.protobuf.ByteString getEtagBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Whether or not this Pipeline satisfies the requirements of
+   * physical zone separation
+   * </pre>
+   *
+   * <code>bool satisfies_pzs = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+   *
+   * @return The satisfiesPzs.
+   */
+  boolean getSatisfiesPzs();
 }

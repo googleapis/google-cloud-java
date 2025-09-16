@@ -393,7 +393,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetGoogleChannelConfig</td>
- *      <td><p> Get a GoogleChannelConfig</td>
+ *      <td><p> Get a GoogleChannelConfig. The name of the GoogleChannelConfig in the response is ALWAYS coded with projectID.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -3366,7 +3366,8 @@ public class EventarcClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get a GoogleChannelConfig
+   * Get a GoogleChannelConfig. The name of the GoogleChannelConfig in the response is ALWAYS coded
+   * with projectID.
    *
    * <p>Sample code:
    *
@@ -3395,7 +3396,8 @@ public class EventarcClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get a GoogleChannelConfig
+   * Get a GoogleChannelConfig. The name of the GoogleChannelConfig in the response is ALWAYS coded
+   * with projectID.
    *
    * <p>Sample code:
    *
@@ -3422,7 +3424,8 @@ public class EventarcClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get a GoogleChannelConfig
+   * Get a GoogleChannelConfig. The name of the GoogleChannelConfig in the response is ALWAYS coded
+   * with projectID.
    *
    * <p>Sample code:
    *
@@ -3450,7 +3453,8 @@ public class EventarcClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Get a GoogleChannelConfig
+   * Get a GoogleChannelConfig. The name of the GoogleChannelConfig in the response is ALWAYS coded
+   * with projectID.
    *
    * <p>Sample code:
    *
@@ -3701,7 +3705,7 @@ public class EventarcClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent collection to list triggers on.
+   * @param parent Required. The parent collection to list message buses on.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListMessageBusesPagedResponse listMessageBuses(LocationName parent) {
@@ -3732,7 +3736,7 @@ public class EventarcClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. The parent collection to list triggers on.
+   * @param parent Required. The parent collection to list message buses on.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListMessageBusesPagedResponse listMessageBuses(String parent) {
@@ -4043,7 +4047,7 @@ public class EventarcClient implements BackgroundResource {
    * @param parent Required. The parent collection in which to add this message bus.
    * @param messageBus Required. The message bus to create.
    * @param messageBusId Required. The user-provided ID to be assigned to the MessageBus. It should
-   *     match the format (^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$)
+   *     match the format `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<MessageBus, OperationMetadata> createMessageBusAsync(
@@ -4081,7 +4085,7 @@ public class EventarcClient implements BackgroundResource {
    * @param parent Required. The parent collection in which to add this message bus.
    * @param messageBus Required. The message bus to create.
    * @param messageBusId Required. The user-provided ID to be assigned to the MessageBus. It should
-   *     match the format (^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$)
+   *     match the format `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<MessageBus, OperationMetadata> createMessageBusAsync(
@@ -4778,7 +4782,7 @@ public class EventarcClient implements BackgroundResource {
    * @param parent Required. The parent collection in which to add this enrollment.
    * @param enrollment Required. The enrollment to create.
    * @param enrollmentId Required. The user-provided ID to be assigned to the Enrollment. It should
-   *     match the format (^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$).
+   *     match the format `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Enrollment, OperationMetadata> createEnrollmentAsync(
@@ -4816,7 +4820,7 @@ public class EventarcClient implements BackgroundResource {
    * @param parent Required. The parent collection in which to add this enrollment.
    * @param enrollment Required. The enrollment to create.
    * @param enrollmentId Required. The user-provided ID to be assigned to the Enrollment. It should
-   *     match the format (^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$).
+   *     match the format `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Enrollment, OperationMetadata> createEnrollmentAsync(
@@ -5509,7 +5513,8 @@ public class EventarcClient implements BackgroundResource {
    *
    * @param parent Required. The parent collection in which to add this pipeline.
    * @param pipeline Required. The pipeline to create.
-   * @param pipelineId Required. The user-provided ID to be assigned to the Pipeline.
+   * @param pipelineId Required. The user-provided ID to be assigned to the Pipeline. It should
+   *     match the format `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Pipeline, OperationMetadata> createPipelineAsync(
@@ -5545,7 +5550,8 @@ public class EventarcClient implements BackgroundResource {
    *
    * @param parent Required. The parent collection in which to add this pipeline.
    * @param pipeline Required. The pipeline to create.
-   * @param pipelineId Required. The user-provided ID to be assigned to the Pipeline.
+   * @param pipelineId Required. The user-provided ID to be assigned to the Pipeline. It should
+   *     match the format `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<Pipeline, OperationMetadata> createPipelineAsync(
@@ -6255,7 +6261,7 @@ public class EventarcClient implements BackgroundResource {
    * @param parent Required. The parent collection in which to add this google api source.
    * @param googleApiSource Required. The google api source to create.
    * @param googleApiSourceId Required. The user-provided ID to be assigned to the GoogleApiSource.
-   *     It should match the format (^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$).
+   *     It should match the format `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<GoogleApiSource, OperationMetadata> createGoogleApiSourceAsync(
@@ -6295,7 +6301,7 @@ public class EventarcClient implements BackgroundResource {
    * @param parent Required. The parent collection in which to add this google api source.
    * @param googleApiSource Required. The google api source to create.
    * @param googleApiSourceId Required. The user-provided ID to be assigned to the GoogleApiSource.
-   *     It should match the format (^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$).
+   *     It should match the format `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<GoogleApiSource, OperationMetadata> createGoogleApiSourceAsync(

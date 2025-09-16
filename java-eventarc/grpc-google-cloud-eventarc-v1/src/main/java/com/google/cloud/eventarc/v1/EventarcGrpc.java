@@ -2071,7 +2071,9 @@ public final class EventarcGrpc {
      *
      *
      * <pre>
-     * Get a GoogleChannelConfig
+     * Get a GoogleChannelConfig.
+     * The name of the GoogleChannelConfig in the response is ALWAYS coded with
+     * projectID.
      * </pre>
      */
     default void getGoogleChannelConfig(
@@ -2693,7 +2695,9 @@ public final class EventarcGrpc {
      *
      *
      * <pre>
-     * Get a GoogleChannelConfig
+     * Get a GoogleChannelConfig.
+     * The name of the GoogleChannelConfig in the response is ALWAYS coded with
+     * projectID.
      * </pre>
      */
     public void getGoogleChannelConfig(
@@ -3298,7 +3302,9 @@ public final class EventarcGrpc {
      *
      *
      * <pre>
-     * Get a GoogleChannelConfig
+     * Get a GoogleChannelConfig.
+     * The name of the GoogleChannelConfig in the response is ALWAYS coded with
+     * projectID.
      * </pre>
      */
     public com.google.cloud.eventarc.v1.GoogleChannelConfig getGoogleChannelConfig(
@@ -3825,7 +3831,9 @@ public final class EventarcGrpc {
      *
      *
      * <pre>
-     * Get a GoogleChannelConfig
+     * Get a GoogleChannelConfig.
+     * The name of the GoogleChannelConfig in the response is ALWAYS coded with
+     * projectID.
      * </pre>
      */
     public com.google.cloud.eventarc.v1.GoogleChannelConfig getGoogleChannelConfig(
@@ -4359,7 +4367,9 @@ public final class EventarcGrpc {
      *
      *
      * <pre>
-     * Get a GoogleChannelConfig
+     * Get a GoogleChannelConfig.
+     * The name of the GoogleChannelConfig in the response is ALWAYS coded with
+     * projectID.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
