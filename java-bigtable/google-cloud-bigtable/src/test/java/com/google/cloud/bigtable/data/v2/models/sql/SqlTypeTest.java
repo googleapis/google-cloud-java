@@ -76,8 +76,9 @@ public class SqlTypeTest {
     protoToJavaMapping.put(arrayType(stringType()), SqlType.arrayOf(SqlType.string()));
     protoToJavaMapping.put(
         mapType(bytesType(), stringType()), SqlType.mapOf(SqlType.bytes(), SqlType.string()));
-    protoToJavaMapping.put(protoType("foo"), SchemalessProto.create("foo"));
-    protoToJavaMapping.put(enumType("foo"), SchemalessEnum.create("foo"));
+    protoToJavaMapping.put(
+        protoType("foo", "my_bundle"), SchemalessProto.create("foo", "my_bundle"));
+    protoToJavaMapping.put(enumType("foo", "my_bundle"), SchemalessEnum.create("foo", "my_bundle"));
   }
 
   @Test
@@ -173,16 +174,17 @@ public class SqlTypeTest {
     SqlType.Proto<Singer> singerProto = SqlType.protoOf(Singer.getDefaultInstance());
     SqlType.Proto<Album> albumProto = SqlType.protoOf(Album.getDefaultInstance());
     SqlType.Proto schemalessSinger =
-        SchemalessProto.create("com.google.cloud.bigtable.data.v2.test.Singer");
+        SchemalessProto.create("com.google.cloud.bigtable.data.v2.test.Singer", "my_bundle");
     SqlType.Proto schemalessAlbum =
-        SchemalessProto.create("com.google.cloud.bigtable.data.v2.test.Album");
+        SchemalessProto.create("com.google.cloud.bigtable.data.v2.test.Album", "my_bundle");
 
     // Both Schemaless types
     assertThat(SqlType.typesMatch(schemalessSinger, schemalessAlbum)).isFalse();
     assertThat(
             SqlType.typesMatch(
                 schemalessSinger,
-                SchemalessProto.create("com.google.cloud.bigtable.data.v2.test.Singer")))
+                SchemalessProto.create(
+                    "com.google.cloud.bigtable.data.v2.test.Singer", "my_bundle")))
         .isTrue();
 
     // Both concrete types
@@ -193,17 +195,28 @@ public class SqlTypeTest {
     // Schemaless versus concrete types (unqualified proto message names must match)
     assertThat(SqlType.typesMatch(schemalessSinger, singerProto)).isTrue();
     assertThat(SqlType.typesMatch(singerProto, schemalessSinger)).isTrue();
-    assertThat(SqlType.typesMatch(singerProto, SchemalessProto.create("Singer"))).isTrue();
-    assertThat(SqlType.typesMatch(singerProto, SchemalessProto.create("foo.bar.Singer"))).isTrue();
+    assertThat(SqlType.typesMatch(singerProto, SchemalessProto.create("Singer", "my_bundle")))
+        .isTrue();
+    assertThat(
+            SqlType.typesMatch(singerProto, SchemalessProto.create("foo.bar.Singer", "my_bundle")))
+        .isTrue();
+    assertThat(SqlType.typesMatch(singerProto, SchemalessProto.create("Singer", "other_bundle")))
+        .isTrue();
+    assertThat(
+            SqlType.typesMatch(
+                singerProto, SchemalessProto.create("foo.bar.Singer", "other_bundle")))
+        .isTrue();
     assertThat(SqlType.typesMatch(schemalessSinger, albumProto)).isFalse();
     assertThat(SqlType.typesMatch(albumProto, schemalessSinger)).isFalse();
-    assertThat(SqlType.typesMatch(singerProto, SchemalessProto.create("Album"))).isFalse();
+    assertThat(SqlType.typesMatch(singerProto, SchemalessProto.create("Album", "my_bundle")))
+        .isFalse();
     assertThat(
             SqlType.typesMatch(
                 singerProto,
-                SchemalessProto.create("com.google.cloud.bigtable.data.v2.test.Album")))
+                SchemalessProto.create(
+                    "com.google.cloud.bigtable.data.v2.test.Album", "my_bundle")))
         .isFalse();
-    assertThat(SqlType.typesMatch(singerProto, SchemalessProto.create(""))).isFalse();
+    assertThat(SqlType.typesMatch(singerProto, SchemalessProto.create("", "my_bundle"))).isFalse();
   }
 
   @Test
@@ -211,16 +224,16 @@ public class SqlTypeTest {
     SqlType.Enum<Genre> genreEnum = SqlType.enumOf(Genre::forNumber);
     SqlType.Enum<Format> formatEnum = SqlType.enumOf(Format::forNumber);
     SqlType.Enum schemalessGenre =
-        SchemalessEnum.create("com.google.cloud.bigtable.data.v2.test.Genre");
+        SchemalessEnum.create("com.google.cloud.bigtable.data.v2.test.Genre", "my_bundle");
     SqlType.Enum schemalessFormat =
-        SchemalessEnum.create("com.google.cloud.bigtable.data.v2.test.Format");
+        SchemalessEnum.create("com.google.cloud.bigtable.data.v2.test.Format", "my_bundle");
 
     // Both Schemaless types
     assertThat(SqlType.typesMatch(schemalessGenre, schemalessFormat)).isFalse();
     assertThat(
             SqlType.typesMatch(
                 schemalessGenre,
-                SchemalessEnum.create("com.google.cloud.bigtable.data.v2.test.Genre")))
+                SchemalessEnum.create("com.google.cloud.bigtable.data.v2.test.Genre", "my_bundle")))
         .isTrue();
 
     // Both concrete types
@@ -230,16 +243,25 @@ public class SqlTypeTest {
     // Schemaless versus concrete types (unqualified enum message names must match)
     assertThat(SqlType.typesMatch(schemalessGenre, genreEnum)).isTrue();
     assertThat(SqlType.typesMatch(genreEnum, schemalessGenre)).isTrue();
-    assertThat(SqlType.typesMatch(genreEnum, SchemalessEnum.create("Genre"))).isTrue();
-    assertThat(SqlType.typesMatch(genreEnum, SchemalessEnum.create("foo.bar.Genre"))).isTrue();
+    assertThat(SqlType.typesMatch(genreEnum, SchemalessEnum.create("Genre", "my_bundle"))).isTrue();
+    assertThat(SqlType.typesMatch(genreEnum, SchemalessEnum.create("foo.bar.Genre", "my_bundle")))
+        .isTrue();
+    assertThat(SqlType.typesMatch(genreEnum, SchemalessEnum.create("Genre", "other_bundle")))
+        .isTrue();
+    assertThat(
+            SqlType.typesMatch(genreEnum, SchemalessEnum.create("foo.bar.Genre", "other_bundle")))
+        .isTrue();
     assertThat(SqlType.typesMatch(schemalessGenre, formatEnum)).isFalse();
     assertThat(SqlType.typesMatch(formatEnum, schemalessGenre)).isFalse();
-    assertThat(SqlType.typesMatch(genreEnum, SchemalessEnum.create("Format"))).isFalse();
+    assertThat(SqlType.typesMatch(genreEnum, SchemalessEnum.create("Format", "my_bundle")))
+        .isFalse();
     assertThat(
             SqlType.typesMatch(
-                genreEnum, SchemalessProto.create("com.google.cloud.bigtable.data.v2.test.Format")))
+                genreEnum,
+                SchemalessProto.create(
+                    "com.google.cloud.bigtable.data.v2.test.Format", "my_bundle")))
         .isFalse();
-    assertThat(SqlType.typesMatch(genreEnum, SchemalessEnum.create(""))).isFalse();
+    assertThat(SqlType.typesMatch(genreEnum, SchemalessEnum.create("", "my_bundle"))).isFalse();
   }
 
   @Test

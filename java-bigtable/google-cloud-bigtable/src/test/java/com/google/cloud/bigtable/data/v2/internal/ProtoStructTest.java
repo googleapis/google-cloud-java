@@ -85,9 +85,12 @@ public class ProtoStructTest {
                       structField("listField", arrayType(stringType())),
                       structField("mapField", mapType(stringType(), stringType())),
                       structField(
-                          "protoField", protoType("com.google.cloud.bigtable.data.v2.test.Singer")),
+                          "protoField",
+                          protoType("com.google.cloud.bigtable.data.v2.test.Singer", "my_bundle")),
                       structField(
-                          "enumField", enumType("com.google.cloud.bigtable.data.v2.test.Genre")))),
+                          "enumField",
+                          enumType(
+                              "com.google.cloud.bigtable.data.v2.test.Genre", "other_bundle")))),
           arrayValue(
                   bytesValue("testBytes"),
                   stringValue("testString"),
@@ -184,9 +187,11 @@ public class ProtoStructTest {
     assertThat(struct.getColumnType("mapField"))
         .isEqualTo(SqlType.mapOf(SqlType.string(), SqlType.string()));
     assertThat(struct.getColumnType("protoField"))
-        .isEqualTo(SchemalessProto.create("com.google.cloud.bigtable.data.v2.test.Singer"));
+        .isEqualTo(
+            SchemalessProto.create("com.google.cloud.bigtable.data.v2.test.Singer", "my_bundle"));
     assertThat(struct.getColumnType("enumField"))
-        .isEqualTo(SchemalessEnum.create("com.google.cloud.bigtable.data.v2.test.Genre"));
+        .isEqualTo(
+            SchemalessEnum.create("com.google.cloud.bigtable.data.v2.test.Genre", "other_bundle"));
   }
 
   @Test
@@ -205,9 +210,11 @@ public class ProtoStructTest {
     assertThat(struct.getColumnType(10))
         .isEqualTo(SqlType.mapOf(SqlType.string(), SqlType.string()));
     assertThat(struct.getColumnType(11))
-        .isEqualTo(SchemalessProto.create("com.google.cloud.bigtable.data.v2.test.Singer"));
+        .isEqualTo(
+            SchemalessProto.create("com.google.cloud.bigtable.data.v2.test.Singer", "my_bundle"));
     assertThat(struct.getColumnType(12))
-        .isEqualTo(SchemalessEnum.create("com.google.cloud.bigtable.data.v2.test.Genre"));
+        .isEqualTo(
+            SchemalessEnum.create("com.google.cloud.bigtable.data.v2.test.Genre", "other_bundle"));
   }
 
   @Test

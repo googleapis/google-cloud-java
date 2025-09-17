@@ -660,14 +660,14 @@ public final class ProtoRowsMergingStateMachineTest {
               IllegalStateException.class,
               () ->
                   ProtoRowsMergingStateMachine.validateValueAndType(
-                      Type.SchemalessProto.create("test"), stringValue("test")));
+                      Type.SchemalessProto.create("test", "my_bundle"), stringValue("test")));
           break;
         case ENUM:
           assertThrows(
               IllegalStateException.class,
               () ->
                   ProtoRowsMergingStateMachine.validateValueAndType(
-                      Type.SchemalessEnum.create("test"), bytesValue("val")));
+                      Type.SchemalessEnum.create("test", "my_bundle"), bytesValue("val")));
           break;
         default:
           assertWithMessage(

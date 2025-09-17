@@ -24,6 +24,7 @@ import com.google.bigtable.v2.Type.Float32;
 import com.google.bigtable.v2.Type.Float64;
 import com.google.bigtable.v2.Type.Int64;
 import com.google.bigtable.v2.Type.Map;
+import com.google.bigtable.v2.Type.Proto;
 import com.google.bigtable.v2.Type.Struct;
 import com.google.bigtable.v2.Type.Timestamp;
 import com.google.bigtable.v2.Value;
@@ -31,6 +32,8 @@ import com.google.cloud.Date;
 import com.google.cloud.bigtable.data.v2.models.sql.ColumnMetadata;
 import com.google.cloud.bigtable.data.v2.models.sql.ResultSet;
 import com.google.cloud.bigtable.data.v2.models.sql.SqlType;
+import com.google.cloud.bigtable.common.Type.SchemalessProto;
+import com.google.cloud.bigtable.common.Type.SchemalessEnum;
 import com.google.cloud.bigtable.data.v2.models.sql.StructReader;
 import com.google.protobuf.ByteString;
 import java.time.Instant;
@@ -69,12 +72,14 @@ public class ResultSetSerializer {
     Value.Builder valueBuilder = Value.newBuilder();
     switch (type.getCode()) {
       case BYTES:
+      case PROTO:
         valueBuilder.setBytesValue((ByteString) value);
         break;
       case STRING:
         valueBuilder.setStringValue((String) value);
         break;
       case INT64:
+      case ENUM:
         valueBuilder.setIntValue((Long) value);
         break;
       case FLOAT32:
@@ -157,6 +162,7 @@ public class ResultSetSerializer {
       case BOOL:
         return struct.getBoolean(fieldIndex);
       case BYTES:
+      case PROTO:
         return struct.getBytes(fieldIndex);
       case DATE:
         return struct.getDate(fieldIndex);
@@ -165,6 +171,7 @@ public class ResultSetSerializer {
       case FLOAT64:
         return struct.getDouble(fieldIndex);
       case INT64:
+      case ENUM:
         return struct.getLong(fieldIndex);
       case MAP:
         return struct.getMap(fieldIndex, (SqlType.Map<?, ?>) fieldType);
@@ -225,7 +232,17 @@ public class ResultSetSerializer {
               .setType(toProtoType(field.type()));
         }
         return Type.newBuilder().setStructType(structBuilder.build()).build();
-
+      case PROTO:
+        SchemalessProto protoType = (SchemalessProto) type;
+        return Type.newBuilder()
+            .setProtoType(Proto.newBuilder().setMessageName(protoType.getMessageName())
+                .setSchemaBundleId(protoType.schemaBundleId()).build()).build();
+      case ENUM:
+        SchemalessEnum enumType = (SchemalessEnum) type;
+        return Type.newBuilder()
+            .setEnumType(
+                com.google.bigtable.v2.Type.Enum.newBuilder().setEnumName(enumType.getEnumName())
+                    .setSchemaBundleId(enumType.schemaBundleId()).build()).build();
       default:
         throw new IllegalStateException("Unexpected Type: " + type);
     }

@@ -257,7 +257,8 @@ public class AbstractProtoStructReaderTest {
                           "testField",
                           mapType(
                               bytesType(),
-                              protoType("com.google.cloud.bigtable.data.v2.test.Singer"))))),
+                              protoType(
+                                  "com.google.cloud.bigtable.data.v2.test.Singer", "my_bundle"))))),
               Collections.singletonList(
                   mapValue(mapElement(bytesValue("key"), bytesValue(singer.toByteArray())))));
       HashMap<ByteString, Singer> expectedMap = new HashMap<>();
@@ -280,7 +281,8 @@ public class AbstractProtoStructReaderTest {
                   "testField",
                   SqlType.mapOf(
                       SqlType.bytes(),
-                      SchemalessProto.create("com.google.cloud.bigtable.data.v2.test.Singer"))));
+                      SchemalessProto.create(
+                          "com.google.cloud.bigtable.data.v2.test.Singer", "my_bundle"))));
       assertThrows(
           UnsupportedOperationException.class,
           () ->
@@ -288,7 +290,8 @@ public class AbstractProtoStructReaderTest {
                   0,
                   SqlType.mapOf(
                       SqlType.bytes(),
-                      SchemalessProto.create("com.google.cloud.bigtable.data.v2.test.Singer"))));
+                      SchemalessProto.create(
+                          "com.google.cloud.bigtable.data.v2.test.Singer", "my_bundle"))));
       assertThrows(
           IllegalStateException.class,
           () ->
@@ -319,7 +322,8 @@ public class AbstractProtoStructReaderTest {
                           "testField",
                           mapType(
                               bytesType(),
-                              enumType("com.google.cloud.bigtable.data.v2.test.Genre"))))),
+                              enumType(
+                                  "com.google.cloud.bigtable.data.v2.test.Genre", "my_bundle"))))),
               Collections.singletonList(mapValue(mapElement(bytesValue("key"), int64Value(0)))));
       HashMap<ByteString, Genre> expectedMap = new HashMap<>();
       expectedMap.put(ByteString.copyFromUtf8("key"), Genre.POP);
@@ -340,7 +344,8 @@ public class AbstractProtoStructReaderTest {
                   "testField",
                   SqlType.mapOf(
                       SqlType.bytes(),
-                      SchemalessEnum.create("com.google.cloud.bigtable.data.v2.test.Genre"))));
+                      SchemalessEnum.create(
+                          "com.google.cloud.bigtable.data.v2.test.Genre", "my_bundle"))));
       assertThrows(
           UnsupportedOperationException.class,
           () ->
@@ -348,7 +353,8 @@ public class AbstractProtoStructReaderTest {
                   0,
                   SqlType.mapOf(
                       SqlType.bytes(),
-                      SchemalessEnum.create("com.google.cloud.bigtable.data.v2.test.Genre"))));
+                      SchemalessEnum.create(
+                          "com.google.cloud.bigtable.data.v2.test.Genre", "my_bundle"))));
       assertThrows(
           UnsupportedOperationException.class,
           () ->
@@ -356,7 +362,8 @@ public class AbstractProtoStructReaderTest {
                   "testField",
                   SqlType.mapOf(
                       SqlType.bytes(),
-                      SchemalessEnum.create("com.google.cloud.bigtable.data.v2.test.Genre"))));
+                      SchemalessEnum.create(
+                          "com.google.cloud.bigtable.data.v2.test.Genre", "my_bundle"))));
       assertThrows(
           UnsupportedOperationException.class,
           () ->
@@ -364,7 +371,8 @@ public class AbstractProtoStructReaderTest {
                   0,
                   SqlType.mapOf(
                       SqlType.bytes(),
-                      SchemalessEnum.create("com.google.cloud.bigtable.data.v2.test.Genre"))));
+                      SchemalessEnum.create(
+                          "com.google.cloud.bigtable.data.v2.test.Genre", "my_bundle"))));
       assertThrows(
           IllegalStateException.class,
           () -> structWithMap.getMap("testField", SqlType.mapOf(SqlType.bytes(), SqlType.bytes())));
@@ -481,8 +489,8 @@ public class AbstractProtoStructReaderTest {
                           structField("stringField", stringType()),
                           structField("intField", int64Type()),
                           structField("listField", arrayType(stringType())),
-                          structField("protoField", protoType("MyMessage")),
-                          structField("enumField", enumType("MyEnum"))))),
+                          structField("protoField", protoType("MyMessage", "my_bundle")),
+                          structField("enumField", enumType("MyEnum", "other_bundle"))))),
               Collections.singletonList(
                   arrayValue(
                       stringValue("test"),
@@ -501,8 +509,8 @@ public class AbstractProtoStructReaderTest {
                               structField("stringField", stringType()),
                               structField("intField", int64Type()),
                               structField("listField", arrayType(stringType())),
-                              structField("protoField", protoType("MyMessage")),
-                              structField("enumField", enumType("MyEnum")))),
+                              structField("protoField", protoType("MyMessage", "my_bundle")),
+                              structField("enumField", enumType("MyEnum", "other_bundle")))),
                   arrayValue(
                           stringValue("test"),
                           int64Value(100),
@@ -686,7 +694,8 @@ public class AbstractProtoStructReaderTest {
             {
               Collections.singletonList(
                   columnMetadata(
-                      "testField", protoType("com.google.cloud.bigtable.data.v2.test.Singer"))),
+                      "testField",
+                      protoType("com.google.cloud.bigtable.data.v2.test.Singer", "my_bundle"))),
               Collections.singletonList(
                   bytesValue(
                       Singer.newBuilder()
@@ -707,7 +716,9 @@ public class AbstractProtoStructReaderTest {
               Collections.singletonList(
                   columnMetadata(
                       "testField",
-                      arrayType(protoType("com.google.cloud.bigtable.data.v2.test.Singer")))),
+                      arrayType(
+                          protoType(
+                              "com.google.cloud.bigtable.data.v2.test.Singer", "my_bundle")))),
               Collections.singletonList(
                   arrayValue(
                       bytesValue(
@@ -743,7 +754,8 @@ public class AbstractProtoStructReaderTest {
                       "testField",
                       mapType(
                           bytesType(),
-                          protoType("com.google.cloud.bigtable.data.v2.test.Singer")))),
+                          protoType(
+                              "com.google.cloud.bigtable.data.v2.test.Singer", "my_bundle")))),
               Collections.singletonList(
                   mapValue(
                       mapElement(
@@ -791,7 +803,8 @@ public class AbstractProtoStructReaderTest {
             {
               Collections.singletonList(
                   columnMetadata(
-                      "testField", enumType("com.google.cloud.bigtable.data.v2.test.Genre"))),
+                      "testField",
+                      enumType("com.google.cloud.bigtable.data.v2.test.Genre", "my_bundle"))),
               Collections.singletonList(int64Value(1)),
               0,
               "testField",
@@ -806,7 +819,8 @@ public class AbstractProtoStructReaderTest {
               Collections.singletonList(
                   columnMetadata(
                       "testField",
-                      arrayType(enumType("com.google.cloud.bigtable.data.v2.test.Genre")))),
+                      arrayType(
+                          enumType("com.google.cloud.bigtable.data.v2.test.Genre", "my_bundle")))),
               Collections.singletonList(arrayValue(nullValue(), int64Value(2), int64Value(100))),
               0,
               "testField",
@@ -824,7 +838,8 @@ public class AbstractProtoStructReaderTest {
                   columnMetadata(
                       "testField",
                       mapType(
-                          bytesType(), enumType("com.google.cloud.bigtable.data.v2.test.Genre")))),
+                          bytesType(),
+                          enumType("com.google.cloud.bigtable.data.v2.test.Genre", "my_bundle")))),
               Collections.singletonList(
                   mapValue(
                       mapElement(bytesValue("foo"), int64Value(1)),

@@ -505,15 +505,18 @@ public interface Type {
   abstract class SchemalessProto implements SqlType.Proto {
 
     public static SchemalessProto fromProto(com.google.bigtable.v2.Type.Proto proto) {
-      return create(proto.getMessageName());
+      return create(proto.getMessageName(), proto.getSchemaBundleId());
     }
 
-    public static SchemalessProto create(java.lang.String messageName) {
-      return new AutoValue_Type_SchemalessProto(messageName);
+    public static SchemalessProto create(
+        java.lang.String messageName, java.lang.String schemaBundleId) {
+      return new AutoValue_Type_SchemalessProto(messageName, schemaBundleId);
     }
 
     @Override
     public abstract java.lang.String getMessageName();
+
+    public abstract java.lang.String schemaBundleId();
 
     @Override
     public Parser<AbstractMessage> getParserForType() {
@@ -529,7 +532,12 @@ public interface Type {
 
     @Override
     public java.lang.String toString() {
-      return getCode().name() + "{messageName=" + getMessageName() + "}";
+      return getCode().name()
+          + "{messageName="
+          + getMessageName()
+          + ", schemaBundleId="
+          + schemaBundleId()
+          + "}";
     }
   }
 
@@ -544,14 +552,17 @@ public interface Type {
   abstract class SchemalessEnum implements SqlType.Enum {
 
     public static SchemalessEnum fromProto(com.google.bigtable.v2.Type.Enum proto) {
-      return create(proto.getEnumName());
+      return create(proto.getEnumName(), proto.getSchemaBundleId());
     }
 
-    public static SchemalessEnum create(java.lang.String enumName) {
-      return new AutoValue_Type_SchemalessEnum(enumName);
+    public static SchemalessEnum create(
+        java.lang.String enumName, java.lang.String schemaBundleId) {
+      return new AutoValue_Type_SchemalessEnum(enumName, schemaBundleId);
     }
 
     public abstract java.lang.String getEnumName();
+
+    public abstract java.lang.String schemaBundleId();
 
     @Override
     public Function<Integer, ProtocolMessageEnum> getForNumber() {
@@ -567,7 +578,12 @@ public interface Type {
 
     @Override
     public java.lang.String toString() {
-      return getCode().name() + "{enumName=" + getEnumName() + "}";
+      return getCode().name()
+          + "{enumName="
+          + getEnumName()
+          + ", schemaBundleId="
+          + schemaBundleId()
+          + "}";
     }
   }
 

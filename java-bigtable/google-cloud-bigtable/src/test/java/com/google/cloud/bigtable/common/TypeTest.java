@@ -57,9 +57,10 @@ public class TypeTest {
     assertThat(Type.Timestamp.create().toString()).isEqualTo("TIMESTAMP");
     assertThat(Type.Date.create().toString()).isEqualTo("DATE");
     assertThat(Type.SchemalessStruct.create().toString()).isEqualTo("STRUCT");
-    assertThat(Type.SchemalessProto.create("MyMessage").toString())
-        .isEqualTo("PROTO{messageName=MyMessage}");
-    assertThat(Type.SchemalessEnum.create("MyEnum").toString()).isEqualTo("ENUM{enumName=MyEnum}");
+    assertThat(Type.SchemalessProto.create("MyMessage", "my_bundle").toString())
+        .isEqualTo("PROTO{messageName=MyMessage, schemaBundleId=my_bundle}");
+    assertThat(Type.SchemalessEnum.create("MyEnum", "other_bundle").toString())
+        .isEqualTo("ENUM{enumName=MyEnum, schemaBundleId=other_bundle}");
   }
 
   @Test
@@ -123,37 +124,48 @@ public class TypeTest {
 
   @Test
   public void proto_equals() {
-    assertThat(Type.SchemalessProto.create("MyMessage"))
-        .isEqualTo(Type.SchemalessProto.create("MyMessage"));
+    assertThat(Type.SchemalessProto.create("MyMessage", "my_bundle"))
+        .isEqualTo(Type.SchemalessProto.create("MyMessage", "my_bundle"));
     assertThat(Type.Proto.create(Singer.getDefaultInstance()))
         .isEqualTo(Type.Proto.create(Singer.getDefaultInstance()));
 
-    assertThat(Type.SchemalessProto.create("MyMessage"))
-        .isNotEqualTo(Type.SchemalessProto.create("AnotherMessage"));
+    assertThat(Type.SchemalessProto.create("MyMessage", "my_bundle"))
+        .isNotEqualTo(Type.SchemalessProto.create("AnotherMessage", "my_bundle"));
+    assertThat(Type.SchemalessProto.create("MyMessage", "my_bundle"))
+        .isNotEqualTo(Type.SchemalessProto.create("MyMessage", "another_bundle"));
     assertThat(Type.Proto.create(Singer.getDefaultInstance()))
         .isNotEqualTo(Type.Proto.create(Album.getDefaultInstance()));
 
-    assertThat(Type.SchemalessProto.create("com.google.cloud.bigtable.data.v2.test.Singer"))
+    assertThat(
+            Type.SchemalessProto.create(
+                "com.google.cloud.bigtable.data.v2.test.Singer", "my_bundle"))
         .isNotEqualTo(Type.Proto.create(Singer.getDefaultInstance()));
     assertThat(Type.Proto.create(Singer.getDefaultInstance()))
-        .isNotEqualTo(Type.SchemalessProto.create("com.google.cloud.bigtable.data.v2.test.Singer"));
+        .isNotEqualTo(
+            Type.SchemalessProto.create(
+                "com.google.cloud.bigtable.data.v2.test.Singer", "my_bundle"));
   }
 
   @Test
   public void enum_equals() {
-    assertThat(Type.SchemalessEnum.create("MyEnum"))
-        .isEqualTo(Type.SchemalessEnum.create("MyEnum"));
+    assertThat(Type.SchemalessEnum.create("MyEnum", "my_bundle"))
+        .isEqualTo(Type.SchemalessEnum.create("MyEnum", "my_bundle"));
     assertThat(Type.Enum.create(Genre::forNumber)).isEqualTo(Type.Enum.create(Genre::forNumber));
 
-    assertThat(Type.SchemalessEnum.create("MyEnum"))
-        .isNotEqualTo(Type.SchemalessEnum.create("AnotherEnum"));
+    assertThat(Type.SchemalessEnum.create("MyEnum", "my_bundle"))
+        .isNotEqualTo(Type.SchemalessEnum.create("AnotherEnum", "my_bundle"));
+    assertThat(Type.SchemalessEnum.create("MyEnum", "my_bundle"))
+        .isNotEqualTo(Type.SchemalessEnum.create("MyEnum", "another_bundle"));
     assertThat(Type.Enum.create(Genre::forNumber))
         .isNotEqualTo(Type.Enum.create(Format::forNumber));
 
-    assertThat(Type.SchemalessEnum.create("com.google.cloud.bigtable.data.v2.test.Genre"))
+    assertThat(
+            Type.SchemalessEnum.create("com.google.cloud.bigtable.data.v2.test.Genre", "my_bundle"))
         .isNotEqualTo(Type.Enum.create(Genre::forNumber));
     assertThat(Type.Enum.create(Genre::forNumber))
-        .isNotEqualTo(Type.SchemalessEnum.create("com.google.cloud.bigtable.data.v2.test.Genre"));
+        .isNotEqualTo(
+            Type.SchemalessEnum.create(
+                "com.google.cloud.bigtable.data.v2.test.Genre", "my_bundle"));
   }
 
   @Test
@@ -230,13 +242,13 @@ public class TypeTest {
 
   @Test
   public void schemalessProto_throwsExceptionOnGetParser() {
-    SchemalessProto proto = Type.SchemalessProto.create("MyMessage");
+    SchemalessProto proto = Type.SchemalessProto.create("MyMessage", "my_bundle");
     assertThrows(UnsupportedOperationException.class, proto::getParserForType);
   }
 
   @Test
   public void schemalessEnum_throwsExceptionOnGetForNumber() {
-    SchemalessEnum myEnum = Type.SchemalessEnum.create("MyEnum");
+    SchemalessEnum myEnum = Type.SchemalessEnum.create("MyEnum", "my_bundle");
     assertThrows(UnsupportedOperationException.class, myEnum::getForNumber);
   }
 

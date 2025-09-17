@@ -103,8 +103,10 @@ public class ResultSetImplTest {
             columnMetadata("struct", structType(structField("string", stringType()))),
             columnMetadata("list", arrayType(stringType())),
             columnMetadata("map", mapType(stringType(), stringType())),
-            columnMetadata("proto", protoType("com.google.cloud.bigtable.data.v2.test.Singer")),
-            columnMetadata("enum", enumType("com.google.cloud.bigtable.data.v2.test.Genre")));
+            columnMetadata(
+                "proto", protoType("com.google.cloud.bigtable.data.v2.test.Singer", "my_bundle")),
+            columnMetadata(
+                "enum", enumType("com.google.cloud.bigtable.data.v2.test.Genre", "other_bundle")));
     ResultSetMetadata metadata = ProtoResultSetMetadata.fromProto(protoMetadata);
     ResultSet resultSet =
         resultSetWithFakeStream(
