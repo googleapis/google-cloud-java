@@ -72,7 +72,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The width of the video in pixels. Must be an even integer.
-     * Valid range is [320, 1920].
+     * Valid range is [320, 4096].
      * </pre>
      *
      * <code>int32 width_pixels = 1;</code>
@@ -86,7 +86,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The height of the video in pixels. Must be an even integer.
-     * Valid range is [180, 1080].
+     * Valid range is [180, 2160].
      * </pre>
      *
      * <code>int32 height_pixels = 2;</code>
@@ -122,6 +122,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * - For SD resolution (&lt; 720p), must be &lt;= 3,000,000 (3 Mbps).
      * - For HD resolution (&lt;= 1080p), must be &lt;= 15,000,000 (15 Mbps).
+     * - For UHD resolution (&lt;= 2160p), must be &lt;= 25,000,000 (25 Mbps).
      * </pre>
      *
      * <code>int32 bitrate_bps = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -543,7 +544,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The width of the video in pixels. Must be an even integer.
-     * Valid range is [320, 1920].
+     * Valid range is [320, 4096].
      * </pre>
      *
      * <code>int32 width_pixels = 1;</code>
@@ -563,7 +564,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Required. The height of the video in pixels. Must be an even integer.
-     * Valid range is [180, 1080].
+     * Valid range is [180, 2160].
      * </pre>
      *
      * <code>int32 height_pixels = 2;</code>
@@ -611,6 +612,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
      *
      * - For SD resolution (&lt; 720p), must be &lt;= 3,000,000 (3 Mbps).
      * - For HD resolution (&lt;= 1080p), must be &lt;= 15,000,000 (15 Mbps).
+     * - For UHD resolution (&lt;= 2160p), must be &lt;= 25,000,000 (25 Mbps).
      * </pre>
      *
      * <code>int32 bitrate_bps = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -1807,7 +1809,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The width of the video in pixels. Must be an even integer.
-       * Valid range is [320, 1920].
+       * Valid range is [320, 4096].
        * </pre>
        *
        * <code>int32 width_pixels = 1;</code>
@@ -1824,7 +1826,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The width of the video in pixels. Must be an even integer.
-       * Valid range is [320, 1920].
+       * Valid range is [320, 4096].
        * </pre>
        *
        * <code>int32 width_pixels = 1;</code>
@@ -1845,7 +1847,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The width of the video in pixels. Must be an even integer.
-       * Valid range is [320, 1920].
+       * Valid range is [320, 4096].
        * </pre>
        *
        * <code>int32 width_pixels = 1;</code>
@@ -1866,7 +1868,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The height of the video in pixels. Must be an even integer.
-       * Valid range is [180, 1080].
+       * Valid range is [180, 2160].
        * </pre>
        *
        * <code>int32 height_pixels = 2;</code>
@@ -1883,7 +1885,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The height of the video in pixels. Must be an even integer.
-       * Valid range is [180, 1080].
+       * Valid range is [180, 2160].
        * </pre>
        *
        * <code>int32 height_pixels = 2;</code>
@@ -1904,7 +1906,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Required. The height of the video in pixels. Must be an even integer.
-       * Valid range is [180, 1080].
+       * Valid range is [180, 2160].
        * </pre>
        *
        * <code>int32 height_pixels = 2;</code>
@@ -2002,6 +2004,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * - For SD resolution (&lt; 720p), must be &lt;= 3,000,000 (3 Mbps).
        * - For HD resolution (&lt;= 1080p), must be &lt;= 15,000,000 (15 Mbps).
+       * - For UHD resolution (&lt;= 2160p), must be &lt;= 25,000,000 (25 Mbps).
        * </pre>
        *
        * <code>int32 bitrate_bps = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2021,6 +2024,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * - For SD resolution (&lt; 720p), must be &lt;= 3,000,000 (3 Mbps).
        * - For HD resolution (&lt;= 1080p), must be &lt;= 15,000,000 (15 Mbps).
+       * - For UHD resolution (&lt;= 2160p), must be &lt;= 25,000,000 (25 Mbps).
        * </pre>
        *
        * <code>int32 bitrate_bps = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2044,6 +2048,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
        *
        * - For SD resolution (&lt; 720p), must be &lt;= 3,000,000 (3 Mbps).
        * - For HD resolution (&lt;= 1080p), must be &lt;= 15,000,000 (15 Mbps).
+       * - For UHD resolution (&lt;= 2160p), must be &lt;= 25,000,000 (25 Mbps).
        * </pre>
        *
        * <code>int32 bitrate_bps = 4 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -3306,6 +3311,2327 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface H265CodecSettingsOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.video.livestream.v1.VideoStream.H265CodecSettings)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The width of the video in pixels. Must be an even integer.
+     * When not specified, the width is adjusted to match the specified height
+     * and input aspect ratio. If both are omitted, the input width is used.
+     * Valid range is [320, 4096].
+     * </pre>
+     *
+     * <code>int32 width_pixels = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The widthPixels.
+     */
+    int getWidthPixels();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The height of the video in pixels. Must be an even integer.
+     * When not specified, the height is adjusted to match the specified width
+     * and input aspect ratio. If both are omitted, the input height is used.
+     * Valid range is [180, 2160].
+     * </pre>
+     *
+     * <code>int32 height_pixels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The heightPixels.
+     */
+    int getHeightPixels();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The target video frame rate in frames per second (FPS). Must be
+     * less than or equal to 120. Will default to the input frame rate if larger
+     * than the input frame rate. The API will generate an output FPS that is
+     * divisible by the input FPS, and smaller or equal to the target FPS. See
+     * [Calculating frame
+     * rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for
+     * more information.
+     * </pre>
+     *
+     * <code>double frame_rate = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The frameRate.
+     */
+    double getFrameRate();
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The video bitrate in bits per second. Minimum value is 10,000.
+     *
+     * - For SD resolution (&lt; 720p), must be &lt;= 3,000,000 (3 Mbps).
+     * - For HD resolution (&lt;= 1080p), must be &lt;= 15,000,000 (15 Mbps).
+     * - For UHD resolution (&lt;= 2160p), must be &lt;= 25,000,000 (25 Mbps).
+     * </pre>
+     *
+     * <code>int32 bitrate_bps = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bitrateBps.
+     */
+    int getBitrateBps();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Select the GOP size based on the specified frame count.
+     * If GOP frame count is set instead of GOP duration, GOP duration will be
+     * calculated by `gopFrameCount`/`frameRate`. The calculated GOP duration
+     * must satisfy the limitations on `gopDuration` as well.
+     * Valid range is [60, 600].
+     * </pre>
+     *
+     * <code>int32 gop_frame_count = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the gopFrameCount field is set.
+     */
+    boolean hasGopFrameCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Select the GOP size based on the specified frame count.
+     * If GOP frame count is set instead of GOP duration, GOP duration will be
+     * calculated by `gopFrameCount`/`frameRate`. The calculated GOP duration
+     * must satisfy the limitations on `gopDuration` as well.
+     * Valid range is [60, 600].
+     * </pre>
+     *
+     * <code>int32 gop_frame_count = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The gopFrameCount.
+     */
+    int getGopFrameCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Select the GOP size based on the specified duration. The
+     * default is `2s`. Note that `gopDuration` must be less than or equal to
+     * [segment_duration][google.cloud.video.livestream.v1.SegmentSettings.segment_duration],
+     * and
+     * [segment_duration][google.cloud.video.livestream.v1.SegmentSettings.segment_duration]
+     * must be divisible by `gopDuration`. Valid range is [2s, 20s].
+     *
+     * All video streams in the same channel must have the same GOP size.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration gop_duration = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the gopDuration field is set.
+     */
+    boolean hasGopDuration();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Select the GOP size based on the specified duration. The
+     * default is `2s`. Note that `gopDuration` must be less than or equal to
+     * [segment_duration][google.cloud.video.livestream.v1.SegmentSettings.segment_duration],
+     * and
+     * [segment_duration][google.cloud.video.livestream.v1.SegmentSettings.segment_duration]
+     * must be divisible by `gopDuration`. Valid range is [2s, 20s].
+     *
+     * All video streams in the same channel must have the same GOP size.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration gop_duration = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The gopDuration.
+     */
+    com.google.protobuf.Duration getGopDuration();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Select the GOP size based on the specified duration. The
+     * default is `2s`. Note that `gopDuration` must be less than or equal to
+     * [segment_duration][google.cloud.video.livestream.v1.SegmentSettings.segment_duration],
+     * and
+     * [segment_duration][google.cloud.video.livestream.v1.SegmentSettings.segment_duration]
+     * must be divisible by `gopDuration`. Valid range is [2s, 20s].
+     *
+     * All video streams in the same channel must have the same GOP size.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration gop_duration = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    com.google.protobuf.DurationOrBuilder getGopDurationOrBuilder();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Size of the Video Buffering Verifier (VBV) buffer in bits. Must
+     * be greater than zero. The default is equal to
+     * [bitrate_bps][google.cloud.video.livestream.v1.VideoStream.H265CodecSettings.bitrate_bps].
+     * </pre>
+     *
+     * <code>int32 vbv_size_bits = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The vbvSizeBits.
+     */
+    int getVbvSizeBits();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Initial fullness of the Video Buffering Verifier (VBV) buffer
+     * in bits. Must be greater than zero. The default is equal to 90% of
+     * [vbv_size_bits][google.cloud.video.livestream.v1.VideoStream.H265CodecSettings.vbv_size_bits].
+     * </pre>
+     *
+     * <code>int32 vbv_fullness_bits = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The vbvFullnessBits.
+     */
+    int getVbvFullnessBits();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Allow B-pyramid for reference frame selection. This may not be
+     * supported on all decoders. The default is `false`.
+     * </pre>
+     *
+     * <code>bool b_pyramid = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bPyramid.
+     */
+    boolean getBPyramid();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The number of consecutive B-frames. Must be greater than or
+     * equal to zero. Must be less than
+     * [gop_frame_count][google.cloud.video.livestream.v1.VideoStream.H265CodecSettings.gop_frame_count]
+     * if set. The default is 0.
+     * </pre>
+     *
+     * <code>int32 b_frame_count = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bFrameCount.
+     */
+    int getBFrameCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specify the intensity of the adaptive quantizer (AQ). Must be
+     * between 0 and 1, where 0 disables the quantizer and 1 maximizes the
+     * quantizer. A higher value equals a lower bitrate but smoother image. The
+     * default is 0.
+     * </pre>
+     *
+     * <code>double aq_strength = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The aqStrength.
+     */
+    double getAqStrength();
+
+    com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings.GopModeCase getGopModeCase();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * H265 codec settings.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.video.livestream.v1.VideoStream.H265CodecSettings}
+   */
+  public static final class H265CodecSettings extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.video.livestream.v1.VideoStream.H265CodecSettings)
+      H265CodecSettingsOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use H265CodecSettings.newBuilder() to construct.
+    private H265CodecSettings(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private H265CodecSettings() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new H265CodecSettings();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.video.livestream.v1.OutputsProto
+          .internal_static_google_cloud_video_livestream_v1_VideoStream_H265CodecSettings_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.video.livestream.v1.OutputsProto
+          .internal_static_google_cloud_video_livestream_v1_VideoStream_H265CodecSettings_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings.class,
+              com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings.Builder.class);
+    }
+
+    private int gopModeCase_ = 0;
+
+    @SuppressWarnings("serial")
+    private java.lang.Object gopMode_;
+
+    public enum GopModeCase
+        implements
+            com.google.protobuf.Internal.EnumLite,
+            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
+      GOP_FRAME_COUNT(7),
+      GOP_DURATION(8),
+      GOPMODE_NOT_SET(0);
+      private final int value;
+
+      private GopModeCase(int value) {
+        this.value = value;
+      }
+
+      /**
+       * @param value The number of the enum to look for.
+       * @return The enum associated with the given number.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static GopModeCase valueOf(int value) {
+        return forNumber(value);
+      }
+
+      public static GopModeCase forNumber(int value) {
+        switch (value) {
+          case 7:
+            return GOP_FRAME_COUNT;
+          case 8:
+            return GOP_DURATION;
+          case 0:
+            return GOPMODE_NOT_SET;
+          default:
+            return null;
+        }
+      }
+
+      public int getNumber() {
+        return this.value;
+      }
+    };
+
+    public GopModeCase getGopModeCase() {
+      return GopModeCase.forNumber(gopModeCase_);
+    }
+
+    public static final int WIDTH_PIXELS_FIELD_NUMBER = 1;
+    private int widthPixels_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The width of the video in pixels. Must be an even integer.
+     * When not specified, the width is adjusted to match the specified height
+     * and input aspect ratio. If both are omitted, the input width is used.
+     * Valid range is [320, 4096].
+     * </pre>
+     *
+     * <code>int32 width_pixels = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The widthPixels.
+     */
+    @java.lang.Override
+    public int getWidthPixels() {
+      return widthPixels_;
+    }
+
+    public static final int HEIGHT_PIXELS_FIELD_NUMBER = 2;
+    private int heightPixels_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The height of the video in pixels. Must be an even integer.
+     * When not specified, the height is adjusted to match the specified width
+     * and input aspect ratio. If both are omitted, the input height is used.
+     * Valid range is [180, 2160].
+     * </pre>
+     *
+     * <code>int32 height_pixels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The heightPixels.
+     */
+    @java.lang.Override
+    public int getHeightPixels() {
+      return heightPixels_;
+    }
+
+    public static final int FRAME_RATE_FIELD_NUMBER = 3;
+    private double frameRate_ = 0D;
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The target video frame rate in frames per second (FPS). Must be
+     * less than or equal to 120. Will default to the input frame rate if larger
+     * than the input frame rate. The API will generate an output FPS that is
+     * divisible by the input FPS, and smaller or equal to the target FPS. See
+     * [Calculating frame
+     * rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for
+     * more information.
+     * </pre>
+     *
+     * <code>double frame_rate = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The frameRate.
+     */
+    @java.lang.Override
+    public double getFrameRate() {
+      return frameRate_;
+    }
+
+    public static final int BITRATE_BPS_FIELD_NUMBER = 4;
+    private int bitrateBps_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Required. The video bitrate in bits per second. Minimum value is 10,000.
+     *
+     * - For SD resolution (&lt; 720p), must be &lt;= 3,000,000 (3 Mbps).
+     * - For HD resolution (&lt;= 1080p), must be &lt;= 15,000,000 (15 Mbps).
+     * - For UHD resolution (&lt;= 2160p), must be &lt;= 25,000,000 (25 Mbps).
+     * </pre>
+     *
+     * <code>int32 bitrate_bps = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+     *
+     * @return The bitrateBps.
+     */
+    @java.lang.Override
+    public int getBitrateBps() {
+      return bitrateBps_;
+    }
+
+    public static final int GOP_FRAME_COUNT_FIELD_NUMBER = 7;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Select the GOP size based on the specified frame count.
+     * If GOP frame count is set instead of GOP duration, GOP duration will be
+     * calculated by `gopFrameCount`/`frameRate`. The calculated GOP duration
+     * must satisfy the limitations on `gopDuration` as well.
+     * Valid range is [60, 600].
+     * </pre>
+     *
+     * <code>int32 gop_frame_count = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return Whether the gopFrameCount field is set.
+     */
+    @java.lang.Override
+    public boolean hasGopFrameCount() {
+      return gopModeCase_ == 7;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Select the GOP size based on the specified frame count.
+     * If GOP frame count is set instead of GOP duration, GOP duration will be
+     * calculated by `gopFrameCount`/`frameRate`. The calculated GOP duration
+     * must satisfy the limitations on `gopDuration` as well.
+     * Valid range is [60, 600].
+     * </pre>
+     *
+     * <code>int32 gop_frame_count = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The gopFrameCount.
+     */
+    @java.lang.Override
+    public int getGopFrameCount() {
+      if (gopModeCase_ == 7) {
+        return (java.lang.Integer) gopMode_;
+      }
+      return 0;
+    }
+
+    public static final int GOP_DURATION_FIELD_NUMBER = 8;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Select the GOP size based on the specified duration. The
+     * default is `2s`. Note that `gopDuration` must be less than or equal to
+     * [segment_duration][google.cloud.video.livestream.v1.SegmentSettings.segment_duration],
+     * and
+     * [segment_duration][google.cloud.video.livestream.v1.SegmentSettings.segment_duration]
+     * must be divisible by `gopDuration`. Valid range is [2s, 20s].
+     *
+     * All video streams in the same channel must have the same GOP size.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration gop_duration = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the gopDuration field is set.
+     */
+    @java.lang.Override
+    public boolean hasGopDuration() {
+      return gopModeCase_ == 8;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Select the GOP size based on the specified duration. The
+     * default is `2s`. Note that `gopDuration` must be less than or equal to
+     * [segment_duration][google.cloud.video.livestream.v1.SegmentSettings.segment_duration],
+     * and
+     * [segment_duration][google.cloud.video.livestream.v1.SegmentSettings.segment_duration]
+     * must be divisible by `gopDuration`. Valid range is [2s, 20s].
+     *
+     * All video streams in the same channel must have the same GOP size.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration gop_duration = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The gopDuration.
+     */
+    @java.lang.Override
+    public com.google.protobuf.Duration getGopDuration() {
+      if (gopModeCase_ == 8) {
+        return (com.google.protobuf.Duration) gopMode_;
+      }
+      return com.google.protobuf.Duration.getDefaultInstance();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Select the GOP size based on the specified duration. The
+     * default is `2s`. Note that `gopDuration` must be less than or equal to
+     * [segment_duration][google.cloud.video.livestream.v1.SegmentSettings.segment_duration],
+     * and
+     * [segment_duration][google.cloud.video.livestream.v1.SegmentSettings.segment_duration]
+     * must be divisible by `gopDuration`. Valid range is [2s, 20s].
+     *
+     * All video streams in the same channel must have the same GOP size.
+     * </pre>
+     *
+     * <code>.google.protobuf.Duration gop_duration = 8 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.protobuf.DurationOrBuilder getGopDurationOrBuilder() {
+      if (gopModeCase_ == 8) {
+        return (com.google.protobuf.Duration) gopMode_;
+      }
+      return com.google.protobuf.Duration.getDefaultInstance();
+    }
+
+    public static final int VBV_SIZE_BITS_FIELD_NUMBER = 9;
+    private int vbvSizeBits_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Size of the Video Buffering Verifier (VBV) buffer in bits. Must
+     * be greater than zero. The default is equal to
+     * [bitrate_bps][google.cloud.video.livestream.v1.VideoStream.H265CodecSettings.bitrate_bps].
+     * </pre>
+     *
+     * <code>int32 vbv_size_bits = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The vbvSizeBits.
+     */
+    @java.lang.Override
+    public int getVbvSizeBits() {
+      return vbvSizeBits_;
+    }
+
+    public static final int VBV_FULLNESS_BITS_FIELD_NUMBER = 10;
+    private int vbvFullnessBits_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Initial fullness of the Video Buffering Verifier (VBV) buffer
+     * in bits. Must be greater than zero. The default is equal to 90% of
+     * [vbv_size_bits][google.cloud.video.livestream.v1.VideoStream.H265CodecSettings.vbv_size_bits].
+     * </pre>
+     *
+     * <code>int32 vbv_fullness_bits = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The vbvFullnessBits.
+     */
+    @java.lang.Override
+    public int getVbvFullnessBits() {
+      return vbvFullnessBits_;
+    }
+
+    public static final int B_PYRAMID_FIELD_NUMBER = 11;
+    private boolean bPyramid_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Allow B-pyramid for reference frame selection. This may not be
+     * supported on all decoders. The default is `false`.
+     * </pre>
+     *
+     * <code>bool b_pyramid = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bPyramid.
+     */
+    @java.lang.Override
+    public boolean getBPyramid() {
+      return bPyramid_;
+    }
+
+    public static final int B_FRAME_COUNT_FIELD_NUMBER = 12;
+    private int bFrameCount_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The number of consecutive B-frames. Must be greater than or
+     * equal to zero. Must be less than
+     * [gop_frame_count][google.cloud.video.livestream.v1.VideoStream.H265CodecSettings.gop_frame_count]
+     * if set. The default is 0.
+     * </pre>
+     *
+     * <code>int32 b_frame_count = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bFrameCount.
+     */
+    @java.lang.Override
+    public int getBFrameCount() {
+      return bFrameCount_;
+    }
+
+    public static final int AQ_STRENGTH_FIELD_NUMBER = 13;
+    private double aqStrength_ = 0D;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Specify the intensity of the adaptive quantizer (AQ). Must be
+     * between 0 and 1, where 0 disables the quantizer and 1 maximizes the
+     * quantizer. A higher value equals a lower bitrate but smoother image. The
+     * default is 0.
+     * </pre>
+     *
+     * <code>double aq_strength = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The aqStrength.
+     */
+    @java.lang.Override
+    public double getAqStrength() {
+      return aqStrength_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (widthPixels_ != 0) {
+        output.writeInt32(1, widthPixels_);
+      }
+      if (heightPixels_ != 0) {
+        output.writeInt32(2, heightPixels_);
+      }
+      if (java.lang.Double.doubleToRawLongBits(frameRate_) != 0) {
+        output.writeDouble(3, frameRate_);
+      }
+      if (bitrateBps_ != 0) {
+        output.writeInt32(4, bitrateBps_);
+      }
+      if (gopModeCase_ == 7) {
+        output.writeInt32(7, (int) ((java.lang.Integer) gopMode_));
+      }
+      if (gopModeCase_ == 8) {
+        output.writeMessage(8, (com.google.protobuf.Duration) gopMode_);
+      }
+      if (vbvSizeBits_ != 0) {
+        output.writeInt32(9, vbvSizeBits_);
+      }
+      if (vbvFullnessBits_ != 0) {
+        output.writeInt32(10, vbvFullnessBits_);
+      }
+      if (bPyramid_ != false) {
+        output.writeBool(11, bPyramid_);
+      }
+      if (bFrameCount_ != 0) {
+        output.writeInt32(12, bFrameCount_);
+      }
+      if (java.lang.Double.doubleToRawLongBits(aqStrength_) != 0) {
+        output.writeDouble(13, aqStrength_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (widthPixels_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, widthPixels_);
+      }
+      if (heightPixels_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, heightPixels_);
+      }
+      if (java.lang.Double.doubleToRawLongBits(frameRate_) != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeDoubleSize(3, frameRate_);
+      }
+      if (bitrateBps_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(4, bitrateBps_);
+      }
+      if (gopModeCase_ == 7) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeInt32Size(
+                7, (int) ((java.lang.Integer) gopMode_));
+      }
+      if (gopModeCase_ == 8) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                8, (com.google.protobuf.Duration) gopMode_);
+      }
+      if (vbvSizeBits_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(9, vbvSizeBits_);
+      }
+      if (vbvFullnessBits_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(10, vbvFullnessBits_);
+      }
+      if (bPyramid_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(11, bPyramid_);
+      }
+      if (bFrameCount_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(12, bFrameCount_);
+      }
+      if (java.lang.Double.doubleToRawLongBits(aqStrength_) != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeDoubleSize(13, aqStrength_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings other =
+          (com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings) obj;
+
+      if (getWidthPixels() != other.getWidthPixels()) return false;
+      if (getHeightPixels() != other.getHeightPixels()) return false;
+      if (java.lang.Double.doubleToLongBits(getFrameRate())
+          != java.lang.Double.doubleToLongBits(other.getFrameRate())) return false;
+      if (getBitrateBps() != other.getBitrateBps()) return false;
+      if (getVbvSizeBits() != other.getVbvSizeBits()) return false;
+      if (getVbvFullnessBits() != other.getVbvFullnessBits()) return false;
+      if (getBPyramid() != other.getBPyramid()) return false;
+      if (getBFrameCount() != other.getBFrameCount()) return false;
+      if (java.lang.Double.doubleToLongBits(getAqStrength())
+          != java.lang.Double.doubleToLongBits(other.getAqStrength())) return false;
+      if (!getGopModeCase().equals(other.getGopModeCase())) return false;
+      switch (gopModeCase_) {
+        case 7:
+          if (getGopFrameCount() != other.getGopFrameCount()) return false;
+          break;
+        case 8:
+          if (!getGopDuration().equals(other.getGopDuration())) return false;
+          break;
+        case 0:
+        default:
+      }
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + WIDTH_PIXELS_FIELD_NUMBER;
+      hash = (53 * hash) + getWidthPixels();
+      hash = (37 * hash) + HEIGHT_PIXELS_FIELD_NUMBER;
+      hash = (53 * hash) + getHeightPixels();
+      hash = (37 * hash) + FRAME_RATE_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getFrameRate()));
+      hash = (37 * hash) + BITRATE_BPS_FIELD_NUMBER;
+      hash = (53 * hash) + getBitrateBps();
+      hash = (37 * hash) + VBV_SIZE_BITS_FIELD_NUMBER;
+      hash = (53 * hash) + getVbvSizeBits();
+      hash = (37 * hash) + VBV_FULLNESS_BITS_FIELD_NUMBER;
+      hash = (53 * hash) + getVbvFullnessBits();
+      hash = (37 * hash) + B_PYRAMID_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getBPyramid());
+      hash = (37 * hash) + B_FRAME_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getBFrameCount();
+      hash = (37 * hash) + AQ_STRENGTH_FIELD_NUMBER;
+      hash =
+          (53 * hash)
+              + com.google.protobuf.Internal.hashLong(
+                  java.lang.Double.doubleToLongBits(getAqStrength()));
+      switch (gopModeCase_) {
+        case 7:
+          hash = (37 * hash) + GOP_FRAME_COUNT_FIELD_NUMBER;
+          hash = (53 * hash) + getGopFrameCount();
+          break;
+        case 8:
+          hash = (37 * hash) + GOP_DURATION_FIELD_NUMBER;
+          hash = (53 * hash) + getGopDuration().hashCode();
+          break;
+        case 0:
+        default:
+      }
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * H265 codec settings.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.video.livestream.v1.VideoStream.H265CodecSettings}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.video.livestream.v1.VideoStream.H265CodecSettings)
+        com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettingsOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.video.livestream.v1.OutputsProto
+            .internal_static_google_cloud_video_livestream_v1_VideoStream_H265CodecSettings_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.video.livestream.v1.OutputsProto
+            .internal_static_google_cloud_video_livestream_v1_VideoStream_H265CodecSettings_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings.class,
+                com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings.Builder.class);
+      }
+
+      // Construct using
+      // com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        widthPixels_ = 0;
+        heightPixels_ = 0;
+        frameRate_ = 0D;
+        bitrateBps_ = 0;
+        if (gopDurationBuilder_ != null) {
+          gopDurationBuilder_.clear();
+        }
+        vbvSizeBits_ = 0;
+        vbvFullnessBits_ = 0;
+        bPyramid_ = false;
+        bFrameCount_ = 0;
+        aqStrength_ = 0D;
+        gopModeCase_ = 0;
+        gopMode_ = null;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.video.livestream.v1.OutputsProto
+            .internal_static_google_cloud_video_livestream_v1_VideoStream_H265CodecSettings_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings
+          getDefaultInstanceForType() {
+        return com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings
+            .getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings build() {
+        com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings buildPartial() {
+        com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings result =
+            new com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        buildPartialOneofs(result);
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.widthPixels_ = widthPixels_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.heightPixels_ = heightPixels_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.frameRate_ = frameRate_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.bitrateBps_ = bitrateBps_;
+        }
+        if (((from_bitField0_ & 0x00000040) != 0)) {
+          result.vbvSizeBits_ = vbvSizeBits_;
+        }
+        if (((from_bitField0_ & 0x00000080) != 0)) {
+          result.vbvFullnessBits_ = vbvFullnessBits_;
+        }
+        if (((from_bitField0_ & 0x00000100) != 0)) {
+          result.bPyramid_ = bPyramid_;
+        }
+        if (((from_bitField0_ & 0x00000200) != 0)) {
+          result.bFrameCount_ = bFrameCount_;
+        }
+        if (((from_bitField0_ & 0x00000400) != 0)) {
+          result.aqStrength_ = aqStrength_;
+        }
+      }
+
+      private void buildPartialOneofs(
+          com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings result) {
+        result.gopModeCase_ = gopModeCase_;
+        result.gopMode_ = this.gopMode_;
+        if (gopModeCase_ == 8 && gopDurationBuilder_ != null) {
+          result.gopMode_ = gopDurationBuilder_.build();
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings) {
+          return mergeFrom(
+              (com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(
+          com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings other) {
+        if (other
+            == com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings
+                .getDefaultInstance()) return this;
+        if (other.getWidthPixels() != 0) {
+          setWidthPixels(other.getWidthPixels());
+        }
+        if (other.getHeightPixels() != 0) {
+          setHeightPixels(other.getHeightPixels());
+        }
+        if (other.getFrameRate() != 0D) {
+          setFrameRate(other.getFrameRate());
+        }
+        if (other.getBitrateBps() != 0) {
+          setBitrateBps(other.getBitrateBps());
+        }
+        if (other.getVbvSizeBits() != 0) {
+          setVbvSizeBits(other.getVbvSizeBits());
+        }
+        if (other.getVbvFullnessBits() != 0) {
+          setVbvFullnessBits(other.getVbvFullnessBits());
+        }
+        if (other.getBPyramid() != false) {
+          setBPyramid(other.getBPyramid());
+        }
+        if (other.getBFrameCount() != 0) {
+          setBFrameCount(other.getBFrameCount());
+        }
+        if (other.getAqStrength() != 0D) {
+          setAqStrength(other.getAqStrength());
+        }
+        switch (other.getGopModeCase()) {
+          case GOP_FRAME_COUNT:
+            {
+              setGopFrameCount(other.getGopFrameCount());
+              break;
+            }
+          case GOP_DURATION:
+            {
+              mergeGopDuration(other.getGopDuration());
+              break;
+            }
+          case GOPMODE_NOT_SET:
+            {
+              break;
+            }
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 8:
+                {
+                  widthPixels_ = input.readInt32();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 8
+              case 16:
+                {
+                  heightPixels_ = input.readInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              case 25:
+                {
+                  frameRate_ = input.readDouble();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 25
+              case 32:
+                {
+                  bitrateBps_ = input.readInt32();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 32
+              case 56:
+                {
+                  gopMode_ = input.readInt32();
+                  gopModeCase_ = 7;
+                  break;
+                } // case 56
+              case 66:
+                {
+                  input.readMessage(getGopDurationFieldBuilder().getBuilder(), extensionRegistry);
+                  gopModeCase_ = 8;
+                  break;
+                } // case 66
+              case 72:
+                {
+                  vbvSizeBits_ = input.readInt32();
+                  bitField0_ |= 0x00000040;
+                  break;
+                } // case 72
+              case 80:
+                {
+                  vbvFullnessBits_ = input.readInt32();
+                  bitField0_ |= 0x00000080;
+                  break;
+                } // case 80
+              case 88:
+                {
+                  bPyramid_ = input.readBool();
+                  bitField0_ |= 0x00000100;
+                  break;
+                } // case 88
+              case 96:
+                {
+                  bFrameCount_ = input.readInt32();
+                  bitField0_ |= 0x00000200;
+                  break;
+                } // case 96
+              case 105:
+                {
+                  aqStrength_ = input.readDouble();
+                  bitField0_ |= 0x00000400;
+                  break;
+                } // case 105
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int gopModeCase_ = 0;
+      private java.lang.Object gopMode_;
+
+      public GopModeCase getGopModeCase() {
+        return GopModeCase.forNumber(gopModeCase_);
+      }
+
+      public Builder clearGopMode() {
+        gopModeCase_ = 0;
+        gopMode_ = null;
+        onChanged();
+        return this;
+      }
+
+      private int bitField0_;
+
+      private int widthPixels_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The width of the video in pixels. Must be an even integer.
+       * When not specified, the width is adjusted to match the specified height
+       * and input aspect ratio. If both are omitted, the input width is used.
+       * Valid range is [320, 4096].
+       * </pre>
+       *
+       * <code>int32 width_pixels = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The widthPixels.
+       */
+      @java.lang.Override
+      public int getWidthPixels() {
+        return widthPixels_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The width of the video in pixels. Must be an even integer.
+       * When not specified, the width is adjusted to match the specified height
+       * and input aspect ratio. If both are omitted, the input width is used.
+       * Valid range is [320, 4096].
+       * </pre>
+       *
+       * <code>int32 width_pixels = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The widthPixels to set.
+       * @return This builder for chaining.
+       */
+      public Builder setWidthPixels(int value) {
+
+        widthPixels_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The width of the video in pixels. Must be an even integer.
+       * When not specified, the width is adjusted to match the specified height
+       * and input aspect ratio. If both are omitted, the input width is used.
+       * Valid range is [320, 4096].
+       * </pre>
+       *
+       * <code>int32 width_pixels = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearWidthPixels() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        widthPixels_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int heightPixels_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The height of the video in pixels. Must be an even integer.
+       * When not specified, the height is adjusted to match the specified width
+       * and input aspect ratio. If both are omitted, the input height is used.
+       * Valid range is [180, 2160].
+       * </pre>
+       *
+       * <code>int32 height_pixels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The heightPixels.
+       */
+      @java.lang.Override
+      public int getHeightPixels() {
+        return heightPixels_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The height of the video in pixels. Must be an even integer.
+       * When not specified, the height is adjusted to match the specified width
+       * and input aspect ratio. If both are omitted, the input height is used.
+       * Valid range is [180, 2160].
+       * </pre>
+       *
+       * <code>int32 height_pixels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The heightPixels to set.
+       * @return This builder for chaining.
+       */
+      public Builder setHeightPixels(int value) {
+
+        heightPixels_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The height of the video in pixels. Must be an even integer.
+       * When not specified, the height is adjusted to match the specified width
+       * and input aspect ratio. If both are omitted, the input height is used.
+       * Valid range is [180, 2160].
+       * </pre>
+       *
+       * <code>int32 height_pixels = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearHeightPixels() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        heightPixels_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private double frameRate_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The target video frame rate in frames per second (FPS). Must be
+       * less than or equal to 120. Will default to the input frame rate if larger
+       * than the input frame rate. The API will generate an output FPS that is
+       * divisible by the input FPS, and smaller or equal to the target FPS. See
+       * [Calculating frame
+       * rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for
+       * more information.
+       * </pre>
+       *
+       * <code>double frame_rate = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The frameRate.
+       */
+      @java.lang.Override
+      public double getFrameRate() {
+        return frameRate_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The target video frame rate in frames per second (FPS). Must be
+       * less than or equal to 120. Will default to the input frame rate if larger
+       * than the input frame rate. The API will generate an output FPS that is
+       * divisible by the input FPS, and smaller or equal to the target FPS. See
+       * [Calculating frame
+       * rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for
+       * more information.
+       * </pre>
+       *
+       * <code>double frame_rate = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The frameRate to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFrameRate(double value) {
+
+        frameRate_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The target video frame rate in frames per second (FPS). Must be
+       * less than or equal to 120. Will default to the input frame rate if larger
+       * than the input frame rate. The API will generate an output FPS that is
+       * divisible by the input FPS, and smaller or equal to the target FPS. See
+       * [Calculating frame
+       * rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for
+       * more information.
+       * </pre>
+       *
+       * <code>double frame_rate = 3 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFrameRate() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        frameRate_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private int bitrateBps_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The video bitrate in bits per second. Minimum value is 10,000.
+       *
+       * - For SD resolution (&lt; 720p), must be &lt;= 3,000,000 (3 Mbps).
+       * - For HD resolution (&lt;= 1080p), must be &lt;= 15,000,000 (15 Mbps).
+       * - For UHD resolution (&lt;= 2160p), must be &lt;= 25,000,000 (25 Mbps).
+       * </pre>
+       *
+       * <code>int32 bitrate_bps = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return The bitrateBps.
+       */
+      @java.lang.Override
+      public int getBitrateBps() {
+        return bitrateBps_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The video bitrate in bits per second. Minimum value is 10,000.
+       *
+       * - For SD resolution (&lt; 720p), must be &lt;= 3,000,000 (3 Mbps).
+       * - For HD resolution (&lt;= 1080p), must be &lt;= 15,000,000 (15 Mbps).
+       * - For UHD resolution (&lt;= 2160p), must be &lt;= 25,000,000 (25 Mbps).
+       * </pre>
+       *
+       * <code>int32 bitrate_bps = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @param value The bitrateBps to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBitrateBps(int value) {
+
+        bitrateBps_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Required. The video bitrate in bits per second. Minimum value is 10,000.
+       *
+       * - For SD resolution (&lt; 720p), must be &lt;= 3,000,000 (3 Mbps).
+       * - For HD resolution (&lt;= 1080p), must be &lt;= 15,000,000 (15 Mbps).
+       * - For UHD resolution (&lt;= 2160p), must be &lt;= 25,000,000 (25 Mbps).
+       * </pre>
+       *
+       * <code>int32 bitrate_bps = 4 [(.google.api.field_behavior) = REQUIRED];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearBitrateBps() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        bitrateBps_ = 0;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Select the GOP size based on the specified frame count.
+       * If GOP frame count is set instead of GOP duration, GOP duration will be
+       * calculated by `gopFrameCount`/`frameRate`. The calculated GOP duration
+       * must satisfy the limitations on `gopDuration` as well.
+       * Valid range is [60, 600].
+       * </pre>
+       *
+       * <code>int32 gop_frame_count = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return Whether the gopFrameCount field is set.
+       */
+      public boolean hasGopFrameCount() {
+        return gopModeCase_ == 7;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Select the GOP size based on the specified frame count.
+       * If GOP frame count is set instead of GOP duration, GOP duration will be
+       * calculated by `gopFrameCount`/`frameRate`. The calculated GOP duration
+       * must satisfy the limitations on `gopDuration` as well.
+       * Valid range is [60, 600].
+       * </pre>
+       *
+       * <code>int32 gop_frame_count = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The gopFrameCount.
+       */
+      public int getGopFrameCount() {
+        if (gopModeCase_ == 7) {
+          return (java.lang.Integer) gopMode_;
+        }
+        return 0;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Select the GOP size based on the specified frame count.
+       * If GOP frame count is set instead of GOP duration, GOP duration will be
+       * calculated by `gopFrameCount`/`frameRate`. The calculated GOP duration
+       * must satisfy the limitations on `gopDuration` as well.
+       * Valid range is [60, 600].
+       * </pre>
+       *
+       * <code>int32 gop_frame_count = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The gopFrameCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setGopFrameCount(int value) {
+
+        gopModeCase_ = 7;
+        gopMode_ = value;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Select the GOP size based on the specified frame count.
+       * If GOP frame count is set instead of GOP duration, GOP duration will be
+       * calculated by `gopFrameCount`/`frameRate`. The calculated GOP duration
+       * must satisfy the limitations on `gopDuration` as well.
+       * Valid range is [60, 600].
+       * </pre>
+       *
+       * <code>int32 gop_frame_count = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearGopFrameCount() {
+        if (gopModeCase_ == 7) {
+          gopModeCase_ = 0;
+          gopMode_ = null;
+          onChanged();
+        }
+        return this;
+      }
+
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          gopDurationBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Select the GOP size based on the specified duration. The
+       * default is `2s`. Note that `gopDuration` must be less than or equal to
+       * [segment_duration][google.cloud.video.livestream.v1.SegmentSettings.segment_duration],
+       * and
+       * [segment_duration][google.cloud.video.livestream.v1.SegmentSettings.segment_duration]
+       * must be divisible by `gopDuration`. Valid range is [2s, 20s].
+       *
+       * All video streams in the same channel must have the same GOP size.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration gop_duration = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return Whether the gopDuration field is set.
+       */
+      @java.lang.Override
+      public boolean hasGopDuration() {
+        return gopModeCase_ == 8;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Select the GOP size based on the specified duration. The
+       * default is `2s`. Note that `gopDuration` must be less than or equal to
+       * [segment_duration][google.cloud.video.livestream.v1.SegmentSettings.segment_duration],
+       * and
+       * [segment_duration][google.cloud.video.livestream.v1.SegmentSettings.segment_duration]
+       * must be divisible by `gopDuration`. Valid range is [2s, 20s].
+       *
+       * All video streams in the same channel must have the same GOP size.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration gop_duration = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The gopDuration.
+       */
+      @java.lang.Override
+      public com.google.protobuf.Duration getGopDuration() {
+        if (gopDurationBuilder_ == null) {
+          if (gopModeCase_ == 8) {
+            return (com.google.protobuf.Duration) gopMode_;
+          }
+          return com.google.protobuf.Duration.getDefaultInstance();
+        } else {
+          if (gopModeCase_ == 8) {
+            return gopDurationBuilder_.getMessage();
+          }
+          return com.google.protobuf.Duration.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Select the GOP size based on the specified duration. The
+       * default is `2s`. Note that `gopDuration` must be less than or equal to
+       * [segment_duration][google.cloud.video.livestream.v1.SegmentSettings.segment_duration],
+       * and
+       * [segment_duration][google.cloud.video.livestream.v1.SegmentSettings.segment_duration]
+       * must be divisible by `gopDuration`. Valid range is [2s, 20s].
+       *
+       * All video streams in the same channel must have the same GOP size.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration gop_duration = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setGopDuration(com.google.protobuf.Duration value) {
+        if (gopDurationBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          gopMode_ = value;
+          onChanged();
+        } else {
+          gopDurationBuilder_.setMessage(value);
+        }
+        gopModeCase_ = 8;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Select the GOP size based on the specified duration. The
+       * default is `2s`. Note that `gopDuration` must be less than or equal to
+       * [segment_duration][google.cloud.video.livestream.v1.SegmentSettings.segment_duration],
+       * and
+       * [segment_duration][google.cloud.video.livestream.v1.SegmentSettings.segment_duration]
+       * must be divisible by `gopDuration`. Valid range is [2s, 20s].
+       *
+       * All video streams in the same channel must have the same GOP size.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration gop_duration = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder setGopDuration(com.google.protobuf.Duration.Builder builderForValue) {
+        if (gopDurationBuilder_ == null) {
+          gopMode_ = builderForValue.build();
+          onChanged();
+        } else {
+          gopDurationBuilder_.setMessage(builderForValue.build());
+        }
+        gopModeCase_ = 8;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Select the GOP size based on the specified duration. The
+       * default is `2s`. Note that `gopDuration` must be less than or equal to
+       * [segment_duration][google.cloud.video.livestream.v1.SegmentSettings.segment_duration],
+       * and
+       * [segment_duration][google.cloud.video.livestream.v1.SegmentSettings.segment_duration]
+       * must be divisible by `gopDuration`. Valid range is [2s, 20s].
+       *
+       * All video streams in the same channel must have the same GOP size.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration gop_duration = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder mergeGopDuration(com.google.protobuf.Duration value) {
+        if (gopDurationBuilder_ == null) {
+          if (gopModeCase_ == 8 && gopMode_ != com.google.protobuf.Duration.getDefaultInstance()) {
+            gopMode_ =
+                com.google.protobuf.Duration.newBuilder((com.google.protobuf.Duration) gopMode_)
+                    .mergeFrom(value)
+                    .buildPartial();
+          } else {
+            gopMode_ = value;
+          }
+          onChanged();
+        } else {
+          if (gopModeCase_ == 8) {
+            gopDurationBuilder_.mergeFrom(value);
+          } else {
+            gopDurationBuilder_.setMessage(value);
+          }
+        }
+        gopModeCase_ = 8;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Select the GOP size based on the specified duration. The
+       * default is `2s`. Note that `gopDuration` must be less than or equal to
+       * [segment_duration][google.cloud.video.livestream.v1.SegmentSettings.segment_duration],
+       * and
+       * [segment_duration][google.cloud.video.livestream.v1.SegmentSettings.segment_duration]
+       * must be divisible by `gopDuration`. Valid range is [2s, 20s].
+       *
+       * All video streams in the same channel must have the same GOP size.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration gop_duration = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder clearGopDuration() {
+        if (gopDurationBuilder_ == null) {
+          if (gopModeCase_ == 8) {
+            gopModeCase_ = 0;
+            gopMode_ = null;
+            onChanged();
+          }
+        } else {
+          if (gopModeCase_ == 8) {
+            gopModeCase_ = 0;
+            gopMode_ = null;
+          }
+          gopDurationBuilder_.clear();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Select the GOP size based on the specified duration. The
+       * default is `2s`. Note that `gopDuration` must be less than or equal to
+       * [segment_duration][google.cloud.video.livestream.v1.SegmentSettings.segment_duration],
+       * and
+       * [segment_duration][google.cloud.video.livestream.v1.SegmentSettings.segment_duration]
+       * must be divisible by `gopDuration`. Valid range is [2s, 20s].
+       *
+       * All video streams in the same channel must have the same GOP size.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration gop_duration = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public com.google.protobuf.Duration.Builder getGopDurationBuilder() {
+        return getGopDurationFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Select the GOP size based on the specified duration. The
+       * default is `2s`. Note that `gopDuration` must be less than or equal to
+       * [segment_duration][google.cloud.video.livestream.v1.SegmentSettings.segment_duration],
+       * and
+       * [segment_duration][google.cloud.video.livestream.v1.SegmentSettings.segment_duration]
+       * must be divisible by `gopDuration`. Valid range is [2s, 20s].
+       *
+       * All video streams in the same channel must have the same GOP size.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration gop_duration = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.protobuf.DurationOrBuilder getGopDurationOrBuilder() {
+        if ((gopModeCase_ == 8) && (gopDurationBuilder_ != null)) {
+          return gopDurationBuilder_.getMessageOrBuilder();
+        } else {
+          if (gopModeCase_ == 8) {
+            return (com.google.protobuf.Duration) gopMode_;
+          }
+          return com.google.protobuf.Duration.getDefaultInstance();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Select the GOP size based on the specified duration. The
+       * default is `2s`. Note that `gopDuration` must be less than or equal to
+       * [segment_duration][google.cloud.video.livestream.v1.SegmentSettings.segment_duration],
+       * and
+       * [segment_duration][google.cloud.video.livestream.v1.SegmentSettings.segment_duration]
+       * must be divisible by `gopDuration`. Valid range is [2s, 20s].
+       *
+       * All video streams in the same channel must have the same GOP size.
+       * </pre>
+       *
+       * <code>.google.protobuf.Duration gop_duration = 8 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.protobuf.Duration,
+              com.google.protobuf.Duration.Builder,
+              com.google.protobuf.DurationOrBuilder>
+          getGopDurationFieldBuilder() {
+        if (gopDurationBuilder_ == null) {
+          if (!(gopModeCase_ == 8)) {
+            gopMode_ = com.google.protobuf.Duration.getDefaultInstance();
+          }
+          gopDurationBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Duration,
+                  com.google.protobuf.Duration.Builder,
+                  com.google.protobuf.DurationOrBuilder>(
+                  (com.google.protobuf.Duration) gopMode_, getParentForChildren(), isClean());
+          gopMode_ = null;
+        }
+        gopModeCase_ = 8;
+        onChanged();
+        return gopDurationBuilder_;
+      }
+
+      private int vbvSizeBits_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Size of the Video Buffering Verifier (VBV) buffer in bits. Must
+       * be greater than zero. The default is equal to
+       * [bitrate_bps][google.cloud.video.livestream.v1.VideoStream.H265CodecSettings.bitrate_bps].
+       * </pre>
+       *
+       * <code>int32 vbv_size_bits = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The vbvSizeBits.
+       */
+      @java.lang.Override
+      public int getVbvSizeBits() {
+        return vbvSizeBits_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Size of the Video Buffering Verifier (VBV) buffer in bits. Must
+       * be greater than zero. The default is equal to
+       * [bitrate_bps][google.cloud.video.livestream.v1.VideoStream.H265CodecSettings.bitrate_bps].
+       * </pre>
+       *
+       * <code>int32 vbv_size_bits = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The vbvSizeBits to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVbvSizeBits(int value) {
+
+        vbvSizeBits_ = value;
+        bitField0_ |= 0x00000040;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Size of the Video Buffering Verifier (VBV) buffer in bits. Must
+       * be greater than zero. The default is equal to
+       * [bitrate_bps][google.cloud.video.livestream.v1.VideoStream.H265CodecSettings.bitrate_bps].
+       * </pre>
+       *
+       * <code>int32 vbv_size_bits = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearVbvSizeBits() {
+        bitField0_ = (bitField0_ & ~0x00000040);
+        vbvSizeBits_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private int vbvFullnessBits_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Initial fullness of the Video Buffering Verifier (VBV) buffer
+       * in bits. Must be greater than zero. The default is equal to 90% of
+       * [vbv_size_bits][google.cloud.video.livestream.v1.VideoStream.H265CodecSettings.vbv_size_bits].
+       * </pre>
+       *
+       * <code>int32 vbv_fullness_bits = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The vbvFullnessBits.
+       */
+      @java.lang.Override
+      public int getVbvFullnessBits() {
+        return vbvFullnessBits_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Initial fullness of the Video Buffering Verifier (VBV) buffer
+       * in bits. Must be greater than zero. The default is equal to 90% of
+       * [vbv_size_bits][google.cloud.video.livestream.v1.VideoStream.H265CodecSettings.vbv_size_bits].
+       * </pre>
+       *
+       * <code>int32 vbv_fullness_bits = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The vbvFullnessBits to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVbvFullnessBits(int value) {
+
+        vbvFullnessBits_ = value;
+        bitField0_ |= 0x00000080;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Initial fullness of the Video Buffering Verifier (VBV) buffer
+       * in bits. Must be greater than zero. The default is equal to 90% of
+       * [vbv_size_bits][google.cloud.video.livestream.v1.VideoStream.H265CodecSettings.vbv_size_bits].
+       * </pre>
+       *
+       * <code>int32 vbv_fullness_bits = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearVbvFullnessBits() {
+        bitField0_ = (bitField0_ & ~0x00000080);
+        vbvFullnessBits_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private boolean bPyramid_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Allow B-pyramid for reference frame selection. This may not be
+       * supported on all decoders. The default is `false`.
+       * </pre>
+       *
+       * <code>bool b_pyramid = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bPyramid.
+       */
+      @java.lang.Override
+      public boolean getBPyramid() {
+        return bPyramid_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Allow B-pyramid for reference frame selection. This may not be
+       * supported on all decoders. The default is `false`.
+       * </pre>
+       *
+       * <code>bool b_pyramid = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bPyramid to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBPyramid(boolean value) {
+
+        bPyramid_ = value;
+        bitField0_ |= 0x00000100;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Allow B-pyramid for reference frame selection. This may not be
+       * supported on all decoders. The default is `false`.
+       * </pre>
+       *
+       * <code>bool b_pyramid = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearBPyramid() {
+        bitField0_ = (bitField0_ & ~0x00000100);
+        bPyramid_ = false;
+        onChanged();
+        return this;
+      }
+
+      private int bFrameCount_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The number of consecutive B-frames. Must be greater than or
+       * equal to zero. Must be less than
+       * [gop_frame_count][google.cloud.video.livestream.v1.VideoStream.H265CodecSettings.gop_frame_count]
+       * if set. The default is 0.
+       * </pre>
+       *
+       * <code>int32 b_frame_count = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bFrameCount.
+       */
+      @java.lang.Override
+      public int getBFrameCount() {
+        return bFrameCount_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The number of consecutive B-frames. Must be greater than or
+       * equal to zero. Must be less than
+       * [gop_frame_count][google.cloud.video.livestream.v1.VideoStream.H265CodecSettings.gop_frame_count]
+       * if set. The default is 0.
+       * </pre>
+       *
+       * <code>int32 b_frame_count = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bFrameCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setBFrameCount(int value) {
+
+        bFrameCount_ = value;
+        bitField0_ |= 0x00000200;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The number of consecutive B-frames. Must be greater than or
+       * equal to zero. Must be less than
+       * [gop_frame_count][google.cloud.video.livestream.v1.VideoStream.H265CodecSettings.gop_frame_count]
+       * if set. The default is 0.
+       * </pre>
+       *
+       * <code>int32 b_frame_count = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearBFrameCount() {
+        bitField0_ = (bitField0_ & ~0x00000200);
+        bFrameCount_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private double aqStrength_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specify the intensity of the adaptive quantizer (AQ). Must be
+       * between 0 and 1, where 0 disables the quantizer and 1 maximizes the
+       * quantizer. A higher value equals a lower bitrate but smoother image. The
+       * default is 0.
+       * </pre>
+       *
+       * <code>double aq_strength = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The aqStrength.
+       */
+      @java.lang.Override
+      public double getAqStrength() {
+        return aqStrength_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specify the intensity of the adaptive quantizer (AQ). Must be
+       * between 0 and 1, where 0 disables the quantizer and 1 maximizes the
+       * quantizer. A higher value equals a lower bitrate but smoother image. The
+       * default is 0.
+       * </pre>
+       *
+       * <code>double aq_strength = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The aqStrength to set.
+       * @return This builder for chaining.
+       */
+      public Builder setAqStrength(double value) {
+
+        aqStrength_ = value;
+        bitField0_ |= 0x00000400;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Specify the intensity of the adaptive quantizer (AQ). Must be
+       * between 0 and 1, where 0 disables the quantizer and 1 maximizes the
+       * quantizer. A higher value equals a lower bitrate but smoother image. The
+       * default is 0.
+       * </pre>
+       *
+       * <code>double aq_strength = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearAqStrength() {
+        bitField0_ = (bitField0_ & ~0x00000400);
+        aqStrength_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.video.livestream.v1.VideoStream.H265CodecSettings)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.video.livestream.v1.VideoStream.H265CodecSettings)
+    private static final com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings();
+    }
+
+    public static com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings
+        getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<H265CodecSettings> PARSER =
+        new com.google.protobuf.AbstractParser<H265CodecSettings>() {
+          @java.lang.Override
+          public H265CodecSettings parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<H265CodecSettings> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<H265CodecSettings> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings
+        getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int codecSettingsCase_ = 0;
 
   @SuppressWarnings("serial")
@@ -3316,6 +5642,7 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.Internal.EnumLite,
           com.google.protobuf.AbstractMessage.InternalOneOfEnum {
     H264(20),
+    H265(21),
     CODECSETTINGS_NOT_SET(0);
     private final int value;
 
@@ -3337,6 +5664,8 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       switch (value) {
         case 20:
           return H264;
+        case 21:
+          return H265;
         case 0:
           return CODECSETTINGS_NOT_SET;
         default:
@@ -3408,6 +5737,61 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
     return com.google.cloud.video.livestream.v1.VideoStream.H264CodecSettings.getDefaultInstance();
   }
 
+  public static final int H265_FIELD_NUMBER = 21;
+
+  /**
+   *
+   *
+   * <pre>
+   * H265 codec settings.
+   * </pre>
+   *
+   * <code>.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings h265 = 21;</code>
+   *
+   * @return Whether the h265 field is set.
+   */
+  @java.lang.Override
+  public boolean hasH265() {
+    return codecSettingsCase_ == 21;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * H265 codec settings.
+   * </pre>
+   *
+   * <code>.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings h265 = 21;</code>
+   *
+   * @return The h265.
+   */
+  @java.lang.Override
+  public com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings getH265() {
+    if (codecSettingsCase_ == 21) {
+      return (com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings) codecSettings_;
+    }
+    return com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings.getDefaultInstance();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * H265 codec settings.
+   * </pre>
+   *
+   * <code>.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings h265 = 21;</code>
+   */
+  @java.lang.Override
+  public com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettingsOrBuilder
+      getH265OrBuilder() {
+    if (codecSettingsCase_ == 21) {
+      return (com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings) codecSettings_;
+    }
+    return com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3426,6 +5810,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       output.writeMessage(
           20, (com.google.cloud.video.livestream.v1.VideoStream.H264CodecSettings) codecSettings_);
     }
+    if (codecSettingsCase_ == 21) {
+      output.writeMessage(
+          21, (com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings) codecSettings_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -3440,6 +5828,12 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               20,
               (com.google.cloud.video.livestream.v1.VideoStream.H264CodecSettings) codecSettings_);
+    }
+    if (codecSettingsCase_ == 21) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              21,
+              (com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings) codecSettings_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -3462,6 +5856,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       case 20:
         if (!getH264().equals(other.getH264())) return false;
         break;
+      case 21:
+        if (!getH265().equals(other.getH265())) return false;
+        break;
       case 0:
       default:
     }
@@ -3480,6 +5877,10 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       case 20:
         hash = (37 * hash) + H264_FIELD_NUMBER;
         hash = (53 * hash) + getH264().hashCode();
+        break;
+      case 21:
+        hash = (37 * hash) + H265_FIELD_NUMBER;
+        hash = (53 * hash) + getH265().hashCode();
         break;
       case 0:
       default:
@@ -3627,6 +6028,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       if (h264Builder_ != null) {
         h264Builder_.clear();
       }
+      if (h265Builder_ != null) {
+        h265Builder_.clear();
+      }
       codecSettingsCase_ = 0;
       codecSettings_ = null;
       return this;
@@ -3673,6 +6077,9 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       result.codecSettings_ = this.codecSettings_;
       if (codecSettingsCase_ == 20 && h264Builder_ != null) {
         result.codecSettings_ = h264Builder_.build();
+      }
+      if (codecSettingsCase_ == 21 && h265Builder_ != null) {
+        result.codecSettings_ = h265Builder_.build();
       }
     }
 
@@ -3728,6 +6135,11 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
             mergeH264(other.getH264());
             break;
           }
+        case H265:
+          {
+            mergeH265(other.getH265());
+            break;
+          }
         case CODECSETTINGS_NOT_SET:
           {
             break;
@@ -3765,6 +6177,12 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
                 codecSettingsCase_ = 20;
                 break;
               } // case 162
+            case 170:
+              {
+                input.readMessage(getH265FieldBuilder().getBuilder(), extensionRegistry);
+                codecSettingsCase_ = 21;
+                break;
+              } // case 170
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4029,6 +6447,239 @@ public final class VideoStream extends com.google.protobuf.GeneratedMessageV3
       codecSettingsCase_ = 20;
       onChanged();
       return h264Builder_;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings,
+            com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings.Builder,
+            com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettingsOrBuilder>
+        h265Builder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * H265 codec settings.
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings h265 = 21;</code>
+     *
+     * @return Whether the h265 field is set.
+     */
+    @java.lang.Override
+    public boolean hasH265() {
+      return codecSettingsCase_ == 21;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * H265 codec settings.
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings h265 = 21;</code>
+     *
+     * @return The h265.
+     */
+    @java.lang.Override
+    public com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings getH265() {
+      if (h265Builder_ == null) {
+        if (codecSettingsCase_ == 21) {
+          return (com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings)
+              codecSettings_;
+        }
+        return com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings
+            .getDefaultInstance();
+      } else {
+        if (codecSettingsCase_ == 21) {
+          return h265Builder_.getMessage();
+        }
+        return com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * H265 codec settings.
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings h265 = 21;</code>
+     */
+    public Builder setH265(
+        com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings value) {
+      if (h265Builder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        codecSettings_ = value;
+        onChanged();
+      } else {
+        h265Builder_.setMessage(value);
+      }
+      codecSettingsCase_ = 21;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * H265 codec settings.
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings h265 = 21;</code>
+     */
+    public Builder setH265(
+        com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings.Builder
+            builderForValue) {
+      if (h265Builder_ == null) {
+        codecSettings_ = builderForValue.build();
+        onChanged();
+      } else {
+        h265Builder_.setMessage(builderForValue.build());
+      }
+      codecSettingsCase_ = 21;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * H265 codec settings.
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings h265 = 21;</code>
+     */
+    public Builder mergeH265(
+        com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings value) {
+      if (h265Builder_ == null) {
+        if (codecSettingsCase_ == 21
+            && codecSettings_
+                != com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings
+                    .getDefaultInstance()) {
+          codecSettings_ =
+              com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings.newBuilder(
+                      (com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings)
+                          codecSettings_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          codecSettings_ = value;
+        }
+        onChanged();
+      } else {
+        if (codecSettingsCase_ == 21) {
+          h265Builder_.mergeFrom(value);
+        } else {
+          h265Builder_.setMessage(value);
+        }
+      }
+      codecSettingsCase_ = 21;
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * H265 codec settings.
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings h265 = 21;</code>
+     */
+    public Builder clearH265() {
+      if (h265Builder_ == null) {
+        if (codecSettingsCase_ == 21) {
+          codecSettingsCase_ = 0;
+          codecSettings_ = null;
+          onChanged();
+        }
+      } else {
+        if (codecSettingsCase_ == 21) {
+          codecSettingsCase_ = 0;
+          codecSettings_ = null;
+        }
+        h265Builder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * H265 codec settings.
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings h265 = 21;</code>
+     */
+    public com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings.Builder
+        getH265Builder() {
+      return getH265FieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * H265 codec settings.
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings h265 = 21;</code>
+     */
+    @java.lang.Override
+    public com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettingsOrBuilder
+        getH265OrBuilder() {
+      if ((codecSettingsCase_ == 21) && (h265Builder_ != null)) {
+        return h265Builder_.getMessageOrBuilder();
+      } else {
+        if (codecSettingsCase_ == 21) {
+          return (com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings)
+              codecSettings_;
+        }
+        return com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings
+            .getDefaultInstance();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * H265 codec settings.
+     * </pre>
+     *
+     * <code>.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings h265 = 21;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings,
+            com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings.Builder,
+            com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettingsOrBuilder>
+        getH265FieldBuilder() {
+      if (h265Builder_ == null) {
+        if (!(codecSettingsCase_ == 21)) {
+          codecSettings_ =
+              com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings
+                  .getDefaultInstance();
+        }
+        h265Builder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings,
+                com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings.Builder,
+                com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettingsOrBuilder>(
+                (com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings) codecSettings_,
+                getParentForChildren(),
+                isClean());
+        codecSettings_ = null;
+      }
+      codecSettingsCase_ = 21;
+      onChanged();
+      return h265Builder_;
     }
 
     @java.lang.Override

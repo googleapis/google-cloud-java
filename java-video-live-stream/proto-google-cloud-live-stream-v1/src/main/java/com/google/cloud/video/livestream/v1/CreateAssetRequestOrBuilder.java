@@ -104,8 +104,11 @@ public interface CreateAssetRequestOrBuilder
    *
    * <pre>
    * Required. The ID of the asset resource to be created.
-   * This value must be 1-63 characters, begin and end with `[a-z0-9]`,
-   * could contain dashes (-) in between.
+   *
+   * This value must be 1-63 characters, begin and end with a lower-case letter
+   * or a number, and consist of only lower-case letters, numbers, and hyphens.
+   * In other words, it must match the following regex:
+   * `^[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?$`.
    * </pre>
    *
    * <code>string asset_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -119,8 +122,11 @@ public interface CreateAssetRequestOrBuilder
    *
    * <pre>
    * Required. The ID of the asset resource to be created.
-   * This value must be 1-63 characters, begin and end with `[a-z0-9]`,
-   * could contain dashes (-) in between.
+   *
+   * This value must be 1-63 characters, begin and end with a lower-case letter
+   * or a number, and consist of only lower-case letters, numbers, and hyphens.
+   * In other words, it must match the following regex:
+   * `^[a-z0-9]([a-z0-9-]{0,61}[a-z0-9])?$`.
    * </pre>
    *
    * <code>string asset_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>

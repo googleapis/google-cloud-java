@@ -425,6 +425,47 @@ public interface EventOrBuilder
    *
    *
    * <pre>
+   * Updates encryption settings.
+   * </pre>
+   *
+   * <code>.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask update_encryptions = 17;
+   * </code>
+   *
+   * @return Whether the updateEncryptions field is set.
+   */
+  boolean hasUpdateEncryptions();
+
+  /**
+   *
+   *
+   * <pre>
+   * Updates encryption settings.
+   * </pre>
+   *
+   * <code>.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask update_encryptions = 17;
+   * </code>
+   *
+   * @return The updateEncryptions.
+   */
+  com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask getUpdateEncryptions();
+
+  /**
+   *
+   *
+   * <pre>
+   * Updates encryption settings.
+   * </pre>
+   *
+   * <code>.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTask update_encryptions = 17;
+   * </code>
+   */
+  com.google.cloud.video.livestream.v1.Event.UpdateEncryptionsTaskOrBuilder
+      getUpdateEncryptionsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * When this field is set to true, the event will be executed at the earliest
    * time that the server can schedule the event and
    * [execution_time][google.cloud.video.livestream.v1.Event.execution_time]

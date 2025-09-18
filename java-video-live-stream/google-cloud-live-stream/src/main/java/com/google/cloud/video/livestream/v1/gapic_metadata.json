@@ -91,11 +91,20 @@
             "ListLocations": {
               "methods": ["listLocations", "listLocationsPagedCallable", "listLocationsCallable"]
             },
+            "PreviewInput": {
+              "methods": ["previewInput", "previewInput", "previewInput", "previewInputCallable"]
+            },
             "StartChannel": {
               "methods": ["startChannelAsync", "startChannelAsync", "startChannelAsync", "startChannelOperationCallable", "startChannelCallable"]
             },
+            "StartDistribution": {
+              "methods": ["startDistributionAsync", "startDistributionAsync", "startDistributionAsync", "startDistributionOperationCallable", "startDistributionCallable"]
+            },
             "StopChannel": {
               "methods": ["stopChannelAsync", "stopChannelAsync", "stopChannelAsync", "stopChannelOperationCallable", "stopChannelCallable"]
+            },
+            "StopDistribution": {
+              "methods": ["stopDistributionAsync", "stopDistributionAsync", "stopDistributionAsync", "stopDistributionOperationCallable", "stopDistributionCallable"]
             },
             "UpdateChannel": {
               "methods": ["updateChannelAsync", "updateChannelAsync", "updateChannelOperationCallable", "updateChannelCallable"]

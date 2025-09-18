@@ -41,6 +41,22 @@ public final class OutputsProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_video_livestream_v1_Manifest_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_video_livestream_v1_DistributionStream_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_video_livestream_v1_DistributionStream_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_video_livestream_v1_Distribution_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_video_livestream_v1_Distribution_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_video_livestream_v1_SrtPushOutputEndpoint_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_video_livestream_v1_SrtPushOutputEndpoint_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_video_livestream_v1_RtmpPushOutputEndpoint_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_video_livestream_v1_RtmpPushOutputEndpoint_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_video_livestream_v1_SpriteSheet_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_video_livestream_v1_SpriteSheet_fieldAccessorTable;
@@ -69,6 +85,10 @@ public final class OutputsProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_video_livestream_v1_VideoStream_H264CodecSettings_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_video_livestream_v1_VideoStream_H265CodecSettings_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_video_livestream_v1_VideoStream_H265CodecSettings_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_video_livestream_v1_AudioStream_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_video_livestream_v1_AudioStream_fieldAccessorTable;
@@ -80,6 +100,10 @@ public final class OutputsProto {
       internal_static_google_cloud_video_livestream_v1_TextStream_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_video_livestream_v1_TextStream_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_video_livestream_v1_TextStream_TextMapping_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_video_livestream_v1_TextStream_TextMapping_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_video_livestream_v1_SegmentSettings_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
@@ -101,27 +125,27 @@ public final class OutputsProto {
           + ".google/cloud/video/livestream/v1/outputs.proto\022 google.cloud.video.livestream."
           + "v1\032\037google/api/field_behavior.proto\032\031goo"
           + "gle/api/resource.proto\032\036google/protobuf/"
-          + "duration.proto\032\032google/type/datetime.proto\"\207\002\n"
+          + "duration.proto\032\027google/rpc/status.proto\032\032google/type/datetime.proto\"\207\002\n"
           + "\020ElementaryStream\022\013\n"
           + "\003key\030\004 \001(\t\022E\n"
-          + "\014video_stream\030\001"
-          + " \001(\0132-.google.cloud.video.livestream.v1.VideoStreamH\000\022E\n"
-          + "\014audio_stream\030\002"
-          + " \001(\0132-.google.cloud.video.livestream.v1.AudioStreamH\000\022C\n"
-          + "\013text_stream\030\003 \001(\0132"
-          + ",.google.cloud.video.livestream.v1.TextStreamH\000B\023\n"
+          + "\014video_stream\030\001 "
+          + "\001(\0132-.google.cloud.video.livestream.v1.VideoStreamH\000\022E\n"
+          + "\014audio_stream\030\002 \001(\0132-.goo"
+          + "gle.cloud.video.livestream.v1.AudioStreamH\000\022C\n"
+          + "\013text_stream\030\003"
+          + " \001(\0132,.google.cloud.video.livestream.v1.TextStreamH\000B\023\n"
           + "\021elementary_stream\"\253\001\n"
           + "\tMuxStream\022\013\n"
           + "\003key\030\001 \001(\t\022\021\n"
           + "\tcontainer\030\003 \001(\t\022\032\n"
           + "\022elementary_streams\030\004 \003(\t\022K\n"
-          + "\020segment_settings\030\005"
-          + " \001(\01321.google.cloud.video.livestream.v1.SegmentSettings\022\025\n\r"
+          + "\020segment_settings\030\005 \001(\01321.goog"
+          + "le.cloud.video.livestream.v1.SegmentSettings\022\025\n\r"
           + "encryption_id\030\006 \001(\t\"\316\002\n"
           + "\010Manifest\022\021\n"
           + "\tfile_name\030\001 \001(\t\022J\n"
-          + "\004type\030\002"
-          + " \001(\01627.google.cloud.video.livestream.v1.Manifest.ManifestTypeB\003\340A\002\022\030\n"
+          + "\004type\030\002 \001(\01627.goog"
+          + "le.cloud.video.livestream.v1.Manifest.ManifestTypeB\003\340A\002\022\030\n"
           + "\013mux_streams\030\003 \003(\tB\003\340A\002\022\031\n"
           + "\021max_segment_count\030\004 \001(\005\0228\n"
           + "\025segment_keep_duration\030\005 \001(\0132\031.google.protobuf.Duration\022 \n"
@@ -130,7 +154,37 @@ public final class OutputsProto {
           + "\014ManifestType\022\035\n"
           + "\031MANIFEST_TYPE_UNSPECIFIED\020\000\022\007\n"
           + "\003HLS\020\001\022\010\n"
-          + "\004DASH\020\002\"\343\001\n"
+          + "\004DASH\020\002\"_\n"
+          + "\022DistributionStream\022\020\n"
+          + "\003key\030\001 \001(\tB\003\340A\002\022\026\n"
+          + "\tcontainer\030\002 \001(\tB\003\340A\002\022\037\n"
+          + "\022elementary_streams\030\003 \003(\tB\003\340A\002\"\307\003\n"
+          + "\014Distribution\022\020\n"
+          + "\003key\030\001 \001(\tB\003\340A\002\022 \n"
+          + "\023distribution_stream\030\002 \001(\tB\003\340A\002\022H\n"
+          + "\005state\030\003 \001(\01624.google.cloud"
+          + ".video.livestream.v1.Distribution.StateB\003\340A\003\022&\n"
+          + "\005error\030\004 \001(\0132\022.google.rpc.StatusB\003\340A\003\022K\n"
+          + "\010srt_push\030\005 \001(\01327.google.cloud.vi"
+          + "deo.livestream.v1.SrtPushOutputEndpointH\000\022M\n"
+          + "\trtmp_push\030\006 \001(\01328.google.cloud.vide"
+          + "o.livestream.v1.RtmpPushOutputEndpointH\000\"i\n"
+          + "\005State\022\025\n"
+          + "\021STATE_UNSPECIFIED\020\000\022\t\n"
+          + "\005ERROR\020\005\022\r\n"
+          + "\tNOT_READY\020\006\022\t\n"
+          + "\005READY\020\007\022\022\n"
+          + "\016AWAITING_INPUT\020\010\022\020\n"
+          + "\014DISTRIBUTING\020\tB\n\n"
+          + "\010endpoint\"\224\001\n"
+          + "\025SrtPushOutputEndpoint\022\020\n"
+          + "\003uri\030\001 \001(\tB\003\340A\002\022T\n"
+          + "\031passphrase_secret_version\030\002 \001(\tB/\372A,\n"
+          + "*secretmanager.googleapis.com/SecretVersionH\000B\023\n"
+          + "\021passphrase_source\"C\n"
+          + "\026RtmpPushOutputEndpoint\022\020\n"
+          + "\003uri\030\001 \001(\tB\003\340A\002\022\027\n\n"
+          + "stream_key\030\002 \001(\tB\003\340A\002\"\343\001\n"
           + "\013SpriteSheet\022\016\n"
           + "\006format\030\001 \001(\t\022\030\n"
           + "\013file_prefix\030\002 \001(\tB\003\340A\002\022 \n"
@@ -158,10 +212,12 @@ public final class OutputsProto {
           + "top_pixels\030\001 \001(\005\022\025\n\r"
           + "bottom_pixels\030\002 \001(\005\022\023\n"
           + "\013left_pixels\030\003 \001(\005\022\024\n"
-          + "\014right_pixels\030\004 \001(\005\"\377\003\n"
+          + "\014right_pixels\030\004 \001(\005\"\276\007\n"
           + "\013VideoStream\022O\n"
           + "\004h264\030\024 \001(\0132?.google.cloud.video.liv"
-          + "estream.v1.VideoStream.H264CodecSettingsH\000\032\214\003\n"
+          + "estream.v1.VideoStream.H264CodecSettingsH\000\022O\n"
+          + "\004h265\030\025 \001(\0132?.google.cloud.video.li"
+          + "vestream.v1.VideoStream.H265CodecSettingsH\000\032\214\003\n"
           + "\021H264CodecSettings\022\024\n"
           + "\014width_pixels\030\001 \001(\005\022\025\n\r"
           + "height_pixels\030\002 \001(\005\022\027\n\n"
@@ -180,6 +236,22 @@ public final class OutputsProto {
           + "\013aq_strength\030\016 \001(\001\022\017\n"
           + "\007profile\030\017 \001(\t\022\014\n"
           + "\004tune\030\020 \001(\tB\n\n"
+          + "\010gop_mode\032\353\002\n"
+          + "\021H265CodecSettings\022\031\n"
+          + "\014width_pixels\030\001 \001(\005B\003\340A\001\022\032\n\r"
+          + "height_pixels\030\002 \001(\005B\003\340A\001\022\027\n\n"
+          + "frame_rate\030\003 \001(\001B\003\340A\002\022\030\n"
+          + "\013bitrate_bps\030\004 \001(\005B\003\340A\002\022\036\n"
+          + "\017gop_frame_count\030\007 \001(\005B\003\340A\001H\000\0226\n"
+          + "\014gop_duration\030\010"
+          + " \001(\0132\031.google.protobuf.DurationB\003\340A\001H\000\022\032\n\r"
+          + "vbv_size_bits\030\t \001(\005B\003\340A\001\022\036\n"
+          + "\021vbv_fullness_bits\030\n"
+          + " \001(\005B\003\340A\001\022\026\n"
+          + "\tb_pyramid\030\013 \001(\010B\003\340A\001\022\032\n\r"
+          + "b_frame_count\030\014 \001(\005B\003\340A\001\022\030\n"
+          + "\013aq_strength\030\r"
+          + " \001(\001B\003\340A\001B\n\n"
           + "\010gop_modeB\020\n"
           + "\016codec_settings\"\354\002\n"
           + "\013AudioStream\022\020\n"
@@ -188,22 +260,32 @@ public final class OutputsProto {
           + "\013bitrate_bps\030\002 \001(\005B\003\340A\002\022\025\n\r"
           + "channel_count\030\003 \001(\005\022\026\n"
           + "\016channel_layout\030\004 \003(\t\022K\n"
-          + "\007mapping\030\005 \003(\0132:"
-          + ".google.cloud.video.livestream.v1.AudioStream.AudioMapping\022\031\n"
+          + "\007mapping\030\005"
+          + " \003(\0132:.google.cloud.video.livestream.v1.AudioStream.AudioMapping\022\031\n"
           + "\021sample_rate_hertz\030\006 \001(\005\032\212\001\n"
           + "\014AudioMapping\022\026\n"
           + "\tinput_key\030\006 \001(\tB\003\340A\002\022\030\n"
           + "\013input_track\030\002 \001(\005B\003\340A\002\022\032\n\r"
           + "input_channel\030\003 \001(\005B\003\340A\002\022\033\n"
           + "\016output_channel\030\004 \001(\005B\003\340A\002\022\017\n"
-          + "\007gain_db\030\005 \001(\001\" \n\n"
+          + "\007gain_db\030\005 \001(\001\"\313\002\n\n"
           + "TextStream\022\022\n"
-          + "\005codec\030\001 \001(\tB\003\340A\002\"F\n"
+          + "\005codec\030\001 \001(\tB\003\340A\002\022\032\n\r"
+          + "language_code\030\002 \001(\tB\003\340A\001\022\031\n"
+          + "\014display_name\030\004 \001(\tB\003\340A\001\022\037\n"
+          + "\022output_cea_channel\030\005 \001(\tB\003\340A\001\022N\n"
+          + "\007mapping\030\003"
+          + " \003(\01328.google.cloud.video.livestream.v1.TextStream.TextMappingB\003\340A\001\032\200\001\n"
+          + "\013TextMapping\022\026\n"
+          + "\tinput_key\030\004 \001(\tB\003\340A\001\022\030\n"
+          + "\013input_track\030\002 \001(\005B\003\340A\001\022\036\n"
+          + "\021input_cea_channel\030\005 \001(\tB\003\340A\001\022\037\n"
+          + "\022from_language_code\030\006 \001(\tB\003\340A\001\"F\n"
           + "\017SegmentSettings\0223\n"
           + "\020segment_duration\030\001 \001(\0132\031.google.protobuf.Duration\"\254\002\n"
           + "\016TimecodeConfig\022O\n"
-          + "\006source\030\001"
-          + " \001(\0162?.google.cloud.video.livestream.v1.TimecodeConfig.TimecodeSource\022/\n\n"
+          + "\006source\030\001 \001(\0162?.goo"
+          + "gle.cloud.video.livestream.v1.TimecodeConfig.TimecodeSource\022/\n\n"
           + "utc_offset\030\002 \001(\0132\031.google.protobuf.DurationH\000\022*\n"
           + "\ttime_zone\030\003 \001(\0132\025.google.type.TimeZoneH\000\"]\n"
           + "\016TimecodeSource\022\037\n"
@@ -211,12 +293,10 @@ public final class OutputsProto {
           + "\017MEDIA_TIMESTAMP\020\001\022\025\n"
           + "\021EMBEDDED_TIMECODE\020\002B\r\n"
           + "\013time_offsetB\351\001\n"
-          + "$com.google.cloud.video.livestream.v1B\014Ou"
-          + "tputsProtoP\001ZDcloud.google.com/go/video/"
-          + "livestream/apiv1/livestreampb;livestreampb\252\002"
-          + " Google.Cloud.Video.LiveStream.V1\312\002 "
-          + "Google\\Cloud\\Video\\LiveStream\\V1\352\002$Googl"
-          + "e::Cloud::Video::LiveStream::V1b\006proto3"
+          + "$com.google.cloud.video.livestream.v1B\014OutputsProtoP\001Z"
+          + "Dcloud.google.com/go/video/livestream/apiv1/livestreampb;livestreampb\252\002"
+          + " Google.Cloud.Video.LiveStream.V1\312\002 Google\\Cloud\\"
+          + "Video\\LiveStream\\V1\352\002$Google::Cloud::Video::LiveStream::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -225,6 +305,7 @@ public final class OutputsProto {
               com.google.api.FieldBehaviorProto.getDescriptor(),
               com.google.api.ResourceProto.getDescriptor(),
               com.google.protobuf.DurationProto.getDescriptor(),
+              com.google.rpc.StatusProto.getDescriptor(),
               com.google.type.DateTimeProto.getDescriptor(),
             });
     internal_static_google_cloud_video_livestream_v1_ElementaryStream_descriptor =
@@ -257,8 +338,40 @@ public final class OutputsProto {
               "UseTimecodeAsTimeline",
               "Key",
             });
-    internal_static_google_cloud_video_livestream_v1_SpriteSheet_descriptor =
+    internal_static_google_cloud_video_livestream_v1_DistributionStream_descriptor =
         getDescriptor().getMessageTypes().get(3);
+    internal_static_google_cloud_video_livestream_v1_DistributionStream_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_video_livestream_v1_DistributionStream_descriptor,
+            new java.lang.String[] {
+              "Key", "Container", "ElementaryStreams",
+            });
+    internal_static_google_cloud_video_livestream_v1_Distribution_descriptor =
+        getDescriptor().getMessageTypes().get(4);
+    internal_static_google_cloud_video_livestream_v1_Distribution_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_video_livestream_v1_Distribution_descriptor,
+            new java.lang.String[] {
+              "Key", "DistributionStream", "State", "Error", "SrtPush", "RtmpPush", "Endpoint",
+            });
+    internal_static_google_cloud_video_livestream_v1_SrtPushOutputEndpoint_descriptor =
+        getDescriptor().getMessageTypes().get(5);
+    internal_static_google_cloud_video_livestream_v1_SrtPushOutputEndpoint_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_video_livestream_v1_SrtPushOutputEndpoint_descriptor,
+            new java.lang.String[] {
+              "Uri", "PassphraseSecretVersion", "PassphraseSource",
+            });
+    internal_static_google_cloud_video_livestream_v1_RtmpPushOutputEndpoint_descriptor =
+        getDescriptor().getMessageTypes().get(6);
+    internal_static_google_cloud_video_livestream_v1_RtmpPushOutputEndpoint_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_video_livestream_v1_RtmpPushOutputEndpoint_descriptor,
+            new java.lang.String[] {
+              "Uri", "StreamKey",
+            });
+    internal_static_google_cloud_video_livestream_v1_SpriteSheet_descriptor =
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_video_livestream_v1_SpriteSheet_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_video_livestream_v1_SpriteSheet_descriptor,
@@ -273,7 +386,7 @@ public final class OutputsProto {
               "Quality",
             });
     internal_static_google_cloud_video_livestream_v1_PreprocessingConfig_descriptor =
-        getDescriptor().getMessageTypes().get(4);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_video_livestream_v1_PreprocessingConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_video_livestream_v1_PreprocessingConfig_descriptor,
@@ -311,12 +424,12 @@ public final class OutputsProto {
               "TopPixels", "BottomPixels", "LeftPixels", "RightPixels",
             });
     internal_static_google_cloud_video_livestream_v1_VideoStream_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_video_livestream_v1_VideoStream_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_video_livestream_v1_VideoStream_descriptor,
             new java.lang.String[] {
-              "H264", "CodecSettings",
+              "H264", "H265", "CodecSettings",
             });
     internal_static_google_cloud_video_livestream_v1_VideoStream_H264CodecSettings_descriptor =
         internal_static_google_cloud_video_livestream_v1_VideoStream_descriptor
@@ -343,8 +456,29 @@ public final class OutputsProto {
               "Tune",
               "GopMode",
             });
+    internal_static_google_cloud_video_livestream_v1_VideoStream_H265CodecSettings_descriptor =
+        internal_static_google_cloud_video_livestream_v1_VideoStream_descriptor
+            .getNestedTypes()
+            .get(1);
+    internal_static_google_cloud_video_livestream_v1_VideoStream_H265CodecSettings_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_video_livestream_v1_VideoStream_H265CodecSettings_descriptor,
+            new java.lang.String[] {
+              "WidthPixels",
+              "HeightPixels",
+              "FrameRate",
+              "BitrateBps",
+              "GopFrameCount",
+              "GopDuration",
+              "VbvSizeBits",
+              "VbvFullnessBits",
+              "BPyramid",
+              "BFrameCount",
+              "AqStrength",
+              "GopMode",
+            });
     internal_static_google_cloud_video_livestream_v1_AudioStream_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_video_livestream_v1_AudioStream_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_video_livestream_v1_AudioStream_descriptor,
@@ -368,15 +502,25 @@ public final class OutputsProto {
               "InputKey", "InputTrack", "InputChannel", "OutputChannel", "GainDb",
             });
     internal_static_google_cloud_video_livestream_v1_TextStream_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_video_livestream_v1_TextStream_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_video_livestream_v1_TextStream_descriptor,
             new java.lang.String[] {
-              "Codec",
+              "Codec", "LanguageCode", "DisplayName", "OutputCeaChannel", "Mapping",
+            });
+    internal_static_google_cloud_video_livestream_v1_TextStream_TextMapping_descriptor =
+        internal_static_google_cloud_video_livestream_v1_TextStream_descriptor
+            .getNestedTypes()
+            .get(0);
+    internal_static_google_cloud_video_livestream_v1_TextStream_TextMapping_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_video_livestream_v1_TextStream_TextMapping_descriptor,
+            new java.lang.String[] {
+              "InputKey", "InputTrack", "InputCeaChannel", "FromLanguageCode",
             });
     internal_static_google_cloud_video_livestream_v1_SegmentSettings_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_video_livestream_v1_SegmentSettings_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_video_livestream_v1_SegmentSettings_descriptor,
@@ -384,7 +528,7 @@ public final class OutputsProto {
               "SegmentDuration",
             });
     internal_static_google_cloud_video_livestream_v1_TimecodeConfig_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_video_livestream_v1_TimecodeConfig_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_video_livestream_v1_TimecodeConfig_descriptor,
@@ -394,11 +538,13 @@ public final class OutputsProto {
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();
     registry.add(com.google.api.FieldBehaviorProto.fieldBehavior);
+    registry.add(com.google.api.ResourceProto.resourceReference);
     com.google.protobuf.Descriptors.FileDescriptor.internalUpdateFileDescriptor(
         descriptor, registry);
     com.google.api.FieldBehaviorProto.getDescriptor();
     com.google.api.ResourceProto.getDescriptor();
     com.google.protobuf.DurationProto.getDescriptor();
+    com.google.rpc.StatusProto.getDescriptor();
     com.google.type.DateTimeProto.getDescriptor();
   }
 
