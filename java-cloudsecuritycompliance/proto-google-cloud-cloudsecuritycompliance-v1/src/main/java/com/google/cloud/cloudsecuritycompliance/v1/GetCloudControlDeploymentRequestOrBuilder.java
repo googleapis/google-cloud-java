@@ -28,7 +28,7 @@ public interface GetCloudControlDeploymentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. CloudControlDeployment name in either of the following formats:
+   * Required. CloudControlDeployment name in the following format:
    * organizations/{organization}/locations/{location}/cloudControlDeployments/{cloud_control_deployment_id}
    * </pre>
    *
@@ -44,7 +44,7 @@ public interface GetCloudControlDeploymentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. CloudControlDeployment name in either of the following formats:
+   * Required. CloudControlDeployment name in the following format:
    * organizations/{organization}/locations/{location}/cloudControlDeployments/{cloud_control_deployment_id}
    * </pre>
    *

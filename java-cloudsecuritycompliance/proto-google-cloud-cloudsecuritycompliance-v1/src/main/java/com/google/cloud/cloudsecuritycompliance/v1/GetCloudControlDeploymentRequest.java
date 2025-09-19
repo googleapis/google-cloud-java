@@ -75,7 +75,7 @@ public final class GetCloudControlDeploymentRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Required. CloudControlDeployment name in either of the following formats:
+   * Required. CloudControlDeployment name in the following format:
    * organizations/{organization}/locations/{location}/cloudControlDeployments/{cloud_control_deployment_id}
    * </pre>
    *
@@ -102,7 +102,7 @@ public final class GetCloudControlDeploymentRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Required. CloudControlDeployment name in either of the following formats:
+   * Required. CloudControlDeployment name in the following format:
    * organizations/{organization}/locations/{location}/cloudControlDeployments/{cloud_control_deployment_id}
    * </pre>
    *
@@ -493,7 +493,7 @@ public final class GetCloudControlDeploymentRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. CloudControlDeployment name in either of the following formats:
+     * Required. CloudControlDeployment name in the following format:
      * organizations/{organization}/locations/{location}/cloudControlDeployments/{cloud_control_deployment_id}
      * </pre>
      *
@@ -519,7 +519,7 @@ public final class GetCloudControlDeploymentRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. CloudControlDeployment name in either of the following formats:
+     * Required. CloudControlDeployment name in the following format:
      * organizations/{organization}/locations/{location}/cloudControlDeployments/{cloud_control_deployment_id}
      * </pre>
      *
@@ -545,7 +545,7 @@ public final class GetCloudControlDeploymentRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. CloudControlDeployment name in either of the following formats:
+     * Required. CloudControlDeployment name in the following format:
      * organizations/{organization}/locations/{location}/cloudControlDeployments/{cloud_control_deployment_id}
      * </pre>
      *
@@ -570,7 +570,7 @@ public final class GetCloudControlDeploymentRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. CloudControlDeployment name in either of the following formats:
+     * Required. CloudControlDeployment name in the following format:
      * organizations/{organization}/locations/{location}/cloudControlDeployments/{cloud_control_deployment_id}
      * </pre>
      *
@@ -591,7 +591,7 @@ public final class GetCloudControlDeploymentRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. CloudControlDeployment name in either of the following formats:
+     * Required. CloudControlDeployment name in the following format:
      * organizations/{organization}/locations/{location}/cloudControlDeployments/{cloud_control_deployment_id}
      * </pre>
      *

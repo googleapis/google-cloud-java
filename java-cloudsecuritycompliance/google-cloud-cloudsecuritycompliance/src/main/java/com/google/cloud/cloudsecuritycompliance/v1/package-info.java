@@ -21,7 +21,8 @@
  *
  * <p>======================= ConfigClient =======================
  *
- * <p>Service Description: Service describing handlers for config resources
+ * <p>Service Description: Config Service manages compliance frameworks, cloud controls, and their
+ * configurations.
  *
  * <p>Sample for ConfigClient:
  *
@@ -39,7 +40,8 @@
  *
  * <p>======================= DeploymentClient =======================
  *
- * <p>Service Description: Service describing handlers for resources
+ * <p>Service Description: Deployment service allows users to manage deployments of Frameworks and
+ * Cloud Controls on a target resource.
  *
  * <p>Sample for DeploymentClient:
  *

@@ -28,7 +28,7 @@ public interface CloudControlMetadataOrBuilder
    *
    *
    * <pre>
-   * Required. Cloud control details
+   * Required. Cloud control name and parameters.
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface CloudControlMetadataOrBuilder
    *
    *
    * <pre>
-   * Required. Cloud control details
+   * Required. Cloud control name and parameters.
    * </pre>
    *
    * <code>
@@ -58,7 +58,7 @@ public interface CloudControlMetadataOrBuilder
    *
    *
    * <pre>
-   * Required. Cloud control details
+   * Required. Cloud control name and parameters.
    * </pre>
    *
    * <code>

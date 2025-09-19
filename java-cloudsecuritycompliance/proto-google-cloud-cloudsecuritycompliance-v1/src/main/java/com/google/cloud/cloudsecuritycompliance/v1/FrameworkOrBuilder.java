@@ -162,83 +162,6 @@ public interface FrameworkOrBuilder
    *
    *
    * <pre>
-   * Optional. The details of the cloud control groups included in the
-   * framework.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails cloud_control_group_details = 7 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   */
-  java.util.List<com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails>
-      getCloudControlGroupDetailsList();
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The details of the cloud control groups included in the
-   * framework.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails cloud_control_group_details = 7 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   */
-  com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails
-      getCloudControlGroupDetails(int index);
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The details of the cloud control groups included in the
-   * framework.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails cloud_control_group_details = 7 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   */
-  int getCloudControlGroupDetailsCount();
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The details of the cloud control groups included in the
-   * framework.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails cloud_control_group_details = 7 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   */
-  java.util.List<
-          ? extends
-              com.google.cloud.cloudsecuritycompliance.v1.Framework
-                  .CloudControlGroupDetailsOrBuilder>
-      getCloudControlGroupDetailsOrBuilderList();
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The details of the cloud control groups included in the
-   * framework.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails cloud_control_group_details = 7 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   */
-  com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetailsOrBuilder
-      getCloudControlGroupDetailsOrBuilder(int index);
-
-  /**
-   *
-   *
-   * <pre>
    * Optional. The details of the cloud controls directly added without any
    * grouping in the framework.
    * </pre>
@@ -541,4 +464,83 @@ public interface FrameworkOrBuilder
    * @return The enum numeric value on the wire of supportedTargetResourceTypes at the given index.
    */
   int getSupportedTargetResourceTypesValue(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The supported enforcement modes of the framework.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.cloudsecuritycompliance.v1.EnforcementMode supported_enforcement_modes = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the supportedEnforcementModes.
+   */
+  java.util.List<com.google.cloud.cloudsecuritycompliance.v1.EnforcementMode>
+      getSupportedEnforcementModesList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The supported enforcement modes of the framework.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.cloudsecuritycompliance.v1.EnforcementMode supported_enforcement_modes = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of supportedEnforcementModes.
+   */
+  int getSupportedEnforcementModesCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The supported enforcement modes of the framework.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.cloudsecuritycompliance.v1.EnforcementMode supported_enforcement_modes = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The supportedEnforcementModes at the given index.
+   */
+  com.google.cloud.cloudsecuritycompliance.v1.EnforcementMode getSupportedEnforcementModes(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The supported enforcement modes of the framework.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.cloudsecuritycompliance.v1.EnforcementMode supported_enforcement_modes = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for supportedEnforcementModes.
+   */
+  java.util.List<java.lang.Integer> getSupportedEnforcementModesValueList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The supported enforcement modes of the framework.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.cloudsecuritycompliance.v1.EnforcementMode supported_enforcement_modes = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of supportedEnforcementModes at the given index.
+   */
+  int getSupportedEnforcementModesValue(int index);
 }

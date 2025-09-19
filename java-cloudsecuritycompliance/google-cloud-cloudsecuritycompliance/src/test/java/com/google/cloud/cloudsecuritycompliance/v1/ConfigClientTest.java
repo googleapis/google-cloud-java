@@ -189,11 +189,11 @@ public class ConfigClientTest {
             .setMajorRevisionId(612576889)
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
-            .addAllCloudControlGroupDetails(new ArrayList<Framework.CloudControlGroupDetails>())
             .addAllCloudControlDetails(new ArrayList<CloudControlDetails>())
             .addAllCategory(new ArrayList<FrameworkCategory>())
             .addAllSupportedCloudProviders(new ArrayList<CloudProvider>())
             .addAllSupportedTargetResourceTypes(new ArrayList<TargetResourceType>())
+            .addAllSupportedEnforcementModes(new ArrayList<EnforcementMode>())
             .build();
     mockConfig.addResponse(expectedResponse);
 
@@ -235,11 +235,11 @@ public class ConfigClientTest {
             .setMajorRevisionId(612576889)
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
-            .addAllCloudControlGroupDetails(new ArrayList<Framework.CloudControlGroupDetails>())
             .addAllCloudControlDetails(new ArrayList<CloudControlDetails>())
             .addAllCategory(new ArrayList<FrameworkCategory>())
             .addAllSupportedCloudProviders(new ArrayList<CloudProvider>())
             .addAllSupportedTargetResourceTypes(new ArrayList<TargetResourceType>())
+            .addAllSupportedEnforcementModes(new ArrayList<EnforcementMode>())
             .build();
     mockConfig.addResponse(expectedResponse);
 
@@ -281,11 +281,11 @@ public class ConfigClientTest {
             .setMajorRevisionId(612576889)
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
-            .addAllCloudControlGroupDetails(new ArrayList<Framework.CloudControlGroupDetails>())
             .addAllCloudControlDetails(new ArrayList<CloudControlDetails>())
             .addAllCategory(new ArrayList<FrameworkCategory>())
             .addAllSupportedCloudProviders(new ArrayList<CloudProvider>())
             .addAllSupportedTargetResourceTypes(new ArrayList<TargetResourceType>())
+            .addAllSupportedEnforcementModes(new ArrayList<EnforcementMode>())
             .build();
     mockConfig.addResponse(expectedResponse);
 
@@ -333,11 +333,11 @@ public class ConfigClientTest {
             .setMajorRevisionId(612576889)
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
-            .addAllCloudControlGroupDetails(new ArrayList<Framework.CloudControlGroupDetails>())
             .addAllCloudControlDetails(new ArrayList<CloudControlDetails>())
             .addAllCategory(new ArrayList<FrameworkCategory>())
             .addAllSupportedCloudProviders(new ArrayList<CloudProvider>())
             .addAllSupportedTargetResourceTypes(new ArrayList<TargetResourceType>())
+            .addAllSupportedEnforcementModes(new ArrayList<EnforcementMode>())
             .build();
     mockConfig.addResponse(expectedResponse);
 
@@ -385,11 +385,11 @@ public class ConfigClientTest {
             .setMajorRevisionId(612576889)
             .setDisplayName("displayName1714148973")
             .setDescription("description-1724546052")
-            .addAllCloudControlGroupDetails(new ArrayList<Framework.CloudControlGroupDetails>())
             .addAllCloudControlDetails(new ArrayList<CloudControlDetails>())
             .addAllCategory(new ArrayList<FrameworkCategory>())
             .addAllSupportedCloudProviders(new ArrayList<CloudProvider>())
             .addAllSupportedTargetResourceTypes(new ArrayList<TargetResourceType>())
+            .addAllSupportedEnforcementModes(new ArrayList<EnforcementMode>())
             .build();
     mockConfig.addResponse(expectedResponse);
 

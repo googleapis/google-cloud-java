@@ -23,7 +23,7 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * Request message for [ListCloudControls][].
+ * Request message for listing CloudControls.
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.ListCloudControlsRequest}
@@ -394,7 +394,7 @@ public final class ListCloudControlsRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Request message for [ListCloudControls][].
+   * Request message for listing CloudControls.
    * </pre>
    *
    * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.ListCloudControlsRequest}

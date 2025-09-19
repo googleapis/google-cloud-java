@@ -179,7 +179,7 @@ public enum CloudProvider implements com.google.protobuf.ProtocolMessageEnum {
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.cloud.cloudsecuritycompliance.v1.CommonProto.getDescriptor()
         .getEnumTypes()
-        .get(4);
+        .get(3);
   }
 
   private static final CloudProvider[] VALUES = values();

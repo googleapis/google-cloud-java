@@ -23,7 +23,7 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * Message for getting a Framework.
+ * Request message for getting a Framework.
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.GetFrameworkRequest}
@@ -132,7 +132,7 @@ public final class GetFrameworkRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. The Framework major revision to retrieve. If not specified, the
+   * Optional. The Framework major version to retrieve. If not specified, the
    * most recently updated revision_id is retrieved.
    * </pre>
    *
@@ -319,7 +319,7 @@ public final class GetFrameworkRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Message for getting a Framework.
+   * Request message for getting a Framework.
    * </pre>
    *
    * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.GetFrameworkRequest}
@@ -652,7 +652,7 @@ public final class GetFrameworkRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. The Framework major revision to retrieve. If not specified, the
+     * Optional. The Framework major version to retrieve. If not specified, the
      * most recently updated revision_id is retrieved.
      * </pre>
      *
@@ -669,7 +669,7 @@ public final class GetFrameworkRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. The Framework major revision to retrieve. If not specified, the
+     * Optional. The Framework major version to retrieve. If not specified, the
      * most recently updated revision_id is retrieved.
      * </pre>
      *
@@ -690,7 +690,7 @@ public final class GetFrameworkRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. The Framework major revision to retrieve. If not specified, the
+     * Optional. The Framework major version to retrieve. If not specified, the
      * most recently updated revision_id is retrieved.
      * </pre>
      *

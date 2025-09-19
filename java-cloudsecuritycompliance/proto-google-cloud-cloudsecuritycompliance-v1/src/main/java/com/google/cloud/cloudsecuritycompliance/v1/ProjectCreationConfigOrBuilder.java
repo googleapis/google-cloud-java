@@ -54,7 +54,7 @@ public interface ProjectCreationConfigOrBuilder
    *
    *
    * <pre>
-   * Required. Display name of the project to be created
+   * Required. Display name of the project to be created.
    * </pre>
    *
    * <code>string project_display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -67,7 +67,7 @@ public interface ProjectCreationConfigOrBuilder
    *
    *
    * <pre>
-   * Required. Display name of the project to be created
+   * Required. Display name of the project to be created.
    * </pre>
    *
    * <code>string project_display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -80,7 +80,7 @@ public interface ProjectCreationConfigOrBuilder
    *
    *
    * <pre>
-   * Required. Billing account id to be used for the project
+   * Required. Billing account id to be used for the project.
    * </pre>
    *
    * <code>string billing_account_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -93,7 +93,7 @@ public interface ProjectCreationConfigOrBuilder
    *
    *
    * <pre>
-   * Required. Billing account id to be used for the project
+   * Required. Billing account id to be used for the project.
    * </pre>
    *
    * <code>string billing_account_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>

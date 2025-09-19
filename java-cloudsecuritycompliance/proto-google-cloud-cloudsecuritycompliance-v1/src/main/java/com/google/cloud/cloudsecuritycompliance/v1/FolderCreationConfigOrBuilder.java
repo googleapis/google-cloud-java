@@ -28,7 +28,8 @@ public interface FolderCreationConfigOrBuilder
    *
    *
    * <pre>
-   * Required. organizations/{org} or folders/{folder}
+   * Required. The parent of the folder to be created. It can be an
+   * organizations/{org} or folders/{folder}
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -41,7 +42,8 @@ public interface FolderCreationConfigOrBuilder
    *
    *
    * <pre>
-   * Required. organizations/{org} or folders/{folder}
+   * Required. The parent of the folder to be created. It can be an
+   * organizations/{org} or folders/{folder}
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>

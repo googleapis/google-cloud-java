@@ -28,7 +28,7 @@ public interface CreateFrameworkDeploymentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Value for parent. Supported formats:
+   * Required. The parent resource of the FrameworkDeployment in the format:
    * organizations/{organization}/locations/{location}
    * Only global location is supported.
    * </pre>
@@ -45,7 +45,7 @@ public interface CreateFrameworkDeploymentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Value for parent. Supported formats:
+   * Required. The parent resource of the FrameworkDeployment in the format:
    * organizations/{organization}/locations/{location}
    * Only global location is supported.
    * </pre>
@@ -63,8 +63,8 @@ public interface CreateFrameworkDeploymentRequestOrBuilder
    *
    * <pre>
    * Optional. User provided identifier. It should be unique in scope of a
-   * parent Please note that this is optional and if not provided, a random UUID
-   * will be generated.
+   * parent. This is optional and if not provided, a random UUID will be
+   * generated.
    * </pre>
    *
    * <code>string framework_deployment_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -78,8 +78,8 @@ public interface CreateFrameworkDeploymentRequestOrBuilder
    *
    * <pre>
    * Optional. User provided identifier. It should be unique in scope of a
-   * parent Please note that this is optional and if not provided, a random UUID
-   * will be generated.
+   * parent. This is optional and if not provided, a random UUID will be
+   * generated.
    * </pre>
    *
    * <code>string framework_deployment_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -92,7 +92,7 @@ public interface CreateFrameworkDeploymentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource being created.
+   * Required. The FrameworkDeployment to be created.
    * </pre>
    *
    * <code>
@@ -107,7 +107,7 @@ public interface CreateFrameworkDeploymentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource being created.
+   * Required. The FrameworkDeployment to be created.
    * </pre>
    *
    * <code>
@@ -122,7 +122,7 @@ public interface CreateFrameworkDeploymentRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The resource being created.
+   * Required. The FrameworkDeployment to be created.
    * </pre>
    *
    * <code>

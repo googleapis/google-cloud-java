@@ -28,7 +28,7 @@ public interface FrameworkDeploymentReferenceOrBuilder
    *
    *
    * <pre>
-   * Output only. The name of the framework. The format is:
+   * Output only. The name of the FrameworkDeployment. The format is:
    * organizations/{org}/locations/{location}/frameworkDeployments/{framework_deployment_id}
    * </pre>
    *
@@ -44,7 +44,7 @@ public interface FrameworkDeploymentReferenceOrBuilder
    *
    *
    * <pre>
-   * Output only. The name of the framework. The format is:
+   * Output only. The name of the FrameworkDeployment. The format is:
    * organizations/{org}/locations/{location}/frameworkDeployments/{framework_deployment_id}
    * </pre>
    *
@@ -60,7 +60,7 @@ public interface FrameworkDeploymentReferenceOrBuilder
    *
    *
    * <pre>
-   * Optional. The reference to the framework that this deployment is for.
+   * Optional. The reference to the Framework that this deployment is for.
    * Example: {
    *   framework:
    *   "organizations/{org}/locations/{location}/frameworks/{framework}",
@@ -80,7 +80,7 @@ public interface FrameworkDeploymentReferenceOrBuilder
    *
    *
    * <pre>
-   * Optional. The reference to the framework that this deployment is for.
+   * Optional. The reference to the Framework that this deployment is for.
    * Example: {
    *   framework:
    *   "organizations/{org}/locations/{location}/frameworks/{framework}",
@@ -100,7 +100,7 @@ public interface FrameworkDeploymentReferenceOrBuilder
    *
    *
    * <pre>
-   * Optional. The reference to the framework that this deployment is for.
+   * Optional. The reference to the Framework that this deployment is for.
    * Example: {
    *   framework:
    *   "organizations/{org}/locations/{location}/frameworks/{framework}",
@@ -119,7 +119,8 @@ public interface FrameworkDeploymentReferenceOrBuilder
    *
    *
    * <pre>
-   * Optional. The display name of the framework.
+   * Optional. The display name of the Framework that this FrameworkDeployment
+   * is for.
    * </pre>
    *
    * <code>string framework_display_name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -132,7 +133,8 @@ public interface FrameworkDeploymentReferenceOrBuilder
    *
    *
    * <pre>
-   * Optional. The display name of the framework.
+   * Optional. The display name of the Framework that this FrameworkDeployment
+   * is for.
    * </pre>
    *
    * <code>string framework_display_name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

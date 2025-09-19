@@ -57,10 +57,6 @@ public final class DeploymentProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_cloudsecuritycompliance_v1_CloudControlMetadata_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_cloudsecuritycompliance_v1_CloudControlGroupDeployment_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_cloudsecuritycompliance_v1_CloudControlGroupDeployment_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_cloudsecuritycompliance_v1_CreateFrameworkDeploymentRequest_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_cloudsecuritycompliance_v1_CreateFrameworkDeploymentRequest_fieldAccessorTable;
@@ -116,7 +112,7 @@ public final class DeploymentProto {
           + "le/api/field_behavior.proto\032\031google/api/"
           + "resource.proto\0324google/cloud/cloudsecuritycompliance/v1/common.proto\032#google/lon"
           + "grunning/operations.proto\032\033google/protob"
-          + "uf/empty.proto\032\037google/protobuf/timestamp.proto\"\233\t\n"
+          + "uf/empty.proto\032\037google/protobuf/timestamp.proto\"\322\007\n"
           + "\023FrameworkDeployment\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022b\n"
           + "\026target_resource_config\030\002 \001"
@@ -128,52 +124,48 @@ public final class DeploymentProto {
           + "\026cloud_control_metadata\030\006 \003(\0132=.google.cloud.cloudsecurit"
           + "ycompliance.v1.CloudControlMetadataB\003\340A\002\022W\n"
           + "\020deployment_state\030\007 \001(\01628.google.clou"
-          + "d.cloudsecuritycompliance.v1.DeploymentStateB\003\340A\003\022^\n"
-          + "\016cc_deployments\030\010 \003(\0132?.goog"
-          + "le.cloud.cloudsecuritycompliance.v1.CloudControlDeploymentB\005\030\001\340A\003\0224\n"
+          + "d.cloudsecuritycompliance.v1.DeploymentStateB\003\340A\003\0224\n"
           + "\013create_time\030\t \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\n"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\021\n"
-          + "\004etag\030\013 \001(\tB\003\340A\001\022g\n"
-          + "\024cc_group_deployments\030\014 \003(\0132D.google.cloud.cl"
-          + "oudsecuritycompliance.v1.CloudControlGroupDeploymentB\003\340A\003\022)\n"
+          + "\004etag\030\013 \001(\tB\003\340A\001\022)\n"
           + "\034target_resource_display_name\030\r"
           + " \001(\tB\003\340A\003\022z\n"
-          + "#cloud_control_deployment_references\030\016 \003(\0132H.google.cloud"
-          + ".cloudsecuritycompliance.v1.CloudControlDeploymentReferenceB\003\340A\003:\312\001\352A\306\001\n"
-          + ":cloudsecuritycompliance.googleapis.com/Framewor"
-          + "kDeployment\022]organizations/{organization}/locations/{location}/frameworkDeployme"
-          + "nts/{framework_deployment}*\024frameworkDeployments2\023frameworkDeployment\"\351\007\n"
+          + "#cloud_control_deployment_references\030\016 \003(\0132H.google.cloud."
+          + "cloudsecuritycompliance.v1.CloudControlDeploymentReferenceB\003\340A\003:\312\001\352A\306\001\n"
+          + ":cloudsecuritycompliance.googleapis.com/Framework"
+          + "Deployment\022]organizations/{organization}/locations/{location}/frameworkDeploymen"
+          + "ts/{framework_deployment}*\024frameworkDeployments2\023frameworkDeployment\"\351\007\n"
           + "\026CloudControlDeployment\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\010\022b\n"
-          + "\026target_resource_config\030\002 \001(\0132=.google.clo"
-          + "ud.cloudsecuritycompliance.v1.TargetResourceConfigB\003\340A\002\022\034\n"
+          + "\026target_resource_config\030\002 \001(\0132=.google.clou"
+          + "d.cloudsecuritycompliance.v1.TargetResourceConfigB\003\340A\002\022\034\n"
           + "\017target_resource\030\003 \001(\tB\003\340A\003\022b\n"
-          + "\026cloud_control_metadata\030\004 \001(\0132=."
-          + "google.cloud.cloudsecuritycompliance.v1.CloudControlMetadataB\003\340A\002\022\030\n"
+          + "\026cloud_control_metadata\030\004 \001(\0132=.g"
+          + "oogle.cloud.cloudsecuritycompliance.v1.CloudControlMetadataB\003\340A\002\022\030\n"
           + "\013description\030\005 \001(\tB\003\340A\001\022W\n"
-          + "\020deployment_state\030\006 \001(\01628."
-          + "google.cloud.cloudsecuritycompliance.v1.DeploymentStateB\003\340A\003\0224\n"
+          + "\020deployment_state\030\006 \001(\01628.g"
+          + "oogle.cloud.cloudsecuritycompliance.v1.DeploymentStateB\003\340A\003\0224\n"
           + "\013create_time\030\007 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\0224\n"
           + "\013update_time\030\010"
           + " \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022\021\n"
           + "\004etag\030\t \001(\tB\003\340A\001\022g\n"
           + "#parameter_substituted_cloud_control\030\n"
           + " \001(\01325.google.cloud.cloudsecuritycompliance.v1.CloudControlB\003\340A\003\022s\n"
-          + "\037framework_deployment_references\030\013 \003(\0132E.google.cloud.cloudsecuri"
-          + "tycompliance.v1.FrameworkDeploymentReferenceB\003\340A\003\022)\n"
+          + "\037framework_deployment_references\030\013 \003(\0132E.google.cloud.cloudsecurit"
+          + "ycompliance.v1.FrameworkDeploymentReferenceB\003\340A\003\022)\n"
           + "\034target_resource_display_name\030\014 \001(\tB\003\340A\003:\332\001\352A\326\001\n"
-          + "=cloudsecuritycompliance.googleapis.com/CloudControlDeployme"
-          + "nt\022dorganizations/{organization}/locations/{location}/cloudControlDeployments/{c"
-          + "loud_control_deployment}*\027cloudControlDeployments2\026cloudControlDeployment\"\311\001\n"
+          + "=cloudsecuritycompliance.googleapis.com/CloudControlDeploymen"
+          + "t\022dorganizations/{organization}/locations/{location}/cloudControlDeployments/{cl"
+          + "oud_control_deployment}*\027cloudControlDeployments2\026cloudControlDeployment\"\311\001\n"
           + "\024TargetResourceConfig\022\'\n"
           + "\030existing_target_resource\030\001 \001(\tB\003\340A\001H\000\022u\n"
-          + "\037target_resource_creation_config\030\002 \001(\0132E.google.cloud.clou"
-          + "dsecuritycompliance.v1.TargetResourceCreationConfigB\003\340A\001H\000B\021\n"
+          + "\037target_resource_creation_config\030\002 \001(\0132E.google.cloud.cloud"
+          + "securitycompliance.v1.TargetResourceCreationConfigB\003\340A\001H\000B\021\n"
           + "\017resource_config\"\210\002\n"
           + "\034TargetResourceCreationConfig\022d\n"
-          + "\026folder_creation_config\030\001 \001(\0132=.google.cloud.cl"
-          + "oudsecuritycompliance.v1.FolderCreationConfigB\003\340A\001H\000\022f\n"
+          + "\026folder_creation_config\030\001 \001(\0132=.google.cloud.clo"
+          + "udsecuritycompliance.v1.FolderCreationConfigB\003\340A\001H\000\022f\n"
           + "\027project_creation_config\030\002"
           + " \001(\0132>.google.cloud.cloudsecuritycompliance.v1.ProjectCreationConfigB\003\340A\001H\000B\032\n"
           + "\030resource_creation_config\"M\n"
@@ -185,23 +177,16 @@ public final class DeploymentProto {
           + "\024project_display_name\030\002 \001(\tB\003\340A\002\022\037\n"
           + "\022billing_account_id\030\003 \001(\tB\003\340A\002\"\321\001\n"
           + "\024CloudControlMetadata\022`\n"
-          + "\025cloud_control_details\030\001 \001(\0132<.goog"
-          + "le.cloud.cloudsecuritycompliance.v1.CloudControlDetailsB\003\340A\002\022W\n"
+          + "\025cloud_control_details\030\001 \001(\0132<.googl"
+          + "e.cloud.cloudsecuritycompliance.v1.CloudControlDetailsB\003\340A\002\022W\n"
           + "\020enforcement_mode\030\002"
-          + " \001(\01628.google.cloud.cloudsecuritycompliance.v1.EnforcementModeB\003\340A\002\"\314\002\n"
-          + "\033CloudControlGroupDeployment\022\\\n"
-          + "\023cloud_control_group\030\001"
-          + " \001(\0132:.google.cloud.cloudsecuritycompliance.v1.CloudControlGroupB\003\340A\002\022^\n"
-          + "\016cc_deployments\030\002 \003(\0132?.google.cloud.cloud"
-          + "securitycompliance.v1.CloudControlDeploymentB\005\030\001\340A\002\022o\n"
-          + "\030cc_deployment_references\030\003 \003(\0132H.google.cloud.cloudsecuritycompli"
-          + "ance.v1.CloudControlDeploymentReferenceB\003\340A\003\"\375\001\n"
+          + " \001(\01628.google.cloud.cloudsecuritycompliance.v1.EnforcementModeB\003\340A\002\"\375\001\n"
           + " CreateFrameworkDeploymentRequest\022R\n"
-          + "\006parent\030\001 \001(\tBB\340A\002\372A<\022:cloudsecurity"
-          + "compliance.googleapis.com/FrameworkDeployment\022$\n"
+          + "\006parent\030\001 \001("
+          + "\tBB\340A\002\372A<\022:cloudsecuritycompliance.googleapis.com/FrameworkDeployment\022$\n"
           + "\027framework_deployment_id\030\002 \001(\tB\003\340A\001\022_\n"
-          + "\024framework_deployment\030\003 \001(\0132<.goog"
-          + "le.cloud.cloudsecuritycompliance.v1.FrameworkDeploymentB\003\340A\002\"\207\001\n"
+          + "\024framework_deployment\030\003 \001(\0132<.google.cloud.cloudse"
+          + "curitycompliance.v1.FrameworkDeploymentB\003\340A\002\"\207\001\n"
           + " DeleteFrameworkDeploymentRequest\022P\n"
           + "\004name\030\001 \001(\tBB\340A\002\372A<\n"
           + ":cloudsecuritycompliance.googleapis.com/FrameworkDeployment\022\021\n"
@@ -210,29 +195,29 @@ public final class DeploymentProto {
           + "\004name\030\001 \001(\tBB\340A\002\372A<\n"
           + ":cloudsecuritycompliance.googleapis.com/FrameworkDeployment\"\322\001\n"
           + "\037ListFrameworkDeploymentsRequest\022R\n"
-          + "\006parent\030\001 \001("
-          + "\tBB\340A\002\372A<\022:cloudsecuritycompliance.googleapis.com/FrameworkDeployment\022\026\n"
+          + "\006parent\030\001 \001(\tBB\340A\002\372A<\022:c"
+          + "loudsecuritycompliance.googleapis.com/FrameworkDeployment\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
           + "\010order_by\030\005 \001(\tB\003\340A\001\"\230\001\n"
           + " ListFrameworkDeploymentsResponse\022[\n"
-          + "\025framework_deployments\030\001 \003(\0132<.goo"
-          + "gle.cloud.cloudsecuritycompliance.v1.FrameworkDeployment\022\027\n"
+          + "\025framework_deployments\030\001 \003(\0132<.google.cloud.clouds"
+          + "ecuritycompliance.v1.FrameworkDeployment\022\027\n"
           + "\017next_page_token\030\002 \001(\t\"w\n"
           + " GetCloudControlDeploymentRequest\022S\n"
           + "\004name\030\001 \001(\tBE\340A\002\372A?\n"
           + "=cloudsecuritycompliance.googleapis.com/CloudControlDeployment\"\330\001\n"
           + "\"ListCloudControlDeploymentsRequest\022U\n"
-          + "\006parent\030\001 \001(\tBE\340A\002\372A?\022=cloudsecurity"
-          + "compliance.googleapis.com/CloudControlDeployment\022\026\n"
+          + "\006parent\030\001 \001("
+          + "\tBE\340A\002\372A?\022=cloudsecuritycompliance.googleapis.com/CloudControlDeployment\022\026\n"
           + "\tpage_size\030\002 \001(\005B\003\340A\001\022\027\n\n"
           + "page_token\030\003 \001(\tB\003\340A\001\022\023\n"
           + "\006filter\030\004 \001(\tB\003\340A\001\022\025\n"
           + "\010order_by\030\005 \001(\tB\003\340A\001\"\242\001\n"
           + "#ListCloudControlDeploymentsResponse\022b\n"
-          + "\031cloud_control_deployments\030\001 \003(\0132?.google.cloud.cloudsec"
-          + "uritycompliance.v1.CloudControlDeployment\022\027\n"
+          + "\031cloud_control_deployments\030\001 \003(\013"
+          + "2?.google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment\022\027\n"
           + "\017next_page_token\030\002 \001(\t\"\212\001\n"
           + "\037CloudControlDeploymentReference\022g\n"
           + "\030cloud_control_deployment\030\001 \001(\tBE\340A\003\372A?\n"
@@ -240,8 +225,8 @@ public final class DeploymentProto {
           + "\034FrameworkDeploymentReference\022`\n"
           + "\024framework_deployment\030\001 \001(\tBB\340A\003\372A<\n"
           + ":cloudsecuritycompliance.googleapis.com/FrameworkDeployment\022]\n"
-          + "\023framework_reference\030\002"
-          + " \001(\0132;.google.cloud.cloudsecuritycompliance.v1.FrameworkReferenceB\003\340A\001\022#\n"
+          + "\023framework_reference\030\002 \001(\0132;.google"
+          + ".cloud.cloudsecuritycompliance.v1.FrameworkReferenceB\003\340A\001\022#\n"
           + "\026framework_display_name\030\003 \001(\tB\003\340A\001*\234\002\n"
           + "\017DeploymentState\022 \n"
           + "\034DEPLOYMENT_STATE_UNSPECIFIED\020\000\022\037\n"
@@ -251,45 +236,45 @@ public final class DeploymentProto {
           + "\027DEPLOYMENT_STATE_FAILED\020\004\022\032\n"
           + "\026DEPLOYMENT_STATE_READY\020\005\022\'\n"
           + "#DEPLOYMENT_STATE_PARTIALLY_DEPLOYED\020\006\022&\n"
-          + "\"DEPLOYMENT_STATE_PARTIALLY_DELETED\020\0072\375\r"
-          + "\n\n"
+          + "\"DEPLOYMENT_STATE_PARTIALLY_DELETED\020\0072\375\r\n\n"
           + "Deployment\022\354\002\n"
-          + "\031CreateFrameworkDeployment\022I.google.cloud.cloudsecuritycomplianc"
-          + "e.v1.CreateFrameworkDeploymentRequest\032\035.google.longrunning.Operation\"\344\001\312AP\n"
-          + "\023FrameworkDeployment\0229google.cloud.cloudsecur"
-          + "itycompliance.v1.OperationMetadata\332A3parent,framework_deployment,framework_deplo"
-          + "yment_id\202\323\344\223\002U\"=/v1/{parent=organization"
-          + "s/*/locations/*}/frameworkDeployments:\024framework_deployment\022\251\002\n"
-          + "\031DeleteFrameworkDeployment\022I.google.cloud.cloudsecurityco"
-          + "mpliance.v1.DeleteFrameworkDeploymentReq"
-          + "uest\032\035.google.longrunning.Operation\"\241\001\312AR\n"
-          + "\025google.protobuf.Empty\0229google.cloud.cloudsecuritycompliance.v1.OperationMetad"
-          + "ata\332A\004name\202\323\344\223\002?*=/v1/{name=organization"
-          + "s/*/locations/*/frameworkDeployments/*}\022\354\001\n"
-          + "\026GetFrameworkDeployment\022F.google.cloud.cloudsecuritycompliance.v1.GetFramewor"
-          + "kDeploymentRequest\032<.google.cloud.cloudsecuritycompliance.v1.FrameworkDeployment"
-          + "\"L\332A\004name\202\323\344\223\002?\022=/v1/{name=organizations"
-          + "/*/locations/*/frameworkDeployments/*}\022\377\001\n"
-          + "\030ListFrameworkDeployments\022H.google.cloud.cloudsecuritycompliance.v1.ListFramew"
-          + "orkDeploymentsRequest\032I.google.cloud.cloudsecuritycompliance.v1.ListFrameworkDep"
-          + "loymentsResponse\"N\332A\006parent\202\323\344\223\002?\022=/v1/{"
-          + "parent=organizations/*/locations/*}/frameworkDeployments\022\370\001\n"
-          + "\031GetCloudControlDeployment\022I.google.cloud.cloudsecuritycompl"
-          + "iance.v1.GetCloudControlDeploymentRequest\032?.google.cloud.cloudsecuritycompliance"
-          + ".v1.CloudControlDeployment\"O\332A\004name\202\323\344\223\002"
-          + "B\022@/v1/{name=organizations/*/locations/*/cloudControlDeployments/*}\022\213\002\n"
-          + "\033ListCloudControlDeployments\022K.google.cloud.cloud"
-          + "securitycompliance.v1.ListCloudControlDeploymentsRequest\032L.google.cloud.cloudsec"
-          + "uritycompliance.v1.ListCloudControlDeplo"
-          + "ymentsResponse\"Q\332A\006parent\202\323\344\223\002B\022@/v1/{pa"
-          + "rent=organizations/*/locations/*}/cloudControlDeployments\032Z\312A&cloudsecuritycompl"
-          + "iance.googleapis.com\322A.https://www.googleapis.com/auth/cloud-platformB\250\002\n"
-          + "+com.google.cloud.cloudsecuritycompliance.v1B\017D"
-          + "eploymentProtoP\001Zecloud.google.com/go/cloudsecuritycompliance/apiv1/cloudsecurit"
-          + "ycompliancepb;cloudsecuritycompliancepb\252"
-          + "\002\'Google.Cloud.CloudSecurityCompliance.V"
-          + "1\312\002\'Google\\Cloud\\CloudSecurityCompliance"
-          + "\\V1\352\002*Google::Cloud::CloudSecurityCompliance::V1b\006proto3"
+          + "\031CreateFrameworkDeployment\022I.google.cloud.cloudsecuritycompliance.v1.CreateFrame"
+          + "workDeploymentRequest\032\035.google.longrunning.Operation\"\344\001\312AP\n"
+          + "\023FrameworkDeployment\0229google.cloud.cloudsecuritycompliance.v1"
+          + ".OperationMetadata\332A3parent,framework_de"
+          + "ployment,framework_deployment_id\202\323\344\223\002U\"="
+          + "/v1/{parent=organizations/*/locations/*}"
+          + "/frameworkDeployments:\024framework_deployment\022\251\002\n"
+          + "\031DeleteFrameworkDeployment\022I.google.cloud.cloudsecuritycompliance.v1.Dele"
+          + "teFrameworkDeploymentRequest\032\035.google.longrunning.Operation\"\241\001\312AR\n"
+          + "\025google.protobuf.Empty\0229google.cloud.cloudsecuritycomp"
+          + "liance.v1.OperationMetadata\332A\004name\202\323\344\223\002?"
+          + "*=/v1/{name=organizations/*/locations/*/frameworkDeployments/*}\022\354\001\n"
+          + "\026GetFrameworkDeployment\022F.google.cloud.cloudsecurityc"
+          + "ompliance.v1.GetFrameworkDeploymentRequest\032<.google.cloud.cloudsecuritycomplianc"
+          + "e.v1.FrameworkDeployment\"L\332A\004name\202\323\344\223\002?\022"
+          + "=/v1/{name=organizations/*/locations/*/frameworkDeployments/*}\022\377\001\n"
+          + "\030ListFrameworkDeployments\022H.google.cloud.cloudsecurity"
+          + "compliance.v1.ListFrameworkDeploymentsRequest\032I.google.cloud.cloudsecuritycompli"
+          + "ance.v1.ListFrameworkDeploymentsResponse"
+          + "\"N\332A\006parent\202\323\344\223\002?\022=/v1/{parent=organizat"
+          + "ions/*/locations/*}/frameworkDeployments\022\370\001\n"
+          + "\031GetCloudControlDeployment\022I.google.cloud.cloudsecuritycompliance.v1.GetClou"
+          + "dControlDeploymentRequest\032?.google.cloud.cloudsecuritycompliance.v1.CloudControl"
+          + "Deployment\"O\332A\004name\202\323\344\223\002B\022@/v1/{name=org"
+          + "anizations/*/locations/*/cloudControlDeployments/*}\022\213\002\n"
+          + "\033ListCloudControlDeployments\022K.google.cloud.cloudsecuritycomplian"
+          + "ce.v1.ListCloudControlDeploymentsRequest\032L.google.cloud.cloudsecuritycompliance."
+          + "v1.ListCloudControlDeploymentsResponse\"Q"
+          + "\332A\006parent\202\323\344\223\002B\022@/v1/{parent=organizatio"
+          + "ns/*/locations/*}/cloudControlDeployments\032Z\312A&cloudsecuritycompliance.googleapis"
+          + ".com\322A.https://www.googleapis.com/auth/cloud-platformB\250\002\n"
+          + "+com.google.cloud.cloudsecuritycompliance.v1B\017DeploymentProtoP\001"
+          + "Zecloud.google.com/go/cloudsecuritycompliance/apiv1/cloudsecuritycompliancepb;cl"
+          + "oudsecuritycompliancepb\252\002\'Google.Cloud.C"
+          + "loudSecurityCompliance.V1\312\002\'Google\\Cloud"
+          + "\\CloudSecurityCompliance\\V1\352\002*Google::Cl"
+          + "oud::CloudSecurityCompliance::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -317,11 +302,9 @@ public final class DeploymentProto {
               "Description",
               "CloudControlMetadata",
               "DeploymentState",
-              "CcDeployments",
               "CreateTime",
               "UpdateTime",
               "Etag",
-              "CcGroupDeployments",
               "TargetResourceDisplayName",
               "CloudControlDeploymentReferences",
             });
@@ -384,16 +367,8 @@ public final class DeploymentProto {
             new java.lang.String[] {
               "CloudControlDetails", "EnforcementMode",
             });
-    internal_static_google_cloud_cloudsecuritycompliance_v1_CloudControlGroupDeployment_descriptor =
-        getDescriptor().getMessageTypes().get(7);
-    internal_static_google_cloud_cloudsecuritycompliance_v1_CloudControlGroupDeployment_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_cloudsecuritycompliance_v1_CloudControlGroupDeployment_descriptor,
-            new java.lang.String[] {
-              "CloudControlGroup", "CcDeployments", "CcDeploymentReferences",
-            });
     internal_static_google_cloud_cloudsecuritycompliance_v1_CreateFrameworkDeploymentRequest_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_cloudsecuritycompliance_v1_CreateFrameworkDeploymentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_cloudsecuritycompliance_v1_CreateFrameworkDeploymentRequest_descriptor,
@@ -401,7 +376,7 @@ public final class DeploymentProto {
               "Parent", "FrameworkDeploymentId", "FrameworkDeployment",
             });
     internal_static_google_cloud_cloudsecuritycompliance_v1_DeleteFrameworkDeploymentRequest_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_cloudsecuritycompliance_v1_DeleteFrameworkDeploymentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_cloudsecuritycompliance_v1_DeleteFrameworkDeploymentRequest_descriptor,
@@ -409,7 +384,7 @@ public final class DeploymentProto {
               "Name", "Etag",
             });
     internal_static_google_cloud_cloudsecuritycompliance_v1_GetFrameworkDeploymentRequest_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_cloudsecuritycompliance_v1_GetFrameworkDeploymentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_cloudsecuritycompliance_v1_GetFrameworkDeploymentRequest_descriptor,
@@ -417,7 +392,7 @@ public final class DeploymentProto {
               "Name",
             });
     internal_static_google_cloud_cloudsecuritycompliance_v1_ListFrameworkDeploymentsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_cloudsecuritycompliance_v1_ListFrameworkDeploymentsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_cloudsecuritycompliance_v1_ListFrameworkDeploymentsRequest_descriptor,
@@ -425,7 +400,7 @@ public final class DeploymentProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_cloudsecuritycompliance_v1_ListFrameworkDeploymentsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_cloudsecuritycompliance_v1_ListFrameworkDeploymentsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_cloudsecuritycompliance_v1_ListFrameworkDeploymentsResponse_descriptor,
@@ -433,7 +408,7 @@ public final class DeploymentProto {
               "FrameworkDeployments", "NextPageToken",
             });
     internal_static_google_cloud_cloudsecuritycompliance_v1_GetCloudControlDeploymentRequest_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_cloudsecuritycompliance_v1_GetCloudControlDeploymentRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_cloudsecuritycompliance_v1_GetCloudControlDeploymentRequest_descriptor,
@@ -441,7 +416,7 @@ public final class DeploymentProto {
               "Name",
             });
     internal_static_google_cloud_cloudsecuritycompliance_v1_ListCloudControlDeploymentsRequest_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_cloudsecuritycompliance_v1_ListCloudControlDeploymentsRequest_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_cloudsecuritycompliance_v1_ListCloudControlDeploymentsRequest_descriptor,
@@ -449,7 +424,7 @@ public final class DeploymentProto {
               "Parent", "PageSize", "PageToken", "Filter", "OrderBy",
             });
     internal_static_google_cloud_cloudsecuritycompliance_v1_ListCloudControlDeploymentsResponse_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_cloudsecuritycompliance_v1_ListCloudControlDeploymentsResponse_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_cloudsecuritycompliance_v1_ListCloudControlDeploymentsResponse_descriptor,
@@ -457,7 +432,7 @@ public final class DeploymentProto {
               "CloudControlDeployments", "NextPageToken",
             });
     internal_static_google_cloud_cloudsecuritycompliance_v1_CloudControlDeploymentReference_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_cloudsecuritycompliance_v1_CloudControlDeploymentReference_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_cloudsecuritycompliance_v1_CloudControlDeploymentReference_descriptor,
@@ -465,7 +440,7 @@ public final class DeploymentProto {
               "CloudControlDeployment",
             });
     internal_static_google_cloud_cloudsecuritycompliance_v1_FrameworkDeploymentReference_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_cloudsecuritycompliance_v1_FrameworkDeploymentReference_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_cloudsecuritycompliance_v1_FrameworkDeploymentReference_descriptor,
