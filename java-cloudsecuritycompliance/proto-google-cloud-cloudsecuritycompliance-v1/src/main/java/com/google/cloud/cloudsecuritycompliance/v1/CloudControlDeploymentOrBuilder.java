@@ -28,7 +28,7 @@ public interface CloudControlDeploymentOrBuilder
    *
    *
    * <pre>
-   * Identifier. CloudControlDeployment name in either of the following formats:
+   * Identifier. CloudControlDeployment name in the following format:
    * organizations/{organization}/locations/{location}/cloudControlDeployments/{cloud_control_deployment_id}
    * </pre>
    *
@@ -42,7 +42,7 @@ public interface CloudControlDeploymentOrBuilder
    *
    *
    * <pre>
-   * Identifier. CloudControlDeployment name in either of the following formats:
+   * Identifier. CloudControlDeployment name in the following format:
    * organizations/{organization}/locations/{location}/cloudControlDeployments/{cloud_control_deployment_id}
    * </pre>
    *
@@ -56,8 +56,9 @@ public interface CloudControlDeploymentOrBuilder
    *
    *
    * <pre>
-   * Required. target_resource_config referencing either an already existing
-   * target_resource or contains config for a target_resource to be created
+   * Required. The details of the target resource on which the CloudControl is
+   * to be deployed. It can either be an existing target resource or a new
+   * target resource to be created.
    * </pre>
    *
    * <code>
@@ -72,8 +73,9 @@ public interface CloudControlDeploymentOrBuilder
    *
    *
    * <pre>
-   * Required. target_resource_config referencing either an already existing
-   * target_resource or contains config for a target_resource to be created
+   * Required. The details of the target resource on which the CloudControl is
+   * to be deployed. It can either be an existing target resource or a new
+   * target resource to be created.
    * </pre>
    *
    * <code>
@@ -88,8 +90,9 @@ public interface CloudControlDeploymentOrBuilder
    *
    *
    * <pre>
-   * Required. target_resource_config referencing either an already existing
-   * target_resource or contains config for a target_resource to be created
+   * Required. The details of the target resource on which the CloudControl is
+   * to be deployed. It can either be an existing target resource or a new
+   * target resource to be created.
    * </pre>
    *
    * <code>
@@ -104,8 +107,8 @@ public interface CloudControlDeploymentOrBuilder
    *
    * <pre>
    * Output only. The resource on which the CloudControl is deployed based on
-   * the provided TargetResourceConfig. In format organizations/{organization},
-   * folders/{folder} or projects/{project}.
+   * the provided TargetResourceConfig in the following format:
+   * organizations/{organization}, folders/{folder} or projects/{project}.
    * </pre>
    *
    * <code>string target_resource = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -119,8 +122,8 @@ public interface CloudControlDeploymentOrBuilder
    *
    * <pre>
    * Output only. The resource on which the CloudControl is deployed based on
-   * the provided TargetResourceConfig. In format organizations/{organization},
-   * folders/{folder} or projects/{project}.
+   * the provided TargetResourceConfig in the following format:
+   * organizations/{organization}, folders/{folder} or projects/{project}.
    * </pre>
    *
    * <code>string target_resource = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -133,8 +136,7 @@ public interface CloudControlDeploymentOrBuilder
    *
    *
    * <pre>
-   * Required. CloudControlReference, Deployment mode and parameters for the
-   * cloud_control
+   * Required. Deployment mode and parameters for the Cloud Control.
    * </pre>
    *
    * <code>
@@ -149,8 +151,7 @@ public interface CloudControlDeploymentOrBuilder
    *
    *
    * <pre>
-   * Required. CloudControlReference, Deployment mode and parameters for the
-   * cloud_control
+   * Required. Deployment mode and parameters for the Cloud Control.
    * </pre>
    *
    * <code>
@@ -165,8 +166,7 @@ public interface CloudControlDeploymentOrBuilder
    *
    *
    * <pre>
-   * Required. CloudControlReference, Deployment mode and parameters for the
-   * cloud_control
+   * Required. Deployment mode and parameters for the Cloud Control.
    * </pre>
    *
    * <code>
@@ -180,7 +180,7 @@ public interface CloudControlDeploymentOrBuilder
    *
    *
    * <pre>
-   * Optional. User provided description of the deployment
+   * Optional. User provided description of the CloudControl deployment
    * </pre>
    *
    * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -193,7 +193,7 @@ public interface CloudControlDeploymentOrBuilder
    *
    *
    * <pre>
-   * Optional. User provided description of the deployment
+   * Optional. User provided description of the CloudControl deployment
    * </pre>
    *
    * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -206,7 +206,7 @@ public interface CloudControlDeploymentOrBuilder
    *
    *
    * <pre>
-   * Output only. State of the deployment
+   * Output only. State of the CloudControl deployment
    * </pre>
    *
    * <code>
@@ -221,7 +221,7 @@ public interface CloudControlDeploymentOrBuilder
    *
    *
    * <pre>
-   * Output only. State of the deployment
+   * Output only. State of the CloudControl deployment
    * </pre>
    *
    * <code>
@@ -317,10 +317,10 @@ public interface CloudControlDeploymentOrBuilder
    *
    * <pre>
    * Optional. To prevent concurrent updates from overwriting each other, always
-   * provide the `etag` when you update a CustomComplianceCloudControl. You can
-   * also provide the `etag` when you delete a CustomComplianceCloudControl, to
-   * help ensure that you're deleting the intended version of the
-   * CustomComplianceCloudControl.
+   * provide the `etag` when you update a CloudControlDeployment. You can also
+   * provide the `etag` when you delete a CloudControlDeployment, to help
+   * ensure that you're deleting the intended version of the
+   * CloudControlDeployment.
    * </pre>
    *
    * <code>string etag = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -334,10 +334,10 @@ public interface CloudControlDeploymentOrBuilder
    *
    * <pre>
    * Optional. To prevent concurrent updates from overwriting each other, always
-   * provide the `etag` when you update a CustomComplianceCloudControl. You can
-   * also provide the `etag` when you delete a CustomComplianceCloudControl, to
-   * help ensure that you're deleting the intended version of the
-   * CustomComplianceCloudControl.
+   * provide the `etag` when you update a CloudControlDeployment. You can also
+   * provide the `etag` when you delete a CloudControlDeployment, to help
+   * ensure that you're deleting the intended version of the
+   * CloudControlDeployment.
    * </pre>
    *
    * <code>string etag = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -350,7 +350,7 @@ public interface CloudControlDeploymentOrBuilder
    *
    *
    * <pre>
-   * Output only. The cloud control after parameter substitution.
+   * Output only. The CloudControl after substitution of given parameters.
    * </pre>
    *
    * <code>
@@ -365,7 +365,7 @@ public interface CloudControlDeploymentOrBuilder
    *
    *
    * <pre>
-   * Output only. The cloud control after parameter substitution.
+   * Output only. The CloudControl after substitution of given parameters.
    * </pre>
    *
    * <code>
@@ -380,7 +380,7 @@ public interface CloudControlDeploymentOrBuilder
    *
    *
    * <pre>
-   * Output only. The cloud control after parameter substitution.
+   * Output only. The CloudControl after substitution of given parameters.
    * </pre>
    *
    * <code>
@@ -394,8 +394,9 @@ public interface CloudControlDeploymentOrBuilder
    *
    *
    * <pre>
-   * Output only. The references to the framework deployments that this cloud
-   * control deployment is part of.
+   * Output only. The references to the Framework deployments that this Cloud
+   * Control deployment is part of. A Cloud Control deployment can be part of
+   * multiple Framework deployments.
    * </pre>
    *
    * <code>
@@ -409,8 +410,9 @@ public interface CloudControlDeploymentOrBuilder
    *
    *
    * <pre>
-   * Output only. The references to the framework deployments that this cloud
-   * control deployment is part of.
+   * Output only. The references to the Framework deployments that this Cloud
+   * Control deployment is part of. A Cloud Control deployment can be part of
+   * multiple Framework deployments.
    * </pre>
    *
    * <code>
@@ -424,8 +426,9 @@ public interface CloudControlDeploymentOrBuilder
    *
    *
    * <pre>
-   * Output only. The references to the framework deployments that this cloud
-   * control deployment is part of.
+   * Output only. The references to the Framework deployments that this Cloud
+   * Control deployment is part of. A Cloud Control deployment can be part of
+   * multiple Framework deployments.
    * </pre>
    *
    * <code>
@@ -438,8 +441,9 @@ public interface CloudControlDeploymentOrBuilder
    *
    *
    * <pre>
-   * Output only. The references to the framework deployments that this cloud
-   * control deployment is part of.
+   * Output only. The references to the Framework deployments that this Cloud
+   * Control deployment is part of. A Cloud Control deployment can be part of
+   * multiple Framework deployments.
    * </pre>
    *
    * <code>
@@ -455,8 +459,9 @@ public interface CloudControlDeploymentOrBuilder
    *
    *
    * <pre>
-   * Output only. The references to the framework deployments that this cloud
-   * control deployment is part of.
+   * Output only. The references to the Framework deployments that this Cloud
+   * Control deployment is part of. A Cloud Control deployment can be part of
+   * multiple Framework deployments.
    * </pre>
    *
    * <code>
@@ -470,8 +475,7 @@ public interface CloudControlDeploymentOrBuilder
    *
    *
    * <pre>
-   * Output only. The name of the application, project, folder, or organization
-   * that the cloud control is deployed on.
+   * Output only. The display name of the target resource.
    * </pre>
    *
    * <code>string target_resource_display_name = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -485,8 +489,7 @@ public interface CloudControlDeploymentOrBuilder
    *
    *
    * <pre>
-   * Output only. The name of the application, project, folder, or organization
-   * that the cloud control is deployed on.
+   * Output only. The display name of the target resource.
    * </pre>
    *
    * <code>string target_resource_display_name = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];

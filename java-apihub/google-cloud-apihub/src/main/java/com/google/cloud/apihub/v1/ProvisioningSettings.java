@@ -35,6 +35,7 @@ import com.google.cloud.location.ListLocationsRequest;
 import com.google.cloud.location.ListLocationsResponse;
 import com.google.cloud.location.Location;
 import com.google.longrunning.Operation;
+import com.google.protobuf.Empty;
 import java.io.IOException;
 import java.util.List;
 import javax.annotation.Generated;
@@ -125,6 +126,17 @@ public class ProvisioningSettings extends ClientSettings<ProvisioningSettings> {
   public OperationCallSettings<CreateApiHubInstanceRequest, ApiHubInstance, OperationMetadata>
       createApiHubInstanceOperationSettings() {
     return ((ProvisioningStubSettings) getStubSettings()).createApiHubInstanceOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteApiHubInstance. */
+  public UnaryCallSettings<DeleteApiHubInstanceRequest, Operation> deleteApiHubInstanceSettings() {
+    return ((ProvisioningStubSettings) getStubSettings()).deleteApiHubInstanceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteApiHubInstance. */
+  public OperationCallSettings<DeleteApiHubInstanceRequest, Empty, OperationMetadata>
+      deleteApiHubInstanceOperationSettings() {
+    return ((ProvisioningStubSettings) getStubSettings()).deleteApiHubInstanceOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to getApiHubInstance. */
@@ -257,6 +269,18 @@ public class ProvisioningSettings extends ClientSettings<ProvisioningSettings> {
             CreateApiHubInstanceRequest, ApiHubInstance, OperationMetadata>
         createApiHubInstanceOperationSettings() {
       return getStubSettingsBuilder().createApiHubInstanceOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteApiHubInstance. */
+    public UnaryCallSettings.Builder<DeleteApiHubInstanceRequest, Operation>
+        deleteApiHubInstanceSettings() {
+      return getStubSettingsBuilder().deleteApiHubInstanceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteApiHubInstance. */
+    public OperationCallSettings.Builder<DeleteApiHubInstanceRequest, Empty, OperationMetadata>
+        deleteApiHubInstanceOperationSettings() {
+      return getStubSettingsBuilder().deleteApiHubInstanceOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to getApiHubInstance. */

@@ -21,7 +21,8 @@ import static io.grpc.MethodDescriptor.generateFullMethodName;
  *
  *
  * <pre>
- * Service describing handlers for resources
+ * Deployment service allows users to manage deployments of Frameworks and
+ * Cloud Controls on a target resource.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -405,7 +406,8 @@ public final class DeploymentGrpc {
    *
    *
    * <pre>
-   * Service describing handlers for resources
+   * Deployment service allows users to manage deployments of Frameworks and
+   * Cloud Controls on a target resource.
    * </pre>
    */
   public interface AsyncService {
@@ -414,7 +416,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Creates a new FrameworkDeployment in a given project and location.
+     * Creates a new FrameworkDeployment in a given parent resource.
      * </pre>
      */
     default void createFrameworkDeployment(
@@ -457,7 +459,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Lists FrameworkDeployments in a given parent and location.
+     * Lists FrameworkDeployments in a given parent resource.
      * </pre>
      */
     default void listFrameworkDeployments(
@@ -489,7 +491,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Lists CloudControlDeployments under a given parent.
+     * Lists CloudControlDeployments in a given parent resource.
      * </pre>
      */
     default void listCloudControlDeployments(
@@ -506,7 +508,8 @@ public final class DeploymentGrpc {
    * Base class for the server implementation of the service Deployment.
    *
    * <pre>
-   * Service describing handlers for resources
+   * Deployment service allows users to manage deployments of Frameworks and
+   * Cloud Controls on a target resource.
    * </pre>
    */
   public abstract static class DeploymentImplBase implements io.grpc.BindableService, AsyncService {
@@ -521,7 +524,8 @@ public final class DeploymentGrpc {
    * A stub to allow clients to do asynchronous rpc calls to service Deployment.
    *
    * <pre>
-   * Service describing handlers for resources
+   * Deployment service allows users to manage deployments of Frameworks and
+   * Cloud Controls on a target resource.
    * </pre>
    */
   public static final class DeploymentStub extends io.grpc.stub.AbstractAsyncStub<DeploymentStub> {
@@ -538,7 +542,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Creates a new FrameworkDeployment in a given project and location.
+     * Creates a new FrameworkDeployment in a given parent resource.
      * </pre>
      */
     public void createFrameworkDeployment(
@@ -587,7 +591,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Lists FrameworkDeployments in a given parent and location.
+     * Lists FrameworkDeployments in a given parent resource.
      * </pre>
      */
     public void listFrameworkDeployments(
@@ -623,7 +627,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Lists CloudControlDeployments under a given parent.
+     * Lists CloudControlDeployments in a given parent resource.
      * </pre>
      */
     public void listCloudControlDeployments(
@@ -642,7 +646,8 @@ public final class DeploymentGrpc {
    * A stub to allow clients to do synchronous rpc calls to service Deployment.
    *
    * <pre>
-   * Service describing handlers for resources
+   * Deployment service allows users to manage deployments of Frameworks and
+   * Cloud Controls on a target resource.
    * </pre>
    */
   public static final class DeploymentBlockingV2Stub
@@ -661,7 +666,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Creates a new FrameworkDeployment in a given project and location.
+     * Creates a new FrameworkDeployment in a given parent resource.
      * </pre>
      */
     public com.google.longrunning.Operation createFrameworkDeployment(
@@ -700,7 +705,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Lists FrameworkDeployments in a given parent and location.
+     * Lists FrameworkDeployments in a given parent resource.
      * </pre>
      */
     public com.google.cloud.cloudsecuritycompliance.v1.ListFrameworkDeploymentsResponse
@@ -728,7 +733,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Lists CloudControlDeployments under a given parent.
+     * Lists CloudControlDeployments in a given parent resource.
      * </pre>
      */
     public com.google.cloud.cloudsecuritycompliance.v1.ListCloudControlDeploymentsResponse
@@ -744,7 +749,8 @@ public final class DeploymentGrpc {
    * A stub to allow clients to do limited synchronous rpc calls to service Deployment.
    *
    * <pre>
-   * Service describing handlers for resources
+   * Deployment service allows users to manage deployments of Frameworks and
+   * Cloud Controls on a target resource.
    * </pre>
    */
   public static final class DeploymentBlockingStub
@@ -763,7 +769,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Creates a new FrameworkDeployment in a given project and location.
+     * Creates a new FrameworkDeployment in a given parent resource.
      * </pre>
      */
     public com.google.longrunning.Operation createFrameworkDeployment(
@@ -802,7 +808,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Lists FrameworkDeployments in a given parent and location.
+     * Lists FrameworkDeployments in a given parent resource.
      * </pre>
      */
     public com.google.cloud.cloudsecuritycompliance.v1.ListFrameworkDeploymentsResponse
@@ -830,7 +836,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Lists CloudControlDeployments under a given parent.
+     * Lists CloudControlDeployments in a given parent resource.
      * </pre>
      */
     public com.google.cloud.cloudsecuritycompliance.v1.ListCloudControlDeploymentsResponse
@@ -846,7 +852,8 @@ public final class DeploymentGrpc {
    * A stub to allow clients to do ListenableFuture-style rpc calls to service Deployment.
    *
    * <pre>
-   * Service describing handlers for resources
+   * Deployment service allows users to manage deployments of Frameworks and
+   * Cloud Controls on a target resource.
    * </pre>
    */
   public static final class DeploymentFutureStub
@@ -864,7 +871,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Creates a new FrameworkDeployment in a given project and location.
+     * Creates a new FrameworkDeployment in a given parent resource.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -907,7 +914,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Lists FrameworkDeployments in a given parent and location.
+     * Lists FrameworkDeployments in a given parent resource.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
@@ -937,7 +944,7 @@ public final class DeploymentGrpc {
      *
      *
      * <pre>
-     * Lists CloudControlDeployments under a given parent.
+     * Lists CloudControlDeployments in a given parent resource.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<

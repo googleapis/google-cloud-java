@@ -28,7 +28,7 @@ public interface FrameworkDeploymentOrBuilder
    *
    *
    * <pre>
-   * Identifier. FrameworkDeployment name in either of the following formats:
+   * Identifier. FrameworkDeployment name in the following format:
    * organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}
    * </pre>
    *
@@ -42,7 +42,7 @@ public interface FrameworkDeploymentOrBuilder
    *
    *
    * <pre>
-   * Identifier. FrameworkDeployment name in either of the following formats:
+   * Identifier. FrameworkDeployment name in the following format:
    * organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}
    * </pre>
    *
@@ -56,8 +56,9 @@ public interface FrameworkDeploymentOrBuilder
    *
    *
    * <pre>
-   * Required. target_resource_config referencing either an already existing
-   * target_resource or contains config for a target_resource to be created
+   * Required. The details of the target resource on which the Framework is to
+   * be deployed. It can either be an existing target resource or a new target
+   * resource to be created.
    * </pre>
    *
    * <code>
@@ -72,8 +73,9 @@ public interface FrameworkDeploymentOrBuilder
    *
    *
    * <pre>
-   * Required. target_resource_config referencing either an already existing
-   * target_resource or contains config for a target_resource to be created
+   * Required. The details of the target resource on which the Framework is to
+   * be deployed. It can either be an existing target resource or a new target
+   * resource to be created.
    * </pre>
    *
    * <code>
@@ -88,8 +90,9 @@ public interface FrameworkDeploymentOrBuilder
    *
    *
    * <pre>
-   * Required. target_resource_config referencing either an already existing
-   * target_resource or contains config for a target_resource to be created
+   * Required. The details of the target resource on which the Framework is to
+   * be deployed. It can either be an existing target resource or a new target
+   * resource to be created.
    * </pre>
    *
    * <code>
@@ -104,9 +107,8 @@ public interface FrameworkDeploymentOrBuilder
    *
    * <pre>
    * Output only. The resource on which the Framework is deployed based on the
-   * provided TargetResourceConfig. In format organizations/{organization},
-   * folders/{folder}, projects/{project} or
-   * projects/{project}/locations/{location}/applications/{application}.
+   * provided TargetResourceConfig in the following format:
+   * organizations/{organization}, folders/{folder} or projects/{project}
    * </pre>
    *
    * <code>string computed_target_resource = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -120,9 +122,8 @@ public interface FrameworkDeploymentOrBuilder
    *
    * <pre>
    * Output only. The resource on which the Framework is deployed based on the
-   * provided TargetResourceConfig. In format organizations/{organization},
-   * folders/{folder}, projects/{project} or
-   * projects/{project}/locations/{location}/applications/{application}.
+   * provided TargetResourceConfig in the following format:
+   * organizations/{organization}, folders/{folder} or projects/{project}
    * </pre>
    *
    * <code>string computed_target_resource = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -135,7 +136,7 @@ public interface FrameworkDeploymentOrBuilder
    *
    *
    * <pre>
-   * Required. Framework resource reference
+   * Required. Reference to the framework to be deployed.
    * </pre>
    *
    * <code>
@@ -150,7 +151,7 @@ public interface FrameworkDeploymentOrBuilder
    *
    *
    * <pre>
-   * Required. Framework resource reference
+   * Required. Reference to the framework to be deployed.
    * </pre>
    *
    * <code>
@@ -165,7 +166,7 @@ public interface FrameworkDeploymentOrBuilder
    *
    *
    * <pre>
-   * Required. Framework resource reference
+   * Required. Reference to the framework to be deployed.
    * </pre>
    *
    * <code>
@@ -178,7 +179,7 @@ public interface FrameworkDeploymentOrBuilder
    *
    *
    * <pre>
-   * Optional. User provided description of the deployment
+   * Optional. User provided description of the Framework deployment
    * </pre>
    *
    * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -191,7 +192,7 @@ public interface FrameworkDeploymentOrBuilder
    *
    *
    * <pre>
-   * Optional. User provided description of the deployment
+   * Optional. User provided description of the Framework deployment
    * </pre>
    *
    * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -204,8 +205,9 @@ public interface FrameworkDeploymentOrBuilder
    *
    *
    * <pre>
-   * Required. Deployment mode and parameters for each of the cloud_controls
-   * part of the framework.
+   * Required. Deployment mode and parameters for each of the Cloud Controls in
+   * the framework. Every Cloud Control in the framework must have a
+   * CloudControlMetadata.
    * </pre>
    *
    * <code>
@@ -219,8 +221,9 @@ public interface FrameworkDeploymentOrBuilder
    *
    *
    * <pre>
-   * Required. Deployment mode and parameters for each of the cloud_controls
-   * part of the framework.
+   * Required. Deployment mode and parameters for each of the Cloud Controls in
+   * the framework. Every Cloud Control in the framework must have a
+   * CloudControlMetadata.
    * </pre>
    *
    * <code>
@@ -234,8 +237,9 @@ public interface FrameworkDeploymentOrBuilder
    *
    *
    * <pre>
-   * Required. Deployment mode and parameters for each of the cloud_controls
-   * part of the framework.
+   * Required. Deployment mode and parameters for each of the Cloud Controls in
+   * the framework. Every Cloud Control in the framework must have a
+   * CloudControlMetadata.
    * </pre>
    *
    * <code>
@@ -248,8 +252,9 @@ public interface FrameworkDeploymentOrBuilder
    *
    *
    * <pre>
-   * Required. Deployment mode and parameters for each of the cloud_controls
-   * part of the framework.
+   * Required. Deployment mode and parameters for each of the Cloud Controls in
+   * the framework. Every Cloud Control in the framework must have a
+   * CloudControlMetadata.
    * </pre>
    *
    * <code>
@@ -264,8 +269,9 @@ public interface FrameworkDeploymentOrBuilder
    *
    *
    * <pre>
-   * Required. Deployment mode and parameters for each of the cloud_controls
-   * part of the framework.
+   * Required. Deployment mode and parameters for each of the Cloud Controls in
+   * the framework. Every Cloud Control in the framework must have a
+   * CloudControlMetadata.
    * </pre>
    *
    * <code>
@@ -279,7 +285,7 @@ public interface FrameworkDeploymentOrBuilder
    *
    *
    * <pre>
-   * Output only. State of the deployment
+   * Output only. State of the Framework Deployment
    * </pre>
    *
    * <code>
@@ -294,7 +300,7 @@ public interface FrameworkDeploymentOrBuilder
    *
    *
    * <pre>
-   * Output only. State of the deployment
+   * Output only. State of the Framework Deployment
    * </pre>
    *
    * <code>
@@ -304,95 +310,6 @@ public interface FrameworkDeploymentOrBuilder
    * @return The deploymentState.
    */
   com.google.cloud.cloudsecuritycompliance.v1.DeploymentState getDeploymentState();
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. This field is inlined just for cloudNext because the one
-   * platform apis of CCDeployment does not exist. Beyond cloud
-   * next it will be replaced with the field below which is the
-   * references of cloud control deployment
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment cc_deployments = 8 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   */
-  @java.lang.Deprecated
-  java.util.List<com.google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment>
-      getCcDeploymentsList();
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. This field is inlined just for cloudNext because the one
-   * platform apis of CCDeployment does not exist. Beyond cloud
-   * next it will be replaced with the field below which is the
-   * references of cloud control deployment
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment cc_deployments = 8 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   */
-  @java.lang.Deprecated
-  com.google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment getCcDeployments(int index);
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. This field is inlined just for cloudNext because the one
-   * platform apis of CCDeployment does not exist. Beyond cloud
-   * next it will be replaced with the field below which is the
-   * references of cloud control deployment
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment cc_deployments = 8 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   */
-  @java.lang.Deprecated
-  int getCcDeploymentsCount();
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. This field is inlined just for cloudNext because the one
-   * platform apis of CCDeployment does not exist. Beyond cloud
-   * next it will be replaced with the field below which is the
-   * references of cloud control deployment
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment cc_deployments = 8 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   */
-  @java.lang.Deprecated
-  java.util.List<
-          ? extends com.google.cloud.cloudsecuritycompliance.v1.CloudControlDeploymentOrBuilder>
-      getCcDeploymentsOrBuilderList();
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. This field is inlined just for cloudNext because the one
-   * platform apis of CCDeployment does not exist. Beyond cloud
-   * next it will be replaced with the field below which is the
-   * references of cloud control deployment
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment cc_deployments = 8 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   */
-  @java.lang.Deprecated
-  com.google.cloud.cloudsecuritycompliance.v1.CloudControlDeploymentOrBuilder
-      getCcDeploymentsOrBuilder(int index);
 
   /**
    *
@@ -479,10 +396,10 @@ public interface FrameworkDeploymentOrBuilder
    *
    * <pre>
    * Optional. To prevent concurrent updates from overwriting each other, always
-   * provide the `etag` when you update a CustomComplianceFramework. You can
-   * also provide the `etag` when you delete a CustomComplianceFramework, to
-   * help ensure that you're deleting the intended version of the
-   * CustomComplianceFramework.
+   * provide the `etag` when you update a FrameworkDeployment. You can also
+   * provide the `etag` when you delete a FrameworkDeployment, to help
+   * ensure that you're deleting the intended version of the
+   * FrameworkDeployment.
    * </pre>
    *
    * <code>string etag = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -496,10 +413,10 @@ public interface FrameworkDeploymentOrBuilder
    *
    * <pre>
    * Optional. To prevent concurrent updates from overwriting each other, always
-   * provide the `etag` when you update a CustomComplianceFramework. You can
-   * also provide the `etag` when you delete a CustomComplianceFramework, to
-   * help ensure that you're deleting the intended version of the
-   * CustomComplianceFramework.
+   * provide the `etag` when you update a FrameworkDeployment. You can also
+   * provide the `etag` when you delete a FrameworkDeployment, to help
+   * ensure that you're deleting the intended version of the
+   * FrameworkDeployment.
    * </pre>
    *
    * <code>string etag = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -507,77 +424,6 @@ public interface FrameworkDeploymentOrBuilder
    * @return The bytes for etag.
    */
   com.google.protobuf.ByteString getEtagBytes();
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. Similarly we'll also have a field for CloudControlGroups
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment cc_group_deployments = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   */
-  java.util.List<com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment>
-      getCcGroupDeploymentsList();
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. Similarly we'll also have a field for CloudControlGroups
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment cc_group_deployments = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   */
-  com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment getCcGroupDeployments(
-      int index);
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. Similarly we'll also have a field for CloudControlGroups
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment cc_group_deployments = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   */
-  int getCcGroupDeploymentsCount();
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. Similarly we'll also have a field for CloudControlGroups
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment cc_group_deployments = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   */
-  java.util.List<
-          ? extends
-              com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeploymentOrBuilder>
-      getCcGroupDeploymentsOrBuilderList();
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. Similarly we'll also have a field for CloudControlGroups
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment cc_group_deployments = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   */
-  com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeploymentOrBuilder
-      getCcGroupDeploymentsOrBuilder(int index);
 
   /**
    *
@@ -611,10 +457,11 @@ public interface FrameworkDeploymentOrBuilder
    *
    *
    * <pre>
-   * Output only. The references to the cloud control deployments.
-   * Example: If a framework deployment deploys two cloud controls,
-   * cc-deployment-1 and cc-deployment-2, then the
-   * cloud_control_deployment_references will be:
+   * Output only. The references to the cloud control deployments. It has all
+   * the CloudControlDeployments which are either directly added in the
+   * framework or through a CloudControlGroup. Example: If a framework
+   * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
+   * then the cloud_control_deployment_references will be:
    * {
    *  cloud_control_deployment_reference: {
    *    cloud_control_deployment:
@@ -637,10 +484,11 @@ public interface FrameworkDeploymentOrBuilder
    *
    *
    * <pre>
-   * Output only. The references to the cloud control deployments.
-   * Example: If a framework deployment deploys two cloud controls,
-   * cc-deployment-1 and cc-deployment-2, then the
-   * cloud_control_deployment_references will be:
+   * Output only. The references to the cloud control deployments. It has all
+   * the CloudControlDeployments which are either directly added in the
+   * framework or through a CloudControlGroup. Example: If a framework
+   * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
+   * then the cloud_control_deployment_references will be:
    * {
    *  cloud_control_deployment_reference: {
    *    cloud_control_deployment:
@@ -663,10 +511,11 @@ public interface FrameworkDeploymentOrBuilder
    *
    *
    * <pre>
-   * Output only. The references to the cloud control deployments.
-   * Example: If a framework deployment deploys two cloud controls,
-   * cc-deployment-1 and cc-deployment-2, then the
-   * cloud_control_deployment_references will be:
+   * Output only. The references to the cloud control deployments. It has all
+   * the CloudControlDeployments which are either directly added in the
+   * framework or through a CloudControlGroup. Example: If a framework
+   * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
+   * then the cloud_control_deployment_references will be:
    * {
    *  cloud_control_deployment_reference: {
    *    cloud_control_deployment:
@@ -688,10 +537,11 @@ public interface FrameworkDeploymentOrBuilder
    *
    *
    * <pre>
-   * Output only. The references to the cloud control deployments.
-   * Example: If a framework deployment deploys two cloud controls,
-   * cc-deployment-1 and cc-deployment-2, then the
-   * cloud_control_deployment_references will be:
+   * Output only. The references to the cloud control deployments. It has all
+   * the CloudControlDeployments which are either directly added in the
+   * framework or through a CloudControlGroup. Example: If a framework
+   * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
+   * then the cloud_control_deployment_references will be:
    * {
    *  cloud_control_deployment_reference: {
    *    cloud_control_deployment:
@@ -716,10 +566,11 @@ public interface FrameworkDeploymentOrBuilder
    *
    *
    * <pre>
-   * Output only. The references to the cloud control deployments.
-   * Example: If a framework deployment deploys two cloud controls,
-   * cc-deployment-1 and cc-deployment-2, then the
-   * cloud_control_deployment_references will be:
+   * Output only. The references to the cloud control deployments. It has all
+   * the CloudControlDeployments which are either directly added in the
+   * framework or through a CloudControlGroup. Example: If a framework
+   * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
+   * then the cloud_control_deployment_references will be:
    * {
    *  cloud_control_deployment_reference: {
    *    cloud_control_deployment:

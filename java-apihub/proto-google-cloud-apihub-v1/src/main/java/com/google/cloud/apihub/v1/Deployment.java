@@ -49,6 +49,9 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
     resourceUri_ = "";
     endpoints_ = com.google.protobuf.LazyStringArrayList.emptyList();
     apiVersions_ = com.google.protobuf.LazyStringArrayList.emptyList();
+    sourceMetadata_ = java.util.Collections.emptyList();
+    sourceProject_ = "";
+    sourceEnvironment_ = "";
   }
 
   @java.lang.Override
@@ -398,9 +401,12 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. A URI to the runtime resource. This URI can be used to manage the
-   * resource. For example, if the runtime resource is of type APIGEE_PROXY,
-   * then this field will contain the URI to the management UI of the proxy.
+   * Required. The resource URI identifies the deployment within its gateway.
+   * For Apigee gateways, its recommended to use the format:
+   * organizations/{org}/environments/{env}/apis/{api}.
+   * For ex: if a proxy with name `orders` is deployed in `staging`
+   * environment of `cymbal` organization, the resource URI would be:
+   * `organizations/cymbal/environments/staging/apis/orders`.
    * </pre>
    *
    * <code>string resource_uri = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -424,9 +430,12 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Required. A URI to the runtime resource. This URI can be used to manage the
-   * resource. For example, if the runtime resource is of type APIGEE_PROXY,
-   * then this field will contain the URI to the management UI of the proxy.
+   * Required. The resource URI identifies the deployment within its gateway.
+   * For Apigee gateways, its recommended to use the format:
+   * organizations/{org}/environments/{env}/apis/{api}.
+   * For ex: if a proxy with name `orders` is deployed in `staging`
+   * environment of `cymbal` organization, the resource URI would be:
+   * `organizations/cymbal/environments/staging/apis/orders`.
    * </pre>
    *
    * <code>string resource_uri = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -994,6 +1003,366 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int SOURCE_METADATA_FIELD_NUMBER = 14;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.apihub.v1.SourceMetadata> sourceMetadata_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of sources and metadata from the sources of the
+   * deployment.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.apihub.v1.SourceMetadata> getSourceMetadataList() {
+    return sourceMetadata_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of sources and metadata from the sources of the
+   * deployment.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.apihub.v1.SourceMetadataOrBuilder>
+      getSourceMetadataOrBuilderList() {
+    return sourceMetadata_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of sources and metadata from the sources of the
+   * deployment.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getSourceMetadataCount() {
+    return sourceMetadata_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of sources and metadata from the sources of the
+   * deployment.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.apihub.v1.SourceMetadata getSourceMetadata(int index) {
+    return sourceMetadata_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of sources and metadata from the sources of the
+   * deployment.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.apihub.v1.SourceMetadataOrBuilder getSourceMetadataOrBuilder(int index) {
+    return sourceMetadata_.get(index);
+  }
+
+  public static final int MANAGEMENT_URL_FIELD_NUMBER = 15;
+  private com.google.cloud.apihub.v1.AttributeValues managementUrl_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The uri where users can navigate to for the management of the
+   * deployment. This maps to the following system defined attribute:
+   * `projects/{project}/locations/{location}/attributes/system-management-url`
+   * The number of values for this attribute will be based on the
+   * cardinality of the attribute. The same can be retrieved via GetAttribute
+   * API. The value of the attribute should be a valid URL.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.AttributeValues management_url = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the managementUrl field is set.
+   */
+  @java.lang.Override
+  public boolean hasManagementUrl() {
+    return ((bitField0_ & 0x00000040) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The uri where users can navigate to for the management of the
+   * deployment. This maps to the following system defined attribute:
+   * `projects/{project}/locations/{location}/attributes/system-management-url`
+   * The number of values for this attribute will be based on the
+   * cardinality of the attribute. The same can be retrieved via GetAttribute
+   * API. The value of the attribute should be a valid URL.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.AttributeValues management_url = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The managementUrl.
+   */
+  @java.lang.Override
+  public com.google.cloud.apihub.v1.AttributeValues getManagementUrl() {
+    return managementUrl_ == null
+        ? com.google.cloud.apihub.v1.AttributeValues.getDefaultInstance()
+        : managementUrl_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The uri where users can navigate to for the management of the
+   * deployment. This maps to the following system defined attribute:
+   * `projects/{project}/locations/{location}/attributes/system-management-url`
+   * The number of values for this attribute will be based on the
+   * cardinality of the attribute. The same can be retrieved via GetAttribute
+   * API. The value of the attribute should be a valid URL.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.AttributeValues management_url = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.apihub.v1.AttributeValuesOrBuilder getManagementUrlOrBuilder() {
+    return managementUrl_ == null
+        ? com.google.cloud.apihub.v1.AttributeValues.getDefaultInstance()
+        : managementUrl_;
+  }
+
+  public static final int SOURCE_URI_FIELD_NUMBER = 16;
+  private com.google.cloud.apihub.v1.AttributeValues sourceUri_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The uri where additional source specific information for this
+   * deployment can be found. This maps to the following system defined
+   * attribute:
+   * `projects/{project}/locations/{location}/attributes/system-source-uri`
+   * The number of values for this attribute will be based on the
+   * cardinality of the attribute. The same can be retrieved via GetAttribute
+   * API. The value of the attribute should be a valid URI, and in case
+   * of Cloud Storage URI, it should point to a Cloud Storage object,
+   * not a directory.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.AttributeValues source_uri = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the sourceUri field is set.
+   */
+  @java.lang.Override
+  public boolean hasSourceUri() {
+    return ((bitField0_ & 0x00000080) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The uri where additional source specific information for this
+   * deployment can be found. This maps to the following system defined
+   * attribute:
+   * `projects/{project}/locations/{location}/attributes/system-source-uri`
+   * The number of values for this attribute will be based on the
+   * cardinality of the attribute. The same can be retrieved via GetAttribute
+   * API. The value of the attribute should be a valid URI, and in case
+   * of Cloud Storage URI, it should point to a Cloud Storage object,
+   * not a directory.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.AttributeValues source_uri = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The sourceUri.
+   */
+  @java.lang.Override
+  public com.google.cloud.apihub.v1.AttributeValues getSourceUri() {
+    return sourceUri_ == null
+        ? com.google.cloud.apihub.v1.AttributeValues.getDefaultInstance()
+        : sourceUri_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The uri where additional source specific information for this
+   * deployment can be found. This maps to the following system defined
+   * attribute:
+   * `projects/{project}/locations/{location}/attributes/system-source-uri`
+   * The number of values for this attribute will be based on the
+   * cardinality of the attribute. The same can be retrieved via GetAttribute
+   * API. The value of the attribute should be a valid URI, and in case
+   * of Cloud Storage URI, it should point to a Cloud Storage object,
+   * not a directory.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.AttributeValues source_uri = 16 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.apihub.v1.AttributeValuesOrBuilder getSourceUriOrBuilder() {
+    return sourceUri_ == null
+        ? com.google.cloud.apihub.v1.AttributeValues.getDefaultInstance()
+        : sourceUri_;
+  }
+
+  public static final int SOURCE_PROJECT_FIELD_NUMBER = 17;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceProject_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The project to which the deployment belongs.
+   * For GCP gateways, this will refer to the project identifier.
+   * For others like Edge/OPDK, this will refer to the org identifier.
+   * </pre>
+   *
+   * <code>string source_project = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The sourceProject.
+   */
+  @java.lang.Override
+  public java.lang.String getSourceProject() {
+    java.lang.Object ref = sourceProject_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      sourceProject_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The project to which the deployment belongs.
+   * For GCP gateways, this will refer to the project identifier.
+   * For others like Edge/OPDK, this will refer to the org identifier.
+   * </pre>
+   *
+   * <code>string source_project = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for sourceProject.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSourceProjectBytes() {
+    java.lang.Object ref = sourceProject_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      sourceProject_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int SOURCE_ENVIRONMENT_FIELD_NUMBER = 18;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object sourceEnvironment_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The environment at source for the deployment.
+   * For example: prod, dev, staging, etc.
+   * </pre>
+   *
+   * <code>string source_environment = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The sourceEnvironment.
+   */
+  @java.lang.Override
+  public java.lang.String getSourceEnvironment() {
+    java.lang.Object ref = sourceEnvironment_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      sourceEnvironment_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The environment at source for the deployment.
+   * For example: prod, dev, staging, etc.
+   * </pre>
+   *
+   * <code>string source_environment = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for sourceEnvironment.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getSourceEnvironmentBytes() {
+    java.lang.Object ref = sourceEnvironment_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      sourceEnvironment_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1046,6 +1415,21 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetAttributes(), AttributesDefaultEntryHolder.defaultEntry, 13);
+    for (int i = 0; i < sourceMetadata_.size(); i++) {
+      output.writeMessage(14, sourceMetadata_.get(i));
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      output.writeMessage(15, getManagementUrl());
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      output.writeMessage(16, getSourceUri());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceProject_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 17, sourceProject_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceEnvironment_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 18, sourceEnvironment_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -1112,6 +1496,21 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
                   .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, attributes__);
     }
+    for (int i = 0; i < sourceMetadata_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, sourceMetadata_.get(i));
+    }
+    if (((bitField0_ & 0x00000040) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(15, getManagementUrl());
+    }
+    if (((bitField0_ & 0x00000080) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, getSourceUri());
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceProject_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(17, sourceProject_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(sourceEnvironment_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(18, sourceEnvironment_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1158,6 +1557,17 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       if (!getEnvironment().equals(other.getEnvironment())) return false;
     }
     if (!internalGetAttributes().equals(other.internalGetAttributes())) return false;
+    if (!getSourceMetadataList().equals(other.getSourceMetadataList())) return false;
+    if (hasManagementUrl() != other.hasManagementUrl()) return false;
+    if (hasManagementUrl()) {
+      if (!getManagementUrl().equals(other.getManagementUrl())) return false;
+    }
+    if (hasSourceUri() != other.hasSourceUri()) return false;
+    if (hasSourceUri()) {
+      if (!getSourceUri().equals(other.getSourceUri())) return false;
+    }
+    if (!getSourceProject().equals(other.getSourceProject())) return false;
+    if (!getSourceEnvironment().equals(other.getSourceEnvironment())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1213,6 +1623,22 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + ATTRIBUTES_FIELD_NUMBER;
       hash = (53 * hash) + internalGetAttributes().hashCode();
     }
+    if (getSourceMetadataCount() > 0) {
+      hash = (37 * hash) + SOURCE_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getSourceMetadataList().hashCode();
+    }
+    if (hasManagementUrl()) {
+      hash = (37 * hash) + MANAGEMENT_URL_FIELD_NUMBER;
+      hash = (53 * hash) + getManagementUrl().hashCode();
+    }
+    if (hasSourceUri()) {
+      hash = (37 * hash) + SOURCE_URI_FIELD_NUMBER;
+      hash = (53 * hash) + getSourceUri().hashCode();
+    }
+    hash = (37 * hash) + SOURCE_PROJECT_FIELD_NUMBER;
+    hash = (53 * hash) + getSourceProject().hashCode();
+    hash = (37 * hash) + SOURCE_ENVIRONMENT_FIELD_NUMBER;
+    hash = (53 * hash) + getSourceEnvironment().hashCode();
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1384,6 +1810,9 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
         getUpdateTimeFieldBuilder();
         getSloFieldBuilder();
         getEnvironmentFieldBuilder();
+        getSourceMetadataFieldBuilder();
+        getManagementUrlFieldBuilder();
+        getSourceUriFieldBuilder();
       }
     }
 
@@ -1428,6 +1857,25 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
         environmentBuilder_ = null;
       }
       internalGetMutableAttributes().clear();
+      if (sourceMetadataBuilder_ == null) {
+        sourceMetadata_ = java.util.Collections.emptyList();
+      } else {
+        sourceMetadata_ = null;
+        sourceMetadataBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00002000);
+      managementUrl_ = null;
+      if (managementUrlBuilder_ != null) {
+        managementUrlBuilder_.dispose();
+        managementUrlBuilder_ = null;
+      }
+      sourceUri_ = null;
+      if (sourceUriBuilder_ != null) {
+        sourceUriBuilder_.dispose();
+        sourceUriBuilder_ = null;
+      }
+      sourceProject_ = "";
+      sourceEnvironment_ = "";
       return this;
     }
 
@@ -1455,11 +1903,24 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.apihub.v1.Deployment buildPartial() {
       com.google.cloud.apihub.v1.Deployment result =
           new com.google.cloud.apihub.v1.Deployment(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.apihub.v1.Deployment result) {
+      if (sourceMetadataBuilder_ == null) {
+        if (((bitField0_ & 0x00002000) != 0)) {
+          sourceMetadata_ = java.util.Collections.unmodifiableList(sourceMetadata_);
+          bitField0_ = (bitField0_ & ~0x00002000);
+        }
+        result.sourceMetadata_ = sourceMetadata_;
+      } else {
+        result.sourceMetadata_ = sourceMetadataBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.apihub.v1.Deployment result) {
@@ -1515,6 +1976,21 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00001000) != 0)) {
         result.attributes_ =
             internalGetAttributes().build(AttributesDefaultEntryHolder.defaultEntry);
+      }
+      if (((from_bitField0_ & 0x00004000) != 0)) {
+        result.managementUrl_ =
+            managementUrlBuilder_ == null ? managementUrl_ : managementUrlBuilder_.build();
+        to_bitField0_ |= 0x00000040;
+      }
+      if (((from_bitField0_ & 0x00008000) != 0)) {
+        result.sourceUri_ = sourceUriBuilder_ == null ? sourceUri_ : sourceUriBuilder_.build();
+        to_bitField0_ |= 0x00000080;
+      }
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.sourceProject_ = sourceProject_;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
+        result.sourceEnvironment_ = sourceEnvironment_;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -1624,6 +2100,49 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
       }
       internalGetMutableAttributes().mergeFrom(other.internalGetAttributes());
       bitField0_ |= 0x00001000;
+      if (sourceMetadataBuilder_ == null) {
+        if (!other.sourceMetadata_.isEmpty()) {
+          if (sourceMetadata_.isEmpty()) {
+            sourceMetadata_ = other.sourceMetadata_;
+            bitField0_ = (bitField0_ & ~0x00002000);
+          } else {
+            ensureSourceMetadataIsMutable();
+            sourceMetadata_.addAll(other.sourceMetadata_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.sourceMetadata_.isEmpty()) {
+          if (sourceMetadataBuilder_.isEmpty()) {
+            sourceMetadataBuilder_.dispose();
+            sourceMetadataBuilder_ = null;
+            sourceMetadata_ = other.sourceMetadata_;
+            bitField0_ = (bitField0_ & ~0x00002000);
+            sourceMetadataBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getSourceMetadataFieldBuilder()
+                    : null;
+          } else {
+            sourceMetadataBuilder_.addAllMessages(other.sourceMetadata_);
+          }
+        }
+      }
+      if (other.hasManagementUrl()) {
+        mergeManagementUrl(other.getManagementUrl());
+      }
+      if (other.hasSourceUri()) {
+        mergeSourceUri(other.getSourceUri());
+      }
+      if (!other.getSourceProject().isEmpty()) {
+        sourceProject_ = other.sourceProject_;
+        bitField0_ |= 0x00010000;
+        onChanged();
+      }
+      if (!other.getSourceEnvironment().isEmpty()) {
+        sourceEnvironment_ = other.sourceEnvironment_;
+        bitField0_ |= 0x00020000;
+        onChanged();
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1738,6 +2257,43 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00001000;
                 break;
               } // case 106
+            case 114:
+              {
+                com.google.cloud.apihub.v1.SourceMetadata m =
+                    input.readMessage(
+                        com.google.cloud.apihub.v1.SourceMetadata.parser(), extensionRegistry);
+                if (sourceMetadataBuilder_ == null) {
+                  ensureSourceMetadataIsMutable();
+                  sourceMetadata_.add(m);
+                } else {
+                  sourceMetadataBuilder_.addMessage(m);
+                }
+                break;
+              } // case 114
+            case 122:
+              {
+                input.readMessage(getManagementUrlFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 122
+            case 130:
+              {
+                input.readMessage(getSourceUriFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x00008000;
+                break;
+              } // case 130
+            case 138:
+              {
+                sourceProject_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00010000;
+                break;
+              } // case 138
+            case 146:
+              {
+                sourceEnvironment_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00020000;
+                break;
+              } // case 146
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2600,9 +3156,12 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A URI to the runtime resource. This URI can be used to manage the
-     * resource. For example, if the runtime resource is of type APIGEE_PROXY,
-     * then this field will contain the URI to the management UI of the proxy.
+     * Required. The resource URI identifies the deployment within its gateway.
+     * For Apigee gateways, its recommended to use the format:
+     * organizations/{org}/environments/{env}/apis/{api}.
+     * For ex: if a proxy with name `orders` is deployed in `staging`
+     * environment of `cymbal` organization, the resource URI would be:
+     * `organizations/cymbal/environments/staging/apis/orders`.
      * </pre>
      *
      * <code>string resource_uri = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2625,9 +3184,12 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A URI to the runtime resource. This URI can be used to manage the
-     * resource. For example, if the runtime resource is of type APIGEE_PROXY,
-     * then this field will contain the URI to the management UI of the proxy.
+     * Required. The resource URI identifies the deployment within its gateway.
+     * For Apigee gateways, its recommended to use the format:
+     * organizations/{org}/environments/{env}/apis/{api}.
+     * For ex: if a proxy with name `orders` is deployed in `staging`
+     * environment of `cymbal` organization, the resource URI would be:
+     * `organizations/cymbal/environments/staging/apis/orders`.
      * </pre>
      *
      * <code>string resource_uri = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2650,9 +3212,12 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A URI to the runtime resource. This URI can be used to manage the
-     * resource. For example, if the runtime resource is of type APIGEE_PROXY,
-     * then this field will contain the URI to the management UI of the proxy.
+     * Required. The resource URI identifies the deployment within its gateway.
+     * For Apigee gateways, its recommended to use the format:
+     * organizations/{org}/environments/{env}/apis/{api}.
+     * For ex: if a proxy with name `orders` is deployed in `staging`
+     * environment of `cymbal` organization, the resource URI would be:
+     * `organizations/cymbal/environments/staging/apis/orders`.
      * </pre>
      *
      * <code>string resource_uri = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2674,9 +3239,12 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A URI to the runtime resource. This URI can be used to manage the
-     * resource. For example, if the runtime resource is of type APIGEE_PROXY,
-     * then this field will contain the URI to the management UI of the proxy.
+     * Required. The resource URI identifies the deployment within its gateway.
+     * For Apigee gateways, its recommended to use the format:
+     * organizations/{org}/environments/{env}/apis/{api}.
+     * For ex: if a proxy with name `orders` is deployed in `staging`
+     * environment of `cymbal` organization, the resource URI would be:
+     * `organizations/cymbal/environments/staging/apis/orders`.
      * </pre>
      *
      * <code>string resource_uri = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -2694,9 +3262,12 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. A URI to the runtime resource. This URI can be used to manage the
-     * resource. For example, if the runtime resource is of type APIGEE_PROXY,
-     * then this field will contain the URI to the management UI of the proxy.
+     * Required. The resource URI identifies the deployment within its gateway.
+     * For Apigee gateways, its recommended to use the format:
+     * organizations/{org}/environments/{env}/apis/{api}.
+     * For ex: if a proxy with name `orders` is deployed in `staging`
+     * environment of `cymbal` organization, the resource URI would be:
+     * `organizations/cymbal/environments/staging/apis/orders`.
      * </pre>
      *
      * <code>string resource_uri = 6 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -4376,6 +4947,1212 @@ public final class Deployment extends com.google.protobuf.GeneratedMessageV3
         builderMap.put(key, entry);
       }
       return (com.google.cloud.apihub.v1.AttributeValues.Builder) entry;
+    }
+
+    private java.util.List<com.google.cloud.apihub.v1.SourceMetadata> sourceMetadata_ =
+        java.util.Collections.emptyList();
+
+    private void ensureSourceMetadataIsMutable() {
+      if (!((bitField0_ & 0x00002000) != 0)) {
+        sourceMetadata_ =
+            new java.util.ArrayList<com.google.cloud.apihub.v1.SourceMetadata>(sourceMetadata_);
+        bitField0_ |= 0x00002000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.apihub.v1.SourceMetadata,
+            com.google.cloud.apihub.v1.SourceMetadata.Builder,
+            com.google.cloud.apihub.v1.SourceMetadataOrBuilder>
+        sourceMetadataBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the
+     * deployment.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.apihub.v1.SourceMetadata> getSourceMetadataList() {
+      if (sourceMetadataBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(sourceMetadata_);
+      } else {
+        return sourceMetadataBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the
+     * deployment.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getSourceMetadataCount() {
+      if (sourceMetadataBuilder_ == null) {
+        return sourceMetadata_.size();
+      } else {
+        return sourceMetadataBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the
+     * deployment.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.SourceMetadata getSourceMetadata(int index) {
+      if (sourceMetadataBuilder_ == null) {
+        return sourceMetadata_.get(index);
+      } else {
+        return sourceMetadataBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the
+     * deployment.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setSourceMetadata(int index, com.google.cloud.apihub.v1.SourceMetadata value) {
+      if (sourceMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSourceMetadataIsMutable();
+        sourceMetadata_.set(index, value);
+        onChanged();
+      } else {
+        sourceMetadataBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the
+     * deployment.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setSourceMetadata(
+        int index, com.google.cloud.apihub.v1.SourceMetadata.Builder builderForValue) {
+      if (sourceMetadataBuilder_ == null) {
+        ensureSourceMetadataIsMutable();
+        sourceMetadata_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        sourceMetadataBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the
+     * deployment.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addSourceMetadata(com.google.cloud.apihub.v1.SourceMetadata value) {
+      if (sourceMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSourceMetadataIsMutable();
+        sourceMetadata_.add(value);
+        onChanged();
+      } else {
+        sourceMetadataBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the
+     * deployment.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addSourceMetadata(int index, com.google.cloud.apihub.v1.SourceMetadata value) {
+      if (sourceMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSourceMetadataIsMutable();
+        sourceMetadata_.add(index, value);
+        onChanged();
+      } else {
+        sourceMetadataBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the
+     * deployment.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addSourceMetadata(
+        com.google.cloud.apihub.v1.SourceMetadata.Builder builderForValue) {
+      if (sourceMetadataBuilder_ == null) {
+        ensureSourceMetadataIsMutable();
+        sourceMetadata_.add(builderForValue.build());
+        onChanged();
+      } else {
+        sourceMetadataBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the
+     * deployment.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addSourceMetadata(
+        int index, com.google.cloud.apihub.v1.SourceMetadata.Builder builderForValue) {
+      if (sourceMetadataBuilder_ == null) {
+        ensureSourceMetadataIsMutable();
+        sourceMetadata_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        sourceMetadataBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the
+     * deployment.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllSourceMetadata(
+        java.lang.Iterable<? extends com.google.cloud.apihub.v1.SourceMetadata> values) {
+      if (sourceMetadataBuilder_ == null) {
+        ensureSourceMetadataIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, sourceMetadata_);
+        onChanged();
+      } else {
+        sourceMetadataBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the
+     * deployment.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearSourceMetadata() {
+      if (sourceMetadataBuilder_ == null) {
+        sourceMetadata_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00002000);
+        onChanged();
+      } else {
+        sourceMetadataBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the
+     * deployment.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeSourceMetadata(int index) {
+      if (sourceMetadataBuilder_ == null) {
+        ensureSourceMetadataIsMutable();
+        sourceMetadata_.remove(index);
+        onChanged();
+      } else {
+        sourceMetadataBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the
+     * deployment.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.SourceMetadata.Builder getSourceMetadataBuilder(int index) {
+      return getSourceMetadataFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the
+     * deployment.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.SourceMetadataOrBuilder getSourceMetadataOrBuilder(
+        int index) {
+      if (sourceMetadataBuilder_ == null) {
+        return sourceMetadata_.get(index);
+      } else {
+        return sourceMetadataBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the
+     * deployment.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.apihub.v1.SourceMetadataOrBuilder>
+        getSourceMetadataOrBuilderList() {
+      if (sourceMetadataBuilder_ != null) {
+        return sourceMetadataBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(sourceMetadata_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the
+     * deployment.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.SourceMetadata.Builder addSourceMetadataBuilder() {
+      return getSourceMetadataFieldBuilder()
+          .addBuilder(com.google.cloud.apihub.v1.SourceMetadata.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the
+     * deployment.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.SourceMetadata.Builder addSourceMetadataBuilder(int index) {
+      return getSourceMetadataFieldBuilder()
+          .addBuilder(index, com.google.cloud.apihub.v1.SourceMetadata.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the
+     * deployment.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.apihub.v1.SourceMetadata.Builder>
+        getSourceMetadataBuilderList() {
+      return getSourceMetadataFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.apihub.v1.SourceMetadata,
+            com.google.cloud.apihub.v1.SourceMetadata.Builder,
+            com.google.cloud.apihub.v1.SourceMetadataOrBuilder>
+        getSourceMetadataFieldBuilder() {
+      if (sourceMetadataBuilder_ == null) {
+        sourceMetadataBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.apihub.v1.SourceMetadata,
+                com.google.cloud.apihub.v1.SourceMetadata.Builder,
+                com.google.cloud.apihub.v1.SourceMetadataOrBuilder>(
+                sourceMetadata_,
+                ((bitField0_ & 0x00002000) != 0),
+                getParentForChildren(),
+                isClean());
+        sourceMetadata_ = null;
+      }
+      return sourceMetadataBuilder_;
+    }
+
+    private com.google.cloud.apihub.v1.AttributeValues managementUrl_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.apihub.v1.AttributeValues,
+            com.google.cloud.apihub.v1.AttributeValues.Builder,
+            com.google.cloud.apihub.v1.AttributeValuesOrBuilder>
+        managementUrlBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The uri where users can navigate to for the management of the
+     * deployment. This maps to the following system defined attribute:
+     * `projects/{project}/locations/{location}/attributes/system-management-url`
+     * The number of values for this attribute will be based on the
+     * cardinality of the attribute. The same can be retrieved via GetAttribute
+     * API. The value of the attribute should be a valid URL.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues management_url = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the managementUrl field is set.
+     */
+    public boolean hasManagementUrl() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The uri where users can navigate to for the management of the
+     * deployment. This maps to the following system defined attribute:
+     * `projects/{project}/locations/{location}/attributes/system-management-url`
+     * The number of values for this attribute will be based on the
+     * cardinality of the attribute. The same can be retrieved via GetAttribute
+     * API. The value of the attribute should be a valid URL.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues management_url = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The managementUrl.
+     */
+    public com.google.cloud.apihub.v1.AttributeValues getManagementUrl() {
+      if (managementUrlBuilder_ == null) {
+        return managementUrl_ == null
+            ? com.google.cloud.apihub.v1.AttributeValues.getDefaultInstance()
+            : managementUrl_;
+      } else {
+        return managementUrlBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The uri where users can navigate to for the management of the
+     * deployment. This maps to the following system defined attribute:
+     * `projects/{project}/locations/{location}/attributes/system-management-url`
+     * The number of values for this attribute will be based on the
+     * cardinality of the attribute. The same can be retrieved via GetAttribute
+     * API. The value of the attribute should be a valid URL.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues management_url = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setManagementUrl(com.google.cloud.apihub.v1.AttributeValues value) {
+      if (managementUrlBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        managementUrl_ = value;
+      } else {
+        managementUrlBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The uri where users can navigate to for the management of the
+     * deployment. This maps to the following system defined attribute:
+     * `projects/{project}/locations/{location}/attributes/system-management-url`
+     * The number of values for this attribute will be based on the
+     * cardinality of the attribute. The same can be retrieved via GetAttribute
+     * API. The value of the attribute should be a valid URL.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues management_url = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setManagementUrl(
+        com.google.cloud.apihub.v1.AttributeValues.Builder builderForValue) {
+      if (managementUrlBuilder_ == null) {
+        managementUrl_ = builderForValue.build();
+      } else {
+        managementUrlBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The uri where users can navigate to for the management of the
+     * deployment. This maps to the following system defined attribute:
+     * `projects/{project}/locations/{location}/attributes/system-management-url`
+     * The number of values for this attribute will be based on the
+     * cardinality of the attribute. The same can be retrieved via GetAttribute
+     * API. The value of the attribute should be a valid URL.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues management_url = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeManagementUrl(com.google.cloud.apihub.v1.AttributeValues value) {
+      if (managementUrlBuilder_ == null) {
+        if (((bitField0_ & 0x00004000) != 0)
+            && managementUrl_ != null
+            && managementUrl_ != com.google.cloud.apihub.v1.AttributeValues.getDefaultInstance()) {
+          getManagementUrlBuilder().mergeFrom(value);
+        } else {
+          managementUrl_ = value;
+        }
+      } else {
+        managementUrlBuilder_.mergeFrom(value);
+      }
+      if (managementUrl_ != null) {
+        bitField0_ |= 0x00004000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The uri where users can navigate to for the management of the
+     * deployment. This maps to the following system defined attribute:
+     * `projects/{project}/locations/{location}/attributes/system-management-url`
+     * The number of values for this attribute will be based on the
+     * cardinality of the attribute. The same can be retrieved via GetAttribute
+     * API. The value of the attribute should be a valid URL.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues management_url = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearManagementUrl() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      managementUrl_ = null;
+      if (managementUrlBuilder_ != null) {
+        managementUrlBuilder_.dispose();
+        managementUrlBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The uri where users can navigate to for the management of the
+     * deployment. This maps to the following system defined attribute:
+     * `projects/{project}/locations/{location}/attributes/system-management-url`
+     * The number of values for this attribute will be based on the
+     * cardinality of the attribute. The same can be retrieved via GetAttribute
+     * API. The value of the attribute should be a valid URL.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues management_url = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.AttributeValues.Builder getManagementUrlBuilder() {
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return getManagementUrlFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The uri where users can navigate to for the management of the
+     * deployment. This maps to the following system defined attribute:
+     * `projects/{project}/locations/{location}/attributes/system-management-url`
+     * The number of values for this attribute will be based on the
+     * cardinality of the attribute. The same can be retrieved via GetAttribute
+     * API. The value of the attribute should be a valid URL.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues management_url = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.AttributeValuesOrBuilder getManagementUrlOrBuilder() {
+      if (managementUrlBuilder_ != null) {
+        return managementUrlBuilder_.getMessageOrBuilder();
+      } else {
+        return managementUrl_ == null
+            ? com.google.cloud.apihub.v1.AttributeValues.getDefaultInstance()
+            : managementUrl_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The uri where users can navigate to for the management of the
+     * deployment. This maps to the following system defined attribute:
+     * `projects/{project}/locations/{location}/attributes/system-management-url`
+     * The number of values for this attribute will be based on the
+     * cardinality of the attribute. The same can be retrieved via GetAttribute
+     * API. The value of the attribute should be a valid URL.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues management_url = 15 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.apihub.v1.AttributeValues,
+            com.google.cloud.apihub.v1.AttributeValues.Builder,
+            com.google.cloud.apihub.v1.AttributeValuesOrBuilder>
+        getManagementUrlFieldBuilder() {
+      if (managementUrlBuilder_ == null) {
+        managementUrlBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.apihub.v1.AttributeValues,
+                com.google.cloud.apihub.v1.AttributeValues.Builder,
+                com.google.cloud.apihub.v1.AttributeValuesOrBuilder>(
+                getManagementUrl(), getParentForChildren(), isClean());
+        managementUrl_ = null;
+      }
+      return managementUrlBuilder_;
+    }
+
+    private com.google.cloud.apihub.v1.AttributeValues sourceUri_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.apihub.v1.AttributeValues,
+            com.google.cloud.apihub.v1.AttributeValues.Builder,
+            com.google.cloud.apihub.v1.AttributeValuesOrBuilder>
+        sourceUriBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The uri where additional source specific information for this
+     * deployment can be found. This maps to the following system defined
+     * attribute:
+     * `projects/{project}/locations/{location}/attributes/system-source-uri`
+     * The number of values for this attribute will be based on the
+     * cardinality of the attribute. The same can be retrieved via GetAttribute
+     * API. The value of the attribute should be a valid URI, and in case
+     * of Cloud Storage URI, it should point to a Cloud Storage object,
+     * not a directory.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues source_uri = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the sourceUri field is set.
+     */
+    public boolean hasSourceUri() {
+      return ((bitField0_ & 0x00008000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The uri where additional source specific information for this
+     * deployment can be found. This maps to the following system defined
+     * attribute:
+     * `projects/{project}/locations/{location}/attributes/system-source-uri`
+     * The number of values for this attribute will be based on the
+     * cardinality of the attribute. The same can be retrieved via GetAttribute
+     * API. The value of the attribute should be a valid URI, and in case
+     * of Cloud Storage URI, it should point to a Cloud Storage object,
+     * not a directory.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues source_uri = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The sourceUri.
+     */
+    public com.google.cloud.apihub.v1.AttributeValues getSourceUri() {
+      if (sourceUriBuilder_ == null) {
+        return sourceUri_ == null
+            ? com.google.cloud.apihub.v1.AttributeValues.getDefaultInstance()
+            : sourceUri_;
+      } else {
+        return sourceUriBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The uri where additional source specific information for this
+     * deployment can be found. This maps to the following system defined
+     * attribute:
+     * `projects/{project}/locations/{location}/attributes/system-source-uri`
+     * The number of values for this attribute will be based on the
+     * cardinality of the attribute. The same can be retrieved via GetAttribute
+     * API. The value of the attribute should be a valid URI, and in case
+     * of Cloud Storage URI, it should point to a Cloud Storage object,
+     * not a directory.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues source_uri = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSourceUri(com.google.cloud.apihub.v1.AttributeValues value) {
+      if (sourceUriBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        sourceUri_ = value;
+      } else {
+        sourceUriBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The uri where additional source specific information for this
+     * deployment can be found. This maps to the following system defined
+     * attribute:
+     * `projects/{project}/locations/{location}/attributes/system-source-uri`
+     * The number of values for this attribute will be based on the
+     * cardinality of the attribute. The same can be retrieved via GetAttribute
+     * API. The value of the attribute should be a valid URI, and in case
+     * of Cloud Storage URI, it should point to a Cloud Storage object,
+     * not a directory.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues source_uri = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setSourceUri(
+        com.google.cloud.apihub.v1.AttributeValues.Builder builderForValue) {
+      if (sourceUriBuilder_ == null) {
+        sourceUri_ = builderForValue.build();
+      } else {
+        sourceUriBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The uri where additional source specific information for this
+     * deployment can be found. This maps to the following system defined
+     * attribute:
+     * `projects/{project}/locations/{location}/attributes/system-source-uri`
+     * The number of values for this attribute will be based on the
+     * cardinality of the attribute. The same can be retrieved via GetAttribute
+     * API. The value of the attribute should be a valid URI, and in case
+     * of Cloud Storage URI, it should point to a Cloud Storage object,
+     * not a directory.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues source_uri = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeSourceUri(com.google.cloud.apihub.v1.AttributeValues value) {
+      if (sourceUriBuilder_ == null) {
+        if (((bitField0_ & 0x00008000) != 0)
+            && sourceUri_ != null
+            && sourceUri_ != com.google.cloud.apihub.v1.AttributeValues.getDefaultInstance()) {
+          getSourceUriBuilder().mergeFrom(value);
+        } else {
+          sourceUri_ = value;
+        }
+      } else {
+        sourceUriBuilder_.mergeFrom(value);
+      }
+      if (sourceUri_ != null) {
+        bitField0_ |= 0x00008000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The uri where additional source specific information for this
+     * deployment can be found. This maps to the following system defined
+     * attribute:
+     * `projects/{project}/locations/{location}/attributes/system-source-uri`
+     * The number of values for this attribute will be based on the
+     * cardinality of the attribute. The same can be retrieved via GetAttribute
+     * API. The value of the attribute should be a valid URI, and in case
+     * of Cloud Storage URI, it should point to a Cloud Storage object,
+     * not a directory.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues source_uri = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearSourceUri() {
+      bitField0_ = (bitField0_ & ~0x00008000);
+      sourceUri_ = null;
+      if (sourceUriBuilder_ != null) {
+        sourceUriBuilder_.dispose();
+        sourceUriBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The uri where additional source specific information for this
+     * deployment can be found. This maps to the following system defined
+     * attribute:
+     * `projects/{project}/locations/{location}/attributes/system-source-uri`
+     * The number of values for this attribute will be based on the
+     * cardinality of the attribute. The same can be retrieved via GetAttribute
+     * API. The value of the attribute should be a valid URI, and in case
+     * of Cloud Storage URI, it should point to a Cloud Storage object,
+     * not a directory.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues source_uri = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.AttributeValues.Builder getSourceUriBuilder() {
+      bitField0_ |= 0x00008000;
+      onChanged();
+      return getSourceUriFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The uri where additional source specific information for this
+     * deployment can be found. This maps to the following system defined
+     * attribute:
+     * `projects/{project}/locations/{location}/attributes/system-source-uri`
+     * The number of values for this attribute will be based on the
+     * cardinality of the attribute. The same can be retrieved via GetAttribute
+     * API. The value of the attribute should be a valid URI, and in case
+     * of Cloud Storage URI, it should point to a Cloud Storage object,
+     * not a directory.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues source_uri = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.AttributeValuesOrBuilder getSourceUriOrBuilder() {
+      if (sourceUriBuilder_ != null) {
+        return sourceUriBuilder_.getMessageOrBuilder();
+      } else {
+        return sourceUri_ == null
+            ? com.google.cloud.apihub.v1.AttributeValues.getDefaultInstance()
+            : sourceUri_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The uri where additional source specific information for this
+     * deployment can be found. This maps to the following system defined
+     * attribute:
+     * `projects/{project}/locations/{location}/attributes/system-source-uri`
+     * The number of values for this attribute will be based on the
+     * cardinality of the attribute. The same can be retrieved via GetAttribute
+     * API. The value of the attribute should be a valid URI, and in case
+     * of Cloud Storage URI, it should point to a Cloud Storage object,
+     * not a directory.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.AttributeValues source_uri = 16 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.apihub.v1.AttributeValues,
+            com.google.cloud.apihub.v1.AttributeValues.Builder,
+            com.google.cloud.apihub.v1.AttributeValuesOrBuilder>
+        getSourceUriFieldBuilder() {
+      if (sourceUriBuilder_ == null) {
+        sourceUriBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.apihub.v1.AttributeValues,
+                com.google.cloud.apihub.v1.AttributeValues.Builder,
+                com.google.cloud.apihub.v1.AttributeValuesOrBuilder>(
+                getSourceUri(), getParentForChildren(), isClean());
+        sourceUri_ = null;
+      }
+      return sourceUriBuilder_;
+    }
+
+    private java.lang.Object sourceProject_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The project to which the deployment belongs.
+     * For GCP gateways, this will refer to the project identifier.
+     * For others like Edge/OPDK, this will refer to the org identifier.
+     * </pre>
+     *
+     * <code>string source_project = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The sourceProject.
+     */
+    public java.lang.String getSourceProject() {
+      java.lang.Object ref = sourceProject_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sourceProject_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The project to which the deployment belongs.
+     * For GCP gateways, this will refer to the project identifier.
+     * For others like Edge/OPDK, this will refer to the org identifier.
+     * </pre>
+     *
+     * <code>string source_project = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for sourceProject.
+     */
+    public com.google.protobuf.ByteString getSourceProjectBytes() {
+      java.lang.Object ref = sourceProject_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        sourceProject_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The project to which the deployment belongs.
+     * For GCP gateways, this will refer to the project identifier.
+     * For others like Edge/OPDK, this will refer to the org identifier.
+     * </pre>
+     *
+     * <code>string source_project = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The sourceProject to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceProject(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      sourceProject_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The project to which the deployment belongs.
+     * For GCP gateways, this will refer to the project identifier.
+     * For others like Edge/OPDK, this will refer to the org identifier.
+     * </pre>
+     *
+     * <code>string source_project = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSourceProject() {
+      sourceProject_ = getDefaultInstance().getSourceProject();
+      bitField0_ = (bitField0_ & ~0x00010000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The project to which the deployment belongs.
+     * For GCP gateways, this will refer to the project identifier.
+     * For others like Edge/OPDK, this will refer to the org identifier.
+     * </pre>
+     *
+     * <code>string source_project = 17 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for sourceProject to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceProjectBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      sourceProject_ = value;
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object sourceEnvironment_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The environment at source for the deployment.
+     * For example: prod, dev, staging, etc.
+     * </pre>
+     *
+     * <code>string source_environment = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The sourceEnvironment.
+     */
+    public java.lang.String getSourceEnvironment() {
+      java.lang.Object ref = sourceEnvironment_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        sourceEnvironment_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The environment at source for the deployment.
+     * For example: prod, dev, staging, etc.
+     * </pre>
+     *
+     * <code>string source_environment = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for sourceEnvironment.
+     */
+    public com.google.protobuf.ByteString getSourceEnvironmentBytes() {
+      java.lang.Object ref = sourceEnvironment_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        sourceEnvironment_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The environment at source for the deployment.
+     * For example: prod, dev, staging, etc.
+     * </pre>
+     *
+     * <code>string source_environment = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The sourceEnvironment to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceEnvironment(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      sourceEnvironment_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The environment at source for the deployment.
+     * For example: prod, dev, staging, etc.
+     * </pre>
+     *
+     * <code>string source_environment = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSourceEnvironment() {
+      sourceEnvironment_ = getDefaultInstance().getSourceEnvironment();
+      bitField0_ = (bitField0_ & ~0x00020000);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The environment at source for the deployment.
+     * For example: prod, dev, staging, etc.
+     * </pre>
+     *
+     * <code>string source_environment = 18 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for sourceEnvironment to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSourceEnvironmentBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      sourceEnvironment_ = value;
+      bitField0_ |= 0x00020000;
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

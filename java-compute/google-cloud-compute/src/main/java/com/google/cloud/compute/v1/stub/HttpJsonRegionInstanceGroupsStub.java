@@ -42,6 +42,8 @@ import com.google.cloud.compute.v1.Operation.Status;
 import com.google.cloud.compute.v1.RegionInstanceGroupList;
 import com.google.cloud.compute.v1.RegionInstanceGroupsListInstances;
 import com.google.cloud.compute.v1.SetNamedPortsRegionInstanceGroupRequest;
+import com.google.cloud.compute.v1.TestIamPermissionsRegionInstanceGroupRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.protobuf.TypeRegistry;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -274,6 +276,50 @@ public class HttpJsonRegionInstanceGroupsStub extends RegionInstanceGroupsStub {
                   })
               .build();
 
+  private static final ApiMethodDescriptor<
+          TestIamPermissionsRegionInstanceGroupRequest, TestPermissionsResponse>
+      testIamPermissionsMethodDescriptor =
+          ApiMethodDescriptor
+              .<TestIamPermissionsRegionInstanceGroupRequest, TestPermissionsResponse>newBuilder()
+              .setFullMethodName("google.cloud.compute.v1.RegionInstanceGroups/TestIamPermissions")
+              .setHttpMethod("POST")
+              .setType(ApiMethodDescriptor.MethodType.UNARY)
+              .setRequestFormatter(
+                  ProtoMessageRequestFormatter
+                      .<TestIamPermissionsRegionInstanceGroupRequest>newBuilder()
+                      .setPath(
+                          "/compute/v1/projects/{project}/regions/{region}/instanceGroups/{resource}/testIamPermissions",
+                          request -> {
+                            Map<String, String> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsRegionInstanceGroupRequest>
+                                serializer = ProtoRestSerializer.create();
+                            serializer.putPathParam(fields, "project", request.getProject());
+                            serializer.putPathParam(fields, "region", request.getRegion());
+                            serializer.putPathParam(fields, "resource", request.getResource());
+                            return fields;
+                          })
+                      .setQueryParamsExtractor(
+                          request -> {
+                            Map<String, List<String>> fields = new HashMap<>();
+                            ProtoRestSerializer<TestIamPermissionsRegionInstanceGroupRequest>
+                                serializer = ProtoRestSerializer.create();
+                            return fields;
+                          })
+                      .setRequestBodyExtractor(
+                          request ->
+                              ProtoRestSerializer.create()
+                                  .toBody(
+                                      "testPermissionsRequestResource",
+                                      request.getTestPermissionsRequestResource(),
+                                      false))
+                      .build())
+              .setResponseParser(
+                  ProtoMessageResponseParser.<TestPermissionsResponse>newBuilder()
+                      .setDefaultInstance(TestPermissionsResponse.getDefaultInstance())
+                      .setDefaultTypeRegistry(typeRegistry)
+                      .build())
+              .build();
+
   private final UnaryCallable<GetRegionInstanceGroupRequest, InstanceGroup> getCallable;
   private final UnaryCallable<ListRegionInstanceGroupsRequest, RegionInstanceGroupList>
       listCallable;
@@ -287,6 +333,8 @@ public class HttpJsonRegionInstanceGroupsStub extends RegionInstanceGroupsStub {
       setNamedPortsCallable;
   private final OperationCallable<SetNamedPortsRegionInstanceGroupRequest, Operation, Operation>
       setNamedPortsOperationCallable;
+  private final UnaryCallable<TestIamPermissionsRegionInstanceGroupRequest, TestPermissionsResponse>
+      testIamPermissionsCallable;
 
   private final BackgroundResource backgroundResources;
   private final HttpJsonRegionOperationsStub httpJsonOperationsStub;
@@ -391,6 +439,21 @@ public class HttpJsonRegionInstanceGroupsStub extends RegionInstanceGroupsStub {
                       return builder.build();
                     })
                 .build();
+    HttpJsonCallSettings<TestIamPermissionsRegionInstanceGroupRequest, TestPermissionsResponse>
+        testIamPermissionsTransportSettings =
+            HttpJsonCallSettings
+                .<TestIamPermissionsRegionInstanceGroupRequest, TestPermissionsResponse>newBuilder()
+                .setMethodDescriptor(testIamPermissionsMethodDescriptor)
+                .setTypeRegistry(typeRegistry)
+                .setParamsExtractor(
+                    request -> {
+                      RequestParamsBuilder builder = RequestParamsBuilder.create();
+                      builder.add("project", String.valueOf(request.getProject()));
+                      builder.add("region", String.valueOf(request.getRegion()));
+                      builder.add("resource", String.valueOf(request.getResource()));
+                      return builder.build();
+                    })
+                .build();
 
     this.getCallable =
         callableFactory.createUnaryCallable(
@@ -416,6 +479,11 @@ public class HttpJsonRegionInstanceGroupsStub extends RegionInstanceGroupsStub {
             settings.setNamedPortsOperationSettings(),
             clientContext,
             httpJsonOperationsStub);
+    this.testIamPermissionsCallable =
+        callableFactory.createUnaryCallable(
+            testIamPermissionsTransportSettings,
+            settings.testIamPermissionsSettings(),
+            clientContext);
 
     this.backgroundResources =
         new BackgroundResourceAggregation(clientContext.getBackgroundResources());
@@ -428,6 +496,7 @@ public class HttpJsonRegionInstanceGroupsStub extends RegionInstanceGroupsStub {
     methodDescriptors.add(listMethodDescriptor);
     methodDescriptors.add(listInstancesMethodDescriptor);
     methodDescriptors.add(setNamedPortsMethodDescriptor);
+    methodDescriptors.add(testIamPermissionsMethodDescriptor);
     return methodDescriptors;
   }
 
@@ -467,6 +536,12 @@ public class HttpJsonRegionInstanceGroupsStub extends RegionInstanceGroupsStub {
   public OperationCallable<SetNamedPortsRegionInstanceGroupRequest, Operation, Operation>
       setNamedPortsOperationCallable() {
     return setNamedPortsOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<TestIamPermissionsRegionInstanceGroupRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    return testIamPermissionsCallable;
   }
 
   @Override

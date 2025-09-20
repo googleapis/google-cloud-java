@@ -579,6 +579,45 @@ public interface NetworkInterfaceOrBuilder
    *
    *
    * <pre>
+   * Name of the parent network interface of a dynamic network interface.
+   * </pre>
+   *
+   * <code>optional string parent_nic_name = 418764375;</code>
+   *
+   * @return Whether the parentNicName field is set.
+   */
+  boolean hasParentNicName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Name of the parent network interface of a dynamic network interface.
+   * </pre>
+   *
+   * <code>optional string parent_nic_name = 418764375;</code>
+   *
+   * @return The parentNicName.
+   */
+  java.lang.String getParentNicName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Name of the parent network interface of a dynamic network interface.
+   * </pre>
+   *
+   * <code>optional string parent_nic_name = 418764375;</code>
+   *
+   * @return The bytes for parentNicName.
+   */
+  com.google.protobuf.ByteString getParentNicNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
    * The networking queue count that's specified by users for the network interface. Both Rx and Tx queues will be set to this number. It'll be empty if not specified by the users.
    * </pre>
    *
@@ -681,4 +720,30 @@ public interface NetworkInterfaceOrBuilder
    * @return The bytes for subnetwork.
    */
   com.google.protobuf.ByteString getSubnetworkBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * VLAN tag of a dynamic network interface, must be an integer in the range from 2 to 255 inclusively.
+   * </pre>
+   *
+   * <code>optional int32 vlan = 3622243;</code>
+   *
+   * @return Whether the vlan field is set.
+   */
+  boolean hasVlan();
+
+  /**
+   *
+   *
+   * <pre>
+   * VLAN tag of a dynamic network interface, must be an integer in the range from 2 to 255 inclusively.
+   * </pre>
+   *
+   * <code>optional int32 vlan = 3622243;</code>
+   *
+   * @return The vlan.
+   */
+  int getVlan();
 }

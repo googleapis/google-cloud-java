@@ -28,7 +28,7 @@ public interface ListSpecsResponseOrBuilder
    *
    *
    * <pre>
-   * The specs corresponding to an API.
+   * The specs corresponding to an API Version.
    * </pre>
    *
    * <code>repeated .google.cloud.apihub.v1.Spec specs = 1;</code>
@@ -39,7 +39,7 @@ public interface ListSpecsResponseOrBuilder
    *
    *
    * <pre>
-   * The specs corresponding to an API.
+   * The specs corresponding to an API Version.
    * </pre>
    *
    * <code>repeated .google.cloud.apihub.v1.Spec specs = 1;</code>
@@ -50,7 +50,7 @@ public interface ListSpecsResponseOrBuilder
    *
    *
    * <pre>
-   * The specs corresponding to an API.
+   * The specs corresponding to an API Version.
    * </pre>
    *
    * <code>repeated .google.cloud.apihub.v1.Spec specs = 1;</code>
@@ -61,7 +61,7 @@ public interface ListSpecsResponseOrBuilder
    *
    *
    * <pre>
-   * The specs corresponding to an API.
+   * The specs corresponding to an API Version.
    * </pre>
    *
    * <code>repeated .google.cloud.apihub.v1.Spec specs = 1;</code>
@@ -72,7 +72,7 @@ public interface ListSpecsResponseOrBuilder
    *
    *
    * <pre>
-   * The specs corresponding to an API.
+   * The specs corresponding to an API Version.
    * </pre>
    *
    * <code>repeated .google.cloud.apihub.v1.Spec specs = 1;</code>

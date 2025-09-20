@@ -172,6 +172,12 @@ public class AddressesSettings extends ClientSettings<AddressesSettings> {
     return ((AddressesStubSettings) getStubSettings()).setLabelsOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsAddressRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return ((AddressesStubSettings) getStubSettings()).testIamPermissionsSettings();
+  }
+
   public static final AddressesSettings create(AddressesStubSettings stub) throws IOException {
     return new AddressesSettings.Builder(stub.toBuilder()).build();
   }
@@ -328,6 +334,12 @@ public class AddressesSettings extends ClientSettings<AddressesSettings> {
     public OperationCallSettings.Builder<SetLabelsAddressRequest, Operation, Operation>
         setLabelsOperationSettings() {
       return getStubSettingsBuilder().setLabelsOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsAddressRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return getStubSettingsBuilder().testIamPermissionsSettings();
     }
 
     @Override

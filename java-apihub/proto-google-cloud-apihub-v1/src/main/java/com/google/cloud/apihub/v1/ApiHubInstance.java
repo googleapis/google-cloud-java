@@ -340,13 +340,14 @@ public final class ApiHubInstance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The Customer Managed Encryption Key (CMEK) used for data
+     * Optional. The Customer Managed Encryption Key (CMEK) used for data
      * encryption. The CMEK name should follow the format of
      * `projects/([^/]+)/locations/([^/]+)/keyRings/([^/]+)/cryptoKeys/([^/]+)`,
      * where the location must match the instance location.
+     * If the CMEK is not provided, a GMEK will be created for the instance.
      * </pre>
      *
-     * <code>string cmek_key_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string cmek_key_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The cmekKeyName.
      */
@@ -356,17 +357,94 @@ public final class ApiHubInstance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The Customer Managed Encryption Key (CMEK) used for data
+     * Optional. The Customer Managed Encryption Key (CMEK) used for data
      * encryption. The CMEK name should follow the format of
      * `projects/([^/]+)/locations/([^/]+)/keyRings/([^/]+)/cryptoKeys/([^/]+)`,
      * where the location must match the instance location.
+     * If the CMEK is not provided, a GMEK will be created for the instance.
      * </pre>
      *
-     * <code>string cmek_key_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string cmek_key_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for cmekKeyName.
      */
     com.google.protobuf.ByteString getCmekKeyNameBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, the search will be disabled for the instance. The
+     * default value is false.
+     * </pre>
+     *
+     * <code>bool disable_search = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The disableSearch.
+     */
+    boolean getDisableSearch();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the Vertex AI location where the data store is
+     * stored.
+     * </pre>
+     *
+     * <code>string vertex_location = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The vertexLocation.
+     */
+    java.lang.String getVertexLocation();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the Vertex AI location where the data store is
+     * stored.
+     * </pre>
+     *
+     * <code>string vertex_location = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for vertexLocation.
+     */
+    com.google.protobuf.ByteString getVertexLocationBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Encryption type for the region. If the encryption type is CMEK,
+     * the cmek_key_name must be provided. If no encryption type is provided,
+     * GMEK will be used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.ApiHubInstance.Config.EncryptionType encryption_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for encryptionType.
+     */
+    int getEncryptionTypeValue();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Encryption type for the region. If the encryption type is CMEK,
+     * the cmek_key_name must be provided. If no encryption type is provided,
+     * GMEK will be used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.ApiHubInstance.Config.EncryptionType encryption_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The encryptionType.
+     */
+    com.google.cloud.apihub.v1.ApiHubInstance.Config.EncryptionType getEncryptionType();
   }
 
   /**
@@ -391,6 +469,8 @@ public final class ApiHubInstance extends com.google.protobuf.GeneratedMessageV3
 
     private Config() {
       cmekKeyName_ = "";
+      vertexLocation_ = "";
+      encryptionType_ = 0;
     }
 
     @java.lang.Override
@@ -414,6 +494,169 @@ public final class ApiHubInstance extends com.google.protobuf.GeneratedMessageV3
               com.google.cloud.apihub.v1.ApiHubInstance.Config.Builder.class);
     }
 
+    /**
+     *
+     *
+     * <pre>
+     * Types of data encryption.
+     * </pre>
+     *
+     * Protobuf enum {@code google.cloud.apihub.v1.ApiHubInstance.Config.EncryptionType}
+     */
+    public enum EncryptionType implements com.google.protobuf.ProtocolMessageEnum {
+      /**
+       *
+       *
+       * <pre>
+       * Encryption type unspecified.
+       * </pre>
+       *
+       * <code>ENCRYPTION_TYPE_UNSPECIFIED = 0;</code>
+       */
+      ENCRYPTION_TYPE_UNSPECIFIED(0),
+      /**
+       *
+       *
+       * <pre>
+       * Default encryption using Google managed encryption key.
+       * </pre>
+       *
+       * <code>GMEK = 1;</code>
+       */
+      GMEK(1),
+      /**
+       *
+       *
+       * <pre>
+       * Encryption using customer managed encryption key.
+       * </pre>
+       *
+       * <code>CMEK = 2;</code>
+       */
+      CMEK(2),
+      UNRECOGNIZED(-1),
+      ;
+
+      /**
+       *
+       *
+       * <pre>
+       * Encryption type unspecified.
+       * </pre>
+       *
+       * <code>ENCRYPTION_TYPE_UNSPECIFIED = 0;</code>
+       */
+      public static final int ENCRYPTION_TYPE_UNSPECIFIED_VALUE = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Default encryption using Google managed encryption key.
+       * </pre>
+       *
+       * <code>GMEK = 1;</code>
+       */
+      public static final int GMEK_VALUE = 1;
+
+      /**
+       *
+       *
+       * <pre>
+       * Encryption using customer managed encryption key.
+       * </pre>
+       *
+       * <code>CMEK = 2;</code>
+       */
+      public static final int CMEK_VALUE = 2;
+
+      public final int getNumber() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalArgumentException(
+              "Can't get the number of an unknown enum value.");
+        }
+        return value;
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       * @deprecated Use {@link #forNumber(int)} instead.
+       */
+      @java.lang.Deprecated
+      public static EncryptionType valueOf(int value) {
+        return forNumber(value);
+      }
+
+      /**
+       * @param value The numeric wire value of the corresponding enum entry.
+       * @return The enum associated with the given numeric wire value.
+       */
+      public static EncryptionType forNumber(int value) {
+        switch (value) {
+          case 0:
+            return ENCRYPTION_TYPE_UNSPECIFIED;
+          case 1:
+            return GMEK;
+          case 2:
+            return CMEK;
+          default:
+            return null;
+        }
+      }
+
+      public static com.google.protobuf.Internal.EnumLiteMap<EncryptionType> internalGetValueMap() {
+        return internalValueMap;
+      }
+
+      private static final com.google.protobuf.Internal.EnumLiteMap<EncryptionType>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<EncryptionType>() {
+                public EncryptionType findValueByNumber(int number) {
+                  return EncryptionType.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+        if (this == UNRECOGNIZED) {
+          throw new java.lang.IllegalStateException(
+              "Can't get the descriptor of an unrecognized enum value.");
+        }
+        return getDescriptor().getValues().get(ordinal());
+      }
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+        return getDescriptor();
+      }
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.apihub.v1.ApiHubInstance.Config.getDescriptor()
+            .getEnumTypes()
+            .get(0);
+      }
+
+      private static final EncryptionType[] VALUES = values();
+
+      public static EncryptionType valueOf(
+          com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+        if (desc.getType() != getDescriptor()) {
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
+        }
+        if (desc.getIndex() == -1) {
+          return UNRECOGNIZED;
+        }
+        return VALUES[desc.getIndex()];
+      }
+
+      private final int value;
+
+      private EncryptionType(int value) {
+        this.value = value;
+      }
+
+      // @@protoc_insertion_point(enum_scope:google.cloud.apihub.v1.ApiHubInstance.Config.EncryptionType)
+    }
+
     public static final int CMEK_KEY_NAME_FIELD_NUMBER = 1;
 
     @SuppressWarnings("serial")
@@ -423,13 +666,14 @@ public final class ApiHubInstance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The Customer Managed Encryption Key (CMEK) used for data
+     * Optional. The Customer Managed Encryption Key (CMEK) used for data
      * encryption. The CMEK name should follow the format of
      * `projects/([^/]+)/locations/([^/]+)/keyRings/([^/]+)/cryptoKeys/([^/]+)`,
      * where the location must match the instance location.
+     * If the CMEK is not provided, a GMEK will be created for the instance.
      * </pre>
      *
-     * <code>string cmek_key_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string cmek_key_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The cmekKeyName.
      */
@@ -450,13 +694,14 @@ public final class ApiHubInstance extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The Customer Managed Encryption Key (CMEK) used for data
+     * Optional. The Customer Managed Encryption Key (CMEK) used for data
      * encryption. The CMEK name should follow the format of
      * `projects/([^/]+)/locations/([^/]+)/keyRings/([^/]+)/cryptoKeys/([^/]+)`,
      * where the location must match the instance location.
+     * If the CMEK is not provided, a GMEK will be created for the instance.
      * </pre>
      *
-     * <code>string cmek_key_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+     * <code>string cmek_key_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
      *
      * @return The bytes for cmekKeyName.
      */
@@ -471,6 +716,129 @@ public final class ApiHubInstance extends com.google.protobuf.GeneratedMessageV3
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
+    }
+
+    public static final int DISABLE_SEARCH_FIELD_NUMBER = 2;
+    private boolean disableSearch_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. If true, the search will be disabled for the instance. The
+     * default value is false.
+     * </pre>
+     *
+     * <code>bool disable_search = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The disableSearch.
+     */
+    @java.lang.Override
+    public boolean getDisableSearch() {
+      return disableSearch_;
+    }
+
+    public static final int VERTEX_LOCATION_FIELD_NUMBER = 3;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object vertexLocation_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the Vertex AI location where the data store is
+     * stored.
+     * </pre>
+     *
+     * <code>string vertex_location = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The vertexLocation.
+     */
+    @java.lang.Override
+    public java.lang.String getVertexLocation() {
+      java.lang.Object ref = vertexLocation_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        vertexLocation_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name of the Vertex AI location where the data store is
+     * stored.
+     * </pre>
+     *
+     * <code>string vertex_location = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for vertexLocation.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getVertexLocationBytes() {
+      java.lang.Object ref = vertexLocation_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        vertexLocation_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ENCRYPTION_TYPE_FIELD_NUMBER = 4;
+    private int encryptionType_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Encryption type for the region. If the encryption type is CMEK,
+     * the cmek_key_name must be provided. If no encryption type is provided,
+     * GMEK will be used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.ApiHubInstance.Config.EncryptionType encryption_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The enum numeric value on the wire for encryptionType.
+     */
+    @java.lang.Override
+    public int getEncryptionTypeValue() {
+      return encryptionType_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Encryption type for the region. If the encryption type is CMEK,
+     * the cmek_key_name must be provided. If no encryption type is provided,
+     * GMEK will be used.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.apihub.v1.ApiHubInstance.Config.EncryptionType encryption_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The encryptionType.
+     */
+    @java.lang.Override
+    public com.google.cloud.apihub.v1.ApiHubInstance.Config.EncryptionType getEncryptionType() {
+      com.google.cloud.apihub.v1.ApiHubInstance.Config.EncryptionType result =
+          com.google.cloud.apihub.v1.ApiHubInstance.Config.EncryptionType.forNumber(
+              encryptionType_);
+      return result == null
+          ? com.google.cloud.apihub.v1.ApiHubInstance.Config.EncryptionType.UNRECOGNIZED
+          : result;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -490,6 +858,18 @@ public final class ApiHubInstance extends com.google.protobuf.GeneratedMessageV3
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cmekKeyName_)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, cmekKeyName_);
       }
+      if (disableSearch_ != false) {
+        output.writeBool(2, disableSearch_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vertexLocation_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 3, vertexLocation_);
+      }
+      if (encryptionType_
+          != com.google.cloud.apihub.v1.ApiHubInstance.Config.EncryptionType
+              .ENCRYPTION_TYPE_UNSPECIFIED
+              .getNumber()) {
+        output.writeEnum(4, encryptionType_);
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -501,6 +881,18 @@ public final class ApiHubInstance extends com.google.protobuf.GeneratedMessageV3
       size = 0;
       if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(cmekKeyName_)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, cmekKeyName_);
+      }
+      if (disableSearch_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, disableSearch_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(vertexLocation_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, vertexLocation_);
+      }
+      if (encryptionType_
+          != com.google.cloud.apihub.v1.ApiHubInstance.Config.EncryptionType
+              .ENCRYPTION_TYPE_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, encryptionType_);
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -519,6 +911,9 @@ public final class ApiHubInstance extends com.google.protobuf.GeneratedMessageV3
           (com.google.cloud.apihub.v1.ApiHubInstance.Config) obj;
 
       if (!getCmekKeyName().equals(other.getCmekKeyName())) return false;
+      if (getDisableSearch() != other.getDisableSearch()) return false;
+      if (!getVertexLocation().equals(other.getVertexLocation())) return false;
+      if (encryptionType_ != other.encryptionType_) return false;
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -532,6 +927,12 @@ public final class ApiHubInstance extends com.google.protobuf.GeneratedMessageV3
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + CMEK_KEY_NAME_FIELD_NUMBER;
       hash = (53 * hash) + getCmekKeyName().hashCode();
+      hash = (37 * hash) + DISABLE_SEARCH_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDisableSearch());
+      hash = (37 * hash) + VERTEX_LOCATION_FIELD_NUMBER;
+      hash = (53 * hash) + getVertexLocation().hashCode();
+      hash = (37 * hash) + ENCRYPTION_TYPE_FIELD_NUMBER;
+      hash = (53 * hash) + encryptionType_;
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -675,6 +1076,9 @@ public final class ApiHubInstance extends com.google.protobuf.GeneratedMessageV3
         super.clear();
         bitField0_ = 0;
         cmekKeyName_ = "";
+        disableSearch_ = false;
+        vertexLocation_ = "";
+        encryptionType_ = 0;
         return this;
       }
 
@@ -713,6 +1117,15 @@ public final class ApiHubInstance extends com.google.protobuf.GeneratedMessageV3
         int from_bitField0_ = bitField0_;
         if (((from_bitField0_ & 0x00000001) != 0)) {
           result.cmekKeyName_ = cmekKeyName_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.disableSearch_ = disableSearch_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.vertexLocation_ = vertexLocation_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.encryptionType_ = encryptionType_;
         }
       }
 
@@ -769,6 +1182,17 @@ public final class ApiHubInstance extends com.google.protobuf.GeneratedMessageV3
           bitField0_ |= 0x00000001;
           onChanged();
         }
+        if (other.getDisableSearch() != false) {
+          setDisableSearch(other.getDisableSearch());
+        }
+        if (!other.getVertexLocation().isEmpty()) {
+          vertexLocation_ = other.vertexLocation_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (other.encryptionType_ != 0) {
+          setEncryptionTypeValue(other.getEncryptionTypeValue());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -801,6 +1225,24 @@ public final class ApiHubInstance extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000001;
                   break;
                 } // case 10
+              case 16:
+                {
+                  disableSearch_ = input.readBool();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              case 26:
+                {
+                  vertexLocation_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 26
+              case 32:
+                {
+                  encryptionType_ = input.readEnum();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 32
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -826,13 +1268,14 @@ public final class ApiHubInstance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The Customer Managed Encryption Key (CMEK) used for data
+       * Optional. The Customer Managed Encryption Key (CMEK) used for data
        * encryption. The CMEK name should follow the format of
        * `projects/([^/]+)/locations/([^/]+)/keyRings/([^/]+)/cryptoKeys/([^/]+)`,
        * where the location must match the instance location.
+       * If the CMEK is not provided, a GMEK will be created for the instance.
        * </pre>
        *
-       * <code>string cmek_key_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>string cmek_key_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The cmekKeyName.
        */
@@ -852,13 +1295,14 @@ public final class ApiHubInstance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The Customer Managed Encryption Key (CMEK) used for data
+       * Optional. The Customer Managed Encryption Key (CMEK) used for data
        * encryption. The CMEK name should follow the format of
        * `projects/([^/]+)/locations/([^/]+)/keyRings/([^/]+)/cryptoKeys/([^/]+)`,
        * where the location must match the instance location.
+       * If the CMEK is not provided, a GMEK will be created for the instance.
        * </pre>
        *
-       * <code>string cmek_key_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>string cmek_key_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return The bytes for cmekKeyName.
        */
@@ -878,13 +1322,14 @@ public final class ApiHubInstance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The Customer Managed Encryption Key (CMEK) used for data
+       * Optional. The Customer Managed Encryption Key (CMEK) used for data
        * encryption. The CMEK name should follow the format of
        * `projects/([^/]+)/locations/([^/]+)/keyRings/([^/]+)/cryptoKeys/([^/]+)`,
        * where the location must match the instance location.
+       * If the CMEK is not provided, a GMEK will be created for the instance.
        * </pre>
        *
-       * <code>string cmek_key_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>string cmek_key_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The cmekKeyName to set.
        * @return This builder for chaining.
@@ -903,13 +1348,14 @@ public final class ApiHubInstance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The Customer Managed Encryption Key (CMEK) used for data
+       * Optional. The Customer Managed Encryption Key (CMEK) used for data
        * encryption. The CMEK name should follow the format of
        * `projects/([^/]+)/locations/([^/]+)/keyRings/([^/]+)/cryptoKeys/([^/]+)`,
        * where the location must match the instance location.
+       * If the CMEK is not provided, a GMEK will be created for the instance.
        * </pre>
        *
-       * <code>string cmek_key_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>string cmek_key_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @return This builder for chaining.
        */
@@ -924,13 +1370,14 @@ public final class ApiHubInstance extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The Customer Managed Encryption Key (CMEK) used for data
+       * Optional. The Customer Managed Encryption Key (CMEK) used for data
        * encryption. The CMEK name should follow the format of
        * `projects/([^/]+)/locations/([^/]+)/keyRings/([^/]+)/cryptoKeys/([^/]+)`,
        * where the location must match the instance location.
+       * If the CMEK is not provided, a GMEK will be created for the instance.
        * </pre>
        *
-       * <code>string cmek_key_name = 1 [(.google.api.field_behavior) = REQUIRED];</code>
+       * <code>string cmek_key_name = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
        *
        * @param value The bytes for cmekKeyName to set.
        * @return This builder for chaining.
@@ -942,6 +1389,300 @@ public final class ApiHubInstance extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
         cmekKeyName_ = value;
         bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private boolean disableSearch_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, the search will be disabled for the instance. The
+       * default value is false.
+       * </pre>
+       *
+       * <code>bool disable_search = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The disableSearch.
+       */
+      @java.lang.Override
+      public boolean getDisableSearch() {
+        return disableSearch_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, the search will be disabled for the instance. The
+       * default value is false.
+       * </pre>
+       *
+       * <code>bool disable_search = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The disableSearch to set.
+       * @return This builder for chaining.
+       */
+      public Builder setDisableSearch(boolean value) {
+
+        disableSearch_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. If true, the search will be disabled for the instance. The
+       * default value is false.
+       * </pre>
+       *
+       * <code>bool disable_search = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearDisableSearch() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        disableSearch_ = false;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object vertexLocation_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the Vertex AI location where the data store is
+       * stored.
+       * </pre>
+       *
+       * <code>string vertex_location = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The vertexLocation.
+       */
+      public java.lang.String getVertexLocation() {
+        java.lang.Object ref = vertexLocation_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          vertexLocation_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the Vertex AI location where the data store is
+       * stored.
+       * </pre>
+       *
+       * <code>string vertex_location = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for vertexLocation.
+       */
+      public com.google.protobuf.ByteString getVertexLocationBytes() {
+        java.lang.Object ref = vertexLocation_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          vertexLocation_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the Vertex AI location where the data store is
+       * stored.
+       * </pre>
+       *
+       * <code>string vertex_location = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The vertexLocation to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVertexLocation(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        vertexLocation_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the Vertex AI location where the data store is
+       * stored.
+       * </pre>
+       *
+       * <code>string vertex_location = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearVertexLocation() {
+        vertexLocation_ = getDefaultInstance().getVertexLocation();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The name of the Vertex AI location where the data store is
+       * stored.
+       * </pre>
+       *
+       * <code>string vertex_location = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for vertexLocation to set.
+       * @return This builder for chaining.
+       */
+      public Builder setVertexLocationBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        vertexLocation_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private int encryptionType_ = 0;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Encryption type for the region. If the encryption type is CMEK,
+       * the cmek_key_name must be provided. If no encryption type is provided,
+       * GMEK will be used.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.apihub.v1.ApiHubInstance.Config.EncryptionType encryption_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The enum numeric value on the wire for encryptionType.
+       */
+      @java.lang.Override
+      public int getEncryptionTypeValue() {
+        return encryptionType_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Encryption type for the region. If the encryption type is CMEK,
+       * the cmek_key_name must be provided. If no encryption type is provided,
+       * GMEK will be used.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.apihub.v1.ApiHubInstance.Config.EncryptionType encryption_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The enum numeric value on the wire for encryptionType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEncryptionTypeValue(int value) {
+        encryptionType_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Encryption type for the region. If the encryption type is CMEK,
+       * the cmek_key_name must be provided. If no encryption type is provided,
+       * GMEK will be used.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.apihub.v1.ApiHubInstance.Config.EncryptionType encryption_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return The encryptionType.
+       */
+      @java.lang.Override
+      public com.google.cloud.apihub.v1.ApiHubInstance.Config.EncryptionType getEncryptionType() {
+        com.google.cloud.apihub.v1.ApiHubInstance.Config.EncryptionType result =
+            com.google.cloud.apihub.v1.ApiHubInstance.Config.EncryptionType.forNumber(
+                encryptionType_);
+        return result == null
+            ? com.google.cloud.apihub.v1.ApiHubInstance.Config.EncryptionType.UNRECOGNIZED
+            : result;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Encryption type for the region. If the encryption type is CMEK,
+       * the cmek_key_name must be provided. If no encryption type is provided,
+       * GMEK will be used.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.apihub.v1.ApiHubInstance.Config.EncryptionType encryption_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @param value The encryptionType to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEncryptionType(
+          com.google.cloud.apihub.v1.ApiHubInstance.Config.EncryptionType value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        bitField0_ |= 0x00000008;
+        encryptionType_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Encryption type for the region. If the encryption type is CMEK,
+       * the cmek_key_name must be provided. If no encryption type is provided,
+       * GMEK will be used.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.apihub.v1.ApiHubInstance.Config.EncryptionType encryption_type = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEncryptionType() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        encryptionType_ = 0;
         onChanged();
         return this;
       }

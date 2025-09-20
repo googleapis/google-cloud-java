@@ -33,14 +33,6 @@ public final class CommonProto {
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_cloudsecuritycompliance_v1_Framework_fieldAccessorTable;
   static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_cloudsecuritycompliance_v1_Framework_CloudControlGroupDetails_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_cloudsecuritycompliance_v1_Framework_CloudControlGroupDetails_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_cloudsecuritycompliance_v1_CloudControlGroup_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_cloudsecuritycompliance_v1_CloudControlGroup_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
       internal_static_google_cloud_cloudsecuritycompliance_v1_CloudControlDetails_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_cloudsecuritycompliance_v1_CloudControlDetails_fieldAccessorTable;
@@ -108,14 +100,6 @@ public final class CommonProto {
       internal_static_google_cloud_cloudsecuritycompliance_v1_OperationMetadata_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_cloudsecuritycompliance_v1_OperationMetadata_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_cloudsecuritycompliance_v1_Control_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_cloudsecuritycompliance_v1_Control_fieldAccessorTable;
-  static final com.google.protobuf.Descriptors.Descriptor
-      internal_static_google_cloud_cloudsecuritycompliance_v1_ControlFamily_descriptor;
-  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-      internal_static_google_cloud_cloudsecuritycompliance_v1_ControlFamily_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -128,104 +112,87 @@ public final class CommonProto {
       "\n"
           + "4google/cloud/cloudsecuritycompliance/v1/common.proto\022\'google.cloud.cloudsecuri"
           + "tycompliance.v1\032\037google/api/field_behavi"
-          + "or.proto\032\031google/api/resource.proto\032\037google/protobuf/timestamp.proto\"\246\010\n"
+          + "or.proto\032\031google/api/resource.proto\032\037google/protobuf/timestamp.proto\"\224\007\n"
           + "\tFramework\022\024\n"
           + "\004name\030\001 \001(\tB\006\340A\002\340A\010\022\036\n"
           + "\021major_revision_id\030\002 \001(\003B\003\340A\003\022\031\n"
           + "\014display_name\030\004 \001(\tB\003\340A\001\022\030\n"
           + "\013description\030\005 \001(\tB\003\340A\001\022S\n"
           + "\004type\030\006 "
-          + "\001(\0162@.google.cloud.cloudsecuritycompliance.v1.Framework.FrameworkTypeB\003\340A\003\022u\n"
-          + "\033cloud_control_group_details\030\007 \003(\0132K.google"
-          + ".cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetailsB\003\340A\001\022`\n"
-          + "\025cloud_control_details\030\010 \003(\0132<.google.cloud."
-          + "cloudsecuritycompliance.v1.CloudControlDetailsB\003\340A\001\022Q\n"
-          + "\010category\030\t \003(\0162:.google.c"
-          + "loud.cloudsecuritycompliance.v1.FrameworkCategoryB\003\340A\001\022^\n"
+          + "\001(\0162@.google.cloud.cloudsecuritycompliance.v1.Framework.FrameworkTypeB\003\340A\003\022`\n"
+          + "\025cloud_control_details\030\010 \003(\0132<.google.cloud"
+          + ".cloudsecuritycompliance.v1.CloudControlDetailsB\003\340A\001\022Q\n"
+          + "\010category\030\t \003(\0162:.google."
+          + "cloud.cloudsecuritycompliance.v1.FrameworkCategoryB\003\340A\001\022^\n"
           + "\031supported_cloud_providers\030\n"
           + " \003(\01626.google.cloud.cloudsecuritycompliance.v1.CloudProviderB\003\340A\003\022i\n"
-          + "\037supported_target_resource_types\030\013 \003(\0162;.google"
-          + ".cloud.cloudsecuritycompliance.v1.TargetResourceTypeB\003\340A\003\032}\n"
-          + "\030CloudControlGroupDetails\022Y\n"
-          + "\023cloud_control_group\030\001 \001(\0132:.goo"
-          + "gle.cloud.cloudsecuritycompliance.v1.CloudControlGroupH\000B\006\n"
-          + "\004kind\"I\n\r"
+          + "\037supported_target_resource_types\030\013 \003(\0162;.googl"
+          + "e.cloud.cloudsecuritycompliance.v1.TargetResourceTypeB\003\340A\003\022b\n"
+          + "\033supported_enforcement_modes\030\r"
+          + " \003(\01628.google.cloud.cloudsecu"
+          + "ritycompliance.v1.EnforcementModeB\003\340A\003\"I\n\r"
           + "FrameworkType\022\036\n"
           + "\032FRAMEWORK_TYPE_UNSPECIFIED\020\000\022\014\n"
           + "\010BUILT_IN\020\001\022\n\n"
           + "\006CUSTOM\020\002:\227\001\352A\223\001\n"
-          + "0cloudsecuritycompliance.googleapis.com/Framework\022Hor"
-          + "ganizations/{organization}/locations/{location}/frameworks/{framework}*\n"
-          + "frameworks2\tframework\"\266\003\n"
-          + "\021CloudControlGroup\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\002\022\030\n"
-          + "\013description\030\002 \001(\tB\003\340A\001\022f\n"
-          + "\004type\030\003 \001(\0162P.google.cloud.cloudsecur"
-          + "itycompliance.v1.CloudControlGroup.CloudControlGroupTypeB\006\340A\001\340A\003\022\027\n\n"
-          + "control_id\030\004 \001(\tB\003\340A\001\022`\n"
-          + "\025cloud_control_details\030\005 \003(\013"
-          + "2<.google.cloud.cloudsecuritycompliance.v1.CloudControlDetailsB\003\340A\002\022\036\n"
-          + "\021major_revision_id\030\006 \001(\003B\003\340A\001\022\024\n"
-          + "\007control\030\010 \001(\tB\003\340A\001\"[\n"
-          + "\025CloudControlGroupType\022(\n"
-          + "$CLOUD_CONTROL_GROUP_TYPE_UNSPECIFIED\020\000\022\014\n"
-          + "\010BUILT_IN\020\001\022\n\n"
-          + "\006CUSTOM\020\002\"\225\001\n"
+          + "0cloudsecuritycompliance.googleapis.com/Framework\022Horganizations/{organization}"
+          + "/locations/{location}/frameworks/{framework}*\n"
+          + "frameworks2\tframework\"\225\001\n"
           + "\023CloudControlDetails\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\002\022\036\n"
           + "\021major_revision_id\030\002 \001(\003B\003\340A\002\022K\n\n"
-          + "parameters\030\004 \003(\01322.google.c"
-          + "loud.cloudsecuritycompliance.v1.ParameterB\003\340A\001\"g\n"
+          + "parameters\030\004 \003"
+          + "(\01322.google.cloud.cloudsecuritycompliance.v1.ParameterB\003\340A\001\"g\n"
           + "\022FrameworkReference\022\026\n"
           + "\tframework\030\001 \001(\tB\003\340A\002\022#\n"
           + "\021major_revision_id\030\002 \001(\003B\003\340A\001H\000\210\001\001B\024\n"
           + "\022_major_revision_id\"q\n"
           + "\tParameter\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\002\022Q\n"
-          + "\017parameter_value\030\002"
-          + " \001(\01323.google.cloud.cloudsecuritycompliance.v1.ParamValueB\003\340A\002\"\242\010\n"
+          + "\017parameter_value\030\002 \001(\01323.google.cloud.clo"
+          + "udsecuritycompliance.v1.ParamValueB\003\340A\002\"\242\010\n"
           + "\014CloudControl\022\024\n"
           + "\004name\030\001 \001(\tB\006\340A\002\340A\010\022\036\n"
           + "\021major_revision_id\030\002 \001(\003B\003\340A\003\022\030\n"
           + "\013description\030\004 \001(\tB\003\340A\001\022\031\n"
           + "\014display_name\030\005 \001(\tB\003\340A\001\022b\n"
-          + "\033supported_enforcement_modes\030\007 \003(\01628.google.clo"
-          + "ud.cloudsecuritycompliance.v1.EnforcementModeB\003\340A\003\022S\n"
-          + "\016parameter_spec\030\010 \003(\01326.goo"
-          + "gle.cloud.cloudsecuritycompliance.v1.ParameterSpecB\003\340A\001\022A\n"
-          + "\005rules\030\t \003(\0132-.google."
-          + "cloud.cloudsecuritycompliance.v1.RuleB\003\340A\001\022H\n"
-          + "\010severity\030\013"
-          + " \001(\01621.google.cloud.cloudsecuritycompliance.v1.SeverityB\003\340A\001\022\035\n"
+          + "\033supported_enforcement_modes\030\007 \003(\016"
+          + "28.google.cloud.cloudsecuritycompliance.v1.EnforcementModeB\003\340A\003\022S\n"
+          + "\016parameter_spec\030\010"
+          + " \003(\01326.google.cloud.cloudsecuritycompliance.v1.ParameterSpecB\003\340A\001\022A\n"
+          + "\005rules\030\t "
+          + "\003(\0132-.google.cloud.cloudsecuritycompliance.v1.RuleB\003\340A\001\022H\n"
+          + "\010severity\030\013 \001(\01621.goog"
+          + "le.cloud.cloudsecuritycompliance.v1.SeverityB\003\340A\001\022\035\n"
           + "\020finding_category\030\014 \001(\tB\003\340A\001\022^\n"
           + "\031supported_cloud_providers\030\r"
-          + " \003(\01626.google.cloud.cl"
-          + "oudsecuritycompliance.v1.CloudProviderB\003\340A\001\022\037\n"
+          + " \003(\01626.go"
+          + "ogle.cloud.cloudsecuritycompliance.v1.CloudProviderB\003\340A\001\022\037\n"
           + "\022related_frameworks\030\016 \003(\tB\003\340A\003\022\036\n"
           + "\021remediation_steps\030\017 \001(\tB\003\340A\001\022V\n\n"
-          + "categories\030\020"
-          + " \003(\0162=.google.cloud.cloudsecuritycompliance.v1.CloudControlCategoryB\003\340A\001\0224\n"
+          + "categories\030\020 \003(\0162=.google.cloud.clo"
+          + "udsecuritycompliance.v1.CloudControlCategoryB\003\340A\001\0224\n"
           + "\013create_time\030\021 \001(\0132\032.google.protobuf.TimestampB\003\340A\003\022i\n"
-          + "\037supported_target_resource_types\030\022 \003(\0162;.google.cloud.cloudsecurity"
-          + "compliance.v1.TargetResourceTypeB\003\340A\001:\247\001\352A\243\001\n"
-          + "3cloudsecuritycompliance.googleapis.com/CloudControl\022Oorganizations/{organi"
-          + "zation}/locations/{location}/cloudControls/{cloud_control}*\r"
+          + "\037supported_target_resource_types\030\022 \003(\0162;.google.cloud."
+          + "cloudsecuritycompliance.v1.TargetResourceTypeB\003\340A\001:\247\001\352A\243\001\n"
+          + "3cloudsecuritycompliance.googleapis.com/CloudControl\022Oorganiza"
+          + "tions/{organization}/locations/{location}/cloudControls/{cloud_control}*\r"
           + "cloudControls2\014cloudControl\"\216\005\n\r"
           + "ParameterSpec\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\002\022\031\n"
           + "\014display_name\030\002 \001(\tB\003\340A\001\022\030\n"
           + "\013description\030\003 \001(\tB\003\340A\001\022\030\n"
           + "\013is_required\030\004 \001(\010B\003\340A\002\022Y\n\n"
-          + "value_type\030\005 \001(\0162@.google.cloud.c"
-          + "loudsecuritycompliance.v1.ParameterSpec.ValueTypeB\003\340A\002\022O\n\r"
-          + "default_value\030\006 \001(\01323."
-          + "google.cloud.cloudsecuritycompliance.v1.ParamValueB\003\340A\001\022c\n"
-          + "\022substitution_rules\030\007 "
-          + "\003(\0132B.google.cloud.cloudsecuritycompliance.v1.ParameterSubstitutionRuleB\003\340A\001\022S\n"
-          + "\016sub_parameters\030\010 \003(\01326.google.cloud.clou"
-          + "dsecuritycompliance.v1.ParameterSpecB\003\340A\001\022L\n\n"
-          + "validation\030\t \001(\01323.google.cloud.clo"
-          + "udsecuritycompliance.v1.ValidationB\003\340A\001\"g\n"
+          + "value_type\030\005 \001(\0162@.g"
+          + "oogle.cloud.cloudsecuritycompliance.v1.ParameterSpec.ValueTypeB\003\340A\002\022O\n\r"
+          + "default_value\030\006"
+          + " \001(\01323.google.cloud.cloudsecuritycompliance.v1.ParamValueB\003\340A\001\022c\n"
+          + "\022substitution_rules\030\007 \003(\0132B.google.cloud.cloudsec"
+          + "uritycompliance.v1.ParameterSubstitutionRuleB\003\340A\001\022S\n"
+          + "\016sub_parameters\030\010 \003(\01326.goog"
+          + "le.cloud.cloudsecuritycompliance.v1.ParameterSpecB\003\340A\001\022L\n\n"
+          + "validation\030\t \001(\01323.goo"
+          + "gle.cloud.cloudsecuritycompliance.v1.ValidationB\003\340A\001\"g\n"
           + "\tValueType\022\032\n"
           + "\026VALUE_TYPE_UNSPECIFIED\020\000\022\n\n"
           + "\006STRING\020\003\022\013\n"
@@ -234,16 +201,16 @@ public final class CommonProto {
           + "\006NUMBER\020\006\022\t\n"
           + "\005ONEOF\020\007\"\206\002\n\n"
           + "Validation\022P\n"
-          + "\016allowed_values\030\001 \001(\01326.google.cloud.c"
-          + "loudsecuritycompliance.v1.AllowedValuesH\000\022F\n"
-          + "\tint_range\030\002"
-          + " \001(\01321.google.cloud.cloudsecuritycompliance.v1.IntRangeH\000\022P\n"
-          + "\016regexp_pattern\030\003"
-          + " \001(\01326.google.cloud.cloudsecuritycompliance.v1.RegexpPatternH\000B\014\n\n"
+          + "\016allowed_values\030\001 \001(\01326.g"
+          + "oogle.cloud.cloudsecuritycompliance.v1.AllowedValuesH\000\022F\n"
+          + "\tint_range\030\002 \001(\01321.goog"
+          + "le.cloud.cloudsecuritycompliance.v1.IntRangeH\000\022P\n"
+          + "\016regexp_pattern\030\003 \001(\01326.google."
+          + "cloud.cloudsecuritycompliance.v1.RegexpPatternH\000B\014\n\n"
           + "constraint\"Y\n\r"
           + "AllowedValues\022H\n"
-          + "\006values\030\001 \003"
-          + "(\01323.google.cloud.cloudsecuritycompliance.v1.ParamValueB\003\340A\002\"%\n\r"
+          + "\006values\030\001"
+          + " \003(\01323.google.cloud.cloudsecuritycompliance.v1.ParamValueB\003\340A\002\"%\n\r"
           + "RegexpPattern\022\024\n"
           + "\007pattern\030\001 \001(\tB\003\340A\002\".\n"
           + "\010IntRange\022\020\n"
@@ -254,33 +221,34 @@ public final class CommonProto {
           + "ParamValue\022\026\n"
           + "\014string_value\030\003 \001(\tH\000\022\024\n\n"
           + "bool_value\030\004 \001(\010H\000\022P\n"
-          + "\021string_list_value\030\005 \001(\01323.google."
-          + "cloud.cloudsecuritycompliance.v1.StringListH\000\022\026\n"
+          + "\021string_list_value\030\005 "
+          + "\001(\01323.google.cloud.cloudsecuritycompliance.v1.StringListH\000\022\026\n"
           + "\014number_value\030\006 \001(\001H\000\022I\n"
           + "\013oneof_value\030\007"
           + " \001(\01322.google.cloud.cloudsecuritycompliance.v1.ParameterH\000B\006\n"
           + "\004kind\"\212\002\n"
           + "\031ParameterSubstitutionRule\022m\n"
-          + "\035placeholder_substitution_rule\030\001 \001(\0132D.google.cloud.clo"
-          + "udsecuritycompliance.v1.PlaceholderSubstitutionRuleH\000\022i\n"
-          + "\033attribute_substitution_rule\030\002 \001(\0132B.google.cloud.cloudsecurityc"
-          + "ompliance.v1.AttributeSubstitutionRuleH\000B\023\n"
+          + "\035placeholder_substitution_rule\030\001 \001(\0132D.goo"
+          + "gle.cloud.cloudsecuritycompliance.v1.PlaceholderSubstitutionRuleH\000\022i\n"
+          + "\033attribute_substitution_rule\030\002 \001(\0132B.google.cloud.c"
+          + "loudsecuritycompliance.v1.AttributeSubstitutionRuleH\000B\023\n"
           + "\021substitution_type\".\n"
           + "\031AttributeSubstitutionRule\022\021\n"
           + "\tattribute\030\001 \001(\t\"0\n"
           + "\033PlaceholderSubstitutionRule\022\021\n"
           + "\tattribute\030\001 \001(\t\"\335\001\n"
           + "\004Rule\022P\n"
-          + "\016cel_expression\030\001 \001(\01326.googl"
-          + "e.cloud.cloudsecuritycompliance.v1.CELExpressionH\000\022\030\n"
+          + "\016cel_expression\030\001"
+          + " \001(\01326.google.cloud.cloudsecuritycompliance.v1.CELExpressionH\000\022\030\n"
           + "\013description\030\n"
           + " \001(\tB\003\340A\001\022W\n"
-          + "\021rule_action_types\030\020 \003(\01627.google.cloud.c"
-          + "loudsecuritycompliance.v1.RuleActionTypeB\003\340A\002B\020\n"
-          + "\016implementation\"\212\001\n\r"
+          + "\021rule_action_types\030\020 \003(\01627.g"
+          + "oogle.cloud.cloudsecuritycompliance.v1.RuleActionTypeB\003\340A\002B\020\n"
+          + "\016implementation\"\212\001\n"
+          + "\r"
           + "CELExpression\022T\n"
-          + "\025resource_types_values\030\003 \001(\01323.googl"
-          + "e.cloud.cloudsecuritycompliance.v1.StringListH\000\022\027\n\n"
+          + "\025resource_types_values\030\003"
+          + " \001(\01323.google.cloud.cloudsecuritycompliance.v1.StringListH\000\022\027\n\n"
           + "expression\030\001 \001(\tB\003\340A\002B\n\n"
           + "\010criteria\"\200\002\n"
           + "\021OperationMetadata\0224\n"
@@ -290,56 +258,7 @@ public final class CommonProto {
           + "\004verb\030\004 \001(\tB\003\340A\003\022\033\n"
           + "\016status_message\030\005 \001(\tB\003\340A\003\022#\n"
           + "\026requested_cancellation\030\006 \001(\010B\003\340A\003\022\030\n"
-          + "\013api_version\030\007 \001(\tB\003\340A\003\"\327\006\n"
-          + "\007Control\022\021\n"
-          + "\004name\030\001 \001(\tB\003\340A\003\022\031\n"
-          + "\014display_name\030\003 \001(\tB\003\340A\003\022\030\n"
-          + "\013description\030\004 \001(\tB\003\340A\003\022L\n"
-          + "\006family\030\005 "
-          + "\001(\01627.google.cloud.cloudsecuritycompliance.v1.Control.FamilyB\003\340A\003\022S\n"
-          + "\016control_family\030\006"
-          + " \001(\01326.google.cloud.cloudsecuritycompliance.v1.ControlFamilyB\003\340A\003\022n\n"
-          + "\023responsibility_type\030\007 \001(\0162L.google.cloud.cloud"
-          + "securitycompliance.v1.RegulatoryControlResponsibilityTypeB\003\340A\003\022.\n"
-          + "!google_responsibility_description\030\010 \001(\tB\003\340A\003\0221\n"
-          + "$google_responsibility_implementation\030\t \001(\tB\003\340A\003\0220\n"
-          + "#customer_responsibility_description\030\n"
-          + " \001(\tB\003\340A\003\0223\n"
-          + "&customer_responsibility_implementation\030\013 \001(\tB\003\340A\003\022.\n"
-          + "!shared_responsibility_description\030\014 \001(\tB\003\340A\003\022#\n"
-          + "\026additional_content_uri\030\r"
-          + " \001(\tB\003\340A\003\022\037\n"
-          + "\022related_frameworks\030\016 \003(\tB\003\340A\003\"\260\001\n"
-          + "\006Family\022\026\n"
-          + "\022FAMILY_UNSPECIFIED\020\000\022\006\n"
-          + "\002AC\020\001\022\006\n"
-          + "\002AT\020\002\022\006\n"
-          + "\002AU\020\003\022\006\n"
-          + "\002CA\020\004\022\006\n"
-          + "\002CM\020\005\022\006\n"
-          + "\002CP\020\006\022\006\n"
-          + "\002IA\020\007\022\006\n"
-          + "\002IR\020\010\022\006\n"
-          + "\002MA\020\t\022\006\n"
-          + "\002MP\020\n"
-          + "\022\006\n"
-          + "\002PE\020\013\022\006\n"
-          + "\002PL\020\014\022\006\n"
-          + "\002PS\020\r"
-          + "\022\006\n"
-          + "\002RA\020\016\022\006\n"
-          + "\002SA\020\017\022\006\n"
-          + "\002SC\020\020\022\006\n"
-          + "\002SI\020\021\022\006\n"
-          + "\002SR\020\022\"8\n\r"
-          + "ControlFamily\022\021\n"
-          + "\tfamily_id\030\001 \001(\t\022\024\n"
-          + "\014display_name\030\002 \001(\t*\203\001\n"
-          + "#RegulatoryControlResponsibilityType\0226\n"
-          + "2REGULATORY_CONTROL_RESPONSIBILITY_TYPE_UNSPECIFIED\020\000\022\n\n"
-          + "\006GOOGLE\020\001\022\014\n"
-          + "\010CUSTOMER\020\002\022\n\n"
-          + "\006SHARED\020\003*]\n"
+          + "\013api_version\030\007 \001(\tB\003\340A\003*]\n"
           + "\017EnforcementMode\022 \n"
           + "\034ENFORCEMENT_MODE_UNSPECIFIED\020\000\022\016\n\n"
           + "PREVENTIVE\020\001\022\r\n"
@@ -393,13 +312,13 @@ public final class CommonProto {
           + "\037TARGET_RESOURCE_CRM_TYPE_FOLDER\020\002\022$\n"
           + " TARGET_RESOURCE_CRM_TYPE_PROJECT\020\003\022$\n"
           + " TARGET_RESOURCE_TYPE_APPLICATION\020\004B\227\003\n"
-          + "+com.google.cloud.cloudsecuritycompliance.v1B\013CommonProtoP\001Zeclo"
-          + "ud.google.com/go/cloudsecuritycompliance/apiv1/cloudsecuritycompliancepb;cloudse"
-          + "curitycompliancepb\252\002\'Google.Cloud.CloudS"
-          + "ecurityCompliance.V1\312\002\'Google\\Cloud\\Clou"
-          + "dSecurityCompliance\\V1\352\002*Google::Cloud::CloudSecurityCompliance::V1\352Ap\n"
-          + ";cloudsecuritycompliance.googleapis.com/Organizat"
-          + "ionLocation\0221organizations/{organization}/locations/{location}b\006proto3"
+          + "+com.google.cloud.cloudsecuritycompliance.v1B\013CommonProtoP\001Ze"
+          + "cloud.google.com/go/cloudsecuritycompliance/apiv1/cloudsecuritycompliancepb;clou"
+          + "dsecuritycompliancepb\252\002\'Google.Cloud.Clo"
+          + "udSecurityCompliance.V1\312\002\'Google\\Cloud\\C"
+          + "loudSecurityCompliance\\V1\352\002*Google::Cloud::CloudSecurityCompliance::V1\352Ap\n"
+          + ";cloudsecuritycompliance.googleapis.com/Organi"
+          + "zationLocation\0221organizations/{organization}/locations/{location}b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -420,38 +339,14 @@ public final class CommonProto {
               "DisplayName",
               "Description",
               "Type",
-              "CloudControlGroupDetails",
               "CloudControlDetails",
               "Category",
               "SupportedCloudProviders",
               "SupportedTargetResourceTypes",
-            });
-    internal_static_google_cloud_cloudsecuritycompliance_v1_Framework_CloudControlGroupDetails_descriptor =
-        internal_static_google_cloud_cloudsecuritycompliance_v1_Framework_descriptor
-            .getNestedTypes()
-            .get(0);
-    internal_static_google_cloud_cloudsecuritycompliance_v1_Framework_CloudControlGroupDetails_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_cloudsecuritycompliance_v1_Framework_CloudControlGroupDetails_descriptor,
-            new java.lang.String[] {
-              "CloudControlGroup", "Kind",
-            });
-    internal_static_google_cloud_cloudsecuritycompliance_v1_CloudControlGroup_descriptor =
-        getDescriptor().getMessageTypes().get(1);
-    internal_static_google_cloud_cloudsecuritycompliance_v1_CloudControlGroup_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_cloudsecuritycompliance_v1_CloudControlGroup_descriptor,
-            new java.lang.String[] {
-              "Name",
-              "Description",
-              "Type",
-              "ControlId",
-              "CloudControlDetails",
-              "MajorRevisionId",
-              "Control",
+              "SupportedEnforcementModes",
             });
     internal_static_google_cloud_cloudsecuritycompliance_v1_CloudControlDetails_descriptor =
-        getDescriptor().getMessageTypes().get(2);
+        getDescriptor().getMessageTypes().get(1);
     internal_static_google_cloud_cloudsecuritycompliance_v1_CloudControlDetails_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_cloudsecuritycompliance_v1_CloudControlDetails_descriptor,
@@ -459,7 +354,7 @@ public final class CommonProto {
               "Name", "MajorRevisionId", "Parameters",
             });
     internal_static_google_cloud_cloudsecuritycompliance_v1_FrameworkReference_descriptor =
-        getDescriptor().getMessageTypes().get(3);
+        getDescriptor().getMessageTypes().get(2);
     internal_static_google_cloud_cloudsecuritycompliance_v1_FrameworkReference_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_cloudsecuritycompliance_v1_FrameworkReference_descriptor,
@@ -467,7 +362,7 @@ public final class CommonProto {
               "Framework", "MajorRevisionId",
             });
     internal_static_google_cloud_cloudsecuritycompliance_v1_Parameter_descriptor =
-        getDescriptor().getMessageTypes().get(4);
+        getDescriptor().getMessageTypes().get(3);
     internal_static_google_cloud_cloudsecuritycompliance_v1_Parameter_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_cloudsecuritycompliance_v1_Parameter_descriptor,
@@ -475,7 +370,7 @@ public final class CommonProto {
               "Name", "ParameterValue",
             });
     internal_static_google_cloud_cloudsecuritycompliance_v1_CloudControl_descriptor =
-        getDescriptor().getMessageTypes().get(5);
+        getDescriptor().getMessageTypes().get(4);
     internal_static_google_cloud_cloudsecuritycompliance_v1_CloudControl_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_cloudsecuritycompliance_v1_CloudControl_descriptor,
@@ -497,7 +392,7 @@ public final class CommonProto {
               "SupportedTargetResourceTypes",
             });
     internal_static_google_cloud_cloudsecuritycompliance_v1_ParameterSpec_descriptor =
-        getDescriptor().getMessageTypes().get(6);
+        getDescriptor().getMessageTypes().get(5);
     internal_static_google_cloud_cloudsecuritycompliance_v1_ParameterSpec_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_cloudsecuritycompliance_v1_ParameterSpec_descriptor,
@@ -513,7 +408,7 @@ public final class CommonProto {
               "Validation",
             });
     internal_static_google_cloud_cloudsecuritycompliance_v1_Validation_descriptor =
-        getDescriptor().getMessageTypes().get(7);
+        getDescriptor().getMessageTypes().get(6);
     internal_static_google_cloud_cloudsecuritycompliance_v1_Validation_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_cloudsecuritycompliance_v1_Validation_descriptor,
@@ -521,7 +416,7 @@ public final class CommonProto {
               "AllowedValues", "IntRange", "RegexpPattern", "Constraint",
             });
     internal_static_google_cloud_cloudsecuritycompliance_v1_AllowedValues_descriptor =
-        getDescriptor().getMessageTypes().get(8);
+        getDescriptor().getMessageTypes().get(7);
     internal_static_google_cloud_cloudsecuritycompliance_v1_AllowedValues_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_cloudsecuritycompliance_v1_AllowedValues_descriptor,
@@ -529,7 +424,7 @@ public final class CommonProto {
               "Values",
             });
     internal_static_google_cloud_cloudsecuritycompliance_v1_RegexpPattern_descriptor =
-        getDescriptor().getMessageTypes().get(9);
+        getDescriptor().getMessageTypes().get(8);
     internal_static_google_cloud_cloudsecuritycompliance_v1_RegexpPattern_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_cloudsecuritycompliance_v1_RegexpPattern_descriptor,
@@ -537,7 +432,7 @@ public final class CommonProto {
               "Pattern",
             });
     internal_static_google_cloud_cloudsecuritycompliance_v1_IntRange_descriptor =
-        getDescriptor().getMessageTypes().get(10);
+        getDescriptor().getMessageTypes().get(9);
     internal_static_google_cloud_cloudsecuritycompliance_v1_IntRange_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_cloudsecuritycompliance_v1_IntRange_descriptor,
@@ -545,7 +440,7 @@ public final class CommonProto {
               "Min", "Max",
             });
     internal_static_google_cloud_cloudsecuritycompliance_v1_StringList_descriptor =
-        getDescriptor().getMessageTypes().get(11);
+        getDescriptor().getMessageTypes().get(10);
     internal_static_google_cloud_cloudsecuritycompliance_v1_StringList_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_cloudsecuritycompliance_v1_StringList_descriptor,
@@ -553,7 +448,7 @@ public final class CommonProto {
               "Values",
             });
     internal_static_google_cloud_cloudsecuritycompliance_v1_ParamValue_descriptor =
-        getDescriptor().getMessageTypes().get(12);
+        getDescriptor().getMessageTypes().get(11);
     internal_static_google_cloud_cloudsecuritycompliance_v1_ParamValue_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_cloudsecuritycompliance_v1_ParamValue_descriptor,
@@ -561,7 +456,7 @@ public final class CommonProto {
               "StringValue", "BoolValue", "StringListValue", "NumberValue", "OneofValue", "Kind",
             });
     internal_static_google_cloud_cloudsecuritycompliance_v1_ParameterSubstitutionRule_descriptor =
-        getDescriptor().getMessageTypes().get(13);
+        getDescriptor().getMessageTypes().get(12);
     internal_static_google_cloud_cloudsecuritycompliance_v1_ParameterSubstitutionRule_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_cloudsecuritycompliance_v1_ParameterSubstitutionRule_descriptor,
@@ -569,7 +464,7 @@ public final class CommonProto {
               "PlaceholderSubstitutionRule", "AttributeSubstitutionRule", "SubstitutionType",
             });
     internal_static_google_cloud_cloudsecuritycompliance_v1_AttributeSubstitutionRule_descriptor =
-        getDescriptor().getMessageTypes().get(14);
+        getDescriptor().getMessageTypes().get(13);
     internal_static_google_cloud_cloudsecuritycompliance_v1_AttributeSubstitutionRule_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_cloudsecuritycompliance_v1_AttributeSubstitutionRule_descriptor,
@@ -577,7 +472,7 @@ public final class CommonProto {
               "Attribute",
             });
     internal_static_google_cloud_cloudsecuritycompliance_v1_PlaceholderSubstitutionRule_descriptor =
-        getDescriptor().getMessageTypes().get(15);
+        getDescriptor().getMessageTypes().get(14);
     internal_static_google_cloud_cloudsecuritycompliance_v1_PlaceholderSubstitutionRule_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_cloudsecuritycompliance_v1_PlaceholderSubstitutionRule_descriptor,
@@ -585,7 +480,7 @@ public final class CommonProto {
               "Attribute",
             });
     internal_static_google_cloud_cloudsecuritycompliance_v1_Rule_descriptor =
-        getDescriptor().getMessageTypes().get(16);
+        getDescriptor().getMessageTypes().get(15);
     internal_static_google_cloud_cloudsecuritycompliance_v1_Rule_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_cloudsecuritycompliance_v1_Rule_descriptor,
@@ -593,7 +488,7 @@ public final class CommonProto {
               "CelExpression", "Description", "RuleActionTypes", "Implementation",
             });
     internal_static_google_cloud_cloudsecuritycompliance_v1_CELExpression_descriptor =
-        getDescriptor().getMessageTypes().get(17);
+        getDescriptor().getMessageTypes().get(16);
     internal_static_google_cloud_cloudsecuritycompliance_v1_CELExpression_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_cloudsecuritycompliance_v1_CELExpression_descriptor,
@@ -601,7 +496,7 @@ public final class CommonProto {
               "ResourceTypesValues", "Expression", "Criteria",
             });
     internal_static_google_cloud_cloudsecuritycompliance_v1_OperationMetadata_descriptor =
-        getDescriptor().getMessageTypes().get(18);
+        getDescriptor().getMessageTypes().get(17);
     internal_static_google_cloud_cloudsecuritycompliance_v1_OperationMetadata_fieldAccessorTable =
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_cloudsecuritycompliance_v1_OperationMetadata_descriptor,
@@ -613,34 +508,6 @@ public final class CommonProto {
               "StatusMessage",
               "RequestedCancellation",
               "ApiVersion",
-            });
-    internal_static_google_cloud_cloudsecuritycompliance_v1_Control_descriptor =
-        getDescriptor().getMessageTypes().get(19);
-    internal_static_google_cloud_cloudsecuritycompliance_v1_Control_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_cloudsecuritycompliance_v1_Control_descriptor,
-            new java.lang.String[] {
-              "Name",
-              "DisplayName",
-              "Description",
-              "Family",
-              "ControlFamily",
-              "ResponsibilityType",
-              "GoogleResponsibilityDescription",
-              "GoogleResponsibilityImplementation",
-              "CustomerResponsibilityDescription",
-              "CustomerResponsibilityImplementation",
-              "SharedResponsibilityDescription",
-              "AdditionalContentUri",
-              "RelatedFrameworks",
-            });
-    internal_static_google_cloud_cloudsecuritycompliance_v1_ControlFamily_descriptor =
-        getDescriptor().getMessageTypes().get(20);
-    internal_static_google_cloud_cloudsecuritycompliance_v1_ControlFamily_fieldAccessorTable =
-        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-            internal_static_google_cloud_cloudsecuritycompliance_v1_ControlFamily_descriptor,
-            new java.lang.String[] {
-              "FamilyId", "DisplayName",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

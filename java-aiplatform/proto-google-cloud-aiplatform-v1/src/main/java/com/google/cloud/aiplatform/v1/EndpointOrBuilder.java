@@ -921,4 +921,17 @@ public interface EndpointOrBuilder
    */
   com.google.cloud.aiplatform.v1.GenAiAdvancedFeaturesConfigOrBuilder
       getGenAiAdvancedFeaturesConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * If true, the model server will be isolated from the external internet.
+   * </pre>
+   *
+   * <code>bool private_model_server_enabled = 30;</code>
+   *
+   * @return The privateModelServerEnabled.
+   */
+  boolean getPrivateModelServerEnabled();
 }

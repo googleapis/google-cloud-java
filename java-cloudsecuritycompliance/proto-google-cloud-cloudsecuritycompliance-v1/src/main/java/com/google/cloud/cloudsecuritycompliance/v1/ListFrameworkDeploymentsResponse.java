@@ -23,7 +23,7 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * Message for response to listing FrameworkDeployments.
+ * Response message for ListFrameworkDeployments.
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.ListFrameworkDeploymentsResponse}
@@ -395,7 +395,7 @@ public final class ListFrameworkDeploymentsResponse extends com.google.protobuf.
    *
    *
    * <pre>
-   * Message for response to listing FrameworkDeployments.
+   * Response message for ListFrameworkDeployments.
    * </pre>
    *
    * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.ListFrameworkDeploymentsResponse}

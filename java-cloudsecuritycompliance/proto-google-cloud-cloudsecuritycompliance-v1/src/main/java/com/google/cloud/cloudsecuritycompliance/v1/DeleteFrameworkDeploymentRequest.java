@@ -76,8 +76,8 @@ public final class DeleteFrameworkDeploymentRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Required. Name of the framework deployment to be deleted
-   * FrameworkDeployment name in either of the following formats:
+   * Required. name of the FrameworkDeployment to be deleted in the following
+   * format:
    * organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}
    * </pre>
    *
@@ -104,8 +104,8 @@ public final class DeleteFrameworkDeploymentRequest extends com.google.protobuf.
    *
    *
    * <pre>
-   * Required. Name of the framework deployment to be deleted
-   * FrameworkDeployment name in either of the following formats:
+   * Required. name of the FrameworkDeployment to be deleted in the following
+   * format:
    * organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}
    * </pre>
    *
@@ -587,8 +587,8 @@ public final class DeleteFrameworkDeploymentRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. Name of the framework deployment to be deleted
-     * FrameworkDeployment name in either of the following formats:
+     * Required. name of the FrameworkDeployment to be deleted in the following
+     * format:
      * organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}
      * </pre>
      *
@@ -614,8 +614,8 @@ public final class DeleteFrameworkDeploymentRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. Name of the framework deployment to be deleted
-     * FrameworkDeployment name in either of the following formats:
+     * Required. name of the FrameworkDeployment to be deleted in the following
+     * format:
      * organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}
      * </pre>
      *
@@ -641,8 +641,8 @@ public final class DeleteFrameworkDeploymentRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. Name of the framework deployment to be deleted
-     * FrameworkDeployment name in either of the following formats:
+     * Required. name of the FrameworkDeployment to be deleted in the following
+     * format:
      * organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}
      * </pre>
      *
@@ -667,8 +667,8 @@ public final class DeleteFrameworkDeploymentRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. Name of the framework deployment to be deleted
-     * FrameworkDeployment name in either of the following formats:
+     * Required. name of the FrameworkDeployment to be deleted in the following
+     * format:
      * organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}
      * </pre>
      *
@@ -689,8 +689,8 @@ public final class DeleteFrameworkDeploymentRequest extends com.google.protobuf.
      *
      *
      * <pre>
-     * Required. Name of the framework deployment to be deleted
-     * FrameworkDeployment name in either of the following formats:
+     * Required. name of the FrameworkDeployment to be deleted in the following
+     * format:
      * organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}
      * </pre>
      *

@@ -40,7 +40,8 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: Service describing handlers for config resources
+ * Service Description: Config Service manages compliance frameworks, cloud controls, and their
+ * configurations.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -69,7 +70,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListFrameworks</td>
- *      <td><p> Lists Frameworks in a given organization.</td>
+ *      <td><p> Lists all Frameworks (both Built-in and Custom) available within a given parent resource. This method supports pagination. The latest major version of each Framework is returned.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -89,7 +90,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetFramework</td>
- *      <td><p> Gets details of a single Framework.</td>
+ *      <td><p> Gets details of a single Framework. This method retrieves a Framework resource, which can be either Built-in or Custom, identified by its name.
+ * <p>  By default, the latest major version of the Framework is returned. A specific major version can be retrieved by specifying the `major_revision_id` in the request.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -108,7 +110,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateFramework</td>
- *      <td><p> Creates a single framework for a given resource.</td>
+ *      <td><p> Creates a new Framework with type `Custom` under a given parent resource. Frameworks with type `Built-in` are managed by Google and cannot be created through this API.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -127,7 +129,9 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateFramework</td>
- *      <td><p> Updates a single Framework.</td>
+ *      <td><p> Updates a single Framework. This method allows for partial updates of a Framework resource. The fields to be updated are specified using the `update_mask`.
+ * <p>  - If an `update_mask` is provided, only the fields specified in the mask will be updated. - If no `update_mask` is provided, all fields present in the request's `framework` body will be used to overwrite the existing resource.
+ * <p>  This operation can only be performed on Frameworks with type `CUSTOM`. A successful update will result in a new version of the Framework.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -145,7 +149,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> DeleteFramework</td>
- *      <td><p> Deletes a single Framework.</td>
+ *      <td><p> Deletes a single Custom Framework, including all its minor and minor revisions.
+ * <p>  - This operation can only be performed on Frameworks with type `CUSTOM`.   Built-in Frameworks cannot be deleted. - The Framework cannot be deleted if it is currently deployed on any   resource. - This action is permanent and cannot be undone.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -164,7 +169,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListCloudControls</td>
- *      <td><p> Lists CloudControls in a given organization.</td>
+ *      <td><p> Lists all CloudControls (both Built-in and Custom) available within a given parent resource. This method supports pagination. The latest major version of each CloudControl is returned.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -184,7 +189,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> GetCloudControl</td>
- *      <td><p> Gets details of a single CloudControl.</td>
+ *      <td><p> Gets details of a single CloudControl. This method retrieves a CloudControl resource, which can be either Built-in or Custom, identified by its name.
+ * <p>  By default, the latest major version of the CloudControl is returned. A specific major version can be retrieved by specifying the `major_revision_id` in the request.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -203,7 +209,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateCloudControl</td>
- *      <td><p> Creates a single CloudControl for a given resource.</td>
+ *      <td><p> Creates a new CloudControl with type `Custom` under a given parent resource. `Built-in` CloudControls are managed by Google and cannot be created through this API.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -222,7 +228,9 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateCloudControl</td>
- *      <td><p> Updates a single CloudControl.</td>
+ *      <td><p> Updates a single CloudControl. This method allows for partial updates of a Custom CloudControl resource. Built-in CloudControls cannot be updated.
+ * <p>  - If an `update_mask` is provided, only the fields specified in the mask will be updated. - If no `update_mask` is provided, all fields present in the request's `cloud_control` body will be used to overwrite the existing resource.
+ * <p>  A successful update will result in a new version of the CloudControl.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -240,7 +248,8 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> DeleteCloudControl</td>
- *      <td><p> Deletes a single CloudControl.</td>
+ *      <td><p> Deletes a single Custom CloudControl, including all its major and minor revisions.
+ * <p>  - This operation can only be performed on CloudControls with type `CUSTOM`.   Built-in CloudControls cannot be deleted. - The CloudControl cannot be deleted if any of its revisions are currently   referenced by any Framework. - This action is permanent and cannot be undone.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -389,7 +398,8 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Frameworks in a given organization.
+   * Lists all Frameworks (both Built-in and Custom) available within a given parent resource. This
+   * method supports pagination. The latest major version of each Framework is returned.
    *
    * <p>Sample code:
    *
@@ -408,7 +418,7 @@ public class ConfigClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource name, in the format
-   *     `organizations/{organization}/locations/{location}`.
+   *     `organizations/{organization}/locations/{location}`. Only global location is supported.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListFrameworksPagedResponse listFrameworks(OrganizationLocationName parent) {
@@ -421,7 +431,8 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Frameworks in a given organization.
+   * Lists all Frameworks (both Built-in and Custom) available within a given parent resource. This
+   * method supports pagination. The latest major version of each Framework is returned.
    *
    * <p>Sample code:
    *
@@ -440,7 +451,7 @@ public class ConfigClient implements BackgroundResource {
    * }</pre>
    *
    * @param parent Required. The parent resource name, in the format
-   *     `organizations/{organization}/locations/{location}`.
+   *     `organizations/{organization}/locations/{location}`. Only global location is supported.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListFrameworksPagedResponse listFrameworks(String parent) {
@@ -450,7 +461,8 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Frameworks in a given organization.
+   * Lists all Frameworks (both Built-in and Custom) available within a given parent resource. This
+   * method supports pagination. The latest major version of each Framework is returned.
    *
    * <p>Sample code:
    *
@@ -482,7 +494,8 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Frameworks in a given organization.
+   * Lists all Frameworks (both Built-in and Custom) available within a given parent resource. This
+   * method supports pagination. The latest major version of each Framework is returned.
    *
    * <p>Sample code:
    *
@@ -514,7 +527,8 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists Frameworks in a given organization.
+   * Lists all Frameworks (both Built-in and Custom) available within a given parent resource. This
+   * method supports pagination. The latest major version of each Framework is returned.
    *
    * <p>Sample code:
    *
@@ -553,7 +567,11 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single Framework.
+   * Gets details of a single Framework. This method retrieves a Framework resource, which can be
+   * either Built-in or Custom, identified by its name.
+   *
+   * <p>By default, the latest major version of the Framework is returned. A specific major version
+   * can be retrieved by specifying the `major_revision_id` in the request.
    *
    * <p>Sample code:
    *
@@ -581,7 +599,11 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single Framework.
+   * Gets details of a single Framework. This method retrieves a Framework resource, which can be
+   * either Built-in or Custom, identified by its name.
+   *
+   * <p>By default, the latest major version of the Framework is returned. A specific major version
+   * can be retrieved by specifying the `major_revision_id` in the request.
    *
    * <p>Sample code:
    *
@@ -608,7 +630,11 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single Framework.
+   * Gets details of a single Framework. This method retrieves a Framework resource, which can be
+   * either Built-in or Custom, identified by its name.
+   *
+   * <p>By default, the latest major version of the Framework is returned. A specific major version
+   * can be retrieved by specifying the `major_revision_id` in the request.
    *
    * <p>Sample code:
    *
@@ -637,7 +663,11 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single Framework.
+   * Gets details of a single Framework. This method retrieves a Framework resource, which can be
+   * either Built-in or Custom, identified by its name.
+   *
+   * <p>By default, the latest major version of the Framework is returned. A specific major version
+   * can be retrieved by specifying the `major_revision_id` in the request.
    *
    * <p>Sample code:
    *
@@ -665,7 +695,8 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a single framework for a given resource.
+   * Creates a new Framework with type `Custom` under a given parent resource. Frameworks with type
+   * `Built-in` are managed by Google and cannot be created through this API.
    *
    * <p>Sample code:
    *
@@ -703,7 +734,8 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a single framework for a given resource.
+   * Creates a new Framework with type `Custom` under a given parent resource. Frameworks with type
+   * `Built-in` are managed by Google and cannot be created through this API.
    *
    * <p>Sample code:
    *
@@ -740,7 +772,8 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a single framework for a given resource.
+   * Creates a new Framework with type `Custom` under a given parent resource. Frameworks with type
+   * `Built-in` are managed by Google and cannot be created through this API.
    *
    * <p>Sample code:
    *
@@ -770,7 +803,8 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a single framework for a given resource.
+   * Creates a new Framework with type `Custom` under a given parent resource. Frameworks with type
+   * `Built-in` are managed by Google and cannot be created through this API.
    *
    * <p>Sample code:
    *
@@ -799,7 +833,15 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a single Framework.
+   * Updates a single Framework. This method allows for partial updates of a Framework resource. The
+   * fields to be updated are specified using the `update_mask`.
+   *
+   * <p>- If an `update_mask` is provided, only the fields specified in the mask will be updated. -
+   * If no `update_mask` is provided, all fields present in the request's `framework` body will be
+   * used to overwrite the existing resource.
+   *
+   * <p>This operation can only be performed on Frameworks with type `CUSTOM`. A successful update
+   * will result in a new version of the Framework.
    *
    * <p>Sample code:
    *
@@ -835,7 +877,15 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a single Framework.
+   * Updates a single Framework. This method allows for partial updates of a Framework resource. The
+   * fields to be updated are specified using the `update_mask`.
+   *
+   * <p>- If an `update_mask` is provided, only the fields specified in the mask will be updated. -
+   * If no `update_mask` is provided, all fields present in the request's `framework` body will be
+   * used to overwrite the existing resource.
+   *
+   * <p>This operation can only be performed on Frameworks with type `CUSTOM`. A successful update
+   * will result in a new version of the Framework.
    *
    * <p>Sample code:
    *
@@ -865,7 +915,15 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a single Framework.
+   * Updates a single Framework. This method allows for partial updates of a Framework resource. The
+   * fields to be updated are specified using the `update_mask`.
+   *
+   * <p>- If an `update_mask` is provided, only the fields specified in the mask will be updated. -
+   * If no `update_mask` is provided, all fields present in the request's `framework` body will be
+   * used to overwrite the existing resource.
+   *
+   * <p>This operation can only be performed on Frameworks with type `CUSTOM`. A successful update
+   * will result in a new version of the Framework.
    *
    * <p>Sample code:
    *
@@ -894,7 +952,11 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single Framework.
+   * Deletes a single Custom Framework, including all its minor and minor revisions.
+   *
+   * <p>- This operation can only be performed on Frameworks with type `CUSTOM`. Built-in Frameworks
+   * cannot be deleted. - The Framework cannot be deleted if it is currently deployed on any
+   * resource. - This action is permanent and cannot be undone.
    *
    * <p>Sample code:
    *
@@ -922,7 +984,11 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single Framework.
+   * Deletes a single Custom Framework, including all its minor and minor revisions.
+   *
+   * <p>- This operation can only be performed on Frameworks with type `CUSTOM`. Built-in Frameworks
+   * cannot be deleted. - The Framework cannot be deleted if it is currently deployed on any
+   * resource. - This action is permanent and cannot be undone.
    *
    * <p>Sample code:
    *
@@ -949,7 +1015,11 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single Framework.
+   * Deletes a single Custom Framework, including all its minor and minor revisions.
+   *
+   * <p>- This operation can only be performed on Frameworks with type `CUSTOM`. Built-in Frameworks
+   * cannot be deleted. - The Framework cannot be deleted if it is currently deployed on any
+   * resource. - This action is permanent and cannot be undone.
    *
    * <p>Sample code:
    *
@@ -977,7 +1047,11 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single Framework.
+   * Deletes a single Custom Framework, including all its minor and minor revisions.
+   *
+   * <p>- This operation can only be performed on Frameworks with type `CUSTOM`. Built-in Frameworks
+   * cannot be deleted. - The Framework cannot be deleted if it is currently deployed on any
+   * resource. - This action is permanent and cannot be undone.
    *
    * <p>Sample code:
    *
@@ -1004,7 +1078,8 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists CloudControls in a given organization.
+   * Lists all CloudControls (both Built-in and Custom) available within a given parent resource.
+   * This method supports pagination. The latest major version of each CloudControl is returned.
    *
    * <p>Sample code:
    *
@@ -1036,7 +1111,8 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists CloudControls in a given organization.
+   * Lists all CloudControls (both Built-in and Custom) available within a given parent resource.
+   * This method supports pagination. The latest major version of each CloudControl is returned.
    *
    * <p>Sample code:
    *
@@ -1066,7 +1142,8 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists CloudControls in a given organization.
+   * Lists all CloudControls (both Built-in and Custom) available within a given parent resource.
+   * This method supports pagination. The latest major version of each CloudControl is returned.
    *
    * <p>Sample code:
    *
@@ -1098,7 +1175,8 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists CloudControls in a given organization.
+   * Lists all CloudControls (both Built-in and Custom) available within a given parent resource.
+   * This method supports pagination. The latest major version of each CloudControl is returned.
    *
    * <p>Sample code:
    *
@@ -1131,7 +1209,8 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists CloudControls in a given organization.
+   * Lists all CloudControls (both Built-in and Custom) available within a given parent resource.
+   * This method supports pagination. The latest major version of each CloudControl is returned.
    *
    * <p>Sample code:
    *
@@ -1170,7 +1249,11 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single CloudControl.
+   * Gets details of a single CloudControl. This method retrieves a CloudControl resource, which can
+   * be either Built-in or Custom, identified by its name.
+   *
+   * <p>By default, the latest major version of the CloudControl is returned. A specific major
+   * version can be retrieved by specifying the `major_revision_id` in the request.
    *
    * <p>Sample code:
    *
@@ -1199,7 +1282,11 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single CloudControl.
+   * Gets details of a single CloudControl. This method retrieves a CloudControl resource, which can
+   * be either Built-in or Custom, identified by its name.
+   *
+   * <p>By default, the latest major version of the CloudControl is returned. A specific major
+   * version can be retrieved by specifying the `major_revision_id` in the request.
    *
    * <p>Sample code:
    *
@@ -1227,7 +1314,11 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single CloudControl.
+   * Gets details of a single CloudControl. This method retrieves a CloudControl resource, which can
+   * be either Built-in or Custom, identified by its name.
+   *
+   * <p>By default, the latest major version of the CloudControl is returned. A specific major
+   * version can be retrieved by specifying the `major_revision_id` in the request.
    *
    * <p>Sample code:
    *
@@ -1256,7 +1347,11 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Gets details of a single CloudControl.
+   * Gets details of a single CloudControl. This method retrieves a CloudControl resource, which can
+   * be either Built-in or Custom, identified by its name.
+   *
+   * <p>By default, the latest major version of the CloudControl is returned. A specific major
+   * version can be retrieved by specifying the `major_revision_id` in the request.
    *
    * <p>Sample code:
    *
@@ -1284,7 +1379,8 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a single CloudControl for a given resource.
+   * Creates a new CloudControl with type `Custom` under a given parent resource. `Built-in`
+   * CloudControls are managed by Google and cannot be created through this API.
    *
    * <p>Sample code:
    *
@@ -1322,7 +1418,8 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a single CloudControl for a given resource.
+   * Creates a new CloudControl with type `Custom` under a given parent resource. `Built-in`
+   * CloudControls are managed by Google and cannot be created through this API.
    *
    * <p>Sample code:
    *
@@ -1360,7 +1457,8 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a single CloudControl for a given resource.
+   * Creates a new CloudControl with type `Custom` under a given parent resource. `Built-in`
+   * CloudControls are managed by Google and cannot be created through this API.
    *
    * <p>Sample code:
    *
@@ -1390,7 +1488,8 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a single CloudControl for a given resource.
+   * Creates a new CloudControl with type `Custom` under a given parent resource. `Built-in`
+   * CloudControls are managed by Google and cannot be created through this API.
    *
    * <p>Sample code:
    *
@@ -1420,7 +1519,14 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a single CloudControl.
+   * Updates a single CloudControl. This method allows for partial updates of a Custom CloudControl
+   * resource. Built-in CloudControls cannot be updated.
+   *
+   * <p>- If an `update_mask` is provided, only the fields specified in the mask will be updated. -
+   * If no `update_mask` is provided, all fields present in the request's `cloud_control` body will
+   * be used to overwrite the existing resource.
+   *
+   * <p>A successful update will result in a new version of the CloudControl.
    *
    * <p>Sample code:
    *
@@ -1457,7 +1563,14 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a single CloudControl.
+   * Updates a single CloudControl. This method allows for partial updates of a Custom CloudControl
+   * resource. Built-in CloudControls cannot be updated.
+   *
+   * <p>- If an `update_mask` is provided, only the fields specified in the mask will be updated. -
+   * If no `update_mask` is provided, all fields present in the request's `cloud_control` body will
+   * be used to overwrite the existing resource.
+   *
+   * <p>A successful update will result in a new version of the CloudControl.
    *
    * <p>Sample code:
    *
@@ -1486,7 +1599,14 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Updates a single CloudControl.
+   * Updates a single CloudControl. This method allows for partial updates of a Custom CloudControl
+   * resource. Built-in CloudControls cannot be updated.
+   *
+   * <p>- If an `update_mask` is provided, only the fields specified in the mask will be updated. -
+   * If no `update_mask` is provided, all fields present in the request's `cloud_control` body will
+   * be used to overwrite the existing resource.
+   *
+   * <p>A successful update will result in a new version of the CloudControl.
    *
    * <p>Sample code:
    *
@@ -1515,7 +1635,11 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single CloudControl.
+   * Deletes a single Custom CloudControl, including all its major and minor revisions.
+   *
+   * <p>- This operation can only be performed on CloudControls with type `CUSTOM`. Built-in
+   * CloudControls cannot be deleted. - The CloudControl cannot be deleted if any of its revisions
+   * are currently referenced by any Framework. - This action is permanent and cannot be undone.
    *
    * <p>Sample code:
    *
@@ -1546,7 +1670,11 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single CloudControl.
+   * Deletes a single Custom CloudControl, including all its major and minor revisions.
+   *
+   * <p>- This operation can only be performed on CloudControls with type `CUSTOM`. Built-in
+   * CloudControls cannot be deleted. - The CloudControl cannot be deleted if any of its revisions
+   * are currently referenced by any Framework. - This action is permanent and cannot be undone.
    *
    * <p>Sample code:
    *
@@ -1575,7 +1703,11 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single CloudControl.
+   * Deletes a single Custom CloudControl, including all its major and minor revisions.
+   *
+   * <p>- This operation can only be performed on CloudControls with type `CUSTOM`. Built-in
+   * CloudControls cannot be deleted. - The CloudControl cannot be deleted if any of its revisions
+   * are currently referenced by any Framework. - This action is permanent and cannot be undone.
    *
    * <p>Sample code:
    *
@@ -1604,7 +1736,11 @@ public class ConfigClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Deletes a single CloudControl.
+   * Deletes a single Custom CloudControl, including all its major and minor revisions.
+   *
+   * <p>- This operation can only be performed on CloudControls with type `CUSTOM`. Built-in
+   * CloudControls cannot be deleted. - The CloudControl cannot be deleted if any of its revisions
+   * are currently referenced by any Framework. - This action is permanent and cannot be undone.
    *
    * <p>Sample code:
    *

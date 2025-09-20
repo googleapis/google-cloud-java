@@ -23,7 +23,7 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * Message for updating a Framework
+ * Request message for updating a Framework.
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.UpdateFrameworkRequest}
@@ -196,7 +196,7 @@ public final class UpdateFrameworkRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Optional. The major revision ID of the framework to update.
+   * Optional. The major version ID of the framework to update.
    * </pre>
    *
    * <code>int64 major_revision_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -402,7 +402,7 @@ public final class UpdateFrameworkRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Message for updating a Framework
+   * Request message for updating a Framework.
    * </pre>
    *
    * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.UpdateFrameworkRequest}
@@ -1102,7 +1102,7 @@ public final class UpdateFrameworkRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The major revision ID of the framework to update.
+     * Optional. The major version ID of the framework to update.
      * </pre>
      *
      * <code>int64 major_revision_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1118,7 +1118,7 @@ public final class UpdateFrameworkRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The major revision ID of the framework to update.
+     * Optional. The major version ID of the framework to update.
      * </pre>
      *
      * <code>int64 major_revision_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1138,7 +1138,7 @@ public final class UpdateFrameworkRequest extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * Optional. The major revision ID of the framework to update.
+     * Optional. The major version ID of the framework to update.
      * </pre>
      *
      * <code>int64 major_revision_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

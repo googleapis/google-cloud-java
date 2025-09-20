@@ -127,11 +127,12 @@ public final class MembershipProto {
           + "\021connect_resources\030\003"
           + " \003(\0132(.google.cloud.gkehub.v1.ResourceManifestB\003\340A\003\022F\n"
           + "\020resource_options\030\004"
-          + " \001(\0132\'.google.cloud.gkehub.v1.ResourceOptionsB\003\340A\001\"c\n"
+          + " \001(\0132\'.google.cloud.gkehub.v1.ResourceOptionsB\003\340A\001\"\201\001\n"
           + "\017ResourceOptions\022\034\n"
           + "\017connect_version\030\001 \001(\tB\003\340A\001\022\030\n"
           + "\013v1beta1_crd\030\002 \001(\010B\003\340A\001\022\030\n"
-          + "\013k8s_version\030\003 \001(\tB\003\340A\001\"<\n"
+          + "\013k8s_version\030\003 \001(\tB\003\340A\001\022\034\n"
+          + "\017k8s_git_version\030\004 \001(\tB\003\340A\001\"<\n"
           + "\020ResourceManifest\022\020\n"
           + "\010manifest\030\001 \001(\t\022\026\n"
           + "\016cluster_scoped\030\002 \001(\010\"F\n\n"
@@ -167,10 +168,10 @@ public final class MembershipProto {
           + "\026workload_identity_pool\030\002 \001(\tB\003\340A\003\022\036\n"
           + "\021identity_provider\030\003 \001(\tB\003\340A\003\022\026\n"
           + "\toidc_jwks\030\004 \001(\014B\003\340A\001B\261\001\n"
-          + "\032com.google.cloud.gkehub.v1B\017MembershipProtoP\001Z"
-          + "2cloud.google.com/go/gkehub/apiv1/gkehub"
-          + "pb;gkehubpb\252\002\026Google.Cloud.GkeHub.V1\312\002\026G"
-          + "oogle\\Cloud\\GkeHub\\V1\352\002\031Google::Cloud::GkeHub::V1b\006proto3"
+          + "\032com.google.cloud.gkehub.v1B\017MembershipProtoP\001Z2cloud.go"
+          + "ogle.com/go/gkehub/apiv1/gkehubpb;gkehub"
+          + "pb\252\002\026Google.Cloud.GkeHub.V1\312\002\026Google\\Clo"
+          + "ud\\GkeHub\\V1\352\002\031Google::Cloud::GkeHub::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -231,7 +232,7 @@ public final class MembershipProto {
         new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
             internal_static_google_cloud_gkehub_v1_ResourceOptions_descriptor,
             new java.lang.String[] {
-              "ConnectVersion", "V1Beta1Crd", "K8SVersion",
+              "ConnectVersion", "V1Beta1Crd", "K8SVersion", "K8SGitVersion",
             });
     internal_static_google_cloud_gkehub_v1_ResourceManifest_descriptor =
         getDescriptor().getMessageTypes().get(4);

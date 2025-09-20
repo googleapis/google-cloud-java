@@ -61,5 +61,42 @@ public interface VideoStreamOrBuilder
    */
   com.google.cloud.video.livestream.v1.VideoStream.H264CodecSettingsOrBuilder getH264OrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * H265 codec settings.
+   * </pre>
+   *
+   * <code>.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings h265 = 21;</code>
+   *
+   * @return Whether the h265 field is set.
+   */
+  boolean hasH265();
+
+  /**
+   *
+   *
+   * <pre>
+   * H265 codec settings.
+   * </pre>
+   *
+   * <code>.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings h265 = 21;</code>
+   *
+   * @return The h265.
+   */
+  com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings getH265();
+
+  /**
+   *
+   *
+   * <pre>
+   * H265 codec settings.
+   * </pre>
+   *
+   * <code>.google.cloud.video.livestream.v1.VideoStream.H265CodecSettings h265 = 21;</code>
+   */
+  com.google.cloud.video.livestream.v1.VideoStream.H265CodecSettingsOrBuilder getH265OrBuilder();
+
   com.google.cloud.video.livestream.v1.VideoStream.CodecSettingsCase getCodecSettingsCase();
 }

@@ -28,7 +28,7 @@ public interface ListMessageBusesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent collection to list triggers on.
+   * Required. The parent collection to list message buses on.
    * </pre>
    *
    * <code>
@@ -43,7 +43,7 @@ public interface ListMessageBusesRequestOrBuilder
    *
    *
    * <pre>
-   * Required. The parent collection to list triggers on.
+   * Required. The parent collection to list message buses on.
    * </pre>
    *
    * <code>

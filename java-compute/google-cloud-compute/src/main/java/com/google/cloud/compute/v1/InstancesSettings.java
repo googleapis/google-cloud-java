@@ -124,6 +124,18 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
     return ((InstancesStubSettings) getStubSettings()).addAccessConfigOperationSettings();
   }
 
+  /** Returns the object with the settings used for calls to addNetworkInterface. */
+  public UnaryCallSettings<AddNetworkInterfaceInstanceRequest, Operation>
+      addNetworkInterfaceSettings() {
+    return ((InstancesStubSettings) getStubSettings()).addNetworkInterfaceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to addNetworkInterface. */
+  public OperationCallSettings<AddNetworkInterfaceInstanceRequest, Operation, Operation>
+      addNetworkInterfaceOperationSettings() {
+    return ((InstancesStubSettings) getStubSettings()).addNetworkInterfaceOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to addResourcePolicies. */
   public UnaryCallSettings<AddResourcePoliciesInstanceRequest, Operation>
       addResourcePoliciesSettings() {
@@ -186,6 +198,18 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
   public OperationCallSettings<DeleteAccessConfigInstanceRequest, Operation, Operation>
       deleteAccessConfigOperationSettings() {
     return ((InstancesStubSettings) getStubSettings()).deleteAccessConfigOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteNetworkInterface. */
+  public UnaryCallSettings<DeleteNetworkInterfaceInstanceRequest, Operation>
+      deleteNetworkInterfaceSettings() {
+    return ((InstancesStubSettings) getStubSettings()).deleteNetworkInterfaceSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteNetworkInterface. */
+  public OperationCallSettings<DeleteNetworkInterfaceInstanceRequest, Operation, Operation>
+      deleteNetworkInterfaceOperationSettings() {
+    return ((InstancesStubSettings) getStubSettings()).deleteNetworkInterfaceOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to detachDisk. */
@@ -714,6 +738,18 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
       return getStubSettingsBuilder().addAccessConfigOperationSettings();
     }
 
+    /** Returns the builder for the settings used for calls to addNetworkInterface. */
+    public UnaryCallSettings.Builder<AddNetworkInterfaceInstanceRequest, Operation>
+        addNetworkInterfaceSettings() {
+      return getStubSettingsBuilder().addNetworkInterfaceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to addNetworkInterface. */
+    public OperationCallSettings.Builder<AddNetworkInterfaceInstanceRequest, Operation, Operation>
+        addNetworkInterfaceOperationSettings() {
+      return getStubSettingsBuilder().addNetworkInterfaceOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to addResourcePolicies. */
     public UnaryCallSettings.Builder<AddResourcePoliciesInstanceRequest, Operation>
         addResourcePoliciesSettings() {
@@ -776,6 +812,19 @@ public class InstancesSettings extends ClientSettings<InstancesSettings> {
     public OperationCallSettings.Builder<DeleteAccessConfigInstanceRequest, Operation, Operation>
         deleteAccessConfigOperationSettings() {
       return getStubSettingsBuilder().deleteAccessConfigOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteNetworkInterface. */
+    public UnaryCallSettings.Builder<DeleteNetworkInterfaceInstanceRequest, Operation>
+        deleteNetworkInterfaceSettings() {
+      return getStubSettingsBuilder().deleteNetworkInterfaceSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteNetworkInterface. */
+    public OperationCallSettings.Builder<
+            DeleteNetworkInterfaceInstanceRequest, Operation, Operation>
+        deleteNetworkInterfaceOperationSettings() {
+      return getStubSettingsBuilder().deleteNetworkInterfaceOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to detachDisk. */

@@ -23,7 +23,7 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * Message for creating a Framework
+ * Request message for creating a Framework
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.CreateFrameworkRequest}
@@ -430,7 +430,7 @@ public final class CreateFrameworkRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Message for creating a Framework
+   * Request message for creating a Framework
    * </pre>
    *
    * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.CreateFrameworkRequest}

@@ -28,6 +28,43 @@ public interface InstanceParamsOrBuilder
    *
    *
    * <pre>
+   * Relative deadline for waiting for capacity. Relevant only for Instances.Insert API.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.Duration request_valid_for_duration = 116247389;</code>
+   *
+   * @return Whether the requestValidForDuration field is set.
+   */
+  boolean hasRequestValidForDuration();
+
+  /**
+   *
+   *
+   * <pre>
+   * Relative deadline for waiting for capacity. Relevant only for Instances.Insert API.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.Duration request_valid_for_duration = 116247389;</code>
+   *
+   * @return The requestValidForDuration.
+   */
+  com.google.cloud.compute.v1.Duration getRequestValidForDuration();
+
+  /**
+   *
+   *
+   * <pre>
+   * Relative deadline for waiting for capacity. Relevant only for Instances.Insert API.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.Duration request_valid_for_duration = 116247389;</code>
+   */
+  com.google.cloud.compute.v1.DurationOrBuilder getRequestValidForDurationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Resource manager tags to be bound to the instance. Tag keys and values have the same definition as resource manager tags. Keys must be in the format `tagKeys/{tag_key_id}`, and values are in the format `tagValues/456`. The field is ignored (both PUT &amp; PATCH) when empty.
    * </pre>
    *

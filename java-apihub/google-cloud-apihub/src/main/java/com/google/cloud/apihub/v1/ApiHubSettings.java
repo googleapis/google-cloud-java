@@ -181,6 +181,11 @@ public class ApiHubSettings extends ClientSettings<ApiHubSettings> {
     return ((ApiHubStubSettings) getStubSettings()).deleteSpecSettings();
   }
 
+  /** Returns the object with the settings used for calls to createApi. */
+  public UnaryCallSettings<CreateApiOperationRequest, ApiOperation> createApiOperationSettings() {
+    return ((ApiHubStubSettings) getStubSettings()).createApiOperationSettings();
+  }
+
   /** Returns the object with the settings used for calls to getApi. */
   public UnaryCallSettings<GetApiOperationRequest, ApiOperation> getApiOperationSettings() {
     return ((ApiHubStubSettings) getStubSettings()).getApiOperationSettings();
@@ -191,6 +196,16 @@ public class ApiHubSettings extends ClientSettings<ApiHubSettings> {
           ListApiOperationsRequest, ListApiOperationsResponse, ListApiOperationsPagedResponse>
       listApiOperationsSettings() {
     return ((ApiHubStubSettings) getStubSettings()).listApiOperationsSettings();
+  }
+
+  /** Returns the object with the settings used for calls to updateApi. */
+  public UnaryCallSettings<UpdateApiOperationRequest, ApiOperation> updateApiOperationSettings() {
+    return ((ApiHubStubSettings) getStubSettings()).updateApiOperationSettings();
+  }
+
+  /** Returns the object with the settings used for calls to deleteApi. */
+  public UnaryCallSettings<DeleteApiOperationRequest, Empty> deleteApiOperationSettings() {
+    return ((ApiHubStubSettings) getStubSettings()).deleteApiOperationSettings();
   }
 
   /** Returns the object with the settings used for calls to getDefinition. */
@@ -478,6 +493,12 @@ public class ApiHubSettings extends ClientSettings<ApiHubSettings> {
       return getStubSettingsBuilder().deleteSpecSettings();
     }
 
+    /** Returns the builder for the settings used for calls to createApi. */
+    public UnaryCallSettings.Builder<CreateApiOperationRequest, ApiOperation>
+        createApiOperationSettings() {
+      return getStubSettingsBuilder().createApiOperationSettings();
+    }
+
     /** Returns the builder for the settings used for calls to getApi. */
     public UnaryCallSettings.Builder<GetApiOperationRequest, ApiOperation>
         getApiOperationSettings() {
@@ -489,6 +510,18 @@ public class ApiHubSettings extends ClientSettings<ApiHubSettings> {
             ListApiOperationsRequest, ListApiOperationsResponse, ListApiOperationsPagedResponse>
         listApiOperationsSettings() {
       return getStubSettingsBuilder().listApiOperationsSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to updateApi. */
+    public UnaryCallSettings.Builder<UpdateApiOperationRequest, ApiOperation>
+        updateApiOperationSettings() {
+      return getStubSettingsBuilder().updateApiOperationSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to deleteApi. */
+    public UnaryCallSettings.Builder<DeleteApiOperationRequest, Empty>
+        deleteApiOperationSettings() {
+      return getStubSettingsBuilder().deleteApiOperationSettings();
     }
 
     /** Returns the builder for the settings used for calls to getDefinition. */

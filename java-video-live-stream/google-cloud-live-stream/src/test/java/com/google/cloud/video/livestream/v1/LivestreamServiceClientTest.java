@@ -115,6 +115,8 @@ public class LivestreamServiceClientTest {
             .addAllElementaryStreams(new ArrayList<ElementaryStream>())
             .addAllMuxStreams(new ArrayList<MuxStream>())
             .addAllManifests(new ArrayList<Manifest>())
+            .addAllDistributionStreams(new ArrayList<DistributionStream>())
+            .addAllDistributions(new ArrayList<Distribution>())
             .addAllSpriteSheets(new ArrayList<SpriteSheet>())
             .setStreamingError(Status.newBuilder().build())
             .setLogConfig(LogConfig.newBuilder().build())
@@ -123,6 +125,7 @@ public class LivestreamServiceClientTest {
             .setInputConfig(InputConfig.newBuilder().build())
             .setRetentionConfig(RetentionConfig.newBuilder().build())
             .addAllStaticOverlays(new ArrayList<StaticOverlay>())
+            .setAutoTranscriptionConfig(AutoTranscriptionConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -184,6 +187,8 @@ public class LivestreamServiceClientTest {
             .addAllElementaryStreams(new ArrayList<ElementaryStream>())
             .addAllMuxStreams(new ArrayList<MuxStream>())
             .addAllManifests(new ArrayList<Manifest>())
+            .addAllDistributionStreams(new ArrayList<DistributionStream>())
+            .addAllDistributions(new ArrayList<Distribution>())
             .addAllSpriteSheets(new ArrayList<SpriteSheet>())
             .setStreamingError(Status.newBuilder().build())
             .setLogConfig(LogConfig.newBuilder().build())
@@ -192,6 +197,7 @@ public class LivestreamServiceClientTest {
             .setInputConfig(InputConfig.newBuilder().build())
             .setRetentionConfig(RetentionConfig.newBuilder().build())
             .addAllStaticOverlays(new ArrayList<StaticOverlay>())
+            .setAutoTranscriptionConfig(AutoTranscriptionConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -341,6 +347,8 @@ public class LivestreamServiceClientTest {
             .addAllElementaryStreams(new ArrayList<ElementaryStream>())
             .addAllMuxStreams(new ArrayList<MuxStream>())
             .addAllManifests(new ArrayList<Manifest>())
+            .addAllDistributionStreams(new ArrayList<DistributionStream>())
+            .addAllDistributions(new ArrayList<Distribution>())
             .addAllSpriteSheets(new ArrayList<SpriteSheet>())
             .setStreamingError(Status.newBuilder().build())
             .setLogConfig(LogConfig.newBuilder().build())
@@ -349,6 +357,7 @@ public class LivestreamServiceClientTest {
             .setInputConfig(InputConfig.newBuilder().build())
             .setRetentionConfig(RetentionConfig.newBuilder().build())
             .addAllStaticOverlays(new ArrayList<StaticOverlay>())
+            .setAutoTranscriptionConfig(AutoTranscriptionConfig.newBuilder().build())
             .build();
     mockLivestreamService.addResponse(expectedResponse);
 
@@ -396,6 +405,8 @@ public class LivestreamServiceClientTest {
             .addAllElementaryStreams(new ArrayList<ElementaryStream>())
             .addAllMuxStreams(new ArrayList<MuxStream>())
             .addAllManifests(new ArrayList<Manifest>())
+            .addAllDistributionStreams(new ArrayList<DistributionStream>())
+            .addAllDistributions(new ArrayList<Distribution>())
             .addAllSpriteSheets(new ArrayList<SpriteSheet>())
             .setStreamingError(Status.newBuilder().build())
             .setLogConfig(LogConfig.newBuilder().build())
@@ -404,6 +415,7 @@ public class LivestreamServiceClientTest {
             .setInputConfig(InputConfig.newBuilder().build())
             .setRetentionConfig(RetentionConfig.newBuilder().build())
             .addAllStaticOverlays(new ArrayList<StaticOverlay>())
+            .setAutoTranscriptionConfig(AutoTranscriptionConfig.newBuilder().build())
             .build();
     mockLivestreamService.addResponse(expectedResponse);
 
@@ -535,6 +547,8 @@ public class LivestreamServiceClientTest {
             .addAllElementaryStreams(new ArrayList<ElementaryStream>())
             .addAllMuxStreams(new ArrayList<MuxStream>())
             .addAllManifests(new ArrayList<Manifest>())
+            .addAllDistributionStreams(new ArrayList<DistributionStream>())
+            .addAllDistributions(new ArrayList<Distribution>())
             .addAllSpriteSheets(new ArrayList<SpriteSheet>())
             .setStreamingError(Status.newBuilder().build())
             .setLogConfig(LogConfig.newBuilder().build())
@@ -543,6 +557,7 @@ public class LivestreamServiceClientTest {
             .setInputConfig(InputConfig.newBuilder().build())
             .setRetentionConfig(RetentionConfig.newBuilder().build())
             .addAllStaticOverlays(new ArrayList<StaticOverlay>())
+            .setAutoTranscriptionConfig(AutoTranscriptionConfig.newBuilder().build())
             .build();
     Operation resultOperation =
         Operation.newBuilder()
@@ -751,6 +766,194 @@ public class LivestreamServiceClientTest {
     try {
       String name = "name3373707";
       client.stopChannelAsync(name).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void startDistributionTest() throws Exception {
+    ChannelOperationResponse expectedResponse = ChannelOperationResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("startDistributionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockLivestreamService.addResponse(resultOperation);
+
+    ChannelName name = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]");
+    List<String> distributionKeys = new ArrayList<>();
+
+    ChannelOperationResponse actualResponse =
+        client.startDistributionAsync(name, distributionKeys).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockLivestreamService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    StartDistributionRequest actualRequest = ((StartDistributionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(distributionKeys, actualRequest.getDistributionKeysList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void startDistributionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLivestreamService.addException(exception);
+
+    try {
+      ChannelName name = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]");
+      List<String> distributionKeys = new ArrayList<>();
+      client.startDistributionAsync(name, distributionKeys).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void startDistributionTest2() throws Exception {
+    ChannelOperationResponse expectedResponse = ChannelOperationResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("startDistributionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockLivestreamService.addResponse(resultOperation);
+
+    String name = "name3373707";
+    List<String> distributionKeys = new ArrayList<>();
+
+    ChannelOperationResponse actualResponse =
+        client.startDistributionAsync(name, distributionKeys).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockLivestreamService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    StartDistributionRequest actualRequest = ((StartDistributionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(distributionKeys, actualRequest.getDistributionKeysList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void startDistributionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLivestreamService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      List<String> distributionKeys = new ArrayList<>();
+      client.startDistributionAsync(name, distributionKeys).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void stopDistributionTest() throws Exception {
+    ChannelOperationResponse expectedResponse = ChannelOperationResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("stopDistributionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockLivestreamService.addResponse(resultOperation);
+
+    ChannelName name = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]");
+    List<String> distributionKeys = new ArrayList<>();
+
+    ChannelOperationResponse actualResponse =
+        client.stopDistributionAsync(name, distributionKeys).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockLivestreamService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    StopDistributionRequest actualRequest = ((StopDistributionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertEquals(distributionKeys, actualRequest.getDistributionKeysList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void stopDistributionExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLivestreamService.addException(exception);
+
+    try {
+      ChannelName name = ChannelName.of("[PROJECT]", "[LOCATION]", "[CHANNEL]");
+      List<String> distributionKeys = new ArrayList<>();
+      client.stopDistributionAsync(name, distributionKeys).get();
+      Assert.fail("No exception raised");
+    } catch (ExecutionException e) {
+      Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
+      InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
+      Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void stopDistributionTest2() throws Exception {
+    ChannelOperationResponse expectedResponse = ChannelOperationResponse.newBuilder().build();
+    Operation resultOperation =
+        Operation.newBuilder()
+            .setName("stopDistributionTest")
+            .setDone(true)
+            .setResponse(Any.pack(expectedResponse))
+            .build();
+    mockLivestreamService.addResponse(resultOperation);
+
+    String name = "name3373707";
+    List<String> distributionKeys = new ArrayList<>();
+
+    ChannelOperationResponse actualResponse =
+        client.stopDistributionAsync(name, distributionKeys).get();
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockLivestreamService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    StopDistributionRequest actualRequest = ((StopDistributionRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertEquals(distributionKeys, actualRequest.getDistributionKeysList());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void stopDistributionExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLivestreamService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      List<String> distributionKeys = new ArrayList<>();
+      client.stopDistributionAsync(name, distributionKeys).get();
       Assert.fail("No exception raised");
     } catch (ExecutionException e) {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
@@ -1192,6 +1395,84 @@ public class LivestreamServiceClientTest {
       Assert.assertEquals(InvalidArgumentException.class, e.getCause().getClass());
       InvalidArgumentException apiException = ((InvalidArgumentException) e.getCause());
       Assert.assertEquals(StatusCode.Code.INVALID_ARGUMENT, apiException.getStatusCode().getCode());
+    }
+  }
+
+  @Test
+  public void previewInputTest() throws Exception {
+    PreviewInputResponse expectedResponse =
+        PreviewInputResponse.newBuilder()
+            .setUri("uri116076")
+            .setBearerToken("bearerToken1995160344")
+            .build();
+    mockLivestreamService.addResponse(expectedResponse);
+
+    InputName name = InputName.of("[PROJECT]", "[LOCATION]", "[INPUT]");
+
+    PreviewInputResponse actualResponse = client.previewInput(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockLivestreamService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    PreviewInputRequest actualRequest = ((PreviewInputRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name.toString(), actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void previewInputExceptionTest() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLivestreamService.addException(exception);
+
+    try {
+      InputName name = InputName.of("[PROJECT]", "[LOCATION]", "[INPUT]");
+      client.previewInput(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
+    }
+  }
+
+  @Test
+  public void previewInputTest2() throws Exception {
+    PreviewInputResponse expectedResponse =
+        PreviewInputResponse.newBuilder()
+            .setUri("uri116076")
+            .setBearerToken("bearerToken1995160344")
+            .build();
+    mockLivestreamService.addResponse(expectedResponse);
+
+    String name = "name3373707";
+
+    PreviewInputResponse actualResponse = client.previewInput(name);
+    Assert.assertEquals(expectedResponse, actualResponse);
+
+    List<AbstractMessage> actualRequests = mockLivestreamService.getRequests();
+    Assert.assertEquals(1, actualRequests.size());
+    PreviewInputRequest actualRequest = ((PreviewInputRequest) actualRequests.get(0));
+
+    Assert.assertEquals(name, actualRequest.getName());
+    Assert.assertTrue(
+        channelProvider.isHeaderSent(
+            ApiClientHeaderProvider.getDefaultApiClientHeaderKey(),
+            GaxGrpcProperties.getDefaultApiClientHeaderPattern()));
+  }
+
+  @Test
+  public void previewInputExceptionTest2() throws Exception {
+    StatusRuntimeException exception = new StatusRuntimeException(io.grpc.Status.INVALID_ARGUMENT);
+    mockLivestreamService.addException(exception);
+
+    try {
+      String name = "name3373707";
+      client.previewInput(name);
+      Assert.fail("No exception raised");
+    } catch (InvalidArgumentException e) {
+      // Expected exception.
     }
   }
 

@@ -211,6 +211,10 @@ public class HttpJsonServiceAttachmentsStub extends ServiceAttachmentsStub {
                             Map<String, List<String>> fields = new HashMap<>();
                             ProtoRestSerializer<GetServiceAttachmentRequest> serializer =
                                 ProtoRestSerializer.create();
+                            if (request.hasShowNatIps()) {
+                              serializer.putQueryParam(
+                                  fields, "showNatIps", request.getShowNatIps());
+                            }
                             return fields;
                           })
                       .setRequestBodyExtractor(request -> null)

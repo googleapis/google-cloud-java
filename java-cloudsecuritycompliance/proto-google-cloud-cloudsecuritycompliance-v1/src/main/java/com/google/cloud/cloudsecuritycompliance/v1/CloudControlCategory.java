@@ -457,7 +457,7 @@ public enum CloudControlCategory implements com.google.protobuf.ProtocolMessageE
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.cloud.cloudsecuritycompliance.v1.CommonProto.getDescriptor()
         .getEnumTypes()
-        .get(3);
+        .get(2);
   }
 
   private static final CloudControlCategory[] VALUES = values();

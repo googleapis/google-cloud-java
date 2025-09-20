@@ -23,7 +23,7 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * Message for deleting a Framework
+ * Request message for deleting a Framework.
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.DeleteFrameworkRequest}
@@ -289,7 +289,7 @@ public final class DeleteFrameworkRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Message for deleting a Framework
+   * Request message for deleting a Framework.
    * </pre>
    *
    * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.DeleteFrameworkRequest}

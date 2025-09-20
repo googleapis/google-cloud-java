@@ -23,7 +23,7 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * Message for updating a CloudControl.
+ * Request message for UpdateCloudControl.
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.UpdateCloudControlRequest}
@@ -390,7 +390,7 @@ public final class UpdateCloudControlRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Message for updating a CloudControl.
+   * Request message for UpdateCloudControl.
    * </pre>
    *
    * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.UpdateCloudControlRequest}

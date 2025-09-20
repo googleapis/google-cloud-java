@@ -23,7 +23,7 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * Message for response to listing CloudControlDeployments.
+ * Response message for ListCloudControlDeployments.
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.ListCloudControlDeploymentsResponse}
@@ -399,7 +399,7 @@ public final class ListCloudControlDeploymentsResponse
    *
    *
    * <pre>
-   * Message for response to listing CloudControlDeployments.
+   * Response message for ListCloudControlDeployments.
    * </pre>
    *
    * Protobuf type {@code

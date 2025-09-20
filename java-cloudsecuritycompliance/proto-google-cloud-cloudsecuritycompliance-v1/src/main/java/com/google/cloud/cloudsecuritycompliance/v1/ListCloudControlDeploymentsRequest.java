@@ -78,7 +78,9 @@ public final class ListCloudControlDeploymentsRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Required. Parent value for ListCloudControlDeploymentsRequest.
+   * Required. parent resource of the CloudControlDeployment in the format:
+   * organizations/{organization}/locations/{location}
+   * Only global location is supported.
    * </pre>
    *
    * <code>
@@ -104,7 +106,9 @@ public final class ListCloudControlDeploymentsRequest extends com.google.protobu
    *
    *
    * <pre>
-   * Required. Parent value for ListCloudControlDeploymentsRequest.
+   * Required. parent resource of the CloudControlDeployment in the format:
+   * organizations/{organization}/locations/{location}
+   * Only global location is supported.
    * </pre>
    *
    * <code>
@@ -772,7 +776,9 @@ public final class ListCloudControlDeploymentsRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. Parent value for ListCloudControlDeploymentsRequest.
+     * Required. parent resource of the CloudControlDeployment in the format:
+     * organizations/{organization}/locations/{location}
+     * Only global location is supported.
      * </pre>
      *
      * <code>
@@ -797,7 +803,9 @@ public final class ListCloudControlDeploymentsRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. Parent value for ListCloudControlDeploymentsRequest.
+     * Required. parent resource of the CloudControlDeployment in the format:
+     * organizations/{organization}/locations/{location}
+     * Only global location is supported.
      * </pre>
      *
      * <code>
@@ -822,7 +830,9 @@ public final class ListCloudControlDeploymentsRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. Parent value for ListCloudControlDeploymentsRequest.
+     * Required. parent resource of the CloudControlDeployment in the format:
+     * organizations/{organization}/locations/{location}
+     * Only global location is supported.
      * </pre>
      *
      * <code>
@@ -846,7 +856,9 @@ public final class ListCloudControlDeploymentsRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. Parent value for ListCloudControlDeploymentsRequest.
+     * Required. parent resource of the CloudControlDeployment in the format:
+     * organizations/{organization}/locations/{location}
+     * Only global location is supported.
      * </pre>
      *
      * <code>
@@ -866,7 +878,9 @@ public final class ListCloudControlDeploymentsRequest extends com.google.protobu
      *
      *
      * <pre>
-     * Required. Parent value for ListCloudControlDeploymentsRequest.
+     * Required. parent resource of the CloudControlDeployment in the format:
+     * organizations/{organization}/locations/{location}
+     * Only global location is supported.
      * </pre>
      *
      * <code>

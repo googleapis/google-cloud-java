@@ -25,8 +25,8 @@ package com.google.cloud.apihub.v1;
  * <pre>
  * A dependency resource defined in the API hub describes a dependency directed
  * from a consumer to a supplier entity. A dependency can be defined between two
- * [Operations][google.cloud.apihub.v1.Operation] or between
- * an [Operation][google.cloud.apihub.v1.Operation] and [External
+ * [Operations][google.cloud.apihub.v1.ApiOperation] or between
+ * an [Operation][google.cloud.apihub.v1.ApiOperation] and [External
  * API][google.cloud.apihub.v1.ExternalApi].
  * </pre>
  *
@@ -1280,8 +1280,8 @@ public final class Dependency extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A dependency resource defined in the API hub describes a dependency directed
    * from a consumer to a supplier entity. A dependency can be defined between two
-   * [Operations][google.cloud.apihub.v1.Operation] or between
-   * an [Operation][google.cloud.apihub.v1.Operation] and [External
+   * [Operations][google.cloud.apihub.v1.ApiOperation] or between
+   * an [Operation][google.cloud.apihub.v1.ApiOperation] and [External
    * API][google.cloud.apihub.v1.ExternalApi].
    * </pre>
    *

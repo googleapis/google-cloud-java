@@ -198,6 +198,24 @@ import javax.annotation.Generated;
  *      </ul>
  *       </td>
  *    </tr>
+ *    <tr>
+ *      <td><p> TestIamPermissions</td>
+ *      <td><p> Returns permissions that a caller has on the specified resource.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> testIamPermissions(TestIamPermissionsAddressRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> testIamPermissions(String project, String region, String resource, TestPermissionsRequest testPermissionsRequestResource)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> testIamPermissionsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
  *  </table>
  *
  * <p>See the individual methods for example code.
@@ -1226,6 +1244,115 @@ public class AddressesClient implements BackgroundResource {
    */
   public final UnaryCallable<SetLabelsAddressRequest, Operation> setLabelsCallable() {
     return stub.setLabelsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AddressesClient addressesClient = AddressesClient.create()) {
+   *   String project = "project-309310695";
+   *   String region = "region-934795532";
+   *   String resource = "resource-341064690";
+   *   TestPermissionsRequest testPermissionsRequestResource =
+   *       TestPermissionsRequest.newBuilder().build();
+   *   TestPermissionsResponse response =
+   *       addressesClient.testIamPermissions(
+   *           project, region, resource, testPermissionsRequestResource);
+   * }
+   * }</pre>
+   *
+   * @param project Project ID for this request.
+   * @param region The name of the region for this request.
+   * @param resource Name or id of the resource for this request.
+   * @param testPermissionsRequestResource The body resource for this request
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestPermissionsResponse testIamPermissions(
+      String project,
+      String region,
+      String resource,
+      TestPermissionsRequest testPermissionsRequestResource) {
+    TestIamPermissionsAddressRequest request =
+        TestIamPermissionsAddressRequest.newBuilder()
+            .setProject(project)
+            .setRegion(region)
+            .setResource(resource)
+            .setTestPermissionsRequestResource(testPermissionsRequestResource)
+            .build();
+    return testIamPermissions(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AddressesClient addressesClient = AddressesClient.create()) {
+   *   TestIamPermissionsAddressRequest request =
+   *       TestIamPermissionsAddressRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setResource("resource-341064690")
+   *           .setTestPermissionsRequestResource(TestPermissionsRequest.newBuilder().build())
+   *           .build();
+   *   TestPermissionsResponse response = addressesClient.testIamPermissions(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final TestPermissionsResponse testIamPermissions(
+      TestIamPermissionsAddressRequest request) {
+    return testIamPermissionsCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Returns permissions that a caller has on the specified resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (AddressesClient addressesClient = AddressesClient.create()) {
+   *   TestIamPermissionsAddressRequest request =
+   *       TestIamPermissionsAddressRequest.newBuilder()
+   *           .setProject("project-309310695")
+   *           .setRegion("region-934795532")
+   *           .setResource("resource-341064690")
+   *           .setTestPermissionsRequestResource(TestPermissionsRequest.newBuilder().build())
+   *           .build();
+   *   ApiFuture<TestPermissionsResponse> future =
+   *       addressesClient.testIamPermissionsCallable().futureCall(request);
+   *   // Do something.
+   *   TestPermissionsResponse response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<TestIamPermissionsAddressRequest, TestPermissionsResponse>
+      testIamPermissionsCallable() {
+    return stub.testIamPermissionsCallable();
   }
 
   @Override

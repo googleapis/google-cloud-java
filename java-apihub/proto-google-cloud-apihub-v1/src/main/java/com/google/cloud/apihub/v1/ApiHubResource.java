@@ -189,7 +189,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This represents ApiOperation resource in search results. Only name,
-   * and description fields are populated in search results.
+   * description, spec and details fields are populated in search results.
    * </pre>
    *
    * <code>.google.cloud.apihub.v1.ApiOperation operation = 2;</code>
@@ -206,7 +206,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This represents ApiOperation resource in search results. Only name,
-   * and description fields are populated in search results.
+   * description, spec and details fields are populated in search results.
    * </pre>
    *
    * <code>.google.cloud.apihub.v1.ApiOperation operation = 2;</code>
@@ -226,7 +226,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This represents ApiOperation resource in search results. Only name,
-   * and description fields are populated in search results.
+   * description, spec and details fields are populated in search results.
    * </pre>
    *
    * <code>.google.cloud.apihub.v1.ApiOperation operation = 2;</code>
@@ -246,7 +246,8 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This represents Deployment resource in search results. Only name,
-   * display_name and description fields are populated in search results.
+   * display_name, description, deployment_type and api_versions fields are
+   * populated in search results.
    * </pre>
    *
    * <code>.google.cloud.apihub.v1.Deployment deployment = 3;</code>
@@ -263,7 +264,8 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This represents Deployment resource in search results. Only name,
-   * display_name and description fields are populated in search results.
+   * display_name, description, deployment_type and api_versions fields are
+   * populated in search results.
    * </pre>
    *
    * <code>.google.cloud.apihub.v1.Deployment deployment = 3;</code>
@@ -283,7 +285,8 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This represents Deployment resource in search results. Only name,
-   * display_name and description fields are populated in search results.
+   * display_name, description, deployment_type and api_versions fields are
+   * populated in search results.
    * </pre>
    *
    * <code>.google.cloud.apihub.v1.Deployment deployment = 3;</code>
@@ -303,7 +306,8 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This represents Spec resource in search results. Only name,
-   * display_name and description fields are populated in search results.
+   * display_name, description, spec_type and documentation fields are
+   * populated in search results.
    * </pre>
    *
    * <code>.google.cloud.apihub.v1.Spec spec = 4;</code>
@@ -320,7 +324,8 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This represents Spec resource in search results. Only name,
-   * display_name and description fields are populated in search results.
+   * display_name, description, spec_type and documentation fields are
+   * populated in search results.
    * </pre>
    *
    * <code>.google.cloud.apihub.v1.Spec spec = 4;</code>
@@ -340,7 +345,8 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This represents Spec resource in search results. Only name,
-   * display_name and description fields are populated in search results.
+   * display_name, description, spec_type and documentation fields are
+   * populated in search results.
    * </pre>
    *
    * <code>.google.cloud.apihub.v1.Spec spec = 4;</code>
@@ -417,7 +423,8 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This represents Version resource in search results. Only name,
-   * display_name and description fields are populated in search results.
+   * display_name, description, lifecycle, compliance and accreditation fields
+   * are populated in search results.
    * </pre>
    *
    * <code>.google.cloud.apihub.v1.Version version = 6;</code>
@@ -434,7 +441,8 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This represents Version resource in search results. Only name,
-   * display_name and description fields are populated in search results.
+   * display_name, description, lifecycle, compliance and accreditation fields
+   * are populated in search results.
    * </pre>
    *
    * <code>.google.cloud.apihub.v1.Version version = 6;</code>
@@ -454,7 +462,8 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * This represents Version resource in search results. Only name,
-   * display_name and description fields are populated in search results.
+   * display_name, description, lifecycle, compliance and accreditation fields
+   * are populated in search results.
    * </pre>
    *
    * <code>.google.cloud.apihub.v1.Version version = 6;</code>
@@ -1249,7 +1258,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This represents ApiOperation resource in search results. Only name,
-     * and description fields are populated in search results.
+     * description, spec and details fields are populated in search results.
      * </pre>
      *
      * <code>.google.cloud.apihub.v1.ApiOperation operation = 2;</code>
@@ -1266,7 +1275,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This represents ApiOperation resource in search results. Only name,
-     * and description fields are populated in search results.
+     * description, spec and details fields are populated in search results.
      * </pre>
      *
      * <code>.google.cloud.apihub.v1.ApiOperation operation = 2;</code>
@@ -1293,7 +1302,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This represents ApiOperation resource in search results. Only name,
-     * and description fields are populated in search results.
+     * description, spec and details fields are populated in search results.
      * </pre>
      *
      * <code>.google.cloud.apihub.v1.ApiOperation operation = 2;</code>
@@ -1317,7 +1326,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This represents ApiOperation resource in search results. Only name,
-     * and description fields are populated in search results.
+     * description, spec and details fields are populated in search results.
      * </pre>
      *
      * <code>.google.cloud.apihub.v1.ApiOperation operation = 2;</code>
@@ -1338,7 +1347,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This represents ApiOperation resource in search results. Only name,
-     * and description fields are populated in search results.
+     * description, spec and details fields are populated in search results.
      * </pre>
      *
      * <code>.google.cloud.apihub.v1.ApiOperation operation = 2;</code>
@@ -1372,7 +1381,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This represents ApiOperation resource in search results. Only name,
-     * and description fields are populated in search results.
+     * description, spec and details fields are populated in search results.
      * </pre>
      *
      * <code>.google.cloud.apihub.v1.ApiOperation operation = 2;</code>
@@ -1399,7 +1408,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This represents ApiOperation resource in search results. Only name,
-     * and description fields are populated in search results.
+     * description, spec and details fields are populated in search results.
      * </pre>
      *
      * <code>.google.cloud.apihub.v1.ApiOperation operation = 2;</code>
@@ -1413,7 +1422,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This represents ApiOperation resource in search results. Only name,
-     * and description fields are populated in search results.
+     * description, spec and details fields are populated in search results.
      * </pre>
      *
      * <code>.google.cloud.apihub.v1.ApiOperation operation = 2;</code>
@@ -1435,7 +1444,7 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This represents ApiOperation resource in search results. Only name,
-     * and description fields are populated in search results.
+     * description, spec and details fields are populated in search results.
      * </pre>
      *
      * <code>.google.cloud.apihub.v1.ApiOperation operation = 2;</code>
@@ -1475,7 +1484,8 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This represents Deployment resource in search results. Only name,
-     * display_name and description fields are populated in search results.
+     * display_name, description, deployment_type and api_versions fields are
+     * populated in search results.
      * </pre>
      *
      * <code>.google.cloud.apihub.v1.Deployment deployment = 3;</code>
@@ -1492,7 +1502,8 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This represents Deployment resource in search results. Only name,
-     * display_name and description fields are populated in search results.
+     * display_name, description, deployment_type and api_versions fields are
+     * populated in search results.
      * </pre>
      *
      * <code>.google.cloud.apihub.v1.Deployment deployment = 3;</code>
@@ -1519,7 +1530,8 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This represents Deployment resource in search results. Only name,
-     * display_name and description fields are populated in search results.
+     * display_name, description, deployment_type and api_versions fields are
+     * populated in search results.
      * </pre>
      *
      * <code>.google.cloud.apihub.v1.Deployment deployment = 3;</code>
@@ -1543,7 +1555,8 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This represents Deployment resource in search results. Only name,
-     * display_name and description fields are populated in search results.
+     * display_name, description, deployment_type and api_versions fields are
+     * populated in search results.
      * </pre>
      *
      * <code>.google.cloud.apihub.v1.Deployment deployment = 3;</code>
@@ -1564,7 +1577,8 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This represents Deployment resource in search results. Only name,
-     * display_name and description fields are populated in search results.
+     * display_name, description, deployment_type and api_versions fields are
+     * populated in search results.
      * </pre>
      *
      * <code>.google.cloud.apihub.v1.Deployment deployment = 3;</code>
@@ -1598,7 +1612,8 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This represents Deployment resource in search results. Only name,
-     * display_name and description fields are populated in search results.
+     * display_name, description, deployment_type and api_versions fields are
+     * populated in search results.
      * </pre>
      *
      * <code>.google.cloud.apihub.v1.Deployment deployment = 3;</code>
@@ -1625,7 +1640,8 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This represents Deployment resource in search results. Only name,
-     * display_name and description fields are populated in search results.
+     * display_name, description, deployment_type and api_versions fields are
+     * populated in search results.
      * </pre>
      *
      * <code>.google.cloud.apihub.v1.Deployment deployment = 3;</code>
@@ -1639,7 +1655,8 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This represents Deployment resource in search results. Only name,
-     * display_name and description fields are populated in search results.
+     * display_name, description, deployment_type and api_versions fields are
+     * populated in search results.
      * </pre>
      *
      * <code>.google.cloud.apihub.v1.Deployment deployment = 3;</code>
@@ -1661,7 +1678,8 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This represents Deployment resource in search results. Only name,
-     * display_name and description fields are populated in search results.
+     * display_name, description, deployment_type and api_versions fields are
+     * populated in search results.
      * </pre>
      *
      * <code>.google.cloud.apihub.v1.Deployment deployment = 3;</code>
@@ -1701,7 +1719,8 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This represents Spec resource in search results. Only name,
-     * display_name and description fields are populated in search results.
+     * display_name, description, spec_type and documentation fields are
+     * populated in search results.
      * </pre>
      *
      * <code>.google.cloud.apihub.v1.Spec spec = 4;</code>
@@ -1718,7 +1737,8 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This represents Spec resource in search results. Only name,
-     * display_name and description fields are populated in search results.
+     * display_name, description, spec_type and documentation fields are
+     * populated in search results.
      * </pre>
      *
      * <code>.google.cloud.apihub.v1.Spec spec = 4;</code>
@@ -1745,7 +1765,8 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This represents Spec resource in search results. Only name,
-     * display_name and description fields are populated in search results.
+     * display_name, description, spec_type and documentation fields are
+     * populated in search results.
      * </pre>
      *
      * <code>.google.cloud.apihub.v1.Spec spec = 4;</code>
@@ -1769,7 +1790,8 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This represents Spec resource in search results. Only name,
-     * display_name and description fields are populated in search results.
+     * display_name, description, spec_type and documentation fields are
+     * populated in search results.
      * </pre>
      *
      * <code>.google.cloud.apihub.v1.Spec spec = 4;</code>
@@ -1790,7 +1812,8 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This represents Spec resource in search results. Only name,
-     * display_name and description fields are populated in search results.
+     * display_name, description, spec_type and documentation fields are
+     * populated in search results.
      * </pre>
      *
      * <code>.google.cloud.apihub.v1.Spec spec = 4;</code>
@@ -1824,7 +1847,8 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This represents Spec resource in search results. Only name,
-     * display_name and description fields are populated in search results.
+     * display_name, description, spec_type and documentation fields are
+     * populated in search results.
      * </pre>
      *
      * <code>.google.cloud.apihub.v1.Spec spec = 4;</code>
@@ -1851,7 +1875,8 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This represents Spec resource in search results. Only name,
-     * display_name and description fields are populated in search results.
+     * display_name, description, spec_type and documentation fields are
+     * populated in search results.
      * </pre>
      *
      * <code>.google.cloud.apihub.v1.Spec spec = 4;</code>
@@ -1865,7 +1890,8 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This represents Spec resource in search results. Only name,
-     * display_name and description fields are populated in search results.
+     * display_name, description, spec_type and documentation fields are
+     * populated in search results.
      * </pre>
      *
      * <code>.google.cloud.apihub.v1.Spec spec = 4;</code>
@@ -1887,7 +1913,8 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This represents Spec resource in search results. Only name,
-     * display_name and description fields are populated in search results.
+     * display_name, description, spec_type and documentation fields are
+     * populated in search results.
      * </pre>
      *
      * <code>.google.cloud.apihub.v1.Spec spec = 4;</code>
@@ -2151,7 +2178,8 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This represents Version resource in search results. Only name,
-     * display_name and description fields are populated in search results.
+     * display_name, description, lifecycle, compliance and accreditation fields
+     * are populated in search results.
      * </pre>
      *
      * <code>.google.cloud.apihub.v1.Version version = 6;</code>
@@ -2168,7 +2196,8 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This represents Version resource in search results. Only name,
-     * display_name and description fields are populated in search results.
+     * display_name, description, lifecycle, compliance and accreditation fields
+     * are populated in search results.
      * </pre>
      *
      * <code>.google.cloud.apihub.v1.Version version = 6;</code>
@@ -2195,7 +2224,8 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This represents Version resource in search results. Only name,
-     * display_name and description fields are populated in search results.
+     * display_name, description, lifecycle, compliance and accreditation fields
+     * are populated in search results.
      * </pre>
      *
      * <code>.google.cloud.apihub.v1.Version version = 6;</code>
@@ -2219,7 +2249,8 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This represents Version resource in search results. Only name,
-     * display_name and description fields are populated in search results.
+     * display_name, description, lifecycle, compliance and accreditation fields
+     * are populated in search results.
      * </pre>
      *
      * <code>.google.cloud.apihub.v1.Version version = 6;</code>
@@ -2240,7 +2271,8 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This represents Version resource in search results. Only name,
-     * display_name and description fields are populated in search results.
+     * display_name, description, lifecycle, compliance and accreditation fields
+     * are populated in search results.
      * </pre>
      *
      * <code>.google.cloud.apihub.v1.Version version = 6;</code>
@@ -2274,7 +2306,8 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This represents Version resource in search results. Only name,
-     * display_name and description fields are populated in search results.
+     * display_name, description, lifecycle, compliance and accreditation fields
+     * are populated in search results.
      * </pre>
      *
      * <code>.google.cloud.apihub.v1.Version version = 6;</code>
@@ -2301,7 +2334,8 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This represents Version resource in search results. Only name,
-     * display_name and description fields are populated in search results.
+     * display_name, description, lifecycle, compliance and accreditation fields
+     * are populated in search results.
      * </pre>
      *
      * <code>.google.cloud.apihub.v1.Version version = 6;</code>
@@ -2315,7 +2349,8 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This represents Version resource in search results. Only name,
-     * display_name and description fields are populated in search results.
+     * display_name, description, lifecycle, compliance and accreditation fields
+     * are populated in search results.
      * </pre>
      *
      * <code>.google.cloud.apihub.v1.Version version = 6;</code>
@@ -2337,7 +2372,8 @@ public final class ApiHubResource extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * This represents Version resource in search results. Only name,
-     * display_name and description fields are populated in search results.
+     * display_name, description, lifecycle, compliance and accreditation fields
+     * are populated in search results.
      * </pre>
      *
      * <code>.google.cloud.apihub.v1.Version version = 6;</code>

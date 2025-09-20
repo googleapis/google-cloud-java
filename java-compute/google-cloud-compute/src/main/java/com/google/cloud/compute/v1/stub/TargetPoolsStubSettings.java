@@ -63,6 +63,8 @@ import com.google.cloud.compute.v1.TargetPoolAggregatedList;
 import com.google.cloud.compute.v1.TargetPoolInstanceHealth;
 import com.google.cloud.compute.v1.TargetPoolList;
 import com.google.cloud.compute.v1.TargetPoolsScopedList;
+import com.google.cloud.compute.v1.TestIamPermissionsTargetPoolRequest;
+import com.google.cloud.compute.v1.TestPermissionsResponse;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
@@ -194,6 +196,8 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
       setSecurityPolicySettings;
   private final OperationCallSettings<SetSecurityPolicyTargetPoolRequest, Operation, Operation>
       setSecurityPolicyOperationSettings;
+  private final UnaryCallSettings<TestIamPermissionsTargetPoolRequest, TestPermissionsResponse>
+      testIamPermissionsSettings;
 
   private static final PagedListDescriptor<
           AggregatedListTargetPoolsRequest,
@@ -432,6 +436,12 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
     return setSecurityPolicyOperationSettings;
   }
 
+  /** Returns the object with the settings used for calls to testIamPermissions. */
+  public UnaryCallSettings<TestIamPermissionsTargetPoolRequest, TestPermissionsResponse>
+      testIamPermissionsSettings() {
+    return testIamPermissionsSettings;
+  }
+
   public TargetPoolsStub createStub() throws IOException {
     if (getTransportChannelProvider()
         .getTransportName()
@@ -536,6 +546,7 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
     setSecurityPolicySettings = settingsBuilder.setSecurityPolicySettings().build();
     setSecurityPolicyOperationSettings =
         settingsBuilder.setSecurityPolicyOperationSettings().build();
+    testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
   }
 
   /** Builder for TargetPoolsStubSettings. */
@@ -584,6 +595,9 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
     private final OperationCallSettings.Builder<
             SetSecurityPolicyTargetPoolRequest, Operation, Operation>
         setSecurityPolicyOperationSettings;
+    private final UnaryCallSettings.Builder<
+            TestIamPermissionsTargetPoolRequest, TestPermissionsResponse>
+        testIamPermissionsSettings;
     private static final ImmutableMap<String, ImmutableSet<StatusCode.Code>>
         RETRYABLE_CODE_DEFINITIONS;
 
@@ -654,6 +668,7 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
       setBackupOperationSettings = OperationCallSettings.newBuilder();
       setSecurityPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
       setSecurityPolicyOperationSettings = OperationCallSettings.newBuilder();
+      testIamPermissionsSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -668,7 +683,8 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
               removeHealthCheckSettings,
               removeInstanceSettings,
               setBackupSettings,
-              setSecurityPolicySettings);
+              setSecurityPolicySettings,
+              testIamPermissionsSettings);
       initDefaults(this);
     }
 
@@ -695,6 +711,7 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
       setBackupOperationSettings = settings.setBackupOperationSettings.toBuilder();
       setSecurityPolicySettings = settings.setSecurityPolicySettings.toBuilder();
       setSecurityPolicyOperationSettings = settings.setSecurityPolicyOperationSettings.toBuilder();
+      testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
 
       unaryMethodSettingsBuilders =
           ImmutableList.<UnaryCallSettings.Builder<?, ?>>of(
@@ -709,7 +726,8 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
               removeHealthCheckSettings,
               removeInstanceSettings,
               setBackupSettings,
-              setSecurityPolicySettings);
+              setSecurityPolicySettings,
+              testIamPermissionsSettings);
     }
 
     private static Builder createDefault() {
@@ -782,6 +800,11 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
 
       builder
           .setSecurityPolicySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
+
+      builder
+          .testIamPermissionsSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("no_retry_1_codes"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("no_retry_1_params"));
 
@@ -1112,6 +1135,12 @@ public class TargetPoolsStubSettings extends StubSettings<TargetPoolsStubSetting
     public OperationCallSettings.Builder<SetSecurityPolicyTargetPoolRequest, Operation, Operation>
         setSecurityPolicyOperationSettings() {
       return setSecurityPolicyOperationSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to testIamPermissions. */
+    public UnaryCallSettings.Builder<TestIamPermissionsTargetPoolRequest, TestPermissionsResponse>
+        testIamPermissionsSettings() {
+      return testIamPermissionsSettings;
     }
 
     @Override

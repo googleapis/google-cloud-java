@@ -23,7 +23,7 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * The reference to the cloud control deployment.
+ * The reference to a CloudControlDeployment.
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.CloudControlDeploymentReference}
@@ -75,7 +75,7 @@ public final class CloudControlDeploymentReference extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Output only. The name of the cloud control deployment. The format is:
+   * Output only. The name of the CloudControlDeployment. The format is:
    * organizations/{org}/locations/{location}/cloudControlDeployments/{cloud_control_deployment_id}
    * </pre>
    *
@@ -102,7 +102,7 @@ public final class CloudControlDeploymentReference extends com.google.protobuf.G
    *
    *
    * <pre>
-   * Output only. The name of the cloud control deployment. The format is:
+   * Output only. The name of the CloudControlDeployment. The format is:
    * organizations/{org}/locations/{location}/cloudControlDeployments/{cloud_control_deployment_id}
    * </pre>
    *
@@ -297,7 +297,7 @@ public final class CloudControlDeploymentReference extends com.google.protobuf.G
    *
    *
    * <pre>
-   * The reference to the cloud control deployment.
+   * The reference to a CloudControlDeployment.
    * </pre>
    *
    * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.CloudControlDeploymentReference}
@@ -493,7 +493,7 @@ public final class CloudControlDeploymentReference extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Output only. The name of the cloud control deployment. The format is:
+     * Output only. The name of the CloudControlDeployment. The format is:
      * organizations/{org}/locations/{location}/cloudControlDeployments/{cloud_control_deployment_id}
      * </pre>
      *
@@ -519,7 +519,7 @@ public final class CloudControlDeploymentReference extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Output only. The name of the cloud control deployment. The format is:
+     * Output only. The name of the CloudControlDeployment. The format is:
      * organizations/{org}/locations/{location}/cloudControlDeployments/{cloud_control_deployment_id}
      * </pre>
      *
@@ -545,7 +545,7 @@ public final class CloudControlDeploymentReference extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Output only. The name of the cloud control deployment. The format is:
+     * Output only. The name of the CloudControlDeployment. The format is:
      * organizations/{org}/locations/{location}/cloudControlDeployments/{cloud_control_deployment_id}
      * </pre>
      *
@@ -570,7 +570,7 @@ public final class CloudControlDeploymentReference extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Output only. The name of the cloud control deployment. The format is:
+     * Output only. The name of the CloudControlDeployment. The format is:
      * organizations/{org}/locations/{location}/cloudControlDeployments/{cloud_control_deployment_id}
      * </pre>
      *
@@ -591,7 +591,7 @@ public final class CloudControlDeploymentReference extends com.google.protobuf.G
      *
      *
      * <pre>
-     * Output only. The name of the cloud control deployment. The format is:
+     * Output only. The name of the CloudControlDeployment. The format is:
      * organizations/{org}/locations/{location}/cloudControlDeployments/{cloud_control_deployment_id}
      * </pre>
      *

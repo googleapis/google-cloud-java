@@ -74,9 +74,9 @@ public interface ResourceOptionsOrBuilder
    *
    *
    * <pre>
-   * Optional. Major version of the Kubernetes cluster. This is only used to
-   * determine which version to use for the CustomResourceDefinition resources,
-   * `apiextensions/v1beta1` or`apiextensions/v1`.
+   * Optional. Major and minor version of the Kubernetes cluster. This is only
+   * used to determine which version to use for the CustomResourceDefinition
+   * resources, `apiextensions/v1beta1` or`apiextensions/v1`.
    * </pre>
    *
    * <code>string k8s_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -89,9 +89,9 @@ public interface ResourceOptionsOrBuilder
    *
    *
    * <pre>
-   * Optional. Major version of the Kubernetes cluster. This is only used to
-   * determine which version to use for the CustomResourceDefinition resources,
-   * `apiextensions/v1beta1` or`apiextensions/v1`.
+   * Optional. Major and minor version of the Kubernetes cluster. This is only
+   * used to determine which version to use for the CustomResourceDefinition
+   * resources, `apiextensions/v1beta1` or`apiextensions/v1`.
    * </pre>
    *
    * <code>string k8s_version = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -99,4 +99,34 @@ public interface ResourceOptionsOrBuilder
    * @return The bytes for k8sVersion.
    */
   com.google.protobuf.ByteString getK8SVersionBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Git version of the Kubernetes cluster. This is only used to gate
+   * the Connect Agent migration to svc.id.goog on GDC-SO 1.33.100 patch and
+   * above.
+   * </pre>
+   *
+   * <code>string k8s_git_version = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The k8sGitVersion.
+   */
+  java.lang.String getK8SGitVersion();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Git version of the Kubernetes cluster. This is only used to gate
+   * the Connect Agent migration to svc.id.goog on GDC-SO 1.33.100 patch and
+   * above.
+   * </pre>
+   *
+   * <code>string k8s_git_version = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for k8sGitVersion.
+   */
+  com.google.protobuf.ByteString getK8SGitVersionBytes();
 }

@@ -60,9 +60,10 @@ public interface ApiOperationOrBuilder
    *
    *
    * <pre>
-   * Output only. The name of the spec from where the operation was parsed.
-   * Format is
+   * Output only. The name of the spec will be of the format:
    * `projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}`
+   * Note:The name of the spec will be empty if the operation is created via
+   * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation] API.
    * </pre>
    *
    * <code>
@@ -77,9 +78,10 @@ public interface ApiOperationOrBuilder
    *
    *
    * <pre>
-   * Output only. The name of the spec from where the operation was parsed.
-   * Format is
+   * Output only. The name of the spec will be of the format:
    * `projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}`
+   * Note:The name of the spec will be empty if the operation is created via
+   * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation] API.
    * </pre>
    *
    * <code>
@@ -94,11 +96,14 @@ public interface ApiOperationOrBuilder
    *
    *
    * <pre>
-   * Output only. Operation details.
+   * Optional. Operation details.
+   * Note: Even though this field is optional, it is required for
+   * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation]
+   * API and we will fail the request if not provided.
    * </pre>
    *
    * <code>
-   * .google.cloud.apihub.v1.OperationDetails details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * .google.cloud.apihub.v1.OperationDetails details = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the details field is set.
@@ -109,11 +114,14 @@ public interface ApiOperationOrBuilder
    *
    *
    * <pre>
-   * Output only. Operation details.
+   * Optional. Operation details.
+   * Note: Even though this field is optional, it is required for
+   * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation]
+   * API and we will fail the request if not provided.
    * </pre>
    *
    * <code>
-   * .google.cloud.apihub.v1.OperationDetails details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * .google.cloud.apihub.v1.OperationDetails details = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The details.
@@ -124,11 +132,14 @@ public interface ApiOperationOrBuilder
    *
    *
    * <pre>
-   * Output only. Operation details.
+   * Optional. Operation details.
+   * Note: Even though this field is optional, it is required for
+   * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation]
+   * API and we will fail the request if not provided.
    * </pre>
    *
    * <code>
-   * .google.cloud.apihub.v1.OperationDetails details = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * .google.cloud.apihub.v1.OperationDetails details = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.apihub.v1.OperationDetailsOrBuilder getDetailsOrBuilder();
@@ -300,4 +311,75 @@ public interface ApiOperationOrBuilder
    * </code>
    */
   com.google.cloud.apihub.v1.AttributeValues getAttributesOrThrow(java.lang.String key);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of sources and metadata from the sources of the API
+   * operation.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<com.google.cloud.apihub.v1.SourceMetadata> getSourceMetadataList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of sources and metadata from the sources of the API
+   * operation.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.apihub.v1.SourceMetadata getSourceMetadata(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of sources and metadata from the sources of the API
+   * operation.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  int getSourceMetadataCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of sources and metadata from the sources of the API
+   * operation.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.apihub.v1.SourceMetadataOrBuilder>
+      getSourceMetadataOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of sources and metadata from the sources of the API
+   * operation.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 7 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.cloud.apihub.v1.SourceMetadataOrBuilder getSourceMetadataOrBuilder(int index);
 }

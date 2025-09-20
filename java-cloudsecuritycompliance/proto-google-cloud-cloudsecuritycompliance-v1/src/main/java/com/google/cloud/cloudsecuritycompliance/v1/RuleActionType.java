@@ -179,7 +179,7 @@ public enum RuleActionType implements com.google.protobuf.ProtocolMessageEnum {
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.cloud.cloudsecuritycompliance.v1.CommonProto.getDescriptor()
         .getEnumTypes()
-        .get(6);
+        .get(5);
   }
 
   private static final RuleActionType[] VALUES = values();

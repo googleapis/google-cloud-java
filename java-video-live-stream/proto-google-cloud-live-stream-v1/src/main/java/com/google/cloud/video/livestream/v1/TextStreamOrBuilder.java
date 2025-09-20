@@ -34,6 +34,7 @@ public interface TextStreamOrBuilder
    *
    * - `cea608`
    * - `cea708`
+   * - `webvtt`
    * </pre>
    *
    * <code>string codec = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -52,6 +53,7 @@ public interface TextStreamOrBuilder
    *
    * - `cea608`
    * - `cea708`
+   * - `webvtt`
    * </pre>
    *
    * <code>string codec = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -59,4 +61,167 @@ public interface TextStreamOrBuilder
    * @return The bytes for codec.
    */
   com.google.protobuf.ByteString getCodecBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
+   * information, see
+   * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+   * </pre>
+   *
+   * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The languageCode.
+   */
+  java.lang.String getLanguageCode();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
+   * information, see
+   * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+   * </pre>
+   *
+   * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for languageCode.
+   */
+  com.google.protobuf.ByteString getLanguageCodeBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name for this particular text stream that will be added to
+   * the HLS/DASH manifest.
+   * </pre>
+   *
+   * <code>string display_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The displayName.
+   */
+  java.lang.String getDisplayName();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name for this particular text stream that will be added to
+   * the HLS/DASH manifest.
+   * </pre>
+   *
+   * <code>string display_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for displayName.
+   */
+  com.google.protobuf.ByteString getDisplayNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The channel of the closed caption in the output stream.
+   * This field should only be set when textstream is used for partner
+   * distribution.
+   * Must be one of `CC1`, `CC2`, `CC3`, and `CC4`, if the
+   * [codec][google.cloud.video.livestream.v1.TextStream.codec] is `cea608`;
+   * Must be one between `SERVICE1` and `SERVICE63`, if the
+   * [codec][google.cloud.video.livestream.v1.TextStream.codec] is `cea708`.
+   * </pre>
+   *
+   * <code>string output_cea_channel = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The outputCeaChannel.
+   */
+  java.lang.String getOutputCeaChannel();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The channel of the closed caption in the output stream.
+   * This field should only be set when textstream is used for partner
+   * distribution.
+   * Must be one of `CC1`, `CC2`, `CC3`, and `CC4`, if the
+   * [codec][google.cloud.video.livestream.v1.TextStream.codec] is `cea608`;
+   * Must be one between `SERVICE1` and `SERVICE63`, if the
+   * [codec][google.cloud.video.livestream.v1.TextStream.codec] is `cea708`.
+   * </pre>
+   *
+   * <code>string output_cea_channel = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for outputCeaChannel.
+   */
+  com.google.protobuf.ByteString getOutputCeaChannelBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The mapping for the input streams and text tracks.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.TextStream.TextMapping mapping = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.video.livestream.v1.TextStream.TextMapping> getMappingList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The mapping for the input streams and text tracks.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.TextStream.TextMapping mapping = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.video.livestream.v1.TextStream.TextMapping getMapping(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The mapping for the input streams and text tracks.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.TextStream.TextMapping mapping = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getMappingCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The mapping for the input streams and text tracks.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.TextStream.TextMapping mapping = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.video.livestream.v1.TextStream.TextMappingOrBuilder>
+      getMappingOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The mapping for the input streams and text tracks.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.TextStream.TextMapping mapping = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.video.livestream.v1.TextStream.TextMappingOrBuilder getMappingOrBuilder(
+      int index);
 }
