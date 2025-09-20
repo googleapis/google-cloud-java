@@ -66,7 +66,7 @@ public interface CustomVoiceParamsOrBuilder
    * </code>
    *
    * @deprecated google.cloud.texttospeech.v1.CustomVoiceParams.reported_usage is deprecated. See
-   *     google/cloud/texttospeech/v1/cloud_tts.proto;l=426
+   *     google/cloud/texttospeech/v1/cloud_tts.proto;l=454
    * @return The enum numeric value on the wire for reportedUsage.
    */
   @java.lang.Deprecated
@@ -84,7 +84,7 @@ public interface CustomVoiceParamsOrBuilder
    * </code>
    *
    * @deprecated google.cloud.texttospeech.v1.CustomVoiceParams.reported_usage is deprecated. See
-   *     google/cloud/texttospeech/v1/cloud_tts.proto;l=426
+   *     google/cloud/texttospeech/v1/cloud_tts.proto;l=454
    * @return The reportedUsage.
    */
   @java.lang.Deprecated

@@ -253,4 +253,54 @@ public interface VoiceSelectionParamsOrBuilder
    * @return The bytes for modelName.
    */
   com.google.protobuf.ByteString getModelNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for a Gemini multi-speaker text-to-speech
+   * setup. Enables the use of two distinct voices in a single synthesis
+   * request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.texttospeech.v1.MultiSpeakerVoiceConfig multi_speaker_voice_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the multiSpeakerVoiceConfig field is set.
+   */
+  boolean hasMultiSpeakerVoiceConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for a Gemini multi-speaker text-to-speech
+   * setup. Enables the use of two distinct voices in a single synthesis
+   * request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.texttospeech.v1.MultiSpeakerVoiceConfig multi_speaker_voice_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The multiSpeakerVoiceConfig.
+   */
+  com.google.cloud.texttospeech.v1.MultiSpeakerVoiceConfig getMultiSpeakerVoiceConfig();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for a Gemini multi-speaker text-to-speech
+   * setup. Enables the use of two distinct voices in a single synthesis
+   * request.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.texttospeech.v1.MultiSpeakerVoiceConfig multi_speaker_voice_config = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.texttospeech.v1.MultiSpeakerVoiceConfigOrBuilder
+      getMultiSpeakerVoiceConfigOrBuilder();
 }
