@@ -125,6 +125,7 @@
     <module>java-language</module>
     <module>java-licensemanager</module>
     <module>java-life-sciences</module>
+    <module>java-locationfinder</module>
     <module>java-lustre</module>
     <module>java-maintenance</module>
     <module>java-managed-identities</module>
