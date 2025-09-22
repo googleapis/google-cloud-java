@@ -16,10 +16,14 @@
 package com.google.cloud.bigtable.gaxx.grpc;
 
 import com.google.api.core.BetaApi;
+import com.google.api.core.InternalApi;
 import com.google.api.gax.grpc.ChannelPoolSettings;
 import com.google.auto.value.AutoValue;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.common.base.Preconditions;
+import com.google.common.base.Strings;
 import java.time.Duration;
+import java.util.logging.Logger;
 
 /**
  * Settings to control {@link BigtableChannelPool} behavior.
@@ -41,11 +45,32 @@ import java.time.Duration;
 @BetaApi("surface for channel pool sizing is not yet stable")
 @AutoValue
 public abstract class BigtableChannelPoolSettings {
+  @VisibleForTesting
+  static final Logger LOG = Logger.getLogger(BigtableChannelPoolSettings.class.getName());
+
   /** How often to check and possibly resize the {@link BigtableChannelPool}. */
   static final Duration RESIZE_INTERVAL = Duration.ofMinutes(1);
 
   /** The maximum number of channels that can be added or removed at a time. */
   static final int MAX_RESIZE_DELTA = 2;
+
+  /** Environment variable used to set load balancing strategy. */
+  private static final String CBT_LOAD_BALANCING_STRATEGY_ENV_VAR = "CBT_LOAD_BALANCING_STRATEGY";
+
+  /** Load balancing strategy to use if environment variable is unset or invalid. */
+  private static final LoadBalancingStrategy DEFAULT_LOAD_BALANCING_STRATEGY =
+      LoadBalancingStrategy.ROUND_ROBIN;
+
+  /** Supported load-balancing strategies. */
+  public enum LoadBalancingStrategy {
+    // Sequentially iterate across all channels.
+    ROUND_ROBIN,
+    // Pick the channel with the fewest in-flight requests. If multiple channels match, pick at
+    // random.
+    LEAST_IN_FLIGHT,
+    // Out of two random channels, pick the channel with the fewest in-flight requests.
+    POWER_OF_TWO_LEAST_IN_FLIGHT,
+  }
 
   /**
    * Threshold to start scaling down the channel pool.
@@ -95,6 +120,10 @@ public abstract class BigtableChannelPoolSettings {
    */
   public abstract boolean isPreemptiveRefreshEnabled();
 
+  /** The load balancing strategy to use for distributing RPCs across channels. */
+  @InternalApi("Use CBT_LOAD_BALANCING_STRATEGY environment variable")
+  public abstract LoadBalancingStrategy getLoadBalancingStrategy();
+
   /**
    * Helper to check if the {@link BigtableChannelPool} implementation can skip dynamic size logic
    */
@@ -111,6 +140,24 @@ public abstract class BigtableChannelPoolSettings {
     return false;
   }
 
+  /**
+   * Use environment variable CBT_LOAD_BALANCING_STRATEGY to pick a load-balancing strategy.
+   *
+   * @return load-balancing strategy to use.
+   */
+  private static LoadBalancingStrategy loadBalancingStrategyFromEnv() {
+    String strategyString = System.getenv(CBT_LOAD_BALANCING_STRATEGY_ENV_VAR);
+    if (Strings.isNullOrEmpty(strategyString)) {
+      return DEFAULT_LOAD_BALANCING_STRATEGY;
+    }
+    try {
+      return LoadBalancingStrategy.valueOf(strategyString.trim().toUpperCase());
+    } catch (IllegalArgumentException e) {
+      throw new IllegalStateException(
+          String.format("Invalid load-balancing strategy %s", strategyString));
+    }
+  }
+
   public abstract Builder toBuilder();
 
   public static BigtableChannelPoolSettings copyFrom(ChannelPoolSettings externalSettings) {
@@ -121,6 +168,7 @@ public abstract class BigtableChannelPoolSettings {
         .setMaxChannelCount(externalSettings.getMaxChannelCount())
         .setInitialChannelCount(externalSettings.getInitialChannelCount())
         .setPreemptiveRefreshEnabled(externalSettings.isPreemptiveRefreshEnabled())
+        .setLoadBalancingStrategy(loadBalancingStrategyFromEnv())
         .build();
   }
 
@@ -131,6 +179,7 @@ public abstract class BigtableChannelPoolSettings {
         .setMaxRpcsPerChannel(Integer.MAX_VALUE)
         .setMinChannelCount(size)
         .setMaxChannelCount(size)
+        .setLoadBalancingStrategy(loadBalancingStrategyFromEnv())
         .build();
   }
 
@@ -141,7 +190,8 @@ public abstract class BigtableChannelPoolSettings {
         .setMaxChannelCount(200)
         .setMinRpcsPerChannel(0)
         .setMaxRpcsPerChannel(Integer.MAX_VALUE)
-        .setPreemptiveRefreshEnabled(false);
+        .setPreemptiveRefreshEnabled(false)
+        .setLoadBalancingStrategy(loadBalancingStrategyFromEnv());
   }
 
   @AutoValue.Builder
@@ -157,6 +207,9 @@ public abstract class BigtableChannelPoolSettings {
     public abstract Builder setInitialChannelCount(int count);
 
     public abstract Builder setPreemptiveRefreshEnabled(boolean enabled);
+
+    @InternalApi("Use CBT_LOAD_BALANCING_STRATEGY environment variable")
+    public abstract Builder setLoadBalancingStrategy(LoadBalancingStrategy strategy);
 
     abstract BigtableChannelPoolSettings autoBuild();
 
