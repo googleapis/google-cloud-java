@@ -911,3 +911,6 @@ grpc-google-cloud-geminidataanalytics-v1beta:0.2.0:0.3.0-SNAPSHOT
 google-cloud-cloudsecuritycompliance:0.1.0:0.2.0-SNAPSHOT
 proto-google-cloud-cloudsecuritycompliance-v1:0.1.0:0.2.0-SNAPSHOT
 grpc-google-cloud-cloudsecuritycompliance-v1:0.1.0:0.2.0-SNAPSHOT
+google-cloud-locationfinder:0.0.0:0.0.1-SNAPSHOT
+proto-google-cloud-locationfinder-v1:0.0.0:0.0.1-SNAPSHOT
+grpc-google-cloud-locationfinder-v1:0.0.0:0.0.1-SNAPSHOT
