@@ -23,7 +23,8 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * FolderCreationConfig contains the config to create a new folder.
+ * FolderCreationConfig contains the config to create a new folder to be used
+ * as the target_resource of a deployment.
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.FolderCreationConfig}
@@ -74,7 +75,8 @@ public final class FolderCreationConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. organizations/{org} or folders/{folder}
+   * Required. The parent of the folder to be created. It can be an
+   * organizations/{org} or folders/{folder}
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -98,7 +100,8 @@ public final class FolderCreationConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. organizations/{org} or folders/{folder}
+   * Required. The parent of the folder to be created. It can be an
+   * organizations/{org} or folders/{folder}
    * </pre>
    *
    * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -345,7 +348,8 @@ public final class FolderCreationConfig extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * FolderCreationConfig contains the config to create a new folder.
+   * FolderCreationConfig contains the config to create a new folder to be used
+   * as the target_resource of a deployment.
    * </pre>
    *
    * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.FolderCreationConfig}
@@ -549,7 +553,8 @@ public final class FolderCreationConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. organizations/{org} or folders/{folder}
+     * Required. The parent of the folder to be created. It can be an
+     * organizations/{org} or folders/{folder}
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -572,7 +577,8 @@ public final class FolderCreationConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. organizations/{org} or folders/{folder}
+     * Required. The parent of the folder to be created. It can be an
+     * organizations/{org} or folders/{folder}
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -595,7 +601,8 @@ public final class FolderCreationConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. organizations/{org} or folders/{folder}
+     * Required. The parent of the folder to be created. It can be an
+     * organizations/{org} or folders/{folder}
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -617,7 +624,8 @@ public final class FolderCreationConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. organizations/{org} or folders/{folder}
+     * Required. The parent of the folder to be created. It can be an
+     * organizations/{org} or folders/{folder}
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -635,7 +643,8 @@ public final class FolderCreationConfig extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. organizations/{org} or folders/{folder}
+     * Required. The parent of the folder to be created. It can be an
+     * organizations/{org} or folders/{folder}
      * </pre>
      *
      * <code>string parent = 1 [(.google.api.field_behavior) = REQUIRED];</code>

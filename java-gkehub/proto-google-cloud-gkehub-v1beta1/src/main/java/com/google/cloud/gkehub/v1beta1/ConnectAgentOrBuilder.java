@@ -34,7 +34,7 @@ public interface ConnectAgentOrBuilder
    * <code>string name = 1 [deprecated = true];</code>
    *
    * @deprecated google.cloud.gkehub.v1beta1.ConnectAgent.name is deprecated. See
-   *     google/cloud/gkehub/v1beta1/membership.proto;l=844
+   *     google/cloud/gkehub/v1beta1/membership.proto;l=849
    * @return The name.
    */
   @java.lang.Deprecated
@@ -50,7 +50,7 @@ public interface ConnectAgentOrBuilder
    * <code>string name = 1 [deprecated = true];</code>
    *
    * @deprecated google.cloud.gkehub.v1beta1.ConnectAgent.name is deprecated. See
-   *     google/cloud/gkehub/v1beta1/membership.proto;l=844
+   *     google/cloud/gkehub/v1beta1/membership.proto;l=849
    * @return The bytes for name.
    */
   @java.lang.Deprecated

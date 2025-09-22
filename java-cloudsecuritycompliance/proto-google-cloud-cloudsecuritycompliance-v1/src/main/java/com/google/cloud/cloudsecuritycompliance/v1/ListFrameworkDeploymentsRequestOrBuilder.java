@@ -28,7 +28,9 @@ public interface ListFrameworkDeploymentsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Parent value for ListFrameworkDeploymentsRequest.
+   * Required. parent resource of the FrameworkDeployment in the format:
+   * organizations/{organization}/locations/{location}
+   * Only global location is supported.
    * </pre>
    *
    * <code>
@@ -43,7 +45,9 @@ public interface ListFrameworkDeploymentsRequestOrBuilder
    *
    *
    * <pre>
-   * Required. Parent value for ListFrameworkDeploymentsRequest.
+   * Required. parent resource of the FrameworkDeployment in the format:
+   * organizations/{organization}/locations/{location}
+   * Only global location is supported.
    * </pre>
    *
    * <code>

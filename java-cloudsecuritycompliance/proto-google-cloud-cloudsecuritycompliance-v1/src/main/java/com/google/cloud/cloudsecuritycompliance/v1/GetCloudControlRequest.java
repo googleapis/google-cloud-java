@@ -23,7 +23,7 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * Message for getting a CloudControl.
+ * Request message for getting a CloudControl.
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.GetCloudControlRequest}
@@ -289,7 +289,7 @@ public final class GetCloudControlRequest extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Message for getting a CloudControl.
+   * Request message for getting a CloudControl.
    * </pre>
    *
    * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.GetCloudControlRequest}

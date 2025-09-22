@@ -23,8 +23,12 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * A CloudControl is a GCP-provided parameterized concept which is used to
- * satisfy a Security or Compliance intent.
+ * A CloudControl is the fundamental unit encapsulating the rules
+ * to meet a specific security or compliance intent. It can contain
+ * various rule types (like Organization Policies, CEL expressions, etc.)
+ * enabling different enforcement modes (Preventive, Detective, Audit).
+ * CloudControls are often parameterized for reusability and can be either
+ * BUILT_IN (provided by Google) or CUSTOM (defined by the user).
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.CloudControl}
@@ -1586,8 +1590,12 @@ public final class CloudControl extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A CloudControl is a GCP-provided parameterized concept which is used to
-   * satisfy a Security or Compliance intent.
+   * A CloudControl is the fundamental unit encapsulating the rules
+   * to meet a specific security or compliance intent. It can contain
+   * various rule types (like Organization Policies, CEL expressions, etc.)
+   * enabling different enforcement modes (Preventive, Detective, Audit).
+   * CloudControls are often parameterized for reusability and can be either
+   * BUILT_IN (provided by Google) or CUSTOM (defined by the user).
    * </pre>
    *
    * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.CloudControl}

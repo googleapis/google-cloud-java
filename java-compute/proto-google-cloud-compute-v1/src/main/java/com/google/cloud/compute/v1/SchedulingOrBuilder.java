@@ -484,6 +484,32 @@ public interface SchedulingOrBuilder
    *
    *
    * <pre>
+   * Default is false and there will be 120 seconds between GCE ACPI G2 Soft Off and ACPI G3 Mechanical Off for Standard VMs and 30 seconds for Spot VMs.
+   * </pre>
+   *
+   * <code>optional bool skip_guest_os_shutdown = 201662378;</code>
+   *
+   * @return Whether the skipGuestOsShutdown field is set.
+   */
+  boolean hasSkipGuestOsShutdown();
+
+  /**
+   *
+   *
+   * <pre>
+   * Default is false and there will be 120 seconds between GCE ACPI G2 Soft Off and ACPI G3 Mechanical Off for Standard VMs and 30 seconds for Spot VMs.
+   * </pre>
+   *
+   * <code>optional bool skip_guest_os_shutdown = 201662378;</code>
+   *
+   * @return The skipGuestOsShutdown.
+   */
+  boolean getSkipGuestOsShutdown();
+
+  /**
+   *
+   *
+   * <pre>
    * Specifies the timestamp, when the instance will be terminated, in RFC3339 text format. If specified, the instance termination action will be performed at the termination time.
    * </pre>
    *

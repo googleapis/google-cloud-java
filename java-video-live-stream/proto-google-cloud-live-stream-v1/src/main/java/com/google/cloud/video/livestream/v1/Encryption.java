@@ -2468,10 +2468,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Widevine configuration.
+     * Optional. Widevine configuration.
      * </pre>
      *
-     * <code>.google.cloud.video.livestream.v1.Encryption.Widevine widevine = 1;</code>
+     * <code>
+     * .google.cloud.video.livestream.v1.Encryption.Widevine widevine = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the widevine field is set.
      */
@@ -2481,10 +2483,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Widevine configuration.
+     * Optional. Widevine configuration.
      * </pre>
      *
-     * <code>.google.cloud.video.livestream.v1.Encryption.Widevine widevine = 1;</code>
+     * <code>
+     * .google.cloud.video.livestream.v1.Encryption.Widevine widevine = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The widevine.
      */
@@ -2494,10 +2498,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Widevine configuration.
+     * Optional. Widevine configuration.
      * </pre>
      *
-     * <code>.google.cloud.video.livestream.v1.Encryption.Widevine widevine = 1;</code>
+     * <code>
+     * .google.cloud.video.livestream.v1.Encryption.Widevine widevine = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     com.google.cloud.video.livestream.v1.Encryption.WidevineOrBuilder getWidevineOrBuilder();
 
@@ -2505,10 +2511,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fairplay configuration.
+     * Optional. Fairplay configuration.
      * </pre>
      *
-     * <code>.google.cloud.video.livestream.v1.Encryption.Fairplay fairplay = 2;</code>
+     * <code>
+     * .google.cloud.video.livestream.v1.Encryption.Fairplay fairplay = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the fairplay field is set.
      */
@@ -2518,10 +2526,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fairplay configuration.
+     * Optional. Fairplay configuration.
      * </pre>
      *
-     * <code>.google.cloud.video.livestream.v1.Encryption.Fairplay fairplay = 2;</code>
+     * <code>
+     * .google.cloud.video.livestream.v1.Encryption.Fairplay fairplay = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The fairplay.
      */
@@ -2531,10 +2541,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fairplay configuration.
+     * Optional. Fairplay configuration.
      * </pre>
      *
-     * <code>.google.cloud.video.livestream.v1.Encryption.Fairplay fairplay = 2;</code>
+     * <code>
+     * .google.cloud.video.livestream.v1.Encryption.Fairplay fairplay = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     com.google.cloud.video.livestream.v1.Encryption.FairplayOrBuilder getFairplayOrBuilder();
 
@@ -2542,10 +2554,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Playready configuration.
+     * Optional. Playready configuration.
      * </pre>
      *
-     * <code>.google.cloud.video.livestream.v1.Encryption.Playready playready = 3;</code>
+     * <code>
+     * .google.cloud.video.livestream.v1.Encryption.Playready playready = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the playready field is set.
      */
@@ -2555,10 +2569,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Playready configuration.
+     * Optional. Playready configuration.
      * </pre>
      *
-     * <code>.google.cloud.video.livestream.v1.Encryption.Playready playready = 3;</code>
+     * <code>
+     * .google.cloud.video.livestream.v1.Encryption.Playready playready = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The playready.
      */
@@ -2568,10 +2584,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Playready configuration.
+     * Optional. Playready configuration.
      * </pre>
      *
-     * <code>.google.cloud.video.livestream.v1.Encryption.Playready playready = 3;</code>
+     * <code>
+     * .google.cloud.video.livestream.v1.Encryption.Playready playready = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     com.google.cloud.video.livestream.v1.Encryption.PlayreadyOrBuilder getPlayreadyOrBuilder();
 
@@ -2579,10 +2597,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Clearkey configuration.
+     * Optional. Clearkey configuration.
      * </pre>
      *
-     * <code>.google.cloud.video.livestream.v1.Encryption.Clearkey clearkey = 4;</code>
+     * <code>
+     * .google.cloud.video.livestream.v1.Encryption.Clearkey clearkey = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the clearkey field is set.
      */
@@ -2592,10 +2612,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Clearkey configuration.
+     * Optional. Clearkey configuration.
      * </pre>
      *
-     * <code>.google.cloud.video.livestream.v1.Encryption.Clearkey clearkey = 4;</code>
+     * <code>
+     * .google.cloud.video.livestream.v1.Encryption.Clearkey clearkey = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The clearkey.
      */
@@ -2605,10 +2627,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Clearkey configuration.
+     * Optional. Clearkey configuration.
      * </pre>
      *
-     * <code>.google.cloud.video.livestream.v1.Encryption.Clearkey clearkey = 4;</code>
+     * <code>
+     * .google.cloud.video.livestream.v1.Encryption.Clearkey clearkey = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     com.google.cloud.video.livestream.v1.Encryption.ClearkeyOrBuilder getClearkeyOrBuilder();
   }
@@ -2665,10 +2689,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Widevine configuration.
+     * Optional. Widevine configuration.
      * </pre>
      *
-     * <code>.google.cloud.video.livestream.v1.Encryption.Widevine widevine = 1;</code>
+     * <code>
+     * .google.cloud.video.livestream.v1.Encryption.Widevine widevine = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the widevine field is set.
      */
@@ -2681,10 +2707,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Widevine configuration.
+     * Optional. Widevine configuration.
      * </pre>
      *
-     * <code>.google.cloud.video.livestream.v1.Encryption.Widevine widevine = 1;</code>
+     * <code>
+     * .google.cloud.video.livestream.v1.Encryption.Widevine widevine = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The widevine.
      */
@@ -2699,10 +2727,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Widevine configuration.
+     * Optional. Widevine configuration.
      * </pre>
      *
-     * <code>.google.cloud.video.livestream.v1.Encryption.Widevine widevine = 1;</code>
+     * <code>
+     * .google.cloud.video.livestream.v1.Encryption.Widevine widevine = 1 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public com.google.cloud.video.livestream.v1.Encryption.WidevineOrBuilder
@@ -2719,10 +2749,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fairplay configuration.
+     * Optional. Fairplay configuration.
      * </pre>
      *
-     * <code>.google.cloud.video.livestream.v1.Encryption.Fairplay fairplay = 2;</code>
+     * <code>
+     * .google.cloud.video.livestream.v1.Encryption.Fairplay fairplay = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the fairplay field is set.
      */
@@ -2735,10 +2767,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fairplay configuration.
+     * Optional. Fairplay configuration.
      * </pre>
      *
-     * <code>.google.cloud.video.livestream.v1.Encryption.Fairplay fairplay = 2;</code>
+     * <code>
+     * .google.cloud.video.livestream.v1.Encryption.Fairplay fairplay = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The fairplay.
      */
@@ -2753,10 +2787,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Fairplay configuration.
+     * Optional. Fairplay configuration.
      * </pre>
      *
-     * <code>.google.cloud.video.livestream.v1.Encryption.Fairplay fairplay = 2;</code>
+     * <code>
+     * .google.cloud.video.livestream.v1.Encryption.Fairplay fairplay = 2 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public com.google.cloud.video.livestream.v1.Encryption.FairplayOrBuilder
@@ -2773,10 +2809,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Playready configuration.
+     * Optional. Playready configuration.
      * </pre>
      *
-     * <code>.google.cloud.video.livestream.v1.Encryption.Playready playready = 3;</code>
+     * <code>
+     * .google.cloud.video.livestream.v1.Encryption.Playready playready = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the playready field is set.
      */
@@ -2789,10 +2827,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Playready configuration.
+     * Optional. Playready configuration.
      * </pre>
      *
-     * <code>.google.cloud.video.livestream.v1.Encryption.Playready playready = 3;</code>
+     * <code>
+     * .google.cloud.video.livestream.v1.Encryption.Playready playready = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The playready.
      */
@@ -2807,10 +2847,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Playready configuration.
+     * Optional. Playready configuration.
      * </pre>
      *
-     * <code>.google.cloud.video.livestream.v1.Encryption.Playready playready = 3;</code>
+     * <code>
+     * .google.cloud.video.livestream.v1.Encryption.Playready playready = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public com.google.cloud.video.livestream.v1.Encryption.PlayreadyOrBuilder
@@ -2827,10 +2869,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Clearkey configuration.
+     * Optional. Clearkey configuration.
      * </pre>
      *
-     * <code>.google.cloud.video.livestream.v1.Encryption.Clearkey clearkey = 4;</code>
+     * <code>
+     * .google.cloud.video.livestream.v1.Encryption.Clearkey clearkey = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return Whether the clearkey field is set.
      */
@@ -2843,10 +2887,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Clearkey configuration.
+     * Optional. Clearkey configuration.
      * </pre>
      *
-     * <code>.google.cloud.video.livestream.v1.Encryption.Clearkey clearkey = 4;</code>
+     * <code>
+     * .google.cloud.video.livestream.v1.Encryption.Clearkey clearkey = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      *
      * @return The clearkey.
      */
@@ -2861,10 +2907,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Clearkey configuration.
+     * Optional. Clearkey configuration.
      * </pre>
      *
-     * <code>.google.cloud.video.livestream.v1.Encryption.Clearkey clearkey = 4;</code>
+     * <code>
+     * .google.cloud.video.livestream.v1.Encryption.Clearkey clearkey = 4 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
      */
     @java.lang.Override
     public com.google.cloud.video.livestream.v1.Encryption.ClearkeyOrBuilder
@@ -3355,10 +3403,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Widevine configuration.
+       * Optional. Widevine configuration.
        * </pre>
        *
-       * <code>.google.cloud.video.livestream.v1.Encryption.Widevine widevine = 1;</code>
+       * <code>
+       * .google.cloud.video.livestream.v1.Encryption.Widevine widevine = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return Whether the widevine field is set.
        */
@@ -3370,10 +3420,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Widevine configuration.
+       * Optional. Widevine configuration.
        * </pre>
        *
-       * <code>.google.cloud.video.livestream.v1.Encryption.Widevine widevine = 1;</code>
+       * <code>
+       * .google.cloud.video.livestream.v1.Encryption.Widevine widevine = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return The widevine.
        */
@@ -3391,10 +3443,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Widevine configuration.
+       * Optional. Widevine configuration.
        * </pre>
        *
-       * <code>.google.cloud.video.livestream.v1.Encryption.Widevine widevine = 1;</code>
+       * <code>
+       * .google.cloud.video.livestream.v1.Encryption.Widevine widevine = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder setWidevine(com.google.cloud.video.livestream.v1.Encryption.Widevine value) {
         if (widevineBuilder_ == null) {
@@ -3414,10 +3468,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Widevine configuration.
+       * Optional. Widevine configuration.
        * </pre>
        *
-       * <code>.google.cloud.video.livestream.v1.Encryption.Widevine widevine = 1;</code>
+       * <code>
+       * .google.cloud.video.livestream.v1.Encryption.Widevine widevine = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder setWidevine(
           com.google.cloud.video.livestream.v1.Encryption.Widevine.Builder builderForValue) {
@@ -3435,10 +3491,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Widevine configuration.
+       * Optional. Widevine configuration.
        * </pre>
        *
-       * <code>.google.cloud.video.livestream.v1.Encryption.Widevine widevine = 1;</code>
+       * <code>
+       * .google.cloud.video.livestream.v1.Encryption.Widevine widevine = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder mergeWidevine(com.google.cloud.video.livestream.v1.Encryption.Widevine value) {
         if (widevineBuilder_ == null) {
@@ -3465,10 +3523,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Widevine configuration.
+       * Optional. Widevine configuration.
        * </pre>
        *
-       * <code>.google.cloud.video.livestream.v1.Encryption.Widevine widevine = 1;</code>
+       * <code>
+       * .google.cloud.video.livestream.v1.Encryption.Widevine widevine = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder clearWidevine() {
         bitField0_ = (bitField0_ & ~0x00000001);
@@ -3485,10 +3545,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Widevine configuration.
+       * Optional. Widevine configuration.
        * </pre>
        *
-       * <code>.google.cloud.video.livestream.v1.Encryption.Widevine widevine = 1;</code>
+       * <code>
+       * .google.cloud.video.livestream.v1.Encryption.Widevine widevine = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public com.google.cloud.video.livestream.v1.Encryption.Widevine.Builder getWidevineBuilder() {
         bitField0_ |= 0x00000001;
@@ -3500,10 +3562,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Widevine configuration.
+       * Optional. Widevine configuration.
        * </pre>
        *
-       * <code>.google.cloud.video.livestream.v1.Encryption.Widevine widevine = 1;</code>
+       * <code>
+       * .google.cloud.video.livestream.v1.Encryption.Widevine widevine = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public com.google.cloud.video.livestream.v1.Encryption.WidevineOrBuilder
           getWidevineOrBuilder() {
@@ -3520,10 +3584,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Widevine configuration.
+       * Optional. Widevine configuration.
        * </pre>
        *
-       * <code>.google.cloud.video.livestream.v1.Encryption.Widevine widevine = 1;</code>
+       * <code>
+       * .google.cloud.video.livestream.v1.Encryption.Widevine widevine = 1 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.video.livestream.v1.Encryption.Widevine,
@@ -3553,10 +3619,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fairplay configuration.
+       * Optional. Fairplay configuration.
        * </pre>
        *
-       * <code>.google.cloud.video.livestream.v1.Encryption.Fairplay fairplay = 2;</code>
+       * <code>
+       * .google.cloud.video.livestream.v1.Encryption.Fairplay fairplay = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return Whether the fairplay field is set.
        */
@@ -3568,10 +3636,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fairplay configuration.
+       * Optional. Fairplay configuration.
        * </pre>
        *
-       * <code>.google.cloud.video.livestream.v1.Encryption.Fairplay fairplay = 2;</code>
+       * <code>
+       * .google.cloud.video.livestream.v1.Encryption.Fairplay fairplay = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return The fairplay.
        */
@@ -3589,10 +3659,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fairplay configuration.
+       * Optional. Fairplay configuration.
        * </pre>
        *
-       * <code>.google.cloud.video.livestream.v1.Encryption.Fairplay fairplay = 2;</code>
+       * <code>
+       * .google.cloud.video.livestream.v1.Encryption.Fairplay fairplay = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder setFairplay(com.google.cloud.video.livestream.v1.Encryption.Fairplay value) {
         if (fairplayBuilder_ == null) {
@@ -3612,10 +3684,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fairplay configuration.
+       * Optional. Fairplay configuration.
        * </pre>
        *
-       * <code>.google.cloud.video.livestream.v1.Encryption.Fairplay fairplay = 2;</code>
+       * <code>
+       * .google.cloud.video.livestream.v1.Encryption.Fairplay fairplay = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder setFairplay(
           com.google.cloud.video.livestream.v1.Encryption.Fairplay.Builder builderForValue) {
@@ -3633,10 +3707,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fairplay configuration.
+       * Optional. Fairplay configuration.
        * </pre>
        *
-       * <code>.google.cloud.video.livestream.v1.Encryption.Fairplay fairplay = 2;</code>
+       * <code>
+       * .google.cloud.video.livestream.v1.Encryption.Fairplay fairplay = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder mergeFairplay(com.google.cloud.video.livestream.v1.Encryption.Fairplay value) {
         if (fairplayBuilder_ == null) {
@@ -3663,10 +3739,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fairplay configuration.
+       * Optional. Fairplay configuration.
        * </pre>
        *
-       * <code>.google.cloud.video.livestream.v1.Encryption.Fairplay fairplay = 2;</code>
+       * <code>
+       * .google.cloud.video.livestream.v1.Encryption.Fairplay fairplay = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder clearFairplay() {
         bitField0_ = (bitField0_ & ~0x00000002);
@@ -3683,10 +3761,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fairplay configuration.
+       * Optional. Fairplay configuration.
        * </pre>
        *
-       * <code>.google.cloud.video.livestream.v1.Encryption.Fairplay fairplay = 2;</code>
+       * <code>
+       * .google.cloud.video.livestream.v1.Encryption.Fairplay fairplay = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public com.google.cloud.video.livestream.v1.Encryption.Fairplay.Builder getFairplayBuilder() {
         bitField0_ |= 0x00000002;
@@ -3698,10 +3778,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fairplay configuration.
+       * Optional. Fairplay configuration.
        * </pre>
        *
-       * <code>.google.cloud.video.livestream.v1.Encryption.Fairplay fairplay = 2;</code>
+       * <code>
+       * .google.cloud.video.livestream.v1.Encryption.Fairplay fairplay = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public com.google.cloud.video.livestream.v1.Encryption.FairplayOrBuilder
           getFairplayOrBuilder() {
@@ -3718,10 +3800,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Fairplay configuration.
+       * Optional. Fairplay configuration.
        * </pre>
        *
-       * <code>.google.cloud.video.livestream.v1.Encryption.Fairplay fairplay = 2;</code>
+       * <code>
+       * .google.cloud.video.livestream.v1.Encryption.Fairplay fairplay = 2 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.video.livestream.v1.Encryption.Fairplay,
@@ -3751,10 +3835,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Playready configuration.
+       * Optional. Playready configuration.
        * </pre>
        *
-       * <code>.google.cloud.video.livestream.v1.Encryption.Playready playready = 3;</code>
+       * <code>
+       * .google.cloud.video.livestream.v1.Encryption.Playready playready = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return Whether the playready field is set.
        */
@@ -3766,10 +3852,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Playready configuration.
+       * Optional. Playready configuration.
        * </pre>
        *
-       * <code>.google.cloud.video.livestream.v1.Encryption.Playready playready = 3;</code>
+       * <code>
+       * .google.cloud.video.livestream.v1.Encryption.Playready playready = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return The playready.
        */
@@ -3787,10 +3875,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Playready configuration.
+       * Optional. Playready configuration.
        * </pre>
        *
-       * <code>.google.cloud.video.livestream.v1.Encryption.Playready playready = 3;</code>
+       * <code>
+       * .google.cloud.video.livestream.v1.Encryption.Playready playready = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder setPlayready(com.google.cloud.video.livestream.v1.Encryption.Playready value) {
         if (playreadyBuilder_ == null) {
@@ -3810,10 +3900,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Playready configuration.
+       * Optional. Playready configuration.
        * </pre>
        *
-       * <code>.google.cloud.video.livestream.v1.Encryption.Playready playready = 3;</code>
+       * <code>
+       * .google.cloud.video.livestream.v1.Encryption.Playready playready = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder setPlayready(
           com.google.cloud.video.livestream.v1.Encryption.Playready.Builder builderForValue) {
@@ -3831,10 +3923,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Playready configuration.
+       * Optional. Playready configuration.
        * </pre>
        *
-       * <code>.google.cloud.video.livestream.v1.Encryption.Playready playready = 3;</code>
+       * <code>
+       * .google.cloud.video.livestream.v1.Encryption.Playready playready = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder mergePlayready(
           com.google.cloud.video.livestream.v1.Encryption.Playready value) {
@@ -3862,10 +3956,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Playready configuration.
+       * Optional. Playready configuration.
        * </pre>
        *
-       * <code>.google.cloud.video.livestream.v1.Encryption.Playready playready = 3;</code>
+       * <code>
+       * .google.cloud.video.livestream.v1.Encryption.Playready playready = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder clearPlayready() {
         bitField0_ = (bitField0_ & ~0x00000004);
@@ -3882,10 +3978,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Playready configuration.
+       * Optional. Playready configuration.
        * </pre>
        *
-       * <code>.google.cloud.video.livestream.v1.Encryption.Playready playready = 3;</code>
+       * <code>
+       * .google.cloud.video.livestream.v1.Encryption.Playready playready = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public com.google.cloud.video.livestream.v1.Encryption.Playready.Builder
           getPlayreadyBuilder() {
@@ -3898,10 +3996,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Playready configuration.
+       * Optional. Playready configuration.
        * </pre>
        *
-       * <code>.google.cloud.video.livestream.v1.Encryption.Playready playready = 3;</code>
+       * <code>
+       * .google.cloud.video.livestream.v1.Encryption.Playready playready = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public com.google.cloud.video.livestream.v1.Encryption.PlayreadyOrBuilder
           getPlayreadyOrBuilder() {
@@ -3918,10 +4018,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Playready configuration.
+       * Optional. Playready configuration.
        * </pre>
        *
-       * <code>.google.cloud.video.livestream.v1.Encryption.Playready playready = 3;</code>
+       * <code>
+       * .google.cloud.video.livestream.v1.Encryption.Playready playready = 3 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.video.livestream.v1.Encryption.Playready,
@@ -3951,10 +4053,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Clearkey configuration.
+       * Optional. Clearkey configuration.
        * </pre>
        *
-       * <code>.google.cloud.video.livestream.v1.Encryption.Clearkey clearkey = 4;</code>
+       * <code>
+       * .google.cloud.video.livestream.v1.Encryption.Clearkey clearkey = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return Whether the clearkey field is set.
        */
@@ -3966,10 +4070,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Clearkey configuration.
+       * Optional. Clearkey configuration.
        * </pre>
        *
-       * <code>.google.cloud.video.livestream.v1.Encryption.Clearkey clearkey = 4;</code>
+       * <code>
+       * .google.cloud.video.livestream.v1.Encryption.Clearkey clearkey = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        *
        * @return The clearkey.
        */
@@ -3987,10 +4093,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Clearkey configuration.
+       * Optional. Clearkey configuration.
        * </pre>
        *
-       * <code>.google.cloud.video.livestream.v1.Encryption.Clearkey clearkey = 4;</code>
+       * <code>
+       * .google.cloud.video.livestream.v1.Encryption.Clearkey clearkey = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder setClearkey(com.google.cloud.video.livestream.v1.Encryption.Clearkey value) {
         if (clearkeyBuilder_ == null) {
@@ -4010,10 +4118,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Clearkey configuration.
+       * Optional. Clearkey configuration.
        * </pre>
        *
-       * <code>.google.cloud.video.livestream.v1.Encryption.Clearkey clearkey = 4;</code>
+       * <code>
+       * .google.cloud.video.livestream.v1.Encryption.Clearkey clearkey = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder setClearkey(
           com.google.cloud.video.livestream.v1.Encryption.Clearkey.Builder builderForValue) {
@@ -4031,10 +4141,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Clearkey configuration.
+       * Optional. Clearkey configuration.
        * </pre>
        *
-       * <code>.google.cloud.video.livestream.v1.Encryption.Clearkey clearkey = 4;</code>
+       * <code>
+       * .google.cloud.video.livestream.v1.Encryption.Clearkey clearkey = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder mergeClearkey(com.google.cloud.video.livestream.v1.Encryption.Clearkey value) {
         if (clearkeyBuilder_ == null) {
@@ -4061,10 +4173,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Clearkey configuration.
+       * Optional. Clearkey configuration.
        * </pre>
        *
-       * <code>.google.cloud.video.livestream.v1.Encryption.Clearkey clearkey = 4;</code>
+       * <code>
+       * .google.cloud.video.livestream.v1.Encryption.Clearkey clearkey = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public Builder clearClearkey() {
         bitField0_ = (bitField0_ & ~0x00000008);
@@ -4081,10 +4195,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Clearkey configuration.
+       * Optional. Clearkey configuration.
        * </pre>
        *
-       * <code>.google.cloud.video.livestream.v1.Encryption.Clearkey clearkey = 4;</code>
+       * <code>
+       * .google.cloud.video.livestream.v1.Encryption.Clearkey clearkey = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public com.google.cloud.video.livestream.v1.Encryption.Clearkey.Builder getClearkeyBuilder() {
         bitField0_ |= 0x00000008;
@@ -4096,10 +4212,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Clearkey configuration.
+       * Optional. Clearkey configuration.
        * </pre>
        *
-       * <code>.google.cloud.video.livestream.v1.Encryption.Clearkey clearkey = 4;</code>
+       * <code>
+       * .google.cloud.video.livestream.v1.Encryption.Clearkey clearkey = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       public com.google.cloud.video.livestream.v1.Encryption.ClearkeyOrBuilder
           getClearkeyOrBuilder() {
@@ -4116,10 +4234,12 @@ public final class Encryption extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Clearkey configuration.
+       * Optional. Clearkey configuration.
        * </pre>
        *
-       * <code>.google.cloud.video.livestream.v1.Encryption.Clearkey clearkey = 4;</code>
+       * <code>
+       * .google.cloud.video.livestream.v1.Encryption.Clearkey clearkey = 4 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
               com.google.cloud.video.livestream.v1.Encryption.Clearkey,

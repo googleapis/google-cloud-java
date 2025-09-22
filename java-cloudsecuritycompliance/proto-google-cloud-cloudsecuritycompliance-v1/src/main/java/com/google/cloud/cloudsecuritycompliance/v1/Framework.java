@@ -23,8 +23,11 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * Framework is a collection of CloudControls which represents
- * industry/GCP/Customer defined
+ * A Framework is a collection of CloudControls to address security and
+ * compliance requirements. Frameworks can be used for prevention, detection,
+ * and auditing. They can be either built-in, industry-standard frameworks
+ * provided by GCP/AZURE/AWS (e.g., NIST, FedRAMP) or custom frameworks created
+ * by users.
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.Framework}
@@ -45,11 +48,11 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
     displayName_ = "";
     description_ = "";
     type_ = 0;
-    cloudControlGroupDetails_ = java.util.Collections.emptyList();
     cloudControlDetails_ = java.util.Collections.emptyList();
     category_ = java.util.Collections.emptyList();
     supportedCloudProviders_ = java.util.Collections.emptyList();
     supportedTargetResourceTypes_ = java.util.Collections.emptyList();
+    supportedEnforcementModes_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -236,930 +239,6 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
     }
 
     // @@protoc_insertion_point(enum_scope:google.cloud.cloudsecuritycompliance.v1.Framework.FrameworkType)
-  }
-
-  public interface CloudControlGroupDetailsOrBuilder
-      extends
-      // @@protoc_insertion_point(interface_extends:google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails)
-      com.google.protobuf.MessageOrBuilder {
-
-    /**
-     *
-     *
-     * <pre>
-     * The cloud control group included in the framework.
-     * </pre>
-     *
-     * <code>.google.cloud.cloudsecuritycompliance.v1.CloudControlGroup cloud_control_group = 1;
-     * </code>
-     *
-     * @return Whether the cloudControlGroup field is set.
-     */
-    boolean hasCloudControlGroup();
-
-    /**
-     *
-     *
-     * <pre>
-     * The cloud control group included in the framework.
-     * </pre>
-     *
-     * <code>.google.cloud.cloudsecuritycompliance.v1.CloudControlGroup cloud_control_group = 1;
-     * </code>
-     *
-     * @return The cloudControlGroup.
-     */
-    com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroup getCloudControlGroup();
-
-    /**
-     *
-     *
-     * <pre>
-     * The cloud control group included in the framework.
-     * </pre>
-     *
-     * <code>.google.cloud.cloudsecuritycompliance.v1.CloudControlGroup cloud_control_group = 1;
-     * </code>
-     */
-    com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroupOrBuilder
-        getCloudControlGroupOrBuilder();
-
-    com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails.KindCase
-        getKindCase();
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * The details of the cloud control group included in the framework.
-   * </pre>
-   *
-   * Protobuf type {@code
-   * google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails}
-   */
-  public static final class CloudControlGroupDetails extends com.google.protobuf.GeneratedMessageV3
-      implements
-      // @@protoc_insertion_point(message_implements:google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails)
-      CloudControlGroupDetailsOrBuilder {
-    private static final long serialVersionUID = 0L;
-
-    // Use CloudControlGroupDetails.newBuilder() to construct.
-    private CloudControlGroupDetails(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
-      super(builder);
-    }
-
-    private CloudControlGroupDetails() {}
-
-    @java.lang.Override
-    @SuppressWarnings({"unused"})
-    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
-      return new CloudControlGroupDetails();
-    }
-
-    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-      return com.google.cloud.cloudsecuritycompliance.v1.CommonProto
-          .internal_static_google_cloud_cloudsecuritycompliance_v1_Framework_CloudControlGroupDetails_descriptor;
-    }
-
-    @java.lang.Override
-    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-        internalGetFieldAccessorTable() {
-      return com.google.cloud.cloudsecuritycompliance.v1.CommonProto
-          .internal_static_google_cloud_cloudsecuritycompliance_v1_Framework_CloudControlGroupDetails_fieldAccessorTable
-          .ensureFieldAccessorsInitialized(
-              com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails.class,
-              com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails.Builder
-                  .class);
-    }
-
-    private int kindCase_ = 0;
-
-    @SuppressWarnings("serial")
-    private java.lang.Object kind_;
-
-    public enum KindCase
-        implements
-            com.google.protobuf.Internal.EnumLite,
-            com.google.protobuf.AbstractMessage.InternalOneOfEnum {
-      CLOUD_CONTROL_GROUP(1),
-      KIND_NOT_SET(0);
-      private final int value;
-
-      private KindCase(int value) {
-        this.value = value;
-      }
-
-      /**
-       * @param value The number of the enum to look for.
-       * @return The enum associated with the given number.
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
-      @java.lang.Deprecated
-      public static KindCase valueOf(int value) {
-        return forNumber(value);
-      }
-
-      public static KindCase forNumber(int value) {
-        switch (value) {
-          case 1:
-            return CLOUD_CONTROL_GROUP;
-          case 0:
-            return KIND_NOT_SET;
-          default:
-            return null;
-        }
-      }
-
-      public int getNumber() {
-        return this.value;
-      }
-    };
-
-    public KindCase getKindCase() {
-      return KindCase.forNumber(kindCase_);
-    }
-
-    public static final int CLOUD_CONTROL_GROUP_FIELD_NUMBER = 1;
-
-    /**
-     *
-     *
-     * <pre>
-     * The cloud control group included in the framework.
-     * </pre>
-     *
-     * <code>.google.cloud.cloudsecuritycompliance.v1.CloudControlGroup cloud_control_group = 1;
-     * </code>
-     *
-     * @return Whether the cloudControlGroup field is set.
-     */
-    @java.lang.Override
-    public boolean hasCloudControlGroup() {
-      return kindCase_ == 1;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The cloud control group included in the framework.
-     * </pre>
-     *
-     * <code>.google.cloud.cloudsecuritycompliance.v1.CloudControlGroup cloud_control_group = 1;
-     * </code>
-     *
-     * @return The cloudControlGroup.
-     */
-    @java.lang.Override
-    public com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroup getCloudControlGroup() {
-      if (kindCase_ == 1) {
-        return (com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroup) kind_;
-      }
-      return com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroup.getDefaultInstance();
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The cloud control group included in the framework.
-     * </pre>
-     *
-     * <code>.google.cloud.cloudsecuritycompliance.v1.CloudControlGroup cloud_control_group = 1;
-     * </code>
-     */
-    @java.lang.Override
-    public com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroupOrBuilder
-        getCloudControlGroupOrBuilder() {
-      if (kindCase_ == 1) {
-        return (com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroup) kind_;
-      }
-      return com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroup.getDefaultInstance();
-    }
-
-    private byte memoizedIsInitialized = -1;
-
-    @java.lang.Override
-    public final boolean isInitialized() {
-      byte isInitialized = memoizedIsInitialized;
-      if (isInitialized == 1) return true;
-      if (isInitialized == 0) return false;
-
-      memoizedIsInitialized = 1;
-      return true;
-    }
-
-    @java.lang.Override
-    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
-      if (kindCase_ == 1) {
-        output.writeMessage(
-            1, (com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroup) kind_);
-      }
-      getUnknownFields().writeTo(output);
-    }
-
-    @java.lang.Override
-    public int getSerializedSize() {
-      int size = memoizedSize;
-      if (size != -1) return size;
-
-      size = 0;
-      if (kindCase_ == 1) {
-        size +=
-            com.google.protobuf.CodedOutputStream.computeMessageSize(
-                1, (com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroup) kind_);
-      }
-      size += getUnknownFields().getSerializedSize();
-      memoizedSize = size;
-      return size;
-    }
-
-    @java.lang.Override
-    public boolean equals(final java.lang.Object obj) {
-      if (obj == this) {
-        return true;
-      }
-      if (!(obj
-          instanceof
-          com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails)) {
-        return super.equals(obj);
-      }
-      com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails other =
-          (com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails) obj;
-
-      if (!getKindCase().equals(other.getKindCase())) return false;
-      switch (kindCase_) {
-        case 1:
-          if (!getCloudControlGroup().equals(other.getCloudControlGroup())) return false;
-          break;
-        case 0:
-        default:
-      }
-      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
-      return true;
-    }
-
-    @java.lang.Override
-    public int hashCode() {
-      if (memoizedHashCode != 0) {
-        return memoizedHashCode;
-      }
-      int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
-      switch (kindCase_) {
-        case 1:
-          hash = (37 * hash) + CLOUD_CONTROL_GROUP_FIELD_NUMBER;
-          hash = (53 * hash) + getCloudControlGroup().hashCode();
-          break;
-        case 0:
-        default:
-      }
-      hash = (29 * hash) + getUnknownFields().hashCode();
-      memoizedHashCode = hash;
-      return hash;
-    }
-
-    public static com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails
-        parseFrom(java.nio.ByteBuffer data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails
-        parseFrom(
-            java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails
-        parseFrom(com.google.protobuf.ByteString data)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails
-        parseFrom(
-            com.google.protobuf.ByteString data,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails
-        parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-
-    public static com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails
-        parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
-
-    public static com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails
-        parseFrom(java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-    }
-
-    public static com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails
-        parseFrom(
-            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    public static com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails
-        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
-    }
-
-    public static com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails
-        parseDelimitedFrom(
-            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    public static com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails
-        parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
-    }
-
-    public static com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails
-        parseFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
-          PARSER, input, extensionRegistry);
-    }
-
-    @java.lang.Override
-    public Builder newBuilderForType() {
-      return newBuilder();
-    }
-
-    public static Builder newBuilder() {
-      return DEFAULT_INSTANCE.toBuilder();
-    }
-
-    public static Builder newBuilder(
-        com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails prototype) {
-      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-    }
-
-    @java.lang.Override
-    public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
-    }
-
-    @java.lang.Override
-    protected Builder newBuilderForType(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-      Builder builder = new Builder(parent);
-      return builder;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * The details of the cloud control group included in the framework.
-     * </pre>
-     *
-     * Protobuf type {@code
-     * google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails}
-     */
-    public static final class Builder
-        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
-        implements
-        // @@protoc_insertion_point(builder_implements:google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails)
-        com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetailsOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
-        return com.google.cloud.cloudsecuritycompliance.v1.CommonProto
-            .internal_static_google_cloud_cloudsecuritycompliance_v1_Framework_CloudControlGroupDetails_descriptor;
-      }
-
-      @java.lang.Override
-      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
-          internalGetFieldAccessorTable() {
-        return com.google.cloud.cloudsecuritycompliance.v1.CommonProto
-            .internal_static_google_cloud_cloudsecuritycompliance_v1_Framework_CloudControlGroupDetails_fieldAccessorTable
-            .ensureFieldAccessorsInitialized(
-                com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails
-                    .class,
-                com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails
-                    .Builder.class);
-      }
-
-      // Construct using
-      // com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails.newBuilder()
-      private Builder() {}
-
-      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
-        super(parent);
-      }
-
-      @java.lang.Override
-      public Builder clear() {
-        super.clear();
-        bitField0_ = 0;
-        if (cloudControlGroupBuilder_ != null) {
-          cloudControlGroupBuilder_.clear();
-        }
-        kindCase_ = 0;
-        kind_ = null;
-        return this;
-      }
-
-      @java.lang.Override
-      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
-        return com.google.cloud.cloudsecuritycompliance.v1.CommonProto
-            .internal_static_google_cloud_cloudsecuritycompliance_v1_Framework_CloudControlGroupDetails_descriptor;
-      }
-
-      @java.lang.Override
-      public com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails
-          getDefaultInstanceForType() {
-        return com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails
-            .getDefaultInstance();
-      }
-
-      @java.lang.Override
-      public com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails
-          build() {
-        com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails result =
-            buildPartial();
-        if (!result.isInitialized()) {
-          throw newUninitializedMessageException(result);
-        }
-        return result;
-      }
-
-      @java.lang.Override
-      public com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails
-          buildPartial() {
-        com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails result =
-            new com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails(
-                this);
-        if (bitField0_ != 0) {
-          buildPartial0(result);
-        }
-        buildPartialOneofs(result);
-        onBuilt();
-        return result;
-      }
-
-      private void buildPartial0(
-          com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails result) {
-        int from_bitField0_ = bitField0_;
-      }
-
-      private void buildPartialOneofs(
-          com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails result) {
-        result.kindCase_ = kindCase_;
-        result.kind_ = this.kind_;
-        if (kindCase_ == 1 && cloudControlGroupBuilder_ != null) {
-          result.kind_ = cloudControlGroupBuilder_.build();
-        }
-      }
-
-      @java.lang.Override
-      public Builder clone() {
-        return super.clone();
-      }
-
-      @java.lang.Override
-      public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return super.setField(field, value);
-      }
-
-      @java.lang.Override
-      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
-        return super.clearField(field);
-      }
-
-      @java.lang.Override
-      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
-        return super.clearOneof(oneof);
-      }
-
-      @java.lang.Override
-      public Builder setRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index,
-          java.lang.Object value) {
-        return super.setRepeatedField(field, index, value);
-      }
-
-      @java.lang.Override
-      public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
-        return super.addRepeatedField(field, value);
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other
-            instanceof
-            com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails) {
-          return mergeFrom(
-              (com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails)
-                  other);
-        } else {
-          super.mergeFrom(other);
-          return this;
-        }
-      }
-
-      public Builder mergeFrom(
-          com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails other) {
-        if (other
-            == com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails
-                .getDefaultInstance()) return this;
-        switch (other.getKindCase()) {
-          case CLOUD_CONTROL_GROUP:
-            {
-              mergeCloudControlGroup(other.getCloudControlGroup());
-              break;
-            }
-          case KIND_NOT_SET:
-            {
-              break;
-            }
-        }
-        this.mergeUnknownFields(other.getUnknownFields());
-        onChanged();
-        return this;
-      }
-
-      @java.lang.Override
-      public final boolean isInitialized() {
-        return true;
-      }
-
-      @java.lang.Override
-      public Builder mergeFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        if (extensionRegistry == null) {
-          throw new java.lang.NullPointerException();
-        }
-        try {
-          boolean done = false;
-          while (!done) {
-            int tag = input.readTag();
-            switch (tag) {
-              case 0:
-                done = true;
-                break;
-              case 10:
-                {
-                  input.readMessage(
-                      getCloudControlGroupFieldBuilder().getBuilder(), extensionRegistry);
-                  kindCase_ = 1;
-                  break;
-                } // case 10
-              default:
-                {
-                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
-                    done = true; // was an endgroup tag
-                  }
-                  break;
-                } // default:
-            } // switch (tag)
-          } // while (!done)
-        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          throw e.unwrapIOException();
-        } finally {
-          onChanged();
-        } // finally
-        return this;
-      }
-
-      private int kindCase_ = 0;
-      private java.lang.Object kind_;
-
-      public KindCase getKindCase() {
-        return KindCase.forNumber(kindCase_);
-      }
-
-      public Builder clearKind() {
-        kindCase_ = 0;
-        kind_ = null;
-        onChanged();
-        return this;
-      }
-
-      private int bitField0_;
-
-      private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroup,
-              com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroup.Builder,
-              com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroupOrBuilder>
-          cloudControlGroupBuilder_;
-
-      /**
-       *
-       *
-       * <pre>
-       * The cloud control group included in the framework.
-       * </pre>
-       *
-       * <code>.google.cloud.cloudsecuritycompliance.v1.CloudControlGroup cloud_control_group = 1;
-       * </code>
-       *
-       * @return Whether the cloudControlGroup field is set.
-       */
-      @java.lang.Override
-      public boolean hasCloudControlGroup() {
-        return kindCase_ == 1;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * The cloud control group included in the framework.
-       * </pre>
-       *
-       * <code>.google.cloud.cloudsecuritycompliance.v1.CloudControlGroup cloud_control_group = 1;
-       * </code>
-       *
-       * @return The cloudControlGroup.
-       */
-      @java.lang.Override
-      public com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroup getCloudControlGroup() {
-        if (cloudControlGroupBuilder_ == null) {
-          if (kindCase_ == 1) {
-            return (com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroup) kind_;
-          }
-          return com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroup.getDefaultInstance();
-        } else {
-          if (kindCase_ == 1) {
-            return cloudControlGroupBuilder_.getMessage();
-          }
-          return com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroup.getDefaultInstance();
-        }
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * The cloud control group included in the framework.
-       * </pre>
-       *
-       * <code>.google.cloud.cloudsecuritycompliance.v1.CloudControlGroup cloud_control_group = 1;
-       * </code>
-       */
-      public Builder setCloudControlGroup(
-          com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroup value) {
-        if (cloudControlGroupBuilder_ == null) {
-          if (value == null) {
-            throw new NullPointerException();
-          }
-          kind_ = value;
-          onChanged();
-        } else {
-          cloudControlGroupBuilder_.setMessage(value);
-        }
-        kindCase_ = 1;
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * The cloud control group included in the framework.
-       * </pre>
-       *
-       * <code>.google.cloud.cloudsecuritycompliance.v1.CloudControlGroup cloud_control_group = 1;
-       * </code>
-       */
-      public Builder setCloudControlGroup(
-          com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroup.Builder builderForValue) {
-        if (cloudControlGroupBuilder_ == null) {
-          kind_ = builderForValue.build();
-          onChanged();
-        } else {
-          cloudControlGroupBuilder_.setMessage(builderForValue.build());
-        }
-        kindCase_ = 1;
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * The cloud control group included in the framework.
-       * </pre>
-       *
-       * <code>.google.cloud.cloudsecuritycompliance.v1.CloudControlGroup cloud_control_group = 1;
-       * </code>
-       */
-      public Builder mergeCloudControlGroup(
-          com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroup value) {
-        if (cloudControlGroupBuilder_ == null) {
-          if (kindCase_ == 1
-              && kind_
-                  != com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroup
-                      .getDefaultInstance()) {
-            kind_ =
-                com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroup.newBuilder(
-                        (com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroup) kind_)
-                    .mergeFrom(value)
-                    .buildPartial();
-          } else {
-            kind_ = value;
-          }
-          onChanged();
-        } else {
-          if (kindCase_ == 1) {
-            cloudControlGroupBuilder_.mergeFrom(value);
-          } else {
-            cloudControlGroupBuilder_.setMessage(value);
-          }
-        }
-        kindCase_ = 1;
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * The cloud control group included in the framework.
-       * </pre>
-       *
-       * <code>.google.cloud.cloudsecuritycompliance.v1.CloudControlGroup cloud_control_group = 1;
-       * </code>
-       */
-      public Builder clearCloudControlGroup() {
-        if (cloudControlGroupBuilder_ == null) {
-          if (kindCase_ == 1) {
-            kindCase_ = 0;
-            kind_ = null;
-            onChanged();
-          }
-        } else {
-          if (kindCase_ == 1) {
-            kindCase_ = 0;
-            kind_ = null;
-          }
-          cloudControlGroupBuilder_.clear();
-        }
-        return this;
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * The cloud control group included in the framework.
-       * </pre>
-       *
-       * <code>.google.cloud.cloudsecuritycompliance.v1.CloudControlGroup cloud_control_group = 1;
-       * </code>
-       */
-      public com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroup.Builder
-          getCloudControlGroupBuilder() {
-        return getCloudControlGroupFieldBuilder().getBuilder();
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * The cloud control group included in the framework.
-       * </pre>
-       *
-       * <code>.google.cloud.cloudsecuritycompliance.v1.CloudControlGroup cloud_control_group = 1;
-       * </code>
-       */
-      @java.lang.Override
-      public com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroupOrBuilder
-          getCloudControlGroupOrBuilder() {
-        if ((kindCase_ == 1) && (cloudControlGroupBuilder_ != null)) {
-          return cloudControlGroupBuilder_.getMessageOrBuilder();
-        } else {
-          if (kindCase_ == 1) {
-            return (com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroup) kind_;
-          }
-          return com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroup.getDefaultInstance();
-        }
-      }
-
-      /**
-       *
-       *
-       * <pre>
-       * The cloud control group included in the framework.
-       * </pre>
-       *
-       * <code>.google.cloud.cloudsecuritycompliance.v1.CloudControlGroup cloud_control_group = 1;
-       * </code>
-       */
-      private com.google.protobuf.SingleFieldBuilderV3<
-              com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroup,
-              com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroup.Builder,
-              com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroupOrBuilder>
-          getCloudControlGroupFieldBuilder() {
-        if (cloudControlGroupBuilder_ == null) {
-          if (!(kindCase_ == 1)) {
-            kind_ =
-                com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroup.getDefaultInstance();
-          }
-          cloudControlGroupBuilder_ =
-              new com.google.protobuf.SingleFieldBuilderV3<
-                  com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroup,
-                  com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroup.Builder,
-                  com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroupOrBuilder>(
-                  (com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroup) kind_,
-                  getParentForChildren(),
-                  isClean());
-          kind_ = null;
-        }
-        kindCase_ = 1;
-        onChanged();
-        return cloudControlGroupBuilder_;
-      }
-
-      @java.lang.Override
-      public final Builder setUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFields(unknownFields);
-      }
-
-      @java.lang.Override
-      public final Builder mergeUnknownFields(
-          final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
-      }
-
-      // @@protoc_insertion_point(builder_scope:google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails)
-    }
-
-    // @@protoc_insertion_point(class_scope:google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails)
-    private static final com.google.cloud.cloudsecuritycompliance.v1.Framework
-            .CloudControlGroupDetails
-        DEFAULT_INSTANCE;
-
-    static {
-      DEFAULT_INSTANCE =
-          new com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails();
-    }
-
-    public static com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails
-        getDefaultInstance() {
-      return DEFAULT_INSTANCE;
-    }
-
-    private static final com.google.protobuf.Parser<CloudControlGroupDetails> PARSER =
-        new com.google.protobuf.AbstractParser<CloudControlGroupDetails>() {
-          @java.lang.Override
-          public CloudControlGroupDetails parsePartialFrom(
-              com.google.protobuf.CodedInputStream input,
-              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-              throws com.google.protobuf.InvalidProtocolBufferException {
-            Builder builder = newBuilder();
-            try {
-              builder.mergeFrom(input, extensionRegistry);
-            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-              throw e.setUnfinishedMessage(builder.buildPartial());
-            } catch (com.google.protobuf.UninitializedMessageException e) {
-              throw e.asInvalidProtocolBufferException()
-                  .setUnfinishedMessage(builder.buildPartial());
-            } catch (java.io.IOException e) {
-              throw new com.google.protobuf.InvalidProtocolBufferException(e)
-                  .setUnfinishedMessage(builder.buildPartial());
-            }
-            return builder.buildPartial();
-          }
-        };
-
-    public static com.google.protobuf.Parser<CloudControlGroupDetails> parser() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.protobuf.Parser<CloudControlGroupDetails> getParserForType() {
-      return PARSER;
-    }
-
-    @java.lang.Override
-    public com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails
-        getDefaultInstanceForType() {
-      return DEFAULT_INSTANCE;
-    }
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
@@ -1394,106 +473,6 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
     return result == null
         ? com.google.cloud.cloudsecuritycompliance.v1.Framework.FrameworkType.UNRECOGNIZED
         : result;
-  }
-
-  public static final int CLOUD_CONTROL_GROUP_DETAILS_FIELD_NUMBER = 7;
-
-  @SuppressWarnings("serial")
-  private java.util.List<
-          com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails>
-      cloudControlGroupDetails_;
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The details of the cloud control groups included in the
-   * framework.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails cloud_control_group_details = 7 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   */
-  @java.lang.Override
-  public java.util.List<
-          com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails>
-      getCloudControlGroupDetailsList() {
-    return cloudControlGroupDetails_;
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The details of the cloud control groups included in the
-   * framework.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails cloud_control_group_details = 7 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   */
-  @java.lang.Override
-  public java.util.List<
-          ? extends
-              com.google.cloud.cloudsecuritycompliance.v1.Framework
-                  .CloudControlGroupDetailsOrBuilder>
-      getCloudControlGroupDetailsOrBuilderList() {
-    return cloudControlGroupDetails_;
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The details of the cloud control groups included in the
-   * framework.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails cloud_control_group_details = 7 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   */
-  @java.lang.Override
-  public int getCloudControlGroupDetailsCount() {
-    return cloudControlGroupDetails_.size();
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The details of the cloud control groups included in the
-   * framework.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails cloud_control_group_details = 7 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   */
-  @java.lang.Override
-  public com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails
-      getCloudControlGroupDetails(int index) {
-    return cloudControlGroupDetails_.get(index);
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Optional. The details of the cloud control groups included in the
-   * framework.
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails cloud_control_group_details = 7 [(.google.api.field_behavior) = OPTIONAL];
-   * </code>
-   */
-  @java.lang.Override
-  public com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetailsOrBuilder
-      getCloudControlGroupDetailsOrBuilder(int index) {
-    return cloudControlGroupDetails_.get(index);
   }
 
   public static final int CLOUD_CONTROL_DETAILS_FIELD_NUMBER = 8;
@@ -1946,6 +925,124 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
 
   private int supportedTargetResourceTypesMemoizedSerializedSize;
 
+  public static final int SUPPORTED_ENFORCEMENT_MODES_FIELD_NUMBER = 13;
+
+  @SuppressWarnings("serial")
+  private java.util.List<java.lang.Integer> supportedEnforcementModes_;
+
+  private static final com.google.protobuf.Internal.ListAdapter.Converter<
+          java.lang.Integer, com.google.cloud.cloudsecuritycompliance.v1.EnforcementMode>
+      supportedEnforcementModes_converter_ =
+          new com.google.protobuf.Internal.ListAdapter.Converter<
+              java.lang.Integer, com.google.cloud.cloudsecuritycompliance.v1.EnforcementMode>() {
+            public com.google.cloud.cloudsecuritycompliance.v1.EnforcementMode convert(
+                java.lang.Integer from) {
+              com.google.cloud.cloudsecuritycompliance.v1.EnforcementMode result =
+                  com.google.cloud.cloudsecuritycompliance.v1.EnforcementMode.forNumber(from);
+              return result == null
+                  ? com.google.cloud.cloudsecuritycompliance.v1.EnforcementMode.UNRECOGNIZED
+                  : result;
+            }
+          };
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The supported enforcement modes of the framework.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.cloudsecuritycompliance.v1.EnforcementMode supported_enforcement_modes = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the supportedEnforcementModes.
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.cloudsecuritycompliance.v1.EnforcementMode>
+      getSupportedEnforcementModesList() {
+    return new com.google.protobuf.Internal.ListAdapter<
+        java.lang.Integer, com.google.cloud.cloudsecuritycompliance.v1.EnforcementMode>(
+        supportedEnforcementModes_, supportedEnforcementModes_converter_);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The supported enforcement modes of the framework.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.cloudsecuritycompliance.v1.EnforcementMode supported_enforcement_modes = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The count of supportedEnforcementModes.
+   */
+  @java.lang.Override
+  public int getSupportedEnforcementModesCount() {
+    return supportedEnforcementModes_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The supported enforcement modes of the framework.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.cloudsecuritycompliance.v1.EnforcementMode supported_enforcement_modes = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the element to return.
+   * @return The supportedEnforcementModes at the given index.
+   */
+  @java.lang.Override
+  public com.google.cloud.cloudsecuritycompliance.v1.EnforcementMode getSupportedEnforcementModes(
+      int index) {
+    return supportedEnforcementModes_converter_.convert(supportedEnforcementModes_.get(index));
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The supported enforcement modes of the framework.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.cloudsecuritycompliance.v1.EnforcementMode supported_enforcement_modes = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return A list containing the enum numeric values on the wire for supportedEnforcementModes.
+   */
+  @java.lang.Override
+  public java.util.List<java.lang.Integer> getSupportedEnforcementModesValueList() {
+    return supportedEnforcementModes_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The supported enforcement modes of the framework.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.cloudsecuritycompliance.v1.EnforcementMode supported_enforcement_modes = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @param index The index of the value to return.
+   * @return The enum numeric value on the wire of supportedEnforcementModes at the given index.
+   */
+  @java.lang.Override
+  public int getSupportedEnforcementModesValue(int index) {
+    return supportedEnforcementModes_.get(index);
+  }
+
+  private int supportedEnforcementModesMemoizedSerializedSize;
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1979,9 +1076,6 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       output.writeEnum(6, type_);
     }
-    for (int i = 0; i < cloudControlGroupDetails_.size(); i++) {
-      output.writeMessage(7, cloudControlGroupDetails_.get(i));
-    }
     for (int i = 0; i < cloudControlDetails_.size(); i++) {
       output.writeMessage(8, cloudControlDetails_.get(i));
     }
@@ -2005,6 +1099,13 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
     }
     for (int i = 0; i < supportedTargetResourceTypes_.size(); i++) {
       output.writeEnumNoTag(supportedTargetResourceTypes_.get(i));
+    }
+    if (getSupportedEnforcementModesList().size() > 0) {
+      output.writeUInt32NoTag(106);
+      output.writeUInt32NoTag(supportedEnforcementModesMemoizedSerializedSize);
+    }
+    for (int i = 0; i < supportedEnforcementModes_.size(); i++) {
+      output.writeEnumNoTag(supportedEnforcementModes_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -2032,11 +1133,6 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
             .FRAMEWORK_TYPE_UNSPECIFIED
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, type_);
-    }
-    for (int i = 0; i < cloudControlGroupDetails_.size(); i++) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(
-              7, cloudControlGroupDetails_.get(i));
     }
     for (int i = 0; i < cloudControlDetails_.size(); i++) {
       size +=
@@ -2082,6 +1178,20 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
       }
       supportedTargetResourceTypesMemoizedSerializedSize = dataSize;
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < supportedEnforcementModes_.size(); i++) {
+        dataSize +=
+            com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(
+                supportedEnforcementModes_.get(i));
+      }
+      size += dataSize;
+      if (!getSupportedEnforcementModesList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+      }
+      supportedEnforcementModesMemoizedSerializedSize = dataSize;
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -2103,12 +1213,11 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
     if (!getDisplayName().equals(other.getDisplayName())) return false;
     if (!getDescription().equals(other.getDescription())) return false;
     if (type_ != other.type_) return false;
-    if (!getCloudControlGroupDetailsList().equals(other.getCloudControlGroupDetailsList()))
-      return false;
     if (!getCloudControlDetailsList().equals(other.getCloudControlDetailsList())) return false;
     if (!category_.equals(other.category_)) return false;
     if (!supportedCloudProviders_.equals(other.supportedCloudProviders_)) return false;
     if (!supportedTargetResourceTypes_.equals(other.supportedTargetResourceTypes_)) return false;
+    if (!supportedEnforcementModes_.equals(other.supportedEnforcementModes_)) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -2130,10 +1239,6 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getDescription().hashCode();
     hash = (37 * hash) + TYPE_FIELD_NUMBER;
     hash = (53 * hash) + type_;
-    if (getCloudControlGroupDetailsCount() > 0) {
-      hash = (37 * hash) + CLOUD_CONTROL_GROUP_DETAILS_FIELD_NUMBER;
-      hash = (53 * hash) + getCloudControlGroupDetailsList().hashCode();
-    }
     if (getCloudControlDetailsCount() > 0) {
       hash = (37 * hash) + CLOUD_CONTROL_DETAILS_FIELD_NUMBER;
       hash = (53 * hash) + getCloudControlDetailsList().hashCode();
@@ -2149,6 +1254,10 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
     if (getSupportedTargetResourceTypesCount() > 0) {
       hash = (37 * hash) + SUPPORTED_TARGET_RESOURCE_TYPES_FIELD_NUMBER;
       hash = (53 * hash) + supportedTargetResourceTypes_.hashCode();
+    }
+    if (getSupportedEnforcementModesCount() > 0) {
+      hash = (37 * hash) + SUPPORTED_ENFORCEMENT_MODES_FIELD_NUMBER;
+      hash = (53 * hash) + supportedEnforcementModes_.hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -2256,8 +1365,11 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Framework is a collection of CloudControls which represents
-   * industry/GCP/Customer defined
+   * A Framework is a collection of CloudControls to address security and
+   * compliance requirements. Frameworks can be used for prevention, detection,
+   * and auditing. They can be either built-in, industry-standard frameworks
+   * provided by GCP/AZURE/AWS (e.g., NIST, FedRAMP) or custom frameworks created
+   * by users.
    * </pre>
    *
    * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.Framework}
@@ -2297,25 +1409,20 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
       displayName_ = "";
       description_ = "";
       type_ = 0;
-      if (cloudControlGroupDetailsBuilder_ == null) {
-        cloudControlGroupDetails_ = java.util.Collections.emptyList();
-      } else {
-        cloudControlGroupDetails_ = null;
-        cloudControlGroupDetailsBuilder_.clear();
-      }
-      bitField0_ = (bitField0_ & ~0x00000020);
       if (cloudControlDetailsBuilder_ == null) {
         cloudControlDetails_ = java.util.Collections.emptyList();
       } else {
         cloudControlDetails_ = null;
         cloudControlDetailsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00000040);
+      bitField0_ = (bitField0_ & ~0x00000020);
       category_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000040);
       supportedCloudProviders_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000080);
       supportedTargetResourceTypes_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000100);
+      supportedEnforcementModes_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000200);
       return this;
     }
@@ -2354,41 +1461,37 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
 
     private void buildPartialRepeatedFields(
         com.google.cloud.cloudsecuritycompliance.v1.Framework result) {
-      if (cloudControlGroupDetailsBuilder_ == null) {
-        if (((bitField0_ & 0x00000020) != 0)) {
-          cloudControlGroupDetails_ =
-              java.util.Collections.unmodifiableList(cloudControlGroupDetails_);
-          bitField0_ = (bitField0_ & ~0x00000020);
-        }
-        result.cloudControlGroupDetails_ = cloudControlGroupDetails_;
-      } else {
-        result.cloudControlGroupDetails_ = cloudControlGroupDetailsBuilder_.build();
-      }
       if (cloudControlDetailsBuilder_ == null) {
-        if (((bitField0_ & 0x00000040) != 0)) {
+        if (((bitField0_ & 0x00000020) != 0)) {
           cloudControlDetails_ = java.util.Collections.unmodifiableList(cloudControlDetails_);
-          bitField0_ = (bitField0_ & ~0x00000040);
+          bitField0_ = (bitField0_ & ~0x00000020);
         }
         result.cloudControlDetails_ = cloudControlDetails_;
       } else {
         result.cloudControlDetails_ = cloudControlDetailsBuilder_.build();
       }
-      if (((bitField0_ & 0x00000080) != 0)) {
+      if (((bitField0_ & 0x00000040) != 0)) {
         category_ = java.util.Collections.unmodifiableList(category_);
-        bitField0_ = (bitField0_ & ~0x00000080);
+        bitField0_ = (bitField0_ & ~0x00000040);
       }
       result.category_ = category_;
-      if (((bitField0_ & 0x00000100) != 0)) {
+      if (((bitField0_ & 0x00000080) != 0)) {
         supportedCloudProviders_ = java.util.Collections.unmodifiableList(supportedCloudProviders_);
-        bitField0_ = (bitField0_ & ~0x00000100);
+        bitField0_ = (bitField0_ & ~0x00000080);
       }
       result.supportedCloudProviders_ = supportedCloudProviders_;
-      if (((bitField0_ & 0x00000200) != 0)) {
+      if (((bitField0_ & 0x00000100) != 0)) {
         supportedTargetResourceTypes_ =
             java.util.Collections.unmodifiableList(supportedTargetResourceTypes_);
-        bitField0_ = (bitField0_ & ~0x00000200);
+        bitField0_ = (bitField0_ & ~0x00000100);
       }
       result.supportedTargetResourceTypes_ = supportedTargetResourceTypes_;
+      if (((bitField0_ & 0x00000200) != 0)) {
+        supportedEnforcementModes_ =
+            java.util.Collections.unmodifiableList(supportedEnforcementModes_);
+        bitField0_ = (bitField0_ & ~0x00000200);
+      }
+      result.supportedEnforcementModes_ = supportedEnforcementModes_;
     }
 
     private void buildPartial0(com.google.cloud.cloudsecuritycompliance.v1.Framework result) {
@@ -2477,38 +1580,11 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
       if (other.type_ != 0) {
         setTypeValue(other.getTypeValue());
       }
-      if (cloudControlGroupDetailsBuilder_ == null) {
-        if (!other.cloudControlGroupDetails_.isEmpty()) {
-          if (cloudControlGroupDetails_.isEmpty()) {
-            cloudControlGroupDetails_ = other.cloudControlGroupDetails_;
-            bitField0_ = (bitField0_ & ~0x00000020);
-          } else {
-            ensureCloudControlGroupDetailsIsMutable();
-            cloudControlGroupDetails_.addAll(other.cloudControlGroupDetails_);
-          }
-          onChanged();
-        }
-      } else {
-        if (!other.cloudControlGroupDetails_.isEmpty()) {
-          if (cloudControlGroupDetailsBuilder_.isEmpty()) {
-            cloudControlGroupDetailsBuilder_.dispose();
-            cloudControlGroupDetailsBuilder_ = null;
-            cloudControlGroupDetails_ = other.cloudControlGroupDetails_;
-            bitField0_ = (bitField0_ & ~0x00000020);
-            cloudControlGroupDetailsBuilder_ =
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
-                    ? getCloudControlGroupDetailsFieldBuilder()
-                    : null;
-          } else {
-            cloudControlGroupDetailsBuilder_.addAllMessages(other.cloudControlGroupDetails_);
-          }
-        }
-      }
       if (cloudControlDetailsBuilder_ == null) {
         if (!other.cloudControlDetails_.isEmpty()) {
           if (cloudControlDetails_.isEmpty()) {
             cloudControlDetails_ = other.cloudControlDetails_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000020);
           } else {
             ensureCloudControlDetailsIsMutable();
             cloudControlDetails_.addAll(other.cloudControlDetails_);
@@ -2521,7 +1597,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
             cloudControlDetailsBuilder_.dispose();
             cloudControlDetailsBuilder_ = null;
             cloudControlDetails_ = other.cloudControlDetails_;
-            bitField0_ = (bitField0_ & ~0x00000040);
+            bitField0_ = (bitField0_ & ~0x00000020);
             cloudControlDetailsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getCloudControlDetailsFieldBuilder()
@@ -2534,7 +1610,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
       if (!other.category_.isEmpty()) {
         if (category_.isEmpty()) {
           category_ = other.category_;
-          bitField0_ = (bitField0_ & ~0x00000080);
+          bitField0_ = (bitField0_ & ~0x00000040);
         } else {
           ensureCategoryIsMutable();
           category_.addAll(other.category_);
@@ -2544,7 +1620,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
       if (!other.supportedCloudProviders_.isEmpty()) {
         if (supportedCloudProviders_.isEmpty()) {
           supportedCloudProviders_ = other.supportedCloudProviders_;
-          bitField0_ = (bitField0_ & ~0x00000100);
+          bitField0_ = (bitField0_ & ~0x00000080);
         } else {
           ensureSupportedCloudProvidersIsMutable();
           supportedCloudProviders_.addAll(other.supportedCloudProviders_);
@@ -2554,10 +1630,20 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
       if (!other.supportedTargetResourceTypes_.isEmpty()) {
         if (supportedTargetResourceTypes_.isEmpty()) {
           supportedTargetResourceTypes_ = other.supportedTargetResourceTypes_;
-          bitField0_ = (bitField0_ & ~0x00000200);
+          bitField0_ = (bitField0_ & ~0x00000100);
         } else {
           ensureSupportedTargetResourceTypesIsMutable();
           supportedTargetResourceTypes_.addAll(other.supportedTargetResourceTypes_);
+        }
+        onChanged();
+      }
+      if (!other.supportedEnforcementModes_.isEmpty()) {
+        if (supportedEnforcementModes_.isEmpty()) {
+          supportedEnforcementModes_ = other.supportedEnforcementModes_;
+          bitField0_ = (bitField0_ & ~0x00000200);
+        } else {
+          ensureSupportedEnforcementModesIsMutable();
+          supportedEnforcementModes_.addAll(other.supportedEnforcementModes_);
         }
         onChanged();
       }
@@ -2617,21 +1703,6 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000010;
                 break;
               } // case 48
-            case 58:
-              {
-                com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails m =
-                    input.readMessage(
-                        com.google.cloud.cloudsecuritycompliance.v1.Framework
-                            .CloudControlGroupDetails.parser(),
-                        extensionRegistry);
-                if (cloudControlGroupDetailsBuilder_ == null) {
-                  ensureCloudControlGroupDetailsIsMutable();
-                  cloudControlGroupDetails_.add(m);
-                } else {
-                  cloudControlGroupDetailsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 58
             case 66:
               {
                 com.google.cloud.cloudsecuritycompliance.v1.CloudControlDetails m =
@@ -2703,6 +1774,25 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
                 input.popLimit(oldLimit);
                 break;
               } // case 90
+            case 104:
+              {
+                int tmpRaw = input.readEnum();
+                ensureSupportedEnforcementModesIsMutable();
+                supportedEnforcementModes_.add(tmpRaw);
+                break;
+              } // case 104
+            case 106:
+              {
+                int length = input.readRawVarint32();
+                int oldLimit = input.pushLimit(length);
+                while (input.getBytesUntilLimit() > 0) {
+                  int tmpRaw = input.readEnum();
+                  ensureSupportedEnforcementModesIsMutable();
+                  supportedEnforcementModes_.add(tmpRaw);
+                }
+                input.popLimit(oldLimit);
+                break;
+              } // case 106
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -3252,475 +2342,16 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
       return this;
     }
 
-    private java.util.List<
-            com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails>
-        cloudControlGroupDetails_ = java.util.Collections.emptyList();
-
-    private void ensureCloudControlGroupDetailsIsMutable() {
-      if (!((bitField0_ & 0x00000020) != 0)) {
-        cloudControlGroupDetails_ =
-            new java.util.ArrayList<
-                com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails>(
-                cloudControlGroupDetails_);
-        bitField0_ |= 0x00000020;
-      }
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails,
-            com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails.Builder,
-            com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetailsOrBuilder>
-        cloudControlGroupDetailsBuilder_;
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The details of the cloud control groups included in the
-     * framework.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails cloud_control_group_details = 7 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public java.util.List<
-            com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails>
-        getCloudControlGroupDetailsList() {
-      if (cloudControlGroupDetailsBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(cloudControlGroupDetails_);
-      } else {
-        return cloudControlGroupDetailsBuilder_.getMessageList();
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The details of the cloud control groups included in the
-     * framework.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails cloud_control_group_details = 7 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public int getCloudControlGroupDetailsCount() {
-      if (cloudControlGroupDetailsBuilder_ == null) {
-        return cloudControlGroupDetails_.size();
-      } else {
-        return cloudControlGroupDetailsBuilder_.getCount();
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The details of the cloud control groups included in the
-     * framework.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails cloud_control_group_details = 7 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails
-        getCloudControlGroupDetails(int index) {
-      if (cloudControlGroupDetailsBuilder_ == null) {
-        return cloudControlGroupDetails_.get(index);
-      } else {
-        return cloudControlGroupDetailsBuilder_.getMessage(index);
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The details of the cloud control groups included in the
-     * framework.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails cloud_control_group_details = 7 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder setCloudControlGroupDetails(
-        int index,
-        com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails value) {
-      if (cloudControlGroupDetailsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureCloudControlGroupDetailsIsMutable();
-        cloudControlGroupDetails_.set(index, value);
-        onChanged();
-      } else {
-        cloudControlGroupDetailsBuilder_.setMessage(index, value);
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The details of the cloud control groups included in the
-     * framework.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails cloud_control_group_details = 7 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder setCloudControlGroupDetails(
-        int index,
-        com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails.Builder
-            builderForValue) {
-      if (cloudControlGroupDetailsBuilder_ == null) {
-        ensureCloudControlGroupDetailsIsMutable();
-        cloudControlGroupDetails_.set(index, builderForValue.build());
-        onChanged();
-      } else {
-        cloudControlGroupDetailsBuilder_.setMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The details of the cloud control groups included in the
-     * framework.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails cloud_control_group_details = 7 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder addCloudControlGroupDetails(
-        com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails value) {
-      if (cloudControlGroupDetailsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureCloudControlGroupDetailsIsMutable();
-        cloudControlGroupDetails_.add(value);
-        onChanged();
-      } else {
-        cloudControlGroupDetailsBuilder_.addMessage(value);
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The details of the cloud control groups included in the
-     * framework.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails cloud_control_group_details = 7 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder addCloudControlGroupDetails(
-        int index,
-        com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails value) {
-      if (cloudControlGroupDetailsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureCloudControlGroupDetailsIsMutable();
-        cloudControlGroupDetails_.add(index, value);
-        onChanged();
-      } else {
-        cloudControlGroupDetailsBuilder_.addMessage(index, value);
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The details of the cloud control groups included in the
-     * framework.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails cloud_control_group_details = 7 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder addCloudControlGroupDetails(
-        com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails.Builder
-            builderForValue) {
-      if (cloudControlGroupDetailsBuilder_ == null) {
-        ensureCloudControlGroupDetailsIsMutable();
-        cloudControlGroupDetails_.add(builderForValue.build());
-        onChanged();
-      } else {
-        cloudControlGroupDetailsBuilder_.addMessage(builderForValue.build());
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The details of the cloud control groups included in the
-     * framework.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails cloud_control_group_details = 7 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder addCloudControlGroupDetails(
-        int index,
-        com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails.Builder
-            builderForValue) {
-      if (cloudControlGroupDetailsBuilder_ == null) {
-        ensureCloudControlGroupDetailsIsMutable();
-        cloudControlGroupDetails_.add(index, builderForValue.build());
-        onChanged();
-      } else {
-        cloudControlGroupDetailsBuilder_.addMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The details of the cloud control groups included in the
-     * framework.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails cloud_control_group_details = 7 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder addAllCloudControlGroupDetails(
-        java.lang.Iterable<
-                ? extends
-                    com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails>
-            values) {
-      if (cloudControlGroupDetailsBuilder_ == null) {
-        ensureCloudControlGroupDetailsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, cloudControlGroupDetails_);
-        onChanged();
-      } else {
-        cloudControlGroupDetailsBuilder_.addAllMessages(values);
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The details of the cloud control groups included in the
-     * framework.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails cloud_control_group_details = 7 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder clearCloudControlGroupDetails() {
-      if (cloudControlGroupDetailsBuilder_ == null) {
-        cloudControlGroupDetails_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000020);
-        onChanged();
-      } else {
-        cloudControlGroupDetailsBuilder_.clear();
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The details of the cloud control groups included in the
-     * framework.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails cloud_control_group_details = 7 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public Builder removeCloudControlGroupDetails(int index) {
-      if (cloudControlGroupDetailsBuilder_ == null) {
-        ensureCloudControlGroupDetailsIsMutable();
-        cloudControlGroupDetails_.remove(index);
-        onChanged();
-      } else {
-        cloudControlGroupDetailsBuilder_.remove(index);
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The details of the cloud control groups included in the
-     * framework.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails cloud_control_group_details = 7 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails.Builder
-        getCloudControlGroupDetailsBuilder(int index) {
-      return getCloudControlGroupDetailsFieldBuilder().getBuilder(index);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The details of the cloud control groups included in the
-     * framework.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails cloud_control_group_details = 7 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetailsOrBuilder
-        getCloudControlGroupDetailsOrBuilder(int index) {
-      if (cloudControlGroupDetailsBuilder_ == null) {
-        return cloudControlGroupDetails_.get(index);
-      } else {
-        return cloudControlGroupDetailsBuilder_.getMessageOrBuilder(index);
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The details of the cloud control groups included in the
-     * framework.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails cloud_control_group_details = 7 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public java.util.List<
-            ? extends
-                com.google.cloud.cloudsecuritycompliance.v1.Framework
-                    .CloudControlGroupDetailsOrBuilder>
-        getCloudControlGroupDetailsOrBuilderList() {
-      if (cloudControlGroupDetailsBuilder_ != null) {
-        return cloudControlGroupDetailsBuilder_.getMessageOrBuilderList();
-      } else {
-        return java.util.Collections.unmodifiableList(cloudControlGroupDetails_);
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The details of the cloud control groups included in the
-     * framework.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails cloud_control_group_details = 7 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails.Builder
-        addCloudControlGroupDetailsBuilder() {
-      return getCloudControlGroupDetailsFieldBuilder()
-          .addBuilder(
-              com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails
-                  .getDefaultInstance());
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The details of the cloud control groups included in the
-     * framework.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails cloud_control_group_details = 7 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails.Builder
-        addCloudControlGroupDetailsBuilder(int index) {
-      return getCloudControlGroupDetailsFieldBuilder()
-          .addBuilder(
-              index,
-              com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails
-                  .getDefaultInstance());
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Optional. The details of the cloud control groups included in the
-     * framework.
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails cloud_control_group_details = 7 [(.google.api.field_behavior) = OPTIONAL];
-     * </code>
-     */
-    public java.util.List<
-            com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails.Builder>
-        getCloudControlGroupDetailsBuilderList() {
-      return getCloudControlGroupDetailsFieldBuilder().getBuilderList();
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails,
-            com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails.Builder,
-            com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetailsOrBuilder>
-        getCloudControlGroupDetailsFieldBuilder() {
-      if (cloudControlGroupDetailsBuilder_ == null) {
-        cloudControlGroupDetailsBuilder_ =
-            new com.google.protobuf.RepeatedFieldBuilderV3<
-                com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails,
-                com.google.cloud.cloudsecuritycompliance.v1.Framework.CloudControlGroupDetails
-                    .Builder,
-                com.google.cloud.cloudsecuritycompliance.v1.Framework
-                    .CloudControlGroupDetailsOrBuilder>(
-                cloudControlGroupDetails_,
-                ((bitField0_ & 0x00000020) != 0),
-                getParentForChildren(),
-                isClean());
-        cloudControlGroupDetails_ = null;
-      }
-      return cloudControlGroupDetailsBuilder_;
-    }
-
     private java.util.List<com.google.cloud.cloudsecuritycompliance.v1.CloudControlDetails>
         cloudControlDetails_ = java.util.Collections.emptyList();
 
     private void ensureCloudControlDetailsIsMutable() {
-      if (!((bitField0_ & 0x00000040) != 0)) {
+      if (!((bitField0_ & 0x00000020) != 0)) {
         cloudControlDetails_ =
             new java.util.ArrayList<
                 com.google.cloud.cloudsecuritycompliance.v1.CloudControlDetails>(
                 cloudControlDetails_);
-        bitField0_ |= 0x00000040;
+        bitField0_ |= 0x00000020;
       }
     }
 
@@ -3988,7 +2619,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
     public Builder clearCloudControlDetails() {
       if (cloudControlDetailsBuilder_ == null) {
         cloudControlDetails_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000040);
+        bitField0_ = (bitField0_ & ~0x00000020);
         onChanged();
       } else {
         cloudControlDetailsBuilder_.clear();
@@ -4147,7 +2778,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
                 com.google.cloud.cloudsecuritycompliance.v1.CloudControlDetails.Builder,
                 com.google.cloud.cloudsecuritycompliance.v1.CloudControlDetailsOrBuilder>(
                 cloudControlDetails_,
-                ((bitField0_ & 0x00000040) != 0),
+                ((bitField0_ & 0x00000020) != 0),
                 getParentForChildren(),
                 isClean());
         cloudControlDetails_ = null;
@@ -4158,9 +2789,9 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
     private java.util.List<java.lang.Integer> category_ = java.util.Collections.emptyList();
 
     private void ensureCategoryIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
+      if (!((bitField0_ & 0x00000040) != 0)) {
         category_ = new java.util.ArrayList<java.lang.Integer>(category_);
-        bitField0_ |= 0x00000080;
+        bitField0_ |= 0x00000040;
       }
     }
 
@@ -4310,7 +2941,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearCategory() {
       category_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000080);
+      bitField0_ = (bitField0_ & ~0x00000040);
       onChanged();
       return this;
     }
@@ -4420,10 +3051,10 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureSupportedCloudProvidersIsMutable() {
-      if (!((bitField0_ & 0x00000100) != 0)) {
+      if (!((bitField0_ & 0x00000080) != 0)) {
         supportedCloudProviders_ =
             new java.util.ArrayList<java.lang.Integer>(supportedCloudProviders_);
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000080;
       }
     }
 
@@ -4574,7 +3205,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSupportedCloudProviders() {
       supportedCloudProviders_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000080);
       onChanged();
       return this;
     }
@@ -4685,10 +3316,10 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
         java.util.Collections.emptyList();
 
     private void ensureSupportedTargetResourceTypesIsMutable() {
-      if (!((bitField0_ & 0x00000200) != 0)) {
+      if (!((bitField0_ & 0x00000100) != 0)) {
         supportedTargetResourceTypes_ =
             new java.util.ArrayList<java.lang.Integer>(supportedTargetResourceTypes_);
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000100;
       }
     }
 
@@ -4840,7 +3471,7 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder clearSupportedTargetResourceTypes() {
       supportedTargetResourceTypes_ = java.util.Collections.emptyList();
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000100);
       onChanged();
       return this;
     }
@@ -4944,6 +3575,271 @@ public final class Framework extends com.google.protobuf.GeneratedMessageV3
       ensureSupportedTargetResourceTypesIsMutable();
       for (int value : values) {
         supportedTargetResourceTypes_.add(value);
+      }
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<java.lang.Integer> supportedEnforcementModes_ =
+        java.util.Collections.emptyList();
+
+    private void ensureSupportedEnforcementModesIsMutable() {
+      if (!((bitField0_ & 0x00000200) != 0)) {
+        supportedEnforcementModes_ =
+            new java.util.ArrayList<java.lang.Integer>(supportedEnforcementModes_);
+        bitField0_ |= 0x00000200;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The supported enforcement modes of the framework.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.cloudsecuritycompliance.v1.EnforcementMode supported_enforcement_modes = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return A list containing the supportedEnforcementModes.
+     */
+    public java.util.List<com.google.cloud.cloudsecuritycompliance.v1.EnforcementMode>
+        getSupportedEnforcementModesList() {
+      return new com.google.protobuf.Internal.ListAdapter<
+          java.lang.Integer, com.google.cloud.cloudsecuritycompliance.v1.EnforcementMode>(
+          supportedEnforcementModes_, supportedEnforcementModes_converter_);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The supported enforcement modes of the framework.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.cloudsecuritycompliance.v1.EnforcementMode supported_enforcement_modes = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The count of supportedEnforcementModes.
+     */
+    public int getSupportedEnforcementModesCount() {
+      return supportedEnforcementModes_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The supported enforcement modes of the framework.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.cloudsecuritycompliance.v1.EnforcementMode supported_enforcement_modes = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the element to return.
+     * @return The supportedEnforcementModes at the given index.
+     */
+    public com.google.cloud.cloudsecuritycompliance.v1.EnforcementMode getSupportedEnforcementModes(
+        int index) {
+      return supportedEnforcementModes_converter_.convert(supportedEnforcementModes_.get(index));
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The supported enforcement modes of the framework.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.cloudsecuritycompliance.v1.EnforcementMode supported_enforcement_modes = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The supportedEnforcementModes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSupportedEnforcementModes(
+        int index, com.google.cloud.cloudsecuritycompliance.v1.EnforcementMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSupportedEnforcementModesIsMutable();
+      supportedEnforcementModes_.set(index, value.getNumber());
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The supported enforcement modes of the framework.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.cloudsecuritycompliance.v1.EnforcementMode supported_enforcement_modes = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The supportedEnforcementModes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSupportedEnforcementModes(
+        com.google.cloud.cloudsecuritycompliance.v1.EnforcementMode value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSupportedEnforcementModesIsMutable();
+      supportedEnforcementModes_.add(value.getNumber());
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The supported enforcement modes of the framework.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.cloudsecuritycompliance.v1.EnforcementMode supported_enforcement_modes = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param values The supportedEnforcementModes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllSupportedEnforcementModes(
+        java.lang.Iterable<? extends com.google.cloud.cloudsecuritycompliance.v1.EnforcementMode>
+            values) {
+      ensureSupportedEnforcementModesIsMutable();
+      for (com.google.cloud.cloudsecuritycompliance.v1.EnforcementMode value : values) {
+        supportedEnforcementModes_.add(value.getNumber());
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The supported enforcement modes of the framework.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.cloudsecuritycompliance.v1.EnforcementMode supported_enforcement_modes = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSupportedEnforcementModes() {
+      supportedEnforcementModes_ = java.util.Collections.emptyList();
+      bitField0_ = (bitField0_ & ~0x00000200);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The supported enforcement modes of the framework.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.cloudsecuritycompliance.v1.EnforcementMode supported_enforcement_modes = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return A list containing the enum numeric values on the wire for supportedEnforcementModes.
+     */
+    public java.util.List<java.lang.Integer> getSupportedEnforcementModesValueList() {
+      return java.util.Collections.unmodifiableList(supportedEnforcementModes_);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The supported enforcement modes of the framework.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.cloudsecuritycompliance.v1.EnforcementMode supported_enforcement_modes = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index of the value to return.
+     * @return The enum numeric value on the wire of supportedEnforcementModes at the given index.
+     */
+    public int getSupportedEnforcementModesValue(int index) {
+      return supportedEnforcementModes_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The supported enforcement modes of the framework.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.cloudsecuritycompliance.v1.EnforcementMode supported_enforcement_modes = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param index The index to set the value at.
+     * @param value The enum numeric value on the wire for supportedEnforcementModes to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSupportedEnforcementModesValue(int index, int value) {
+      ensureSupportedEnforcementModesIsMutable();
+      supportedEnforcementModes_.set(index, value);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The supported enforcement modes of the framework.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.cloudsecuritycompliance.v1.EnforcementMode supported_enforcement_modes = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param value The enum numeric value on the wire for supportedEnforcementModes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSupportedEnforcementModesValue(int value) {
+      ensureSupportedEnforcementModesIsMutable();
+      supportedEnforcementModes_.add(value);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The supported enforcement modes of the framework.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.cloudsecuritycompliance.v1.EnforcementMode supported_enforcement_modes = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @param values The enum numeric values on the wire for supportedEnforcementModes to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllSupportedEnforcementModesValue(
+        java.lang.Iterable<java.lang.Integer> values) {
+      ensureSupportedEnforcementModesIsMutable();
+      for (int value : values) {
+        supportedEnforcementModes_.add(value);
       }
       onChanged();
       return this;

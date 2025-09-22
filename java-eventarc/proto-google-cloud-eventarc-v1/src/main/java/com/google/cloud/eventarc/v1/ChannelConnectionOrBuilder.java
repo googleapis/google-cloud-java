@@ -223,4 +223,67 @@ public interface ChannelConnectionOrBuilder
    * @return The bytes for activationToken.
    */
   com.google.protobuf.ByteString getActivationTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resource labels.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  int getLabelsCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resource labels.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  boolean containsLabels(java.lang.String key);
+
+  /** Use {@link #getLabelsMap()} instead. */
+  @java.lang.Deprecated
+  java.util.Map<java.lang.String, java.lang.String> getLabels();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resource labels.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resource labels.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  /* nullable */
+  java.lang.String getLabelsOrDefault(
+      java.lang.String key,
+      /* nullable */
+      java.lang.String defaultValue);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Resource labels.
+   * </pre>
+   *
+   * <code>map&lt;string, string&gt; labels = 9 [(.google.api.field_behavior) = OPTIONAL];</code>
+   */
+  java.lang.String getLabelsOrThrow(java.lang.String key);
 }

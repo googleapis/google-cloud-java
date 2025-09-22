@@ -44,7 +44,8 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS.
 /**
- * Service Description: Service describing handlers for resources
+ * Service Description: Deployment service allows users to manage deployments of Frameworks and
+ * Cloud Controls on a target resource.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -74,7 +75,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> CreateFrameworkDeployment</td>
- *      <td><p> Creates a new FrameworkDeployment in a given project and location.</td>
+ *      <td><p> Creates a new FrameworkDeployment in a given parent resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -133,7 +134,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListFrameworkDeployments</td>
- *      <td><p> Lists FrameworkDeployments in a given parent and location.</td>
+ *      <td><p> Lists FrameworkDeployments in a given parent resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -172,7 +173,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> ListCloudControlDeployments</td>
- *      <td><p> Lists CloudControlDeployments under a given parent.</td>
+ *      <td><p> Lists CloudControlDeployments in a given parent resource.</td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -348,7 +349,7 @@ public class DeploymentClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new FrameworkDeployment in a given project and location.
+   * Creates a new FrameworkDeployment in a given parent resource.
    *
    * <p>Sample code:
    *
@@ -369,12 +370,11 @@ public class DeploymentClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Value for parent. Supported formats:
+   * @param parent Required. The parent resource of the FrameworkDeployment in the format:
    *     organizations/{organization}/locations/{location} Only global location is supported.
-   * @param frameworkDeployment Required. The resource being created.
+   * @param frameworkDeployment Required. The FrameworkDeployment to be created.
    * @param frameworkDeploymentId Optional. User provided identifier. It should be unique in scope
-   *     of a parent Please note that this is optional and if not provided, a random UUID will be
-   *     generated.
+   *     of a parent. This is optional and if not provided, a random UUID will be generated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<FrameworkDeployment, OperationMetadata>
@@ -393,7 +393,7 @@ public class DeploymentClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new FrameworkDeployment in a given project and location.
+   * Creates a new FrameworkDeployment in a given parent resource.
    *
    * <p>Sample code:
    *
@@ -414,12 +414,11 @@ public class DeploymentClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Value for parent. Supported formats:
+   * @param parent Required. The parent resource of the FrameworkDeployment in the format:
    *     organizations/{organization}/locations/{location} Only global location is supported.
-   * @param frameworkDeployment Required. The resource being created.
+   * @param frameworkDeployment Required. The FrameworkDeployment to be created.
    * @param frameworkDeploymentId Optional. User provided identifier. It should be unique in scope
-   *     of a parent Please note that this is optional and if not provided, a random UUID will be
-   *     generated.
+   *     of a parent. This is optional and if not provided, a random UUID will be generated.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final OperationFuture<FrameworkDeployment, OperationMetadata>
@@ -436,7 +435,7 @@ public class DeploymentClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new FrameworkDeployment in a given project and location.
+   * Creates a new FrameworkDeployment in a given parent resource.
    *
    * <p>Sample code:
    *
@@ -467,7 +466,7 @@ public class DeploymentClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new FrameworkDeployment in a given project and location.
+   * Creates a new FrameworkDeployment in a given parent resource.
    *
    * <p>Sample code:
    *
@@ -499,7 +498,7 @@ public class DeploymentClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Creates a new FrameworkDeployment in a given project and location.
+   * Creates a new FrameworkDeployment in a given parent resource.
    *
    * <p>Sample code:
    *
@@ -547,8 +546,7 @@ public class DeploymentClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Name of the framework deployment to be deleted FrameworkDeployment name
-   *     in either of the following formats:
+   * @param name Required. name of the FrameworkDeployment to be deleted in the following format:
    *     organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -581,8 +579,7 @@ public class DeploymentClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. Name of the framework deployment to be deleted FrameworkDeployment name
-   *     in either of the following formats:
+   * @param name Required. name of the FrameworkDeployment to be deleted in the following format:
    *     organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -711,7 +708,7 @@ public class DeploymentClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. FrameworkDeployment name in either of the following formats:
+   * @param name Required. FrameworkDeployment name in the following format:
    *     organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -743,7 +740,7 @@ public class DeploymentClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. FrameworkDeployment name in either of the following formats:
+   * @param name Required. FrameworkDeployment name in the following format:
    *     organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -818,7 +815,7 @@ public class DeploymentClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists FrameworkDeployments in a given parent and location.
+   * Lists FrameworkDeployments in a given parent resource.
    *
    * <p>Sample code:
    *
@@ -837,7 +834,8 @@ public class DeploymentClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Parent value for ListFrameworkDeploymentsRequest.
+   * @param parent Required. parent resource of the FrameworkDeployment in the format:
+   *     organizations/{organization}/locations/{location} Only global location is supported.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListFrameworkDeploymentsPagedResponse listFrameworkDeployments(
@@ -851,7 +849,7 @@ public class DeploymentClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists FrameworkDeployments in a given parent and location.
+   * Lists FrameworkDeployments in a given parent resource.
    *
    * <p>Sample code:
    *
@@ -870,7 +868,8 @@ public class DeploymentClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Parent value for ListFrameworkDeploymentsRequest.
+   * @param parent Required. parent resource of the FrameworkDeployment in the format:
+   *     organizations/{organization}/locations/{location} Only global location is supported.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListFrameworkDeploymentsPagedResponse listFrameworkDeployments(String parent) {
@@ -881,7 +880,7 @@ public class DeploymentClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists FrameworkDeployments in a given parent and location.
+   * Lists FrameworkDeployments in a given parent resource.
    *
    * <p>Sample code:
    *
@@ -917,7 +916,7 @@ public class DeploymentClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists FrameworkDeployments in a given parent and location.
+   * Lists FrameworkDeployments in a given parent resource.
    *
    * <p>Sample code:
    *
@@ -952,7 +951,7 @@ public class DeploymentClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists FrameworkDeployments in a given parent and location.
+   * Lists FrameworkDeployments in a given parent resource.
    *
    * <p>Sample code:
    *
@@ -1012,7 +1011,7 @@ public class DeploymentClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. CloudControlDeployment name in either of the following formats:
+   * @param name Required. CloudControlDeployment name in the following format:
    *     organizations/{organization}/locations/{location}/cloudControlDeployments/{cloud_control_deployment_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1045,7 +1044,7 @@ public class DeploymentClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param name Required. CloudControlDeployment name in either of the following formats:
+   * @param name Required. CloudControlDeployment name in the following format:
    *     organizations/{organization}/locations/{location}/cloudControlDeployments/{cloud_control_deployment_id}
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -1121,7 +1120,7 @@ public class DeploymentClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists CloudControlDeployments under a given parent.
+   * Lists CloudControlDeployments in a given parent resource.
    *
    * <p>Sample code:
    *
@@ -1140,7 +1139,8 @@ public class DeploymentClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Parent value for ListCloudControlDeploymentsRequest.
+   * @param parent Required. parent resource of the CloudControlDeployment in the format:
+   *     organizations/{organization}/locations/{location} Only global location is supported.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListCloudControlDeploymentsPagedResponse listCloudControlDeployments(
@@ -1154,7 +1154,7 @@ public class DeploymentClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists CloudControlDeployments under a given parent.
+   * Lists CloudControlDeployments in a given parent resource.
    *
    * <p>Sample code:
    *
@@ -1173,7 +1173,8 @@ public class DeploymentClient implements BackgroundResource {
    * }
    * }</pre>
    *
-   * @param parent Required. Parent value for ListCloudControlDeploymentsRequest.
+   * @param parent Required. parent resource of the CloudControlDeployment in the format:
+   *     organizations/{organization}/locations/{location} Only global location is supported.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final ListCloudControlDeploymentsPagedResponse listCloudControlDeployments(String parent) {
@@ -1184,7 +1185,7 @@ public class DeploymentClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists CloudControlDeployments under a given parent.
+   * Lists CloudControlDeployments in a given parent resource.
    *
    * <p>Sample code:
    *
@@ -1220,7 +1221,7 @@ public class DeploymentClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists CloudControlDeployments under a given parent.
+   * Lists CloudControlDeployments in a given parent resource.
    *
    * <p>Sample code:
    *
@@ -1256,7 +1257,7 @@ public class DeploymentClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Lists CloudControlDeployments under a given parent.
+   * Lists CloudControlDeployments in a given parent resource.
    *
    * <p>Sample code:
    *

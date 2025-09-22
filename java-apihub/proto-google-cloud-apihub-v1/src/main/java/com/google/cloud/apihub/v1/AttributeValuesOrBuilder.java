@@ -150,6 +150,46 @@ public interface AttributeValuesOrBuilder
    *
    *
    * <pre>
+   * The attribute values associated with a resource in case attribute data
+   * type is URL, URI or IP, like gs://bucket-name/object-name.
+   * </pre>
+   *
+   * <code>.google.cloud.apihub.v1.AttributeValues.StringAttributeValues uri_values = 5;</code>
+   *
+   * @return Whether the uriValues field is set.
+   */
+  boolean hasUriValues();
+
+  /**
+   *
+   *
+   * <pre>
+   * The attribute values associated with a resource in case attribute data
+   * type is URL, URI or IP, like gs://bucket-name/object-name.
+   * </pre>
+   *
+   * <code>.google.cloud.apihub.v1.AttributeValues.StringAttributeValues uri_values = 5;</code>
+   *
+   * @return The uriValues.
+   */
+  com.google.cloud.apihub.v1.AttributeValues.StringAttributeValues getUriValues();
+
+  /**
+   *
+   *
+   * <pre>
+   * The attribute values associated with a resource in case attribute data
+   * type is URL, URI or IP, like gs://bucket-name/object-name.
+   * </pre>
+   *
+   * <code>.google.cloud.apihub.v1.AttributeValues.StringAttributeValues uri_values = 5;</code>
+   */
+  com.google.cloud.apihub.v1.AttributeValues.StringAttributeValuesOrBuilder getUriValuesOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * Output only. The name of the attribute.
    * Format: projects/{project}/locations/{location}/attributes/{attribute}
    * </pre>

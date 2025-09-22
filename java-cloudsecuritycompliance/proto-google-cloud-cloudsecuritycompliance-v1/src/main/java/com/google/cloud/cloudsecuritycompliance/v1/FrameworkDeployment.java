@@ -23,8 +23,9 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * FrameworkDeployment is a resource that represents a deployment using a
- * framework.
+ * FrameworkDeployment represents deployment of a Framework on a target
+ * resource. Supported target resources are organizations/{organization},
+ * folders/{folder}, and projects/{project}.
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.FrameworkDeployment}
@@ -46,9 +47,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
     description_ = "";
     cloudControlMetadata_ = java.util.Collections.emptyList();
     deploymentState_ = 0;
-    ccDeployments_ = java.util.Collections.emptyList();
     etag_ = "";
-    ccGroupDeployments_ = java.util.Collections.emptyList();
     targetResourceDisplayName_ = "";
     cloudControlDeploymentReferences_ = java.util.Collections.emptyList();
   }
@@ -84,7 +83,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Identifier. FrameworkDeployment name in either of the following formats:
+   * Identifier. FrameworkDeployment name in the following format:
    * organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}
    * </pre>
    *
@@ -109,7 +108,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Identifier. FrameworkDeployment name in either of the following formats:
+   * Identifier. FrameworkDeployment name in the following format:
    * organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}
    * </pre>
    *
@@ -137,8 +136,9 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. target_resource_config referencing either an already existing
-   * target_resource or contains config for a target_resource to be created
+   * Required. The details of the target resource on which the Framework is to
+   * be deployed. It can either be an existing target resource or a new target
+   * resource to be created.
    * </pre>
    *
    * <code>
@@ -156,8 +156,9 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. target_resource_config referencing either an already existing
-   * target_resource or contains config for a target_resource to be created
+   * Required. The details of the target resource on which the Framework is to
+   * be deployed. It can either be an existing target resource or a new target
+   * resource to be created.
    * </pre>
    *
    * <code>
@@ -178,8 +179,9 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. target_resource_config referencing either an already existing
-   * target_resource or contains config for a target_resource to be created
+   * Required. The details of the target resource on which the Framework is to
+   * be deployed. It can either be an existing target resource or a new target
+   * resource to be created.
    * </pre>
    *
    * <code>
@@ -204,9 +206,8 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Output only. The resource on which the Framework is deployed based on the
-   * provided TargetResourceConfig. In format organizations/{organization},
-   * folders/{folder}, projects/{project} or
-   * projects/{project}/locations/{location}/applications/{application}.
+   * provided TargetResourceConfig in the following format:
+   * organizations/{organization}, folders/{folder} or projects/{project}
    * </pre>
    *
    * <code>string computed_target_resource = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -231,9 +232,8 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Output only. The resource on which the Framework is deployed based on the
-   * provided TargetResourceConfig. In format organizations/{organization},
-   * folders/{folder}, projects/{project} or
-   * projects/{project}/locations/{location}/applications/{application}.
+   * provided TargetResourceConfig in the following format:
+   * organizations/{organization}, folders/{folder} or projects/{project}
    * </pre>
    *
    * <code>string computed_target_resource = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -260,7 +260,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. Framework resource reference
+   * Required. Reference to the framework to be deployed.
    * </pre>
    *
    * <code>
@@ -278,7 +278,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. Framework resource reference
+   * Required. Reference to the framework to be deployed.
    * </pre>
    *
    * <code>
@@ -298,7 +298,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. Framework resource reference
+   * Required. Reference to the framework to be deployed.
    * </pre>
    *
    * <code>
@@ -322,7 +322,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. User provided description of the deployment
+   * Optional. User provided description of the Framework deployment
    * </pre>
    *
    * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -346,7 +346,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Optional. User provided description of the deployment
+   * Optional. User provided description of the Framework deployment
    * </pre>
    *
    * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -376,8 +376,9 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. Deployment mode and parameters for each of the cloud_controls
-   * part of the framework.
+   * Required. Deployment mode and parameters for each of the Cloud Controls in
+   * the framework. Every Cloud Control in the framework must have a
+   * CloudControlMetadata.
    * </pre>
    *
    * <code>
@@ -394,8 +395,9 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. Deployment mode and parameters for each of the cloud_controls
-   * part of the framework.
+   * Required. Deployment mode and parameters for each of the Cloud Controls in
+   * the framework. Every Cloud Control in the framework must have a
+   * CloudControlMetadata.
    * </pre>
    *
    * <code>
@@ -413,8 +415,9 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. Deployment mode and parameters for each of the cloud_controls
-   * part of the framework.
+   * Required. Deployment mode and parameters for each of the Cloud Controls in
+   * the framework. Every Cloud Control in the framework must have a
+   * CloudControlMetadata.
    * </pre>
    *
    * <code>
@@ -430,8 +433,9 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. Deployment mode and parameters for each of the cloud_controls
-   * part of the framework.
+   * Required. Deployment mode and parameters for each of the Cloud Controls in
+   * the framework. Every Cloud Control in the framework must have a
+   * CloudControlMetadata.
    * </pre>
    *
    * <code>
@@ -448,8 +452,9 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Required. Deployment mode and parameters for each of the cloud_controls
-   * part of the framework.
+   * Required. Deployment mode and parameters for each of the Cloud Controls in
+   * the framework. Every Cloud Control in the framework must have a
+   * CloudControlMetadata.
    * </pre>
    *
    * <code>
@@ -469,7 +474,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. State of the deployment
+   * Output only. State of the Framework Deployment
    * </pre>
    *
    * <code>
@@ -487,7 +492,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. State of the deployment
+   * Output only. State of the Framework Deployment
    * </pre>
    *
    * <code>
@@ -503,117 +508,6 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
     return result == null
         ? com.google.cloud.cloudsecuritycompliance.v1.DeploymentState.UNRECOGNIZED
         : result;
-  }
-
-  public static final int CC_DEPLOYMENTS_FIELD_NUMBER = 8;
-
-  @SuppressWarnings("serial")
-  private java.util.List<com.google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment>
-      ccDeployments_;
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. This field is inlined just for cloudNext because the one
-   * platform apis of CCDeployment does not exist. Beyond cloud
-   * next it will be replaced with the field below which is the
-   * references of cloud control deployment
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment cc_deployments = 8 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   */
-  @java.lang.Override
-  @java.lang.Deprecated
-  public java.util.List<com.google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment>
-      getCcDeploymentsList() {
-    return ccDeployments_;
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. This field is inlined just for cloudNext because the one
-   * platform apis of CCDeployment does not exist. Beyond cloud
-   * next it will be replaced with the field below which is the
-   * references of cloud control deployment
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment cc_deployments = 8 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   */
-  @java.lang.Override
-  @java.lang.Deprecated
-  public java.util.List<
-          ? extends com.google.cloud.cloudsecuritycompliance.v1.CloudControlDeploymentOrBuilder>
-      getCcDeploymentsOrBuilderList() {
-    return ccDeployments_;
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. This field is inlined just for cloudNext because the one
-   * platform apis of CCDeployment does not exist. Beyond cloud
-   * next it will be replaced with the field below which is the
-   * references of cloud control deployment
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment cc_deployments = 8 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   */
-  @java.lang.Override
-  @java.lang.Deprecated
-  public int getCcDeploymentsCount() {
-    return ccDeployments_.size();
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. This field is inlined just for cloudNext because the one
-   * platform apis of CCDeployment does not exist. Beyond cloud
-   * next it will be replaced with the field below which is the
-   * references of cloud control deployment
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment cc_deployments = 8 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   */
-  @java.lang.Override
-  @java.lang.Deprecated
-  public com.google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment getCcDeployments(
-      int index) {
-    return ccDeployments_.get(index);
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. This field is inlined just for cloudNext because the one
-   * platform apis of CCDeployment does not exist. Beyond cloud
-   * next it will be replaced with the field below which is the
-   * references of cloud control deployment
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment cc_deployments = 8 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   */
-  @java.lang.Override
-  @java.lang.Deprecated
-  public com.google.cloud.cloudsecuritycompliance.v1.CloudControlDeploymentOrBuilder
-      getCcDeploymentsOrBuilder(int index) {
-    return ccDeployments_.get(index);
   }
 
   public static final int CREATE_TIME_FIELD_NUMBER = 9;
@@ -730,10 +624,10 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Optional. To prevent concurrent updates from overwriting each other, always
-   * provide the `etag` when you update a CustomComplianceFramework. You can
-   * also provide the `etag` when you delete a CustomComplianceFramework, to
-   * help ensure that you're deleting the intended version of the
-   * CustomComplianceFramework.
+   * provide the `etag` when you update a FrameworkDeployment. You can also
+   * provide the `etag` when you delete a FrameworkDeployment, to help
+   * ensure that you're deleting the intended version of the
+   * FrameworkDeployment.
    * </pre>
    *
    * <code>string etag = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -758,10 +652,10 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    * <pre>
    * Optional. To prevent concurrent updates from overwriting each other, always
-   * provide the `etag` when you update a CustomComplianceFramework. You can
-   * also provide the `etag` when you delete a CustomComplianceFramework, to
-   * help ensure that you're deleting the intended version of the
-   * CustomComplianceFramework.
+   * provide the `etag` when you update a FrameworkDeployment. You can also
+   * provide the `etag` when you delete a FrameworkDeployment, to help
+   * ensure that you're deleting the intended version of the
+   * FrameworkDeployment.
    * </pre>
    *
    * <code>string etag = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -779,98 +673,6 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
-  }
-
-  public static final int CC_GROUP_DEPLOYMENTS_FIELD_NUMBER = 12;
-
-  @SuppressWarnings("serial")
-  private java.util.List<com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment>
-      ccGroupDeployments_;
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. Similarly we'll also have a field for CloudControlGroups
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment cc_group_deployments = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   */
-  @java.lang.Override
-  public java.util.List<com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment>
-      getCcGroupDeploymentsList() {
-    return ccGroupDeployments_;
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. Similarly we'll also have a field for CloudControlGroups
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment cc_group_deployments = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   */
-  @java.lang.Override
-  public java.util.List<
-          ? extends
-              com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeploymentOrBuilder>
-      getCcGroupDeploymentsOrBuilderList() {
-    return ccGroupDeployments_;
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. Similarly we'll also have a field for CloudControlGroups
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment cc_group_deployments = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   */
-  @java.lang.Override
-  public int getCcGroupDeploymentsCount() {
-    return ccGroupDeployments_.size();
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. Similarly we'll also have a field for CloudControlGroups
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment cc_group_deployments = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   */
-  @java.lang.Override
-  public com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment
-      getCcGroupDeployments(int index) {
-    return ccGroupDeployments_.get(index);
-  }
-
-  /**
-   *
-   *
-   * <pre>
-   * Output only. Similarly we'll also have a field for CloudControlGroups
-   * </pre>
-   *
-   * <code>
-   * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment cc_group_deployments = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-   * </code>
-   */
-  @java.lang.Override
-  public com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeploymentOrBuilder
-      getCcGroupDeploymentsOrBuilder(int index) {
-    return ccGroupDeployments_.get(index);
   }
 
   public static final int TARGET_RESOURCE_DISPLAY_NAME_FIELD_NUMBER = 13;
@@ -939,10 +741,11 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. The references to the cloud control deployments.
-   * Example: If a framework deployment deploys two cloud controls,
-   * cc-deployment-1 and cc-deployment-2, then the
-   * cloud_control_deployment_references will be:
+   * Output only. The references to the cloud control deployments. It has all
+   * the CloudControlDeployments which are either directly added in the
+   * framework or through a CloudControlGroup. Example: If a framework
+   * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
+   * then the cloud_control_deployment_references will be:
    * {
    *  cloud_control_deployment_reference: {
    *    cloud_control_deployment:
@@ -968,10 +771,11 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. The references to the cloud control deployments.
-   * Example: If a framework deployment deploys two cloud controls,
-   * cc-deployment-1 and cc-deployment-2, then the
-   * cloud_control_deployment_references will be:
+   * Output only. The references to the cloud control deployments. It has all
+   * the CloudControlDeployments which are either directly added in the
+   * framework or through a CloudControlGroup. Example: If a framework
+   * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
+   * then the cloud_control_deployment_references will be:
    * {
    *  cloud_control_deployment_reference: {
    *    cloud_control_deployment:
@@ -999,10 +803,11 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. The references to the cloud control deployments.
-   * Example: If a framework deployment deploys two cloud controls,
-   * cc-deployment-1 and cc-deployment-2, then the
-   * cloud_control_deployment_references will be:
+   * Output only. The references to the cloud control deployments. It has all
+   * the CloudControlDeployments which are either directly added in the
+   * framework or through a CloudControlGroup. Example: If a framework
+   * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
+   * then the cloud_control_deployment_references will be:
    * {
    *  cloud_control_deployment_reference: {
    *    cloud_control_deployment:
@@ -1027,10 +832,11 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. The references to the cloud control deployments.
-   * Example: If a framework deployment deploys two cloud controls,
-   * cc-deployment-1 and cc-deployment-2, then the
-   * cloud_control_deployment_references will be:
+   * Output only. The references to the cloud control deployments. It has all
+   * the CloudControlDeployments which are either directly added in the
+   * framework or through a CloudControlGroup. Example: If a framework
+   * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
+   * then the cloud_control_deployment_references will be:
    * {
    *  cloud_control_deployment_reference: {
    *    cloud_control_deployment:
@@ -1056,10 +862,11 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Output only. The references to the cloud control deployments.
-   * Example: If a framework deployment deploys two cloud controls,
-   * cc-deployment-1 and cc-deployment-2, then the
-   * cloud_control_deployment_references will be:
+   * Output only. The references to the cloud control deployments. It has all
+   * the CloudControlDeployments which are either directly added in the
+   * framework or through a CloudControlGroup. Example: If a framework
+   * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
+   * then the cloud_control_deployment_references will be:
    * {
    *  cloud_control_deployment_reference: {
    *    cloud_control_deployment:
@@ -1118,9 +925,6 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
             .getNumber()) {
       output.writeEnum(7, deploymentState_);
     }
-    for (int i = 0; i < ccDeployments_.size(); i++) {
-      output.writeMessage(8, ccDeployments_.get(i));
-    }
     if (((bitField0_ & 0x00000004) != 0)) {
       output.writeMessage(9, getCreateTime());
     }
@@ -1129,9 +933,6 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 11, etag_);
-    }
-    for (int i = 0; i < ccGroupDeployments_.size(); i++) {
-      output.writeMessage(12, ccGroupDeployments_.get(i));
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetResourceDisplayName_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, targetResourceDisplayName_);
@@ -1173,9 +974,6 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, deploymentState_);
     }
-    for (int i = 0; i < ccDeployments_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, ccDeployments_.get(i));
-    }
     if (((bitField0_ & 0x00000004) != 0)) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getCreateTime());
     }
@@ -1184,10 +982,6 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(etag_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(11, etag_);
-    }
-    for (int i = 0; i < ccGroupDeployments_.size(); i++) {
-      size +=
-          com.google.protobuf.CodedOutputStream.computeMessageSize(12, ccGroupDeployments_.get(i));
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(targetResourceDisplayName_)) {
       size +=
@@ -1227,7 +1021,6 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
     if (!getDescription().equals(other.getDescription())) return false;
     if (!getCloudControlMetadataList().equals(other.getCloudControlMetadataList())) return false;
     if (deploymentState_ != other.deploymentState_) return false;
-    if (!getCcDeploymentsList().equals(other.getCcDeploymentsList())) return false;
     if (hasCreateTime() != other.hasCreateTime()) return false;
     if (hasCreateTime()) {
       if (!getCreateTime().equals(other.getCreateTime())) return false;
@@ -1237,7 +1030,6 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
       if (!getUpdateTime().equals(other.getUpdateTime())) return false;
     }
     if (!getEtag().equals(other.getEtag())) return false;
-    if (!getCcGroupDeploymentsList().equals(other.getCcGroupDeploymentsList())) return false;
     if (!getTargetResourceDisplayName().equals(other.getTargetResourceDisplayName())) return false;
     if (!getCloudControlDeploymentReferencesList()
         .equals(other.getCloudControlDeploymentReferencesList())) return false;
@@ -1272,10 +1064,6 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
     }
     hash = (37 * hash) + DEPLOYMENT_STATE_FIELD_NUMBER;
     hash = (53 * hash) + deploymentState_;
-    if (getCcDeploymentsCount() > 0) {
-      hash = (37 * hash) + CC_DEPLOYMENTS_FIELD_NUMBER;
-      hash = (53 * hash) + getCcDeploymentsList().hashCode();
-    }
     if (hasCreateTime()) {
       hash = (37 * hash) + CREATE_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getCreateTime().hashCode();
@@ -1286,10 +1074,6 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
     }
     hash = (37 * hash) + ETAG_FIELD_NUMBER;
     hash = (53 * hash) + getEtag().hashCode();
-    if (getCcGroupDeploymentsCount() > 0) {
-      hash = (37 * hash) + CC_GROUP_DEPLOYMENTS_FIELD_NUMBER;
-      hash = (53 * hash) + getCcGroupDeploymentsList().hashCode();
-    }
     hash = (37 * hash) + TARGET_RESOURCE_DISPLAY_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getTargetResourceDisplayName().hashCode();
     if (getCloudControlDeploymentReferencesCount() > 0) {
@@ -1402,8 +1186,9 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * FrameworkDeployment is a resource that represents a deployment using a
-   * framework.
+   * FrameworkDeployment represents deployment of a Framework on a target
+   * resource. Supported target resources are organizations/{organization},
+   * folders/{folder}, and projects/{project}.
    * </pre>
    *
    * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.FrameworkDeployment}
@@ -1442,10 +1227,8 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
         getTargetResourceConfigFieldBuilder();
         getFrameworkFieldBuilder();
         getCloudControlMetadataFieldBuilder();
-        getCcDeploymentsFieldBuilder();
         getCreateTimeFieldBuilder();
         getUpdateTimeFieldBuilder();
-        getCcGroupDeploymentsFieldBuilder();
         getCloudControlDeploymentReferencesFieldBuilder();
       }
     }
@@ -1475,13 +1258,6 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
       }
       bitField0_ = (bitField0_ & ~0x00000020);
       deploymentState_ = 0;
-      if (ccDeploymentsBuilder_ == null) {
-        ccDeployments_ = java.util.Collections.emptyList();
-      } else {
-        ccDeployments_ = null;
-        ccDeploymentsBuilder_.clear();
-      }
-      bitField0_ = (bitField0_ & ~0x00000080);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -1493,13 +1269,6 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
         updateTimeBuilder_ = null;
       }
       etag_ = "";
-      if (ccGroupDeploymentsBuilder_ == null) {
-        ccGroupDeployments_ = java.util.Collections.emptyList();
-      } else {
-        ccGroupDeployments_ = null;
-        ccGroupDeploymentsBuilder_.clear();
-      }
-      bitField0_ = (bitField0_ & ~0x00000800);
       targetResourceDisplayName_ = "";
       if (cloudControlDeploymentReferencesBuilder_ == null) {
         cloudControlDeploymentReferences_ = java.util.Collections.emptyList();
@@ -1507,7 +1276,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
         cloudControlDeploymentReferences_ = null;
         cloudControlDeploymentReferencesBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00002000);
+      bitField0_ = (bitField0_ & ~0x00000800);
       return this;
     }
 
@@ -1555,29 +1324,11 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
       } else {
         result.cloudControlMetadata_ = cloudControlMetadataBuilder_.build();
       }
-      if (ccDeploymentsBuilder_ == null) {
-        if (((bitField0_ & 0x00000080) != 0)) {
-          ccDeployments_ = java.util.Collections.unmodifiableList(ccDeployments_);
-          bitField0_ = (bitField0_ & ~0x00000080);
-        }
-        result.ccDeployments_ = ccDeployments_;
-      } else {
-        result.ccDeployments_ = ccDeploymentsBuilder_.build();
-      }
-      if (ccGroupDeploymentsBuilder_ == null) {
-        if (((bitField0_ & 0x00000800) != 0)) {
-          ccGroupDeployments_ = java.util.Collections.unmodifiableList(ccGroupDeployments_);
-          bitField0_ = (bitField0_ & ~0x00000800);
-        }
-        result.ccGroupDeployments_ = ccGroupDeployments_;
-      } else {
-        result.ccGroupDeployments_ = ccGroupDeploymentsBuilder_.build();
-      }
       if (cloudControlDeploymentReferencesBuilder_ == null) {
-        if (((bitField0_ & 0x00002000) != 0)) {
+        if (((bitField0_ & 0x00000800) != 0)) {
           cloudControlDeploymentReferences_ =
               java.util.Collections.unmodifiableList(cloudControlDeploymentReferences_);
-          bitField0_ = (bitField0_ & ~0x00002000);
+          bitField0_ = (bitField0_ & ~0x00000800);
         }
         result.cloudControlDeploymentReferences_ = cloudControlDeploymentReferences_;
       } else {
@@ -1612,18 +1363,18 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
       if (((from_bitField0_ & 0x00000040) != 0)) {
         result.deploymentState_ = deploymentState_;
       }
-      if (((from_bitField0_ & 0x00000100) != 0)) {
+      if (((from_bitField0_ & 0x00000080) != 0)) {
         result.createTime_ = createTimeBuilder_ == null ? createTime_ : createTimeBuilder_.build();
         to_bitField0_ |= 0x00000004;
       }
-      if (((from_bitField0_ & 0x00000200) != 0)) {
+      if (((from_bitField0_ & 0x00000100) != 0)) {
         result.updateTime_ = updateTimeBuilder_ == null ? updateTime_ : updateTimeBuilder_.build();
         to_bitField0_ |= 0x00000008;
       }
-      if (((from_bitField0_ & 0x00000400) != 0)) {
+      if (((from_bitField0_ & 0x00000200) != 0)) {
         result.etag_ = etag_;
       }
-      if (((from_bitField0_ & 0x00001000) != 0)) {
+      if (((from_bitField0_ & 0x00000400) != 0)) {
         result.targetResourceDisplayName_ = targetResourceDisplayName_;
       }
       result.bitField0_ |= to_bitField0_;
@@ -1728,33 +1479,6 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
       if (other.deploymentState_ != 0) {
         setDeploymentStateValue(other.getDeploymentStateValue());
       }
-      if (ccDeploymentsBuilder_ == null) {
-        if (!other.ccDeployments_.isEmpty()) {
-          if (ccDeployments_.isEmpty()) {
-            ccDeployments_ = other.ccDeployments_;
-            bitField0_ = (bitField0_ & ~0x00000080);
-          } else {
-            ensureCcDeploymentsIsMutable();
-            ccDeployments_.addAll(other.ccDeployments_);
-          }
-          onChanged();
-        }
-      } else {
-        if (!other.ccDeployments_.isEmpty()) {
-          if (ccDeploymentsBuilder_.isEmpty()) {
-            ccDeploymentsBuilder_.dispose();
-            ccDeploymentsBuilder_ = null;
-            ccDeployments_ = other.ccDeployments_;
-            bitField0_ = (bitField0_ & ~0x00000080);
-            ccDeploymentsBuilder_ =
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
-                    ? getCcDeploymentsFieldBuilder()
-                    : null;
-          } else {
-            ccDeploymentsBuilder_.addAllMessages(other.ccDeployments_);
-          }
-        }
-      }
       if (other.hasCreateTime()) {
         mergeCreateTime(other.getCreateTime());
       }
@@ -1763,46 +1487,19 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
       }
       if (!other.getEtag().isEmpty()) {
         etag_ = other.etag_;
-        bitField0_ |= 0x00000400;
+        bitField0_ |= 0x00000200;
         onChanged();
-      }
-      if (ccGroupDeploymentsBuilder_ == null) {
-        if (!other.ccGroupDeployments_.isEmpty()) {
-          if (ccGroupDeployments_.isEmpty()) {
-            ccGroupDeployments_ = other.ccGroupDeployments_;
-            bitField0_ = (bitField0_ & ~0x00000800);
-          } else {
-            ensureCcGroupDeploymentsIsMutable();
-            ccGroupDeployments_.addAll(other.ccGroupDeployments_);
-          }
-          onChanged();
-        }
-      } else {
-        if (!other.ccGroupDeployments_.isEmpty()) {
-          if (ccGroupDeploymentsBuilder_.isEmpty()) {
-            ccGroupDeploymentsBuilder_.dispose();
-            ccGroupDeploymentsBuilder_ = null;
-            ccGroupDeployments_ = other.ccGroupDeployments_;
-            bitField0_ = (bitField0_ & ~0x00000800);
-            ccGroupDeploymentsBuilder_ =
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
-                    ? getCcGroupDeploymentsFieldBuilder()
-                    : null;
-          } else {
-            ccGroupDeploymentsBuilder_.addAllMessages(other.ccGroupDeployments_);
-          }
-        }
       }
       if (!other.getTargetResourceDisplayName().isEmpty()) {
         targetResourceDisplayName_ = other.targetResourceDisplayName_;
-        bitField0_ |= 0x00001000;
+        bitField0_ |= 0x00000400;
         onChanged();
       }
       if (cloudControlDeploymentReferencesBuilder_ == null) {
         if (!other.cloudControlDeploymentReferences_.isEmpty()) {
           if (cloudControlDeploymentReferences_.isEmpty()) {
             cloudControlDeploymentReferences_ = other.cloudControlDeploymentReferences_;
-            bitField0_ = (bitField0_ & ~0x00002000);
+            bitField0_ = (bitField0_ & ~0x00000800);
           } else {
             ensureCloudControlDeploymentReferencesIsMutable();
             cloudControlDeploymentReferences_.addAll(other.cloudControlDeploymentReferences_);
@@ -1815,7 +1512,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
             cloudControlDeploymentReferencesBuilder_.dispose();
             cloudControlDeploymentReferencesBuilder_ = null;
             cloudControlDeploymentReferences_ = other.cloudControlDeploymentReferences_;
-            bitField0_ = (bitField0_ & ~0x00002000);
+            bitField0_ = (bitField0_ & ~0x00000800);
             cloudControlDeploymentReferencesBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getCloudControlDeploymentReferencesFieldBuilder()
@@ -1903,57 +1600,28 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
                 bitField0_ |= 0x00000040;
                 break;
               } // case 56
-            case 66:
-              {
-                com.google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment m =
-                    input.readMessage(
-                        com.google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment.parser(),
-                        extensionRegistry);
-                if (ccDeploymentsBuilder_ == null) {
-                  ensureCcDeploymentsIsMutable();
-                  ccDeployments_.add(m);
-                } else {
-                  ccDeploymentsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 66
             case 74:
               {
                 input.readMessage(getCreateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000100;
+                bitField0_ |= 0x00000080;
                 break;
               } // case 74
             case 82:
               {
                 input.readMessage(getUpdateTimeFieldBuilder().getBuilder(), extensionRegistry);
-                bitField0_ |= 0x00000200;
+                bitField0_ |= 0x00000100;
                 break;
               } // case 82
             case 90:
               {
                 etag_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00000400;
+                bitField0_ |= 0x00000200;
                 break;
               } // case 90
-            case 98:
-              {
-                com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment m =
-                    input.readMessage(
-                        com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment
-                            .parser(),
-                        extensionRegistry);
-                if (ccGroupDeploymentsBuilder_ == null) {
-                  ensureCcGroupDeploymentsIsMutable();
-                  ccGroupDeployments_.add(m);
-                } else {
-                  ccGroupDeploymentsBuilder_.addMessage(m);
-                }
-                break;
-              } // case 98
             case 106:
               {
                 targetResourceDisplayName_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00001000;
+                bitField0_ |= 0x00000400;
                 break;
               } // case 106
             case 114:
@@ -1996,7 +1664,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Identifier. FrameworkDeployment name in either of the following formats:
+     * Identifier. FrameworkDeployment name in the following format:
      * organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}
      * </pre>
      *
@@ -2020,7 +1688,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Identifier. FrameworkDeployment name in either of the following formats:
+     * Identifier. FrameworkDeployment name in the following format:
      * organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}
      * </pre>
      *
@@ -2044,7 +1712,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Identifier. FrameworkDeployment name in either of the following formats:
+     * Identifier. FrameworkDeployment name in the following format:
      * organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}
      * </pre>
      *
@@ -2067,7 +1735,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Identifier. FrameworkDeployment name in either of the following formats:
+     * Identifier. FrameworkDeployment name in the following format:
      * organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}
      * </pre>
      *
@@ -2086,7 +1754,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Identifier. FrameworkDeployment name in either of the following formats:
+     * Identifier. FrameworkDeployment name in the following format:
      * organizations/{organization}/locations/{location}/frameworkDeployments/{framework_deployment_id}
      * </pre>
      *
@@ -2117,8 +1785,9 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. target_resource_config referencing either an already existing
-     * target_resource or contains config for a target_resource to be created
+     * Required. The details of the target resource on which the Framework is to
+     * be deployed. It can either be an existing target resource or a new target
+     * resource to be created.
      * </pre>
      *
      * <code>
@@ -2135,8 +1804,9 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. target_resource_config referencing either an already existing
-     * target_resource or contains config for a target_resource to be created
+     * Required. The details of the target resource on which the Framework is to
+     * be deployed. It can either be an existing target resource or a new target
+     * resource to be created.
      * </pre>
      *
      * <code>
@@ -2160,8 +1830,9 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. target_resource_config referencing either an already existing
-     * target_resource or contains config for a target_resource to be created
+     * Required. The details of the target resource on which the Framework is to
+     * be deployed. It can either be an existing target resource or a new target
+     * resource to be created.
      * </pre>
      *
      * <code>
@@ -2187,8 +1858,9 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. target_resource_config referencing either an already existing
-     * target_resource or contains config for a target_resource to be created
+     * Required. The details of the target resource on which the Framework is to
+     * be deployed. It can either be an existing target resource or a new target
+     * resource to be created.
      * </pre>
      *
      * <code>
@@ -2211,8 +1883,9 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. target_resource_config referencing either an already existing
-     * target_resource or contains config for a target_resource to be created
+     * Required. The details of the target resource on which the Framework is to
+     * be deployed. It can either be an existing target resource or a new target
+     * resource to be created.
      * </pre>
      *
      * <code>
@@ -2245,8 +1918,9 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. target_resource_config referencing either an already existing
-     * target_resource or contains config for a target_resource to be created
+     * Required. The details of the target resource on which the Framework is to
+     * be deployed. It can either be an existing target resource or a new target
+     * resource to be created.
      * </pre>
      *
      * <code>
@@ -2268,8 +1942,9 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. target_resource_config referencing either an already existing
-     * target_resource or contains config for a target_resource to be created
+     * Required. The details of the target resource on which the Framework is to
+     * be deployed. It can either be an existing target resource or a new target
+     * resource to be created.
      * </pre>
      *
      * <code>
@@ -2287,8 +1962,9 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. target_resource_config referencing either an already existing
-     * target_resource or contains config for a target_resource to be created
+     * Required. The details of the target resource on which the Framework is to
+     * be deployed. It can either be an existing target resource or a new target
+     * resource to be created.
      * </pre>
      *
      * <code>
@@ -2310,8 +1986,9 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. target_resource_config referencing either an already existing
-     * target_resource or contains config for a target_resource to be created
+     * Required. The details of the target resource on which the Framework is to
+     * be deployed. It can either be an existing target resource or a new target
+     * resource to be created.
      * </pre>
      *
      * <code>
@@ -2342,9 +2019,8 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Output only. The resource on which the Framework is deployed based on the
-     * provided TargetResourceConfig. In format organizations/{organization},
-     * folders/{folder}, projects/{project} or
-     * projects/{project}/locations/{location}/applications/{application}.
+     * provided TargetResourceConfig in the following format:
+     * organizations/{organization}, folders/{folder} or projects/{project}
      * </pre>
      *
      * <code>string computed_target_resource = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -2369,9 +2045,8 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Output only. The resource on which the Framework is deployed based on the
-     * provided TargetResourceConfig. In format organizations/{organization},
-     * folders/{folder}, projects/{project} or
-     * projects/{project}/locations/{location}/applications/{application}.
+     * provided TargetResourceConfig in the following format:
+     * organizations/{organization}, folders/{folder} or projects/{project}
      * </pre>
      *
      * <code>string computed_target_resource = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -2396,9 +2071,8 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Output only. The resource on which the Framework is deployed based on the
-     * provided TargetResourceConfig. In format organizations/{organization},
-     * folders/{folder}, projects/{project} or
-     * projects/{project}/locations/{location}/applications/{application}.
+     * provided TargetResourceConfig in the following format:
+     * organizations/{organization}, folders/{folder} or projects/{project}
      * </pre>
      *
      * <code>string computed_target_resource = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -2422,9 +2096,8 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Output only. The resource on which the Framework is deployed based on the
-     * provided TargetResourceConfig. In format organizations/{organization},
-     * folders/{folder}, projects/{project} or
-     * projects/{project}/locations/{location}/applications/{application}.
+     * provided TargetResourceConfig in the following format:
+     * organizations/{organization}, folders/{folder} or projects/{project}
      * </pre>
      *
      * <code>string computed_target_resource = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -2444,9 +2117,8 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Output only. The resource on which the Framework is deployed based on the
-     * provided TargetResourceConfig. In format organizations/{organization},
-     * folders/{folder}, projects/{project} or
-     * projects/{project}/locations/{location}/applications/{application}.
+     * provided TargetResourceConfig in the following format:
+     * organizations/{organization}, folders/{folder} or projects/{project}
      * </pre>
      *
      * <code>string computed_target_resource = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
@@ -2477,7 +2149,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Framework resource reference
+     * Required. Reference to the framework to be deployed.
      * </pre>
      *
      * <code>
@@ -2494,7 +2166,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Framework resource reference
+     * Required. Reference to the framework to be deployed.
      * </pre>
      *
      * <code>
@@ -2517,7 +2189,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Framework resource reference
+     * Required. Reference to the framework to be deployed.
      * </pre>
      *
      * <code>
@@ -2543,7 +2215,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Framework resource reference
+     * Required. Reference to the framework to be deployed.
      * </pre>
      *
      * <code>
@@ -2566,7 +2238,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Framework resource reference
+     * Required. Reference to the framework to be deployed.
      * </pre>
      *
      * <code>
@@ -2599,7 +2271,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Framework resource reference
+     * Required. Reference to the framework to be deployed.
      * </pre>
      *
      * <code>
@@ -2621,7 +2293,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Framework resource reference
+     * Required. Reference to the framework to be deployed.
      * </pre>
      *
      * <code>
@@ -2639,7 +2311,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Framework resource reference
+     * Required. Reference to the framework to be deployed.
      * </pre>
      *
      * <code>
@@ -2661,7 +2333,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Framework resource reference
+     * Required. Reference to the framework to be deployed.
      * </pre>
      *
      * <code>
@@ -2691,7 +2363,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. User provided description of the deployment
+     * Optional. User provided description of the Framework deployment
      * </pre>
      *
      * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2714,7 +2386,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. User provided description of the deployment
+     * Optional. User provided description of the Framework deployment
      * </pre>
      *
      * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2737,7 +2409,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. User provided description of the deployment
+     * Optional. User provided description of the Framework deployment
      * </pre>
      *
      * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2759,7 +2431,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. User provided description of the deployment
+     * Optional. User provided description of the Framework deployment
      * </pre>
      *
      * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2777,7 +2449,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Optional. User provided description of the deployment
+     * Optional. User provided description of the Framework deployment
      * </pre>
      *
      * <code>string description = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -2819,8 +2491,9 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Deployment mode and parameters for each of the cloud_controls
-     * part of the framework.
+     * Required. Deployment mode and parameters for each of the Cloud Controls in
+     * the framework. Every Cloud Control in the framework must have a
+     * CloudControlMetadata.
      * </pre>
      *
      * <code>
@@ -2840,8 +2513,9 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Deployment mode and parameters for each of the cloud_controls
-     * part of the framework.
+     * Required. Deployment mode and parameters for each of the Cloud Controls in
+     * the framework. Every Cloud Control in the framework must have a
+     * CloudControlMetadata.
      * </pre>
      *
      * <code>
@@ -2860,8 +2534,9 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Deployment mode and parameters for each of the cloud_controls
-     * part of the framework.
+     * Required. Deployment mode and parameters for each of the Cloud Controls in
+     * the framework. Every Cloud Control in the framework must have a
+     * CloudControlMetadata.
      * </pre>
      *
      * <code>
@@ -2881,8 +2556,9 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Deployment mode and parameters for each of the cloud_controls
-     * part of the framework.
+     * Required. Deployment mode and parameters for each of the Cloud Controls in
+     * the framework. Every Cloud Control in the framework must have a
+     * CloudControlMetadata.
      * </pre>
      *
      * <code>
@@ -2908,8 +2584,9 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Deployment mode and parameters for each of the cloud_controls
-     * part of the framework.
+     * Required. Deployment mode and parameters for each of the Cloud Controls in
+     * the framework. Every Cloud Control in the framework must have a
+     * CloudControlMetadata.
      * </pre>
      *
      * <code>
@@ -2933,8 +2610,9 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Deployment mode and parameters for each of the cloud_controls
-     * part of the framework.
+     * Required. Deployment mode and parameters for each of the Cloud Controls in
+     * the framework. Every Cloud Control in the framework must have a
+     * CloudControlMetadata.
      * </pre>
      *
      * <code>
@@ -2960,8 +2638,9 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Deployment mode and parameters for each of the cloud_controls
-     * part of the framework.
+     * Required. Deployment mode and parameters for each of the Cloud Controls in
+     * the framework. Every Cloud Control in the framework must have a
+     * CloudControlMetadata.
      * </pre>
      *
      * <code>
@@ -2987,8 +2666,9 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Deployment mode and parameters for each of the cloud_controls
-     * part of the framework.
+     * Required. Deployment mode and parameters for each of the Cloud Controls in
+     * the framework. Every Cloud Control in the framework must have a
+     * CloudControlMetadata.
      * </pre>
      *
      * <code>
@@ -3011,8 +2691,9 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Deployment mode and parameters for each of the cloud_controls
-     * part of the framework.
+     * Required. Deployment mode and parameters for each of the Cloud Controls in
+     * the framework. Every Cloud Control in the framework must have a
+     * CloudControlMetadata.
      * </pre>
      *
      * <code>
@@ -3036,8 +2717,9 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Deployment mode and parameters for each of the cloud_controls
-     * part of the framework.
+     * Required. Deployment mode and parameters for each of the Cloud Controls in
+     * the framework. Every Cloud Control in the framework must have a
+     * CloudControlMetadata.
      * </pre>
      *
      * <code>
@@ -3062,8 +2744,9 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Deployment mode and parameters for each of the cloud_controls
-     * part of the framework.
+     * Required. Deployment mode and parameters for each of the Cloud Controls in
+     * the framework. Every Cloud Control in the framework must have a
+     * CloudControlMetadata.
      * </pre>
      *
      * <code>
@@ -3085,8 +2768,9 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Deployment mode and parameters for each of the cloud_controls
-     * part of the framework.
+     * Required. Deployment mode and parameters for each of the Cloud Controls in
+     * the framework. Every Cloud Control in the framework must have a
+     * CloudControlMetadata.
      * </pre>
      *
      * <code>
@@ -3108,8 +2792,9 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Deployment mode and parameters for each of the cloud_controls
-     * part of the framework.
+     * Required. Deployment mode and parameters for each of the Cloud Controls in
+     * the framework. Every Cloud Control in the framework must have a
+     * CloudControlMetadata.
      * </pre>
      *
      * <code>
@@ -3125,8 +2810,9 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Deployment mode and parameters for each of the cloud_controls
-     * part of the framework.
+     * Required. Deployment mode and parameters for each of the Cloud Controls in
+     * the framework. Every Cloud Control in the framework must have a
+     * CloudControlMetadata.
      * </pre>
      *
      * <code>
@@ -3146,8 +2832,9 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Deployment mode and parameters for each of the cloud_controls
-     * part of the framework.
+     * Required. Deployment mode and parameters for each of the Cloud Controls in
+     * the framework. Every Cloud Control in the framework must have a
+     * CloudControlMetadata.
      * </pre>
      *
      * <code>
@@ -3168,8 +2855,9 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Deployment mode and parameters for each of the cloud_controls
-     * part of the framework.
+     * Required. Deployment mode and parameters for each of the Cloud Controls in
+     * the framework. Every Cloud Control in the framework must have a
+     * CloudControlMetadata.
      * </pre>
      *
      * <code>
@@ -3188,8 +2876,9 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Deployment mode and parameters for each of the cloud_controls
-     * part of the framework.
+     * Required. Deployment mode and parameters for each of the Cloud Controls in
+     * the framework. Every Cloud Control in the framework must have a
+     * CloudControlMetadata.
      * </pre>
      *
      * <code>
@@ -3209,8 +2898,9 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Required. Deployment mode and parameters for each of the cloud_controls
-     * part of the framework.
+     * Required. Deployment mode and parameters for each of the Cloud Controls in
+     * the framework. Every Cloud Control in the framework must have a
+     * CloudControlMetadata.
      * </pre>
      *
      * <code>
@@ -3248,7 +2938,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. State of the deployment
+     * Output only. State of the Framework Deployment
      * </pre>
      *
      * <code>
@@ -3266,7 +2956,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. State of the deployment
+     * Output only. State of the Framework Deployment
      * </pre>
      *
      * <code>
@@ -3287,7 +2977,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. State of the deployment
+     * Output only. State of the Framework Deployment
      * </pre>
      *
      * <code>
@@ -3309,7 +2999,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. State of the deployment
+     * Output only. State of the Framework Deployment
      * </pre>
      *
      * <code>
@@ -3334,7 +3024,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. State of the deployment
+     * Output only. State of the Framework Deployment
      * </pre>
      *
      * <code>
@@ -3348,509 +3038,6 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
       deploymentState_ = 0;
       onChanged();
       return this;
-    }
-
-    private java.util.List<com.google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment>
-        ccDeployments_ = java.util.Collections.emptyList();
-
-    private void ensureCcDeploymentsIsMutable() {
-      if (!((bitField0_ & 0x00000080) != 0)) {
-        ccDeployments_ =
-            new java.util.ArrayList<
-                com.google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment>(ccDeployments_);
-        bitField0_ |= 0x00000080;
-      }
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment,
-            com.google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment.Builder,
-            com.google.cloud.cloudsecuritycompliance.v1.CloudControlDeploymentOrBuilder>
-        ccDeploymentsBuilder_;
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. This field is inlined just for cloudNext because the one
-     * platform apis of CCDeployment does not exist. Beyond cloud
-     * next it will be replaced with the field below which is the
-     * references of cloud control deployment
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment cc_deployments = 8 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    @java.lang.Deprecated
-    public java.util.List<com.google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment>
-        getCcDeploymentsList() {
-      if (ccDeploymentsBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(ccDeployments_);
-      } else {
-        return ccDeploymentsBuilder_.getMessageList();
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. This field is inlined just for cloudNext because the one
-     * platform apis of CCDeployment does not exist. Beyond cloud
-     * next it will be replaced with the field below which is the
-     * references of cloud control deployment
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment cc_deployments = 8 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    @java.lang.Deprecated
-    public int getCcDeploymentsCount() {
-      if (ccDeploymentsBuilder_ == null) {
-        return ccDeployments_.size();
-      } else {
-        return ccDeploymentsBuilder_.getCount();
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. This field is inlined just for cloudNext because the one
-     * platform apis of CCDeployment does not exist. Beyond cloud
-     * next it will be replaced with the field below which is the
-     * references of cloud control deployment
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment cc_deployments = 8 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    @java.lang.Deprecated
-    public com.google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment getCcDeployments(
-        int index) {
-      if (ccDeploymentsBuilder_ == null) {
-        return ccDeployments_.get(index);
-      } else {
-        return ccDeploymentsBuilder_.getMessage(index);
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. This field is inlined just for cloudNext because the one
-     * platform apis of CCDeployment does not exist. Beyond cloud
-     * next it will be replaced with the field below which is the
-     * references of cloud control deployment
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment cc_deployments = 8 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    @java.lang.Deprecated
-    public Builder setCcDeployments(
-        int index, com.google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment value) {
-      if (ccDeploymentsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureCcDeploymentsIsMutable();
-        ccDeployments_.set(index, value);
-        onChanged();
-      } else {
-        ccDeploymentsBuilder_.setMessage(index, value);
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. This field is inlined just for cloudNext because the one
-     * platform apis of CCDeployment does not exist. Beyond cloud
-     * next it will be replaced with the field below which is the
-     * references of cloud control deployment
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment cc_deployments = 8 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    @java.lang.Deprecated
-    public Builder setCcDeployments(
-        int index,
-        com.google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment.Builder
-            builderForValue) {
-      if (ccDeploymentsBuilder_ == null) {
-        ensureCcDeploymentsIsMutable();
-        ccDeployments_.set(index, builderForValue.build());
-        onChanged();
-      } else {
-        ccDeploymentsBuilder_.setMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. This field is inlined just for cloudNext because the one
-     * platform apis of CCDeployment does not exist. Beyond cloud
-     * next it will be replaced with the field below which is the
-     * references of cloud control deployment
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment cc_deployments = 8 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    @java.lang.Deprecated
-    public Builder addCcDeployments(
-        com.google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment value) {
-      if (ccDeploymentsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureCcDeploymentsIsMutable();
-        ccDeployments_.add(value);
-        onChanged();
-      } else {
-        ccDeploymentsBuilder_.addMessage(value);
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. This field is inlined just for cloudNext because the one
-     * platform apis of CCDeployment does not exist. Beyond cloud
-     * next it will be replaced with the field below which is the
-     * references of cloud control deployment
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment cc_deployments = 8 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    @java.lang.Deprecated
-    public Builder addCcDeployments(
-        int index, com.google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment value) {
-      if (ccDeploymentsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureCcDeploymentsIsMutable();
-        ccDeployments_.add(index, value);
-        onChanged();
-      } else {
-        ccDeploymentsBuilder_.addMessage(index, value);
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. This field is inlined just for cloudNext because the one
-     * platform apis of CCDeployment does not exist. Beyond cloud
-     * next it will be replaced with the field below which is the
-     * references of cloud control deployment
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment cc_deployments = 8 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    @java.lang.Deprecated
-    public Builder addCcDeployments(
-        com.google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment.Builder
-            builderForValue) {
-      if (ccDeploymentsBuilder_ == null) {
-        ensureCcDeploymentsIsMutable();
-        ccDeployments_.add(builderForValue.build());
-        onChanged();
-      } else {
-        ccDeploymentsBuilder_.addMessage(builderForValue.build());
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. This field is inlined just for cloudNext because the one
-     * platform apis of CCDeployment does not exist. Beyond cloud
-     * next it will be replaced with the field below which is the
-     * references of cloud control deployment
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment cc_deployments = 8 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    @java.lang.Deprecated
-    public Builder addCcDeployments(
-        int index,
-        com.google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment.Builder
-            builderForValue) {
-      if (ccDeploymentsBuilder_ == null) {
-        ensureCcDeploymentsIsMutable();
-        ccDeployments_.add(index, builderForValue.build());
-        onChanged();
-      } else {
-        ccDeploymentsBuilder_.addMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. This field is inlined just for cloudNext because the one
-     * platform apis of CCDeployment does not exist. Beyond cloud
-     * next it will be replaced with the field below which is the
-     * references of cloud control deployment
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment cc_deployments = 8 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    @java.lang.Deprecated
-    public Builder addAllCcDeployments(
-        java.lang.Iterable<
-                ? extends com.google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment>
-            values) {
-      if (ccDeploymentsBuilder_ == null) {
-        ensureCcDeploymentsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, ccDeployments_);
-        onChanged();
-      } else {
-        ccDeploymentsBuilder_.addAllMessages(values);
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. This field is inlined just for cloudNext because the one
-     * platform apis of CCDeployment does not exist. Beyond cloud
-     * next it will be replaced with the field below which is the
-     * references of cloud control deployment
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment cc_deployments = 8 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    @java.lang.Deprecated
-    public Builder clearCcDeployments() {
-      if (ccDeploymentsBuilder_ == null) {
-        ccDeployments_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000080);
-        onChanged();
-      } else {
-        ccDeploymentsBuilder_.clear();
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. This field is inlined just for cloudNext because the one
-     * platform apis of CCDeployment does not exist. Beyond cloud
-     * next it will be replaced with the field below which is the
-     * references of cloud control deployment
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment cc_deployments = 8 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    @java.lang.Deprecated
-    public Builder removeCcDeployments(int index) {
-      if (ccDeploymentsBuilder_ == null) {
-        ensureCcDeploymentsIsMutable();
-        ccDeployments_.remove(index);
-        onChanged();
-      } else {
-        ccDeploymentsBuilder_.remove(index);
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. This field is inlined just for cloudNext because the one
-     * platform apis of CCDeployment does not exist. Beyond cloud
-     * next it will be replaced with the field below which is the
-     * references of cloud control deployment
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment cc_deployments = 8 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    @java.lang.Deprecated
-    public com.google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment.Builder
-        getCcDeploymentsBuilder(int index) {
-      return getCcDeploymentsFieldBuilder().getBuilder(index);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. This field is inlined just for cloudNext because the one
-     * platform apis of CCDeployment does not exist. Beyond cloud
-     * next it will be replaced with the field below which is the
-     * references of cloud control deployment
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment cc_deployments = 8 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    @java.lang.Deprecated
-    public com.google.cloud.cloudsecuritycompliance.v1.CloudControlDeploymentOrBuilder
-        getCcDeploymentsOrBuilder(int index) {
-      if (ccDeploymentsBuilder_ == null) {
-        return ccDeployments_.get(index);
-      } else {
-        return ccDeploymentsBuilder_.getMessageOrBuilder(index);
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. This field is inlined just for cloudNext because the one
-     * platform apis of CCDeployment does not exist. Beyond cloud
-     * next it will be replaced with the field below which is the
-     * references of cloud control deployment
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment cc_deployments = 8 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    @java.lang.Deprecated
-    public java.util.List<
-            ? extends com.google.cloud.cloudsecuritycompliance.v1.CloudControlDeploymentOrBuilder>
-        getCcDeploymentsOrBuilderList() {
-      if (ccDeploymentsBuilder_ != null) {
-        return ccDeploymentsBuilder_.getMessageOrBuilderList();
-      } else {
-        return java.util.Collections.unmodifiableList(ccDeployments_);
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. This field is inlined just for cloudNext because the one
-     * platform apis of CCDeployment does not exist. Beyond cloud
-     * next it will be replaced with the field below which is the
-     * references of cloud control deployment
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment cc_deployments = 8 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    @java.lang.Deprecated
-    public com.google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment.Builder
-        addCcDeploymentsBuilder() {
-      return getCcDeploymentsFieldBuilder()
-          .addBuilder(
-              com.google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment
-                  .getDefaultInstance());
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. This field is inlined just for cloudNext because the one
-     * platform apis of CCDeployment does not exist. Beyond cloud
-     * next it will be replaced with the field below which is the
-     * references of cloud control deployment
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment cc_deployments = 8 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    @java.lang.Deprecated
-    public com.google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment.Builder
-        addCcDeploymentsBuilder(int index) {
-      return getCcDeploymentsFieldBuilder()
-          .addBuilder(
-              index,
-              com.google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment
-                  .getDefaultInstance());
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. This field is inlined just for cloudNext because the one
-     * platform apis of CCDeployment does not exist. Beyond cloud
-     * next it will be replaced with the field below which is the
-     * references of cloud control deployment
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment cc_deployments = 8 [deprecated = true, (.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    @java.lang.Deprecated
-    public java.util.List<
-            com.google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment.Builder>
-        getCcDeploymentsBuilderList() {
-      return getCcDeploymentsFieldBuilder().getBuilderList();
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment,
-            com.google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment.Builder,
-            com.google.cloud.cloudsecuritycompliance.v1.CloudControlDeploymentOrBuilder>
-        getCcDeploymentsFieldBuilder() {
-      if (ccDeploymentsBuilder_ == null) {
-        ccDeploymentsBuilder_ =
-            new com.google.protobuf.RepeatedFieldBuilderV3<
-                com.google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment,
-                com.google.cloud.cloudsecuritycompliance.v1.CloudControlDeployment.Builder,
-                com.google.cloud.cloudsecuritycompliance.v1.CloudControlDeploymentOrBuilder>(
-                ccDeployments_,
-                ((bitField0_ & 0x00000080) != 0),
-                getParentForChildren(),
-                isClean());
-        ccDeployments_ = null;
-      }
-      return ccDeploymentsBuilder_;
     }
 
     private com.google.protobuf.Timestamp createTime_;
@@ -3874,7 +3061,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      * @return Whether the createTime field is set.
      */
     public boolean hasCreateTime() {
-      return ((bitField0_ & 0x00000100) != 0);
+      return ((bitField0_ & 0x00000080) != 0);
     }
 
     /**
@@ -3920,7 +3107,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
       } else {
         createTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3942,7 +3129,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
       } else {
         createTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000080;
       onChanged();
       return this;
     }
@@ -3960,7 +3147,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeCreateTime(com.google.protobuf.Timestamp value) {
       if (createTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000100) != 0)
+        if (((bitField0_ & 0x00000080) != 0)
             && createTime_ != null
             && createTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getCreateTimeBuilder().mergeFrom(value);
@@ -3971,7 +3158,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
         createTimeBuilder_.mergeFrom(value);
       }
       if (createTime_ != null) {
-        bitField0_ |= 0x00000100;
+        bitField0_ |= 0x00000080;
         onChanged();
       }
       return this;
@@ -3989,7 +3176,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearCreateTime() {
-      bitField0_ = (bitField0_ & ~0x00000100);
+      bitField0_ = (bitField0_ & ~0x00000080);
       createTime_ = null;
       if (createTimeBuilder_ != null) {
         createTimeBuilder_.dispose();
@@ -4011,7 +3198,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      bitField0_ |= 0x00000100;
+      bitField0_ |= 0x00000080;
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
@@ -4086,7 +3273,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      * @return Whether the updateTime field is set.
      */
     public boolean hasUpdateTime() {
-      return ((bitField0_ & 0x00000200) != 0);
+      return ((bitField0_ & 0x00000100) != 0);
     }
 
     /**
@@ -4132,7 +3319,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
       } else {
         updateTimeBuilder_.setMessage(value);
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4154,7 +3341,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
       } else {
         updateTimeBuilder_.setMessage(builderForValue.build());
       }
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000100;
       onChanged();
       return this;
     }
@@ -4172,7 +3359,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      */
     public Builder mergeUpdateTime(com.google.protobuf.Timestamp value) {
       if (updateTimeBuilder_ == null) {
-        if (((bitField0_ & 0x00000200) != 0)
+        if (((bitField0_ & 0x00000100) != 0)
             && updateTime_ != null
             && updateTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
           getUpdateTimeBuilder().mergeFrom(value);
@@ -4183,7 +3370,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
         updateTimeBuilder_.mergeFrom(value);
       }
       if (updateTime_ != null) {
-        bitField0_ |= 0x00000200;
+        bitField0_ |= 0x00000100;
         onChanged();
       }
       return this;
@@ -4201,7 +3388,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public Builder clearUpdateTime() {
-      bitField0_ = (bitField0_ & ~0x00000200);
+      bitField0_ = (bitField0_ & ~0x00000100);
       updateTime_ = null;
       if (updateTimeBuilder_ != null) {
         updateTimeBuilder_.dispose();
@@ -4223,7 +3410,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      * </code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      bitField0_ |= 0x00000200;
+      bitField0_ |= 0x00000100;
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
@@ -4284,10 +3471,10 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. To prevent concurrent updates from overwriting each other, always
-     * provide the `etag` when you update a CustomComplianceFramework. You can
-     * also provide the `etag` when you delete a CustomComplianceFramework, to
-     * help ensure that you're deleting the intended version of the
-     * CustomComplianceFramework.
+     * provide the `etag` when you update a FrameworkDeployment. You can also
+     * provide the `etag` when you delete a FrameworkDeployment, to help
+     * ensure that you're deleting the intended version of the
+     * FrameworkDeployment.
      * </pre>
      *
      * <code>string etag = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4311,10 +3498,10 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. To prevent concurrent updates from overwriting each other, always
-     * provide the `etag` when you update a CustomComplianceFramework. You can
-     * also provide the `etag` when you delete a CustomComplianceFramework, to
-     * help ensure that you're deleting the intended version of the
-     * CustomComplianceFramework.
+     * provide the `etag` when you update a FrameworkDeployment. You can also
+     * provide the `etag` when you delete a FrameworkDeployment, to help
+     * ensure that you're deleting the intended version of the
+     * FrameworkDeployment.
      * </pre>
      *
      * <code>string etag = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4338,10 +3525,10 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. To prevent concurrent updates from overwriting each other, always
-     * provide the `etag` when you update a CustomComplianceFramework. You can
-     * also provide the `etag` when you delete a CustomComplianceFramework, to
-     * help ensure that you're deleting the intended version of the
-     * CustomComplianceFramework.
+     * provide the `etag` when you update a FrameworkDeployment. You can also
+     * provide the `etag` when you delete a FrameworkDeployment, to help
+     * ensure that you're deleting the intended version of the
+     * FrameworkDeployment.
      * </pre>
      *
      * <code>string etag = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4354,7 +3541,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       etag_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
     }
@@ -4364,10 +3551,10 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. To prevent concurrent updates from overwriting each other, always
-     * provide the `etag` when you update a CustomComplianceFramework. You can
-     * also provide the `etag` when you delete a CustomComplianceFramework, to
-     * help ensure that you're deleting the intended version of the
-     * CustomComplianceFramework.
+     * provide the `etag` when you update a FrameworkDeployment. You can also
+     * provide the `etag` when you delete a FrameworkDeployment, to help
+     * ensure that you're deleting the intended version of the
+     * FrameworkDeployment.
      * </pre>
      *
      * <code>string etag = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4376,7 +3563,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      */
     public Builder clearEtag() {
       etag_ = getDefaultInstance().getEtag();
-      bitField0_ = (bitField0_ & ~0x00000400);
+      bitField0_ = (bitField0_ & ~0x00000200);
       onChanged();
       return this;
     }
@@ -4386,10 +3573,10 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * Optional. To prevent concurrent updates from overwriting each other, always
-     * provide the `etag` when you update a CustomComplianceFramework. You can
-     * also provide the `etag` when you delete a CustomComplianceFramework, to
-     * help ensure that you're deleting the intended version of the
-     * CustomComplianceFramework.
+     * provide the `etag` when you update a FrameworkDeployment. You can also
+     * provide the `etag` when you delete a FrameworkDeployment, to help
+     * ensure that you're deleting the intended version of the
+     * FrameworkDeployment.
      * </pre>
      *
      * <code>string etag = 11 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -4403,442 +3590,9 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
       }
       checkByteStringIsUtf8(value);
       etag_ = value;
-      bitField0_ |= 0x00000400;
+      bitField0_ |= 0x00000200;
       onChanged();
       return this;
-    }
-
-    private java.util.List<com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment>
-        ccGroupDeployments_ = java.util.Collections.emptyList();
-
-    private void ensureCcGroupDeploymentsIsMutable() {
-      if (!((bitField0_ & 0x00000800) != 0)) {
-        ccGroupDeployments_ =
-            new java.util.ArrayList<
-                com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment>(
-                ccGroupDeployments_);
-        bitField0_ |= 0x00000800;
-      }
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment,
-            com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment.Builder,
-            com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeploymentOrBuilder>
-        ccGroupDeploymentsBuilder_;
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Similarly we'll also have a field for CloudControlGroups
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment cc_group_deployments = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public java.util.List<com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment>
-        getCcGroupDeploymentsList() {
-      if (ccGroupDeploymentsBuilder_ == null) {
-        return java.util.Collections.unmodifiableList(ccGroupDeployments_);
-      } else {
-        return ccGroupDeploymentsBuilder_.getMessageList();
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Similarly we'll also have a field for CloudControlGroups
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment cc_group_deployments = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public int getCcGroupDeploymentsCount() {
-      if (ccGroupDeploymentsBuilder_ == null) {
-        return ccGroupDeployments_.size();
-      } else {
-        return ccGroupDeploymentsBuilder_.getCount();
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Similarly we'll also have a field for CloudControlGroups
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment cc_group_deployments = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment
-        getCcGroupDeployments(int index) {
-      if (ccGroupDeploymentsBuilder_ == null) {
-        return ccGroupDeployments_.get(index);
-      } else {
-        return ccGroupDeploymentsBuilder_.getMessage(index);
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Similarly we'll also have a field for CloudControlGroups
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment cc_group_deployments = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public Builder setCcGroupDeployments(
-        int index, com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment value) {
-      if (ccGroupDeploymentsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureCcGroupDeploymentsIsMutable();
-        ccGroupDeployments_.set(index, value);
-        onChanged();
-      } else {
-        ccGroupDeploymentsBuilder_.setMessage(index, value);
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Similarly we'll also have a field for CloudControlGroups
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment cc_group_deployments = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public Builder setCcGroupDeployments(
-        int index,
-        com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment.Builder
-            builderForValue) {
-      if (ccGroupDeploymentsBuilder_ == null) {
-        ensureCcGroupDeploymentsIsMutable();
-        ccGroupDeployments_.set(index, builderForValue.build());
-        onChanged();
-      } else {
-        ccGroupDeploymentsBuilder_.setMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Similarly we'll also have a field for CloudControlGroups
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment cc_group_deployments = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public Builder addCcGroupDeployments(
-        com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment value) {
-      if (ccGroupDeploymentsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureCcGroupDeploymentsIsMutable();
-        ccGroupDeployments_.add(value);
-        onChanged();
-      } else {
-        ccGroupDeploymentsBuilder_.addMessage(value);
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Similarly we'll also have a field for CloudControlGroups
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment cc_group_deployments = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public Builder addCcGroupDeployments(
-        int index, com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment value) {
-      if (ccGroupDeploymentsBuilder_ == null) {
-        if (value == null) {
-          throw new NullPointerException();
-        }
-        ensureCcGroupDeploymentsIsMutable();
-        ccGroupDeployments_.add(index, value);
-        onChanged();
-      } else {
-        ccGroupDeploymentsBuilder_.addMessage(index, value);
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Similarly we'll also have a field for CloudControlGroups
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment cc_group_deployments = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public Builder addCcGroupDeployments(
-        com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment.Builder
-            builderForValue) {
-      if (ccGroupDeploymentsBuilder_ == null) {
-        ensureCcGroupDeploymentsIsMutable();
-        ccGroupDeployments_.add(builderForValue.build());
-        onChanged();
-      } else {
-        ccGroupDeploymentsBuilder_.addMessage(builderForValue.build());
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Similarly we'll also have a field for CloudControlGroups
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment cc_group_deployments = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public Builder addCcGroupDeployments(
-        int index,
-        com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment.Builder
-            builderForValue) {
-      if (ccGroupDeploymentsBuilder_ == null) {
-        ensureCcGroupDeploymentsIsMutable();
-        ccGroupDeployments_.add(index, builderForValue.build());
-        onChanged();
-      } else {
-        ccGroupDeploymentsBuilder_.addMessage(index, builderForValue.build());
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Similarly we'll also have a field for CloudControlGroups
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment cc_group_deployments = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public Builder addAllCcGroupDeployments(
-        java.lang.Iterable<
-                ? extends com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment>
-            values) {
-      if (ccGroupDeploymentsBuilder_ == null) {
-        ensureCcGroupDeploymentsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, ccGroupDeployments_);
-        onChanged();
-      } else {
-        ccGroupDeploymentsBuilder_.addAllMessages(values);
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Similarly we'll also have a field for CloudControlGroups
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment cc_group_deployments = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public Builder clearCcGroupDeployments() {
-      if (ccGroupDeploymentsBuilder_ == null) {
-        ccGroupDeployments_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00000800);
-        onChanged();
-      } else {
-        ccGroupDeploymentsBuilder_.clear();
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Similarly we'll also have a field for CloudControlGroups
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment cc_group_deployments = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public Builder removeCcGroupDeployments(int index) {
-      if (ccGroupDeploymentsBuilder_ == null) {
-        ensureCcGroupDeploymentsIsMutable();
-        ccGroupDeployments_.remove(index);
-        onChanged();
-      } else {
-        ccGroupDeploymentsBuilder_.remove(index);
-      }
-      return this;
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Similarly we'll also have a field for CloudControlGroups
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment cc_group_deployments = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment.Builder
-        getCcGroupDeploymentsBuilder(int index) {
-      return getCcGroupDeploymentsFieldBuilder().getBuilder(index);
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Similarly we'll also have a field for CloudControlGroups
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment cc_group_deployments = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeploymentOrBuilder
-        getCcGroupDeploymentsOrBuilder(int index) {
-      if (ccGroupDeploymentsBuilder_ == null) {
-        return ccGroupDeployments_.get(index);
-      } else {
-        return ccGroupDeploymentsBuilder_.getMessageOrBuilder(index);
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Similarly we'll also have a field for CloudControlGroups
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment cc_group_deployments = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public java.util.List<
-            ? extends
-                com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeploymentOrBuilder>
-        getCcGroupDeploymentsOrBuilderList() {
-      if (ccGroupDeploymentsBuilder_ != null) {
-        return ccGroupDeploymentsBuilder_.getMessageOrBuilderList();
-      } else {
-        return java.util.Collections.unmodifiableList(ccGroupDeployments_);
-      }
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Similarly we'll also have a field for CloudControlGroups
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment cc_group_deployments = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment.Builder
-        addCcGroupDeploymentsBuilder() {
-      return getCcGroupDeploymentsFieldBuilder()
-          .addBuilder(
-              com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment
-                  .getDefaultInstance());
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Similarly we'll also have a field for CloudControlGroups
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment cc_group_deployments = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment.Builder
-        addCcGroupDeploymentsBuilder(int index) {
-      return getCcGroupDeploymentsFieldBuilder()
-          .addBuilder(
-              index,
-              com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment
-                  .getDefaultInstance());
-    }
-
-    /**
-     *
-     *
-     * <pre>
-     * Output only. Similarly we'll also have a field for CloudControlGroups
-     * </pre>
-     *
-     * <code>
-     * repeated .google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment cc_group_deployments = 12 [(.google.api.field_behavior) = OUTPUT_ONLY];
-     * </code>
-     */
-    public java.util.List<
-            com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment.Builder>
-        getCcGroupDeploymentsBuilderList() {
-      return getCcGroupDeploymentsFieldBuilder().getBuilderList();
-    }
-
-    private com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment,
-            com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment.Builder,
-            com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeploymentOrBuilder>
-        getCcGroupDeploymentsFieldBuilder() {
-      if (ccGroupDeploymentsBuilder_ == null) {
-        ccGroupDeploymentsBuilder_ =
-            new com.google.protobuf.RepeatedFieldBuilderV3<
-                com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment,
-                com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeployment.Builder,
-                com.google.cloud.cloudsecuritycompliance.v1.CloudControlGroupDeploymentOrBuilder>(
-                ccGroupDeployments_,
-                ((bitField0_ & 0x00000800) != 0),
-                getParentForChildren(),
-                isClean());
-        ccGroupDeployments_ = null;
-      }
-      return ccGroupDeploymentsBuilder_;
     }
 
     private java.lang.Object targetResourceDisplayName_ = "";
@@ -4909,7 +3663,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
         throw new NullPointerException();
       }
       targetResourceDisplayName_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4928,7 +3682,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      */
     public Builder clearTargetResourceDisplayName() {
       targetResourceDisplayName_ = getDefaultInstance().getTargetResourceDisplayName();
-      bitField0_ = (bitField0_ & ~0x00001000);
+      bitField0_ = (bitField0_ & ~0x00000400);
       onChanged();
       return this;
     }
@@ -4952,7 +3706,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
       }
       checkByteStringIsUtf8(value);
       targetResourceDisplayName_ = value;
-      bitField0_ |= 0x00001000;
+      bitField0_ |= 0x00000400;
       onChanged();
       return this;
     }
@@ -4962,12 +3716,12 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
         cloudControlDeploymentReferences_ = java.util.Collections.emptyList();
 
     private void ensureCloudControlDeploymentReferencesIsMutable() {
-      if (!((bitField0_ & 0x00002000) != 0)) {
+      if (!((bitField0_ & 0x00000800) != 0)) {
         cloudControlDeploymentReferences_ =
             new java.util.ArrayList<
                 com.google.cloud.cloudsecuritycompliance.v1.CloudControlDeploymentReference>(
                 cloudControlDeploymentReferences_);
-        bitField0_ |= 0x00002000;
+        bitField0_ |= 0x00000800;
       }
     }
 
@@ -4981,10 +3735,11 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The references to the cloud control deployments.
-     * Example: If a framework deployment deploys two cloud controls,
-     * cc-deployment-1 and cc-deployment-2, then the
-     * cloud_control_deployment_references will be:
+     * Output only. The references to the cloud control deployments. It has all
+     * the CloudControlDeployments which are either directly added in the
+     * framework or through a CloudControlGroup. Example: If a framework
+     * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
+     * then the cloud_control_deployment_references will be:
      * {
      *  cloud_control_deployment_reference: {
      *    cloud_control_deployment:
@@ -5014,10 +3769,11 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The references to the cloud control deployments.
-     * Example: If a framework deployment deploys two cloud controls,
-     * cc-deployment-1 and cc-deployment-2, then the
-     * cloud_control_deployment_references will be:
+     * Output only. The references to the cloud control deployments. It has all
+     * the CloudControlDeployments which are either directly added in the
+     * framework or through a CloudControlGroup. Example: If a framework
+     * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
+     * then the cloud_control_deployment_references will be:
      * {
      *  cloud_control_deployment_reference: {
      *    cloud_control_deployment:
@@ -5045,10 +3801,11 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The references to the cloud control deployments.
-     * Example: If a framework deployment deploys two cloud controls,
-     * cc-deployment-1 and cc-deployment-2, then the
-     * cloud_control_deployment_references will be:
+     * Output only. The references to the cloud control deployments. It has all
+     * the CloudControlDeployments which are either directly added in the
+     * framework or through a CloudControlGroup. Example: If a framework
+     * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
+     * then the cloud_control_deployment_references will be:
      * {
      *  cloud_control_deployment_reference: {
      *    cloud_control_deployment:
@@ -5077,10 +3834,11 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The references to the cloud control deployments.
-     * Example: If a framework deployment deploys two cloud controls,
-     * cc-deployment-1 and cc-deployment-2, then the
-     * cloud_control_deployment_references will be:
+     * Output only. The references to the cloud control deployments. It has all
+     * the CloudControlDeployments which are either directly added in the
+     * framework or through a CloudControlGroup. Example: If a framework
+     * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
+     * then the cloud_control_deployment_references will be:
      * {
      *  cloud_control_deployment_reference: {
      *    cloud_control_deployment:
@@ -5116,10 +3874,11 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The references to the cloud control deployments.
-     * Example: If a framework deployment deploys two cloud controls,
-     * cc-deployment-1 and cc-deployment-2, then the
-     * cloud_control_deployment_references will be:
+     * Output only. The references to the cloud control deployments. It has all
+     * the CloudControlDeployments which are either directly added in the
+     * framework or through a CloudControlGroup. Example: If a framework
+     * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
+     * then the cloud_control_deployment_references will be:
      * {
      *  cloud_control_deployment_reference: {
      *    cloud_control_deployment:
@@ -5153,10 +3912,11 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The references to the cloud control deployments.
-     * Example: If a framework deployment deploys two cloud controls,
-     * cc-deployment-1 and cc-deployment-2, then the
-     * cloud_control_deployment_references will be:
+     * Output only. The references to the cloud control deployments. It has all
+     * the CloudControlDeployments which are either directly added in the
+     * framework or through a CloudControlGroup. Example: If a framework
+     * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
+     * then the cloud_control_deployment_references will be:
      * {
      *  cloud_control_deployment_reference: {
      *    cloud_control_deployment:
@@ -5191,10 +3951,11 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The references to the cloud control deployments.
-     * Example: If a framework deployment deploys two cloud controls,
-     * cc-deployment-1 and cc-deployment-2, then the
-     * cloud_control_deployment_references will be:
+     * Output only. The references to the cloud control deployments. It has all
+     * the CloudControlDeployments which are either directly added in the
+     * framework or through a CloudControlGroup. Example: If a framework
+     * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
+     * then the cloud_control_deployment_references will be:
      * {
      *  cloud_control_deployment_reference: {
      *    cloud_control_deployment:
@@ -5230,10 +3991,11 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The references to the cloud control deployments.
-     * Example: If a framework deployment deploys two cloud controls,
-     * cc-deployment-1 and cc-deployment-2, then the
-     * cloud_control_deployment_references will be:
+     * Output only. The references to the cloud control deployments. It has all
+     * the CloudControlDeployments which are either directly added in the
+     * framework or through a CloudControlGroup. Example: If a framework
+     * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
+     * then the cloud_control_deployment_references will be:
      * {
      *  cloud_control_deployment_reference: {
      *    cloud_control_deployment:
@@ -5266,10 +4028,11 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The references to the cloud control deployments.
-     * Example: If a framework deployment deploys two cloud controls,
-     * cc-deployment-1 and cc-deployment-2, then the
-     * cloud_control_deployment_references will be:
+     * Output only. The references to the cloud control deployments. It has all
+     * the CloudControlDeployments which are either directly added in the
+     * framework or through a CloudControlGroup. Example: If a framework
+     * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
+     * then the cloud_control_deployment_references will be:
      * {
      *  cloud_control_deployment_reference: {
      *    cloud_control_deployment:
@@ -5303,10 +4066,11 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The references to the cloud control deployments.
-     * Example: If a framework deployment deploys two cloud controls,
-     * cc-deployment-1 and cc-deployment-2, then the
-     * cloud_control_deployment_references will be:
+     * Output only. The references to the cloud control deployments. It has all
+     * the CloudControlDeployments which are either directly added in the
+     * framework or through a CloudControlGroup. Example: If a framework
+     * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
+     * then the cloud_control_deployment_references will be:
      * {
      *  cloud_control_deployment_reference: {
      *    cloud_control_deployment:
@@ -5342,10 +4106,11 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The references to the cloud control deployments.
-     * Example: If a framework deployment deploys two cloud controls,
-     * cc-deployment-1 and cc-deployment-2, then the
-     * cloud_control_deployment_references will be:
+     * Output only. The references to the cloud control deployments. It has all
+     * the CloudControlDeployments which are either directly added in the
+     * framework or through a CloudControlGroup. Example: If a framework
+     * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
+     * then the cloud_control_deployment_references will be:
      * {
      *  cloud_control_deployment_reference: {
      *    cloud_control_deployment:
@@ -5364,7 +4129,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
     public Builder clearCloudControlDeploymentReferences() {
       if (cloudControlDeploymentReferencesBuilder_ == null) {
         cloudControlDeploymentReferences_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00002000);
+        bitField0_ = (bitField0_ & ~0x00000800);
         onChanged();
       } else {
         cloudControlDeploymentReferencesBuilder_.clear();
@@ -5376,10 +4141,11 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The references to the cloud control deployments.
-     * Example: If a framework deployment deploys two cloud controls,
-     * cc-deployment-1 and cc-deployment-2, then the
-     * cloud_control_deployment_references will be:
+     * Output only. The references to the cloud control deployments. It has all
+     * the CloudControlDeployments which are either directly added in the
+     * framework or through a CloudControlGroup. Example: If a framework
+     * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
+     * then the cloud_control_deployment_references will be:
      * {
      *  cloud_control_deployment_reference: {
      *    cloud_control_deployment:
@@ -5410,10 +4176,11 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The references to the cloud control deployments.
-     * Example: If a framework deployment deploys two cloud controls,
-     * cc-deployment-1 and cc-deployment-2, then the
-     * cloud_control_deployment_references will be:
+     * Output only. The references to the cloud control deployments. It has all
+     * the CloudControlDeployments which are either directly added in the
+     * framework or through a CloudControlGroup. Example: If a framework
+     * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
+     * then the cloud_control_deployment_references will be:
      * {
      *  cloud_control_deployment_reference: {
      *    cloud_control_deployment:
@@ -5438,10 +4205,11 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The references to the cloud control deployments.
-     * Example: If a framework deployment deploys two cloud controls,
-     * cc-deployment-1 and cc-deployment-2, then the
-     * cloud_control_deployment_references will be:
+     * Output only. The references to the cloud control deployments. It has all
+     * the CloudControlDeployments which are either directly added in the
+     * framework or through a CloudControlGroup. Example: If a framework
+     * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
+     * then the cloud_control_deployment_references will be:
      * {
      *  cloud_control_deployment_reference: {
      *    cloud_control_deployment:
@@ -5470,10 +4238,11 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The references to the cloud control deployments.
-     * Example: If a framework deployment deploys two cloud controls,
-     * cc-deployment-1 and cc-deployment-2, then the
-     * cloud_control_deployment_references will be:
+     * Output only. The references to the cloud control deployments. It has all
+     * the CloudControlDeployments which are either directly added in the
+     * framework or through a CloudControlGroup. Example: If a framework
+     * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
+     * then the cloud_control_deployment_references will be:
      * {
      *  cloud_control_deployment_reference: {
      *    cloud_control_deployment:
@@ -5505,10 +4274,11 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The references to the cloud control deployments.
-     * Example: If a framework deployment deploys two cloud controls,
-     * cc-deployment-1 and cc-deployment-2, then the
-     * cloud_control_deployment_references will be:
+     * Output only. The references to the cloud control deployments. It has all
+     * the CloudControlDeployments which are either directly added in the
+     * framework or through a CloudControlGroup. Example: If a framework
+     * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
+     * then the cloud_control_deployment_references will be:
      * {
      *  cloud_control_deployment_reference: {
      *    cloud_control_deployment:
@@ -5536,10 +4306,11 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The references to the cloud control deployments.
-     * Example: If a framework deployment deploys two cloud controls,
-     * cc-deployment-1 and cc-deployment-2, then the
-     * cloud_control_deployment_references will be:
+     * Output only. The references to the cloud control deployments. It has all
+     * the CloudControlDeployments which are either directly added in the
+     * framework or through a CloudControlGroup. Example: If a framework
+     * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
+     * then the cloud_control_deployment_references will be:
      * {
      *  cloud_control_deployment_reference: {
      *    cloud_control_deployment:
@@ -5568,10 +4339,11 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * Output only. The references to the cloud control deployments.
-     * Example: If a framework deployment deploys two cloud controls,
-     * cc-deployment-1 and cc-deployment-2, then the
-     * cloud_control_deployment_references will be:
+     * Output only. The references to the cloud control deployments. It has all
+     * the CloudControlDeployments which are either directly added in the
+     * framework or through a CloudControlGroup. Example: If a framework
+     * deployment deploys two cloud controls, cc-deployment-1 and cc-deployment-2,
+     * then the cloud_control_deployment_references will be:
      * {
      *  cloud_control_deployment_reference: {
      *    cloud_control_deployment:
@@ -5606,7 +4378,7 @@ public final class FrameworkDeployment extends com.google.protobuf.GeneratedMess
                 com.google.cloud.cloudsecuritycompliance.v1
                     .CloudControlDeploymentReferenceOrBuilder>(
                 cloudControlDeploymentReferences_,
-                ((bitField0_ & 0x00002000) != 0),
+                ((bitField0_ & 0x00000800) != 0),
                 getParentForChildren(),
                 isClean());
         cloudControlDeploymentReferences_ = null;

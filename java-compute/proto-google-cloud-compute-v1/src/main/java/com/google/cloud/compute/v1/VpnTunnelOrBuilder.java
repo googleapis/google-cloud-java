@@ -28,6 +28,43 @@ public interface VpnTunnelOrBuilder
    *
    *
    * <pre>
+   * User specified list of ciphers to use for the phase 1 and phase 2 of the IKE protocol.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.VpnTunnelCipherSuite cipher_suite = 443788228;</code>
+   *
+   * @return Whether the cipherSuite field is set.
+   */
+  boolean hasCipherSuite();
+
+  /**
+   *
+   *
+   * <pre>
+   * User specified list of ciphers to use for the phase 1 and phase 2 of the IKE protocol.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.VpnTunnelCipherSuite cipher_suite = 443788228;</code>
+   *
+   * @return The cipherSuite.
+   */
+  com.google.cloud.compute.v1.VpnTunnelCipherSuite getCipherSuite();
+
+  /**
+   *
+   *
+   * <pre>
+   * User specified list of ciphers to use for the phase 1 and phase 2 of the IKE protocol.
+   * </pre>
+   *
+   * <code>optional .google.cloud.compute.v1.VpnTunnelCipherSuite cipher_suite = 443788228;</code>
+   */
+  com.google.cloud.compute.v1.VpnTunnelCipherSuiteOrBuilder getCipherSuiteOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] Creation timestamp in RFC3339 text format.
    * </pre>
    *

@@ -76,7 +76,7 @@ public final class ListMessageBusesRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The parent collection to list triggers on.
+   * Required. The parent collection to list message buses on.
    * </pre>
    *
    * <code>
@@ -102,7 +102,7 @@ public final class ListMessageBusesRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * Required. The parent collection to list triggers on.
+   * Required. The parent collection to list message buses on.
    * </pre>
    *
    * <code>
@@ -763,7 +763,7 @@ public final class ListMessageBusesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The parent collection to list triggers on.
+     * Required. The parent collection to list message buses on.
      * </pre>
      *
      * <code>
@@ -788,7 +788,7 @@ public final class ListMessageBusesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The parent collection to list triggers on.
+     * Required. The parent collection to list message buses on.
      * </pre>
      *
      * <code>
@@ -813,7 +813,7 @@ public final class ListMessageBusesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The parent collection to list triggers on.
+     * Required. The parent collection to list message buses on.
      * </pre>
      *
      * <code>
@@ -837,7 +837,7 @@ public final class ListMessageBusesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The parent collection to list triggers on.
+     * Required. The parent collection to list message buses on.
      * </pre>
      *
      * <code>
@@ -857,7 +857,7 @@ public final class ListMessageBusesRequest extends com.google.protobuf.Generated
      *
      *
      * <pre>
-     * Required. The parent collection to list triggers on.
+     * Required. The parent collection to list message buses on.
      * </pre>
      *
      * <code>

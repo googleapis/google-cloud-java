@@ -30,6 +30,7 @@ public interface ListFrameworksRequestOrBuilder
    * <pre>
    * Required. The parent resource name, in the format
    * `organizations/{organization}/locations/{location}`.
+   * Only global location is supported.
    * </pre>
    *
    * <code>
@@ -46,6 +47,7 @@ public interface ListFrameworksRequestOrBuilder
    * <pre>
    * Required. The parent resource name, in the format
    * `organizations/{organization}/locations/{location}`.
+   * Only global location is supported.
    * </pre>
    *
    * <code>

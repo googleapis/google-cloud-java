@@ -126,7 +126,7 @@ public interface UpdateFrameworkRequestOrBuilder
    *
    *
    * <pre>
-   * Optional. The major revision ID of the framework to update.
+   * Optional. The major version ID of the framework to update.
    * </pre>
    *
    * <code>int64 major_revision_id = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

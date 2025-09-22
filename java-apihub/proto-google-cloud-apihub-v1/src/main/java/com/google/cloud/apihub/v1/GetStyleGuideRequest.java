@@ -23,7 +23,8 @@ package com.google.cloud.apihub.v1;
  *
  *
  * <pre>
- * The [GetStyleGuide][ApiHub.GetStyleGuide] method's request.
+ * The [GetStyleGuide][google.cloud.apihub.v1.LintingService.GetStyleGuide]
+ * method's request.
  * </pre>
  *
  * Protobuf type {@code google.cloud.apihub.v1.GetStyleGuideRequest}
@@ -289,7 +290,8 @@ public final class GetStyleGuideRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The [GetStyleGuide][ApiHub.GetStyleGuide] method's request.
+   * The [GetStyleGuide][google.cloud.apihub.v1.LintingService.GetStyleGuide]
+   * method's request.
    * </pre>
    *
    * Protobuf type {@code google.cloud.apihub.v1.GetStyleGuideRequest}

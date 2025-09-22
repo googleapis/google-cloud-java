@@ -49,6 +49,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     definitions_ = com.google.protobuf.LazyStringArrayList.emptyList();
     deployments_ = com.google.protobuf.LazyStringArrayList.emptyList();
     selectedDeployment_ = "";
+    sourceMetadata_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -1210,6 +1211,97 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int SOURCE_METADATA_FIELD_NUMBER = 17;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.apihub.v1.SourceMetadata> sourceMetadata_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of sources and metadata from the sources of the
+   * version.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.apihub.v1.SourceMetadata> getSourceMetadataList() {
+    return sourceMetadata_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of sources and metadata from the sources of the
+   * version.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<? extends com.google.cloud.apihub.v1.SourceMetadataOrBuilder>
+      getSourceMetadataOrBuilderList() {
+    return sourceMetadata_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of sources and metadata from the sources of the
+   * version.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public int getSourceMetadataCount() {
+    return sourceMetadata_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of sources and metadata from the sources of the
+   * version.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.apihub.v1.SourceMetadata getSourceMetadata(int index) {
+    return sourceMetadata_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The list of sources and metadata from the sources of the
+   * version.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.apihub.v1.SourceMetadataOrBuilder getSourceMetadataOrBuilder(int index) {
+    return sourceMetadata_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -1267,6 +1359,9 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
         output, internalGetAttributes(), AttributesDefaultEntryHolder.defaultEntry, 14);
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(selectedDeployment_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 16, selectedDeployment_);
+    }
+    for (int i = 0; i < sourceMetadata_.size(); i++) {
+      output.writeMessage(17, sourceMetadata_.get(i));
     }
     getUnknownFields().writeTo(output);
   }
@@ -1350,6 +1445,9 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(selectedDeployment_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(16, selectedDeployment_);
     }
+    for (int i = 0; i < sourceMetadata_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(17, sourceMetadata_.get(i));
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -1398,6 +1496,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     }
     if (!internalGetAttributes().equals(other.internalGetAttributes())) return false;
     if (!getSelectedDeployment().equals(other.getSelectedDeployment())) return false;
+    if (!getSourceMetadataList().equals(other.getSourceMetadataList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -1461,6 +1560,10 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + SELECTED_DEPLOYMENT_FIELD_NUMBER;
     hash = (53 * hash) + getSelectedDeployment().hashCode();
+    if (getSourceMetadataCount() > 0) {
+      hash = (37 * hash) + SOURCE_METADATA_FIELD_NUMBER;
+      hash = (53 * hash) + getSourceMetadataList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -1630,6 +1733,7 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
         getLifecycleFieldBuilder();
         getComplianceFieldBuilder();
         getAccreditationFieldBuilder();
+        getSourceMetadataFieldBuilder();
       }
     }
 
@@ -1676,6 +1780,13 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       }
       internalGetMutableAttributes().clear();
       selectedDeployment_ = "";
+      if (sourceMetadataBuilder_ == null) {
+        sourceMetadata_ = java.util.Collections.emptyList();
+      } else {
+        sourceMetadata_ = null;
+        sourceMetadataBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00008000);
       return this;
     }
 
@@ -1702,11 +1813,24 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.cloud.apihub.v1.Version buildPartial() {
       com.google.cloud.apihub.v1.Version result = new com.google.cloud.apihub.v1.Version(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
       onBuilt();
       return result;
+    }
+
+    private void buildPartialRepeatedFields(com.google.cloud.apihub.v1.Version result) {
+      if (sourceMetadataBuilder_ == null) {
+        if (((bitField0_ & 0x00008000) != 0)) {
+          sourceMetadata_ = java.util.Collections.unmodifiableList(sourceMetadata_);
+          bitField0_ = (bitField0_ & ~0x00008000);
+        }
+        result.sourceMetadata_ = sourceMetadata_;
+      } else {
+        result.sourceMetadata_ = sourceMetadataBuilder_.build();
+      }
     }
 
     private void buildPartial0(com.google.cloud.apihub.v1.Version result) {
@@ -1898,6 +2022,33 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00004000;
         onChanged();
       }
+      if (sourceMetadataBuilder_ == null) {
+        if (!other.sourceMetadata_.isEmpty()) {
+          if (sourceMetadata_.isEmpty()) {
+            sourceMetadata_ = other.sourceMetadata_;
+            bitField0_ = (bitField0_ & ~0x00008000);
+          } else {
+            ensureSourceMetadataIsMutable();
+            sourceMetadata_.addAll(other.sourceMetadata_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.sourceMetadata_.isEmpty()) {
+          if (sourceMetadataBuilder_.isEmpty()) {
+            sourceMetadataBuilder_.dispose();
+            sourceMetadataBuilder_ = null;
+            sourceMetadata_ = other.sourceMetadata_;
+            bitField0_ = (bitField0_ & ~0x00008000);
+            sourceMetadataBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getSourceMetadataFieldBuilder()
+                    : null;
+          } else {
+            sourceMetadataBuilder_.addAllMessages(other.sourceMetadata_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -2026,6 +2177,19 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00004000;
                 break;
               } // case 130
+            case 138:
+              {
+                com.google.cloud.apihub.v1.SourceMetadata m =
+                    input.readMessage(
+                        com.google.cloud.apihub.v1.SourceMetadata.parser(), extensionRegistry);
+                if (sourceMetadataBuilder_ == null) {
+                  ensureSourceMetadataIsMutable();
+                  sourceMetadata_.add(m);
+                } else {
+                  sourceMetadataBuilder_.addMessage(m);
+                }
+                break;
+              } // case 138
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -5204,6 +5368,432 @@ public final class Version extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00004000;
       onChanged();
       return this;
+    }
+
+    private java.util.List<com.google.cloud.apihub.v1.SourceMetadata> sourceMetadata_ =
+        java.util.Collections.emptyList();
+
+    private void ensureSourceMetadataIsMutable() {
+      if (!((bitField0_ & 0x00008000) != 0)) {
+        sourceMetadata_ =
+            new java.util.ArrayList<com.google.cloud.apihub.v1.SourceMetadata>(sourceMetadata_);
+        bitField0_ |= 0x00008000;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.apihub.v1.SourceMetadata,
+            com.google.cloud.apihub.v1.SourceMetadata.Builder,
+            com.google.cloud.apihub.v1.SourceMetadataOrBuilder>
+        sourceMetadataBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the
+     * version.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.apihub.v1.SourceMetadata> getSourceMetadataList() {
+      if (sourceMetadataBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(sourceMetadata_);
+      } else {
+        return sourceMetadataBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the
+     * version.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public int getSourceMetadataCount() {
+      if (sourceMetadataBuilder_ == null) {
+        return sourceMetadata_.size();
+      } else {
+        return sourceMetadataBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the
+     * version.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.SourceMetadata getSourceMetadata(int index) {
+      if (sourceMetadataBuilder_ == null) {
+        return sourceMetadata_.get(index);
+      } else {
+        return sourceMetadataBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the
+     * version.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setSourceMetadata(int index, com.google.cloud.apihub.v1.SourceMetadata value) {
+      if (sourceMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSourceMetadataIsMutable();
+        sourceMetadata_.set(index, value);
+        onChanged();
+      } else {
+        sourceMetadataBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the
+     * version.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder setSourceMetadata(
+        int index, com.google.cloud.apihub.v1.SourceMetadata.Builder builderForValue) {
+      if (sourceMetadataBuilder_ == null) {
+        ensureSourceMetadataIsMutable();
+        sourceMetadata_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        sourceMetadataBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the
+     * version.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addSourceMetadata(com.google.cloud.apihub.v1.SourceMetadata value) {
+      if (sourceMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSourceMetadataIsMutable();
+        sourceMetadata_.add(value);
+        onChanged();
+      } else {
+        sourceMetadataBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the
+     * version.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addSourceMetadata(int index, com.google.cloud.apihub.v1.SourceMetadata value) {
+      if (sourceMetadataBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureSourceMetadataIsMutable();
+        sourceMetadata_.add(index, value);
+        onChanged();
+      } else {
+        sourceMetadataBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the
+     * version.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addSourceMetadata(
+        com.google.cloud.apihub.v1.SourceMetadata.Builder builderForValue) {
+      if (sourceMetadataBuilder_ == null) {
+        ensureSourceMetadataIsMutable();
+        sourceMetadata_.add(builderForValue.build());
+        onChanged();
+      } else {
+        sourceMetadataBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the
+     * version.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addSourceMetadata(
+        int index, com.google.cloud.apihub.v1.SourceMetadata.Builder builderForValue) {
+      if (sourceMetadataBuilder_ == null) {
+        ensureSourceMetadataIsMutable();
+        sourceMetadata_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        sourceMetadataBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the
+     * version.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder addAllSourceMetadata(
+        java.lang.Iterable<? extends com.google.cloud.apihub.v1.SourceMetadata> values) {
+      if (sourceMetadataBuilder_ == null) {
+        ensureSourceMetadataIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, sourceMetadata_);
+        onChanged();
+      } else {
+        sourceMetadataBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the
+     * version.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder clearSourceMetadata() {
+      if (sourceMetadataBuilder_ == null) {
+        sourceMetadata_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00008000);
+        onChanged();
+      } else {
+        sourceMetadataBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the
+     * version.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public Builder removeSourceMetadata(int index) {
+      if (sourceMetadataBuilder_ == null) {
+        ensureSourceMetadataIsMutable();
+        sourceMetadata_.remove(index);
+        onChanged();
+      } else {
+        sourceMetadataBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the
+     * version.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.SourceMetadata.Builder getSourceMetadataBuilder(int index) {
+      return getSourceMetadataFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the
+     * version.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.SourceMetadataOrBuilder getSourceMetadataOrBuilder(
+        int index) {
+      if (sourceMetadataBuilder_ == null) {
+        return sourceMetadata_.get(index);
+      } else {
+        return sourceMetadataBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the
+     * version.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.apihub.v1.SourceMetadataOrBuilder>
+        getSourceMetadataOrBuilderList() {
+      if (sourceMetadataBuilder_ != null) {
+        return sourceMetadataBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(sourceMetadata_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the
+     * version.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.SourceMetadata.Builder addSourceMetadataBuilder() {
+      return getSourceMetadataFieldBuilder()
+          .addBuilder(com.google.cloud.apihub.v1.SourceMetadata.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the
+     * version.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public com.google.cloud.apihub.v1.SourceMetadata.Builder addSourceMetadataBuilder(int index) {
+      return getSourceMetadataFieldBuilder()
+          .addBuilder(index, com.google.cloud.apihub.v1.SourceMetadata.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The list of sources and metadata from the sources of the
+     * version.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.apihub.v1.SourceMetadata source_metadata = 17 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.apihub.v1.SourceMetadata.Builder>
+        getSourceMetadataBuilderList() {
+      return getSourceMetadataFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.apihub.v1.SourceMetadata,
+            com.google.cloud.apihub.v1.SourceMetadata.Builder,
+            com.google.cloud.apihub.v1.SourceMetadataOrBuilder>
+        getSourceMetadataFieldBuilder() {
+      if (sourceMetadataBuilder_ == null) {
+        sourceMetadataBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.apihub.v1.SourceMetadata,
+                com.google.cloud.apihub.v1.SourceMetadata.Builder,
+                com.google.cloud.apihub.v1.SourceMetadataOrBuilder>(
+                sourceMetadata_,
+                ((bitField0_ & 0x00008000) != 0),
+                getParentForChildren(),
+                isClean());
+        sourceMetadata_ = null;
+      }
+      return sourceMetadataBuilder_;
     }
 
     @java.lang.Override

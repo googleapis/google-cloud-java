@@ -28,7 +28,7 @@ public interface HttpEndpointOrBuilder
    *
    *
    * <pre>
-   * Required. The URI of the HTTP enpdoint.
+   * Required. The URI of the HTTP endpoint.
    *
    * The value must be a RFC2396 URI string.
    * Examples: `http://10.10.10.8:80/route`,
@@ -48,7 +48,7 @@ public interface HttpEndpointOrBuilder
    *
    *
    * <pre>
-   * Required. The URI of the HTTP enpdoint.
+   * Required. The URI of the HTTP endpoint.
    *
    * The value must be a RFC2396 URI string.
    * Examples: `http://10.10.10.8:80/route`,

@@ -23,7 +23,7 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * The reference to the framework deployment.
+ * The reference to a FrameworkDeployment.
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.FrameworkDeploymentReference}
@@ -75,7 +75,7 @@ public final class FrameworkDeploymentReference extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Output only. The name of the framework. The format is:
+   * Output only. The name of the FrameworkDeployment. The format is:
    * organizations/{org}/locations/{location}/frameworkDeployments/{framework_deployment_id}
    * </pre>
    *
@@ -102,7 +102,7 @@ public final class FrameworkDeploymentReference extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Output only. The name of the framework. The format is:
+   * Output only. The name of the FrameworkDeployment. The format is:
    * organizations/{org}/locations/{location}/frameworkDeployments/{framework_deployment_id}
    * </pre>
    *
@@ -132,7 +132,7 @@ public final class FrameworkDeploymentReference extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The reference to the framework that this deployment is for.
+   * Optional. The reference to the Framework that this deployment is for.
    * Example: {
    *   framework:
    *   "organizations/{org}/locations/{location}/frameworks/{framework}",
@@ -155,7 +155,7 @@ public final class FrameworkDeploymentReference extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The reference to the framework that this deployment is for.
+   * Optional. The reference to the Framework that this deployment is for.
    * Example: {
    *   framework:
    *   "organizations/{org}/locations/{location}/frameworks/{framework}",
@@ -180,7 +180,7 @@ public final class FrameworkDeploymentReference extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The reference to the framework that this deployment is for.
+   * Optional. The reference to the Framework that this deployment is for.
    * Example: {
    *   framework:
    *   "organizations/{org}/locations/{location}/frameworks/{framework}",
@@ -209,7 +209,8 @@ public final class FrameworkDeploymentReference extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The display name of the framework.
+   * Optional. The display name of the Framework that this FrameworkDeployment
+   * is for.
    * </pre>
    *
    * <code>string framework_display_name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -233,7 +234,8 @@ public final class FrameworkDeploymentReference extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * Optional. The display name of the framework.
+   * Optional. The display name of the Framework that this FrameworkDeployment
+   * is for.
    * </pre>
    *
    * <code>string framework_display_name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -443,7 +445,7 @@ public final class FrameworkDeploymentReference extends com.google.protobuf.Gene
    *
    *
    * <pre>
-   * The reference to the framework deployment.
+   * The reference to a FrameworkDeployment.
    * </pre>
    *
    * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.FrameworkDeploymentReference}
@@ -686,7 +688,7 @@ public final class FrameworkDeploymentReference extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Output only. The name of the framework. The format is:
+     * Output only. The name of the FrameworkDeployment. The format is:
      * organizations/{org}/locations/{location}/frameworkDeployments/{framework_deployment_id}
      * </pre>
      *
@@ -712,7 +714,7 @@ public final class FrameworkDeploymentReference extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Output only. The name of the framework. The format is:
+     * Output only. The name of the FrameworkDeployment. The format is:
      * organizations/{org}/locations/{location}/frameworkDeployments/{framework_deployment_id}
      * </pre>
      *
@@ -738,7 +740,7 @@ public final class FrameworkDeploymentReference extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Output only. The name of the framework. The format is:
+     * Output only. The name of the FrameworkDeployment. The format is:
      * organizations/{org}/locations/{location}/frameworkDeployments/{framework_deployment_id}
      * </pre>
      *
@@ -763,7 +765,7 @@ public final class FrameworkDeploymentReference extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Output only. The name of the framework. The format is:
+     * Output only. The name of the FrameworkDeployment. The format is:
      * organizations/{org}/locations/{location}/frameworkDeployments/{framework_deployment_id}
      * </pre>
      *
@@ -784,7 +786,7 @@ public final class FrameworkDeploymentReference extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Output only. The name of the framework. The format is:
+     * Output only. The name of the FrameworkDeployment. The format is:
      * organizations/{org}/locations/{location}/frameworkDeployments/{framework_deployment_id}
      * </pre>
      *
@@ -817,7 +819,7 @@ public final class FrameworkDeploymentReference extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The reference to the framework that this deployment is for.
+     * Optional. The reference to the Framework that this deployment is for.
      * Example: {
      *   framework:
      *   "organizations/{org}/locations/{location}/frameworks/{framework}",
@@ -839,7 +841,7 @@ public final class FrameworkDeploymentReference extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The reference to the framework that this deployment is for.
+     * Optional. The reference to the Framework that this deployment is for.
      * Example: {
      *   framework:
      *   "organizations/{org}/locations/{location}/frameworks/{framework}",
@@ -867,7 +869,7 @@ public final class FrameworkDeploymentReference extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The reference to the framework that this deployment is for.
+     * Optional. The reference to the Framework that this deployment is for.
      * Example: {
      *   framework:
      *   "organizations/{org}/locations/{location}/frameworks/{framework}",
@@ -898,7 +900,7 @@ public final class FrameworkDeploymentReference extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The reference to the framework that this deployment is for.
+     * Optional. The reference to the Framework that this deployment is for.
      * Example: {
      *   framework:
      *   "organizations/{org}/locations/{location}/frameworks/{framework}",
@@ -926,7 +928,7 @@ public final class FrameworkDeploymentReference extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The reference to the framework that this deployment is for.
+     * Optional. The reference to the Framework that this deployment is for.
      * Example: {
      *   framework:
      *   "organizations/{org}/locations/{location}/frameworks/{framework}",
@@ -964,7 +966,7 @@ public final class FrameworkDeploymentReference extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The reference to the framework that this deployment is for.
+     * Optional. The reference to the Framework that this deployment is for.
      * Example: {
      *   framework:
      *   "organizations/{org}/locations/{location}/frameworks/{framework}",
@@ -991,7 +993,7 @@ public final class FrameworkDeploymentReference extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The reference to the framework that this deployment is for.
+     * Optional. The reference to the Framework that this deployment is for.
      * Example: {
      *   framework:
      *   "organizations/{org}/locations/{location}/frameworks/{framework}",
@@ -1014,7 +1016,7 @@ public final class FrameworkDeploymentReference extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The reference to the framework that this deployment is for.
+     * Optional. The reference to the Framework that this deployment is for.
      * Example: {
      *   framework:
      *   "organizations/{org}/locations/{location}/frameworks/{framework}",
@@ -1041,7 +1043,7 @@ public final class FrameworkDeploymentReference extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The reference to the framework that this deployment is for.
+     * Optional. The reference to the Framework that this deployment is for.
      * Example: {
      *   framework:
      *   "organizations/{org}/locations/{location}/frameworks/{framework}",
@@ -1076,7 +1078,8 @@ public final class FrameworkDeploymentReference extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The display name of the framework.
+     * Optional. The display name of the Framework that this FrameworkDeployment
+     * is for.
      * </pre>
      *
      * <code>string framework_display_name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1099,7 +1102,8 @@ public final class FrameworkDeploymentReference extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The display name of the framework.
+     * Optional. The display name of the Framework that this FrameworkDeployment
+     * is for.
      * </pre>
      *
      * <code>string framework_display_name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1122,7 +1126,8 @@ public final class FrameworkDeploymentReference extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The display name of the framework.
+     * Optional. The display name of the Framework that this FrameworkDeployment
+     * is for.
      * </pre>
      *
      * <code>string framework_display_name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1144,7 +1149,8 @@ public final class FrameworkDeploymentReference extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The display name of the framework.
+     * Optional. The display name of the Framework that this FrameworkDeployment
+     * is for.
      * </pre>
      *
      * <code>string framework_display_name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1162,7 +1168,8 @@ public final class FrameworkDeploymentReference extends com.google.protobuf.Gene
      *
      *
      * <pre>
-     * Optional. The display name of the framework.
+     * Optional. The display name of the Framework that this FrameworkDeployment
+     * is for.
      * </pre>
      *
      * <code>string framework_display_name = 3 [(.google.api.field_behavior) = OPTIONAL];</code>

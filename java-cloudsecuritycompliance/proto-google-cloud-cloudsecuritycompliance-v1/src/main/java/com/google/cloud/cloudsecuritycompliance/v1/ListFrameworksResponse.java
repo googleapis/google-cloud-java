@@ -23,7 +23,8 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * Response message for [ListFrameworks][].
+ * Response message for listing Frameworks.
+ * Contains a paginated list of Framework resources.
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.ListFrameworksResponse}
@@ -74,8 +75,7 @@ public final class ListFrameworksResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The list of [Framework][google.cloud.cloudsecuritycompliance.v1.Framework]
-   * resources.
+   * The list of Framework resources.
    * </pre>
    *
    * <code>repeated .google.cloud.cloudsecuritycompliance.v1.Framework frameworks = 1;</code>
@@ -89,8 +89,7 @@ public final class ListFrameworksResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The list of [Framework][google.cloud.cloudsecuritycompliance.v1.Framework]
-   * resources.
+   * The list of Framework resources.
    * </pre>
    *
    * <code>repeated .google.cloud.cloudsecuritycompliance.v1.Framework frameworks = 1;</code>
@@ -105,8 +104,7 @@ public final class ListFrameworksResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The list of [Framework][google.cloud.cloudsecuritycompliance.v1.Framework]
-   * resources.
+   * The list of Framework resources.
    * </pre>
    *
    * <code>repeated .google.cloud.cloudsecuritycompliance.v1.Framework frameworks = 1;</code>
@@ -120,8 +118,7 @@ public final class ListFrameworksResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The list of [Framework][google.cloud.cloudsecuritycompliance.v1.Framework]
-   * resources.
+   * The list of Framework resources.
    * </pre>
    *
    * <code>repeated .google.cloud.cloudsecuritycompliance.v1.Framework frameworks = 1;</code>
@@ -135,8 +132,7 @@ public final class ListFrameworksResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The list of [Framework][google.cloud.cloudsecuritycompliance.v1.Framework]
-   * resources.
+   * The list of Framework resources.
    * </pre>
    *
    * <code>repeated .google.cloud.cloudsecuritycompliance.v1.Framework frameworks = 1;</code>
@@ -379,7 +375,8 @@ public final class ListFrameworksResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Response message for [ListFrameworks][].
+   * Response message for listing Frameworks.
+   * Contains a paginated list of Framework resources.
    * </pre>
    *
    * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.ListFrameworksResponse}
@@ -649,8 +646,7 @@ public final class ListFrameworksResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The list of [Framework][google.cloud.cloudsecuritycompliance.v1.Framework]
-     * resources.
+     * The list of Framework resources.
      * </pre>
      *
      * <code>repeated .google.cloud.cloudsecuritycompliance.v1.Framework frameworks = 1;</code>
@@ -668,8 +664,7 @@ public final class ListFrameworksResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The list of [Framework][google.cloud.cloudsecuritycompliance.v1.Framework]
-     * resources.
+     * The list of Framework resources.
      * </pre>
      *
      * <code>repeated .google.cloud.cloudsecuritycompliance.v1.Framework frameworks = 1;</code>
@@ -686,8 +681,7 @@ public final class ListFrameworksResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The list of [Framework][google.cloud.cloudsecuritycompliance.v1.Framework]
-     * resources.
+     * The list of Framework resources.
      * </pre>
      *
      * <code>repeated .google.cloud.cloudsecuritycompliance.v1.Framework frameworks = 1;</code>
@@ -704,8 +698,7 @@ public final class ListFrameworksResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The list of [Framework][google.cloud.cloudsecuritycompliance.v1.Framework]
-     * resources.
+     * The list of Framework resources.
      * </pre>
      *
      * <code>repeated .google.cloud.cloudsecuritycompliance.v1.Framework frameworks = 1;</code>
@@ -729,8 +722,7 @@ public final class ListFrameworksResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The list of [Framework][google.cloud.cloudsecuritycompliance.v1.Framework]
-     * resources.
+     * The list of Framework resources.
      * </pre>
      *
      * <code>repeated .google.cloud.cloudsecuritycompliance.v1.Framework frameworks = 1;</code>
@@ -751,8 +743,7 @@ public final class ListFrameworksResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The list of [Framework][google.cloud.cloudsecuritycompliance.v1.Framework]
-     * resources.
+     * The list of Framework resources.
      * </pre>
      *
      * <code>repeated .google.cloud.cloudsecuritycompliance.v1.Framework frameworks = 1;</code>
@@ -775,8 +766,7 @@ public final class ListFrameworksResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The list of [Framework][google.cloud.cloudsecuritycompliance.v1.Framework]
-     * resources.
+     * The list of Framework resources.
      * </pre>
      *
      * <code>repeated .google.cloud.cloudsecuritycompliance.v1.Framework frameworks = 1;</code>
@@ -800,8 +790,7 @@ public final class ListFrameworksResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The list of [Framework][google.cloud.cloudsecuritycompliance.v1.Framework]
-     * resources.
+     * The list of Framework resources.
      * </pre>
      *
      * <code>repeated .google.cloud.cloudsecuritycompliance.v1.Framework frameworks = 1;</code>
@@ -822,8 +811,7 @@ public final class ListFrameworksResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The list of [Framework][google.cloud.cloudsecuritycompliance.v1.Framework]
-     * resources.
+     * The list of Framework resources.
      * </pre>
      *
      * <code>repeated .google.cloud.cloudsecuritycompliance.v1.Framework frameworks = 1;</code>
@@ -844,8 +832,7 @@ public final class ListFrameworksResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The list of [Framework][google.cloud.cloudsecuritycompliance.v1.Framework]
-     * resources.
+     * The list of Framework resources.
      * </pre>
      *
      * <code>repeated .google.cloud.cloudsecuritycompliance.v1.Framework frameworks = 1;</code>
@@ -867,8 +854,7 @@ public final class ListFrameworksResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The list of [Framework][google.cloud.cloudsecuritycompliance.v1.Framework]
-     * resources.
+     * The list of Framework resources.
      * </pre>
      *
      * <code>repeated .google.cloud.cloudsecuritycompliance.v1.Framework frameworks = 1;</code>
@@ -888,8 +874,7 @@ public final class ListFrameworksResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The list of [Framework][google.cloud.cloudsecuritycompliance.v1.Framework]
-     * resources.
+     * The list of Framework resources.
      * </pre>
      *
      * <code>repeated .google.cloud.cloudsecuritycompliance.v1.Framework frameworks = 1;</code>
@@ -909,8 +894,7 @@ public final class ListFrameworksResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The list of [Framework][google.cloud.cloudsecuritycompliance.v1.Framework]
-     * resources.
+     * The list of Framework resources.
      * </pre>
      *
      * <code>repeated .google.cloud.cloudsecuritycompliance.v1.Framework frameworks = 1;</code>
@@ -924,8 +908,7 @@ public final class ListFrameworksResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The list of [Framework][google.cloud.cloudsecuritycompliance.v1.Framework]
-     * resources.
+     * The list of Framework resources.
      * </pre>
      *
      * <code>repeated .google.cloud.cloudsecuritycompliance.v1.Framework frameworks = 1;</code>
@@ -943,8 +926,7 @@ public final class ListFrameworksResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The list of [Framework][google.cloud.cloudsecuritycompliance.v1.Framework]
-     * resources.
+     * The list of Framework resources.
      * </pre>
      *
      * <code>repeated .google.cloud.cloudsecuritycompliance.v1.Framework frameworks = 1;</code>
@@ -962,8 +944,7 @@ public final class ListFrameworksResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The list of [Framework][google.cloud.cloudsecuritycompliance.v1.Framework]
-     * resources.
+     * The list of Framework resources.
      * </pre>
      *
      * <code>repeated .google.cloud.cloudsecuritycompliance.v1.Framework frameworks = 1;</code>
@@ -977,8 +958,7 @@ public final class ListFrameworksResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The list of [Framework][google.cloud.cloudsecuritycompliance.v1.Framework]
-     * resources.
+     * The list of Framework resources.
      * </pre>
      *
      * <code>repeated .google.cloud.cloudsecuritycompliance.v1.Framework frameworks = 1;</code>
@@ -994,8 +974,7 @@ public final class ListFrameworksResponse extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The list of [Framework][google.cloud.cloudsecuritycompliance.v1.Framework]
-     * resources.
+     * The list of Framework resources.
      * </pre>
      *
      * <code>repeated .google.cloud.cloudsecuritycompliance.v1.Framework frameworks = 1;</code>

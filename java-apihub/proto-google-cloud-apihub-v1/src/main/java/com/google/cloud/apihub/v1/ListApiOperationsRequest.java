@@ -158,6 +158,30 @@ public final class ListApiOperationsRequest extends com.google.protobuf.Generate
    *   * `create_time` - The time at which the ApiOperation was created. The
    *   value should be in the (RFC3339)[https://tools.ietf.org/html/rfc3339]
    *   format. Allowed comparison operators: `&gt;` and `&lt;`.
+   *   * `attributes.projects/test-project-id/locations/test-location-id/
+   *   attributes/user-defined-attribute-id.enum_values.values.id` - The
+   *   allowed value id of the user defined enum attribute associated with the
+   *   Resource. Allowed comparison operator is `:`. Here
+   *   user-defined-attribute-enum-id is a placeholder that can be replaced with
+   *   any user defined enum attribute name.
+   *   * `attributes.projects/test-project-id/locations/test-location-id/
+   *   attributes/user-defined-attribute-id.enum_values.values.display_name`
+   *   - The allowed value display name of the user defined enum attribute
+   *   associated with the Resource. Allowed comparison operator is `:`. Here
+   *   user-defined-attribute-enum-display-name is a placeholder that can be
+   *   replaced with any user defined enum attribute enum name.
+   *   * `attributes.projects/test-project-id/locations/test-location-id/
+   *   attributes/user-defined-attribute-id.string_values.values` - The
+   *   allowed value of the user defined string attribute associated with the
+   *   Resource. Allowed comparison operator is `:`. Here
+   *   user-defined-attribute-string is a placeholder that can be replaced with
+   *   any user defined string attribute name.
+   *   * `attributes.projects/test-project-id/locations/test-location-id/
+   *   attributes/user-defined-attribute-id.json_values.values` - The
+   *   allowed value of the user defined JSON attribute associated with the
+   *   Resource. Allowed comparison operator is `:`. Here
+   *   user-defined-attribute-json is a placeholder that can be replaced with
+   *   any user defined JSON attribute name.
    *
    * Expressions are combined with either `AND` logic operator or `OR` logical
    * operator but not both of them together i.e. only one of the `AND` or `OR`
@@ -177,6 +201,11 @@ public final class ListApiOperationsRequest extends com.google.protobuf.Generate
    *   * `details.http_operation.method = GET OR details.http_operation.method =
    *   POST`. - The http operation of the method of ApiOperation is _GET_ or
    *   _POST_.
+   *   * `details.deprecated = True AND
+   *   attributes.projects/test-project-id/locations/test-location-id/
+   *   attributes/17650f90-4a29-4971-b3c0-d5532da3764b.string_values.values:
+   *   test`  - The filter string specifies that the ApiOperation is deprecated
+   *   and the value of the user defined attribute of type string is _test_.
    * </pre>
    *
    * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -221,6 +250,30 @@ public final class ListApiOperationsRequest extends com.google.protobuf.Generate
    *   * `create_time` - The time at which the ApiOperation was created. The
    *   value should be in the (RFC3339)[https://tools.ietf.org/html/rfc3339]
    *   format. Allowed comparison operators: `&gt;` and `&lt;`.
+   *   * `attributes.projects/test-project-id/locations/test-location-id/
+   *   attributes/user-defined-attribute-id.enum_values.values.id` - The
+   *   allowed value id of the user defined enum attribute associated with the
+   *   Resource. Allowed comparison operator is `:`. Here
+   *   user-defined-attribute-enum-id is a placeholder that can be replaced with
+   *   any user defined enum attribute name.
+   *   * `attributes.projects/test-project-id/locations/test-location-id/
+   *   attributes/user-defined-attribute-id.enum_values.values.display_name`
+   *   - The allowed value display name of the user defined enum attribute
+   *   associated with the Resource. Allowed comparison operator is `:`. Here
+   *   user-defined-attribute-enum-display-name is a placeholder that can be
+   *   replaced with any user defined enum attribute enum name.
+   *   * `attributes.projects/test-project-id/locations/test-location-id/
+   *   attributes/user-defined-attribute-id.string_values.values` - The
+   *   allowed value of the user defined string attribute associated with the
+   *   Resource. Allowed comparison operator is `:`. Here
+   *   user-defined-attribute-string is a placeholder that can be replaced with
+   *   any user defined string attribute name.
+   *   * `attributes.projects/test-project-id/locations/test-location-id/
+   *   attributes/user-defined-attribute-id.json_values.values` - The
+   *   allowed value of the user defined JSON attribute associated with the
+   *   Resource. Allowed comparison operator is `:`. Here
+   *   user-defined-attribute-json is a placeholder that can be replaced with
+   *   any user defined JSON attribute name.
    *
    * Expressions are combined with either `AND` logic operator or `OR` logical
    * operator but not both of them together i.e. only one of the `AND` or `OR`
@@ -240,6 +293,11 @@ public final class ListApiOperationsRequest extends com.google.protobuf.Generate
    *   * `details.http_operation.method = GET OR details.http_operation.method =
    *   POST`. - The http operation of the method of ApiOperation is _GET_ or
    *   _POST_.
+   *   * `details.deprecated = True AND
+   *   attributes.projects/test-project-id/locations/test-location-id/
+   *   attributes/17650f90-4a29-4971-b3c0-d5532da3764b.string_values.values:
+   *   test`  - The filter string specifies that the ApiOperation is deprecated
+   *   and the value of the user defined attribute of type string is _test_.
    * </pre>
    *
    * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -914,6 +972,30 @@ public final class ListApiOperationsRequest extends com.google.protobuf.Generate
      *   * `create_time` - The time at which the ApiOperation was created. The
      *   value should be in the (RFC3339)[https://tools.ietf.org/html/rfc3339]
      *   format. Allowed comparison operators: `&gt;` and `&lt;`.
+     *   * `attributes.projects/test-project-id/locations/test-location-id/
+     *   attributes/user-defined-attribute-id.enum_values.values.id` - The
+     *   allowed value id of the user defined enum attribute associated with the
+     *   Resource. Allowed comparison operator is `:`. Here
+     *   user-defined-attribute-enum-id is a placeholder that can be replaced with
+     *   any user defined enum attribute name.
+     *   * `attributes.projects/test-project-id/locations/test-location-id/
+     *   attributes/user-defined-attribute-id.enum_values.values.display_name`
+     *   - The allowed value display name of the user defined enum attribute
+     *   associated with the Resource. Allowed comparison operator is `:`. Here
+     *   user-defined-attribute-enum-display-name is a placeholder that can be
+     *   replaced with any user defined enum attribute enum name.
+     *   * `attributes.projects/test-project-id/locations/test-location-id/
+     *   attributes/user-defined-attribute-id.string_values.values` - The
+     *   allowed value of the user defined string attribute associated with the
+     *   Resource. Allowed comparison operator is `:`. Here
+     *   user-defined-attribute-string is a placeholder that can be replaced with
+     *   any user defined string attribute name.
+     *   * `attributes.projects/test-project-id/locations/test-location-id/
+     *   attributes/user-defined-attribute-id.json_values.values` - The
+     *   allowed value of the user defined JSON attribute associated with the
+     *   Resource. Allowed comparison operator is `:`. Here
+     *   user-defined-attribute-json is a placeholder that can be replaced with
+     *   any user defined JSON attribute name.
      *
      * Expressions are combined with either `AND` logic operator or `OR` logical
      * operator but not both of them together i.e. only one of the `AND` or `OR`
@@ -933,6 +1015,11 @@ public final class ListApiOperationsRequest extends com.google.protobuf.Generate
      *   * `details.http_operation.method = GET OR details.http_operation.method =
      *   POST`. - The http operation of the method of ApiOperation is _GET_ or
      *   _POST_.
+     *   * `details.deprecated = True AND
+     *   attributes.projects/test-project-id/locations/test-location-id/
+     *   attributes/17650f90-4a29-4971-b3c0-d5532da3764b.string_values.values:
+     *   test`  - The filter string specifies that the ApiOperation is deprecated
+     *   and the value of the user defined attribute of type string is _test_.
      * </pre>
      *
      * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -976,6 +1063,30 @@ public final class ListApiOperationsRequest extends com.google.protobuf.Generate
      *   * `create_time` - The time at which the ApiOperation was created. The
      *   value should be in the (RFC3339)[https://tools.ietf.org/html/rfc3339]
      *   format. Allowed comparison operators: `&gt;` and `&lt;`.
+     *   * `attributes.projects/test-project-id/locations/test-location-id/
+     *   attributes/user-defined-attribute-id.enum_values.values.id` - The
+     *   allowed value id of the user defined enum attribute associated with the
+     *   Resource. Allowed comparison operator is `:`. Here
+     *   user-defined-attribute-enum-id is a placeholder that can be replaced with
+     *   any user defined enum attribute name.
+     *   * `attributes.projects/test-project-id/locations/test-location-id/
+     *   attributes/user-defined-attribute-id.enum_values.values.display_name`
+     *   - The allowed value display name of the user defined enum attribute
+     *   associated with the Resource. Allowed comparison operator is `:`. Here
+     *   user-defined-attribute-enum-display-name is a placeholder that can be
+     *   replaced with any user defined enum attribute enum name.
+     *   * `attributes.projects/test-project-id/locations/test-location-id/
+     *   attributes/user-defined-attribute-id.string_values.values` - The
+     *   allowed value of the user defined string attribute associated with the
+     *   Resource. Allowed comparison operator is `:`. Here
+     *   user-defined-attribute-string is a placeholder that can be replaced with
+     *   any user defined string attribute name.
+     *   * `attributes.projects/test-project-id/locations/test-location-id/
+     *   attributes/user-defined-attribute-id.json_values.values` - The
+     *   allowed value of the user defined JSON attribute associated with the
+     *   Resource. Allowed comparison operator is `:`. Here
+     *   user-defined-attribute-json is a placeholder that can be replaced with
+     *   any user defined JSON attribute name.
      *
      * Expressions are combined with either `AND` logic operator or `OR` logical
      * operator but not both of them together i.e. only one of the `AND` or `OR`
@@ -995,6 +1106,11 @@ public final class ListApiOperationsRequest extends com.google.protobuf.Generate
      *   * `details.http_operation.method = GET OR details.http_operation.method =
      *   POST`. - The http operation of the method of ApiOperation is _GET_ or
      *   _POST_.
+     *   * `details.deprecated = True AND
+     *   attributes.projects/test-project-id/locations/test-location-id/
+     *   attributes/17650f90-4a29-4971-b3c0-d5532da3764b.string_values.values:
+     *   test`  - The filter string specifies that the ApiOperation is deprecated
+     *   and the value of the user defined attribute of type string is _test_.
      * </pre>
      *
      * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1038,6 +1154,30 @@ public final class ListApiOperationsRequest extends com.google.protobuf.Generate
      *   * `create_time` - The time at which the ApiOperation was created. The
      *   value should be in the (RFC3339)[https://tools.ietf.org/html/rfc3339]
      *   format. Allowed comparison operators: `&gt;` and `&lt;`.
+     *   * `attributes.projects/test-project-id/locations/test-location-id/
+     *   attributes/user-defined-attribute-id.enum_values.values.id` - The
+     *   allowed value id of the user defined enum attribute associated with the
+     *   Resource. Allowed comparison operator is `:`. Here
+     *   user-defined-attribute-enum-id is a placeholder that can be replaced with
+     *   any user defined enum attribute name.
+     *   * `attributes.projects/test-project-id/locations/test-location-id/
+     *   attributes/user-defined-attribute-id.enum_values.values.display_name`
+     *   - The allowed value display name of the user defined enum attribute
+     *   associated with the Resource. Allowed comparison operator is `:`. Here
+     *   user-defined-attribute-enum-display-name is a placeholder that can be
+     *   replaced with any user defined enum attribute enum name.
+     *   * `attributes.projects/test-project-id/locations/test-location-id/
+     *   attributes/user-defined-attribute-id.string_values.values` - The
+     *   allowed value of the user defined string attribute associated with the
+     *   Resource. Allowed comparison operator is `:`. Here
+     *   user-defined-attribute-string is a placeholder that can be replaced with
+     *   any user defined string attribute name.
+     *   * `attributes.projects/test-project-id/locations/test-location-id/
+     *   attributes/user-defined-attribute-id.json_values.values` - The
+     *   allowed value of the user defined JSON attribute associated with the
+     *   Resource. Allowed comparison operator is `:`. Here
+     *   user-defined-attribute-json is a placeholder that can be replaced with
+     *   any user defined JSON attribute name.
      *
      * Expressions are combined with either `AND` logic operator or `OR` logical
      * operator but not both of them together i.e. only one of the `AND` or `OR`
@@ -1057,6 +1197,11 @@ public final class ListApiOperationsRequest extends com.google.protobuf.Generate
      *   * `details.http_operation.method = GET OR details.http_operation.method =
      *   POST`. - The http operation of the method of ApiOperation is _GET_ or
      *   _POST_.
+     *   * `details.deprecated = True AND
+     *   attributes.projects/test-project-id/locations/test-location-id/
+     *   attributes/17650f90-4a29-4971-b3c0-d5532da3764b.string_values.values:
+     *   test`  - The filter string specifies that the ApiOperation is deprecated
+     *   and the value of the user defined attribute of type string is _test_.
      * </pre>
      *
      * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1099,6 +1244,30 @@ public final class ListApiOperationsRequest extends com.google.protobuf.Generate
      *   * `create_time` - The time at which the ApiOperation was created. The
      *   value should be in the (RFC3339)[https://tools.ietf.org/html/rfc3339]
      *   format. Allowed comparison operators: `&gt;` and `&lt;`.
+     *   * `attributes.projects/test-project-id/locations/test-location-id/
+     *   attributes/user-defined-attribute-id.enum_values.values.id` - The
+     *   allowed value id of the user defined enum attribute associated with the
+     *   Resource. Allowed comparison operator is `:`. Here
+     *   user-defined-attribute-enum-id is a placeholder that can be replaced with
+     *   any user defined enum attribute name.
+     *   * `attributes.projects/test-project-id/locations/test-location-id/
+     *   attributes/user-defined-attribute-id.enum_values.values.display_name`
+     *   - The allowed value display name of the user defined enum attribute
+     *   associated with the Resource. Allowed comparison operator is `:`. Here
+     *   user-defined-attribute-enum-display-name is a placeholder that can be
+     *   replaced with any user defined enum attribute enum name.
+     *   * `attributes.projects/test-project-id/locations/test-location-id/
+     *   attributes/user-defined-attribute-id.string_values.values` - The
+     *   allowed value of the user defined string attribute associated with the
+     *   Resource. Allowed comparison operator is `:`. Here
+     *   user-defined-attribute-string is a placeholder that can be replaced with
+     *   any user defined string attribute name.
+     *   * `attributes.projects/test-project-id/locations/test-location-id/
+     *   attributes/user-defined-attribute-id.json_values.values` - The
+     *   allowed value of the user defined JSON attribute associated with the
+     *   Resource. Allowed comparison operator is `:`. Here
+     *   user-defined-attribute-json is a placeholder that can be replaced with
+     *   any user defined JSON attribute name.
      *
      * Expressions are combined with either `AND` logic operator or `OR` logical
      * operator but not both of them together i.e. only one of the `AND` or `OR`
@@ -1118,6 +1287,11 @@ public final class ListApiOperationsRequest extends com.google.protobuf.Generate
      *   * `details.http_operation.method = GET OR details.http_operation.method =
      *   POST`. - The http operation of the method of ApiOperation is _GET_ or
      *   _POST_.
+     *   * `details.deprecated = True AND
+     *   attributes.projects/test-project-id/locations/test-location-id/
+     *   attributes/17650f90-4a29-4971-b3c0-d5532da3764b.string_values.values:
+     *   test`  - The filter string specifies that the ApiOperation is deprecated
+     *   and the value of the user defined attribute of type string is _test_.
      * </pre>
      *
      * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -1156,6 +1330,30 @@ public final class ListApiOperationsRequest extends com.google.protobuf.Generate
      *   * `create_time` - The time at which the ApiOperation was created. The
      *   value should be in the (RFC3339)[https://tools.ietf.org/html/rfc3339]
      *   format. Allowed comparison operators: `&gt;` and `&lt;`.
+     *   * `attributes.projects/test-project-id/locations/test-location-id/
+     *   attributes/user-defined-attribute-id.enum_values.values.id` - The
+     *   allowed value id of the user defined enum attribute associated with the
+     *   Resource. Allowed comparison operator is `:`. Here
+     *   user-defined-attribute-enum-id is a placeholder that can be replaced with
+     *   any user defined enum attribute name.
+     *   * `attributes.projects/test-project-id/locations/test-location-id/
+     *   attributes/user-defined-attribute-id.enum_values.values.display_name`
+     *   - The allowed value display name of the user defined enum attribute
+     *   associated with the Resource. Allowed comparison operator is `:`. Here
+     *   user-defined-attribute-enum-display-name is a placeholder that can be
+     *   replaced with any user defined enum attribute enum name.
+     *   * `attributes.projects/test-project-id/locations/test-location-id/
+     *   attributes/user-defined-attribute-id.string_values.values` - The
+     *   allowed value of the user defined string attribute associated with the
+     *   Resource. Allowed comparison operator is `:`. Here
+     *   user-defined-attribute-string is a placeholder that can be replaced with
+     *   any user defined string attribute name.
+     *   * `attributes.projects/test-project-id/locations/test-location-id/
+     *   attributes/user-defined-attribute-id.json_values.values` - The
+     *   allowed value of the user defined JSON attribute associated with the
+     *   Resource. Allowed comparison operator is `:`. Here
+     *   user-defined-attribute-json is a placeholder that can be replaced with
+     *   any user defined JSON attribute name.
      *
      * Expressions are combined with either `AND` logic operator or `OR` logical
      * operator but not both of them together i.e. only one of the `AND` or `OR`
@@ -1175,6 +1373,11 @@ public final class ListApiOperationsRequest extends com.google.protobuf.Generate
      *   * `details.http_operation.method = GET OR details.http_operation.method =
      *   POST`. - The http operation of the method of ApiOperation is _GET_ or
      *   _POST_.
+     *   * `details.deprecated = True AND
+     *   attributes.projects/test-project-id/locations/test-location-id/
+     *   attributes/17650f90-4a29-4971-b3c0-d5532da3764b.string_values.values:
+     *   test`  - The filter string specifies that the ApiOperation is deprecated
+     *   and the value of the user defined attribute of type string is _test_.
      * </pre>
      *
      * <code>string filter = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

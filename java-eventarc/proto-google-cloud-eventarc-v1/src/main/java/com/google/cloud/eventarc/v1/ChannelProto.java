@@ -32,6 +32,10 @@ public final class ChannelProto {
       internal_static_google_cloud_eventarc_v1_Channel_descriptor;
   static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_eventarc_v1_Channel_fieldAccessorTable;
+  static final com.google.protobuf.Descriptors.Descriptor
+      internal_static_google_cloud_eventarc_v1_Channel_LabelsEntry_descriptor;
+  static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_eventarc_v1_Channel_LabelsEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
@@ -45,7 +49,7 @@ public final class ChannelProto {
           + "&google/cloud/eventarc/v1/channel.proto"
           + "\022\030google.cloud.eventarc.v1\032\037google/api/f"
           + "ield_behavior.proto\032\031google/api/resource"
-          + ".proto\032\037google/protobuf/timestamp.proto\"\313\004\n"
+          + ".proto\032\037google/protobuf/timestamp.proto\"\301\005\n"
           + "\007Channel\022\021\n"
           + "\004name\030\001 \001(\tB\003\340A\002\022\020\n"
           + "\003uid\030\002 \001(\tB\003\340A\003\0224\n"
@@ -57,23 +61,28 @@ public final class ChannelProto {
           + "\005state\030\t"
           + " \001(\0162\'.google.cloud.eventarc.v1.Channel.StateB\003\340A\003\022\035\n"
           + "\020activation_token\030\n"
-          + " \001(\tB\003\340A\003\022?\n"
-          + "\017crypto_key_name\030\013 \001(\tB&\372A#\n"
+          + " \001(\tB\003\340A\003\022B\n"
+          + "\017crypto_key_name\030\013 \001(\tB)\340A\001\372A#\n"
           + "!cloudkms.googleapis.com/CryptoKey\022\032\n\r"
-          + "satisfies_pzs\030\014 \001(\010B\003\340A\003\"E\n"
+          + "satisfies_pzs\030\014 \001(\010B\003\340A\003\022B\n"
+          + "\006labels\030\r"
+          + " \003(\0132-.google.cloud.eventarc.v1.Channel.LabelsEntryB\003\340A\001\032-\n"
+          + "\013LabelsEntry\022\013\n"
+          + "\003key\030\001 \001(\t\022\r\n"
+          + "\005value\030\002 \001(\t:\0028\001\"E\n"
           + "\005State\022\025\n"
           + "\021STATE_UNSPECIFIED\020\000\022\013\n"
           + "\007PENDING\020\001\022\n\n"
           + "\006ACTIVE\020\002\022\014\n"
           + "\010INACTIVE\020\003:s\352Ap\n"
-          + "\037eventarc.googleapis.com/Channel\022:projects/{project}/lo"
-          + "cations/{location}/channels/{channel}*\010channels2\007channelB\013\n"
+          + "\037eventarc.googleapis.com/Channel\022:projects/{project}/loca"
+          + "tions/{location}/channels/{channel}*\010channels2\007channelB\013\n"
           + "\ttransportB\274\001\n"
-          + "\034com.google.cloud.eventarc.v1B\014ChannelProtoP\001Z8"
-          + "cloud.google.com/go/eventarc/apiv1/event"
-          + "arcpb;eventarcpb\252\002\030Google.Cloud.Eventarc"
-          + ".V1\312\002\030Google\\Cloud\\Eventarc\\V1\352\002\033Google:"
-          + ":Cloud::Eventarc::V1b\006proto3"
+          + "\034com.google.cloud.eventarc.v1B\014ChannelProtoP\001Z8cl"
+          + "oud.google.com/go/eventarc/apiv1/eventar"
+          + "cpb;eventarcpb\252\002\030Google.Cloud.Eventarc.V"
+          + "1\312\002\030Google\\Cloud\\Eventarc\\V1\352\002\033Google::C"
+          + "loud::Eventarc::V1b\006proto3"
     };
     descriptor =
         com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
@@ -99,7 +108,16 @@ public final class ChannelProto {
               "ActivationToken",
               "CryptoKeyName",
               "SatisfiesPzs",
+              "Labels",
               "Transport",
+            });
+    internal_static_google_cloud_eventarc_v1_Channel_LabelsEntry_descriptor =
+        internal_static_google_cloud_eventarc_v1_Channel_descriptor.getNestedTypes().get(0);
+    internal_static_google_cloud_eventarc_v1_Channel_LabelsEntry_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_eventarc_v1_Channel_LabelsEntry_descriptor,
+            new java.lang.String[] {
+              "Key", "Value",
             });
     com.google.protobuf.ExtensionRegistry registry =
         com.google.protobuf.ExtensionRegistry.newInstance();

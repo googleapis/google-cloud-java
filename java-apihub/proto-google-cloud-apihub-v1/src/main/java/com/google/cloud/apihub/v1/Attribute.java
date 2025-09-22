@@ -605,6 +605,16 @@ public final class Attribute extends com.google.protobuf.GeneratedMessageV3
      * <code>STRING = 3;</code>
      */
     STRING(3),
+    /**
+     *
+     *
+     * <pre>
+     * Attribute's value is of type uri.
+     * </pre>
+     *
+     * <code>URI = 4;</code>
+     */
+    URI(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -652,6 +662,17 @@ public final class Attribute extends com.google.protobuf.GeneratedMessageV3
      */
     public static final int STRING_VALUE = 3;
 
+    /**
+     *
+     *
+     * <pre>
+     * Attribute's value is of type uri.
+     * </pre>
+     *
+     * <code>URI = 4;</code>
+     */
+    public static final int URI_VALUE = 4;
+
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -684,6 +705,8 @@ public final class Attribute extends com.google.protobuf.GeneratedMessageV3
           return JSON;
         case 3:
           return STRING;
+        case 4:
+          return URI;
         default:
           return null;
       }

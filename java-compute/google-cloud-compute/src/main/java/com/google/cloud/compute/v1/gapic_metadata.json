@@ -48,6 +48,9 @@
             },
             "SetLabels": {
               "methods": ["setLabelsAsync", "setLabelsAsync", "setLabelsOperationCallable", "setLabelsCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
             }
           }
         }
@@ -441,6 +444,9 @@
             },
             "SetLabels": {
               "methods": ["setLabelsAsync", "setLabelsAsync", "setLabelsOperationCallable", "setLabelsCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
             }
           }
         }
@@ -792,6 +798,9 @@
             },
             "SetNamedPorts": {
               "methods": ["setNamedPortsAsync", "setNamedPortsAsync", "setNamedPortsOperationCallable", "setNamedPortsCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
             }
           }
         }
@@ -853,6 +862,9 @@
             "AddAccessConfig": {
               "methods": ["addAccessConfigAsync", "addAccessConfigAsync", "addAccessConfigOperationCallable", "addAccessConfigCallable"]
             },
+            "AddNetworkInterface": {
+              "methods": ["addNetworkInterfaceAsync", "addNetworkInterfaceAsync", "addNetworkInterfaceOperationCallable", "addNetworkInterfaceCallable"]
+            },
             "AddResourcePolicies": {
               "methods": ["addResourcePoliciesAsync", "addResourcePoliciesAsync", "addResourcePoliciesOperationCallable", "addResourcePoliciesCallable"]
             },
@@ -870,6 +882,9 @@
             },
             "DeleteAccessConfig": {
               "methods": ["deleteAccessConfigAsync", "deleteAccessConfigAsync", "deleteAccessConfigOperationCallable", "deleteAccessConfigCallable"]
+            },
+            "DeleteNetworkInterface": {
+              "methods": ["deleteNetworkInterfaceAsync", "deleteNetworkInterfaceAsync", "deleteNetworkInterfaceOperationCallable", "deleteNetworkInterfaceCallable"]
             },
             "DetachDisk": {
               "methods": ["detachDiskAsync", "detachDiskAsync", "detachDiskOperationCallable", "detachDiskCallable"]
@@ -2097,6 +2112,9 @@
             },
             "SetNamedPorts": {
               "methods": ["setNamedPortsAsync", "setNamedPortsAsync", "setNamedPortsOperationCallable", "setNamedPortsCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
             }
           }
         }
@@ -3117,6 +3135,9 @@
             },
             "SetSecurityPolicy": {
               "methods": ["setSecurityPolicyAsync", "setSecurityPolicyAsync", "setSecurityPolicyOperationCallable", "setSecurityPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
             }
           }
         }
@@ -3162,6 +3183,9 @@
             },
             "SetSecurityPolicy": {
               "methods": ["setSecurityPolicyAsync", "setSecurityPolicyAsync", "setSecurityPolicyOperationCallable", "setSecurityPolicyCallable"]
+            },
+            "TestIamPermissions": {
+              "methods": ["testIamPermissions", "testIamPermissions", "testIamPermissionsCallable"]
             }
           }
         }

@@ -84,7 +84,7 @@ public interface PluginOrBuilder
    *
    *
    * <pre>
-   * Required. The type of the API.
+   * Optional. The type of the API.
    * This maps to the following system defined attribute:
    * `projects/{project}/locations/{location}/attributes/system-plugin-type`
    * attribute.
@@ -92,10 +92,11 @@ public interface PluginOrBuilder
    * cardinality of the attribute. The same can be retrieved via GetAttribute
    * API. All values should be from the list of allowed values defined for the
    * attribute.
+   * Note this field is not required for plugins developed via plugin framework.
    * </pre>
    *
    * <code>
-   * .google.cloud.apihub.v1.AttributeValues type = 3 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.apihub.v1.AttributeValues type = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return Whether the type field is set.
@@ -106,7 +107,7 @@ public interface PluginOrBuilder
    *
    *
    * <pre>
-   * Required. The type of the API.
+   * Optional. The type of the API.
    * This maps to the following system defined attribute:
    * `projects/{project}/locations/{location}/attributes/system-plugin-type`
    * attribute.
@@ -114,10 +115,11 @@ public interface PluginOrBuilder
    * cardinality of the attribute. The same can be retrieved via GetAttribute
    * API. All values should be from the list of allowed values defined for the
    * attribute.
+   * Note this field is not required for plugins developed via plugin framework.
    * </pre>
    *
    * <code>
-   * .google.cloud.apihub.v1.AttributeValues type = 3 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.apihub.v1.AttributeValues type = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    *
    * @return The type.
@@ -128,7 +130,7 @@ public interface PluginOrBuilder
    *
    *
    * <pre>
-   * Required. The type of the API.
+   * Optional. The type of the API.
    * This maps to the following system defined attribute:
    * `projects/{project}/locations/{location}/attributes/system-plugin-type`
    * attribute.
@@ -136,10 +138,11 @@ public interface PluginOrBuilder
    * cardinality of the attribute. The same can be retrieved via GetAttribute
    * API. All values should be from the list of allowed values defined for the
    * attribute.
+   * Note this field is not required for plugins developed via plugin framework.
    * </pre>
    *
    * <code>
-   * .google.cloud.apihub.v1.AttributeValues type = 3 [(.google.api.field_behavior) = REQUIRED];
+   * .google.cloud.apihub.v1.AttributeValues type = 3 [(.google.api.field_behavior) = OPTIONAL];
    * </code>
    */
   com.google.cloud.apihub.v1.AttributeValuesOrBuilder getTypeOrBuilder();
@@ -177,6 +180,8 @@ public interface PluginOrBuilder
    *
    * <pre>
    * Output only. Represents the state of the plugin.
+   * Note this field will not be set for plugins developed via plugin
+   * framework as the state will be managed at plugin instance level.
    * </pre>
    *
    * <code>
@@ -192,6 +197,8 @@ public interface PluginOrBuilder
    *
    * <pre>
    * Output only. Represents the state of the plugin.
+   * Note this field will not be set for plugins developed via plugin
+   * framework as the state will be managed at plugin instance level.
    * </pre>
    *
    * <code>
@@ -201,4 +208,425 @@ public interface PluginOrBuilder
    * @return The state.
    */
   com.google.cloud.apihub.v1.Plugin.State getState();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The type of the plugin, indicating whether it is
+   * 'SYSTEM_OWNED' or 'USER_OWNED'.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.Plugin.OwnershipType ownership_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for ownershipType.
+   */
+  int getOwnershipTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. The type of the plugin, indicating whether it is
+   * 'SYSTEM_OWNED' or 'USER_OWNED'.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.Plugin.OwnershipType ownership_type = 6 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The ownershipType.
+   */
+  com.google.cloud.apihub.v1.Plugin.OwnershipType getOwnershipType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field is optional. It is used to notify the plugin hosting
+   * service for any lifecycle changes of the plugin instance and trigger
+   * execution of plugin instance actions in case of API hub managed actions.
+   *
+   * This field should be provided if the plugin instance lifecycle of the
+   * developed plugin needs to be managed from API hub. Also, in this case the
+   * plugin hosting service interface needs to be implemented.
+   *
+   * This field should not be provided if the plugin wants to manage plugin
+   * instance lifecycle events outside of hub interface and use plugin framework
+   * for only registering of plugin and plugin instances to capture the source
+   * of data into hub. Note, in this case the plugin hosting service interface
+   * is not required to be implemented. Also, the plugin instance lifecycle
+   * actions will be disabled from API hub's UI.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.Plugin.HostingService hosting_service = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the hostingService field is set.
+   */
+  boolean hasHostingService();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field is optional. It is used to notify the plugin hosting
+   * service for any lifecycle changes of the plugin instance and trigger
+   * execution of plugin instance actions in case of API hub managed actions.
+   *
+   * This field should be provided if the plugin instance lifecycle of the
+   * developed plugin needs to be managed from API hub. Also, in this case the
+   * plugin hosting service interface needs to be implemented.
+   *
+   * This field should not be provided if the plugin wants to manage plugin
+   * instance lifecycle events outside of hub interface and use plugin framework
+   * for only registering of plugin and plugin instances to capture the source
+   * of data into hub. Note, in this case the plugin hosting service interface
+   * is not required to be implemented. Also, the plugin instance lifecycle
+   * actions will be disabled from API hub's UI.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.Plugin.HostingService hosting_service = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The hostingService.
+   */
+  com.google.cloud.apihub.v1.Plugin.HostingService getHostingService();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. This field is optional. It is used to notify the plugin hosting
+   * service for any lifecycle changes of the plugin instance and trigger
+   * execution of plugin instance actions in case of API hub managed actions.
+   *
+   * This field should be provided if the plugin instance lifecycle of the
+   * developed plugin needs to be managed from API hub. Also, in this case the
+   * plugin hosting service interface needs to be implemented.
+   *
+   * This field should not be provided if the plugin wants to manage plugin
+   * instance lifecycle events outside of hub interface and use plugin framework
+   * for only registering of plugin and plugin instances to capture the source
+   * of data into hub. Note, in this case the plugin hosting service interface
+   * is not required to be implemented. Also, the plugin instance lifecycle
+   * actions will be disabled from API hub's UI.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.Plugin.HostingService hosting_service = 7 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.apihub.v1.Plugin.HostingServiceOrBuilder getHostingServiceOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration of actions supported by the plugin.
+   * **REQUIRED**: This field must be provided when creating or updating a
+   * Plugin. The server will reject requests if this field is missing.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.PluginActionConfig actions_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<com.google.cloud.apihub.v1.PluginActionConfig> getActionsConfigList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration of actions supported by the plugin.
+   * **REQUIRED**: This field must be provided when creating or updating a
+   * Plugin. The server will reject requests if this field is missing.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.PluginActionConfig actions_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.apihub.v1.PluginActionConfig getActionsConfig(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration of actions supported by the plugin.
+   * **REQUIRED**: This field must be provided when creating or updating a
+   * Plugin. The server will reject requests if this field is missing.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.PluginActionConfig actions_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  int getActionsConfigCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration of actions supported by the plugin.
+   * **REQUIRED**: This field must be provided when creating or updating a
+   * Plugin. The server will reject requests if this field is missing.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.PluginActionConfig actions_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.apihub.v1.PluginActionConfigOrBuilder>
+      getActionsConfigOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration of actions supported by the plugin.
+   * **REQUIRED**: This field must be provided when creating or updating a
+   * Plugin. The server will reject requests if this field is missing.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.apihub.v1.PluginActionConfig actions_config = 8 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.apihub.v1.PluginActionConfigOrBuilder getActionsConfigOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The documentation of the plugin, that explains how to set up and
+   * use the plugin.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.Documentation documentation = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the documentation field is set.
+   */
+  boolean hasDocumentation();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The documentation of the plugin, that explains how to set up and
+   * use the plugin.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.Documentation documentation = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The documentation.
+   */
+  com.google.cloud.apihub.v1.Documentation getDocumentation();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The documentation of the plugin, that explains how to set up and
+   * use the plugin.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.Documentation documentation = 9 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.apihub.v1.DocumentationOrBuilder getDocumentationOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The category of the plugin, identifying its primary category or
+   * purpose. This field is required for all plugins.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.PluginCategory plugin_category = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for pluginCategory.
+   */
+  int getPluginCategoryValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The category of the plugin, identifying its primary category or
+   * purpose. This field is required for all plugins.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.PluginCategory plugin_category = 11 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The pluginCategory.
+   */
+  com.google.cloud.apihub.v1.PluginCategory getPluginCategory();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration template for the plugin.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.Plugin.ConfigTemplate config_template = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the configTemplate field is set.
+   */
+  boolean hasConfigTemplate();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration template for the plugin.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.Plugin.ConfigTemplate config_template = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The configTemplate.
+   */
+  com.google.cloud.apihub.v1.Plugin.ConfigTemplate getConfigTemplate();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration template for the plugin.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.Plugin.ConfigTemplate config_template = 12 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  com.google.cloud.apihub.v1.Plugin.ConfigTemplateOrBuilder getConfigTemplateOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp indicating when the plugin was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the createTime field is set.
+   */
+  boolean hasCreateTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp indicating when the plugin was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The createTime.
+   */
+  com.google.protobuf.Timestamp getCreateTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp indicating when the plugin was created.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp create_time = 13 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp indicating when the plugin was last updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return Whether the updateTime field is set.
+   */
+  boolean hasUpdateTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp indicating when the plugin was last updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   *
+   * @return The updateTime.
+   */
+  com.google.protobuf.Timestamp getUpdateTime();
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. Timestamp indicating when the plugin was last updated.
+   * </pre>
+   *
+   * <code>.google.protobuf.Timestamp update_time = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];
+   * </code>
+   */
+  com.google.protobuf.TimestampOrBuilder getUpdateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The type of the gateway.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.GatewayType gateway_type = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for gatewayType.
+   */
+  int getGatewayTypeValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The type of the gateway.
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.apihub.v1.GatewayType gateway_type = 15 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The gatewayType.
+   */
+  com.google.cloud.apihub.v1.GatewayType getGatewayType();
 }

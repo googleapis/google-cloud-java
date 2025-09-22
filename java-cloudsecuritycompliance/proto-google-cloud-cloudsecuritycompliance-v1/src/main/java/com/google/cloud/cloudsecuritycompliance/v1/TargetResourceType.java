@@ -204,7 +204,7 @@ public enum TargetResourceType implements com.google.protobuf.ProtocolMessageEnu
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.cloud.cloudsecuritycompliance.v1.CommonProto.getDescriptor()
         .getEnumTypes()
-        .get(7);
+        .get(6);
   }
 
   private static final TargetResourceType[] VALUES = values();

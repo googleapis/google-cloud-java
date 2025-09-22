@@ -76,8 +76,12 @@ import com.google.cloud.video.livestream.v1.ListInputsRequest;
 import com.google.cloud.video.livestream.v1.ListInputsResponse;
 import com.google.cloud.video.livestream.v1.OperationMetadata;
 import com.google.cloud.video.livestream.v1.Pool;
+import com.google.cloud.video.livestream.v1.PreviewInputRequest;
+import com.google.cloud.video.livestream.v1.PreviewInputResponse;
 import com.google.cloud.video.livestream.v1.StartChannelRequest;
+import com.google.cloud.video.livestream.v1.StartDistributionRequest;
 import com.google.cloud.video.livestream.v1.StopChannelRequest;
+import com.google.cloud.video.livestream.v1.StopDistributionRequest;
 import com.google.cloud.video.livestream.v1.UpdateChannelRequest;
 import com.google.cloud.video.livestream.v1.UpdateDvrSessionRequest;
 import com.google.cloud.video.livestream.v1.UpdateInputRequest;
@@ -171,6 +175,30 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
           .setSampledToLocalTracing(true)
           .build();
 
+  private static final MethodDescriptor<StartDistributionRequest, Operation>
+      startDistributionMethodDescriptor =
+          MethodDescriptor.<StartDistributionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.video.livestream.v1.LivestreamService/StartDistribution")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(StartDistributionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
+  private static final MethodDescriptor<StopDistributionRequest, Operation>
+      stopDistributionMethodDescriptor =
+          MethodDescriptor.<StopDistributionRequest, Operation>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(
+                  "google.cloud.video.livestream.v1.LivestreamService/StopDistribution")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(StopDistributionRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<CreateInputRequest, Operation> createInputMethodDescriptor =
       MethodDescriptor.<CreateInputRequest, Operation>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -216,6 +244,17 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
           .setResponseMarshaller(ProtoUtils.marshaller(Operation.getDefaultInstance()))
           .setSampledToLocalTracing(true)
           .build();
+
+  private static final MethodDescriptor<PreviewInputRequest, PreviewInputResponse>
+      previewInputMethodDescriptor =
+          MethodDescriptor.<PreviewInputRequest, PreviewInputResponse>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.video.livestream.v1.LivestreamService/PreviewInput")
+              .setRequestMarshaller(ProtoUtils.marshaller(PreviewInputRequest.getDefaultInstance()))
+              .setResponseMarshaller(
+                  ProtoUtils.marshaller(PreviewInputResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
 
   private static final MethodDescriptor<CreateEventRequest, Event> createEventMethodDescriptor =
       MethodDescriptor.<CreateEventRequest, Event>newBuilder()
@@ -446,6 +485,14 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
   private final UnaryCallable<StopChannelRequest, Operation> stopChannelCallable;
   private final OperationCallable<StopChannelRequest, ChannelOperationResponse, OperationMetadata>
       stopChannelOperationCallable;
+  private final UnaryCallable<StartDistributionRequest, Operation> startDistributionCallable;
+  private final OperationCallable<
+          StartDistributionRequest, ChannelOperationResponse, OperationMetadata>
+      startDistributionOperationCallable;
+  private final UnaryCallable<StopDistributionRequest, Operation> stopDistributionCallable;
+  private final OperationCallable<
+          StopDistributionRequest, ChannelOperationResponse, OperationMetadata>
+      stopDistributionOperationCallable;
   private final UnaryCallable<CreateInputRequest, Operation> createInputCallable;
   private final OperationCallable<CreateInputRequest, Input, OperationMetadata>
       createInputOperationCallable;
@@ -458,6 +505,7 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
   private final UnaryCallable<UpdateInputRequest, Operation> updateInputCallable;
   private final OperationCallable<UpdateInputRequest, Input, OperationMetadata>
       updateInputOperationCallable;
+  private final UnaryCallable<PreviewInputRequest, PreviewInputResponse> previewInputCallable;
   private final UnaryCallable<CreateEventRequest, Event> createEventCallable;
   private final UnaryCallable<ListEventsRequest, ListEventsResponse> listEventsCallable;
   private final UnaryCallable<ListEventsRequest, ListEventsPagedResponse> listEventsPagedCallable;
@@ -618,6 +666,26 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<StartDistributionRequest, Operation> startDistributionTransportSettings =
+        GrpcCallSettings.<StartDistributionRequest, Operation>newBuilder()
+            .setMethodDescriptor(startDistributionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<StopDistributionRequest, Operation> stopDistributionTransportSettings =
+        GrpcCallSettings.<StopDistributionRequest, Operation>newBuilder()
+            .setMethodDescriptor(stopDistributionMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<CreateInputRequest, Operation> createInputTransportSettings =
         GrpcCallSettings.<CreateInputRequest, Operation>newBuilder()
             .setMethodDescriptor(createInputMethodDescriptor)
@@ -665,6 +733,16 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
                 request -> {
                   RequestParamsBuilder builder = RequestParamsBuilder.create();
                   builder.add("input.name", String.valueOf(request.getInput().getName()));
+                  return builder.build();
+                })
+            .build();
+    GrpcCallSettings<PreviewInputRequest, PreviewInputResponse> previewInputTransportSettings =
+        GrpcCallSettings.<PreviewInputRequest, PreviewInputResponse>newBuilder()
+            .setMethodDescriptor(previewInputMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("name", String.valueOf(request.getName()));
                   return builder.build();
                 })
             .build();
@@ -935,6 +1013,26 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
             settings.stopChannelOperationSettings(),
             clientContext,
             operationsStub);
+    this.startDistributionCallable =
+        callableFactory.createUnaryCallable(
+            startDistributionTransportSettings,
+            settings.startDistributionSettings(),
+            clientContext);
+    this.startDistributionOperationCallable =
+        callableFactory.createOperationCallable(
+            startDistributionTransportSettings,
+            settings.startDistributionOperationSettings(),
+            clientContext,
+            operationsStub);
+    this.stopDistributionCallable =
+        callableFactory.createUnaryCallable(
+            stopDistributionTransportSettings, settings.stopDistributionSettings(), clientContext);
+    this.stopDistributionOperationCallable =
+        callableFactory.createOperationCallable(
+            stopDistributionTransportSettings,
+            settings.stopDistributionOperationSettings(),
+            clientContext,
+            operationsStub);
     this.createInputCallable =
         callableFactory.createUnaryCallable(
             createInputTransportSettings, settings.createInputSettings(), clientContext);
@@ -971,6 +1069,9 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
             settings.updateInputOperationSettings(),
             clientContext,
             operationsStub);
+    this.previewInputCallable =
+        callableFactory.createUnaryCallable(
+            previewInputTransportSettings, settings.previewInputSettings(), clientContext);
     this.createEventCallable =
         callableFactory.createUnaryCallable(
             createEventTransportSettings, settings.createEventSettings(), clientContext);
@@ -1177,6 +1278,28 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
   }
 
   @Override
+  public UnaryCallable<StartDistributionRequest, Operation> startDistributionCallable() {
+    return startDistributionCallable;
+  }
+
+  @Override
+  public OperationCallable<StartDistributionRequest, ChannelOperationResponse, OperationMetadata>
+      startDistributionOperationCallable() {
+    return startDistributionOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<StopDistributionRequest, Operation> stopDistributionCallable() {
+    return stopDistributionCallable;
+  }
+
+  @Override
+  public OperationCallable<StopDistributionRequest, ChannelOperationResponse, OperationMetadata>
+      stopDistributionOperationCallable() {
+    return stopDistributionOperationCallable;
+  }
+
+  @Override
   public UnaryCallable<CreateInputRequest, Operation> createInputCallable() {
     return createInputCallable;
   }
@@ -1222,6 +1345,11 @@ public class GrpcLivestreamServiceStub extends LivestreamServiceStub {
   public OperationCallable<UpdateInputRequest, Input, OperationMetadata>
       updateInputOperationCallable() {
     return updateInputOperationCallable;
+  }
+
+  @Override
+  public UnaryCallable<PreviewInputRequest, PreviewInputResponse> previewInputCallable() {
+    return previewInputCallable;
   }
 
   @Override

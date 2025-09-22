@@ -179,7 +179,7 @@ public enum EnforcementMode implements com.google.protobuf.ProtocolMessageEnum {
   public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.cloud.cloudsecuritycompliance.v1.CommonProto.getDescriptor()
         .getEnumTypes()
-        .get(1);
+        .get(0);
   }
 
   private static final EnforcementMode[] VALUES = values();

@@ -71,8 +71,12 @@ import com.google.cloud.video.livestream.v1.ListInputsRequest;
 import com.google.cloud.video.livestream.v1.ListInputsResponse;
 import com.google.cloud.video.livestream.v1.OperationMetadata;
 import com.google.cloud.video.livestream.v1.Pool;
+import com.google.cloud.video.livestream.v1.PreviewInputRequest;
+import com.google.cloud.video.livestream.v1.PreviewInputResponse;
 import com.google.cloud.video.livestream.v1.StartChannelRequest;
+import com.google.cloud.video.livestream.v1.StartDistributionRequest;
 import com.google.cloud.video.livestream.v1.StopChannelRequest;
+import com.google.cloud.video.livestream.v1.StopDistributionRequest;
 import com.google.cloud.video.livestream.v1.UpdateChannelRequest;
 import com.google.cloud.video.livestream.v1.UpdateDvrSessionRequest;
 import com.google.cloud.video.livestream.v1.UpdateInputRequest;
@@ -156,6 +160,25 @@ public abstract class LivestreamServiceStub implements BackgroundResource {
     throw new UnsupportedOperationException("Not implemented: stopChannelCallable()");
   }
 
+  public OperationCallable<StartDistributionRequest, ChannelOperationResponse, OperationMetadata>
+      startDistributionOperationCallable() {
+    throw new UnsupportedOperationException(
+        "Not implemented: startDistributionOperationCallable()");
+  }
+
+  public UnaryCallable<StartDistributionRequest, Operation> startDistributionCallable() {
+    throw new UnsupportedOperationException("Not implemented: startDistributionCallable()");
+  }
+
+  public OperationCallable<StopDistributionRequest, ChannelOperationResponse, OperationMetadata>
+      stopDistributionOperationCallable() {
+    throw new UnsupportedOperationException("Not implemented: stopDistributionOperationCallable()");
+  }
+
+  public UnaryCallable<StopDistributionRequest, Operation> stopDistributionCallable() {
+    throw new UnsupportedOperationException("Not implemented: stopDistributionCallable()");
+  }
+
   public OperationCallable<CreateInputRequest, Input, OperationMetadata>
       createInputOperationCallable() {
     throw new UnsupportedOperationException("Not implemented: createInputOperationCallable()");
@@ -193,6 +216,10 @@ public abstract class LivestreamServiceStub implements BackgroundResource {
 
   public UnaryCallable<UpdateInputRequest, Operation> updateInputCallable() {
     throw new UnsupportedOperationException("Not implemented: updateInputCallable()");
+  }
+
+  public UnaryCallable<PreviewInputRequest, PreviewInputResponse> previewInputCallable() {
+    throw new UnsupportedOperationException("Not implemented: previewInputCallable()");
   }
 
   public UnaryCallable<CreateEventRequest, Event> createEventCallable() {

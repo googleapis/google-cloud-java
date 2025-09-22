@@ -142,8 +142,11 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
    * the specified id is already used by another version in the API resource.
    * * If not provided, a system generated id will be used.
    *
-   * This value should be 4-500 characters, and valid characters
-   * are /[a-z][A-Z][0-9]-_/.
+   * This value should be 4-500 characters, overall resource name which will be
+   * of format
+   * `projects/{project}/locations/{location}/apis/{api}/versions/{version}`,
+   * its length is limited to 700 characters and valid characters are
+   * /[a-z][A-Z][0-9]-_/.
    * </pre>
    *
    * <code>string version_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -174,8 +177,11 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
    * the specified id is already used by another version in the API resource.
    * * If not provided, a system generated id will be used.
    *
-   * This value should be 4-500 characters, and valid characters
-   * are /[a-z][A-Z][0-9]-_/.
+   * This value should be 4-500 characters, overall resource name which will be
+   * of format
+   * `projects/{project}/locations/{location}/apis/{api}/versions/{version}`,
+   * its length is limited to 700 characters and valid characters are
+   * /[a-z][A-Z][0-9]-_/.
    * </pre>
    *
    * <code>string version_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -797,8 +803,11 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
      * the specified id is already used by another version in the API resource.
      * * If not provided, a system generated id will be used.
      *
-     * This value should be 4-500 characters, and valid characters
-     * are /[a-z][A-Z][0-9]-_/.
+     * This value should be 4-500 characters, overall resource name which will be
+     * of format
+     * `projects/{project}/locations/{location}/apis/{api}/versions/{version}`,
+     * its length is limited to 700 characters and valid characters are
+     * /[a-z][A-Z][0-9]-_/.
      * </pre>
      *
      * <code>string version_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -828,8 +837,11 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
      * the specified id is already used by another version in the API resource.
      * * If not provided, a system generated id will be used.
      *
-     * This value should be 4-500 characters, and valid characters
-     * are /[a-z][A-Z][0-9]-_/.
+     * This value should be 4-500 characters, overall resource name which will be
+     * of format
+     * `projects/{project}/locations/{location}/apis/{api}/versions/{version}`,
+     * its length is limited to 700 characters and valid characters are
+     * /[a-z][A-Z][0-9]-_/.
      * </pre>
      *
      * <code>string version_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -859,8 +871,11 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
      * the specified id is already used by another version in the API resource.
      * * If not provided, a system generated id will be used.
      *
-     * This value should be 4-500 characters, and valid characters
-     * are /[a-z][A-Z][0-9]-_/.
+     * This value should be 4-500 characters, overall resource name which will be
+     * of format
+     * `projects/{project}/locations/{location}/apis/{api}/versions/{version}`,
+     * its length is limited to 700 characters and valid characters are
+     * /[a-z][A-Z][0-9]-_/.
      * </pre>
      *
      * <code>string version_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -889,8 +904,11 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
      * the specified id is already used by another version in the API resource.
      * * If not provided, a system generated id will be used.
      *
-     * This value should be 4-500 characters, and valid characters
-     * are /[a-z][A-Z][0-9]-_/.
+     * This value should be 4-500 characters, overall resource name which will be
+     * of format
+     * `projects/{project}/locations/{location}/apis/{api}/versions/{version}`,
+     * its length is limited to 700 characters and valid characters are
+     * /[a-z][A-Z][0-9]-_/.
      * </pre>
      *
      * <code>string version_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
@@ -915,8 +933,11 @@ public final class CreateVersionRequest extends com.google.protobuf.GeneratedMes
      * the specified id is already used by another version in the API resource.
      * * If not provided, a system generated id will be used.
      *
-     * This value should be 4-500 characters, and valid characters
-     * are /[a-z][A-Z][0-9]-_/.
+     * This value should be 4-500 characters, overall resource name which will be
+     * of format
+     * `projects/{project}/locations/{location}/apis/{api}/versions/{version}`,
+     * its length is limited to 700 characters and valid characters are
+     * /[a-z][A-Z][0-9]-_/.
      * </pre>
      *
      * <code>string version_id = 2 [(.google.api.field_behavior) = OPTIONAL];</code>

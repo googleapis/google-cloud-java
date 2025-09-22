@@ -129,7 +129,7 @@ import javax.annotation.Generated;
  *    </tr>
  *    <tr>
  *      <td><p> UpdateApi</td>
- *      <td><p> Update an API resource in the API hub. The following fields in the [API][] can be updated:
+ *      <td><p> Update an API resource in the API hub. The following fields in the [API][google.cloud.apihub.v1.Api] can be updated:
  * <ul>
  * <li>  [display_name][google.cloud.apihub.v1.Api.display_name]
  * <li>  [description][google.cloud.apihub.v1.Api.description]
@@ -139,6 +139,7 @@ import javax.annotation.Generated;
  * <li>  [team][google.cloud.apihub.v1.Api.team]
  * <li>  [business_unit][google.cloud.apihub.v1.Api.business_unit]
  * <li>  [maturity_level][google.cloud.apihub.v1.Api.maturity_level]
+ * <li>  [api_style][google.cloud.apihub.v1.Api.api_style]
  * <li>  [attributes][google.cloud.apihub.v1.Api.attributes]
  * </ul>
  * <p>  The [update_mask][google.cloud.apihub.v1.UpdateApiRequest.update_mask] should be used to specify the fields being updated.
@@ -411,6 +412,25 @@ import javax.annotation.Generated;
  *       </td>
  *    </tr>
  *    <tr>
+ *      <td><p> CreateApiOperation</td>
+ *      <td><p> Create an apiOperation in an API version. An apiOperation can be created only if the version has no apiOperations which were created by parsing a spec.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> createApiOperation(CreateApiOperationRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> createApiOperation(VersionName parent, ApiOperation apiOperation, String apiOperationId)
+ *           <li><p> createApiOperation(String parent, ApiOperation apiOperation, String apiOperationId)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> createApiOperationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
  *      <td><p> GetApiOperation</td>
  *      <td><p> Get details about a particular operation in API version.</td>
  *      <td>
@@ -446,6 +466,53 @@ import javax.annotation.Generated;
  *      <ul>
  *           <li><p> listApiOperationsPagedCallable()
  *           <li><p> listApiOperationsCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> UpdateApiOperation</td>
+ *      <td><p> Update an operation in an API version. The following fields in the [ApiOperation resource][google.cloud.apihub.v1.ApiOperation] can be updated:
+ * <ul>
+ * <li>  [details.description][ApiOperation.details.description]
+ * <li>  [details.documentation][ApiOperation.details.documentation]
+ * <li>  [details.http_operation.path][ApiOperation.details.http_operation.path.path]
+ * <li>  [details.http_operation.method][ApiOperation.details.http_operation.method]
+ * <li>  [details.deprecated][ApiOperation.details.deprecated]
+ * <li>  [attributes][google.cloud.apihub.v1.ApiOperation.attributes]
+ * </ul>
+ * <p>  The [update_mask][google.cloud.apihub.v1.UpdateApiOperationRequest.update_mask] should be used to specify the fields being updated.
+ * <p>  An operation can be updated only if the operation was created via [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation] API. If the operation was created by parsing the spec, then it can be edited by updating the spec.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> updateApiOperation(UpdateApiOperationRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> updateApiOperation(ApiOperation apiOperation, FieldMask updateMask)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> updateApiOperationCallable()
+ *      </ul>
+ *       </td>
+ *    </tr>
+ *    <tr>
+ *      <td><p> DeleteApiOperation</td>
+ *      <td><p> Delete an operation in an API version and we can delete only the operations created via create API. If the operation was created by parsing the spec, then it can be deleted by editing or deleting the spec.</td>
+ *      <td>
+ *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
+ *      <ul>
+ *           <li><p> deleteApiOperation(DeleteApiOperationRequest request)
+ *      </ul>
+ *      <p>"Flattened" method variants have converted the fields of the request object into function parameters to enable multiple ways to call the same method.</p>
+ *      <ul>
+ *           <li><p> deleteApiOperation(ApiOperationName name)
+ *           <li><p> deleteApiOperation(String name)
+ *      </ul>
+ *      <p>Callable method variants take no parameters and return an immutable API callable object, which can be used to initiate calls to the service.</p>
+ *      <ul>
+ *           <li><p> deleteApiOperationCallable()
  *      </ul>
  *       </td>
  *    </tr>
@@ -539,8 +606,11 @@ import javax.annotation.Generated;
  * <li>  [slo][google.cloud.apihub.v1.Deployment.slo]
  * <li>  [environment][google.cloud.apihub.v1.Deployment.environment]
  * <li>  [attributes][google.cloud.apihub.v1.Deployment.attributes]
- * </ul>
- * <p>  The [update_mask][google.cloud.apihub.v1.UpdateDeploymentRequest.update_mask] should be used to specify the fields being updated.</td>
+ * <li>  [source_project] [google.cloud.apihub.v1.Deployment.source_project]
+ * <li>  [source_environment] [google.cloud.apihub.v1.Deployment.source_environment]
+ * <li>  [management_url][google.cloud.apihub.v1.Deployment.management_url]
+ * <li>  [source_uri][google.cloud.apihub.v1.Deployment.source_uri] The [update_mask][google.cloud.apihub.v1.UpdateDeploymentRequest.update_mask] should be used to specify the fields being updated.
+ * </ul></td>
  *      <td>
  *      <p>Request object method variants only take one parameter, a request object, which must be constructed before the call.</p>
  *      <ul>
@@ -1339,7 +1409,8 @@ public class ApiHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Update an API resource in the API hub. The following fields in the [API][] can be updated:
+   * Update an API resource in the API hub. The following fields in the
+   * [API][google.cloud.apihub.v1.Api] can be updated:
    *
    * <ul>
    *   <li>[display_name][google.cloud.apihub.v1.Api.display_name]
@@ -1350,6 +1421,7 @@ public class ApiHubClient implements BackgroundResource {
    *   <li>[team][google.cloud.apihub.v1.Api.team]
    *   <li>[business_unit][google.cloud.apihub.v1.Api.business_unit]
    *   <li>[maturity_level][google.cloud.apihub.v1.Api.maturity_level]
+   *   <li>[api_style][google.cloud.apihub.v1.Api.api_style]
    *   <li>[attributes][google.cloud.apihub.v1.Api.attributes]
    * </ul>
    *
@@ -1388,7 +1460,8 @@ public class ApiHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Update an API resource in the API hub. The following fields in the [API][] can be updated:
+   * Update an API resource in the API hub. The following fields in the
+   * [API][google.cloud.apihub.v1.Api] can be updated:
    *
    * <ul>
    *   <li>[display_name][google.cloud.apihub.v1.Api.display_name]
@@ -1399,6 +1472,7 @@ public class ApiHubClient implements BackgroundResource {
    *   <li>[team][google.cloud.apihub.v1.Api.team]
    *   <li>[business_unit][google.cloud.apihub.v1.Api.business_unit]
    *   <li>[maturity_level][google.cloud.apihub.v1.Api.maturity_level]
+   *   <li>[api_style][google.cloud.apihub.v1.Api.api_style]
    *   <li>[attributes][google.cloud.apihub.v1.Api.attributes]
    * </ul>
    *
@@ -1435,7 +1509,8 @@ public class ApiHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
-   * Update an API resource in the API hub. The following fields in the [API][] can be updated:
+   * Update an API resource in the API hub. The following fields in the
+   * [API][google.cloud.apihub.v1.Api] can be updated:
    *
    * <ul>
    *   <li>[display_name][google.cloud.apihub.v1.Api.display_name]
@@ -1446,6 +1521,7 @@ public class ApiHubClient implements BackgroundResource {
    *   <li>[team][google.cloud.apihub.v1.Api.team]
    *   <li>[business_unit][google.cloud.apihub.v1.Api.business_unit]
    *   <li>[maturity_level][google.cloud.apihub.v1.Api.maturity_level]
+   *   <li>[api_style][google.cloud.apihub.v1.Api.api_style]
    *   <li>[attributes][google.cloud.apihub.v1.Api.attributes]
    * </ul>
    *
@@ -1625,7 +1701,9 @@ public class ApiHubClient implements BackgroundResource {
    *           id is already used by another version in the API resource.
    *       <li>If not provided, a system generated id will be used.
    *     </ul>
-   *     <p>This value should be 4-500 characters, and valid characters are /[a-z][A-Z][0-9]-_/.
+   *     <p>This value should be 4-500 characters, overall resource name which will be of format
+   *     `projects/{project}/locations/{location}/apis/{api}/versions/{version}`, its length is
+   *     limited to 700 characters and valid characters are /[a-z][A-Z][0-9]-_/.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Version createVersion(ApiName parent, Version version, String versionId) {
@@ -1668,7 +1746,9 @@ public class ApiHubClient implements BackgroundResource {
    *           id is already used by another version in the API resource.
    *       <li>If not provided, a system generated id will be used.
    *     </ul>
-   *     <p>This value should be 4-500 characters, and valid characters are /[a-z][A-Z][0-9]-_/.
+   *     <p>This value should be 4-500 characters, overall resource name which will be of format
+   *     `projects/{project}/locations/{location}/apis/{api}/versions/{version}`, its length is
+   *     limited to 700 characters and valid characters are /[a-z][A-Z][0-9]-_/.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Version createVersion(String parent, Version version, String versionId) {
@@ -2313,7 +2393,9 @@ public class ApiHubClient implements BackgroundResource {
    *           id is already used by another spec in the API resource.
    *       <li>If not provided, a system generated id will be used.
    *     </ul>
-   *     <p>This value should be 4-500 characters, and valid characters are /[a-z][A-Z][0-9]-_/.
+   *     <p>This value should be 4-500 characters, overall resource name which will be of format
+   *     `projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}`, its
+   *     length is limited to 1000 characters and valid characters are /[a-z][A-Z][0-9]-_/.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Spec createSpec(VersionName parent, Spec spec, String specId) {
@@ -2370,7 +2452,9 @@ public class ApiHubClient implements BackgroundResource {
    *           id is already used by another spec in the API resource.
    *       <li>If not provided, a system generated id will be used.
    *     </ul>
-   *     <p>This value should be 4-500 characters, and valid characters are /[a-z][A-Z][0-9]-_/.
+   *     <p>This value should be 4-500 characters, overall resource name which will be of format
+   *     `projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}`, its
+   *     length is limited to 1000 characters and valid characters are /[a-z][A-Z][0-9]-_/.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   public final Spec createSpec(String parent, Spec spec, String specId) {
@@ -3126,6 +3210,162 @@ public class ApiHubClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
   /**
+   * Create an apiOperation in an API version. An apiOperation can be created only if the version
+   * has no apiOperations which were created by parsing a spec.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApiHubClient apiHubClient = ApiHubClient.create()) {
+   *   VersionName parent = VersionName.of("[PROJECT]", "[LOCATION]", "[API]", "[VERSION]");
+   *   ApiOperation apiOperation = ApiOperation.newBuilder().build();
+   *   String apiOperationId = "apiOperationId-2124555672";
+   *   ApiOperation response = apiHubClient.createApiOperation(parent, apiOperation, apiOperationId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource for the operation resource. Format:
+   *     `projects/{project}/locations/{location}/apis/{api}/versions/{version}`
+   * @param apiOperation Required. The operation resource to create.
+   * @param apiOperationId Optional. The ID to use for the operation resource, which will become the
+   *     final component of the operation's resource name. This field is optional.
+   *     <ul>
+   *       <li>If provided, the same will be used. The service will throw an error if the specified
+   *           id is already used by another operation resource in the API hub.
+   *       <li>If not provided, a system generated id will be used.
+   *     </ul>
+   *     <p>This value should be 4-500 characters, overall resource name which will be of format
+   *     `projects/{project}/locations/{location}/apis/{api}/versions/{version}/operations/{operation}`,
+   *     its length is limited to 700 characters, and valid characters are /[a-z][A-Z][0-9]-_/.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ApiOperation createApiOperation(
+      VersionName parent, ApiOperation apiOperation, String apiOperationId) {
+    CreateApiOperationRequest request =
+        CreateApiOperationRequest.newBuilder()
+            .setParent(parent == null ? null : parent.toString())
+            .setApiOperation(apiOperation)
+            .setApiOperationId(apiOperationId)
+            .build();
+    return createApiOperation(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create an apiOperation in an API version. An apiOperation can be created only if the version
+   * has no apiOperations which were created by parsing a spec.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApiHubClient apiHubClient = ApiHubClient.create()) {
+   *   String parent = VersionName.of("[PROJECT]", "[LOCATION]", "[API]", "[VERSION]").toString();
+   *   ApiOperation apiOperation = ApiOperation.newBuilder().build();
+   *   String apiOperationId = "apiOperationId-2124555672";
+   *   ApiOperation response = apiHubClient.createApiOperation(parent, apiOperation, apiOperationId);
+   * }
+   * }</pre>
+   *
+   * @param parent Required. The parent resource for the operation resource. Format:
+   *     `projects/{project}/locations/{location}/apis/{api}/versions/{version}`
+   * @param apiOperation Required. The operation resource to create.
+   * @param apiOperationId Optional. The ID to use for the operation resource, which will become the
+   *     final component of the operation's resource name. This field is optional.
+   *     <ul>
+   *       <li>If provided, the same will be used. The service will throw an error if the specified
+   *           id is already used by another operation resource in the API hub.
+   *       <li>If not provided, a system generated id will be used.
+   *     </ul>
+   *     <p>This value should be 4-500 characters, overall resource name which will be of format
+   *     `projects/{project}/locations/{location}/apis/{api}/versions/{version}/operations/{operation}`,
+   *     its length is limited to 700 characters, and valid characters are /[a-z][A-Z][0-9]-_/.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ApiOperation createApiOperation(
+      String parent, ApiOperation apiOperation, String apiOperationId) {
+    CreateApiOperationRequest request =
+        CreateApiOperationRequest.newBuilder()
+            .setParent(parent)
+            .setApiOperation(apiOperation)
+            .setApiOperationId(apiOperationId)
+            .build();
+    return createApiOperation(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create an apiOperation in an API version. An apiOperation can be created only if the version
+   * has no apiOperations which were created by parsing a spec.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApiHubClient apiHubClient = ApiHubClient.create()) {
+   *   CreateApiOperationRequest request =
+   *       CreateApiOperationRequest.newBuilder()
+   *           .setParent(VersionName.of("[PROJECT]", "[LOCATION]", "[API]", "[VERSION]").toString())
+   *           .setApiOperationId("apiOperationId-2124555672")
+   *           .setApiOperation(ApiOperation.newBuilder().build())
+   *           .build();
+   *   ApiOperation response = apiHubClient.createApiOperation(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ApiOperation createApiOperation(CreateApiOperationRequest request) {
+    return createApiOperationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Create an apiOperation in an API version. An apiOperation can be created only if the version
+   * has no apiOperations which were created by parsing a spec.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApiHubClient apiHubClient = ApiHubClient.create()) {
+   *   CreateApiOperationRequest request =
+   *       CreateApiOperationRequest.newBuilder()
+   *           .setParent(VersionName.of("[PROJECT]", "[LOCATION]", "[API]", "[VERSION]").toString())
+   *           .setApiOperationId("apiOperationId-2124555672")
+   *           .setApiOperation(ApiOperation.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ApiOperation> future =
+   *       apiHubClient.createApiOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ApiOperation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<CreateApiOperationRequest, ApiOperation> createApiOperationCallable() {
+    return stub.createApiOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
    * Get details about a particular operation in API version.
    *
    * <p>Sample code:
@@ -3410,6 +3650,280 @@ public class ApiHubClient implements BackgroundResource {
   public final UnaryCallable<ListApiOperationsRequest, ListApiOperationsResponse>
       listApiOperationsCallable() {
     return stub.listApiOperationsCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update an operation in an API version. The following fields in the [ApiOperation
+   * resource][google.cloud.apihub.v1.ApiOperation] can be updated:
+   *
+   * <ul>
+   *   <li>[details.description][ApiOperation.details.description]
+   *   <li>[details.documentation][ApiOperation.details.documentation]
+   *   <li>[details.http_operation.path][ApiOperation.details.http_operation.path.path]
+   *   <li>[details.http_operation.method][ApiOperation.details.http_operation.method]
+   *   <li>[details.deprecated][ApiOperation.details.deprecated]
+   *   <li>[attributes][google.cloud.apihub.v1.ApiOperation.attributes]
+   * </ul>
+   *
+   * <p>The [update_mask][google.cloud.apihub.v1.UpdateApiOperationRequest.update_mask] should be
+   * used to specify the fields being updated.
+   *
+   * <p>An operation can be updated only if the operation was created via
+   * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation] API. If the operation
+   * was created by parsing the spec, then it can be edited by updating the spec.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApiHubClient apiHubClient = ApiHubClient.create()) {
+   *   ApiOperation apiOperation = ApiOperation.newBuilder().build();
+   *   FieldMask updateMask = FieldMask.newBuilder().build();
+   *   ApiOperation response = apiHubClient.updateApiOperation(apiOperation, updateMask);
+   * }
+   * }</pre>
+   *
+   * @param apiOperation Required. The apiOperation resource to update.
+   *     <p>The operation resource's `name` field is used to identify the operation resource to
+   *     update. Format:
+   *     `projects/{project}/locations/{location}/apis/{api}/versions/{version}/operations/{operation}`
+   * @param updateMask Required. The list of fields to update.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ApiOperation updateApiOperation(ApiOperation apiOperation, FieldMask updateMask) {
+    UpdateApiOperationRequest request =
+        UpdateApiOperationRequest.newBuilder()
+            .setApiOperation(apiOperation)
+            .setUpdateMask(updateMask)
+            .build();
+    return updateApiOperation(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update an operation in an API version. The following fields in the [ApiOperation
+   * resource][google.cloud.apihub.v1.ApiOperation] can be updated:
+   *
+   * <ul>
+   *   <li>[details.description][ApiOperation.details.description]
+   *   <li>[details.documentation][ApiOperation.details.documentation]
+   *   <li>[details.http_operation.path][ApiOperation.details.http_operation.path.path]
+   *   <li>[details.http_operation.method][ApiOperation.details.http_operation.method]
+   *   <li>[details.deprecated][ApiOperation.details.deprecated]
+   *   <li>[attributes][google.cloud.apihub.v1.ApiOperation.attributes]
+   * </ul>
+   *
+   * <p>The [update_mask][google.cloud.apihub.v1.UpdateApiOperationRequest.update_mask] should be
+   * used to specify the fields being updated.
+   *
+   * <p>An operation can be updated only if the operation was created via
+   * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation] API. If the operation
+   * was created by parsing the spec, then it can be edited by updating the spec.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApiHubClient apiHubClient = ApiHubClient.create()) {
+   *   UpdateApiOperationRequest request =
+   *       UpdateApiOperationRequest.newBuilder()
+   *           .setApiOperation(ApiOperation.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiOperation response = apiHubClient.updateApiOperation(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final ApiOperation updateApiOperation(UpdateApiOperationRequest request) {
+    return updateApiOperationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Update an operation in an API version. The following fields in the [ApiOperation
+   * resource][google.cloud.apihub.v1.ApiOperation] can be updated:
+   *
+   * <ul>
+   *   <li>[details.description][ApiOperation.details.description]
+   *   <li>[details.documentation][ApiOperation.details.documentation]
+   *   <li>[details.http_operation.path][ApiOperation.details.http_operation.path.path]
+   *   <li>[details.http_operation.method][ApiOperation.details.http_operation.method]
+   *   <li>[details.deprecated][ApiOperation.details.deprecated]
+   *   <li>[attributes][google.cloud.apihub.v1.ApiOperation.attributes]
+   * </ul>
+   *
+   * <p>The [update_mask][google.cloud.apihub.v1.UpdateApiOperationRequest.update_mask] should be
+   * used to specify the fields being updated.
+   *
+   * <p>An operation can be updated only if the operation was created via
+   * [CreateApiOperation][google.cloud.apihub.v1.ApiHub.CreateApiOperation] API. If the operation
+   * was created by parsing the spec, then it can be edited by updating the spec.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApiHubClient apiHubClient = ApiHubClient.create()) {
+   *   UpdateApiOperationRequest request =
+   *       UpdateApiOperationRequest.newBuilder()
+   *           .setApiOperation(ApiOperation.newBuilder().build())
+   *           .setUpdateMask(FieldMask.newBuilder().build())
+   *           .build();
+   *   ApiFuture<ApiOperation> future =
+   *       apiHubClient.updateApiOperationCallable().futureCall(request);
+   *   // Do something.
+   *   ApiOperation response = future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<UpdateApiOperationRequest, ApiOperation> updateApiOperationCallable() {
+    return stub.updateApiOperationCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete an operation in an API version and we can delete only the operations created via create
+   * API. If the operation was created by parsing the spec, then it can be deleted by editing or
+   * deleting the spec.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApiHubClient apiHubClient = ApiHubClient.create()) {
+   *   ApiOperationName name =
+   *       ApiOperationName.of("[PROJECT]", "[LOCATION]", "[API]", "[VERSION]", "[OPERATION]");
+   *   apiHubClient.deleteApiOperation(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the operation resource to delete. Format:
+   *     `projects/{project}/locations/{location}/apis/{api}/versions/{version}/operations/{operation}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteApiOperation(ApiOperationName name) {
+    DeleteApiOperationRequest request =
+        DeleteApiOperationRequest.newBuilder()
+            .setName(name == null ? null : name.toString())
+            .build();
+    deleteApiOperation(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete an operation in an API version and we can delete only the operations created via create
+   * API. If the operation was created by parsing the spec, then it can be deleted by editing or
+   * deleting the spec.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApiHubClient apiHubClient = ApiHubClient.create()) {
+   *   String name =
+   *       ApiOperationName.of("[PROJECT]", "[LOCATION]", "[API]", "[VERSION]", "[OPERATION]")
+   *           .toString();
+   *   apiHubClient.deleteApiOperation(name);
+   * }
+   * }</pre>
+   *
+   * @param name Required. The name of the operation resource to delete. Format:
+   *     `projects/{project}/locations/{location}/apis/{api}/versions/{version}/operations/{operation}`
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteApiOperation(String name) {
+    DeleteApiOperationRequest request =
+        DeleteApiOperationRequest.newBuilder().setName(name).build();
+    deleteApiOperation(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete an operation in an API version and we can delete only the operations created via create
+   * API. If the operation was created by parsing the spec, then it can be deleted by editing or
+   * deleting the spec.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApiHubClient apiHubClient = ApiHubClient.create()) {
+   *   DeleteApiOperationRequest request =
+   *       DeleteApiOperationRequest.newBuilder()
+   *           .setName(
+   *               ApiOperationName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[API]", "[VERSION]", "[OPERATION]")
+   *                   .toString())
+   *           .build();
+   *   apiHubClient.deleteApiOperation(request);
+   * }
+   * }</pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  public final void deleteApiOperation(DeleteApiOperationRequest request) {
+    deleteApiOperationCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD.
+  /**
+   * Delete an operation in an API version and we can delete only the operations created via create
+   * API. If the operation was created by parsing the spec, then it can be deleted by editing or
+   * deleting the spec.
+   *
+   * <p>Sample code:
+   *
+   * <pre>{@code
+   * // This snippet has been automatically generated and should be regarded as a code template only.
+   * // It will require modifications to work:
+   * // - It may require correct/in-range values for request initialization.
+   * // - It may require specifying regional endpoints when creating the service client as shown in
+   * // https://cloud.google.com/java/docs/setup#configure_endpoints_for_the_client_library
+   * try (ApiHubClient apiHubClient = ApiHubClient.create()) {
+   *   DeleteApiOperationRequest request =
+   *       DeleteApiOperationRequest.newBuilder()
+   *           .setName(
+   *               ApiOperationName.of(
+   *                       "[PROJECT]", "[LOCATION]", "[API]", "[VERSION]", "[OPERATION]")
+   *                   .toString())
+   *           .build();
+   *   ApiFuture<Empty> future = apiHubClient.deleteApiOperationCallable().futureCall(request);
+   *   // Do something.
+   *   future.get();
+   * }
+   * }</pre>
+   */
+  public final UnaryCallable<DeleteApiOperationRequest, Empty> deleteApiOperationCallable() {
+    return stub.deleteApiOperationCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD.
@@ -3973,10 +4487,13 @@ public class ApiHubClient implements BackgroundResource {
    *   <li>[slo][google.cloud.apihub.v1.Deployment.slo]
    *   <li>[environment][google.cloud.apihub.v1.Deployment.environment]
    *   <li>[attributes][google.cloud.apihub.v1.Deployment.attributes]
+   *   <li>[source_project] [google.cloud.apihub.v1.Deployment.source_project]
+   *   <li>[source_environment] [google.cloud.apihub.v1.Deployment.source_environment]
+   *   <li>[management_url][google.cloud.apihub.v1.Deployment.management_url]
+   *   <li>[source_uri][google.cloud.apihub.v1.Deployment.source_uri] The
+   *       [update_mask][google.cloud.apihub.v1.UpdateDeploymentRequest.update_mask] should be used
+   *       to specify the fields being updated.
    * </ul>
-   *
-   * <p>The [update_mask][google.cloud.apihub.v1.UpdateDeploymentRequest.update_mask] should be used
-   * to specify the fields being updated.
    *
    * <p>Sample code:
    *
@@ -4023,10 +4540,13 @@ public class ApiHubClient implements BackgroundResource {
    *   <li>[slo][google.cloud.apihub.v1.Deployment.slo]
    *   <li>[environment][google.cloud.apihub.v1.Deployment.environment]
    *   <li>[attributes][google.cloud.apihub.v1.Deployment.attributes]
+   *   <li>[source_project] [google.cloud.apihub.v1.Deployment.source_project]
+   *   <li>[source_environment] [google.cloud.apihub.v1.Deployment.source_environment]
+   *   <li>[management_url][google.cloud.apihub.v1.Deployment.management_url]
+   *   <li>[source_uri][google.cloud.apihub.v1.Deployment.source_uri] The
+   *       [update_mask][google.cloud.apihub.v1.UpdateDeploymentRequest.update_mask] should be used
+   *       to specify the fields being updated.
    * </ul>
-   *
-   * <p>The [update_mask][google.cloud.apihub.v1.UpdateDeploymentRequest.update_mask] should be used
-   * to specify the fields being updated.
    *
    * <p>Sample code:
    *
@@ -4068,10 +4588,13 @@ public class ApiHubClient implements BackgroundResource {
    *   <li>[slo][google.cloud.apihub.v1.Deployment.slo]
    *   <li>[environment][google.cloud.apihub.v1.Deployment.environment]
    *   <li>[attributes][google.cloud.apihub.v1.Deployment.attributes]
+   *   <li>[source_project] [google.cloud.apihub.v1.Deployment.source_project]
+   *   <li>[source_environment] [google.cloud.apihub.v1.Deployment.source_environment]
+   *   <li>[management_url][google.cloud.apihub.v1.Deployment.management_url]
+   *   <li>[source_uri][google.cloud.apihub.v1.Deployment.source_uri] The
+   *       [update_mask][google.cloud.apihub.v1.UpdateDeploymentRequest.update_mask] should be used
+   *       to specify the fields being updated.
    * </ul>
-   *
-   * <p>The [update_mask][google.cloud.apihub.v1.UpdateDeploymentRequest.update_mask] should be used
-   * to specify the fields being updated.
    *
    * <p>Sample code:
    *

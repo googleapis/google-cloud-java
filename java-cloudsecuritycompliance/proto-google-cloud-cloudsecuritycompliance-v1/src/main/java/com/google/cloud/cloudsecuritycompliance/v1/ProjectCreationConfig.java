@@ -23,7 +23,8 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * ProjectCreationConfig contains the config to create a new project.
+ * ProjectCreationConfig contains the config to create a new project to be used
+ * as the target_resource of a deployment.
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.ProjectCreationConfig}
@@ -128,7 +129,7 @@ public final class ProjectCreationConfig extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. Display name of the project to be created
+   * Required. Display name of the project to be created.
    * </pre>
    *
    * <code>string project_display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -152,7 +153,7 @@ public final class ProjectCreationConfig extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. Display name of the project to be created
+   * Required. Display name of the project to be created.
    * </pre>
    *
    * <code>string project_display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -181,7 +182,7 @@ public final class ProjectCreationConfig extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. Billing account id to be used for the project
+   * Required. Billing account id to be used for the project.
    * </pre>
    *
    * <code>string billing_account_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -205,7 +206,7 @@ public final class ProjectCreationConfig extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. Billing account id to be used for the project
+   * Required. Billing account id to be used for the project.
    * </pre>
    *
    * <code>string billing_account_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -409,7 +410,8 @@ public final class ProjectCreationConfig extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * ProjectCreationConfig contains the config to create a new project.
+   * ProjectCreationConfig contains the config to create a new project to be used
+   * as the target_resource of a deployment.
    * </pre>
    *
    * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.ProjectCreationConfig}
@@ -740,7 +742,7 @@ public final class ProjectCreationConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Display name of the project to be created
+     * Required. Display name of the project to be created.
      * </pre>
      *
      * <code>string project_display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -763,7 +765,7 @@ public final class ProjectCreationConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Display name of the project to be created
+     * Required. Display name of the project to be created.
      * </pre>
      *
      * <code>string project_display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -786,7 +788,7 @@ public final class ProjectCreationConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Display name of the project to be created
+     * Required. Display name of the project to be created.
      * </pre>
      *
      * <code>string project_display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -808,7 +810,7 @@ public final class ProjectCreationConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Display name of the project to be created
+     * Required. Display name of the project to be created.
      * </pre>
      *
      * <code>string project_display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -826,7 +828,7 @@ public final class ProjectCreationConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Display name of the project to be created
+     * Required. Display name of the project to be created.
      * </pre>
      *
      * <code>string project_display_name = 2 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -851,7 +853,7 @@ public final class ProjectCreationConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Billing account id to be used for the project
+     * Required. Billing account id to be used for the project.
      * </pre>
      *
      * <code>string billing_account_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -874,7 +876,7 @@ public final class ProjectCreationConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Billing account id to be used for the project
+     * Required. Billing account id to be used for the project.
      * </pre>
      *
      * <code>string billing_account_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -897,7 +899,7 @@ public final class ProjectCreationConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Billing account id to be used for the project
+     * Required. Billing account id to be used for the project.
      * </pre>
      *
      * <code>string billing_account_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -919,7 +921,7 @@ public final class ProjectCreationConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Billing account id to be used for the project
+     * Required. Billing account id to be used for the project.
      * </pre>
      *
      * <code>string billing_account_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -937,7 +939,7 @@ public final class ProjectCreationConfig extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. Billing account id to be used for the project
+     * Required. Billing account id to be used for the project.
      * </pre>
      *
      * <code>string billing_account_id = 3 [(.google.api.field_behavior) = REQUIRED];</code>

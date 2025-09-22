@@ -23,7 +23,7 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * Message for deleting a CloudControl.
+ * Request message for deleting a CloudControl.
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.DeleteCloudControlRequest}
@@ -289,7 +289,7 @@ public final class DeleteCloudControlRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Message for deleting a CloudControl.
+   * Request message for deleting a CloudControl.
    * </pre>
    *
    * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.DeleteCloudControlRequest}

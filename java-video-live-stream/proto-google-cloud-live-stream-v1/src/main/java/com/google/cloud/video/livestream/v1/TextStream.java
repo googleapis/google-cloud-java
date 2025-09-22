@@ -41,6 +41,10 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
 
   private TextStream() {
     codec_ = "";
+    languageCode_ = "";
+    displayName_ = "";
+    outputCeaChannel_ = "";
+    mapping_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -64,6 +68,1293 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.video.livestream.v1.TextStream.Builder.class);
   }
 
+  public interface TextMappingOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.video.livestream.v1.TextStream.TextMapping)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The `Channel`
+     * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]
+     * that identifies the input that this text mapping applies to.
+     * </pre>
+     *
+     * <code>string input_key = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The inputKey.
+     */
+    java.lang.String getInputKey();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The `Channel`
+     * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]
+     * that identifies the input that this text mapping applies to.
+     * </pre>
+     *
+     * <code>string input_key = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for inputKey.
+     */
+    com.google.protobuf.ByteString getInputKeyBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The zero-based index of the track in the input stream.
+     * </pre>
+     *
+     * <code>int32 input_track = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The inputTrack.
+     */
+    int getInputTrack();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The channel of the closed caption in the input stream.
+     * If this field is set, the output
+     * [codec][google.cloud.video.livestream.v1.TextStream.codec] must be
+     * `webvtt`. Must be one of `CC1`, `CC2`, `CC3`, and `CC4`, if the codec of
+     * the input closed caption is `cea608`; Must be one between `SERVICE1` and
+     * `SERVICE64`, if the codec of the input closed caption is `cea708`.
+     * </pre>
+     *
+     * <code>string input_cea_channel = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The inputCeaChannel.
+     */
+    java.lang.String getInputCeaChannel();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The channel of the closed caption in the input stream.
+     * If this field is set, the output
+     * [codec][google.cloud.video.livestream.v1.TextStream.codec] must be
+     * `webvtt`. Must be one of `CC1`, `CC2`, `CC3`, and `CC4`, if the codec of
+     * the input closed caption is `cea608`; Must be one between `SERVICE1` and
+     * `SERVICE64`, if the codec of the input closed caption is `cea708`.
+     * </pre>
+     *
+     * <code>string input_cea_channel = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for inputCeaChannel.
+     */
+    com.google.protobuf.ByteString getInputCeaChannelBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The BCP-47 source language code, such as `en-US` or `sr-Latn`.
+     * If differ from the textStream's language code, enable translation. For
+     * more information on BCP-47 language codes, see
+     * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+     * </pre>
+     *
+     * <code>string from_language_code = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The fromLanguageCode.
+     */
+    java.lang.String getFromLanguageCode();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The BCP-47 source language code, such as `en-US` or `sr-Latn`.
+     * If differ from the textStream's language code, enable translation. For
+     * more information on BCP-47 language codes, see
+     * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+     * </pre>
+     *
+     * <code>string from_language_code = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for fromLanguageCode.
+     */
+    com.google.protobuf.ByteString getFromLanguageCodeBytes();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * The mapping for the input streams and text tracks.
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.video.livestream.v1.TextStream.TextMapping}
+   */
+  public static final class TextMapping extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.video.livestream.v1.TextStream.TextMapping)
+      TextMappingOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use TextMapping.newBuilder() to construct.
+    private TextMapping(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private TextMapping() {
+      inputKey_ = "";
+      inputCeaChannel_ = "";
+      fromLanguageCode_ = "";
+    }
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new TextMapping();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.video.livestream.v1.OutputsProto
+          .internal_static_google_cloud_video_livestream_v1_TextStream_TextMapping_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.video.livestream.v1.OutputsProto
+          .internal_static_google_cloud_video_livestream_v1_TextStream_TextMapping_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.video.livestream.v1.TextStream.TextMapping.class,
+              com.google.cloud.video.livestream.v1.TextStream.TextMapping.Builder.class);
+    }
+
+    public static final int INPUT_KEY_FIELD_NUMBER = 4;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object inputKey_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The `Channel`
+     * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]
+     * that identifies the input that this text mapping applies to.
+     * </pre>
+     *
+     * <code>string input_key = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The inputKey.
+     */
+    @java.lang.Override
+    public java.lang.String getInputKey() {
+      java.lang.Object ref = inputKey_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        inputKey_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The `Channel`
+     * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]
+     * that identifies the input that this text mapping applies to.
+     * </pre>
+     *
+     * <code>string input_key = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for inputKey.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getInputKeyBytes() {
+      java.lang.Object ref = inputKey_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        inputKey_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int INPUT_TRACK_FIELD_NUMBER = 2;
+    private int inputTrack_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The zero-based index of the track in the input stream.
+     * </pre>
+     *
+     * <code>int32 input_track = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The inputTrack.
+     */
+    @java.lang.Override
+    public int getInputTrack() {
+      return inputTrack_;
+    }
+
+    public static final int INPUT_CEA_CHANNEL_FIELD_NUMBER = 5;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object inputCeaChannel_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The channel of the closed caption in the input stream.
+     * If this field is set, the output
+     * [codec][google.cloud.video.livestream.v1.TextStream.codec] must be
+     * `webvtt`. Must be one of `CC1`, `CC2`, `CC3`, and `CC4`, if the codec of
+     * the input closed caption is `cea608`; Must be one between `SERVICE1` and
+     * `SERVICE64`, if the codec of the input closed caption is `cea708`.
+     * </pre>
+     *
+     * <code>string input_cea_channel = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The inputCeaChannel.
+     */
+    @java.lang.Override
+    public java.lang.String getInputCeaChannel() {
+      java.lang.Object ref = inputCeaChannel_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        inputCeaChannel_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The channel of the closed caption in the input stream.
+     * If this field is set, the output
+     * [codec][google.cloud.video.livestream.v1.TextStream.codec] must be
+     * `webvtt`. Must be one of `CC1`, `CC2`, `CC3`, and `CC4`, if the codec of
+     * the input closed caption is `cea608`; Must be one between `SERVICE1` and
+     * `SERVICE64`, if the codec of the input closed caption is `cea708`.
+     * </pre>
+     *
+     * <code>string input_cea_channel = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for inputCeaChannel.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getInputCeaChannelBytes() {
+      java.lang.Object ref = inputCeaChannel_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        inputCeaChannel_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int FROM_LANGUAGE_CODE_FIELD_NUMBER = 6;
+
+    @SuppressWarnings("serial")
+    private volatile java.lang.Object fromLanguageCode_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The BCP-47 source language code, such as `en-US` or `sr-Latn`.
+     * If differ from the textStream's language code, enable translation. For
+     * more information on BCP-47 language codes, see
+     * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+     * </pre>
+     *
+     * <code>string from_language_code = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The fromLanguageCode.
+     */
+    @java.lang.Override
+    public java.lang.String getFromLanguageCode() {
+      java.lang.Object ref = fromLanguageCode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        fromLanguageCode_ = s;
+        return s;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The BCP-47 source language code, such as `en-US` or `sr-Latn`.
+     * If differ from the textStream's language code, enable translation. For
+     * more information on BCP-47 language codes, see
+     * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+     * </pre>
+     *
+     * <code>string from_language_code = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for fromLanguageCode.
+     */
+    @java.lang.Override
+    public com.google.protobuf.ByteString getFromLanguageCodeBytes() {
+      java.lang.Object ref = fromLanguageCode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        fromLanguageCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (inputTrack_ != 0) {
+        output.writeInt32(2, inputTrack_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inputKey_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 4, inputKey_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inputCeaChannel_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 5, inputCeaChannel_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fromLanguageCode_)) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 6, fromLanguageCode_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (inputTrack_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, inputTrack_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inputKey_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, inputKey_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(inputCeaChannel_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, inputCeaChannel_);
+      }
+      if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(fromLanguageCode_)) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, fromLanguageCode_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.video.livestream.v1.TextStream.TextMapping)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.video.livestream.v1.TextStream.TextMapping other =
+          (com.google.cloud.video.livestream.v1.TextStream.TextMapping) obj;
+
+      if (!getInputKey().equals(other.getInputKey())) return false;
+      if (getInputTrack() != other.getInputTrack()) return false;
+      if (!getInputCeaChannel().equals(other.getInputCeaChannel())) return false;
+      if (!getFromLanguageCode().equals(other.getFromLanguageCode())) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + INPUT_KEY_FIELD_NUMBER;
+      hash = (53 * hash) + getInputKey().hashCode();
+      hash = (37 * hash) + INPUT_TRACK_FIELD_NUMBER;
+      hash = (53 * hash) + getInputTrack();
+      hash = (37 * hash) + INPUT_CEA_CHANNEL_FIELD_NUMBER;
+      hash = (53 * hash) + getInputCeaChannel().hashCode();
+      hash = (37 * hash) + FROM_LANGUAGE_CODE_FIELD_NUMBER;
+      hash = (53 * hash) + getFromLanguageCode().hashCode();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.video.livestream.v1.TextStream.TextMapping parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.livestream.v1.TextStream.TextMapping parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.livestream.v1.TextStream.TextMapping parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.livestream.v1.TextStream.TextMapping parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.livestream.v1.TextStream.TextMapping parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.video.livestream.v1.TextStream.TextMapping parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.livestream.v1.TextStream.TextMapping parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.livestream.v1.TextStream.TextMapping parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.livestream.v1.TextStream.TextMapping parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.livestream.v1.TextStream.TextMapping parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.video.livestream.v1.TextStream.TextMapping parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.video.livestream.v1.TextStream.TextMapping parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.video.livestream.v1.TextStream.TextMapping prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * The mapping for the input streams and text tracks.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.video.livestream.v1.TextStream.TextMapping}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.video.livestream.v1.TextStream.TextMapping)
+        com.google.cloud.video.livestream.v1.TextStream.TextMappingOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.video.livestream.v1.OutputsProto
+            .internal_static_google_cloud_video_livestream_v1_TextStream_TextMapping_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.video.livestream.v1.OutputsProto
+            .internal_static_google_cloud_video_livestream_v1_TextStream_TextMapping_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.video.livestream.v1.TextStream.TextMapping.class,
+                com.google.cloud.video.livestream.v1.TextStream.TextMapping.Builder.class);
+      }
+
+      // Construct using com.google.cloud.video.livestream.v1.TextStream.TextMapping.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        inputKey_ = "";
+        inputTrack_ = 0;
+        inputCeaChannel_ = "";
+        fromLanguageCode_ = "";
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.video.livestream.v1.OutputsProto
+            .internal_static_google_cloud_video_livestream_v1_TextStream_TextMapping_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.livestream.v1.TextStream.TextMapping
+          getDefaultInstanceForType() {
+        return com.google.cloud.video.livestream.v1.TextStream.TextMapping.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.livestream.v1.TextStream.TextMapping build() {
+        com.google.cloud.video.livestream.v1.TextStream.TextMapping result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.video.livestream.v1.TextStream.TextMapping buildPartial() {
+        com.google.cloud.video.livestream.v1.TextStream.TextMapping result =
+            new com.google.cloud.video.livestream.v1.TextStream.TextMapping(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(
+          com.google.cloud.video.livestream.v1.TextStream.TextMapping result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.inputKey_ = inputKey_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.inputTrack_ = inputTrack_;
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.inputCeaChannel_ = inputCeaChannel_;
+        }
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.fromLanguageCode_ = fromLanguageCode_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.video.livestream.v1.TextStream.TextMapping) {
+          return mergeFrom((com.google.cloud.video.livestream.v1.TextStream.TextMapping) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.video.livestream.v1.TextStream.TextMapping other) {
+        if (other
+            == com.google.cloud.video.livestream.v1.TextStream.TextMapping.getDefaultInstance())
+          return this;
+        if (!other.getInputKey().isEmpty()) {
+          inputKey_ = other.inputKey_;
+          bitField0_ |= 0x00000001;
+          onChanged();
+        }
+        if (other.getInputTrack() != 0) {
+          setInputTrack(other.getInputTrack());
+        }
+        if (!other.getInputCeaChannel().isEmpty()) {
+          inputCeaChannel_ = other.inputCeaChannel_;
+          bitField0_ |= 0x00000004;
+          onChanged();
+        }
+        if (!other.getFromLanguageCode().isEmpty()) {
+          fromLanguageCode_ = other.fromLanguageCode_;
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 16:
+                {
+                  inputTrack_ = input.readInt32();
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 16
+              case 34:
+                {
+                  inputKey_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 34
+              case 42:
+                {
+                  inputCeaChannel_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 42
+              case 50:
+                {
+                  fromLanguageCode_ = input.readStringRequireUtf8();
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 50
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private java.lang.Object inputKey_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The `Channel`
+       * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]
+       * that identifies the input that this text mapping applies to.
+       * </pre>
+       *
+       * <code>string input_key = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The inputKey.
+       */
+      public java.lang.String getInputKey() {
+        java.lang.Object ref = inputKey_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          inputKey_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The `Channel`
+       * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]
+       * that identifies the input that this text mapping applies to.
+       * </pre>
+       *
+       * <code>string input_key = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for inputKey.
+       */
+      public com.google.protobuf.ByteString getInputKeyBytes() {
+        java.lang.Object ref = inputKey_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          inputKey_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The `Channel`
+       * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]
+       * that identifies the input that this text mapping applies to.
+       * </pre>
+       *
+       * <code>string input_key = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The inputKey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInputKey(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        inputKey_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The `Channel`
+       * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]
+       * that identifies the input that this text mapping applies to.
+       * </pre>
+       *
+       * <code>string input_key = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearInputKey() {
+        inputKey_ = getDefaultInstance().getInputKey();
+        bitField0_ = (bitField0_ & ~0x00000001);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The `Channel`
+       * [InputAttachment.key][google.cloud.video.livestream.v1.InputAttachment.key]
+       * that identifies the input that this text mapping applies to.
+       * </pre>
+       *
+       * <code>string input_key = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for inputKey to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInputKeyBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        inputKey_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      private int inputTrack_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The zero-based index of the track in the input stream.
+       * </pre>
+       *
+       * <code>int32 input_track = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The inputTrack.
+       */
+      @java.lang.Override
+      public int getInputTrack() {
+        return inputTrack_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The zero-based index of the track in the input stream.
+       * </pre>
+       *
+       * <code>int32 input_track = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The inputTrack to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInputTrack(int value) {
+
+        inputTrack_ = value;
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The zero-based index of the track in the input stream.
+       * </pre>
+       *
+       * <code>int32 input_track = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearInputTrack() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        inputTrack_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object inputCeaChannel_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The channel of the closed caption in the input stream.
+       * If this field is set, the output
+       * [codec][google.cloud.video.livestream.v1.TextStream.codec] must be
+       * `webvtt`. Must be one of `CC1`, `CC2`, `CC3`, and `CC4`, if the codec of
+       * the input closed caption is `cea608`; Must be one between `SERVICE1` and
+       * `SERVICE64`, if the codec of the input closed caption is `cea708`.
+       * </pre>
+       *
+       * <code>string input_cea_channel = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The inputCeaChannel.
+       */
+      public java.lang.String getInputCeaChannel() {
+        java.lang.Object ref = inputCeaChannel_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          inputCeaChannel_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The channel of the closed caption in the input stream.
+       * If this field is set, the output
+       * [codec][google.cloud.video.livestream.v1.TextStream.codec] must be
+       * `webvtt`. Must be one of `CC1`, `CC2`, `CC3`, and `CC4`, if the codec of
+       * the input closed caption is `cea608`; Must be one between `SERVICE1` and
+       * `SERVICE64`, if the codec of the input closed caption is `cea708`.
+       * </pre>
+       *
+       * <code>string input_cea_channel = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for inputCeaChannel.
+       */
+      public com.google.protobuf.ByteString getInputCeaChannelBytes() {
+        java.lang.Object ref = inputCeaChannel_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          inputCeaChannel_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The channel of the closed caption in the input stream.
+       * If this field is set, the output
+       * [codec][google.cloud.video.livestream.v1.TextStream.codec] must be
+       * `webvtt`. Must be one of `CC1`, `CC2`, `CC3`, and `CC4`, if the codec of
+       * the input closed caption is `cea608`; Must be one between `SERVICE1` and
+       * `SERVICE64`, if the codec of the input closed caption is `cea708`.
+       * </pre>
+       *
+       * <code>string input_cea_channel = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The inputCeaChannel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInputCeaChannel(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        inputCeaChannel_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The channel of the closed caption in the input stream.
+       * If this field is set, the output
+       * [codec][google.cloud.video.livestream.v1.TextStream.codec] must be
+       * `webvtt`. Must be one of `CC1`, `CC2`, `CC3`, and `CC4`, if the codec of
+       * the input closed caption is `cea608`; Must be one between `SERVICE1` and
+       * `SERVICE64`, if the codec of the input closed caption is `cea708`.
+       * </pre>
+       *
+       * <code>string input_cea_channel = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearInputCeaChannel() {
+        inputCeaChannel_ = getDefaultInstance().getInputCeaChannel();
+        bitField0_ = (bitField0_ & ~0x00000004);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The channel of the closed caption in the input stream.
+       * If this field is set, the output
+       * [codec][google.cloud.video.livestream.v1.TextStream.codec] must be
+       * `webvtt`. Must be one of `CC1`, `CC2`, `CC3`, and `CC4`, if the codec of
+       * the input closed caption is `cea608`; Must be one between `SERVICE1` and
+       * `SERVICE64`, if the codec of the input closed caption is `cea708`.
+       * </pre>
+       *
+       * <code>string input_cea_channel = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for inputCeaChannel to set.
+       * @return This builder for chaining.
+       */
+      public Builder setInputCeaChannelBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        inputCeaChannel_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object fromLanguageCode_ = "";
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The BCP-47 source language code, such as `en-US` or `sr-Latn`.
+       * If differ from the textStream's language code, enable translation. For
+       * more information on BCP-47 language codes, see
+       * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+       * </pre>
+       *
+       * <code>string from_language_code = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The fromLanguageCode.
+       */
+      public java.lang.String getFromLanguageCode() {
+        java.lang.Object ref = fromLanguageCode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          fromLanguageCode_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The BCP-47 source language code, such as `en-US` or `sr-Latn`.
+       * If differ from the textStream's language code, enable translation. For
+       * more information on BCP-47 language codes, see
+       * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+       * </pre>
+       *
+       * <code>string from_language_code = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The bytes for fromLanguageCode.
+       */
+      public com.google.protobuf.ByteString getFromLanguageCodeBytes() {
+        java.lang.Object ref = fromLanguageCode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          fromLanguageCode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The BCP-47 source language code, such as `en-US` or `sr-Latn`.
+       * If differ from the textStream's language code, enable translation. For
+       * more information on BCP-47 language codes, see
+       * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+       * </pre>
+       *
+       * <code>string from_language_code = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The fromLanguageCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFromLanguageCode(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        fromLanguageCode_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The BCP-47 source language code, such as `en-US` or `sr-Latn`.
+       * If differ from the textStream's language code, enable translation. For
+       * more information on BCP-47 language codes, see
+       * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+       * </pre>
+       *
+       * <code>string from_language_code = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearFromLanguageCode() {
+        fromLanguageCode_ = getDefaultInstance().getFromLanguageCode();
+        bitField0_ = (bitField0_ & ~0x00000008);
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. The BCP-47 source language code, such as `en-US` or `sr-Latn`.
+       * If differ from the textStream's language code, enable translation. For
+       * more information on BCP-47 language codes, see
+       * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+       * </pre>
+       *
+       * <code>string from_language_code = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The bytes for fromLanguageCode to set.
+       * @return This builder for chaining.
+       */
+      public Builder setFromLanguageCodeBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+        fromLanguageCode_ = value;
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.video.livestream.v1.TextStream.TextMapping)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.video.livestream.v1.TextStream.TextMapping)
+    private static final com.google.cloud.video.livestream.v1.TextStream.TextMapping
+        DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.video.livestream.v1.TextStream.TextMapping();
+    }
+
+    public static com.google.cloud.video.livestream.v1.TextStream.TextMapping getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<TextMapping> PARSER =
+        new com.google.protobuf.AbstractParser<TextMapping>() {
+          @java.lang.Override
+          public TextMapping parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<TextMapping> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<TextMapping> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.video.livestream.v1.TextStream.TextMapping getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   public static final int CODEC_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -79,6 +1370,7 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
    *
    * - `cea608`
    * - `cea708`
+   * - `webvtt`
    * </pre>
    *
    * <code>string codec = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -108,6 +1400,7 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
    *
    * - `cea608`
    * - `cea708`
+   * - `webvtt`
    * </pre>
    *
    * <code>string codec = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -127,6 +1420,272 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public static final int LANGUAGE_CODE_FIELD_NUMBER = 2;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object languageCode_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
+   * information, see
+   * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+   * </pre>
+   *
+   * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The languageCode.
+   */
+  @java.lang.Override
+  public java.lang.String getLanguageCode() {
+    java.lang.Object ref = languageCode_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      languageCode_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
+   * information, see
+   * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+   * </pre>
+   *
+   * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for languageCode.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getLanguageCodeBytes() {
+    java.lang.Object ref = languageCode_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      languageCode_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DISPLAY_NAME_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object displayName_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name for this particular text stream that will be added to
+   * the HLS/DASH manifest.
+   * </pre>
+   *
+   * <code>string display_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The displayName.
+   */
+  @java.lang.Override
+  public java.lang.String getDisplayName() {
+    java.lang.Object ref = displayName_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      displayName_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The name for this particular text stream that will be added to
+   * the HLS/DASH manifest.
+   * </pre>
+   *
+   * <code>string display_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for displayName.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDisplayNameBytes() {
+    java.lang.Object ref = displayName_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      displayName_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int OUTPUT_CEA_CHANNEL_FIELD_NUMBER = 5;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object outputCeaChannel_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The channel of the closed caption in the output stream.
+   * This field should only be set when textstream is used for partner
+   * distribution.
+   * Must be one of `CC1`, `CC2`, `CC3`, and `CC4`, if the
+   * [codec][google.cloud.video.livestream.v1.TextStream.codec] is `cea608`;
+   * Must be one between `SERVICE1` and `SERVICE63`, if the
+   * [codec][google.cloud.video.livestream.v1.TextStream.codec] is `cea708`.
+   * </pre>
+   *
+   * <code>string output_cea_channel = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The outputCeaChannel.
+   */
+  @java.lang.Override
+  public java.lang.String getOutputCeaChannel() {
+    java.lang.Object ref = outputCeaChannel_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      outputCeaChannel_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The channel of the closed caption in the output stream.
+   * This field should only be set when textstream is used for partner
+   * distribution.
+   * Must be one of `CC1`, `CC2`, `CC3`, and `CC4`, if the
+   * [codec][google.cloud.video.livestream.v1.TextStream.codec] is `cea608`;
+   * Must be one between `SERVICE1` and `SERVICE63`, if the
+   * [codec][google.cloud.video.livestream.v1.TextStream.codec] is `cea708`.
+   * </pre>
+   *
+   * <code>string output_cea_channel = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The bytes for outputCeaChannel.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getOutputCeaChannelBytes() {
+    java.lang.Object ref = outputCeaChannel_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      outputCeaChannel_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int MAPPING_FIELD_NUMBER = 3;
+
+  @SuppressWarnings("serial")
+  private java.util.List<com.google.cloud.video.livestream.v1.TextStream.TextMapping> mapping_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The mapping for the input streams and text tracks.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.TextStream.TextMapping mapping = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<com.google.cloud.video.livestream.v1.TextStream.TextMapping>
+      getMappingList() {
+    return mapping_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The mapping for the input streams and text tracks.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.TextStream.TextMapping mapping = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public java.util.List<
+          ? extends com.google.cloud.video.livestream.v1.TextStream.TextMappingOrBuilder>
+      getMappingOrBuilderList() {
+    return mapping_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The mapping for the input streams and text tracks.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.TextStream.TextMapping mapping = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public int getMappingCount() {
+    return mapping_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The mapping for the input streams and text tracks.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.TextStream.TextMapping mapping = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.video.livestream.v1.TextStream.TextMapping getMapping(int index) {
+    return mapping_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The mapping for the input streams and text tracks.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.video.livestream.v1.TextStream.TextMapping mapping = 3 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.video.livestream.v1.TextStream.TextMappingOrBuilder getMappingOrBuilder(
+      int index) {
+    return mapping_.get(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -144,6 +1703,18 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(codec_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, codec_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 2, languageCode_);
+    }
+    for (int i = 0; i < mapping_.size(); i++) {
+      output.writeMessage(3, mapping_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, displayName_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(outputCeaChannel_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, outputCeaChannel_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -155,6 +1726,18 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
     size = 0;
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(codec_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, codec_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(languageCode_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, languageCode_);
+    }
+    for (int i = 0; i < mapping_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, mapping_.get(i));
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(displayName_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, displayName_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(outputCeaChannel_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, outputCeaChannel_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -173,6 +1756,10 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
         (com.google.cloud.video.livestream.v1.TextStream) obj;
 
     if (!getCodec().equals(other.getCodec())) return false;
+    if (!getLanguageCode().equals(other.getLanguageCode())) return false;
+    if (!getDisplayName().equals(other.getDisplayName())) return false;
+    if (!getOutputCeaChannel().equals(other.getOutputCeaChannel())) return false;
+    if (!getMappingList().equals(other.getMappingList())) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -186,6 +1773,16 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + CODEC_FIELD_NUMBER;
     hash = (53 * hash) + getCodec().hashCode();
+    hash = (37 * hash) + LANGUAGE_CODE_FIELD_NUMBER;
+    hash = (53 * hash) + getLanguageCode().hashCode();
+    hash = (37 * hash) + DISPLAY_NAME_FIELD_NUMBER;
+    hash = (53 * hash) + getDisplayName().hashCode();
+    hash = (37 * hash) + OUTPUT_CEA_CHANNEL_FIELD_NUMBER;
+    hash = (53 * hash) + getOutputCeaChannel().hashCode();
+    if (getMappingCount() > 0) {
+      hash = (37 * hash) + MAPPING_FIELD_NUMBER;
+      hash = (53 * hash) + getMappingList().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -327,6 +1924,16 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
       super.clear();
       bitField0_ = 0;
       codec_ = "";
+      languageCode_ = "";
+      displayName_ = "";
+      outputCeaChannel_ = "";
+      if (mappingBuilder_ == null) {
+        mapping_ = java.util.Collections.emptyList();
+      } else {
+        mapping_ = null;
+        mappingBuilder_.clear();
+      }
+      bitField0_ = (bitField0_ & ~0x00000010);
       return this;
     }
 
@@ -354,6 +1961,7 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.video.livestream.v1.TextStream buildPartial() {
       com.google.cloud.video.livestream.v1.TextStream result =
           new com.google.cloud.video.livestream.v1.TextStream(this);
+      buildPartialRepeatedFields(result);
       if (bitField0_ != 0) {
         buildPartial0(result);
       }
@@ -361,10 +1969,32 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
       return result;
     }
 
+    private void buildPartialRepeatedFields(
+        com.google.cloud.video.livestream.v1.TextStream result) {
+      if (mappingBuilder_ == null) {
+        if (((bitField0_ & 0x00000010) != 0)) {
+          mapping_ = java.util.Collections.unmodifiableList(mapping_);
+          bitField0_ = (bitField0_ & ~0x00000010);
+        }
+        result.mapping_ = mapping_;
+      } else {
+        result.mapping_ = mappingBuilder_.build();
+      }
+    }
+
     private void buildPartial0(com.google.cloud.video.livestream.v1.TextStream result) {
       int from_bitField0_ = bitField0_;
       if (((from_bitField0_ & 0x00000001) != 0)) {
         result.codec_ = codec_;
+      }
+      if (((from_bitField0_ & 0x00000002) != 0)) {
+        result.languageCode_ = languageCode_;
+      }
+      if (((from_bitField0_ & 0x00000004) != 0)) {
+        result.displayName_ = displayName_;
+      }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.outputCeaChannel_ = outputCeaChannel_;
       }
     }
 
@@ -419,6 +2049,48 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000001;
         onChanged();
       }
+      if (!other.getLanguageCode().isEmpty()) {
+        languageCode_ = other.languageCode_;
+        bitField0_ |= 0x00000002;
+        onChanged();
+      }
+      if (!other.getDisplayName().isEmpty()) {
+        displayName_ = other.displayName_;
+        bitField0_ |= 0x00000004;
+        onChanged();
+      }
+      if (!other.getOutputCeaChannel().isEmpty()) {
+        outputCeaChannel_ = other.outputCeaChannel_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      if (mappingBuilder_ == null) {
+        if (!other.mapping_.isEmpty()) {
+          if (mapping_.isEmpty()) {
+            mapping_ = other.mapping_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+          } else {
+            ensureMappingIsMutable();
+            mapping_.addAll(other.mapping_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.mapping_.isEmpty()) {
+          if (mappingBuilder_.isEmpty()) {
+            mappingBuilder_.dispose();
+            mappingBuilder_ = null;
+            mapping_ = other.mapping_;
+            bitField0_ = (bitField0_ & ~0x00000010);
+            mappingBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getMappingFieldBuilder()
+                    : null;
+          } else {
+            mappingBuilder_.addAllMessages(other.mapping_);
+          }
+        }
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -451,6 +2123,38 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000001;
                 break;
               } // case 10
+            case 18:
+              {
+                languageCode_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000002;
+                break;
+              } // case 18
+            case 26:
+              {
+                com.google.cloud.video.livestream.v1.TextStream.TextMapping m =
+                    input.readMessage(
+                        com.google.cloud.video.livestream.v1.TextStream.TextMapping.parser(),
+                        extensionRegistry);
+                if (mappingBuilder_ == null) {
+                  ensureMappingIsMutable();
+                  mapping_.add(m);
+                } else {
+                  mappingBuilder_.addMessage(m);
+                }
+                break;
+              } // case 26
+            case 34:
+              {
+                displayName_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000004;
+                break;
+              } // case 34
+            case 42:
+              {
+                outputCeaChannel_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 42
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -482,6 +2186,7 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      *
      * - `cea608`
      * - `cea708`
+     * - `webvtt`
      * </pre>
      *
      * <code>string codec = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -510,6 +2215,7 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      *
      * - `cea608`
      * - `cea708`
+     * - `webvtt`
      * </pre>
      *
      * <code>string codec = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -538,6 +2244,7 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      *
      * - `cea608`
      * - `cea708`
+     * - `webvtt`
      * </pre>
      *
      * <code>string codec = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -565,6 +2272,7 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      *
      * - `cea608`
      * - `cea708`
+     * - `webvtt`
      * </pre>
      *
      * <code>string codec = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -588,6 +2296,7 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
      *
      * - `cea608`
      * - `cea708`
+     * - `webvtt`
      * </pre>
      *
      * <code>string codec = 1 [(.google.api.field_behavior) = REQUIRED];</code>
@@ -604,6 +2313,802 @@ public final class TextStream extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x00000001;
       onChanged();
       return this;
+    }
+
+    private java.lang.Object languageCode_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
+     * information, see
+     * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+     * </pre>
+     *
+     * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The languageCode.
+     */
+    public java.lang.String getLanguageCode() {
+      java.lang.Object ref = languageCode_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        languageCode_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
+     * information, see
+     * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+     * </pre>
+     *
+     * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for languageCode.
+     */
+    public com.google.protobuf.ByteString getLanguageCodeBytes() {
+      java.lang.Object ref = languageCode_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        languageCode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
+     * information, see
+     * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+     * </pre>
+     *
+     * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The languageCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLanguageCode(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      languageCode_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
+     * information, see
+     * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+     * </pre>
+     *
+     * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearLanguageCode() {
+      languageCode_ = getDefaultInstance().getLanguageCode();
+      bitField0_ = (bitField0_ & ~0x00000002);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The BCP-47 language code, such as `en-US` or `sr-Latn`. For more
+     * information, see
+     * https://www.unicode.org/reports/tr35/#Unicode_locale_identifier.
+     * </pre>
+     *
+     * <code>string language_code = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for languageCode to set.
+     * @return This builder for chaining.
+     */
+    public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      languageCode_ = value;
+      bitField0_ |= 0x00000002;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object displayName_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name for this particular text stream that will be added to
+     * the HLS/DASH manifest.
+     * </pre>
+     *
+     * <code>string display_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The displayName.
+     */
+    public java.lang.String getDisplayName() {
+      java.lang.Object ref = displayName_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        displayName_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name for this particular text stream that will be added to
+     * the HLS/DASH manifest.
+     * </pre>
+     *
+     * <code>string display_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for displayName.
+     */
+    public com.google.protobuf.ByteString getDisplayNameBytes() {
+      java.lang.Object ref = displayName_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        displayName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name for this particular text stream that will be added to
+     * the HLS/DASH manifest.
+     * </pre>
+     *
+     * <code>string display_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The displayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisplayName(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      displayName_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name for this particular text stream that will be added to
+     * the HLS/DASH manifest.
+     * </pre>
+     *
+     * <code>string display_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDisplayName() {
+      displayName_ = getDefaultInstance().getDisplayName();
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The name for this particular text stream that will be added to
+     * the HLS/DASH manifest.
+     * </pre>
+     *
+     * <code>string display_name = 4 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for displayName to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      displayName_ = value;
+      bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object outputCeaChannel_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The channel of the closed caption in the output stream.
+     * This field should only be set when textstream is used for partner
+     * distribution.
+     * Must be one of `CC1`, `CC2`, `CC3`, and `CC4`, if the
+     * [codec][google.cloud.video.livestream.v1.TextStream.codec] is `cea608`;
+     * Must be one between `SERVICE1` and `SERVICE63`, if the
+     * [codec][google.cloud.video.livestream.v1.TextStream.codec] is `cea708`.
+     * </pre>
+     *
+     * <code>string output_cea_channel = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The outputCeaChannel.
+     */
+    public java.lang.String getOutputCeaChannel() {
+      java.lang.Object ref = outputCeaChannel_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        outputCeaChannel_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The channel of the closed caption in the output stream.
+     * This field should only be set when textstream is used for partner
+     * distribution.
+     * Must be one of `CC1`, `CC2`, `CC3`, and `CC4`, if the
+     * [codec][google.cloud.video.livestream.v1.TextStream.codec] is `cea608`;
+     * Must be one between `SERVICE1` and `SERVICE63`, if the
+     * [codec][google.cloud.video.livestream.v1.TextStream.codec] is `cea708`.
+     * </pre>
+     *
+     * <code>string output_cea_channel = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The bytes for outputCeaChannel.
+     */
+    public com.google.protobuf.ByteString getOutputCeaChannelBytes() {
+      java.lang.Object ref = outputCeaChannel_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        outputCeaChannel_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The channel of the closed caption in the output stream.
+     * This field should only be set when textstream is used for partner
+     * distribution.
+     * Must be one of `CC1`, `CC2`, `CC3`, and `CC4`, if the
+     * [codec][google.cloud.video.livestream.v1.TextStream.codec] is `cea608`;
+     * Must be one between `SERVICE1` and `SERVICE63`, if the
+     * [codec][google.cloud.video.livestream.v1.TextStream.codec] is `cea708`.
+     * </pre>
+     *
+     * <code>string output_cea_channel = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The outputCeaChannel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOutputCeaChannel(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      outputCeaChannel_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The channel of the closed caption in the output stream.
+     * This field should only be set when textstream is used for partner
+     * distribution.
+     * Must be one of `CC1`, `CC2`, `CC3`, and `CC4`, if the
+     * [codec][google.cloud.video.livestream.v1.TextStream.codec] is `cea608`;
+     * Must be one between `SERVICE1` and `SERVICE63`, if the
+     * [codec][google.cloud.video.livestream.v1.TextStream.codec] is `cea708`.
+     * </pre>
+     *
+     * <code>string output_cea_channel = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearOutputCeaChannel() {
+      outputCeaChannel_ = getDefaultInstance().getOutputCeaChannel();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The channel of the closed caption in the output stream.
+     * This field should only be set when textstream is used for partner
+     * distribution.
+     * Must be one of `CC1`, `CC2`, `CC3`, and `CC4`, if the
+     * [codec][google.cloud.video.livestream.v1.TextStream.codec] is `cea608`;
+     * Must be one between `SERVICE1` and `SERVICE63`, if the
+     * [codec][google.cloud.video.livestream.v1.TextStream.codec] is `cea708`.
+     * </pre>
+     *
+     * <code>string output_cea_channel = 5 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The bytes for outputCeaChannel to set.
+     * @return This builder for chaining.
+     */
+    public Builder setOutputCeaChannelBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      outputCeaChannel_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private java.util.List<com.google.cloud.video.livestream.v1.TextStream.TextMapping> mapping_ =
+        java.util.Collections.emptyList();
+
+    private void ensureMappingIsMutable() {
+      if (!((bitField0_ & 0x00000010) != 0)) {
+        mapping_ =
+            new java.util.ArrayList<com.google.cloud.video.livestream.v1.TextStream.TextMapping>(
+                mapping_);
+        bitField0_ |= 0x00000010;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.video.livestream.v1.TextStream.TextMapping,
+            com.google.cloud.video.livestream.v1.TextStream.TextMapping.Builder,
+            com.google.cloud.video.livestream.v1.TextStream.TextMappingOrBuilder>
+        mappingBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mapping for the input streams and text tracks.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.TextStream.TextMapping mapping = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.video.livestream.v1.TextStream.TextMapping>
+        getMappingList() {
+      if (mappingBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(mapping_);
+      } else {
+        return mappingBuilder_.getMessageList();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mapping for the input streams and text tracks.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.TextStream.TextMapping mapping = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public int getMappingCount() {
+      if (mappingBuilder_ == null) {
+        return mapping_.size();
+      } else {
+        return mappingBuilder_.getCount();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mapping for the input streams and text tracks.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.TextStream.TextMapping mapping = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.video.livestream.v1.TextStream.TextMapping getMapping(int index) {
+      if (mappingBuilder_ == null) {
+        return mapping_.get(index);
+      } else {
+        return mappingBuilder_.getMessage(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mapping for the input streams and text tracks.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.TextStream.TextMapping mapping = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMapping(
+        int index, com.google.cloud.video.livestream.v1.TextStream.TextMapping value) {
+      if (mappingBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMappingIsMutable();
+        mapping_.set(index, value);
+        onChanged();
+      } else {
+        mappingBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mapping for the input streams and text tracks.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.TextStream.TextMapping mapping = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setMapping(
+        int index,
+        com.google.cloud.video.livestream.v1.TextStream.TextMapping.Builder builderForValue) {
+      if (mappingBuilder_ == null) {
+        ensureMappingIsMutable();
+        mapping_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        mappingBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mapping for the input streams and text tracks.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.TextStream.TextMapping mapping = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addMapping(com.google.cloud.video.livestream.v1.TextStream.TextMapping value) {
+      if (mappingBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMappingIsMutable();
+        mapping_.add(value);
+        onChanged();
+      } else {
+        mappingBuilder_.addMessage(value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mapping for the input streams and text tracks.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.TextStream.TextMapping mapping = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addMapping(
+        int index, com.google.cloud.video.livestream.v1.TextStream.TextMapping value) {
+      if (mappingBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureMappingIsMutable();
+        mapping_.add(index, value);
+        onChanged();
+      } else {
+        mappingBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mapping for the input streams and text tracks.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.TextStream.TextMapping mapping = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addMapping(
+        com.google.cloud.video.livestream.v1.TextStream.TextMapping.Builder builderForValue) {
+      if (mappingBuilder_ == null) {
+        ensureMappingIsMutable();
+        mapping_.add(builderForValue.build());
+        onChanged();
+      } else {
+        mappingBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mapping for the input streams and text tracks.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.TextStream.TextMapping mapping = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addMapping(
+        int index,
+        com.google.cloud.video.livestream.v1.TextStream.TextMapping.Builder builderForValue) {
+      if (mappingBuilder_ == null) {
+        ensureMappingIsMutable();
+        mapping_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        mappingBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mapping for the input streams and text tracks.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.TextStream.TextMapping mapping = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder addAllMapping(
+        java.lang.Iterable<? extends com.google.cloud.video.livestream.v1.TextStream.TextMapping>
+            values) {
+      if (mappingBuilder_ == null) {
+        ensureMappingIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, mapping_);
+        onChanged();
+      } else {
+        mappingBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mapping for the input streams and text tracks.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.TextStream.TextMapping mapping = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearMapping() {
+      if (mappingBuilder_ == null) {
+        mapping_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000010);
+        onChanged();
+      } else {
+        mappingBuilder_.clear();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mapping for the input streams and text tracks.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.TextStream.TextMapping mapping = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder removeMapping(int index) {
+      if (mappingBuilder_ == null) {
+        ensureMappingIsMutable();
+        mapping_.remove(index);
+        onChanged();
+      } else {
+        mappingBuilder_.remove(index);
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mapping for the input streams and text tracks.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.TextStream.TextMapping mapping = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.video.livestream.v1.TextStream.TextMapping.Builder getMappingBuilder(
+        int index) {
+      return getMappingFieldBuilder().getBuilder(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mapping for the input streams and text tracks.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.TextStream.TextMapping mapping = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.video.livestream.v1.TextStream.TextMappingOrBuilder getMappingOrBuilder(
+        int index) {
+      if (mappingBuilder_ == null) {
+        return mapping_.get(index);
+      } else {
+        return mappingBuilder_.getMessageOrBuilder(index);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mapping for the input streams and text tracks.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.TextStream.TextMapping mapping = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.video.livestream.v1.TextStream.TextMappingOrBuilder>
+        getMappingOrBuilderList() {
+      if (mappingBuilder_ != null) {
+        return mappingBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(mapping_);
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mapping for the input streams and text tracks.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.TextStream.TextMapping mapping = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.video.livestream.v1.TextStream.TextMapping.Builder addMappingBuilder() {
+      return getMappingFieldBuilder()
+          .addBuilder(
+              com.google.cloud.video.livestream.v1.TextStream.TextMapping.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mapping for the input streams and text tracks.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.TextStream.TextMapping mapping = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.video.livestream.v1.TextStream.TextMapping.Builder addMappingBuilder(
+        int index) {
+      return getMappingFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.video.livestream.v1.TextStream.TextMapping.getDefaultInstance());
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The mapping for the input streams and text tracks.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.video.livestream.v1.TextStream.TextMapping mapping = 3 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public java.util.List<com.google.cloud.video.livestream.v1.TextStream.TextMapping.Builder>
+        getMappingBuilderList() {
+      return getMappingFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.video.livestream.v1.TextStream.TextMapping,
+            com.google.cloud.video.livestream.v1.TextStream.TextMapping.Builder,
+            com.google.cloud.video.livestream.v1.TextStream.TextMappingOrBuilder>
+        getMappingFieldBuilder() {
+      if (mappingBuilder_ == null) {
+        mappingBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.video.livestream.v1.TextStream.TextMapping,
+                com.google.cloud.video.livestream.v1.TextStream.TextMapping.Builder,
+                com.google.cloud.video.livestream.v1.TextStream.TextMappingOrBuilder>(
+                mapping_, ((bitField0_ & 0x00000010) != 0), getParentForChildren(), isClean());
+        mapping_ = null;
+      }
+      return mappingBuilder_;
     }
 
     @java.lang.Override

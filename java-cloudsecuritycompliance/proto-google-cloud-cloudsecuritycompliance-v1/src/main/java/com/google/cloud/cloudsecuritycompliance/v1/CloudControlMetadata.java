@@ -23,8 +23,8 @@ package com.google.cloud.cloudsecuritycompliance.v1;
  *
  *
  * <pre>
- * CloudControlMetadata contains the metadata for each of the cloud controls
- * part of the framework.
+ * CloudControlMetadata contains the enforcement mode and parameters of a Cloud
+ * Control Deployment.
  * </pre>
  *
  * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.CloudControlMetadata}
@@ -73,7 +73,7 @@ public final class CloudControlMetadata extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. Cloud control details
+   * Required. Cloud control name and parameters.
    * </pre>
    *
    * <code>
@@ -91,7 +91,7 @@ public final class CloudControlMetadata extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. Cloud control details
+   * Required. Cloud control name and parameters.
    * </pre>
    *
    * <code>
@@ -111,7 +111,7 @@ public final class CloudControlMetadata extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Required. Cloud control details
+   * Required. Cloud control name and parameters.
    * </pre>
    *
    * <code>
@@ -352,8 +352,8 @@ public final class CloudControlMetadata extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * CloudControlMetadata contains the metadata for each of the cloud controls
-   * part of the framework.
+   * CloudControlMetadata contains the enforcement mode and parameters of a Cloud
+   * Control Deployment.
    * </pre>
    *
    * Protobuf type {@code google.cloud.cloudsecuritycompliance.v1.CloudControlMetadata}
@@ -578,7 +578,7 @@ public final class CloudControlMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Cloud control details
+     * Required. Cloud control name and parameters.
      * </pre>
      *
      * <code>
@@ -595,7 +595,7 @@ public final class CloudControlMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Cloud control details
+     * Required. Cloud control name and parameters.
      * </pre>
      *
      * <code>
@@ -619,7 +619,7 @@ public final class CloudControlMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Cloud control details
+     * Required. Cloud control name and parameters.
      * </pre>
      *
      * <code>
@@ -645,7 +645,7 @@ public final class CloudControlMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Cloud control details
+     * Required. Cloud control name and parameters.
      * </pre>
      *
      * <code>
@@ -668,7 +668,7 @@ public final class CloudControlMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Cloud control details
+     * Required. Cloud control name and parameters.
      * </pre>
      *
      * <code>
@@ -701,7 +701,7 @@ public final class CloudControlMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Cloud control details
+     * Required. Cloud control name and parameters.
      * </pre>
      *
      * <code>
@@ -723,7 +723,7 @@ public final class CloudControlMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Cloud control details
+     * Required. Cloud control name and parameters.
      * </pre>
      *
      * <code>
@@ -741,7 +741,7 @@ public final class CloudControlMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Cloud control details
+     * Required. Cloud control name and parameters.
      * </pre>
      *
      * <code>
@@ -763,7 +763,7 @@ public final class CloudControlMetadata extends com.google.protobuf.GeneratedMes
      *
      *
      * <pre>
-     * Required. Cloud control details
+     * Required. Cloud control name and parameters.
      * </pre>
      *
      * <code>
