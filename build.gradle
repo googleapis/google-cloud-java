@@ -1,10 +1,9 @@
 plugins {
     id 'java-library'
     id 'maven-publish'
-    id 'signing'
     id 'com.google.protobuf' version '0.9.4'
     id 'com.github.sherter.google-java-format' version '0.9'
-    id 'io.codearte.nexus-staging' version '0.30.0'
+    id 'org.jreleaser' version '1.20.0'
 }
 
 repositories {
@@ -89,16 +88,6 @@ task sourcesJar(type: Jar) {
     from sourceSets.main.allJava
 }
 
-if (project.hasProperty('ossrhUsername') && project.hasProperty('ossrhPassword')) {
-    // Nexus staging plugin only works at root project level
-    // See https://github.com/Codearte/gradle-nexus-staging-plugin/issues/47
-    nexusStaging {
-        username = ossrhUsername
-        password = ossrhPassword
-        packageGroup = group
-    }
-}
-
 publishing {
     publications {
         maven(MavenPublication) {
@@ -143,21 +132,32 @@ publishing {
     }
     repositories {
         maven {
-            url 'https://google.oss.sonatype.org/service/local/staging/deploy/maven2/'
-            credentials {
-                username = project.hasProperty('ossrhUsername') ? project.getProperty('ossrhUsername') : null
-                password = project.hasProperty('ossrhPassword') ? project.getProperty('ossrhPassword') : null
-            }
+            url = layout.buildDirectory.dir('staging-deploy')
         }
     }
 }
 
-signing {
-    if (!project.hasProperty('skip.signing')) {
-        if (project.hasProperty('signing.gnupg.executable')) {
-            useGpgCmd()
+jreleaser {
+    gitRootSearch = true
+    signing {
+        active = 'ALWAYS'
+        armored = true
+    }
+    deploy {
+        maven {
+            mavenCentral {
+                sonatype {
+                    active = 'ALWAYS'
+                    url = 'https://central.sonatype.com/api/v1/publisher'
+                    stagingRepository('build/staging-deploy')
+                }
+            }
         }
-        sign publishing.publications.maven
+    }
+    release {
+        github {
+            skipRelease = true
+        }
     }
 }
 
