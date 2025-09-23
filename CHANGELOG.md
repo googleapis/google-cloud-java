@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.7.0 (2025-09-23)
+
+### Features
+
+* Dynamic channel pool scaling (#194)
+
 ## 1.6.1 (2024-06-17)
 
 ### Features
