@@ -1345,7 +1345,7 @@ public class GcpManagedChannel extends ManagedChannel {
     ChannelRef mappedChannel = affinityKeyToChannelRef.get(key);
     affinityKeyLastUsed.put(key, System.nanoTime());
     if (mappedChannel == null) {
-      ChannelRef channelRef = pickLeastBusyChannel(/*forFallback= */ false);
+      ChannelRef channelRef = pickLeastBusyChannel(/* forFallback= */ false);
       bind(channelRef, Collections.singletonList(key));
       return channelRef;
     }
@@ -1689,7 +1689,7 @@ public class GcpManagedChannel extends ManagedChannel {
     }
     awaitTimeNanos = endTimeNanos - System.nanoTime();
     if (awaitTimeNanos > 0) {
-      //noinspection ResultOfMethodCallIgnored
+      // noinspection ResultOfMethodCallIgnored
       stateNotificationExecutor.awaitTermination(awaitTimeNanos, NANOSECONDS);
     }
     return isTerminated();

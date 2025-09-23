@@ -1411,7 +1411,7 @@ public final class GcpManagedChannelTest {
     }
 
     executor.shutdown();
-    //noinspection StatementWithEmptyBody
+    // noinspection StatementWithEmptyBody
     while (!executor.awaitTermination(10, TimeUnit.MILLISECONDS)) {}
 
     channel.setState(ConnectivityState.SHUTDOWN);
