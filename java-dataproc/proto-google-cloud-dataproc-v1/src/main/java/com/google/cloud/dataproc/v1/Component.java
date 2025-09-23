@@ -147,6 +147,16 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
+   * The Jupyter Kernel Gateway.
+   * </pre>
+   *
+   * <code>JUPYTER_KERNEL_GATEWAY = 22;</code>
+   */
+  JUPYTER_KERNEL_GATEWAY(22),
+  /**
+   *
+   *
+   * <pre>
    * The Pig component.
    * </pre>
    *
@@ -345,6 +355,17 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
+   * The Jupyter Kernel Gateway.
+   * </pre>
+   *
+   * <code>JUPYTER_KERNEL_GATEWAY = 22;</code>
+   */
+  public static final int JUPYTER_KERNEL_GATEWAY_VALUE = 22;
+
+  /**
+   *
+   *
+   * <pre>
    * The Pig component.
    * </pre>
    *
@@ -464,6 +485,8 @@ public enum Component implements com.google.protobuf.ProtocolMessageEnum {
         return ICEBERG;
       case 1:
         return JUPYTER;
+      case 22:
+        return JUPYTER_KERNEL_GATEWAY;
       case 21:
         return PIG;
       case 6:
