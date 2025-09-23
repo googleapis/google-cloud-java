@@ -78,12 +78,13 @@ sourceSets {
     }
 }
 
-task javadocJar(type: Jar) {
+task javadocJar(type: Jar, dependsOn: javadoc) {
     archiveClassifier = 'javadoc'
     from javadoc.destinationDir
 }
 
 task sourcesJar(type: Jar) {
+    duplicatesStrategy = DuplicatesStrategy.WARN
     archiveClassifier = 'sources'
     from sourceSets.main.allJava
 }

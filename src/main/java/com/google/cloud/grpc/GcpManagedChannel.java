@@ -1894,7 +1894,7 @@ public class GcpManagedChannel extends ManagedChannel {
   /**
    * Fetch the affinity key from the message.
    *
-   * @param message the <reqT> or <respT> prototype message.
+   * @param message the &lt;ReqT&gt; or &lt;RespT&gt; prototype message.
    * @param isReq indicates if the message is a request message.
    */
   @Nullable
