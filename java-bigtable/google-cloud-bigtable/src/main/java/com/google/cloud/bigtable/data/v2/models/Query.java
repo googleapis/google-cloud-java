@@ -366,7 +366,6 @@ public final class Query implements Serializable {
    * A Query Paginator that will split a query into small chunks. See {@link
    * Query#createPaginator(int)} for example usage.
    */
-  @BetaApi("This surface is stable yet it might be removed in the future.")
   public static class QueryPaginator {
 
     private final boolean hasOverallLimit;
