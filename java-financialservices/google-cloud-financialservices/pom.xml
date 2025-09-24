@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-financialservices</artifactId>
-  <version>0.16.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-financialservices:current} -->
+  <version>0.16.0</version><!-- {x-version-update:google-cloud-financialservices:current} -->
   <packaging>jar</packaging>
   <name>Google Financial Services API</name>
   <description>Financial Services API Google Cloud's Anti Money Laundering AI (AML AI) product is an API that scores AML risk. Use it to identify more risk, more defensibly, with fewer false positives and reduced time per review.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-financialservices-parent</artifactId>
-    <version>0.16.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-financialservices:current} -->
+    <version>0.16.0</version><!-- {x-version-update:google-cloud-financialservices:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-financialservices</site.installationModule>

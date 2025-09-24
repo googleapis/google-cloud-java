@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.shopping.api.grpc</groupId>
   <artifactId>proto-google-shopping-merchant-lfp-v1</artifactId>
-  <version>1.3.0-SNAPSHOT</version><!-- {x-version-update:proto-google-shopping-merchant-lfp-v1:current} -->
+  <version>1.3.0</version><!-- {x-version-update:proto-google-shopping-merchant-lfp-v1:current} -->
   <name>proto-google-shopping-merchant-lfp-v1</name>
   <description>Proto library for google-shopping-merchant-lfp</description>
   <parent>
     <groupId>com.google.shopping</groupId>
     <artifactId>google-shopping-merchant-lfp-parent</artifactId>
-    <version>1.3.0-SNAPSHOT</version><!-- {x-version-update:google-shopping-merchant-lfp:current} -->
+    <version>1.3.0</version><!-- {x-version-update:google-shopping-merchant-lfp:current} -->
   </parent>
   <dependencies>
     <dependency>

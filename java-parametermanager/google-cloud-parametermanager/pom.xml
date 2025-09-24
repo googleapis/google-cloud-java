@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-parametermanager</artifactId>
-  <version>0.19.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-parametermanager:current} -->
+  <version>0.19.0</version><!-- {x-version-update:google-cloud-parametermanager:current} -->
   <packaging>jar</packaging>
   <name>Google Parameter Manager API</name>
   <description>Parameter Manager API (Public Preview) Parameter Manager is a single source of truth to store,     access and manage the lifecycle of your workload parameters. Parameter     Manager aims to make management of sensitive application parameters     effortless for customers without diminishing focus on security.</description>
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-parametermanager-parent</artifactId>
-    <version>0.19.0-SNAPSHOT</version><!-- {x-version-update:google-cloud-parametermanager:current} -->
+    <version>0.19.0</version><!-- {x-version-update:google-cloud-parametermanager:current} -->
   </parent>
   <properties>
     <site.installationModule>google-cloud-parametermanager</site.installationModule>
