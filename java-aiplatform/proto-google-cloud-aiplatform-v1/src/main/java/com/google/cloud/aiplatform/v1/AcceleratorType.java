@@ -23,7 +23,6 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * LINT: LEGACY_NAMES
  * Represents a hardware accelerator type.
  * </pre>
  *
