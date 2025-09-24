@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.85.0 (2025-09-22)
+
+### Features
+
+* Update Compute Engine v1 API to revision 20250902 ([bd1762a](https://github.com/googleapis/google-cloud-java/commit/bd1762a0350d5273d57036d6430bbb7f34c2dad0))
+
+### Dependencies
+
+* update dependency com.google.cloud:sdk-platform-java-config to v3.52.2 ([#11747](https://github.com/googleapis/google-cloud-java/issues/11747)) ([deb0ed9](https://github.com/googleapis/google-cloud-java/commit/deb0ed92d7c3279e0e26ba8b22463cb77131fa10))
+
+
 ## 1.84.0 (2025-09-11)
 
 ### Features
