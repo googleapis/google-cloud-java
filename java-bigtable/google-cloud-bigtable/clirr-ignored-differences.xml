@@ -350,6 +350,26 @@
         <method>*protoOf(*)</method>
     </difference>
     <difference>
+        <differenceType>7004</differenceType>
+        <className>com/google/cloud/bigtable/common/Type$SchemalessProto</className>
+        <method>*</method>
+    </difference>
+    <difference>
+        <differenceType>7004</differenceType>
+        <className>com/google/cloud/bigtable/common/Type$SchemalessEnum</className>
+        <method>*</method>
+    </difference>
+    <difference>
+        <differenceType>7013</differenceType>
+        <className>com/google/cloud/bigtable/common/Type$SchemalessProto</className>
+        <method>*</method>
+    </difference>
+    <difference>
+        <differenceType>7013</differenceType>
+        <className>com/google/cloud/bigtable/common/Type$SchemalessEnum</className>
+        <method>*</method>
+    </difference>
+    <difference>
         <!-- BetaApi was added -->
         <differenceType>7012</differenceType>
         <className>com/google/cloud/bigtable/data/v2/models/sql/SqlType</className>
