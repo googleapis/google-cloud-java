@@ -29,11 +29,11 @@ import com.google.bigtable.v2.Type.Struct;
 import com.google.bigtable.v2.Type.Timestamp;
 import com.google.bigtable.v2.Value;
 import com.google.cloud.Date;
+import com.google.cloud.bigtable.common.Type.SchemalessEnum;
+import com.google.cloud.bigtable.common.Type.SchemalessProto;
 import com.google.cloud.bigtable.data.v2.models.sql.ColumnMetadata;
 import com.google.cloud.bigtable.data.v2.models.sql.ResultSet;
 import com.google.cloud.bigtable.data.v2.models.sql.SqlType;
-import com.google.cloud.bigtable.common.Type.SchemalessProto;
-import com.google.cloud.bigtable.common.Type.SchemalessEnum;
 import com.google.cloud.bigtable.data.v2.models.sql.StructReader;
 import com.google.protobuf.ByteString;
 import java.time.Instant;
@@ -235,14 +235,21 @@ public class ResultSetSerializer {
       case PROTO:
         SchemalessProto protoType = (SchemalessProto) type;
         return Type.newBuilder()
-            .setProtoType(Proto.newBuilder().setMessageName(protoType.getMessageName())
-                .setSchemaBundleId(protoType.schemaBundleId()).build()).build();
+            .setProtoType(
+                Proto.newBuilder()
+                    .setMessageName(protoType.getMessageName())
+                    .setSchemaBundleId(protoType.schemaBundleId())
+                    .build())
+            .build();
       case ENUM:
         SchemalessEnum enumType = (SchemalessEnum) type;
         return Type.newBuilder()
             .setEnumType(
-                com.google.bigtable.v2.Type.Enum.newBuilder().setEnumName(enumType.getEnumName())
-                    .setSchemaBundleId(enumType.schemaBundleId()).build()).build();
+                com.google.bigtable.v2.Type.Enum.newBuilder()
+                    .setEnumName(enumType.getEnumName())
+                    .setSchemaBundleId(enumType.schemaBundleId())
+                    .build())
+            .build();
       default:
         throw new IllegalStateException("Unexpected Type: " + type);
     }

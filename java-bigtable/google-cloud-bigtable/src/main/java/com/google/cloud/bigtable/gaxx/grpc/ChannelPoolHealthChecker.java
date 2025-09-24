@@ -102,7 +102,8 @@ class ChannelPoolHealthChecker {
     if (!(channelPrimer instanceof BigtableChannelPrimer)) {
       logger.log(
           Level.WARNING,
-          "Provided channelPrimer not an instance of BigtableChannelPrimer, not checking channel health.");
+          "Provided channelPrimer not an instance of BigtableChannelPrimer, not checking channel"
+              + " health.");
       return;
     }
 
