@@ -65,6 +65,7 @@ public class GrpcMetastorePartitionServiceStub extends MetastorePartitionService
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       BatchCreateMetastorePartitionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<BatchDeleteMetastorePartitionsRequest, Empty>
@@ -76,6 +77,7 @@ public class GrpcMetastorePartitionServiceStub extends MetastorePartitionService
               .setRequestMarshaller(
                   ProtoUtils.marshaller(BatchDeleteMetastorePartitionsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -92,6 +94,7 @@ public class GrpcMetastorePartitionServiceStub extends MetastorePartitionService
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       BatchUpdateMetastorePartitionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -106,6 +109,7 @@ public class GrpcMetastorePartitionServiceStub extends MetastorePartitionService
                   ProtoUtils.marshaller(ListMetastorePartitionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(ListMetastorePartitionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -120,6 +124,7 @@ public class GrpcMetastorePartitionServiceStub extends MetastorePartitionService
                   ProtoUtils.marshaller(StreamMetastorePartitionsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(StreamMetastorePartitionsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<

@@ -56,6 +56,7 @@ public class GrpcBigQueryReadStub extends BigQueryReadStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateReadSessionRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ReadSession.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<ReadRowsRequest, ReadRowsResponse>
@@ -65,6 +66,7 @@ public class GrpcBigQueryReadStub extends BigQueryReadStub {
               .setFullMethodName("google.cloud.bigquery.storage.v1beta2.BigQueryRead/ReadRows")
               .setRequestMarshaller(ProtoUtils.marshaller(ReadRowsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(ReadRowsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<SplitReadStreamRequest, SplitReadStreamResponse>
@@ -77,6 +79,7 @@ public class GrpcBigQueryReadStub extends BigQueryReadStub {
                   ProtoUtils.marshaller(SplitReadStreamRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(SplitReadStreamResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateReadSessionRequest, ReadSession> createReadSessionCallable;

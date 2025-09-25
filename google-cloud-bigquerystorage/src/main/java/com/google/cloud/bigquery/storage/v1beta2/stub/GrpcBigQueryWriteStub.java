@@ -64,6 +64,7 @@ public class GrpcBigQueryWriteStub extends BigQueryWriteStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(CreateWriteStreamRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(WriteStream.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<AppendRowsRequest, AppendRowsResponse>
@@ -73,6 +74,7 @@ public class GrpcBigQueryWriteStub extends BigQueryWriteStub {
               .setFullMethodName("google.cloud.bigquery.storage.v1beta2.BigQueryWrite/AppendRows")
               .setRequestMarshaller(ProtoUtils.marshaller(AppendRowsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(AppendRowsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<GetWriteStreamRequest, WriteStream>
@@ -84,6 +86,7 @@ public class GrpcBigQueryWriteStub extends BigQueryWriteStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(GetWriteStreamRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(WriteStream.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<FinalizeWriteStreamRequest, FinalizeWriteStreamResponse>
@@ -96,6 +99,7 @@ public class GrpcBigQueryWriteStub extends BigQueryWriteStub {
                   ProtoUtils.marshaller(FinalizeWriteStreamRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(FinalizeWriteStreamResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -110,6 +114,7 @@ public class GrpcBigQueryWriteStub extends BigQueryWriteStub {
                   ProtoUtils.marshaller(BatchCommitWriteStreamsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(BatchCommitWriteStreamsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<FlushRowsRequest, FlushRowsResponse>
@@ -119,6 +124,7 @@ public class GrpcBigQueryWriteStub extends BigQueryWriteStub {
               .setFullMethodName("google.cloud.bigquery.storage.v1beta2.BigQueryWrite/FlushRows")
               .setRequestMarshaller(ProtoUtils.marshaller(FlushRowsRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(FlushRowsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<CreateWriteStreamRequest, WriteStream> createWriteStreamCallable;

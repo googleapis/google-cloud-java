@@ -53,6 +53,7 @@ public class GrpcBigQueryStorageStub extends BigQueryStorageStub {
                   ProtoUtils.marshaller(Storage.CreateReadSessionRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(Storage.ReadSession.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<Storage.ReadRowsRequest, Storage.ReadRowsResponse>
@@ -64,6 +65,7 @@ public class GrpcBigQueryStorageStub extends BigQueryStorageStub {
                   ProtoUtils.marshaller(Storage.ReadRowsRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(Storage.ReadRowsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -83,6 +85,7 @@ public class GrpcBigQueryStorageStub extends BigQueryStorageStub {
               .setResponseMarshaller(
                   ProtoUtils.marshaller(
                       Storage.BatchCreateReadSessionStreamsResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<Storage.FinalizeStreamRequest, Empty>
@@ -94,6 +97,7 @@ public class GrpcBigQueryStorageStub extends BigQueryStorageStub {
               .setRequestMarshaller(
                   ProtoUtils.marshaller(Storage.FinalizeStreamRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(Empty.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private static final MethodDescriptor<
@@ -108,6 +112,7 @@ public class GrpcBigQueryStorageStub extends BigQueryStorageStub {
                   ProtoUtils.marshaller(Storage.SplitReadStreamRequest.getDefaultInstance()))
               .setResponseMarshaller(
                   ProtoUtils.marshaller(Storage.SplitReadStreamResponse.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
               .build();
 
   private final UnaryCallable<Storage.CreateReadSessionRequest, Storage.ReadSession>
