@@ -3164,6 +3164,56 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
      * @return The bytes for placeId.
      */
     com.google.protobuf.ByteString getPlaceIdBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Sources used to generate the place answer.
+     * This includes review snippets and photos that were used to generate the
+     * answer, as well as uris to flag content.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources place_answer_sources = 5;
+     * </code>
+     *
+     * @return Whether the placeAnswerSources field is set.
+     */
+    boolean hasPlaceAnswerSources();
+
+    /**
+     *
+     *
+     * <pre>
+     * Sources used to generate the place answer.
+     * This includes review snippets and photos that were used to generate the
+     * answer, as well as uris to flag content.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources place_answer_sources = 5;
+     * </code>
+     *
+     * @return The placeAnswerSources.
+     */
+    com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources getPlaceAnswerSources();
+
+    /**
+     *
+     *
+     * <pre>
+     * Sources used to generate the place answer.
+     * This includes review snippets and photos that were used to generate the
+     * answer, as well as uris to flag content.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources place_answer_sources = 5;
+     * </code>
+     */
+    com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSourcesOrBuilder
+        getPlaceAnswerSourcesOrBuilder();
   }
 
   /**
@@ -3212,6 +3262,2298 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
           .ensureFieldAccessorsInitialized(
               com.google.cloud.aiplatform.v1.GroundingChunk.Maps.class,
               com.google.cloud.aiplatform.v1.GroundingChunk.Maps.Builder.class);
+    }
+
+    public interface PlaceAnswerSourcesOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * Snippets of reviews that are used to generate the answer.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet review_snippets = 1;
+       * </code>
+       */
+      java.util.List<
+              com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet>
+          getReviewSnippetsList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Snippets of reviews that are used to generate the answer.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet review_snippets = 1;
+       * </code>
+       */
+      com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet
+          getReviewSnippets(int index);
+
+      /**
+       *
+       *
+       * <pre>
+       * Snippets of reviews that are used to generate the answer.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet review_snippets = 1;
+       * </code>
+       */
+      int getReviewSnippetsCount();
+
+      /**
+       *
+       *
+       * <pre>
+       * Snippets of reviews that are used to generate the answer.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet review_snippets = 1;
+       * </code>
+       */
+      java.util.List<
+              ? extends
+                  com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+                      .ReviewSnippetOrBuilder>
+          getReviewSnippetsOrBuilderList();
+
+      /**
+       *
+       *
+       * <pre>
+       * Snippets of reviews that are used to generate the answer.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet review_snippets = 1;
+       * </code>
+       */
+      com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippetOrBuilder
+          getReviewSnippetsOrBuilder(int index);
+    }
+
+    /** Protobuf type {@code google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources} */
+    public static final class PlaceAnswerSources extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources)
+        PlaceAnswerSourcesOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      // Use PlaceAnswerSources.newBuilder() to construct.
+      private PlaceAnswerSources(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private PlaceAnswerSources() {
+        reviewSnippets_ = java.util.Collections.emptyList();
+      }
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new PlaceAnswerSources();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.aiplatform.v1.ContentProto
+            .internal_static_google_cloud_aiplatform_v1_GroundingChunk_Maps_PlaceAnswerSources_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.aiplatform.v1.ContentProto
+            .internal_static_google_cloud_aiplatform_v1_GroundingChunk_Maps_PlaceAnswerSources_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.class,
+                com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.Builder
+                    .class);
+      }
+
+      public interface ReviewSnippetOrBuilder
+          extends
+          // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet)
+          com.google.protobuf.MessageOrBuilder {
+
+        /**
+         *
+         *
+         * <pre>
+         * Id of the review referencing the place.
+         * </pre>
+         *
+         * <code>string review_id = 1;</code>
+         *
+         * @return The reviewId.
+         */
+        java.lang.String getReviewId();
+
+        /**
+         *
+         *
+         * <pre>
+         * Id of the review referencing the place.
+         * </pre>
+         *
+         * <code>string review_id = 1;</code>
+         *
+         * @return The bytes for reviewId.
+         */
+        com.google.protobuf.ByteString getReviewIdBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * A link to show the review on Google Maps.
+         * </pre>
+         *
+         * <code>string google_maps_uri = 2;</code>
+         *
+         * @return The googleMapsUri.
+         */
+        java.lang.String getGoogleMapsUri();
+
+        /**
+         *
+         *
+         * <pre>
+         * A link to show the review on Google Maps.
+         * </pre>
+         *
+         * <code>string google_maps_uri = 2;</code>
+         *
+         * @return The bytes for googleMapsUri.
+         */
+        com.google.protobuf.ByteString getGoogleMapsUriBytes();
+
+        /**
+         *
+         *
+         * <pre>
+         * Title of the review.
+         * </pre>
+         *
+         * <code>string title = 3;</code>
+         *
+         * @return The title.
+         */
+        java.lang.String getTitle();
+
+        /**
+         *
+         *
+         * <pre>
+         * Title of the review.
+         * </pre>
+         *
+         * <code>string title = 3;</code>
+         *
+         * @return The bytes for title.
+         */
+        com.google.protobuf.ByteString getTitleBytes();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Encapsulates a review snippet.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet}
+       */
+      public static final class ReviewSnippet extends com.google.protobuf.GeneratedMessageV3
+          implements
+          // @@protoc_insertion_point(message_implements:google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet)
+          ReviewSnippetOrBuilder {
+        private static final long serialVersionUID = 0L;
+
+        // Use ReviewSnippet.newBuilder() to construct.
+        private ReviewSnippet(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+          super(builder);
+        }
+
+        private ReviewSnippet() {
+          reviewId_ = "";
+          googleMapsUri_ = "";
+          title_ = "";
+        }
+
+        @java.lang.Override
+        @SuppressWarnings({"unused"})
+        protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+          return new ReviewSnippet();
+        }
+
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.aiplatform.v1.ContentProto
+              .internal_static_google_cloud_aiplatform_v1_GroundingChunk_Maps_PlaceAnswerSources_ReviewSnippet_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.aiplatform.v1.ContentProto
+              .internal_static_google_cloud_aiplatform_v1_GroundingChunk_Maps_PlaceAnswerSources_ReviewSnippet_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+                      .ReviewSnippet.class,
+                  com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+                      .ReviewSnippet.Builder.class);
+        }
+
+        public static final int REVIEW_ID_FIELD_NUMBER = 1;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object reviewId_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Id of the review referencing the place.
+         * </pre>
+         *
+         * <code>string review_id = 1;</code>
+         *
+         * @return The reviewId.
+         */
+        @java.lang.Override
+        public java.lang.String getReviewId() {
+          java.lang.Object ref = reviewId_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            reviewId_ = s;
+            return s;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Id of the review referencing the place.
+         * </pre>
+         *
+         * <code>string review_id = 1;</code>
+         *
+         * @return The bytes for reviewId.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getReviewIdBytes() {
+          java.lang.Object ref = reviewId_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            reviewId_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        public static final int GOOGLE_MAPS_URI_FIELD_NUMBER = 2;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object googleMapsUri_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * A link to show the review on Google Maps.
+         * </pre>
+         *
+         * <code>string google_maps_uri = 2;</code>
+         *
+         * @return The googleMapsUri.
+         */
+        @java.lang.Override
+        public java.lang.String getGoogleMapsUri() {
+          java.lang.Object ref = googleMapsUri_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            googleMapsUri_ = s;
+            return s;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * A link to show the review on Google Maps.
+         * </pre>
+         *
+         * <code>string google_maps_uri = 2;</code>
+         *
+         * @return The bytes for googleMapsUri.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getGoogleMapsUriBytes() {
+          java.lang.Object ref = googleMapsUri_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            googleMapsUri_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        public static final int TITLE_FIELD_NUMBER = 3;
+
+        @SuppressWarnings("serial")
+        private volatile java.lang.Object title_ = "";
+
+        /**
+         *
+         *
+         * <pre>
+         * Title of the review.
+         * </pre>
+         *
+         * <code>string title = 3;</code>
+         *
+         * @return The title.
+         */
+        @java.lang.Override
+        public java.lang.String getTitle() {
+          java.lang.Object ref = title_;
+          if (ref instanceof java.lang.String) {
+            return (java.lang.String) ref;
+          } else {
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+            java.lang.String s = bs.toStringUtf8();
+            title_ = s;
+            return s;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Title of the review.
+         * </pre>
+         *
+         * <code>string title = 3;</code>
+         *
+         * @return The bytes for title.
+         */
+        @java.lang.Override
+        public com.google.protobuf.ByteString getTitleBytes() {
+          java.lang.Object ref = title_;
+          if (ref instanceof java.lang.String) {
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+            title_ = b;
+            return b;
+          } else {
+            return (com.google.protobuf.ByteString) ref;
+          }
+        }
+
+        private byte memoizedIsInitialized = -1;
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          byte isInitialized = memoizedIsInitialized;
+          if (isInitialized == 1) return true;
+          if (isInitialized == 0) return false;
+
+          memoizedIsInitialized = 1;
+          return true;
+        }
+
+        @java.lang.Override
+        public void writeTo(com.google.protobuf.CodedOutputStream output)
+            throws java.io.IOException {
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reviewId_)) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 1, reviewId_);
+          }
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(googleMapsUri_)) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 2, googleMapsUri_);
+          }
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
+            com.google.protobuf.GeneratedMessageV3.writeString(output, 3, title_);
+          }
+          getUnknownFields().writeTo(output);
+        }
+
+        @java.lang.Override
+        public int getSerializedSize() {
+          int size = memoizedSize;
+          if (size != -1) return size;
+
+          size = 0;
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(reviewId_)) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, reviewId_);
+          }
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(googleMapsUri_)) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, googleMapsUri_);
+          }
+          if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(title_)) {
+            size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, title_);
+          }
+          size += getUnknownFields().getSerializedSize();
+          memoizedSize = size;
+          return size;
+        }
+
+        @java.lang.Override
+        public boolean equals(final java.lang.Object obj) {
+          if (obj == this) {
+            return true;
+          }
+          if (!(obj
+              instanceof
+              com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+                  .ReviewSnippet)) {
+            return super.equals(obj);
+          }
+          com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet
+              other =
+                  (com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+                          .ReviewSnippet)
+                      obj;
+
+          if (!getReviewId().equals(other.getReviewId())) return false;
+          if (!getGoogleMapsUri().equals(other.getGoogleMapsUri())) return false;
+          if (!getTitle().equals(other.getTitle())) return false;
+          if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+          return true;
+        }
+
+        @java.lang.Override
+        public int hashCode() {
+          if (memoizedHashCode != 0) {
+            return memoizedHashCode;
+          }
+          int hash = 41;
+          hash = (19 * hash) + getDescriptor().hashCode();
+          hash = (37 * hash) + REVIEW_ID_FIELD_NUMBER;
+          hash = (53 * hash) + getReviewId().hashCode();
+          hash = (37 * hash) + GOOGLE_MAPS_URI_FIELD_NUMBER;
+          hash = (53 * hash) + getGoogleMapsUri().hashCode();
+          hash = (37 * hash) + TITLE_FIELD_NUMBER;
+          hash = (53 * hash) + getTitle().hashCode();
+          hash = (29 * hash) + getUnknownFields().hashCode();
+          memoizedHashCode = hash;
+          return hash;
+        }
+
+        public static com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+                .ReviewSnippet
+            parseFrom(java.nio.ByteBuffer data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+                .ReviewSnippet
+            parseFrom(
+                java.nio.ByteBuffer data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+                .ReviewSnippet
+            parseFrom(com.google.protobuf.ByteString data)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+                .ReviewSnippet
+            parseFrom(
+                com.google.protobuf.ByteString data,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+                .ReviewSnippet
+            parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data);
+        }
+
+        public static com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+                .ReviewSnippet
+            parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+          return PARSER.parseFrom(data, extensionRegistry);
+        }
+
+        public static com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+                .ReviewSnippet
+            parseFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+                .ReviewSnippet
+            parseFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+                .ReviewSnippet
+            parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input);
+        }
+
+        public static com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+                .ReviewSnippet
+            parseDelimitedFrom(
+                java.io.InputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        public static com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+                .ReviewSnippet
+            parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+        }
+
+        public static com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+                .ReviewSnippet
+            parseFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws java.io.IOException {
+          return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+              PARSER, input, extensionRegistry);
+        }
+
+        @java.lang.Override
+        public Builder newBuilderForType() {
+          return newBuilder();
+        }
+
+        public static Builder newBuilder() {
+          return DEFAULT_INSTANCE.toBuilder();
+        }
+
+        public static Builder newBuilder(
+            com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet
+                prototype) {
+          return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+        }
+
+        @java.lang.Override
+        public Builder toBuilder() {
+          return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+        }
+
+        @java.lang.Override
+        protected Builder newBuilderForType(
+            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          Builder builder = new Builder(parent);
+          return builder;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Encapsulates a review snippet.
+         * </pre>
+         *
+         * Protobuf type {@code
+         * google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet}
+         */
+        public static final class Builder
+            extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+            implements
+            // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet)
+            com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+                .ReviewSnippetOrBuilder {
+          public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+            return com.google.cloud.aiplatform.v1.ContentProto
+                .internal_static_google_cloud_aiplatform_v1_GroundingChunk_Maps_PlaceAnswerSources_ReviewSnippet_descriptor;
+          }
+
+          @java.lang.Override
+          protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+              internalGetFieldAccessorTable() {
+            return com.google.cloud.aiplatform.v1.ContentProto
+                .internal_static_google_cloud_aiplatform_v1_GroundingChunk_Maps_PlaceAnswerSources_ReviewSnippet_fieldAccessorTable
+                .ensureFieldAccessorsInitialized(
+                    com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+                        .ReviewSnippet.class,
+                    com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+                        .ReviewSnippet.Builder.class);
+          }
+
+          // Construct using
+          // com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet.newBuilder()
+          private Builder() {}
+
+          private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+            super(parent);
+          }
+
+          @java.lang.Override
+          public Builder clear() {
+            super.clear();
+            bitField0_ = 0;
+            reviewId_ = "";
+            googleMapsUri_ = "";
+            title_ = "";
+            return this;
+          }
+
+          @java.lang.Override
+          public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+            return com.google.cloud.aiplatform.v1.ContentProto
+                .internal_static_google_cloud_aiplatform_v1_GroundingChunk_Maps_PlaceAnswerSources_ReviewSnippet_descriptor;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet
+              getDefaultInstanceForType() {
+            return com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+                .ReviewSnippet.getDefaultInstance();
+          }
+
+          @java.lang.Override
+          public com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet
+              build() {
+            com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet
+                result = buildPartial();
+            if (!result.isInitialized()) {
+              throw newUninitializedMessageException(result);
+            }
+            return result;
+          }
+
+          @java.lang.Override
+          public com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet
+              buildPartial() {
+            com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet
+                result =
+                    new com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+                        .ReviewSnippet(this);
+            if (bitField0_ != 0) {
+              buildPartial0(result);
+            }
+            onBuilt();
+            return result;
+          }
+
+          private void buildPartial0(
+              com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet
+                  result) {
+            int from_bitField0_ = bitField0_;
+            if (((from_bitField0_ & 0x00000001) != 0)) {
+              result.reviewId_ = reviewId_;
+            }
+            if (((from_bitField0_ & 0x00000002) != 0)) {
+              result.googleMapsUri_ = googleMapsUri_;
+            }
+            if (((from_bitField0_ & 0x00000004) != 0)) {
+              result.title_ = title_;
+            }
+          }
+
+          @java.lang.Override
+          public Builder clone() {
+            return super.clone();
+          }
+
+          @java.lang.Override
+          public Builder setField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.setField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+            return super.clearField(field);
+          }
+
+          @java.lang.Override
+          public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+            return super.clearOneof(oneof);
+          }
+
+          @java.lang.Override
+          public Builder setRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field,
+              int index,
+              java.lang.Object value) {
+            return super.setRepeatedField(field, index, value);
+          }
+
+          @java.lang.Override
+          public Builder addRepeatedField(
+              com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+            return super.addRepeatedField(field, value);
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(com.google.protobuf.Message other) {
+            if (other
+                instanceof
+                com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+                    .ReviewSnippet) {
+              return mergeFrom(
+                  (com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+                          .ReviewSnippet)
+                      other);
+            } else {
+              super.mergeFrom(other);
+              return this;
+            }
+          }
+
+          public Builder mergeFrom(
+              com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet
+                  other) {
+            if (other
+                == com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+                    .ReviewSnippet.getDefaultInstance()) return this;
+            if (!other.getReviewId().isEmpty()) {
+              reviewId_ = other.reviewId_;
+              bitField0_ |= 0x00000001;
+              onChanged();
+            }
+            if (!other.getGoogleMapsUri().isEmpty()) {
+              googleMapsUri_ = other.googleMapsUri_;
+              bitField0_ |= 0x00000002;
+              onChanged();
+            }
+            if (!other.getTitle().isEmpty()) {
+              title_ = other.title_;
+              bitField0_ |= 0x00000004;
+              onChanged();
+            }
+            this.mergeUnknownFields(other.getUnknownFields());
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final boolean isInitialized() {
+            return true;
+          }
+
+          @java.lang.Override
+          public Builder mergeFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+            if (extensionRegistry == null) {
+              throw new java.lang.NullPointerException();
+            }
+            try {
+              boolean done = false;
+              while (!done) {
+                int tag = input.readTag();
+                switch (tag) {
+                  case 0:
+                    done = true;
+                    break;
+                  case 10:
+                    {
+                      reviewId_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000001;
+                      break;
+                    } // case 10
+                  case 18:
+                    {
+                      googleMapsUri_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000002;
+                      break;
+                    } // case 18
+                  case 26:
+                    {
+                      title_ = input.readStringRequireUtf8();
+                      bitField0_ |= 0x00000004;
+                      break;
+                    } // case 26
+                  default:
+                    {
+                      if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                        done = true; // was an endgroup tag
+                      }
+                      break;
+                    } // default:
+                } // switch (tag)
+              } // while (!done)
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.unwrapIOException();
+            } finally {
+              onChanged();
+            } // finally
+            return this;
+          }
+
+          private int bitField0_;
+
+          private java.lang.Object reviewId_ = "";
+
+          /**
+           *
+           *
+           * <pre>
+           * Id of the review referencing the place.
+           * </pre>
+           *
+           * <code>string review_id = 1;</code>
+           *
+           * @return The reviewId.
+           */
+          public java.lang.String getReviewId() {
+            java.lang.Object ref = reviewId_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              reviewId_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Id of the review referencing the place.
+           * </pre>
+           *
+           * <code>string review_id = 1;</code>
+           *
+           * @return The bytes for reviewId.
+           */
+          public com.google.protobuf.ByteString getReviewIdBytes() {
+            java.lang.Object ref = reviewId_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              reviewId_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Id of the review referencing the place.
+           * </pre>
+           *
+           * <code>string review_id = 1;</code>
+           *
+           * @param value The reviewId to set.
+           * @return This builder for chaining.
+           */
+          public Builder setReviewId(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            reviewId_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Id of the review referencing the place.
+           * </pre>
+           *
+           * <code>string review_id = 1;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearReviewId() {
+            reviewId_ = getDefaultInstance().getReviewId();
+            bitField0_ = (bitField0_ & ~0x00000001);
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Id of the review referencing the place.
+           * </pre>
+           *
+           * <code>string review_id = 1;</code>
+           *
+           * @param value The bytes for reviewId to set.
+           * @return This builder for chaining.
+           */
+          public Builder setReviewIdBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            reviewId_ = value;
+            bitField0_ |= 0x00000001;
+            onChanged();
+            return this;
+          }
+
+          private java.lang.Object googleMapsUri_ = "";
+
+          /**
+           *
+           *
+           * <pre>
+           * A link to show the review on Google Maps.
+           * </pre>
+           *
+           * <code>string google_maps_uri = 2;</code>
+           *
+           * @return The googleMapsUri.
+           */
+          public java.lang.String getGoogleMapsUri() {
+            java.lang.Object ref = googleMapsUri_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              googleMapsUri_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * A link to show the review on Google Maps.
+           * </pre>
+           *
+           * <code>string google_maps_uri = 2;</code>
+           *
+           * @return The bytes for googleMapsUri.
+           */
+          public com.google.protobuf.ByteString getGoogleMapsUriBytes() {
+            java.lang.Object ref = googleMapsUri_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              googleMapsUri_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * A link to show the review on Google Maps.
+           * </pre>
+           *
+           * <code>string google_maps_uri = 2;</code>
+           *
+           * @param value The googleMapsUri to set.
+           * @return This builder for chaining.
+           */
+          public Builder setGoogleMapsUri(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            googleMapsUri_ = value;
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * A link to show the review on Google Maps.
+           * </pre>
+           *
+           * <code>string google_maps_uri = 2;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearGoogleMapsUri() {
+            googleMapsUri_ = getDefaultInstance().getGoogleMapsUri();
+            bitField0_ = (bitField0_ & ~0x00000002);
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * A link to show the review on Google Maps.
+           * </pre>
+           *
+           * <code>string google_maps_uri = 2;</code>
+           *
+           * @param value The bytes for googleMapsUri to set.
+           * @return This builder for chaining.
+           */
+          public Builder setGoogleMapsUriBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            googleMapsUri_ = value;
+            bitField0_ |= 0x00000002;
+            onChanged();
+            return this;
+          }
+
+          private java.lang.Object title_ = "";
+
+          /**
+           *
+           *
+           * <pre>
+           * Title of the review.
+           * </pre>
+           *
+           * <code>string title = 3;</code>
+           *
+           * @return The title.
+           */
+          public java.lang.String getTitle() {
+            java.lang.Object ref = title_;
+            if (!(ref instanceof java.lang.String)) {
+              com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+              java.lang.String s = bs.toStringUtf8();
+              title_ = s;
+              return s;
+            } else {
+              return (java.lang.String) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Title of the review.
+           * </pre>
+           *
+           * <code>string title = 3;</code>
+           *
+           * @return The bytes for title.
+           */
+          public com.google.protobuf.ByteString getTitleBytes() {
+            java.lang.Object ref = title_;
+            if (ref instanceof String) {
+              com.google.protobuf.ByteString b =
+                  com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+              title_ = b;
+              return b;
+            } else {
+              return (com.google.protobuf.ByteString) ref;
+            }
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Title of the review.
+           * </pre>
+           *
+           * <code>string title = 3;</code>
+           *
+           * @param value The title to set.
+           * @return This builder for chaining.
+           */
+          public Builder setTitle(java.lang.String value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            title_ = value;
+            bitField0_ |= 0x00000004;
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Title of the review.
+           * </pre>
+           *
+           * <code>string title = 3;</code>
+           *
+           * @return This builder for chaining.
+           */
+          public Builder clearTitle() {
+            title_ = getDefaultInstance().getTitle();
+            bitField0_ = (bitField0_ & ~0x00000004);
+            onChanged();
+            return this;
+          }
+
+          /**
+           *
+           *
+           * <pre>
+           * Title of the review.
+           * </pre>
+           *
+           * <code>string title = 3;</code>
+           *
+           * @param value The bytes for title to set.
+           * @return This builder for chaining.
+           */
+          public Builder setTitleBytes(com.google.protobuf.ByteString value) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            checkByteStringIsUtf8(value);
+            title_ = value;
+            bitField0_ |= 0x00000004;
+            onChanged();
+            return this;
+          }
+
+          @java.lang.Override
+          public final Builder setUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.setUnknownFields(unknownFields);
+          }
+
+          @java.lang.Override
+          public final Builder mergeUnknownFields(
+              final com.google.protobuf.UnknownFieldSet unknownFields) {
+            return super.mergeUnknownFields(unknownFields);
+          }
+
+          // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet)
+        }
+
+        // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet)
+        private static final com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+                .ReviewSnippet
+            DEFAULT_INSTANCE;
+
+        static {
+          DEFAULT_INSTANCE =
+              new com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+                  .ReviewSnippet();
+        }
+
+        public static com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+                .ReviewSnippet
+            getDefaultInstance() {
+          return DEFAULT_INSTANCE;
+        }
+
+        private static final com.google.protobuf.Parser<ReviewSnippet> PARSER =
+            new com.google.protobuf.AbstractParser<ReviewSnippet>() {
+              @java.lang.Override
+              public ReviewSnippet parsePartialFrom(
+                  com.google.protobuf.CodedInputStream input,
+                  com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                  throws com.google.protobuf.InvalidProtocolBufferException {
+                Builder builder = newBuilder();
+                try {
+                  builder.mergeFrom(input, extensionRegistry);
+                } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                  throw e.setUnfinishedMessage(builder.buildPartial());
+                } catch (com.google.protobuf.UninitializedMessageException e) {
+                  throw e.asInvalidProtocolBufferException()
+                      .setUnfinishedMessage(builder.buildPartial());
+                } catch (java.io.IOException e) {
+                  throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                      .setUnfinishedMessage(builder.buildPartial());
+                }
+                return builder.buildPartial();
+              }
+            };
+
+        public static com.google.protobuf.Parser<ReviewSnippet> parser() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Parser<ReviewSnippet> getParserForType() {
+          return PARSER;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet
+            getDefaultInstanceForType() {
+          return DEFAULT_INSTANCE;
+        }
+      }
+
+      public static final int REVIEW_SNIPPETS_FIELD_NUMBER = 1;
+
+      @SuppressWarnings("serial")
+      private java.util.List<
+              com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet>
+          reviewSnippets_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Snippets of reviews that are used to generate the answer.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet review_snippets = 1;
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.List<
+              com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet>
+          getReviewSnippetsList() {
+        return reviewSnippets_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Snippets of reviews that are used to generate the answer.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet review_snippets = 1;
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.List<
+              ? extends
+                  com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+                      .ReviewSnippetOrBuilder>
+          getReviewSnippetsOrBuilderList() {
+        return reviewSnippets_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Snippets of reviews that are used to generate the answer.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet review_snippets = 1;
+       * </code>
+       */
+      @java.lang.Override
+      public int getReviewSnippetsCount() {
+        return reviewSnippets_.size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Snippets of reviews that are used to generate the answer.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet review_snippets = 1;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet
+          getReviewSnippets(int index) {
+        return reviewSnippets_.get(index);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Snippets of reviews that are used to generate the answer.
+       * </pre>
+       *
+       * <code>
+       * repeated .google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet review_snippets = 1;
+       * </code>
+       */
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+              .ReviewSnippetOrBuilder
+          getReviewSnippetsOrBuilder(int index) {
+        return reviewSnippets_.get(index);
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        for (int i = 0; i < reviewSnippets_.size(); i++) {
+          output.writeMessage(1, reviewSnippets_.get(i));
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        for (int i = 0; i < reviewSnippets_.size(); i++) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(1, reviewSnippets_.get(i));
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources other =
+            (com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources) obj;
+
+        if (!getReviewSnippetsList().equals(other.getReviewSnippetsList())) return false;
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (getReviewSnippetsCount() > 0) {
+          hash = (37 * hash) + REVIEW_SNIPPETS_FIELD_NUMBER;
+          hash = (53 * hash) + getReviewSnippetsList().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources parseFrom(
+          java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources parseFrom(
+          java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources parseFrom(
+          com.google.protobuf.ByteString data)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources parseFrom(
+          com.google.protobuf.ByteString data,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources parseFrom(
+          byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources parseFrom(
+          byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources parseFrom(
+          java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources parseFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources parseFrom(
+          com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources parseFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /** Protobuf type {@code google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources} */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources)
+          com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSourcesOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.aiplatform.v1.ContentProto
+              .internal_static_google_cloud_aiplatform_v1_GroundingChunk_Maps_PlaceAnswerSources_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.aiplatform.v1.ContentProto
+              .internal_static_google_cloud_aiplatform_v1_GroundingChunk_Maps_PlaceAnswerSources_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.class,
+                  com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.Builder
+                      .class);
+        }
+
+        // Construct using
+        // com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.newBuilder()
+        private Builder() {}
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          if (reviewSnippetsBuilder_ == null) {
+            reviewSnippets_ = java.util.Collections.emptyList();
+          } else {
+            reviewSnippets_ = null;
+            reviewSnippetsBuilder_.clear();
+          }
+          bitField0_ = (bitField0_ & ~0x00000001);
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.aiplatform.v1.ContentProto
+              .internal_static_google_cloud_aiplatform_v1_GroundingChunk_Maps_PlaceAnswerSources_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+            getDefaultInstanceForType() {
+          return com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources build() {
+          com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+            buildPartial() {
+          com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources result =
+              new com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources(this);
+          buildPartialRepeatedFields(result);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartialRepeatedFields(
+            com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources result) {
+          if (reviewSnippetsBuilder_ == null) {
+            if (((bitField0_ & 0x00000001) != 0)) {
+              reviewSnippets_ = java.util.Collections.unmodifiableList(reviewSnippets_);
+              bitField0_ = (bitField0_ & ~0x00000001);
+            }
+            result.reviewSnippets_ = reviewSnippets_;
+          } else {
+            result.reviewSnippets_ = reviewSnippetsBuilder_.build();
+          }
+        }
+
+        private void buildPartial0(
+            com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources result) {
+          int from_bitField0_ = bitField0_;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources) {
+            return mergeFrom(
+                (com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources other) {
+          if (other
+              == com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+                  .getDefaultInstance()) return this;
+          if (reviewSnippetsBuilder_ == null) {
+            if (!other.reviewSnippets_.isEmpty()) {
+              if (reviewSnippets_.isEmpty()) {
+                reviewSnippets_ = other.reviewSnippets_;
+                bitField0_ = (bitField0_ & ~0x00000001);
+              } else {
+                ensureReviewSnippetsIsMutable();
+                reviewSnippets_.addAll(other.reviewSnippets_);
+              }
+              onChanged();
+            }
+          } else {
+            if (!other.reviewSnippets_.isEmpty()) {
+              if (reviewSnippetsBuilder_.isEmpty()) {
+                reviewSnippetsBuilder_.dispose();
+                reviewSnippetsBuilder_ = null;
+                reviewSnippets_ = other.reviewSnippets_;
+                bitField0_ = (bitField0_ & ~0x00000001);
+                reviewSnippetsBuilder_ =
+                    com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                        ? getReviewSnippetsFieldBuilder()
+                        : null;
+              } else {
+                reviewSnippetsBuilder_.addAllMessages(other.reviewSnippets_);
+              }
+            }
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+                            .ReviewSnippet
+                        m =
+                            input.readMessage(
+                                com.google.cloud.aiplatform.v1.GroundingChunk.Maps
+                                    .PlaceAnswerSources.ReviewSnippet.parser(),
+                                extensionRegistry);
+                    if (reviewSnippetsBuilder_ == null) {
+                      ensureReviewSnippetsIsMutable();
+                      reviewSnippets_.add(m);
+                    } else {
+                      reviewSnippetsBuilder_.addMessage(m);
+                    }
+                    break;
+                  } // case 10
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private java.util.List<
+                com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet>
+            reviewSnippets_ = java.util.Collections.emptyList();
+
+        private void ensureReviewSnippetsIsMutable() {
+          if (!((bitField0_ & 0x00000001) != 0)) {
+            reviewSnippets_ =
+                new java.util.ArrayList<
+                    com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+                        .ReviewSnippet>(reviewSnippets_);
+            bitField0_ |= 0x00000001;
+          }
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet,
+                com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet
+                    .Builder,
+                com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+                    .ReviewSnippetOrBuilder>
+            reviewSnippetsBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Snippets of reviews that are used to generate the answer.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet review_snippets = 1;
+         * </code>
+         */
+        public java.util.List<
+                com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet>
+            getReviewSnippetsList() {
+          if (reviewSnippetsBuilder_ == null) {
+            return java.util.Collections.unmodifiableList(reviewSnippets_);
+          } else {
+            return reviewSnippetsBuilder_.getMessageList();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Snippets of reviews that are used to generate the answer.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet review_snippets = 1;
+         * </code>
+         */
+        public int getReviewSnippetsCount() {
+          if (reviewSnippetsBuilder_ == null) {
+            return reviewSnippets_.size();
+          } else {
+            return reviewSnippetsBuilder_.getCount();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Snippets of reviews that are used to generate the answer.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet review_snippets = 1;
+         * </code>
+         */
+        public com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet
+            getReviewSnippets(int index) {
+          if (reviewSnippetsBuilder_ == null) {
+            return reviewSnippets_.get(index);
+          } else {
+            return reviewSnippetsBuilder_.getMessage(index);
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Snippets of reviews that are used to generate the answer.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet review_snippets = 1;
+         * </code>
+         */
+        public Builder setReviewSnippets(
+            int index,
+            com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet
+                value) {
+          if (reviewSnippetsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureReviewSnippetsIsMutable();
+            reviewSnippets_.set(index, value);
+            onChanged();
+          } else {
+            reviewSnippetsBuilder_.setMessage(index, value);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Snippets of reviews that are used to generate the answer.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet review_snippets = 1;
+         * </code>
+         */
+        public Builder setReviewSnippets(
+            int index,
+            com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet
+                    .Builder
+                builderForValue) {
+          if (reviewSnippetsBuilder_ == null) {
+            ensureReviewSnippetsIsMutable();
+            reviewSnippets_.set(index, builderForValue.build());
+            onChanged();
+          } else {
+            reviewSnippetsBuilder_.setMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Snippets of reviews that are used to generate the answer.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet review_snippets = 1;
+         * </code>
+         */
+        public Builder addReviewSnippets(
+            com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet
+                value) {
+          if (reviewSnippetsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureReviewSnippetsIsMutable();
+            reviewSnippets_.add(value);
+            onChanged();
+          } else {
+            reviewSnippetsBuilder_.addMessage(value);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Snippets of reviews that are used to generate the answer.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet review_snippets = 1;
+         * </code>
+         */
+        public Builder addReviewSnippets(
+            int index,
+            com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet
+                value) {
+          if (reviewSnippetsBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            ensureReviewSnippetsIsMutable();
+            reviewSnippets_.add(index, value);
+            onChanged();
+          } else {
+            reviewSnippetsBuilder_.addMessage(index, value);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Snippets of reviews that are used to generate the answer.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet review_snippets = 1;
+         * </code>
+         */
+        public Builder addReviewSnippets(
+            com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet
+                    .Builder
+                builderForValue) {
+          if (reviewSnippetsBuilder_ == null) {
+            ensureReviewSnippetsIsMutable();
+            reviewSnippets_.add(builderForValue.build());
+            onChanged();
+          } else {
+            reviewSnippetsBuilder_.addMessage(builderForValue.build());
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Snippets of reviews that are used to generate the answer.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet review_snippets = 1;
+         * </code>
+         */
+        public Builder addReviewSnippets(
+            int index,
+            com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet
+                    .Builder
+                builderForValue) {
+          if (reviewSnippetsBuilder_ == null) {
+            ensureReviewSnippetsIsMutable();
+            reviewSnippets_.add(index, builderForValue.build());
+            onChanged();
+          } else {
+            reviewSnippetsBuilder_.addMessage(index, builderForValue.build());
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Snippets of reviews that are used to generate the answer.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet review_snippets = 1;
+         * </code>
+         */
+        public Builder addAllReviewSnippets(
+            java.lang.Iterable<
+                    ? extends
+                        com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+                            .ReviewSnippet>
+                values) {
+          if (reviewSnippetsBuilder_ == null) {
+            ensureReviewSnippetsIsMutable();
+            com.google.protobuf.AbstractMessageLite.Builder.addAll(values, reviewSnippets_);
+            onChanged();
+          } else {
+            reviewSnippetsBuilder_.addAllMessages(values);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Snippets of reviews that are used to generate the answer.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet review_snippets = 1;
+         * </code>
+         */
+        public Builder clearReviewSnippets() {
+          if (reviewSnippetsBuilder_ == null) {
+            reviewSnippets_ = java.util.Collections.emptyList();
+            bitField0_ = (bitField0_ & ~0x00000001);
+            onChanged();
+          } else {
+            reviewSnippetsBuilder_.clear();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Snippets of reviews that are used to generate the answer.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet review_snippets = 1;
+         * </code>
+         */
+        public Builder removeReviewSnippets(int index) {
+          if (reviewSnippetsBuilder_ == null) {
+            ensureReviewSnippetsIsMutable();
+            reviewSnippets_.remove(index);
+            onChanged();
+          } else {
+            reviewSnippetsBuilder_.remove(index);
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Snippets of reviews that are used to generate the answer.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet review_snippets = 1;
+         * </code>
+         */
+        public com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet
+                .Builder
+            getReviewSnippetsBuilder(int index) {
+          return getReviewSnippetsFieldBuilder().getBuilder(index);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Snippets of reviews that are used to generate the answer.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet review_snippets = 1;
+         * </code>
+         */
+        public com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+                .ReviewSnippetOrBuilder
+            getReviewSnippetsOrBuilder(int index) {
+          if (reviewSnippetsBuilder_ == null) {
+            return reviewSnippets_.get(index);
+          } else {
+            return reviewSnippetsBuilder_.getMessageOrBuilder(index);
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Snippets of reviews that are used to generate the answer.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet review_snippets = 1;
+         * </code>
+         */
+        public java.util.List<
+                ? extends
+                    com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+                        .ReviewSnippetOrBuilder>
+            getReviewSnippetsOrBuilderList() {
+          if (reviewSnippetsBuilder_ != null) {
+            return reviewSnippetsBuilder_.getMessageOrBuilderList();
+          } else {
+            return java.util.Collections.unmodifiableList(reviewSnippets_);
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Snippets of reviews that are used to generate the answer.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet review_snippets = 1;
+         * </code>
+         */
+        public com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet
+                .Builder
+            addReviewSnippetsBuilder() {
+          return getReviewSnippetsFieldBuilder()
+              .addBuilder(
+                  com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+                      .ReviewSnippet.getDefaultInstance());
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Snippets of reviews that are used to generate the answer.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet review_snippets = 1;
+         * </code>
+         */
+        public com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet
+                .Builder
+            addReviewSnippetsBuilder(int index) {
+          return getReviewSnippetsFieldBuilder()
+              .addBuilder(
+                  index,
+                  com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+                      .ReviewSnippet.getDefaultInstance());
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Snippets of reviews that are used to generate the answer.
+         * </pre>
+         *
+         * <code>
+         * repeated .google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet review_snippets = 1;
+         * </code>
+         */
+        public java.util.List<
+                com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet
+                    .Builder>
+            getReviewSnippetsBuilderList() {
+          return getReviewSnippetsFieldBuilder().getBuilderList();
+        }
+
+        private com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet,
+                com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.ReviewSnippet
+                    .Builder,
+                com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+                    .ReviewSnippetOrBuilder>
+            getReviewSnippetsFieldBuilder() {
+          if (reviewSnippetsBuilder_ == null) {
+            reviewSnippetsBuilder_ =
+                new com.google.protobuf.RepeatedFieldBuilderV3<
+                    com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+                        .ReviewSnippet,
+                    com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+                        .ReviewSnippet.Builder,
+                    com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+                        .ReviewSnippetOrBuilder>(
+                    reviewSnippets_,
+                    ((bitField0_ & 0x00000001) != 0),
+                    getParentForChildren(),
+                    isClean());
+            reviewSnippets_ = null;
+          }
+          return reviewSnippetsBuilder_;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources)
+      private static final com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources();
+      }
+
+      public static com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<PlaceAnswerSources> PARSER =
+          new com.google.protobuf.AbstractParser<PlaceAnswerSources>() {
+            @java.lang.Override
+            public PlaceAnswerSources parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<PlaceAnswerSources> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<PlaceAnswerSources> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
     }
 
     private int bitField0_;
@@ -3494,6 +5836,76 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public static final int PLACE_ANSWER_SOURCES_FIELD_NUMBER = 5;
+    private com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+        placeAnswerSources_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Sources used to generate the place answer.
+     * This includes review snippets and photos that were used to generate the
+     * answer, as well as uris to flag content.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources place_answer_sources = 5;
+     * </code>
+     *
+     * @return Whether the placeAnswerSources field is set.
+     */
+    @java.lang.Override
+    public boolean hasPlaceAnswerSources() {
+      return ((bitField0_ & 0x00000010) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sources used to generate the place answer.
+     * This includes review snippets and photos that were used to generate the
+     * answer, as well as uris to flag content.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources place_answer_sources = 5;
+     * </code>
+     *
+     * @return The placeAnswerSources.
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+        getPlaceAnswerSources() {
+      return placeAnswerSources_ == null
+          ? com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+              .getDefaultInstance()
+          : placeAnswerSources_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Sources used to generate the place answer.
+     * This includes review snippets and photos that were used to generate the
+     * answer, as well as uris to flag content.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources place_answer_sources = 5;
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSourcesOrBuilder
+        getPlaceAnswerSourcesOrBuilder() {
+      return placeAnswerSources_ == null
+          ? com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+              .getDefaultInstance()
+          : placeAnswerSources_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -3520,6 +5932,9 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       if (((bitField0_ & 0x00000008) != 0)) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 4, placeId_);
       }
+      if (((bitField0_ & 0x00000010) != 0)) {
+        output.writeMessage(5, getPlaceAnswerSources());
+      }
       getUnknownFields().writeTo(output);
     }
 
@@ -3540,6 +5955,10 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       }
       if (((bitField0_ & 0x00000008) != 0)) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, placeId_);
+      }
+      if (((bitField0_ & 0x00000010) != 0)) {
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(5, getPlaceAnswerSources());
       }
       size += getUnknownFields().getSerializedSize();
       memoizedSize = size;
@@ -3573,6 +5992,10 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       if (hasPlaceId()) {
         if (!getPlaceId().equals(other.getPlaceId())) return false;
       }
+      if (hasPlaceAnswerSources() != other.hasPlaceAnswerSources()) return false;
+      if (hasPlaceAnswerSources()) {
+        if (!getPlaceAnswerSources().equals(other.getPlaceAnswerSources())) return false;
+      }
       if (!getUnknownFields().equals(other.getUnknownFields())) return false;
       return true;
     }
@@ -3599,6 +6022,10 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       if (hasPlaceId()) {
         hash = (37 * hash) + PLACE_ID_FIELD_NUMBER;
         hash = (53 * hash) + getPlaceId().hashCode();
+      }
+      if (hasPlaceAnswerSources()) {
+        hash = (37 * hash) + PLACE_ANSWER_SOURCES_FIELD_NUMBER;
+        hash = (53 * hash) + getPlaceAnswerSources().hashCode();
       }
       hash = (29 * hash) + getUnknownFields().hashCode();
       memoizedHashCode = hash;
@@ -3732,10 +6159,19 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
       }
 
       // Construct using com.google.cloud.aiplatform.v1.GroundingChunk.Maps.newBuilder()
-      private Builder() {}
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getPlaceAnswerSourcesFieldBuilder();
+        }
       }
 
       @java.lang.Override
@@ -3746,6 +6182,11 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
         title_ = "";
         text_ = "";
         placeId_ = "";
+        placeAnswerSources_ = null;
+        if (placeAnswerSourcesBuilder_ != null) {
+          placeAnswerSourcesBuilder_.dispose();
+          placeAnswerSourcesBuilder_ = null;
+        }
         return this;
       }
 
@@ -3798,6 +6239,13 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
         if (((from_bitField0_ & 0x00000008) != 0)) {
           result.placeId_ = placeId_;
           to_bitField0_ |= 0x00000008;
+        }
+        if (((from_bitField0_ & 0x00000010) != 0)) {
+          result.placeAnswerSources_ =
+              placeAnswerSourcesBuilder_ == null
+                  ? placeAnswerSources_
+                  : placeAnswerSourcesBuilder_.build();
+          to_bitField0_ |= 0x00000010;
         }
         result.bitField0_ |= to_bitField0_;
       }
@@ -3870,6 +6318,9 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
           bitField0_ |= 0x00000008;
           onChanged();
         }
+        if (other.hasPlaceAnswerSources()) {
+          mergePlaceAnswerSources(other.getPlaceAnswerSources());
+        }
         this.mergeUnknownFields(other.getUnknownFields());
         onChanged();
         return this;
@@ -3920,6 +6371,13 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
                   bitField0_ |= 0x00000008;
                   break;
                 } // case 34
+              case 42:
+                {
+                  input.readMessage(
+                      getPlaceAnswerSourcesFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000010;
+                  break;
+                } // case 42
               default:
                 {
                   if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -4447,6 +6905,248 @@ public final class GroundingChunk extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000008;
         onChanged();
         return this;
+      }
+
+      private com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+          placeAnswerSources_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources,
+              com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.Builder,
+              com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSourcesOrBuilder>
+          placeAnswerSourcesBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Sources used to generate the place answer.
+       * This includes review snippets and photos that were used to generate the
+       * answer, as well as uris to flag content.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources place_answer_sources = 5;
+       * </code>
+       *
+       * @return Whether the placeAnswerSources field is set.
+       */
+      public boolean hasPlaceAnswerSources() {
+        return ((bitField0_ & 0x00000010) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Sources used to generate the place answer.
+       * This includes review snippets and photos that were used to generate the
+       * answer, as well as uris to flag content.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources place_answer_sources = 5;
+       * </code>
+       *
+       * @return The placeAnswerSources.
+       */
+      public com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+          getPlaceAnswerSources() {
+        if (placeAnswerSourcesBuilder_ == null) {
+          return placeAnswerSources_ == null
+              ? com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+                  .getDefaultInstance()
+              : placeAnswerSources_;
+        } else {
+          return placeAnswerSourcesBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Sources used to generate the place answer.
+       * This includes review snippets and photos that were used to generate the
+       * answer, as well as uris to flag content.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources place_answer_sources = 5;
+       * </code>
+       */
+      public Builder setPlaceAnswerSources(
+          com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources value) {
+        if (placeAnswerSourcesBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          placeAnswerSources_ = value;
+        } else {
+          placeAnswerSourcesBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Sources used to generate the place answer.
+       * This includes review snippets and photos that were used to generate the
+       * answer, as well as uris to flag content.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources place_answer_sources = 5;
+       * </code>
+       */
+      public Builder setPlaceAnswerSources(
+          com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.Builder
+              builderForValue) {
+        if (placeAnswerSourcesBuilder_ == null) {
+          placeAnswerSources_ = builderForValue.build();
+        } else {
+          placeAnswerSourcesBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Sources used to generate the place answer.
+       * This includes review snippets and photos that were used to generate the
+       * answer, as well as uris to flag content.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources place_answer_sources = 5;
+       * </code>
+       */
+      public Builder mergePlaceAnswerSources(
+          com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources value) {
+        if (placeAnswerSourcesBuilder_ == null) {
+          if (((bitField0_ & 0x00000010) != 0)
+              && placeAnswerSources_ != null
+              && placeAnswerSources_
+                  != com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+                      .getDefaultInstance()) {
+            getPlaceAnswerSourcesBuilder().mergeFrom(value);
+          } else {
+            placeAnswerSources_ = value;
+          }
+        } else {
+          placeAnswerSourcesBuilder_.mergeFrom(value);
+        }
+        if (placeAnswerSources_ != null) {
+          bitField0_ |= 0x00000010;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Sources used to generate the place answer.
+       * This includes review snippets and photos that were used to generate the
+       * answer, as well as uris to flag content.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources place_answer_sources = 5;
+       * </code>
+       */
+      public Builder clearPlaceAnswerSources() {
+        bitField0_ = (bitField0_ & ~0x00000010);
+        placeAnswerSources_ = null;
+        if (placeAnswerSourcesBuilder_ != null) {
+          placeAnswerSourcesBuilder_.dispose();
+          placeAnswerSourcesBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Sources used to generate the place answer.
+       * This includes review snippets and photos that were used to generate the
+       * answer, as well as uris to flag content.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources place_answer_sources = 5;
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.Builder
+          getPlaceAnswerSourcesBuilder() {
+        bitField0_ |= 0x00000010;
+        onChanged();
+        return getPlaceAnswerSourcesFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Sources used to generate the place answer.
+       * This includes review snippets and photos that were used to generate the
+       * answer, as well as uris to flag content.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources place_answer_sources = 5;
+       * </code>
+       */
+      public com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSourcesOrBuilder
+          getPlaceAnswerSourcesOrBuilder() {
+        if (placeAnswerSourcesBuilder_ != null) {
+          return placeAnswerSourcesBuilder_.getMessageOrBuilder();
+        } else {
+          return placeAnswerSources_ == null
+              ? com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources
+                  .getDefaultInstance()
+              : placeAnswerSources_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Sources used to generate the place answer.
+       * This includes review snippets and photos that were used to generate the
+       * answer, as well as uris to flag content.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources place_answer_sources = 5;
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources,
+              com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.Builder,
+              com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSourcesOrBuilder>
+          getPlaceAnswerSourcesFieldBuilder() {
+        if (placeAnswerSourcesBuilder_ == null) {
+          placeAnswerSourcesBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources,
+                  com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSources.Builder,
+                  com.google.cloud.aiplatform.v1.GroundingChunk.Maps.PlaceAnswerSourcesOrBuilder>(
+                  getPlaceAnswerSources(), getParentForChildren(), isClean());
+          placeAnswerSources_ = null;
+        }
+        return placeAnswerSourcesBuilder_;
       }
 
       @java.lang.Override
