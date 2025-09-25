@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <artifactId>google-cloud-firestore-admin</artifactId>
-  <version>3.33.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-firestore-admin:current} -->
+  <version>3.33.1</version><!-- {x-version-update:google-cloud-firestore-admin:current} -->
   <packaging>jar</packaging>
   <name>Google Cloud Firestore Admin Client</name>
   <url>https://github.com/googleapis/java-firestore</url>
@@ -14,7 +14,7 @@
   <parent>
     <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-firestore-parent</artifactId>
-    <version>3.33.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-firestore:current} -->
+    <version>3.33.1</version><!-- {x-version-update:google-cloud-firestore:current} -->
   </parent>
   <dependencies>
     <dependency>
