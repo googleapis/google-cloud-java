@@ -4,13 +4,13 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.google.shopping.api.grpc</groupId>
   <artifactId>grpc-google-shopping-merchant-order-tracking-v1</artifactId>
-  <version>1.3.0</version><!-- {x-version-update:grpc-google-shopping-merchant-order-tracking-v1:current} -->
+  <version>1.4.0-SNAPSHOT</version><!-- {x-version-update:grpc-google-shopping-merchant-order-tracking-v1:current} -->
   <name>grpc-google-shopping-merchant-order-tracking-v1</name>
   <description>GRPC library for google-shopping-merchant-order-tracking</description>
   <parent>
     <groupId>com.google.shopping</groupId>
     <artifactId>google-shopping-merchant-order-tracking-parent</artifactId>
-    <version>1.3.0</version><!-- {x-version-update:google-shopping-merchant-order-tracking:current} -->
+    <version>1.4.0-SNAPSHOT</version><!-- {x-version-update:google-shopping-merchant-order-tracking:current} -->
   </parent>
   <dependencies>
     <dependency>
