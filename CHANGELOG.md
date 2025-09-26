@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.55.1](https://github.com/googleapis/java-bigquery/compare/v2.55.0...v2.55.1) (2025-09-26)
+
+
+### Dependencies
+
+* Update dependency com.google.cloud:sdk-platform-java-config to v3.52.2 ([#3964](https://github.com/googleapis/java-bigquery/issues/3964)) ([6775fce](https://github.com/googleapis/java-bigquery/commit/6775fce537df9c5f4d0b1488ce28591f6aed195f))
+
 ## [2.55.0](https://github.com/googleapis/java-bigquery/compare/v2.54.2...v2.55.0) (2025-09-12)
 
 
