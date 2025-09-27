@@ -451,6 +451,11 @@ public class AlloyDBAdminSettings extends ClientSettings<AlloyDBAdminSettings> {
     return ((AlloyDBAdminStubSettings) getStubSettings()).listDatabasesSettings();
   }
 
+  /** Returns the object with the settings used for calls to createDatabase. */
+  public UnaryCallSettings<CreateDatabaseRequest, Database> createDatabaseSettings() {
+    return ((AlloyDBAdminStubSettings) getStubSettings()).createDatabaseSettings();
+  }
+
   /** Returns the object with the settings used for calls to listLocations. */
   public PagedCallSettings<ListLocationsRequest, ListLocationsResponse, ListLocationsPagedResponse>
       listLocationsSettings() {
@@ -909,6 +914,11 @@ public class AlloyDBAdminSettings extends ClientSettings<AlloyDBAdminSettings> {
             ListDatabasesRequest, ListDatabasesResponse, ListDatabasesPagedResponse>
         listDatabasesSettings() {
       return getStubSettingsBuilder().listDatabasesSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to createDatabase. */
+    public UnaryCallSettings.Builder<CreateDatabaseRequest, Database> createDatabaseSettings() {
+      return getStubSettingsBuilder().createDatabaseSettings();
     }
 
     /** Returns the builder for the settings used for calls to listLocations. */

@@ -39,6 +39,7 @@ public class SyncGet {
               .setProject("project-309310695")
               .setRegion("region-934795532")
               .setSubnetwork("subnetwork-1302785042")
+              .setViews("views112204398")
               .build();
       Subnetwork response = subnetworksClient.get(request);
     }

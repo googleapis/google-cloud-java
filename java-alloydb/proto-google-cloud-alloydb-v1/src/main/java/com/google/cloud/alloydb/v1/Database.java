@@ -43,6 +43,8 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     name_ = "";
     charset_ = "";
     collation_ = "";
+    characterType_ = "";
+    databaseTemplate_ = "";
   }
 
   @java.lang.Override
@@ -66,6 +68,7 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.alloydb.v1.Database.Builder.class);
   }
 
+  private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
   @SuppressWarnings("serial")
@@ -130,12 +133,14 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Charset for the database.
+   * Optional. Immutable. Charset for the database.
    * This field can contain any PostgreSQL supported charset name.
    * Example values include "UTF8", "SQL_ASCII", etc.
    * </pre>
    *
-   * <code>string charset = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string charset = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The charset.
    */
@@ -156,12 +161,14 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Charset for the database.
+   * Optional. Immutable. Charset for the database.
    * This field can contain any PostgreSQL supported charset name.
    * Example values include "UTF8", "SQL_ASCII", etc.
    * </pre>
    *
-   * <code>string charset = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string charset = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for charset.
    */
@@ -187,12 +194,14 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Collation for the database.
-   * Name of the custom or native collation for postgres.
-   * Example values include "C", "POSIX", etc
+   * Optional. Immutable. lc_collate for the database.
+   * String sort order.
+   * Example values include "C", "POSIX", etc.
    * </pre>
    *
-   * <code>string collation = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string collation = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The collation.
    */
@@ -213,12 +222,14 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Optional. Collation for the database.
-   * Name of the custom or native collation for postgres.
-   * Example values include "C", "POSIX", etc
+   * Optional. Immutable. lc_collate for the database.
+   * String sort order.
+   * Example values include "C", "POSIX", etc.
    * </pre>
    *
-   * <code>string collation = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+   * <code>
+   * string collation = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
    *
    * @return The bytes for collation.
    */
@@ -233,6 +244,161 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     } else {
       return (com.google.protobuf.ByteString) ref;
     }
+  }
+
+  public static final int CHARACTER_TYPE_FIELD_NUMBER = 4;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object characterType_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. lc_ctype for the database.
+   * Character classification (What is a letter? The upper-case equivalent?).
+   * Example values include "C", "POSIX", etc.
+   * </pre>
+   *
+   * <code>
+   * string character_type = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The characterType.
+   */
+  @java.lang.Override
+  public java.lang.String getCharacterType() {
+    java.lang.Object ref = characterType_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      characterType_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Immutable. lc_ctype for the database.
+   * Character classification (What is a letter? The upper-case equivalent?).
+   * Example values include "C", "POSIX", etc.
+   * </pre>
+   *
+   * <code>
+   * string character_type = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The bytes for characterType.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getCharacterTypeBytes() {
+    java.lang.Object ref = characterType_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      characterType_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int DATABASE_TEMPLATE_FIELD_NUMBER = 6;
+
+  @SuppressWarnings("serial")
+  private volatile java.lang.Object databaseTemplate_ = "";
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Immutable. Template of the database to be used for creating a
+   * new database.
+   * </pre>
+   *
+   * <code>
+   * string database_template = 6 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The databaseTemplate.
+   */
+  @java.lang.Override
+  public java.lang.String getDatabaseTemplate() {
+    java.lang.Object ref = databaseTemplate_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      databaseTemplate_ = s;
+      return s;
+    }
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Input only. Immutable. Template of the database to be used for creating a
+   * new database.
+   * </pre>
+   *
+   * <code>
+   * string database_template = 6 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+   * </code>
+   *
+   * @return The bytes for databaseTemplate.
+   */
+  @java.lang.Override
+  public com.google.protobuf.ByteString getDatabaseTemplateBytes() {
+    java.lang.Object ref = databaseTemplate_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      databaseTemplate_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int IS_TEMPLATE_DATABASE_FIELD_NUMBER = 7;
+  private boolean isTemplateDatabase_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether the database is a template database.
+   * </pre>
+   *
+   * <code>optional bool is_template_database = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return Whether the isTemplateDatabase field is set.
+   */
+  @java.lang.Override
+  public boolean hasIsTemplateDatabase() {
+    return ((bitField0_ & 0x00000001) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Whether the database is a template database.
+   * </pre>
+   *
+   * <code>optional bool is_template_database = 7 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The isTemplateDatabase.
+   */
+  @java.lang.Override
+  public boolean getIsTemplateDatabase() {
+    return isTemplateDatabase_;
   }
 
   private byte memoizedIsInitialized = -1;
@@ -258,6 +424,15 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(collation_)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3, collation_);
     }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(characterType_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, characterType_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(databaseTemplate_)) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 6, databaseTemplate_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      output.writeBool(7, isTemplateDatabase_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -275,6 +450,15 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     }
     if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(collation_)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, collation_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(characterType_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, characterType_);
+    }
+    if (!com.google.protobuf.GeneratedMessageV3.isStringEmpty(databaseTemplate_)) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, databaseTemplate_);
+    }
+    if (((bitField0_ & 0x00000001) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, isTemplateDatabase_);
     }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
@@ -294,6 +478,12 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     if (!getName().equals(other.getName())) return false;
     if (!getCharset().equals(other.getCharset())) return false;
     if (!getCollation().equals(other.getCollation())) return false;
+    if (!getCharacterType().equals(other.getCharacterType())) return false;
+    if (!getDatabaseTemplate().equals(other.getDatabaseTemplate())) return false;
+    if (hasIsTemplateDatabase() != other.hasIsTemplateDatabase()) return false;
+    if (hasIsTemplateDatabase()) {
+      if (getIsTemplateDatabase() != other.getIsTemplateDatabase()) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -311,6 +501,14 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
     hash = (53 * hash) + getCharset().hashCode();
     hash = (37 * hash) + COLLATION_FIELD_NUMBER;
     hash = (53 * hash) + getCollation().hashCode();
+    hash = (37 * hash) + CHARACTER_TYPE_FIELD_NUMBER;
+    hash = (53 * hash) + getCharacterType().hashCode();
+    hash = (37 * hash) + DATABASE_TEMPLATE_FIELD_NUMBER;
+    hash = (53 * hash) + getDatabaseTemplate().hashCode();
+    if (hasIsTemplateDatabase()) {
+      hash = (37 * hash) + IS_TEMPLATE_DATABASE_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getIsTemplateDatabase());
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -453,6 +651,9 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       name_ = "";
       charset_ = "";
       collation_ = "";
+      characterType_ = "";
+      databaseTemplate_ = "";
+      isTemplateDatabase_ = false;
       return this;
     }
 
@@ -497,6 +698,18 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x00000004) != 0)) {
         result.collation_ = collation_;
       }
+      if (((from_bitField0_ & 0x00000008) != 0)) {
+        result.characterType_ = characterType_;
+      }
+      if (((from_bitField0_ & 0x00000010) != 0)) {
+        result.databaseTemplate_ = databaseTemplate_;
+      }
+      int to_bitField0_ = 0;
+      if (((from_bitField0_ & 0x00000020) != 0)) {
+        result.isTemplateDatabase_ = isTemplateDatabase_;
+        to_bitField0_ |= 0x00000001;
+      }
+      result.bitField0_ |= to_bitField0_;
     }
 
     @java.lang.Override
@@ -559,6 +772,19 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
         bitField0_ |= 0x00000004;
         onChanged();
       }
+      if (!other.getCharacterType().isEmpty()) {
+        characterType_ = other.characterType_;
+        bitField0_ |= 0x00000008;
+        onChanged();
+      }
+      if (!other.getDatabaseTemplate().isEmpty()) {
+        databaseTemplate_ = other.databaseTemplate_;
+        bitField0_ |= 0x00000010;
+        onChanged();
+      }
+      if (other.hasIsTemplateDatabase()) {
+        setIsTemplateDatabase(other.getIsTemplateDatabase());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -603,6 +829,24 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x00000004;
                 break;
               } // case 26
+            case 34:
+              {
+                characterType_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000008;
+                break;
+              } // case 34
+            case 50:
+              {
+                databaseTemplate_ = input.readStringRequireUtf8();
+                bitField0_ |= 0x00000010;
+                break;
+              } // case 50
+            case 56:
+              {
+                isTemplateDatabase_ = input.readBool();
+                bitField0_ |= 0x00000020;
+                break;
+              } // case 56
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -744,12 +988,14 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Charset for the database.
+     * Optional. Immutable. Charset for the database.
      * This field can contain any PostgreSQL supported charset name.
      * Example values include "UTF8", "SQL_ASCII", etc.
      * </pre>
      *
-     * <code>string charset = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string charset = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The charset.
      */
@@ -769,12 +1015,14 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Charset for the database.
+     * Optional. Immutable. Charset for the database.
      * This field can contain any PostgreSQL supported charset name.
      * Example values include "UTF8", "SQL_ASCII", etc.
      * </pre>
      *
-     * <code>string charset = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string charset = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The bytes for charset.
      */
@@ -794,12 +1042,14 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Charset for the database.
+     * Optional. Immutable. Charset for the database.
      * This field can contain any PostgreSQL supported charset name.
      * Example values include "UTF8", "SQL_ASCII", etc.
      * </pre>
      *
-     * <code>string charset = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string charset = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The charset to set.
      * @return This builder for chaining.
@@ -818,12 +1068,14 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Charset for the database.
+     * Optional. Immutable. Charset for the database.
      * This field can contain any PostgreSQL supported charset name.
      * Example values include "UTF8", "SQL_ASCII", etc.
      * </pre>
      *
-     * <code>string charset = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string charset = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -838,12 +1090,14 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Charset for the database.
+     * Optional. Immutable. Charset for the database.
      * This field can contain any PostgreSQL supported charset name.
      * Example values include "UTF8", "SQL_ASCII", etc.
      * </pre>
      *
-     * <code>string charset = 2 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string charset = 2 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The bytes for charset to set.
      * @return This builder for chaining.
@@ -865,12 +1119,14 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Collation for the database.
-     * Name of the custom or native collation for postgres.
-     * Example values include "C", "POSIX", etc
+     * Optional. Immutable. lc_collate for the database.
+     * String sort order.
+     * Example values include "C", "POSIX", etc.
      * </pre>
      *
-     * <code>string collation = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string collation = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The collation.
      */
@@ -890,12 +1146,14 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Collation for the database.
-     * Name of the custom or native collation for postgres.
-     * Example values include "C", "POSIX", etc
+     * Optional. Immutable. lc_collate for the database.
+     * String sort order.
+     * Example values include "C", "POSIX", etc.
      * </pre>
      *
-     * <code>string collation = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string collation = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return The bytes for collation.
      */
@@ -915,12 +1173,14 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Collation for the database.
-     * Name of the custom or native collation for postgres.
-     * Example values include "C", "POSIX", etc
+     * Optional. Immutable. lc_collate for the database.
+     * String sort order.
+     * Example values include "C", "POSIX", etc.
      * </pre>
      *
-     * <code>string collation = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string collation = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The collation to set.
      * @return This builder for chaining.
@@ -939,12 +1199,14 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Collation for the database.
-     * Name of the custom or native collation for postgres.
-     * Example values include "C", "POSIX", etc
+     * Optional. Immutable. lc_collate for the database.
+     * String sort order.
+     * Example values include "C", "POSIX", etc.
      * </pre>
      *
-     * <code>string collation = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string collation = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @return This builder for chaining.
      */
@@ -959,12 +1221,14 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Optional. Collation for the database.
-     * Name of the custom or native collation for postgres.
-     * Example values include "C", "POSIX", etc
+     * Optional. Immutable. lc_collate for the database.
+     * String sort order.
+     * Example values include "C", "POSIX", etc.
      * </pre>
      *
-     * <code>string collation = 3 [(.google.api.field_behavior) = OPTIONAL];</code>
+     * <code>
+     * string collation = 3 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
      *
      * @param value The bytes for collation to set.
      * @return This builder for chaining.
@@ -976,6 +1240,339 @@ public final class Database extends com.google.protobuf.GeneratedMessageV3
       checkByteStringIsUtf8(value);
       collation_ = value;
       bitField0_ |= 0x00000004;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object characterType_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. lc_ctype for the database.
+     * Character classification (What is a letter? The upper-case equivalent?).
+     * Example values include "C", "POSIX", etc.
+     * </pre>
+     *
+     * <code>
+     * string character_type = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The characterType.
+     */
+    public java.lang.String getCharacterType() {
+      java.lang.Object ref = characterType_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        characterType_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. lc_ctype for the database.
+     * Character classification (What is a letter? The upper-case equivalent?).
+     * Example values include "C", "POSIX", etc.
+     * </pre>
+     *
+     * <code>
+     * string character_type = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The bytes for characterType.
+     */
+    public com.google.protobuf.ByteString getCharacterTypeBytes() {
+      java.lang.Object ref = characterType_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        characterType_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. lc_ctype for the database.
+     * Character classification (What is a letter? The upper-case equivalent?).
+     * Example values include "C", "POSIX", etc.
+     * </pre>
+     *
+     * <code>
+     * string character_type = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The characterType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCharacterType(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      characterType_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. lc_ctype for the database.
+     * Character classification (What is a letter? The upper-case equivalent?).
+     * Example values include "C", "POSIX", etc.
+     * </pre>
+     *
+     * <code>
+     * string character_type = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearCharacterType() {
+      characterType_ = getDefaultInstance().getCharacterType();
+      bitField0_ = (bitField0_ & ~0x00000008);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Immutable. lc_ctype for the database.
+     * Character classification (What is a letter? The upper-case equivalent?).
+     * Example values include "C", "POSIX", etc.
+     * </pre>
+     *
+     * <code>
+     * string character_type = 4 [(.google.api.field_behavior) = OPTIONAL, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The bytes for characterType to set.
+     * @return This builder for chaining.
+     */
+    public Builder setCharacterTypeBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      characterType_ = value;
+      bitField0_ |= 0x00000008;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object databaseTemplate_ = "";
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Immutable. Template of the database to be used for creating a
+     * new database.
+     * </pre>
+     *
+     * <code>
+     * string database_template = 6 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The databaseTemplate.
+     */
+    public java.lang.String getDatabaseTemplate() {
+      java.lang.Object ref = databaseTemplate_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        databaseTemplate_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Immutable. Template of the database to be used for creating a
+     * new database.
+     * </pre>
+     *
+     * <code>
+     * string database_template = 6 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return The bytes for databaseTemplate.
+     */
+    public com.google.protobuf.ByteString getDatabaseTemplateBytes() {
+      java.lang.Object ref = databaseTemplate_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        databaseTemplate_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Immutable. Template of the database to be used for creating a
+     * new database.
+     * </pre>
+     *
+     * <code>
+     * string database_template = 6 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The databaseTemplate to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDatabaseTemplate(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      databaseTemplate_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Immutable. Template of the database to be used for creating a
+     * new database.
+     * </pre>
+     *
+     * <code>
+     * string database_template = 6 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearDatabaseTemplate() {
+      databaseTemplate_ = getDefaultInstance().getDatabaseTemplate();
+      bitField0_ = (bitField0_ & ~0x00000010);
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Input only. Immutable. Template of the database to be used for creating a
+     * new database.
+     * </pre>
+     *
+     * <code>
+     * string database_template = 6 [(.google.api.field_behavior) = INPUT_ONLY, (.google.api.field_behavior) = IMMUTABLE];
+     * </code>
+     *
+     * @param value The bytes for databaseTemplate to set.
+     * @return This builder for chaining.
+     */
+    public Builder setDatabaseTemplateBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      databaseTemplate_ = value;
+      bitField0_ |= 0x00000010;
+      onChanged();
+      return this;
+    }
+
+    private boolean isTemplateDatabase_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether the database is a template database.
+     * </pre>
+     *
+     * <code>optional bool is_template_database = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the isTemplateDatabase field is set.
+     */
+    @java.lang.Override
+    public boolean hasIsTemplateDatabase() {
+      return ((bitField0_ & 0x00000020) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether the database is a template database.
+     * </pre>
+     *
+     * <code>optional bool is_template_database = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The isTemplateDatabase.
+     */
+    @java.lang.Override
+    public boolean getIsTemplateDatabase() {
+      return isTemplateDatabase_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether the database is a template database.
+     * </pre>
+     *
+     * <code>optional bool is_template_database = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @param value The isTemplateDatabase to set.
+     * @return This builder for chaining.
+     */
+    public Builder setIsTemplateDatabase(boolean value) {
+
+      isTemplateDatabase_ = value;
+      bitField0_ |= 0x00000020;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether the database is a template database.
+     * </pre>
+     *
+     * <code>optional bool is_template_database = 7 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearIsTemplateDatabase() {
+      bitField0_ = (bitField0_ & ~0x00000020);
+      isTemplateDatabase_ = false;
       onChanged();
       return this;
     }

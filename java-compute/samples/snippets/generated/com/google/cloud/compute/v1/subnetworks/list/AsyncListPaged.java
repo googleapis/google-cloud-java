@@ -45,6 +45,7 @@ public class AsyncListPaged {
               .setProject("project-309310695")
               .setRegion("region-934795532")
               .setReturnPartialSuccess(true)
+              .setViews("views112204398")
               .build();
       while (true) {
         SubnetworkList response = subnetworksClient.listCallable().call(request);

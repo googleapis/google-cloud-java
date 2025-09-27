@@ -169,6 +169,50 @@ public final class UpgradeClusterStatus extends com.google.protobuf.GeneratedMes
      */
     com.google.cloud.alloydb.v1.UpgradeClusterResponse.Status getState();
 
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timing information for the stage execution.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule schedule = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the schedule field is set.
+     */
+    boolean hasSchedule();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timing information for the stage execution.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule schedule = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The schedule.
+     */
+    com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule getSchedule();
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timing information for the stage execution.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule schedule = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageScheduleOrBuilder
+        getScheduleOrBuilder();
+
     com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSpecificStatusCase
         getStageSpecificStatusCase();
   }
@@ -219,6 +263,1799 @@ public final class UpgradeClusterStatus extends com.google.protobuf.GeneratedMes
               com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.Builder.class);
     }
 
+    public interface StageScheduleOrBuilder
+        extends
+        // @@protoc_insertion_point(interface_extends:google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule)
+        com.google.protobuf.MessageOrBuilder {
+
+      /**
+       *
+       *
+       * <pre>
+       * When the stage is expected to start. Set only if the stage has not
+       * started yet.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp estimated_start_time = 1;</code>
+       *
+       * @return Whether the estimatedStartTime field is set.
+       */
+      boolean hasEstimatedStartTime();
+
+      /**
+       *
+       *
+       * <pre>
+       * When the stage is expected to start. Set only if the stage has not
+       * started yet.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp estimated_start_time = 1;</code>
+       *
+       * @return The estimatedStartTime.
+       */
+      com.google.protobuf.Timestamp getEstimatedStartTime();
+
+      /**
+       *
+       *
+       * <pre>
+       * When the stage is expected to start. Set only if the stage has not
+       * started yet.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp estimated_start_time = 1;</code>
+       */
+      com.google.protobuf.TimestampOrBuilder getEstimatedStartTimeOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * Actual start time of the stage. Set only if the stage has started.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp actual_start_time = 2;</code>
+       *
+       * @return Whether the actualStartTime field is set.
+       */
+      boolean hasActualStartTime();
+
+      /**
+       *
+       *
+       * <pre>
+       * Actual start time of the stage. Set only if the stage has started.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp actual_start_time = 2;</code>
+       *
+       * @return The actualStartTime.
+       */
+      com.google.protobuf.Timestamp getActualStartTime();
+
+      /**
+       *
+       *
+       * <pre>
+       * Actual start time of the stage. Set only if the stage has started.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp actual_start_time = 2;</code>
+       */
+      com.google.protobuf.TimestampOrBuilder getActualStartTimeOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * When the stage is expected to end. Set only if the stage has not
+       * completed yet.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp estimated_end_time = 3;</code>
+       *
+       * @return Whether the estimatedEndTime field is set.
+       */
+      boolean hasEstimatedEndTime();
+
+      /**
+       *
+       *
+       * <pre>
+       * When the stage is expected to end. Set only if the stage has not
+       * completed yet.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp estimated_end_time = 3;</code>
+       *
+       * @return The estimatedEndTime.
+       */
+      com.google.protobuf.Timestamp getEstimatedEndTime();
+
+      /**
+       *
+       *
+       * <pre>
+       * When the stage is expected to end. Set only if the stage has not
+       * completed yet.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp estimated_end_time = 3;</code>
+       */
+      com.google.protobuf.TimestampOrBuilder getEstimatedEndTimeOrBuilder();
+
+      /**
+       *
+       *
+       * <pre>
+       * Actual end time of the stage. Set only if the stage has completed.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp actual_end_time = 4;</code>
+       *
+       * @return Whether the actualEndTime field is set.
+       */
+      boolean hasActualEndTime();
+
+      /**
+       *
+       *
+       * <pre>
+       * Actual end time of the stage. Set only if the stage has completed.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp actual_end_time = 4;</code>
+       *
+       * @return The actualEndTime.
+       */
+      com.google.protobuf.Timestamp getActualEndTime();
+
+      /**
+       *
+       *
+       * <pre>
+       * Actual end time of the stage. Set only if the stage has completed.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp actual_end_time = 4;</code>
+       */
+      com.google.protobuf.TimestampOrBuilder getActualEndTimeOrBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Timing information for the stage execution.
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule}
+     */
+    public static final class StageSchedule extends com.google.protobuf.GeneratedMessageV3
+        implements
+        // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule)
+        StageScheduleOrBuilder {
+      private static final long serialVersionUID = 0L;
+
+      // Use StageSchedule.newBuilder() to construct.
+      private StageSchedule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+        super(builder);
+      }
+
+      private StageSchedule() {}
+
+      @java.lang.Override
+      @SuppressWarnings({"unused"})
+      protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+        return new StageSchedule();
+      }
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.alloydb.v1.ServiceProto
+            .internal_static_google_cloud_alloydb_v1_UpgradeClusterStatus_StageStatus_StageSchedule_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.alloydb.v1.ServiceProto
+            .internal_static_google_cloud_alloydb_v1_UpgradeClusterStatus_StageStatus_StageSchedule_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule.class,
+                com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule.Builder
+                    .class);
+      }
+
+      private int bitField0_;
+      public static final int ESTIMATED_START_TIME_FIELD_NUMBER = 1;
+      private com.google.protobuf.Timestamp estimatedStartTime_;
+
+      /**
+       *
+       *
+       * <pre>
+       * When the stage is expected to start. Set only if the stage has not
+       * started yet.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp estimated_start_time = 1;</code>
+       *
+       * @return Whether the estimatedStartTime field is set.
+       */
+      @java.lang.Override
+      public boolean hasEstimatedStartTime() {
+        return ((bitField0_ & 0x00000001) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * When the stage is expected to start. Set only if the stage has not
+       * started yet.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp estimated_start_time = 1;</code>
+       *
+       * @return The estimatedStartTime.
+       */
+      @java.lang.Override
+      public com.google.protobuf.Timestamp getEstimatedStartTime() {
+        return estimatedStartTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : estimatedStartTime_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * When the stage is expected to start. Set only if the stage has not
+       * started yet.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp estimated_start_time = 1;</code>
+       */
+      @java.lang.Override
+      public com.google.protobuf.TimestampOrBuilder getEstimatedStartTimeOrBuilder() {
+        return estimatedStartTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : estimatedStartTime_;
+      }
+
+      public static final int ACTUAL_START_TIME_FIELD_NUMBER = 2;
+      private com.google.protobuf.Timestamp actualStartTime_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Actual start time of the stage. Set only if the stage has started.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp actual_start_time = 2;</code>
+       *
+       * @return Whether the actualStartTime field is set.
+       */
+      @java.lang.Override
+      public boolean hasActualStartTime() {
+        return ((bitField0_ & 0x00000002) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Actual start time of the stage. Set only if the stage has started.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp actual_start_time = 2;</code>
+       *
+       * @return The actualStartTime.
+       */
+      @java.lang.Override
+      public com.google.protobuf.Timestamp getActualStartTime() {
+        return actualStartTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : actualStartTime_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Actual start time of the stage. Set only if the stage has started.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp actual_start_time = 2;</code>
+       */
+      @java.lang.Override
+      public com.google.protobuf.TimestampOrBuilder getActualStartTimeOrBuilder() {
+        return actualStartTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : actualStartTime_;
+      }
+
+      public static final int ESTIMATED_END_TIME_FIELD_NUMBER = 3;
+      private com.google.protobuf.Timestamp estimatedEndTime_;
+
+      /**
+       *
+       *
+       * <pre>
+       * When the stage is expected to end. Set only if the stage has not
+       * completed yet.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp estimated_end_time = 3;</code>
+       *
+       * @return Whether the estimatedEndTime field is set.
+       */
+      @java.lang.Override
+      public boolean hasEstimatedEndTime() {
+        return ((bitField0_ & 0x00000004) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * When the stage is expected to end. Set only if the stage has not
+       * completed yet.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp estimated_end_time = 3;</code>
+       *
+       * @return The estimatedEndTime.
+       */
+      @java.lang.Override
+      public com.google.protobuf.Timestamp getEstimatedEndTime() {
+        return estimatedEndTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : estimatedEndTime_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * When the stage is expected to end. Set only if the stage has not
+       * completed yet.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp estimated_end_time = 3;</code>
+       */
+      @java.lang.Override
+      public com.google.protobuf.TimestampOrBuilder getEstimatedEndTimeOrBuilder() {
+        return estimatedEndTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : estimatedEndTime_;
+      }
+
+      public static final int ACTUAL_END_TIME_FIELD_NUMBER = 4;
+      private com.google.protobuf.Timestamp actualEndTime_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Actual end time of the stage. Set only if the stage has completed.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp actual_end_time = 4;</code>
+       *
+       * @return Whether the actualEndTime field is set.
+       */
+      @java.lang.Override
+      public boolean hasActualEndTime() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Actual end time of the stage. Set only if the stage has completed.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp actual_end_time = 4;</code>
+       *
+       * @return The actualEndTime.
+       */
+      @java.lang.Override
+      public com.google.protobuf.Timestamp getActualEndTime() {
+        return actualEndTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : actualEndTime_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Actual end time of the stage. Set only if the stage has completed.
+       * </pre>
+       *
+       * <code>.google.protobuf.Timestamp actual_end_time = 4;</code>
+       */
+      @java.lang.Override
+      public com.google.protobuf.TimestampOrBuilder getActualEndTimeOrBuilder() {
+        return actualEndTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : actualEndTime_;
+      }
+
+      private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        byte isInitialized = memoizedIsInitialized;
+        if (isInitialized == 1) return true;
+        if (isInitialized == 0) return false;
+
+        memoizedIsInitialized = 1;
+        return true;
+      }
+
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+        if (((bitField0_ & 0x00000001) != 0)) {
+          output.writeMessage(1, getEstimatedStartTime());
+        }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          output.writeMessage(2, getActualStartTime());
+        }
+        if (((bitField0_ & 0x00000004) != 0)) {
+          output.writeMessage(3, getEstimatedEndTime());
+        }
+        if (((bitField0_ & 0x00000008) != 0)) {
+          output.writeMessage(4, getActualEndTime());
+        }
+        getUnknownFields().writeTo(output);
+      }
+
+      @java.lang.Override
+      public int getSerializedSize() {
+        int size = memoizedSize;
+        if (size != -1) return size;
+
+        size = 0;
+        if (((bitField0_ & 0x00000001) != 0)) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(1, getEstimatedStartTime());
+        }
+        if (((bitField0_ & 0x00000002) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getActualStartTime());
+        }
+        if (((bitField0_ & 0x00000004) != 0)) {
+          size +=
+              com.google.protobuf.CodedOutputStream.computeMessageSize(3, getEstimatedEndTime());
+        }
+        if (((bitField0_ & 0x00000008) != 0)) {
+          size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getActualEndTime());
+        }
+        size += getUnknownFields().getSerializedSize();
+        memoizedSize = size;
+        return size;
+      }
+
+      @java.lang.Override
+      public boolean equals(final java.lang.Object obj) {
+        if (obj == this) {
+          return true;
+        }
+        if (!(obj
+            instanceof
+            com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule)) {
+          return super.equals(obj);
+        }
+        com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule other =
+            (com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule) obj;
+
+        if (hasEstimatedStartTime() != other.hasEstimatedStartTime()) return false;
+        if (hasEstimatedStartTime()) {
+          if (!getEstimatedStartTime().equals(other.getEstimatedStartTime())) return false;
+        }
+        if (hasActualStartTime() != other.hasActualStartTime()) return false;
+        if (hasActualStartTime()) {
+          if (!getActualStartTime().equals(other.getActualStartTime())) return false;
+        }
+        if (hasEstimatedEndTime() != other.hasEstimatedEndTime()) return false;
+        if (hasEstimatedEndTime()) {
+          if (!getEstimatedEndTime().equals(other.getEstimatedEndTime())) return false;
+        }
+        if (hasActualEndTime() != other.hasActualEndTime()) return false;
+        if (hasActualEndTime()) {
+          if (!getActualEndTime().equals(other.getActualEndTime())) return false;
+        }
+        if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+        return true;
+      }
+
+      @java.lang.Override
+      public int hashCode() {
+        if (memoizedHashCode != 0) {
+          return memoizedHashCode;
+        }
+        int hash = 41;
+        hash = (19 * hash) + getDescriptor().hashCode();
+        if (hasEstimatedStartTime()) {
+          hash = (37 * hash) + ESTIMATED_START_TIME_FIELD_NUMBER;
+          hash = (53 * hash) + getEstimatedStartTime().hashCode();
+        }
+        if (hasActualStartTime()) {
+          hash = (37 * hash) + ACTUAL_START_TIME_FIELD_NUMBER;
+          hash = (53 * hash) + getActualStartTime().hashCode();
+        }
+        if (hasEstimatedEndTime()) {
+          hash = (37 * hash) + ESTIMATED_END_TIME_FIELD_NUMBER;
+          hash = (53 * hash) + getEstimatedEndTime().hashCode();
+        }
+        if (hasActualEndTime()) {
+          hash = (37 * hash) + ACTUAL_END_TIME_FIELD_NUMBER;
+          hash = (53 * hash) + getActualEndTime().hashCode();
+        }
+        hash = (29 * hash) + getUnknownFields().hashCode();
+        memoizedHashCode = hash;
+        return hash;
+      }
+
+      public static com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
+      public static Builder newBuilder() {
+        return DEFAULT_INSTANCE.toBuilder();
+      }
+
+      public static Builder newBuilder(
+          com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule prototype) {
+        return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+      }
+
+      @java.lang.Override
+      public Builder toBuilder() {
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+      }
+
+      @java.lang.Override
+      protected Builder newBuilderForType(
+          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        Builder builder = new Builder(parent);
+        return builder;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Timing information for the stage execution.
+       * </pre>
+       *
+       * Protobuf type {@code
+       * google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule}
+       */
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
+          // @@protoc_insertion_point(builder_implements:google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule)
+          com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageScheduleOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.alloydb.v1.ServiceProto
+              .internal_static_google_cloud_alloydb_v1_UpgradeClusterStatus_StageStatus_StageSchedule_descriptor;
+        }
+
+        @java.lang.Override
+        protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+            internalGetFieldAccessorTable() {
+          return com.google.cloud.alloydb.v1.ServiceProto
+              .internal_static_google_cloud_alloydb_v1_UpgradeClusterStatus_StageStatus_StageSchedule_fieldAccessorTable
+              .ensureFieldAccessorsInitialized(
+                  com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule.class,
+                  com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule.Builder
+                      .class);
+        }
+
+        // Construct using
+        // com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule.newBuilder()
+        private Builder() {
+          maybeForceBuilderInitialization();
+        }
+
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+          super(parent);
+          maybeForceBuilderInitialization();
+        }
+
+        private void maybeForceBuilderInitialization() {
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+            getEstimatedStartTimeFieldBuilder();
+            getActualStartTimeFieldBuilder();
+            getEstimatedEndTimeFieldBuilder();
+            getActualEndTimeFieldBuilder();
+          }
+        }
+
+        @java.lang.Override
+        public Builder clear() {
+          super.clear();
+          bitField0_ = 0;
+          estimatedStartTime_ = null;
+          if (estimatedStartTimeBuilder_ != null) {
+            estimatedStartTimeBuilder_.dispose();
+            estimatedStartTimeBuilder_ = null;
+          }
+          actualStartTime_ = null;
+          if (actualStartTimeBuilder_ != null) {
+            actualStartTimeBuilder_.dispose();
+            actualStartTimeBuilder_ = null;
+          }
+          estimatedEndTime_ = null;
+          if (estimatedEndTimeBuilder_ != null) {
+            estimatedEndTimeBuilder_.dispose();
+            estimatedEndTimeBuilder_ = null;
+          }
+          actualEndTime_ = null;
+          if (actualEndTimeBuilder_ != null) {
+            actualEndTimeBuilder_.dispose();
+            actualEndTimeBuilder_ = null;
+          }
+          return this;
+        }
+
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.alloydb.v1.ServiceProto
+              .internal_static_google_cloud_alloydb_v1_UpgradeClusterStatus_StageStatus_StageSchedule_descriptor;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule
+            getDefaultInstanceForType() {
+          return com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule
+              .getDefaultInstance();
+        }
+
+        @java.lang.Override
+        public com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule build() {
+          com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule result =
+              buildPartial();
+          if (!result.isInitialized()) {
+            throw newUninitializedMessageException(result);
+          }
+          return result;
+        }
+
+        @java.lang.Override
+        public com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule
+            buildPartial() {
+          com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule result =
+              new com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule(this);
+          if (bitField0_ != 0) {
+            buildPartial0(result);
+          }
+          onBuilt();
+          return result;
+        }
+
+        private void buildPartial0(
+            com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule result) {
+          int from_bitField0_ = bitField0_;
+          int to_bitField0_ = 0;
+          if (((from_bitField0_ & 0x00000001) != 0)) {
+            result.estimatedStartTime_ =
+                estimatedStartTimeBuilder_ == null
+                    ? estimatedStartTime_
+                    : estimatedStartTimeBuilder_.build();
+            to_bitField0_ |= 0x00000001;
+          }
+          if (((from_bitField0_ & 0x00000002) != 0)) {
+            result.actualStartTime_ =
+                actualStartTimeBuilder_ == null
+                    ? actualStartTime_
+                    : actualStartTimeBuilder_.build();
+            to_bitField0_ |= 0x00000002;
+          }
+          if (((from_bitField0_ & 0x00000004) != 0)) {
+            result.estimatedEndTime_ =
+                estimatedEndTimeBuilder_ == null
+                    ? estimatedEndTime_
+                    : estimatedEndTimeBuilder_.build();
+            to_bitField0_ |= 0x00000004;
+          }
+          if (((from_bitField0_ & 0x00000008) != 0)) {
+            result.actualEndTime_ =
+                actualEndTimeBuilder_ == null ? actualEndTime_ : actualEndTimeBuilder_.build();
+            to_bitField0_ |= 0x00000008;
+          }
+          result.bitField0_ |= to_bitField0_;
+        }
+
+        @java.lang.Override
+        public Builder clone() {
+          return super.clone();
+        }
+
+        @java.lang.Override
+        public Builder setField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.setField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+          return super.clearField(field);
+        }
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+          return super.clearOneof(oneof);
+        }
+
+        @java.lang.Override
+        public Builder setRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field,
+            int index,
+            java.lang.Object value) {
+          return super.setRepeatedField(field, index, value);
+        }
+
+        @java.lang.Override
+        public Builder addRepeatedField(
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+          return super.addRepeatedField(field, value);
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(com.google.protobuf.Message other) {
+          if (other
+              instanceof
+              com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule) {
+            return mergeFrom(
+                (com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule) other);
+          } else {
+            super.mergeFrom(other);
+            return this;
+          }
+        }
+
+        public Builder mergeFrom(
+            com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule other) {
+          if (other
+              == com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule
+                  .getDefaultInstance()) return this;
+          if (other.hasEstimatedStartTime()) {
+            mergeEstimatedStartTime(other.getEstimatedStartTime());
+          }
+          if (other.hasActualStartTime()) {
+            mergeActualStartTime(other.getActualStartTime());
+          }
+          if (other.hasEstimatedEndTime()) {
+            mergeEstimatedEndTime(other.getEstimatedEndTime());
+          }
+          if (other.hasActualEndTime()) {
+            mergeActualEndTime(other.getActualEndTime());
+          }
+          this.mergeUnknownFields(other.getUnknownFields());
+          onChanged();
+          return this;
+        }
+
+        @java.lang.Override
+        public final boolean isInitialized() {
+          return true;
+        }
+
+        @java.lang.Override
+        public Builder mergeFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+          if (extensionRegistry == null) {
+            throw new java.lang.NullPointerException();
+          }
+          try {
+            boolean done = false;
+            while (!done) {
+              int tag = input.readTag();
+              switch (tag) {
+                case 0:
+                  done = true;
+                  break;
+                case 10:
+                  {
+                    input.readMessage(
+                        getEstimatedStartTimeFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000001;
+                    break;
+                  } // case 10
+                case 18:
+                  {
+                    input.readMessage(
+                        getActualStartTimeFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000002;
+                    break;
+                  } // case 18
+                case 26:
+                  {
+                    input.readMessage(
+                        getEstimatedEndTimeFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000004;
+                    break;
+                  } // case 26
+                case 34:
+                  {
+                    input.readMessage(
+                        getActualEndTimeFieldBuilder().getBuilder(), extensionRegistry);
+                    bitField0_ |= 0x00000008;
+                    break;
+                  } // case 34
+                default:
+                  {
+                    if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                      done = true; // was an endgroup tag
+                    }
+                    break;
+                  } // default:
+              } // switch (tag)
+            } // while (!done)
+          } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+            throw e.unwrapIOException();
+          } finally {
+            onChanged();
+          } // finally
+          return this;
+        }
+
+        private int bitField0_;
+
+        private com.google.protobuf.Timestamp estimatedStartTime_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>
+            estimatedStartTimeBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * When the stage is expected to start. Set only if the stage has not
+         * started yet.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp estimated_start_time = 1;</code>
+         *
+         * @return Whether the estimatedStartTime field is set.
+         */
+        public boolean hasEstimatedStartTime() {
+          return ((bitField0_ & 0x00000001) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * When the stage is expected to start. Set only if the stage has not
+         * started yet.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp estimated_start_time = 1;</code>
+         *
+         * @return The estimatedStartTime.
+         */
+        public com.google.protobuf.Timestamp getEstimatedStartTime() {
+          if (estimatedStartTimeBuilder_ == null) {
+            return estimatedStartTime_ == null
+                ? com.google.protobuf.Timestamp.getDefaultInstance()
+                : estimatedStartTime_;
+          } else {
+            return estimatedStartTimeBuilder_.getMessage();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * When the stage is expected to start. Set only if the stage has not
+         * started yet.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp estimated_start_time = 1;</code>
+         */
+        public Builder setEstimatedStartTime(com.google.protobuf.Timestamp value) {
+          if (estimatedStartTimeBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            estimatedStartTime_ = value;
+          } else {
+            estimatedStartTimeBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * When the stage is expected to start. Set only if the stage has not
+         * started yet.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp estimated_start_time = 1;</code>
+         */
+        public Builder setEstimatedStartTime(
+            com.google.protobuf.Timestamp.Builder builderForValue) {
+          if (estimatedStartTimeBuilder_ == null) {
+            estimatedStartTime_ = builderForValue.build();
+          } else {
+            estimatedStartTimeBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * When the stage is expected to start. Set only if the stage has not
+         * started yet.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp estimated_start_time = 1;</code>
+         */
+        public Builder mergeEstimatedStartTime(com.google.protobuf.Timestamp value) {
+          if (estimatedStartTimeBuilder_ == null) {
+            if (((bitField0_ & 0x00000001) != 0)
+                && estimatedStartTime_ != null
+                && estimatedStartTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+              getEstimatedStartTimeBuilder().mergeFrom(value);
+            } else {
+              estimatedStartTime_ = value;
+            }
+          } else {
+            estimatedStartTimeBuilder_.mergeFrom(value);
+          }
+          if (estimatedStartTime_ != null) {
+            bitField0_ |= 0x00000001;
+            onChanged();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * When the stage is expected to start. Set only if the stage has not
+         * started yet.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp estimated_start_time = 1;</code>
+         */
+        public Builder clearEstimatedStartTime() {
+          bitField0_ = (bitField0_ & ~0x00000001);
+          estimatedStartTime_ = null;
+          if (estimatedStartTimeBuilder_ != null) {
+            estimatedStartTimeBuilder_.dispose();
+            estimatedStartTimeBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * When the stage is expected to start. Set only if the stage has not
+         * started yet.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp estimated_start_time = 1;</code>
+         */
+        public com.google.protobuf.Timestamp.Builder getEstimatedStartTimeBuilder() {
+          bitField0_ |= 0x00000001;
+          onChanged();
+          return getEstimatedStartTimeFieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * When the stage is expected to start. Set only if the stage has not
+         * started yet.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp estimated_start_time = 1;</code>
+         */
+        public com.google.protobuf.TimestampOrBuilder getEstimatedStartTimeOrBuilder() {
+          if (estimatedStartTimeBuilder_ != null) {
+            return estimatedStartTimeBuilder_.getMessageOrBuilder();
+          } else {
+            return estimatedStartTime_ == null
+                ? com.google.protobuf.Timestamp.getDefaultInstance()
+                : estimatedStartTime_;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * When the stage is expected to start. Set only if the stage has not
+         * started yet.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp estimated_start_time = 1;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>
+            getEstimatedStartTimeFieldBuilder() {
+          if (estimatedStartTimeBuilder_ == null) {
+            estimatedStartTimeBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.protobuf.Timestamp,
+                    com.google.protobuf.Timestamp.Builder,
+                    com.google.protobuf.TimestampOrBuilder>(
+                    getEstimatedStartTime(), getParentForChildren(), isClean());
+            estimatedStartTime_ = null;
+          }
+          return estimatedStartTimeBuilder_;
+        }
+
+        private com.google.protobuf.Timestamp actualStartTime_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>
+            actualStartTimeBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Actual start time of the stage. Set only if the stage has started.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp actual_start_time = 2;</code>
+         *
+         * @return Whether the actualStartTime field is set.
+         */
+        public boolean hasActualStartTime() {
+          return ((bitField0_ & 0x00000002) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Actual start time of the stage. Set only if the stage has started.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp actual_start_time = 2;</code>
+         *
+         * @return The actualStartTime.
+         */
+        public com.google.protobuf.Timestamp getActualStartTime() {
+          if (actualStartTimeBuilder_ == null) {
+            return actualStartTime_ == null
+                ? com.google.protobuf.Timestamp.getDefaultInstance()
+                : actualStartTime_;
+          } else {
+            return actualStartTimeBuilder_.getMessage();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Actual start time of the stage. Set only if the stage has started.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp actual_start_time = 2;</code>
+         */
+        public Builder setActualStartTime(com.google.protobuf.Timestamp value) {
+          if (actualStartTimeBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            actualStartTime_ = value;
+          } else {
+            actualStartTimeBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Actual start time of the stage. Set only if the stage has started.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp actual_start_time = 2;</code>
+         */
+        public Builder setActualStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+          if (actualStartTimeBuilder_ == null) {
+            actualStartTime_ = builderForValue.build();
+          } else {
+            actualStartTimeBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Actual start time of the stage. Set only if the stage has started.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp actual_start_time = 2;</code>
+         */
+        public Builder mergeActualStartTime(com.google.protobuf.Timestamp value) {
+          if (actualStartTimeBuilder_ == null) {
+            if (((bitField0_ & 0x00000002) != 0)
+                && actualStartTime_ != null
+                && actualStartTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+              getActualStartTimeBuilder().mergeFrom(value);
+            } else {
+              actualStartTime_ = value;
+            }
+          } else {
+            actualStartTimeBuilder_.mergeFrom(value);
+          }
+          if (actualStartTime_ != null) {
+            bitField0_ |= 0x00000002;
+            onChanged();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Actual start time of the stage. Set only if the stage has started.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp actual_start_time = 2;</code>
+         */
+        public Builder clearActualStartTime() {
+          bitField0_ = (bitField0_ & ~0x00000002);
+          actualStartTime_ = null;
+          if (actualStartTimeBuilder_ != null) {
+            actualStartTimeBuilder_.dispose();
+            actualStartTimeBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Actual start time of the stage. Set only if the stage has started.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp actual_start_time = 2;</code>
+         */
+        public com.google.protobuf.Timestamp.Builder getActualStartTimeBuilder() {
+          bitField0_ |= 0x00000002;
+          onChanged();
+          return getActualStartTimeFieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Actual start time of the stage. Set only if the stage has started.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp actual_start_time = 2;</code>
+         */
+        public com.google.protobuf.TimestampOrBuilder getActualStartTimeOrBuilder() {
+          if (actualStartTimeBuilder_ != null) {
+            return actualStartTimeBuilder_.getMessageOrBuilder();
+          } else {
+            return actualStartTime_ == null
+                ? com.google.protobuf.Timestamp.getDefaultInstance()
+                : actualStartTime_;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Actual start time of the stage. Set only if the stage has started.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp actual_start_time = 2;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>
+            getActualStartTimeFieldBuilder() {
+          if (actualStartTimeBuilder_ == null) {
+            actualStartTimeBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.protobuf.Timestamp,
+                    com.google.protobuf.Timestamp.Builder,
+                    com.google.protobuf.TimestampOrBuilder>(
+                    getActualStartTime(), getParentForChildren(), isClean());
+            actualStartTime_ = null;
+          }
+          return actualStartTimeBuilder_;
+        }
+
+        private com.google.protobuf.Timestamp estimatedEndTime_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>
+            estimatedEndTimeBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * When the stage is expected to end. Set only if the stage has not
+         * completed yet.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp estimated_end_time = 3;</code>
+         *
+         * @return Whether the estimatedEndTime field is set.
+         */
+        public boolean hasEstimatedEndTime() {
+          return ((bitField0_ & 0x00000004) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * When the stage is expected to end. Set only if the stage has not
+         * completed yet.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp estimated_end_time = 3;</code>
+         *
+         * @return The estimatedEndTime.
+         */
+        public com.google.protobuf.Timestamp getEstimatedEndTime() {
+          if (estimatedEndTimeBuilder_ == null) {
+            return estimatedEndTime_ == null
+                ? com.google.protobuf.Timestamp.getDefaultInstance()
+                : estimatedEndTime_;
+          } else {
+            return estimatedEndTimeBuilder_.getMessage();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * When the stage is expected to end. Set only if the stage has not
+         * completed yet.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp estimated_end_time = 3;</code>
+         */
+        public Builder setEstimatedEndTime(com.google.protobuf.Timestamp value) {
+          if (estimatedEndTimeBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            estimatedEndTime_ = value;
+          } else {
+            estimatedEndTimeBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * When the stage is expected to end. Set only if the stage has not
+         * completed yet.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp estimated_end_time = 3;</code>
+         */
+        public Builder setEstimatedEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+          if (estimatedEndTimeBuilder_ == null) {
+            estimatedEndTime_ = builderForValue.build();
+          } else {
+            estimatedEndTimeBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * When the stage is expected to end. Set only if the stage has not
+         * completed yet.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp estimated_end_time = 3;</code>
+         */
+        public Builder mergeEstimatedEndTime(com.google.protobuf.Timestamp value) {
+          if (estimatedEndTimeBuilder_ == null) {
+            if (((bitField0_ & 0x00000004) != 0)
+                && estimatedEndTime_ != null
+                && estimatedEndTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+              getEstimatedEndTimeBuilder().mergeFrom(value);
+            } else {
+              estimatedEndTime_ = value;
+            }
+          } else {
+            estimatedEndTimeBuilder_.mergeFrom(value);
+          }
+          if (estimatedEndTime_ != null) {
+            bitField0_ |= 0x00000004;
+            onChanged();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * When the stage is expected to end. Set only if the stage has not
+         * completed yet.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp estimated_end_time = 3;</code>
+         */
+        public Builder clearEstimatedEndTime() {
+          bitField0_ = (bitField0_ & ~0x00000004);
+          estimatedEndTime_ = null;
+          if (estimatedEndTimeBuilder_ != null) {
+            estimatedEndTimeBuilder_.dispose();
+            estimatedEndTimeBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * When the stage is expected to end. Set only if the stage has not
+         * completed yet.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp estimated_end_time = 3;</code>
+         */
+        public com.google.protobuf.Timestamp.Builder getEstimatedEndTimeBuilder() {
+          bitField0_ |= 0x00000004;
+          onChanged();
+          return getEstimatedEndTimeFieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * When the stage is expected to end. Set only if the stage has not
+         * completed yet.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp estimated_end_time = 3;</code>
+         */
+        public com.google.protobuf.TimestampOrBuilder getEstimatedEndTimeOrBuilder() {
+          if (estimatedEndTimeBuilder_ != null) {
+            return estimatedEndTimeBuilder_.getMessageOrBuilder();
+          } else {
+            return estimatedEndTime_ == null
+                ? com.google.protobuf.Timestamp.getDefaultInstance()
+                : estimatedEndTime_;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * When the stage is expected to end. Set only if the stage has not
+         * completed yet.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp estimated_end_time = 3;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>
+            getEstimatedEndTimeFieldBuilder() {
+          if (estimatedEndTimeBuilder_ == null) {
+            estimatedEndTimeBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.protobuf.Timestamp,
+                    com.google.protobuf.Timestamp.Builder,
+                    com.google.protobuf.TimestampOrBuilder>(
+                    getEstimatedEndTime(), getParentForChildren(), isClean());
+            estimatedEndTime_ = null;
+          }
+          return estimatedEndTimeBuilder_;
+        }
+
+        private com.google.protobuf.Timestamp actualEndTime_;
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>
+            actualEndTimeBuilder_;
+
+        /**
+         *
+         *
+         * <pre>
+         * Actual end time of the stage. Set only if the stage has completed.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp actual_end_time = 4;</code>
+         *
+         * @return Whether the actualEndTime field is set.
+         */
+        public boolean hasActualEndTime() {
+          return ((bitField0_ & 0x00000008) != 0);
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Actual end time of the stage. Set only if the stage has completed.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp actual_end_time = 4;</code>
+         *
+         * @return The actualEndTime.
+         */
+        public com.google.protobuf.Timestamp getActualEndTime() {
+          if (actualEndTimeBuilder_ == null) {
+            return actualEndTime_ == null
+                ? com.google.protobuf.Timestamp.getDefaultInstance()
+                : actualEndTime_;
+          } else {
+            return actualEndTimeBuilder_.getMessage();
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Actual end time of the stage. Set only if the stage has completed.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp actual_end_time = 4;</code>
+         */
+        public Builder setActualEndTime(com.google.protobuf.Timestamp value) {
+          if (actualEndTimeBuilder_ == null) {
+            if (value == null) {
+              throw new NullPointerException();
+            }
+            actualEndTime_ = value;
+          } else {
+            actualEndTimeBuilder_.setMessage(value);
+          }
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Actual end time of the stage. Set only if the stage has completed.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp actual_end_time = 4;</code>
+         */
+        public Builder setActualEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
+          if (actualEndTimeBuilder_ == null) {
+            actualEndTime_ = builderForValue.build();
+          } else {
+            actualEndTimeBuilder_.setMessage(builderForValue.build());
+          }
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Actual end time of the stage. Set only if the stage has completed.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp actual_end_time = 4;</code>
+         */
+        public Builder mergeActualEndTime(com.google.protobuf.Timestamp value) {
+          if (actualEndTimeBuilder_ == null) {
+            if (((bitField0_ & 0x00000008) != 0)
+                && actualEndTime_ != null
+                && actualEndTime_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+              getActualEndTimeBuilder().mergeFrom(value);
+            } else {
+              actualEndTime_ = value;
+            }
+          } else {
+            actualEndTimeBuilder_.mergeFrom(value);
+          }
+          if (actualEndTime_ != null) {
+            bitField0_ |= 0x00000008;
+            onChanged();
+          }
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Actual end time of the stage. Set only if the stage has completed.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp actual_end_time = 4;</code>
+         */
+        public Builder clearActualEndTime() {
+          bitField0_ = (bitField0_ & ~0x00000008);
+          actualEndTime_ = null;
+          if (actualEndTimeBuilder_ != null) {
+            actualEndTimeBuilder_.dispose();
+            actualEndTimeBuilder_ = null;
+          }
+          onChanged();
+          return this;
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Actual end time of the stage. Set only if the stage has completed.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp actual_end_time = 4;</code>
+         */
+        public com.google.protobuf.Timestamp.Builder getActualEndTimeBuilder() {
+          bitField0_ |= 0x00000008;
+          onChanged();
+          return getActualEndTimeFieldBuilder().getBuilder();
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Actual end time of the stage. Set only if the stage has completed.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp actual_end_time = 4;</code>
+         */
+        public com.google.protobuf.TimestampOrBuilder getActualEndTimeOrBuilder() {
+          if (actualEndTimeBuilder_ != null) {
+            return actualEndTimeBuilder_.getMessageOrBuilder();
+          } else {
+            return actualEndTime_ == null
+                ? com.google.protobuf.Timestamp.getDefaultInstance()
+                : actualEndTime_;
+          }
+        }
+
+        /**
+         *
+         *
+         * <pre>
+         * Actual end time of the stage. Set only if the stage has completed.
+         * </pre>
+         *
+         * <code>.google.protobuf.Timestamp actual_end_time = 4;</code>
+         */
+        private com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>
+            getActualEndTimeFieldBuilder() {
+          if (actualEndTimeBuilder_ == null) {
+            actualEndTimeBuilder_ =
+                new com.google.protobuf.SingleFieldBuilderV3<
+                    com.google.protobuf.Timestamp,
+                    com.google.protobuf.Timestamp.Builder,
+                    com.google.protobuf.TimestampOrBuilder>(
+                    getActualEndTime(), getParentForChildren(), isClean());
+            actualEndTime_ = null;
+          }
+          return actualEndTimeBuilder_;
+        }
+
+        @java.lang.Override
+        public final Builder setUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.setUnknownFields(unknownFields);
+        }
+
+        @java.lang.Override
+        public final Builder mergeUnknownFields(
+            final com.google.protobuf.UnknownFieldSet unknownFields) {
+          return super.mergeUnknownFields(unknownFields);
+        }
+
+        // @@protoc_insertion_point(builder_scope:google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule)
+      }
+
+      // @@protoc_insertion_point(class_scope:google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule)
+      private static final com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus
+              .StageSchedule
+          DEFAULT_INSTANCE;
+
+      static {
+        DEFAULT_INSTANCE =
+            new com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule();
+      }
+
+      public static com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule
+          getDefaultInstance() {
+        return DEFAULT_INSTANCE;
+      }
+
+      private static final com.google.protobuf.Parser<StageSchedule> PARSER =
+          new com.google.protobuf.AbstractParser<StageSchedule>() {
+            @java.lang.Override
+            public StageSchedule parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              Builder builder = newBuilder();
+              try {
+                builder.mergeFrom(input, extensionRegistry);
+              } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+                throw e.setUnfinishedMessage(builder.buildPartial());
+              } catch (com.google.protobuf.UninitializedMessageException e) {
+                throw e.asInvalidProtocolBufferException()
+                    .setUnfinishedMessage(builder.buildPartial());
+              } catch (java.io.IOException e) {
+                throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                    .setUnfinishedMessage(builder.buildPartial());
+              }
+              return builder.buildPartial();
+            }
+          };
+
+      public static com.google.protobuf.Parser<StageSchedule> parser() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Parser<StageSchedule> getParserForType() {
+        return PARSER;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule
+          getDefaultInstanceForType() {
+        return DEFAULT_INSTANCE;
+      }
+    }
+
+    private int bitField0_;
     private int stageSpecificStatusCase_ = 0;
 
     @SuppressWarnings("serial")
@@ -413,6 +2250,69 @@ public final class UpgradeClusterStatus extends com.google.protobuf.GeneratedMes
           : result;
     }
 
+    public static final int SCHEDULE_FIELD_NUMBER = 3;
+    private com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule schedule_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timing information for the stage execution.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule schedule = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return Whether the schedule field is set.
+     */
+    @java.lang.Override
+    public boolean hasSchedule() {
+      return ((bitField0_ & 0x00000001) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timing information for the stage execution.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule schedule = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     *
+     * @return The schedule.
+     */
+    @java.lang.Override
+    public com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule
+        getSchedule() {
+      return schedule_ == null
+          ? com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule
+              .getDefaultInstance()
+          : schedule_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. Timing information for the stage execution.
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule schedule = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * </code>
+     */
+    @java.lang.Override
+    public com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageScheduleOrBuilder
+        getScheduleOrBuilder() {
+      return schedule_ == null
+          ? com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule
+              .getDefaultInstance()
+          : schedule_;
+    }
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -436,6 +2336,9 @@ public final class UpgradeClusterStatus extends com.google.protobuf.GeneratedMes
           != com.google.cloud.alloydb.v1.UpgradeClusterResponse.Status.STATUS_UNSPECIFIED
               .getNumber()) {
         output.writeEnum(2, state_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        output.writeMessage(3, getSchedule());
       }
       if (stageSpecificStatusCase_ == 11) {
         output.writeMessage(
@@ -461,6 +2364,9 @@ public final class UpgradeClusterStatus extends com.google.protobuf.GeneratedMes
           != com.google.cloud.alloydb.v1.UpgradeClusterResponse.Status.STATUS_UNSPECIFIED
               .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, state_);
+      }
+      if (((bitField0_ & 0x00000001) != 0)) {
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getSchedule());
       }
       if (stageSpecificStatusCase_ == 11) {
         size +=
@@ -488,6 +2394,10 @@ public final class UpgradeClusterStatus extends com.google.protobuf.GeneratedMes
 
       if (stage_ != other.stage_) return false;
       if (state_ != other.state_) return false;
+      if (hasSchedule() != other.hasSchedule()) return false;
+      if (hasSchedule()) {
+        if (!getSchedule().equals(other.getSchedule())) return false;
+      }
       if (!getStageSpecificStatusCase().equals(other.getStageSpecificStatusCase())) return false;
       switch (stageSpecificStatusCase_) {
         case 11:
@@ -512,6 +2422,10 @@ public final class UpgradeClusterStatus extends com.google.protobuf.GeneratedMes
       hash = (53 * hash) + stage_;
       hash = (37 * hash) + STATE_FIELD_NUMBER;
       hash = (53 * hash) + state_;
+      if (hasSchedule()) {
+        hash = (37 * hash) + SCHEDULE_FIELD_NUMBER;
+        hash = (53 * hash) + getSchedule().hashCode();
+      }
       switch (stageSpecificStatusCase_) {
         case 11:
           hash = (37 * hash) + READ_POOL_INSTANCES_UPGRADE_FIELD_NUMBER;
@@ -653,10 +2567,19 @@ public final class UpgradeClusterStatus extends com.google.protobuf.GeneratedMes
       }
 
       // Construct using com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.newBuilder()
-      private Builder() {}
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
 
       private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
+          getScheduleFieldBuilder();
+        }
       }
 
       @java.lang.Override
@@ -668,6 +2591,11 @@ public final class UpgradeClusterStatus extends com.google.protobuf.GeneratedMes
         }
         stage_ = 0;
         state_ = 0;
+        schedule_ = null;
+        if (scheduleBuilder_ != null) {
+          scheduleBuilder_.dispose();
+          scheduleBuilder_ = null;
+        }
         stageSpecificStatusCase_ = 0;
         stageSpecificStatus_ = null;
         return this;
@@ -715,6 +2643,12 @@ public final class UpgradeClusterStatus extends com.google.protobuf.GeneratedMes
         if (((from_bitField0_ & 0x00000004) != 0)) {
           result.state_ = state_;
         }
+        int to_bitField0_ = 0;
+        if (((from_bitField0_ & 0x00000008) != 0)) {
+          result.schedule_ = scheduleBuilder_ == null ? schedule_ : scheduleBuilder_.build();
+          to_bitField0_ |= 0x00000001;
+        }
+        result.bitField0_ |= to_bitField0_;
       }
 
       private void buildPartialOneofs(
@@ -781,6 +2715,9 @@ public final class UpgradeClusterStatus extends com.google.protobuf.GeneratedMes
         if (other.state_ != 0) {
           setStateValue(other.getStateValue());
         }
+        if (other.hasSchedule()) {
+          mergeSchedule(other.getSchedule());
+        }
         switch (other.getStageSpecificStatusCase()) {
           case READ_POOL_INSTANCES_UPGRADE:
             {
@@ -830,6 +2767,12 @@ public final class UpgradeClusterStatus extends com.google.protobuf.GeneratedMes
                   bitField0_ |= 0x00000004;
                   break;
                 } // case 16
+              case 26:
+                {
+                  input.readMessage(getScheduleFieldBuilder().getBuilder(), extensionRegistry);
+                  bitField0_ |= 0x00000008;
+                  break;
+                } // case 26
               case 90:
                 {
                   input.readMessage(
@@ -1332,6 +3275,230 @@ public final class UpgradeClusterStatus extends com.google.protobuf.GeneratedMes
         state_ = 0;
         onChanged();
         return this;
+      }
+
+      private com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule schedule_;
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule,
+              com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule.Builder,
+              com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageScheduleOrBuilder>
+          scheduleBuilder_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Timing information for the stage execution.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule schedule = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return Whether the schedule field is set.
+       */
+      public boolean hasSchedule() {
+        return ((bitField0_ & 0x00000008) != 0);
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Timing information for the stage execution.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule schedule = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       *
+       * @return The schedule.
+       */
+      public com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule
+          getSchedule() {
+        if (scheduleBuilder_ == null) {
+          return schedule_ == null
+              ? com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule
+                  .getDefaultInstance()
+              : schedule_;
+        } else {
+          return scheduleBuilder_.getMessage();
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Timing information for the stage execution.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule schedule = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setSchedule(
+          com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule value) {
+        if (scheduleBuilder_ == null) {
+          if (value == null) {
+            throw new NullPointerException();
+          }
+          schedule_ = value;
+        } else {
+          scheduleBuilder_.setMessage(value);
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Timing information for the stage execution.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule schedule = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder setSchedule(
+          com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule.Builder
+              builderForValue) {
+        if (scheduleBuilder_ == null) {
+          schedule_ = builderForValue.build();
+        } else {
+          scheduleBuilder_.setMessage(builderForValue.build());
+        }
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Timing information for the stage execution.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule schedule = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder mergeSchedule(
+          com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule value) {
+        if (scheduleBuilder_ == null) {
+          if (((bitField0_ & 0x00000008) != 0)
+              && schedule_ != null
+              && schedule_
+                  != com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule
+                      .getDefaultInstance()) {
+            getScheduleBuilder().mergeFrom(value);
+          } else {
+            schedule_ = value;
+          }
+        } else {
+          scheduleBuilder_.mergeFrom(value);
+        }
+        if (schedule_ != null) {
+          bitField0_ |= 0x00000008;
+          onChanged();
+        }
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Timing information for the stage execution.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule schedule = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public Builder clearSchedule() {
+        bitField0_ = (bitField0_ & ~0x00000008);
+        schedule_ = null;
+        if (scheduleBuilder_ != null) {
+          scheduleBuilder_.dispose();
+          scheduleBuilder_ = null;
+        }
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Timing information for the stage execution.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule schedule = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule.Builder
+          getScheduleBuilder() {
+        bitField0_ |= 0x00000008;
+        onChanged();
+        return getScheduleFieldBuilder().getBuilder();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Timing information for the stage execution.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule schedule = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      public com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageScheduleOrBuilder
+          getScheduleOrBuilder() {
+        if (scheduleBuilder_ != null) {
+          return scheduleBuilder_.getMessageOrBuilder();
+        } else {
+          return schedule_ == null
+              ? com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule
+                  .getDefaultInstance()
+              : schedule_;
+        }
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. Timing information for the stage execution.
+       * </pre>
+       *
+       * <code>
+       * .google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule schedule = 3 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * </code>
+       */
+      private com.google.protobuf.SingleFieldBuilderV3<
+              com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule,
+              com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule.Builder,
+              com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageScheduleOrBuilder>
+          getScheduleFieldBuilder() {
+        if (scheduleBuilder_ == null) {
+          scheduleBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule,
+                  com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus.StageSchedule
+                      .Builder,
+                  com.google.cloud.alloydb.v1.UpgradeClusterStatus.StageStatus
+                      .StageScheduleOrBuilder>(getSchedule(), getParentForChildren(), isClean());
+          schedule_ = null;
+        }
+        return scheduleBuilder_;
       }
 
       @java.lang.Override

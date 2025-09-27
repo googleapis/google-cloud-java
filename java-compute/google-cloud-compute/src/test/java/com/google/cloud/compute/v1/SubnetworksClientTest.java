@@ -327,6 +327,7 @@ public class SubnetworksClientTest {
             .setState("state109757585")
             .addAllSystemReservedExternalIpv6Ranges(new ArrayList<String>())
             .addAllSystemReservedInternalIpv6Ranges(new ArrayList<String>())
+            .setUtilizationDetails(SubnetworkUtilizationDetails.newBuilder().build())
             .build();
     mockService.addResponse(expectedResponse);
 

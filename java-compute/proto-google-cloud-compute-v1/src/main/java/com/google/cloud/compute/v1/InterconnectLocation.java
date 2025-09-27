@@ -55,6 +55,8 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     peeringdbFacilityId_ = "";
     regionInfos_ = java.util.Collections.emptyList();
     selfLink_ = "";
+    singleRegionProductionCriticalPeerLocations_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
     status_ = "";
   }
 
@@ -1843,6 +1845,76 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     }
   }
 
+  public static final int SINGLE_REGION_PRODUCTION_CRITICAL_PEER_LOCATIONS_FIELD_NUMBER = 439537103;
+
+  @SuppressWarnings("serial")
+  private com.google.protobuf.LazyStringArrayList singleRegionProductionCriticalPeerLocations_ =
+      com.google.protobuf.LazyStringArrayList.emptyList();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URLs of the other locations that can pair up with this location to support Single-Region 99.99% SLA. E.g. iad-zone1-1 and iad-zone2-5467 are Single-Region 99.99% peer locations of each other.
+   * </pre>
+   *
+   * <code>repeated string single_region_production_critical_peer_locations = 439537103;</code>
+   *
+   * @return A list containing the singleRegionProductionCriticalPeerLocations.
+   */
+  public com.google.protobuf.ProtocolStringList
+      getSingleRegionProductionCriticalPeerLocationsList() {
+    return singleRegionProductionCriticalPeerLocations_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URLs of the other locations that can pair up with this location to support Single-Region 99.99% SLA. E.g. iad-zone1-1 and iad-zone2-5467 are Single-Region 99.99% peer locations of each other.
+   * </pre>
+   *
+   * <code>repeated string single_region_production_critical_peer_locations = 439537103;</code>
+   *
+   * @return The count of singleRegionProductionCriticalPeerLocations.
+   */
+  public int getSingleRegionProductionCriticalPeerLocationsCount() {
+    return singleRegionProductionCriticalPeerLocations_.size();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URLs of the other locations that can pair up with this location to support Single-Region 99.99% SLA. E.g. iad-zone1-1 and iad-zone2-5467 are Single-Region 99.99% peer locations of each other.
+   * </pre>
+   *
+   * <code>repeated string single_region_production_critical_peer_locations = 439537103;</code>
+   *
+   * @param index The index of the element to return.
+   * @return The singleRegionProductionCriticalPeerLocations at the given index.
+   */
+  public java.lang.String getSingleRegionProductionCriticalPeerLocations(int index) {
+    return singleRegionProductionCriticalPeerLocations_.get(index);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] URLs of the other locations that can pair up with this location to support Single-Region 99.99% SLA. E.g. iad-zone1-1 and iad-zone2-5467 are Single-Region 99.99% peer locations of each other.
+   * </pre>
+   *
+   * <code>repeated string single_region_production_critical_peer_locations = 439537103;</code>
+   *
+   * @param index The index of the value to return.
+   * @return The bytes of the singleRegionProductionCriticalPeerLocations at the given index.
+   */
+  public com.google.protobuf.ByteString getSingleRegionProductionCriticalPeerLocationsBytes(
+      int index) {
+    return singleRegionProductionCriticalPeerLocations_.getByteString(index);
+  }
+
   public static final int STATUS_FIELD_NUMBER = 181260274;
 
   @SuppressWarnings("serial")
@@ -2001,6 +2073,10 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     if (((bitField0_ & 0x00000020) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 422937596, description_);
     }
+    for (int i = 0; i < singleRegionProductionCriticalPeerLocations_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(
+          output, 439537103, singleRegionProductionCriticalPeerLocations_.getRaw(i));
+    }
     if (((bitField0_ & 0x00001000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
@@ -2070,6 +2146,14 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     }
     if (((bitField0_ & 0x00000020) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(422937596, description_);
+    }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < singleRegionProductionCriticalPeerLocations_.size(); i++) {
+        dataSize += computeStringSizeNoTag(singleRegionProductionCriticalPeerLocations_.getRaw(i));
+      }
+      size += dataSize;
+      size += 5 * getSingleRegionProductionCriticalPeerLocationsList().size();
     }
     if (((bitField0_ & 0x00001000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
@@ -2173,6 +2257,8 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     if (hasSelfLink()) {
       if (!getSelfLink().equals(other.getSelfLink())) return false;
     }
+    if (!getSingleRegionProductionCriticalPeerLocationsList()
+        .equals(other.getSingleRegionProductionCriticalPeerLocationsList())) return false;
     if (hasStatus() != other.hasStatus()) return false;
     if (hasStatus()) {
       if (!getStatus().equals(other.getStatus())) return false;
@@ -2255,6 +2341,10 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     if (hasSelfLink()) {
       hash = (37 * hash) + SELF_LINK_FIELD_NUMBER;
       hash = (53 * hash) + getSelfLink().hashCode();
+    }
+    if (getSingleRegionProductionCriticalPeerLocationsCount() > 0) {
+      hash = (37 * hash) + SINGLE_REGION_PRODUCTION_CRITICAL_PEER_LOCATIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getSingleRegionProductionCriticalPeerLocationsList().hashCode();
     }
     if (hasStatus()) {
       hash = (37 * hash) + STATUS_FIELD_NUMBER;
@@ -2426,6 +2516,8 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       }
       bitField0_ = (bitField0_ & ~0x00004000);
       selfLink_ = "";
+      singleRegionProductionCriticalPeerLocations_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
       status_ = "";
       supportsPzs_ = false;
       return this;
@@ -2540,10 +2632,15 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         to_bitField0_ |= 0x00001000;
       }
       if (((from_bitField0_ & 0x00010000) != 0)) {
+        singleRegionProductionCriticalPeerLocations_.makeImmutable();
+        result.singleRegionProductionCriticalPeerLocations_ =
+            singleRegionProductionCriticalPeerLocations_;
+      }
+      if (((from_bitField0_ & 0x00020000) != 0)) {
         result.status_ = status_;
         to_bitField0_ |= 0x00002000;
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
+      if (((from_bitField0_ & 0x00040000) != 0)) {
         result.supportsPzs_ = supportsPzs_;
         to_bitField0_ |= 0x00004000;
       }
@@ -2706,9 +2803,21 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         bitField0_ |= 0x00008000;
         onChanged();
       }
+      if (!other.singleRegionProductionCriticalPeerLocations_.isEmpty()) {
+        if (singleRegionProductionCriticalPeerLocations_.isEmpty()) {
+          singleRegionProductionCriticalPeerLocations_ =
+              other.singleRegionProductionCriticalPeerLocations_;
+          bitField0_ |= 0x00010000;
+        } else {
+          ensureSingleRegionProductionCriticalPeerLocationsIsMutable();
+          singleRegionProductionCriticalPeerLocations_.addAll(
+              other.singleRegionProductionCriticalPeerLocations_);
+        }
+        onChanged();
+      }
       if (other.hasStatus()) {
         status_ = other.status_;
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
         onChanged();
       }
       if (other.hasSupportsPzs()) {
@@ -2773,7 +2882,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
             case 671865712:
               {
                 supportsPzs_ = input.readBool();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case 671865712
             case 698153002:
@@ -2797,7 +2906,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
             case 1450082194:
               {
                 status_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00010000;
+                bitField0_ |= 0x00020000;
                 break;
               } // case 1450082194
             case -1797413934:
@@ -2820,6 +2929,13 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
                 bitField0_ |= 0x00000080;
                 break;
               } // case -911466526
+            case -778670470:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+                ensureSingleRegionProductionCriticalPeerLocationsIsMutable();
+                singleRegionProductionCriticalPeerLocations_.add(s);
+                break;
+              } // case -778670470
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
@@ -5271,6 +5387,198 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       return this;
     }
 
+    private com.google.protobuf.LazyStringArrayList singleRegionProductionCriticalPeerLocations_ =
+        com.google.protobuf.LazyStringArrayList.emptyList();
+
+    private void ensureSingleRegionProductionCriticalPeerLocationsIsMutable() {
+      if (!singleRegionProductionCriticalPeerLocations_.isModifiable()) {
+        singleRegionProductionCriticalPeerLocations_ =
+            new com.google.protobuf.LazyStringArrayList(
+                singleRegionProductionCriticalPeerLocations_);
+      }
+      bitField0_ |= 0x00010000;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] URLs of the other locations that can pair up with this location to support Single-Region 99.99% SLA. E.g. iad-zone1-1 and iad-zone2-5467 are Single-Region 99.99% peer locations of each other.
+     * </pre>
+     *
+     * <code>repeated string single_region_production_critical_peer_locations = 439537103;</code>
+     *
+     * @return A list containing the singleRegionProductionCriticalPeerLocations.
+     */
+    public com.google.protobuf.ProtocolStringList
+        getSingleRegionProductionCriticalPeerLocationsList() {
+      singleRegionProductionCriticalPeerLocations_.makeImmutable();
+      return singleRegionProductionCriticalPeerLocations_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] URLs of the other locations that can pair up with this location to support Single-Region 99.99% SLA. E.g. iad-zone1-1 and iad-zone2-5467 are Single-Region 99.99% peer locations of each other.
+     * </pre>
+     *
+     * <code>repeated string single_region_production_critical_peer_locations = 439537103;</code>
+     *
+     * @return The count of singleRegionProductionCriticalPeerLocations.
+     */
+    public int getSingleRegionProductionCriticalPeerLocationsCount() {
+      return singleRegionProductionCriticalPeerLocations_.size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] URLs of the other locations that can pair up with this location to support Single-Region 99.99% SLA. E.g. iad-zone1-1 and iad-zone2-5467 are Single-Region 99.99% peer locations of each other.
+     * </pre>
+     *
+     * <code>repeated string single_region_production_critical_peer_locations = 439537103;</code>
+     *
+     * @param index The index of the element to return.
+     * @return The singleRegionProductionCriticalPeerLocations at the given index.
+     */
+    public java.lang.String getSingleRegionProductionCriticalPeerLocations(int index) {
+      return singleRegionProductionCriticalPeerLocations_.get(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] URLs of the other locations that can pair up with this location to support Single-Region 99.99% SLA. E.g. iad-zone1-1 and iad-zone2-5467 are Single-Region 99.99% peer locations of each other.
+     * </pre>
+     *
+     * <code>repeated string single_region_production_critical_peer_locations = 439537103;</code>
+     *
+     * @param index The index of the value to return.
+     * @return The bytes of the singleRegionProductionCriticalPeerLocations at the given index.
+     */
+    public com.google.protobuf.ByteString getSingleRegionProductionCriticalPeerLocationsBytes(
+        int index) {
+      return singleRegionProductionCriticalPeerLocations_.getByteString(index);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] URLs of the other locations that can pair up with this location to support Single-Region 99.99% SLA. E.g. iad-zone1-1 and iad-zone2-5467 are Single-Region 99.99% peer locations of each other.
+     * </pre>
+     *
+     * <code>repeated string single_region_production_critical_peer_locations = 439537103;</code>
+     *
+     * @param index The index to set the value at.
+     * @param value The singleRegionProductionCriticalPeerLocations to set.
+     * @return This builder for chaining.
+     */
+    public Builder setSingleRegionProductionCriticalPeerLocations(
+        int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSingleRegionProductionCriticalPeerLocationsIsMutable();
+      singleRegionProductionCriticalPeerLocations_.set(index, value);
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] URLs of the other locations that can pair up with this location to support Single-Region 99.99% SLA. E.g. iad-zone1-1 and iad-zone2-5467 are Single-Region 99.99% peer locations of each other.
+     * </pre>
+     *
+     * <code>repeated string single_region_production_critical_peer_locations = 439537103;</code>
+     *
+     * @param value The singleRegionProductionCriticalPeerLocations to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSingleRegionProductionCriticalPeerLocations(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureSingleRegionProductionCriticalPeerLocationsIsMutable();
+      singleRegionProductionCriticalPeerLocations_.add(value);
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] URLs of the other locations that can pair up with this location to support Single-Region 99.99% SLA. E.g. iad-zone1-1 and iad-zone2-5467 are Single-Region 99.99% peer locations of each other.
+     * </pre>
+     *
+     * <code>repeated string single_region_production_critical_peer_locations = 439537103;</code>
+     *
+     * @param values The singleRegionProductionCriticalPeerLocations to add.
+     * @return This builder for chaining.
+     */
+    public Builder addAllSingleRegionProductionCriticalPeerLocations(
+        java.lang.Iterable<java.lang.String> values) {
+      ensureSingleRegionProductionCriticalPeerLocationsIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(
+          values, singleRegionProductionCriticalPeerLocations_);
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] URLs of the other locations that can pair up with this location to support Single-Region 99.99% SLA. E.g. iad-zone1-1 and iad-zone2-5467 are Single-Region 99.99% peer locations of each other.
+     * </pre>
+     *
+     * <code>repeated string single_region_production_critical_peer_locations = 439537103;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearSingleRegionProductionCriticalPeerLocations() {
+      singleRegionProductionCriticalPeerLocations_ =
+          com.google.protobuf.LazyStringArrayList.emptyList();
+      bitField0_ = (bitField0_ & ~0x00010000);
+      ;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] URLs of the other locations that can pair up with this location to support Single-Region 99.99% SLA. E.g. iad-zone1-1 and iad-zone2-5467 are Single-Region 99.99% peer locations of each other.
+     * </pre>
+     *
+     * <code>repeated string single_region_production_critical_peer_locations = 439537103;</code>
+     *
+     * @param value The bytes of the singleRegionProductionCriticalPeerLocations to add.
+     * @return This builder for chaining.
+     */
+    public Builder addSingleRegionProductionCriticalPeerLocationsBytes(
+        com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureSingleRegionProductionCriticalPeerLocationsIsMutable();
+      singleRegionProductionCriticalPeerLocations_.add(value);
+      bitField0_ |= 0x00010000;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object status_ = "";
 
     /**
@@ -5286,7 +5594,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00010000) != 0);
+      return ((bitField0_ & 0x00020000) != 0);
     }
 
     /**
@@ -5355,7 +5663,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
         throw new NullPointerException();
       }
       status_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5374,7 +5682,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      */
     public Builder clearStatus() {
       status_ = getDefaultInstance().getStatus();
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       onChanged();
       return this;
     }
@@ -5398,7 +5706,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
       }
       checkByteStringIsUtf8(value);
       status_ = value;
-      bitField0_ |= 0x00010000;
+      bitField0_ |= 0x00020000;
       onChanged();
       return this;
     }
@@ -5418,7 +5726,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      */
     @java.lang.Override
     public boolean hasSupportsPzs() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
 
     /**
@@ -5452,7 +5760,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
     public Builder setSupportsPzs(boolean value) {
 
       supportsPzs_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5469,7 +5777,7 @@ public final class InterconnectLocation extends com.google.protobuf.GeneratedMes
      * @return This builder for chaining.
      */
     public Builder clearSupportsPzs() {
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       supportsPzs_ = false;
       onChanged();
       return this;

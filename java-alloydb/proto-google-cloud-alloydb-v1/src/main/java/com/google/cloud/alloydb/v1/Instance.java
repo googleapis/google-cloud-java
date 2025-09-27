@@ -9915,7 +9915,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * `projects/&lt;alloydb-tenant-project-number&gt;/regions/&lt;region-name&gt;/serviceAttachments/&lt;service-attachment-name&gt;`
      * </pre>
      *
-     * <code>string service_attachment_link = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string service_attachment_link = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The serviceAttachmentLink.
      */
@@ -9931,7 +9933,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * `projects/&lt;alloydb-tenant-project-number&gt;/regions/&lt;region-name&gt;/serviceAttachments/&lt;service-attachment-name&gt;`
      * </pre>
      *
-     * <code>string service_attachment_link = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string service_attachment_link = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for serviceAttachmentLink.
      */
@@ -10248,7 +10252,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * `projects/&lt;alloydb-tenant-project-number&gt;/regions/&lt;region-name&gt;/serviceAttachments/&lt;service-attachment-name&gt;`
      * </pre>
      *
-     * <code>string service_attachment_link = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string service_attachment_link = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The serviceAttachmentLink.
      */
@@ -10275,7 +10281,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
      * `projects/&lt;alloydb-tenant-project-number&gt;/regions/&lt;region-name&gt;/serviceAttachments/&lt;service-attachment-name&gt;`
      * </pre>
      *
-     * <code>string service_attachment_link = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     * <code>
+     * string service_attachment_link = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
+     * </code>
      *
      * @return The bytes for serviceAttachmentLink.
      */
@@ -11193,7 +11201,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * `projects/&lt;alloydb-tenant-project-number&gt;/regions/&lt;region-name&gt;/serviceAttachments/&lt;service-attachment-name&gt;`
        * </pre>
        *
-       * <code>string service_attachment_link = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * <code>
+       * string service_attachment_link = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
        * </code>
        *
        * @return The serviceAttachmentLink.
@@ -11220,7 +11229,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * `projects/&lt;alloydb-tenant-project-number&gt;/regions/&lt;region-name&gt;/serviceAttachments/&lt;service-attachment-name&gt;`
        * </pre>
        *
-       * <code>string service_attachment_link = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * <code>
+       * string service_attachment_link = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
        * </code>
        *
        * @return The bytes for serviceAttachmentLink.
@@ -11247,7 +11257,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * `projects/&lt;alloydb-tenant-project-number&gt;/regions/&lt;region-name&gt;/serviceAttachments/&lt;service-attachment-name&gt;`
        * </pre>
        *
-       * <code>string service_attachment_link = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * <code>
+       * string service_attachment_link = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
        * </code>
        *
        * @param value The serviceAttachmentLink to set.
@@ -11273,7 +11284,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * `projects/&lt;alloydb-tenant-project-number&gt;/regions/&lt;region-name&gt;/serviceAttachments/&lt;service-attachment-name&gt;`
        * </pre>
        *
-       * <code>string service_attachment_link = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * <code>
+       * string service_attachment_link = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
        * </code>
        *
        * @return This builder for chaining.
@@ -11295,7 +11307,8 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
        * `projects/&lt;alloydb-tenant-project-number&gt;/regions/&lt;region-name&gt;/serviceAttachments/&lt;service-attachment-name&gt;`
        * </pre>
        *
-       * <code>string service_attachment_link = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * <code>
+       * string service_attachment_link = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
        * </code>
        *
        * @param value The bytes for serviceAttachmentLink to set.
@@ -15195,6 +15208,1082 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
   }
 
+  public interface ConnectionPoolConfigOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.cloud.alloydb.v1.Instance.ConnectionPoolConfig)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to enable Managed Connection Pool (MCP).
+     * </pre>
+     *
+     * <code>bool enabled = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enabled.
+     */
+    boolean getEnabled();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Connection Pool flags, as a list of "key": "value" pairs.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; flags = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    int getFlagsCount();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Connection Pool flags, as a list of "key": "value" pairs.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; flags = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    boolean containsFlags(java.lang.String key);
+
+    /** Use {@link #getFlagsMap()} instead. */
+    @java.lang.Deprecated
+    java.util.Map<java.lang.String, java.lang.String> getFlags();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Connection Pool flags, as a list of "key": "value" pairs.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; flags = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    java.util.Map<java.lang.String, java.lang.String> getFlagsMap();
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Connection Pool flags, as a list of "key": "value" pairs.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; flags = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    /* nullable */
+    java.lang.String getFlagsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue);
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Connection Pool flags, as a list of "key": "value" pairs.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; flags = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    java.lang.String getFlagsOrThrow(java.lang.String key);
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The number of running poolers per instance.
+     * </pre>
+     *
+     * <code>int32 pooler_count = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The poolerCount.
+     */
+    int getPoolerCount();
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Configuration for Managed Connection Pool (MCP).
+   * </pre>
+   *
+   * Protobuf type {@code google.cloud.alloydb.v1.Instance.ConnectionPoolConfig}
+   */
+  public static final class ConnectionPoolConfig extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.cloud.alloydb.v1.Instance.ConnectionPoolConfig)
+      ConnectionPoolConfigOrBuilder {
+    private static final long serialVersionUID = 0L;
+
+    // Use ConnectionPoolConfig.newBuilder() to construct.
+    private ConnectionPoolConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private ConnectionPoolConfig() {}
+
+    @java.lang.Override
+    @SuppressWarnings({"unused"})
+    protected java.lang.Object newInstance(UnusedPrivateParameter unused) {
+      return new ConnectionPoolConfig();
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.alloydb.v1.ResourcesProto
+          .internal_static_google_cloud_alloydb_v1_Instance_ConnectionPoolConfig_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    @java.lang.Override
+    protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+        int number) {
+      switch (number) {
+        case 13:
+          return internalGetFlags();
+        default:
+          throw new RuntimeException("Invalid map field number: " + number);
+      }
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.cloud.alloydb.v1.ResourcesProto
+          .internal_static_google_cloud_alloydb_v1_Instance_ConnectionPoolConfig_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig.class,
+              com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig.Builder.class);
+    }
+
+    public static final int ENABLED_FIELD_NUMBER = 12;
+    private boolean enabled_ = false;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Whether to enable Managed Connection Pool (MCP).
+     * </pre>
+     *
+     * <code>bool enabled = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enabled.
+     */
+    @java.lang.Override
+    public boolean getEnabled() {
+      return enabled_;
+    }
+
+    public static final int FLAGS_FIELD_NUMBER = 13;
+
+    private static final class FlagsDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+          com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+              com.google.cloud.alloydb.v1.ResourcesProto
+                  .internal_static_google_cloud_alloydb_v1_Instance_ConnectionPoolConfig_FlagsEntry_descriptor,
+              com.google.protobuf.WireFormat.FieldType.STRING,
+              "",
+              com.google.protobuf.WireFormat.FieldType.STRING,
+              "");
+    }
+
+    @SuppressWarnings("serial")
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> flags_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetFlags() {
+      if (flags_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(FlagsDefaultEntryHolder.defaultEntry);
+      }
+      return flags_;
+    }
+
+    public int getFlagsCount() {
+      return internalGetFlags().getMap().size();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Connection Pool flags, as a list of "key": "value" pairs.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; flags = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public boolean containsFlags(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      return internalGetFlags().getMap().containsKey(key);
+    }
+
+    /** Use {@link #getFlagsMap()} instead. */
+    @java.lang.Override
+    @java.lang.Deprecated
+    public java.util.Map<java.lang.String, java.lang.String> getFlags() {
+      return getFlagsMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Connection Pool flags, as a list of "key": "value" pairs.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; flags = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public java.util.Map<java.lang.String, java.lang.String> getFlagsMap() {
+      return internalGetFlags().getMap();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Connection Pool flags, as a list of "key": "value" pairs.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; flags = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public /* nullable */ java.lang.String getFlagsOrDefault(
+        java.lang.String key,
+        /* nullable */
+        java.lang.String defaultValue) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetFlags().getMap();
+      return map.containsKey(key) ? map.get(key) : defaultValue;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. Connection Pool flags, as a list of "key": "value" pairs.
+     * </pre>
+     *
+     * <code>map&lt;string, string&gt; flags = 13 [(.google.api.field_behavior) = OPTIONAL];</code>
+     */
+    @java.lang.Override
+    public java.lang.String getFlagsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new NullPointerException("map key");
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetFlags().getMap();
+      if (!map.containsKey(key)) {
+        throw new java.lang.IllegalArgumentException();
+      }
+      return map.get(key);
+    }
+
+    public static final int POOLER_COUNT_FIELD_NUMBER = 14;
+    private int poolerCount_ = 0;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. The number of running poolers per instance.
+     * </pre>
+     *
+     * <code>int32 pooler_count = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+     *
+     * @return The poolerCount.
+     */
+    @java.lang.Override
+    public int getPoolerCount() {
+      return poolerCount_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (enabled_ != false) {
+        output.writeBool(12, enabled_);
+      }
+      com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+          output, internalGetFlags(), FlagsDefaultEntryHolder.defaultEntry, 13);
+      if (poolerCount_ != 0) {
+        output.writeInt32(14, poolerCount_);
+      }
+      getUnknownFields().writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (enabled_ != false) {
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(12, enabled_);
+      }
+      for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+          internalGetFlags().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<java.lang.String, java.lang.String> flags__ =
+            FlagsDefaultEntryHolder.defaultEntry
+                .newBuilderForType()
+                .setKey(entry.getKey())
+                .setValue(entry.getValue())
+                .build();
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, flags__);
+      }
+      if (poolerCount_ != 0) {
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(14, poolerCount_);
+      }
+      size += getUnknownFields().getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig)) {
+        return super.equals(obj);
+      }
+      com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig other =
+          (com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig) obj;
+
+      if (getEnabled() != other.getEnabled()) return false;
+      if (!internalGetFlags().equals(other.internalGetFlags())) return false;
+      if (getPoolerCount() != other.getPoolerCount()) return false;
+      if (!getUnknownFields().equals(other.getUnknownFields())) return false;
+      return true;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + ENABLED_FIELD_NUMBER;
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnabled());
+      if (!internalGetFlags().getMap().isEmpty()) {
+        hash = (37 * hash) + FLAGS_FIELD_NUMBER;
+        hash = (53 * hash) + internalGetFlags().hashCode();
+      }
+      hash = (37 * hash) + POOLER_COUNT_FIELD_NUMBER;
+      hash = (53 * hash) + getPoolerCount();
+      hash = (29 * hash) + getUnknownFields().hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig parseFrom(
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig parseFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(
+        com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Configuration for Managed Connection Pool (MCP).
+     * </pre>
+     *
+     * Protobuf type {@code google.cloud.alloydb.v1.Instance.ConnectionPoolConfig}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.cloud.alloydb.v1.Instance.ConnectionPoolConfig)
+        com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfigOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.alloydb.v1.ResourcesProto
+            .internal_static_google_cloud_alloydb_v1_Instance_ConnectionPoolConfig_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 13:
+            return internalGetFlags();
+          default:
+            throw new RuntimeException("Invalid map field number: " + number);
+        }
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapFieldReflectionAccessor internalGetMutableMapFieldReflection(
+          int number) {
+        switch (number) {
+          case 13:
+            return internalGetMutableFlags();
+          default:
+            throw new RuntimeException("Invalid map field number: " + number);
+        }
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.cloud.alloydb.v1.ResourcesProto
+            .internal_static_google_cloud_alloydb_v1_Instance_ConnectionPoolConfig_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig.class,
+                com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig.Builder.class);
+      }
+
+      // Construct using com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig.newBuilder()
+      private Builder() {}
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        bitField0_ = 0;
+        enabled_ = false;
+        internalGetMutableFlags().clear();
+        poolerCount_ = 0;
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.alloydb.v1.ResourcesProto
+            .internal_static_google_cloud_alloydb_v1_Instance_ConnectionPoolConfig_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig getDefaultInstanceForType() {
+        return com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig build() {
+        com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig buildPartial() {
+        com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig result =
+            new com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig(this);
+        if (bitField0_ != 0) {
+          buildPartial0(result);
+        }
+        onBuilt();
+        return result;
+      }
+
+      private void buildPartial0(com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig result) {
+        int from_bitField0_ = bitField0_;
+        if (((from_bitField0_ & 0x00000001) != 0)) {
+          result.enabled_ = enabled_;
+        }
+        if (((from_bitField0_ & 0x00000002) != 0)) {
+          result.flags_ = internalGetFlags();
+          result.flags_.makeImmutable();
+        }
+        if (((from_bitField0_ & 0x00000004) != 0)) {
+          result.poolerCount_ = poolerCount_;
+        }
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig) {
+          return mergeFrom((com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig other) {
+        if (other == com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig.getDefaultInstance())
+          return this;
+        if (other.getEnabled() != false) {
+          setEnabled(other.getEnabled());
+        }
+        internalGetMutableFlags().mergeFrom(other.internalGetFlags());
+        bitField0_ |= 0x00000002;
+        if (other.getPoolerCount() != 0) {
+          setPoolerCount(other.getPoolerCount());
+        }
+        this.mergeUnknownFields(other.getUnknownFields());
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
+        try {
+          boolean done = false;
+          while (!done) {
+            int tag = input.readTag();
+            switch (tag) {
+              case 0:
+                done = true;
+                break;
+              case 96:
+                {
+                  enabled_ = input.readBool();
+                  bitField0_ |= 0x00000001;
+                  break;
+                } // case 96
+              case 106:
+                {
+                  com.google.protobuf.MapEntry<java.lang.String, java.lang.String> flags__ =
+                      input.readMessage(
+                          FlagsDefaultEntryHolder.defaultEntry.getParserForType(),
+                          extensionRegistry);
+                  internalGetMutableFlags()
+                      .getMutableMap()
+                      .put(flags__.getKey(), flags__.getValue());
+                  bitField0_ |= 0x00000002;
+                  break;
+                } // case 106
+              case 112:
+                {
+                  poolerCount_ = input.readInt32();
+                  bitField0_ |= 0x00000004;
+                  break;
+                } // case 112
+              default:
+                {
+                  if (!super.parseUnknownField(input, extensionRegistry, tag)) {
+                    done = true; // was an endgroup tag
+                  }
+                  break;
+                } // default:
+            } // switch (tag)
+          } // while (!done)
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          throw e.unwrapIOException();
+        } finally {
+          onChanged();
+        } // finally
+        return this;
+      }
+
+      private int bitField0_;
+
+      private boolean enabled_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to enable Managed Connection Pool (MCP).
+       * </pre>
+       *
+       * <code>bool enabled = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return The enabled.
+       */
+      @java.lang.Override
+      public boolean getEnabled() {
+        return enabled_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to enable Managed Connection Pool (MCP).
+       * </pre>
+       *
+       * <code>bool enabled = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @param value The enabled to set.
+       * @return This builder for chaining.
+       */
+      public Builder setEnabled(boolean value) {
+
+        enabled_ = value;
+        bitField0_ |= 0x00000001;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Whether to enable Managed Connection Pool (MCP).
+       * </pre>
+       *
+       * <code>bool enabled = 12 [(.google.api.field_behavior) = OPTIONAL];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearEnabled() {
+        bitField0_ = (bitField0_ & ~0x00000001);
+        enabled_ = false;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String> flags_;
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetFlags() {
+        if (flags_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(FlagsDefaultEntryHolder.defaultEntry);
+        }
+        return flags_;
+      }
+
+      private com.google.protobuf.MapField<java.lang.String, java.lang.String>
+          internalGetMutableFlags() {
+        if (flags_ == null) {
+          flags_ = com.google.protobuf.MapField.newMapField(FlagsDefaultEntryHolder.defaultEntry);
+        }
+        if (!flags_.isMutable()) {
+          flags_ = flags_.copy();
+        }
+        bitField0_ |= 0x00000002;
+        onChanged();
+        return flags_;
+      }
+
+      public int getFlagsCount() {
+        return internalGetFlags().getMap().size();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Connection Pool flags, as a list of "key": "value" pairs.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; flags = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public boolean containsFlags(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        return internalGetFlags().getMap().containsKey(key);
+      }
+
+      /** Use {@link #getFlagsMap()} instead. */
+      @java.lang.Override
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getFlags() {
+        return getFlagsMap();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Connection Pool flags, as a list of "key": "value" pairs.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; flags = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public java.util.Map<java.lang.String, java.lang.String> getFlagsMap() {
+        return internalGetFlags().getMap();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Connection Pool flags, as a list of "key": "value" pairs.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; flags = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public /* nullable */ java.lang.String getFlagsOrDefault(
+          java.lang.String key,
+          /* nullable */
+          java.lang.String defaultValue) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<java.lang.String, java.lang.String> map = internalGetFlags().getMap();
+        return map.containsKey(key) ? map.get(key) : defaultValue;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Connection Pool flags, as a list of "key": "value" pairs.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; flags = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      @java.lang.Override
+      public java.lang.String getFlagsOrThrow(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        java.util.Map<java.lang.String, java.lang.String> map = internalGetFlags().getMap();
+        if (!map.containsKey(key)) {
+          throw new java.lang.IllegalArgumentException();
+        }
+        return map.get(key);
+      }
+
+      public Builder clearFlags() {
+        bitField0_ = (bitField0_ & ~0x00000002);
+        internalGetMutableFlags().getMutableMap().clear();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Connection Pool flags, as a list of "key": "value" pairs.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; flags = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder removeFlags(java.lang.String key) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        internalGetMutableFlags().getMutableMap().remove(key);
+        return this;
+      }
+
+      /** Use alternate mutation accessors instead. */
+      @java.lang.Deprecated
+      public java.util.Map<java.lang.String, java.lang.String> getMutableFlags() {
+        bitField0_ |= 0x00000002;
+        return internalGetMutableFlags().getMutableMap();
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Connection Pool flags, as a list of "key": "value" pairs.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; flags = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder putFlags(java.lang.String key, java.lang.String value) {
+        if (key == null) {
+          throw new NullPointerException("map key");
+        }
+        if (value == null) {
+          throw new NullPointerException("map value");
+        }
+        internalGetMutableFlags().getMutableMap().put(key, value);
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Optional. Connection Pool flags, as a list of "key": "value" pairs.
+       * </pre>
+       *
+       * <code>map&lt;string, string&gt; flags = 13 [(.google.api.field_behavior) = OPTIONAL];
+       * </code>
+       */
+      public Builder putAllFlags(java.util.Map<java.lang.String, java.lang.String> values) {
+        internalGetMutableFlags().getMutableMap().putAll(values);
+        bitField0_ |= 0x00000002;
+        return this;
+      }
+
+      private int poolerCount_;
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The number of running poolers per instance.
+       * </pre>
+       *
+       * <code>int32 pooler_count = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return The poolerCount.
+       */
+      @java.lang.Override
+      public int getPoolerCount() {
+        return poolerCount_;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The number of running poolers per instance.
+       * </pre>
+       *
+       * <code>int32 pooler_count = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @param value The poolerCount to set.
+       * @return This builder for chaining.
+       */
+      public Builder setPoolerCount(int value) {
+
+        poolerCount_ = value;
+        bitField0_ |= 0x00000004;
+        onChanged();
+        return this;
+      }
+
+      /**
+       *
+       *
+       * <pre>
+       * Output only. The number of running poolers per instance.
+       * </pre>
+       *
+       * <code>int32 pooler_count = 14 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
+       *
+       * @return This builder for chaining.
+       */
+      public Builder clearPoolerCount() {
+        bitField0_ = (bitField0_ & ~0x00000004);
+        poolerCount_ = 0;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFields(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.cloud.alloydb.v1.Instance.ConnectionPoolConfig)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.cloud.alloydb.v1.Instance.ConnectionPoolConfig)
+    private static final com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig();
+    }
+
+    public static com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ConnectionPoolConfig> PARSER =
+        new com.google.protobuf.AbstractParser<ConnectionPoolConfig>() {
+          @java.lang.Override
+          public ConnectionPoolConfig parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            Builder builder = newBuilder();
+            try {
+              builder.mergeFrom(input, extensionRegistry);
+            } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+              throw e.setUnfinishedMessage(builder.buildPartial());
+            } catch (com.google.protobuf.UninitializedMessageException e) {
+              throw e.asInvalidProtocolBufferException()
+                  .setUnfinishedMessage(builder.buildPartial());
+            } catch (java.io.IOException e) {
+              throw new com.google.protobuf.InvalidProtocolBufferException(e)
+                  .setUnfinishedMessage(builder.buildPartial());
+            }
+            return builder.buildPartial();
+          }
+        };
+
+    public static com.google.protobuf.Parser<ConnectionPoolConfig> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<ConnectionPoolConfig> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
 
@@ -17019,6 +18108,66 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         : result;
   }
 
+  public static final int CONNECTION_POOL_CONFIG_FIELD_NUMBER = 37;
+  private com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig connectionPoolConfig_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for Managed Connection Pool (MCP).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.Instance.ConnectionPoolConfig connection_pool_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the connectionPoolConfig field is set.
+   */
+  @java.lang.Override
+  public boolean hasConnectionPoolConfig() {
+    return ((bitField0_ & 0x00000800) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for Managed Connection Pool (MCP).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.Instance.ConnectionPoolConfig connection_pool_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The connectionPoolConfig.
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig getConnectionPoolConfig() {
+    return connectionPoolConfig_ == null
+        ? com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig.getDefaultInstance()
+        : connectionPoolConfig_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The configuration for Managed Connection Pool (MCP).
+   * </pre>
+   *
+   * <code>
+   * .google.cloud.alloydb.v1.Instance.ConnectionPoolConfig connection_pool_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfigOrBuilder
+      getConnectionPoolConfigOrBuilder() {
+    return connectionPoolConfig_ == null
+        ? com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig.getDefaultInstance()
+        : connectionPoolConfig_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -17123,6 +18272,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         != com.google.cloud.alloydb.v1.Instance.ActivationPolicy.ACTIVATION_POLICY_UNSPECIFIED
             .getNumber()) {
       output.writeEnum(35, activationPolicy_);
+    }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      output.writeMessage(37, getConnectionPoolConfig());
     }
     getUnknownFields().writeTo(output);
   }
@@ -17255,6 +18407,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
             .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(35, activationPolicy_);
     }
+    if (((bitField0_ & 0x00000800) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(37, getConnectionPoolConfig());
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -17333,6 +18489,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     if (!getOutboundPublicIpAddressesList().equals(other.getOutboundPublicIpAddressesList()))
       return false;
     if (activationPolicy_ != other.activationPolicy_) return false;
+    if (hasConnectionPoolConfig() != other.hasConnectionPoolConfig()) return false;
+    if (hasConnectionPoolConfig()) {
+      if (!getConnectionPoolConfig().equals(other.getConnectionPoolConfig())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -17434,6 +18594,10 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
     }
     hash = (37 * hash) + ACTIVATION_POLICY_FIELD_NUMBER;
     hash = (53 * hash) + activationPolicy_;
+    if (hasConnectionPoolConfig()) {
+      hash = (37 * hash) + CONNECTION_POOL_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getConnectionPoolConfig().hashCode();
+    }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -17617,6 +18781,7 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
         getClientConnectionConfigFieldBuilder();
         getPscInstanceConfigFieldBuilder();
         getNetworkConfigFieldBuilder();
+        getConnectionPoolConfigFieldBuilder();
       }
     }
 
@@ -17703,6 +18868,11 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       outboundPublicIpAddresses_ = com.google.protobuf.LazyStringArrayList.emptyList();
       activationPolicy_ = 0;
+      connectionPoolConfig_ = null;
+      if (connectionPoolConfigBuilder_ != null) {
+        connectionPoolConfigBuilder_.dispose();
+        connectionPoolConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -17866,6 +19036,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       if (((from_bitField0_ & 0x10000000) != 0)) {
         result.activationPolicy_ = activationPolicy_;
+      }
+      if (((from_bitField0_ & 0x20000000) != 0)) {
+        result.connectionPoolConfig_ =
+            connectionPoolConfigBuilder_ == null
+                ? connectionPoolConfig_
+                : connectionPoolConfigBuilder_.build();
+        to_bitField0_ |= 0x00000800;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -18043,6 +19220,9 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.activationPolicy_ != 0) {
         setActivationPolicyValue(other.getActivationPolicyValue());
+      }
+      if (other.hasConnectionPoolConfig()) {
+        mergeConnectionPoolConfig(other.getConnectionPoolConfig());
       }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
@@ -18274,6 +19454,13 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x10000000;
                 break;
               } // case 280
+            case 298:
+              {
+                input.readMessage(
+                    getConnectionPoolConfigFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x20000000;
+                break;
+              } // case 298
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -23396,6 +24583,224 @@ public final class Instance extends com.google.protobuf.GeneratedMessageV3
       activationPolicy_ = 0;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig connectionPoolConfig_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig,
+            com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig.Builder,
+            com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfigOrBuilder>
+        connectionPoolConfigBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for Managed Connection Pool (MCP).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.Instance.ConnectionPoolConfig connection_pool_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return Whether the connectionPoolConfig field is set.
+     */
+    public boolean hasConnectionPoolConfig() {
+      return ((bitField0_ & 0x20000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for Managed Connection Pool (MCP).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.Instance.ConnectionPoolConfig connection_pool_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     *
+     * @return The connectionPoolConfig.
+     */
+    public com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig getConnectionPoolConfig() {
+      if (connectionPoolConfigBuilder_ == null) {
+        return connectionPoolConfig_ == null
+            ? com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig.getDefaultInstance()
+            : connectionPoolConfig_;
+      } else {
+        return connectionPoolConfigBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for Managed Connection Pool (MCP).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.Instance.ConnectionPoolConfig connection_pool_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setConnectionPoolConfig(
+        com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig value) {
+      if (connectionPoolConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        connectionPoolConfig_ = value;
+      } else {
+        connectionPoolConfigBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x20000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for Managed Connection Pool (MCP).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.Instance.ConnectionPoolConfig connection_pool_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder setConnectionPoolConfig(
+        com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig.Builder builderForValue) {
+      if (connectionPoolConfigBuilder_ == null) {
+        connectionPoolConfig_ = builderForValue.build();
+      } else {
+        connectionPoolConfigBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x20000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for Managed Connection Pool (MCP).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.Instance.ConnectionPoolConfig connection_pool_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder mergeConnectionPoolConfig(
+        com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig value) {
+      if (connectionPoolConfigBuilder_ == null) {
+        if (((bitField0_ & 0x20000000) != 0)
+            && connectionPoolConfig_ != null
+            && connectionPoolConfig_
+                != com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig.getDefaultInstance()) {
+          getConnectionPoolConfigBuilder().mergeFrom(value);
+        } else {
+          connectionPoolConfig_ = value;
+        }
+      } else {
+        connectionPoolConfigBuilder_.mergeFrom(value);
+      }
+      if (connectionPoolConfig_ != null) {
+        bitField0_ |= 0x20000000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for Managed Connection Pool (MCP).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.Instance.ConnectionPoolConfig connection_pool_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public Builder clearConnectionPoolConfig() {
+      bitField0_ = (bitField0_ & ~0x20000000);
+      connectionPoolConfig_ = null;
+      if (connectionPoolConfigBuilder_ != null) {
+        connectionPoolConfigBuilder_.dispose();
+        connectionPoolConfigBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for Managed Connection Pool (MCP).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.Instance.ConnectionPoolConfig connection_pool_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig.Builder
+        getConnectionPoolConfigBuilder() {
+      bitField0_ |= 0x20000000;
+      onChanged();
+      return getConnectionPoolConfigFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for Managed Connection Pool (MCP).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.Instance.ConnectionPoolConfig connection_pool_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    public com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfigOrBuilder
+        getConnectionPoolConfigOrBuilder() {
+      if (connectionPoolConfigBuilder_ != null) {
+        return connectionPoolConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return connectionPoolConfig_ == null
+            ? com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig.getDefaultInstance()
+            : connectionPoolConfig_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The configuration for Managed Connection Pool (MCP).
+     * </pre>
+     *
+     * <code>
+     * .google.cloud.alloydb.v1.Instance.ConnectionPoolConfig connection_pool_config = 37 [(.google.api.field_behavior) = OPTIONAL];
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig,
+            com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig.Builder,
+            com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfigOrBuilder>
+        getConnectionPoolConfigFieldBuilder() {
+      if (connectionPoolConfigBuilder_ == null) {
+        connectionPoolConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig,
+                com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfig.Builder,
+                com.google.cloud.alloydb.v1.Instance.ConnectionPoolConfigOrBuilder>(
+                getConnectionPoolConfig(), getParentForChildren(), isClean());
+        connectionPoolConfig_ = null;
+      }
+      return connectionPoolConfigBuilder_;
     }
 
     @java.lang.Override

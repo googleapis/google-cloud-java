@@ -23,7 +23,6 @@ package com.google.cloud.aiplatform.v1;
  *
  *
  * <pre>
- * LINT: LEGACY_NAMES
  * Represents a hardware accelerator type.
  * </pre>
  *
@@ -172,6 +171,16 @@ public enum AcceleratorType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>NVIDIA_GB200 = 17;</code>
    */
   NVIDIA_GB200(17),
+  /**
+   *
+   *
+   * <pre>
+   * Nvidia RTX Pro 6000 GPU.
+   * </pre>
+   *
+   * <code>NVIDIA_RTX_PRO_6000 = 18;</code>
+   */
+  NVIDIA_RTX_PRO_6000(18),
   /**
    *
    *
@@ -374,6 +383,17 @@ public enum AcceleratorType implements com.google.protobuf.ProtocolMessageEnum {
    *
    *
    * <pre>
+   * Nvidia RTX Pro 6000 GPU.
+   * </pre>
+   *
+   * <code>NVIDIA_RTX_PRO_6000 = 18;</code>
+   */
+  public static final int NVIDIA_RTX_PRO_6000_VALUE = 18;
+
+  /**
+   *
+   *
+   * <pre>
    * TPU v2.
    * </pre>
    *
@@ -466,6 +486,8 @@ public enum AcceleratorType implements com.google.protobuf.ProtocolMessageEnum {
         return NVIDIA_B200;
       case 17:
         return NVIDIA_GB200;
+      case 18:
+        return NVIDIA_RTX_PRO_6000;
       case 6:
         return TPU_V2;
       case 7:

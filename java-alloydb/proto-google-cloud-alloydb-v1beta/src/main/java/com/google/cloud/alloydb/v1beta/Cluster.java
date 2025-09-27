@@ -125,11 +125,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The cluster is stopped. All instances in the cluster are stopped.
-     * Customers can start a stopped cluster at any point and all their
-     * instances will come back to life with same names and IP resources. In
-     * this state, customer pays for storage.
-     * Associated backups could also be present in a stopped cluster.
+     * This is unused. Even when all instances in the cluster are stopped, the
+     * cluster remains in READY state.
      * </pre>
      *
      * <code>STOPPED = 2;</code>
@@ -238,11 +235,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The cluster is stopped. All instances in the cluster are stopped.
-     * Customers can start a stopped cluster at any point and all their
-     * instances will come back to life with same names and IP resources. In
-     * this state, customer pays for storage.
-     * Associated backups could also be present in a stopped cluster.
+     * This is unused. Even when all instances in the cluster are stopped, the
+     * cluster remains in READY state.
      * </pre>
      *
      * <code>STOPPED = 2;</code>
@@ -1586,7 +1580,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * * projects/{project}/locations/{region}/clusters/{cluster_id}
      * </pre>
      *
-     * <code>string primary_cluster_name = 1;</code>
+     * <code>string primary_cluster_name = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The primaryClusterName.
      */
@@ -1600,7 +1594,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * * projects/{project}/locations/{region}/clusters/{cluster_id}
      * </pre>
      *
-     * <code>string primary_cluster_name = 1;</code>
+     * <code>string primary_cluster_name = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The bytes for primaryClusterName.
      */
@@ -1666,7 +1660,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * * projects/{project}/locations/{region}/clusters/{cluster_id}
      * </pre>
      *
-     * <code>string primary_cluster_name = 1;</code>
+     * <code>string primary_cluster_name = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The primaryClusterName.
      */
@@ -1691,7 +1685,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * * projects/{project}/locations/{region}/clusters/{cluster_id}
      * </pre>
      *
-     * <code>string primary_cluster_name = 1;</code>
+     * <code>string primary_cluster_name = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The bytes for primaryClusterName.
      */
@@ -2067,7 +2061,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * * projects/{project}/locations/{region}/clusters/{cluster_id}
        * </pre>
        *
-       * <code>string primary_cluster_name = 1;</code>
+       * <code>string primary_cluster_name = 1 [(.google.api.resource_reference) = { ... }</code>
        *
        * @return The primaryClusterName.
        */
@@ -2091,7 +2085,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * * projects/{project}/locations/{region}/clusters/{cluster_id}
        * </pre>
        *
-       * <code>string primary_cluster_name = 1;</code>
+       * <code>string primary_cluster_name = 1 [(.google.api.resource_reference) = { ... }</code>
        *
        * @return The bytes for primaryClusterName.
        */
@@ -2115,7 +2109,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * * projects/{project}/locations/{region}/clusters/{cluster_id}
        * </pre>
        *
-       * <code>string primary_cluster_name = 1;</code>
+       * <code>string primary_cluster_name = 1 [(.google.api.resource_reference) = { ... }</code>
        *
        * @param value The primaryClusterName to set.
        * @return This builder for chaining.
@@ -2138,7 +2132,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * * projects/{project}/locations/{region}/clusters/{cluster_id}
        * </pre>
        *
-       * <code>string primary_cluster_name = 1;</code>
+       * <code>string primary_cluster_name = 1 [(.google.api.resource_reference) = { ... }</code>
        *
        * @return This builder for chaining.
        */
@@ -2157,7 +2151,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * * projects/{project}/locations/{region}/clusters/{cluster_id}
        * </pre>
        *
-       * <code>string primary_cluster_name = 1;</code>
+       * <code>string primary_cluster_name = 1 [(.google.api.resource_reference) = { ... }</code>
        *
        * @param value The bytes for primaryClusterName to set.
        * @return This builder for chaining.
@@ -2251,7 +2245,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated string secondary_cluster_names = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated string secondary_cluster_names = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return A list containing the secondaryClusterNames.
@@ -2267,7 +2261,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated string secondary_cluster_names = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated string secondary_cluster_names = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The count of secondaryClusterNames.
@@ -2283,7 +2277,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated string secondary_cluster_names = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated string secondary_cluster_names = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param index The index of the element to return.
@@ -2300,7 +2294,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated string secondary_cluster_names = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated string secondary_cluster_names = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param index The index of the value to return.
@@ -2371,7 +2365,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated string secondary_cluster_names = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated string secondary_cluster_names = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return A list containing the secondaryClusterNames.
@@ -2389,7 +2383,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated string secondary_cluster_names = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated string secondary_cluster_names = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @return The count of secondaryClusterNames.
@@ -2407,7 +2401,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated string secondary_cluster_names = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated string secondary_cluster_names = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param index The index of the element to return.
@@ -2426,7 +2420,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </pre>
      *
      * <code>
-     * repeated string secondary_cluster_names = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+     * repeated string secondary_cluster_names = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
      * </code>
      *
      * @param index The index of the value to return.
@@ -2822,7 +2816,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * repeated string secondary_cluster_names = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * repeated string secondary_cluster_names = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
        * </code>
        *
        * @return A list containing the secondaryClusterNames.
@@ -2841,7 +2835,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * repeated string secondary_cluster_names = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * repeated string secondary_cluster_names = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
        * </code>
        *
        * @return The count of secondaryClusterNames.
@@ -2859,7 +2853,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * repeated string secondary_cluster_names = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * repeated string secondary_cluster_names = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
        * </code>
        *
        * @param index The index of the element to return.
@@ -2878,7 +2872,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * repeated string secondary_cluster_names = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * repeated string secondary_cluster_names = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
        * </code>
        *
        * @param index The index of the value to return.
@@ -2897,7 +2891,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * repeated string secondary_cluster_names = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * repeated string secondary_cluster_names = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
        * </code>
        *
        * @param index The index to set the value at.
@@ -2924,7 +2918,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * repeated string secondary_cluster_names = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * repeated string secondary_cluster_names = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
        * </code>
        *
        * @param value The secondaryClusterNames to add.
@@ -2950,7 +2944,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * repeated string secondary_cluster_names = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * repeated string secondary_cluster_names = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
        * </code>
        *
        * @param values The secondaryClusterNames to add.
@@ -2973,7 +2967,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * repeated string secondary_cluster_names = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * repeated string secondary_cluster_names = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
        * </code>
        *
        * @return This builder for chaining.
@@ -2995,7 +2989,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
        * </pre>
        *
        * <code>
-       * repeated string secondary_cluster_names = 1 [(.google.api.field_behavior) = OUTPUT_ONLY];
+       * repeated string secondary_cluster_names = 1 [(.google.api.field_behavior) = OUTPUT_ONLY, (.google.api.resource_reference) = { ... }
        * </code>
        *
        * @param value The bytes of the secondaryClusterNames to add.
@@ -6324,7 +6318,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=659
+   *     google/cloud/alloydb/v1beta/resources.proto;l=675
    * @return The network.
    */
   @java.lang.Override
@@ -6357,7 +6351,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=659
+   *     google/cloud/alloydb/v1beta/resources.proto;l=675
    * @return The bytes for network.
    */
   @java.lang.Override
@@ -6713,7 +6707,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.alloydb.v1beta.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.ssl_config is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=694
+   *     google/cloud/alloydb/v1beta/resources.proto;l=710
    * @return Whether the sslConfig field is set.
    */
   @java.lang.Override
@@ -6732,7 +6726,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.cloud.alloydb.v1beta.SslConfig ssl_config = 18 [deprecated = true];</code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.ssl_config is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=694
+   *     google/cloud/alloydb/v1beta/resources.proto;l=710
    * @return The sslConfig.
    */
   @java.lang.Override
@@ -7347,7 +7341,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.gemini_config is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=741
+   *     google/cloud/alloydb/v1beta/resources.proto;l=757
    * @return Whether the geminiConfig field is set.
    */
   @java.lang.Override
@@ -7369,7 +7363,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.cloud.alloydb.v1beta.Cluster.gemini_config is deprecated. See
-   *     google/cloud/alloydb/v1beta/resources.proto;l=741
+   *     google/cloud/alloydb/v1beta/resources.proto;l=757
    * @return The geminiConfig.
    */
   @java.lang.Override
@@ -7645,10 +7639,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. AlloyDB per-cluster service agent email. This service account
-   * is created per-cluster per-project, and is different from that of the
-   * primary service agent which is created per-project. The service account
-   * naming format is subject to change.
+   * Output only. AlloyDB per-cluster service account. This service account is
+   * created per-cluster per-project, and is different from the per-project
+   * service account. The per-cluster service account naming format is subject
+   * to change.
    * </pre>
    *
    * <code>string service_account_email = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -7672,10 +7666,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Output only. AlloyDB per-cluster service agent email. This service account
-   * is created per-cluster per-project, and is different from that of the
-   * primary service agent which is created per-project. The service account
-   * naming format is subject to change.
+   * Output only. AlloyDB per-cluster service account. This service account is
+   * created per-cluster per-project, and is different from the per-project
+   * service account. The per-cluster service account naming format is subject
+   * to change.
    * </pre>
    *
    * <code>string service_account_email = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -11631,7 +11625,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=659
+     *     google/cloud/alloydb/v1beta/resources.proto;l=675
      * @return The network.
      */
     @java.lang.Deprecated
@@ -11663,7 +11657,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=659
+     *     google/cloud/alloydb/v1beta/resources.proto;l=675
      * @return The bytes for network.
      */
     @java.lang.Deprecated
@@ -11695,7 +11689,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=659
+     *     google/cloud/alloydb/v1beta/resources.proto;l=675
      * @param value The network to set.
      * @return This builder for chaining.
      */
@@ -11726,7 +11720,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=659
+     *     google/cloud/alloydb/v1beta/resources.proto;l=675
      * @return This builder for chaining.
      */
     @java.lang.Deprecated
@@ -11753,7 +11747,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.network is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=659
+     *     google/cloud/alloydb/v1beta/resources.proto;l=675
      * @param value The bytes for network to set.
      * @return This builder for chaining.
      */
@@ -12630,7 +12624,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.alloydb.v1beta.SslConfig ssl_config = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.ssl_config is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=694
+     *     google/cloud/alloydb/v1beta/resources.proto;l=710
      * @return Whether the sslConfig field is set.
      */
     @java.lang.Deprecated
@@ -12648,7 +12642,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.cloud.alloydb.v1beta.SslConfig ssl_config = 18 [deprecated = true];</code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.ssl_config is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=694
+     *     google/cloud/alloydb/v1beta/resources.proto;l=710
      * @return The sslConfig.
      */
     @java.lang.Deprecated
@@ -14888,7 +14882,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.gemini_config is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=741
+     *     google/cloud/alloydb/v1beta/resources.proto;l=757
      * @return Whether the geminiConfig field is set.
      */
     @java.lang.Deprecated
@@ -14909,7 +14903,7 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.cloud.alloydb.v1beta.Cluster.gemini_config is deprecated. See
-     *     google/cloud/alloydb/v1beta/resources.proto;l=741
+     *     google/cloud/alloydb/v1beta/resources.proto;l=757
      * @return The geminiConfig.
      */
     @java.lang.Deprecated
@@ -15652,10 +15646,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. AlloyDB per-cluster service agent email. This service account
-     * is created per-cluster per-project, and is different from that of the
-     * primary service agent which is created per-project. The service account
-     * naming format is subject to change.
+     * Output only. AlloyDB per-cluster service account. This service account is
+     * created per-cluster per-project, and is different from the per-project
+     * service account. The per-cluster service account naming format is subject
+     * to change.
      * </pre>
      *
      * <code>string service_account_email = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -15678,10 +15672,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. AlloyDB per-cluster service agent email. This service account
-     * is created per-cluster per-project, and is different from that of the
-     * primary service agent which is created per-project. The service account
-     * naming format is subject to change.
+     * Output only. AlloyDB per-cluster service account. This service account is
+     * created per-cluster per-project, and is different from the per-project
+     * service account. The per-cluster service account naming format is subject
+     * to change.
      * </pre>
      *
      * <code>string service_account_email = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -15704,10 +15698,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. AlloyDB per-cluster service agent email. This service account
-     * is created per-cluster per-project, and is different from that of the
-     * primary service agent which is created per-project. The service account
-     * naming format is subject to change.
+     * Output only. AlloyDB per-cluster service account. This service account is
+     * created per-cluster per-project, and is different from the per-project
+     * service account. The per-cluster service account naming format is subject
+     * to change.
      * </pre>
      *
      * <code>string service_account_email = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -15729,10 +15723,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. AlloyDB per-cluster service agent email. This service account
-     * is created per-cluster per-project, and is different from that of the
-     * primary service agent which is created per-project. The service account
-     * naming format is subject to change.
+     * Output only. AlloyDB per-cluster service account. This service account is
+     * created per-cluster per-project, and is different from the per-project
+     * service account. The per-cluster service account naming format is subject
+     * to change.
      * </pre>
      *
      * <code>string service_account_email = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>
@@ -15750,10 +15744,10 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Output only. AlloyDB per-cluster service agent email. This service account
-     * is created per-cluster per-project, and is different from that of the
-     * primary service agent which is created per-project. The service account
-     * naming format is subject to change.
+     * Output only. AlloyDB per-cluster service account. This service account is
+     * created per-cluster per-project, and is different from the per-project
+     * service account. The per-cluster service account naming format is subject
+     * to change.
      * </pre>
      *
      * <code>string service_account_email = 46 [(.google.api.field_behavior) = OUTPUT_ONLY];</code>

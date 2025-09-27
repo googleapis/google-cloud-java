@@ -1694,6 +1694,52 @@ public final class AlloyDBAdminGrpc {
     return getListDatabasesMethod;
   }
 
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.alloydb.v1alpha.CreateDatabaseRequest,
+          com.google.cloud.alloydb.v1alpha.Database>
+      getCreateDatabaseMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "CreateDatabase",
+      requestType = com.google.cloud.alloydb.v1alpha.CreateDatabaseRequest.class,
+      responseType = com.google.cloud.alloydb.v1alpha.Database.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.alloydb.v1alpha.CreateDatabaseRequest,
+          com.google.cloud.alloydb.v1alpha.Database>
+      getCreateDatabaseMethod() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.alloydb.v1alpha.CreateDatabaseRequest,
+            com.google.cloud.alloydb.v1alpha.Database>
+        getCreateDatabaseMethod;
+    if ((getCreateDatabaseMethod = AlloyDBAdminGrpc.getCreateDatabaseMethod) == null) {
+      synchronized (AlloyDBAdminGrpc.class) {
+        if ((getCreateDatabaseMethod = AlloyDBAdminGrpc.getCreateDatabaseMethod) == null) {
+          AlloyDBAdminGrpc.getCreateDatabaseMethod =
+              getCreateDatabaseMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.alloydb.v1alpha.CreateDatabaseRequest,
+                          com.google.cloud.alloydb.v1alpha.Database>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(generateFullMethodName(SERVICE_NAME, "CreateDatabase"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.alloydb.v1alpha.CreateDatabaseRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.alloydb.v1alpha.Database.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new AlloyDBAdminMethodDescriptorSupplier("CreateDatabase"))
+                      .build();
+        }
+      }
+    }
+    return getCreateDatabaseMethod;
+  }
+
   /** Creates a new async stub that supports all call types for the service */
   public static AlloyDBAdminStub newStub(io.grpc.Channel channel) {
     io.grpc.stub.AbstractStub.StubFactory<AlloyDBAdminStub> factory =
@@ -2304,6 +2350,20 @@ public final class AlloyDBAdminGrpc {
             responseObserver) {
       io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
           getListDatabasesMethod(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Database in a given project, location, and cluster.
+     * </pre>
+     */
+    default void createDatabase(
+        com.google.cloud.alloydb.v1alpha.CreateDatabaseRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.alloydb.v1alpha.Database> responseObserver) {
+      io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall(
+          getCreateDatabaseMethod(), responseObserver);
     }
   }
 
@@ -2955,6 +3015,22 @@ public final class AlloyDBAdminGrpc {
           request,
           responseObserver);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Database in a given project, location, and cluster.
+     * </pre>
+     */
+    public void createDatabase(
+        com.google.cloud.alloydb.v1alpha.CreateDatabaseRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.alloydb.v1alpha.Database> responseObserver) {
+      io.grpc.stub.ClientCalls.asyncUnaryCall(
+          getChannel().newCall(getCreateDatabaseMethod(), getCallOptions()),
+          request,
+          responseObserver);
+    }
   }
 
   /**
@@ -3486,6 +3562,19 @@ public final class AlloyDBAdminGrpc {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListDatabasesMethod(), getCallOptions(), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Database in a given project, location, and cluster.
+     * </pre>
+     */
+    public com.google.cloud.alloydb.v1alpha.Database createDatabase(
+        com.google.cloud.alloydb.v1alpha.CreateDatabaseRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateDatabaseMethod(), getCallOptions(), request);
+    }
   }
 
   /**
@@ -4016,6 +4105,19 @@ public final class AlloyDBAdminGrpc {
         com.google.cloud.alloydb.v1alpha.ListDatabasesRequest request) {
       return io.grpc.stub.ClientCalls.blockingUnaryCall(
           getChannel(), getListDatabasesMethod(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Database in a given project, location, and cluster.
+     * </pre>
+     */
+    public com.google.cloud.alloydb.v1alpha.Database createDatabase(
+        com.google.cloud.alloydb.v1alpha.CreateDatabaseRequest request) {
+      return io.grpc.stub.ClientCalls.blockingUnaryCall(
+          getChannel(), getCreateDatabaseMethod(), getCallOptions(), request);
     }
   }
 
@@ -4562,6 +4664,20 @@ public final class AlloyDBAdminGrpc {
       return io.grpc.stub.ClientCalls.futureUnaryCall(
           getChannel().newCall(getListDatabasesMethod(), getCallOptions()), request);
     }
+
+    /**
+     *
+     *
+     * <pre>
+     * Creates a new Database in a given project, location, and cluster.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.alloydb.v1alpha.Database>
+        createDatabase(com.google.cloud.alloydb.v1alpha.CreateDatabaseRequest request) {
+      return io.grpc.stub.ClientCalls.futureUnaryCall(
+          getChannel().newCall(getCreateDatabaseMethod(), getCallOptions()), request);
+    }
   }
 
   private static final int METHODID_LIST_CLUSTERS = 0;
@@ -4601,6 +4717,7 @@ public final class AlloyDBAdminGrpc {
   private static final int METHODID_UPDATE_USER = 34;
   private static final int METHODID_DELETE_USER = 35;
   private static final int METHODID_LIST_DATABASES = 36;
+  private static final int METHODID_CREATE_DATABASE = 37;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -4819,6 +4936,12 @@ public final class AlloyDBAdminGrpc {
           serviceImpl.listDatabases(
               (com.google.cloud.alloydb.v1alpha.ListDatabasesRequest) request,
               (io.grpc.stub.StreamObserver<com.google.cloud.alloydb.v1alpha.ListDatabasesResponse>)
+                  responseObserver);
+          break;
+        case METHODID_CREATE_DATABASE:
+          serviceImpl.createDatabase(
+              (com.google.cloud.alloydb.v1alpha.CreateDatabaseRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.alloydb.v1alpha.Database>)
                   responseObserver);
           break;
         default:
@@ -5070,6 +5193,12 @@ public final class AlloyDBAdminGrpc {
                     com.google.cloud.alloydb.v1alpha.ListDatabasesRequest,
                     com.google.cloud.alloydb.v1alpha.ListDatabasesResponse>(
                     service, METHODID_LIST_DATABASES)))
+        .addMethod(
+            getCreateDatabaseMethod(),
+            io.grpc.stub.ServerCalls.asyncUnaryCall(
+                new MethodHandlers<
+                    com.google.cloud.alloydb.v1alpha.CreateDatabaseRequest,
+                    com.google.cloud.alloydb.v1alpha.Database>(service, METHODID_CREATE_DATABASE)))
         .build();
   }
 
@@ -5158,6 +5287,7 @@ public final class AlloyDBAdminGrpc {
                       .addMethod(getUpdateUserMethod())
                       .addMethod(getDeleteUserMethod())
                       .addMethod(getListDatabasesMethod())
+                      .addMethod(getCreateDatabaseMethod())
                       .build();
         }
       }

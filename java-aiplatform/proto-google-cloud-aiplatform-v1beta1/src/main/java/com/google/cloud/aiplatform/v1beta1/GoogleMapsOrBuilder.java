@@ -22,4 +22,18 @@ package com.google.cloud.aiplatform.v1beta1;
 public interface GoogleMapsOrBuilder
     extends
     // @@protoc_insertion_point(interface_extends:google.cloud.aiplatform.v1beta1.GoogleMaps)
-    com.google.protobuf.MessageOrBuilder {}
+    com.google.protobuf.MessageOrBuilder {
+
+  /**
+   *
+   *
+   * <pre>
+   * If true, include the widget context token in the response.
+   * </pre>
+   *
+   * <code>bool enable_widget = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableWidget.
+   */
+  boolean getEnableWidget();
+}

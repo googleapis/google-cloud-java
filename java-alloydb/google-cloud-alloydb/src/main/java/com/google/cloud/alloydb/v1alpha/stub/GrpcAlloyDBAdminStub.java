@@ -40,10 +40,12 @@ import com.google.cloud.alloydb.v1alpha.Cluster;
 import com.google.cloud.alloydb.v1alpha.ConnectionInfo;
 import com.google.cloud.alloydb.v1alpha.CreateBackupRequest;
 import com.google.cloud.alloydb.v1alpha.CreateClusterRequest;
+import com.google.cloud.alloydb.v1alpha.CreateDatabaseRequest;
 import com.google.cloud.alloydb.v1alpha.CreateInstanceRequest;
 import com.google.cloud.alloydb.v1alpha.CreateSecondaryClusterRequest;
 import com.google.cloud.alloydb.v1alpha.CreateSecondaryInstanceRequest;
 import com.google.cloud.alloydb.v1alpha.CreateUserRequest;
+import com.google.cloud.alloydb.v1alpha.Database;
 import com.google.cloud.alloydb.v1alpha.DeleteBackupRequest;
 import com.google.cloud.alloydb.v1alpha.DeleteClusterRequest;
 import com.google.cloud.alloydb.v1alpha.DeleteInstanceRequest;
@@ -507,6 +509,17 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
               .setSampledToLocalTracing(true)
               .build();
 
+  private static final MethodDescriptor<CreateDatabaseRequest, Database>
+      createDatabaseMethodDescriptor =
+          MethodDescriptor.<CreateDatabaseRequest, Database>newBuilder()
+              .setType(MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName("google.cloud.alloydb.v1alpha.AlloyDBAdmin/CreateDatabase")
+              .setRequestMarshaller(
+                  ProtoUtils.marshaller(CreateDatabaseRequest.getDefaultInstance()))
+              .setResponseMarshaller(ProtoUtils.marshaller(Database.getDefaultInstance()))
+              .setSampledToLocalTracing(true)
+              .build();
+
   private static final MethodDescriptor<ListLocationsRequest, ListLocationsResponse>
       listLocationsMethodDescriptor =
           MethodDescriptor.<ListLocationsRequest, ListLocationsResponse>newBuilder()
@@ -624,6 +637,7 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
   private final UnaryCallable<ListDatabasesRequest, ListDatabasesResponse> listDatabasesCallable;
   private final UnaryCallable<ListDatabasesRequest, ListDatabasesPagedResponse>
       listDatabasesPagedCallable;
+  private final UnaryCallable<CreateDatabaseRequest, Database> createDatabaseCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsResponse> listLocationsCallable;
   private final UnaryCallable<ListLocationsRequest, ListLocationsPagedResponse>
       listLocationsPagedCallable;
@@ -1047,6 +1061,16 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
                   return builder.build();
                 })
             .build();
+    GrpcCallSettings<CreateDatabaseRequest, Database> createDatabaseTransportSettings =
+        GrpcCallSettings.<CreateDatabaseRequest, Database>newBuilder()
+            .setMethodDescriptor(createDatabaseMethodDescriptor)
+            .setParamsExtractor(
+                request -> {
+                  RequestParamsBuilder builder = RequestParamsBuilder.create();
+                  builder.add("parent", String.valueOf(request.getParent()));
+                  return builder.build();
+                })
+            .build();
     GrpcCallSettings<ListLocationsRequest, ListLocationsResponse> listLocationsTransportSettings =
         GrpcCallSettings.<ListLocationsRequest, ListLocationsResponse>newBuilder()
             .setMethodDescriptor(listLocationsMethodDescriptor)
@@ -1339,6 +1363,9 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
     this.listDatabasesPagedCallable =
         callableFactory.createPagedCallable(
             listDatabasesTransportSettings, settings.listDatabasesSettings(), clientContext);
+    this.createDatabaseCallable =
+        callableFactory.createUnaryCallable(
+            createDatabaseTransportSettings, settings.createDatabaseSettings(), clientContext);
     this.listLocationsCallable =
         callableFactory.createUnaryCallable(
             listLocationsTransportSettings, settings.listLocationsSettings(), clientContext);
@@ -1703,6 +1730,11 @@ public class GrpcAlloyDBAdminStub extends AlloyDBAdminStub {
   public UnaryCallable<ListDatabasesRequest, ListDatabasesPagedResponse>
       listDatabasesPagedCallable() {
     return listDatabasesPagedCallable;
+  }
+
+  @Override
+  public UnaryCallable<CreateDatabaseRequest, Database> createDatabaseCallable() {
+    return createDatabaseCallable;
   }
 
   @Override

@@ -3346,6 +3346,66 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     return systemReservedInternalIpv6Ranges_.getByteString(index);
   }
 
+  public static final int UTILIZATION_DETAILS_FIELD_NUMBER = 125404453;
+  private com.google.cloud.compute.v1.SubnetworkUtilizationDetails utilizationDetails_;
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The current IP utilization of all subnetwork ranges. Contains the total number of allocated and free IPs in each range.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SubnetworkUtilizationDetails utilization_details = 125404453;
+   * </code>
+   *
+   * @return Whether the utilizationDetails field is set.
+   */
+  @java.lang.Override
+  public boolean hasUtilizationDetails() {
+    return ((bitField0_ & 0x08000000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The current IP utilization of all subnetwork ranges. Contains the total number of allocated and free IPs in each range.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SubnetworkUtilizationDetails utilization_details = 125404453;
+   * </code>
+   *
+   * @return The utilizationDetails.
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.SubnetworkUtilizationDetails getUtilizationDetails() {
+    return utilizationDetails_ == null
+        ? com.google.cloud.compute.v1.SubnetworkUtilizationDetails.getDefaultInstance()
+        : utilizationDetails_;
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * Output only. [Output Only] The current IP utilization of all subnetwork ranges. Contains the total number of allocated and free IPs in each range.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.compute.v1.SubnetworkUtilizationDetails utilization_details = 125404453;
+   * </code>
+   */
+  @java.lang.Override
+  public com.google.cloud.compute.v1.SubnetworkUtilizationDetailsOrBuilder
+      getUtilizationDetailsOrBuilder() {
+    return utilizationDetails_ == null
+        ? com.google.cloud.compute.v1.SubnetworkUtilizationDetails.getDefaultInstance()
+        : utilizationDetails_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -3391,6 +3451,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x04000000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 109757585, state_);
+    }
+    if (((bitField0_ & 0x08000000) != 0)) {
+      output.writeMessage(125404453, getUtilizationDetails());
     }
     for (int i = 0; i < secondaryIpRanges_.size(); i++) {
       output.writeMessage(136658915, secondaryIpRanges_.get(i));
@@ -3499,6 +3562,11 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     }
     if (((bitField0_ & 0x04000000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(109757585, state_);
+    }
+    if (((bitField0_ & 0x08000000) != 0)) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              125404453, getUtilizationDetails());
     }
     for (int i = 0; i < secondaryIpRanges_.size(); i++) {
       size +=
@@ -3700,6 +3768,10 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
         .equals(other.getSystemReservedExternalIpv6RangesList())) return false;
     if (!getSystemReservedInternalIpv6RangesList()
         .equals(other.getSystemReservedInternalIpv6RangesList())) return false;
+    if (hasUtilizationDetails() != other.hasUtilizationDetails()) return false;
+    if (hasUtilizationDetails()) {
+      if (!getUtilizationDetails().equals(other.getUtilizationDetails())) return false;
+    }
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -3830,6 +3902,10 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
     if (getSystemReservedInternalIpv6RangesCount() > 0) {
       hash = (37 * hash) + SYSTEM_RESERVED_INTERNAL_IPV6_RANGES_FIELD_NUMBER;
       hash = (53 * hash) + getSystemReservedInternalIpv6RangesList().hashCode();
+    }
+    if (hasUtilizationDetails()) {
+      hash = (37 * hash) + UTILIZATION_DETAILS_FIELD_NUMBER;
+      hash = (53 * hash) + getUtilizationDetails().hashCode();
     }
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
@@ -3975,6 +4051,7 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
         getLogConfigFieldBuilder();
         getParamsFieldBuilder();
         getSecondaryIpRangesFieldBuilder();
+        getUtilizationDetailsFieldBuilder();
       }
     }
 
@@ -4026,6 +4103,11 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       state_ = "";
       systemReservedExternalIpv6Ranges_ = com.google.protobuf.LazyStringArrayList.emptyList();
       systemReservedInternalIpv6Ranges_ = com.google.protobuf.LazyStringArrayList.emptyList();
+      utilizationDetails_ = null;
+      if (utilizationDetailsBuilder_ != null) {
+        utilizationDetailsBuilder_.dispose();
+        utilizationDetailsBuilder_ = null;
+      }
       return this;
     }
 
@@ -4191,6 +4273,13 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       if (((from_bitField0_ & 0x20000000) != 0)) {
         systemReservedInternalIpv6Ranges_.makeImmutable();
         result.systemReservedInternalIpv6Ranges_ = systemReservedInternalIpv6Ranges_;
+      }
+      if (((from_bitField0_ & 0x40000000) != 0)) {
+        result.utilizationDetails_ =
+            utilizationDetailsBuilder_ == null
+                ? utilizationDetails_
+                : utilizationDetailsBuilder_.build();
+        to_bitField0_ |= 0x08000000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -4412,6 +4501,9 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
         }
         onChanged();
       }
+      if (other.hasUtilizationDetails()) {
+        mergeUtilizationDetails(other.getUtilizationDetails());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -4499,6 +4591,13 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
                 bitField0_ |= 0x08000000;
                 break;
               } // case 878060682
+            case 1003235626:
+              {
+                input.readMessage(
+                    getUtilizationDetailsFieldBuilder().getBuilder(), extensionRegistry);
+                bitField0_ |= 0x40000000;
+                break;
+              } // case 1003235626
             case 1093271322:
               {
                 com.google.cloud.compute.v1.SubnetworkSecondaryRange m =
@@ -8853,6 +8952,224 @@ public final class Subnetwork extends com.google.protobuf.GeneratedMessageV3
       bitField0_ |= 0x20000000;
       onChanged();
       return this;
+    }
+
+    private com.google.cloud.compute.v1.SubnetworkUtilizationDetails utilizationDetails_;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.SubnetworkUtilizationDetails,
+            com.google.cloud.compute.v1.SubnetworkUtilizationDetails.Builder,
+            com.google.cloud.compute.v1.SubnetworkUtilizationDetailsOrBuilder>
+        utilizationDetailsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The current IP utilization of all subnetwork ranges. Contains the total number of allocated and free IPs in each range.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SubnetworkUtilizationDetails utilization_details = 125404453;
+     * </code>
+     *
+     * @return Whether the utilizationDetails field is set.
+     */
+    public boolean hasUtilizationDetails() {
+      return ((bitField0_ & 0x40000000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The current IP utilization of all subnetwork ranges. Contains the total number of allocated and free IPs in each range.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SubnetworkUtilizationDetails utilization_details = 125404453;
+     * </code>
+     *
+     * @return The utilizationDetails.
+     */
+    public com.google.cloud.compute.v1.SubnetworkUtilizationDetails getUtilizationDetails() {
+      if (utilizationDetailsBuilder_ == null) {
+        return utilizationDetails_ == null
+            ? com.google.cloud.compute.v1.SubnetworkUtilizationDetails.getDefaultInstance()
+            : utilizationDetails_;
+      } else {
+        return utilizationDetailsBuilder_.getMessage();
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The current IP utilization of all subnetwork ranges. Contains the total number of allocated and free IPs in each range.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SubnetworkUtilizationDetails utilization_details = 125404453;
+     * </code>
+     */
+    public Builder setUtilizationDetails(
+        com.google.cloud.compute.v1.SubnetworkUtilizationDetails value) {
+      if (utilizationDetailsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        utilizationDetails_ = value;
+      } else {
+        utilizationDetailsBuilder_.setMessage(value);
+      }
+      bitField0_ |= 0x40000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The current IP utilization of all subnetwork ranges. Contains the total number of allocated and free IPs in each range.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SubnetworkUtilizationDetails utilization_details = 125404453;
+     * </code>
+     */
+    public Builder setUtilizationDetails(
+        com.google.cloud.compute.v1.SubnetworkUtilizationDetails.Builder builderForValue) {
+      if (utilizationDetailsBuilder_ == null) {
+        utilizationDetails_ = builderForValue.build();
+      } else {
+        utilizationDetailsBuilder_.setMessage(builderForValue.build());
+      }
+      bitField0_ |= 0x40000000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The current IP utilization of all subnetwork ranges. Contains the total number of allocated and free IPs in each range.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SubnetworkUtilizationDetails utilization_details = 125404453;
+     * </code>
+     */
+    public Builder mergeUtilizationDetails(
+        com.google.cloud.compute.v1.SubnetworkUtilizationDetails value) {
+      if (utilizationDetailsBuilder_ == null) {
+        if (((bitField0_ & 0x40000000) != 0)
+            && utilizationDetails_ != null
+            && utilizationDetails_
+                != com.google.cloud.compute.v1.SubnetworkUtilizationDetails.getDefaultInstance()) {
+          getUtilizationDetailsBuilder().mergeFrom(value);
+        } else {
+          utilizationDetails_ = value;
+        }
+      } else {
+        utilizationDetailsBuilder_.mergeFrom(value);
+      }
+      if (utilizationDetails_ != null) {
+        bitField0_ |= 0x40000000;
+        onChanged();
+      }
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The current IP utilization of all subnetwork ranges. Contains the total number of allocated and free IPs in each range.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SubnetworkUtilizationDetails utilization_details = 125404453;
+     * </code>
+     */
+    public Builder clearUtilizationDetails() {
+      bitField0_ = (bitField0_ & ~0x40000000);
+      utilizationDetails_ = null;
+      if (utilizationDetailsBuilder_ != null) {
+        utilizationDetailsBuilder_.dispose();
+        utilizationDetailsBuilder_ = null;
+      }
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The current IP utilization of all subnetwork ranges. Contains the total number of allocated and free IPs in each range.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SubnetworkUtilizationDetails utilization_details = 125404453;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.SubnetworkUtilizationDetails.Builder
+        getUtilizationDetailsBuilder() {
+      bitField0_ |= 0x40000000;
+      onChanged();
+      return getUtilizationDetailsFieldBuilder().getBuilder();
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The current IP utilization of all subnetwork ranges. Contains the total number of allocated and free IPs in each range.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SubnetworkUtilizationDetails utilization_details = 125404453;
+     * </code>
+     */
+    public com.google.cloud.compute.v1.SubnetworkUtilizationDetailsOrBuilder
+        getUtilizationDetailsOrBuilder() {
+      if (utilizationDetailsBuilder_ != null) {
+        return utilizationDetailsBuilder_.getMessageOrBuilder();
+      } else {
+        return utilizationDetails_ == null
+            ? com.google.cloud.compute.v1.SubnetworkUtilizationDetails.getDefaultInstance()
+            : utilizationDetails_;
+      }
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Output only. [Output Only] The current IP utilization of all subnetwork ranges. Contains the total number of allocated and free IPs in each range.
+     * </pre>
+     *
+     * <code>
+     * optional .google.cloud.compute.v1.SubnetworkUtilizationDetails utilization_details = 125404453;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.compute.v1.SubnetworkUtilizationDetails,
+            com.google.cloud.compute.v1.SubnetworkUtilizationDetails.Builder,
+            com.google.cloud.compute.v1.SubnetworkUtilizationDetailsOrBuilder>
+        getUtilizationDetailsFieldBuilder() {
+      if (utilizationDetailsBuilder_ == null) {
+        utilizationDetailsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.compute.v1.SubnetworkUtilizationDetails,
+                com.google.cloud.compute.v1.SubnetworkUtilizationDetails.Builder,
+                com.google.cloud.compute.v1.SubnetworkUtilizationDetailsOrBuilder>(
+                getUtilizationDetails(), getParentForChildren(), isClean());
+        utilizationDetails_ = null;
+      }
+      return utilizationDetailsBuilder_;
     }
 
     @java.lang.Override

@@ -95,6 +95,7 @@ public class InterconnectRemoteLocationsClientTest {
             .setLacp("lacp3313826")
             .setMaxLagSize100Gbps(-828522571)
             .setMaxLagSize10Gbps(294007573)
+            .setMaxLagSize400Gbps(104941138)
             .setName("name3373707")
             .setPeeringdbFacilityId("peeringdbFacilityId1154838908")
             .addAllPermittedConnections(

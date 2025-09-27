@@ -183,5 +183,19 @@ public interface ExecuteSqlRequestOrBuilder
    */
   com.google.protobuf.ByteString getSqlStatementBytes();
 
+  /**
+   *
+   *
+   * <pre>
+   * Optional. If set, validates the sql statement by performing
+   * syntax and semantic validation and doesn't execute the query.
+   * </pre>
+   *
+   * <code>bool validate_only = 6 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The validateOnly.
+   */
+  boolean getValidateOnly();
+
   com.google.cloud.alloydb.v1beta.ExecuteSqlRequest.UserCredentialCase getUserCredentialCase();
 }

@@ -96,6 +96,7 @@ public class InterconnectLocationsClientTest {
             .setPeeringdbFacilityId("peeringdbFacilityId1154838908")
             .addAllRegionInfos(new ArrayList<InterconnectLocationRegionInfo>())
             .setSelfLink("selfLink1191800166")
+            .addAllSingleRegionProductionCriticalPeerLocations(new ArrayList<String>())
             .setStatus("status-892481550")
             .setSupportsPzs(true)
             .build();

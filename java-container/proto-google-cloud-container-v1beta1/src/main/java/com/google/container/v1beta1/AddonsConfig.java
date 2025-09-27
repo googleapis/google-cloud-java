@@ -199,7 +199,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1beta1.AddonsConfig.kubernetes_dashboard is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1944
+   *     google/container/v1beta1/cluster_service.proto;l=1942
    * @return Whether the kubernetesDashboard field is set.
    */
   @java.lang.Override
@@ -224,7 +224,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    * </code>
    *
    * @deprecated google.container.v1beta1.AddonsConfig.kubernetes_dashboard is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1944
+   *     google/container/v1beta1/cluster_service.proto;l=1942
    * @return The kubernetesDashboard.
    */
   @java.lang.Override
@@ -333,7 +333,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.container.v1beta1.IstioConfig istio_config = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.AddonsConfig.istio_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1953
+   *     google/container/v1beta1/cluster_service.proto;l=1951
    * @return Whether the istioConfig field is set.
    */
   @java.lang.Override
@@ -353,7 +353,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.container.v1beta1.IstioConfig istio_config = 5 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.AddonsConfig.istio_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1953
+   *     google/container/v1beta1/cluster_service.proto;l=1951
    * @return The istioConfig.
    */
   @java.lang.Override
@@ -627,7 +627,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.AddonsConfig.kalm_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1972
+   *     google/container/v1beta1/cluster_service.proto;l=1970
    * @return Whether the kalmConfig field is set.
    */
   @java.lang.Override
@@ -647,7 +647,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
    * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
    *
    * @deprecated google.container.v1beta1.AddonsConfig.kalm_config is deprecated. See
-   *     google/container/v1beta1/cluster_service.proto;l=1972
+   *     google/container/v1beta1/cluster_service.proto;l=1970
    * @return The kalmConfig.
    */
   @java.lang.Override
@@ -2593,7 +2593,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.AddonsConfig.kubernetes_dashboard is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1944
+     *     google/container/v1beta1/cluster_service.proto;l=1942
      * @return Whether the kubernetesDashboard field is set.
      */
     @java.lang.Deprecated
@@ -2617,7 +2617,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * </code>
      *
      * @deprecated google.container.v1beta1.AddonsConfig.kubernetes_dashboard is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1944
+     *     google/container/v1beta1/cluster_service.proto;l=1942
      * @return The kubernetesDashboard.
      */
     @java.lang.Deprecated
@@ -3070,7 +3070,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1beta1.IstioConfig istio_config = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.AddonsConfig.istio_config is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1953
+     *     google/container/v1beta1/cluster_service.proto;l=1951
      * @return Whether the istioConfig field is set.
      */
     @java.lang.Deprecated
@@ -3089,7 +3089,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1beta1.IstioConfig istio_config = 5 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.AddonsConfig.istio_config is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1953
+     *     google/container/v1beta1/cluster_service.proto;l=1951
      * @return The istioConfig.
      */
     @java.lang.Deprecated
@@ -4126,7 +4126,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.AddonsConfig.kalm_config is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1972
+     *     google/container/v1beta1/cluster_service.proto;l=1970
      * @return Whether the kalmConfig field is set.
      */
     @java.lang.Deprecated
@@ -4145,7 +4145,7 @@ public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
      * <code>.google.container.v1beta1.KalmConfig kalm_config = 12 [deprecated = true];</code>
      *
      * @deprecated google.container.v1beta1.AddonsConfig.kalm_config is deprecated. See
-     *     google/container/v1beta1/cluster_service.proto;l=1972
+     *     google/container/v1beta1/cluster_service.proto;l=1970
      * @return The kalmConfig.
      */
     @java.lang.Deprecated

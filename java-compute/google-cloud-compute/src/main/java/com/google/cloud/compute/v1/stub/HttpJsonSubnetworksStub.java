@@ -269,6 +269,9 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                         Map<String, List<String>> fields = new HashMap<>();
                         ProtoRestSerializer<GetSubnetworkRequest> serializer =
                             ProtoRestSerializer.create();
+                        if (request.hasViews()) {
+                          serializer.putQueryParam(fields, "views", request.getViews());
+                        }
                         return fields;
                       })
                   .setRequestBodyExtractor(request -> null)
@@ -416,6 +419,9 @@ public class HttpJsonSubnetworksStub extends SubnetworksStub {
                                   fields,
                                   "returnPartialSuccess",
                                   request.getReturnPartialSuccess());
+                            }
+                            if (request.hasViews()) {
+                              serializer.putQueryParam(fields, "views", request.getViews());
                             }
                             return fields;
                           })

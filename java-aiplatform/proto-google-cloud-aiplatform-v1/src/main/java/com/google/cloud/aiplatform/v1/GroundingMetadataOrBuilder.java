@@ -336,4 +336,79 @@ public interface GroundingMetadataOrBuilder
    * @return The bytes for googleMapsWidgetContextToken.
    */
   com.google.protobuf.ByteString getGoogleMapsWidgetContextTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * List of source flagging uris. This is currently populated only for Google
+   * Maps grounding.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.GroundingMetadata.SourceFlaggingUri source_flagging_uris = 9;
+   * </code>
+   */
+  java.util.List<com.google.cloud.aiplatform.v1.GroundingMetadata.SourceFlaggingUri>
+      getSourceFlaggingUrisList();
+
+  /**
+   *
+   *
+   * <pre>
+   * List of source flagging uris. This is currently populated only for Google
+   * Maps grounding.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.GroundingMetadata.SourceFlaggingUri source_flagging_uris = 9;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.GroundingMetadata.SourceFlaggingUri getSourceFlaggingUris(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * List of source flagging uris. This is currently populated only for Google
+   * Maps grounding.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.GroundingMetadata.SourceFlaggingUri source_flagging_uris = 9;
+   * </code>
+   */
+  int getSourceFlaggingUrisCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * List of source flagging uris. This is currently populated only for Google
+   * Maps grounding.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.GroundingMetadata.SourceFlaggingUri source_flagging_uris = 9;
+   * </code>
+   */
+  java.util.List<
+          ? extends com.google.cloud.aiplatform.v1.GroundingMetadata.SourceFlaggingUriOrBuilder>
+      getSourceFlaggingUrisOrBuilderList();
+
+  /**
+   *
+   *
+   * <pre>
+   * List of source flagging uris. This is currently populated only for Google
+   * Maps grounding.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.aiplatform.v1.GroundingMetadata.SourceFlaggingUri source_flagging_uris = 9;
+   * </code>
+   */
+  com.google.cloud.aiplatform.v1.GroundingMetadata.SourceFlaggingUriOrBuilder
+      getSourceFlaggingUrisOrBuilder(int index);
 }

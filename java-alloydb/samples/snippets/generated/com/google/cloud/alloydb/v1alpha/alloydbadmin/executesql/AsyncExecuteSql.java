@@ -43,6 +43,7 @@ public class AsyncExecuteSql {
               .setDatabase("database1789464955")
               .setUser("user3599307")
               .setSqlStatement("sqlStatement937767745")
+              .setValidateOnly(true)
               .build();
       ApiFuture<ExecuteSqlResponse> future =
           alloyDBAdminClient.executeSqlCallable().futureCall(request);

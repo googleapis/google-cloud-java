@@ -79,7 +79,7 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
    * projects/[PROJECT]/locations/[REGION]/keyRings/[RING]/cryptoKeys/[KEY_NAME]
    * </pre>
    *
-   * <code>string kms_key_name = 1;</code>
+   * <code>string kms_key_name = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The kmsKeyName.
    */
@@ -105,7 +105,7 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
    * projects/[PROJECT]/locations/[REGION]/keyRings/[RING]/cryptoKeys/[KEY_NAME]
    * </pre>
    *
-   * <code>string kms_key_name = 1;</code>
+   * <code>string kms_key_name = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for kmsKeyName.
    */
@@ -477,7 +477,7 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
      * projects/[PROJECT]/locations/[REGION]/keyRings/[RING]/cryptoKeys/[KEY_NAME]
      * </pre>
      *
-     * <code>string kms_key_name = 1;</code>
+     * <code>string kms_key_name = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The kmsKeyName.
      */
@@ -502,7 +502,7 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
      * projects/[PROJECT]/locations/[REGION]/keyRings/[RING]/cryptoKeys/[KEY_NAME]
      * </pre>
      *
-     * <code>string kms_key_name = 1;</code>
+     * <code>string kms_key_name = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return The bytes for kmsKeyName.
      */
@@ -527,7 +527,7 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
      * projects/[PROJECT]/locations/[REGION]/keyRings/[RING]/cryptoKeys/[KEY_NAME]
      * </pre>
      *
-     * <code>string kms_key_name = 1;</code>
+     * <code>string kms_key_name = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The kmsKeyName to set.
      * @return This builder for chaining.
@@ -551,7 +551,7 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
      * projects/[PROJECT]/locations/[REGION]/keyRings/[RING]/cryptoKeys/[KEY_NAME]
      * </pre>
      *
-     * <code>string kms_key_name = 1;</code>
+     * <code>string kms_key_name = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @return This builder for chaining.
      */
@@ -571,7 +571,7 @@ public final class EncryptionConfig extends com.google.protobuf.GeneratedMessage
      * projects/[PROJECT]/locations/[REGION]/keyRings/[RING]/cryptoKeys/[KEY_NAME]
      * </pre>
      *
-     * <code>string kms_key_name = 1;</code>
+     * <code>string kms_key_name = 1 [(.google.api.resource_reference) = { ... }</code>
      *
      * @param value The bytes for kmsKeyName to set.
      * @return This builder for chaining.

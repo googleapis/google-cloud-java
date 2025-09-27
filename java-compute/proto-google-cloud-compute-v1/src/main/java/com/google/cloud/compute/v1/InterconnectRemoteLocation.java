@@ -1407,6 +1407,41 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     return maxLagSize10Gbps_;
   }
 
+  public static final int MAX_LAG_SIZE400_GBPS_FIELD_NUMBER = 104941138;
+  private int maxLagSize400Gbps_ = 0;
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The maximum number of 400 Gbps ports supported in a link aggregation group (LAG). When linkType is 400 Gbps, requestedLinkCount cannot exceed max_lag_size_400_gbps.
+   * </pre>
+   *
+   * <code>optional int32 max_lag_size400_gbps = 104941138;</code>
+   *
+   * @return Whether the maxLagSize400Gbps field is set.
+   */
+  @java.lang.Override
+  public boolean hasMaxLagSize400Gbps() {
+    return ((bitField0_ & 0x00004000) != 0);
+  }
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The maximum number of 400 Gbps ports supported in a link aggregation group (LAG). When linkType is 400 Gbps, requestedLinkCount cannot exceed max_lag_size_400_gbps.
+   * </pre>
+   *
+   * <code>optional int32 max_lag_size400_gbps = 104941138;</code>
+   *
+   * @return The maxLagSize400Gbps.
+   */
+  @java.lang.Override
+  public int getMaxLagSize400Gbps() {
+    return maxLagSize400Gbps_;
+  }
+
   public static final int NAME_FIELD_NUMBER = 3373707;
 
   @SuppressWarnings("serial")
@@ -1425,7 +1460,7 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public boolean hasName() {
-    return ((bitField0_ & 0x00004000) != 0);
+    return ((bitField0_ & 0x00008000) != 0);
   }
 
   /**
@@ -1494,7 +1529,7 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public boolean hasPeeringdbFacilityId() {
-    return ((bitField0_ & 0x00008000) != 0);
+    return ((bitField0_ & 0x00010000) != 0);
   }
 
   /**
@@ -1655,7 +1690,7 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public boolean hasRemoteService() {
-    return ((bitField0_ & 0x00010000) != 0);
+    return ((bitField0_ & 0x00020000) != 0);
   }
 
   /**
@@ -1724,7 +1759,7 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public boolean hasSelfLink() {
-    return ((bitField0_ & 0x00020000) != 0);
+    return ((bitField0_ & 0x00040000) != 0);
   }
 
   /**
@@ -1794,7 +1829,7 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
    */
   @java.lang.Override
   public boolean hasStatus() {
-    return ((bitField0_ & 0x00040000) != 0);
+    return ((bitField0_ & 0x00080000) != 0);
   }
 
   /**
@@ -1873,7 +1908,7 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     if (((bitField0_ & 0x00000800) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3313826, lacp_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 3373707, name_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
@@ -1886,10 +1921,13 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       com.google.protobuf.GeneratedMessageV3.writeString(
           output, 87269125, facilityProviderFacilityId_);
     }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      output.writeInt32(104941138, maxLagSize400Gbps_);
+    }
     if (((bitField0_ & 0x00000010) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 133442996, continent_);
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 181260274, status_);
     }
     if (((bitField0_ & 0x00001000) != 0)) {
@@ -1901,7 +1939,7 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     if (((bitField0_ & 0x00000002) != 0)) {
       output.writeMessage(326825041, getAttachmentConfigurationConstraints());
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 391954364, remoteService_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
@@ -1910,7 +1948,7 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     for (int i = 0; i < permittedConnections_.size(); i++) {
       output.writeMessage(442063278, permittedConnections_.get(i));
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00040000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 456214797, selfLink_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -1919,7 +1957,7 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     if (((bitField0_ & 0x00000080) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 533303309, facilityProvider_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 536567094, peeringdbFacilityId_);
     }
     getUnknownFields().writeTo(output);
@@ -1943,7 +1981,7 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     if (((bitField0_ & 0x00000800) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3313826, lacp_);
     }
-    if (((bitField0_ & 0x00004000) != 0)) {
+    if (((bitField0_ & 0x00008000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3373707, name_);
     }
     if (((bitField0_ & 0x00000008) != 0)) {
@@ -1958,10 +1996,13 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
           com.google.protobuf.GeneratedMessageV3.computeStringSize(
               87269125, facilityProviderFacilityId_);
     }
+    if (((bitField0_ & 0x00004000) != 0)) {
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(104941138, maxLagSize400Gbps_);
+    }
     if (((bitField0_ & 0x00000010) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(133442996, continent_);
     }
-    if (((bitField0_ & 0x00040000) != 0)) {
+    if (((bitField0_ & 0x00080000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(181260274, status_);
     }
     if (((bitField0_ & 0x00001000) != 0)) {
@@ -1975,7 +2016,7 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               326825041, getAttachmentConfigurationConstraints());
     }
-    if (((bitField0_ & 0x00010000) != 0)) {
+    if (((bitField0_ & 0x00020000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(391954364, remoteService_);
     }
     if (((bitField0_ & 0x00000040) != 0)) {
@@ -1986,7 +2027,7 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               442063278, permittedConnections_.get(i));
     }
-    if (((bitField0_ & 0x00020000) != 0)) {
+    if (((bitField0_ & 0x00040000) != 0)) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(456214797, selfLink_);
     }
     if (((bitField0_ & 0x00000001) != 0)) {
@@ -1996,7 +2037,7 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(533303309, facilityProvider_);
     }
-    if (((bitField0_ & 0x00008000) != 0)) {
+    if (((bitField0_ & 0x00010000) != 0)) {
       size +=
           com.google.protobuf.GeneratedMessageV3.computeStringSize(536567094, peeringdbFacilityId_);
     }
@@ -2074,6 +2115,10 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     if (hasMaxLagSize10Gbps() != other.hasMaxLagSize10Gbps()) return false;
     if (hasMaxLagSize10Gbps()) {
       if (getMaxLagSize10Gbps() != other.getMaxLagSize10Gbps()) return false;
+    }
+    if (hasMaxLagSize400Gbps() != other.hasMaxLagSize400Gbps()) return false;
+    if (hasMaxLagSize400Gbps()) {
+      if (getMaxLagSize400Gbps() != other.getMaxLagSize400Gbps()) return false;
     }
     if (hasName() != other.hasName()) return false;
     if (hasName()) {
@@ -2162,6 +2207,10 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     if (hasMaxLagSize10Gbps()) {
       hash = (37 * hash) + MAX_LAG_SIZE10_GBPS_FIELD_NUMBER;
       hash = (53 * hash) + getMaxLagSize10Gbps();
+    }
+    if (hasMaxLagSize400Gbps()) {
+      hash = (37 * hash) + MAX_LAG_SIZE400_GBPS_FIELD_NUMBER;
+      hash = (53 * hash) + getMaxLagSize400Gbps();
     }
     if (hasName()) {
       hash = (37 * hash) + NAME_FIELD_NUMBER;
@@ -2361,6 +2410,7 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       lacp_ = "";
       maxLagSize100Gbps_ = 0;
       maxLagSize10Gbps_ = 0;
+      maxLagSize400Gbps_ = 0;
       name_ = "";
       peeringdbFacilityId_ = "";
       if (permittedConnectionsBuilder_ == null) {
@@ -2369,7 +2419,7 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
         permittedConnections_ = null;
         permittedConnectionsBuilder_.clear();
       }
-      bitField0_ = (bitField0_ & ~0x00010000);
+      bitField0_ = (bitField0_ & ~0x00020000);
       remoteService_ = "";
       selfLink_ = "";
       status_ = "";
@@ -2411,9 +2461,9 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     private void buildPartialRepeatedFields(
         com.google.cloud.compute.v1.InterconnectRemoteLocation result) {
       if (permittedConnectionsBuilder_ == null) {
-        if (((bitField0_ & 0x00010000) != 0)) {
+        if (((bitField0_ & 0x00020000) != 0)) {
           permittedConnections_ = java.util.Collections.unmodifiableList(permittedConnections_);
-          bitField0_ = (bitField0_ & ~0x00010000);
+          bitField0_ = (bitField0_ & ~0x00020000);
         }
         result.permittedConnections_ = permittedConnections_;
       } else {
@@ -2485,24 +2535,28 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
         to_bitField0_ |= 0x00002000;
       }
       if (((from_bitField0_ & 0x00004000) != 0)) {
-        result.name_ = name_;
+        result.maxLagSize400Gbps_ = maxLagSize400Gbps_;
         to_bitField0_ |= 0x00004000;
       }
       if (((from_bitField0_ & 0x00008000) != 0)) {
-        result.peeringdbFacilityId_ = peeringdbFacilityId_;
+        result.name_ = name_;
         to_bitField0_ |= 0x00008000;
       }
-      if (((from_bitField0_ & 0x00020000) != 0)) {
-        result.remoteService_ = remoteService_;
+      if (((from_bitField0_ & 0x00010000) != 0)) {
+        result.peeringdbFacilityId_ = peeringdbFacilityId_;
         to_bitField0_ |= 0x00010000;
       }
       if (((from_bitField0_ & 0x00040000) != 0)) {
-        result.selfLink_ = selfLink_;
+        result.remoteService_ = remoteService_;
         to_bitField0_ |= 0x00020000;
       }
       if (((from_bitField0_ & 0x00080000) != 0)) {
-        result.status_ = status_;
+        result.selfLink_ = selfLink_;
         to_bitField0_ |= 0x00040000;
+      }
+      if (((from_bitField0_ & 0x00100000) != 0)) {
+        result.status_ = status_;
+        to_bitField0_ |= 0x00080000;
       }
       result.bitField0_ |= to_bitField0_;
     }
@@ -2613,21 +2667,24 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       if (other.hasMaxLagSize10Gbps()) {
         setMaxLagSize10Gbps(other.getMaxLagSize10Gbps());
       }
+      if (other.hasMaxLagSize400Gbps()) {
+        setMaxLagSize400Gbps(other.getMaxLagSize400Gbps());
+      }
       if (other.hasName()) {
         name_ = other.name_;
-        bitField0_ |= 0x00004000;
+        bitField0_ |= 0x00008000;
         onChanged();
       }
       if (other.hasPeeringdbFacilityId()) {
         peeringdbFacilityId_ = other.peeringdbFacilityId_;
-        bitField0_ |= 0x00008000;
+        bitField0_ |= 0x00010000;
         onChanged();
       }
       if (permittedConnectionsBuilder_ == null) {
         if (!other.permittedConnections_.isEmpty()) {
           if (permittedConnections_.isEmpty()) {
             permittedConnections_ = other.permittedConnections_;
-            bitField0_ = (bitField0_ & ~0x00010000);
+            bitField0_ = (bitField0_ & ~0x00020000);
           } else {
             ensurePermittedConnectionsIsMutable();
             permittedConnections_.addAll(other.permittedConnections_);
@@ -2640,7 +2697,7 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
             permittedConnectionsBuilder_.dispose();
             permittedConnectionsBuilder_ = null;
             permittedConnections_ = other.permittedConnections_;
-            bitField0_ = (bitField0_ & ~0x00010000);
+            bitField0_ = (bitField0_ & ~0x00020000);
             permittedConnectionsBuilder_ =
                 com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
                     ? getPermittedConnectionsFieldBuilder()
@@ -2652,17 +2709,17 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       }
       if (other.hasRemoteService()) {
         remoteService_ = other.remoteService_;
-        bitField0_ |= 0x00020000;
+        bitField0_ |= 0x00040000;
         onChanged();
       }
       if (other.hasSelfLink()) {
         selfLink_ = other.selfLink_;
-        bitField0_ |= 0x00040000;
+        bitField0_ |= 0x00080000;
         onChanged();
       }
       if (other.hasStatus()) {
         status_ = other.status_;
-        bitField0_ |= 0x00080000;
+        bitField0_ |= 0x00100000;
         onChanged();
       }
       this.mergeUnknownFields(other.getUnknownFields());
@@ -2718,7 +2775,7 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
             case 26989658:
               {
                 name_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00004000;
+                bitField0_ |= 0x00008000;
                 break;
               } // case 26989658
             case 31273394:
@@ -2739,6 +2796,12 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
                 bitField0_ |= 0x00000100;
                 break;
               } // case 698153002
+            case 839529104:
+              {
+                maxLagSize400Gbps_ = input.readInt32();
+                bitField0_ |= 0x00004000;
+                break;
+              } // case 839529104
             case 1067543970:
               {
                 continent_ = input.readStringRequireUtf8();
@@ -2748,7 +2811,7 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
             case 1450082194:
               {
                 status_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00080000;
+                bitField0_ |= 0x00100000;
                 break;
               } // case 1450082194
             case 1961754024:
@@ -2774,7 +2837,7 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
             case -1159332382:
               {
                 remoteService_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00020000;
+                bitField0_ |= 0x00040000;
                 break;
               } // case -1159332382
             case -911466526:
@@ -2801,7 +2864,7 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
             case -645248918:
               {
                 selfLink_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00040000;
+                bitField0_ |= 0x00080000;
                 break;
               } // case -645248918
             case -591601758:
@@ -2819,7 +2882,7 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
             case -2430542:
               {
                 peeringdbFacilityId_ = input.readStringRequireUtf8();
-                bitField0_ |= 0x00008000;
+                bitField0_ |= 0x00010000;
                 break;
               } // case -2430542
             default:
@@ -4647,6 +4710,78 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       return this;
     }
 
+    private int maxLagSize400Gbps_;
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The maximum number of 400 Gbps ports supported in a link aggregation group (LAG). When linkType is 400 Gbps, requestedLinkCount cannot exceed max_lag_size_400_gbps.
+     * </pre>
+     *
+     * <code>optional int32 max_lag_size400_gbps = 104941138;</code>
+     *
+     * @return Whether the maxLagSize400Gbps field is set.
+     */
+    @java.lang.Override
+    public boolean hasMaxLagSize400Gbps() {
+      return ((bitField0_ & 0x00004000) != 0);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The maximum number of 400 Gbps ports supported in a link aggregation group (LAG). When linkType is 400 Gbps, requestedLinkCount cannot exceed max_lag_size_400_gbps.
+     * </pre>
+     *
+     * <code>optional int32 max_lag_size400_gbps = 104941138;</code>
+     *
+     * @return The maxLagSize400Gbps.
+     */
+    @java.lang.Override
+    public int getMaxLagSize400Gbps() {
+      return maxLagSize400Gbps_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The maximum number of 400 Gbps ports supported in a link aggregation group (LAG). When linkType is 400 Gbps, requestedLinkCount cannot exceed max_lag_size_400_gbps.
+     * </pre>
+     *
+     * <code>optional int32 max_lag_size400_gbps = 104941138;</code>
+     *
+     * @param value The maxLagSize400Gbps to set.
+     * @return This builder for chaining.
+     */
+    public Builder setMaxLagSize400Gbps(int value) {
+
+      maxLagSize400Gbps_ = value;
+      bitField0_ |= 0x00004000;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * [Output Only] The maximum number of 400 Gbps ports supported in a link aggregation group (LAG). When linkType is 400 Gbps, requestedLinkCount cannot exceed max_lag_size_400_gbps.
+     * </pre>
+     *
+     * <code>optional int32 max_lag_size400_gbps = 104941138;</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearMaxLagSize400Gbps() {
+      bitField0_ = (bitField0_ & ~0x00004000);
+      maxLagSize400Gbps_ = 0;
+      onChanged();
+      return this;
+    }
+
     private java.lang.Object name_ = "";
 
     /**
@@ -4661,7 +4796,7 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
      * @return Whether the name field is set.
      */
     public boolean hasName() {
-      return ((bitField0_ & 0x00004000) != 0);
+      return ((bitField0_ & 0x00008000) != 0);
     }
 
     /**
@@ -4727,7 +4862,7 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       name_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4745,7 +4880,7 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
      */
     public Builder clearName() {
       name_ = getDefaultInstance().getName();
-      bitField0_ = (bitField0_ & ~0x00004000);
+      bitField0_ = (bitField0_ & ~0x00008000);
       onChanged();
       return this;
     }
@@ -4768,7 +4903,7 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       }
       checkByteStringIsUtf8(value);
       name_ = value;
-      bitField0_ |= 0x00004000;
+      bitField0_ |= 0x00008000;
       onChanged();
       return this;
     }
@@ -4787,7 +4922,7 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
      * @return Whether the peeringdbFacilityId field is set.
      */
     public boolean hasPeeringdbFacilityId() {
-      return ((bitField0_ & 0x00008000) != 0);
+      return ((bitField0_ & 0x00010000) != 0);
     }
 
     /**
@@ -4853,7 +4988,7 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       peeringdbFacilityId_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4871,7 +5006,7 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
      */
     public Builder clearPeeringdbFacilityId() {
       peeringdbFacilityId_ = getDefaultInstance().getPeeringdbFacilityId();
-      bitField0_ = (bitField0_ & ~0x00008000);
+      bitField0_ = (bitField0_ & ~0x00010000);
       onChanged();
       return this;
     }
@@ -4894,7 +5029,7 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       }
       checkByteStringIsUtf8(value);
       peeringdbFacilityId_ = value;
-      bitField0_ |= 0x00008000;
+      bitField0_ |= 0x00010000;
       onChanged();
       return this;
     }
@@ -4904,12 +5039,12 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
         permittedConnections_ = java.util.Collections.emptyList();
 
     private void ensurePermittedConnectionsIsMutable() {
-      if (!((bitField0_ & 0x00010000) != 0)) {
+      if (!((bitField0_ & 0x00020000) != 0)) {
         permittedConnections_ =
             new java.util.ArrayList<
                 com.google.cloud.compute.v1.InterconnectRemoteLocationPermittedConnections>(
                 permittedConnections_);
-        bitField0_ |= 0x00010000;
+        bitField0_ |= 0x00020000;
       }
     }
 
@@ -5173,7 +5308,7 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
     public Builder clearPermittedConnections() {
       if (permittedConnectionsBuilder_ == null) {
         permittedConnections_ = java.util.Collections.emptyList();
-        bitField0_ = (bitField0_ & ~0x00010000);
+        bitField0_ = (bitField0_ & ~0x00020000);
         onChanged();
       } else {
         permittedConnectionsBuilder_.clear();
@@ -5330,7 +5465,7 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
                 com.google.cloud.compute.v1
                     .InterconnectRemoteLocationPermittedConnectionsOrBuilder>(
                 permittedConnections_,
-                ((bitField0_ & 0x00010000) != 0),
+                ((bitField0_ & 0x00020000) != 0),
                 getParentForChildren(),
                 isClean());
         permittedConnections_ = null;
@@ -5352,7 +5487,7 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
      * @return Whether the remoteService field is set.
      */
     public boolean hasRemoteService() {
-      return ((bitField0_ & 0x00020000) != 0);
+      return ((bitField0_ & 0x00040000) != 0);
     }
 
     /**
@@ -5418,7 +5553,7 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       remoteService_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5436,7 +5571,7 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
      */
     public Builder clearRemoteService() {
       remoteService_ = getDefaultInstance().getRemoteService();
-      bitField0_ = (bitField0_ & ~0x00020000);
+      bitField0_ = (bitField0_ & ~0x00040000);
       onChanged();
       return this;
     }
@@ -5459,7 +5594,7 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       }
       checkByteStringIsUtf8(value);
       remoteService_ = value;
-      bitField0_ |= 0x00020000;
+      bitField0_ |= 0x00040000;
       onChanged();
       return this;
     }
@@ -5478,7 +5613,7 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
      * @return Whether the selfLink field is set.
      */
     public boolean hasSelfLink() {
-      return ((bitField0_ & 0x00040000) != 0);
+      return ((bitField0_ & 0x00080000) != 0);
     }
 
     /**
@@ -5544,7 +5679,7 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       selfLink_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -5562,7 +5697,7 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
      */
     public Builder clearSelfLink() {
       selfLink_ = getDefaultInstance().getSelfLink();
-      bitField0_ = (bitField0_ & ~0x00040000);
+      bitField0_ = (bitField0_ & ~0x00080000);
       onChanged();
       return this;
     }
@@ -5585,7 +5720,7 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       }
       checkByteStringIsUtf8(value);
       selfLink_ = value;
-      bitField0_ |= 0x00040000;
+      bitField0_ |= 0x00080000;
       onChanged();
       return this;
     }
@@ -5605,7 +5740,7 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
      * @return Whether the status field is set.
      */
     public boolean hasStatus() {
-      return ((bitField0_ & 0x00080000) != 0);
+      return ((bitField0_ & 0x00100000) != 0);
     }
 
     /**
@@ -5674,7 +5809,7 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
         throw new NullPointerException();
       }
       status_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }
@@ -5693,7 +5828,7 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
      */
     public Builder clearStatus() {
       status_ = getDefaultInstance().getStatus();
-      bitField0_ = (bitField0_ & ~0x00080000);
+      bitField0_ = (bitField0_ & ~0x00100000);
       onChanged();
       return this;
     }
@@ -5717,7 +5852,7 @@ public final class InterconnectRemoteLocation extends com.google.protobuf.Genera
       }
       checkByteStringIsUtf8(value);
       status_ = value;
-      bitField0_ |= 0x00080000;
+      bitField0_ |= 0x00100000;
       onChanged();
       return this;
     }

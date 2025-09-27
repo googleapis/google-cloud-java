@@ -43,6 +43,7 @@ public class SyncList {
               .setProject("project-309310695")
               .setRegion("region-934795532")
               .setReturnPartialSuccess(true)
+              .setViews("views112204398")
               .build();
       for (Subnetwork element : subnetworksClient.list(request).iterateAll()) {
         // doThingsWith(element);

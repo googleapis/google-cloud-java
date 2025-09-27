@@ -23,7 +23,7 @@ package com.google.cloud.alloydb.v1;
  *
  *
  * <pre>
- * Message for response to listing Databases.
+ * Message for ListDatabases response.
  * </pre>
  *
  * Protobuf type {@code google.cloud.alloydb.v1.ListDatabasesResponse}
@@ -74,7 +74,7 @@ public final class ListDatabasesResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The list of databases
+   * The list of databases.
    * </pre>
    *
    * <code>repeated .google.cloud.alloydb.v1.Database databases = 1;</code>
@@ -88,7 +88,7 @@ public final class ListDatabasesResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The list of databases
+   * The list of databases.
    * </pre>
    *
    * <code>repeated .google.cloud.alloydb.v1.Database databases = 1;</code>
@@ -103,7 +103,7 @@ public final class ListDatabasesResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The list of databases
+   * The list of databases.
    * </pre>
    *
    * <code>repeated .google.cloud.alloydb.v1.Database databases = 1;</code>
@@ -117,7 +117,7 @@ public final class ListDatabasesResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The list of databases
+   * The list of databases.
    * </pre>
    *
    * <code>repeated .google.cloud.alloydb.v1.Database databases = 1;</code>
@@ -131,7 +131,7 @@ public final class ListDatabasesResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The list of databases
+   * The list of databases.
    * </pre>
    *
    * <code>repeated .google.cloud.alloydb.v1.Database databases = 1;</code>
@@ -371,7 +371,7 @@ public final class ListDatabasesResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Message for response to listing Databases.
+   * Message for ListDatabases response.
    * </pre>
    *
    * Protobuf type {@code google.cloud.alloydb.v1.ListDatabasesResponse}
@@ -631,7 +631,7 @@ public final class ListDatabasesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The list of databases
+     * The list of databases.
      * </pre>
      *
      * <code>repeated .google.cloud.alloydb.v1.Database databases = 1;</code>
@@ -648,7 +648,7 @@ public final class ListDatabasesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The list of databases
+     * The list of databases.
      * </pre>
      *
      * <code>repeated .google.cloud.alloydb.v1.Database databases = 1;</code>
@@ -665,7 +665,7 @@ public final class ListDatabasesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The list of databases
+     * The list of databases.
      * </pre>
      *
      * <code>repeated .google.cloud.alloydb.v1.Database databases = 1;</code>
@@ -682,7 +682,7 @@ public final class ListDatabasesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The list of databases
+     * The list of databases.
      * </pre>
      *
      * <code>repeated .google.cloud.alloydb.v1.Database databases = 1;</code>
@@ -705,7 +705,7 @@ public final class ListDatabasesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The list of databases
+     * The list of databases.
      * </pre>
      *
      * <code>repeated .google.cloud.alloydb.v1.Database databases = 1;</code>
@@ -726,7 +726,7 @@ public final class ListDatabasesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The list of databases
+     * The list of databases.
      * </pre>
      *
      * <code>repeated .google.cloud.alloydb.v1.Database databases = 1;</code>
@@ -749,7 +749,7 @@ public final class ListDatabasesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The list of databases
+     * The list of databases.
      * </pre>
      *
      * <code>repeated .google.cloud.alloydb.v1.Database databases = 1;</code>
@@ -772,7 +772,7 @@ public final class ListDatabasesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The list of databases
+     * The list of databases.
      * </pre>
      *
      * <code>repeated .google.cloud.alloydb.v1.Database databases = 1;</code>
@@ -792,7 +792,7 @@ public final class ListDatabasesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The list of databases
+     * The list of databases.
      * </pre>
      *
      * <code>repeated .google.cloud.alloydb.v1.Database databases = 1;</code>
@@ -813,7 +813,7 @@ public final class ListDatabasesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The list of databases
+     * The list of databases.
      * </pre>
      *
      * <code>repeated .google.cloud.alloydb.v1.Database databases = 1;</code>
@@ -834,7 +834,7 @@ public final class ListDatabasesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The list of databases
+     * The list of databases.
      * </pre>
      *
      * <code>repeated .google.cloud.alloydb.v1.Database databases = 1;</code>
@@ -854,7 +854,7 @@ public final class ListDatabasesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The list of databases
+     * The list of databases.
      * </pre>
      *
      * <code>repeated .google.cloud.alloydb.v1.Database databases = 1;</code>
@@ -874,7 +874,7 @@ public final class ListDatabasesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The list of databases
+     * The list of databases.
      * </pre>
      *
      * <code>repeated .google.cloud.alloydb.v1.Database databases = 1;</code>
@@ -887,7 +887,7 @@ public final class ListDatabasesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The list of databases
+     * The list of databases.
      * </pre>
      *
      * <code>repeated .google.cloud.alloydb.v1.Database databases = 1;</code>
@@ -904,7 +904,7 @@ public final class ListDatabasesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The list of databases
+     * The list of databases.
      * </pre>
      *
      * <code>repeated .google.cloud.alloydb.v1.Database databases = 1;</code>
@@ -922,7 +922,7 @@ public final class ListDatabasesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The list of databases
+     * The list of databases.
      * </pre>
      *
      * <code>repeated .google.cloud.alloydb.v1.Database databases = 1;</code>
@@ -936,7 +936,7 @@ public final class ListDatabasesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The list of databases
+     * The list of databases.
      * </pre>
      *
      * <code>repeated .google.cloud.alloydb.v1.Database databases = 1;</code>
@@ -950,7 +950,7 @@ public final class ListDatabasesResponse extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * The list of databases
+     * The list of databases.
      * </pre>
      *
      * <code>repeated .google.cloud.alloydb.v1.Database databases = 1;</code>

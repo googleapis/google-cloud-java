@@ -62,6 +62,25 @@ public final class GoogleMaps extends com.google.protobuf.GeneratedMessageV3
             com.google.cloud.aiplatform.v1.GoogleMaps.Builder.class);
   }
 
+  public static final int ENABLE_WIDGET_FIELD_NUMBER = 1;
+  private boolean enableWidget_ = false;
+
+  /**
+   *
+   *
+   * <pre>
+   * If true, include the widget context token in the response.
+   * </pre>
+   *
+   * <code>bool enable_widget = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The enableWidget.
+   */
+  @java.lang.Override
+  public boolean getEnableWidget() {
+    return enableWidget_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -76,6 +95,9 @@ public final class GoogleMaps extends com.google.protobuf.GeneratedMessageV3
 
   @java.lang.Override
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (enableWidget_ != false) {
+      output.writeBool(1, enableWidget_);
+    }
     getUnknownFields().writeTo(output);
   }
 
@@ -85,6 +107,9 @@ public final class GoogleMaps extends com.google.protobuf.GeneratedMessageV3
     if (size != -1) return size;
 
     size = 0;
+    if (enableWidget_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, enableWidget_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -101,6 +126,7 @@ public final class GoogleMaps extends com.google.protobuf.GeneratedMessageV3
     com.google.cloud.aiplatform.v1.GoogleMaps other =
         (com.google.cloud.aiplatform.v1.GoogleMaps) obj;
 
+    if (getEnableWidget() != other.getEnableWidget()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -112,6 +138,8 @@ public final class GoogleMaps extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    hash = (37 * hash) + ENABLE_WIDGET_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableWidget());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -251,6 +279,8 @@ public final class GoogleMaps extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      bitField0_ = 0;
+      enableWidget_ = false;
       return this;
     }
 
@@ -278,8 +308,18 @@ public final class GoogleMaps extends com.google.protobuf.GeneratedMessageV3
     public com.google.cloud.aiplatform.v1.GoogleMaps buildPartial() {
       com.google.cloud.aiplatform.v1.GoogleMaps result =
           new com.google.cloud.aiplatform.v1.GoogleMaps(this);
+      if (bitField0_ != 0) {
+        buildPartial0(result);
+      }
       onBuilt();
       return result;
+    }
+
+    private void buildPartial0(com.google.cloud.aiplatform.v1.GoogleMaps result) {
+      int from_bitField0_ = bitField0_;
+      if (((from_bitField0_ & 0x00000001) != 0)) {
+        result.enableWidget_ = enableWidget_;
+      }
     }
 
     @java.lang.Override
@@ -327,6 +367,9 @@ public final class GoogleMaps extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.cloud.aiplatform.v1.GoogleMaps other) {
       if (other == com.google.cloud.aiplatform.v1.GoogleMaps.getDefaultInstance()) return this;
+      if (other.getEnableWidget() != false) {
+        setEnableWidget(other.getEnableWidget());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -353,6 +396,12 @@ public final class GoogleMaps extends com.google.protobuf.GeneratedMessageV3
             case 0:
               done = true;
               break;
+            case 8:
+              {
+                enableWidget_ = input.readBool();
+                bitField0_ |= 0x00000001;
+                break;
+              } // case 8
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -367,6 +416,64 @@ public final class GoogleMaps extends com.google.protobuf.GeneratedMessageV3
       } finally {
         onChanged();
       } // finally
+      return this;
+    }
+
+    private int bitField0_;
+
+    private boolean enableWidget_;
+
+    /**
+     *
+     *
+     * <pre>
+     * If true, include the widget context token in the response.
+     * </pre>
+     *
+     * <code>bool enable_widget = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The enableWidget.
+     */
+    @java.lang.Override
+    public boolean getEnableWidget() {
+      return enableWidget_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If true, include the widget context token in the response.
+     * </pre>
+     *
+     * <code>bool enable_widget = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The enableWidget to set.
+     * @return This builder for chaining.
+     */
+    public Builder setEnableWidget(boolean value) {
+
+      enableWidget_ = value;
+      bitField0_ |= 0x00000001;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * If true, include the widget context token in the response.
+     * </pre>
+     *
+     * <code>bool enable_widget = 1 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearEnableWidget() {
+      bitField0_ = (bitField0_ & ~0x00000001);
+      enableWidget_ = false;
+      onChanged();
       return this;
     }
 

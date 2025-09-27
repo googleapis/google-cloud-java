@@ -552,6 +552,32 @@ public interface InterconnectRemoteLocationOrBuilder
    *
    *
    * <pre>
+   * [Output Only] The maximum number of 400 Gbps ports supported in a link aggregation group (LAG). When linkType is 400 Gbps, requestedLinkCount cannot exceed max_lag_size_400_gbps.
+   * </pre>
+   *
+   * <code>optional int32 max_lag_size400_gbps = 104941138;</code>
+   *
+   * @return Whether the maxLagSize400Gbps field is set.
+   */
+  boolean hasMaxLagSize400Gbps();
+
+  /**
+   *
+   *
+   * <pre>
+   * [Output Only] The maximum number of 400 Gbps ports supported in a link aggregation group (LAG). When linkType is 400 Gbps, requestedLinkCount cannot exceed max_lag_size_400_gbps.
+   * </pre>
+   *
+   * <code>optional int32 max_lag_size400_gbps = 104941138;</code>
+   *
+   * @return The maxLagSize400Gbps.
+   */
+  int getMaxLagSize400Gbps();
+
+  /**
+   *
+   *
+   * <pre>
    * [Output Only] Name of the resource.
    * </pre>
    *
