@@ -33,7 +33,7 @@ public interface EncryptionConfigOrBuilder
    * projects/[PROJECT]/locations/[REGION]/keyRings/[RING]/cryptoKeys/[KEY_NAME]
    * </pre>
    *
-   * <code>string kms_key_name = 1;</code>
+   * <code>string kms_key_name = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The kmsKeyName.
    */
@@ -48,7 +48,7 @@ public interface EncryptionConfigOrBuilder
    * projects/[PROJECT]/locations/[REGION]/keyRings/[RING]/cryptoKeys/[KEY_NAME]
    * </pre>
    *
-   * <code>string kms_key_name = 1;</code>
+   * <code>string kms_key_name = 1 [(.google.api.resource_reference) = { ... }</code>
    *
    * @return The bytes for kmsKeyName.
    */

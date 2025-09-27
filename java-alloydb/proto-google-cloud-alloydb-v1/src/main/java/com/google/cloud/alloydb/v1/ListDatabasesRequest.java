@@ -23,7 +23,7 @@ package com.google.cloud.alloydb.v1;
  *
  *
  * <pre>
- * Message for requesting list of Databases.
+ * Message for ListDatabases request.
  * </pre>
  *
  * Protobuf type {@code google.cloud.alloydb.v1.ListDatabasesRequest}
@@ -448,7 +448,7 @@ public final class ListDatabasesRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Message for requesting list of Databases.
+   * Message for ListDatabases request.
    * </pre>
    *
    * Protobuf type {@code google.cloud.alloydb.v1.ListDatabasesRequest}
