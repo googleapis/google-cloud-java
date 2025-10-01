@@ -35,6 +35,7 @@ import com.google.cloud.bigtable.test_helpers.env.TestEnvRule;
 import io.grpc.StatusRuntimeException;
 import java.util.List;
 import java.util.logging.Logger;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.ClassRule;
@@ -69,6 +70,13 @@ public class BigtableLogicalViewIT {
   public void setUp() throws InterruptedException {
     client = testEnvRule.env().getInstanceAdminClient();
     testTable = createTestTable(testEnvRule.env().getTableAdminClient());
+  }
+
+  @After
+  public void tearDown() throws InterruptedException {
+    if (testTable != null) {
+      testEnvRule.env().getTableAdminClient().deleteTable(testTable.getId());
+    }
   }
 
   @Test

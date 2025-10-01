@@ -104,6 +104,8 @@ public class SampleRowsIT {
         .env()
         .getTableAdminClient()
         .deleteAuthorizedView(testAuthorizedView.getTableId(), testAuthorizedView.getId());
+
+    testEnvRule.env().getTableAdminClient().deleteTable(testAuthorizedView.getTableId());
   }
 
   private static AuthorizedView createPreSplitTableAndAuthorizedView() {
