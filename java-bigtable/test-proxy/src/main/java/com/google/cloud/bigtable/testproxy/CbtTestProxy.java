@@ -706,7 +706,8 @@ public class CbtTestProxy extends CloudBigtableV2TestProxyImplBase implements Cl
               .dataClient()
               .executeQuery(
                   BoundStatementDeserializer.toBoundStatement(preparedStatement, request));
-      responseObserver.onNext(ResultSetSerializer.toExecuteQueryResult(resultSet));
+      responseObserver.onNext(
+          new ResultSetSerializer(request.getProtoDescriptors()).toExecuteQueryResult(resultSet));
     } catch (InterruptedException e) {
       responseObserver.onError(e);
       return;

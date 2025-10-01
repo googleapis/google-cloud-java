@@ -20,6 +20,7 @@ import "google/api/client.proto";
 import "google/bigtable/v2/bigtable.proto";
 import "google/bigtable/v2/data.proto";
 import "google/protobuf/duration.proto";
+import "google/protobuf/descriptor.proto";
 import "google/rpc/status.proto";
 
 option go_package = "./testproxypb";
@@ -256,6 +257,9 @@ message ExecuteQueryRequest {
 
   // The raw request to the Bigtable server.
   google.bigtable.v2.ExecuteQueryRequest request = 2;
+
+  // The file descriptor set for the query.
+  google.protobuf.FileDescriptorSet proto_descriptors = 3;
 }
 
 // Response from test proxy service for ExecuteQueryRequest.

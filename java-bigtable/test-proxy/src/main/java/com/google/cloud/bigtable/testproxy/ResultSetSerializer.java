@@ -35,13 +35,124 @@ import com.google.cloud.bigtable.data.v2.models.sql.ColumnMetadata;
 import com.google.cloud.bigtable.data.v2.models.sql.ResultSet;
 import com.google.cloud.bigtable.data.v2.models.sql.SqlType;
 import com.google.cloud.bigtable.data.v2.models.sql.StructReader;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.ByteString;
+import com.google.protobuf.DescriptorProtos.FileDescriptorProto;
+import com.google.protobuf.DescriptorProtos.FileDescriptorSet;
+import com.google.protobuf.Descriptors.Descriptor;
+import com.google.protobuf.Descriptors.DescriptorValidationException;
+import com.google.protobuf.Descriptors.EnumDescriptor;
+import com.google.protobuf.Descriptors.FileDescriptor;
+import com.google.protobuf.DynamicMessage;
+import com.google.protobuf.ProtocolMessageEnum;
 import java.time.Instant;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 public class ResultSetSerializer {
-  public static ExecuteQueryResult toExecuteQueryResult(ResultSet resultSet)
+
+  // This is a helper enum to satisfy the type constraints of {@link StructReader#getProtoEnum}.
+  private static class DummyEnum implements ProtocolMessageEnum {
+
+    private final int value;
+    private final EnumDescriptor descriptor;
+
+    private DummyEnum(int value, EnumDescriptor descriptor) {
+      this.value = value;
+      this.descriptor = descriptor;
+    }
+
+    @Override
+    public int getNumber() {
+      return value;
+    }
+
+    @Override
+    public com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
+      return descriptor.findValueByNumber(value);
+    }
+
+    @Override
+    public com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
+      return descriptor;
+    }
+  }
+
+  /**
+   * A map of all known message descriptors, keyed by their fully qualified name (e.g.,
+   * "my.package.MyMessage").
+   */
+  private final java.util.Map<String, Descriptor> messageDescriptorMap;
+
+  /**
+   * A map of all known enum descriptors, keyed by their fully qualified name (e.g.,
+   * "my.package.MyEnum").
+   */
+  private final java.util.Map<String, EnumDescriptor> enumDescriptorMap;
+
+  /**
+   * Helper function to recursively adds a message descriptor and all its nested types to the map.
+   */
+  private void populateDescriptorMapsRecursively(Descriptor descriptor) {
+    messageDescriptorMap.put(descriptor.getFullName(), descriptor);
+
+    for (EnumDescriptor nestedEnum : descriptor.getEnumTypes()) {
+      enumDescriptorMap.put(nestedEnum.getFullName(), nestedEnum);
+    }
+    for (Descriptor nestedMessage : descriptor.getNestedTypes()) {
+      populateDescriptorMapsRecursively(nestedMessage);
+    }
+  }
+
+  /**
+   * Creates a serializer with a descriptor cache built from the provided FileDescriptorSet. This is
+   * useful for handling PROTO or ENUM types that require schema lookup.
+   *
+   * @param descriptorSet A set containing one or more .proto file definitions and all their
+   *     non-standard dependencies. All .proto file must be provided in dependency order.
+   * @throws IllegalArgumentException if the descriptorSet contains unresolvable dependencies.
+   */
+  public ResultSetSerializer(FileDescriptorSet descriptorSet) throws IllegalArgumentException {
+    this.messageDescriptorMap = new HashMap<>();
+    this.enumDescriptorMap = new HashMap<>();
+    java.util.Map<String, FileDescriptor> builtDescriptors = new HashMap<>();
+
+    for (FileDescriptorProto fileDescriptorProto : descriptorSet.getFileList()) {
+      // Collect dependencies. This code require files inside the descriptor set to be sorted
+      // according to the dependency order.
+      List<FileDescriptor> dependencies = new ArrayList<>();
+      for (String dependencyName : fileDescriptorProto.getDependencyList()) {
+        FileDescriptor dependency = builtDescriptors.get(dependencyName);
+        if (dependency != null) {
+          // Dependency is already built, add it.
+          dependencies.add(dependency);
+        }
+        // Dependency is not in our set. We assume it's a well-known type (e.g.,
+        // google/protobuf/timestamp.proto) that buildFrom() can find and link automatically.
+      }
+
+      try {
+        FileDescriptor fileDescriptor =
+            FileDescriptor.buildFrom(
+                fileDescriptorProto, dependencies.toArray(new FileDescriptor[0]));
+        builtDescriptors.put(fileDescriptor.getName(), fileDescriptor);
+        // Now, populate both message and enum maps with all messages/enums in this file.
+        for (EnumDescriptor enumDescriptor : fileDescriptor.getEnumTypes()) {
+          enumDescriptorMap.put(enumDescriptor.getFullName(), enumDescriptor);
+        }
+        for (Descriptor messageDescriptor : fileDescriptor.getMessageTypes()) {
+          populateDescriptorMapsRecursively(messageDescriptor);
+        }
+      } catch (DescriptorValidationException e) {
+        throw new IllegalArgumentException(
+            "Failed to build descriptor for " + fileDescriptorProto.getName(), e);
+      }
+    }
+  }
+
+  public ExecuteQueryResult toExecuteQueryResult(ResultSet resultSet)
       throws ExecutionException, InterruptedException {
     ExecuteQueryResult.Builder resultBuilder = ExecuteQueryResult.newBuilder();
     for (ColumnMetadata columnMetadata : resultSet.getMetadata().getColumns()) {
@@ -64,7 +175,7 @@ public class ResultSetSerializer {
     return resultBuilder.build();
   }
 
-  private static Value toProtoValue(Object value, SqlType<?> type) {
+  private Value toProtoValue(Object value, SqlType<?> type) {
     if (value == null) {
       return Value.getDefaultInstance();
     }
@@ -72,15 +183,19 @@ public class ResultSetSerializer {
     Value.Builder valueBuilder = Value.newBuilder();
     switch (type.getCode()) {
       case BYTES:
-      case PROTO:
         valueBuilder.setBytesValue((ByteString) value);
+        break;
+      case PROTO:
+        valueBuilder.setBytesValue(((AbstractMessage) value).toByteString());
         break;
       case STRING:
         valueBuilder.setStringValue((String) value);
         break;
       case INT64:
-      case ENUM:
         valueBuilder.setIntValue((Long) value);
+        break;
+      case ENUM:
+        valueBuilder.setIntValue(((ProtocolMessageEnum) value).getNumber());
         break;
       case FLOAT32:
         valueBuilder.setFloatValue((Float) value);
@@ -151,7 +266,7 @@ public class ResultSetSerializer {
     return valueBuilder.build();
   }
 
-  private static Object getColumn(StructReader struct, int fieldIndex, SqlType<?> fieldType) {
+  private Object getColumn(StructReader struct, int fieldIndex, SqlType<?> fieldType) {
     if (struct.isNull(fieldIndex)) {
       return null;
     }
@@ -162,8 +277,15 @@ public class ResultSetSerializer {
       case BOOL:
         return struct.getBoolean(fieldIndex);
       case BYTES:
-      case PROTO:
         return struct.getBytes(fieldIndex);
+      case PROTO:
+        SchemalessProto protoType = (SchemalessProto) fieldType;
+        Descriptor descriptor = messageDescriptorMap.get(protoType.getMessageName());
+        if (descriptor == null) {
+          throw new IllegalArgumentException(
+              "Descriptor for message " + protoType.getMessageName() + " could not be found");
+        }
+        return struct.getProtoMessage(fieldIndex, DynamicMessage.getDefaultInstance(descriptor));
       case DATE:
         return struct.getDate(fieldIndex);
       case FLOAT32:
@@ -171,8 +293,19 @@ public class ResultSetSerializer {
       case FLOAT64:
         return struct.getDouble(fieldIndex);
       case INT64:
-      case ENUM:
         return struct.getLong(fieldIndex);
+      case ENUM:
+        SchemalessEnum enumType = (SchemalessEnum) fieldType;
+        EnumDescriptor enumDescriptor = enumDescriptorMap.get(enumType.getEnumName());
+        if (enumDescriptor == null) {
+          throw new IllegalArgumentException(
+              "Descriptor for enum " + enumType.getEnumName() + " could not be found");
+        }
+        // We need to extract the integer value of the enum. `getProtoEnum` is the only
+        // available method, but it is designed for static enum types. To work around this,
+        // we can pass a lambda that constructs our DummyEnum with the captured integer value
+        // and the descriptor from the outer scope.
+        return struct.getProtoEnum(fieldIndex, number -> new DummyEnum(number, enumDescriptor));
       case MAP:
         return struct.getMap(fieldIndex, (SqlType.Map<?, ?>) fieldType);
       case STRING:
