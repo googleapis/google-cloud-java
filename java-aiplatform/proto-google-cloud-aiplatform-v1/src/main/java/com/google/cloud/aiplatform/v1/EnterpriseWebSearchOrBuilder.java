@@ -81,4 +81,52 @@ public interface EnterpriseWebSearchOrBuilder
    * @return The bytes of the excludeDomains at the given index.
    */
   com.google.protobuf.ByteString getExcludeDomainsBytes(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Sites with confidence level chosen &amp; above this value will be
+   * blocked from the search results.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.Tool.PhishBlockThreshold blocking_confidence = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return Whether the blockingConfidence field is set.
+   */
+  boolean hasBlockingConfidence();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Sites with confidence level chosen &amp; above this value will be
+   * blocked from the search results.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.Tool.PhishBlockThreshold blocking_confidence = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The enum numeric value on the wire for blockingConfidence.
+   */
+  int getBlockingConfidenceValue();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. Sites with confidence level chosen &amp; above this value will be
+   * blocked from the search results.
+   * </pre>
+   *
+   * <code>
+   * optional .google.cloud.aiplatform.v1.Tool.PhishBlockThreshold blocking_confidence = 2 [(.google.api.field_behavior) = OPTIONAL];
+   * </code>
+   *
+   * @return The blockingConfidence.
+   */
+  com.google.cloud.aiplatform.v1.Tool.PhishBlockThreshold getBlockingConfidence();
 }
