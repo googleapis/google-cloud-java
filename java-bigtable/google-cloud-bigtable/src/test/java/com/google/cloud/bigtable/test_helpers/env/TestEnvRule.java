@@ -165,6 +165,7 @@ public class TestEnvRule implements TestRule {
    * @param stalePrefix
    */
   private void cleanupStaleTables(String stalePrefix) {
+    LOGGER.info("Start cleaning up stale tables with stalePrefix=" + stalePrefix);
     for (String tableId : env().getTableAdminClient().listTables()) {
       if (!tableId.startsWith(PrefixGenerator.PREFIX)) {
         LOGGER.info("Skip cleaning up table: " + tableId);
