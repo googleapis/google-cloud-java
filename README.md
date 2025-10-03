@@ -240,10 +240,6 @@ If the service is not listed, [google-api-java-client][google-api-java-client-se
 
 *When building Java applications, preference should be given to the libraries listed in the table.*
 
-## Troubleshooting
-
-To get help, follow the instructions in the [Troubleshooting document](https://github.com/googleapis/google-cloud-java/blob/main/TROUBLESHOOTING.md).
-
 ## Testing
 
 This library provides tools to help write tests for code that uses google-cloud services.
