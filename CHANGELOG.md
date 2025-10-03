@@ -1,5 +1,30 @@
 # Changelog
 
+## [1.69.0](https://github.com/googleapis/google-cloud-java/compare/v1.68.0...v1.69.0) (2025-09-22)
+
+
+### Features
+
+* [aiplatform] add private_model_server_enabled to in Endpoint.proto ([bd1762a](https://github.com/googleapis/google-cloud-java/commit/bd1762a0350d5273d57036d6430bbb7f34c2dad0))
+* [apihub] Introduce new services for data collection (ApiHubCollect) and curation (ApiHubCurate) ([bd1762a](https://github.com/googleapis/google-cloud-java/commit/bd1762a0350d5273d57036d6430bbb7f34c2dad0))
+* [batch] added new provisioning models ([bd1762a](https://github.com/googleapis/google-cloud-java/commit/bd1762a0350d5273d57036d6430bbb7f34c2dad0))
+* [compute] Update Compute Engine v1 API to revision 20250902 ([bd1762a](https://github.com/googleapis/google-cloud-java/commit/bd1762a0350d5273d57036d6430bbb7f34c2dad0))
+* [eventarc] add new fields to Eventarc resources ([bd1762a](https://github.com/googleapis/google-cloud-java/commit/bd1762a0350d5273d57036d6430bbb7f34c2dad0))
+* [gkehub] add `k8s_git_version` field ([bd1762a](https://github.com/googleapis/google-cloud-java/commit/bd1762a0350d5273d57036d6430bbb7f34c2dad0))
+* [texttospeech] add Gemini TTS Multispeaker API fields ([bd1762a](https://github.com/googleapis/google-cloud-java/commit/bd1762a0350d5273d57036d6430bbb7f34c2dad0))
+* [video-live-stream] Added H.265 (HEVC) codec support ([bd1762a](https://github.com/googleapis/google-cloud-java/commit/bd1762a0350d5273d57036d6430bbb7f34c2dad0))
+
+
+### Bug Fixes
+
+* **deps:** update the Java code generator (gapic-generator-java) to 2.62.2 ([bd1762a](https://github.com/googleapis/google-cloud-java/commit/bd1762a0350d5273d57036d6430bbb7f34c2dad0))
+* update dependency com.google.cloud:sdk-platform-java-config to v3.52.2 ([#11747](https://github.com/googleapis/google-cloud-java/issues/11747)) ([deb0ed9](https://github.com/googleapis/google-cloud-java/commit/deb0ed92d7c3279e0e26ba8b22463cb77131fa10))
+
+
+### Documentation
+
+* [cloudsecuritycompliance] updated documentation for APIs ([bd1762a](https://github.com/googleapis/google-cloud-java/commit/bd1762a0350d5273d57036d6430bbb7f34c2dad0))
+
 ## [1.68.0](https://github.com/googleapis/google-cloud-java/compare/v1.67.0...v1.68.0) (2025-09-11)
 
 
