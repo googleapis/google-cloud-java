@@ -370,4 +370,19 @@ public interface StreamingPullRequestOrBuilder
    * @return The maxOutstandingBytes.
    */
   long getMaxOutstandingBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The protocol version used by the client. This property can only
+   * be set on the initial StreamingPullRequest. If it is set on a subsequent
+   * request, the stream will be aborted with status `INVALID_ARGUMENT`.
+   * </pre>
+   *
+   * <code>int64 protocol_version = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The protocolVersion.
+   */
+  long getProtocolVersion();
 }

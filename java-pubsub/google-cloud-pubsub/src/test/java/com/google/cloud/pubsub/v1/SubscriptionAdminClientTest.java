@@ -1074,6 +1074,7 @@ public class SubscriptionAdminClientTest {
             .setClientId("clientId908408390")
             .setMaxOutstandingMessages(-1315266996)
             .setMaxOutstandingBytes(-2103098517)
+            .setProtocolVersion(-1161610703)
             .build();
 
     MockStreamObserver<StreamingPullResponse> responseObserver = new MockStreamObserver<>();
@@ -1105,6 +1106,7 @@ public class SubscriptionAdminClientTest {
             .setClientId("clientId908408390")
             .setMaxOutstandingMessages(-1315266996)
             .setMaxOutstandingBytes(-2103098517)
+            .setProtocolVersion(-1161610703)
             .build();
 
     MockStreamObserver<StreamingPullResponse> responseObserver = new MockStreamObserver<>();

@@ -531,6 +531,27 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
     return maxOutstandingBytes_;
   }
 
+  public static final int PROTOCOL_VERSION_FIELD_NUMBER = 10;
+  private long protocolVersion_ = 0L;
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional. The protocol version used by the client. This property can only
+   * be set on the initial StreamingPullRequest. If it is set on a subsequent
+   * request, the stream will be aborted with status `INVALID_ARGUMENT`.
+   * </pre>
+   *
+   * <code>int64 protocol_version = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+   *
+   * @return The protocolVersion.
+   */
+  @java.lang.Override
+  public long getProtocolVersion() {
+    return protocolVersion_;
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -574,6 +595,9 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
     }
     if (maxOutstandingBytes_ != 0L) {
       output.writeInt64(8, maxOutstandingBytes_);
+    }
+    if (protocolVersion_ != 0L) {
+      output.writeInt64(10, protocolVersion_);
     }
     getUnknownFields().writeTo(output);
   }
@@ -629,6 +653,9 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
     if (maxOutstandingBytes_ != 0L) {
       size += com.google.protobuf.CodedOutputStream.computeInt64Size(8, maxOutstandingBytes_);
     }
+    if (protocolVersion_ != 0L) {
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(10, protocolVersion_);
+    }
     size += getUnknownFields().getSerializedSize();
     memoizedSize = size;
     return size;
@@ -653,6 +680,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
     if (!getClientId().equals(other.getClientId())) return false;
     if (getMaxOutstandingMessages() != other.getMaxOutstandingMessages()) return false;
     if (getMaxOutstandingBytes() != other.getMaxOutstandingBytes()) return false;
+    if (getProtocolVersion() != other.getProtocolVersion()) return false;
     if (!getUnknownFields().equals(other.getUnknownFields())) return false;
     return true;
   }
@@ -686,6 +714,8 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMaxOutstandingMessages());
     hash = (37 * hash) + MAX_OUTSTANDING_BYTES_FIELD_NUMBER;
     hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getMaxOutstandingBytes());
+    hash = (37 * hash) + PROTOCOL_VERSION_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getProtocolVersion());
     hash = (29 * hash) + getUnknownFields().hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -836,6 +866,7 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
       clientId_ = "";
       maxOutstandingMessages_ = 0L;
       maxOutstandingBytes_ = 0L;
+      protocolVersion_ = 0L;
       return this;
     }
 
@@ -898,6 +929,9 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
       }
       if (((from_bitField0_ & 0x00000080) != 0)) {
         result.maxOutstandingBytes_ = maxOutstandingBytes_;
+      }
+      if (((from_bitField0_ & 0x00000100) != 0)) {
+        result.protocolVersion_ = protocolVersion_;
       }
     }
 
@@ -996,6 +1030,9 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
       if (other.getMaxOutstandingBytes() != 0L) {
         setMaxOutstandingBytes(other.getMaxOutstandingBytes());
       }
+      if (other.getProtocolVersion() != 0L) {
+        setProtocolVersion(other.getProtocolVersion());
+      }
       this.mergeUnknownFields(other.getUnknownFields());
       onChanged();
       return this;
@@ -1084,6 +1121,12 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
                 bitField0_ |= 0x00000080;
                 break;
               } // case 64
+            case 80:
+              {
+                protocolVersion_ = input.readInt64();
+                bitField0_ |= 0x00000100;
+                break;
+              } // case 80
             default:
               {
                 if (!super.parseUnknownField(input, extensionRegistry, tag)) {
@@ -2258,6 +2301,68 @@ public final class StreamingPullRequest extends com.google.protobuf.GeneratedMes
     public Builder clearMaxOutstandingBytes() {
       bitField0_ = (bitField0_ & ~0x00000080);
       maxOutstandingBytes_ = 0L;
+      onChanged();
+      return this;
+    }
+
+    private long protocolVersion_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The protocol version used by the client. This property can only
+     * be set on the initial StreamingPullRequest. If it is set on a subsequent
+     * request, the stream will be aborted with status `INVALID_ARGUMENT`.
+     * </pre>
+     *
+     * <code>int64 protocol_version = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return The protocolVersion.
+     */
+    @java.lang.Override
+    public long getProtocolVersion() {
+      return protocolVersion_;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The protocol version used by the client. This property can only
+     * be set on the initial StreamingPullRequest. If it is set on a subsequent
+     * request, the stream will be aborted with status `INVALID_ARGUMENT`.
+     * </pre>
+     *
+     * <code>int64 protocol_version = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @param value The protocolVersion to set.
+     * @return This builder for chaining.
+     */
+    public Builder setProtocolVersion(long value) {
+
+      protocolVersion_ = value;
+      bitField0_ |= 0x00000100;
+      onChanged();
+      return this;
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Optional. The protocol version used by the client. This property can only
+     * be set on the initial StreamingPullRequest. If it is set on a subsequent
+     * request, the stream will be aborted with status `INVALID_ARGUMENT`.
+     * </pre>
+     *
+     * <code>int64 protocol_version = 10 [(.google.api.field_behavior) = OPTIONAL];</code>
+     *
+     * @return This builder for chaining.
+     */
+    public Builder clearProtocolVersion() {
+      bitField0_ = (bitField0_ & ~0x00000100);
+      protocolVersion_ = 0L;
       onChanged();
       return this;
     }

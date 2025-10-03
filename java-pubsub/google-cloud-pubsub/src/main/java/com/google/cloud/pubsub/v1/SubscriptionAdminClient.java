@@ -2406,6 +2406,7 @@ public class SubscriptionAdminClient implements BackgroundResource {
    *           .setClientId("clientId908408390")
    *           .setMaxOutstandingMessages(-1315266996)
    *           .setMaxOutstandingBytes(-2103098517)
+   *           .setProtocolVersion(-1161610703)
    *           .build();
    *   bidiStream.send(request);
    *   for (StreamingPullResponse response : bidiStream) {
